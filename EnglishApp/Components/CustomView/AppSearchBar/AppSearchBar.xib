@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppSearchBar" customModule="Ipos" customModuleProvider="target">
+            <connections>
+                <outlet property="btnSearch" destination="6Kz-z1-Pwb" id="1Yf-v9-545"/>
+                <outlet property="lbTitle" destination="0Yp-lv-Bel" id="rHc-JE-DZJ"/>
+                <outlet property="tfInput" destination="0FA-Fn-HAL" id="eSM-LD-QTM"/>
+                <outlet property="vContain" destination="J1L-mP-C5K" id="o4y-eM-K1W"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="188"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yp-lv-Bel">
+                    <rect key="frame" x="0.0" y="44" width="36" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="anf-Sv-1ui"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1L-mP-C5K">
+                    <rect key="frame" x="0.0" y="68" width="414" height="86"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-Fn-HAL">
+                            <rect key="frame" x="16" y="0.0" width="382" height="86"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Kz-z1-Pwb">
+                            <rect key="frame" x="368" y="28" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="W8n-Fu-iIB"/>
+                                <constraint firstAttribute="width" constant="30" id="oGD-dO-jTa"/>
+                            </constraints>
+                            <state key="normal" image="searchYellow"/>
+                            <connections>
+                                <action selector="btnSearchTapped" destination="-1" eventType="touchUpInside" id="tUr-9M-S2m"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="0FA-Fn-HAL" secondAttribute="bottom" id="4ei-hE-pl7"/>
+                        <constraint firstAttribute="trailing" secondItem="0FA-Fn-HAL" secondAttribute="trailing" constant="16" id="PHq-tB-Mbg"/>
+                        <constraint firstItem="6Kz-z1-Pwb" firstAttribute="trailing" secondItem="0FA-Fn-HAL" secondAttribute="trailing" id="ekd-Ji-sIj"/>
+                        <constraint firstItem="0FA-Fn-HAL" firstAttribute="centerY" secondItem="J1L-mP-C5K" secondAttribute="centerY" id="jkF-0Y-BCf"/>
+                        <constraint firstItem="0FA-Fn-HAL" firstAttribute="top" secondItem="J1L-mP-C5K" secondAttribute="top" id="krb-bV-6W9"/>
+                        <constraint firstItem="6Kz-z1-Pwb" firstAttribute="centerY" secondItem="0FA-Fn-HAL" secondAttribute="centerY" id="pmQ-ps-hQk"/>
+                        <constraint firstItem="0FA-Fn-HAL" firstAttribute="leading" secondItem="J1L-mP-C5K" secondAttribute="leading" constant="16" id="r0t-dB-IOV"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.83529411764705885" green="0.83529411764705885" blue="0.83529411764705885" alpha="0.0" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Yp-lv-Bel" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="3q5-uT-hWR"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="J1L-mP-C5K" secondAttribute="bottom" id="6hz-9t-VhS"/>
+                <constraint firstItem="J1L-mP-C5K" firstAttribute="leading" secondItem="0Yp-lv-Bel" secondAttribute="leading" id="aCz-67-JIS"/>
+                <constraint firstItem="0Yp-lv-Bel" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lJs-5V-DHo"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="J1L-mP-C5K" secondAttribute="trailing" id="nUP-Fp-ZYm"/>
+                <constraint firstItem="J1L-mP-C5K" firstAttribute="top" secondItem="0Yp-lv-Bel" secondAttribute="bottom" constant="4" id="xO6-wZ-q72"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="346.875"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="searchYellow" width="20" height="20"/>
+    </resources>
+</document>
