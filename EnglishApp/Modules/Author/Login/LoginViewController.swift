@@ -10,12 +10,66 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, LoginViewProtocol {
+class LoginViewController: BaseViewController, LoginViewProtocol {
 
 	var presenter: LoginPresenterProtocol?
+    
+    @IBOutlet weak var vEmail: AppTextField!
+    @IBOutlet weak var vPassword: AppTextField!
+    @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var lbFbGmail: UILabel!
+    @IBOutlet weak var lbForgot: UILabel!
+    @IBOutlet weak var lbRegister: UILabel!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func setUpViews() {
+        super.setUpViews()
+    }
+    
+    override func setTitleUI() {
+        vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
+        
+        vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
+        
+        btnLogin.setTitle(LocalizableKey.LoginButtonLogin.showLanguage, for: .normal)
+        lbFbGmail.text = LocalizableKey.FBorGmail.showLanguage
+        lbForgot.text = LocalizableKey.ForgotPass.showLanguage
+        
+        let attr = NSMutableAttributedString()
+        let attr1 = LocalizableKey.NotYetAccount.showLanguage.toAttributedString(color: AppColor.black)
+        let attr2 = " \(LocalizableKey.Register.showLanguage)".toAttributedString(color: AppColor.black, font: AppFont.fontBold18, isUnderLine: true)
+        attr.append(attr1)
+        attr.append(attr2)
+        lbRegister.attributedText = attr
+    }
+    
+    override func setUpNavigation() {
+        super.setUpNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.hideNavigation()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.showNavigation()
+    }
+    
+    @IBAction func btnLoginTapped() {
+        
+    }
+    
+    @IBAction func btnForgotPassTapped() {
+        self.push(controller: ForgotPasswordRouter.createModule())
+    }
+    
+    @IBAction func btnRegisterTapped() {
+        self.push(controller: SignUpRouter.createModule())
     }
 
 }

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="tbMenu" destination="mrk-ff-eaa" id="zJX-aN-OZc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,21 +20,40 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZK-Uj-4gk">
-                    <rect key="frame" x="0.0" y="120" width="375" height="80"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wuF-Xw-xs0">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="86"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hYN-1n-bct" customClass="HeaderUserView" customModule="EnglishApp" customModuleProvider="target">
+                            <rect key="frame" x="40" y="22" width="295" height="42"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="U2L-yY-kHd"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="80" id="5UN-EQ-HwY"/>
+                        <constraint firstItem="hYN-1n-bct" firstAttribute="leading" secondItem="wuF-Xw-xs0" secondAttribute="leading" constant="40" id="5ye-93-nd2"/>
+                        <constraint firstAttribute="trailing" secondItem="hYN-1n-bct" secondAttribute="trailing" constant="40" id="Y7H-W8-1Gr"/>
+                        <constraint firstItem="hYN-1n-bct" firstAttribute="centerY" secondItem="wuF-Xw-xs0" secondAttribute="centerY" id="dXL-D1-Zb5"/>
+                        <constraint firstAttribute="height" constant="86" id="yCU-Be-HBg"/>
                     </constraints>
-                    <state key="normal" title="Button"/>
-                </button>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrk-ff-eaa">
+                    <rect key="frame" x="0.0" y="86" width="375" height="581"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="AZK-Uj-4gk" firstAttribute="top" secondItem="zE3-6d-spw" secondAttribute="top" constant="100" id="A0u-lJ-NZt"/>
-                <constraint firstItem="zE3-6d-spw" firstAttribute="trailing" secondItem="AZK-Uj-4gk" secondAttribute="trailing" id="EL3-8C-PtV"/>
-                <constraint firstItem="AZK-Uj-4gk" firstAttribute="leading" secondItem="zE3-6d-spw" secondAttribute="leading" id="hOB-FU-u33"/>
+                <constraint firstItem="wuF-Xw-xs0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2Ae-ru-oR5"/>
+                <constraint firstItem="mrk-ff-eaa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4dO-H1-rDm"/>
+                <constraint firstAttribute="bottom" secondItem="mrk-ff-eaa" secondAttribute="bottom" id="WUJ-Kq-xev"/>
+                <constraint firstAttribute="trailing" secondItem="wuF-Xw-xs0" secondAttribute="trailing" id="ZWk-IG-27J"/>
+                <constraint firstItem="mrk-ff-eaa" firstAttribute="top" secondItem="wuF-Xw-xs0" secondAttribute="bottom" id="t6Z-gj-HFf"/>
+                <constraint firstAttribute="trailing" secondItem="mrk-ff-eaa" secondAttribute="trailing" id="wXc-r6-OIR"/>
+                <constraint firstItem="wuF-Xw-xs0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xWP-to-gAJ"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="zE3-6d-spw"/>
         </view>
     </objects>
 </document>

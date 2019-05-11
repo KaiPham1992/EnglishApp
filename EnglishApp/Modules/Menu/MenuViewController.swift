@@ -11,11 +11,60 @@
 import UIKit
 
 class MenuViewController: UIViewController, MenuViewProtocol {
+    @IBOutlet weak var tbMenu: UITableView!
 
 	var presenter: MenuPresenterProtocol?
+    weak var delegate: MenuProtocol?
+    
+    var listMenuItem = [MenuItem]() {
+        didSet {
+            tbMenu.reloadData()
+        }
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        configureTable()
+        listMenuItem = MenuItem.toArray()
     }
 
+}
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    func configureTable() {
+        tbMenu.delegate = self
+        tbMenu.dataSource = self
+        tbMenu.registerXibFile(MenuCell.self)
+        tbMenu.separatorStyle = .none
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(MenuCell.self, for: indexPath)
+        cell.menuItem = self.listMenuItem[indexPath.item]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listMenuItem.count
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let itemSelected = self.listMenuItem[indexPath.item]
+        self.listMenuItem.forEach { item in
+            item.isSelected = false
+        }
+        
+        if itemSelected.imgIcon == AppImage.imgLanguage {
+           LanguageHelper.changeLanguage()
+        }
+        
+        listMenuItem = MenuItem.toArray()
+        
+        itemSelected.isSelected = true
+        
+        tbMenu.reloadData()
+    }
 }

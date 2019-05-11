@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -19,22 +19,8 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VFd-sO-7ls" customClass="HeaderUserView" customModule="EnglishApp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="120" width="375" height="42"/>
-                    <color key="backgroundColor" red="0.91764705879999997" green="0.12941176469999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="42" id="Ezy-3t-Bwr"/>
-                    </constraints>
-                </view>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="u8q-MF-jQw" firstAttribute="trailing" secondItem="VFd-sO-7ls" secondAttribute="trailing" id="Bbl-g6-JJH"/>
-                <constraint firstItem="VFd-sO-7ls" firstAttribute="leading" secondItem="u8q-MF-jQw" secondAttribute="leading" id="EFU-XB-dlx"/>
-                <constraint firstItem="VFd-sO-7ls" firstAttribute="top" secondItem="u8q-MF-jQw" secondAttribute="top" constant="100" id="gl0-TY-zlL"/>
-            </constraints>
-            <viewLayoutGuide key="safeArea" id="u8q-MF-jQw"/>
+            <viewLayoutGuide key="safeArea" id="sWY-dm-3dB"/>
         </view>
     </objects>
 </document>

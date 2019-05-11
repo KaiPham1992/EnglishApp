@@ -15,7 +15,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
+        
+        
+        //---
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+//        window?.rootViewController = AppContainerViewController()
+        let extractedExpr = UINavigationController(rootViewController: LoginRouter.createModule())
+        window?.rootViewController = extractedExpr
+        
+        configureGoogle()
+        
+        
+        
         return true
     }
 }

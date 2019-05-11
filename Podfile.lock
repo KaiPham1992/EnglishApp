@@ -45,8 +45,6 @@ PODS:
     - GoogleUtilities/Reachability (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
     - Protobuf (~> 3.1)
-  - Google-Mobile-Ads-SDK (7.43.0):
-    - GoogleAppMeasurement (~> 5.7)
   - GoogleAppMeasurement (5.8.1):
     - GoogleUtilities/AppDelegateSwizzler (~> 5.2)
     - GoogleUtilities/MethodSwizzler (~> 5.2)
@@ -119,7 +117,6 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - Firebase/Core
   - Firebase/Messaging
-  - Google-Mobile-Ads-SDK
   - GoogleMaps
   - GooglePlaces
   - GoogleSignIn
@@ -145,7 +142,6 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - FirebaseMessaging
-    - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleMaps
     - GooglePlaces
@@ -175,7 +171,6 @@ SPEC CHECKSUMS:
   FirebaseCore: f1a9a8be1aee4bf71a2fc0f4096df6788bdfda61
   FirebaseInstanceID: a122b0c258720cf250551bb2bedf48c699f80d90
   FirebaseMessaging: 4235f949ce1c4e827aeb19705ba5c53f9b85aa10
-  Google-Mobile-Ads-SDK: e911f5544fc6488f8372a183627a802c8bdb5e36
   GoogleAppMeasurement: ffe513e90551844a739e7bcbb1d2aca1c28a4338
   GoogleMaps: 5c13302e6fe6bb6e686b267196586b91cd594225
   GooglePlaces: e874db179f2675c4f3eeda0b686b540273a578b0
@@ -192,6 +187,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: d926f46b4cef3f5d99b8dc7cc276d9d0118e8223
+PODFILE CHECKSUM: dbd0b1d261af97d5cad44082ed6cadab1257cfe1
 
 COCOAPODS: 1.6.1

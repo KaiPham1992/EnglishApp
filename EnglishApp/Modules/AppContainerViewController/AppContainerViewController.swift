@@ -16,4 +16,13 @@ class AppContainerViewController: SideMenuViewController {
         super.viewDidLoad()
         self.openViewController(presentingController: vcHome)
     }
+    
+    init() {
+        super.init(drawerDirection: .left, drawerWidth: 280, menuViewController: vcMenu)
+//        menuVC.delegate = self
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 }

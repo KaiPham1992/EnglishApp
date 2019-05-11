@@ -9,6 +9,13 @@
 import UIKit
 
 struct AppColor {
+    
+    
+    
+    static let yellow = UIColor(hexString: "ffd311")
+    static let yellowLogin = UIColor(hexString: "fbf0bf")
+    
+    
 //    static let yellow = UIColor(
     static let lineNavigationBar = UIColor.black.withAlphaComponent(0.3)
     static let black = UIColor.black

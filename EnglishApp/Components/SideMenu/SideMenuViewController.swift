@@ -15,7 +15,7 @@ protocol MenuProtocol: class {
 }
 
 
-open class SideMenuViewController: UIViewController, UIGestureRecognizerDelegate {
+open class SideMenuViewController: BaseViewController, UIGestureRecognizerDelegate {
     
     /**************************************************************************/
     // MARK: - Types

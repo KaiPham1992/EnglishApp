@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		56842DA39549A1D4F6A3AF0E /* Pods_EnglishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B6424E15EB5BB969D0CA6 /* Pods_EnglishApp.framework */; };
+		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
 		DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5222841755003768CE /* AppDelegate+Push.swift */; };
 		DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE5422841755003768CE /* GoogleService-Prod-Info.plist */; };
@@ -26,6 +27,7 @@
 		DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7222841BB9003768CE /* MenuProtocols.swift */; };
 		DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7322841BB9003768CE /* MenuInteractor.swift */; };
 		DE2ADE7A22841BB9003768CE /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE7422841BB9003768CE /* MenuViewController.xib */; };
+		DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */; };
 		DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD02283E4BD00FA3B0D /* LoginPresenter.swift */; };
 		DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD12283E4BD00FA3B0D /* LoginRouter.swift */; };
 		DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD22283E4BD00FA3B0D /* LoginViewController.swift */; };
@@ -105,12 +107,34 @@
 		DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */; };
 		DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3442283DD990037DBE4 /* Assets.xcassets */; };
 		DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */; };
+		DEECF86E2286FCAB00A4678B /* HeaderUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */; };
+		DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF86F2286FCC100A4678B /* HeaderUserView.xib */; };
+		DEECF8742287041900A4678B /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8722287041900A4678B /* MenuCell.swift */; };
+		DEECF8752287041900A4678B /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF8732287041900A4678B /* MenuCell.xib */; };
+		DEECF8772287075B00A4678B /* UITable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8762287075B00A4678B /* UITable+extension.swift */; };
+		DEECF87922870AEB00A4678B /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF87822870AEB00A4678B /* LanguageHelper.swift */; };
+		DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF87A22870B3D00A4678B /* Bundle+extension.swift */; };
+		DEECF88022870D1700A4678B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88222870D1700A4678B /* Localizable.strings */; };
+		DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88422870DA400A4678B /* LocalizableKey.swift */; };
+		DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88922871D0400A4678B /* SignUpPresenter.swift */; };
+		DEECF89022871D0400A4678B /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88A22871D0400A4678B /* SignUpRouter.swift */; };
+		DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88B22871D0400A4678B /* SignUpViewController.swift */; };
+		DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88C22871D0400A4678B /* SignUpProtocols.swift */; };
+		DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88D22871D0400A4678B /* SignUpInteractor.swift */; };
+		DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88E22871D0400A4678B /* SignUpViewController.xib */; };
+		DEECF89C22871D1B00A4678B /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89622871D1B00A4678B /* ForgotPasswordPresenter.swift */; };
+		DEECF89D22871D1B00A4678B /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89722871D1B00A4678B /* ForgotPasswordRouter.swift */; };
+		DEECF89E22871D1B00A4678B /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89822871D1B00A4678B /* ForgotPasswordViewController.swift */; };
+		DEECF89F22871D1B00A4678B /* ForgotPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89922871D1B00A4678B /* ForgotPasswordProtocols.swift */; };
+		DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89A22871D1B00A4678B /* ForgotPasswordInteractor.swift */; };
+		DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		187B6424E15EB5BB969D0CA6 /* Pods_EnglishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B757D3CF68AEA1A27D502BF /* Pods-EnglishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.release.xcconfig"; sourceTree = "<group>"; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleSignIn.swift"; sourceTree = "<group>"; };
 		DE2ADE5222841755003768CE /* AppDelegate+Push.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
 		DE2ADE5422841755003768CE /* GoogleService-Prod-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Prod-Info.plist"; sourceTree = "<group>"; };
@@ -129,6 +153,7 @@
 		DE2ADE7222841BB9003768CE /* MenuProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuProtocols.swift; sourceTree = "<group>"; };
 		DE2ADE7322841BB9003768CE /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
 		DE2ADE7422841BB9003768CE /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabStripViewController.swift; sourceTree = "<group>"; };
 		DE361DD02283E4BD00FA3B0D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		DE361DD12283E4BD00FA3B0D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		DE361DD22283E4BD00FA3B0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +235,29 @@
 		DE3CC3442283DD990037DBE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE3CC3472283DD990037DBE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE3CC3492283DD990037DBE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
+		DEECF86F2286FCC100A4678B /* HeaderUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderUserView.xib; sourceTree = "<group>"; };
+		DEECF8722287041900A4678B /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
+		DEECF8732287041900A4678B /* MenuCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		DEECF8762287075B00A4678B /* UITable+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITable+extension.swift"; sourceTree = "<group>"; };
+		DEECF87822870AEB00A4678B /* LanguageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageHelper.swift; sourceTree = "<group>"; };
+		DEECF87A22870B3D00A4678B /* Bundle+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+extension.swift"; sourceTree = "<group>"; };
+		DEECF88122870D1700A4678B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEECF88422870DA400A4678B /* LocalizableKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableKey.swift; sourceTree = "<group>"; };
+		DEECF88622870F2500A4678B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		DEECF88722870F2500A4678B /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		DEECF88922871D0400A4678B /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
+		DEECF88A22871D0400A4678B /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
+		DEECF88B22871D0400A4678B /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		DEECF88C22871D0400A4678B /* SignUpProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpProtocols.swift; sourceTree = "<group>"; };
+		DEECF88D22871D0400A4678B /* SignUpInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpInteractor.swift; sourceTree = "<group>"; };
+		DEECF88E22871D0400A4678B /* SignUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignUpViewController.xib; sourceTree = "<group>"; };
+		DEECF89622871D1B00A4678B /* ForgotPasswordPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordPresenter.swift; sourceTree = "<group>"; };
+		DEECF89722871D1B00A4678B /* ForgotPasswordRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordRouter.swift; sourceTree = "<group>"; };
+		DEECF89822871D1B00A4678B /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		DEECF89922871D1B00A4678B /* ForgotPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordProtocols.swift; sourceTree = "<group>"; };
+		DEECF89A22871D1B00A4678B /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
+		DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,6 +340,7 @@
 		DE2ADE6222841B8E003768CE /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				DEECF871228703FE00A4678B /* Cell */,
 				DE2ADE6F22841BB9003768CE /* MenuPresenter.swift */,
 				DE2ADE7022841BB9003768CE /* MenuRouter.swift */,
 				DE2ADE7122841BB9003768CE /* MenuViewController.swift */,
@@ -316,6 +365,8 @@
 		DE361DCE2283E48200FA3B0D /* Author */ = {
 			isa = PBXGroup;
 			children = (
+				DEECF89522871D0C00A4678B /* ForgotPassword */,
+				DEECF88822871CA100A4678B /* SignUp */,
 				DE361DCF2283E4B200FA3B0D /* Login */,
 			);
 			path = Author;
@@ -337,6 +388,7 @@
 		DE361DDC2283E52A00FA3B0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				DEECF87C22870BBD00A4678B /* Localizable */,
 				DE2ADE5B22841A42003768CE /* SideMenu */,
 				DE361E012283E60400FA3B0D /* Constants */,
 				DE361E062283E60400FA3B0D /* CustomView */,
@@ -356,6 +408,7 @@
 				DE361DE02283E54C00FA3B0D /* BaseTableCell.swift */,
 				DE361DE12283E54C00FA3B0D /* BasePopUpView.swift */,
 				DE361DE22283E54C00FA3B0D /* BaseView.swift */,
+				DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -373,6 +426,8 @@
 				DE361DF22283E57900FA3B0D /* UITextFiled+extension.swift */,
 				DE361DF32283E57900FA3B0D /* NSObjectProtocol+Extension.swift */,
 				DE361DF42283E57900FA3B0D /* Button+extension.swift */,
+				DEECF8762287075B00A4678B /* UITable+extension.swift */,
+				DEECF87A22870B3D00A4678B /* Bundle+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -384,6 +439,7 @@
 				DE361E032283E60400FA3B0D /* Strings.swift */,
 				DE361E042283E60400FA3B0D /* AppColor.swift */,
 				DE361E052283E60400FA3B0D /* AppFont.swift */,
+				DE1F61B8228573950024223F /* AppConstant.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -391,6 +447,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				DEECF86C2286FC9400A4678B /* HeaderUserView */,
 				DE361EA82283E6DB00FA3B0D /* CustomTextfield */,
 				DE361E102283E60500FA3B0D /* AppTextField */,
 				DE361E1C2283E60500FA3B0D /* AppSearchBar */,
@@ -463,6 +520,7 @@
 				DE361E4D2283E60500FA3B0D /* AnimationHelper.swift */,
 				DE361E4E2283E60500FA3B0D /* Utils.swift */,
 				DE361E4F2283E60500FA3B0D /* StringReachability.swift */,
+				DEECF87822870AEB00A4678B /* LanguageHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -660,6 +718,59 @@
 			path = EnglishApp;
 			sourceTree = "<group>";
 		};
+		DEECF86C2286FC9400A4678B /* HeaderUserView */ = {
+			isa = PBXGroup;
+			children = (
+				DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */,
+				DEECF86F2286FCC100A4678B /* HeaderUserView.xib */,
+			);
+			path = HeaderUserView;
+			sourceTree = "<group>";
+		};
+		DEECF871228703FE00A4678B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEECF8722287041900A4678B /* MenuCell.swift */,
+				DEECF8732287041900A4678B /* MenuCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DEECF87C22870BBD00A4678B /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				DEECF88222870D1700A4678B /* Localizable.strings */,
+				DEECF88422870DA400A4678B /* LocalizableKey.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		DEECF88822871CA100A4678B /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				DEECF88922871D0400A4678B /* SignUpPresenter.swift */,
+				DEECF88A22871D0400A4678B /* SignUpRouter.swift */,
+				DEECF88B22871D0400A4678B /* SignUpViewController.swift */,
+				DEECF88C22871D0400A4678B /* SignUpProtocols.swift */,
+				DEECF88D22871D0400A4678B /* SignUpInteractor.swift */,
+				DEECF88E22871D0400A4678B /* SignUpViewController.xib */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		DEECF89522871D0C00A4678B /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				DEECF89622871D1B00A4678B /* ForgotPasswordPresenter.swift */,
+				DEECF89722871D1B00A4678B /* ForgotPasswordRouter.swift */,
+				DEECF89822871D1B00A4678B /* ForgotPasswordViewController.swift */,
+				DEECF89922871D1B00A4678B /* ForgotPasswordProtocols.swift */,
+				DEECF89A22871D1B00A4678B /* ForgotPasswordInteractor.swift */,
+				DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -705,6 +816,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = DE3CC3312283DD980037DBE4;
 			productRefGroup = DE3CC33B2283DD980037DBE4 /* Products */;
@@ -721,8 +833,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEECF88022870D1700A4678B /* Localizable.strings in Resources */,
+				DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
+				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
+				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
@@ -735,6 +851,7 @@
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
 				DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */,
 				DE361E722283E60500FA3B0D /* AppTextField.xib in Resources */,
+				DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,11 +967,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
 				DE361DFE2283E57900FA3B0D /* UITextFiled+extension.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
 				DE2ADE6C22841B9E003768CE /* HomeProtocols.swift in Sources */,
+				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
 				DE361F3E2283E85000FA3B0D /* LoginSocialParam.swift in Sources */,
 				DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */,
@@ -869,6 +988,7 @@
 				DE361F412283E85000FA3B0D /* UpdateProfileSocial.swift in Sources */,
 				DE2ADE5D22841A68003768CE /* SideMenuViewController.swift in Sources */,
 				DE2ADE6922841B9E003768CE /* HomePresenter.swift in Sources */,
+				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
@@ -877,10 +997,13 @@
 				DE361F472283E85000FA3B0D /* CommonEndPoint.swift in Sources */,
 				DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DE361F362283E85000FA3B0D /* PhotoEntity.swift in Sources */,
+				DEECF89F22871D1B00A4678B /* ForgotPasswordProtocols.swift in Sources */,
+				DEECF86E2286FCAB00A4678B /* HeaderUserView.swift in Sources */,
 				DE361F3B2283E85000FA3B0D /* Network.swift in Sources */,
 				DE361F402283E85000FA3B0D /* UpdateProfileParam.swift in Sources */,
 				DE361F3A2283E85000FA3B0D /* BaseResponse.swift in Sources */,
 				DE361DDA2283E4BD00FA3B0D /* LoginInteractor.swift in Sources */,
+				DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
@@ -896,32 +1019,42 @@
 				DE361E9A2283E60500FA3B0D /* StringReachability.swift in Sources */,
 				DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */,
 				DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */,
+				DEECF8772287075B00A4678B /* UITable+extension.swift in Sources */,
 				DE361DE32283E54C00FA3B0D /* BaseViewController.swift in Sources */,
 				DE361F432283E85000FA3B0D /* PostRecordParam.swift in Sources */,
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
+				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
 				DE361F4C2283E85000FA3B0D /* NotificationEndPoint.swift in Sources */,
 				DE361E9E2283E60500FA3B0D /* NotificationContent.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
 				DE361E962283E60500FA3B0D /* UserDefaultHelper.swift in Sources */,
+				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
 				DE361DE72283E54C00FA3B0D /* BaseView.swift in Sources */,
 				DE361F392283E85000FA3B0D /* APIError.swift in Sources */,
 				DE361F332283E85000FA3B0D /* UserEntity.swift in Sources */,
 				DE361F342283E85000FA3B0D /* FaceBookEntity.swift in Sources */,
+				DEECF89E22871D1B00A4678B /* ForgotPasswordViewController.swift in Sources */,
 				DE361E842283E60500FA3B0D /* AppDropDownCell.swift in Sources */,
 				DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */,
+				DEECF89C22871D1B00A4678B /* ForgotPasswordPresenter.swift in Sources */,
+				DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
+				DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */,
 				DE361E822283E60500FA3B0D /* AppDropDown.swift in Sources */,
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
 				DE361F512283E85000FA3B0D /* NotificationAPIService.swift in Sources */,
 				DE2ADE7522841BB9003768CE /* MenuPresenter.swift in Sources */,
+				DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */,
+				DEECF87922870AEB00A4678B /* LanguageHelper.swift in Sources */,
 				DE361F3D2283E85000FA3B0D /* NetworkRequest.swift in Sources */,
 				DE361E8D2283E60500FA3B0D /* AppCheckBox.swift in Sources */,
 				DE361DFA2283E57900FA3B0D /* UIViewController+extension.swift in Sources */,
 				DE361E7A2283E60500FA3B0D /* AppSearchBar.swift in Sources */,
+				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
 				DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */,
 				DE361F3C2283E85000FA3B0D /* MapperData.swift in Sources */,
 				DE361DF62283E57900FA3B0D /* Int+extension.swift in Sources */,
@@ -931,6 +1064,8 @@
 				DE361E9F2283E60500FA3B0D /* YesNoContentView.swift in Sources */,
 				DE361E8B2283E60500FA3B0D /* AppTextView.swift in Sources */,
 				DE361DF72283E57900FA3B0D /* Date+extension.swift in Sources */,
+				DEECF89D22871D1B00A4678B /* ForgotPasswordRouter.swift in Sources */,
+				DEECF89022871D0400A4678B /* SignUpRouter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 			);
@@ -943,8 +1078,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				DE3CC3472283DD990037DBE4 /* Base */,
+				DEECF88622870F2500A4678B /* vi */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DEECF88222870D1700A4678B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DEECF88122870D1700A4678B /* en */,
+				DEECF88722870F2500A4678B /* vi */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -954,6 +1099,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1015,6 +1161,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1079,7 +1226,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kai.demo.EnglishApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -1100,7 +1247,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kai.demo.EnglishApp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

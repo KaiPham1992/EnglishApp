@@ -1,0 +1,38 @@
+/* 
+  Localizable.strings
+  EnglishApp
+
+  Created by Kai Pham on 5/11/19.
+  Copyright © 2019 demo. All rights reserved.
+*/
+
+// Menu Page
+"MenuInfo" = "Thông tin cá nhân";
+"MenuTop" = "Bảng xếp hạng";
+"MenuQA" = "Hỏi đáp";
+"MenuLanguage" = "Ngôn ngữ";
+"MenuSaved" = "Đã lưu";
+"MenuHistory" = "Lịch sử kiểm tra";
+"MenuPrivacy" = "Chính sách và điều khoản";
+"MenuChangePassword" = "Đổi mật khẩu";
+"MenuLogout" = "Đăng xuất";
+
+// Login Page
+
+"LoginEmail" = "Mail";
+"LoginEmailPlaceHolder" = "Nhập email của bạn";
+"LoginPassword" = "Mật khẩu";
+"LoginButtonLogin" = "Đăng nhập";
+"FBorGmail" = "Hoặc đăng nhập bằng";
+"ForgotPass" = "Quên mật khẩu";
+"NotYetAccount" = "Bạn chưa có tài khoản?";
+"Register" = "Đăng kí";
+
+// Forgot password page
+"ForgotPasswordMessage" = "Nhập địa chỉ email liên kết với tài khoản của bạn.\nSau đó kiểm tra hòm thư";
+"SentEmail" = "Gửi email";
+"ForgotTitle" = "Quên mật khẩu";
+
+
+
+

@@ -10,12 +10,33 @@
 
 import UIKit
 
-class HomeViewController: UIViewController, HomeViewProtocol {
+class HomeViewController: BaseViewController, HomeViewProtocol {
 
 	var presenter: HomePresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        
+        addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
+        
+         addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: nil)
+            
+        addHeaderUser()
+    }
+    
+    @objc func btnMenuTapped() {
+        if let containerController = navigationController?.parent as? SideMenuViewController {
+            containerController.toggleLeftPanel()
+        }
+    }
+    
+    func pushHaveNavigation(viewController: UIViewController) {
+        showNavigation()
+        
+        self.push(controller: viewController)
+    }
 }

@@ -390,6 +390,15 @@ extension String {
         let htmlString: String =  "<html><meta name='viewport' content='width=device-width, initial-scale=1'><head><link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'><style>body { background: white; font-family: 'Open Sans' !important; font-size: 15px; } </style> </head> <body> <img align=\"middle\">" + self + "</body></html>"
         return htmlString
     }
+    
+    var showLanguage: String {
+        let lang = LanguageHelper.currentAppleLanguage()
+        
+        let path = Bundle.main.path(forResource: lang, ofType: "lproj")
+        let bundle = Bundle(path: path!)
+        
+        return NSLocalizedString(self, tableName: nil, bundle: bundle!, value: "", comment: "")
+    }
 }
 
 extension String {

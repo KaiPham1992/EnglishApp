@@ -12,7 +12,7 @@ enum StyleNavigation {
     case right
 }
 
-class BaseViewController: UIViewController {
+open class BaseViewController: UIViewController {
     
     let mainBackgroundColor = UIColor.white
     let mainNavigationBarColor = UIColor.white
@@ -23,7 +23,7 @@ class BaseViewController: UIViewController {
         return btn
     }()
     
-    override func viewDidLoad() {
+    override open func viewDidLoad() {
         super.viewDidLoad()
         //store.subscribe(self)
         setUpNavigation()
@@ -31,19 +31,26 @@ class BaseViewController: UIViewController {
     }
     
     func setUpViews() {}
+    func setTitleUI() {}
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return UIStatusBarStyle.default
+    open override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setTitleUI()
+    }
+    
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
     }
     
     func setUpNavigation() {
-        self.view.backgroundColor = UIColor.white
         guard let navigationController = self.navigationController else { return }
         //---
         navigationController.navigationBar.barTintColor = mainNavigationBarColor
         navigationController.navigationBar.isTranslucent = false
         navigationController.navigationBar.isHidden = false
         navigationItem.setHidesBackButton(true, animated: true)
+        
+        setNavigationColor()
     }
     
     func transparentNavigationBar() {
@@ -74,9 +81,9 @@ class BaseViewController: UIViewController {
         self.navigationItem.hidesBackButton = true
     }
     
-//    func setColorStatusBar(color: UIColor = AppColor.red) {
-//        Utils.setColorStatusBar(color: color)
-//    }
+    func setNavigationColor(color: UIColor = AppColor.yellow) {
+         self.navigationController?.navigationBar.barTintColor = color
+    }
     
     func pushUpFromBottomView(controller: UIViewController) {
         let transition = CATransition()
@@ -317,5 +324,10 @@ extension BaseViewController {
     
     func setWhiteCloseNavigation() {
         addButtonImageToNavigation(image: #imageLiteral(resourceName: "cancel_white"), style: .left, action: #selector(btnCloseTapped))
+    }
+    
+    func addHeaderUser() {
+        let header = HeaderUserView()
+         self.navigationItem.titleView = header
     }
 }

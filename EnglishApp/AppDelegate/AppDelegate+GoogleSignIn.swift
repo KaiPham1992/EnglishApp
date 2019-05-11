@@ -9,7 +9,7 @@
 import GoogleMaps
 import GooglePlaces
 import GoogleSignIn
-import GoogleMobileAds
+//import GoogleMobileAds
 import Firebase
 
 extension AppDelegate {
