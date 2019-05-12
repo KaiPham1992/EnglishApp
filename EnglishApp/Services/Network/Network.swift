@@ -32,6 +32,8 @@ struct APINetwork: APINetworkProtocol {
         print("\(BASE_URL)\(endPoint.path)")
         print(endPoint.parameters)
         print(endPoint.headers)
+        
+        
         request.requestData(endPoint: endPoint, success: { data in
             let json = JSON(data)
             

@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "DE3CC3392283DD980037DBE4"
-               BuildableName = "EnglishApp.app"
-               BlueprintName = "EnglishApp"
+               BlueprintIdentifier = "DE952FAE2287DF4800E3F688"
+               BuildableName = "EnglishApp_Prod.app"
+               BlueprintName = "EnglishApp_Prod"
                ReferencedContainer = "container:EnglishApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,9 +32,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DE3CC3392283DD980037DBE4"
-            BuildableName = "EnglishApp.app"
-            BlueprintName = "EnglishApp"
+            BlueprintIdentifier = "DE952FAE2287DF4800E3F688"
+            BuildableName = "EnglishApp_Prod.app"
+            BlueprintName = "EnglishApp_Prod"
             ReferencedContainer = "container:EnglishApp.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -55,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DE3CC3392283DD980037DBE4"
-            BuildableName = "EnglishApp.app"
-            BlueprintName = "EnglishApp"
+            BlueprintIdentifier = "DE952FAE2287DF4800E3F688"
+            BuildableName = "EnglishApp_Prod.app"
+            BlueprintName = "EnglishApp_Prod"
             ReferencedContainer = "container:EnglishApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "DE3CC3392283DD980037DBE4"
-            BuildableName = "EnglishApp.app"
-            BlueprintName = "EnglishApp"
+            BlueprintIdentifier = "DE952FAE2287DF4800E3F688"
+            BuildableName = "EnglishApp_Prod.app"
+            BlueprintName = "EnglishApp_Prod"
             ReferencedContainer = "container:EnglishApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

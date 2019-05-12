@@ -25,10 +25,15 @@ struct LocalizableKey {
     static let LoginEmailPlaceHolder = "LoginEmailPlaceHolder"
     static let LoginPassword = "LoginPassword"
     static let LoginButtonLogin = "LoginButtonLogin"
+    static let LoginButtonSignUp = "LoginButtonSignUp"
     static let FBorGmail = "FBorGmail"
     static let ForgotPass = "ForgotPass"
     static let Register = "Register"
     static let NotYetAccount = "NotYetAccount"
+    
+    static let invalidLoginEmail = "invalidLoginEmail"
+    static let invalidLoginPassword = "invalidLoginPassword"
+    static let emptyLoginEmailPassword = "emptyLoginEmailPassword"
     
     // Forgot password Page
     static let ForgotPasswordMessage = "ForgotPasswordMessage"

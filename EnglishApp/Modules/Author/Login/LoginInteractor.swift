@@ -13,4 +13,30 @@ import UIKit
 class LoginInteractor: LoginInteractorInputProtocol {
 
     weak var presenter: LoginInteractorOutputProtocol?
+    
+    func login(email: String, password: String) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.login(email: email, password: password.sha256(), success: { (user) in
+            //save user
+            ProgressView.shared.hide()
+            guard let user = user else { return }
+            // --
+            self.presenter?.didLogin(user: user)
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.didLogin(error: error)
+        }
+    }
+    
+    func loginSocial(param: LoginSocialParam) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.loginGmail(param: param, success: { user in
+            ProgressView.shared.hide()
+            guard let user = user else { return }
+            self.presenter?.didLogin(user: user)
+        }) { error in
+            ProgressView.shared.hide()
+            self.presenter?.didLogin(error: error)
+        }
+    }
 }

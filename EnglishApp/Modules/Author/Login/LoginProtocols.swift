@@ -18,12 +18,17 @@ protocol LoginWireframeProtocol: class {
 protocol LoginPresenterProtocol: class {
 
     var interactor: LoginInteractorInputProtocol? { get set }
+    
+    func login(email: String, password: String)
+    func loginSocial(param: LoginSocialParam)
 }
 
 //MARK: Interactor -
 protocol LoginInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didLogin(user: UserEntity?)
+    func didLogin(error: APIError?)
 }
 
 protocol LoginInteractorInputProtocol: class {
@@ -31,6 +36,8 @@ protocol LoginInteractorInputProtocol: class {
     var presenter: LoginInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func login(email: String, password: String)
+    func loginSocial(param: LoginSocialParam)
 }
 
 //MARK: View -
@@ -39,4 +46,6 @@ protocol LoginViewProtocol: class {
     var presenter: LoginPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didLogin(user: UserEntity?)
+    func didError(error: APIError?)
 }

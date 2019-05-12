@@ -10,12 +10,37 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, SignUpViewProtocol {
-
-	var presenter: SignUpPresenterProtocol?
-
-	override func viewDidLoad() {
+class SignUpViewController: BaseViewController, SignUpViewProtocol {
+    
+    var presenter: SignUpPresenterProtocol?
+    
+    @IBOutlet weak var vEmail: AppTextField!
+    @IBOutlet weak var vPassword: AppTextField!
+    @IBOutlet weak var vRePassword: AppTextField!
+    @IBOutlet weak var tfCaptcha: UITextField!
+    @IBOutlet weak var btnSignUp: UIButton!
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override func setTitleUI() {
+        vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
+        
+        vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
+        vRePassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
+        btnSignUp.setTitle(LocalizableKey.LoginButtonSignUp.showLanguage, for: .normal)
+        vPassword.tfInput.isSecureTextEntry = true
+        vRePassword.tfInput.isSecureTextEntry = true
+        
+        addBackToNavigation()
+    }
+    
+    @IBAction func btnSignUpTapped() {
+        
+    }
+    
+    @IBAction func btnReloadCaptcha() {
+        
+    }
 }

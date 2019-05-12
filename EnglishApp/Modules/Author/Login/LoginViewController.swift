@@ -9,8 +9,20 @@
 //
 
 import UIKit
+import CryptoSwift
+import GoogleSignIn
+import FBSDKLoginKit
+import FBSDKCoreKit
+import SystemConfiguration
 
-class LoginViewController: BaseViewController, LoginViewProtocol {
+enum LoginType {
+    case gmail
+    case facebook
+    case normal
+}
+
+
+class LoginViewController: BaseViewController {
 
 	var presenter: LoginPresenterProtocol?
     
@@ -20,6 +32,11 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
     @IBOutlet weak var lbFbGmail: UILabel!
     @IBOutlet weak var lbForgot: UILabel!
     @IBOutlet weak var lbRegister: UILabel!
+    @IBOutlet weak var lbError: UILabel!
+    
+    
+    var loginType = LoginType.normal
+    var paramLogin: Any?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +44,16 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
     
     override func setUpViews() {
         super.setUpViews()
+        
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     override func setTitleUI() {
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
         vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
+        vPassword.tfInput.isSecureTextEntry = true 
         
         btnLogin.setTitle(LocalizableKey.LoginButtonLogin.showLanguage, for: .normal)
         lbFbGmail.text = LocalizableKey.FBorGmail.showLanguage
@@ -44,6 +65,8 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
         attr.append(attr1)
         attr.append(attr2)
         lbRegister.attributedText = attr
+        
+        lbError.text = ""
     }
     
     override func setUpNavigation() {
@@ -61,7 +84,9 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
     }
     
     @IBAction func btnLoginTapped() {
-        
+        if validateInputData() {
+            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
+        }
     }
     
     @IBAction func btnForgotPassTapped() {
@@ -71,5 +96,70 @@ class LoginViewController: BaseViewController, LoginViewProtocol {
     @IBAction func btnRegisterTapped() {
         self.push(controller: SignUpRouter.createModule())
     }
+    
+    @IBAction func btnLoginGmail() {
+        self.view.endEditing(true)
+        GIDSignIn.sharedInstance().signOut()
+        GIDSignIn.sharedInstance().signIn()
+    }
+    
+    @IBAction func btnLoginFacebook() {
+        self.view.endEditing(true)
+        self.FBlogin()
+    }
+    
 
+}
+
+extension LoginViewController {
+    func validateInputData() -> Bool {
+        
+        if self.vEmail.tfInput.text == "" || self.vPassword.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
+            return false
+        }
+        
+        if let email = self.vEmail.tfInput.text, email.isValidEmail() == false {
+            hideError(isHidden: false, message:  LocalizableKey.invalidLoginEmail.showLanguage)
+            return false
+        }
+        if let password = self.vPassword.tfInput.text, password.count < 6 {
+            hideError(isHidden: false, message:  LocalizableKey.invalidLoginPassword.showLanguage)
+            return false
+        }
+        hideError()
+        return true
+    }
+    
+    func hideError(isHidden: Bool = true, message: String? = nil){
+        lbError.isHidden = isHidden
+        lbError.text = message ?? ""
+    }
+}
+
+
+extension LoginViewController: LoginViewProtocol {
+    func didLogin(user: UserEntity?) {
+        guard let _user = user else { return }
+        
+        UserDefaultHelper.shared.saveUser(user: _user)
+    }
+    
+    func didError(error: APIError?) {
+        if let message = error?.message {
+            switch message {
+            case "INVALID_USERNAME_OR_PASSWORD":
+                UserDefaultHelper.shared.clearUser()
+                hideError(isHidden: false, message:  LocalizableKey.emptyLoginEmailPassword.showLanguage)
+                break
+            case "USER_IS_NOT_VERIFY":
+                break
+            case "PHONE_IS_EXISTED":
+               break
+            default:
+                break
+            }
+        }
+        
+    }
 }

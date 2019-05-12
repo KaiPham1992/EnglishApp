@@ -27,11 +27,16 @@
 "ForgotPass" = "Quên mật khẩu";
 "NotYetAccount" = "Bạn chưa có tài khoản?";
 "Register" = "Đăng kí";
+"LoginButtonSignUp" = "ĐĂNG KÝ";
 
 // Forgot password page
 "ForgotPasswordMessage" = "Nhập địa chỉ email liên kết với tài khoản của bạn.\nSau đó kiểm tra hòm thư";
 "SentEmail" = "Gửi email";
 "ForgotTitle" = "Quên mật khẩu";
+
+"invalidLoginEmail" = "Email không chính xác";
+"invalidLoginPassword" = "Mật khẩu không chính xác";
+"emptyLoginEmailPassword"  = "Vui lòng nhập đầy đủ thông tin bắt buộc";
 
 
 

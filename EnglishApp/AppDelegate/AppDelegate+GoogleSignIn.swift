@@ -18,13 +18,13 @@ extension AppDelegate {
         
         // get key from fire base : AIzaSyCaOVKfotVN6tQ4sUbv8ssND
         #if APPSTORE
-        GMSServices.provideAPIKey("AIzaSyB5SWRz9NmcGfr-i9cSZKZp5Qzc4uhC9EE")
-        GMSPlacesClient.provideAPIKey("AIzaSyB5SWRz9NmcGfr-i9cSZKZp5Qzc4uhC9EE")
-        GIDSignIn.sharedInstance().clientID = "75482666365-r238vl3vtgahphqk7suf0o18j31b02ru.apps.googleusercontent.com"
+        GMSServices.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
+        GMSPlacesClient.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
+        GIDSignIn.sharedInstance().clientID = "204187467150-uf817q823gfjullmamdligjgvh257ki9.apps.googleusercontent.com"
         #else
-        GMSServices.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
-        GMSPlacesClient.provideAPIKey("AIzaSyCaOVKfotVN6tQ4sUbv8ssND-4zmssrdPk")
-        GIDSignIn.sharedInstance().clientID = "75482666365-hu68btcpb6hks79npv4npjad2t4rla0o.apps.googleusercontent.com"
+        GMSServices.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
+        GMSPlacesClient.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
+        GIDSignIn.sharedInstance().clientID = "204187467150-uf817q823gfjullmamdligjgvh257ki9.apps.googleusercontent.com"
         #endif
         
         configureFirebase()

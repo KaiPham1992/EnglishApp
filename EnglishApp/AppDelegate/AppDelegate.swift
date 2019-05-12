@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
+import Firebase
+import FBSDKLoginKit
+import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,9 +33,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         configureGoogle()
         
-        
-        
         return true
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:], sourceApplication: String) -> Bool {
+        let fb = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        let gg = GIDSignIn.sharedInstance().handle(url as URL?,
+                                                   sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
+                                                   annotation: options[UIApplication.OpenURLOptionsKey.annotation])
+       
+        
+        return fb || gg
+        
+        
     }
 }
 

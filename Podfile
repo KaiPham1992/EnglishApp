@@ -20,7 +20,17 @@ def main_pods
     pod 'XLPagerTabStrip'
 end
 
-target 'EnglishApp' do
+target 'EnglishApp_Dev' do
     use_frameworks!
     main_pods
+end
+
+target 'EnglishApp_Prod' do
+  use_frameworks!
+  main_pods
+end
+
+target 'EnglishApp_AppStore' do
+  use_frameworks!
+  main_pods
 end

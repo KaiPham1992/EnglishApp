@@ -10,7 +10,7 @@
 
 import UIKit
 
-class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtocol {
+class LoginPresenter: LoginPresenterProtocol {
 
     weak private var view: LoginViewProtocol?
     var interactor: LoginInteractorInputProtocol?
@@ -21,5 +21,24 @@ class LoginPresenter: LoginPresenterProtocol, LoginInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+    
+    func login(email: String, password: String) {
+        interactor?.login(email: email, password: password)
+    }
+    
+    func loginSocial(param: LoginSocialParam) {
+        interactor?.loginSocial(param: param)
+    }
 
+}
+
+
+extension LoginPresenter: LoginInteractorOutputProtocol {
+    func didLogin(user: UserEntity?) {
+        view?.didLogin(user: user)
+    }
+    
+    func didLogin(error: APIError?) {
+        view?.didError(error: error)
+    }
 }

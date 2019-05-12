@@ -12,15 +12,17 @@ import ObjectMapper
 enum UserDefaultHelperKey: String {
     case deviceToken = "DeviceToken"
     case fcmToken = "FcmToken"
-
     case userToken = "UserToken"
+    
+    
+    
     case userName  = "UserName"
     case email = "Email"
     case bio = "Bio"
     case website = "Website"
     case profilePhoto = "Profile Photo"
     case refreshToken = "RefreshUserToken"
-
+    
     case userLoggedIn = "UserLogin"
     case userSkipIntro = "UserSkipIntroduction"
     case isFirstLauch = "IsFirstLauch"
@@ -30,7 +32,7 @@ enum UserDefaultHelperKey: String {
 class UserDefaultHelper {
     static let shared = UserDefaultHelper()
     private let userDefaultManager = UserDefaults.standard
-
+    
     var loginUserInfo: UserEntity? {
         get {
             if let savedUser = UserDefaults.standard.object(forKey: UserDefaultHelperKey.loginUserInfo.rawValue) as? Data {
@@ -85,8 +87,17 @@ extension UserDefaultHelper {
         userDefaultManager.set(value, forKey: key.rawValue)
         userDefaultManager.synchronize()
     }
-
+    
     private func get(key: UserDefaultHelperKey) -> Any? {
         return userDefaultManager.object(forKey: key.rawValue)
+    }
+    
+    func clearUser() {
+        UserDefaults.standard.removeObject(forKey: UserDefaultHelperKey.userToken.rawValue)
+    }
+    
+    func saveUser(user: UserEntity) {
+        loginUserInfo = user
+        userToken = user.jwt&
     }
 }

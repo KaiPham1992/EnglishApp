@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		56842DA39549A1D4F6A3AF0E /* Pods_EnglishApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187B6424E15EB5BB969D0CA6 /* Pods_EnglishApp.framework */; };
+		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
+		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
 		DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5222841755003768CE /* AppDelegate+Push.swift */; };
@@ -107,6 +109,378 @@
 		DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */; };
 		DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3442283DD990037DBE4 /* Assets.xcassets */; };
 		DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */; };
+		DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */; };
+		DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */; };
+		DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */; };
+		DE952F7F2287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F562287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		DE952F802287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F572287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift */; };
+		DE952F812287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F582287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift */; };
+		DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F592287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift */; };
+		DE952F832287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5A2287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift */; };
+		DE952F842287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5B2287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift */; };
+		DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5C2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift */; };
+		DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5D2287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
+		DE952F872287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5E2287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift */; };
+		DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5F2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift */; };
+		DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F602287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift */; };
+		DE952F8A2287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F612287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
+		DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F622287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */; };
+		DE952F8C2287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F632287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift */; };
+		DE952F8D2287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F642287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift */; };
+		DE952F8E2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F652287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
+		DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F662287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
+		DE952F902287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F672287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift */; };
+		DE952F912287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F682287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift */; };
+		DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F692287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
+		DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6A2287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift */; };
+		DE952F942287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6B2287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift */; };
+		DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6C2287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift */; };
+		DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6D2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift */; };
+		DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6E2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift */; };
+		DE952F982287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6F2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift */; };
+		DE952F992287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F702287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */; };
+		DE952F9A2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F712287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift */; };
+		DE952F9B2287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F722287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift */; };
+		DE952F9C2287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F732287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */; };
+		DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F752287D2A700E3F688 /* KActivityIndicatorView.swift */; };
+		DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F762287D2A700E3F688 /* KActivityIndicatorType.swift */; };
+		DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F772287D2A700E3F688 /* KActivityIndicatorShape.swift */; };
+		DE952FA02287D2A700E3F688 /* FadeInOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F782287D2A700E3F688 /* FadeInOutAnimation.swift */; };
+		DE952FA12287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F792287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift */; };
+		DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F7B2287D2A700E3F688 /* ProgressView.swift */; };
+		DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952FA42287DD2A00E3F688 /* Login+Facebook.swift */; };
+		DE952FAD2287DD2A00E3F688 /* Login+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952FA82287DD2A00E3F688 /* Login+GoogleSignIn.swift */; };
+		DE952FB12287DF4800E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F582287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift */; };
+		DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88B22871D0400A4678B /* SignUpViewController.swift */; };
+		DE952FB32287DF4800E3F688 /* UITextFiled+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF22283E57900FA3B0D /* UITextFiled+extension.swift */; };
+		DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F242283E85000FA3B0D /* UserAPIService.swift */; };
+		DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEC2283E57900FA3B0D /* UIView+extension.swift */; };
+		DE952FB62287DF4800E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F572287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift */; };
+		DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F762287D2A700E3F688 /* KActivityIndicatorType.swift */; };
+		DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6C2287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift */; };
+		DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0F2283E84F00FA3B0D /* SendCommentParam.swift */; };
+		DE952FBA2287DF4800E3F688 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6622841B9E003768CE /* HomeProtocols.swift */; };
+		DE952FBB2287DF4800E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F672287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift */; };
+		DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89A22871D1B00A4678B /* ForgotPasswordInteractor.swift */; };
+		DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6A2287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift */; };
+		DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE12283E54C00FA3B0D /* BasePopUpView.swift */; };
+		DE952FBF2287DF4800E3F688 /* LoginSocialParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0A2283E84F00FA3B0D /* LoginSocialParam.swift */; };
+		DE952FC02287DF4800E3F688 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD02283E4BD00FA3B0D /* LoginPresenter.swift */; };
+		DE952FC12287DF4800E3F688 /* NSObjectProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF32283E57900FA3B0D /* NSObjectProtocol+Extension.swift */; };
+		DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F622287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */; };
+		DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4D2283E60500FA3B0D /* AnimationHelper.swift */; };
+		DE952FC42287DF4800E3F688 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E042283E60400FA3B0D /* AppColor.swift */; };
+		DE952FC52287DF4800E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F632287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift */; };
+		DE952FC62287DF4800E3F688 /* PhoneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EF62283E84F00FA3B0D /* PhoneEntity.swift */; };
+		DE952FC72287DF4800E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F682287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift */; };
+		DE952FC82287DF4800E3F688 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EEE2283E84F00FA3B0D /* NotificationEntity.swift */; };
+		DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E022283E60400FA3B0D /* AppImage.swift */; };
+		DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EA92283E6DB00FA3B0D /* CustomTextfield.swift */; };
+		DE952FCB2287DF4800E3F688 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE02283E54C00FA3B0D /* BaseTableCell.swift */; };
+		DE952FCC2287DF4800E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */; };
+		DE952FCD2287DF4800E3F688 /* UpdateProfileSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0D2283E84F00FA3B0D /* UpdateProfileSocial.swift */; };
+		DE952FCE2287DF4800E3F688 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5C22841A68003768CE /* SideMenuViewController.swift */; };
+		DE952FCF2287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5E2287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift */; };
+		DE952FD02287DF4800E3F688 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6322841B9E003768CE /* HomePresenter.swift */; };
+		DE952FD12287DF4800E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6B2287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift */; };
+		DE952FD22287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F702287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */; };
+		DE952FD32287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F612287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
+		DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */; };
+		DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6D2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift */; };
+		DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5F2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift */; };
+		DE952FD72287DF4800E3F688 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E032283E60400FA3B0D /* Strings.swift */; };
+		DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F122283E85000FA3B0D /* BaseParam.swift */; };
+		DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE92283E57900FA3B0D /* UIColor+extension.swift */; };
+		DE952FDA2287DF4800E3F688 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7122841BB9003768CE /* MenuViewController.swift */; };
+		DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F192283E85000FA3B0D /* EndPointType.swift */; };
+		DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F152283E85000FA3B0D /* CommonEndPoint.swift */; };
+		DE952FDD2287DF4800E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
+		DE952FDE2287DF4800E3F688 /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EFD2283E84F00FA3B0D /* PhotoEntity.swift */; };
+		DE952FDF2287DF4800E3F688 /* ForgotPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89922871D1B00A4678B /* ForgotPasswordProtocols.swift */; };
+		DE952FE02287DF4800E3F688 /* HeaderUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */; };
+		DE952FE12287DF4800E3F688 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F052283E84F00FA3B0D /* Network.swift */; };
+		DE952FE22287DF4800E3F688 /* UpdateProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0C2283E84F00FA3B0D /* UpdateProfileParam.swift */; };
+		DE952FE32287DF4800E3F688 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F042283E84F00FA3B0D /* BaseResponse.swift */; };
+		DE952FE42287DF4800E3F688 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD42283E4BD00FA3B0D /* LoginInteractor.swift */; };
+		DE952FE52287DF4800E3F688 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88D22871D0400A4678B /* SignUpInteractor.swift */; };
+		DE952FE62287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6F2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift */; };
+		DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F112283E85000FA3B0D /* RecordParam.swift */; };
+		DE952FE82287DF4800E3F688 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4E2283E60500FA3B0D /* Utils.swift */; };
+		DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0B2283E84F00FA3B0D /* SignUpParam.swift */; };
+		DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952FA42287DD2A00E3F688 /* Login+Facebook.swift */; };
+		DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7022841BB9003768CE /* MenuRouter.swift */; };
+		DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F752287D2A700E3F688 /* KActivityIndicatorView.swift */; };
+		DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5D2287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
+		DE952FEE2287DF4800E3F688 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6722841B9E003768CE /* HomeInteractor.swift */; };
+		DE952FEF2287DF4800E3F688 /* ParentNotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F542283E8E200FA3B0D /* ParentNotificationEntity.swift */; };
+		DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD12283E4BD00FA3B0D /* LoginRouter.swift */; };
+		DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD32283E4BD00FA3B0D /* LoginProtocols.swift */; };
+		DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E552283E60500FA3B0D /* NotificationPopUp.swift */; };
+		DE952FF32287DF4800E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F642287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift */; };
+		DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEF2283E57900FA3B0D /* String+extension.swift */; };
+		DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F592287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift */; };
+		DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD22283E4BD00FA3B0D /* LoginViewController.swift */; };
+		DE952FF72287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F652287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
+		DE952FF82287DF4800E3F688 /* BaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DDF2283E54C00FA3B0D /* BaseViewXib.swift */; };
+		DE952FF92287DF4800E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F562287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		DE952FFA2287DF4800E3F688 /* FadeInOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F782287D2A700E3F688 /* FadeInOutAnimation.swift */; };
+		DE952FFB2287DF4800E3F688 /* StringReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4F2283E60500FA3B0D /* StringReachability.swift */; };
+		DE952FFC2287DF4800E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5B2287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift */; };
+		DE952FFD2287DF4800E3F688 /* MenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7222841BB9003768CE /* MenuProtocols.swift */; };
+		DE952FFE2287DF4800E3F688 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5222841755003768CE /* AppDelegate+Push.swift */; };
+		DE952FFF2287DF4800E3F688 /* UITable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8762287075B00A4678B /* UITable+extension.swift */; };
+		DE9530002287DF4800E3F688 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DDE2283E54C00FA3B0D /* BaseViewController.swift */; };
+		DE9530012287DF4800E3F688 /* PostRecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F102283E85000FA3B0D /* PostRecordParam.swift */; };
+		DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F662287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
+		DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F1A2283E85000FA3B0D /* UserEndPoint.swift */; };
+		DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7322841BB9003768CE /* MenuInteractor.swift */; };
+		DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E5B2283E60500FA3B0D /* YesNoPopUp.swift */; };
+		DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
+		DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F772287D2A700E3F688 /* KActivityIndicatorShape.swift */; };
+		DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E112283E60500FA3B0D /* AppTextField.swift */; };
+		DE9530092287DF4800E3F688 /* NotificationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F1B2283E85000FA3B0D /* NotificationEndPoint.swift */; };
+		DE95300A2287DF4800E3F688 /* NotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E562283E60500FA3B0D /* NotificationContent.swift */; };
+		DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F602287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift */; };
+		DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4C2283E60500FA3B0D /* PopUpHelper.swift */; };
+		DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5C2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift */; };
+		DE95300E2287DF4800E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F792287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift */; };
+		DE95300F2287DF4800E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F722287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift */; };
+		DE9530102287DF4800E3F688 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4B2283E60500FA3B0D /* UserDefaultHelper.swift */; };
+		DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8722287041900A4678B /* MenuCell.swift */; };
+		DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DED2283E57900FA3B0D /* UIImage+extension.swift */; };
+		DE9530132287DF4800E3F688 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE22283E54C00FA3B0D /* BaseView.swift */; };
+		DE9530142287DF4800E3F688 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F022283E84F00FA3B0D /* APIError.swift */; };
+		DE9530152287DF4800E3F688 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EFA2283E84F00FA3B0D /* UserEntity.swift */; };
+		DE9530162287DF4800E3F688 /* FaceBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EFB2283E84F00FA3B0D /* FaceBookEntity.swift */; };
+		DE9530172287DF4800E3F688 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89822871D1B00A4678B /* ForgotPasswordViewController.swift */; };
+		DE9530182287DF4800E3F688 /* AppDropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E2E2283E60500FA3B0D /* AppDropDownCell.swift */; };
+		DE9530192287DF4800E3F688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */; };
+		DE95301A2287DF4800E3F688 /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89622871D1B00A4678B /* ForgotPasswordPresenter.swift */; };
+		DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88422870DA400A4678B /* LocalizableKey.swift */; };
+		DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E052283E60400FA3B0D /* AppFont.swift */; };
+		DE95301D2287DF4800E3F688 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88922871D0400A4678B /* SignUpPresenter.swift */; };
+		DE95301E2287DF4800E3F688 /* AppDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E2B2283E60500FA3B0D /* AppDropDown.swift */; };
+		DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6522841B9E003768CE /* HomeViewController.swift */; };
+		DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */; };
+		DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */; };
+		DE9530222287DF4800E3F688 /* Login+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952FA82287DD2A00E3F688 /* Login+GoogleSignIn.swift */; };
+		DE9530232287DF4800E3F688 /* NotificationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F212283E85000FA3B0D /* NotificationAPIService.swift */; };
+		DE9530242287DF4800E3F688 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6F22841BB9003768CE /* MenuPresenter.swift */; };
+		DE9530252287DF4800E3F688 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF87A22870B3D00A4678B /* Bundle+extension.swift */; };
+		DE9530262287DF4800E3F688 /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF87822870AEB00A4678B /* LanguageHelper.swift */; };
+		DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F692287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
+		DE9530282287DF4800E3F688 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F072283E84F00FA3B0D /* NetworkRequest.swift */; };
+		DE9530292287DF4800E3F688 /* AppCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E3C2283E60500FA3B0D /* AppCheckBox.swift */; };
+		DE95302A2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F712287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift */; };
+		DE95302B2287DF4800E3F688 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEE2283E57900FA3B0D /* UIViewController+extension.swift */; };
+		DE95302C2287DF4800E3F688 /* AppSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E1E2283E60500FA3B0D /* AppSearchBar.swift */; };
+		DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6E2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift */; };
+		DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88C22871D0400A4678B /* SignUpProtocols.swift */; };
+		DE95302F2287DF4800E3F688 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6422841B9E003768CE /* HomeRouter.swift */; };
+		DE9530302287DF4800E3F688 /* MapperData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F062283E84F00FA3B0D /* MapperData.swift */; };
+		DE9530312287DF4800E3F688 /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEA2283E57900FA3B0D /* Int+extension.swift */; };
+		DE9530322287DF4800E3F688 /* CommonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F1D2283E85000FA3B0D /* CommonAPIService.swift */; };
+		DE9530332287DF4800E3F688 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F232283E85000FA3B0D /* Provider.swift */; };
+		DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EF02283E84F00FA3B0D /* BaseEntity.swift */; };
+		DE9530352287DF4800E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5A2287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift */; };
+		DE9530362287DF4800E3F688 /* YesNoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E592283E60500FA3B0D /* YesNoContentView.swift */; };
+		DE9530372287DF4800E3F688 /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E392283E60500FA3B0D /* AppTextView.swift */; };
+		DE9530382287DF4800E3F688 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEB2283E57900FA3B0D /* Date+extension.swift */; };
+		DE9530392287DF4800E3F688 /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89722871D1B00A4678B /* ForgotPasswordRouter.swift */; };
+		DE95303A2287DF4800E3F688 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88A22871D0400A4678B /* SignUpRouter.swift */; };
+		DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F732287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */; };
+		DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F7B2287D2A700E3F688 /* ProgressView.swift */; };
+		DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5F22841B61003768CE /* AppContainerViewController.swift */; };
+		DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF42283E57900FA3B0D /* Button+extension.swift */; };
+		DE9530422287DF4800E3F688 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88222870D1700A4678B /* Localizable.strings */; };
+		DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */; };
+		DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E542283E60500FA3B0D /* NotificationContent.xib */; };
+		DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E2A2283E60500FA3B0D /* AppDropDown.xib */; };
+		DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF8732287041900A4678B /* MenuCell.xib */; };
+		DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88E22871D0400A4678B /* SignUpViewController.xib */; };
+		DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE6822841B9E003768CE /* HomeViewController.xib */; };
+		DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E2D2283E60500FA3B0D /* AppDropDownCell.xib */; };
+		DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E1D2283E60500FA3B0D /* AppSearchBar.xib */; };
+		DE95304B2287DF4800E3F688 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE7422841BB9003768CE /* MenuViewController.xib */; };
+		DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E3B2283E60500FA3B0D /* AppCheckBox.xib */; };
+		DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE5522841755003768CE /* GoogleService-Dev-Info.plist */; };
+		DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361DD52283E4BD00FA3B0D /* LoginViewController.xib */; };
+		DE95304F2287DF4800E3F688 /* YesNoContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E5A2283E60500FA3B0D /* YesNoContentView.xib */; };
+		DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */; };
+		DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE5422841755003768CE /* GoogleService-Prod-Info.plist */; };
+		DE9530522287DF4800E3F688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3442283DD990037DBE4 /* Assets.xcassets */; };
+		DE9530532287DF4800E3F688 /* AppTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E122283E60500FA3B0D /* AppTextField.xib */; };
+		DE9530542287DF4800E3F688 /* HeaderUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF86F2286FCC100A4678B /* HeaderUserView.xib */; };
+		DE95305F2287DF6400E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F582287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift */; };
+		DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88B22871D0400A4678B /* SignUpViewController.swift */; };
+		DE9530612287DF6400E3F688 /* UITextFiled+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF22283E57900FA3B0D /* UITextFiled+extension.swift */; };
+		DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F242283E85000FA3B0D /* UserAPIService.swift */; };
+		DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEC2283E57900FA3B0D /* UIView+extension.swift */; };
+		DE9530642287DF6400E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F572287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift */; };
+		DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F762287D2A700E3F688 /* KActivityIndicatorType.swift */; };
+		DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6C2287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift */; };
+		DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0F2283E84F00FA3B0D /* SendCommentParam.swift */; };
+		DE9530682287DF6400E3F688 /* HomeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6622841B9E003768CE /* HomeProtocols.swift */; };
+		DE9530692287DF6400E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F672287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift */; };
+		DE95306A2287DF6400E3F688 /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89A22871D1B00A4678B /* ForgotPasswordInteractor.swift */; };
+		DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6A2287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift */; };
+		DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE12283E54C00FA3B0D /* BasePopUpView.swift */; };
+		DE95306D2287DF6400E3F688 /* LoginSocialParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0A2283E84F00FA3B0D /* LoginSocialParam.swift */; };
+		DE95306E2287DF6400E3F688 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD02283E4BD00FA3B0D /* LoginPresenter.swift */; };
+		DE95306F2287DF6400E3F688 /* NSObjectProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF32283E57900FA3B0D /* NSObjectProtocol+Extension.swift */; };
+		DE9530702287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F622287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */; };
+		DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4D2283E60500FA3B0D /* AnimationHelper.swift */; };
+		DE9530722287DF6400E3F688 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E042283E60400FA3B0D /* AppColor.swift */; };
+		DE9530732287DF6400E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F632287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift */; };
+		DE9530742287DF6400E3F688 /* PhoneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EF62283E84F00FA3B0D /* PhoneEntity.swift */; };
+		DE9530752287DF6400E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F682287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift */; };
+		DE9530762287DF6400E3F688 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EEE2283E84F00FA3B0D /* NotificationEntity.swift */; };
+		DE9530772287DF6400E3F688 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E022283E60400FA3B0D /* AppImage.swift */; };
+		DE9530782287DF6400E3F688 /* CustomTextfield.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EA92283E6DB00FA3B0D /* CustomTextfield.swift */; };
+		DE9530792287DF6400E3F688 /* BaseTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE02283E54C00FA3B0D /* BaseTableCell.swift */; };
+		DE95307A2287DF6400E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */; };
+		DE95307B2287DF6400E3F688 /* UpdateProfileSocial.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0D2283E84F00FA3B0D /* UpdateProfileSocial.swift */; };
+		DE95307C2287DF6400E3F688 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5C22841A68003768CE /* SideMenuViewController.swift */; };
+		DE95307D2287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5E2287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift */; };
+		DE95307E2287DF6400E3F688 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6322841B9E003768CE /* HomePresenter.swift */; };
+		DE95307F2287DF6400E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6B2287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift */; };
+		DE9530802287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F702287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */; };
+		DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F612287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
+		DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */; };
+		DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6D2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift */; };
+		DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5F2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift */; };
+		DE9530852287DF6400E3F688 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E032283E60400FA3B0D /* Strings.swift */; };
+		DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F122283E85000FA3B0D /* BaseParam.swift */; };
+		DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE92283E57900FA3B0D /* UIColor+extension.swift */; };
+		DE9530882287DF6400E3F688 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7122841BB9003768CE /* MenuViewController.swift */; };
+		DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F192283E85000FA3B0D /* EndPointType.swift */; };
+		DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F152283E85000FA3B0D /* CommonEndPoint.swift */; };
+		DE95308B2287DF6400E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
+		DE95308C2287DF6400E3F688 /* PhotoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EFD2283E84F00FA3B0D /* PhotoEntity.swift */; };
+		DE95308D2287DF6400E3F688 /* ForgotPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89922871D1B00A4678B /* ForgotPasswordProtocols.swift */; };
+		DE95308E2287DF6400E3F688 /* HeaderUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */; };
+		DE95308F2287DF6400E3F688 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F052283E84F00FA3B0D /* Network.swift */; };
+		DE9530902287DF6400E3F688 /* UpdateProfileParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0C2283E84F00FA3B0D /* UpdateProfileParam.swift */; };
+		DE9530912287DF6400E3F688 /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F042283E84F00FA3B0D /* BaseResponse.swift */; };
+		DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD42283E4BD00FA3B0D /* LoginInteractor.swift */; };
+		DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88D22871D0400A4678B /* SignUpInteractor.swift */; };
+		DE9530942287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6F2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift */; };
+		DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F112283E85000FA3B0D /* RecordParam.swift */; };
+		DE9530962287DF6400E3F688 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4E2283E60500FA3B0D /* Utils.swift */; };
+		DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F0B2283E84F00FA3B0D /* SignUpParam.swift */; };
+		DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952FA42287DD2A00E3F688 /* Login+Facebook.swift */; };
+		DE9530992287DF6400E3F688 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7022841BB9003768CE /* MenuRouter.swift */; };
+		DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F752287D2A700E3F688 /* KActivityIndicatorView.swift */; };
+		DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5D2287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
+		DE95309C2287DF6400E3F688 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6722841B9E003768CE /* HomeInteractor.swift */; };
+		DE95309D2287DF6400E3F688 /* ParentNotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F542283E8E200FA3B0D /* ParentNotificationEntity.swift */; };
+		DE95309E2287DF6400E3F688 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD12283E4BD00FA3B0D /* LoginRouter.swift */; };
+		DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD32283E4BD00FA3B0D /* LoginProtocols.swift */; };
+		DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E552283E60500FA3B0D /* NotificationPopUp.swift */; };
+		DE9530A12287DF6400E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F642287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift */; };
+		DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEF2283E57900FA3B0D /* String+extension.swift */; };
+		DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F592287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift */; };
+		DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD22283E4BD00FA3B0D /* LoginViewController.swift */; };
+		DE9530A52287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F652287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
+		DE9530A62287DF6400E3F688 /* BaseViewXib.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DDF2283E54C00FA3B0D /* BaseViewXib.swift */; };
+		DE9530A72287DF6400E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F562287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F782287D2A700E3F688 /* FadeInOutAnimation.swift */; };
+		DE9530A92287DF6400E3F688 /* StringReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4F2283E60500FA3B0D /* StringReachability.swift */; };
+		DE9530AA2287DF6400E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5B2287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift */; };
+		DE9530AB2287DF6400E3F688 /* MenuProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7222841BB9003768CE /* MenuProtocols.swift */; };
+		DE9530AC2287DF6400E3F688 /* AppDelegate+Push.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5222841755003768CE /* AppDelegate+Push.swift */; };
+		DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8762287075B00A4678B /* UITable+extension.swift */; };
+		DE9530AE2287DF6400E3F688 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DDE2283E54C00FA3B0D /* BaseViewController.swift */; };
+		DE9530AF2287DF6400E3F688 /* PostRecordParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F102283E85000FA3B0D /* PostRecordParam.swift */; };
+		DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F662287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
+		DE9530B12287DF6400E3F688 /* UserEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F1A2283E85000FA3B0D /* UserEndPoint.swift */; };
+		DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7322841BB9003768CE /* MenuInteractor.swift */; };
+		DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E5B2283E60500FA3B0D /* YesNoPopUp.swift */; };
+		DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
+		DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F772287D2A700E3F688 /* KActivityIndicatorShape.swift */; };
+		DE9530B62287DF6400E3F688 /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E112283E60500FA3B0D /* AppTextField.swift */; };
+		DE9530B72287DF6400E3F688 /* NotificationEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F1B2283E85000FA3B0D /* NotificationEndPoint.swift */; };
+		DE9530B82287DF6400E3F688 /* NotificationContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E562283E60500FA3B0D /* NotificationContent.swift */; };
+		DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F602287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift */; };
+		DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4C2283E60500FA3B0D /* PopUpHelper.swift */; };
+		DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5C2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift */; };
+		DE9530BC2287DF6400E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F792287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift */; };
+		DE9530BD2287DF6400E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F722287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift */; };
+		DE9530BE2287DF6400E3F688 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E4B2283E60500FA3B0D /* UserDefaultHelper.swift */; };
+		DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8722287041900A4678B /* MenuCell.swift */; };
+		DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DED2283E57900FA3B0D /* UIImage+extension.swift */; };
+		DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DE22283E54C00FA3B0D /* BaseView.swift */; };
+		DE9530C22287DF6400E3F688 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F022283E84F00FA3B0D /* APIError.swift */; };
+		DE9530C32287DF6400E3F688 /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EFA2283E84F00FA3B0D /* UserEntity.swift */; };
+		DE9530C42287DF6400E3F688 /* FaceBookEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EFB2283E84F00FA3B0D /* FaceBookEntity.swift */; };
+		DE9530C52287DF6400E3F688 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89822871D1B00A4678B /* ForgotPasswordViewController.swift */; };
+		DE9530C62287DF6400E3F688 /* AppDropDownCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E2E2283E60500FA3B0D /* AppDropDownCell.swift */; };
+		DE9530C72287DF6400E3F688 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */; };
+		DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89622871D1B00A4678B /* ForgotPasswordPresenter.swift */; };
+		DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88422870DA400A4678B /* LocalizableKey.swift */; };
+		DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E052283E60400FA3B0D /* AppFont.swift */; };
+		DE9530CB2287DF6400E3F688 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88922871D0400A4678B /* SignUpPresenter.swift */; };
+		DE9530CC2287DF6400E3F688 /* AppDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E2B2283E60500FA3B0D /* AppDropDown.swift */; };
+		DE9530CD2287DF6400E3F688 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6522841B9E003768CE /* HomeViewController.swift */; };
+		DE9530CE2287DF6400E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */; };
+		DE9530CF2287DF6400E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */; };
+		DE9530D02287DF6400E3F688 /* Login+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952FA82287DD2A00E3F688 /* Login+GoogleSignIn.swift */; };
+		DE9530D12287DF6400E3F688 /* NotificationAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F212283E85000FA3B0D /* NotificationAPIService.swift */; };
+		DE9530D22287DF6400E3F688 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6F22841BB9003768CE /* MenuPresenter.swift */; };
+		DE9530D32287DF6400E3F688 /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF87A22870B3D00A4678B /* Bundle+extension.swift */; };
+		DE9530D42287DF6400E3F688 /* LanguageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF87822870AEB00A4678B /* LanguageHelper.swift */; };
+		DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F692287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
+		DE9530D62287DF6400E3F688 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F072283E84F00FA3B0D /* NetworkRequest.swift */; };
+		DE9530D72287DF6400E3F688 /* AppCheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E3C2283E60500FA3B0D /* AppCheckBox.swift */; };
+		DE9530D82287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F712287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift */; };
+		DE9530D92287DF6400E3F688 /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEE2283E57900FA3B0D /* UIViewController+extension.swift */; };
+		DE9530DA2287DF6400E3F688 /* AppSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E1E2283E60500FA3B0D /* AppSearchBar.swift */; };
+		DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F6E2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift */; };
+		DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88C22871D0400A4678B /* SignUpProtocols.swift */; };
+		DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6422841B9E003768CE /* HomeRouter.swift */; };
+		DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F062283E84F00FA3B0D /* MapperData.swift */; };
+		DE9530DF2287DF6400E3F688 /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEA2283E57900FA3B0D /* Int+extension.swift */; };
+		DE9530E02287DF6400E3F688 /* CommonAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F1D2283E85000FA3B0D /* CommonAPIService.swift */; };
+		DE9530E12287DF6400E3F688 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361F232283E85000FA3B0D /* Provider.swift */; };
+		DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361EF02283E84F00FA3B0D /* BaseEntity.swift */; };
+		DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F5A2287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift */; };
+		DE9530E42287DF6400E3F688 /* YesNoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E592283E60500FA3B0D /* YesNoContentView.swift */; };
+		DE9530E52287DF6400E3F688 /* AppTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361E392283E60500FA3B0D /* AppTextView.swift */; };
+		DE9530E62287DF6400E3F688 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DEB2283E57900FA3B0D /* Date+extension.swift */; };
+		DE9530E72287DF6400E3F688 /* ForgotPasswordRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89722871D1B00A4678B /* ForgotPasswordRouter.swift */; };
+		DE9530E82287DF6400E3F688 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88A22871D0400A4678B /* SignUpRouter.swift */; };
+		DE9530E92287DF6400E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F732287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */; };
+		DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F7B2287D2A700E3F688 /* ProgressView.swift */; };
+		DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5F22841B61003768CE /* AppContainerViewController.swift */; };
+		DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF42283E57900FA3B0D /* Button+extension.swift */; };
+		DE9530F02287DF6400E3F688 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88222870D1700A4678B /* Localizable.strings */; };
+		DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */; };
+		DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E542283E60500FA3B0D /* NotificationContent.xib */; };
+		DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E2A2283E60500FA3B0D /* AppDropDown.xib */; };
+		DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF8732287041900A4678B /* MenuCell.xib */; };
+		DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88E22871D0400A4678B /* SignUpViewController.xib */; };
+		DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE6822841B9E003768CE /* HomeViewController.xib */; };
+		DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E2D2283E60500FA3B0D /* AppDropDownCell.xib */; };
+		DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E1D2283E60500FA3B0D /* AppSearchBar.xib */; };
+		DE9530F92287DF6400E3F688 /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE7422841BB9003768CE /* MenuViewController.xib */; };
+		DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E3B2283E60500FA3B0D /* AppCheckBox.xib */; };
+		DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE5522841755003768CE /* GoogleService-Dev-Info.plist */; };
+		DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361DD52283E4BD00FA3B0D /* LoginViewController.xib */; };
+		DE9530FD2287DF6400E3F688 /* YesNoContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E5A2283E60500FA3B0D /* YesNoContentView.xib */; };
+		DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */; };
+		DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE5422841755003768CE /* GoogleService-Prod-Info.plist */; };
+		DE9531002287DF6400E3F688 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3442283DD990037DBE4 /* Assets.xcassets */; };
+		DE9531012287DF6400E3F688 /* AppTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE361E122283E60500FA3B0D /* AppTextField.xib */; };
+		DE9531022287DF6400E3F688 /* HeaderUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF86F2286FCC100A4678B /* HeaderUserView.xib */; };
+		DE95310E2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE95310C2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist */; };
+		DE95310F2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE95310C2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist */; };
+		DE9531102287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE95310C2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist */; };
+		DE9531112287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE95310D2287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist */; };
+		DE9531122287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE95310D2287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist */; };
+		DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE95310D2287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist */; };
+		DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */; };
+		DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */; };
+		DE9531162287E00A00E3F688 /* EnglishApp_Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */; };
 		DEECF86E2286FCAB00A4678B /* HeaderUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */; };
 		DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF86F2286FCC100A4678B /* HeaderUserView.xib */; };
 		DEECF8742287041900A4678B /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8722287041900A4678B /* MenuCell.swift */; };
@@ -132,8 +506,17 @@
 
 /* Begin PBXFileReference section */
 		187B6424E15EB5BB969D0CA6 /* Pods_EnglishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.release.xcconfig"; sourceTree = "<group>"; };
+		28D786760AE73B0AF55038DE /* Pods-EnglishApp_AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.debug.xcconfig"; sourceTree = "<group>"; };
+		3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		3B757D3CF68AEA1A27D502BF /* Pods-EnglishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.release.xcconfig"; sourceTree = "<group>"; };
+		4C6A78A13386B1C2DA9E8046 /* Pods-EnglishApp_AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.release.xcconfig"; sourceTree = "<group>"; };
+		5B9797D30EEE2E20FFDA9072 /* Pods-EnglishApp_Prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.debug.xcconfig"; sourceTree = "<group>"; };
+		5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
+		759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
+		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
 		DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+GoogleSignIn.swift"; sourceTree = "<group>"; };
 		DE2ADE5222841755003768CE /* AppDelegate+Push.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Push.swift"; sourceTree = "<group>"; };
@@ -230,11 +613,56 @@
 		DE361F232283E85000FA3B0D /* Provider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		DE361F242283E85000FA3B0D /* UserAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAPIService.swift; sourceTree = "<group>"; };
 		DE361F542283E8E200FA3B0D /* ParentNotificationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentNotificationEntity.swift; sourceTree = "<group>"; };
-		DE3CC33A2283DD980037DBE4 /* EnglishApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE3CC33A2283DD980037DBE4 /* EnglishApp_Dev.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp_Dev.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE3CC3442283DD990037DBE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE3CC3472283DD990037DBE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DE3CC3492283DD990037DBE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnglishApp_Dev-Info.plist"; sourceTree = "<group>"; };
+		DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
+		DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
+		DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
+		DE952F562287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
+		DE952F572287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridPulse.swift; sourceTree = "<group>"; };
+		DE952F582287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
+		DE952F592287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallRotateChase.swift; sourceTree = "<group>"; };
+		DE952F5A2287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
+		DE952F5B2287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScale.swift; sourceTree = "<group>"; };
+		DE952F5C2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = "<group>"; };
+		DE952F5D2287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = "<group>"; };
+		DE952F5E2287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
+		DE952F5F2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulse.swift; sourceTree = "<group>"; };
+		DE952F602287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
+		DE952F612287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
+		DE952F622287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
+		DE952F632287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBlank.swift; sourceTree = "<group>"; };
+		DE952F642287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = "<group>"; };
+		DE952F652287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = "<group>"; };
+		DE952F662287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = "<group>"; };
+		DE952F672287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
+		DE952F682287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScaleParty.swift; sourceTree = "<group>"; };
+		DE952F692287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
+		DE952F6A2287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationSquareSpin.swift; sourceTree = "<group>"; };
+		DE952F6B2287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
+		DE952F6C2287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
+		DE952F6D2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
+		DE952F6E2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
+		DE952F6F2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
+		DE952F702287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = "<group>"; };
+		DE952F712287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallPulseRise.swift; sourceTree = "<group>"; };
+		DE952F722287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallRotate.swift; sourceTree = "<group>"; };
+		DE952F732287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
+		DE952F752287D2A700E3F688 /* KActivityIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorView.swift; sourceTree = "<group>"; };
+		DE952F762287D2A700E3F688 /* KActivityIndicatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorType.swift; sourceTree = "<group>"; };
+		DE952F772287D2A700E3F688 /* KActivityIndicatorShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		DE952F782287D2A700E3F688 /* FadeInOutAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FadeInOutAnimation.swift; sourceTree = "<group>"; };
+		DE952F792287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
+		DE952F7B2287D2A700E3F688 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		DE952FA42287DD2A00E3F688 /* Login+Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login+Facebook.swift"; sourceTree = "<group>"; };
+		DE952FA82287DD2A00E3F688 /* Login+GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login+GoogleSignIn.swift"; sourceTree = "<group>"; };
+		DE95305A2287DF4800E3F688 /* EnglishApp_Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp_Prod.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE9531082287DF6400E3F688 /* EnglishApp_AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp_AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE95310C2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EnglishApp_Prod-Info.plist"; sourceTree = "<group>"; };
+		DE95310D2287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EnglishApp_AppStore-Info.plist"; sourceTree = "<group>"; };
 		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
 		DEECF86F2286FCC100A4678B /* HeaderUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderUserView.xib; sourceTree = "<group>"; };
 		DEECF8722287041900A4678B /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -265,7 +693,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56842DA39549A1D4F6A3AF0E /* Pods_EnglishApp.framework in Frameworks */,
+				55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE95303F2287DF4800E3F688 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE9530ED2287DF6400E3F688 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +720,9 @@
 			isa = PBXGroup;
 			children = (
 				187B6424E15EB5BB969D0CA6 /* Pods_EnglishApp.framework */,
+				759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */,
+				C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */,
+				5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -285,6 +732,12 @@
 			children = (
 				70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */,
 				3B757D3CF68AEA1A27D502BF /* Pods-EnglishApp.release.xcconfig */,
+				28D786760AE73B0AF55038DE /* Pods-EnglishApp_AppStore.debug.xcconfig */,
+				4C6A78A13386B1C2DA9E8046 /* Pods-EnglishApp_AppStore.release.xcconfig */,
+				3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */,
+				25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */,
+				5B9797D30EEE2E20FFDA9072 /* Pods-EnglishApp_Prod.debug.xcconfig */,
+				C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -375,6 +828,7 @@
 		DE361DCF2283E4B200FA3B0D /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				DE952FA32287DD2A00E3F688 /* LoginExtension */,
 				DE361DD02283E4BD00FA3B0D /* LoginPresenter.swift */,
 				DE361DD12283E4BD00FA3B0D /* LoginRouter.swift */,
 				DE361DD22283E4BD00FA3B0D /* LoginViewController.swift */,
@@ -403,6 +857,7 @@
 		DE361DDD2283E54C00FA3B0D /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				DE952F512287D2A700E3F688 /* Indicator */,
 				DE361DDE2283E54C00FA3B0D /* BaseViewController.swift */,
 				DE361DDF2283E54C00FA3B0D /* BaseViewXib.swift */,
 				DE361DE02283E54C00FA3B0D /* BaseTableCell.swift */,
@@ -697,7 +1152,9 @@
 		DE3CC33B2283DD980037DBE4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DE3CC33A2283DD980037DBE4 /* EnglishApp.app */,
+				DE3CC33A2283DD980037DBE4 /* EnglishApp_Dev.app */,
+				DE95305A2287DF4800E3F688 /* EnglishApp_Prod.app */,
+				DE9531082287DF6400E3F688 /* EnglishApp_AppStore.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -705,17 +1162,114 @@
 		DE3CC33C2283DD980037DBE4 /* EnglishApp */ = {
 			isa = PBXGroup;
 			children = (
+				DE95310A2287DFA400E3F688 /* SourceFile */,
 				DE2ADE5A2284175C003768CE /* AppDelegate */,
-				DE2ADE5322841755003768CE /* GoogleInfo */,
 				DE361EEB2283E84F00FA3B0D /* Entity */,
 				DE361F002283E84F00FA3B0D /* Services */,
 				DE361DDC2283E52A00FA3B0D /* Components */,
 				DE361D912283E1D700FA3B0D /* Modules */,
 				DE3CC3442283DD990037DBE4 /* Assets.xcassets */,
 				DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */,
-				DE3CC3492283DD990037DBE4 /* Info.plist */,
 			);
 			path = EnglishApp;
+			sourceTree = "<group>";
+		};
+		DE952F512287D2A700E3F688 /* Indicator */ = {
+			isa = PBXGroup;
+			children = (
+				DE952F522287D2A700E3F688 /* Animation */,
+				DE952F742287D2A700E3F688 /* KActivityIndicatorView */,
+				DE952F7A2287D2A700E3F688 /* ProgressView */,
+			);
+			path = Indicator;
+			sourceTree = "<group>";
+		};
+		DE952F522287D2A700E3F688 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */,
+				DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */,
+				DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */,
+				DE952F562287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift */,
+				DE952F572287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift */,
+				DE952F582287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift */,
+				DE952F592287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift */,
+				DE952F5A2287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift */,
+				DE952F5B2287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift */,
+				DE952F5C2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift */,
+				DE952F5D2287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift */,
+				DE952F5E2287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift */,
+				DE952F5F2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift */,
+				DE952F602287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift */,
+				DE952F612287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift */,
+				DE952F622287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift */,
+				DE952F632287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift */,
+				DE952F642287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift */,
+				DE952F652287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift */,
+				DE952F662287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift */,
+				DE952F672287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift */,
+				DE952F682287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift */,
+				DE952F692287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift */,
+				DE952F6A2287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift */,
+				DE952F6B2287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift */,
+				DE952F6C2287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift */,
+				DE952F6D2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift */,
+				DE952F6E2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift */,
+				DE952F6F2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift */,
+				DE952F702287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift */,
+				DE952F712287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift */,
+				DE952F722287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift */,
+				DE952F732287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */,
+			);
+			path = Animation;
+			sourceTree = "<group>";
+		};
+		DE952F742287D2A700E3F688 /* KActivityIndicatorView */ = {
+			isa = PBXGroup;
+			children = (
+				DE952F752287D2A700E3F688 /* KActivityIndicatorView.swift */,
+				DE952F762287D2A700E3F688 /* KActivityIndicatorType.swift */,
+				DE952F772287D2A700E3F688 /* KActivityIndicatorShape.swift */,
+				DE952F782287D2A700E3F688 /* FadeInOutAnimation.swift */,
+				DE952F792287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift */,
+			);
+			path = KActivityIndicatorView;
+			sourceTree = "<group>";
+		};
+		DE952F7A2287D2A700E3F688 /* ProgressView */ = {
+			isa = PBXGroup;
+			children = (
+				DE952F7B2287D2A700E3F688 /* ProgressView.swift */,
+			);
+			path = ProgressView;
+			sourceTree = "<group>";
+		};
+		DE952FA32287DD2A00E3F688 /* LoginExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DE952FA42287DD2A00E3F688 /* Login+Facebook.swift */,
+				DE952FA82287DD2A00E3F688 /* Login+GoogleSignIn.swift */,
+			);
+			path = LoginExtension;
+			sourceTree = "<group>";
+		};
+		DE95310A2287DFA400E3F688 /* SourceFile */ = {
+			isa = PBXGroup;
+			children = (
+				DE95310B2287DFAE00E3F688 /* Info */,
+				DE2ADE5322841755003768CE /* GoogleInfo */,
+			);
+			path = SourceFile;
+			sourceTree = "<group>";
+		};
+		DE95310B2287DFAE00E3F688 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				DE95310D2287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist */,
+				DE95310C2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist */,
+				DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 		DEECF86C2286FC9400A4678B /* HeaderUserView */ = {
@@ -774,9 +1328,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DE3CC3392283DD980037DBE4 /* EnglishApp */ = {
+		DE3CC3392283DD980037DBE4 /* EnglishApp_Dev */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DE3CC34C2283DD990037DBE4 /* Build configuration list for PBXNativeTarget "EnglishApp" */;
+			buildConfigurationList = DE3CC34C2283DD990037DBE4 /* Build configuration list for PBXNativeTarget "EnglishApp_Dev" */;
 			buildPhases = (
 				B1BFFD79D7336217D57D509F /* [CP] Check Pods Manifest.lock */,
 				DE3CC3362283DD980037DBE4 /* Sources */,
@@ -789,9 +1343,49 @@
 			);
 			dependencies = (
 			);
-			name = EnglishApp;
+			name = EnglishApp_Dev;
 			productName = EnglishApp;
-			productReference = DE3CC33A2283DD980037DBE4 /* EnglishApp.app */;
+			productReference = DE3CC33A2283DD980037DBE4 /* EnglishApp_Dev.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE952FAE2287DF4800E3F688 /* EnglishApp_Prod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE9530572287DF4800E3F688 /* Build configuration list for PBXNativeTarget "EnglishApp_Prod" */;
+			buildPhases = (
+				DE952FAF2287DF4800E3F688 /* [CP] Check Pods Manifest.lock */,
+				DE952FB02287DF4800E3F688 /* Sources */,
+				DE95303F2287DF4800E3F688 /* Frameworks */,
+				DE9530412287DF4800E3F688 /* Resources */,
+				DE9530552287DF4800E3F688 /* [CP] Embed Pods Frameworks */,
+				DE9530562287DF4800E3F688 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EnglishApp_Prod;
+			productName = EnglishApp;
+			productReference = DE95305A2287DF4800E3F688 /* EnglishApp_Prod.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DE95305C2287DF6400E3F688 /* EnglishApp_AppStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE9531052287DF6400E3F688 /* Build configuration list for PBXNativeTarget "EnglishApp_AppStore" */;
+			buildPhases = (
+				DE95305D2287DF6400E3F688 /* [CP] Check Pods Manifest.lock */,
+				DE95305E2287DF6400E3F688 /* Sources */,
+				DE9530ED2287DF6400E3F688 /* Frameworks */,
+				DE9530EF2287DF6400E3F688 /* Resources */,
+				DE9531032287DF6400E3F688 /* [CP] Embed Pods Frameworks */,
+				DE9531042287DF6400E3F688 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EnglishApp_AppStore;
+			productName = EnglishApp;
+			productReference = DE9531082287DF6400E3F688 /* EnglishApp_AppStore.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -823,7 +1417,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DE3CC3392283DD980037DBE4 /* EnglishApp */,
+				DE3CC3392283DD980037DBE4 /* EnglishApp_Dev */,
+				DE952FAE2287DF4800E3F688 /* EnglishApp_Prod */,
+				DE95305C2287DF6400E3F688 /* EnglishApp_AppStore */,
 			);
 		};
 /* End PBXProject section */
@@ -843,15 +1439,76 @@
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
 				DE2ADE7A22841BB9003768CE /* MenuViewController.xib in Resources */,
+				DE9531112287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE361E8C2283E60500FA3B0D /* AppCheckBox.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
 				DE361EA02283E60500FA3B0D /* YesNoContentView.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
+				DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
+				DE95310E2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */,
 				DE361E722283E60500FA3B0D /* AppTextField.xib in Resources */,
 				DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE9530412287DF4800E3F688 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9530422287DF4800E3F688 /* Localizable.strings in Resources */,
+				DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */,
+				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
+				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
+				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
+				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
+				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
+				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
+				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
+				DE95304B2287DF4800E3F688 /* MenuViewController.xib in Resources */,
+				DE9531122287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
+				DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */,
+				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
+				DE95304F2287DF4800E3F688 /* YesNoContentView.xib in Resources */,
+				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
+				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
+				DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
+				DE95310F2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
+				DE9530522287DF4800E3F688 /* Assets.xcassets in Resources */,
+				DE9530532287DF4800E3F688 /* AppTextField.xib in Resources */,
+				DE9530542287DF4800E3F688 /* HeaderUserView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE9530EF2287DF6400E3F688 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE9530F02287DF6400E3F688 /* Localizable.strings in Resources */,
+				DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */,
+				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
+				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
+				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
+				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
+				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
+				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
+				DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */,
+				DE9530F92287DF6400E3F688 /* MenuViewController.xib in Resources */,
+				DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
+				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
+				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
+				DE9530FD2287DF6400E3F688 /* YesNoContentView.xib in Resources */,
+				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
+				DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */,
+				DE9531162287E00A00E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
+				DE9531102287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
+				DE9531002287DF6400E3F688 /* Assets.xcassets in Resources */,
+				DE9531012287DF6400E3F688 /* AppTextField.xib in Resources */,
+				DE9531022287DF6400E3F688 /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -873,14 +1530,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-EnglishApp-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-EnglishApp_Dev-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		ECC81D57BA8A2F47335BA0EE /* [CP] Embed Pods Frameworks */ = {
+		DE952FAF2287DF4800E3F688 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -888,7 +1545,29 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp/Pods-EnglishApp-frameworks.sh",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnglishApp_Prod-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE9530552287DF4800E3F688 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
@@ -931,10 +1610,10 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp/Pods-EnglishApp-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F7321019EC4AC75D7A647D72 /* [CP] Copy Pods Resources */ = {
+		DE9530562287DF4800E3F688 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -942,7 +1621,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp/Pods-EnglishApp-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
@@ -957,7 +1636,189 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp/Pods-EnglishApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE95305D2287DF6400E3F688 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EnglishApp_AppStore-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE9531032287DF6400E3F688 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE9531042287DF6400E3F688 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ECC81D57BA8A2F47335BA0EE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/CryptoSwift/CryptoSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
+				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CryptoSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7321019EC4AC75D7A647D72 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -967,28 +1828,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE952F812287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
 				DE361DFE2283E57900FA3B0D /* UITextFiled+extension.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
+				DE952F802287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */,
+				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
 				DE2ADE6C22841B9E003768CE /* HomeProtocols.swift in Sources */,
+				DE952F902287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
+				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
 				DE361F3E2283E85000FA3B0D /* LoginSocialParam.swift in Sources */,
 				DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */,
 				DE361DFF2283E57900FA3B0D /* NSObjectProtocol+Extension.swift in Sources */,
+				DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
 				DE361E692283E60500FA3B0D /* AppColor.swift in Sources */,
+				DE952F8C2287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				DE361F2F2283E85000FA3B0D /* PhoneEntity.swift in Sources */,
+				DE952F912287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DE361F272283E85000FA3B0D /* NotificationEntity.swift in Sources */,
 				DE361E672283E60500FA3B0D /* AppImage.swift in Sources */,
 				DE361EAA2283E6DB00FA3B0D /* CustomTextfield.swift in Sources */,
 				DE361DE52283E54C00FA3B0D /* BaseTableCell.swift in Sources */,
+				DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE361F412283E85000FA3B0D /* UpdateProfileSocial.swift in Sources */,
 				DE2ADE5D22841A68003768CE /* SideMenuViewController.swift in Sources */,
+				DE952F872287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE2ADE6922841B9E003768CE /* HomePresenter.swift in Sources */,
+				DE952F942287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DE952F992287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				DE952F8A2287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
+				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
@@ -1004,32 +1881,48 @@
 				DE361F3A2283E85000FA3B0D /* BaseResponse.swift in Sources */,
 				DE361DDA2283E4BD00FA3B0D /* LoginInteractor.swift in Sources */,
 				DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */,
+				DE952F982287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
+				DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
+				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
+				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				DE2ADE6D22841B9E003768CE /* HomeInteractor.swift in Sources */,
 				DE361F552283E8E200FA3B0D /* ParentNotificationEntity.swift in Sources */,
 				DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */,
 				DE361DD92283E4BD00FA3B0D /* LoginProtocols.swift in Sources */,
 				DE361E9D2283E60500FA3B0D /* NotificationPopUp.swift in Sources */,
+				DE952F8D2287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE361DFB2283E57900FA3B0D /* String+extension.swift in Sources */,
+				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */,
+				DE952F8E2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE361DE42283E54C00FA3B0D /* BaseViewXib.swift in Sources */,
+				DE952F7F2287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				DE952FA02287D2A700E3F688 /* FadeInOutAnimation.swift in Sources */,
 				DE361E9A2283E60500FA3B0D /* StringReachability.swift in Sources */,
+				DE952F842287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */,
 				DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */,
 				DEECF8772287075B00A4678B /* UITable+extension.swift in Sources */,
 				DE361DE32283E54C00FA3B0D /* BaseViewController.swift in Sources */,
 				DE361F432283E85000FA3B0D /* PostRecordParam.swift in Sources */,
+				DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
 				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
+				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
 				DE361F4C2283E85000FA3B0D /* NotificationEndPoint.swift in Sources */,
 				DE361E9E2283E60500FA3B0D /* NotificationContent.swift in Sources */,
+				DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
+				DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				DE952FA12287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
+				DE952F9B2287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE361E962283E60500FA3B0D /* UserDefaultHelper.swift in Sources */,
 				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
@@ -1046,14 +1939,20 @@
 				DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */,
 				DE361E822283E60500FA3B0D /* AppDropDown.swift in Sources */,
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
+				DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
+				DE952FAD2287DD2A00E3F688 /* Login+GoogleSignIn.swift in Sources */,
 				DE361F512283E85000FA3B0D /* NotificationAPIService.swift in Sources */,
 				DE2ADE7522841BB9003768CE /* MenuPresenter.swift in Sources */,
 				DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */,
 				DEECF87922870AEB00A4678B /* LanguageHelper.swift in Sources */,
+				DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE361F3D2283E85000FA3B0D /* NetworkRequest.swift in Sources */,
 				DE361E8D2283E60500FA3B0D /* AppCheckBox.swift in Sources */,
+				DE952F9A2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				DE361DFA2283E57900FA3B0D /* UIViewController+extension.swift in Sources */,
 				DE361E7A2283E60500FA3B0D /* AppSearchBar.swift in Sources */,
+				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
 				DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */,
 				DE361F3C2283E85000FA3B0D /* MapperData.swift in Sources */,
@@ -1061,13 +1960,314 @@
 				DE361F4D2283E85000FA3B0D /* CommonAPIService.swift in Sources */,
 				DE361F522283E85000FA3B0D /* Provider.swift in Sources */,
 				DE361F292283E85000FA3B0D /* BaseEntity.swift in Sources */,
+				DE952F832287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE361E9F2283E60500FA3B0D /* YesNoContentView.swift in Sources */,
 				DE361E8B2283E60500FA3B0D /* AppTextView.swift in Sources */,
 				DE361DF72283E57900FA3B0D /* Date+extension.swift in Sources */,
 				DEECF89D22871D1B00A4678B /* ForgotPasswordRouter.swift in Sources */,
 				DEECF89022871D0400A4678B /* SignUpRouter.swift in Sources */,
+				DE952F9C2287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
+				DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE952FB02287DF4800E3F688 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE952FB12287DF4800E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */,
+				DE952FB32287DF4800E3F688 /* UITextFiled+extension.swift in Sources */,
+				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
+				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
+				DE952FB62287DF4800E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */,
+				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
+				DE952FBA2287DF4800E3F688 /* HomeProtocols.swift in Sources */,
+				DE952FBB2287DF4800E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
+				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
+				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
+				DE952FBF2287DF4800E3F688 /* LoginSocialParam.swift in Sources */,
+				DE952FC02287DF4800E3F688 /* LoginPresenter.swift in Sources */,
+				DE952FC12287DF4800E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
+				DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
+				DE952FC42287DF4800E3F688 /* AppColor.swift in Sources */,
+				DE952FC52287DF4800E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				DE952FC62287DF4800E3F688 /* PhoneEntity.swift in Sources */,
+				DE952FC72287DF4800E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				DE952FC82287DF4800E3F688 /* NotificationEntity.swift in Sources */,
+				DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */,
+				DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */,
+				DE952FCB2287DF4800E3F688 /* BaseTableCell.swift in Sources */,
+				DE952FCC2287DF4800E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				DE952FCD2287DF4800E3F688 /* UpdateProfileSocial.swift in Sources */,
+				DE952FCE2287DF4800E3F688 /* SideMenuViewController.swift in Sources */,
+				DE952FCF2287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				DE952FD02287DF4800E3F688 /* HomePresenter.swift in Sources */,
+				DE952FD12287DF4800E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DE952FD22287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				DE952FD32287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
+				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
+				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
+				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
+				DE952FDA2287DF4800E3F688 /* MenuViewController.swift in Sources */,
+				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
+				DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */,
+				DE952FDD2287DF4800E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
+				DE952FDE2287DF4800E3F688 /* PhotoEntity.swift in Sources */,
+				DE952FDF2287DF4800E3F688 /* ForgotPasswordProtocols.swift in Sources */,
+				DE952FE02287DF4800E3F688 /* HeaderUserView.swift in Sources */,
+				DE952FE12287DF4800E3F688 /* Network.swift in Sources */,
+				DE952FE22287DF4800E3F688 /* UpdateProfileParam.swift in Sources */,
+				DE952FE32287DF4800E3F688 /* BaseResponse.swift in Sources */,
+				DE952FE42287DF4800E3F688 /* LoginInteractor.swift in Sources */,
+				DE952FE52287DF4800E3F688 /* SignUpInteractor.swift in Sources */,
+				DE952FE62287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
+				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
+				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
+				DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */,
+				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
+				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
+				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				DE952FEE2287DF4800E3F688 /* HomeInteractor.swift in Sources */,
+				DE952FEF2287DF4800E3F688 /* ParentNotificationEntity.swift in Sources */,
+				DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */,
+				DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */,
+				DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */,
+				DE952FF32287DF4800E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */,
+				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */,
+				DE952FF72287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				DE952FF82287DF4800E3F688 /* BaseViewXib.swift in Sources */,
+				DE952FF92287DF4800E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				DE952FFA2287DF4800E3F688 /* FadeInOutAnimation.swift in Sources */,
+				DE952FFB2287DF4800E3F688 /* StringReachability.swift in Sources */,
+				DE952FFC2287DF4800E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				DE952FFD2287DF4800E3F688 /* MenuProtocols.swift in Sources */,
+				DE952FFE2287DF4800E3F688 /* AppDelegate+Push.swift in Sources */,
+				DE952FFF2287DF4800E3F688 /* UITable+extension.swift in Sources */,
+				DE9530002287DF4800E3F688 /* BaseViewController.swift in Sources */,
+				DE9530012287DF4800E3F688 /* PostRecordParam.swift in Sources */,
+				DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */,
+				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
+				DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */,
+				DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */,
+				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
+				DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */,
+				DE9530092287DF4800E3F688 /* NotificationEndPoint.swift in Sources */,
+				DE95300A2287DF4800E3F688 /* NotificationContent.swift in Sources */,
+				DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
+				DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				DE95300E2287DF4800E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
+				DE95300F2287DF4800E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
+				DE9530102287DF4800E3F688 /* UserDefaultHelper.swift in Sources */,
+				DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */,
+				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
+				DE9530132287DF4800E3F688 /* BaseView.swift in Sources */,
+				DE9530142287DF4800E3F688 /* APIError.swift in Sources */,
+				DE9530152287DF4800E3F688 /* UserEntity.swift in Sources */,
+				DE9530162287DF4800E3F688 /* FaceBookEntity.swift in Sources */,
+				DE9530172287DF4800E3F688 /* ForgotPasswordViewController.swift in Sources */,
+				DE9530182287DF4800E3F688 /* AppDropDownCell.swift in Sources */,
+				DE9530192287DF4800E3F688 /* AppDelegate.swift in Sources */,
+				DE95301A2287DF4800E3F688 /* ForgotPasswordPresenter.swift in Sources */,
+				DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */,
+				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
+				DE95301D2287DF4800E3F688 /* SignUpPresenter.swift in Sources */,
+				DE95301E2287DF4800E3F688 /* AppDropDown.swift in Sources */,
+				DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */,
+				DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
+				DE9530222287DF4800E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				DE9530232287DF4800E3F688 /* NotificationAPIService.swift in Sources */,
+				DE9530242287DF4800E3F688 /* MenuPresenter.swift in Sources */,
+				DE9530252287DF4800E3F688 /* Bundle+extension.swift in Sources */,
+				DE9530262287DF4800E3F688 /* LanguageHelper.swift in Sources */,
+				DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
+				DE9530282287DF4800E3F688 /* NetworkRequest.swift in Sources */,
+				DE9530292287DF4800E3F688 /* AppCheckBox.swift in Sources */,
+				DE95302A2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				DE95302B2287DF4800E3F688 /* UIViewController+extension.swift in Sources */,
+				DE95302C2287DF4800E3F688 /* AppSearchBar.swift in Sources */,
+				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
+				DE95302F2287DF4800E3F688 /* HomeRouter.swift in Sources */,
+				DE9530302287DF4800E3F688 /* MapperData.swift in Sources */,
+				DE9530312287DF4800E3F688 /* Int+extension.swift in Sources */,
+				DE9530322287DF4800E3F688 /* CommonAPIService.swift in Sources */,
+				DE9530332287DF4800E3F688 /* Provider.swift in Sources */,
+				DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */,
+				DE9530352287DF4800E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				DE9530362287DF4800E3F688 /* YesNoContentView.swift in Sources */,
+				DE9530372287DF4800E3F688 /* AppTextView.swift in Sources */,
+				DE9530382287DF4800E3F688 /* Date+extension.swift in Sources */,
+				DE9530392287DF4800E3F688 /* ForgotPasswordRouter.swift in Sources */,
+				DE95303A2287DF4800E3F688 /* SignUpRouter.swift in Sources */,
+				DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
+				DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */,
+				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
+				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE95305E2287DF6400E3F688 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE95305F2287DF6400E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
+				DE9530612287DF6400E3F688 /* UITextFiled+extension.swift in Sources */,
+				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
+				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
+				DE9530642287DF6400E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
+				DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */,
+				DE9530682287DF6400E3F688 /* HomeProtocols.swift in Sources */,
+				DE9530692287DF6400E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
+				DE95306A2287DF6400E3F688 /* ForgotPasswordInteractor.swift in Sources */,
+				DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */,
+				DE95306D2287DF6400E3F688 /* LoginSocialParam.swift in Sources */,
+				DE95306E2287DF6400E3F688 /* LoginPresenter.swift in Sources */,
+				DE95306F2287DF6400E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
+				DE9530702287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
+				DE9530722287DF6400E3F688 /* AppColor.swift in Sources */,
+				DE9530732287DF6400E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				DE9530742287DF6400E3F688 /* PhoneEntity.swift in Sources */,
+				DE9530752287DF6400E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				DE9530762287DF6400E3F688 /* NotificationEntity.swift in Sources */,
+				DE9530772287DF6400E3F688 /* AppImage.swift in Sources */,
+				DE9530782287DF6400E3F688 /* CustomTextfield.swift in Sources */,
+				DE9530792287DF6400E3F688 /* BaseTableCell.swift in Sources */,
+				DE95307A2287DF6400E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				DE95307B2287DF6400E3F688 /* UpdateProfileSocial.swift in Sources */,
+				DE95307C2287DF6400E3F688 /* SideMenuViewController.swift in Sources */,
+				DE95307D2287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				DE95307E2287DF6400E3F688 /* HomePresenter.swift in Sources */,
+				DE95307F2287DF6400E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DE9530802287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
+				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
+				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
+				DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */,
+				DE9530882287DF6400E3F688 /* MenuViewController.swift in Sources */,
+				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
+				DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */,
+				DE95308B2287DF6400E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
+				DE95308C2287DF6400E3F688 /* PhotoEntity.swift in Sources */,
+				DE95308D2287DF6400E3F688 /* ForgotPasswordProtocols.swift in Sources */,
+				DE95308E2287DF6400E3F688 /* HeaderUserView.swift in Sources */,
+				DE95308F2287DF6400E3F688 /* Network.swift in Sources */,
+				DE9530902287DF6400E3F688 /* UpdateProfileParam.swift in Sources */,
+				DE9530912287DF6400E3F688 /* BaseResponse.swift in Sources */,
+				DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */,
+				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
+				DE9530942287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */,
+				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
+				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
+				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,
+				DE9530992287DF6400E3F688 /* MenuRouter.swift in Sources */,
+				DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */,
+				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				DE95309C2287DF6400E3F688 /* HomeInteractor.swift in Sources */,
+				DE95309D2287DF6400E3F688 /* ParentNotificationEntity.swift in Sources */,
+				DE95309E2287DF6400E3F688 /* LoginRouter.swift in Sources */,
+				DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */,
+				DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */,
+				DE9530A12287DF6400E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
+				DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */,
+				DE9530A52287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				DE9530A62287DF6400E3F688 /* BaseViewXib.swift in Sources */,
+				DE9530A72287DF6400E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */,
+				DE9530A92287DF6400E3F688 /* StringReachability.swift in Sources */,
+				DE9530AA2287DF6400E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				DE9530AB2287DF6400E3F688 /* MenuProtocols.swift in Sources */,
+				DE9530AC2287DF6400E3F688 /* AppDelegate+Push.swift in Sources */,
+				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
+				DE9530AE2287DF6400E3F688 /* BaseViewController.swift in Sources */,
+				DE9530AF2287DF6400E3F688 /* PostRecordParam.swift in Sources */,
+				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				DE9530B12287DF6400E3F688 /* UserEndPoint.swift in Sources */,
+				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
+				DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */,
+				DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */,
+				DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */,
+				DE9530B62287DF6400E3F688 /* AppTextField.swift in Sources */,
+				DE9530B72287DF6400E3F688 /* NotificationEndPoint.swift in Sources */,
+				DE9530B82287DF6400E3F688 /* NotificationContent.swift in Sources */,
+				DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
+				DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				DE9530BC2287DF6400E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
+				DE9530BD2287DF6400E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
+				DE9530BE2287DF6400E3F688 /* UserDefaultHelper.swift in Sources */,
+				DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */,
+				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
+				DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */,
+				DE9530C22287DF6400E3F688 /* APIError.swift in Sources */,
+				DE9530C32287DF6400E3F688 /* UserEntity.swift in Sources */,
+				DE9530C42287DF6400E3F688 /* FaceBookEntity.swift in Sources */,
+				DE9530C52287DF6400E3F688 /* ForgotPasswordViewController.swift in Sources */,
+				DE9530C62287DF6400E3F688 /* AppDropDownCell.swift in Sources */,
+				DE9530C72287DF6400E3F688 /* AppDelegate.swift in Sources */,
+				DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */,
+				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
+				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,
+				DE9530CB2287DF6400E3F688 /* SignUpPresenter.swift in Sources */,
+				DE9530CC2287DF6400E3F688 /* AppDropDown.swift in Sources */,
+				DE9530CD2287DF6400E3F688 /* HomeViewController.swift in Sources */,
+				DE9530CE2287DF6400E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				DE9530CF2287DF6400E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
+				DE9530D02287DF6400E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				DE9530D12287DF6400E3F688 /* NotificationAPIService.swift in Sources */,
+				DE9530D22287DF6400E3F688 /* MenuPresenter.swift in Sources */,
+				DE9530D32287DF6400E3F688 /* Bundle+extension.swift in Sources */,
+				DE9530D42287DF6400E3F688 /* LanguageHelper.swift in Sources */,
+				DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
+				DE9530D62287DF6400E3F688 /* NetworkRequest.swift in Sources */,
+				DE9530D72287DF6400E3F688 /* AppCheckBox.swift in Sources */,
+				DE9530D82287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				DE9530D92287DF6400E3F688 /* UIViewController+extension.swift in Sources */,
+				DE9530DA2287DF6400E3F688 /* AppSearchBar.swift in Sources */,
+				DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */,
+				DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */,
+				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
+				DE9530DF2287DF6400E3F688 /* Int+extension.swift in Sources */,
+				DE9530E02287DF6400E3F688 /* CommonAPIService.swift in Sources */,
+				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
+				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,
+				DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				DE9530E42287DF6400E3F688 /* YesNoContentView.swift in Sources */,
+				DE9530E52287DF6400E3F688 /* AppTextView.swift in Sources */,
+				DE9530E62287DF6400E3F688 /* Date+extension.swift in Sources */,
+				DE9530E72287DF6400E3F688 /* ForgotPasswordRouter.swift in Sources */,
+				DE9530E82287DF6400E3F688 /* SignUpRouter.swift in Sources */,
+				DE9530E92287DF6400E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
+				DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */,
+				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
+				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1215,20 +2415,20 @@
 		};
 		DE3CC34D2283DD990037DBE4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */;
+			baseConfigurationReference = 3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = EnglishApp/Info.plist;
+				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Dev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.englishapp";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1236,20 +2436,111 @@
 		};
 		DE3CC34E2283DD990037DBE4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B757D3CF68AEA1A27D502BF /* Pods-EnglishApp.release.xcconfig */;
+			baseConfigurationReference = 25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = EnglishApp/Info.plist;
+				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Dev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.engma.oganban;
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "Math Adhoc com.engma.englishapp";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE9530582287DF4800E3F688 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B9797D30EEE2E20FFDA9072 /* Pods-EnglishApp_Prod.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG PROD";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE9530592287DF4800E3F688 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DE9531062287DF6400E3F688 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28D786760AE73B0AF55038DE /* Pods-EnglishApp_AppStore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_AppStore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPSTORE";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DE9531072287DF6400E3F688 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C6A78A13386B1C2DA9E8046 /* Pods-EnglishApp_AppStore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_AppStore-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.oganban";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1267,11 +2558,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DE3CC34C2283DD990037DBE4 /* Build configuration list for PBXNativeTarget "EnglishApp" */ = {
+		DE3CC34C2283DD990037DBE4 /* Build configuration list for PBXNativeTarget "EnglishApp_Dev" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DE3CC34D2283DD990037DBE4 /* Debug */,
 				DE3CC34E2283DD990037DBE4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE9530572287DF4800E3F688 /* Build configuration list for PBXNativeTarget "EnglishApp_Prod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE9530582287DF4800E3F688 /* Debug */,
+				DE9530592287DF4800E3F688 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE9531052287DF6400E3F688 /* Build configuration list for PBXNativeTarget "EnglishApp_AppStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE9531062287DF6400E3F688 /* Debug */,
+				DE9531072287DF6400E3F688 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
