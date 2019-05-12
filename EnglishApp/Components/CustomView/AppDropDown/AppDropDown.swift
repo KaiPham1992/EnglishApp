@@ -23,8 +23,7 @@ protocol AppTextFieldDropDownDelegate: class {
 
 class AppDropDown: BaseViewXib {
     @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var tfInput: CustomTextfield!
-    @IBOutlet weak var vContain: UIView!
+    @IBOutlet weak var tfInput: UITextField!
     
     let dropDown = DropDown()
     var selectedItem: Any?
@@ -53,16 +52,6 @@ class AppDropDown: BaseViewXib {
     override func setUpViews() {
         super.setUpViews()
         
-        tfInput.addTarget(self, action: #selector(textFieldDidChanged), for: UIControl.Event.editingChanged)
-        vContain.setBorder(borderWidth: 1, borderColor: AppColor.d5d5d5Color, cornerRadius: 5)
-    }
-    
-    @objc func textFieldDidChanged(_ textField: UITextField) {
-        if !textField.text&.isEmpty {
-            vContain.backgroundColor = AppColor.f1f1f1
-        } else {
-            vContain.backgroundColor = .white
-        }
     }
     
     @IBAction func btnActionTapped() {
@@ -70,7 +59,7 @@ class AppDropDown: BaseViewXib {
     }
     
     func setUpDropDown() {
-        dropDown.anchorView = vContain
+        dropDown.anchorView = tfInput
         dropDown.backgroundColor = .white
         dropDown.width = tfInput.frame.width
         
