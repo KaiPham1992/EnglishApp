@@ -14,9 +14,9 @@ class MenuRouter: MenuWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> MenuViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = MenuViewController(nibName: nil, bundle: nil)
+        let view = MenuViewController.init()
         let interactor = MenuInteractor()
         let router = MenuRouter()
         let presenter = MenuPresenter(interface: view, interactor: interactor, router: router)

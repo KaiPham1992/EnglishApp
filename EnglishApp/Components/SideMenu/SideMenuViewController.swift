@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol MenuProtocol: class {
     func openViewController(presentingController: UIViewController)
     func pushViewController(presentingController: UIViewController)
@@ -432,9 +431,10 @@ extension SideMenuViewController: MenuProtocol {
     func openViewController(presentingController: UIViewController) {
         self.mainViewController = UINavigationController(rootViewController: presentingController)
         rootNavigation = presentingController.navigationController
+        AppRouter.shared.rootNavigation = rootNavigation
         self.setDrawerState(.closed)
     }
-    
+
     func pushViewController(presentingController: UIViewController) {
         self.push(controller: presentingController)
         rootNavigation?.pushViewController(presentingController, animated: true)

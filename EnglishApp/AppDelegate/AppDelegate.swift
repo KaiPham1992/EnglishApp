@@ -27,9 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-//        window?.rootViewController = AppContainerViewController()
-        let extractedExpr = UINavigationController(rootViewController: LoginRouter.createModule())
-        window?.rootViewController = extractedExpr
+        AppRouter.shared.setTest()
         
         configureGoogle()
         

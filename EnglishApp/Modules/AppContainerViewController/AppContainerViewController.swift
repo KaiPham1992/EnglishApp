@@ -6,7 +6,7 @@
 //  Copyright © 2019 demo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class AppContainerViewController: SideMenuViewController {
     let vcHome = HomeRouter.createModule()
@@ -19,10 +19,16 @@ class AppContainerViewController: SideMenuViewController {
     
     init() {
         super.init(drawerDirection: .left, drawerWidth: 280, menuViewController: vcMenu)
-//        menuVC.delegate = self
+        vcMenu.delegateController = self
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AppContainerViewController: MenuViewControllerDelegate {
+    func controllerSelected(controller: UIViewController) {
+        vcHome.showHideMenu()
     }
 }

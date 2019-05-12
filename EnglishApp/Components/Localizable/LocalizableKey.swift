@@ -40,4 +40,31 @@ struct LocalizableKey {
     static let ForgotPasswordMessage = "ForgotPasswordMessage"
     static let SentEmail = "SentEmail"
     static let ForgotTitle = "ForgotTitle"
+    
+    // profil
+    static let DisplayName = "DisplayName"
+    static let TitleProfile = "TitleProfile"
+    static let Location = "Location"
+    static let CodeNumber = "CodeNumber"
+    static let EditProfile = "EditProfile"
+    static let titleSave = "titleSave"
+    
+    // preview profile
+    
+    static let privateInfo = "privateInfo"
+    static let privateHistory = "privateHistory"
+    
+    // Change pass word
+    
+    static let currentPassword = "currentPassword"
+    static let currentPasswordLogin = "currentPasswordLogin"
+    static let newPassword = "newPassword"
+    static let reNewPassword = "reNewPassword"
+    static let changePasssword = "changePasssword"
+    
+    static let popUpLogout = "popUpLogout"
+    static let agree = "agree"
+    static let cancel = "cancel"
+    
+    
 }

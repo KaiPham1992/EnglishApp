@@ -28,7 +28,6 @@ class ForgotPasswordPresenter: ForgotPasswordPresenterProtocol {
 
 }
 
-
 extension ForgotPasswordPresenter: ForgotPasswordInteractorOutputProtocol {
     func didForgotPassword(data: BaseResponse?) {
         view?.didForgotPassword(data: data)

@@ -10,11 +10,17 @@
 
 import UIKit
 
+protocol MenuViewControllerDelegate: class {
+    func controllerSelected(controller: UIViewController)
+}
+
+
 class MenuViewController: UIViewController, MenuViewProtocol {
     @IBOutlet weak var tbMenu: UITableView!
 
 	var presenter: MenuPresenterProtocol?
     weak var delegate: MenuProtocol?
+    weak var delegateController: MenuViewControllerDelegate?
     
     var listMenuItem = [MenuItem]() {
         didSet {
@@ -29,6 +35,7 @@ class MenuViewController: UIViewController, MenuViewProtocol {
     }
 
 }
+
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     func configureTable() {
         tbMenu.delegate = self
@@ -57,14 +64,24 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             item.isSelected = false
         }
         
-        if itemSelected.imgIcon == AppImage.imgLanguage {
-           LanguageHelper.changeLanguage()
-        }
-        
-        listMenuItem = MenuItem.toArray()
-        
         itemSelected.isSelected = true
+        pushViewController(itemSelected: itemSelected)
         
         tbMenu.reloadData()
     }
+    
+    func pushViewController(itemSelected: MenuItem) {
+        
+        guard let itemIcon = itemSelected.imgIcon else { return }
+        switch itemIcon {
+        case AppImage.imgInfo:
+            delegateController?.controllerSelected(controller: ProfileRouter.createModule())
+            AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
+            
+        default:
+            break
+        }
+    }
+    
+    
 }

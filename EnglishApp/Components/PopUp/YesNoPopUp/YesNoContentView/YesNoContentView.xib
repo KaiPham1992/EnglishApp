@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YesNoContentView" customModule="Ipos" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YesNoContentView" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="btnNo" destination="Iog-XB-84V" id="bOH-6G-376"/>
                 <outlet property="btnYes" destination="JRM-cn-Qvv" id="tgU-km-Ai6"/>
@@ -26,14 +26,14 @@
                     <rect key="frame" x="0.0" y="188" width="414" height="59"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-XB-84V">
-                            <rect key="frame" x="0.0" y="0.0" width="207" height="59"/>
+                            <rect key="frame" x="20" y="0.0" width="165.5" height="59"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="No">
                                 <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRM-cn-Qvv">
-                            <rect key="frame" x="207" y="0.0" width="207" height="59"/>
+                            <rect key="frame" x="228.5" y="0.0" width="165.5" height="59"/>
                             <state key="normal" title="Yes">
                                 <color key="titleColor" red="0.94117647058823528" green="0.40000000000000002" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
@@ -42,14 +42,14 @@
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="Iog-XB-84V" firstAttribute="top" secondItem="20N-tC-e56" secondAttribute="top" id="20x-mZ-oon"/>
-                        <constraint firstItem="Iog-XB-84V" firstAttribute="width" secondItem="20N-tC-e56" secondAttribute="width" multiplier="1/2" id="5rT-yV-b90"/>
+                        <constraint firstItem="Iog-XB-84V" firstAttribute="width" secondItem="20N-tC-e56" secondAttribute="width" multiplier="2/5" id="5rT-yV-b90"/>
                         <constraint firstItem="JRM-cn-Qvv" firstAttribute="top" secondItem="20N-tC-e56" secondAttribute="top" id="8V8-Nm-oq0"/>
                         <constraint firstAttribute="bottom" secondItem="Iog-XB-84V" secondAttribute="bottom" id="K7M-QG-5Nb"/>
                         <constraint firstAttribute="height" constant="59" id="QIE-7u-Xib"/>
                         <constraint firstAttribute="bottom" secondItem="JRM-cn-Qvv" secondAttribute="bottom" id="kAi-Pl-dnA"/>
-                        <constraint firstAttribute="trailing" secondItem="JRM-cn-Qvv" secondAttribute="trailing" id="mIq-gU-V2v"/>
+                        <constraint firstAttribute="trailing" secondItem="JRM-cn-Qvv" secondAttribute="trailing" constant="20" id="mIq-gU-V2v"/>
                         <constraint firstItem="JRM-cn-Qvv" firstAttribute="width" secondItem="Iog-XB-84V" secondAttribute="width" id="qlc-gK-QcP"/>
-                        <constraint firstItem="Iog-XB-84V" firstAttribute="leading" secondItem="20N-tC-e56" secondAttribute="leading" id="qqi-U5-bKE"/>
+                        <constraint firstItem="Iog-XB-84V" firstAttribute="leading" secondItem="20N-tC-e56" secondAttribute="leading" constant="20" id="qqi-U5-bKE"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete this draft application?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w1-Fn-ZOm">

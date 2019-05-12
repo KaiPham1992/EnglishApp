@@ -18,6 +18,7 @@ struct AppImage {
     
     static let imgMenu = UIImage(named: "close")!
     static let imgNotification = UIImage(named: "close")!
+    static let imgEditProfile = UIImage(named: "close")!
     
     // Menu
     static let imgTop = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)

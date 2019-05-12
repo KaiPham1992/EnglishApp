@@ -84,9 +84,13 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func btnLoginTapped() {
-        if validateInputData() {
-            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
-        }
+//        if validateInputData() {
+//            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
+//        }
+        
+       
+        
+        AppRouter.shared.openHome()
     }
     
     @IBAction func btnForgotPassTapped() {
@@ -107,7 +111,6 @@ class LoginViewController: BaseViewController {
         self.view.endEditing(true)
         self.FBlogin()
     }
-    
 
 }
 

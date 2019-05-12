@@ -39,6 +39,28 @@
 "invalidLoginPassword" = "Mật khẩu không chính xác";
 "emptyLoginEmailPassword"  = "Vui lòng nhập đầy đủ thông tin bắt buộc";
 
+// Profile
+"DisplayName" = "Tên hiển thị";
+"Location" = "Lãnh thổ";
+"CodeNumber"  = "Mã code";
+"TitleProfile" = "Thông tin tài khoản";
+"EditProfile" = "Sửa thông tin";
+"titleSave" = "LƯU";
 
+// Preview profile
 
+"privateInfo" = "Thông tin cá nhân";
+"privateHistory" = "Lịch sử cá nhân";
+
+// change passsword
+"currentPassword"  = "Mật khẩu hiện tại";
+"newPassword" = "Mật khẩu mới";
+"reNewPassword" = "Nhập lại mật khẩu";
+"changePasssword" = "Đổi mật khẩu";
+"currentPasswordLogin" = "Mật khẩu đăng nhập";
+
+// logout
+"popUpLogout" = "Bạn có muốn đăng xuất?";
+"agree" = "Đồng ý";
+"cancel" = "Huỷ";
 

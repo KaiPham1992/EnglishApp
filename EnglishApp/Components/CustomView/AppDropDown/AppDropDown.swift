@@ -10,6 +10,10 @@
 // Fix me
 class TagEntity {
     var name: String?
+    
+    init(name: String) {
+        self.name = name
+    }
 }
 
 //
@@ -55,6 +59,7 @@ class AppDropDown: BaseViewXib {
     }
     
     @IBAction func btnActionTapped() {
+        dropDown.width = tfInput.frame.width
         dropDown.show()
     }
     

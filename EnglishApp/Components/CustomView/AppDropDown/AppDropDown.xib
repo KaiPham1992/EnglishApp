@@ -37,6 +37,14 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ibt-Jz-jQf">
+                    <rect key="frame" x="399" y="86.5" width="15" height="15"/>
+                    <color key="backgroundColor" red="0.43137254899999999" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="2yX-Ml-X2D"/>
+                        <constraint firstAttribute="height" constant="15" id="fDs-be-3wT"/>
+                    </constraints>
+                </imageView>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d62-pM-Yqv">
                     <rect key="frame" x="-3" y="153" width="414" height="1"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,6 +63,12 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gb1-Lk-Ndo">
+                    <rect key="frame" x="0.0" y="72" width="414" height="81"/>
+                    <connections>
+                        <action selector="btnActionTapped" destination="-1" eventType="touchUpInside" id="2Hg-BD-W8S"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
@@ -62,11 +76,17 @@
                 <constraint firstItem="d62-pM-Yqv" firstAttribute="bottom" secondItem="uc2-xd-pDX" secondAttribute="bottom" id="DeR-zF-VuV"/>
                 <constraint firstItem="eCy-Lb-K4C" firstAttribute="leading" secondItem="uc2-xd-pDX" secondAttribute="leading" id="IUi-R8-Zm3"/>
                 <constraint firstItem="d62-pM-Yqv" firstAttribute="leading" secondItem="uc2-xd-pDX" secondAttribute="leading" constant="-3" id="LFG-Ob-p0G"/>
+                <constraint firstItem="Ibt-Jz-jQf" firstAttribute="centerY" secondItem="f1q-ec-Dlb" secondAttribute="centerY" id="N0A-BU-6Dt"/>
                 <constraint firstItem="d62-pM-Yqv" firstAttribute="trailing" secondItem="uc2-xd-pDX" secondAttribute="trailing" constant="-3" id="O1a-0y-Be6"/>
+                <constraint firstItem="gb1-Lk-Ndo" firstAttribute="bottom" secondItem="Nfz-Bu-dbs" secondAttribute="bottom" id="PXo-Bf-P2u"/>
                 <constraint firstItem="Nfz-Bu-dbs" firstAttribute="trailing" secondItem="eCy-Lb-K4C" secondAttribute="trailing" id="SBc-Zs-hPz"/>
                 <constraint firstItem="d62-pM-Yqv" firstAttribute="top" secondItem="Nfz-Bu-dbs" secondAttribute="bottom" id="Vnb-fK-CWB"/>
+                <constraint firstItem="gb1-Lk-Ndo" firstAttribute="trailing" secondItem="Nfz-Bu-dbs" secondAttribute="trailing" id="WMh-UZ-J1O"/>
+                <constraint firstItem="gb1-Lk-Ndo" firstAttribute="top" secondItem="Nfz-Bu-dbs" secondAttribute="top" id="XLh-UG-Z23"/>
+                <constraint firstItem="uc2-xd-pDX" firstAttribute="trailing" secondItem="Ibt-Jz-jQf" secondAttribute="trailing" id="Z7S-PT-M18"/>
                 <constraint firstItem="eCy-Lb-K4C" firstAttribute="top" secondItem="uc2-xd-pDX" secondAttribute="top" id="mUf-Q1-xrZ"/>
                 <constraint firstItem="eCy-Lb-K4C" firstAttribute="trailing" secondItem="uc2-xd-pDX" secondAttribute="trailing" id="tCd-tC-rWm"/>
+                <constraint firstItem="gb1-Lk-Ndo" firstAttribute="leading" secondItem="Nfz-Bu-dbs" secondAttribute="leading" id="unO-Vo-7Wo"/>
                 <constraint firstItem="Nfz-Bu-dbs" firstAttribute="leading" secondItem="eCy-Lb-K4C" secondAttribute="leading" id="zDi-f9-aMq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

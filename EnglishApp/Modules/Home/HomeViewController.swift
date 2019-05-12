@@ -23,20 +23,24 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
         
-         addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: nil)
+        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: nil)
             
         addHeaderUser()
     }
     
     @objc func btnMenuTapped() {
+       showHideMenu()
+    }
+    
+    func showHideMenu() {
         if let containerController = navigationController?.parent as? SideMenuViewController {
             containerController.toggleLeftPanel()
         }
     }
     
-    func pushHaveNavigation(viewController: UIViewController) {
-        showNavigation()
-        
-        self.push(controller: viewController)
-    }
+//    func pushHaveNavigation(viewController: UIViewController) {
+//        showNavigation()
+//
+//        self.push(controller: viewController)
+//    }
 }

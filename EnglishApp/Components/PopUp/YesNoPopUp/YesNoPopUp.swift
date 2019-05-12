@@ -31,7 +31,7 @@ class YesNoPopUp: BasePopUpView {
         self.completionNo = completionNo
         self.completionYes = completionYes
         
-        super.showPopUp(height: 180, type: .showFromBottom)
+        super.showPopUp(height: 180)
     }
     
     @objc func btnNoTapped() {
