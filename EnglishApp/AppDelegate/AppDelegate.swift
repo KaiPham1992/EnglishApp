@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
-        
+        IQKeyboardManager.shared.enable = true
         
         //---
         window = UIWindow(frame: UIScreen.main.bounds)

@@ -22,6 +22,11 @@ class AppTextField: BaseViewXib {
         }
     }
     
+    
+    func getText() -> String {
+        return tfInput.text&
+    }
+    
     override func setUpViews() {
         super.setUpViews()
         

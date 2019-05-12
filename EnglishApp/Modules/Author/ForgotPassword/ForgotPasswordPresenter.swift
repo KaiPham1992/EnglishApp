@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ForgotPasswordPresenter: ForgotPasswordPresenterProtocol, ForgotPasswordInteractorOutputProtocol {
+class ForgotPasswordPresenter: ForgotPasswordPresenterProtocol {
 
     weak private var view: ForgotPasswordViewProtocol?
     var interactor: ForgotPasswordInteractorInputProtocol?
@@ -21,5 +21,20 @@ class ForgotPasswordPresenter: ForgotPasswordPresenterProtocol, ForgotPasswordIn
         self.interactor = interactor
         self.router = router
     }
+    
+    func forgotPassword(email: String) {
+        interactor?.forgotPassword(email: email)
+    }
 
+}
+
+
+extension ForgotPasswordPresenter: ForgotPasswordInteractorOutputProtocol {
+    func didForgotPassword(data: BaseResponse?) {
+        view?.didForgotPassword(data: data)
+    }
+    
+    func didForgotPassword(error: APIError?) {
+        view?.didForgotPassword(error: error)
+    }
 }

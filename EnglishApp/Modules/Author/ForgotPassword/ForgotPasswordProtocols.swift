@@ -18,12 +18,15 @@ protocol ForgotPasswordWireframeProtocol: class {
 protocol ForgotPasswordPresenterProtocol: class {
 
     var interactor: ForgotPasswordInteractorInputProtocol? { get set }
+    func forgotPassword(email: String)
 }
 
 //MARK: Interactor -
 protocol ForgotPasswordInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didForgotPassword(data: BaseResponse?)
+    func didForgotPassword(error: APIError?)
 }
 
 protocol ForgotPasswordInteractorInputProtocol: class {
@@ -31,6 +34,7 @@ protocol ForgotPasswordInteractorInputProtocol: class {
     var presenter: ForgotPasswordInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func forgotPassword(email: String)
 }
 
 //MARK: View -
@@ -39,4 +43,6 @@ protocol ForgotPasswordViewProtocol: class {
     var presenter: ForgotPasswordPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didForgotPassword(data: BaseResponse?)
+    func didForgotPassword(error: APIError?)
 }

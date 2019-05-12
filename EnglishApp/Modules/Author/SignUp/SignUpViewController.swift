@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SignUpViewController: BaseViewController, SignUpViewProtocol {
+class SignUpViewController: BaseViewController {
     
     var presenter: SignUpPresenterProtocol?
     
@@ -19,6 +19,8 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
     @IBOutlet weak var vRePassword: AppTextField!
     @IBOutlet weak var tfCaptcha: UITextField!
     @IBOutlet weak var btnSignUp: UIButton!
+    @IBOutlet weak var lbStatus: UILabel!
+    @IBOutlet weak var imgCaptcha: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +39,76 @@ class SignUpViewController: BaseViewController, SignUpViewProtocol {
     }
     
     @IBAction func btnSignUpTapped() {
-        
+        if validateInputData() {
+            let param = SignUpParam(email: vEmail.getText(), password: vPassword.getText(), captcha: tfCaptcha.text&)
+            
+            presenter?.signUp(param: param)
+        }
     }
     
     @IBAction func btnReloadCaptcha() {
+        presenter?.getCaptcha()
+    }
+}
+
+extension SignUpViewController {
+    func validateInputData() -> Bool {
+        if self.vEmail.tfInput.text == "" || self.vPassword.tfInput.text == "" || self.vRePassword.tfInput.text == "" || self.tfCaptcha.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
+            return false
+        }
         
+        if let email = self.vEmail.tfInput.text, email.isValidEmail() == false {
+            hideError(isHidden: false, message:  LocalizableKey.invalidLoginEmail.showLanguage)
+            return false
+        }
+        
+        if let password = self.vPassword.tfInput.text, password.count < 6 {
+            hideError(isHidden: false, message:  LocalizableKey.invalidLoginPassword.showLanguage)
+            return false
+        }
+        
+        if self.vPassword.tfInput.text& != self.vRePassword.tfInput.text& {
+            hideError(isHidden: false, message:  LocalizableKey.passwordDifference.showLanguage)
+            return false
+        }
+        hideError()
+        return true
+    }
+    
+    func hideError(isHidden: Bool = true, message: String? = nil){
+        lbStatus.isHidden = isHidden
+        lbStatus.text = message ?? ""
+    }
+}
+
+
+extension SignUpViewController: SignUpViewProtocol {
+   
+    func successCaptcha(image: UIImage) {
+        imgCaptcha.image = image
+    }
+    
+    func signUpSuccess(user: UserEntity?) {
+        
+        
+    }
+    
+    func signUpError(error: APIError) {
+        presenter?.getCaptcha()
+        switch error.message {
+        case "USER_IS_EXISTED":
+            lbStatus.text = "Tên đăng nhập đã tồn tại"
+        case "WRONG_CAPTCHA":
+            lbStatus.text = "Mã captcha không trùng khớp"
+        case "EMAIL_IS_EXISTED":
+            lbStatus.text = "Email đã tồn tại"
+        case "CODE_INTRODUCTION_IS_NOT_EXISTED":
+            lbStatus.text = "Mã giới thiệu không tồn tại"
+        case "NOT_OLD_ENOUGH":
+            lbStatus.text = "Bạn không đủ tuổi để đăng ký"
+        default:
+            break
+        }
     }
 }

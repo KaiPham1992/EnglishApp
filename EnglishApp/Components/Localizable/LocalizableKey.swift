@@ -34,6 +34,7 @@ struct LocalizableKey {
     static let invalidLoginEmail = "invalidLoginEmail"
     static let invalidLoginPassword = "invalidLoginPassword"
     static let emptyLoginEmailPassword = "emptyLoginEmailPassword"
+    static let passwordDifference = "passwordDifference"
     
     // Forgot password Page
     static let ForgotPasswordMessage = "ForgotPasswordMessage"

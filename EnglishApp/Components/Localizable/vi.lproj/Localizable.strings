@@ -28,6 +28,7 @@
 "NotYetAccount" = "Bạn chưa có tài khoản?";
 "Register" = "Đăng kí";
 "LoginButtonSignUp" = "ĐĂNG KÝ";
+"passwordDifference" = "Mật khẩu không giống nhau";
 
 // Forgot password page
 "ForgotPasswordMessage" = "Nhập địa chỉ email liên kết với tài khoản của bạn.\nSau đó kiểm tra hòm thư";

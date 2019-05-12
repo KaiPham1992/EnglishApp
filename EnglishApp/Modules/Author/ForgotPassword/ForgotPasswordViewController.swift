@@ -10,12 +10,13 @@
 
 import UIKit
 
-class ForgotPasswordViewController: BaseViewController, ForgotPasswordViewProtocol {
+class ForgotPasswordViewController: BaseViewController {
 
 	var presenter: ForgotPasswordPresenterProtocol?
     @IBOutlet weak var btnSendEmail: UIButton!
     @IBOutlet weak var lbMessage: UILabel!
     @IBOutlet weak var vEmail: AppTextField!
+    @IBOutlet weak var lbError: UILabel!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +28,7 @@ class ForgotPasswordViewController: BaseViewController, ForgotPasswordViewProtoc
         addBackToNavigation()
     }
     
+    
     override func setTitleUI() {
         super.setTitleUI()
         
@@ -37,6 +39,41 @@ class ForgotPasswordViewController: BaseViewController, ForgotPasswordViewProtoc
     }
     
     @IBAction func btnSendEmailTapped() {
+        if validateInputData() {
+            presenter?.forgotPassword(email: vEmail.getText())
+        }
+    }
+}
+
+extension ForgotPasswordViewController {
+    func validateInputData() -> Bool {
+        if self.vEmail.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
+            return false
+        }
         
+        if let email = self.vEmail.tfInput.text, email.isValidEmail() == false {
+            hideError(isHidden: false, message:  LocalizableKey.invalidLoginEmail.showLanguage)
+            return false
+        }
+        
+        hideError()
+        return true
+    }
+    
+    func hideError(isHidden: Bool = true, message: String? = nil){
+        lbError.isHidden = isHidden
+        lbError.text = message ?? ""
+    }
+}
+
+extension ForgotPasswordViewController: ForgotPasswordViewProtocol {
+    func didForgotPassword(data: BaseResponse?) {
+//        PopUpHelper.shared.showMessageHaveAds(message: "Đã gửi Email thành công !")
+//        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func didForgotPassword(error: APIError?) {
+//        lbNotice.text = MessageString.messageEmailNoHave
     }
 }

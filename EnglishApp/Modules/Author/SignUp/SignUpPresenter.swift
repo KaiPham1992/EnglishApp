@@ -10,7 +10,7 @@
 
 import UIKit
 
-class SignUpPresenter: SignUpPresenterProtocol, SignUpInteractorOutputProtocol {
+class SignUpPresenter: SignUpPresenterProtocol {
 
     weak private var view: SignUpViewProtocol?
     var interactor: SignUpInteractorInputProtocol?
@@ -22,4 +22,27 @@ class SignUpPresenter: SignUpPresenterProtocol, SignUpInteractorOutputProtocol {
         self.router = router
     }
 
+    func getCaptcha() {
+        interactor?.getCaptcha()
+    }
+    
+    func signUp(param: SignUpParam) {
+        interactor?.signUp(param: param)
+    }
+}
+
+
+extension SignUpPresenter: SignUpInteractorOutputProtocol {
+  
+    func successCaptcha(image: UIImage) {
+        view?.successCaptcha(image: image)
+    }
+    
+    func signUpSuccess(user: UserEntity?) {
+        view?.signUpSuccess(user: user)
+    }
+    
+    func signUpError(error: APIError) {
+        view?.signUpError(error: error)
+    }
 }

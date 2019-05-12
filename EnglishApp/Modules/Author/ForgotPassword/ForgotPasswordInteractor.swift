@@ -13,4 +13,15 @@ import UIKit
 class ForgotPasswordInteractor: ForgotPasswordInteractorInputProtocol {
 
     weak var presenter: ForgotPasswordInteractorOutputProtocol?
+    
+    func forgotPassword(email: String) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.forgotPassword(email: email, success: { (data) in
+            ProgressView.shared.hide()
+            self.presenter?.didForgotPassword(data: data)
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.didForgotPassword(error: error)
+        }
+    }
 }
