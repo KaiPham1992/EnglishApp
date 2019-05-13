@@ -80,7 +80,7 @@ class BasePopUpView: UIView {
         hidePopUp()
     }
     
-    func showPopUp(width: CGFloat = 250 , height: CGFloat = 250, type: BasePopUpViewType = BasePopUpViewType.zoomOut) {
+    func showPopUp(width: CGFloat = 350 , height: CGFloat = 250, type: BasePopUpViewType = BasePopUpViewType.zoomOut) {
         
         if let window = UIApplication.shared.keyWindow {
             if #available(iOS 11.0, *) {
@@ -97,6 +97,7 @@ class BasePopUpView: UIView {
             
             //--
             if type != .showFromBottom {
+                widthContent = width
                 minXContent = (widthWindow - width) / 2
                 minYContent = (heightWindow - height) / 2
             } else {
@@ -197,7 +198,7 @@ class BasePopUpView: UIView {
         
         switch type {
         case .fromBottomToCenter, .fromLeftToCenter, .fromRightToCenter, .fromTopToCenter:
-            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: { [unowned self] in
+            UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 1, options: UIView.AnimationOptions.curveEaseOut, animations: { [unowned self] in
                 self.vBackGround.alpha = 1
                 self.vContent.frame = CGRect(x: self.minXContent, y: self.minYContent, width: self.widthContent, height: self.heightContent)
                 }, completion: nil)

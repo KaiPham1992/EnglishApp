@@ -29,7 +29,7 @@ struct AppImage {
     static let imgHistoryCheck = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
     static let imgPrivacy = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
     static let imgChangePass = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
-    static let imgLogout = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
+    static let imgLogout = UIImage(named: "back")!.withRenderingMode(.alwaysTemplate)
     
     
 }

@@ -58,9 +58,17 @@
 "reNewPassword" = "Nhập lại mật khẩu";
 "changePasssword" = "Đổi mật khẩu";
 "currentPasswordLogin" = "Mật khẩu đăng nhập";
+"changePasswordSuccess" = "Thay đổi password thành công";
 
 // logout
 "popUpLogout" = "Bạn có muốn đăng xuất?";
 "agree" = "Đồng ý";
 "cancel" = "Huỷ";
 
+//QA
+
+"whatQA" = "Bạn đang thắc mắc điều gì?";
+"enterQA" = "Nhập câu hỏi của bạn";
+"messageQA" = "5 kim cương cho một lần đặt câu hỏi";
+"qAOlder" = "Câu hỏi bạn đã từng đặt";
+"titleQA" = "Hỏi đáp";

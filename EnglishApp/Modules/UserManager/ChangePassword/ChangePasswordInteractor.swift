@@ -11,6 +11,17 @@
 import UIKit
 
 class ChangePasswordInteractor: ChangePasswordInteractorInputProtocol {
-
+    
     weak var presenter: ChangePasswordInteractorOutputProtocol?
+    
+    func changePassword(password: String, newPassword: String) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.changePassword(current: password, new: newPassword, success: { (data) in
+            ProgressView.shared.hide()
+            self.presenter?.didChangePassword(data: data)
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.didChangePassword(error: error)
+        }
+    }
 }

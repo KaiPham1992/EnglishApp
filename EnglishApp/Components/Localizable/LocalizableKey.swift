@@ -65,6 +65,16 @@ struct LocalizableKey {
     static let popUpLogout = "popUpLogout"
     static let agree = "agree"
     static let cancel = "cancel"
+    static let changePasswordSuccess = "changePasswordSuccess"
+    
+    
+    // QA
+    
+    static let whatQA = "whatQA"
+    static let enterQA = "enterQA"
+    static let messageQA = "messageQA"
+    static let qAOlder = "qAOlder"
+    static let titleQA = "titleQA"
     
     
 }

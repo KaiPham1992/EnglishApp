@@ -77,11 +77,28 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         case AppImage.imgInfo:
             delegateController?.controllerSelected(controller: ProfileRouter.createModule())
             AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
-            
+        case AppImage.imgLogout:
+            PopUpHelper.shared.showLogout(completionNo: {
+                print("No")
+            }) {
+                self.logout()
+            }
         default:
             break
         }
     }
     
-    
+}
+
+extension MenuViewController {
+    func logout() {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.logout(success: { (_) in
+            ProgressView.shared.hide()
+            UserDefaultHelper.shared.clearUser()
+            AppRouter.shared.openLogin()
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }
