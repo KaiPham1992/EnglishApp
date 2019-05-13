@@ -72,3 +72,11 @@
 "messageQA" = "5 kim cương cho một lần đặt câu hỏi";
 "qAOlder" = "Câu hỏi bạn đã từng đặt";
 "titleQA" = "Hỏi đáp";
+
+// Competition
+"titleCompetition" = "Thi đấu";
+"conditionCompetition" = "Điều kiện: ";
+"timeStart" = "Bắt đầu sau: ";
+"countTeam" = "Số đội: ";
+"selectTeamJoin" = "Chọn nhóm tham gia";
+"joinTeam" = "Vào nhóm";

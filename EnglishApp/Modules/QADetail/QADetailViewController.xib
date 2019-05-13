@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QADetailViewController">
+            <connections>
+                <outlet property="IQLayoutGuideConstraint" destination="fpK-fX-acu" id="NdJ-T2-Bzz"/>
+                <outlet property="lbContent" destination="fpK-fX-acu" id="D0Y-Zk-nGY"/>
+                <outlet property="lbTime" destination="AAA-T6-9LH" id="gQJ-3e-JuY"/>
+                <outlet property="lbTitle" destination="m7P-YA-Ci8" id="nbX-Iz-G58"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m7P-YA-Ci8">
+                    <rect key="frame" x="20" y="50" width="335" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAA-T6-9LH">
+                    <rect key="frame" x="20" y="78.5" width="335" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-fX-acu">
+                    <rect key="frame" x="20" y="109.5" width="335" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="m7P-YA-Ci8" firstAttribute="leading" secondItem="lDn-4T-Lnx" secondAttribute="leading" constant="20" id="2vJ-12-GFt"/>
+                <constraint firstItem="m7P-YA-Ci8" firstAttribute="top" secondItem="lDn-4T-Lnx" secondAttribute="top" constant="30" id="51e-cX-iN1"/>
+                <constraint firstItem="AAA-T6-9LH" firstAttribute="trailing" secondItem="m7P-YA-Ci8" secondAttribute="trailing" id="GKW-0B-Q9M"/>
+                <constraint firstItem="fpK-fX-acu" firstAttribute="top" secondItem="AAA-T6-9LH" secondAttribute="bottom" constant="10" id="HOc-TX-wSi"/>
+                <constraint firstItem="AAA-T6-9LH" firstAttribute="leading" secondItem="m7P-YA-Ci8" secondAttribute="leading" id="X0r-xW-JUd"/>
+                <constraint firstItem="AAA-T6-9LH" firstAttribute="top" secondItem="m7P-YA-Ci8" secondAttribute="bottom" constant="8" id="i6M-LC-Qpi"/>
+                <constraint firstItem="lDn-4T-Lnx" firstAttribute="trailing" secondItem="m7P-YA-Ci8" secondAttribute="trailing" constant="20" id="j74-QF-AZi"/>
+                <constraint firstItem="fpK-fX-acu" firstAttribute="trailing" secondItem="AAA-T6-9LH" secondAttribute="trailing" id="nNd-Og-2ex"/>
+                <constraint firstItem="fpK-fX-acu" firstAttribute="leading" secondItem="AAA-T6-9LH" secondAttribute="leading" id="waR-nT-E3k"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="lDn-4T-Lnx"/>
+        </view>
+    </objects>
+</document>

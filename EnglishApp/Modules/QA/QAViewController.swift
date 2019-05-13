@@ -75,6 +75,7 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        let vc = QADetailRouter.createModule(qa: self.listHistory[indexPath.item])
+        self.push(controller: vc)
     }
 }
