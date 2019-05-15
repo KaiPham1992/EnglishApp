@@ -30,6 +30,8 @@ class AppTextField: BaseViewXib {
     override func setUpViews() {
         super.setUpViews()
         
+//        lbTitle.font = AppFont.fontBold18
+        
 //        tfInput.addTarget(self, action: #selector(textFieldDidChanged), for: UIControl.Event.editingChanged)
     }
     
