@@ -181,6 +181,15 @@
 		DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */; };
 		DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3442283DD990037DBE4 /* Assets.xcassets */; };
 		DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */; };
+		DE750BB2228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */; };
+		DE750BB3228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */; };
+		DE750BB4228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */; };
+		DE750BB5228C425E00596D3B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */; };
+		DE750BB6228C425E00596D3B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */; };
+		DE750BB7228C425E00596D3B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */; };
+		DE750BB8228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */; };
+		DE750BB9228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */; };
+		DE750BBA228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */; };
 		DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */; };
 		DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */; };
 		DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */; };
@@ -825,6 +834,9 @@
 		DE3CC3442283DD990037DBE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE3CC3472283DD990037DBE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnglishApp_Dev-Info.plist"; sourceTree = "<group>"; };
+		DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
 		DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
 		DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
@@ -1495,6 +1507,16 @@
 			path = EnglishApp;
 			sourceTree = "<group>";
 		};
+		DE750BAE228C424300596D3B /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */,
+				DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */,
+				DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		DE952F512287D2A700E3F688 /* Indicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1577,6 +1599,7 @@
 		DE95310A2287DFA400E3F688 /* SourceFile */ = {
 			isa = PBXGroup;
 			children = (
+				DE750BAE228C424300596D3B /* Font */,
 				DE95310B2287DFAE00E3F688 /* Info */,
 				DE2ADE5322841755003768CE /* GoogleInfo */,
 			);
@@ -1850,6 +1873,7 @@
 				DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613422898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC22289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
+				DE750BB5228C425E00596D3B /* Comfortaa-Light.ttf in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
@@ -1873,7 +1897,9 @@
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				DE750BB2228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
+				DE750BB8228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
 				DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310E2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314B2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -1891,6 +1917,7 @@
 				DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613522898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC32289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
+				DE750BB6228C425E00596D3B /* Comfortaa-Light.ttf in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
@@ -1914,7 +1941,9 @@
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				DE750BB3228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
+				DE750BB9228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
 				DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310F2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314C2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -1932,6 +1961,7 @@
 				DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613622898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC42289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
+				DE750BB7228C425E00596D3B /* Comfortaa-Light.ttf in Resources */,
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
@@ -1955,7 +1985,9 @@
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				DE750BB4228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */,
+				DE750BBA228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
 				DE9531162287E00A00E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE9531102287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314D2288324300E3F688 /* EditProfileViewController.xib in Resources */,
