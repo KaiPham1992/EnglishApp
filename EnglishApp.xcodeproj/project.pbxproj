@@ -27,6 +27,33 @@
 		76DB9393228C56640081A36E /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB9383228C56640081A36E /* DictionaryViewController.xib */; };
 		76DB9394228C56640081A36E /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB9383228C56640081A36E /* DictionaryViewController.xib */; };
 		76DB9395228C56640081A36E /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB9383228C56640081A36E /* DictionaryViewController.xib */; };
+		76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9397228C73A90081A36E /* MoreDictionaryPresenter.swift */; };
+		76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9397228C73A90081A36E /* MoreDictionaryPresenter.swift */; };
+		76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9397228C73A90081A36E /* MoreDictionaryPresenter.swift */; };
+		76DB93A0228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9398228C73A90081A36E /* MoreDictionaryRouter.swift */; };
+		76DB93A1228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9398228C73A90081A36E /* MoreDictionaryRouter.swift */; };
+		76DB93A2228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9398228C73A90081A36E /* MoreDictionaryRouter.swift */; };
+		76DB93A3228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9399228C73A90081A36E /* MoreDictionaryViewController.swift */; };
+		76DB93A4228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9399228C73A90081A36E /* MoreDictionaryViewController.swift */; };
+		76DB93A5228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9399228C73A90081A36E /* MoreDictionaryViewController.swift */; };
+		76DB93A6228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB939A228C73A90081A36E /* MoreDictionaryProtocols.swift */; };
+		76DB93A7228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB939A228C73A90081A36E /* MoreDictionaryProtocols.swift */; };
+		76DB93A8228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB939A228C73A90081A36E /* MoreDictionaryProtocols.swift */; };
+		76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB939B228C73A90081A36E /* MoreDictionaryInteractor.swift */; };
+		76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB939B228C73A90081A36E /* MoreDictionaryInteractor.swift */; };
+		76DB93AB228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB939B228C73A90081A36E /* MoreDictionaryInteractor.swift */; };
+		76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB939C228C73A90081A36E /* MoreDictionaryViewController.xib */; };
+		76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB939C228C73A90081A36E /* MoreDictionaryViewController.xib */; };
+		76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB939C228C73A90081A36E /* MoreDictionaryViewController.xib */; };
+		76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B0228C73E60081A36E /* MoreDictionaryCell.swift */; };
+		76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B0228C73E60081A36E /* MoreDictionaryCell.swift */; };
+		76DB93B4228C73E60081A36E /* MoreDictionaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B0228C73E60081A36E /* MoreDictionaryCell.swift */; };
+		76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93B1228C73E60081A36E /* MoreDictionaryCell.xib */; };
+		76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93B1228C73E60081A36E /* MoreDictionaryCell.xib */; };
+		76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93B1228C73E60081A36E /* MoreDictionaryCell.xib */; };
+		76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
+		76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
+		76DB93BC228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
 		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
@@ -731,6 +758,15 @@
 		76DB9381228C56640081A36E /* DictionaryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryProtocols.swift; sourceTree = "<group>"; };
 		76DB9382228C56640081A36E /* DictionaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryInteractor.swift; sourceTree = "<group>"; };
 		76DB9383228C56640081A36E /* DictionaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DictionaryViewController.xib; sourceTree = "<group>"; };
+		76DB9397228C73A90081A36E /* MoreDictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryPresenter.swift; sourceTree = "<group>"; };
+		76DB9398228C73A90081A36E /* MoreDictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryRouter.swift; sourceTree = "<group>"; };
+		76DB9399228C73A90081A36E /* MoreDictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryViewController.swift; sourceTree = "<group>"; };
+		76DB939A228C73A90081A36E /* MoreDictionaryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryProtocols.swift; sourceTree = "<group>"; };
+		76DB939B228C73A90081A36E /* MoreDictionaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryInteractor.swift; sourceTree = "<group>"; };
+		76DB939C228C73A90081A36E /* MoreDictionaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreDictionaryViewController.xib; sourceTree = "<group>"; };
+		76DB93B0228C73E60081A36E /* MoreDictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryCell.swift; sourceTree = "<group>"; };
+		76DB93B1228C73E60081A36E /* MoreDictionaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreDictionaryCell.xib; sourceTree = "<group>"; };
+		76DB93B9228C74B00081A36E /* RatioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioButton.swift; sourceTree = "<group>"; };
 		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
 		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
@@ -1035,6 +1071,37 @@
 			path = Dictionary;
 			sourceTree = "<group>";
 		};
+		76DB9396228C73720081A36E /* MoreDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				76DB93AF228C73C70081A36E /* MoreDictionaryCell */,
+				76DB9397228C73A90081A36E /* MoreDictionaryPresenter.swift */,
+				76DB9398228C73A90081A36E /* MoreDictionaryRouter.swift */,
+				76DB9399228C73A90081A36E /* MoreDictionaryViewController.swift */,
+				76DB939A228C73A90081A36E /* MoreDictionaryProtocols.swift */,
+				76DB939B228C73A90081A36E /* MoreDictionaryInteractor.swift */,
+				76DB939C228C73A90081A36E /* MoreDictionaryViewController.xib */,
+			);
+			path = MoreDictionary;
+			sourceTree = "<group>";
+		};
+		76DB93AF228C73C70081A36E /* MoreDictionaryCell */ = {
+			isa = PBXGroup;
+			children = (
+				76DB93B0228C73E60081A36E /* MoreDictionaryCell.swift */,
+				76DB93B1228C73E60081A36E /* MoreDictionaryCell.xib */,
+			);
+			path = MoreDictionaryCell;
+			sourceTree = "<group>";
+		};
+		76DB93B8228C74950081A36E /* RatioButton */ = {
+			isa = PBXGroup;
+			children = (
+				76DB93B9228C74B00081A36E /* RatioButton.swift */,
+			);
+			path = RatioButton;
+			sourceTree = "<group>";
+		};
 		DE2ADE5322841755003768CE /* GoogleInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1101,6 +1168,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				76DB9396228C73720081A36E /* MoreDictionary */,
 				76DB937D228C56380081A36E /* Dictionary */,
 				DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */,
 				DE3A8C922289B9210080A8CB /* QADetail */,
@@ -1201,6 +1269,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				76DB93B8228C74950081A36E /* RatioButton */,
 				DEECF86C2286FC9400A4678B /* HeaderUserView */,
 				DE361EA82283E6DB00FA3B0D /* CustomTextfield */,
 				DE361E102283E60500FA3B0D /* AppTextField */,
@@ -1915,6 +1984,7 @@
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
+				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
@@ -1935,6 +2005,7 @@
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB2228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
 				DE750BB8228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
@@ -1960,6 +2031,7 @@
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
+				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
@@ -1980,6 +2052,7 @@
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB3228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
 				DE750BB9228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
@@ -2005,6 +2078,7 @@
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
+				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
 				DE3A8CEA2289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
@@ -2025,6 +2099,7 @@
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB4228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */,
 				DE750BBA228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
@@ -2355,6 +2430,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE3A8CEE2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
+				76DB93A0228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
 				DE952F812287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
@@ -2379,6 +2455,7 @@
 				DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */,
 				DE361DFF2283E57900FA3B0D /* NSObjectProtocol+Extension.swift in Sources */,
 				DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
 				DE3A8CBC2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				DE95315522883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
@@ -2408,6 +2485,7 @@
 				DE952F8A2287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317E228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
+				76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
@@ -2415,6 +2493,8 @@
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
 				DE2ADE7722841BB9003768CE /* MenuViewController.swift in Sources */,
+				76DB93A6228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
+				76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
 				DE95315B22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE361F472283E85000FA3B0D /* CommonEndPoint.swift in Sources */,
@@ -2537,6 +2617,7 @@
 				DE361F522283E85000FA3B0D /* Provider.swift in Sources */,
 				DE361F292283E85000FA3B0D /* BaseEntity.swift in Sources */,
 				DE953181228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				76DB93A3228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE952F832287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE361E9F2283E60500FA3B0D /* YesNoContentView.swift in Sources */,
 				DE361E8B2283E60500FA3B0D /* AppTextView.swift in Sources */,
@@ -2546,6 +2627,7 @@
 				DE3A8CF52289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE952F9C2287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */,
+				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
@@ -2558,6 +2640,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE3A8CEF2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
+				76DB93A1228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
 				DE952FB12287DF4800E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */,
@@ -2582,6 +2665,7 @@
 				DE952FC02287DF4800E3F688 /* LoginPresenter.swift in Sources */,
 				DE952FC12287DF4800E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
 				DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
 				DE3A8CBD2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				DE95315622883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
@@ -2611,6 +2695,7 @@
 				DE952FD32287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317F228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
+				76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
@@ -2618,6 +2703,8 @@
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
 				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
 				DE952FDA2287DF4800E3F688 /* MenuViewController.swift in Sources */,
+				76DB93A7228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
+				76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
 				DE95315C22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */,
@@ -2740,6 +2827,7 @@
 				DE9530332287DF4800E3F688 /* Provider.swift in Sources */,
 				DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */,
 				DE953182228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				76DB93A4228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE9530352287DF4800E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE9530362287DF4800E3F688 /* YesNoContentView.swift in Sources */,
 				DE9530372287DF4800E3F688 /* AppTextView.swift in Sources */,
@@ -2749,6 +2837,7 @@
 				DE3A8CF62289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */,
+				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
@@ -2761,6 +2850,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE3A8CF02289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
+				76DB93A2228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
 				DE95305F2287DF6400E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
@@ -2785,6 +2875,7 @@
 				DE95306E2287DF6400E3F688 /* LoginPresenter.swift in Sources */,
 				DE95306F2287DF6400E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
 				DE9530702287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				76DB93B4228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
 				DE3A8CBE2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				DE95315722883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
@@ -2814,6 +2905,7 @@
 				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
+				76DB93AB228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
@@ -2821,6 +2913,8 @@
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
 				DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */,
 				DE9530882287DF6400E3F688 /* MenuViewController.swift in Sources */,
+				76DB93A8228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
+				76DB93BC228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
 				DE95315D22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */,
@@ -2943,6 +3037,7 @@
 				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
 				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,
 				DE953183228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				76DB93A5228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE9530E42287DF6400E3F688 /* YesNoContentView.swift in Sources */,
 				DE9530E52287DF6400E3F688 /* AppTextView.swift in Sources */,
@@ -2952,6 +3047,7 @@
 				DE3A8CF72289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE9530E92287DF6400E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */,
+				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
