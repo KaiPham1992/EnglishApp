@@ -9,6 +9,24 @@
 /* Begin PBXBuildFile section */
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
+		76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
+		76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
+		76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937F228C56640081A36E /* DictionaryRouter.swift */; };
+		76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937F228C56640081A36E /* DictionaryRouter.swift */; };
+		76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937F228C56640081A36E /* DictionaryRouter.swift */; };
+		76DB938A228C56640081A36E /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9380228C56640081A36E /* DictionaryViewController.swift */; };
+		76DB938B228C56640081A36E /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9380228C56640081A36E /* DictionaryViewController.swift */; };
+		76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9380228C56640081A36E /* DictionaryViewController.swift */; };
+		76DB938D228C56640081A36E /* DictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9381228C56640081A36E /* DictionaryProtocols.swift */; };
+		76DB938E228C56640081A36E /* DictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9381228C56640081A36E /* DictionaryProtocols.swift */; };
+		76DB938F228C56640081A36E /* DictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9381228C56640081A36E /* DictionaryProtocols.swift */; };
+		76DB9390228C56640081A36E /* DictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9382228C56640081A36E /* DictionaryInteractor.swift */; };
+		76DB9391228C56640081A36E /* DictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9382228C56640081A36E /* DictionaryInteractor.swift */; };
+		76DB9392228C56640081A36E /* DictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB9382228C56640081A36E /* DictionaryInteractor.swift */; };
+		76DB9393228C56640081A36E /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB9383228C56640081A36E /* DictionaryViewController.xib */; };
+		76DB9394228C56640081A36E /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB9383228C56640081A36E /* DictionaryViewController.xib */; };
+		76DB9395228C56640081A36E /* DictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB9383228C56640081A36E /* DictionaryViewController.xib */; };
 		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
@@ -698,6 +716,12 @@
 		5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76DB937E228C56640081A36E /* DictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPresenter.swift; sourceTree = "<group>"; };
+		76DB937F228C56640081A36E /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
+		76DB9380228C56640081A36E /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
+		76DB9381228C56640081A36E /* DictionaryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryProtocols.swift; sourceTree = "<group>"; };
+		76DB9382228C56640081A36E /* DictionaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryInteractor.swift; sourceTree = "<group>"; };
+		76DB9383228C56640081A36E /* DictionaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DictionaryViewController.xib; sourceTree = "<group>"; };
 		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
 		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
@@ -986,6 +1010,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		76DB937D228C56380081A36E /* Dictionary */ = {
+			isa = PBXGroup;
+			children = (
+				76DB937E228C56640081A36E /* DictionaryPresenter.swift */,
+				76DB937F228C56640081A36E /* DictionaryRouter.swift */,
+				76DB9380228C56640081A36E /* DictionaryViewController.swift */,
+				76DB9381228C56640081A36E /* DictionaryProtocols.swift */,
+				76DB9382228C56640081A36E /* DictionaryInteractor.swift */,
+				76DB9383228C56640081A36E /* DictionaryViewController.xib */,
+			);
+			path = Dictionary;
+			sourceTree = "<group>";
+		};
 		DE2ADE5322841755003768CE /* GoogleInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1052,6 +1089,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				76DB937D228C56380081A36E /* Dictionary */,
 				DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */,
 				DE3A8C922289B9210080A8CB /* QADetail */,
 				DEB9611E22898F080046801B /* QA */,
@@ -1879,6 +1917,7 @@
 				DE95314B2288324300E3F688 /* EditProfileViewController.xib in Resources */,
 				DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */,
 				DE361E722283E60500FA3B0D /* AppTextField.xib in Resources */,
+				76DB9393228C56640081A36E /* DictionaryViewController.xib in Resources */,
 				DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1920,6 +1959,7 @@
 				DE95314C2288324300E3F688 /* EditProfileViewController.xib in Resources */,
 				DE9530522287DF4800E3F688 /* Assets.xcassets in Resources */,
 				DE9530532287DF4800E3F688 /* AppTextField.xib in Resources */,
+				76DB9394228C56640081A36E /* DictionaryViewController.xib in Resources */,
 				DE9530542287DF4800E3F688 /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1961,6 +2001,7 @@
 				DE95314D2288324300E3F688 /* EditProfileViewController.xib in Resources */,
 				DE9531002287DF6400E3F688 /* Assets.xcassets in Resources */,
 				DE9531012287DF6400E3F688 /* AppTextField.xib in Resources */,
+				76DB9395228C56640081A36E /* DictionaryViewController.xib in Resources */,
 				DE9531022287DF6400E3F688 /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2283,6 +2324,7 @@
 			files = (
 				DE3A8CEE2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				DE952F812287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
 				DE361DFE2283E57900FA3B0D /* UITextFiled+extension.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
@@ -2318,6 +2360,7 @@
 				DE3A8CD92289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE361F272283E85000FA3B0D /* NotificationEntity.swift in Sources */,
 				DE361E672283E60500FA3B0D /* AppImage.swift in Sources */,
+				76DB938A228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE22289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE95317B228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE361EAA2283E6DB00FA3B0D /* CustomTextfield.swift in Sources */,
@@ -2377,6 +2420,7 @@
 				DE952F8D2287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE361DFB2283E57900FA3B0D /* String+extension.swift in Sources */,
 				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76DB9390228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */,
 				DE952F8E2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE3A8C992289B93F0080A8CB /* QADetailPresenter.swift in Sources */,
@@ -2428,6 +2472,7 @@
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
+				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */,
 				DE361E822283E60500FA3B0D /* AppDropDown.swift in Sources */,
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
@@ -2448,6 +2493,7 @@
 				DE361E8D2283E60500FA3B0D /* AppCheckBox.swift in Sources */,
 				DE953123228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE952F9A2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				76DB938D228C56640081A36E /* DictionaryProtocols.swift in Sources */,
 				DE361DFA2283E57900FA3B0D /* UIViewController+extension.swift in Sources */,
 				DE361E7A2283E60500FA3B0D /* AppSearchBar.swift in Sources */,
 				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
@@ -2481,6 +2527,7 @@
 			files = (
 				DE3A8CEF2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				DE952FB12287DF4800E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */,
 				DE952FB32287DF4800E3F688 /* UITextFiled+extension.swift in Sources */,
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
@@ -2516,6 +2563,7 @@
 				DE3A8CDA2289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE952FC82287DF4800E3F688 /* NotificationEntity.swift in Sources */,
 				DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */,
+				76DB938B228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE32289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE95317C228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */,
@@ -2575,6 +2623,7 @@
 				DE952FF32287DF4800E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */,
 				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76DB9391228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */,
 				DE952FF72287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE3A8C9A2289B93F0080A8CB /* QADetailPresenter.swift in Sources */,
@@ -2626,6 +2675,7 @@
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
+				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				DE95301D2287DF4800E3F688 /* SignUpPresenter.swift in Sources */,
 				DE95301E2287DF4800E3F688 /* AppDropDown.swift in Sources */,
 				DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */,
@@ -2646,6 +2696,7 @@
 				DE9530292287DF4800E3F688 /* AppCheckBox.swift in Sources */,
 				DE953124228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE95302A2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				76DB938E228C56640081A36E /* DictionaryProtocols.swift in Sources */,
 				DE95302B2287DF4800E3F688 /* UIViewController+extension.swift in Sources */,
 				DE95302C2287DF4800E3F688 /* AppSearchBar.swift in Sources */,
 				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
@@ -2679,6 +2730,7 @@
 			files = (
 				DE3A8CF02289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				DE95305F2287DF6400E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
+				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
 				DE9530612287DF6400E3F688 /* UITextFiled+extension.swift in Sources */,
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
@@ -2714,6 +2766,7 @@
 				DE3A8CDB2289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE9530762287DF6400E3F688 /* NotificationEntity.swift in Sources */,
 				DE9530772287DF6400E3F688 /* AppImage.swift in Sources */,
+				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE95317D228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE9530782287DF6400E3F688 /* CustomTextfield.swift in Sources */,
@@ -2773,6 +2826,7 @@
 				DE9530A12287DF6400E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
 				DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76DB9392228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */,
 				DE9530A52287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE3A8C9B2289B93F0080A8CB /* QADetailPresenter.swift in Sources */,
@@ -2824,6 +2878,7 @@
 				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,
 				DE953128228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
+				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				DE9530CB2287DF6400E3F688 /* SignUpPresenter.swift in Sources */,
 				DE9530CC2287DF6400E3F688 /* AppDropDown.swift in Sources */,
 				DE9530CD2287DF6400E3F688 /* HomeViewController.swift in Sources */,
@@ -2844,6 +2899,7 @@
 				DE9530D72287DF6400E3F688 /* AppCheckBox.swift in Sources */,
 				DE953125228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE9530D82287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				76DB938F228C56640081A36E /* DictionaryProtocols.swift in Sources */,
 				DE9530D92287DF6400E3F688 /* UIViewController+extension.swift in Sources */,
 				DE9530DA2287DF6400E3F688 /* AppSearchBar.swift in Sources */,
 				DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,

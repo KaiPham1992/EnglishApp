@@ -229,7 +229,7 @@ extension BaseViewController {
         vTest.addSubview(lb)
         lb.centerSuperview()
         lb.font = AppFont.fontRegular18
-        lb.textColor = AppColor.black
+        lb.textColor = UIColor.white
         let tap = UITapGestureRecognizer(target: self, action: action)
         lb.isUserInteractionEnabled = true
         lb.addGestureRecognizer(tap)
@@ -296,7 +296,7 @@ extension BaseViewController {
     }
 }
 extension BaseViewController {
-    func addBackToNavigation(icon: UIImage = AppImage.imgBack ) {
+    func addBackToNavigation(icon: UIImage = UIImage(named: "Material_Icons_white_chevron_left")! ) {
         addButtonImageToNavigation(image: icon, style: .left, action: #selector(btnBackTapped))
     }
     
