@@ -26,7 +26,7 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [GrammarRouter.createModule(),GrammarRouter.createModule()]
+        return [GrammarRouter.createModule(),VocabularyRouter.createModule(),NoteRouter.createModule()]
     }
 
 }

@@ -99,6 +99,42 @@
 		76E2FEFB228DC4C20014B1F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */; };
 		76E2FEFC228DC4C20014B1F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */; };
 		76E2FEFD228DC4C20014B1F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */; };
+		76E2FF05228DCE950014B1F4 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFF228DCE950014B1F4 /* VocabularyPresenter.swift */; };
+		76E2FF06228DCE950014B1F4 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFF228DCE950014B1F4 /* VocabularyPresenter.swift */; };
+		76E2FF07228DCE950014B1F4 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFF228DCE950014B1F4 /* VocabularyPresenter.swift */; };
+		76E2FF08228DCE950014B1F4 /* VocabularyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF00228DCE950014B1F4 /* VocabularyRouter.swift */; };
+		76E2FF09228DCE950014B1F4 /* VocabularyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF00228DCE950014B1F4 /* VocabularyRouter.swift */; };
+		76E2FF0A228DCE950014B1F4 /* VocabularyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF00228DCE950014B1F4 /* VocabularyRouter.swift */; };
+		76E2FF0B228DCE950014B1F4 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF01228DCE950014B1F4 /* VocabularyViewController.swift */; };
+		76E2FF0C228DCE950014B1F4 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF01228DCE950014B1F4 /* VocabularyViewController.swift */; };
+		76E2FF0D228DCE950014B1F4 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF01228DCE950014B1F4 /* VocabularyViewController.swift */; };
+		76E2FF0E228DCE950014B1F4 /* VocabularyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF02228DCE950014B1F4 /* VocabularyProtocols.swift */; };
+		76E2FF0F228DCE950014B1F4 /* VocabularyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF02228DCE950014B1F4 /* VocabularyProtocols.swift */; };
+		76E2FF10228DCE950014B1F4 /* VocabularyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF02228DCE950014B1F4 /* VocabularyProtocols.swift */; };
+		76E2FF11228DCE950014B1F4 /* VocabularyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF03228DCE950014B1F4 /* VocabularyInteractor.swift */; };
+		76E2FF12228DCE950014B1F4 /* VocabularyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF03228DCE950014B1F4 /* VocabularyInteractor.swift */; };
+		76E2FF13228DCE950014B1F4 /* VocabularyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF03228DCE950014B1F4 /* VocabularyInteractor.swift */; };
+		76E2FF14228DCE950014B1F4 /* VocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF04228DCE950014B1F4 /* VocabularyViewController.xib */; };
+		76E2FF15228DCE950014B1F4 /* VocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF04228DCE950014B1F4 /* VocabularyViewController.xib */; };
+		76E2FF16228DCE950014B1F4 /* VocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF04228DCE950014B1F4 /* VocabularyViewController.xib */; };
+		76E2FF1E228DCF290014B1F4 /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF18228DCF290014B1F4 /* NotePresenter.swift */; };
+		76E2FF1F228DCF290014B1F4 /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF18228DCF290014B1F4 /* NotePresenter.swift */; };
+		76E2FF20228DCF290014B1F4 /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF18228DCF290014B1F4 /* NotePresenter.swift */; };
+		76E2FF21228DCF290014B1F4 /* NoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF19228DCF290014B1F4 /* NoteRouter.swift */; };
+		76E2FF22228DCF290014B1F4 /* NoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF19228DCF290014B1F4 /* NoteRouter.swift */; };
+		76E2FF23228DCF290014B1F4 /* NoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF19228DCF290014B1F4 /* NoteRouter.swift */; };
+		76E2FF24228DCF290014B1F4 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1A228DCF290014B1F4 /* NoteViewController.swift */; };
+		76E2FF25228DCF290014B1F4 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1A228DCF290014B1F4 /* NoteViewController.swift */; };
+		76E2FF26228DCF290014B1F4 /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1A228DCF290014B1F4 /* NoteViewController.swift */; };
+		76E2FF27228DCF290014B1F4 /* NoteProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1B228DCF290014B1F4 /* NoteProtocols.swift */; };
+		76E2FF28228DCF290014B1F4 /* NoteProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1B228DCF290014B1F4 /* NoteProtocols.swift */; };
+		76E2FF29228DCF290014B1F4 /* NoteProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1B228DCF290014B1F4 /* NoteProtocols.swift */; };
+		76E2FF2A228DCF290014B1F4 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1C228DCF290014B1F4 /* NoteInteractor.swift */; };
+		76E2FF2B228DCF290014B1F4 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1C228DCF290014B1F4 /* NoteInteractor.swift */; };
+		76E2FF2C228DCF290014B1F4 /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FF1C228DCF290014B1F4 /* NoteInteractor.swift */; };
+		76E2FF2D228DCF290014B1F4 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF1D228DCF290014B1F4 /* NoteViewController.xib */; };
+		76E2FF2E228DCF290014B1F4 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF1D228DCF290014B1F4 /* NoteViewController.xib */; };
+		76E2FF2F228DCF290014B1F4 /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF1D228DCF290014B1F4 /* NoteViewController.xib */; };
 		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
@@ -827,6 +863,18 @@
 		76E2FEF1228DBB610014B1F4 /* CellGrammar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellGrammar.swift; sourceTree = "<group>"; };
 		76E2FEF2228DBB610014B1F4 /* CellGrammar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellGrammar.xib; sourceTree = "<group>"; };
 		76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		76E2FEFF228DCE950014B1F4 /* VocabularyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyPresenter.swift; sourceTree = "<group>"; };
+		76E2FF00228DCE950014B1F4 /* VocabularyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyRouter.swift; sourceTree = "<group>"; };
+		76E2FF01228DCE950014B1F4 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
+		76E2FF02228DCE950014B1F4 /* VocabularyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyProtocols.swift; sourceTree = "<group>"; };
+		76E2FF03228DCE950014B1F4 /* VocabularyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyInteractor.swift; sourceTree = "<group>"; };
+		76E2FF04228DCE950014B1F4 /* VocabularyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VocabularyViewController.xib; sourceTree = "<group>"; };
+		76E2FF18228DCF290014B1F4 /* NotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenter.swift; sourceTree = "<group>"; };
+		76E2FF19228DCF290014B1F4 /* NoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRouter.swift; sourceTree = "<group>"; };
+		76E2FF1A228DCF290014B1F4 /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		76E2FF1B228DCF290014B1F4 /* NoteProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteProtocols.swift; sourceTree = "<group>"; };
+		76E2FF1C228DCF290014B1F4 /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
+		76E2FF1D228DCF290014B1F4 /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
 		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
 		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
@@ -1179,6 +1227,8 @@
 		76E2FED6228DBAB50014B1F4 /* ChildController */ = {
 			isa = PBXGroup;
 			children = (
+				76E2FF17228DCF160014B1F4 /* Note */,
+				76E2FEFE228DCE6C0014B1F4 /* Vocabulary */,
 				76E2FED7228DBAE10014B1F4 /* Grammar */,
 			);
 			path = ChildController;
@@ -1213,6 +1263,32 @@
 				76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */,
 			);
 			path = PageView;
+			sourceTree = "<group>";
+		};
+		76E2FEFE228DCE6C0014B1F4 /* Vocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				76E2FEFF228DCE950014B1F4 /* VocabularyPresenter.swift */,
+				76E2FF00228DCE950014B1F4 /* VocabularyRouter.swift */,
+				76E2FF01228DCE950014B1F4 /* VocabularyViewController.swift */,
+				76E2FF02228DCE950014B1F4 /* VocabularyProtocols.swift */,
+				76E2FF03228DCE950014B1F4 /* VocabularyInteractor.swift */,
+				76E2FF04228DCE950014B1F4 /* VocabularyViewController.xib */,
+			);
+			path = Vocabulary;
+			sourceTree = "<group>";
+		};
+		76E2FF17228DCF160014B1F4 /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				76E2FF18228DCF290014B1F4 /* NotePresenter.swift */,
+				76E2FF19228DCF290014B1F4 /* NoteRouter.swift */,
+				76E2FF1A228DCF290014B1F4 /* NoteViewController.swift */,
+				76E2FF1B228DCF290014B1F4 /* NoteProtocols.swift */,
+				76E2FF1C228DCF290014B1F4 /* NoteInteractor.swift */,
+				76E2FF1D228DCF290014B1F4 /* NoteViewController.xib */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		DE2ADE5322841755003768CE /* GoogleInfo */ = {
@@ -2115,6 +2191,7 @@
 				76E2FEED228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE361E8C2283E60500FA3B0D /* AppCheckBox.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
+				76E2FF14228DCE950014B1F4 /* VocabularyViewController.xib in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -2133,6 +2210,7 @@
 				DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */,
 				DE361E722283E60500FA3B0D /* AppTextField.xib in Resources */,
 				76DB9393228C56640081A36E /* DictionaryViewController.xib in Resources */,
+				76E2FF2D228DCF290014B1F4 /* NoteViewController.xib in Resources */,
 				DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2165,6 +2243,7 @@
 				76E2FEEE228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */,
 				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				76E2FF15228DCE950014B1F4 /* VocabularyViewController.xib in Resources */,
 				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -2183,6 +2262,7 @@
 				DE9530522287DF4800E3F688 /* Assets.xcassets in Resources */,
 				DE9530532287DF4800E3F688 /* AppTextField.xib in Resources */,
 				76DB9394228C56640081A36E /* DictionaryViewController.xib in Resources */,
+				76E2FF2E228DCF290014B1F4 /* NoteViewController.xib in Resources */,
 				DE9530542287DF4800E3F688 /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2215,6 +2295,7 @@
 				76E2FEEF228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				76E2FF16228DCE950014B1F4 /* VocabularyViewController.xib in Resources */,
 				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -2233,6 +2314,7 @@
 				DE9531002287DF6400E3F688 /* Assets.xcassets in Resources */,
 				DE9531012287DF6400E3F688 /* AppTextField.xib in Resources */,
 				76DB9395228C56640081A36E /* DictionaryViewController.xib in Resources */,
+				76E2FF2F228DCF290014B1F4 /* NoteViewController.xib in Resources */,
 				DE9531022287DF6400E3F688 /* HeaderUserView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2562,6 +2644,7 @@
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE95315822883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
+				76E2FF27228DCF290014B1F4 /* NoteProtocols.swift in Sources */,
 				DE952F802287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CDF2289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
 				76E2FEC7228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
@@ -2658,6 +2741,7 @@
 				DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */,
 				DE361DD92283E4BD00FA3B0D /* LoginProtocols.swift in Sources */,
 				DE361E9D2283E60500FA3B0D /* NotificationPopUp.swift in Sources */,
+				76E2FF08228DCE950014B1F4 /* VocabularyRouter.swift in Sources */,
 				DE952F8D2287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE361DFB2283E57900FA3B0D /* String+extension.swift in Sources */,
 				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
@@ -2682,6 +2766,7 @@
 				DE361F432283E85000FA3B0D /* PostRecordParam.swift in Sources */,
 				DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531422288324300E3F688 /* EditProfileViewController.swift in Sources */,
+				76E2FF21228DCF290014B1F4 /* NoteRouter.swift in Sources */,
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
@@ -2698,16 +2783,19 @@
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
 				DE9531452288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				76E2FF1E228DCF290014B1F4 /* NotePresenter.swift in Sources */,
 				DE952FA12287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DE952F9B2287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE361E962283E60500FA3B0D /* UserDefaultHelper.swift in Sources */,
 				DE3A8CA52289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
+				76E2FF11228DCE950014B1F4 /* VocabularyInteractor.swift in Sources */,
 				DE361DE72283E54C00FA3B0D /* BaseView.swift in Sources */,
 				DE361F392283E85000FA3B0D /* APIError.swift in Sources */,
 				DE361F332283E85000FA3B0D /* UserEntity.swift in Sources */,
 				DE361F342283E85000FA3B0D /* FaceBookEntity.swift in Sources */,
+				76E2FF0B228DCE950014B1F4 /* VocabularyViewController.swift in Sources */,
 				76E2FEC4228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
 				DEECF89E22871D1B00A4678B /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CC82289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
@@ -2725,10 +2813,13 @@
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
 				DE953171228842D700E3F688 /* HistoryEntity.swift in Sources */,
 				DEB9613122898F1F0046801B /* QAInteractor.swift in Sources */,
+				76E2FF05228DCE950014B1F4 /* VocabularyPresenter.swift in Sources */,
+				76E2FF0E228DCE950014B1F4 /* VocabularyProtocols.swift in Sources */,
 				DE3A8CA22289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE952FAD2287DD2A00E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				76E2FF24228DCF290014B1F4 /* NoteViewController.swift in Sources */,
 				DE361F512283E85000FA3B0D /* NotificationAPIService.swift in Sources */,
 				DE2ADE7522841BB9003768CE /* MenuPresenter.swift in Sources */,
 				DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */,
@@ -2748,6 +2839,7 @@
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
 				DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */,
 				DE361F3C2283E85000FA3B0D /* MapperData.swift in Sources */,
+				76E2FF2A228DCF290014B1F4 /* NoteInteractor.swift in Sources */,
 				DE361DF62283E57900FA3B0D /* Int+extension.swift in Sources */,
 				DE361F4D2283E85000FA3B0D /* CommonAPIService.swift in Sources */,
 				DE361F522283E85000FA3B0D /* Provider.swift in Sources */,
@@ -2784,6 +2876,7 @@
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
 				DE95315922883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
+				76E2FF28228DCF290014B1F4 /* NoteProtocols.swift in Sources */,
 				DE952FB62287DF4800E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CE02289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
 				76E2FEC8228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
@@ -2880,6 +2973,7 @@
 				DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */,
 				DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */,
 				DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */,
+				76E2FF09228DCE950014B1F4 /* VocabularyRouter.swift in Sources */,
 				DE952FF32287DF4800E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */,
 				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
@@ -2904,6 +2998,7 @@
 				DE9530012287DF4800E3F688 /* PostRecordParam.swift in Sources */,
 				DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531432288324300E3F688 /* EditProfileViewController.swift in Sources */,
+				76E2FF22228DCF290014B1F4 /* NoteRouter.swift in Sources */,
 				DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */,
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
@@ -2920,16 +3015,19 @@
 				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531462288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				76E2FF1F228DCF290014B1F4 /* NotePresenter.swift in Sources */,
 				DE95300E2287DF4800E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DE95300F2287DF4800E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530102287DF4800E3F688 /* UserDefaultHelper.swift in Sources */,
 				DE3A8CA62289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
+				76E2FF12228DCE950014B1F4 /* VocabularyInteractor.swift in Sources */,
 				DE9530132287DF4800E3F688 /* BaseView.swift in Sources */,
 				DE9530142287DF4800E3F688 /* APIError.swift in Sources */,
 				DE9530152287DF4800E3F688 /* UserEntity.swift in Sources */,
 				DE9530162287DF4800E3F688 /* FaceBookEntity.swift in Sources */,
+				76E2FF0C228DCE950014B1F4 /* VocabularyViewController.swift in Sources */,
 				76E2FEC5228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
 				DE9530172287DF4800E3F688 /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CC92289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
@@ -2947,10 +3045,13 @@
 				DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */,
 				DE953172228842D700E3F688 /* HistoryEntity.swift in Sources */,
 				DEB9613222898F1F0046801B /* QAInteractor.swift in Sources */,
+				76E2FF06228DCE950014B1F4 /* VocabularyPresenter.swift in Sources */,
+				76E2FF0F228DCE950014B1F4 /* VocabularyProtocols.swift in Sources */,
 				DE3A8CA32289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530222287DF4800E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				76E2FF25228DCF290014B1F4 /* NoteViewController.swift in Sources */,
 				DE9530232287DF4800E3F688 /* NotificationAPIService.swift in Sources */,
 				DE9530242287DF4800E3F688 /* MenuPresenter.swift in Sources */,
 				DE9530252287DF4800E3F688 /* Bundle+extension.swift in Sources */,
@@ -2970,6 +3071,7 @@
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
 				DE95302F2287DF4800E3F688 /* HomeRouter.swift in Sources */,
 				DE9530302287DF4800E3F688 /* MapperData.swift in Sources */,
+				76E2FF2B228DCF290014B1F4 /* NoteInteractor.swift in Sources */,
 				DE9530312287DF4800E3F688 /* Int+extension.swift in Sources */,
 				DE9530322287DF4800E3F688 /* CommonAPIService.swift in Sources */,
 				DE9530332287DF4800E3F688 /* Provider.swift in Sources */,
@@ -3006,6 +3108,7 @@
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
 				DE95315A22883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
+				76E2FF29228DCF290014B1F4 /* NoteProtocols.swift in Sources */,
 				DE9530642287DF6400E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CE12289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
 				76E2FEC9228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
@@ -3102,6 +3205,7 @@
 				DE95309E2287DF6400E3F688 /* LoginRouter.swift in Sources */,
 				DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */,
 				DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */,
+				76E2FF0A228DCE950014B1F4 /* VocabularyRouter.swift in Sources */,
 				DE9530A12287DF6400E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
 				DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
@@ -3126,6 +3230,7 @@
 				DE9530AF2287DF6400E3F688 /* PostRecordParam.swift in Sources */,
 				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531442288324300E3F688 /* EditProfileViewController.swift in Sources */,
+				76E2FF23228DCF290014B1F4 /* NoteRouter.swift in Sources */,
 				DE9530B12287DF6400E3F688 /* UserEndPoint.swift in Sources */,
 				76E2FED2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
@@ -3142,16 +3247,19 @@
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531472288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				76E2FF20228DCF290014B1F4 /* NotePresenter.swift in Sources */,
 				DE9530BC2287DF6400E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DE9530BD2287DF6400E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530BE2287DF6400E3F688 /* UserDefaultHelper.swift in Sources */,
 				DE3A8CA72289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */,
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
+				76E2FF13228DCE950014B1F4 /* VocabularyInteractor.swift in Sources */,
 				DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */,
 				DE9530C22287DF6400E3F688 /* APIError.swift in Sources */,
 				DE9530C32287DF6400E3F688 /* UserEntity.swift in Sources */,
 				DE9530C42287DF6400E3F688 /* FaceBookEntity.swift in Sources */,
+				76E2FF0D228DCE950014B1F4 /* VocabularyViewController.swift in Sources */,
 				76E2FEC6228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
 				DE9530C52287DF6400E3F688 /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CCA2289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
@@ -3169,10 +3277,13 @@
 				DE9530CD2287DF6400E3F688 /* HomeViewController.swift in Sources */,
 				DE953173228842D700E3F688 /* HistoryEntity.swift in Sources */,
 				DEB9613322898F1F0046801B /* QAInteractor.swift in Sources */,
+				76E2FF07228DCE950014B1F4 /* VocabularyPresenter.swift in Sources */,
+				76E2FF10228DCE950014B1F4 /* VocabularyProtocols.swift in Sources */,
 				DE3A8CA42289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530CE2287DF6400E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE9530CF2287DF6400E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530D02287DF6400E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				76E2FF26228DCF290014B1F4 /* NoteViewController.swift in Sources */,
 				DE9530D12287DF6400E3F688 /* NotificationAPIService.swift in Sources */,
 				DE9530D22287DF6400E3F688 /* MenuPresenter.swift in Sources */,
 				DE9530D32287DF6400E3F688 /* Bundle+extension.swift in Sources */,
@@ -3192,6 +3303,7 @@
 				DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */,
 				DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */,
 				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
+				76E2FF2C228DCF290014B1F4 /* NoteInteractor.swift in Sources */,
 				DE9530DF2287DF6400E3F688 /* Int+extension.swift in Sources */,
 				DE9530E02287DF6400E3F688 /* CommonAPIService.swift in Sources */,
 				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
