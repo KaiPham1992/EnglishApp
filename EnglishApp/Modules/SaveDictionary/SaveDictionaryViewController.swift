@@ -18,7 +18,7 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
 	override func viewDidLoad() {
         super.viewDidLoad()
         addBackToNavigation()
-        setTitleNavigation(title: "Da luu")
+        setTitleNavigation(title: LocalizableKey.saved.showLanguage)
         addButtonImageToNavigation(image: #imageLiteral(resourceName: "ic_settings"), style: .right, action: #selector(clickButtonRight))
     }
     @objc func clickButtonRight(){

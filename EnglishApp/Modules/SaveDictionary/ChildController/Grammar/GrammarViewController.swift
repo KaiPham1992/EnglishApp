@@ -42,6 +42,6 @@ extension GrammarViewController: UITableViewDelegate{
 }
 extension GrammarViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: "Ngu phap")
+        return IndicatorInfo(title: LocalizableKey.grammar.showLanguage)
     }
 }

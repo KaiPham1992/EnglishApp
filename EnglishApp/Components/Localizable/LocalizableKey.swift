@@ -94,5 +94,8 @@ struct LocalizableKey {
     static let japanese_to_vietnamese = "japanese_to_vietnamese"
     static let addDictionary = "addDictionary"
     
-    
+    static let saved = "saved"
+    static let grammar = "grammar"
+    static let vocabulary = "vocabulary"
+    static let note = "note"
 }
