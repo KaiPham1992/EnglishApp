@@ -1,5 +1,5 @@
 //
-//  PageViewInteractor.swift
+//  SaveDictionaryInteractor.swift
 //  EnglishApp
 //
 //  Created vinova on 5/16/19.
@@ -10,7 +10,7 @@
 
 import UIKit
 
-class PageViewInteractor: PageViewInteractorInputProtocol {
+class SaveDictionaryInteractor: SaveDictionaryInteractorInputProtocol {
 
-    weak var presenter: PageViewInteractorOutputProtocol?
+    weak var presenter: SaveDictionaryInteractorOutputProtocol?
 }

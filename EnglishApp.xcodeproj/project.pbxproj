@@ -54,24 +54,51 @@
 		76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
 		76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
 		76DB93BC228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
-		76DB93C4228C86530081A36E /* PageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BE228C86530081A36E /* PageViewPresenter.swift */; };
-		76DB93C5228C86530081A36E /* PageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BE228C86530081A36E /* PageViewPresenter.swift */; };
-		76DB93C6228C86530081A36E /* PageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BE228C86530081A36E /* PageViewPresenter.swift */; };
-		76DB93C7228C86530081A36E /* PageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BF228C86530081A36E /* PageViewRouter.swift */; };
-		76DB93C8228C86530081A36E /* PageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BF228C86530081A36E /* PageViewRouter.swift */; };
-		76DB93C9228C86530081A36E /* PageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BF228C86530081A36E /* PageViewRouter.swift */; };
-		76DB93CA228C86530081A36E /* PageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C0228C86530081A36E /* PageViewViewController.swift */; };
-		76DB93CB228C86530081A36E /* PageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C0228C86530081A36E /* PageViewViewController.swift */; };
-		76DB93CC228C86530081A36E /* PageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C0228C86530081A36E /* PageViewViewController.swift */; };
-		76DB93CD228C86530081A36E /* PageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C1228C86530081A36E /* PageViewProtocols.swift */; };
-		76DB93CE228C86530081A36E /* PageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C1228C86530081A36E /* PageViewProtocols.swift */; };
-		76DB93CF228C86530081A36E /* PageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C1228C86530081A36E /* PageViewProtocols.swift */; };
-		76DB93D0228C86530081A36E /* PageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C2228C86530081A36E /* PageViewInteractor.swift */; };
-		76DB93D1228C86530081A36E /* PageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C2228C86530081A36E /* PageViewInteractor.swift */; };
-		76DB93D2228C86530081A36E /* PageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C2228C86530081A36E /* PageViewInteractor.swift */; };
-		76DB93D3228C86530081A36E /* PageViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93C3228C86530081A36E /* PageViewViewController.xib */; };
-		76DB93D4228C86530081A36E /* PageViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93C3228C86530081A36E /* PageViewViewController.xib */; };
-		76DB93D5228C86530081A36E /* PageViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93C3228C86530081A36E /* PageViewViewController.xib */; };
+		76E2FEC4228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEBE228DBAB00014B1F4 /* SaveDictionaryPresenter.swift */; };
+		76E2FEC5228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEBE228DBAB00014B1F4 /* SaveDictionaryPresenter.swift */; };
+		76E2FEC6228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEBE228DBAB00014B1F4 /* SaveDictionaryPresenter.swift */; };
+		76E2FEC7228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEBF228DBAB00014B1F4 /* SaveDictionaryRouter.swift */; };
+		76E2FEC8228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEBF228DBAB00014B1F4 /* SaveDictionaryRouter.swift */; };
+		76E2FEC9228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEBF228DBAB00014B1F4 /* SaveDictionaryRouter.swift */; };
+		76E2FECA228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC0228DBAB00014B1F4 /* SaveDictionaryViewController.swift */; };
+		76E2FECB228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC0228DBAB00014B1F4 /* SaveDictionaryViewController.swift */; };
+		76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC0228DBAB00014B1F4 /* SaveDictionaryViewController.swift */; };
+		76E2FECD228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC1228DBAB00014B1F4 /* SaveDictionaryProtocols.swift */; };
+		76E2FECE228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC1228DBAB00014B1F4 /* SaveDictionaryProtocols.swift */; };
+		76E2FECF228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC1228DBAB00014B1F4 /* SaveDictionaryProtocols.swift */; };
+		76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift */; };
+		76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift */; };
+		76E2FED2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEC2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift */; };
+		76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEC3228DBAB00014B1F4 /* SaveDictionaryViewController.xib */; };
+		76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEC3228DBAB00014B1F4 /* SaveDictionaryViewController.xib */; };
+		76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEC3228DBAB00014B1F4 /* SaveDictionaryViewController.xib */; };
+		76E2FEDE228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FED8228DBAF10014B1F4 /* GrammarPresenter.swift */; };
+		76E2FEDF228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FED8228DBAF10014B1F4 /* GrammarPresenter.swift */; };
+		76E2FEE0228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FED8228DBAF10014B1F4 /* GrammarPresenter.swift */; };
+		76E2FEE1228DBAF10014B1F4 /* GrammarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FED9228DBAF10014B1F4 /* GrammarRouter.swift */; };
+		76E2FEE2228DBAF10014B1F4 /* GrammarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FED9228DBAF10014B1F4 /* GrammarRouter.swift */; };
+		76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FED9228DBAF10014B1F4 /* GrammarRouter.swift */; };
+		76E2FEE4228DBAF10014B1F4 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDA228DBAF10014B1F4 /* GrammarViewController.swift */; };
+		76E2FEE5228DBAF10014B1F4 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDA228DBAF10014B1F4 /* GrammarViewController.swift */; };
+		76E2FEE6228DBAF10014B1F4 /* GrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDA228DBAF10014B1F4 /* GrammarViewController.swift */; };
+		76E2FEE7228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDB228DBAF10014B1F4 /* GrammarProtocols.swift */; };
+		76E2FEE8228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDB228DBAF10014B1F4 /* GrammarProtocols.swift */; };
+		76E2FEE9228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDB228DBAF10014B1F4 /* GrammarProtocols.swift */; };
+		76E2FEEA228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDC228DBAF10014B1F4 /* GrammarInteractor.swift */; };
+		76E2FEEB228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDC228DBAF10014B1F4 /* GrammarInteractor.swift */; };
+		76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEDC228DBAF10014B1F4 /* GrammarInteractor.swift */; };
+		76E2FEED228DBAF10014B1F4 /* GrammarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEDD228DBAF10014B1F4 /* GrammarViewController.xib */; };
+		76E2FEEE228DBAF10014B1F4 /* GrammarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEDD228DBAF10014B1F4 /* GrammarViewController.xib */; };
+		76E2FEEF228DBAF10014B1F4 /* GrammarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEDD228DBAF10014B1F4 /* GrammarViewController.xib */; };
+		76E2FEF3228DBB610014B1F4 /* CellGrammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEF1228DBB610014B1F4 /* CellGrammar.swift */; };
+		76E2FEF4228DBB610014B1F4 /* CellGrammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEF1228DBB610014B1F4 /* CellGrammar.swift */; };
+		76E2FEF5228DBB610014B1F4 /* CellGrammar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEF1228DBB610014B1F4 /* CellGrammar.swift */; };
+		76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEF2228DBB610014B1F4 /* CellGrammar.xib */; };
+		76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEF2228DBB610014B1F4 /* CellGrammar.xib */; };
+		76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FEF2228DBB610014B1F4 /* CellGrammar.xib */; };
+		76E2FEFB228DC4C20014B1F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */; };
+		76E2FEFC228DC4C20014B1F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */; };
+		76E2FEFD228DC4C20014B1F4 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */; };
 		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
@@ -785,12 +812,21 @@
 		76DB93B0228C73E60081A36E /* MoreDictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryCell.swift; sourceTree = "<group>"; };
 		76DB93B1228C73E60081A36E /* MoreDictionaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreDictionaryCell.xib; sourceTree = "<group>"; };
 		76DB93B9228C74B00081A36E /* RatioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioButton.swift; sourceTree = "<group>"; };
-		76DB93BE228C86530081A36E /* PageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewPresenter.swift; sourceTree = "<group>"; };
-		76DB93BF228C86530081A36E /* PageViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewRouter.swift; sourceTree = "<group>"; };
-		76DB93C0228C86530081A36E /* PageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewViewController.swift; sourceTree = "<group>"; };
-		76DB93C1228C86530081A36E /* PageViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewProtocols.swift; sourceTree = "<group>"; };
-		76DB93C2228C86530081A36E /* PageViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewInteractor.swift; sourceTree = "<group>"; };
-		76DB93C3228C86530081A36E /* PageViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewViewController.xib; sourceTree = "<group>"; };
+		76E2FEBE228DBAB00014B1F4 /* SaveDictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDictionaryPresenter.swift; sourceTree = "<group>"; };
+		76E2FEBF228DBAB00014B1F4 /* SaveDictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDictionaryRouter.swift; sourceTree = "<group>"; };
+		76E2FEC0228DBAB00014B1F4 /* SaveDictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDictionaryViewController.swift; sourceTree = "<group>"; };
+		76E2FEC1228DBAB00014B1F4 /* SaveDictionaryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDictionaryProtocols.swift; sourceTree = "<group>"; };
+		76E2FEC2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDictionaryInteractor.swift; sourceTree = "<group>"; };
+		76E2FEC3228DBAB00014B1F4 /* SaveDictionaryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SaveDictionaryViewController.xib; sourceTree = "<group>"; };
+		76E2FED8228DBAF10014B1F4 /* GrammarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarPresenter.swift; sourceTree = "<group>"; };
+		76E2FED9228DBAF10014B1F4 /* GrammarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarRouter.swift; sourceTree = "<group>"; };
+		76E2FEDA228DBAF10014B1F4 /* GrammarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarViewController.swift; sourceTree = "<group>"; };
+		76E2FEDB228DBAF10014B1F4 /* GrammarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarProtocols.swift; sourceTree = "<group>"; };
+		76E2FEDC228DBAF10014B1F4 /* GrammarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarInteractor.swift; sourceTree = "<group>"; };
+		76E2FEDD228DBAF10014B1F4 /* GrammarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GrammarViewController.xib; sourceTree = "<group>"; };
+		76E2FEF1228DBB610014B1F4 /* CellGrammar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellGrammar.swift; sourceTree = "<group>"; };
+		76E2FEF2228DBB610014B1F4 /* CellGrammar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellGrammar.xib; sourceTree = "<group>"; };
+		76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
 		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
@@ -1126,15 +1162,55 @@
 			path = RatioButton;
 			sourceTree = "<group>";
 		};
-		76DB93BD228C863B0081A36E /* PageView */ = {
+		76E2FEBD228DBA990014B1F4 /* SaveDictionary */ = {
 			isa = PBXGroup;
 			children = (
-				76DB93BE228C86530081A36E /* PageViewPresenter.swift */,
-				76DB93BF228C86530081A36E /* PageViewRouter.swift */,
-				76DB93C0228C86530081A36E /* PageViewViewController.swift */,
-				76DB93C1228C86530081A36E /* PageViewProtocols.swift */,
-				76DB93C2228C86530081A36E /* PageViewInteractor.swift */,
-				76DB93C3228C86530081A36E /* PageViewViewController.xib */,
+				76E2FED6228DBAB50014B1F4 /* ChildController */,
+				76E2FEBE228DBAB00014B1F4 /* SaveDictionaryPresenter.swift */,
+				76E2FEBF228DBAB00014B1F4 /* SaveDictionaryRouter.swift */,
+				76E2FEC0228DBAB00014B1F4 /* SaveDictionaryViewController.swift */,
+				76E2FEC1228DBAB00014B1F4 /* SaveDictionaryProtocols.swift */,
+				76E2FEC2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift */,
+				76E2FEC3228DBAB00014B1F4 /* SaveDictionaryViewController.xib */,
+			);
+			path = SaveDictionary;
+			sourceTree = "<group>";
+		};
+		76E2FED6228DBAB50014B1F4 /* ChildController */ = {
+			isa = PBXGroup;
+			children = (
+				76E2FED7228DBAE10014B1F4 /* Grammar */,
+			);
+			path = ChildController;
+			sourceTree = "<group>";
+		};
+		76E2FED7228DBAE10014B1F4 /* Grammar */ = {
+			isa = PBXGroup;
+			children = (
+				76E2FEF0228DBB450014B1F4 /* CellGrammar */,
+				76E2FED8228DBAF10014B1F4 /* GrammarPresenter.swift */,
+				76E2FED9228DBAF10014B1F4 /* GrammarRouter.swift */,
+				76E2FEDA228DBAF10014B1F4 /* GrammarViewController.swift */,
+				76E2FEDB228DBAF10014B1F4 /* GrammarProtocols.swift */,
+				76E2FEDC228DBAF10014B1F4 /* GrammarInteractor.swift */,
+				76E2FEDD228DBAF10014B1F4 /* GrammarViewController.xib */,
+			);
+			path = Grammar;
+			sourceTree = "<group>";
+		};
+		76E2FEF0228DBB450014B1F4 /* CellGrammar */ = {
+			isa = PBXGroup;
+			children = (
+				76E2FEF1228DBB610014B1F4 /* CellGrammar.swift */,
+				76E2FEF2228DBB610014B1F4 /* CellGrammar.xib */,
+			);
+			path = CellGrammar;
+			sourceTree = "<group>";
+		};
+		76E2FEF9228DC4AC0014B1F4 /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				76E2FEFA228DC4C20014B1F4 /* PageViewController.swift */,
 			);
 			path = PageView;
 			sourceTree = "<group>";
@@ -1205,7 +1281,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				76DB93BD228C863B0081A36E /* PageView */,
+				76E2FEBD228DBA990014B1F4 /* SaveDictionary */,
 				76DB9396228C73720081A36E /* MoreDictionary */,
 				76DB937D228C56380081A36E /* Dictionary */,
 				DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */,
@@ -1307,6 +1383,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				76E2FEF9228DC4AC0014B1F4 /* PageView */,
 				76DB93B8228C74950081A36E /* RatioButton */,
 				DEECF86C2286FC9400A4678B /* HeaderUserView */,
 				DE361EA82283E6DB00FA3B0D /* CustomTextfield */,
@@ -2027,12 +2104,15 @@
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
+				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
+				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
 				DE2ADE7A22841BB9003768CE /* MenuViewController.xib in Resources */,
 				DE95316D2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531112287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCB2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
+				76E2FEED228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE361E8C2283E60500FA3B0D /* AppCheckBox.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
@@ -2042,7 +2122,6 @@
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
-				76DB93D3228C86530081A36E /* PageViewViewController.xib in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB2228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
@@ -2075,12 +2154,15 @@
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
+				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
+				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
 				DE95304B2287DF4800E3F688 /* MenuViewController.xib in Resources */,
 				DE95316E2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531122287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCC2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
+				76E2FEEE228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */,
 				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
@@ -2090,7 +2172,6 @@
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
-				76DB93D4228C86530081A36E /* PageViewViewController.xib in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB3228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
@@ -2123,12 +2204,15 @@
 				DE3A8CEA2289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
+				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
+				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */,
 				DE9530F92287DF6400E3F688 /* MenuViewController.xib in Resources */,
 				DE95316F2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCD2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
+				76E2FEEF228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
@@ -2138,7 +2222,6 @@
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
-				76DB93D5228C86530081A36E /* PageViewViewController.xib in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB4228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
@@ -2476,18 +2559,18 @@
 				76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
 				DE361DFE2283E57900FA3B0D /* UITextFiled+extension.swift in Sources */,
-				76DB93D0228C86530081A36E /* PageViewInteractor.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE95315822883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
 				DE952F802287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CDF2289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
+				76E2FEC7228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
 				DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953187228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
-				76DB93C4228C86530081A36E /* PageViewPresenter.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
 				DE2ADE6C22841B9E003768CE /* HomeProtocols.swift in Sources */,
+				76E2FEE7228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CBF2289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961412289942E0046801B /* QAEntity.swift in Sources */,
 				DE952F902287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
@@ -2496,10 +2579,12 @@
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
 				DE361F3E2283E85000FA3B0D /* LoginSocialParam.swift in Sources */,
 				DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */,
+				76E2FEFB228DC4C20014B1F4 /* PageViewController.swift in Sources */,
 				DE361DFF2283E57900FA3B0D /* NSObjectProtocol+Extension.swift in Sources */,
 				DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
+				76E2FECA228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DE3A8CBC2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				DE95315522883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE361E692283E60500FA3B0D /* AppColor.swift in Sources */,
@@ -2566,10 +2651,10 @@
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				DE2ADE6D22841B9E003768CE /* HomeInteractor.swift in Sources */,
+				76E2FEDE228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE953118228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE361F552283E8E200FA3B0D /* ParentNotificationEntity.swift in Sources */,
 				DE953129228808ED00E3F688 /* ProfileViewController.swift in Sources */,
-				76DB93CD228C86530081A36E /* PageViewProtocols.swift in Sources */,
 				DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */,
 				DE361DD92283E4BD00FA3B0D /* LoginProtocols.swift in Sources */,
 				DE361E9D2283E60500FA3B0D /* NotificationPopUp.swift in Sources */,
@@ -2588,20 +2673,24 @@
 				DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */,
 				DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */,
 				DE95316A2288418F00E3F688 /* HistoryCell.swift in Sources */,
+				76E2FEE1228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				DEECF8772287075B00A4678B /* UITable+extension.swift in Sources */,
 				DE3A8CB92289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE361DE32283E54C00FA3B0D /* BaseViewController.swift in Sources */,
 				DE95315E22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
-				76DB93C7228C86530081A36E /* PageViewRouter.swift in Sources */,
+				76E2FEF3228DBB610014B1F4 /* CellGrammar.swift in Sources */,
 				DE361F432283E85000FA3B0D /* PostRecordParam.swift in Sources */,
 				DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531422288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
+				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
+				76E2FEEA228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
 				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
 				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
+				76E2FECD228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */,
 				DE361F4C2283E85000FA3B0D /* NotificationEndPoint.swift in Sources */,
 				DE361E9E2283E60500FA3B0D /* NotificationContent.swift in Sources */,
 				DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
@@ -2619,6 +2708,7 @@
 				DE361F392283E85000FA3B0D /* APIError.swift in Sources */,
 				DE361F332283E85000FA3B0D /* UserEntity.swift in Sources */,
 				DE361F342283E85000FA3B0D /* FaceBookEntity.swift in Sources */,
+				76E2FEC4228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
 				DEECF89E22871D1B00A4678B /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CC82289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
 				DE953184228846D400E3F688 /* ChangePasswordProtocols.swift in Sources */,
@@ -2643,6 +2733,7 @@
 				DE2ADE7522841BB9003768CE /* MenuPresenter.swift in Sources */,
 				DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */,
 				DEECF87922870AEB00A4678B /* LanguageHelper.swift in Sources */,
+				76E2FEE4228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE95312F228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DE3A8CB62289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -2672,7 +2763,6 @@
 				DE3A8CF52289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE952F9C2287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */,
-				76DB93CA228C86530081A36E /* PageViewViewController.swift in Sources */,
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
@@ -2691,18 +2781,18 @@
 				76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */,
 				DE952FB32287DF4800E3F688 /* UITextFiled+extension.swift in Sources */,
-				76DB93D1228C86530081A36E /* PageViewInteractor.swift in Sources */,
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
 				DE95315922883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
 				DE952FB62287DF4800E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CE02289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
+				76E2FEC8228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
 				DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953188228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
-				76DB93C5228C86530081A36E /* PageViewPresenter.swift in Sources */,
 				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
 				DE952FBA2287DF4800E3F688 /* HomeProtocols.swift in Sources */,
+				76E2FEE8228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CC02289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961422289942E0046801B /* QAEntity.swift in Sources */,
 				DE952FBB2287DF4800E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
@@ -2711,10 +2801,12 @@
 				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
 				DE952FBF2287DF4800E3F688 /* LoginSocialParam.swift in Sources */,
 				DE952FC02287DF4800E3F688 /* LoginPresenter.swift in Sources */,
+				76E2FEFC228DC4C20014B1F4 /* PageViewController.swift in Sources */,
 				DE952FC12287DF4800E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
 				DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
+				76E2FECB228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DE3A8CBD2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				DE95315622883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE952FC42287DF4800E3F688 /* AppColor.swift in Sources */,
@@ -2781,10 +2873,10 @@
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				DE952FEE2287DF4800E3F688 /* HomeInteractor.swift in Sources */,
+				76E2FEDF228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE953119228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE952FEF2287DF4800E3F688 /* ParentNotificationEntity.swift in Sources */,
 				DE95312A228808ED00E3F688 /* ProfileViewController.swift in Sources */,
-				76DB93CE228C86530081A36E /* PageViewProtocols.swift in Sources */,
 				DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */,
 				DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */,
 				DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */,
@@ -2803,20 +2895,24 @@
 				DE952FFD2287DF4800E3F688 /* MenuProtocols.swift in Sources */,
 				DE952FFE2287DF4800E3F688 /* AppDelegate+Push.swift in Sources */,
 				DE95316B2288418F00E3F688 /* HistoryCell.swift in Sources */,
+				76E2FEE2228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				DE952FFF2287DF4800E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBA2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530002287DF4800E3F688 /* BaseViewController.swift in Sources */,
 				DE95315F22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
-				76DB93C8228C86530081A36E /* PageViewRouter.swift in Sources */,
+				76E2FEF4228DBB610014B1F4 /* CellGrammar.swift in Sources */,
 				DE9530012287DF4800E3F688 /* PostRecordParam.swift in Sources */,
 				DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531432288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */,
+				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
+				76E2FEEB228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */,
 				DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */,
 				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */,
+				76E2FECE228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */,
 				DE9530092287DF4800E3F688 /* NotificationEndPoint.swift in Sources */,
 				DE95300A2287DF4800E3F688 /* NotificationContent.swift in Sources */,
 				DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
@@ -2834,6 +2930,7 @@
 				DE9530142287DF4800E3F688 /* APIError.swift in Sources */,
 				DE9530152287DF4800E3F688 /* UserEntity.swift in Sources */,
 				DE9530162287DF4800E3F688 /* FaceBookEntity.swift in Sources */,
+				76E2FEC5228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
 				DE9530172287DF4800E3F688 /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CC92289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
 				DE953185228846D400E3F688 /* ChangePasswordProtocols.swift in Sources */,
@@ -2858,6 +2955,7 @@
 				DE9530242287DF4800E3F688 /* MenuPresenter.swift in Sources */,
 				DE9530252287DF4800E3F688 /* Bundle+extension.swift in Sources */,
 				DE9530262287DF4800E3F688 /* LanguageHelper.swift in Sources */,
+				76E2FEE5228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE953130228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DE3A8CB72289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -2887,7 +2985,6 @@
 				DE3A8CF62289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */,
-				76DB93CB228C86530081A36E /* PageViewViewController.swift in Sources */,
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
@@ -2906,18 +3003,18 @@
 				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
 				DE9530612287DF6400E3F688 /* UITextFiled+extension.swift in Sources */,
-				76DB93D2228C86530081A36E /* PageViewInteractor.swift in Sources */,
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
 				DE95315A22883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
 				DE9530642287DF6400E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CE12289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
+				76E2FEC9228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
 				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953189228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
-				76DB93C6228C86530081A36E /* PageViewPresenter.swift in Sources */,
 				DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */,
 				DE9530682287DF6400E3F688 /* HomeProtocols.swift in Sources */,
+				76E2FEE9228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CC12289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961432289942E0046801B /* QAEntity.swift in Sources */,
 				DE9530692287DF6400E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
@@ -2926,10 +3023,12 @@
 				DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */,
 				DE95306D2287DF6400E3F688 /* LoginSocialParam.swift in Sources */,
 				DE95306E2287DF6400E3F688 /* LoginPresenter.swift in Sources */,
+				76E2FEFD228DC4C20014B1F4 /* PageViewController.swift in Sources */,
 				DE95306F2287DF6400E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
 				DE9530702287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B4228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
+				76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DE3A8CBE2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				DE95315722883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE9530722287DF6400E3F688 /* AppColor.swift in Sources */,
@@ -2996,10 +3095,10 @@
 				DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				DE95309C2287DF6400E3F688 /* HomeInteractor.swift in Sources */,
+				76E2FEE0228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE95311A228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE95309D2287DF6400E3F688 /* ParentNotificationEntity.swift in Sources */,
 				DE95312B228808ED00E3F688 /* ProfileViewController.swift in Sources */,
-				76DB93CF228C86530081A36E /* PageViewProtocols.swift in Sources */,
 				DE95309E2287DF6400E3F688 /* LoginRouter.swift in Sources */,
 				DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */,
 				DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */,
@@ -3018,20 +3117,24 @@
 				DE9530AB2287DF6400E3F688 /* MenuProtocols.swift in Sources */,
 				DE9530AC2287DF6400E3F688 /* AppDelegate+Push.swift in Sources */,
 				DE95316C2288418F00E3F688 /* HistoryCell.swift in Sources */,
+				76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBB2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530AE2287DF6400E3F688 /* BaseViewController.swift in Sources */,
 				DE95316022883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
-				76DB93C9228C86530081A36E /* PageViewRouter.swift in Sources */,
+				76E2FEF5228DBB610014B1F4 /* CellGrammar.swift in Sources */,
 				DE9530AF2287DF6400E3F688 /* PostRecordParam.swift in Sources */,
 				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531442288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE9530B12287DF6400E3F688 /* UserEndPoint.swift in Sources */,
+				76E2FED2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
+				76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */,
 				DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */,
 				DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530B62287DF6400E3F688 /* AppTextField.swift in Sources */,
+				76E2FECF228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */,
 				DE9530B72287DF6400E3F688 /* NotificationEndPoint.swift in Sources */,
 				DE9530B82287DF6400E3F688 /* NotificationContent.swift in Sources */,
 				DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
@@ -3049,6 +3152,7 @@
 				DE9530C22287DF6400E3F688 /* APIError.swift in Sources */,
 				DE9530C32287DF6400E3F688 /* UserEntity.swift in Sources */,
 				DE9530C42287DF6400E3F688 /* FaceBookEntity.swift in Sources */,
+				76E2FEC6228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
 				DE9530C52287DF6400E3F688 /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CCA2289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
 				DE953186228846D400E3F688 /* ChangePasswordProtocols.swift in Sources */,
@@ -3073,6 +3177,7 @@
 				DE9530D22287DF6400E3F688 /* MenuPresenter.swift in Sources */,
 				DE9530D32287DF6400E3F688 /* Bundle+extension.swift in Sources */,
 				DE9530D42287DF6400E3F688 /* LanguageHelper.swift in Sources */,
+				76E2FEE6228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE953131228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DE3A8CB82289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -3102,7 +3207,6 @@
 				DE3A8CF72289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE9530E92287DF6400E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */,
-				76DB93CC228C86530081A36E /* PageViewViewController.swift in Sources */,
 				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,

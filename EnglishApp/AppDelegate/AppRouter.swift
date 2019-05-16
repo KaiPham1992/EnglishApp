@@ -46,7 +46,7 @@ class AppRouter {
     func openTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         //---
-        let vcLogin = MoreDictionaryRouter.createModule()
+        let vcLogin = SaveDictionaryRouter.createModule()
         let nc = UINavigationController(rootViewController: vcLogin)
         windowApp.rootViewController = nc
     }
