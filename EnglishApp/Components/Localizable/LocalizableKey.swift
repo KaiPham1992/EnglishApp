@@ -98,4 +98,5 @@ struct LocalizableKey {
     static let grammar = "grammar"
     static let vocabulary = "vocabulary"
     static let note = "note"
+    static let writeNote = "write_note"
 }
