@@ -38,7 +38,7 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
     
     override func setTitleUI() {
         super.setTitleUI()
-        setTitleNavigation(title: LocalizableKey.TitleProfile.showLanguage)
+        setTitleNavigation(title: LocalizableKey.TitleProfile.showLanguage.uppercased())
         vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage)
         vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
