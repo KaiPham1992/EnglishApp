@@ -15,7 +15,7 @@ class MoreDictionaryPresenter: MoreDictionaryPresenterProtocol, MoreDictionaryIn
     weak private var view: MoreDictionaryViewProtocol?
     var interactor: MoreDictionaryInteractorInputProtocol?
     private let router: MoreDictionaryWireframeProtocol
-    private var listMoreDictionary : [String] = ["Anh - Anh","Anh - Viet","Viet - Anh","Nhat - Viet"]
+    private var listMoreDictionary : [String] = [LocalizableKey.english_to_english.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.japanese_to_vietnamese.showLanguage]
 
     init(interface: MoreDictionaryViewProtocol, interactor: MoreDictionaryInteractorInputProtocol?, router: MoreDictionaryWireframeProtocol) {
         self.view = interface

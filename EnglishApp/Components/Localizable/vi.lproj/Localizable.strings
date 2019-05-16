@@ -80,3 +80,12 @@
 "countTeam" = "Số đội: ";
 "selectTeamJoin" = "Chọn nhóm tham gia";
 "joinTeam" = "Vào nhóm";
+
+//add dictionary
+"search" = "Tra cứu";
+"dictionaty" = "Từ điển";
+"vietnamese_to_english" = "Việt - Anh";
+"english_to_english" = "Anh - Anh";
+"english_to_vietnamese" = "Anh - Việt";
+"japanese_to_vietnamese" = "Nhật - Việt";
+"addDictionary" = "Thêm Từ Điển";

@@ -54,6 +54,24 @@
 		76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
 		76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
 		76DB93BC228C74B00081A36E /* RatioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93B9228C74B00081A36E /* RatioButton.swift */; };
+		76DB93C4228C86530081A36E /* PageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BE228C86530081A36E /* PageViewPresenter.swift */; };
+		76DB93C5228C86530081A36E /* PageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BE228C86530081A36E /* PageViewPresenter.swift */; };
+		76DB93C6228C86530081A36E /* PageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BE228C86530081A36E /* PageViewPresenter.swift */; };
+		76DB93C7228C86530081A36E /* PageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BF228C86530081A36E /* PageViewRouter.swift */; };
+		76DB93C8228C86530081A36E /* PageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BF228C86530081A36E /* PageViewRouter.swift */; };
+		76DB93C9228C86530081A36E /* PageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93BF228C86530081A36E /* PageViewRouter.swift */; };
+		76DB93CA228C86530081A36E /* PageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C0228C86530081A36E /* PageViewViewController.swift */; };
+		76DB93CB228C86530081A36E /* PageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C0228C86530081A36E /* PageViewViewController.swift */; };
+		76DB93CC228C86530081A36E /* PageViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C0228C86530081A36E /* PageViewViewController.swift */; };
+		76DB93CD228C86530081A36E /* PageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C1228C86530081A36E /* PageViewProtocols.swift */; };
+		76DB93CE228C86530081A36E /* PageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C1228C86530081A36E /* PageViewProtocols.swift */; };
+		76DB93CF228C86530081A36E /* PageViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C1228C86530081A36E /* PageViewProtocols.swift */; };
+		76DB93D0228C86530081A36E /* PageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C2228C86530081A36E /* PageViewInteractor.swift */; };
+		76DB93D1228C86530081A36E /* PageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C2228C86530081A36E /* PageViewInteractor.swift */; };
+		76DB93D2228C86530081A36E /* PageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB93C2228C86530081A36E /* PageViewInteractor.swift */; };
+		76DB93D3228C86530081A36E /* PageViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93C3228C86530081A36E /* PageViewViewController.xib */; };
+		76DB93D4228C86530081A36E /* PageViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93C3228C86530081A36E /* PageViewViewController.xib */; };
+		76DB93D5228C86530081A36E /* PageViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76DB93C3228C86530081A36E /* PageViewViewController.xib */; };
 		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
@@ -767,6 +785,12 @@
 		76DB93B0228C73E60081A36E /* MoreDictionaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreDictionaryCell.swift; sourceTree = "<group>"; };
 		76DB93B1228C73E60081A36E /* MoreDictionaryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreDictionaryCell.xib; sourceTree = "<group>"; };
 		76DB93B9228C74B00081A36E /* RatioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatioButton.swift; sourceTree = "<group>"; };
+		76DB93BE228C86530081A36E /* PageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewPresenter.swift; sourceTree = "<group>"; };
+		76DB93BF228C86530081A36E /* PageViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewRouter.swift; sourceTree = "<group>"; };
+		76DB93C0228C86530081A36E /* PageViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewViewController.swift; sourceTree = "<group>"; };
+		76DB93C1228C86530081A36E /* PageViewProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewProtocols.swift; sourceTree = "<group>"; };
+		76DB93C2228C86530081A36E /* PageViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewInteractor.swift; sourceTree = "<group>"; };
+		76DB93C3228C86530081A36E /* PageViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewViewController.xib; sourceTree = "<group>"; };
 		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
 		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
@@ -1102,6 +1126,19 @@
 			path = RatioButton;
 			sourceTree = "<group>";
 		};
+		76DB93BD228C863B0081A36E /* PageView */ = {
+			isa = PBXGroup;
+			children = (
+				76DB93BE228C86530081A36E /* PageViewPresenter.swift */,
+				76DB93BF228C86530081A36E /* PageViewRouter.swift */,
+				76DB93C0228C86530081A36E /* PageViewViewController.swift */,
+				76DB93C1228C86530081A36E /* PageViewProtocols.swift */,
+				76DB93C2228C86530081A36E /* PageViewInteractor.swift */,
+				76DB93C3228C86530081A36E /* PageViewViewController.xib */,
+			);
+			path = PageView;
+			sourceTree = "<group>";
+		};
 		DE2ADE5322841755003768CE /* GoogleInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1168,6 +1205,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				76DB93BD228C863B0081A36E /* PageView */,
 				76DB9396228C73720081A36E /* MoreDictionary */,
 				76DB937D228C56380081A36E /* Dictionary */,
 				DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */,
@@ -2004,6 +2042,7 @@
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
+				76DB93D3228C86530081A36E /* PageViewViewController.xib in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB2228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
@@ -2051,6 +2090,7 @@
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
+				76DB93D4228C86530081A36E /* PageViewViewController.xib in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB3228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
@@ -2098,6 +2138,7 @@
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
+				76DB93D5228C86530081A36E /* PageViewViewController.xib in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE750BB4228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
@@ -2435,6 +2476,7 @@
 				76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
 				DE361DFE2283E57900FA3B0D /* UITextFiled+extension.swift in Sources */,
+				76DB93D0228C86530081A36E /* PageViewInteractor.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE95315822883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
@@ -2443,6 +2485,7 @@
 				DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953187228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				76DB93C4228C86530081A36E /* PageViewPresenter.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
 				DE2ADE6C22841B9E003768CE /* HomeProtocols.swift in Sources */,
 				DE3A8CBF2289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
@@ -2526,6 +2569,7 @@
 				DE953118228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE361F552283E8E200FA3B0D /* ParentNotificationEntity.swift in Sources */,
 				DE953129228808ED00E3F688 /* ProfileViewController.swift in Sources */,
+				76DB93CD228C86530081A36E /* PageViewProtocols.swift in Sources */,
 				DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */,
 				DE361DD92283E4BD00FA3B0D /* LoginProtocols.swift in Sources */,
 				DE361E9D2283E60500FA3B0D /* NotificationPopUp.swift in Sources */,
@@ -2548,6 +2592,7 @@
 				DE3A8CB92289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE361DE32283E54C00FA3B0D /* BaseViewController.swift in Sources */,
 				DE95315E22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
+				76DB93C7228C86530081A36E /* PageViewRouter.swift in Sources */,
 				DE361F432283E85000FA3B0D /* PostRecordParam.swift in Sources */,
 				DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531422288324300E3F688 /* EditProfileViewController.swift in Sources */,
@@ -2627,6 +2672,7 @@
 				DE3A8CF52289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE952F9C2287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */,
+				76DB93CA228C86530081A36E /* PageViewViewController.swift in Sources */,
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
@@ -2645,6 +2691,7 @@
 				76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */,
 				DE952FB32287DF4800E3F688 /* UITextFiled+extension.swift in Sources */,
+				76DB93D1228C86530081A36E /* PageViewInteractor.swift in Sources */,
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
 				DE95315922883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
@@ -2653,6 +2700,7 @@
 				DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953188228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				76DB93C5228C86530081A36E /* PageViewPresenter.swift in Sources */,
 				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
 				DE952FBA2287DF4800E3F688 /* HomeProtocols.swift in Sources */,
 				DE3A8CC02289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
@@ -2736,6 +2784,7 @@
 				DE953119228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE952FEF2287DF4800E3F688 /* ParentNotificationEntity.swift in Sources */,
 				DE95312A228808ED00E3F688 /* ProfileViewController.swift in Sources */,
+				76DB93CE228C86530081A36E /* PageViewProtocols.swift in Sources */,
 				DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */,
 				DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */,
 				DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */,
@@ -2758,6 +2807,7 @@
 				DE3A8CBA2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530002287DF4800E3F688 /* BaseViewController.swift in Sources */,
 				DE95315F22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
+				76DB93C8228C86530081A36E /* PageViewRouter.swift in Sources */,
 				DE9530012287DF4800E3F688 /* PostRecordParam.swift in Sources */,
 				DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531432288324300E3F688 /* EditProfileViewController.swift in Sources */,
@@ -2837,6 +2887,7 @@
 				DE3A8CF62289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */,
+				76DB93CB228C86530081A36E /* PageViewViewController.swift in Sources */,
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
@@ -2855,6 +2906,7 @@
 				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
 				DE9530612287DF6400E3F688 /* UITextFiled+extension.swift in Sources */,
+				76DB93D2228C86530081A36E /* PageViewInteractor.swift in Sources */,
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
 				DE95315A22883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
@@ -2863,6 +2915,7 @@
 				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953189228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				76DB93C6228C86530081A36E /* PageViewPresenter.swift in Sources */,
 				DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */,
 				DE9530682287DF6400E3F688 /* HomeProtocols.swift in Sources */,
 				DE3A8CC12289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
@@ -2946,6 +2999,7 @@
 				DE95311A228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE95309D2287DF6400E3F688 /* ParentNotificationEntity.swift in Sources */,
 				DE95312B228808ED00E3F688 /* ProfileViewController.swift in Sources */,
+				76DB93CF228C86530081A36E /* PageViewProtocols.swift in Sources */,
 				DE95309E2287DF6400E3F688 /* LoginRouter.swift in Sources */,
 				DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */,
 				DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */,
@@ -2968,6 +3022,7 @@
 				DE3A8CBB2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530AE2287DF6400E3F688 /* BaseViewController.swift in Sources */,
 				DE95316022883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
+				76DB93C9228C86530081A36E /* PageViewRouter.swift in Sources */,
 				DE9530AF2287DF6400E3F688 /* PostRecordParam.swift in Sources */,
 				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531442288324300E3F688 /* EditProfileViewController.swift in Sources */,
@@ -3047,6 +3102,7 @@
 				DE3A8CF72289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE9530E92287DF6400E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */,
+				76DB93CC228C86530081A36E /* PageViewViewController.swift in Sources */,
 				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,

@@ -86,5 +86,13 @@ struct LocalizableKey {
     static let selectTeamJoin = "selectTeamJoin"
     static let joinTeam = "joinTeam"
     
+    static let search = "search"
+    static let dictionaty = "dictionaty"
+    static let vietnamese_to_english = "vietnamese_to_english"
+    static let english_to_english = "english_to_english"
+    static let english_to_vietnamese = "english_to_vietnamese"
+    static let japanese_to_vietnamese = "japanese_to_vietnamese"
+    static let addDictionary = "addDictionary"
+    
     
 }
