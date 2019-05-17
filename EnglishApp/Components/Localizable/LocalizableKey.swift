@@ -99,4 +99,15 @@ struct LocalizableKey {
     static let vocabulary = "vocabulary"
     static let note = "note"
     static let writeNote = "write_note"
+    
+    //theory
+    
+    static let phrasal_verbs = "phrasal_verbs"
+    static let phonetics = "phonetics"
+    static let lesson = "lesson"
+    static let recipe = "recipe"
+    
+    static let idiams = "idiams"
+    static let wordUsage = "word_usage"
+    static let wordForm = "word_form"
 }

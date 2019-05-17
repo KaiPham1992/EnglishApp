@@ -9,6 +9,45 @@
 /* Begin PBXBuildFile section */
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		766D12FC228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
+		766D12FD228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
+		766D12FE228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
+		766D12FF228EE8DA005E47F0 /* TheoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */; };
+		766D1300228EE8DA005E47F0 /* TheoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */; };
+		766D1301228EE8DA005E47F0 /* TheoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */; };
+		766D1302228EE8DA005E47F0 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */; };
+		766D1303228EE8DA005E47F0 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */; };
+		766D1304228EE8DA005E47F0 /* TheoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */; };
+		766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F9228EE8DA005E47F0 /* TheoryProtocols.swift */; };
+		766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F9228EE8DA005E47F0 /* TheoryProtocols.swift */; };
+		766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F9228EE8DA005E47F0 /* TheoryProtocols.swift */; };
+		766D1308228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12FA228EE8DA005E47F0 /* TheoryInteractor.swift */; };
+		766D1309228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12FA228EE8DA005E47F0 /* TheoryInteractor.swift */; };
+		766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12FA228EE8DA005E47F0 /* TheoryInteractor.swift */; };
+		766D130B228EE8DA005E47F0 /* TheoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D12FB228EE8DA005E47F0 /* TheoryViewController.xib */; };
+		766D130C228EE8DA005E47F0 /* TheoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D12FB228EE8DA005E47F0 /* TheoryViewController.xib */; };
+		766D130D228EE8DA005E47F0 /* TheoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D12FB228EE8DA005E47F0 /* TheoryViewController.xib */; };
+		766D1317228EE9E4005E47F0 /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1311228EE9E4005E47F0 /* LessonPresenter.swift */; };
+		766D1318228EE9E4005E47F0 /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1311228EE9E4005E47F0 /* LessonPresenter.swift */; };
+		766D1319228EE9E4005E47F0 /* LessonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1311228EE9E4005E47F0 /* LessonPresenter.swift */; };
+		766D131A228EE9E4005E47F0 /* LessonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1312228EE9E4005E47F0 /* LessonRouter.swift */; };
+		766D131B228EE9E4005E47F0 /* LessonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1312228EE9E4005E47F0 /* LessonRouter.swift */; };
+		766D131C228EE9E4005E47F0 /* LessonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1312228EE9E4005E47F0 /* LessonRouter.swift */; };
+		766D131D228EE9E4005E47F0 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1313228EE9E4005E47F0 /* LessonViewController.swift */; };
+		766D131E228EE9E4005E47F0 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1313228EE9E4005E47F0 /* LessonViewController.swift */; };
+		766D131F228EE9E4005E47F0 /* LessonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1313228EE9E4005E47F0 /* LessonViewController.swift */; };
+		766D1320228EE9E4005E47F0 /* LessonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1314228EE9E4005E47F0 /* LessonProtocols.swift */; };
+		766D1321228EE9E4005E47F0 /* LessonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1314228EE9E4005E47F0 /* LessonProtocols.swift */; };
+		766D1322228EE9E4005E47F0 /* LessonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1314228EE9E4005E47F0 /* LessonProtocols.swift */; };
+		766D1323228EE9E4005E47F0 /* LessonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1315228EE9E4005E47F0 /* LessonInteractor.swift */; };
+		766D1324228EE9E4005E47F0 /* LessonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1315228EE9E4005E47F0 /* LessonInteractor.swift */; };
+		766D1325228EE9E4005E47F0 /* LessonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D1315228EE9E4005E47F0 /* LessonInteractor.swift */; };
+		766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D1316228EE9E4005E47F0 /* LessonViewController.xib */; };
+		766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D1316228EE9E4005E47F0 /* LessonViewController.xib */; };
+		766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D1316228EE9E4005E47F0 /* LessonViewController.xib */; };
+		766D135C228EF078005E47F0 /* ViewGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D135B228EF078005E47F0 /* ViewGradient.swift */; };
+		766D135D228EF078005E47F0 /* ViewGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D135B228EF078005E47F0 /* ViewGradient.swift */; };
+		766D135E228EF078005E47F0 /* ViewGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D135B228EF078005E47F0 /* ViewGradient.swift */; };
 		76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
@@ -869,6 +908,19 @@
 		5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryPresenter.swift; sourceTree = "<group>"; };
+		766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryRouter.swift; sourceTree = "<group>"; };
+		766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
+		766D12F9228EE8DA005E47F0 /* TheoryProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryProtocols.swift; sourceTree = "<group>"; };
+		766D12FA228EE8DA005E47F0 /* TheoryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryInteractor.swift; sourceTree = "<group>"; };
+		766D12FB228EE8DA005E47F0 /* TheoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TheoryViewController.xib; sourceTree = "<group>"; };
+		766D1311228EE9E4005E47F0 /* LessonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonPresenter.swift; sourceTree = "<group>"; };
+		766D1312228EE9E4005E47F0 /* LessonRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonRouter.swift; sourceTree = "<group>"; };
+		766D1313228EE9E4005E47F0 /* LessonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonViewController.swift; sourceTree = "<group>"; };
+		766D1314228EE9E4005E47F0 /* LessonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonProtocols.swift; sourceTree = "<group>"; };
+		766D1315228EE9E4005E47F0 /* LessonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonInteractor.swift; sourceTree = "<group>"; };
+		766D1316228EE9E4005E47F0 /* LessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LessonViewController.xib; sourceTree = "<group>"; };
+		766D135B228EF078005E47F0 /* ViewGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGradient.swift; sourceTree = "<group>"; };
 		76DB937E228C56640081A36E /* DictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPresenter.swift; sourceTree = "<group>"; };
 		76DB937F228C56640081A36E /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		76DB9380228C56640081A36E /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
@@ -1214,6 +1266,49 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		766D12F5228EE8C6005E47F0 /* TheoryGroup */ = {
+			isa = PBXGroup;
+			children = (
+				766D130E228EE97E005E47F0 /* ListController */,
+				766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */,
+				766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */,
+				766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */,
+				766D12F9228EE8DA005E47F0 /* TheoryProtocols.swift */,
+				766D12FA228EE8DA005E47F0 /* TheoryInteractor.swift */,
+				766D12FB228EE8DA005E47F0 /* TheoryViewController.xib */,
+			);
+			path = TheoryGroup;
+			sourceTree = "<group>";
+		};
+		766D130E228EE97E005E47F0 /* ListController */ = {
+			isa = PBXGroup;
+			children = (
+				766D130F228EE9A0005E47F0 /* Lesson */,
+			);
+			path = ListController;
+			sourceTree = "<group>";
+		};
+		766D130F228EE9A0005E47F0 /* Lesson */ = {
+			isa = PBXGroup;
+			children = (
+				766D1311228EE9E4005E47F0 /* LessonPresenter.swift */,
+				766D1312228EE9E4005E47F0 /* LessonRouter.swift */,
+				766D1313228EE9E4005E47F0 /* LessonViewController.swift */,
+				766D1314228EE9E4005E47F0 /* LessonProtocols.swift */,
+				766D1315228EE9E4005E47F0 /* LessonInteractor.swift */,
+				766D1316228EE9E4005E47F0 /* LessonViewController.xib */,
+			);
+			path = Lesson;
+			sourceTree = "<group>";
+		};
+		766D135A228EF05B005E47F0 /* ViewGradient */ = {
+			isa = PBXGroup;
+			children = (
+				766D135B228EF078005E47F0 /* ViewGradient.swift */,
+			);
+			path = ViewGradient;
+			sourceTree = "<group>";
+		};
 		76DB937D228C56380081A36E /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -1433,6 +1528,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
 				76E2FEBD228DBA990014B1F4 /* SaveDictionary */,
 				76DB9396228C73720081A36E /* MoreDictionary */,
 				76DB937D228C56380081A36E /* Dictionary */,
@@ -1535,6 +1631,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				766D135A228EF05B005E47F0 /* ViewGradient */,
 				76E2FEF9228DC4AC0014B1F4 /* PageView */,
 				76DB93B8228C74950081A36E /* RatioButton */,
 				DEECF86C2286FC9400A4678B /* HeaderUserView */,
@@ -2261,7 +2358,9 @@
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
+				766D130B228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE2ADE7A22841BB9003768CE /* MenuViewController.xib in Resources */,
 				DE95316D2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531112287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
@@ -2315,7 +2414,9 @@
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
+				766D130C228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE95304B2287DF4800E3F688 /* MenuViewController.xib in Resources */,
 				DE95316E2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531122287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
@@ -2369,7 +2470,9 @@
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */,
+				766D130D228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE9530F92287DF6400E3F688 /* MenuViewController.xib in Resources */,
 				DE95316F2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
@@ -2742,6 +2845,7 @@
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
 				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
+				766D131D228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
 				DE361F3E2283E85000FA3B0D /* LoginSocialParam.swift in Sources */,
 				DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */,
 				76E2FF58228DD2120014B1F4 /* SeeNoteProtocols.swift in Sources */,
@@ -2752,6 +2856,7 @@
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
 				76E2FECA228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DE3A8CBC2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
+				766D1317228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315522883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE361E692283E60500FA3B0D /* AppColor.swift in Sources */,
 				DEB9613A228993640046801B /* QACell.swift in Sources */,
@@ -2794,6 +2899,7 @@
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
 				DE95315B22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE361F472283E85000FA3B0D /* CommonEndPoint.swift in Sources */,
+				766D131A228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB32289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DE361F362283E85000FA3B0D /* PhotoEntity.swift in Sources */,
@@ -2811,6 +2917,7 @@
 				76E2FF4F228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				DE95313F2288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952F982287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
@@ -2819,7 +2926,9 @@
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				766D1308228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DE2ADE6D22841B9E003768CE /* HomeInteractor.swift in Sources */,
+				766D1302228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEDE228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE953118228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE361F552283E8E200FA3B0D /* ParentNotificationEntity.swift in Sources */,
@@ -2852,6 +2961,7 @@
 				76E2FEF3228DBB610014B1F4 /* CellGrammar.swift in Sources */,
 				76E2FF3D228DD1060014B1F4 /* AddNoteViewController.swift in Sources */,
 				DE361F432283E85000FA3B0D /* PostRecordParam.swift in Sources */,
+				766D12FC228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */,
 				DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531422288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				76E2FF21228DCF290014B1F4 /* NoteRouter.swift in Sources */,
@@ -2869,6 +2979,7 @@
 				DE361E9E2283E60500FA3B0D /* NotificationContent.swift in Sources */,
 				76E2FF55228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				766D135C228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				DEB9612822898F1F0046801B /* QARouter.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
 				DE9531452288324300E3F688 /* EditProfileProtocols.swift in Sources */,
@@ -2899,6 +3010,7 @@
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				766D12FF228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */,
 				76E2FF37228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				DE361E822283E60500FA3B0D /* AppDropDown.swift in Sources */,
@@ -2912,8 +3024,10 @@
 				DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE952FAD2287DD2A00E3F688 /* Login+GoogleSignIn.swift in Sources */,
 				76E2FF24228DCF290014B1F4 /* NoteViewController.swift in Sources */,
+				766D1323228EE9E4005E47F0 /* LessonInteractor.swift in Sources */,
 				DE361F512283E85000FA3B0D /* NotificationAPIService.swift in Sources */,
 				DE2ADE7522841BB9003768CE /* MenuPresenter.swift in Sources */,
+				766D1320228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */,
 				DEECF87922870AEB00A4678B /* LanguageHelper.swift in Sources */,
 				76E2FEE4228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
@@ -2984,6 +3098,7 @@
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
+				766D131E228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
 				DE952FBF2287DF4800E3F688 /* LoginSocialParam.swift in Sources */,
 				DE952FC02287DF4800E3F688 /* LoginPresenter.swift in Sources */,
 				76E2FF59228DD2120014B1F4 /* SeeNoteProtocols.swift in Sources */,
@@ -2994,6 +3109,7 @@
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
 				76E2FECB228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DE3A8CBD2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
+				766D1318228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315622883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE952FC42287DF4800E3F688 /* AppColor.swift in Sources */,
 				DEB9613B228993640046801B /* QACell.swift in Sources */,
@@ -3036,6 +3152,7 @@
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
 				DE95315C22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */,
+				766D131B228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB42289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DE952FDD2287DF4800E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DE952FDE2287DF4800E3F688 /* PhotoEntity.swift in Sources */,
@@ -3053,6 +3170,7 @@
 				76E2FF50228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				DE9531402288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952FE62287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
@@ -3061,7 +3179,9 @@
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				766D1309228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DE952FEE2287DF4800E3F688 /* HomeInteractor.swift in Sources */,
+				766D1303228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEDF228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE953119228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE952FEF2287DF4800E3F688 /* ParentNotificationEntity.swift in Sources */,
@@ -3094,6 +3214,7 @@
 				76E2FEF4228DBB610014B1F4 /* CellGrammar.swift in Sources */,
 				76E2FF3E228DD1060014B1F4 /* AddNoteViewController.swift in Sources */,
 				DE9530012287DF4800E3F688 /* PostRecordParam.swift in Sources */,
+				766D12FD228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */,
 				DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531432288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				76E2FF22228DCF290014B1F4 /* NoteRouter.swift in Sources */,
@@ -3111,6 +3232,7 @@
 				DE95300A2287DF4800E3F688 /* NotificationContent.swift in Sources */,
 				76E2FF56228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				766D135D228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				DEB9612922898F1F0046801B /* QARouter.swift in Sources */,
 				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531462288324300E3F688 /* EditProfileProtocols.swift in Sources */,
@@ -3141,6 +3263,7 @@
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				766D1300228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DE95301D2287DF4800E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF38228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				DE95301E2287DF4800E3F688 /* AppDropDown.swift in Sources */,
@@ -3154,8 +3277,10 @@
 				DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530222287DF4800E3F688 /* Login+GoogleSignIn.swift in Sources */,
 				76E2FF25228DCF290014B1F4 /* NoteViewController.swift in Sources */,
+				766D1324228EE9E4005E47F0 /* LessonInteractor.swift in Sources */,
 				DE9530232287DF4800E3F688 /* NotificationAPIService.swift in Sources */,
 				DE9530242287DF4800E3F688 /* MenuPresenter.swift in Sources */,
+				766D1321228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				DE9530252287DF4800E3F688 /* Bundle+extension.swift in Sources */,
 				DE9530262287DF4800E3F688 /* LanguageHelper.swift in Sources */,
 				76E2FEE5228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
@@ -3226,6 +3351,7 @@
 				DE95306A2287DF6400E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */,
+				766D131F228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
 				DE95306D2287DF6400E3F688 /* LoginSocialParam.swift in Sources */,
 				DE95306E2287DF6400E3F688 /* LoginPresenter.swift in Sources */,
 				76E2FF5A228DD2120014B1F4 /* SeeNoteProtocols.swift in Sources */,
@@ -3236,6 +3362,7 @@
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
 				76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DE3A8CBE2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
+				766D1319228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315722883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE9530722287DF6400E3F688 /* AppColor.swift in Sources */,
 				DEB9613C228993640046801B /* QACell.swift in Sources */,
@@ -3278,6 +3405,7 @@
 				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
 				DE95315D22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */,
+				766D131C228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB52289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DE95308B2287DF6400E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DE95308C2287DF6400E3F688 /* PhotoEntity.swift in Sources */,
@@ -3295,6 +3423,7 @@
 				76E2FF51228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				DE9531412288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE9530942287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */,
 				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
@@ -3303,7 +3432,9 @@
 				DE3A8CDE2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DE95309C2287DF6400E3F688 /* HomeInteractor.swift in Sources */,
+				766D1304228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEE0228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE95311A228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE95309D2287DF6400E3F688 /* ParentNotificationEntity.swift in Sources */,
@@ -3336,6 +3467,7 @@
 				76E2FEF5228DBB610014B1F4 /* CellGrammar.swift in Sources */,
 				76E2FF3F228DD1070014B1F4 /* AddNoteViewController.swift in Sources */,
 				DE9530AF2287DF6400E3F688 /* PostRecordParam.swift in Sources */,
+				766D12FE228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */,
 				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531442288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				76E2FF23228DCF290014B1F4 /* NoteRouter.swift in Sources */,
@@ -3353,6 +3485,7 @@
 				DE9530B82287DF6400E3F688 /* NotificationContent.swift in Sources */,
 				76E2FF57228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				766D135E228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531472288324300E3F688 /* EditProfileProtocols.swift in Sources */,
@@ -3383,6 +3516,7 @@
 				DE953128228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				766D1301228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DE9530CB2287DF6400E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF39228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				DE9530CC2287DF6400E3F688 /* AppDropDown.swift in Sources */,
@@ -3396,8 +3530,10 @@
 				DE9530CF2287DF6400E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530D02287DF6400E3F688 /* Login+GoogleSignIn.swift in Sources */,
 				76E2FF26228DCF290014B1F4 /* NoteViewController.swift in Sources */,
+				766D1325228EE9E4005E47F0 /* LessonInteractor.swift in Sources */,
 				DE9530D12287DF6400E3F688 /* NotificationAPIService.swift in Sources */,
 				DE9530D22287DF6400E3F688 /* MenuPresenter.swift in Sources */,
+				766D1322228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				DE9530D32287DF6400E3F688 /* Bundle+extension.swift in Sources */,
 				DE9530D42287DF6400E3F688 /* LanguageHelper.swift in Sources */,
 				76E2FEE6228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,

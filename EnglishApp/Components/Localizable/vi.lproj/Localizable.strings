@@ -97,3 +97,15 @@
 "vocabulary" = "Từ vựng";
 "note" = "Ghi chú";
 "write_note" = "Viết ghi chú";
+
+//theory
+
+"phrasal_verbs" = "Phrasal Verbs";
+"grammar" = "Grammar";
+"phonetics" = "Phonetics";
+"lesson" = "Bài học";
+"recipe" = "Công thức";
+
+"idiams" = "Idiams";
+"word_usage" = "Word usage";
+"word_form" = "Word form";
