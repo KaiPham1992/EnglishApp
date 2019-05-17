@@ -23,29 +23,52 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="20N-tC-e56">
-                    <rect key="frame" x="0.0" y="188" width="414" height="59"/>
+                    <rect key="frame" x="0.0" y="185" width="414" height="32"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iog-XB-84V">
-                            <rect key="frame" x="20" y="0.0" width="165.5" height="59"/>
+                            <rect key="frame" x="20" y="0.0" width="165.5" height="32"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <state key="normal" title="No">
-                                <color key="titleColor" red="0.40000000000000002" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRM-cn-Qvv">
-                            <rect key="frame" x="228.5" y="0.0" width="165.5" height="59"/>
+                            <rect key="frame" x="228.5" y="0.0" width="165.5" height="32"/>
+                            <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                             <state key="normal" title="Yes">
-                                <color key="titleColor" red="0.94117647058823528" green="0.40000000000000002" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </button>
                     </subviews>
-                    <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Iog-XB-84V" firstAttribute="top" secondItem="20N-tC-e56" secondAttribute="top" id="20x-mZ-oon"/>
                         <constraint firstItem="Iog-XB-84V" firstAttribute="width" secondItem="20N-tC-e56" secondAttribute="width" multiplier="2/5" id="5rT-yV-b90"/>
-                        <constraint firstItem="JRM-cn-Qvv" firstAttribute="top" secondItem="20N-tC-e56" secondAttribute="top" id="8V8-Nm-oq0"/>
                         <constraint firstAttribute="bottom" secondItem="Iog-XB-84V" secondAttribute="bottom" id="K7M-QG-5Nb"/>
-                        <constraint firstAttribute="height" constant="59" id="QIE-7u-Xib"/>
+                        <constraint firstItem="JRM-cn-Qvv" firstAttribute="top" secondItem="Iog-XB-84V" secondAttribute="top" id="Ocx-dZ-ap8"/>
+                        <constraint firstAttribute="height" constant="32" id="QIE-7u-Xib"/>
+                        <constraint firstItem="Iog-XB-84V" firstAttribute="top" secondItem="20N-tC-e56" secondAttribute="top" id="Vwt-jI-2hL"/>
                         <constraint firstAttribute="bottom" secondItem="JRM-cn-Qvv" secondAttribute="bottom" id="kAi-Pl-dnA"/>
                         <constraint firstAttribute="trailing" secondItem="JRM-cn-Qvv" secondAttribute="trailing" constant="20" id="mIq-gU-V2v"/>
                         <constraint firstItem="JRM-cn-Qvv" firstAttribute="width" secondItem="Iog-XB-84V" secondAttribute="width" id="qlc-gK-QcP"/>
@@ -53,7 +76,7 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete this draft application?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w1-Fn-ZOm">
-                    <rect key="frame" x="8" y="44" width="398" height="144"/>
+                    <rect key="frame" x="8" y="44" width="398" height="141"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -61,7 +84,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="20N-tC-e56" secondAttribute="bottom" id="Ppd-1G-Dgn"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="20N-tC-e56" secondAttribute="bottom" constant="30" id="Ppd-1G-Dgn"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="20N-tC-e56" secondAttribute="trailing" id="QBG-v1-nmZ"/>
                 <constraint firstItem="20N-tC-e56" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="SEi-LV-mvE"/>
                 <constraint firstItem="20N-tC-e56" firstAttribute="top" secondItem="4w1-Fn-ZOm" secondAttribute="bottom" id="cuT-nT-Wjb"/>

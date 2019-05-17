@@ -21,7 +21,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppTextField" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="lbTitle" destination="0Yp-lv-Bel" id="rHc-JE-DZJ"/>
-                <outlet property="tfInput" destination="0FA-Fn-HAL" id="eSM-LD-QTM"/>
+                <outlet property="tfInput" destination="hgd-5V-CHC" id="cpM-lw-5nk"/>
+                <outlet property="vLine" destination="J1L-mP-C5K" id="jJe-fV-n8j"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -38,12 +39,23 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0FA-Fn-HAL">
-                    <rect key="frame" x="0.0" y="72" width="414" height="81"/>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-5V-CHC">
+                    <rect key="frame" x="0.0" y="64" width="414" height="89"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </textField>
                 <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J1L-mP-C5K">
                     <rect key="frame" x="-3" y="153" width="414" height="1"/>
@@ -66,16 +78,16 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="hgd-5V-CHC" firstAttribute="leading" secondItem="0Yp-lv-Bel" secondAttribute="leading" id="12d-9Z-Bf2"/>
                 <constraint firstItem="J1L-mP-C5K" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="1T9-Tp-6ep"/>
                 <constraint firstItem="0Yp-lv-Bel" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8Fu-An-hQG"/>
-                <constraint firstItem="J1L-mP-C5K" firstAttribute="top" secondItem="0FA-Fn-HAL" secondAttribute="bottom" id="FWG-A6-L5X"/>
                 <constraint firstItem="J1L-mP-C5K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="-3" id="Mi6-Yd-OQZ"/>
-                <constraint firstItem="0FA-Fn-HAL" firstAttribute="trailing" secondItem="0Yp-lv-Bel" secondAttribute="trailing" id="Q9p-Qy-Lmb"/>
-                <constraint firstItem="0FA-Fn-HAL" firstAttribute="top" secondItem="0Yp-lv-Bel" secondAttribute="bottom" constant="8" id="b02-Z5-i3U"/>
+                <constraint firstItem="hgd-5V-CHC" firstAttribute="top" secondItem="0Yp-lv-Bel" secondAttribute="bottom" id="Tdy-gL-Q2V"/>
                 <constraint firstItem="0Yp-lv-Bel" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ccA-LI-MrF"/>
                 <constraint firstItem="0Yp-lv-Bel" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ieq-JT-BYD"/>
-                <constraint firstItem="0FA-Fn-HAL" firstAttribute="leading" secondItem="0Yp-lv-Bel" secondAttribute="leading" id="svX-DG-4ne"/>
+                <constraint firstItem="J1L-mP-C5K" firstAttribute="top" secondItem="hgd-5V-CHC" secondAttribute="bottom" id="jGo-bP-FUv"/>
                 <constraint firstItem="J1L-mP-C5K" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-3" id="urD-bs-cvo"/>
+                <constraint firstItem="hgd-5V-CHC" firstAttribute="trailing" secondItem="0Yp-lv-Bel" secondAttribute="trailing" id="zhI-bQ-bYP"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

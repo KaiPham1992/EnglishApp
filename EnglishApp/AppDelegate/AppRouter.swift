@@ -25,8 +25,9 @@ class AppRouter {
     
     func setTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
+        
         //---
-        let vcLogin = DictionaryRouter.createModule()
+        let vcLogin = PreviewProfileRouter.createModule()
         let nc = UINavigationController(rootViewController: vcLogin)
         windowApp.rootViewController = nc
     }
@@ -46,7 +47,8 @@ class AppRouter {
     func openTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         //---
-        let vcLogin = TheoryRouter.createModule()
+        let vcLogin = HomeRouter.createModule()
+
         let nc = UINavigationController(rootViewController: vcLogin)
         windowApp.rootViewController = nc
     }

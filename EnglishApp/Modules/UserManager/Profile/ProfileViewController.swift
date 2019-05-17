@@ -13,12 +13,17 @@ import UIKit
 class ProfileViewController: BaseViewController, ProfileViewProtocol {
 
 	var presenter: ProfilePresenterProtocol?
-    @IBOutlet weak var lbMoney: UILabel!
+    @IBOutlet weak var lbBee: UILabel!
     @IBOutlet weak var lbDiamon: UILabel!
+    
+    @IBOutlet weak var lbTitleBee: UILabel!
+    @IBOutlet weak var lbTitleDiamon: UILabel!
+    
     @IBOutlet weak var vDisplayName: AppTextField!
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vLocation: AppTextField!
     @IBOutlet weak var vCode: AppTextField!
+    @IBOutlet weak var imgAvatar: UIImageView!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +48,9 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage)
         vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
         vCode.setTitleAndPlaceHolder(title: LocalizableKey.CodeNumber.showLanguage)
+        imgAvatar.setBorder(borderWidth: 2, borderColor: AppColor.yellow, cornerRadius: 30)
+        lbTitleBee.text = LocalizableKey.titleBee.showLanguage
+        lbTitleDiamon.text = LocalizableKey.titleBee.showLanguage
     }
 
 }

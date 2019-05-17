@@ -9,10 +9,20 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController">
             <connections>
                 <outlet property="btnSave" destination="zzo-SG-aJN" id="bQv-SW-Tyw"/>
+                <outlet property="imgAvatar" destination="KhC-VB-xt5" id="Qkz-uI-4fT"/>
+                <outlet property="lbError" destination="bFw-tE-PrY" id="w8j-2O-Wj4"/>
                 <outlet property="vDisplayName" destination="sel-a4-rGo" id="gzq-ub-Zat"/>
                 <outlet property="vEmail" destination="e9k-f4-e6c" id="sVX-Se-y00"/>
                 <outlet property="vLocation" destination="eeg-H2-Ae9" id="KCu-zR-Q4Y"/>
@@ -30,6 +40,13 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="4IK-zI-W6V"/>
                         <constraint firstAttribute="width" constant="100" id="b7q-Xx-VnQ"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="edit_gray" translatesAutoresizingMaskIntoConstraints="NO" id="U5s-bH-0J4">
+                    <rect key="frame" x="187.5" y="100" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="5t8-go-ZFH"/>
+                        <constraint firstAttribute="height" constant="50" id="yfb-nf-W6l"/>
                     </constraints>
                 </imageView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sel-a4-rGo" customClass="AppTextField" customModule="EnglishApp_AppStore" customModuleProvider="target">
@@ -53,6 +70,7 @@
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="fwM-yd-86Z"/>
                     </constraints>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                     <state key="normal" title="LƯU">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
@@ -60,6 +78,15 @@
                         <action selector="btnSavedTapped" destination="-1" eventType="touchUpInside" id="r6r-Cg-eDp"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bFw-tE-PrY">
+                    <rect key="frame" x="35" y="397" width="305" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="KcQ-nV-XdT"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -69,13 +96,18 @@
                 <constraint firstItem="eeg-H2-Ae9" firstAttribute="trailing" secondItem="e9k-f4-e6c" secondAttribute="trailing" id="GKO-pY-6UR"/>
                 <constraint firstItem="KhC-VB-xt5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="GzH-9c-b0J"/>
                 <constraint firstItem="e9k-f4-e6c" firstAttribute="top" secondItem="sel-a4-rGo" secondAttribute="bottom" constant="25" id="KyJ-Ft-PO6"/>
+                <constraint firstItem="U5s-bH-0J4" firstAttribute="trailing" secondItem="KhC-VB-xt5" secondAttribute="trailing" id="McQ-9X-abJ"/>
                 <constraint firstItem="eeg-H2-Ae9" firstAttribute="height" secondItem="e9k-f4-e6c" secondAttribute="height" id="SMo-79-rqh"/>
                 <constraint firstItem="e9k-f4-e6c" firstAttribute="height" secondItem="sel-a4-rGo" secondAttribute="height" id="V7B-ks-Qa3"/>
                 <constraint firstItem="e9k-f4-e6c" firstAttribute="trailing" secondItem="sel-a4-rGo" secondAttribute="trailing" id="YOW-9v-OaM"/>
+                <constraint firstItem="bFw-tE-PrY" firstAttribute="top" secondItem="eeg-H2-Ae9" secondAttribute="bottom" constant="12" id="afy-Zy-HnW"/>
                 <constraint firstItem="zzo-SG-aJN" firstAttribute="top" secondItem="eeg-H2-Ae9" secondAttribute="bottom" constant="45" id="dOB-IL-Cdr"/>
+                <constraint firstItem="bFw-tE-PrY" firstAttribute="leading" secondItem="eeg-H2-Ae9" secondAttribute="leading" id="fyh-ao-W21"/>
                 <constraint firstItem="eeg-H2-Ae9" firstAttribute="leading" secondItem="e9k-f4-e6c" secondAttribute="leading" id="hA9-3L-8ba"/>
+                <constraint firstItem="bFw-tE-PrY" firstAttribute="trailing" secondItem="eeg-H2-Ae9" secondAttribute="trailing" id="iKJ-vz-eyQ"/>
                 <constraint firstItem="sel-a4-rGo" firstAttribute="top" secondItem="KhC-VB-xt5" secondAttribute="bottom" constant="35" id="ia2-nl-lMG"/>
                 <constraint firstItem="e9k-f4-e6c" firstAttribute="leading" secondItem="sel-a4-rGo" secondAttribute="leading" id="nez-gu-ccd"/>
+                <constraint firstItem="U5s-bH-0J4" firstAttribute="bottom" secondItem="KhC-VB-xt5" secondAttribute="bottom" id="oRa-1u-rqU"/>
                 <constraint firstItem="zzo-SG-aJN" firstAttribute="trailing" secondItem="eeg-H2-Ae9" secondAttribute="trailing" id="yxg-0t-si6"/>
                 <constraint firstItem="KhC-VB-xt5" firstAttribute="top" secondItem="B9j-eQ-CgQ" secondAttribute="top" constant="30" id="zaj-7N-WXo"/>
                 <constraint firstItem="sel-a4-rGo" firstAttribute="leading" secondItem="B9j-eQ-CgQ" secondAttribute="leading" constant="35" id="zch-Dw-YFK"/>
@@ -83,4 +115,7 @@
             <viewLayoutGuide key="safeArea" id="B9j-eQ-CgQ"/>
         </view>
     </objects>
+    <resources>
+        <image name="edit_gray" width="16" height="16"/>
+    </resources>
 </document>

@@ -9,7 +9,7 @@
 import UIKit
 
 struct AppImage {
-    static let imgBack = UIImage(named: "back")!
+    static let imgBack = UIImage(named: "Material_Icons_white_chevron_left")!
     static let imgClose = UIImage(named: "close")!
     static let imgDelete = UIImage(named: "delete")!
     
@@ -18,7 +18,8 @@ struct AppImage {
     
     static let imgMenu = UIImage(named: "close")!
     static let imgNotification = UIImage(named: "close")!
-    static let imgEditProfile = UIImage(named: "close")!
+    static let imgEditProfile = UIImage(named: "edit")!
+    
     
     // Menu
     static let imgTop = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)

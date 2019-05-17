@@ -382,15 +382,12 @@
 		DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */; };
 		DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3442283DD990037DBE4 /* Assets.xcassets */; };
 		DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */; };
-		DE750BB2228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */; };
-		DE750BB3228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */; };
-		DE750BB4228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */; };
-		DE750BB5228C425E00596D3B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */; };
-		DE750BB6228C425E00596D3B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */; };
-		DE750BB7228C425E00596D3B /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */; };
-		DE750BB8228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */; };
-		DE750BB9228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */; };
-		DE750BBA228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */; };
+		DE7D14B9228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
+		DE7D14BA228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
+		DE7D14BB228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
+		DE7D14BD228EA2B500713084 /* TitleNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */; };
+		DE7D14BE228EA2B500713084 /* TitleNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */; };
+		DE7D14BF228EA2B500713084 /* TitleNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */; };
 		DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */; };
 		DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */; };
 		DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */; };
@@ -847,6 +844,15 @@
 		DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */; };
 		DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */; };
 		DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */; };
+		DE9F0F8A228C700800A99869 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */; };
+		DE9F0F8B228C700800A99869 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */; };
+		DE9F0F8C228C700800A99869 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */; };
+		DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */; };
+		DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */; };
+		DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */; };
+		DE9F0F90228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
+		DE9F0F91228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
+		DE9F0F92228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
 		DEB9612522898F1F0046801B /* QAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9611F22898F1F0046801B /* QAPresenter.swift */; };
 		DEB9612622898F1F0046801B /* QAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9611F22898F1F0046801B /* QAPresenter.swift */; };
 		DEB9612722898F1F0046801B /* QAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9611F22898F1F0046801B /* QAPresenter.swift */; };
@@ -874,6 +880,75 @@
 		DEB961412289942E0046801B /* QAEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB961402289942E0046801B /* QAEntity.swift */; };
 		DEB961422289942E0046801B /* QAEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB961402289942E0046801B /* QAEntity.swift */; };
 		DEB961432289942E0046801B /* QAEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB961402289942E0046801B /* QAEntity.swift */; };
+		DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */; };
+		DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */; };
+		DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */; };
+		DEBD6704228D201A004B74C8 /* DetailTeamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FC228D201A004B74C8 /* DetailTeamRouter.swift */; };
+		DEBD6705228D201A004B74C8 /* DetailTeamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FC228D201A004B74C8 /* DetailTeamRouter.swift */; };
+		DEBD6706228D201A004B74C8 /* DetailTeamRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FC228D201A004B74C8 /* DetailTeamRouter.swift */; };
+		DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FD228D201A004B74C8 /* DetailTeamViewController.swift */; };
+		DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FD228D201A004B74C8 /* DetailTeamViewController.swift */; };
+		DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FD228D201A004B74C8 /* DetailTeamViewController.swift */; };
+		DEBD670A228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FE228D201A004B74C8 /* DetailTeamProtocols.swift */; };
+		DEBD670B228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FE228D201A004B74C8 /* DetailTeamProtocols.swift */; };
+		DEBD670C228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FE228D201A004B74C8 /* DetailTeamProtocols.swift */; };
+		DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FF228D201A004B74C8 /* DetailTeamInteractor.swift */; };
+		DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FF228D201A004B74C8 /* DetailTeamInteractor.swift */; };
+		DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FF228D201A004B74C8 /* DetailTeamInteractor.swift */; };
+		DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6700228D201A004B74C8 /* DetailTeamViewController.xib */; };
+		DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6700228D201A004B74C8 /* DetailTeamViewController.xib */; };
+		DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6700228D201A004B74C8 /* DetailTeamViewController.xib */; };
+		DEBD6716228D22F2004B74C8 /* DetailTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6714228D22F2004B74C8 /* DetailTeamCell.swift */; };
+		DEBD6717228D22F2004B74C8 /* DetailTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6714228D22F2004B74C8 /* DetailTeamCell.swift */; };
+		DEBD6718228D22F2004B74C8 /* DetailTeamCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6714228D22F2004B74C8 /* DetailTeamCell.swift */; };
+		DEBD6719228D22F2004B74C8 /* DetailTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6715228D22F2004B74C8 /* DetailTeamCell.xib */; };
+		DEBD671A228D22F2004B74C8 /* DetailTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6715228D22F2004B74C8 /* DetailTeamCell.xib */; };
+		DEBD671B228D22F2004B74C8 /* DetailTeamCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6715228D22F2004B74C8 /* DetailTeamCell.xib */; };
+		DEBD6723228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671D228D47DF004B74C8 /* ExplainCompetitionPresenter.swift */; };
+		DEBD6724228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671D228D47DF004B74C8 /* ExplainCompetitionPresenter.swift */; };
+		DEBD6725228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671D228D47DF004B74C8 /* ExplainCompetitionPresenter.swift */; };
+		DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671E228D47DF004B74C8 /* ExplainCompetitionRouter.swift */; };
+		DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671E228D47DF004B74C8 /* ExplainCompetitionRouter.swift */; };
+		DEBD6728228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671E228D47DF004B74C8 /* ExplainCompetitionRouter.swift */; };
+		DEBD6729228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671F228D47DF004B74C8 /* ExplainCompetitionViewController.swift */; };
+		DEBD672A228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671F228D47DF004B74C8 /* ExplainCompetitionViewController.swift */; };
+		DEBD672B228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD671F228D47DF004B74C8 /* ExplainCompetitionViewController.swift */; };
+		DEBD672C228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6720228D47DF004B74C8 /* ExplainCompetitionProtocols.swift */; };
+		DEBD672D228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6720228D47DF004B74C8 /* ExplainCompetitionProtocols.swift */; };
+		DEBD672E228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6720228D47DF004B74C8 /* ExplainCompetitionProtocols.swift */; };
+		DEBD672F228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6721228D47DF004B74C8 /* ExplainCompetitionInteractor.swift */; };
+		DEBD6730228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6721228D47DF004B74C8 /* ExplainCompetitionInteractor.swift */; };
+		DEBD6731228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6721228D47DF004B74C8 /* ExplainCompetitionInteractor.swift */; };
+		DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6722228D47DF004B74C8 /* ExplainCompetitionViewController.xib */; };
+		DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6722228D47DF004B74C8 /* ExplainCompetitionViewController.xib */; };
+		DEBD6734228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6722228D47DF004B74C8 /* ExplainCompetitionViewController.xib */; };
+		DEBD6737228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6736228D48DA004B74C8 /* CreateGroupPopUp.swift */; };
+		DEBD6738228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6736228D48DA004B74C8 /* CreateGroupPopUp.swift */; };
+		DEBD6739228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6736228D48DA004B74C8 /* CreateGroupPopUp.swift */; };
+		DEBD673B228D48EB004B74C8 /* CreateGroupContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD673A228D48EB004B74C8 /* CreateGroupContent.swift */; };
+		DEBD673C228D48EB004B74C8 /* CreateGroupContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD673A228D48EB004B74C8 /* CreateGroupContent.swift */; };
+		DEBD673D228D48EB004B74C8 /* CreateGroupContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD673A228D48EB004B74C8 /* CreateGroupContent.swift */; };
+		DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */; };
+		DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */; };
+		DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */; };
+		DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */; };
+		DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */; };
+		DEBD674B228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */; };
+		DEBD674C228D6850004B74C8 /* DailyMissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */; };
+		DEBD674D228D6850004B74C8 /* DailyMissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */; };
+		DEBD674E228D6850004B74C8 /* DailyMissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */; };
+		DEBD674F228D6850004B74C8 /* DailyMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */; };
+		DEBD6750228D6850004B74C8 /* DailyMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */; };
+		DEBD6751228D6850004B74C8 /* DailyMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */; };
+		DEBD6752228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */; };
+		DEBD6753228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */; };
+		DEBD6754228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */; };
+		DEBD6755228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */; };
+		DEBD6756228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */; };
+		DEBD6757228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */; };
+		DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
+		DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
+		DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
 		DEECF86E2286FCAB00A4678B /* HeaderUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */; };
 		DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF86F2286FCC100A4678B /* HeaderUserView.xib */; };
 		DEECF8742287041900A4678B /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8722287041900A4678B /* MenuCell.swift */; };
@@ -1102,9 +1177,8 @@
 		DE3CC3442283DD990037DBE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE3CC3472283DD990037DBE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnglishApp_Dev-Info.plist"; sourceTree = "<group>"; };
-		DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
-		DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
-		DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationBar.swift; sourceTree = "<group>"; };
+		DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNavigationBar.xib; sourceTree = "<group>"; };
 		DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
 		DE952F542287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
 		DE952F552287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
@@ -1178,6 +1252,9 @@
 		DE953178228846D400E3F688 /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
 		DE953179228846D400E3F688 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
+		DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		DEB9611F22898F1F0046801B /* QAPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAPresenter.swift; sourceTree = "<group>"; };
 		DEB9612022898F1F0046801B /* QARouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QARouter.swift; sourceTree = "<group>"; };
 		DEB9612122898F1F0046801B /* QAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAViewController.swift; sourceTree = "<group>"; };
@@ -1187,6 +1264,29 @@
 		DEB96138228993640046801B /* QACell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QACell.swift; sourceTree = "<group>"; };
 		DEB96139228993640046801B /* QACell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QACell.xib; sourceTree = "<group>"; };
 		DEB961402289942E0046801B /* QAEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntity.swift; sourceTree = "<group>"; };
+		DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamPresenter.swift; sourceTree = "<group>"; };
+		DEBD66FC228D201A004B74C8 /* DetailTeamRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamRouter.swift; sourceTree = "<group>"; };
+		DEBD66FD228D201A004B74C8 /* DetailTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamViewController.swift; sourceTree = "<group>"; };
+		DEBD66FE228D201A004B74C8 /* DetailTeamProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamProtocols.swift; sourceTree = "<group>"; };
+		DEBD66FF228D201A004B74C8 /* DetailTeamInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamInteractor.swift; sourceTree = "<group>"; };
+		DEBD6700228D201A004B74C8 /* DetailTeamViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTeamViewController.xib; sourceTree = "<group>"; };
+		DEBD6714228D22F2004B74C8 /* DetailTeamCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamCell.swift; sourceTree = "<group>"; };
+		DEBD6715228D22F2004B74C8 /* DetailTeamCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailTeamCell.xib; sourceTree = "<group>"; };
+		DEBD671D228D47DF004B74C8 /* ExplainCompetitionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCompetitionPresenter.swift; sourceTree = "<group>"; };
+		DEBD671E228D47DF004B74C8 /* ExplainCompetitionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCompetitionRouter.swift; sourceTree = "<group>"; };
+		DEBD671F228D47DF004B74C8 /* ExplainCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCompetitionViewController.swift; sourceTree = "<group>"; };
+		DEBD6720228D47DF004B74C8 /* ExplainCompetitionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCompetitionProtocols.swift; sourceTree = "<group>"; };
+		DEBD6721228D47DF004B74C8 /* ExplainCompetitionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainCompetitionInteractor.swift; sourceTree = "<group>"; };
+		DEBD6722228D47DF004B74C8 /* ExplainCompetitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExplainCompetitionViewController.xib; sourceTree = "<group>"; };
+		DEBD6736228D48DA004B74C8 /* CreateGroupPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupPopUp.swift; sourceTree = "<group>"; };
+		DEBD673A228D48EB004B74C8 /* CreateGroupContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupContent.swift; sourceTree = "<group>"; };
+		DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGroupContent.xib; sourceTree = "<group>"; };
+		DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionPresenter.swift; sourceTree = "<group>"; };
+		DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionRouter.swift; sourceTree = "<group>"; };
+		DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionViewController.swift; sourceTree = "<group>"; };
+		DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionProtocols.swift; sourceTree = "<group>"; };
+		DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionInteractor.swift; sourceTree = "<group>"; };
+		DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyMissionViewController.xib; sourceTree = "<group>"; };
 		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
 		DEECF86F2286FCC100A4678B /* HeaderUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderUserView.xib; sourceTree = "<group>"; };
 		DEECF8722287041900A4678B /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -1528,7 +1628,10 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
+
+				DEBD6742228D6840004B74C8 /* DailyMission */,
 				76E2FEBD228DBA990014B1F4 /* SaveDictionary */,
 				76DB9396228C73720081A36E /* MoreDictionary */,
 				76DB937D228C56380081A36E /* Dictionary */,
@@ -1632,6 +1735,7 @@
 			isa = PBXGroup;
 			children = (
 				766D135A228EF05B005E47F0 /* ViewGradient */,
+				DE7D14B7228EA27500713084 /* TitleNavigationBar */,
 				76E2FEF9228DC4AC0014B1F4 /* PageView */,
 				76DB93B8228C74950081A36E /* RatioButton */,
 				DEECF86C2286FC9400A4678B /* HeaderUserView */,
@@ -1715,6 +1819,7 @@
 		DE361E502283E60500FA3B0D /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DEBD6735228D48C7004B74C8 /* CreateGroupPopUp */,
 				DE361E532283E60500FA3B0D /* NotificationPopUp */,
 				DE361E572283E60500FA3B0D /* YesNoPopUp */,
 			);
@@ -1891,6 +1996,8 @@
 		DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				DEBD671C228D47BD004B74C8 /* ExplainCompetition */,
+				DEBD66FA228D2004004B74C8 /* DetailTeam */,
 				DE3A8CD22289C7490080A8CB /* SelectTeam */,
 				DE3A8CAC2289BBE60080A8CB /* Competition */,
 			);
@@ -1981,11 +2088,20 @@
 		DE750BAE228C424300596D3B /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				DE750BAF228C425D00596D3B /* Comfortaa-Bold.ttf */,
-				DE750BB0228C425D00596D3B /* Comfortaa-Light.ttf */,
-				DE750BB1228C425E00596D3B /* Comfortaa-Regular.ttf */,
+				DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */,
+				DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */,
+				DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		DE7D14B7228EA27500713084 /* TitleNavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */,
+				DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */,
+			);
+			path = TitleNavigationBar;
 			sourceTree = "<group>";
 		};
 		DE952F512287D2A700E3F688 /* Indicator */ = {
@@ -2183,6 +2299,65 @@
 			path = QACell;
 			sourceTree = "<group>";
 		};
+		DEBD66FA228D2004004B74C8 /* DetailTeam */ = {
+			isa = PBXGroup;
+			children = (
+				DEBD6713228D22DE004B74C8 /* DetailTeamCell */,
+				DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */,
+				DEBD66FC228D201A004B74C8 /* DetailTeamRouter.swift */,
+				DEBD66FD228D201A004B74C8 /* DetailTeamViewController.swift */,
+				DEBD66FE228D201A004B74C8 /* DetailTeamProtocols.swift */,
+				DEBD66FF228D201A004B74C8 /* DetailTeamInteractor.swift */,
+				DEBD6700228D201A004B74C8 /* DetailTeamViewController.xib */,
+			);
+			path = DetailTeam;
+			sourceTree = "<group>";
+		};
+		DEBD6713228D22DE004B74C8 /* DetailTeamCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEBD6714228D22F2004B74C8 /* DetailTeamCell.swift */,
+				DEBD6715228D22F2004B74C8 /* DetailTeamCell.xib */,
+			);
+			path = DetailTeamCell;
+			sourceTree = "<group>";
+		};
+		DEBD671C228D47BD004B74C8 /* ExplainCompetition */ = {
+			isa = PBXGroup;
+			children = (
+				DEBD671D228D47DF004B74C8 /* ExplainCompetitionPresenter.swift */,
+				DEBD671E228D47DF004B74C8 /* ExplainCompetitionRouter.swift */,
+				DEBD671F228D47DF004B74C8 /* ExplainCompetitionViewController.swift */,
+				DEBD6720228D47DF004B74C8 /* ExplainCompetitionProtocols.swift */,
+				DEBD6721228D47DF004B74C8 /* ExplainCompetitionInteractor.swift */,
+				DEBD6722228D47DF004B74C8 /* ExplainCompetitionViewController.xib */,
+			);
+			path = ExplainCompetition;
+			sourceTree = "<group>";
+		};
+		DEBD6735228D48C7004B74C8 /* CreateGroupPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				DEBD6736228D48DA004B74C8 /* CreateGroupPopUp.swift */,
+				DEBD673A228D48EB004B74C8 /* CreateGroupContent.swift */,
+				DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */,
+			);
+			path = CreateGroupPopUp;
+			sourceTree = "<group>";
+		};
+		DEBD6742228D6840004B74C8 /* DailyMission */ = {
+			isa = PBXGroup;
+			children = (
+				DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */,
+				DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */,
+				DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */,
+				DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */,
+				DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */,
+				DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */,
+			);
+			path = DailyMission;
+			sourceTree = "<group>";
+		};
 		DEECF86C2286FC9400A4678B /* HeaderUserView */ = {
 			isa = PBXGroup;
 			children = (
@@ -2344,16 +2519,22 @@
 				DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613422898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC22289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
+				DE9F0F8A228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
+				DE7D14BD228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
+				DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
-				DE750BB5228C425E00596D3B /* Comfortaa-Light.ttf in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
+				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
+				DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
+				DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
+				DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
@@ -2373,14 +2554,14 @@
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				DE361EA02283E60500FA3B0D /* YesNoContentView.xib in Resources */,
+				DEBD6719228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
-				DE750BB2228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
-				DE750BB8228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
+				DE9F0F90228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
 				DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310E2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314B2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -2400,16 +2581,22 @@
 				DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613522898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC32289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
+				DE9F0F8B228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
+				DE7D14BE228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
+				DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
-				DE750BB6228C425E00596D3B /* Comfortaa-Light.ttf in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
+				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
+				DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
+				DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
+				DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
@@ -2429,14 +2616,14 @@
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				DE95304F2287DF4800E3F688 /* YesNoContentView.xib in Resources */,
+				DEBD671A228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
-				DE750BB3228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
-				DE750BB9228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
+				DE9F0F91228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
 				DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310F2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314C2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -2456,16 +2643,22 @@
 				DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613622898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC42289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
+				DE9F0F8C228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
+				DE7D14BF228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
+				DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
-				DE750BB7228C425E00596D3B /* Comfortaa-Light.ttf in Resources */,
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
+				DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
+				DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
 				DE3A8CEA2289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
+				DEBD6734228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
+				DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
@@ -2485,14 +2678,14 @@
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				DE9530FD2287DF6400E3F688 /* YesNoContentView.xib in Resources */,
+				DEBD671B228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
-				DE750BB4228C425E00596D3B /* Comfortaa-Bold.ttf in Resources */,
 				DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */,
-				DE750BBA228C425E00596D3B /* Comfortaa-Regular.ttf in Resources */,
+				DE9F0F92228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
 				DE9531162287E00A00E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE9531102287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314D2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -2836,13 +3029,17 @@
 				DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953187228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				DEBD672F228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
 				DE2ADE6C22841B9E003768CE /* HomeProtocols.swift in Sources */,
 				76E2FEE7228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CBF2289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961412289942E0046801B /* QAEntity.swift in Sources */,
+				DE7D14B9228EA28A00713084 /* TitleNavigationBar.swift in Sources */,
 				DE952F902287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
+				DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
+				DEBD6737228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
 				766D131D228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
@@ -2872,6 +3069,7 @@
 				DE3A8CE22289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE95317B228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE361EAA2283E6DB00FA3B0D /* CustomTextfield.swift in Sources */,
+				DEBD6723228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE361DE52283E54C00FA3B0D /* BaseTableCell.swift in Sources */,
 				76E2FF52228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
@@ -2887,14 +3085,17 @@
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
 				76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
 				DE2ADE7722841BB9003768CE /* MenuViewController.swift in Sources */,
+				DEBD6704228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				76E2FF5B228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
 				76DB93A6228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
+				DEBD6729228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */,
 				76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
 				DE95315B22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
@@ -2902,6 +3103,7 @@
 				766D131A228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB32289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */,
+				DEBD670A228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE361F362283E85000FA3B0D /* PhotoEntity.swift in Sources */,
 				DEECF89F22871D1B00A4678B /* ForgotPasswordProtocols.swift in Sources */,
 				DEECF86E2286FCAB00A4678B /* HeaderUserView.swift in Sources */,
@@ -2920,6 +3122,7 @@
 				766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
+				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
 				DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
@@ -2940,6 +3143,7 @@
 				DE952F8D2287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE361DFB2283E57900FA3B0D /* String+extension.swift in Sources */,
 				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				DEBD674F228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9390228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */,
 				DE952F8E2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
@@ -2956,6 +3160,7 @@
 				DEECF8772287075B00A4678B /* UITable+extension.swift in Sources */,
 				DE3A8CB92289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE361DE32283E54C00FA3B0D /* BaseViewController.swift in Sources */,
+				DEBD6755228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */,
 				76E2FF40228DD1070014B1F4 /* AddNoteProtocols.swift in Sources */,
 				DE95315E22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
 				76E2FEF3228DBB610014B1F4 /* CellGrammar.swift in Sources */,
@@ -2971,6 +3176,8 @@
 				76E2FEEA228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
 				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
+				DEBD674C228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
+				DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
 				76E2FF3A228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
@@ -3023,6 +3230,7 @@
 				DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE952FAD2287DD2A00E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				DEBD6716228D22F2004B74C8 /* DetailTeamCell.swift in Sources */,
 				76E2FF24228DCF290014B1F4 /* NoteViewController.swift in Sources */,
 				766D1323228EE9E4005E47F0 /* LessonInteractor.swift in Sources */,
 				DE361F512283E85000FA3B0D /* NotificationAPIService.swift in Sources */,
@@ -3033,6 +3241,7 @@
 				76E2FEE4228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE95312F228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DE3A8CB62289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
+				DEBD6752228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE361F3D2283E85000FA3B0D /* NetworkRequest.swift in Sources */,
 				DE361E8D2283E60500FA3B0D /* AppCheckBox.swift in Sources */,
@@ -3042,6 +3251,7 @@
 				DE361DFA2283E57900FA3B0D /* UIViewController+extension.swift in Sources */,
 				DE361E7A2283E60500FA3B0D /* AppSearchBar.swift in Sources */,
 				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				DEBD672C228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
 				DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */,
 				DE361F3C2283E85000FA3B0D /* MapperData.swift in Sources */,
@@ -3062,10 +3272,12 @@
 				DE952F9C2287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */,
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
+				DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CCF2289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
+				DEBD673B228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3089,13 +3301,17 @@
 				DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953188228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				DEBD6730228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
 				DE952FBA2287DF4800E3F688 /* HomeProtocols.swift in Sources */,
 				76E2FEE8228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CC02289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961422289942E0046801B /* QAEntity.swift in Sources */,
+				DE7D14BA228EA28A00713084 /* TitleNavigationBar.swift in Sources */,
 				DE952FBB2287DF4800E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
+				DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
+				DEBD6738228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
 				766D131E228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
@@ -3125,6 +3341,7 @@
 				DE3A8CE32289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE95317C228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */,
+				DEBD6724228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE952FCB2287DF4800E3F688 /* BaseTableCell.swift in Sources */,
 				76E2FF53228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952FCC2287DF4800E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
@@ -3140,14 +3357,17 @@
 				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
 				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
 				DE952FDA2287DF4800E3F688 /* MenuViewController.swift in Sources */,
+				DEBD6705228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				76E2FF5C228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
 				76DB93A7228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
+				DEBD672A228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */,
 				76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
 				DE95315C22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
@@ -3155,6 +3375,7 @@
 				766D131B228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB42289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DE952FDD2287DF4800E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
+				DEBD670B228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE952FDE2287DF4800E3F688 /* PhotoEntity.swift in Sources */,
 				DE952FDF2287DF4800E3F688 /* ForgotPasswordProtocols.swift in Sources */,
 				DE952FE02287DF4800E3F688 /* HeaderUserView.swift in Sources */,
@@ -3173,6 +3394,7 @@
 				766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
+				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
 				DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */,
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
@@ -3193,6 +3415,7 @@
 				DE952FF32287DF4800E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */,
 				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				DEBD6750228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9391228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */,
 				DE952FF72287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
@@ -3209,6 +3432,7 @@
 				DE952FFF2287DF4800E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBA2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530002287DF4800E3F688 /* BaseViewController.swift in Sources */,
+				DEBD6756228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */,
 				76E2FF41228DD1070014B1F4 /* AddNoteProtocols.swift in Sources */,
 				DE95315F22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
 				76E2FEF4228DBB610014B1F4 /* CellGrammar.swift in Sources */,
@@ -3224,6 +3448,8 @@
 				76E2FEEB228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */,
 				DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */,
+				DEBD674D228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
+				DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */,
 				76E2FF3B228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
@@ -3276,6 +3502,7 @@
 				DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530222287DF4800E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				DEBD6717228D22F2004B74C8 /* DetailTeamCell.swift in Sources */,
 				76E2FF25228DCF290014B1F4 /* NoteViewController.swift in Sources */,
 				766D1324228EE9E4005E47F0 /* LessonInteractor.swift in Sources */,
 				DE9530232287DF4800E3F688 /* NotificationAPIService.swift in Sources */,
@@ -3286,6 +3513,7 @@
 				76E2FEE5228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE953130228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DE3A8CB72289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
+				DEBD6753228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530282287DF4800E3F688 /* NetworkRequest.swift in Sources */,
 				DE9530292287DF4800E3F688 /* AppCheckBox.swift in Sources */,
@@ -3295,6 +3523,7 @@
 				DE95302B2287DF4800E3F688 /* UIViewController+extension.swift in Sources */,
 				DE95302C2287DF4800E3F688 /* AppSearchBar.swift in Sources */,
 				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				DEBD672D228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
 				DE95302F2287DF4800E3F688 /* HomeRouter.swift in Sources */,
 				DE9530302287DF4800E3F688 /* MapperData.swift in Sources */,
@@ -3315,10 +3544,12 @@
 				DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */,
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
+				DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD02289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
+				DEBD673C228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3342,13 +3573,17 @@
 				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953189228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				DEBD6731228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */,
 				DE9530682287DF6400E3F688 /* HomeProtocols.swift in Sources */,
 				76E2FEE9228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CC12289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961432289942E0046801B /* QAEntity.swift in Sources */,
+				DE7D14BB228EA28A00713084 /* TitleNavigationBar.swift in Sources */,
 				DE9530692287DF6400E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DE95306A2287DF6400E3F688 /* ForgotPasswordInteractor.swift in Sources */,
+				DEBD674B228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
+				DEBD6739228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */,
 				766D131F228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
@@ -3378,6 +3613,7 @@
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE95317D228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE9530782287DF6400E3F688 /* CustomTextfield.swift in Sources */,
+				DEBD6725228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE9530792287DF6400E3F688 /* BaseTableCell.swift in Sources */,
 				76E2FF54228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE95307A2287DF6400E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
@@ -3393,14 +3629,17 @@
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76DB93AB228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
 				DE95314A2288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
 				DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */,
 				DE9530882287DF6400E3F688 /* MenuViewController.swift in Sources */,
+				DEBD6706228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				76E2FF5D228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
 				76DB93A8228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
+				DEBD672B228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */,
 				76DB93BC228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
 				DE95315D22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
@@ -3408,6 +3647,7 @@
 				766D131C228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB52289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DE95308B2287DF6400E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
+				DEBD670C228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE95308C2287DF6400E3F688 /* PhotoEntity.swift in Sources */,
 				DE95308D2287DF6400E3F688 /* ForgotPasswordProtocols.swift in Sources */,
 				DE95308E2287DF6400E3F688 /* HeaderUserView.swift in Sources */,
@@ -3426,6 +3666,7 @@
 				766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */,
 				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
+				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,
 				DE9530992287DF6400E3F688 /* MenuRouter.swift in Sources */,
@@ -3446,6 +3687,7 @@
 				DE9530A12287DF6400E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
 				DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				DEBD6751228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9392228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */,
 				DE9530A52287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
@@ -3462,6 +3704,7 @@
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBB2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530AE2287DF6400E3F688 /* BaseViewController.swift in Sources */,
+				DEBD6757228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */,
 				76E2FF42228DD1070014B1F4 /* AddNoteProtocols.swift in Sources */,
 				DE95316022883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
 				76E2FEF5228DBB610014B1F4 /* CellGrammar.swift in Sources */,
@@ -3477,6 +3720,8 @@
 				76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */,
 				DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */,
+				DEBD674E228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
+				DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530B62287DF6400E3F688 /* AppTextField.swift in Sources */,
 				76E2FF3C228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
@@ -3529,6 +3774,7 @@
 				DE9530CE2287DF6400E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE9530CF2287DF6400E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530D02287DF6400E3F688 /* Login+GoogleSignIn.swift in Sources */,
+				DEBD6718228D22F2004B74C8 /* DetailTeamCell.swift in Sources */,
 				76E2FF26228DCF290014B1F4 /* NoteViewController.swift in Sources */,
 				766D1325228EE9E4005E47F0 /* LessonInteractor.swift in Sources */,
 				DE9530D12287DF6400E3F688 /* NotificationAPIService.swift in Sources */,
@@ -3539,6 +3785,7 @@
 				76E2FEE6228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE953131228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DE3A8CB82289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
+				DEBD6754228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530D62287DF6400E3F688 /* NetworkRequest.swift in Sources */,
 				DE9530D72287DF6400E3F688 /* AppCheckBox.swift in Sources */,
@@ -3548,6 +3795,7 @@
 				DE9530D92287DF6400E3F688 /* UIViewController+extension.swift in Sources */,
 				DE9530DA2287DF6400E3F688 /* AppSearchBar.swift in Sources */,
 				DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				DEBD672E228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */,
 				DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */,
 				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
@@ -3568,10 +3816,12 @@
 				DE9530E92287DF6400E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */,
 				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
+				DEBD6728228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD12289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
+				DEBD673D228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

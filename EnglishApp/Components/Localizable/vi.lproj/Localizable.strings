@@ -26,7 +26,7 @@
 "FBorGmail" = "Hoặc đăng nhập bằng";
 "ForgotPass" = "Quên mật khẩu";
 "NotYetAccount" = "Bạn chưa có tài khoản?";
-"Register" = "Đăng kí";
+"Register" = "Đăng ký";
 "LoginButtonSignUp" = "ĐĂNG KÝ";
 "passwordDifference" = "Mật khẩu không giống nhau";
 
@@ -37,7 +37,7 @@
 
 "invalidLoginEmail" = "Email không chính xác";
 "invalidLoginPassword" = "Mật khẩu không chính xác";
-"emptyLoginEmailPassword"  = "Vui lòng nhập đầy đủ thông tin bắt buộc";
+"emptyLoginEmailPassword"  = "Vui lòng nhập đầy đủ thông tin";
 
 // Profile
 "DisplayName" = "Tên hiển thị";
@@ -46,6 +46,8 @@
 "TitleProfile" = "Thông tin tài khoản";
 "EditProfile" = "Sửa thông tin";
 "titleSave" = "LƯU";
+"titleDiamon" = "titleDiamon";
+"titleBee" = "titleBee";
 
 // Preview profile
 
@@ -80,6 +82,24 @@
 "countTeam" = "Số đội: ";
 "selectTeamJoin" = "Chọn nhóm tham gia";
 "joinTeam" = "Vào nhóm";
+
+
+// Detail team
+"startAfter" = "Bắt đầu sau: ";
+"explainConpetition" = "Giải thích về cuộc thi";
+"leaveTeam" = "Rời nhóm";
+"createGroup" = "Tạo nhóm";
+"nameGroup" = "Tên nhóm";
+"enterNameGroup" = "Nhập tên nhóm";
+"leaveTeamPopUp" = "Bạn có muốn rời nhóm?";
+"verifyButton" = "Xác nhận";
+
+// Daily mission
+"messageDailyMission" = "Hoàn thành nhiệm vụ hàng ngày nhận ngay 1 kim cương và x điểm level";
+"dailyMissionTitle" = "Nhiệm vụ hàng ngày";
+"startMission" = "Bắt đầu";
+
+
 
 //add dictionary
 "search" = "Tra cứu";

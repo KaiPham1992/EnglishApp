@@ -216,46 +216,12 @@ extension BaseViewController {
     func setTitleNavigation(title: String, textColor: UIColor = UIColor.white, action: Selector? = nil ) {
         
         showNavigation()
-        let lb = UILabel()
-        lb.text             = title
-        lb.textAlignment    = .center
-        lb.numberOfLines    = 2
-        lb.textColor        = textColor
-        lb.sizeToFit()
+        let vTitle = TitleNavigationBar()
+        vTitle.lbTitle.text = title
+        vTitle.frame = CGRect(x: 0, y: 0, width: 375, height: 44)
+        self.navigationItem.titleView = vTitle
         
-        let vTest = UIView()
-        vTest.isUserInteractionEnabled = true
-        vTest.frame = CGRect(x: 0, y: 0, width: 375, height: 44)
-        vTest.addSubview(lb)
-        lb.centerSuperview()
-        lb.font = AppFont.fontRegular18
-        lb.textColor = UIColor.white
-        let tap = UITapGestureRecognizer(target: self, action: action)
-        lb.isUserInteractionEnabled = true
-        lb.addGestureRecognizer(tap)
-        self.navigationItem.titleView = vTest
     }
-    
-    func setTitleWhiteNavigation(title: String, textColor: UIColor = UIColor.white, action: Selector? = nil ) {
-        let lb = UILabel()
-        lb.text             = title
-        lb.textAlignment    = .center
-        lb.numberOfLines    = 2
-        lb.textColor        = textColor
-        lb.sizeToFit()
-        
-        let vTest = UIView()
-        vTest.isUserInteractionEnabled = true
-        vTest.frame = CGRect(x: 0, y: 0, width: 375, height: 44)
-        vTest.addSubview(lb)
-        lb.centerSuperview()
-        lb.font = AppFont.fontRegular18
-        let tap = UITapGestureRecognizer(target: self, action: action)
-        lb.isUserInteractionEnabled = true
-        lb.addGestureRecognizer(tap)
-        self.navigationItem.titleView = vTest
-    }
-    
     
     func addButtonImageToNavigation(image: UIImage, style: StyleNavigation, action: Selector?) {
         showNavigation()

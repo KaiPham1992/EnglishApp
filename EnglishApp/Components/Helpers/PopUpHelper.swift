@@ -29,4 +29,34 @@ class PopUpHelper {
         popUp.showPopUp(message: message, completion: completionYes)
     }
     
+    func showCreateGroup(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+        let popUp = CreateGroupPopUp()
+        popUp.showPopUp(titlePopUp: LocalizableKey.createGroup.showLanguage,
+                        titleInput: LocalizableKey.nameGroup.showLanguage,
+                        placeHolderInput: LocalizableKey.enterNameGroup.showLanguage,
+                        titleNo: LocalizableKey.cancel.showLanguage.uppercased(),
+                        titleYes: LocalizableKey.createGroup.showLanguage.uppercased(),
+                        completionNo: completionNo,
+                        completionYes: completionYes)
+    }
+    
+    func showLeaveGroup(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+        let popUp = YesNoPopUp()
+        popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.verifyButton.showLanguage.uppercased(), for: .normal)
+        popUp.vYesNoContentView.btnYes.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
+        
+        popUp.showPopUp(message: LocalizableKey.leaveTeamPopUp.showLanguage, completionNo: completionYes, completionYes: completionNo)
+    }
+    
+    func showReport(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+        let popUp = CreateGroupPopUp()
+        popUp.showPopUp(titlePopUp: LocalizableKey.createGroup.showLanguage,
+                        titleInput: LocalizableKey.nameGroup.showLanguage,
+                        placeHolderInput: LocalizableKey.enterNameGroup.showLanguage,
+                        titleNo: LocalizableKey.cancel.showLanguage.uppercased(),
+                        titleYes: LocalizableKey.createGroup.showLanguage.uppercased(),
+                        completionNo: completionNo,
+                        completionYes: completionYes)
+    }
+    
 }
