@@ -27,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        AppRouter.shared.openLogin()
-        
+        AppRouter.shared.setTest()
         configureGoogle()
         
         return true

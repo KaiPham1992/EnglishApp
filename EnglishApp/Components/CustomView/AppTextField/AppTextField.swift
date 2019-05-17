@@ -11,6 +11,7 @@ import UIKit
 class AppTextField: BaseViewXib {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var tfInput: UITextField!
+    @IBOutlet weak var vLine: UIView!
     
     func setTitleAndPlaceHolder(title: String? = nil, placeHolder: String? = nil) {
         if title != nil {

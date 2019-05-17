@@ -33,6 +33,7 @@ class BasePopUpView: UIView {
     let vContent: UIView = {
         let view                = UIView()
         view.backgroundColor    = UIColor.white
+        view.setBorder(cornerRadius: 8)
         return view
     }()
     
