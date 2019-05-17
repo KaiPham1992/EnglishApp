@@ -33,7 +33,7 @@ class ChangePasswordViewController: BaseViewController {
        
         setTitleNavigation(title: LocalizableKey.changePasssword.showLanguage)
         vCurrenPass.setTitleAndPlaceHolder(title: LocalizableKey.currentPassword.showLanguage, placeHolder: LocalizableKey.currentPasswordLogin.showLanguage)
-        vCurrenPass.tfInput.isSecureTextEntry = true
+//        vCurrenPass.tfInput.isSecureTextEntry = true
         vNewPass.tfInput.isSecureTextEntry = true
         VReNewPass.tfInput.isSecureTextEntry = true
         

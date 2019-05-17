@@ -13,6 +13,7 @@ import DropDown
 
 class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
 
+    @IBOutlet weak var lblDictionary: UILabel!
     @IBOutlet weak var viewDictionary: UIView!
     @IBOutlet weak var tfSearch: UITextField!
     
@@ -22,6 +23,7 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
 
     override func setUpViews() {
         super.setUpViews()
+        lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
             self.setupDropDown()
         }
@@ -33,7 +35,7 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: "Từ điển")
+        setTitleNavigation(title: LocalizableKey.dictionaty.showLanguage)
         addButtonToNavigation(image: UIImage(named: "ic_settings")!, style: .right, action: #selector(clickButtonRight) )
     }
     
@@ -42,7 +44,7 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
     }
     
     private func getData(){
-        dropDownDictionary.dataSource = ["a","b","c"]
+        dropDownDictionary.dataSource = [LocalizableKey.vietnamese_to_english.showLanguage,LocalizableKey.english_to_english.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.japanese_to_vietnamese.showLanguage]
         dropDownDictionary.show()
 //        dropDownSearch.dataSource = ["a","b","c"]
 //        dropDownSearch.show()

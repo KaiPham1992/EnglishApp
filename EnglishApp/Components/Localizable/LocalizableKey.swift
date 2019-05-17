@@ -48,6 +48,8 @@ struct LocalizableKey {
     static let CodeNumber = "CodeNumber"
     static let EditProfile = "EditProfile"
     static let titleSave = "titleSave"
+    static let titleDiamon = "Kim cương"
+    static let titleBee = "Hũ mật ong"
     
     // preview profile
     
@@ -86,6 +88,7 @@ struct LocalizableKey {
     static let selectTeamJoin = "selectTeamJoin"
     static let joinTeam = "joinTeam"
     
+
     // Detail team
     static let startAfter = "startAfter"
     static let explainConpetition = "explainConpetition"
@@ -104,4 +107,19 @@ struct LocalizableKey {
     static let report = "report"
     static let description = "description"
     static let enterContent = "enterContent"
+
+    static let search = "search"
+    static let dictionaty = "dictionaty"
+    static let vietnamese_to_english = "vietnamese_to_english"
+    static let english_to_english = "english_to_english"
+    static let english_to_vietnamese = "english_to_vietnamese"
+    static let japanese_to_vietnamese = "japanese_to_vietnamese"
+    static let addDictionary = "addDictionary"
+    
+    static let saved = "saved"
+    static let grammar = "grammar"
+    static let vocabulary = "vocabulary"
+    static let note = "note"
+    static let writeNote = "write_note"
+
 }

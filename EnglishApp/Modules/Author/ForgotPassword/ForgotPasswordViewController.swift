@@ -33,7 +33,7 @@ class ForgotPasswordViewController: BaseViewController {
         super.setTitleUI()
         
         setTitleNavigation(title: LocalizableKey.ForgotTitle.showLanguage)
-        btnSendEmail.setTitle(LocalizableKey.SentEmail.showLanguage, for: .normal)
+        btnSendEmail.setTitle(LocalizableKey.SentEmail.showLanguage.uppercased(), for: .normal)
         lbMessage.text = LocalizableKey.ForgotPasswordMessage.showLanguage
          vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
     }

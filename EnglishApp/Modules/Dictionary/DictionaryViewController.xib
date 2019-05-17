@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
         <array key="Roboto-Bold.ttf">
             <string>Roboto-Bold</string>
         </array>
@@ -17,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DictionaryViewController">
             <connections>
+                <outlet property="lblDictionary" destination="Vhz-EI-uqB" id="DEa-oj-zYA"/>
                 <outlet property="tfSearch" destination="TBR-R9-mjb" id="tFS-bF-m2o"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewDictionary" destination="qDE-WM-TdO" id="EVt-NW-i7S"/>
@@ -111,17 +115,18 @@
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGL-HV-3PZ">
-                    <rect key="frame" x="16" y="84" width="343" height="40"/>
+                    <rect key="frame" x="16" y="84" width="343" height="60"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="17"/>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pU5-AX-J4h">
-                    <rect key="frame" x="16" y="152" width="343" height="515"/>
+                    <rect key="frame" x="16" y="172" width="343" height="495"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vc-ac-SBe">
                             <rect key="frame" x="0.0" y="0.0" width="343" height="176"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JY-75-6wC">
                                     <rect key="frame" x="0.0" y="0.0" width="343" height="176"/>
-                                    <mutableString key="text">appeal @appeal /ə'pi:l/ * danh từ - sự kêu gọi; lời kêu gọi - lời thỉnh cầu, sự cầu khẩn =with a look of appeal+ với vẻ cầu khẩn =to make an appeal to someone's generossity+ cầu đến lòng rộng lượng của ai, kêu gọi lòng rộng lượng của ai - (pháp lý) sự chống án; quyền chống án =to lodge an appeal; to give notice of appeal+ đưa đơn chống án !Court of Appeal - toà thượng thẩm - sức lôi cuốn, sức quyến rũ =to have appeal+ có sức lôi cuốn, có sức quyến rũ !to appeal to the country</mutableString>
+                                    <string key="text">appeal @appeal /ə'pi:l/ * danh từ - sự kêu gọi; lời kêu gọi - lời thỉnh cầu, sự cầu khẩn =with a look of appeal+ với vẻ cầu khẩn =to make an appeal to someone's generossity+ cầu đến lòng rộng lượng của ai, kêu gọi lòng rộng lượng của ai - (pháp lý) sự chống án; quyền chống án =to lodge an appeal; to give notice of appeal+ đưa đơn chống án !Court of Appeal - toà thượng thẩm - sức lôi cuốn, sức quyến rũ =to have appeal+ có sức lôi cuốn, có sức quyến rũ !to appeal to the country</string>
                                     <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="15"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -161,7 +166,7 @@
                 <constraint firstItem="4ZE-SS-dMm" firstAttribute="bottom" secondItem="pU5-AX-J4h" secondAttribute="bottom" id="uPC-Fu-atz"/>
                 <constraint firstItem="TBR-R9-mjb" firstAttribute="leading" secondItem="qDE-WM-TdO" secondAttribute="trailing" constant="5" id="vEn-G1-wsh"/>
                 <constraint firstItem="kGL-HV-3PZ" firstAttribute="leading" secondItem="h3B-5e-yLV" secondAttribute="leading" id="vUB-bS-dE7"/>
-                <constraint firstItem="kGL-HV-3PZ" firstAttribute="bottom" secondItem="h3B-5e-yLV" secondAttribute="bottom" id="wb5-IX-Bc9"/>
+                <constraint firstItem="kGL-HV-3PZ" firstAttribute="bottom" secondItem="h3B-5e-yLV" secondAttribute="bottom" constant="20" id="wb5-IX-Bc9"/>
                 <constraint firstItem="kGL-HV-3PZ" firstAttribute="trailing" secondItem="h3B-5e-yLV" secondAttribute="trailing" id="xVA-vJ-1Bs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="4ZE-SS-dMm"/>

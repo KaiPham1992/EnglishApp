@@ -26,7 +26,7 @@
 "FBorGmail" = "Hoặc đăng nhập bằng";
 "ForgotPass" = "Quên mật khẩu";
 "NotYetAccount" = "Bạn chưa có tài khoản?";
-"Register" = "Đăng kí";
+"Register" = "Đăng ký";
 "LoginButtonSignUp" = "ĐĂNG KÝ";
 "passwordDifference" = "Mật khẩu không giống nhau";
 
@@ -37,7 +37,7 @@
 
 "invalidLoginEmail" = "Email không chính xác";
 "invalidLoginPassword" = "Mật khẩu không chính xác";
-"emptyLoginEmailPassword"  = "Vui lòng nhập đầy đủ thông tin bắt buộc";
+"emptyLoginEmailPassword"  = "Vui lòng nhập đầy đủ thông tin";
 
 // Profile
 "DisplayName" = "Tên hiển thị";
@@ -46,6 +46,8 @@
 "TitleProfile" = "Thông tin tài khoản";
 "EditProfile" = "Sửa thông tin";
 "titleSave" = "LƯU";
+"titleDiamon" = "titleDiamon";
+"titleBee" = "titleBee";
 
 // Preview profile
 
@@ -81,6 +83,7 @@
 "selectTeamJoin" = "Chọn nhóm tham gia";
 "joinTeam" = "Vào nhóm";
 
+
 // Detail team
 "startAfter" = "Bắt đầu sau: ";
 "explainConpetition" = "Giải thích về cuộc thi";
@@ -96,4 +99,22 @@
 "dailyMissionTitle" = "Nhiệm vụ hàng ngày";
 "startMission" = "Bắt đầu";
 
+
+
+//add dictionary
+"search" = "Tra cứu";
+"dictionaty" = "Từ điển";
+"vietnamese_to_english" = "Việt - Anh";
+"english_to_english" = "Anh - Anh";
+"english_to_vietnamese" = "Anh - Việt";
+"japanese_to_vietnamese" = "Nhật - Việt";
+"addDictionary" = "Thêm Từ Điển";
+
+//saved
+
+"saved" = "Đã lưu";
+"grammar" = "Ngữ pháp";
+"vocabulary" = "Từ vựng";
+"note" = "Ghi chú";
+"write_note" = "Viết ghi chú";
 

@@ -17,6 +17,8 @@ class EditProfileViewController: BaseViewController, EditProfileViewProtocol {
     @IBOutlet weak var vDisplayName: AppTextField!
     @IBOutlet weak var vLocation: AppDropDown!
     @IBOutlet weak var btnSave: UIButton!
+    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var lbError: UILabel!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +38,14 @@ class EditProfileViewController: BaseViewController, EditProfileViewProtocol {
 
     override func setTitleUI() {
         super.setTitleUI()
+        lbError.text = ""
         vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage)
         vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
         
         setTitleNavigation(title: LocalizableKey.EditProfile.showLanguage)
         btnSave.setTitle(LocalizableKey.titleSave.showLanguage, for: .normal)
+        imgAvatar.setBorder(borderWidth: 4, borderColor: AppColor.yellow, cornerRadius: 50)
     }
     
     @IBAction func btnSavedTapped() {

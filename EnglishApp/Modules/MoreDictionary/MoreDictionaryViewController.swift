@@ -25,7 +25,7 @@ class MoreDictionaryViewController: BaseViewController, MoreDictionaryViewProtoc
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: "Thêm từ điển")
+        setTitleNavigation(title: LocalizableKey.addDictionary.showLanguage)
     }
 }
 

@@ -55,13 +55,13 @@ class LoginViewController: BaseViewController {
         vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
         vPassword.tfInput.isSecureTextEntry = true 
         
-        btnLogin.setTitle(LocalizableKey.LoginButtonLogin.showLanguage, for: .normal)
+        btnLogin.setTitle(LocalizableKey.LoginButtonLogin.showLanguage.uppercased(), for: .normal)
         lbFbGmail.text = LocalizableKey.FBorGmail.showLanguage
         lbForgot.text = LocalizableKey.ForgotPass.showLanguage
         
         let attr = NSMutableAttributedString()
         let attr1 = LocalizableKey.NotYetAccount.showLanguage.uppercased().toAttributedString(color: AppColor.color48_48_48, font: AppFont.fontRegular12)
-        let attr2 = " \(LocalizableKey.LoginButtonLogin.showLanguage.uppercased())".toAttributedString(color: AppColor.color255_211_17, font: AppFont.fontRegular14, isUnderLine: true)
+        let attr2 = " \(LocalizableKey.Register.showLanguage.uppercased())".toAttributedString(color: AppColor.color255_211_17, font: AppFont.fontRegular14, isUnderLine: true)
         attr.append(attr1)
         attr.append(attr2)
         lbRegister.attributedText = attr
