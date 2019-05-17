@@ -18,7 +18,7 @@ class AppContainerViewController: SideMenuViewController {
     }
     
     init() {
-        super.init(drawerDirection: .left, drawerWidth: 280, menuViewController: vcMenu)
+        super.init(drawerDirection: .left, drawerWidth: 308, menuViewController: vcMenu)
         vcMenu.delegateController = self
     }
     
