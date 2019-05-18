@@ -19,14 +19,14 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
         super.viewDidLoad()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.saved.showLanguage)
-        addButtonImageToNavigation(image: #imageLiteral(resourceName: "ic_settings"), style: .right, action: #selector(clickButtonRight))
+        addButtonImageToNavigation(image: #imageLiteral(resourceName: "Material_Icons_black_delete"), style: .right, action: #selector(clickButtonRight))
     }
     @objc func clickButtonRight(){
         
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [GrammarRouter.createModule(),VocabularyRouter.createModule(),NoteRouter.createModule()]
+        return [GrammarRouter.createModule(type:.grammar),GrammarRouter.createModule(type:.vocabulary),GrammarRouter.createModule(type:.note)]
     }
 
 }

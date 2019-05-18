@@ -11,10 +11,17 @@
 import UIKit
 import XLPagerTabStrip
 
+enum TypeSave{
+    case grammar
+    case vocabulary
+    case note
+}
+
 class GrammarViewController: UIViewController, GrammarViewProtocol {
 
     @IBOutlet weak var tbvGrammar: UITableView!
     var presenter: GrammarPresenterProtocol?
+    var type : TypeSave = .grammar
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +49,12 @@ extension GrammarViewController: UITableViewDelegate{
 }
 extension GrammarViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.grammar.showLanguage)
+        if type == .grammar {
+            return IndicatorInfo(title: LocalizableKey.grammar.showLanguage)
+        }
+        if type == .note{
+            return IndicatorInfo(title: LocalizableKey.note.showLanguage)
+        }
+        return IndicatorInfo(title: LocalizableKey.vocabulary.showLanguage)
     }
 }
