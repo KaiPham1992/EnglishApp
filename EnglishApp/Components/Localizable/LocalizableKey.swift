@@ -132,4 +132,11 @@ struct LocalizableKey {
     static let idiams = "idiams"
     static let wordUsage = "word_usage"
     static let wordForm = "word_form"
+    
+    // Home
+    static let homeDictionary = "homeDictionary"
+    static let homeStore = "homeStore"
+    static let homeMission = "homeMission"
+    static let homeFindWork = "homeFindWork"
+    static let actionRecently = "actionRecently"
 }

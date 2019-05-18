@@ -33,6 +33,13 @@
                         <constraint firstAttribute="width" constant="42" id="iDr-AZ-4HP"/>
                     </constraints>
                 </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Gold_III" translatesAutoresizingMaskIntoConstraints="NO" id="Bkm-kw-UJy">
+                    <rect key="frame" x="22" y="88.5" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="UUw-Hz-8AM"/>
+                        <constraint firstAttribute="height" constant="20" id="YDV-YQ-MCY"/>
+                    </constraints>
+                </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="G12-EU-7y2">
                     <rect key="frame" x="47" y="66.5" width="362" height="42"/>
                     <subviews>
@@ -168,9 +175,11 @@
             <constraints>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="centerY" secondItem="XuH-Dp-7KT" secondAttribute="centerY" id="0Oy-aI-EpK"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="leading" secondItem="XuH-Dp-7KT" secondAttribute="trailing" constant="5" id="3Tp-Hu-LME"/>
+                <constraint firstItem="Bkm-kw-UJy" firstAttribute="trailing" secondItem="XuH-Dp-7KT" secondAttribute="trailing" id="88s-6q-bvj"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="G12-EU-7y2" secondAttribute="trailing" constant="5" id="Gw1-c8-sz9"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="height" secondItem="XuH-Dp-7KT" secondAttribute="height" id="Qur-yY-TL4"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y3d-Um-xm0"/>
+                <constraint firstItem="Bkm-kw-UJy" firstAttribute="bottom" secondItem="XuH-Dp-7KT" secondAttribute="bottom" id="afj-q7-CnZ"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tkB-Ah-Q2l"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -179,6 +188,7 @@
         </view>
     </objects>
     <resources>
+        <image name="ic_Gold_III" width="33" height="32"/>
         <image name="ic_dima" width="12" height="10"/>
         <image name="ic_gold" width="12" height="13"/>
         <image name="ic_matong" width="12" height="12"/>

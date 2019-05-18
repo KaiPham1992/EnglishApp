@@ -970,6 +970,36 @@
 		DEECF89F22871D1B00A4678B /* ForgotPasswordProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89922871D1B00A4678B /* ForgotPasswordProtocols.swift */; };
 		DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF89A22871D1B00A4678B /* ForgotPasswordInteractor.swift */; };
 		DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */; };
+		DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C247229033BA005AD1A3 /* ButtonHomeView.swift */; };
+		DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C247229033BA005AD1A3 /* ButtonHomeView.swift */; };
+		DEF1C24A229033BA005AD1A3 /* ButtonHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C247229033BA005AD1A3 /* ButtonHomeView.swift */; };
+		DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C24B229033D2005AD1A3 /* ButtonHomeView.xib */; };
+		DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C24B229033D2005AD1A3 /* ButtonHomeView.xib */; };
+		DEF1C24E229033D2005AD1A3 /* ButtonHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C24B229033D2005AD1A3 /* ButtonHomeView.xib */; };
+		DEF1C25322903557005AD1A3 /* HomeActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C25122903557005AD1A3 /* HomeActionCell.swift */; };
+		DEF1C25422903557005AD1A3 /* HomeActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C25122903557005AD1A3 /* HomeActionCell.swift */; };
+		DEF1C25522903557005AD1A3 /* HomeActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C25122903557005AD1A3 /* HomeActionCell.swift */; };
+		DEF1C25622903557005AD1A3 /* HomeActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C25222903557005AD1A3 /* HomeActionCell.xib */; };
+		DEF1C25722903557005AD1A3 /* HomeActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C25222903557005AD1A3 /* HomeActionCell.xib */; };
+		DEF1C25822903557005AD1A3 /* HomeActionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C25222903557005AD1A3 /* HomeActionCell.xib */; };
+		DEF1C25C22903670005AD1A3 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C25A22903670005AD1A3 /* HomeHeaderCell.swift */; };
+		DEF1C25D22903670005AD1A3 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C25A22903670005AD1A3 /* HomeHeaderCell.swift */; };
+		DEF1C25E22903670005AD1A3 /* HomeHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C25A22903670005AD1A3 /* HomeHeaderCell.swift */; };
+		DEF1C25F22903670005AD1A3 /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C25B22903670005AD1A3 /* HomeHeaderCell.xib */; };
+		DEF1C26022903670005AD1A3 /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C25B22903670005AD1A3 /* HomeHeaderCell.xib */; };
+		DEF1C26122903670005AD1A3 /* HomeHeaderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C25B22903670005AD1A3 /* HomeHeaderCell.xib */; };
+		DEF1C26522903E32005AD1A3 /* HomeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C26322903E32005AD1A3 /* HomeTitleCell.swift */; };
+		DEF1C26622903E32005AD1A3 /* HomeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C26322903E32005AD1A3 /* HomeTitleCell.swift */; };
+		DEF1C26722903E32005AD1A3 /* HomeTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C26322903E32005AD1A3 /* HomeTitleCell.swift */; };
+		DEF1C26822903E32005AD1A3 /* HomeTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C26422903E32005AD1A3 /* HomeTitleCell.xib */; };
+		DEF1C26922903E32005AD1A3 /* HomeTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C26422903E32005AD1A3 /* HomeTitleCell.xib */; };
+		DEF1C26A22903E32005AD1A3 /* HomeTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C26422903E32005AD1A3 /* HomeTitleCell.xib */; };
+		DEF1C26E22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C26C22903FA5005AD1A3 /* HomeRecentlyCell.swift */; };
+		DEF1C26F22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C26C22903FA5005AD1A3 /* HomeRecentlyCell.swift */; };
+		DEF1C27022903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEF1C26C22903FA5005AD1A3 /* HomeRecentlyCell.swift */; };
+		DEF1C27122903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C26D22903FA5005AD1A3 /* HomeRecentlyCell.xib */; };
+		DEF1C27222903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C26D22903FA5005AD1A3 /* HomeRecentlyCell.xib */; };
+		DEF1C27322903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEF1C26D22903FA5005AD1A3 /* HomeRecentlyCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -1310,6 +1340,16 @@
 		DEECF89922871D1B00A4678B /* ForgotPasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordProtocols.swift; sourceTree = "<group>"; };
 		DEECF89A22871D1B00A4678B /* ForgotPasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordInteractor.swift; sourceTree = "<group>"; };
 		DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForgotPasswordViewController.xib; sourceTree = "<group>"; };
+		DEF1C247229033BA005AD1A3 /* ButtonHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonHomeView.swift; sourceTree = "<group>"; };
+		DEF1C24B229033D2005AD1A3 /* ButtonHomeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonHomeView.xib; sourceTree = "<group>"; };
+		DEF1C25122903557005AD1A3 /* HomeActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeActionCell.swift; sourceTree = "<group>"; };
+		DEF1C25222903557005AD1A3 /* HomeActionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeActionCell.xib; sourceTree = "<group>"; };
+		DEF1C25A22903670005AD1A3 /* HomeHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderCell.swift; sourceTree = "<group>"; };
+		DEF1C25B22903670005AD1A3 /* HomeHeaderCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderCell.xib; sourceTree = "<group>"; };
+		DEF1C26322903E32005AD1A3 /* HomeTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTitleCell.swift; sourceTree = "<group>"; };
+		DEF1C26422903E32005AD1A3 /* HomeTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTitleCell.xib; sourceTree = "<group>"; };
+		DEF1C26C22903FA5005AD1A3 /* HomeRecentlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRecentlyCell.swift; sourceTree = "<group>"; };
+		DEF1C26D22903FA5005AD1A3 /* HomeRecentlyCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeRecentlyCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1609,6 +1649,7 @@
 		DE2ADE6122841B8A003768CE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DEF1C24F22903529005AD1A3 /* Cell */,
 				DE2ADE6322841B9E003768CE /* HomePresenter.swift */,
 				DE2ADE6422841B9E003768CE /* HomeRouter.swift */,
 				DE2ADE6522841B9E003768CE /* HomeViewController.swift */,
@@ -1740,6 +1781,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				DEF1C246229033A0005AD1A3 /* ButtonHomeView */,
 				766D135A228EF05B005E47F0 /* ViewGradient */,
 				DE7D14B7228EA27500713084 /* TitleNavigationBar */,
 				76E2FEF9228DC4AC0014B1F4 /* PageView */,
@@ -2417,6 +2459,62 @@
 			path = ForgotPassword;
 			sourceTree = "<group>";
 		};
+		DEF1C246229033A0005AD1A3 /* ButtonHomeView */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1C247229033BA005AD1A3 /* ButtonHomeView.swift */,
+				DEF1C24B229033D2005AD1A3 /* ButtonHomeView.xib */,
+			);
+			path = ButtonHomeView;
+			sourceTree = "<group>";
+		};
+		DEF1C24F22903529005AD1A3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1C26B22903F8C005AD1A3 /* HomeRecentlyCell */,
+				DEF1C26222903E19005AD1A3 /* HomeTitleCell */,
+				DEF1C2592290364F005AD1A3 /* HomeHeaderCell */,
+				DEF1C2502290353D005AD1A3 /* HomeActionCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DEF1C2502290353D005AD1A3 /* HomeActionCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1C25122903557005AD1A3 /* HomeActionCell.swift */,
+				DEF1C25222903557005AD1A3 /* HomeActionCell.xib */,
+			);
+			path = HomeActionCell;
+			sourceTree = "<group>";
+		};
+		DEF1C2592290364F005AD1A3 /* HomeHeaderCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1C25A22903670005AD1A3 /* HomeHeaderCell.swift */,
+				DEF1C25B22903670005AD1A3 /* HomeHeaderCell.xib */,
+			);
+			path = HomeHeaderCell;
+			sourceTree = "<group>";
+		};
+		DEF1C26222903E19005AD1A3 /* HomeTitleCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1C26322903E32005AD1A3 /* HomeTitleCell.swift */,
+				DEF1C26422903E32005AD1A3 /* HomeTitleCell.xib */,
+			);
+			path = HomeTitleCell;
+			sourceTree = "<group>";
+		};
+		DEF1C26B22903F8C005AD1A3 /* HomeRecentlyCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEF1C26C22903FA5005AD1A3 /* HomeRecentlyCell.swift */,
+				DEF1C26D22903FA5005AD1A3 /* HomeRecentlyCell.xib */,
+			);
+			path = HomeRecentlyCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2526,12 +2624,14 @@
 				DEB9613422898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC22289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DE9F0F8A228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
+				DEF1C25F22903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BD228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
 				DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
@@ -2543,9 +2643,12 @@
 				DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				DEF1C26822903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				DEF1C27122903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
+				DEF1C25622903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
 				766D130B228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
@@ -2588,12 +2691,14 @@
 				DEB9613522898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC32289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DE9F0F8B228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
+				DEF1C26022903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BE228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
 				DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
@@ -2605,9 +2710,12 @@
 				DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				DEF1C26922903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				DEF1C27222903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
+				DEF1C25722903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
 				766D130C228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
@@ -2650,12 +2758,14 @@
 				DEB9613622898F1F0046801B /* QAViewController.xib in Resources */,
 				DE3A8CC42289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DE9F0F8C228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
+				DEF1C26122903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BF228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				DEF1C24E229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
 				DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
@@ -2667,9 +2777,12 @@
 				DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				DEF1C26A22903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				DEF1C27322903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
+				DEF1C25822903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */,
 				766D130D228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
@@ -3044,6 +3157,7 @@
 				DE952F902287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
+				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				DEBD6737228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
@@ -3203,6 +3317,7 @@
 				DE9531452288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE952FA12287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
+				DEF1C26522903E32005AD1A3 /* HomeTitleCell.swift in Sources */,
 				DE952F9B2287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE361E962283E60500FA3B0D /* UserDefaultHelper.swift in Sources */,
 				766D1385228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
@@ -3259,6 +3374,7 @@
 				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				DEBD672C228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
+				DEF1C25322903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */,
 				DE361F3C2283E85000FA3B0D /* MapperData.swift in Sources */,
 				DE361DF62283E57900FA3B0D /* Int+extension.swift in Sources */,
@@ -3266,6 +3382,7 @@
 				DE361F522283E85000FA3B0D /* Provider.swift in Sources */,
 				DE361F292283E85000FA3B0D /* BaseEntity.swift in Sources */,
 				DE953181228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				DEF1C25C22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A3228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE952F832287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE361E9F2283E60500FA3B0D /* YesNoContentView.swift in Sources */,
@@ -3283,6 +3400,7 @@
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CCF2289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
+				DEF1C26E22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				DEBD673B228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3316,6 +3434,7 @@
 				DE952FBB2287DF4800E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
+				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				DEBD6738228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
@@ -3475,6 +3594,7 @@
 				DE9531462288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE95300E2287DF4800E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
+				DEF1C26622903E32005AD1A3 /* HomeTitleCell.swift in Sources */,
 				DE95300F2287DF4800E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530102287DF4800E3F688 /* UserDefaultHelper.swift in Sources */,
 				766D1386228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
@@ -3531,6 +3651,7 @@
 				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				DEBD672D228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
+				DEF1C25422903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				DE95302F2287DF4800E3F688 /* HomeRouter.swift in Sources */,
 				DE9530302287DF4800E3F688 /* MapperData.swift in Sources */,
 				DE9530312287DF4800E3F688 /* Int+extension.swift in Sources */,
@@ -3538,6 +3659,7 @@
 				DE9530332287DF4800E3F688 /* Provider.swift in Sources */,
 				DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */,
 				DE953182228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				DEF1C25D22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A4228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE9530352287DF4800E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE9530362287DF4800E3F688 /* YesNoContentView.swift in Sources */,
@@ -3555,6 +3677,7 @@
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD02289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
+				DEF1C26F22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				DEBD673C228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3588,6 +3711,7 @@
 				DE9530692287DF6400E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DE95306A2287DF6400E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD674B228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
+				DEF1C24A229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				DEBD6739228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */,
@@ -3747,6 +3871,7 @@
 				DE9531472288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE9530BC2287DF6400E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
+				DEF1C26722903E32005AD1A3 /* HomeTitleCell.swift in Sources */,
 				DE9530BD2287DF6400E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530BE2287DF6400E3F688 /* UserDefaultHelper.swift in Sources */,
 				766D1387228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
@@ -3803,6 +3928,7 @@
 				DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				DEBD672E228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */,
+				DEF1C25522903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */,
 				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
 				DE9530DF2287DF6400E3F688 /* Int+extension.swift in Sources */,
@@ -3810,6 +3936,7 @@
 				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
 				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,
 				DE953183228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				DEF1C25E22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A5228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE9530E42287DF6400E3F688 /* YesNoContentView.swift in Sources */,
@@ -3827,6 +3954,7 @@
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD12289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
+				DEF1C27022903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				DEBD673D228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,11 +11,18 @@
 import UIKit
 
 class HomeViewController: BaseViewController, HomeViewProtocol {
-
+    @IBOutlet weak var tbHome: UITableView!
 	var presenter: HomePresenterProtocol?
 
+    var listMenuItem = [MenuItem]() {
+        didSet {
+            tbHome.reloadData()
+        }
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
+        configureTable()
     }
     
     override func setUpNavigation() {
@@ -37,10 +44,78 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
             containerController.toggleLeftPanel()
         }
     }
+}
+
+
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func configureTable() {
+        tbHome.delegate = self
+        tbHome.dataSource = self
+        tbHome.registerXibFile(HomeActionCell.self)
+        tbHome.registerXibFile(HomeHeaderCell.self)
+        tbHome.registerXibFile(HomeRecentlyCell.self)
+        tbHome.registerXibFile(HomeTitleCell.self)
+        tbHome.separatorStyle = .none
+        
+        tbHome.estimatedRowHeight = 120
+        tbHome.rowHeight = UITableView.automaticDimension
+        
+    }
     
-//    func pushHaveNavigation(viewController: UIViewController) {
-//        showNavigation()
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            if indexPath.item == 0 {
+                let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
+                
+                return cell
+            } else {
+                let cell = tableView.dequeue(HomeActionCell.self, for: indexPath)
+                
+                return cell
+            }
+        } else {
+            if indexPath.item == 0 {
+                let cell = tableView.dequeue(HomeTitleCell.self, for: indexPath)
+                
+                return cell
+            } else {
+                let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
+                
+                return cell
+            }
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 2
+        } else {
+            return 11
+        }
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return indexPath.item == 0 ? 222: 150
+        } else {
+             return indexPath.item == 0 ? 60: UITableView.automaticDimension
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let itemSelected = self.listMenuItem[indexPath.item]
+//        self.listMenuItem.forEach { item in
+//            item.isSelected = false
+//        }
 //
-//        self.push(controller: viewController)
-//    }
+//        itemSelected.isSelected = true
+////        pushViewController(itemSelected: itemSelected)
+//
+//        tbHome.reloadData()
+    }
 }

@@ -27,7 +27,7 @@ class AppRouter {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         
         //---
-        let vcLogin = SaveDictionaryRouter.createModule()
+        let vcLogin = LoginRouter.createModule()
         let nc = UINavigationController(rootViewController: vcLogin)
         windowApp.rootViewController = nc
     }
