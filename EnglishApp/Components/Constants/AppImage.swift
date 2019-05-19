@@ -25,6 +25,12 @@ struct AppImage {
     static let imgFindWork = UIImage(named: "ic_arrown")!
     static let imgMission = UIImage(named: "ic_arrown")!
     
+    // tababr
+    static let imgTabbarHome = UIImage(named: "HOME")!.withRenderingMode(.alwaysTemplate)
+    static let imgTabbarProgramer = UIImage(named: "ic_book_2")!.withRenderingMode(.alwaysTemplate)
+    static let imgTabbarHomeWork = UIImage(named: "ic_gym_2")!.withRenderingMode(.alwaysTemplate)
+    static let imgTabbarCompetition = UIImage(named: "ic_fire")!.withRenderingMode(.alwaysTemplate)
+    
     // Menu
     static let imgTop = UIImage(named: "ic_ranking")!.withRenderingMode(.alwaysTemplate)
     static let imgInfo = UIImage(named: "Info")!.withRenderingMode(.alwaysTemplate)

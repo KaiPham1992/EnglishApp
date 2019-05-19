@@ -139,4 +139,10 @@ struct LocalizableKey {
     static let homeMission = "homeMission"
     static let homeFindWork = "homeFindWork"
     static let actionRecently = "actionRecently"
+    
+    // TABBAR
+    static let tabbarHome = "tabbarHome"
+    static let tabbarProgram = "tabbarProgram"
+    static let tabbarHomeWork = "tabbarHomeWork"
+    static let tabbarCompetition = "tabbarCompetition"
 }

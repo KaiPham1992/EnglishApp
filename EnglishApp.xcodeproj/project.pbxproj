@@ -949,6 +949,12 @@
 		DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
 		DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
 		DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
+		DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
+		DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
+		DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
+		DEDDEF6922914B8D0043A62D /* UIDevice+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */; };
+		DEDDEF6A22914B8D0043A62D /* UIDevice+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */; };
+		DEDDEF6B22914B8D0043A62D /* UIDevice+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */; };
 		DEECF86E2286FCAB00A4678B /* HeaderUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */; };
 		DEECF8702286FCC100A4678B /* HeaderUserView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF86F2286FCC100A4678B /* HeaderUserView.xib */; };
 		DEECF8742287041900A4678B /* MenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF8722287041900A4678B /* MenuCell.swift */; };
@@ -1317,6 +1323,8 @@
 		DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionProtocols.swift; sourceTree = "<group>"; };
 		DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionInteractor.swift; sourceTree = "<group>"; };
 		DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyMissionViewController.xib; sourceTree = "<group>"; };
+		DEDDEF6422914A980043A62D /* MainTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
+		DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
 		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
 		DEECF86F2286FCC100A4678B /* HeaderUserView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderUserView.xib; sourceTree = "<group>"; };
 		DEECF8722287041900A4678B /* MenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuCell.swift; sourceTree = "<group>"; };
@@ -1677,6 +1685,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DEDDEF6322914A790043A62D /* MainTabbar */,
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
 				DEBD6742228D6840004B74C8 /* DailyMission */,
 				76E2FEBD228DBA990014B1F4 /* SaveDictionary */,
@@ -1762,6 +1771,7 @@
 				DE361DF42283E57900FA3B0D /* Button+extension.swift */,
 				DEECF8762287075B00A4678B /* UITable+extension.swift */,
 				DEECF87A22870B3D00A4678B /* Bundle+extension.swift */,
+				DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -2404,6 +2414,14 @@
 				DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */,
 			);
 			path = DailyMission;
+			sourceTree = "<group>";
+		};
+		DEDDEF6322914A790043A62D /* MainTabbar */ = {
+			isa = PBXGroup;
+			children = (
+				DEDDEF6422914A980043A62D /* MainTabbar.swift */,
+			);
+			path = MainTabbar;
 			sourceTree = "<group>";
 		};
 		DEECF86C2286FC9400A4678B /* HeaderUserView */ = {
@@ -3208,6 +3226,7 @@
 				DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
+				DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
@@ -3220,6 +3239,7 @@
 				766D1372228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
 				76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
+				DEDDEF6922914B8D0043A62D /* UIDevice+extension.swift in Sources */,
 				DE95315B22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE361F472283E85000FA3B0D /* CommonEndPoint.swift in Sources */,
 				766D131A228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
@@ -3485,6 +3505,7 @@
 				DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
+				DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
 				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
@@ -3497,6 +3518,7 @@
 				766D1373228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
 				76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
+				DEDDEF6A22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
 				DE95315C22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */,
 				766D131B228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
@@ -3762,6 +3784,7 @@
 				DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
+				DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */,
 				DE95314A2288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
 				DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */,
@@ -3774,6 +3797,7 @@
 				766D1374228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
 				76DB93BC228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
+				DEDDEF6B22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
 				DE95315D22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */,
 				766D131C228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
