@@ -33,10 +33,18 @@ class DetailTeamViewController: BaseViewController, DetailTeamViewProtocol {
     }
     
     @IBAction func btnStartTapped() {
+       print("Go to competition")
+    }
+    
+    @IBAction func btnExplainTapped() {
+       self.push(controller: ExplainCompetitionRouter.createModule())
+    }
+    
+    @IBAction func btnLeaveTapped() {
         PopUpHelper.shared.showLeaveGroup(completionNo: {
             print("Huỷ")
         }) {
-            print("Xác nhận")
+            self.pop()
         }
     }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailTeamCell: UITableViewCell {
+class DetailTeamCell: BaseTableCell {
     @IBOutlet weak var lbIndex: UILabel!
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lbName: UILabel!
