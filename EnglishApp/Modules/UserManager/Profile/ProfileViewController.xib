@@ -125,6 +125,12 @@
                                 <constraint firstAttribute="height" constant="24" id="gYy-pB-CmJ"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dIf-5y-kFT">
+                            <rect key="frame" x="0.0" y="0.0" width="155" height="64"/>
+                            <connections>
+                                <action selector="btnBeeTapped" destination="-1" eventType="touchUpInside" id="dKs-Te-XJG"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -132,13 +138,17 @@
                         <constraint firstAttribute="height" constant="64" id="1Gx-mV-fCO"/>
                         <constraint firstAttribute="bottom" secondItem="uPo-h6-7Hu" secondAttribute="bottom" id="2WX-yR-GOM"/>
                         <constraint firstItem="NgC-1c-Z27" firstAttribute="centerY" secondItem="uPo-h6-7Hu" secondAttribute="centerY" constant="-10" id="6bQ-wF-ZOS"/>
+                        <constraint firstAttribute="bottom" secondItem="dIf-5y-kFT" secondAttribute="bottom" id="9EQ-Rs-61c"/>
                         <constraint firstItem="uPo-h6-7Hu" firstAttribute="top" secondItem="Mww-qS-XOx" secondAttribute="top" id="BEU-pO-N7J"/>
+                        <constraint firstItem="dIf-5y-kFT" firstAttribute="top" secondItem="Mww-qS-XOx" secondAttribute="top" id="Iu0-Rq-11r"/>
                         <constraint firstAttribute="trailing" secondItem="NgC-1c-Z27" secondAttribute="trailing" id="Thu-T8-k4K"/>
                         <constraint firstAttribute="trailing" secondItem="KQF-VX-PEh" secondAttribute="trailing" constant="4" id="YlW-O6-n1U"/>
                         <constraint firstItem="Lib-HW-C4q" firstAttribute="top" secondItem="NgC-1c-Z27" secondAttribute="bottom" constant="0.5" id="bC7-3J-X0i"/>
                         <constraint firstItem="KQF-VX-PEh" firstAttribute="centerY" secondItem="Mww-qS-XOx" secondAttribute="centerY" id="guN-Xw-wpl"/>
                         <constraint firstItem="uPo-h6-7Hu" firstAttribute="leading" secondItem="Mww-qS-XOx" secondAttribute="leading" constant="4" id="jcb-Cz-kqk"/>
                         <constraint firstItem="Lib-HW-C4q" firstAttribute="leading" secondItem="NgC-1c-Z27" secondAttribute="leading" id="mRX-hN-XDe"/>
+                        <constraint firstAttribute="trailing" secondItem="dIf-5y-kFT" secondAttribute="trailing" id="re4-uh-NYN"/>
+                        <constraint firstItem="dIf-5y-kFT" firstAttribute="leading" secondItem="Mww-qS-XOx" secondAttribute="leading" id="vMH-MH-4zH"/>
                         <constraint firstItem="Lib-HW-C4q" firstAttribute="trailing" secondItem="NgC-1c-Z27" secondAttribute="trailing" id="w02-Ju-vzD"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -181,19 +191,29 @@
                                 <constraint firstAttribute="height" constant="24" id="y34-WP-a8q"/>
                             </constraints>
                         </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaL-gM-pPn">
+                            <rect key="frame" x="0.0" y="0.0" width="155" height="64"/>
+                            <connections>
+                                <action selector="btnDiamonTapped" destination="-1" eventType="touchUpInside" id="4qN-ys-w3j"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="TaL-gM-pPn" firstAttribute="top" secondItem="tNj-TA-l9W" secondAttribute="top" id="1hL-S3-ggL"/>
+                        <constraint firstAttribute="bottom" secondItem="TaL-gM-pPn" secondAttribute="bottom" id="2DJ-8E-T6a"/>
                         <constraint firstAttribute="trailing" secondItem="aXo-hV-YPw" secondAttribute="trailing" id="3fV-E3-ZhW"/>
                         <constraint firstItem="aXo-hV-YPw" firstAttribute="leading" secondItem="hYi-MI-j9M" secondAttribute="trailing" constant="8" id="5Wp-Ve-T5E"/>
                         <constraint firstItem="hYi-MI-j9M" firstAttribute="leading" secondItem="tNj-TA-l9W" secondAttribute="leading" constant="4" id="FIc-l1-eB7"/>
                         <constraint firstItem="aXo-hV-YPw" firstAttribute="centerY" secondItem="hYi-MI-j9M" secondAttribute="centerY" constant="-10" id="Jwm-EN-vjX"/>
                         <constraint firstAttribute="trailing" secondItem="rVT-xt-vc1" secondAttribute="trailing" constant="4" id="VXi-Sz-mEv"/>
+                        <constraint firstAttribute="trailing" secondItem="TaL-gM-pPn" secondAttribute="trailing" id="a46-7K-ItZ"/>
                         <constraint firstItem="hYi-MI-j9M" firstAttribute="top" secondItem="tNj-TA-l9W" secondAttribute="top" id="bpr-ZH-Yt6"/>
                         <constraint firstAttribute="height" constant="64" id="dYi-ir-RGr"/>
                         <constraint firstItem="QAP-Fz-HFt" firstAttribute="trailing" secondItem="aXo-hV-YPw" secondAttribute="trailing" id="hPS-OH-3Xf"/>
                         <constraint firstItem="QAP-Fz-HFt" firstAttribute="leading" secondItem="aXo-hV-YPw" secondAttribute="leading" id="nf1-l5-mH3"/>
                         <constraint firstAttribute="bottom" secondItem="hYi-MI-j9M" secondAttribute="bottom" id="rLQ-Ml-6jV"/>
+                        <constraint firstItem="TaL-gM-pPn" firstAttribute="leading" secondItem="tNj-TA-l9W" secondAttribute="leading" id="swz-6L-hX1"/>
                         <constraint firstItem="QAP-Fz-HFt" firstAttribute="top" secondItem="aXo-hV-YPw" secondAttribute="bottom" constant="0.5" id="wiq-wy-man"/>
                         <constraint firstItem="rVT-xt-vc1" firstAttribute="centerY" secondItem="tNj-TA-l9W" secondAttribute="centerY" id="xdo-2A-qRd"/>
                     </constraints>

@@ -13,6 +13,7 @@ import UIKit
 class HomeViewController: BaseViewController, HomeViewProtocol {
     @IBOutlet weak var tbHome: UITableView!
 	var presenter: HomePresenterProtocol?
+    
 
     var listMenuItem = [MenuItem]() {
         didSet {
@@ -23,6 +24,11 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+    }
+    
+    override func setUpViews() {
+        super.setUpViews()
+        
     }
     
     override func setUpNavigation() {
@@ -74,7 +80,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeue(HomeActionCell.self, for: indexPath)
-                
+                cell.delegate = self
                 return cell
             }
         } else {
@@ -118,4 +124,24 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
 //
 //        tbHome.reloadData()
     }
+}
+
+extension HomeViewController: HomeActionCellDelegate {
+    func btnDictionaryTapped() {
+        self.push(controller: DictionaryRouter.createModule())
+    }
+    
+    func btnStoreTapped() {
+        
+    }
+    
+    func btnMissionTapped() {
+        self.push(controller: DailyMissionRouter.createModule())
+    }
+    
+    func btnFindWorkTapped() {
+        
+    }
+    
+    
 }

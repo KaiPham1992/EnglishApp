@@ -853,6 +853,36 @@
 		DE9F0F90228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
 		DE9F0F91228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
 		DE9F0F92228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
+		DEB584712291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */; };
+		DEB584722291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */; };
+		DEB584732291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */; };
+		DEB584742291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846C2291ABD700FE0356 /* HistoryBeeRouter.swift */; };
+		DEB584752291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846C2291ABD700FE0356 /* HistoryBeeRouter.swift */; };
+		DEB584762291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846C2291ABD700FE0356 /* HistoryBeeRouter.swift */; };
+		DEB584772291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846D2291ABD700FE0356 /* HistoryBeeViewController.swift */; };
+		DEB584782291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846D2291ABD700FE0356 /* HistoryBeeViewController.swift */; };
+		DEB584792291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846D2291ABD700FE0356 /* HistoryBeeViewController.swift */; };
+		DEB5847A2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846E2291ABD700FE0356 /* HistoryBeeProtocols.swift */; };
+		DEB5847B2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846E2291ABD700FE0356 /* HistoryBeeProtocols.swift */; };
+		DEB5847C2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846E2291ABD700FE0356 /* HistoryBeeProtocols.swift */; };
+		DEB5847D2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846F2291ABD700FE0356 /* HistoryBeeInteractor.swift */; };
+		DEB5847E2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846F2291ABD700FE0356 /* HistoryBeeInteractor.swift */; };
+		DEB5847F2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846F2291ABD700FE0356 /* HistoryBeeInteractor.swift */; };
+		DEB584802291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB584702291ABD700FE0356 /* HistoryBeeViewController.xib */; };
+		DEB584812291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB584702291ABD700FE0356 /* HistoryBeeViewController.xib */; };
+		DEB584822291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB584702291ABD700FE0356 /* HistoryBeeViewController.xib */; };
+		DEB584882291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB584872291AC7A00FE0356 /* HistoryBeeHeader.swift */; };
+		DEB584892291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB584872291AC7A00FE0356 /* HistoryBeeHeader.swift */; };
+		DEB5848A2291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB584872291AC7A00FE0356 /* HistoryBeeHeader.swift */; };
+		DEB5848C2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB5848B2291AC9500FE0356 /* HistoryBeeHeader.xib */; };
+		DEB5848D2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB5848B2291AC9500FE0356 /* HistoryBeeHeader.xib */; };
+		DEB5848E2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB5848B2291AC9500FE0356 /* HistoryBeeHeader.xib */; };
+		DEB584912291AD7900FE0356 /* HistoryBeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5848F2291AD7900FE0356 /* HistoryBeeCell.swift */; };
+		DEB584922291AD7900FE0356 /* HistoryBeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5848F2291AD7900FE0356 /* HistoryBeeCell.swift */; };
+		DEB584932291AD7900FE0356 /* HistoryBeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5848F2291AD7900FE0356 /* HistoryBeeCell.swift */; };
+		DEB584942291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB584902291AD7900FE0356 /* HistoryBeeCell.xib */; };
+		DEB584952291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB584902291AD7900FE0356 /* HistoryBeeCell.xib */; };
+		DEB584962291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEB584902291AD7900FE0356 /* HistoryBeeCell.xib */; };
 		DEB9612522898F1F0046801B /* QAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9611F22898F1F0046801B /* QAPresenter.swift */; };
 		DEB9612622898F1F0046801B /* QAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9611F22898F1F0046801B /* QAPresenter.swift */; };
 		DEB9612722898F1F0046801B /* QAPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB9611F22898F1F0046801B /* QAPresenter.swift */; };
@@ -1291,6 +1321,16 @@
 		DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeePresenter.swift; sourceTree = "<group>"; };
+		DEB5846C2291ABD700FE0356 /* HistoryBeeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeRouter.swift; sourceTree = "<group>"; };
+		DEB5846D2291ABD700FE0356 /* HistoryBeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeViewController.swift; sourceTree = "<group>"; };
+		DEB5846E2291ABD700FE0356 /* HistoryBeeProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeProtocols.swift; sourceTree = "<group>"; };
+		DEB5846F2291ABD700FE0356 /* HistoryBeeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeInteractor.swift; sourceTree = "<group>"; };
+		DEB584702291ABD700FE0356 /* HistoryBeeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryBeeViewController.xib; sourceTree = "<group>"; };
+		DEB584872291AC7A00FE0356 /* HistoryBeeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeHeader.swift; sourceTree = "<group>"; };
+		DEB5848B2291AC9500FE0356 /* HistoryBeeHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryBeeHeader.xib; sourceTree = "<group>"; };
+		DEB5848F2291AD7900FE0356 /* HistoryBeeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeCell.swift; sourceTree = "<group>"; };
+		DEB584902291AD7900FE0356 /* HistoryBeeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryBeeCell.xib; sourceTree = "<group>"; };
 		DEB9611F22898F1F0046801B /* QAPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAPresenter.swift; sourceTree = "<group>"; };
 		DEB9612022898F1F0046801B /* QARouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QARouter.swift; sourceTree = "<group>"; };
 		DEB9612122898F1F0046801B /* QAViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAViewController.swift; sourceTree = "<group>"; };
@@ -1685,6 +1725,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DEB5846A2291ABBF00FE0356 /* HistoryBee */,
 				DEDDEF6322914A790043A62D /* MainTabbar */,
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
 				DEBD6742228D6840004B74C8 /* DailyMission */,
@@ -2334,6 +2375,47 @@
 			path = ChangePassword;
 			sourceTree = "<group>";
 		};
+		DEB5846A2291ABBF00FE0356 /* HistoryBee */ = {
+			isa = PBXGroup;
+			children = (
+				DEB584842291AC5C00FE0356 /* Cell */,
+				DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */,
+				DEB5846C2291ABD700FE0356 /* HistoryBeeRouter.swift */,
+				DEB5846D2291ABD700FE0356 /* HistoryBeeViewController.swift */,
+				DEB5846E2291ABD700FE0356 /* HistoryBeeProtocols.swift */,
+				DEB5846F2291ABD700FE0356 /* HistoryBeeInteractor.swift */,
+				DEB584702291ABD700FE0356 /* HistoryBeeViewController.xib */,
+			);
+			path = HistoryBee;
+			sourceTree = "<group>";
+		};
+		DEB584842291AC5C00FE0356 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEB584862291AC6D00FE0356 /* HistoryBeeHeader */,
+				DEB584852291AC6500FE0356 /* HistoryBeeCell */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DEB584852291AC6500FE0356 /* HistoryBeeCell */ = {
+			isa = PBXGroup;
+			children = (
+				DEB5848F2291AD7900FE0356 /* HistoryBeeCell.swift */,
+				DEB584902291AD7900FE0356 /* HistoryBeeCell.xib */,
+			);
+			path = HistoryBeeCell;
+			sourceTree = "<group>";
+		};
+		DEB584862291AC6D00FE0356 /* HistoryBeeHeader */ = {
+			isa = PBXGroup;
+			children = (
+				DEB584872291AC7A00FE0356 /* HistoryBeeHeader.swift */,
+				DEB5848B2291AC9500FE0356 /* HistoryBeeHeader.xib */,
+			);
+			path = HistoryBeeHeader;
+			sourceTree = "<group>";
+		};
 		DEB9611E22898F080046801B /* QA */ = {
 			isa = PBXGroup;
 			children = (
@@ -2655,8 +2737,10 @@
 				DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
+				DEB584942291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */,
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
+				DEB5848C2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
@@ -2664,6 +2748,7 @@
 				DEF1C26822903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				DEB584802291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DEF1C27122903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
 				DEF1C25622903557005AD1A3 /* HomeActionCell.xib in Resources */,
@@ -2722,8 +2807,10 @@
 				DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
+				DEB584952291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */,
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
+				DEB5848D2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
@@ -2731,6 +2818,7 @@
 				DEF1C26922903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				DEB584812291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DEF1C27222903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
 				DEF1C25722903557005AD1A3 /* HomeActionCell.xib in Resources */,
@@ -2789,8 +2877,10 @@
 				DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
+				DEB584962291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */,
 				DE3A8CEA2289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
+				DEB5848E2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6734228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
@@ -2798,6 +2888,7 @@
 				DEF1C26A22903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				DEB584822291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DEF1C27322903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
 				DEF1C25822903557005AD1A3 /* HomeActionCell.xib in Resources */,
@@ -3263,17 +3354,20 @@
 				DE95313F2288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952F982287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
+				DEB584772291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
 				DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */,
+				DEB584712291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
 				766D1369228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1308228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
+				DEB584882291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				DE2ADE6D22841B9E003768CE /* HomeInteractor.swift in Sources */,
 				766D137F228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1302228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
@@ -3323,6 +3417,7 @@
 				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
 				DEBD674C228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
+				DEB5847A2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
 				76E2FF3A228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
@@ -3333,6 +3428,7 @@
 				DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135C228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				DEB9612822898F1F0046801B /* QARouter.swift in Sources */,
+				DEB5847D2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
 				DE9531452288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -3368,6 +3464,7 @@
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
 				DE953171228842D700E3F688 /* HistoryEntity.swift in Sources */,
 				DEB9613122898F1F0046801B /* QAInteractor.swift in Sources */,
+				DEB584912291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA22289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
@@ -3389,6 +3486,7 @@
 				DE953123228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE952F9A2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				76DB938D228C56640081A36E /* DictionaryProtocols.swift in Sources */,
+				DEB584742291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */,
 				DE361DFA2283E57900FA3B0D /* UIViewController+extension.swift in Sources */,
 				DE361E7A2283E60500FA3B0D /* AppSearchBar.swift in Sources */,
 				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
@@ -3542,17 +3640,20 @@
 				DE9531402288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952FE62287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
+				DEB584782291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
 				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
 				DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */,
+				DEB584722291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
 				766D136A228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1309228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
+				DEB584892291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				DE952FEE2287DF4800E3F688 /* HomeInteractor.swift in Sources */,
 				766D1380228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1303228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
@@ -3602,6 +3703,7 @@
 				DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */,
 				DEBD674D228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
+				DEB5847B2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */,
 				76E2FF3B228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
@@ -3612,6 +3714,7 @@
 				DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135D228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				DEB9612922898F1F0046801B /* QARouter.swift in Sources */,
+				DEB5847E2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531462288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -3647,6 +3750,7 @@
 				DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */,
 				DE953172228842D700E3F688 /* HistoryEntity.swift in Sources */,
 				DEB9613222898F1F0046801B /* QAInteractor.swift in Sources */,
+				DEB584922291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA32289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
@@ -3668,6 +3772,7 @@
 				DE953124228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE95302A2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				76DB938E228C56640081A36E /* DictionaryProtocols.swift in Sources */,
+				DEB584752291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */,
 				DE95302B2287DF4800E3F688 /* UIViewController+extension.swift in Sources */,
 				DE95302C2287DF4800E3F688 /* AppSearchBar.swift in Sources */,
 				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
@@ -3821,17 +3926,20 @@
 				DE9531412288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE9530942287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
+				DEB584792291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */,
 				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,
+				DEB584732291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DE9530992287DF6400E3F688 /* MenuRouter.swift in Sources */,
 				DE3A8CDE2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */,
 				766D136B228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
+				DEB5848A2291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				DE95309C2287DF6400E3F688 /* HomeInteractor.swift in Sources */,
 				766D1381228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1304228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
@@ -3881,6 +3989,7 @@
 				DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */,
 				DEBD674E228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
+				DEB5847C2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530B62287DF6400E3F688 /* AppTextField.swift in Sources */,
 				76E2FF3C228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
@@ -3891,6 +4000,7 @@
 				DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135E228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
+				DEB5847F2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531472288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -3926,6 +4036,7 @@
 				DE9530CD2287DF6400E3F688 /* HomeViewController.swift in Sources */,
 				DE953173228842D700E3F688 /* HistoryEntity.swift in Sources */,
 				DEB9613322898F1F0046801B /* QAInteractor.swift in Sources */,
+				DEB584932291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA42289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530CE2287DF6400E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				DE9530CF2287DF6400E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
@@ -3947,6 +4058,7 @@
 				DE953125228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE9530D82287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				76DB938F228C56640081A36E /* DictionaryProtocols.swift in Sources */,
+				DEB584762291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */,
 				DE9530D92287DF6400E3F688 /* UIViewController+extension.swift in Sources */,
 				DE9530DA2287DF6400E3F688 /* AppSearchBar.swift in Sources */,
 				DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,

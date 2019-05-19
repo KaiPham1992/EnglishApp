@@ -25,7 +25,7 @@ class DailyMissionViewController: BaseViewController, DailyMissionViewProtocol {
         
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
-        btnStart.setTitle(LocalizableKey.startMission.showLanguage.showLanguage, for: .normal)
+        btnStart.setTitle(LocalizableKey.startMission.showLanguage.showLanguage.uppercased(), for: .normal)
         lbMessage.text = LocalizableKey.messageDailyMission.showLanguage
     }
 }

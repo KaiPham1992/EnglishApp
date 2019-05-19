@@ -17,6 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ButtonHomeView" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="btnAction" destination="dAe-48-8Se" id="ZDn-Zy-fcz"/>
                 <outlet property="imgIcon" destination="Eer-OM-1fz" id="QvT-TL-TRS"/>
                 <outlet property="lbTitle" destination="YCI-EH-O0h" id="c6g-yD-fB3"/>
             </connections>

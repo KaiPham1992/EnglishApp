@@ -11,6 +11,7 @@ import UIKit
 class ButtonHomeView: BaseViewXib {
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var btnAction: UIButton!
     override func setUpViews() {
         super.setUpViews()
     }

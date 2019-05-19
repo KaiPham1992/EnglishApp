@@ -9,6 +9,14 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QAViewController">
             <connections>
@@ -26,18 +34,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rD5-fG-a8T">
-                    <rect key="frame" x="0.0" y="20" width="375" height="250"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="190"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gtS-60-GJf">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                            <color key="backgroundColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="bhA-1b-Qvq"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="itQ-8m-Wgr">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn đang thắc mắc điều gì?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUb-jn-h3V">
                                     <rect key="frame" x="20" y="30" width="335" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="1Yq-64-uSd"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập câu hỏi của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPb-gg-Fc0">
@@ -46,25 +61,26 @@
                                         <constraint firstAttribute="height" constant="40" id="k9J-VT-fPV"/>
                                     </constraints>
                                     <nil key="textColor"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-Y5-Sw1">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IvJ-Y5-Sw1">
                                     <rect key="frame" x="315" y="66" width="30" height="30"/>
-                                    <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="30" id="cbR-G7-Bts"/>
                                         <constraint firstAttribute="width" constant="30" id="sVe-2V-83K"/>
                                     </constraints>
+                                    <state key="normal" image="GoToQA"/>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 kim cương cho 1 lần đặt câu hỏi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBh-gC-Lki">
-                                    <rect key="frame" x="20" y="109" width="335" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
+                                    <rect key="frame" x="20" y="109" width="335" height="11.5"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="10"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.12549019607843137" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="IvJ-Y5-Sw1" firstAttribute="trailing" secondItem="SPb-gg-Fc0" secondAttribute="trailing" constant="-10" id="7t9-sd-xAC"/>
                                 <constraint firstItem="SPb-gg-Fc0" firstAttribute="leading" secondItem="UUb-jn-h3V" secondAttribute="leading" id="A3X-bs-UvP"/>
@@ -73,34 +89,41 @@
                                 <constraint firstItem="SPb-gg-Fc0" firstAttribute="trailing" secondItem="UUb-jn-h3V" secondAttribute="trailing" id="NhU-Ay-0Yo"/>
                                 <constraint firstItem="dBh-gC-Lki" firstAttribute="top" secondItem="SPb-gg-Fc0" secondAttribute="bottom" constant="8" id="Wnz-xH-Bcn"/>
                                 <constraint firstItem="UUb-jn-h3V" firstAttribute="leading" secondItem="itQ-8m-Wgr" secondAttribute="leading" constant="20" id="dbf-BE-gg6"/>
-                                <constraint firstAttribute="height" constant="150" id="o9w-ZQ-YQt"/>
+                                <constraint firstAttribute="height" constant="140" id="o9w-ZQ-YQt"/>
                                 <constraint firstItem="SPb-gg-Fc0" firstAttribute="top" secondItem="UUb-jn-h3V" secondAttribute="bottom" constant="10" id="pZ0-M5-3EE"/>
                                 <constraint firstItem="dBh-gC-Lki" firstAttribute="trailing" secondItem="SPb-gg-Fc0" secondAttribute="trailing" id="pg6-OB-ObW"/>
                                 <constraint firstItem="dBh-gC-Lki" firstAttribute="leading" secondItem="SPb-gg-Fc0" secondAttribute="leading" id="rVT-Id-cO4"/>
                                 <constraint firstItem="UUb-jn-h3V" firstAttribute="top" secondItem="itQ-8m-Wgr" secondAttribute="top" constant="30" id="vq7-Fg-Itm"/>
-                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="ztw-jZ-oNY"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Câu hỏi bạn đã từng đặt" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rs8-PF-8Fk">
-                            <rect key="frame" x="20" y="180" width="335" height="21"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <rect key="frame" x="20" y="155" width="335" height="22.5"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="20"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="Rs8-PF-8Fk" firstAttribute="top" secondItem="itQ-8m-Wgr" secondAttribute="bottom" constant="30" id="2hw-oR-qOQ"/>
+                        <constraint firstItem="Rs8-PF-8Fk" firstAttribute="top" secondItem="itQ-8m-Wgr" secondAttribute="bottom" constant="15" id="2hw-oR-qOQ"/>
                         <constraint firstItem="itQ-8m-Wgr" firstAttribute="top" secondItem="rD5-fG-a8T" secondAttribute="top" id="K6o-yL-kAU"/>
-                        <constraint firstAttribute="height" constant="250" id="O8H-KZ-LoF"/>
+                        <constraint firstAttribute="height" constant="190" id="O8H-KZ-LoF"/>
                         <constraint firstAttribute="trailing" secondItem="Rs8-PF-8Fk" secondAttribute="trailing" constant="20" id="RUj-9T-vx5"/>
+                        <constraint firstItem="gtS-60-GJf" firstAttribute="top" secondItem="rD5-fG-a8T" secondAttribute="top" id="aCv-qX-mra"/>
                         <constraint firstItem="itQ-8m-Wgr" firstAttribute="leading" secondItem="rD5-fG-a8T" secondAttribute="leading" id="eha-Bf-EVZ"/>
+                        <constraint firstAttribute="trailing" secondItem="gtS-60-GJf" secondAttribute="trailing" id="hy8-YZ-Gxb"/>
                         <constraint firstAttribute="trailing" secondItem="itQ-8m-Wgr" secondAttribute="trailing" id="ke2-AX-p80"/>
+                        <constraint firstItem="gtS-60-GJf" firstAttribute="leading" secondItem="rD5-fG-a8T" secondAttribute="leading" id="rTd-Fj-N0i"/>
                         <constraint firstItem="Rs8-PF-8Fk" firstAttribute="leading" secondItem="rD5-fG-a8T" secondAttribute="leading" constant="20" id="y2f-Xq-MBk"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mMM-wA-DDJ">
-                    <rect key="frame" x="0.0" y="270" width="375" height="397"/>
+                    <rect key="frame" x="0.0" y="210" width="375" height="457"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -117,4 +140,7 @@
             <viewLayoutGuide key="safeArea" id="hCS-EU-ZL1"/>
         </view>
     </objects>
+    <resources>
+        <image name="GoToQA" width="24" height="24"/>
+    </resources>
 </document>
