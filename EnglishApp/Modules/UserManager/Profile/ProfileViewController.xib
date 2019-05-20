@@ -100,11 +100,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mww-qS-XOx">
                     <rect key="frame" x="27" y="120" width="155" height="64"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ic_kimcuong" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPo-h6-7Hu">
-                            <rect key="frame" x="4" y="0.0" width="32" height="64"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ic_matong" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPo-h6-7Hu">
+                            <rect key="frame" x="4" y="0.0" width="12" height="64"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgC-1c-Z27">
-                            <rect key="frame" x="44" y="11.5" width="111" height="21"/>
+                            <rect key="frame" x="24" y="11.5" width="131" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Ysi-e2-uLp"/>
                             </constraints>
@@ -113,7 +113,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 hũ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lib-HW-C4q">
-                            <rect key="frame" x="44" y="33" width="111" height="14.5"/>
+                            <rect key="frame" x="24" y="33" width="131" height="14.5"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                             <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -273,5 +273,6 @@
         <image name="add_green" width="24" height="24"/>
         <image name="ic_Gold_III" width="33" height="32"/>
         <image name="ic_kimcuong" width="32" height="32"/>
+        <image name="ic_matong" width="12" height="12"/>
     </resources>
 </document>

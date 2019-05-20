@@ -12,16 +12,21 @@ import UIKit
 
 class HomeViewController: BaseViewController, HomeViewProtocol {
     @IBOutlet weak var tbHome: UITableView!
-	var presenter: HomePresenterProtocol?
+    var presenter: HomePresenterProtocol?
     
-
     var listMenuItem = [MenuItem]() {
         didSet {
             tbHome.reloadData()
         }
     }
     
-	override func viewDidLoad() {
+    let header: HeaderUserView = {
+        let header = HeaderUserView()
+        
+        return header
+    }()
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
     }
@@ -33,16 +38,43 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     
     override func setUpNavigation() {
         super.setUpNavigation()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        addHeaderHome()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeHeaderHome()
+    }
+    
+    func addHeaderHome() {
+        guard let nav = self.navigationController?.navigationBar else { return }
+        nav.addSubview(header)
+        header.anchor(widthConstant: 240, heightConstant: 42)
+        header.centerSuperview()
+        //---
         
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
-        
-        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: nil)
-            
-        addHeaderUser()
+        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: #selector(btnNotificationTapped))
+    }
+    
+    func removeHeaderHome() {
+        header.removeFromSuperview()
+    }
+    
+    @objc func btnNotificationTapped() {
+        PopUpHelper.shared.showLeaveHomeWork(completionNo: {
+            print("No")
+        }) {
+            print("yes")
+        }
     }
     
     @objc func btnMenuTapped() {
-       showHideMenu()
+        showHideMenu()
     }
     
     func showHideMenu() {
@@ -109,20 +141,20 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             return indexPath.item == 0 ? 222: 150
         } else {
-             return indexPath.item == 0 ? 60: UITableView.automaticDimension
+            return indexPath.item == 0 ? 60: UITableView.automaticDimension
         }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let itemSelected = self.listMenuItem[indexPath.item]
-//        self.listMenuItem.forEach { item in
-//            item.isSelected = false
-//        }
-//
-//        itemSelected.isSelected = true
-////        pushViewController(itemSelected: itemSelected)
-//
-//        tbHome.reloadData()
+        //        let itemSelected = self.listMenuItem[indexPath.item]
+        //        self.listMenuItem.forEach { item in
+        //            item.isSelected = false
+        //        }
+        //
+        //        itemSelected.isSelected = true
+        ////        pushViewController(itemSelected: itemSelected)
+        //
+        //        tbHome.reloadData()
     }
 }
 

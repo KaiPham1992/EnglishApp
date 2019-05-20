@@ -59,4 +59,33 @@ class PopUpHelper {
                         completionYes: completionYes)
     }
     
+    func showThanks(completionYes: CompletionClosure?) {
+        let popUp = ThanksReportPopUp()
+        popUp.showPopUp(completionYes: completionYes)
+    }
+    
+    func showNotEnoughtBee(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+        let popUp = YesNoPopUp()
+        popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
+        popUp.vYesNoContentView.btnYes.setTitle(LocalizableKey.addBee.showLanguage.uppercased(), for: .normal)
+        
+        popUp.showPopUp(message: LocalizableKey.notEnoughBee.showLanguage, completionNo: completionNo, completionYes: completionYes)
+    }
+    
+    func showNotEnoughtDiamon(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+        let popUp = YesNoPopUp()
+        popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
+        popUp.vYesNoContentView.btnYes.setTitle(LocalizableKey.addDiamon.showLanguage.uppercased(), for: .normal)
+        
+        popUp.showPopUp(message: LocalizableKey.notEnoughDiamon.showLanguage, completionNo: completionNo, completionYes: completionYes)
+    }
+    
+    func showLeaveHomeWork(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+        let popUp = YesNoPopUp()
+        popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.verifyButton.showLanguage.uppercased(), for: .normal)
+        popUp.vYesNoContentView.btnYes.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
+        
+        popUp.showPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, completionNo: completionYes, completionYes: completionNo)
+    }
+    
 }

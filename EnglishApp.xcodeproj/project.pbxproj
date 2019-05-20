@@ -979,6 +979,21 @@
 		DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
 		DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
 		DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
+		DEC62A9D2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */; };
+		DEC62A9E2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */; };
+		DEC62A9F2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */; };
+		DEC62AA12292FA2800D7CECE /* HomeNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AA02292FA2800D7CECE /* HomeNavigationView.xib */; };
+		DEC62AA22292FA2800D7CECE /* HomeNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AA02292FA2800D7CECE /* HomeNavigationView.xib */; };
+		DEC62AA32292FA2800D7CECE /* HomeNavigationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AA02292FA2800D7CECE /* HomeNavigationView.xib */; };
+		DEC62AA62293006100D7CECE /* ThanksReportPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AA52293006100D7CECE /* ThanksReportPopUp.swift */; };
+		DEC62AA72293006100D7CECE /* ThanksReportPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AA52293006100D7CECE /* ThanksReportPopUp.swift */; };
+		DEC62AA82293006100D7CECE /* ThanksReportPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AA52293006100D7CECE /* ThanksReportPopUp.swift */; };
+		DEC62AAA2293007200D7CECE /* ThanksReportContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AA92293007200D7CECE /* ThanksReportContent.swift */; };
+		DEC62AAB2293007200D7CECE /* ThanksReportContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AA92293007200D7CECE /* ThanksReportContent.swift */; };
+		DEC62AAC2293007200D7CECE /* ThanksReportContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AA92293007200D7CECE /* ThanksReportContent.swift */; };
+		DEC62AAE2293007F00D7CECE /* ThanksReportContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */; };
+		DEC62AAF2293007F00D7CECE /* ThanksReportContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */; };
+		DEC62AB02293007F00D7CECE /* ThanksReportContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */; };
 		DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
@@ -1363,6 +1378,11 @@
 		DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionProtocols.swift; sourceTree = "<group>"; };
 		DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionInteractor.swift; sourceTree = "<group>"; };
 		DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyMissionViewController.xib; sourceTree = "<group>"; };
+		DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
+		DEC62AA02292FA2800D7CECE /* HomeNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNavigationView.xib; sourceTree = "<group>"; };
+		DEC62AA52293006100D7CECE /* ThanksReportPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksReportPopUp.swift; sourceTree = "<group>"; };
+		DEC62AA92293007200D7CECE /* ThanksReportContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksReportContent.swift; sourceTree = "<group>"; };
+		DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThanksReportContent.xib; sourceTree = "<group>"; };
 		DEDDEF6422914A980043A62D /* MainTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
 		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
@@ -1697,6 +1717,7 @@
 		DE2ADE6122841B8A003768CE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				DEC62A9B2292F9E600D7CECE /* HomeNavigationView */,
 				DEF1C24F22903529005AD1A3 /* Cell */,
 				DE2ADE6322841B9E003768CE /* HomePresenter.swift */,
 				DE2ADE6422841B9E003768CE /* HomeRouter.swift */,
@@ -1918,6 +1939,7 @@
 		DE361E502283E60500FA3B0D /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DEC62AA42293004B00D7CECE /* ThanksReportPopUp */,
 				DEBD6735228D48C7004B74C8 /* CreateGroupPopUp */,
 				DE361E532283E60500FA3B0D /* NotificationPopUp */,
 				DE361E572283E60500FA3B0D /* YesNoPopUp */,
@@ -2498,6 +2520,25 @@
 			path = DailyMission;
 			sourceTree = "<group>";
 		};
+		DEC62A9B2292F9E600D7CECE /* HomeNavigationView */ = {
+			isa = PBXGroup;
+			children = (
+				DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */,
+				DEC62AA02292FA2800D7CECE /* HomeNavigationView.xib */,
+			);
+			path = HomeNavigationView;
+			sourceTree = "<group>";
+		};
+		DEC62AA42293004B00D7CECE /* ThanksReportPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				DEC62AA52293006100D7CECE /* ThanksReportPopUp.swift */,
+				DEC62AA92293007200D7CECE /* ThanksReportContent.swift */,
+				DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */,
+			);
+			path = ThanksReportPopUp;
+			sourceTree = "<group>";
+		};
 		DEDDEF6322914A790043A62D /* MainTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2719,6 +2760,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC62AAE2293007F00D7CECE /* ThanksReportContent.xib in Resources */,
 				DEECF88022870D1700A4678B /* Localizable.strings in Resources */,
 				DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613422898F1F0046801B /* QAViewController.xib in Resources */,
@@ -2778,6 +2820,7 @@
 				DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310E2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314B2288324300E3F688 /* EditProfileViewController.xib in Resources */,
+				DEC62AA12292FA2800D7CECE /* HomeNavigationView.xib in Resources */,
 				DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */,
 				DE361E722283E60500FA3B0D /* AppTextField.xib in Resources */,
 				76DB9393228C56640081A36E /* DictionaryViewController.xib in Resources */,
@@ -2789,6 +2832,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC62AAF2293007F00D7CECE /* ThanksReportContent.xib in Resources */,
 				DE9530422287DF4800E3F688 /* Localizable.strings in Resources */,
 				DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613522898F1F0046801B /* QAViewController.xib in Resources */,
@@ -2848,6 +2892,7 @@
 				DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310F2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314C2288324300E3F688 /* EditProfileViewController.xib in Resources */,
+				DEC62AA22292FA2800D7CECE /* HomeNavigationView.xib in Resources */,
 				DE9530522287DF4800E3F688 /* Assets.xcassets in Resources */,
 				DE9530532287DF4800E3F688 /* AppTextField.xib in Resources */,
 				76DB9394228C56640081A36E /* DictionaryViewController.xib in Resources */,
@@ -2859,6 +2904,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC62AB02293007F00D7CECE /* ThanksReportContent.xib in Resources */,
 				DE9530F02287DF6400E3F688 /* Localizable.strings in Resources */,
 				DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613622898F1F0046801B /* QAViewController.xib in Resources */,
@@ -2918,6 +2964,7 @@
 				DE9531162287E00A00E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE9531102287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314D2288324300E3F688 /* EditProfileViewController.xib in Resources */,
+				DEC62AA32292FA2800D7CECE /* HomeNavigationView.xib in Resources */,
 				DE9531002287DF6400E3F688 /* Assets.xcassets in Resources */,
 				DE9531012287DF6400E3F688 /* AppTextField.xib in Resources */,
 				76DB9395228C56640081A36E /* DictionaryViewController.xib in Resources */,
@@ -3351,6 +3398,7 @@
 				DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */,
 				76E2FF4F228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				766D136F228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
+				DEC62AA62293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
 				DE95313F2288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952F982287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
@@ -3360,6 +3408,7 @@
 				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
 				DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */,
+				DEC62A9D2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */,
 				DEB584712291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
@@ -3467,6 +3516,7 @@
 				DEB584912291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA22289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				DEC62AAA2293007200D7CECE /* ThanksReportContent.swift in Sources */,
 				DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE952FAD2287DD2A00E3F688 /* Login+GoogleSignIn.swift in Sources */,
 				DEBD6716228D22F2004B74C8 /* DetailTeamCell.swift in Sources */,
@@ -3637,6 +3687,7 @@
 				DE952FE52287DF4800E3F688 /* SignUpInteractor.swift in Sources */,
 				76E2FF50228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				766D1370228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
+				DEC62AA72293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
 				DE9531402288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952FE62287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
@@ -3646,6 +3697,7 @@
 				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
 				DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */,
+				DEC62A9E2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */,
 				DEB584722291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
@@ -3753,6 +3805,7 @@
 				DEB584922291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA32289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				DEC62AAB2293007200D7CECE /* ThanksReportContent.swift in Sources */,
 				DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530222287DF4800E3F688 /* Login+GoogleSignIn.swift in Sources */,
 				DEBD6717228D22F2004B74C8 /* DetailTeamCell.swift in Sources */,
@@ -3923,6 +3976,7 @@
 				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
 				76E2FF51228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				766D1371228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
+				DEC62AA82293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
 				DE9531412288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE9530942287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
@@ -3932,6 +3986,7 @@
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,
+				DEC62A9F2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */,
 				DEB584732291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DE9530992287DF6400E3F688 /* MenuRouter.swift in Sources */,
 				DE3A8CDE2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
@@ -4039,6 +4094,7 @@
 				DEB584932291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA42289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530CE2287DF6400E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				DEC62AAC2293007200D7CECE /* ThanksReportContent.swift in Sources */,
 				DE9530CF2287DF6400E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
 				DE9530D02287DF6400E3F688 /* Login+GoogleSignIn.swift in Sources */,
 				DEBD6718228D22F2004B74C8 /* DetailTeamCell.swift in Sources */,

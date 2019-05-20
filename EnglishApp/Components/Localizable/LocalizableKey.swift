@@ -68,6 +68,7 @@ struct LocalizableKey {
     static let agree = "agree"
     static let cancel = "cancel"
     static let changePasswordSuccess = "changePasswordSuccess"
+    static let popleaveHomeWork = "popleaveHomeWork"
     
     
     // QA
@@ -145,4 +146,13 @@ struct LocalizableKey {
     static let tabbarProgram = "tabbarProgram"
     static let tabbarHomeWork = "tabbarHomeWork"
     static let tabbarCompetition = "tabbarCompetition"
+    
+    // report popup
+    static let reportTitlePopUp = "reportTitlePopUp"
+    static let reportMessagePopUp = "reportMessagePopUp"
+    static let reportButtonPopUp = "reportButtonPopUp"
+    static let notEnoughBee = "notEnoughBee"
+    static let notEnoughDiamon = "notEnoughDiamon"
+    static let addBee = "addBee"
+    static let addDiamon = "addDiamon"
 }

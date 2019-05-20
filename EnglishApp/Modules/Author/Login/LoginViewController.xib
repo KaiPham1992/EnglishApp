@@ -73,7 +73,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                             <state key="normal" title="ĐĂNG NHẬP">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <connections>
                                 <action selector="btnLoginTapped" destination="-1" eventType="touchUpInside" id="1oN-DA-Foa"/>
