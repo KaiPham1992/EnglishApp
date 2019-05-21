@@ -155,4 +155,9 @@ struct LocalizableKey {
     static let notEnoughDiamon = "notEnoughDiamon"
     static let addBee = "addBee"
     static let addDiamon = "addDiamon"
+    
+    // store
+    static let studyPack = "studyPack"
+    static let beePack = "beePack"
+    static let titleStore = "titleStore"
 }

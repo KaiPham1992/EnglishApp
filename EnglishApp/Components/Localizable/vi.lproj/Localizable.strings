@@ -152,3 +152,8 @@
 "notEnoughDiamon" = "Bạn không đủ kim cương.";
 "addDiamon" = "Thêm kim cương";
 "popleaveHomeWork" = "Bạn có muốn thoát khỏi bài tập đang làm?";
+
+// store
+"studyPack" = "Gói nâng cấp";
+"beePack" = "Gói mật ong";
+"titleStore" = "Cửa hàng";

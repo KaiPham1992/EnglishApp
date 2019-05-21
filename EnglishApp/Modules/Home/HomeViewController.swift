@@ -164,7 +164,7 @@ extension HomeViewController: HomeActionCellDelegate {
     }
     
     func btnStoreTapped() {
-        
+        self.push(controller: StoreViewController())
     }
     
     func btnMissionTapped() {

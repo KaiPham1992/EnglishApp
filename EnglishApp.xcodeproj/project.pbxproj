@@ -994,6 +994,45 @@
 		DEC62AAE2293007F00D7CECE /* ThanksReportContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */; };
 		DEC62AAF2293007F00D7CECE /* ThanksReportContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */; };
 		DEC62AB02293007F00D7CECE /* ThanksReportContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */; };
+		DEC62AB322930D6000D7CECE /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB222930D6000D7CECE /* StoreViewController.swift */; };
+		DEC62AB422930D6000D7CECE /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB222930D6000D7CECE /* StoreViewController.swift */; };
+		DEC62AB522930D6000D7CECE /* StoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB222930D6000D7CECE /* StoreViewController.swift */; };
+		DEC62ABD22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB722930E0E00D7CECE /* StudyPackPresenter.swift */; };
+		DEC62ABE22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB722930E0E00D7CECE /* StudyPackPresenter.swift */; };
+		DEC62ABF22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB722930E0E00D7CECE /* StudyPackPresenter.swift */; };
+		DEC62AC022930E0E00D7CECE /* StudyPackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB822930E0E00D7CECE /* StudyPackRouter.swift */; };
+		DEC62AC122930E0E00D7CECE /* StudyPackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB822930E0E00D7CECE /* StudyPackRouter.swift */; };
+		DEC62AC222930E0E00D7CECE /* StudyPackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB822930E0E00D7CECE /* StudyPackRouter.swift */; };
+		DEC62AC322930E0E00D7CECE /* StudyPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB922930E0E00D7CECE /* StudyPackViewController.swift */; };
+		DEC62AC422930E0E00D7CECE /* StudyPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB922930E0E00D7CECE /* StudyPackViewController.swift */; };
+		DEC62AC522930E0E00D7CECE /* StudyPackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AB922930E0E00D7CECE /* StudyPackViewController.swift */; };
+		DEC62AC622930E0E00D7CECE /* StudyPackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62ABA22930E0E00D7CECE /* StudyPackProtocols.swift */; };
+		DEC62AC722930E0E00D7CECE /* StudyPackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62ABA22930E0E00D7CECE /* StudyPackProtocols.swift */; };
+		DEC62AC822930E0E00D7CECE /* StudyPackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62ABA22930E0E00D7CECE /* StudyPackProtocols.swift */; };
+		DEC62AC922930E0E00D7CECE /* StudyPackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62ABB22930E0E00D7CECE /* StudyPackInteractor.swift */; };
+		DEC62ACA22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62ABB22930E0E00D7CECE /* StudyPackInteractor.swift */; };
+		DEC62ACB22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62ABB22930E0E00D7CECE /* StudyPackInteractor.swift */; };
+		DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62ABC22930E0E00D7CECE /* StudyPackViewController.xib */; };
+		DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62ABC22930E0E00D7CECE /* StudyPackViewController.xib */; };
+		DEC62ACE22930E0E00D7CECE /* StudyPackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62ABC22930E0E00D7CECE /* StudyPackViewController.xib */; };
+		DEC62AD622930EC400D7CECE /* BeePackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD022930EC400D7CECE /* BeePackPresenter.swift */; };
+		DEC62AD722930EC400D7CECE /* BeePackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD022930EC400D7CECE /* BeePackPresenter.swift */; };
+		DEC62AD822930EC400D7CECE /* BeePackPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD022930EC400D7CECE /* BeePackPresenter.swift */; };
+		DEC62AD922930EC400D7CECE /* BeePackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD122930EC400D7CECE /* BeePackRouter.swift */; };
+		DEC62ADA22930EC400D7CECE /* BeePackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD122930EC400D7CECE /* BeePackRouter.swift */; };
+		DEC62ADB22930EC400D7CECE /* BeePackRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD122930EC400D7CECE /* BeePackRouter.swift */; };
+		DEC62ADC22930EC400D7CECE /* BeePackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD222930EC400D7CECE /* BeePackViewController.swift */; };
+		DEC62ADD22930EC400D7CECE /* BeePackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD222930EC400D7CECE /* BeePackViewController.swift */; };
+		DEC62ADE22930EC400D7CECE /* BeePackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD222930EC400D7CECE /* BeePackViewController.swift */; };
+		DEC62ADF22930EC400D7CECE /* BeePackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD322930EC400D7CECE /* BeePackProtocols.swift */; };
+		DEC62AE022930EC400D7CECE /* BeePackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD322930EC400D7CECE /* BeePackProtocols.swift */; };
+		DEC62AE122930EC400D7CECE /* BeePackProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD322930EC400D7CECE /* BeePackProtocols.swift */; };
+		DEC62AE222930EC400D7CECE /* BeePackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD422930EC400D7CECE /* BeePackInteractor.swift */; };
+		DEC62AE322930EC400D7CECE /* BeePackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD422930EC400D7CECE /* BeePackInteractor.swift */; };
+		DEC62AE422930EC400D7CECE /* BeePackInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62AD422930EC400D7CECE /* BeePackInteractor.swift */; };
+		DEC62AE522930EC400D7CECE /* BeePackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AD522930EC400D7CECE /* BeePackViewController.xib */; };
+		DEC62AE622930EC400D7CECE /* BeePackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AD522930EC400D7CECE /* BeePackViewController.xib */; };
+		DEC62AE722930EC400D7CECE /* BeePackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AD522930EC400D7CECE /* BeePackViewController.xib */; };
 		DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
@@ -1383,6 +1422,19 @@
 		DEC62AA52293006100D7CECE /* ThanksReportPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksReportPopUp.swift; sourceTree = "<group>"; };
 		DEC62AA92293007200D7CECE /* ThanksReportContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksReportContent.swift; sourceTree = "<group>"; };
 		DEC62AAD2293007F00D7CECE /* ThanksReportContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThanksReportContent.xib; sourceTree = "<group>"; };
+		DEC62AB222930D6000D7CECE /* StoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreViewController.swift; sourceTree = "<group>"; };
+		DEC62AB722930E0E00D7CECE /* StudyPackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackPresenter.swift; sourceTree = "<group>"; };
+		DEC62AB822930E0E00D7CECE /* StudyPackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackRouter.swift; sourceTree = "<group>"; };
+		DEC62AB922930E0E00D7CECE /* StudyPackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackViewController.swift; sourceTree = "<group>"; };
+		DEC62ABA22930E0E00D7CECE /* StudyPackProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackProtocols.swift; sourceTree = "<group>"; };
+		DEC62ABB22930E0E00D7CECE /* StudyPackInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackInteractor.swift; sourceTree = "<group>"; };
+		DEC62ABC22930E0E00D7CECE /* StudyPackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyPackViewController.xib; sourceTree = "<group>"; };
+		DEC62AD022930EC400D7CECE /* BeePackPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackPresenter.swift; sourceTree = "<group>"; };
+		DEC62AD122930EC400D7CECE /* BeePackRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackRouter.swift; sourceTree = "<group>"; };
+		DEC62AD222930EC400D7CECE /* BeePackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackViewController.swift; sourceTree = "<group>"; };
+		DEC62AD322930EC400D7CECE /* BeePackProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackProtocols.swift; sourceTree = "<group>"; };
+		DEC62AD422930EC400D7CECE /* BeePackInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackInteractor.swift; sourceTree = "<group>"; };
+		DEC62AD522930EC400D7CECE /* BeePackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeePackViewController.xib; sourceTree = "<group>"; };
 		DEDDEF6422914A980043A62D /* MainTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
 		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
@@ -1746,6 +1798,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DEC62AB122930D4B00D7CECE /* Store */,
 				DEB5846A2291ABBF00FE0356 /* HistoryBee */,
 				DEDDEF6322914A790043A62D /* MainTabbar */,
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
@@ -2539,6 +2592,42 @@
 			path = ThanksReportPopUp;
 			sourceTree = "<group>";
 		};
+		DEC62AB122930D4B00D7CECE /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				DEC62ACF22930EB300D7CECE /* BeePack */,
+				DEC62AB622930DF500D7CECE /* StudyPack */,
+				DEC62AB222930D6000D7CECE /* StoreViewController.swift */,
+			);
+			path = Store;
+			sourceTree = "<group>";
+		};
+		DEC62AB622930DF500D7CECE /* StudyPack */ = {
+			isa = PBXGroup;
+			children = (
+				DEC62AB722930E0E00D7CECE /* StudyPackPresenter.swift */,
+				DEC62AB822930E0E00D7CECE /* StudyPackRouter.swift */,
+				DEC62AB922930E0E00D7CECE /* StudyPackViewController.swift */,
+				DEC62ABA22930E0E00D7CECE /* StudyPackProtocols.swift */,
+				DEC62ABB22930E0E00D7CECE /* StudyPackInteractor.swift */,
+				DEC62ABC22930E0E00D7CECE /* StudyPackViewController.xib */,
+			);
+			path = StudyPack;
+			sourceTree = "<group>";
+		};
+		DEC62ACF22930EB300D7CECE /* BeePack */ = {
+			isa = PBXGroup;
+			children = (
+				DEC62AD022930EC400D7CECE /* BeePackPresenter.swift */,
+				DEC62AD122930EC400D7CECE /* BeePackRouter.swift */,
+				DEC62AD222930EC400D7CECE /* BeePackViewController.swift */,
+				DEC62AD322930EC400D7CECE /* BeePackProtocols.swift */,
+				DEC62AD422930EC400D7CECE /* BeePackInteractor.swift */,
+				DEC62AD522930EC400D7CECE /* BeePackViewController.xib */,
+			);
+			path = BeePack;
+			sourceTree = "<group>";
+		};
 		DEDDEF6322914A790043A62D /* MainTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2764,6 +2853,7 @@
 				DEECF88022870D1700A4678B /* Localizable.strings in Resources */,
 				DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613422898F1F0046801B /* QAViewController.xib in Resources */,
+				DEC62AE522930EC400D7CECE /* BeePackViewController.xib in Resources */,
 				DE3A8CC22289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DE9F0F8A228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C25F22903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
@@ -2773,6 +2863,7 @@
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
@@ -2836,6 +2927,7 @@
 				DE9530422287DF4800E3F688 /* Localizable.strings in Resources */,
 				DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613522898F1F0046801B /* QAViewController.xib in Resources */,
+				DEC62AE622930EC400D7CECE /* BeePackViewController.xib in Resources */,
 				DE3A8CC32289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DE9F0F8B228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C26022903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
@@ -2845,6 +2937,7 @@
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
@@ -2908,6 +3001,7 @@
 				DE9530F02287DF6400E3F688 /* Localizable.strings in Resources */,
 				DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613622898F1F0046801B /* QAViewController.xib in Resources */,
+				DEC62AE722930EC400D7CECE /* BeePackViewController.xib in Resources */,
 				DE3A8CC42289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DE9F0F8C228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C26122903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
@@ -2917,6 +3011,7 @@
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				DEC62ACE22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DEF1C24E229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
@@ -3290,6 +3385,7 @@
 			files = (
 				DE3A8CEE2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A0228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				DEC62AD922930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE952F812287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
@@ -3327,6 +3423,7 @@
 				76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
 				76E2FECA228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
+				DEC62AC922930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				DE3A8CBC2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				766D1317228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315522883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
@@ -3347,6 +3444,7 @@
 				766D1366228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
 				DEBD6723228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE361DE52283E54C00FA3B0D /* BaseTableCell.swift in Sources */,
+				DEC62ABD22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF52228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE361F412283E85000FA3B0D /* UpdateProfileSocial.swift in Sources */,
@@ -3354,6 +3452,7 @@
 				DE952F872287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE2ADE6922841B9E003768CE /* HomePresenter.swift in Sources */,
 				DE952F942287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DEC62ADF22930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE952F992287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE95312C228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
 				DE952F8A2287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
@@ -3377,11 +3476,13 @@
 				766D1372228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
 				76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
+				DEC62AD622930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6922914B8D0043A62D /* UIDevice+extension.swift in Sources */,
 				DE95315B22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE361F472283E85000FA3B0D /* CommonEndPoint.swift in Sources */,
 				766D131A228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB32289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
+				DEC62AE222930EC400D7CECE /* BeePackInteractor.swift in Sources */,
 				DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670A228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE361F362283E85000FA3B0D /* PhotoEntity.swift in Sources */,
@@ -3459,6 +3560,7 @@
 				DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531422288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
+				DEC62AC022930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
 				76E2FEEA228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
@@ -3483,6 +3585,7 @@
 				DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE952FA12287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DEF1C26522903E32005AD1A3 /* HomeTitleCell.swift in Sources */,
+				DEC62AB322930D6000D7CECE /* StoreViewController.swift in Sources */,
 				DE952F9B2287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE361E962283E60500FA3B0D /* UserDefaultHelper.swift in Sources */,
 				766D1385228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
@@ -3528,6 +3631,7 @@
 				DEECF87922870AEB00A4678B /* LanguageHelper.swift in Sources */,
 				76E2FEE4228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE95312F228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
+				DEC62AC322930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB62289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				DEBD6752228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -3547,6 +3651,7 @@
 				DE361F3C2283E85000FA3B0D /* MapperData.swift in Sources */,
 				DE361DF62283E57900FA3B0D /* Int+extension.swift in Sources */,
 				DE361F4D2283E85000FA3B0D /* CommonAPIService.swift in Sources */,
+				DEC62ADC22930EC400D7CECE /* BeePackViewController.swift in Sources */,
 				DE361F522283E85000FA3B0D /* Provider.swift in Sources */,
 				DE361F292283E85000FA3B0D /* BaseEntity.swift in Sources */,
 				DE953181228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
@@ -3565,6 +3670,7 @@
 				DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				766D1382228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
+				DEC62AC622930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CCF2289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
@@ -3579,6 +3685,7 @@
 			files = (
 				DE3A8CEF2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A1228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				DEC62ADA22930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE952FB12287DF4800E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */,
@@ -3616,6 +3723,7 @@
 				76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
 				76E2FECB228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
+				DEC62ACA22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				DE3A8CBD2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				766D1318228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315622883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
@@ -3636,6 +3744,7 @@
 				766D1367228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
 				DEBD6724228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE952FCB2287DF4800E3F688 /* BaseTableCell.swift in Sources */,
+				DEC62ABE22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF53228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952FCC2287DF4800E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE952FCD2287DF4800E3F688 /* UpdateProfileSocial.swift in Sources */,
@@ -3643,6 +3752,7 @@
 				DE952FCF2287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE952FD02287DF4800E3F688 /* HomePresenter.swift in Sources */,
 				DE952FD12287DF4800E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DEC62AE022930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE952FD22287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE95312D228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
 				DE952FD32287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
@@ -3666,11 +3776,13 @@
 				766D1373228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
 				76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
+				DEC62AD722930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6A22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
 				DE95315C22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */,
 				766D131B228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB42289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
+				DEC62AE322930EC400D7CECE /* BeePackInteractor.swift in Sources */,
 				DE952FDD2287DF4800E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670B228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE952FDE2287DF4800E3F688 /* PhotoEntity.swift in Sources */,
@@ -3748,6 +3860,7 @@
 				DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531432288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */,
+				DEC62AC122930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
 				76E2FEEB228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
@@ -3772,6 +3885,7 @@
 				DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE95300E2287DF4800E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DEF1C26622903E32005AD1A3 /* HomeTitleCell.swift in Sources */,
+				DEC62AB422930D6000D7CECE /* StoreViewController.swift in Sources */,
 				DE95300F2287DF4800E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530102287DF4800E3F688 /* UserDefaultHelper.swift in Sources */,
 				766D1386228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
@@ -3817,6 +3931,7 @@
 				DE9530262287DF4800E3F688 /* LanguageHelper.swift in Sources */,
 				76E2FEE5228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE953130228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
+				DEC62AC422930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB72289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				DEBD6753228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -3836,6 +3951,7 @@
 				DE9530302287DF4800E3F688 /* MapperData.swift in Sources */,
 				DE9530312287DF4800E3F688 /* Int+extension.swift in Sources */,
 				DE9530322287DF4800E3F688 /* CommonAPIService.swift in Sources */,
+				DEC62ADD22930EC400D7CECE /* BeePackViewController.swift in Sources */,
 				DE9530332287DF4800E3F688 /* Provider.swift in Sources */,
 				DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */,
 				DE953182228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
@@ -3854,6 +3970,7 @@
 				DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
 				766D1383228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
+				DEC62AC722930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD02289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
@@ -3868,6 +3985,7 @@
 			files = (
 				DE3A8CF02289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A2228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				DEC62ADB22930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE95305F2287DF6400E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
@@ -3905,6 +4023,7 @@
 				76DB93B4228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
 				76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
+				DEC62ACB22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				DE3A8CBE2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				766D1319228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315722883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
@@ -3925,6 +4044,7 @@
 				766D1368228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
 				DEBD6725228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE9530792287DF6400E3F688 /* BaseTableCell.swift in Sources */,
+				DEC62ABF22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF54228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE95307A2287DF6400E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE95307B2287DF6400E3F688 /* UpdateProfileSocial.swift in Sources */,
@@ -3932,6 +4052,7 @@
 				DE95307D2287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE95307E2287DF6400E3F688 /* HomePresenter.swift in Sources */,
 				DE95307F2287DF6400E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DEC62AE122930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE9530802287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE95312E228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
 				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
@@ -3955,11 +4076,13 @@
 				766D1374228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
 				76DB93BC228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
+				DEC62AD822930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6B22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
 				DE95315D22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */,
 				766D131C228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB52289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
+				DEC62AE422930EC400D7CECE /* BeePackInteractor.swift in Sources */,
 				DE95308B2287DF6400E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670C228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE95308C2287DF6400E3F688 /* PhotoEntity.swift in Sources */,
@@ -4037,6 +4160,7 @@
 				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE9531442288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE9530B12287DF6400E3F688 /* UserEndPoint.swift in Sources */,
+				DEC62AC222930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76E2FED2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
 				76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
@@ -4061,6 +4185,7 @@
 				DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE9530BC2287DF6400E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DEF1C26722903E32005AD1A3 /* HomeTitleCell.swift in Sources */,
+				DEC62AB522930D6000D7CECE /* StoreViewController.swift in Sources */,
 				DE9530BD2287DF6400E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530BE2287DF6400E3F688 /* UserDefaultHelper.swift in Sources */,
 				766D1387228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
@@ -4106,6 +4231,7 @@
 				DE9530D42287DF6400E3F688 /* LanguageHelper.swift in Sources */,
 				76E2FEE6228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE953131228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
+				DEC62AC522930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB82289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				DEBD6754228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
@@ -4125,6 +4251,7 @@
 				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
 				DE9530DF2287DF6400E3F688 /* Int+extension.swift in Sources */,
 				DE9530E02287DF6400E3F688 /* CommonAPIService.swift in Sources */,
+				DEC62ADE22930EC400D7CECE /* BeePackViewController.swift in Sources */,
 				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
 				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,
 				DE953183228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
@@ -4143,6 +4270,7 @@
 				DEBD6728228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
 				766D1384228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
+				DEC62AC822930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD12289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
