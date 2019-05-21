@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		765110C1229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
+		765110C2229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
+		765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
+		765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
+		765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
+		765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
 		766D12FC228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
 		766D12FD228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
 		766D12FE228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
@@ -84,6 +90,36 @@
 		766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
 		766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
 		766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
+		76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
+		76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
+		76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
+		76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6722906821003C4B4B /* CommentRouter.swift */; };
+		76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6722906821003C4B4B /* CommentRouter.swift */; };
+		76CF0C7122906822003C4B4B /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6722906821003C4B4B /* CommentRouter.swift */; };
+		76CF0C7222906822003C4B4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6822906821003C4B4B /* CommentViewController.swift */; };
+		76CF0C7322906822003C4B4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6822906821003C4B4B /* CommentViewController.swift */; };
+		76CF0C7422906822003C4B4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6822906821003C4B4B /* CommentViewController.swift */; };
+		76CF0C7522906822003C4B4B /* CommentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6922906821003C4B4B /* CommentProtocols.swift */; };
+		76CF0C7622906822003C4B4B /* CommentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6922906821003C4B4B /* CommentProtocols.swift */; };
+		76CF0C7722906822003C4B4B /* CommentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6922906821003C4B4B /* CommentProtocols.swift */; };
+		76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6A22906822003C4B4B /* CommentInteractor.swift */; };
+		76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6A22906822003C4B4B /* CommentInteractor.swift */; };
+		76CF0C7A22906822003C4B4B /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6A22906822003C4B4B /* CommentInteractor.swift */; };
+		76CF0C7B22906822003C4B4B /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C6B22906822003C4B4B /* CommentViewController.xib */; };
+		76CF0C7C22906822003C4B4B /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C6B22906822003C4B4B /* CommentViewController.xib */; };
+		76CF0C7D22906822003C4B4B /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C6B22906822003C4B4B /* CommentViewController.xib */; };
+		76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C7F229068AB003C4B4B /* CellComment.swift */; };
+		76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C7F229068AB003C4B4B /* CellComment.swift */; };
+		76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C7F229068AB003C4B4B /* CellComment.swift */; };
+		76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C80229068AB003C4B4B /* CellComment.xib */; };
+		76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C80229068AB003C4B4B /* CellComment.xib */; };
+		76CF0C86229068AB003C4B4B /* CellComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C80229068AB003C4B4B /* CellComment.xib */; };
+		76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C8922906D09003C4B4B /* ViewComment.swift */; };
+		76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C8922906D09003C4B4B /* ViewComment.swift */; };
+		76CF0C8C22906D09003C4B4B /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C8922906D09003C4B4B /* ViewComment.swift */; };
+		76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
+		76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
+		76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
 		76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
@@ -983,6 +1019,8 @@
 		5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		765110BF229312EC004A060A /* CellHeaderComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHeaderComment.swift; sourceTree = "<group>"; };
+		765110C0229312EC004A060A /* CellHeaderComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellHeaderComment.xib; sourceTree = "<group>"; };
 		766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryPresenter.swift; sourceTree = "<group>"; };
 		766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryRouter.swift; sourceTree = "<group>"; };
 		766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
@@ -1008,6 +1046,16 @@
 		766D137C228F2629005E47F0 /* DetailLessonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonProtocols.swift; sourceTree = "<group>"; };
 		766D137D228F2629005E47F0 /* DetailLessonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonInteractor.swift; sourceTree = "<group>"; };
 		766D137E228F2629005E47F0 /* DetailLessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailLessonViewController.xib; sourceTree = "<group>"; };
+		76CF0C6622906821003C4B4B /* CommentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPresenter.swift; sourceTree = "<group>"; };
+		76CF0C6722906821003C4B4B /* CommentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
+		76CF0C6822906821003C4B4B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		76CF0C6922906821003C4B4B /* CommentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentProtocols.swift; sourceTree = "<group>"; };
+		76CF0C6A22906822003C4B4B /* CommentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInteractor.swift; sourceTree = "<group>"; };
+		76CF0C6B22906822003C4B4B /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		76CF0C7F229068AB003C4B4B /* CellComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComment.swift; sourceTree = "<group>"; };
+		76CF0C80229068AB003C4B4B /* CellComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellComment.xib; sourceTree = "<group>"; };
+		76CF0C8922906D09003C4B4B /* ViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComment.swift; sourceTree = "<group>"; };
+		76CF0C8D22906D18003C4B4B /* ViewComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewComment.xib; sourceTree = "<group>"; };
 		76DB937E228C56640081A36E /* DictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPresenter.swift; sourceTree = "<group>"; };
 		76DB937F228C56640081A36E /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		76DB9380228C56640081A36E /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
@@ -1437,6 +1485,40 @@
 			path = DetailLesson;
 			sourceTree = "<group>";
 		};
+		76CF0C652290680B003C4B4B /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				76CF0C7E22906892003C4B4B /* CellComment */,
+				76CF0C6622906821003C4B4B /* CommentPresenter.swift */,
+				76CF0C6722906821003C4B4B /* CommentRouter.swift */,
+				76CF0C6822906821003C4B4B /* CommentViewController.swift */,
+				76CF0C6922906821003C4B4B /* CommentProtocols.swift */,
+				76CF0C6A22906822003C4B4B /* CommentInteractor.swift */,
+				76CF0C6B22906822003C4B4B /* CommentViewController.xib */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		76CF0C7E22906892003C4B4B /* CellComment */ = {
+			isa = PBXGroup;
+			children = (
+				765110BF229312EC004A060A /* CellHeaderComment.swift */,
+				765110C0229312EC004A060A /* CellHeaderComment.xib */,
+				76CF0C7F229068AB003C4B4B /* CellComment.swift */,
+				76CF0C80229068AB003C4B4B /* CellComment.xib */,
+			);
+			path = CellComment;
+			sourceTree = "<group>";
+		};
+		76CF0C8822906CED003C4B4B /* ViewComment */ = {
+			isa = PBXGroup;
+			children = (
+				76CF0C8922906D09003C4B4B /* ViewComment.swift */,
+				76CF0C8D22906D18003C4B4B /* ViewComment.xib */,
+			);
+			path = ViewComment;
+			sourceTree = "<group>";
+		};
 		76DB937D228C56380081A36E /* Dictionary */ = {
 			isa = PBXGroup;
 			children = (
@@ -1636,6 +1718,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				76CF0C652290680B003C4B4B /* Comment */,
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
 				DEBD6742228D6840004B74C8 /* DailyMission */,
 				76E2FEBD228DBA990014B1F4 /* SaveDictionary */,
@@ -1740,6 +1823,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				76CF0C8822906CED003C4B4B /* ViewComment */,
 				766D135A228EF05B005E47F0 /* ViewGradient */,
 				DE7D14B7228EA27500713084 /* TitleNavigationBar */,
 				76E2FEF9228DC4AC0014B1F4 /* PageView */,
@@ -2541,11 +2625,14 @@
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
 				DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
+				76CF0C7B22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */,
 				766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
 				766D130B228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
@@ -2557,6 +2644,7 @@
 				76E2FEED228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE361E8C2283E60500FA3B0D /* AppCheckBox.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
+				76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -2603,11 +2691,14 @@
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
 				DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
+				76CF0C7C22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */,
 				766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
 				766D130C228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
@@ -2619,6 +2710,7 @@
 				76E2FEEE228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */,
 				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -2665,11 +2757,14 @@
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
 				DEBD6734228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
+				76CF0C7D22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				76CF0C86229068AB003C4B4B /* CellComment.xib in Resources */,
 				766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */,
 				766D130D228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
@@ -2681,6 +2776,7 @@
 				76E2FEEF228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
 				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -3093,7 +3189,9 @@
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
+				76CF0C7222906822003C4B4B /* CommentViewController.swift in Sources */,
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
@@ -3125,6 +3223,7 @@
 				DE361DDA2283E4BD00FA3B0D /* LoginInteractor.swift in Sources */,
 				DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */,
 				76E2FF4F228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
+				76CF0C7522906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D136F228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DE95313F2288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952F982287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
@@ -3154,6 +3253,7 @@
 				DE361DFB2283E57900FA3B0D /* String+extension.swift in Sources */,
 				766D1388228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */,
 				DEBD674F228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9390228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */,
@@ -3198,6 +3298,7 @@
 				76E2FF55228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135C228EF078005E47F0 /* ViewGradient.swift in Sources */,
+				765110C1229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612822898F1F0046801B /* QARouter.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
 				DE9531452288324300E3F688 /* EditProfileProtocols.swift in Sources */,
@@ -3209,6 +3310,7 @@
 				DE3A8CA52289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
+				76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF43228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE361DE72283E54C00FA3B0D /* BaseView.swift in Sources */,
 				DE361F392283E85000FA3B0D /* APIError.swift in Sources */,
@@ -3223,6 +3325,7 @@
 				DEECF89C22871D1B00A4678B /* ForgotPasswordPresenter.swift in Sources */,
 				DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
+				76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */,
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
@@ -3279,6 +3382,7 @@
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
+				76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1382228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
@@ -3365,7 +3469,9 @@
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
+				76CF0C7322906822003C4B4B /* CommentViewController.swift in Sources */,
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
 				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
@@ -3397,6 +3503,7 @@
 				DE952FE42287DF4800E3F688 /* LoginInteractor.swift in Sources */,
 				DE952FE52287DF4800E3F688 /* SignUpInteractor.swift in Sources */,
 				76E2FF50228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
+				76CF0C7622906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1370228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DE9531402288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952FE62287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
@@ -3426,6 +3533,7 @@
 				DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */,
 				766D1389228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */,
 				DEBD6750228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9391228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */,
@@ -3470,6 +3578,7 @@
 				76E2FF56228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135D228EF078005E47F0 /* ViewGradient.swift in Sources */,
+				765110C2229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612922898F1F0046801B /* QARouter.swift in Sources */,
 				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531462288324300E3F688 /* EditProfileProtocols.swift in Sources */,
@@ -3481,6 +3590,7 @@
 				DE3A8CA62289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
+				76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF44228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530132287DF4800E3F688 /* BaseView.swift in Sources */,
 				DE9530142287DF4800E3F688 /* APIError.swift in Sources */,
@@ -3495,6 +3605,7 @@
 				DE95301A2287DF4800E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */,
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
+				76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */,
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
@@ -3551,6 +3662,7 @@
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
+				76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1383228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
@@ -3637,7 +3749,9 @@
 				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
+				76CF0C7422906822003C4B4B /* CommentViewController.swift in Sources */,
 				DE95314A2288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
 				DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */,
@@ -3669,6 +3783,7 @@
 				DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */,
 				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
 				76E2FF51228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
+				76CF0C7722906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1371228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DE9531412288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE9530942287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
@@ -3698,6 +3813,7 @@
 				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
 				766D138A228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76CF0C7122906822003C4B4B /* CommentRouter.swift in Sources */,
 				DEBD6751228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9392228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */,
@@ -3742,6 +3858,7 @@
 				76E2FF57228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135E228EF078005E47F0 /* ViewGradient.swift in Sources */,
+				765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531472288324300E3F688 /* EditProfileProtocols.swift in Sources */,
@@ -3753,6 +3870,7 @@
 				DE3A8CA72289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */,
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
+				76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF45228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */,
 				DE9530C22287DF6400E3F688 /* APIError.swift in Sources */,
@@ -3767,6 +3885,7 @@
 				DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
 				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,
+				76CF0C7A22906822003C4B4B /* CommentInteractor.swift in Sources */,
 				DE953128228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
@@ -3823,6 +3942,7 @@
 				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6728228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
+				76CF0C8C22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1384228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
