@@ -156,3 +156,10 @@
 
 //comment
 "comment" = "Bình luận";
+
+//exercise
+"exercise" = "Bài tập";
+"practice" = "Luyện tập";
+"create_exercise" ="Bài tập tự tạo";
+"level_exercise" ="Bài tập theo cấp";
+"assign_exercise" = "Bài tập được giao";
