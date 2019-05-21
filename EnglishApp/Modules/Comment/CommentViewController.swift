@@ -25,7 +25,7 @@ class CommentViewController: BaseViewController, CommentViewProtocol {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        setTitleNavigation(title: "")
+        setTitleNavigation(title: LocalizableKey.comment.showLanguage)
     }
 }
 

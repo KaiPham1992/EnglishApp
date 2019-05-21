@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SelectTeamCell: UITableViewCell {
+class SelectTeamCell: BaseTableCell {
 
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbCountMember: UILabel!

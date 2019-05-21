@@ -294,6 +294,10 @@ extension BaseViewController {
     
     func addHeaderUser() {
         let header = HeaderUserView()
-         self.navigationItem.titleView = header
+     
+//        header.frame = CGRect(x: 0, y: 0, width: 414, height: 375)
+//         self.navigationItem.titleView = header
+        self.navigationController?.navigationBar.addSubview(header)
+        header.fillSuperview()
     }
 }

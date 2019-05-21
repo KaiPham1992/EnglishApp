@@ -77,6 +77,15 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         case AppImage.imgInfo:
             delegateController?.controllerSelected(controller: ProfileRouter.createModule())
             AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
+            
+        case AppImage.imgQA:
+            delegateController?.controllerSelected(controller: QARouter.createModule())
+            AppRouter.shared.pushTo(viewController: QARouter.createModule())
+            
+        case AppImage.imgChangePass:
+            delegateController?.controllerSelected(controller: ChangePasswordRouter.createModule())
+            AppRouter.shared.pushTo(viewController: ChangePasswordRouter.createModule())
+            
         case AppImage.imgLogout:
             PopUpHelper.shared.showLogout(completionNo: {
                 print("No")

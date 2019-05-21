@@ -16,10 +16,20 @@ struct AppImage {
     static let imgUnCheck = UIImage(named: "UnCheck")!
     static let imgCheck = UIImage(named: "Check")!
     
-    static let imgMenu = UIImage(named: "close")!
-    static let imgNotification = UIImage(named: "close")!
+    static let imgMenu = UIImage(named: "ic_menu")!
+    static let imgNotification = UIImage(named: "THONG_BAO")!
     static let imgEditProfile = UIImage(named: "edit")!
     
+    static let imgDictionary = UIImage(named: "ic_dictionary")!
+    static let imgStore = UIImage(named: "ic_store")!
+    static let imgFindWork = UIImage(named: "ic_arrown")!
+    static let imgMission = UIImage(named: "ic_arrown")!
+    
+    // tababr
+    static let imgTabbarHome = UIImage(named: "HOME")!.withRenderingMode(.alwaysTemplate)
+    static let imgTabbarProgramer = UIImage(named: "ic_book_2")!.withRenderingMode(.alwaysTemplate)
+    static let imgTabbarHomeWork = UIImage(named: "ic_gym_2")!.withRenderingMode(.alwaysTemplate)
+    static let imgTabbarCompetition = UIImage(named: "ic_fire")!.withRenderingMode(.alwaysTemplate)
     
     // Menu
     static let imgTop = UIImage(named: "ic_ranking")!.withRenderingMode(.alwaysTemplate)

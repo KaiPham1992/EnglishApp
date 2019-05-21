@@ -36,7 +36,7 @@ Label</string>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quên mật khẩu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZxP-Rj-x3F">
                     <rect key="frame" x="0.0" y="44" width="414" height="140"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="textColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>

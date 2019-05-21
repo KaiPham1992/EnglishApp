@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CompetitionCell: UITableViewCell {
+class CompetitionCell: BaseTableCell {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbCondition: UILabel!
     @IBOutlet weak var lbTimeStart: UILabel!

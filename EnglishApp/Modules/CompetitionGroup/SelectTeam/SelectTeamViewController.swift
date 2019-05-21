@@ -34,6 +34,14 @@ class SelectTeamViewController: BaseViewController, SelectTeamViewProtocol {
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.selectTeamJoin.showLanguage)
     }
+    
+    @IBAction func btnCreateGroup() {
+        PopUpHelper.shared.showCreateGroup(completionNo: {
+            print("Cancel")
+        }) {
+            print("Yes")
+        }
+    }
 }
 
 
@@ -61,7 +69,8 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func btnJoinTapped() {
-        
+        let vc = DetailTeamRouter.createModule()
+        self.push(controller: vc)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

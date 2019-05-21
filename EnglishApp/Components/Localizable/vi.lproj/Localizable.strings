@@ -31,7 +31,7 @@
 "passwordDifference" = "Mật khẩu không giống nhau";
 
 // Forgot password page
-"ForgotPasswordMessage" = "Nhập địa chỉ email liên kết với tài khoản của bạn.\nSau đó kiểm tra hòm thư";
+"ForgotPasswordMessage" = "Nhập địa chỉ email liên kết với tài khoản của bạn.Sau đó kiểm tra hòm thư";
 "SentEmail" = "Gửi email";
 "ForgotTitle" = "Quên mật khẩu";
 
@@ -129,3 +129,30 @@
 "idiams" = "Idiams";
 "word_usage" = "Word usage";
 "word_form" = "Word form";
+
+// Home
+"homeDictionary" = "Từ điển";
+"homeStore" = "Cửa hàng";
+"homeMission" = "Nhiệm vụ";
+"homeFindWork" = "Tìm bài tập";
+"actionRecently" = "HOẠT ĐỘNG GẦN ĐÂY";
+
+"tabbarHome" = "Trang chủ";
+"tabbarProgram" = "Lý thuyết";
+"tabbarHomeWork" = "Bài tập";
+"tabbarCompetition" = "Thi đấu";
+
+// report pop up
+"reportTitlePopUp" = "Báo cáo";
+"reportMessagePopUp" = "Cảm ơn bạn đã báo cáo cho chúng tôi về trường hợp này. Chúng tối sẽ xem xét và chỉnh sửa lại sớm nhất.";
+"reportButtonPopUp" = "Hoàn thành";
+
+"notEnoughBee" = "Bạn không đủ mật ong.";
+"addBee" = "Thêm mật ong";
+"notEnoughDiamon" = "Bạn không đủ kim cương.";
+"addDiamon" = "Thêm kim cương";
+"popleaveHomeWork" = "Bạn có muốn thoát khỏi bài tập đang làm?";
+
+
+//comment
+"comment" = "Bình luận";

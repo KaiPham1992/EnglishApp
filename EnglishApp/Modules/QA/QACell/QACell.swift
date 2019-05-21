@@ -8,7 +8,7 @@
 
 import UIKit
 
-class QACell: UITableViewCell {
+class QACell: BaseTableCell {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var lbContent: UILabel!

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ThanksReportContent" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="btnYes" destination="al9-fH-Mf8" id="ucj-Lp-CI9"/>
+                <outlet property="lbMessage" destination="JAF-7u-q9R" id="S2v-NU-b7Z"/>
+                <outlet property="lbTitle" destination="VKy-YL-pGD" id="ZvC-fR-9hA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="432"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Báo Cáo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKy-YL-pGD">
+                    <rect key="frame" x="153.5" y="68" width="107" height="27"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cảm ơn bạn đã báo cáo cho chúng tôi về trường hợp này. Chúng tối sẽ xem xét và chỉnh sửa lại sớm nhất." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JAF-7u-q9R">
+                    <rect key="frame" x="20" y="119" width="374" height="47"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al9-fH-Mf8">
+                    <rect key="frame" x="147" y="334" width="120" height="40"/>
+                    <color key="backgroundColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="MIt-ls-6nQ"/>
+                        <constraint firstAttribute="height" constant="40" id="PsI-Db-Lu5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                    <state key="normal" title="HOÀN THÀNH">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="VKy-YL-pGD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="P2s-xd-o42"/>
+                <constraint firstItem="al9-fH-Mf8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YyH-IY-Zj4"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="al9-fH-Mf8" secondAttribute="bottom" constant="24" id="aXG-wL-vMT"/>
+                <constraint firstItem="JAF-7u-q9R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="dp8-Wi-se9"/>
+                <constraint firstItem="VKy-YL-pGD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="gRb-R2-m69"/>
+                <constraint firstAttribute="trailing" secondItem="JAF-7u-q9R" secondAttribute="trailing" constant="20" id="ge4-fk-qIX"/>
+                <constraint firstItem="JAF-7u-q9R" firstAttribute="top" secondItem="VKy-YL-pGD" secondAttribute="bottom" constant="24" id="umG-B9-Nkp"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="257.14285714285711"/>
+        </view>
+    </objects>
+</document>

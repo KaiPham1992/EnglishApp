@@ -50,7 +50,14 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
         vCode.setTitleAndPlaceHolder(title: LocalizableKey.CodeNumber.showLanguage)
         imgAvatar.setBorder(borderWidth: 2, borderColor: AppColor.yellow, cornerRadius: 30)
         lbTitleBee.text = LocalizableKey.titleBee.showLanguage
-        lbTitleDiamon.text = LocalizableKey.titleBee.showLanguage
+        lbTitleDiamon.text = LocalizableKey.titleDiamon.showLanguage
     }
-
+    
+    @IBAction func btnBeeTapped() {
+        self.push(controller: HistoryBeeRouter.createModule())
+    }
+    
+    @IBAction func btnDiamonTapped() {
+        self.push(controller: HistoryBeeRouter.createModule())
+    }
 }
