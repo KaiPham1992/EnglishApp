@@ -114,6 +114,30 @@
 		76CE31962295A9E700E998FB /* CellLevelExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31922295A9E700E998FB /* CellLevelExercise.xib */; };
 		76CE31972295A9E700E998FB /* CellLevelExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31922295A9E700E998FB /* CellLevelExercise.xib */; };
 		76CE31982295A9E700E998FB /* CellLevelExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31922295A9E700E998FB /* CellLevelExercise.xib */; };
+		76CE31A02295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319A2295AE3600E998FB /* ChoiceExercisePresenter.swift */; };
+		76CE31A12295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319A2295AE3600E998FB /* ChoiceExercisePresenter.swift */; };
+		76CE31A22295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319A2295AE3600E998FB /* ChoiceExercisePresenter.swift */; };
+		76CE31A32295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319B2295AE3600E998FB /* ChoiceExerciseRouter.swift */; };
+		76CE31A42295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319B2295AE3600E998FB /* ChoiceExerciseRouter.swift */; };
+		76CE31A52295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319B2295AE3600E998FB /* ChoiceExerciseRouter.swift */; };
+		76CE31A62295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319C2295AE3600E998FB /* ChoiceExerciseViewController.swift */; };
+		76CE31A72295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319C2295AE3600E998FB /* ChoiceExerciseViewController.swift */; };
+		76CE31A82295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319C2295AE3600E998FB /* ChoiceExerciseViewController.swift */; };
+		76CE31A92295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319D2295AE3600E998FB /* ChoiceExerciseProtocols.swift */; };
+		76CE31AA2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319D2295AE3600E998FB /* ChoiceExerciseProtocols.swift */; };
+		76CE31AB2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319D2295AE3600E998FB /* ChoiceExerciseProtocols.swift */; };
+		76CE31AC2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319E2295AE3600E998FB /* ChoiceExerciseInteractor.swift */; };
+		76CE31AD2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319E2295AE3600E998FB /* ChoiceExerciseInteractor.swift */; };
+		76CE31AE2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE319E2295AE3600E998FB /* ChoiceExerciseInteractor.swift */; };
+		76CE31AF2295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE319F2295AE3600E998FB /* ChoiceExerciseViewController.xib */; };
+		76CE31B02295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE319F2295AE3600E998FB /* ChoiceExerciseViewController.xib */; };
+		76CE31B12295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE319F2295AE3600E998FB /* ChoiceExerciseViewController.xib */; };
+		76CE31B52295AE6300E998FB /* CellChoiceExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31B32295AE6300E998FB /* CellChoiceExercise.swift */; };
+		76CE31B62295AE6300E998FB /* CellChoiceExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31B32295AE6300E998FB /* CellChoiceExercise.swift */; };
+		76CE31B72295AE6300E998FB /* CellChoiceExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31B32295AE6300E998FB /* CellChoiceExercise.swift */; };
+		76CE31B82295AE6300E998FB /* CellChoiceExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31B42295AE6300E998FB /* CellChoiceExercise.xib */; };
+		76CE31B92295AE6300E998FB /* CellChoiceExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31B42295AE6300E998FB /* CellChoiceExercise.xib */; };
+		76CE31BA2295AE6300E998FB /* CellChoiceExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31B42295AE6300E998FB /* CellChoiceExercise.xib */; };
 		76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
 		76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
 		76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
@@ -1258,6 +1282,14 @@
 		76CE317D2295A95300E998FB /* LevelExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LevelExerciseViewController.xib; sourceTree = "<group>"; };
 		76CE31912295A9E700E998FB /* CellLevelExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLevelExercise.swift; sourceTree = "<group>"; };
 		76CE31922295A9E700E998FB /* CellLevelExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellLevelExercise.xib; sourceTree = "<group>"; };
+		76CE319A2295AE3600E998FB /* ChoiceExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceExercisePresenter.swift; sourceTree = "<group>"; };
+		76CE319B2295AE3600E998FB /* ChoiceExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceExerciseRouter.swift; sourceTree = "<group>"; };
+		76CE319C2295AE3600E998FB /* ChoiceExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceExerciseViewController.swift; sourceTree = "<group>"; };
+		76CE319D2295AE3600E998FB /* ChoiceExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceExerciseProtocols.swift; sourceTree = "<group>"; };
+		76CE319E2295AE3600E998FB /* ChoiceExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceExerciseInteractor.swift; sourceTree = "<group>"; };
+		76CE319F2295AE3600E998FB /* ChoiceExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChoiceExerciseViewController.xib; sourceTree = "<group>"; };
+		76CE31B32295AE6300E998FB /* CellChoiceExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellChoiceExercise.swift; sourceTree = "<group>"; };
+		76CE31B42295AE6300E998FB /* CellChoiceExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellChoiceExercise.xib; sourceTree = "<group>"; };
 		76CF0C6622906821003C4B4B /* CommentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPresenter.swift; sourceTree = "<group>"; };
 		76CF0C6722906821003C4B4B /* CommentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
 		76CF0C6822906821003C4B4B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
@@ -1780,6 +1812,29 @@
 			path = CellLevelExercise;
 			sourceTree = "<group>";
 		};
+		76CE31992295AE1E00E998FB /* ChoiceExercise */ = {
+			isa = PBXGroup;
+			children = (
+				76CE31B22295AE4B00E998FB /* CellChoiceExercise */,
+				76CE319A2295AE3600E998FB /* ChoiceExercisePresenter.swift */,
+				76CE319B2295AE3600E998FB /* ChoiceExerciseRouter.swift */,
+				76CE319C2295AE3600E998FB /* ChoiceExerciseViewController.swift */,
+				76CE319D2295AE3600E998FB /* ChoiceExerciseProtocols.swift */,
+				76CE319E2295AE3600E998FB /* ChoiceExerciseInteractor.swift */,
+				76CE319F2295AE3600E998FB /* ChoiceExerciseViewController.xib */,
+			);
+			path = ChoiceExercise;
+			sourceTree = "<group>";
+		};
+		76CE31B22295AE4B00E998FB /* CellChoiceExercise */ = {
+			isa = PBXGroup;
+			children = (
+				76CE31B32295AE6300E998FB /* CellChoiceExercise.swift */,
+				76CE31B42295AE6300E998FB /* CellChoiceExercise.xib */,
+			);
+			path = CellChoiceExercise;
+			sourceTree = "<group>";
+		};
 		76CF0C652290680B003C4B4B /* Comment */ = {
 			isa = PBXGroup;
 			children = (
@@ -1950,6 +2005,7 @@
 		76F7F4302294212A001E9984 /* ExerciseGroup */ = {
 			isa = PBXGroup;
 			children = (
+				76CE31992295AE1E00E998FB /* ChoiceExercise */,
 				76CE31772295A93400E998FB /* LevelExercise */,
 				76F7F449229466C0001E9984 /* CreateExercise */,
 				76F7F431229421BD001E9984 /* ExercisePresenter.swift */,
@@ -3157,6 +3213,7 @@
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
 				DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
+				76CE31AF2295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
 				76CE31962295A9E700E998FB /* CellLevelExercise.xib in Resources */,
@@ -3194,6 +3251,7 @@
 				DE361E8C2283E60500FA3B0D /* AppCheckBox.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */,
+				76CE31B82295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -3244,6 +3302,7 @@
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
 				DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
+				76CE31B02295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
 				76CE31972295A9E700E998FB /* CellLevelExercise.xib in Resources */,
@@ -3281,6 +3340,7 @@
 				DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */,
 				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */,
+				76CE31B92295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -3331,6 +3391,7 @@
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
 				DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
+				76CE31B12295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
 				76CE31982295A9E700E998FB /* CellLevelExercise.xib in Resources */,
@@ -3368,6 +3429,7 @@
 				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
+				76CE31BA2295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -3806,6 +3868,7 @@
 				DE2ADE7722841BB9003768CE /* MenuViewController.swift in Sources */,
 				DEBD6704228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138B228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
+				76CE31B52295AE6300E998FB /* CellChoiceExercise.swift in Sources */,
 				76CE31872295A95300E998FB /* LevelExerciseProtocols.swift in Sources */,
 				76E2FF5B228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
 				76F7F45C229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
@@ -3835,6 +3898,7 @@
 				DE361F3A2283E85000FA3B0D /* BaseResponse.swift in Sources */,
 				DE361DDA2283E4BD00FA3B0D /* LoginInteractor.swift in Sources */,
 				DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */,
+				76CE31A32295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
 				76E2FF4F228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				76CF0C7522906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D136F228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
@@ -3856,9 +3920,11 @@
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
 				766D1369228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
+				76CE31A62295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1308228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DEB584882291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
+				76CE31A02295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
 				DE2ADE6D22841B9E003768CE /* HomeInteractor.swift in Sources */,
 				766D137F228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1302228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
@@ -3996,6 +4062,7 @@
 				DE361DFA2283E57900FA3B0D /* UIViewController+extension.swift in Sources */,
 				DE361E7A2283E60500FA3B0D /* AppSearchBar.swift in Sources */,
 				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				76CE31AC2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672C228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
 				DEF1C25322903557005AD1A3 /* HomeActionCell.swift in Sources */,
@@ -4009,6 +4076,7 @@
 				DE953181228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
 				DEF1C25C22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A3228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
+				76CE31A92295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
 				DE952F832287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE361E9F2283E60500FA3B0D /* YesNoContentView.swift in Sources */,
 				DE361E8B2283E60500FA3B0D /* AppTextView.swift in Sources */,
@@ -4134,6 +4202,7 @@
 				DE952FDA2287DF4800E3F688 /* MenuViewController.swift in Sources */,
 				DEBD6705228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138C228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
+				76CE31B62295AE6300E998FB /* CellChoiceExercise.swift in Sources */,
 				76CE31882295A95300E998FB /* LevelExerciseProtocols.swift in Sources */,
 				76E2FF5C228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
 				76F7F45D229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
@@ -4163,6 +4232,7 @@
 				DE952FE32287DF4800E3F688 /* BaseResponse.swift in Sources */,
 				DE952FE42287DF4800E3F688 /* LoginInteractor.swift in Sources */,
 				DE952FE52287DF4800E3F688 /* SignUpInteractor.swift in Sources */,
+				76CE31A42295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
 				76E2FF50228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				76CF0C7622906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1370228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
@@ -4184,9 +4254,11 @@
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
 				766D136A228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
+				76CE31A72295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1309228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DEB584892291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
+				76CE31A12295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
 				DE952FEE2287DF4800E3F688 /* HomeInteractor.swift in Sources */,
 				766D1380228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1303228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
@@ -4324,6 +4396,7 @@
 				DE95302B2287DF4800E3F688 /* UIViewController+extension.swift in Sources */,
 				DE95302C2287DF4800E3F688 /* AppSearchBar.swift in Sources */,
 				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				76CE31AD2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672D228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
 				DEF1C25422903557005AD1A3 /* HomeActionCell.swift in Sources */,
@@ -4337,6 +4410,7 @@
 				DE953182228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
 				DEF1C25D22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A4228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
+				76CE31AA2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
 				DE9530352287DF4800E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE9530362287DF4800E3F688 /* YesNoContentView.swift in Sources */,
 				DE9530372287DF4800E3F688 /* AppTextView.swift in Sources */,
@@ -4462,6 +4536,7 @@
 				DE9530882287DF6400E3F688 /* MenuViewController.swift in Sources */,
 				DEBD6706228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138D228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
+				76CE31B72295AE6300E998FB /* CellChoiceExercise.swift in Sources */,
 				76CE31892295A95300E998FB /* LevelExerciseProtocols.swift in Sources */,
 				76E2FF5D228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
 				76F7F45E229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
@@ -4491,6 +4566,7 @@
 				DE9530912287DF6400E3F688 /* BaseResponse.swift in Sources */,
 				DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */,
 				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
+				76CE31A52295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
 				76E2FF51228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				76CF0C7722906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1371228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
@@ -4512,9 +4588,11 @@
 				DE3A8CDE2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */,
 				766D136B228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
+				76CE31A82295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DEB5848A2291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
+				76CE31A22295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
 				DE95309C2287DF6400E3F688 /* HomeInteractor.swift in Sources */,
 				766D1381228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1304228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
@@ -4652,6 +4730,7 @@
 				DE9530D92287DF6400E3F688 /* UIViewController+extension.swift in Sources */,
 				DE9530DA2287DF6400E3F688 /* AppSearchBar.swift in Sources */,
 				DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				76CE31AE2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672E228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */,
 				DEF1C25522903557005AD1A3 /* HomeActionCell.swift in Sources */,
@@ -4665,6 +4744,7 @@
 				DE953183228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
 				DEF1C25E22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A5228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
+				76CE31AB2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
 				DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE9530E42287DF6400E3F688 /* YesNoContentView.swift in Sources */,
 				DE9530E52287DF6400E3F688 /* AppTextView.swift in Sources */,
