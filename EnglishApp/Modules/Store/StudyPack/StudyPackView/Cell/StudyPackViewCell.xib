@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="StudyPackViewCell" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="206" height="288"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="206" height="288"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NH8-QJ-9sL">
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="75"/>
+                        <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="75" id="NDj-Wa-ajg"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1fJ-cC-Xfb">
+                        <rect key="frame" x="16" y="91" width="174" height="80"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-Rd-qwK" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="174" height="16"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-8J-XtJ" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="16" width="174" height="16"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfC-AX-YFa" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="32" width="174" height="16"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAu-Xx-53F" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="48" width="174" height="16"/>
+                                <color key="backgroundColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGE-3J-ie9" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="174" height="16"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="85k-bR-lX5"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="1fJ-cC-Xfb" firstAttribute="top" secondItem="NH8-QJ-9sL" secondAttribute="bottom" constant="16" id="FHt-Vl-yWA"/>
+                <constraint firstAttribute="trailing" secondItem="NH8-QJ-9sL" secondAttribute="trailing" id="SVU-9H-cUP"/>
+                <constraint firstItem="NH8-QJ-9sL" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="TRE-ea-Nh6"/>
+                <constraint firstItem="NH8-QJ-9sL" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XVj-5D-EC1"/>
+                <constraint firstAttribute="trailing" secondItem="1fJ-cC-Xfb" secondAttribute="trailing" constant="16" id="eVD-is-TnI"/>
+                <constraint firstItem="1fJ-cC-Xfb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="tB3-H5-OQU"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="206" height="288"/>
+            <point key="canvasLocation" x="250.72463768115944" y="26.785714285714285"/>
+        </collectionViewCell>
+    </objects>
+</document>

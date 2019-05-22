@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		765110C1229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
+		765110C2229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
+		765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
+		765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
+		765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
+		765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
 		766D12FC228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
 		766D12FD228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
 		766D12FE228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
@@ -84,6 +90,36 @@
 		766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
 		766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
 		766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
+		76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
+		76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
+		76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
+		76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6722906821003C4B4B /* CommentRouter.swift */; };
+		76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6722906821003C4B4B /* CommentRouter.swift */; };
+		76CF0C7122906822003C4B4B /* CommentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6722906821003C4B4B /* CommentRouter.swift */; };
+		76CF0C7222906822003C4B4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6822906821003C4B4B /* CommentViewController.swift */; };
+		76CF0C7322906822003C4B4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6822906821003C4B4B /* CommentViewController.swift */; };
+		76CF0C7422906822003C4B4B /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6822906821003C4B4B /* CommentViewController.swift */; };
+		76CF0C7522906822003C4B4B /* CommentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6922906821003C4B4B /* CommentProtocols.swift */; };
+		76CF0C7622906822003C4B4B /* CommentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6922906821003C4B4B /* CommentProtocols.swift */; };
+		76CF0C7722906822003C4B4B /* CommentProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6922906821003C4B4B /* CommentProtocols.swift */; };
+		76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6A22906822003C4B4B /* CommentInteractor.swift */; };
+		76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6A22906822003C4B4B /* CommentInteractor.swift */; };
+		76CF0C7A22906822003C4B4B /* CommentInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6A22906822003C4B4B /* CommentInteractor.swift */; };
+		76CF0C7B22906822003C4B4B /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C6B22906822003C4B4B /* CommentViewController.xib */; };
+		76CF0C7C22906822003C4B4B /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C6B22906822003C4B4B /* CommentViewController.xib */; };
+		76CF0C7D22906822003C4B4B /* CommentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C6B22906822003C4B4B /* CommentViewController.xib */; };
+		76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C7F229068AB003C4B4B /* CellComment.swift */; };
+		76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C7F229068AB003C4B4B /* CellComment.swift */; };
+		76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C7F229068AB003C4B4B /* CellComment.swift */; };
+		76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C80229068AB003C4B4B /* CellComment.xib */; };
+		76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C80229068AB003C4B4B /* CellComment.xib */; };
+		76CF0C86229068AB003C4B4B /* CellComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C80229068AB003C4B4B /* CellComment.xib */; };
+		76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C8922906D09003C4B4B /* ViewComment.swift */; };
+		76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C8922906D09003C4B4B /* ViewComment.swift */; };
+		76CF0C8C22906D09003C4B4B /* ViewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C8922906D09003C4B4B /* ViewComment.swift */; };
+		76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
+		76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
+		76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
 		76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
@@ -910,6 +946,24 @@
 		DEB961412289942E0046801B /* QAEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB961402289942E0046801B /* QAEntity.swift */; };
 		DEB961422289942E0046801B /* QAEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB961402289942E0046801B /* QAEntity.swift */; };
 		DEB961432289942E0046801B /* QAEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB961402289942E0046801B /* QAEntity.swift */; };
+		DEBCBC6022945B0900DF7F74 /* StudyPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC5F22945B0900DF7F74 /* StudyPackView.swift */; };
+		DEBCBC6122945B0900DF7F74 /* StudyPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC5F22945B0900DF7F74 /* StudyPackView.swift */; };
+		DEBCBC6222945B0900DF7F74 /* StudyPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC5F22945B0900DF7F74 /* StudyPackView.swift */; };
+		DEBCBC6422945B4400DF7F74 /* StudyPackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC6322945B4400DF7F74 /* StudyPackView.xib */; };
+		DEBCBC6522945B4400DF7F74 /* StudyPackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC6322945B4400DF7F74 /* StudyPackView.xib */; };
+		DEBCBC6622945B4400DF7F74 /* StudyPackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC6322945B4400DF7F74 /* StudyPackView.xib */; };
+		DEBCBC6A22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC6822945BA000DF7F74 /* StudyPackViewCell.swift */; };
+		DEBCBC6B22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC6822945BA000DF7F74 /* StudyPackViewCell.swift */; };
+		DEBCBC6C22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC6822945BA000DF7F74 /* StudyPackViewCell.swift */; };
+		DEBCBC6D22945BA000DF7F74 /* StudyPackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC6922945BA000DF7F74 /* StudyPackViewCell.xib */; };
+		DEBCBC6E22945BA000DF7F74 /* StudyPackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC6922945BA000DF7F74 /* StudyPackViewCell.xib */; };
+		DEBCBC6F22945BA000DF7F74 /* StudyPackViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC6922945BA000DF7F74 /* StudyPackViewCell.xib */; };
+		DEBCBC7222945C8300DF7F74 /* InfoPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC7122945C8300DF7F74 /* InfoPackView.swift */; };
+		DEBCBC7322945C8300DF7F74 /* InfoPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC7122945C8300DF7F74 /* InfoPackView.swift */; };
+		DEBCBC7422945C8300DF7F74 /* InfoPackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBCBC7122945C8300DF7F74 /* InfoPackView.swift */; };
+		DEBCBC7622945C9A00DF7F74 /* InfoPackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC7522945C9A00DF7F74 /* InfoPackView.xib */; };
+		DEBCBC7722945C9A00DF7F74 /* InfoPackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC7522945C9A00DF7F74 /* InfoPackView.xib */; };
+		DEBCBC7822945C9A00DF7F74 /* InfoPackView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBCBC7522945C9A00DF7F74 /* InfoPackView.xib */; };
 		DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */; };
 		DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */; };
 		DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */; };
@@ -1103,6 +1157,8 @@
 		5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		765110BF229312EC004A060A /* CellHeaderComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHeaderComment.swift; sourceTree = "<group>"; };
+		765110C0229312EC004A060A /* CellHeaderComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellHeaderComment.xib; sourceTree = "<group>"; };
 		766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryPresenter.swift; sourceTree = "<group>"; };
 		766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryRouter.swift; sourceTree = "<group>"; };
 		766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
@@ -1128,6 +1184,16 @@
 		766D137C228F2629005E47F0 /* DetailLessonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonProtocols.swift; sourceTree = "<group>"; };
 		766D137D228F2629005E47F0 /* DetailLessonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonInteractor.swift; sourceTree = "<group>"; };
 		766D137E228F2629005E47F0 /* DetailLessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailLessonViewController.xib; sourceTree = "<group>"; };
+		76CF0C6622906821003C4B4B /* CommentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPresenter.swift; sourceTree = "<group>"; };
+		76CF0C6722906821003C4B4B /* CommentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
+		76CF0C6822906821003C4B4B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		76CF0C6922906821003C4B4B /* CommentProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentProtocols.swift; sourceTree = "<group>"; };
+		76CF0C6A22906822003C4B4B /* CommentInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentInteractor.swift; sourceTree = "<group>"; };
+		76CF0C6B22906822003C4B4B /* CommentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentViewController.xib; sourceTree = "<group>"; };
+		76CF0C7F229068AB003C4B4B /* CellComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComment.swift; sourceTree = "<group>"; };
+		76CF0C80229068AB003C4B4B /* CellComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellComment.xib; sourceTree = "<group>"; };
+		76CF0C8922906D09003C4B4B /* ViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComment.swift; sourceTree = "<group>"; };
+		76CF0C8D22906D18003C4B4B /* ViewComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewComment.xib; sourceTree = "<group>"; };
 		76DB937E228C56640081A36E /* DictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPresenter.swift; sourceTree = "<group>"; };
 		76DB937F228C56640081A36E /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		76DB9380228C56640081A36E /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
@@ -1394,6 +1460,12 @@
 		DEB96138228993640046801B /* QACell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QACell.swift; sourceTree = "<group>"; };
 		DEB96139228993640046801B /* QACell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QACell.xib; sourceTree = "<group>"; };
 		DEB961402289942E0046801B /* QAEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEntity.swift; sourceTree = "<group>"; };
+		DEBCBC5F22945B0900DF7F74 /* StudyPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackView.swift; sourceTree = "<group>"; };
+		DEBCBC6322945B4400DF7F74 /* StudyPackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyPackView.xib; sourceTree = "<group>"; };
+		DEBCBC6822945BA000DF7F74 /* StudyPackViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackViewCell.swift; sourceTree = "<group>"; };
+		DEBCBC6922945BA000DF7F74 /* StudyPackViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyPackViewCell.xib; sourceTree = "<group>"; };
+		DEBCBC7122945C8300DF7F74 /* InfoPackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoPackView.swift; sourceTree = "<group>"; };
+		DEBCBC7522945C9A00DF7F74 /* InfoPackView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoPackView.xib; sourceTree = "<group>"; };
 		DEBD66FB228D201A004B74C8 /* DetailTeamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamPresenter.swift; sourceTree = "<group>"; };
 		DEBD66FC228D201A004B74C8 /* DetailTeamRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamRouter.swift; sourceTree = "<group>"; };
 		DEBD66FD228D201A004B74C8 /* DetailTeamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamViewController.swift; sourceTree = "<group>"; };
@@ -1595,6 +1667,40 @@
 				766D137E228F2629005E47F0 /* DetailLessonViewController.xib */,
 			);
 			path = DetailLesson;
+			sourceTree = "<group>";
+		};
+		76CF0C652290680B003C4B4B /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				76CF0C7E22906892003C4B4B /* CellComment */,
+				76CF0C6622906821003C4B4B /* CommentPresenter.swift */,
+				76CF0C6722906821003C4B4B /* CommentRouter.swift */,
+				76CF0C6822906821003C4B4B /* CommentViewController.swift */,
+				76CF0C6922906821003C4B4B /* CommentProtocols.swift */,
+				76CF0C6A22906822003C4B4B /* CommentInteractor.swift */,
+				76CF0C6B22906822003C4B4B /* CommentViewController.xib */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		76CF0C7E22906892003C4B4B /* CellComment */ = {
+			isa = PBXGroup;
+			children = (
+				765110BF229312EC004A060A /* CellHeaderComment.swift */,
+				765110C0229312EC004A060A /* CellHeaderComment.xib */,
+				76CF0C7F229068AB003C4B4B /* CellComment.swift */,
+				76CF0C80229068AB003C4B4B /* CellComment.xib */,
+			);
+			path = CellComment;
+			sourceTree = "<group>";
+		};
+		76CF0C8822906CED003C4B4B /* ViewComment */ = {
+			isa = PBXGroup;
+			children = (
+				76CF0C8922906D09003C4B4B /* ViewComment.swift */,
+				76CF0C8D22906D18003C4B4B /* ViewComment.xib */,
+			);
+			path = ViewComment;
 			sourceTree = "<group>";
 		};
 		76DB937D228C56380081A36E /* Dictionary */ = {
@@ -1799,6 +1905,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC62AB122930D4B00D7CECE /* Store */,
+				76CF0C652290680B003C4B4B /* Comment */,
 				DEB5846A2291ABBF00FE0356 /* HistoryBee */,
 				DEDDEF6322914A790043A62D /* MainTabbar */,
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
@@ -1906,6 +2013,8 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				DEBCBC7022945C6300DF7F74 /* InfoPackView */,
+				76CF0C8822906CED003C4B4B /* ViewComment */,
 				DEF1C246229033A0005AD1A3 /* ButtonHomeView */,
 				766D135A228EF05B005E47F0 /* ViewGradient */,
 				DE7D14B7228EA27500713084 /* TitleNavigationBar */,
@@ -2514,6 +2623,34 @@
 			path = QACell;
 			sourceTree = "<group>";
 		};
+		DEBCBC5E22945AF400DF7F74 /* StudyPackView */ = {
+			isa = PBXGroup;
+			children = (
+				DEBCBC6722945B8B00DF7F74 /* Cell */,
+				DEBCBC5F22945B0900DF7F74 /* StudyPackView.swift */,
+				DEBCBC6322945B4400DF7F74 /* StudyPackView.xib */,
+			);
+			path = StudyPackView;
+			sourceTree = "<group>";
+		};
+		DEBCBC6722945B8B00DF7F74 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DEBCBC6822945BA000DF7F74 /* StudyPackViewCell.swift */,
+				DEBCBC6922945BA000DF7F74 /* StudyPackViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DEBCBC7022945C6300DF7F74 /* InfoPackView */ = {
+			isa = PBXGroup;
+			children = (
+				DEBCBC7122945C8300DF7F74 /* InfoPackView.swift */,
+				DEBCBC7522945C9A00DF7F74 /* InfoPackView.xib */,
+			);
+			path = InfoPackView;
+			sourceTree = "<group>";
+		};
 		DEBD66FA228D2004004B74C8 /* DetailTeam */ = {
 			isa = PBXGroup;
 			children = (
@@ -2605,6 +2742,7 @@
 		DEC62AB622930DF500D7CECE /* StudyPack */ = {
 			isa = PBXGroup;
 			children = (
+				DEBCBC5E22945AF400DF7F74 /* StudyPackView */,
 				DEC62AB722930E0E00D7CECE /* StudyPackPresenter.swift */,
 				DEC62AB822930E0E00D7CECE /* StudyPackRouter.swift */,
 				DEC62AB922930E0E00D7CECE /* StudyPackViewController.swift */,
@@ -2858,6 +2996,7 @@
 				DE9F0F8A228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C25F22903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BD228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
+				DEBCBC6422945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
@@ -2876,11 +3015,15 @@
 				DEB5848C2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
+				76CF0C7B22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DEF1C26822903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */,
+				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584802291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DEF1C27122903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
@@ -2894,12 +3037,15 @@
 				DE9531112287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCB2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
 				76E2FEED228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
+				DEBCBC7622945C9A00DF7F74 /* InfoPackView.xib in Resources */,
 				DE361E8C2283E60500FA3B0D /* AppCheckBox.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
+				76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				DE361EA02283E60500FA3B0D /* YesNoContentView.xib in Resources */,
+				DEBCBC6D22945BA000DF7F74 /* StudyPackViewCell.xib in Resources */,
 				DEBD6719228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
@@ -2932,6 +3078,7 @@
 				DE9F0F8B228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C26022903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BE228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
+				DEBCBC6522945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
@@ -2950,11 +3097,15 @@
 				DEB5848D2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
+				76CF0C7C22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DEF1C26922903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */,
+				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584812291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DEF1C27222903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
@@ -2968,12 +3119,15 @@
 				DE9531122287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCC2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
 				76E2FEEE228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
+				DEBCBC7722945C9A00DF7F74 /* InfoPackView.xib in Resources */,
 				DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */,
 				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				DE95304F2287DF4800E3F688 /* YesNoContentView.xib in Resources */,
+				DEBCBC6E22945BA000DF7F74 /* StudyPackViewCell.xib in Resources */,
 				DEBD671A228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
@@ -3006,6 +3160,7 @@
 				DE9F0F8C228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C26122903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BF228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
+				DEBCBC6622945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
@@ -3024,11 +3179,15 @@
 				DEB5848E2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6734228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
+				76CF0C7D22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DEF1C26A22903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
+				765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */,
+				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				76CF0C86229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584822291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DEF1C27322903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
@@ -3042,12 +3201,15 @@
 				DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCD2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
 				76E2FEEF228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
+				DEBCBC7822945C9A00DF7F74 /* InfoPackView.xib in Resources */,
 				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
 				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				DE9530FD2287DF6400E3F688 /* YesNoContentView.xib in Resources */,
+				DEBCBC6F22945BA000DF7F74 /* StudyPackViewCell.xib in Resources */,
 				DEBD671B228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
@@ -3428,11 +3590,13 @@
 				766D1317228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315522883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE361E692283E60500FA3B0D /* AppColor.swift in Sources */,
+				DEBCBC6022945B0900DF7F74 /* StudyPackView.swift in Sources */,
 				DEB9613A228993640046801B /* QACell.swift in Sources */,
 				DE952F8C2287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				DE361F2F2283E85000FA3B0D /* PhoneEntity.swift in Sources */,
 				DE952F912287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEB9612E22898F1F0046801B /* QAProtocols.swift in Sources */,
+				DEBCBC7222945C8300DF7F74 /* InfoPackView.swift in Sources */,
 				DE3A8C9C2289B93F0080A8CB /* QADetailRouter.swift in Sources */,
 				DE3A8CD92289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE361F272283E85000FA3B0D /* NotificationEntity.swift in Sources */,
@@ -3462,7 +3626,9 @@
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
+				76CF0C7222906822003C4B4B /* CommentViewController.swift in Sources */,
 				DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
@@ -3498,6 +3664,7 @@
 				DE361DDA2283E4BD00FA3B0D /* LoginInteractor.swift in Sources */,
 				DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */,
 				76E2FF4F228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
+				76CF0C7522906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D136F228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DEC62AA62293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
 				DE95313F2288324300E3F688 /* EditProfileRouter.swift in Sources */,
@@ -3528,10 +3695,12 @@
 				DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */,
 				DE361DD92283E4BD00FA3B0D /* LoginProtocols.swift in Sources */,
 				DE361E9D2283E60500FA3B0D /* NotificationPopUp.swift in Sources */,
+				DEBCBC6A22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */,
 				DE952F8D2287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE361DFB2283E57900FA3B0D /* String+extension.swift in Sources */,
 				766D1388228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */,
 				DEBD674F228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9390228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */,
@@ -3578,6 +3747,7 @@
 				76E2FF55228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135C228EF078005E47F0 /* ViewGradient.swift in Sources */,
+				765110C1229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612822898F1F0046801B /* QARouter.swift in Sources */,
 				DEB5847D2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
@@ -3592,6 +3762,7 @@
 				DE3A8CA52289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
+				76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF43228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE361DE72283E54C00FA3B0D /* BaseView.swift in Sources */,
 				DE361F392283E85000FA3B0D /* APIError.swift in Sources */,
@@ -3606,6 +3777,7 @@
 				DEECF89C22871D1B00A4678B /* ForgotPasswordPresenter.swift in Sources */,
 				DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
+				76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */,
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
@@ -3669,6 +3841,7 @@
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
+				76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1382228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC622930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
@@ -3728,11 +3901,13 @@
 				766D1318228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315622883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE952FC42287DF4800E3F688 /* AppColor.swift in Sources */,
+				DEBCBC6122945B0900DF7F74 /* StudyPackView.swift in Sources */,
 				DEB9613B228993640046801B /* QACell.swift in Sources */,
 				DE952FC52287DF4800E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				DE952FC62287DF4800E3F688 /* PhoneEntity.swift in Sources */,
 				DE952FC72287DF4800E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEB9612F22898F1F0046801B /* QAProtocols.swift in Sources */,
+				DEBCBC7322945C8300DF7F74 /* InfoPackView.swift in Sources */,
 				DE3A8C9D2289B93F0080A8CB /* QADetailRouter.swift in Sources */,
 				DE3A8CDA2289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE952FC82287DF4800E3F688 /* NotificationEntity.swift in Sources */,
@@ -3762,7 +3937,9 @@
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
+				76CF0C7322906822003C4B4B /* CommentViewController.swift in Sources */,
 				DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
@@ -3798,6 +3975,7 @@
 				DE952FE42287DF4800E3F688 /* LoginInteractor.swift in Sources */,
 				DE952FE52287DF4800E3F688 /* SignUpInteractor.swift in Sources */,
 				76E2FF50228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
+				76CF0C7622906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1370228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DEC62AA72293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
 				DE9531402288324300E3F688 /* EditProfileRouter.swift in Sources */,
@@ -3828,10 +4006,12 @@
 				DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */,
 				DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */,
 				DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */,
+				DEBCBC6B22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */,
 				DE952FF32287DF4800E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */,
 				766D1389228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */,
 				DEBD6750228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9391228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */,
@@ -3878,6 +4058,7 @@
 				76E2FF56228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135D228EF078005E47F0 /* ViewGradient.swift in Sources */,
+				765110C2229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612922898F1F0046801B /* QARouter.swift in Sources */,
 				DEB5847E2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
@@ -3892,6 +4073,7 @@
 				DE3A8CA62289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
+				76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF44228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530132287DF4800E3F688 /* BaseView.swift in Sources */,
 				DE9530142287DF4800E3F688 /* APIError.swift in Sources */,
@@ -3906,6 +4088,7 @@
 				DE95301A2287DF4800E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */,
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
+				76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */,
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
@@ -3969,6 +4152,7 @@
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
+				76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1383228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC722930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
@@ -4028,11 +4212,13 @@
 				766D1319228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
 				DE95315722883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE9530722287DF6400E3F688 /* AppColor.swift in Sources */,
+				DEBCBC6222945B0900DF7F74 /* StudyPackView.swift in Sources */,
 				DEB9613C228993640046801B /* QACell.swift in Sources */,
 				DE9530732287DF6400E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				DE9530742287DF6400E3F688 /* PhoneEntity.swift in Sources */,
 				DE9530752287DF6400E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEB9613022898F1F0046801B /* QAProtocols.swift in Sources */,
+				DEBCBC7422945C8300DF7F74 /* InfoPackView.swift in Sources */,
 				DE3A8C9E2289B93F0080A8CB /* QADetailRouter.swift in Sources */,
 				DE3A8CDB2289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE9530762287DF6400E3F688 /* NotificationEntity.swift in Sources */,
@@ -4062,7 +4248,9 @@
 				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
+				76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
+				76CF0C7422906822003C4B4B /* CommentViewController.swift in Sources */,
 				DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */,
 				DE95314A2288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
@@ -4098,6 +4286,7 @@
 				DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */,
 				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
 				76E2FF51228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
+				76CF0C7722906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1371228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DEC62AA82293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
 				DE9531412288324300E3F688 /* EditProfileRouter.swift in Sources */,
@@ -4128,10 +4317,12 @@
 				DE95309E2287DF6400E3F688 /* LoginRouter.swift in Sources */,
 				DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */,
 				DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */,
+				DEBCBC6C22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */,
 				DE9530A12287DF6400E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
 				766D138A228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				76CF0C7122906822003C4B4B /* CommentRouter.swift in Sources */,
 				DEBD6751228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				76DB9392228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */,
@@ -4178,6 +4369,7 @@
 				76E2FF57228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
 				766D135E228EF078005E47F0 /* ViewGradient.swift in Sources */,
+				765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
 				DEB5847F2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
@@ -4192,6 +4384,7 @@
 				DE3A8CA72289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */,
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
+				76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF45228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */,
 				DE9530C22287DF6400E3F688 /* APIError.swift in Sources */,
@@ -4206,6 +4399,7 @@
 				DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
 				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,
+				76CF0C7A22906822003C4B4B /* CommentInteractor.swift in Sources */,
 				DE953128228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
@@ -4269,6 +4463,7 @@
 				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6728228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
+				76CF0C8C22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1384228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC822930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
