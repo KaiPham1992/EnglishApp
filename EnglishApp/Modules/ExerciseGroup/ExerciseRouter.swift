@@ -27,4 +27,13 @@ class ExerciseRouter: ExerciseWireframeProtocol {
 
         return view
     }
+    
+    func gotoCreateExercise(){
+        let vc = CreateExerciseRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
+    func gotoLevelExercise(){
+        let vc = LevelExerciseRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }

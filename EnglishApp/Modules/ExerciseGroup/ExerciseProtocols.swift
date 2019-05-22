@@ -12,12 +12,15 @@ import Foundation
 
 //MARK: Wireframe -
 protocol ExerciseWireframeProtocol: class {
-
+    func gotoCreateExercise()
+    func gotoLevelExercise()
 }
 //MARK: Presenter -
 protocol ExercisePresenterProtocol: class {
 
     var interactor: ExerciseInteractorInputProtocol? { get set }
+    func gotoCreateExercise()
+    func gotoLevelExercise()
 }
 
 //MARK: Interactor -
