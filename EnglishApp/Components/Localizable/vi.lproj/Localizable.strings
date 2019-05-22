@@ -154,6 +154,11 @@
 "popleaveHomeWork" = "Bạn có muốn thoát khỏi bài tập đang làm?";
 
 
+// store
+"studyPack" = "Gói nâng cấp";
+"beePack" = "Gói mật ong";
+"titleStore" = "Cửa hàng";
+
 //comment
 "comment" = "Bình luận";
 

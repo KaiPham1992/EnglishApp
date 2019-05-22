@@ -162,7 +162,11 @@ extension UICollectionView {
         }
     }
     
-    func dequeueCollectionCell<T: UICollectionViewCell>(_: T.Type, indexPath: IndexPath) -> T {
+    func registerXibCell<T: UICollectionViewCell>(_: T.Type) {
+         self.register(T.nib, forCellWithReuseIdentifier: T.identifier)
+    }
+    
+    func dequeueCell<T: UICollectionViewCell>(_: T.Type, indexPath: IndexPath) -> T {
         let cell = self.dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath)
         
         return cell as! T
