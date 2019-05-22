@@ -163,3 +163,5 @@
 "create_exercise" ="Bài tập tự tạo";
 "level_exercise" ="Bài tập theo cấp";
 "assign_exercise" = "Bài tập được giao";
+"name_exercise" = "Tên bài tập";
+"enter_name_exercise" = "Nhập tên bài tập";

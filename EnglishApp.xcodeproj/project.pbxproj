@@ -264,6 +264,30 @@
 		76F7F446229421BD001E9984 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F436229421BD001E9984 /* ExerciseViewController.xib */; };
 		76F7F447229421BD001E9984 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F436229421BD001E9984 /* ExerciseViewController.xib */; };
 		76F7F448229421BD001E9984 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F436229421BD001E9984 /* ExerciseViewController.xib */; };
+		76F7F450229466DD001E9984 /* CreateExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44A229466DD001E9984 /* CreateExercisePresenter.swift */; };
+		76F7F451229466DD001E9984 /* CreateExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44A229466DD001E9984 /* CreateExercisePresenter.swift */; };
+		76F7F452229466DD001E9984 /* CreateExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44A229466DD001E9984 /* CreateExercisePresenter.swift */; };
+		76F7F453229466DD001E9984 /* CreateExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44B229466DD001E9984 /* CreateExerciseRouter.swift */; };
+		76F7F454229466DD001E9984 /* CreateExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44B229466DD001E9984 /* CreateExerciseRouter.swift */; };
+		76F7F455229466DD001E9984 /* CreateExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44B229466DD001E9984 /* CreateExerciseRouter.swift */; };
+		76F7F456229466DD001E9984 /* CreateExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44C229466DD001E9984 /* CreateExerciseViewController.swift */; };
+		76F7F457229466DD001E9984 /* CreateExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44C229466DD001E9984 /* CreateExerciseViewController.swift */; };
+		76F7F458229466DD001E9984 /* CreateExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44C229466DD001E9984 /* CreateExerciseViewController.swift */; };
+		76F7F459229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44D229466DD001E9984 /* CreateExerciseProtocols.swift */; };
+		76F7F45A229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44D229466DD001E9984 /* CreateExerciseProtocols.swift */; };
+		76F7F45B229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44D229466DD001E9984 /* CreateExerciseProtocols.swift */; };
+		76F7F45C229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44E229466DD001E9984 /* CreateExerciseInteractor.swift */; };
+		76F7F45D229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44E229466DD001E9984 /* CreateExerciseInteractor.swift */; };
+		76F7F45E229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F44E229466DD001E9984 /* CreateExerciseInteractor.swift */; };
+		76F7F45F229466DD001E9984 /* CreateExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F44F229466DD001E9984 /* CreateExerciseViewController.xib */; };
+		76F7F460229466DD001E9984 /* CreateExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F44F229466DD001E9984 /* CreateExerciseViewController.xib */; };
+		76F7F461229466DD001E9984 /* CreateExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F44F229466DD001E9984 /* CreateExerciseViewController.xib */; };
+		76F7F46522946928001E9984 /* CellCreateExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F46322946928001E9984 /* CellCreateExercise.swift */; };
+		76F7F46622946928001E9984 /* CellCreateExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F46322946928001E9984 /* CellCreateExercise.swift */; };
+		76F7F46722946928001E9984 /* CellCreateExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F46322946928001E9984 /* CellCreateExercise.swift */; };
+		76F7F46822946928001E9984 /* CellCreateExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F46422946928001E9984 /* CellCreateExercise.xib */; };
+		76F7F46922946928001E9984 /* CellCreateExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F46422946928001E9984 /* CellCreateExercise.xib */; };
+		76F7F46A22946928001E9984 /* CellCreateExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F46422946928001E9984 /* CellCreateExercise.xib */; };
 		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
@@ -1203,6 +1227,14 @@
 		76F7F434229421BD001E9984 /* ExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProtocols.swift; sourceTree = "<group>"; };
 		76F7F435229421BD001E9984 /* ExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInteractor.swift; sourceTree = "<group>"; };
 		76F7F436229421BD001E9984 /* ExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseViewController.xib; sourceTree = "<group>"; };
+		76F7F44A229466DD001E9984 /* CreateExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExercisePresenter.swift; sourceTree = "<group>"; };
+		76F7F44B229466DD001E9984 /* CreateExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseRouter.swift; sourceTree = "<group>"; };
+		76F7F44C229466DD001E9984 /* CreateExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseViewController.swift; sourceTree = "<group>"; };
+		76F7F44D229466DD001E9984 /* CreateExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseProtocols.swift; sourceTree = "<group>"; };
+		76F7F44E229466DD001E9984 /* CreateExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseInteractor.swift; sourceTree = "<group>"; };
+		76F7F44F229466DD001E9984 /* CreateExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateExerciseViewController.xib; sourceTree = "<group>"; };
+		76F7F46322946928001E9984 /* CellCreateExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellCreateExercise.swift; sourceTree = "<group>"; };
+		76F7F46422946928001E9984 /* CellCreateExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellCreateExercise.xib; sourceTree = "<group>"; };
 		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
 		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
@@ -1787,6 +1819,7 @@
 		76F7F4302294212A001E9984 /* ExerciseGroup */ = {
 			isa = PBXGroup;
 			children = (
+				76F7F449229466C0001E9984 /* CreateExercise */,
 				76F7F431229421BD001E9984 /* ExercisePresenter.swift */,
 				76F7F432229421BD001E9984 /* ExerciseRouter.swift */,
 				76F7F433229421BD001E9984 /* ExerciseViewController.swift */,
@@ -1795,6 +1828,29 @@
 				76F7F436229421BD001E9984 /* ExerciseViewController.xib */,
 			);
 			path = ExerciseGroup;
+			sourceTree = "<group>";
+		};
+		76F7F449229466C0001E9984 /* CreateExercise */ = {
+			isa = PBXGroup;
+			children = (
+				76F7F46222946911001E9984 /* CellCreateExercise */,
+				76F7F44A229466DD001E9984 /* CreateExercisePresenter.swift */,
+				76F7F44B229466DD001E9984 /* CreateExerciseRouter.swift */,
+				76F7F44C229466DD001E9984 /* CreateExerciseViewController.swift */,
+				76F7F44D229466DD001E9984 /* CreateExerciseProtocols.swift */,
+				76F7F44E229466DD001E9984 /* CreateExerciseInteractor.swift */,
+				76F7F44F229466DD001E9984 /* CreateExerciseViewController.xib */,
+			);
+			path = CreateExercise;
+			sourceTree = "<group>";
+		};
+		76F7F46222946911001E9984 /* CellCreateExercise */ = {
+			isa = PBXGroup;
+			children = (
+				76F7F46322946928001E9984 /* CellCreateExercise.swift */,
+				76F7F46422946928001E9984 /* CellCreateExercise.xib */,
+			);
+			path = CellCreateExercise;
 			sourceTree = "<group>";
 		};
 		DE2ADE5322841755003768CE /* GoogleInfo */ = {
@@ -2914,6 +2970,7 @@
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */,
+				76F7F46822946928001E9984 /* CellCreateExercise.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584802291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
@@ -2922,6 +2979,7 @@
 				DEF1C25622903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
+				76F7F45F229466DD001E9984 /* CreateExerciseViewController.xib in Resources */,
 				766D130B228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE2ADE7A22841BB9003768CE /* MenuViewController.xib in Resources */,
 				766D1375228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
@@ -2992,6 +3050,7 @@
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */,
+				76F7F46922946928001E9984 /* CellCreateExercise.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584812291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
@@ -3000,6 +3059,7 @@
 				DEF1C25722903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
+				76F7F460229466DD001E9984 /* CreateExerciseViewController.xib in Resources */,
 				766D130C228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE95304B2287DF4800E3F688 /* MenuViewController.xib in Resources */,
 				766D1376228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
@@ -3070,6 +3130,7 @@
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */,
+				76F7F46A22946928001E9984 /* CellCreateExercise.xib in Resources */,
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				76CF0C86229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584822291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
@@ -3078,6 +3139,7 @@
 				DEF1C25822903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
 				DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */,
+				76F7F461229466DD001E9984 /* CreateExerciseViewController.xib in Resources */,
 				766D130D228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE9530F92287DF6400E3F688 /* MenuViewController.xib in Resources */,
 				766D1377228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
@@ -3516,6 +3578,7 @@
 				DEBD6704228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138B228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
 				76E2FF5B228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
+				76F7F45C229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
 				76DB93A6228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
 				DEBD6729228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */,
 				766D1372228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
@@ -3550,6 +3613,7 @@
 				766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DEB584772291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
+				76F7F46522946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
@@ -3588,6 +3652,7 @@
 				DE952FA02287D2A700E3F688 /* FadeInOutAnimation.swift in Sources */,
 				DE361E9A2283E60500FA3B0D /* StringReachability.swift in Sources */,
 				DE952F842287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				76F7F453229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */,
 				DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */,
 				766D136C228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
@@ -3616,6 +3681,7 @@
 				DEB5847A2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
+				76F7F450229466DD001E9984 /* CreateExercisePresenter.swift in Sources */,
 				76E2FF3A228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
 				76E2FECD228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */,
 				DE361F4C2283E85000FA3B0D /* NotificationEndPoint.swift in Sources */,
@@ -3637,6 +3703,7 @@
 				DE3A8CA52289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
+				76F7F459229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF43228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE361DE72283E54C00FA3B0D /* BaseView.swift in Sources */,
@@ -3656,6 +3723,7 @@
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				76F7F456229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
 				766D12FF228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */,
 				76E2FF37228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
@@ -3818,6 +3886,7 @@
 				DEBD6705228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138C228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
 				76E2FF5C228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
+				76F7F45D229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
 				76DB93A7228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
 				DEBD672A228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */,
 				766D1373228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
@@ -3852,6 +3921,7 @@
 				766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DEB584782291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
+				76F7F46622946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
 				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
@@ -3890,6 +3960,7 @@
 				DE952FFA2287DF4800E3F688 /* FadeInOutAnimation.swift in Sources */,
 				DE952FFB2287DF4800E3F688 /* StringReachability.swift in Sources */,
 				DE952FFC2287DF4800E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				76F7F454229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE952FFD2287DF4800E3F688 /* MenuProtocols.swift in Sources */,
 				DE952FFE2287DF4800E3F688 /* AppDelegate+Push.swift in Sources */,
 				766D136D228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
@@ -3918,6 +3989,7 @@
 				DEB5847B2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */,
+				76F7F451229466DD001E9984 /* CreateExercisePresenter.swift in Sources */,
 				76E2FF3B228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
 				76E2FECE228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */,
 				DE9530092287DF4800E3F688 /* NotificationEndPoint.swift in Sources */,
@@ -3939,6 +4011,7 @@
 				DE3A8CA62289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
+				76F7F45A229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF44228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530132287DF4800E3F688 /* BaseView.swift in Sources */,
@@ -3958,6 +4031,7 @@
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				76F7F457229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
 				766D1300228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DE95301D2287DF4800E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF38228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
@@ -4120,6 +4194,7 @@
 				DEBD6706228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138D228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
 				76E2FF5D228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
+				76F7F45E229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
 				76DB93A8228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
 				DEBD672B228D47E0004B74C8 /* ExplainCompetitionViewController.swift in Sources */,
 				766D1374228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
@@ -4154,6 +4229,7 @@
 				766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				DEB584792291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */,
+				76F7F46722946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
@@ -4192,6 +4268,7 @@
 				DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */,
 				DE9530A92287DF6400E3F688 /* StringReachability.swift in Sources */,
 				DE9530AA2287DF6400E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				76F7F455229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE9530AB2287DF6400E3F688 /* MenuProtocols.swift in Sources */,
 				DE9530AC2287DF6400E3F688 /* AppDelegate+Push.swift in Sources */,
 				766D136E228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
@@ -4220,6 +4297,7 @@
 				DEB5847C2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530B62287DF6400E3F688 /* AppTextField.swift in Sources */,
+				76F7F452229466DD001E9984 /* CreateExercisePresenter.swift in Sources */,
 				76E2FF3C228DD1060014B1F4 /* AddNoteRouter.swift in Sources */,
 				76E2FECF228DBAB00014B1F4 /* SaveDictionaryProtocols.swift in Sources */,
 				DE9530B72287DF6400E3F688 /* NotificationEndPoint.swift in Sources */,
@@ -4241,6 +4319,7 @@
 				DE3A8CA72289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */,
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
+				76F7F45B229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */,
 				76E2FF45228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */,
@@ -4260,6 +4339,7 @@
 				DE953128228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				76F7F458229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
 				766D1301228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DE9530CB2287DF6400E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF39228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,

@@ -26,7 +26,7 @@ class AppRouter {
     func setTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
         
-        let vcLogin = CommentRouter.createModule()
+        let vcLogin = CreateExerciseRouter.createModule()
         let nc = UINavigationController(rootViewController: vcLogin)
         windowApp.rootViewController = nc
     }

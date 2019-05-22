@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateExerciseViewController">
+            <connections>
+                <outlet property="edEnterExercise" destination="2hK-Os-562" id="fNm-dD-iCy"/>
+                <outlet property="lbNameExercise" destination="Abk-k7-iar" id="SeC-fd-zvm"/>
+                <outlet property="tbvCreateExercise" destination="5Ry-4J-1Lg" id="DEw-Er-65h"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100/100 cau" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwd-QA-aCG">
+                    <rect key="frame" x="140.5" y="13" width="94" height="18"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QP-SR-reV">
+                    <rect key="frame" x="0.0" y="42" width="375" height="1"/>
+                    <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="f3a-sM-u7B"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên bài tập" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abk-k7-iar">
+                    <rect key="frame" x="16" y="52" width="94" height="18"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập tên bài tập" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2hK-Os-562">
+                    <rect key="frame" x="16" y="75" width="343" height="47"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="Gbc-xE-9ec"/>
+                    </constraints>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="4"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </textField>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Ry-4J-1Lg">
+                    <rect key="frame" x="0.0" y="122" width="375" height="545"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT1-xF-eIc">
+                    <rect key="frame" x="16" y="601" width="343" height="42"/>
+                    <color key="backgroundColor" red="1" green="0.63529411759999999" blue="0.1843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="42" id="Gvi-fa-dC4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="15"/>
+                    <state key="normal" title="Lam bai tap">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="5Ry-4J-1Lg" secondAttribute="trailing" id="1VP-BK-o8p"/>
+                <constraint firstItem="kwd-QA-aCG" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1Yb-z3-a52"/>
+                <constraint firstAttribute="bottom" secondItem="5Ry-4J-1Lg" secondAttribute="bottom" id="1hD-Mc-WGS"/>
+                <constraint firstItem="kwd-QA-aCG" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="13" id="82u-nB-hCm"/>
+                <constraint firstAttribute="trailing" secondItem="uT1-xF-eIc" secondAttribute="trailing" constant="16" id="9pL-N1-YuY"/>
+                <constraint firstItem="6QP-SR-reV" firstAttribute="top" secondItem="kwd-QA-aCG" secondAttribute="bottom" constant="11" id="G90-cA-XJH"/>
+                <constraint firstItem="5Ry-4J-1Lg" firstAttribute="top" secondItem="2hK-Os-562" secondAttribute="bottom" id="MN1-Yi-DNH"/>
+                <constraint firstItem="uT1-xF-eIc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="T5I-bS-Zyw"/>
+                <constraint firstItem="Abk-k7-iar" firstAttribute="top" secondItem="6QP-SR-reV" secondAttribute="bottom" constant="9" id="TTZ-QR-kbZ"/>
+                <constraint firstAttribute="trailing" secondItem="6QP-SR-reV" secondAttribute="trailing" id="TX0-Nf-0wA"/>
+                <constraint firstAttribute="trailing" secondItem="2hK-Os-562" secondAttribute="trailing" constant="16" id="bJ7-ym-ggM"/>
+                <constraint firstItem="6QP-SR-reV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="fIj-jL-GLa"/>
+                <constraint firstItem="Abk-k7-iar" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="jEF-Hz-Xzn"/>
+                <constraint firstItem="2hK-Os-562" firstAttribute="leading" secondItem="Abk-k7-iar" secondAttribute="leading" id="kED-vm-YQH"/>
+                <constraint firstItem="5Ry-4J-1Lg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="tRt-o6-BDw"/>
+                <constraint firstItem="2hK-Os-562" firstAttribute="top" secondItem="Abk-k7-iar" secondAttribute="bottom" constant="5" id="wdW-PM-Bhh"/>
+                <constraint firstAttribute="bottom" secondItem="uT1-xF-eIc" secondAttribute="bottom" constant="24" id="yPS-Zi-sff"/>
+            </constraints>
+            <point key="canvasLocation" x="130.40000000000001" y="110.19490254872565"/>
+        </view>
+    </objects>
+</document>
