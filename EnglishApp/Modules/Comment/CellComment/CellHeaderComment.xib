@@ -24,11 +24,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                 </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
-                    <constraint firstItem="Klp-dW-rof" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="307-0x-qPG"/>
-                    <constraint firstItem="Klp-dW-rof" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Qc6-07-Cu7"/>
-                    <constraint firstAttribute="trailing" secondItem="Klp-dW-rof" secondAttribute="trailing" constant="16" id="UGT-4G-RnQ"/>
-                    <constraint firstAttribute="bottom" secondItem="Klp-dW-rof" secondAttribute="bottom" id="yhA-cW-f4g"/>
+                    <constraint firstAttribute="trailing" secondItem="Klp-dW-rof" secondAttribute="trailing" constant="16" id="8hg-BJ-xKC"/>
+                    <constraint firstItem="Klp-dW-rof" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="Dh0-Cn-rZv"/>
+                    <constraint firstAttribute="bottom" secondItem="Klp-dW-rof" secondAttribute="bottom" id="EZM-ot-ORC"/>
+                    <constraint firstItem="Klp-dW-rof" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="TFw-Wq-Awb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

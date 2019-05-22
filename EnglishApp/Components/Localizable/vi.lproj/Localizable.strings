@@ -153,13 +153,19 @@
 "addDiamon" = "Thêm kim cương";
 "popleaveHomeWork" = "Bạn có muốn thoát khỏi bài tập đang làm?";
 
-<<<<<<< HEAD
+
 // store
 "studyPack" = "Gói nâng cấp";
 "beePack" = "Gói mật ong";
 "titleStore" = "Cửa hàng";
-=======
 
 //comment
 "comment" = "Bình luận";
->>>>>>> f1cffcb2c7b22026a5dc4ac933fb5e72cf265ef6
+
+//exercise
+"exercise" = "Bài tập";
+"practice" = "Luyện tập";
+"create_exercise" ="Bài tập tự tạo";
+"level_exercise" ="Bài tập theo cấp";
+"assign_exercise" = "Bài tập được giao";
+

@@ -246,6 +246,24 @@
 		76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */; };
 		76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */; };
 		76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */; };
+		76F7F437229421BD001E9984 /* ExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F431229421BD001E9984 /* ExercisePresenter.swift */; };
+		76F7F438229421BD001E9984 /* ExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F431229421BD001E9984 /* ExercisePresenter.swift */; };
+		76F7F439229421BD001E9984 /* ExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F431229421BD001E9984 /* ExercisePresenter.swift */; };
+		76F7F43A229421BD001E9984 /* ExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F432229421BD001E9984 /* ExerciseRouter.swift */; };
+		76F7F43B229421BD001E9984 /* ExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F432229421BD001E9984 /* ExerciseRouter.swift */; };
+		76F7F43C229421BD001E9984 /* ExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F432229421BD001E9984 /* ExerciseRouter.swift */; };
+		76F7F43D229421BD001E9984 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F433229421BD001E9984 /* ExerciseViewController.swift */; };
+		76F7F43E229421BD001E9984 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F433229421BD001E9984 /* ExerciseViewController.swift */; };
+		76F7F43F229421BD001E9984 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F433229421BD001E9984 /* ExerciseViewController.swift */; };
+		76F7F440229421BD001E9984 /* ExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F434229421BD001E9984 /* ExerciseProtocols.swift */; };
+		76F7F441229421BD001E9984 /* ExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F434229421BD001E9984 /* ExerciseProtocols.swift */; };
+		76F7F442229421BD001E9984 /* ExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F434229421BD001E9984 /* ExerciseProtocols.swift */; };
+		76F7F443229421BD001E9984 /* ExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F435229421BD001E9984 /* ExerciseInteractor.swift */; };
+		76F7F444229421BD001E9984 /* ExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F435229421BD001E9984 /* ExerciseInteractor.swift */; };
+		76F7F445229421BD001E9984 /* ExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F7F435229421BD001E9984 /* ExerciseInteractor.swift */; };
+		76F7F446229421BD001E9984 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F436229421BD001E9984 /* ExerciseViewController.xib */; };
+		76F7F447229421BD001E9984 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F436229421BD001E9984 /* ExerciseViewController.xib */; };
+		76F7F448229421BD001E9984 /* ExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76F7F436229421BD001E9984 /* ExerciseViewController.xib */; };
 		C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */; };
 		DE1F61B9228573950024223F /* AppConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1F61B8228573950024223F /* AppConstant.swift */; };
 		DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5122841755003768CE /* AppDelegate+GoogleSignIn.swift */; };
@@ -1236,6 +1254,12 @@
 		76E2FF4C228DD2120014B1F4 /* SeeNoteProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeNoteProtocols.swift; sourceTree = "<group>"; };
 		76E2FF4D228DD2120014B1F4 /* SeeNoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeNoteInteractor.swift; sourceTree = "<group>"; };
 		76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeNoteViewController.xib; sourceTree = "<group>"; };
+		76F7F431229421BD001E9984 /* ExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExercisePresenter.swift; sourceTree = "<group>"; };
+		76F7F432229421BD001E9984 /* ExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseRouter.swift; sourceTree = "<group>"; };
+		76F7F433229421BD001E9984 /* ExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseViewController.swift; sourceTree = "<group>"; };
+		76F7F434229421BD001E9984 /* ExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseProtocols.swift; sourceTree = "<group>"; };
+		76F7F435229421BD001E9984 /* ExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseInteractor.swift; sourceTree = "<group>"; };
+		76F7F436229421BD001E9984 /* ExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExerciseViewController.xib; sourceTree = "<group>"; };
 		C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Prod.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Prod/Pods-EnglishApp_Prod.release.xcconfig"; sourceTree = "<group>"; };
 		C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Dev.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE1F61B8228573950024223F /* AppConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConstant.swift; sourceTree = "<group>"; };
@@ -1836,6 +1860,19 @@
 			path = AddNote;
 			sourceTree = "<group>";
 		};
+		76F7F4302294212A001E9984 /* ExerciseGroup */ = {
+			isa = PBXGroup;
+			children = (
+				76F7F431229421BD001E9984 /* ExercisePresenter.swift */,
+				76F7F432229421BD001E9984 /* ExerciseRouter.swift */,
+				76F7F433229421BD001E9984 /* ExerciseViewController.swift */,
+				76F7F434229421BD001E9984 /* ExerciseProtocols.swift */,
+				76F7F435229421BD001E9984 /* ExerciseInteractor.swift */,
+				76F7F436229421BD001E9984 /* ExerciseViewController.xib */,
+			);
+			path = ExerciseGroup;
+			sourceTree = "<group>";
+		};
 		DE2ADE5322841755003768CE /* GoogleInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -1905,6 +1942,7 @@
 			isa = PBXGroup;
 			children = (
 				DEC62AB122930D4B00D7CECE /* Store */,
+				76F7F4302294212A001E9984 /* ExerciseGroup */,
 				76CF0C652290680B003C4B4B /* Comment */,
 				DEB5846A2291ABBF00FE0356 /* HistoryBee */,
 				DEDDEF6322914A790043A62D /* MainTabbar */,
@@ -3050,6 +3088,7 @@
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
+				76F7F446229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
@@ -3132,6 +3171,7 @@
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
+				76F7F447229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
@@ -3214,6 +3254,7 @@
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
+				76F7F448229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */,
@@ -3584,6 +3625,7 @@
 				DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
+				76F7F443229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
 				76E2FECA228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DEC62AC922930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				DE3A8CBC2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
@@ -3622,6 +3664,7 @@
 				DE952F8A2287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317E228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
+				76F7F440229421BD001E9984 /* ExerciseProtocols.swift in Sources */,
 				76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
@@ -3667,6 +3710,7 @@
 				76CF0C7522906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D136F228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DEC62AA62293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
+				76F7F43D229421BD001E9984 /* ExerciseViewController.swift in Sources */,
 				DE95313F2288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952F982287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
@@ -3805,6 +3849,7 @@
 				DE95312F228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DEC62AC322930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB62289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
+				76F7F43A229421BD001E9984 /* ExerciseRouter.swift in Sources */,
 				DEBD6752228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE361F3D2283E85000FA3B0D /* NetworkRequest.swift in Sources */,
@@ -3844,6 +3889,7 @@
 				76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1382228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC622930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
+				76F7F437229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CCF2289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
@@ -3895,6 +3941,7 @@
 				DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
+				76F7F444229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
 				76E2FECB228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DEC62ACA22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				DE3A8CBD2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
@@ -3933,6 +3980,7 @@
 				DE952FD32287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317F228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
+				76F7F441229421BD001E9984 /* ExerciseProtocols.swift in Sources */,
 				76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
@@ -3978,6 +4026,7 @@
 				76CF0C7622906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1370228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DEC62AA72293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
+				76F7F43E229421BD001E9984 /* ExerciseViewController.swift in Sources */,
 				DE9531402288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE952FE62287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
@@ -4116,6 +4165,7 @@
 				DE953130228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DEC62AC422930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB72289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
+				76F7F43B229421BD001E9984 /* ExerciseRouter.swift in Sources */,
 				DEBD6753228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530282287DF4800E3F688 /* NetworkRequest.swift in Sources */,
@@ -4155,6 +4205,7 @@
 				76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1383228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC722930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
+				76F7F438229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD02289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
@@ -4206,6 +4257,7 @@
 				DE9530702287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B4228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
+				76F7F445229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
 				76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DEC62ACB22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				DE3A8CBE2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
@@ -4244,6 +4296,7 @@
 				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
+				76F7F442229421BD001E9984 /* ExerciseProtocols.swift in Sources */,
 				76DB93AB228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
@@ -4289,6 +4342,7 @@
 				76CF0C7722906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1371228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
 				DEC62AA82293006100D7CECE /* ThanksReportPopUp.swift in Sources */,
+				76F7F43F229421BD001E9984 /* ExerciseViewController.swift in Sources */,
 				DE9531412288324300E3F688 /* EditProfileRouter.swift in Sources */,
 				DE9530942287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
 				766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
@@ -4427,6 +4481,7 @@
 				DE953131228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DEC62AC522930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB82289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
+				76F7F43C229421BD001E9984 /* ExerciseRouter.swift in Sources */,
 				DEBD6754228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530D62287DF6400E3F688 /* NetworkRequest.swift in Sources */,
@@ -4466,6 +4521,7 @@
 				76CF0C8C22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1384228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC822930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
+				76F7F439229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD12289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
