@@ -168,6 +168,48 @@
 		76CE31E42296382D00E998FB /* CellResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31E02296382D00E998FB /* CellResult.xib */; };
 		76CE31E52296382D00E998FB /* CellResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31E02296382D00E998FB /* CellResult.xib */; };
 		76CE31E62296382D00E998FB /* CellResult.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31E02296382D00E998FB /* CellResult.xib */; };
+		76CE31EF22963EDE00E998FB /* ResultGroupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31E922963EDE00E998FB /* ResultGroupPresenter.swift */; };
+		76CE31F022963EDE00E998FB /* ResultGroupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31E922963EDE00E998FB /* ResultGroupPresenter.swift */; };
+		76CE31F122963EDE00E998FB /* ResultGroupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31E922963EDE00E998FB /* ResultGroupPresenter.swift */; };
+		76CE31F222963EDE00E998FB /* ResultGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EA22963EDE00E998FB /* ResultGroupRouter.swift */; };
+		76CE31F322963EDE00E998FB /* ResultGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EA22963EDE00E998FB /* ResultGroupRouter.swift */; };
+		76CE31F422963EDE00E998FB /* ResultGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EA22963EDE00E998FB /* ResultGroupRouter.swift */; };
+		76CE31F522963EDE00E998FB /* ResultGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EB22963EDE00E998FB /* ResultGroupViewController.swift */; };
+		76CE31F622963EDE00E998FB /* ResultGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EB22963EDE00E998FB /* ResultGroupViewController.swift */; };
+		76CE31F722963EDE00E998FB /* ResultGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EB22963EDE00E998FB /* ResultGroupViewController.swift */; };
+		76CE31F822963EDE00E998FB /* ResultGroupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EC22963EDE00E998FB /* ResultGroupProtocols.swift */; };
+		76CE31F922963EDE00E998FB /* ResultGroupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EC22963EDE00E998FB /* ResultGroupProtocols.swift */; };
+		76CE31FA22963EDE00E998FB /* ResultGroupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31EC22963EDE00E998FB /* ResultGroupProtocols.swift */; };
+		76CE31FB22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31ED22963EDE00E998FB /* ResultGroupInteractor.swift */; };
+		76CE31FC22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31ED22963EDE00E998FB /* ResultGroupInteractor.swift */; };
+		76CE31FD22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31ED22963EDE00E998FB /* ResultGroupInteractor.swift */; };
+		76CE31FE22963EDE00E998FB /* ResultGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31EE22963EDE00E998FB /* ResultGroupViewController.xib */; };
+		76CE31FF22963EDE00E998FB /* ResultGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31EE22963EDE00E998FB /* ResultGroupViewController.xib */; };
+		76CE320022963EDE00E998FB /* ResultGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE31EE22963EDE00E998FB /* ResultGroupViewController.xib */; };
+		76CE32082296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32022296538F00E998FB /* ResultCompetitionPresenter.swift */; };
+		76CE32092296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32022296538F00E998FB /* ResultCompetitionPresenter.swift */; };
+		76CE320A2296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32022296538F00E998FB /* ResultCompetitionPresenter.swift */; };
+		76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32032296538F00E998FB /* ResultCompetitionRouter.swift */; };
+		76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32032296538F00E998FB /* ResultCompetitionRouter.swift */; };
+		76CE320D2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32032296538F00E998FB /* ResultCompetitionRouter.swift */; };
+		76CE320E2296539000E998FB /* ResultCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32042296538F00E998FB /* ResultCompetitionViewController.swift */; };
+		76CE320F2296539000E998FB /* ResultCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32042296538F00E998FB /* ResultCompetitionViewController.swift */; };
+		76CE32102296539000E998FB /* ResultCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32042296538F00E998FB /* ResultCompetitionViewController.swift */; };
+		76CE32112296539000E998FB /* ResultCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32052296538F00E998FB /* ResultCompetitionProtocols.swift */; };
+		76CE32122296539000E998FB /* ResultCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32052296538F00E998FB /* ResultCompetitionProtocols.swift */; };
+		76CE32132296539000E998FB /* ResultCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32052296538F00E998FB /* ResultCompetitionProtocols.swift */; };
+		76CE32142296539000E998FB /* ResultCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32062296538F00E998FB /* ResultCompetitionInteractor.swift */; };
+		76CE32152296539000E998FB /* ResultCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32062296538F00E998FB /* ResultCompetitionInteractor.swift */; };
+		76CE32162296539000E998FB /* ResultCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE32062296538F00E998FB /* ResultCompetitionInteractor.swift */; };
+		76CE32172296539000E998FB /* ResultCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE32072296538F00E998FB /* ResultCompetitionViewController.xib */; };
+		76CE32182296539000E998FB /* ResultCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE32072296538F00E998FB /* ResultCompetitionViewController.xib */; };
+		76CE32192296539000E998FB /* ResultCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE32072296538F00E998FB /* ResultCompetitionViewController.xib */; };
+		76CE321D229653D500E998FB /* CellResultCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE321B229653D500E998FB /* CellResultCompetition.swift */; };
+		76CE321E229653D500E998FB /* CellResultCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE321B229653D500E998FB /* CellResultCompetition.swift */; };
+		76CE321F229653D500E998FB /* CellResultCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE321B229653D500E998FB /* CellResultCompetition.swift */; };
+		76CE3220229653D500E998FB /* CellResultCompetition.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE321C229653D500E998FB /* CellResultCompetition.xib */; };
+		76CE3221229653D500E998FB /* CellResultCompetition.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE321C229653D500E998FB /* CellResultCompetition.xib */; };
+		76CE3222229653D500E998FB /* CellResultCompetition.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CE321C229653D500E998FB /* CellResultCompetition.xib */; };
 		76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
 		76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
 		76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF0C6622906821003C4B4B /* CommentPresenter.swift */; };
@@ -1330,6 +1372,20 @@
 		76CE31DA229631C600E998FB /* ViewPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPoint.swift; sourceTree = "<group>"; };
 		76CE31DF2296382D00E998FB /* CellResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResult.swift; sourceTree = "<group>"; };
 		76CE31E02296382D00E998FB /* CellResult.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResult.xib; sourceTree = "<group>"; };
+		76CE31E922963EDE00E998FB /* ResultGroupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGroupPresenter.swift; sourceTree = "<group>"; };
+		76CE31EA22963EDE00E998FB /* ResultGroupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGroupRouter.swift; sourceTree = "<group>"; };
+		76CE31EB22963EDE00E998FB /* ResultGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGroupViewController.swift; sourceTree = "<group>"; };
+		76CE31EC22963EDE00E998FB /* ResultGroupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGroupProtocols.swift; sourceTree = "<group>"; };
+		76CE31ED22963EDE00E998FB /* ResultGroupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultGroupInteractor.swift; sourceTree = "<group>"; };
+		76CE31EE22963EDE00E998FB /* ResultGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultGroupViewController.xib; sourceTree = "<group>"; };
+		76CE32022296538F00E998FB /* ResultCompetitionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCompetitionPresenter.swift; sourceTree = "<group>"; };
+		76CE32032296538F00E998FB /* ResultCompetitionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCompetitionRouter.swift; sourceTree = "<group>"; };
+		76CE32042296538F00E998FB /* ResultCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCompetitionViewController.swift; sourceTree = "<group>"; };
+		76CE32052296538F00E998FB /* ResultCompetitionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCompetitionProtocols.swift; sourceTree = "<group>"; };
+		76CE32062296538F00E998FB /* ResultCompetitionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultCompetitionInteractor.swift; sourceTree = "<group>"; };
+		76CE32072296538F00E998FB /* ResultCompetitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultCompetitionViewController.xib; sourceTree = "<group>"; };
+		76CE321B229653D500E998FB /* CellResultCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultCompetition.swift; sourceTree = "<group>"; };
+		76CE321C229653D500E998FB /* CellResultCompetition.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultCompetition.xib; sourceTree = "<group>"; };
 		76CF0C6622906821003C4B4B /* CommentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentPresenter.swift; sourceTree = "<group>"; };
 		76CF0C6722906821003C4B4B /* CommentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRouter.swift; sourceTree = "<group>"; };
 		76CF0C6822906821003C4B4B /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
@@ -1878,13 +1934,14 @@
 		76CE31BC22961FAC00E998FB /* ResultGroup */ = {
 			isa = PBXGroup;
 			children = (
-				76CE31DE2296381B00E998FB /* CellResult */,
-				76CE31BD22961FC300E998FB /* ResultPresenter.swift */,
-				76CE31BE22961FC300E998FB /* ResultRouter.swift */,
-				76CE31BF22961FC300E998FB /* ResultViewController.swift */,
-				76CE31C022961FC300E998FB /* ResultProtocols.swift */,
-				76CE31C122961FC300E998FB /* ResultInteractor.swift */,
-				76CE31C222961FC300E998FB /* ResultViewController.xib */,
+				76CE32012296536C00E998FB /* ResultCompetition */,
+				76CE31E822963EBA00E998FB /* ResultMember */,
+				76CE31E922963EDE00E998FB /* ResultGroupPresenter.swift */,
+				76CE31EA22963EDE00E998FB /* ResultGroupRouter.swift */,
+				76CE31EB22963EDE00E998FB /* ResultGroupViewController.swift */,
+				76CE31EC22963EDE00E998FB /* ResultGroupProtocols.swift */,
+				76CE31ED22963EDE00E998FB /* ResultGroupInteractor.swift */,
+				76CE31EE22963EDE00E998FB /* ResultGroupViewController.xib */,
 			);
 			path = ResultGroup;
 			sourceTree = "<group>";
@@ -1905,6 +1962,43 @@
 				76CE31E02296382D00E998FB /* CellResult.xib */,
 			);
 			path = CellResult;
+			sourceTree = "<group>";
+		};
+		76CE31E822963EBA00E998FB /* ResultMember */ = {
+			isa = PBXGroup;
+			children = (
+				76CE31BD22961FC300E998FB /* ResultPresenter.swift */,
+				76CE31BE22961FC300E998FB /* ResultRouter.swift */,
+				76CE31BF22961FC300E998FB /* ResultViewController.swift */,
+				76CE31C022961FC300E998FB /* ResultProtocols.swift */,
+				76CE31C122961FC300E998FB /* ResultInteractor.swift */,
+				76CE31C222961FC300E998FB /* ResultViewController.xib */,
+				76CE31DE2296381B00E998FB /* CellResult */,
+			);
+			path = ResultMember;
+			sourceTree = "<group>";
+		};
+		76CE32012296536C00E998FB /* ResultCompetition */ = {
+			isa = PBXGroup;
+			children = (
+				76CE321A229653B600E998FB /* CellResultCompetition */,
+				76CE32022296538F00E998FB /* ResultCompetitionPresenter.swift */,
+				76CE32032296538F00E998FB /* ResultCompetitionRouter.swift */,
+				76CE32042296538F00E998FB /* ResultCompetitionViewController.swift */,
+				76CE32052296538F00E998FB /* ResultCompetitionProtocols.swift */,
+				76CE32062296538F00E998FB /* ResultCompetitionInteractor.swift */,
+				76CE32072296538F00E998FB /* ResultCompetitionViewController.xib */,
+			);
+			path = ResultCompetition;
+			sourceTree = "<group>";
+		};
+		76CE321A229653B600E998FB /* CellResultCompetition */ = {
+			isa = PBXGroup;
+			children = (
+				76CE321B229653D500E998FB /* CellResultCompetition.swift */,
+				76CE321C229653D500E998FB /* CellResultCompetition.xib */,
+			);
+			path = CellResultCompetition;
 			sourceTree = "<group>";
 		};
 		76CF0C652290680B003C4B4B /* Comment */ = {
@@ -3284,6 +3378,7 @@
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
+				76CE31FE22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
 				DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
@@ -3302,6 +3397,7 @@
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DEF1C26822903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
+				76CE3220229653D500E998FB /* CellResultCompetition.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46822946928001E9984 /* CellCreateExercise.xib in Resources */,
@@ -3318,6 +3414,7 @@
 				766D130B228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE2ADE7A22841BB9003768CE /* MenuViewController.xib in Resources */,
 				766D1375228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
+				76CE32172296539000E998FB /* ResultCompetitionViewController.xib in Resources */,
 				DE95316D2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531112287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCB2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
@@ -3376,6 +3473,7 @@
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
+				76CE31FF22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
 				DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
@@ -3394,6 +3492,7 @@
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DEF1C26922903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
+				76CE3221229653D500E998FB /* CellResultCompetition.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46922946928001E9984 /* CellCreateExercise.xib in Resources */,
@@ -3410,6 +3509,7 @@
 				766D130C228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE95304B2287DF4800E3F688 /* MenuViewController.xib in Resources */,
 				766D1376228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
+				76CE32182296539000E998FB /* ResultCompetitionViewController.xib in Resources */,
 				DE95316E2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531122287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCC2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
@@ -3468,6 +3568,7 @@
 				DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACE22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DEF1C24E229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
+				76CE320022963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
 				DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
@@ -3486,6 +3587,7 @@
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DEF1C26A22903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
+				76CE3222229653D500E998FB /* CellResultCompetition.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46A22946928001E9984 /* CellCreateExercise.xib in Resources */,
@@ -3502,6 +3604,7 @@
 				766D130D228EE8DA005E47F0 /* TheoryViewController.xib in Resources */,
 				DE9530F92287DF6400E3F688 /* MenuViewController.xib in Resources */,
 				766D1377228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
+				76CE32192296539000E998FB /* ResultCompetitionViewController.xib in Resources */,
 				DE95316F2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCD2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
@@ -3865,6 +3968,7 @@
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE95315822883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
+				76CE321D229653D500E998FB /* CellResultCompetition.swift in Sources */,
 				DE952F802287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CDF2289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
 				76E2FEC7228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
@@ -3874,6 +3978,7 @@
 				DEBD672F228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
 				DE2ADE6C22841B9E003768CE /* HomeProtocols.swift in Sources */,
+				76CE31FB22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */,
 				76E2FEE7228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CBF2289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961412289942E0046801B /* QAEntity.swift in Sources */,
@@ -3882,6 +3987,7 @@
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
+				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76CE31CC22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				DEBD6737228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
@@ -3966,6 +4072,7 @@
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
 				DEC62AD622930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6922914B8D0043A62D /* UIDevice+extension.swift in Sources */,
+				76CE31F222963EDE00E998FB /* ResultGroupRouter.swift in Sources */,
 				DE95315B22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE361F472283E85000FA3B0D /* CommonEndPoint.swift in Sources */,
 				766D131A228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
@@ -4044,6 +4151,7 @@
 				DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */,
 				766D136C228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
 				DE95316A2288418F00E3F688 /* HistoryCell.swift in Sources */,
+				76CE31F522963EDE00E998FB /* ResultGroupViewController.swift in Sources */,
 				76E2FEE1228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				DEECF8772287075B00A4678B /* UITable+extension.swift in Sources */,
 				DE3A8CB92289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
@@ -4082,6 +4190,7 @@
 				765110C1229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612822898F1F0046801B /* QARouter.swift in Sources */,
 				DEB5847D2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
+				76CE320E2296539000E998FB /* ResultCompetitionViewController.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
 				DE9531452288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -4091,8 +4200,10 @@
 				DE952F9B2287D2A700E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE361E962283E60500FA3B0D /* UserDefaultHelper.swift in Sources */,
 				766D1385228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
+				76CE32112296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA52289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
+				76CE31EF22963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
 				76F7F459229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */,
@@ -4115,6 +4226,7 @@
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				76F7F456229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
+				76CE32142296539000E998FB /* ResultCompetitionInteractor.swift in Sources */,
 				766D12FF228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */,
 				76E2FF37228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
@@ -4154,6 +4266,7 @@
 				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				76CE31AC2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672C228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
+				76CE31F822963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
 				DEF1C25322903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */,
@@ -4188,6 +4301,7 @@
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CCF2289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DEF1C26E22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
+				76CE32082296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
 				DEBD673B228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4206,6 +4320,7 @@
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
 				DE95315922883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
+				76CE321E229653D500E998FB /* CellResultCompetition.swift in Sources */,
 				DE952FB62287DF4800E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CE02289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
 				76E2FEC8228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
@@ -4215,6 +4330,7 @@
 				DEBD6730228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
 				DE952FBA2287DF4800E3F688 /* HomeProtocols.swift in Sources */,
+				76CE31FC22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */,
 				76E2FEE8228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CC02289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961422289942E0046801B /* QAEntity.swift in Sources */,
@@ -4223,6 +4339,7 @@
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
+				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76CE31CD22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				DEBD6738228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
@@ -4307,6 +4424,7 @@
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
 				DEC62AD722930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6A22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
+				76CE31F322963EDE00E998FB /* ResultGroupRouter.swift in Sources */,
 				DE95315C22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */,
 				766D131B228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
@@ -4385,6 +4503,7 @@
 				DE952FFE2287DF4800E3F688 /* AppDelegate+Push.swift in Sources */,
 				766D136D228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
 				DE95316B2288418F00E3F688 /* HistoryCell.swift in Sources */,
+				76CE31F622963EDE00E998FB /* ResultGroupViewController.swift in Sources */,
 				76E2FEE2228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				DE952FFF2287DF4800E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBA2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
@@ -4423,6 +4542,7 @@
 				765110C2229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612922898F1F0046801B /* QARouter.swift in Sources */,
 				DEB5847E2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
+				76CE320F2296539000E998FB /* ResultCompetitionViewController.swift in Sources */,
 				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531462288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -4432,8 +4552,10 @@
 				DE95300F2287DF4800E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530102287DF4800E3F688 /* UserDefaultHelper.swift in Sources */,
 				766D1386228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
+				76CE32122296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA62289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */,
+				76CE31F022963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45A229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */,
@@ -4456,6 +4578,7 @@
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				76F7F457229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
+				76CE32152296539000E998FB /* ResultCompetitionInteractor.swift in Sources */,
 				766D1300228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DE95301D2287DF4800E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF38228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
@@ -4495,6 +4618,7 @@
 				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				76CE31AD2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672D228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
+				76CE31F922963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
 				DEF1C25422903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				DE95302F2287DF4800E3F688 /* HomeRouter.swift in Sources */,
@@ -4529,6 +4653,7 @@
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD02289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DEF1C26F22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
+				76CE32092296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
 				DEBD673C228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -4547,6 +4672,7 @@
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
 				DE95315A22883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
+				76CE321F229653D500E998FB /* CellResultCompetition.swift in Sources */,
 				DE9530642287DF6400E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CE12289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
 				76E2FEC9228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
@@ -4556,6 +4682,7 @@
 				DEBD6731228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */,
 				DE9530682287DF6400E3F688 /* HomeProtocols.swift in Sources */,
+				76CE31FD22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */,
 				76E2FEE9228DBAF10014B1F4 /* GrammarProtocols.swift in Sources */,
 				DE3A8CC12289BBF30080A8CB /* CompetitionInteractor.swift in Sources */,
 				DEB961432289942E0046801B /* QAEntity.swift in Sources */,
@@ -4564,6 +4691,7 @@
 				DE95306A2287DF6400E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD674B228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C24A229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
+				76CE320D2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76CE31CE22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				DEBD6739228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
@@ -4648,6 +4776,7 @@
 				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
 				DEC62AD822930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6B22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
+				76CE31F422963EDE00E998FB /* ResultGroupRouter.swift in Sources */,
 				DE95315D22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */,
 				766D131C228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
@@ -4726,6 +4855,7 @@
 				DE9530AC2287DF6400E3F688 /* AppDelegate+Push.swift in Sources */,
 				766D136E228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
 				DE95316C2288418F00E3F688 /* HistoryCell.swift in Sources */,
+				76CE31F722963EDE00E998FB /* ResultGroupViewController.swift in Sources */,
 				76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBB2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
@@ -4764,6 +4894,7 @@
 				765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
 				DEB5847F2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
+				76CE32102296539000E998FB /* ResultCompetitionViewController.swift in Sources */,
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531472288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
@@ -4773,8 +4904,10 @@
 				DE9530BD2287DF6400E3F688 /* KActivityIndicatorAnimationBallRotate.swift in Sources */,
 				DE9530BE2287DF6400E3F688 /* UserDefaultHelper.swift in Sources */,
 				766D1387228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
+				76CE32132296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA72289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */,
+				76CE31F122963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45B229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */,
@@ -4797,6 +4930,7 @@
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				76F7F458229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
+				76CE32162296539000E998FB /* ResultCompetitionInteractor.swift in Sources */,
 				766D1301228EE8DA005E47F0 /* TheoryRouter.swift in Sources */,
 				DE9530CB2287DF6400E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF39228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
@@ -4836,6 +4970,7 @@
 				DE9530DB2287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				76CE31AE2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672E228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
+				76CE31FA22963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */,
 				DEF1C25522903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */,
@@ -4870,6 +5005,7 @@
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD12289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DEF1C27022903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
+				76CE320A2296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
 				DEBD673D228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

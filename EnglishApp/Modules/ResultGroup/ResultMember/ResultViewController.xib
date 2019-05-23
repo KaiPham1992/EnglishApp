@@ -19,8 +19,13 @@
                 <outlet property="btnBackHome" destination="wQu-gg-xdd" id="6ua-2d-bpR"/>
                 <outlet property="lblPointSum" destination="wTA-VI-wvh" id="NgN-Hp-o5q"/>
                 <outlet property="lblTimeDoExercise" destination="h95-w4-4pv" id="bN1-n3-ZK1"/>
+                <outlet property="leadingStackView" destination="012-kv-WTW" id="csx-t8-Y9P"/>
+                <outlet property="stackView" destination="a4C-uD-VLz" id="QJf-3H-fvl"/>
                 <outlet property="tbvResult" destination="ivt-iT-WmL" id="CNV-qb-PQq"/>
+                <outlet property="trailingStackView" destination="bX8-ZY-qBM" id="29z-kR-FLj"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewRank" destination="N0p-8g-lUl" id="1pl-3U-0el"/>
+                <outlet property="viewTime" destination="eOa-XP-ehu" id="fhg-dN-pBo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -107,14 +112,14 @@
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a4C-uD-VLz">
-                            <rect key="frame" x="28" y="104" width="319" height="64"/>
+                            <rect key="frame" x="16" y="104" width="343" height="64"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0p-8g-lUl" customClass="ViewPoint" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="154.5" height="64"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="166.5" height="64"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-XP-ehu" customClass="ViewPoint" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                    <rect key="frame" x="164.5" y="0.0" width="154.5" height="64"/>
+                                    <rect key="frame" x="176.5" y="0.0" width="166.5" height="64"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                             </subviews>
@@ -125,7 +130,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="a4C-uD-VLz" firstAttribute="leading" secondItem="8Dn-7Z-poH" secondAttribute="leading" constant="28" id="012-kv-WTW"/>
+                        <constraint firstItem="a4C-uD-VLz" firstAttribute="leading" secondItem="8Dn-7Z-poH" secondAttribute="leading" constant="16" id="012-kv-WTW"/>
                         <constraint firstItem="EAB-I0-Pox" firstAttribute="leading" secondItem="8Dn-7Z-poH" secondAttribute="leading" id="Ppv-d9-mjg"/>
                         <constraint firstItem="a4C-uD-VLz" firstAttribute="top" secondItem="EAB-I0-Pox" secondAttribute="bottom" constant="16" id="Q62-Lc-BJU"/>
                         <constraint firstItem="Wq9-6a-m60" firstAttribute="top" secondItem="8Dn-7Z-poH" secondAttribute="top" id="WCQ-kF-jpY"/>
@@ -133,7 +138,7 @@
                         <constraint firstItem="EAB-I0-Pox" firstAttribute="top" secondItem="Wq9-6a-m60" secondAttribute="bottom" constant="2" id="Z8O-OH-QGu"/>
                         <constraint firstAttribute="trailing" secondItem="Wq9-6a-m60" secondAttribute="trailing" id="Z8l-c8-5RQ"/>
                         <constraint firstAttribute="bottom" secondItem="a4C-uD-VLz" secondAttribute="bottom" id="ZnE-be-qm4"/>
-                        <constraint firstAttribute="trailing" secondItem="a4C-uD-VLz" secondAttribute="trailing" constant="28" id="bX8-ZY-qBM"/>
+                        <constraint firstAttribute="trailing" secondItem="a4C-uD-VLz" secondAttribute="trailing" constant="16" id="bX8-ZY-qBM"/>
                         <constraint firstAttribute="trailing" secondItem="EAB-I0-Pox" secondAttribute="trailing" id="sNe-M2-boD"/>
                     </constraints>
                 </view>

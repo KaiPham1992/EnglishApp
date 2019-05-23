@@ -9,17 +9,34 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 class ResultViewController: BaseViewController, ResultViewProtocol {
 
+    @IBOutlet weak var trailingStackView: NSLayoutConstraint!
+    @IBOutlet weak var leadingStackView: NSLayoutConstraint!
+    @IBOutlet weak var stackView: UIStackView!
+    @IBOutlet weak var viewRank: ViewPoint!
     @IBOutlet weak var btnBackHome: UIButton!
     @IBOutlet weak var lblTimeDoExercise: UILabel!
     @IBOutlet weak var lblPointSum: UILabel!
     @IBOutlet weak var tbvResult: UITableView!
+    @IBOutlet weak var viewTime: ViewPoint!
+    var type : TypeResult = .result
     var presenter: ResultPresenterProtocol?
 
     override func setUpViews() {
         super.setUpViews()
+        if type == .result {
+            viewRank.isHidden = false
+            leadingStackView.constant = 28
+            trailingStackView.constant = 28
+        } else {
+            viewRank.isHidden = true
+            leadingStackView.constant = 16
+            trailingStackView.constant = 16
+            
+        }
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbvResult.registerXibFile(CellResult.self)
         tbvResult.dataSource = self
@@ -32,7 +49,12 @@ class ResultViewController: BaseViewController, ResultViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.result.showLanguage)
+        if type == .result{
+            setTitleNavigation(title: LocalizableKey.result.showLanguage)
+        } else {
+            setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
+        }
+        
     }
 }
 extension ResultViewController : UITableViewDataSource{
@@ -58,5 +80,11 @@ extension ResultViewController : UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
+    }
+}
+
+extension ResultViewController: IndicatorInfoProvider{
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: LocalizableKey.result.showLanguage)
     }
 }

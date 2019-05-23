@@ -1,5 +1,5 @@
 //
-//  ResultRouter.swift
+//  ResultCompetitionRouter.swift
 //  EnglishApp
 //
 //  Created vinova on 5/23/19.
@@ -10,16 +10,16 @@
 
 import UIKit
 
-class ResultRouter: ResultWireframeProtocol {
+class ResultCompetitionRouter: ResultCompetitionWireframeProtocol {
 
     weak var viewController: UIViewController?
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ResultViewController(nibName: nil, bundle: nil)
-        let interactor = ResultInteractor()
-        let router = ResultRouter()
-        let presenter = ResultPresenter(interface: view, interactor: interactor, router: router)
+        let view = ResultCompetitionViewController(nibName: nil, bundle: nil)
+        let interactor = ResultCompetitionInteractor()
+        let router = ResultCompetitionRouter()
+        let presenter = ResultCompetitionPresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
         interactor.presenter = presenter
