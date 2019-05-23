@@ -172,3 +172,9 @@
 "enter_name_exercise" = "Nhập tên bài tập";
 "choice_exercise" = "Chọn bài tập";
 "exercise_level" = "Cấp độ bài tập";
+
+//result
+"result" = "Kết quả";
+"sum_point" = "Tổng điểm:";
+"time_do_exercise" = "Thời gian làm bài:";
+"back_gome" = "Về trang chủ";

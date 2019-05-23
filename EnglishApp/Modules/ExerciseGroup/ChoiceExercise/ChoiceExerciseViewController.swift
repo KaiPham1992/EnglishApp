@@ -11,6 +11,12 @@
 import UIKit
 import DropDown
 
+enum TypeExerxcier {
+    case choice
+    case level
+}
+
+
 class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtocol {
     @IBOutlet weak var lbExerciseLevel: UILabel!
     
@@ -23,6 +29,9 @@ class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtoc
     @IBOutlet weak var tbvChoiceExercise: UITableView!
     var presenter: ChoiceExercisePresenterProtocol?
     let dropDown = DropDown()
+    
+    //to view choiceexercise or level exercise
+    var type : TypeExerxcier = .level
 
     @IBOutlet weak var vLine: UIView!
     override func setUpViews() {
