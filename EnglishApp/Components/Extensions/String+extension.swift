@@ -343,6 +343,16 @@ extension String {
 
         return ceil(boundingBox.width)
     }
+    
+    func getHeightLabel(width: CGFloat, font: UIFont) -> CGFloat{
+        let lbl = UILabel(frame: .zero)
+        lbl.frame.size.width = width
+        lbl.font = font
+        lbl.text = self
+        lbl.numberOfLines = 0
+        lbl.sizeToFit()
+        return floor(ceil(lbl.frame.height) / lbl.font.lineHeight)
+    }
 
     func formatNumber(type: String) -> String {
         if self.count < 4 {

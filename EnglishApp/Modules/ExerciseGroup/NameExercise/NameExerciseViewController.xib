@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NameExerciseViewController">
+            <connections>
+                <outlet property="btnMore" destination="LDL-9c-CMY" id="9dw-4T-PCS"/>
+                <outlet property="heightMore" destination="kcx-LK-6lz" id="DJg-mN-Fxl"/>
+                <outlet property="heightScrollView" destination="cGq-m2-mea" id="Kkz-ML-CDx"/>
+                <outlet property="lbDetailQuestion" destination="dHB-ho-Dz6" id="1oy-Bf-5gs"/>
+                <outlet property="tbvNameExercise" destination="Ecu-d9-Fry" id="Ufe-Et-ViP"/>
+                <outlet property="vProfile" destination="Jcx-fC-HaO" id="5SJ-Yp-GgQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="1118"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jgo-cC-h06">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="1118"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Z4-IG-yLf">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jcx-fC-HaO">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="242"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/40 câu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hUu-hT-VhW">
+                                            <rect key="frame" x="16" y="21" width="87" height="22.5"/>
+                                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="20"/>
+                                            <color key="textColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdG-7p-d9c">
+                                            <rect key="frame" x="16" y="55" width="183.5" height="18"/>
+                                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="8" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHB-ho-Dz6">
+                                            <rect key="frame" x="16" y="93" width="343" height="125"/>
+                                            <mutableString key="text">In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion </mutableString>
+                                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDL-9c-CMY">
+                                            <rect key="frame" x="0.0" y="218" width="375" height="24"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="24" id="kcx-LK-6lz"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                            <color key="tintColor" red="0.12549019610000001" green="0.70980392160000005" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <state key="normal" title="Xem them"/>
+                                            <connections>
+                                                <action selector="clickMore:" destination="-1" eventType="touchUpInside" id="ons-hH-naA"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="hUu-hT-VhW" firstAttribute="leading" secondItem="Jcx-fC-HaO" secondAttribute="leading" constant="16" id="311-PT-7iM"/>
+                                        <constraint firstItem="hUu-hT-VhW" firstAttribute="top" secondItem="Jcx-fC-HaO" secondAttribute="top" constant="21" id="3Ht-TQ-5gB"/>
+                                        <constraint firstAttribute="trailing" secondItem="LDL-9c-CMY" secondAttribute="trailing" id="6lT-K8-ht2"/>
+                                        <constraint firstItem="XdG-7p-d9c" firstAttribute="top" secondItem="hUu-hT-VhW" secondAttribute="bottom" constant="11.5" id="KPn-C7-jnU"/>
+                                        <constraint firstAttribute="bottom" secondItem="dHB-ho-Dz6" secondAttribute="bottom" constant="24" id="cJD-mt-ERy"/>
+                                        <constraint firstItem="dHB-ho-Dz6" firstAttribute="leading" secondItem="XdG-7p-d9c" secondAttribute="leading" id="dxg-Jz-EKe"/>
+                                        <constraint firstItem="XdG-7p-d9c" firstAttribute="leading" secondItem="hUu-hT-VhW" secondAttribute="leading" id="epo-CN-cmU"/>
+                                        <constraint firstItem="LDL-9c-CMY" firstAttribute="top" secondItem="dHB-ho-Dz6" secondAttribute="bottom" id="gd3-Ha-M37"/>
+                                        <constraint firstItem="LDL-9c-CMY" firstAttribute="leading" secondItem="Jcx-fC-HaO" secondAttribute="leading" id="nuy-3Q-SqR"/>
+                                        <constraint firstItem="XdG-7p-d9c" firstAttribute="bottom" secondItem="dHB-ho-Dz6" secondAttribute="top" constant="-20" id="r6z-fc-9ee"/>
+                                        <constraint firstAttribute="trailing" secondItem="dHB-ho-Dz6" secondAttribute="trailing" constant="16" id="rLd-gD-8EY"/>
+                                    </constraints>
+                                </view>
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ecu-d9-Fry">
+                                    <rect key="frame" x="0.0" y="262" width="375" height="738"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </tableView>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="Ecu-d9-Fry" firstAttribute="top" secondItem="Jcx-fC-HaO" secondAttribute="bottom" constant="20" id="Bf0-Lt-Jdh"/>
+                                <constraint firstItem="Jcx-fC-HaO" firstAttribute="top" secondItem="6Z4-IG-yLf" secondAttribute="top" id="GHz-6x-qRj"/>
+                                <constraint firstItem="Jcx-fC-HaO" firstAttribute="leading" secondItem="6Z4-IG-yLf" secondAttribute="leading" id="Rwn-zZ-O1p"/>
+                                <constraint firstAttribute="height" constant="1000" id="cGq-m2-mea"/>
+                                <constraint firstAttribute="trailing" secondItem="Jcx-fC-HaO" secondAttribute="trailing" id="iC9-TE-B07"/>
+                                <constraint firstAttribute="bottom" secondItem="Ecu-d9-Fry" secondAttribute="bottom" id="n4g-Ah-fXd"/>
+                                <constraint firstItem="Ecu-d9-Fry" firstAttribute="leading" secondItem="6Z4-IG-yLf" secondAttribute="leading" id="nwk-sv-XAW"/>
+                                <constraint firstAttribute="trailing" secondItem="Ecu-d9-Fry" secondAttribute="trailing" id="p87-15-Mgw"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="6Z4-IG-yLf" firstAttribute="leading" secondItem="jgo-cC-h06" secondAttribute="leading" id="7cr-em-lgq"/>
+                        <constraint firstAttribute="trailing" secondItem="6Z4-IG-yLf" secondAttribute="trailing" id="CpN-H7-HF1"/>
+                        <constraint firstItem="6Z4-IG-yLf" firstAttribute="width" secondItem="jgo-cC-h06" secondAttribute="width" id="EEZ-OZ-N9i"/>
+                        <constraint firstAttribute="bottom" secondItem="6Z4-IG-yLf" secondAttribute="bottom" id="gGk-Qb-3Ok"/>
+                        <constraint firstItem="6Z4-IG-yLf" firstAttribute="top" secondItem="jgo-cC-h06" secondAttribute="top" id="n95-yU-7gX"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="jgo-cC-h06" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qsq-oh-MCr"/>
+                <constraint firstItem="jgo-cC-h06" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bXR-pU-xc4"/>
+                <constraint firstAttribute="trailing" secondItem="jgo-cC-h06" secondAttribute="trailing" id="fqd-yn-nzp"/>
+                <constraint firstAttribute="bottom" secondItem="jgo-cC-h06" secondAttribute="bottom" id="urv-Aa-bSH"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="53.600000000000001" y="250.9745127436282"/>
+        </view>
+    </objects>
+</document>
