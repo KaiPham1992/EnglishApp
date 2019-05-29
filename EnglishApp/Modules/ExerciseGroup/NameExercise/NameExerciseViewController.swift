@@ -87,7 +87,12 @@ extension NameExerciseViewController : UITableViewDataSource{
 }
 extension NameExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        //show popup suggestion result
+        PopUpHelper.shared.showSuggesstionResult(diamond: {
+            
+        }) {
+            
+        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

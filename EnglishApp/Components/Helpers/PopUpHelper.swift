@@ -16,6 +16,13 @@ class PopUpHelper {
         popUp.showPopUp(message: message, completionNo: completionNo, completionYes: completionYes)
     }
     
+    
+    func showSuggesstionResult(diamond: CompletionClosure?,money: CompletionClosure?){
+        let popup = SuggestionResultPopUp()
+        popup.showPopup(diamod: diamond, money: money)
+    }
+    
+    
     func showLogout(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
         let popUp = YesNoPopUp()
     popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)

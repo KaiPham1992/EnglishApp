@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
+		76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
+		76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
+		76483BE3229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */; };
+		76483BE4229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */; };
+		76483BE5229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */; };
+		76483BE7229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */; };
+		76483BE8229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */; };
+		76483BE9229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */; };
 		765110C1229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
 		765110C2229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
 		765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765110BF229312EC004A060A /* CellHeaderComment.swift */; };
@@ -1343,6 +1352,9 @@
 		5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionResultPopUp.swift; sourceTree = "<group>"; };
+		76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggesstionView.swift; sourceTree = "<group>"; };
+		76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggesstionView.xib; sourceTree = "<group>"; };
 		765110BF229312EC004A060A /* CellHeaderComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHeaderComment.swift; sourceTree = "<group>"; };
 		765110C0229312EC004A060A /* CellHeaderComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellHeaderComment.xib; sourceTree = "<group>"; };
 		766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryPresenter.swift; sourceTree = "<group>"; };
@@ -1844,6 +1856,16 @@
 				C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		76483BDC229ED1220079F9A1 /* SuggestionResultPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */,
+				76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */,
+				76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */,
+			);
+			path = SuggestionResultPopUp;
 			sourceTree = "<group>";
 		};
 		766D12F5228EE8C6005E47F0 /* TheoryGroup */ = {
@@ -2531,6 +2553,7 @@
 		DE361E502283E60500FA3B0D /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				76483BDC229ED1220079F9A1 /* SuggestionResultPopUp */,
 				DEC62AA42293004B00D7CECE /* ThanksReportPopUp */,
 				DEBD6735228D48C7004B74C8 /* CreateGroupPopUp */,
 				DE361E532283E60500FA3B0D /* NotificationPopUp */,
@@ -3443,6 +3466,7 @@
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
 				76CE31962295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				DEB584942291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */,
+				76483BE7229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
 				DEB5848C2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
@@ -3540,6 +3564,7 @@
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
 				76CE31972295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				DEB584952291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */,
+				76483BE8229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
 				DEB5848D2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
@@ -3637,6 +3662,7 @@
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
 				76CE31982295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				DEB584962291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */,
+				76483BE9229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				DE3A8CEA2289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
 				DEB5848E2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
@@ -4051,6 +4077,7 @@
 				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76CE31CC22961FC300E998FB /* ResultProtocols.swift in Sources */,
+				76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				DEBD6737228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
@@ -4178,6 +4205,7 @@
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
+				76483BE3229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
 				766D1369228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				76CE31A62295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
@@ -4409,6 +4437,7 @@
 				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76CE31CD22961FC300E998FB /* ResultProtocols.swift in Sources */,
+				76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				DEBD6738228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
@@ -4536,6 +4565,7 @@
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
+				76483BE4229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
 				766D136A228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				76CE31A72295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
@@ -4767,6 +4797,7 @@
 				DEF1C24A229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320D2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76CE31CE22961FC300E998FB /* ResultProtocols.swift in Sources */,
+				76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				DEBD6739228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */,
@@ -4894,6 +4925,7 @@
 				DE9530992287DF6400E3F688 /* MenuRouter.swift in Sources */,
 				DE3A8CDE2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */,
+				76483BE5229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
 				766D136B228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				76CE31A82295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
