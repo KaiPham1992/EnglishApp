@@ -179,5 +179,14 @@
 "time_do_exercise" = "Thời gian làm bài:";
 "back_gome" = "Về trang chủ";
 "result_competion" = "Kết quả cuộc thi";
-đội
-i
+"result_group" = "Kết quả đội";
+
+
+//popup
+"confirm" = "XÁC NHẬN";
+"update_account" = "Nâng cấp tài khoản thành công";
+"diamond" = "Kim cương";
+"money" = " tiền";
+
+
+//"money_money" = "Tiền";

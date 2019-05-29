@@ -184,4 +184,10 @@ struct LocalizableKey {
     static let back_gome = "back_gome"
     static let result_competion = "result_competion"
     static let result_group = "result_group"
+    
+    //popup
+    static let confirm = "confirm"
+    static let update_account = "update_account"
+    static let diamond = "diamond"
+    static let money = "money"
 }

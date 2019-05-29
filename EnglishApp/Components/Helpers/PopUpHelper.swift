@@ -22,6 +22,11 @@ class PopUpHelper {
         popup.showPopup(diamod: diamond, money: money)
     }
     
+    func showUpdateAccount(confirm: CompletionClosure?){
+        let popup = UpdateAccountPopup()
+        popup.showPopup(confirm: confirm)
+    }
+    
     
     func showLogout(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
         let popUp = YesNoPopUp()

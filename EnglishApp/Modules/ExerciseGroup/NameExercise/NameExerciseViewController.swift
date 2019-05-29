@@ -88,9 +88,13 @@ extension NameExerciseViewController : UITableViewDataSource{
 extension NameExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //show popup suggestion result
-        PopUpHelper.shared.showSuggesstionResult(diamond: {
-            
-        }) {
+//        PopUpHelper.shared.showSuggesstionResult(diamond: {
+//
+//        }) {
+//
+//        }
+        //show pop update account
+        PopUpHelper.shared.showUpdateAccount {
             
         }
     }
