@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class SuggestionResultPopUp : BasePopUpView{
     let view : SuggesstionView = {
         let view = SuggesstionView()

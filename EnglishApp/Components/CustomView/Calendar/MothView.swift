@@ -38,7 +38,7 @@ class MonthView: UIView{
         return view
     }()
     
-    var monthsArr = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+    var monthsArr = [LocalizableKey.january.showLanguage, LocalizableKey.february.showLanguage, LocalizableKey.march.showLanguage, LocalizableKey.april.showLanguage, LocalizableKey.may.showLanguage, LocalizableKey.june.showLanguage, LocalizableKey.july.showLanguage, LocalizableKey.august.showLanguage, LocalizableKey.september.showLanguage, LocalizableKey.october.showLanguage, LocalizableKey.november.showLanguage, LocalizableKey.december.showLanguage]
     var currentMonthIndex = 0{
         didSet{
             if tempCurrentMonth == currentMonthIndex && tempCurrentYear == currentYear {
@@ -76,12 +76,12 @@ class MonthView: UIView{
         lblTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
         btRight.heightAnchor.constraint(equalToConstant: 14).isActive = true
         btRight.widthAnchor.constraint(equalToConstant: 14).isActive = true
-        btRight.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10).isActive = true
+        btRight.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         btRight.centerYToSuperview()
         
         btLeft.heightAnchor.constraint(equalToConstant: 14).isActive = true
         btLeft.widthAnchor.constraint(equalToConstant: 14).isActive = true
-        btLeft.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10).isActive = true
+        btLeft.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         btLeft.centerYToSuperview()
         btLeft.addTarget(self, action: #selector(clickButton), for: .touchUpInside)
         btRight.addTarget(self, action: #selector(clickButton), for: .touchUpInside)

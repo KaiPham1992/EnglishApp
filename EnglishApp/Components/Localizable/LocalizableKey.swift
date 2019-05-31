@@ -190,4 +190,29 @@ struct LocalizableKey {
     static let update_account = "update_account"
     static let diamond = "diamond"
     static let money = "money"
+    
+    
+    //month
+    static let january = "January"
+    static let february = "February"
+    static let march = "March"
+    static let april = "April"
+    static let may = "May"
+    static let june = "June"
+    static let july = "July"
+    static let august = "August"
+    static let september = "September"
+    static let october = "October"
+    static let november = "November"
+    static let december = "December"
+
+    //week
+    static let su = "Su"
+    static let mo = "Mo"
+    static let tu = "Tu"
+    static let we = "We"
+    static let th = "Th"
+    static let fr = "Fr"
+    static let sa = "Sa"
+
 }

@@ -68,8 +68,8 @@ class CalendarView : UIView{
         self.addSubview(monthView)
         monthView.delegate = self
         monthView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
-        monthView.widthAnchor.constraint(equalToConstant: 200).isActive = true
-        monthView.centerXToSuperview()
+        monthView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 24).isActive = true
+        monthView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -24).isActive = true
         monthView.heightAnchor.constraint(equalToConstant: 30).isActive = true
         
         self.addSubview(weekView)

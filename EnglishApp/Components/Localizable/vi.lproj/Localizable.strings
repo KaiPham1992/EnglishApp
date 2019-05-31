@@ -189,4 +189,30 @@
 "money" = " tiền";
 
 
+//month
+"January" = "Tháng Một";
+"February" = "Tháng Hai";
+"March" = "Tháng Ba";
+"April" = "Tháng Tư";
+"May" = "Tháng Năm";
+"June" = "Tháng Sáu";
+"July" = "Tháng Bảy";
+"August" = "Tháng Tám";
+"September" = "Tháng Chín";
+"October"= "Tháng Mười";
+"November" = "Tháng Mười Một";
+"December" = "Tháng Mười Hai";
+
+
+//week
+"Su" = "CN";
+"Mo" = "T2";
+"Tu" = "T3";
+"We" = "T4";
+"Th" = "T5";
+"Fr"= "T6";
+"Sa" = "T7";
+
+
+
 //"money_money" = "Tiền";
