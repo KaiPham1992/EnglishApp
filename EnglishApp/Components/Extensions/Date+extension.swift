@@ -220,6 +220,12 @@ extension Date {
     public var yearForWeekOfYear: Int {
         return component(.yearForWeekOfYear)
     }
+    
+    //first date in month
+    
+    public var firstDateInMonth : Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
+    }
 
     /**
      *  Convenience getter for the date's `daysInMonth` component

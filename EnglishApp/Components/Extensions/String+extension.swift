@@ -424,3 +424,15 @@ extension String {
         }
     }
 }
+
+extension String{
+    static var dateFormatter : DateFormatter = {
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyyy-MM-dd"
+        return dateFormat
+    }()
+    
+    var date: Date? {
+        return String.dateFormatter.date(from: self)
+    }
+}
