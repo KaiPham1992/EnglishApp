@@ -16,6 +16,7 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
 
     @IBOutlet weak var vCountTime: ViewTime!
     @IBOutlet weak var scrollView: UIScrollView!
+    
     @IBAction func clickMore(_ sender: Any) {
         if isShowMore {
             btnMore.setTitle("An bot", for: .normal)
@@ -55,6 +56,7 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         vCountTime.setupTime(min: 60)
+        vCountTime.delegate = self
         vBlur.setupThreeGradient(beginColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), centerColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.74), endColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
         tbvNameExercise.registerXibFile(CellQuestion.self)
         tbvNameExercise.dataSource = self
@@ -78,6 +80,13 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
     }
     
 }
+
+extension NameExerciseViewController : TimeDelegate{
+    func endTime() {
+        
+    }
+}
+
 extension NameExerciseViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

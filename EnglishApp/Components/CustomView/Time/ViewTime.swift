@@ -8,6 +8,10 @@
 
 import Foundation
 import UIKit
+    
+protocol TimeDelegate: class {
+    func endTime()
+}
 
 class ViewTime: BaseViewXib{
     @IBAction func clickPlay(_ sender: Any) {
@@ -16,6 +20,8 @@ class ViewTime: BaseViewXib{
     }
     
     var timer : Timer?
+    
+    weak var delegate: TimeDelegate?
     
     @IBOutlet weak var btnPlay: UIButton!
     var time = 60
@@ -38,11 +44,12 @@ class ViewTime: BaseViewXib{
     @objc func changeTime(){
         if self.time == 0 {
             stopTimer()
+            
         } else {
             self.time -= 1
             let second = self.time % 60
             let min : Int = self.time / 60
-            let timeText = "\(min):\(second) phút"
+            let timeText = "\(min):\(second) \(LocalizableKey.min.showLanguage)"
             lblTime.text = timeText
         }
     }
