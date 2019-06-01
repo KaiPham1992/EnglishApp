@@ -42,5 +42,15 @@ struct AppImage {
     static let imgChangePass = UIImage(named: "ic_lock")!.withRenderingMode(.alwaysTemplate)
     static let imgLogout = UIImage(named: "ic_logout")!.withRenderingMode(.alwaysTemplate)
     
+    //---
+    static let img099 = UIImage(named: "0_99")!
+    static let img199 = UIImage(named: "1_99")!
+    static let img999 = UIImage(named: "9_99")!
+    static let img4999 = UIImage(named: "49_99")!
+    static let img9999 = UIImage(named: "99_99")!
     
+    //---
+    
+    static let imgCloseRed = UIImage(named: "close_red")!
+    static let imgTickGreen = UIImage(named: "tick_green")!
 }
