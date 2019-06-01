@@ -30,7 +30,7 @@ class WeekView: UIView{
     func setupView(){
         self.addSubview(stackView)
         stackView.fillSuperview()
-        var daysArr = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"]
+        var daysArr = [LocalizableKey.su.showLanguage, LocalizableKey.mo.showLanguage, LocalizableKey.tu.showLanguage, LocalizableKey.we.showLanguage, LocalizableKey.th.showLanguage, LocalizableKey.fr.showLanguage, LocalizableKey.sa.showLanguage]
         for i in 0..<7 {
             let lbl = UILabel()
             lbl.text = daysArr[i]

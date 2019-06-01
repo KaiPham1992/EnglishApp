@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewTime" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="btnPlay" destination="yfF-ZU-k9S" id="AX1-af-KSX"/>
+                <outlet property="lblTime" destination="8DC-uD-NGo" id="cyO-pS-OTB"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="119" height="75"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AaH-gR-zuE">
+                    <rect key="frame" x="0.0" y="0.0" width="119" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="60:00 phút" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8DC-uD-NGo">
+                            <rect key="frame" x="17.5" y="28.5" width="84" height="18"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="8DC-uD-NGo" firstAttribute="centerX" secondItem="AaH-gR-zuE" secondAttribute="centerX" id="2cp-EF-y59"/>
+                        <constraint firstItem="8DC-uD-NGo" firstAttribute="centerY" secondItem="AaH-gR-zuE" secondAttribute="centerY" id="Tkr-25-kfr"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yfF-ZU-k9S">
+                    <rect key="frame" x="0.0" y="0.0" width="119" height="75"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                    <state key="normal" image="music-player-play"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="clickPlay:" destination="-1" eventType="touchUpInside" id="jzx-Sw-K8U"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="yfF-ZU-k9S" secondAttribute="bottom" id="DzG-c5-bKG"/>
+                <constraint firstAttribute="trailing" secondItem="yfF-ZU-k9S" secondAttribute="trailing" id="Lh5-Jm-w8L"/>
+                <constraint firstAttribute="bottom" secondItem="AaH-gR-zuE" secondAttribute="bottom" id="PdQ-fg-fBc"/>
+                <constraint firstItem="AaH-gR-zuE" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VrE-wL-rpu"/>
+                <constraint firstItem="yfF-ZU-k9S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Xgf-hw-DWa"/>
+                <constraint firstAttribute="trailing" secondItem="AaH-gR-zuE" secondAttribute="trailing" id="oJm-QN-OCd"/>
+                <constraint firstItem="yfF-ZU-k9S" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="rMa-cz-3ZE"/>
+                <constraint firstItem="AaH-gR-zuE" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="sZc-KP-AAT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="310.86956521739131" y="276.22767857142856"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="music-player-play" width="13" height="16"/>
+    </resources>
+</document>

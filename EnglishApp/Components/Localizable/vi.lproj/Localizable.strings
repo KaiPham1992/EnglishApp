@@ -172,6 +172,7 @@
 "enter_name_exercise" = "Nhập tên bài tập";
 "choice_exercise" = "Chọn bài tập";
 "exercise_level" = "Cấp độ bài tập";
+"history_exercise" = "Lịch sử kiểm tra";
 
 //result
 "result" = "Kết quả";
@@ -189,4 +190,33 @@
 "money" = " tiền";
 
 
+//month
+"January" = "Tháng Một";
+"February" = "Tháng Hai";
+"March" = "Tháng Ba";
+"April" = "Tháng Tư";
+"May" = "Tháng Năm";
+"June" = "Tháng Sáu";
+"July" = "Tháng Bảy";
+"August" = "Tháng Tám";
+"September" = "Tháng Chín";
+"October"= "Tháng Mười";
+"November" = "Tháng Mười Một";
+"December" = "Tháng Mười Hai";
+
+
+//week
+"Su" = "CN";
+"Mo" = "T2";
+"Tu" = "T3";
+"We" = "T4";
+"Th" = "T5";
+"Fr"= "T6";
+"Sa" = "T7";
+
+//hour
+
+â
+
 //"money_money" = "Tiền";
+â

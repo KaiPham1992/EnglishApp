@@ -32,4 +32,12 @@ class ViewGradient : UIView{
         gradient.endPoint = CGPoint(x: 1, y: 0)
         self.layer.insertSublayer(gradient, at: 0)
     }
+    
+    func setupThreeGradient(beginColor: UIColor,centerColor: UIColor,endColor: UIColor){
+        gradient.colors = [beginColor.cgColor,centerColor.cgColor,endColor.cgColor]
+        gradient.locations = [0,0.33,1]
+        gradient.startPoint = CGPoint(x: 0, y: 1)
+        gradient.endPoint = CGPoint(x: 0, y: 0)
+        self.layer.insertSublayer(gradient, at: 0)
+    }
 }
