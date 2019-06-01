@@ -172,6 +172,7 @@
 "enter_name_exercise" = "Nhập tên bài tập";
 "choice_exercise" = "Chọn bài tập";
 "exercise_level" = "Cấp độ bài tập";
+"history_exercise" = "Lịch sử kiểm tra";
 
 //result
 "result" = "Kết quả";

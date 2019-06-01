@@ -20,7 +20,7 @@ class HistoryExerciseViewController: BaseViewController, HistoryExerciseViewProt
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        setTitleNavigation(title: "History Exercise")
+        setTitleNavigation(title: LocalizableKey.history_exercise.showLanguage)
         addBackToNavigation()
     }
 

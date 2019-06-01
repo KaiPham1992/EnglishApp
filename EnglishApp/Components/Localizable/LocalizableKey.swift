@@ -175,6 +175,7 @@ struct LocalizableKey {
     static let enter_name_exercise = "enter_name_exercise"
     static let choice_exercise = "choice_exercise"
     static let exercise_level = "exercise_level"
+    static let history_exercise = "history_exercise"
 
     
     //result
