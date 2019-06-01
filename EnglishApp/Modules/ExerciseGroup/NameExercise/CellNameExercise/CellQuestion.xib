@@ -33,19 +33,42 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLab" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV9-zw-bxg">
-                                <rect key="frame" x="39" y="8" width="233" height="18.5"/>
+                                <rect key="frame" x="39" y="8" width="212" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7uR-73-3au">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="31.5"/>
+                                <connections>
+                                    <action selector="clickQuestion:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Ysw-r1-Wr9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdX-cf-jNK">
+                                <rect key="frame" x="256" y="4" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="cRW-uD-vzh"/>
+                                    <constraint firstAttribute="height" constant="24" id="dUs-Zf-maP"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="ic_more"/>
+                                <connections>
+                                    <action selector="clickMore:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="YCQ-c8-6Jv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qdX-cf-jNK" firstAttribute="centerY" secondItem="UwO-Sh-gVy" secondAttribute="centerY" id="5HC-Wl-Ase"/>
+                            <constraint firstItem="qdX-cf-jNK" firstAttribute="leading" secondItem="CV9-zw-bxg" secondAttribute="trailing" constant="5" id="BIc-qy-S31"/>
                             <constraint firstItem="Hya-E2-If7" firstAttribute="top" secondItem="CV9-zw-bxg" secondAttribute="top" constant="1" id="BNu-Hk-4nR"/>
+                            <constraint firstAttribute="trailing" secondItem="7uR-73-3au" secondAttribute="trailing" id="BrB-un-nV7"/>
+                            <constraint firstAttribute="bottom" secondItem="7uR-73-3au" secondAttribute="bottom" id="CBC-Ij-avM"/>
+                            <constraint firstItem="7uR-73-3au" firstAttribute="leading" secondItem="UwO-Sh-gVy" secondAttribute="leading" id="Sgi-RM-fjW"/>
                             <constraint firstItem="CV9-zw-bxg" firstAttribute="leading" secondItem="Hya-E2-If7" secondAttribute="trailing" constant="10" id="ZaK-Rf-j12"/>
                             <constraint firstItem="Hya-E2-If7" firstAttribute="leading" secondItem="UwO-Sh-gVy" secondAttribute="leading" constant="18" id="dta-gO-YaG"/>
                             <constraint firstItem="CV9-zw-bxg" firstAttribute="top" secondItem="UwO-Sh-gVy" secondAttribute="top" constant="8" id="ikR-dj-g8N"/>
-                            <constraint firstAttribute="trailing" secondItem="CV9-zw-bxg" secondAttribute="trailing" constant="16" id="pGv-ip-f3C"/>
+                            <constraint firstAttribute="trailing" secondItem="qdX-cf-jNK" secondAttribute="trailing" constant="8" id="jQz-pg-tNl"/>
+                            <constraint firstItem="7uR-73-3au" firstAttribute="top" secondItem="UwO-Sh-gVy" secondAttribute="top" id="lHA-Im-qfK"/>
                             <constraint firstAttribute="bottom" secondItem="CV9-zw-bxg" secondAttribute="bottom" constant="5" id="rmH-Of-STe"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
@@ -64,9 +87,14 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="heightMore" destination="dUs-Zf-maP" id="INy-mM-O2R"/>
                 <outlet property="lbQuestion" destination="CV9-zw-bxg" id="PhD-Z7-Ow1"/>
+                <outlet property="vBG" destination="UwO-Sh-gVy" id="L6S-3o-I3F"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="ic_more" width="24" height="24"/>
+    </resources>
 </document>

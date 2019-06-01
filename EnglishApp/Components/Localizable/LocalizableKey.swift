@@ -215,5 +215,9 @@ struct LocalizableKey {
     static let th = "Th"
     static let fr = "Fr"
     static let sa = "Sa"
-
+    
+    //hour
+    static let hour = "hour"
+    static let min = "min"
+    static let second = "second"
 }

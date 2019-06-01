@@ -141,6 +141,12 @@
 		769A3BD922A0A69200CA55BD /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A3BD522A0A69200CA55BD /* DateCell.xib */; };
 		769A3BDA22A0A69200CA55BD /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A3BD522A0A69200CA55BD /* DateCell.xib */; };
 		769A3BDB22A0A69200CA55BD /* DateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A3BD522A0A69200CA55BD /* DateCell.xib */; };
+		769A3BDE22A24E8C00CA55BD /* ViewTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A3BDD22A24E8C00CA55BD /* ViewTime.xib */; };
+		769A3BDF22A24E8C00CA55BD /* ViewTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A3BDD22A24E8C00CA55BD /* ViewTime.xib */; };
+		769A3BE022A24E8C00CA55BD /* ViewTime.xib in Resources */ = {isa = PBXBuildFile; fileRef = 769A3BDD22A24E8C00CA55BD /* ViewTime.xib */; };
+		769A3BE222A24FF000CA55BD /* ViewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BE122A24FF000CA55BD /* ViewTime.swift */; };
+		769A3BE322A24FF000CA55BD /* ViewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BE122A24FF000CA55BD /* ViewTime.swift */; };
+		769A3BE422A24FF000CA55BD /* ViewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BE122A24FF000CA55BD /* ViewTime.swift */; };
 		76CE317E2295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
 		76CE317F2295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
 		76CE31802295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
@@ -1438,6 +1444,8 @@
 		769A3BCB22A0A11B00CA55BD /* WeekView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekView.swift; sourceTree = "<group>"; };
 		769A3BD422A0A69200CA55BD /* DateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateCell.swift; sourceTree = "<group>"; };
 		769A3BD522A0A69200CA55BD /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
+		769A3BDD22A24E8C00CA55BD /* ViewTime.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewTime.xib; sourceTree = "<group>"; };
+		769A3BE122A24FF000CA55BD /* ViewTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTime.swift; sourceTree = "<group>"; };
 		76CE31782295A95300E998FB /* LevelExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExercisePresenter.swift; sourceTree = "<group>"; };
 		76CE31792295A95300E998FB /* LevelExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseRouter.swift; sourceTree = "<group>"; };
 		76CE317A2295A95300E998FB /* LevelExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseViewController.swift; sourceTree = "<group>"; };
@@ -2038,6 +2046,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		769A3BDC22A24E7A00CA55BD /* Time */ = {
+			isa = PBXGroup;
+			children = (
+				769A3BDD22A24E8C00CA55BD /* ViewTime.xib */,
+				769A3BE122A24FF000CA55BD /* ViewTime.swift */,
+			);
+			path = Time;
+			sourceTree = "<group>";
+		};
 		76CE31772295A93400E998FB /* LevelExercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -2564,6 +2581,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				769A3BDC22A24E7A00CA55BD /* Time */,
 				769A3BA9229FE52500CA55BD /* Calendar */,
 				76CE31D52296302E00E998FB /* ViewPoint */,
 				DEBCBC7022945C6300DF7F74 /* InfoPackView */,
@@ -3571,6 +3589,7 @@
 				76483BE7229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
+				769A3BDE22A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				DEB5848C2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				769A3BD922A0A69200CA55BD /* DateCell.xib in Resources */,
@@ -3672,6 +3691,7 @@
 				76483BE8229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
+				769A3BDF22A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				DEB5848D2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				769A3BDA22A0A69200CA55BD /* DateCell.xib in Resources */,
@@ -3773,6 +3793,7 @@
 				76483BE9229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				DE3A8CEA2289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
+				769A3BE022A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				DEB5848E2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				DEBD6734228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				769A3BDB22A0A69200CA55BD /* DateCell.xib in Resources */,
@@ -4312,6 +4333,7 @@
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				76F7F46522946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
+				769A3BE222A24FF000CA55BD /* ViewTime.swift in Sources */,
 				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
 				DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */,
@@ -4683,6 +4705,7 @@
 				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
 				76F7F46622946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
+				769A3BE322A24FF000CA55BD /* ViewTime.swift in Sources */,
 				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
 				DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */,
@@ -5054,6 +5077,7 @@
 				DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */,
 				76F7F46722946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
+				769A3BE422A24FF000CA55BD /* ViewTime.swift in Sources */,
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,

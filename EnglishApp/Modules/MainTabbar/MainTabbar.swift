@@ -51,7 +51,7 @@ class MainTabbar: UITabBarController {
         
         let vcHome = AppContainerViewController()
         let vcProgramer = TheoryRouter.createModule()
-        let vcHomeWork = UIViewController()
+        let vcHomeWork = ExerciseRouter.createModule()
         let vcCompetition = CompetitionRouter.createModule()
         
         

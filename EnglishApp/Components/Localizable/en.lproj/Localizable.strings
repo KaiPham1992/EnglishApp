@@ -33,3 +33,8 @@
 "Th" = "Th";
 "Fr"= "Fr";
 "Sa" = "Sa";
+
+//hour
+"hour" = "hour";
+"min" = "min";
+"second" = "second";

@@ -14,6 +14,8 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
 
 	var presenter: NameExercisePresenterProtocol?
 
+    @IBOutlet weak var vCountTime: ViewTime!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBAction func clickMore(_ sender: Any) {
         if isShowMore {
             btnMore.setTitle("An bot", for: .normal)
@@ -38,6 +40,8 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         self.heightScrollView.constant = self.vProfile.frame.size.height + self.tbvNameExercise.contentSize.height + 20
     }
     
+    @IBOutlet weak var heightVBlur: NSLayoutConstraint!
+    @IBOutlet weak var vBlur: ViewGradient!
     @IBOutlet weak var btnMore: UIButton!
     @IBOutlet weak var heightMore: NSLayoutConstraint!
     @IBOutlet weak var lbDetailQuestion: UILabel!
@@ -46,17 +50,21 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
     @IBOutlet weak var tbvNameExercise: UITableView!
     var heightTB : CGFloat = 0
     let listQuestion : [String] = ["dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasdasdasdasdasdasdasd","8","9","10","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasdasdasdasdasdasdasd","8","9","10","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasdasdasdasdasdasdasd","8","9","10"]
+    var listSelect : [Bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     var isShowMore = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        vCountTime.setupTime(min: 60)
+        vBlur.setupThreeGradient(beginColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), centerColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.74), endColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
         tbvNameExercise.registerXibFile(CellQuestion.self)
         tbvNameExercise.dataSource = self
         tbvNameExercise.delegate = self
+        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 106, right: 0)
         lbDetailQuestion.text = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion "
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
             let number = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion ".getHeightLabel(width: self.lbDetailQuestion.frame.width, font: AppFont.fontRegular14)
             if number > 8 {
-                self.heightMore.constant = 24
+                self.heightVBlur.constant = 100
             } else {
                 self.heightMore.constant = 0
             }
@@ -80,9 +88,18 @@ extension NameExerciseViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
         cell.setupData(title: listQuestion[indexPath.row])
+        cell.indexPath = indexPath
+        cell.isSelect = listSelect[indexPath.row]
+        cell.delegate = self
         heightTB = tableView.contentSize.height
         heightScrollView.constant = vProfile.frame.height + heightTB + 20
         return cell
+    }
+}
+
+extension NameExerciseViewController : ClickQuestionDelegate{
+    func clickQuestion(indexPath: IndexPath?, isSelect: Bool) {
+        self.listSelect[indexPath?.row ?? 0] = isSelect
     }
 }
 extension NameExerciseViewController : UITableViewDelegate{
@@ -94,9 +111,9 @@ extension NameExerciseViewController : UITableViewDelegate{
 //
 //        }
         //show pop update account
-        PopUpHelper.shared.showUpdateAccount {
-            
-        }
+//        PopUpHelper.shared.showUpdateAccount {
+//
+//        }
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

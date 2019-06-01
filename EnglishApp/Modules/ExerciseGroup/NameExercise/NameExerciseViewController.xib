@@ -22,8 +22,12 @@
                 <outlet property="btnMore" destination="LDL-9c-CMY" id="9dw-4T-PCS"/>
                 <outlet property="heightMore" destination="kcx-LK-6lz" id="DJg-mN-Fxl"/>
                 <outlet property="heightScrollView" destination="cGq-m2-mea" id="Kkz-ML-CDx"/>
+                <outlet property="heightVBlur" destination="3NJ-85-Bg5" id="zaC-se-xe2"/>
                 <outlet property="lbDetailQuestion" destination="dHB-ho-Dz6" id="1oy-Bf-5gs"/>
+                <outlet property="scrollView" destination="jgo-cC-h06" id="MZN-hD-Pj5"/>
                 <outlet property="tbvNameExercise" destination="Ecu-d9-Fry" id="Ufe-Et-ViP"/>
+                <outlet property="vBlur" destination="5oc-ok-mEh" id="fw2-DY-TN8"/>
+                <outlet property="vCountTime" destination="X92-RA-yrm" id="Z0o-R1-zOj"/>
                 <outlet property="vProfile" destination="Jcx-fC-HaO" id="5SJ-Yp-GgQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -48,6 +52,14 @@
                                             <color key="textColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X92-RA-yrm" customClass="ViewTime" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                                            <rect key="frame" x="254" y="10" width="105" height="44"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="105" id="Em2-BY-ZYD"/>
+                                                <constraint firstAttribute="height" constant="44" id="KWH-g6-1mq"/>
+                                            </constraints>
+                                        </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XdG-7p-d9c">
                                             <rect key="frame" x="16" y="55" width="183.5" height="18"/>
                                             <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
@@ -56,37 +68,51 @@
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="8" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dHB-ho-Dz6">
                                             <rect key="frame" x="16" y="93" width="343" height="125"/>
-                                            <mutableString key="text">In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion </mutableString>
+                                            <string key="text">In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion </string>
                                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDL-9c-CMY">
-                                            <rect key="frame" x="0.0" y="218" width="375" height="24"/>
+                                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5oc-ok-mEh" customClass="ViewGradient" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="138" width="375" height="100"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDL-9c-CMY">
+                                                    <rect key="frame" x="0.0" y="76" width="375" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="kcx-LK-6lz"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                                    <color key="tintColor" red="0.12549019610000001" green="0.70980392160000005" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Xem them"/>
+                                                    <connections>
+                                                        <action selector="clickMore:" destination="-1" eventType="touchUpInside" id="ons-hH-naA"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="24" id="kcx-LK-6lz"/>
+                                                <constraint firstAttribute="height" constant="100" id="3NJ-85-Bg5"/>
+                                                <constraint firstItem="LDL-9c-CMY" firstAttribute="leading" secondItem="5oc-ok-mEh" secondAttribute="leading" id="S4W-cn-EP4"/>
+                                                <constraint firstAttribute="bottom" secondItem="LDL-9c-CMY" secondAttribute="bottom" id="YPt-QR-sHF"/>
+                                                <constraint firstAttribute="trailing" secondItem="LDL-9c-CMY" secondAttribute="trailing" id="h8F-vt-5oh"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                                            <color key="tintColor" red="0.12549019610000001" green="0.70980392160000005" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <state key="normal" title="Xem them"/>
-                                            <connections>
-                                                <action selector="clickMore:" destination="-1" eventType="touchUpInside" id="ons-hH-naA"/>
-                                            </connections>
-                                        </button>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="5oc-ok-mEh" firstAttribute="bottom" secondItem="dHB-ho-Dz6" secondAttribute="bottom" constant="20" id="0hP-lv-PbX"/>
                                         <constraint firstItem="hUu-hT-VhW" firstAttribute="leading" secondItem="Jcx-fC-HaO" secondAttribute="leading" constant="16" id="311-PT-7iM"/>
                                         <constraint firstItem="hUu-hT-VhW" firstAttribute="top" secondItem="Jcx-fC-HaO" secondAttribute="top" constant="21" id="3Ht-TQ-5gB"/>
-                                        <constraint firstAttribute="trailing" secondItem="LDL-9c-CMY" secondAttribute="trailing" id="6lT-K8-ht2"/>
                                         <constraint firstItem="XdG-7p-d9c" firstAttribute="top" secondItem="hUu-hT-VhW" secondAttribute="bottom" constant="11.5" id="KPn-C7-jnU"/>
+                                        <constraint firstItem="X92-RA-yrm" firstAttribute="top" secondItem="Jcx-fC-HaO" secondAttribute="top" constant="10" id="Y4S-ix-H3M"/>
+                                        <constraint firstAttribute="trailing" secondItem="X92-RA-yrm" secondAttribute="trailing" constant="16" id="ZLa-GA-lz5"/>
+                                        <constraint firstItem="5oc-ok-mEh" firstAttribute="leading" secondItem="Jcx-fC-HaO" secondAttribute="leading" id="bfo-Jn-LvB"/>
                                         <constraint firstAttribute="bottom" secondItem="dHB-ho-Dz6" secondAttribute="bottom" constant="24" id="cJD-mt-ERy"/>
                                         <constraint firstItem="dHB-ho-Dz6" firstAttribute="leading" secondItem="XdG-7p-d9c" secondAttribute="leading" id="dxg-Jz-EKe"/>
                                         <constraint firstItem="XdG-7p-d9c" firstAttribute="leading" secondItem="hUu-hT-VhW" secondAttribute="leading" id="epo-CN-cmU"/>
-                                        <constraint firstItem="LDL-9c-CMY" firstAttribute="top" secondItem="dHB-ho-Dz6" secondAttribute="bottom" id="gd3-Ha-M37"/>
-                                        <constraint firstItem="LDL-9c-CMY" firstAttribute="leading" secondItem="Jcx-fC-HaO" secondAttribute="leading" id="nuy-3Q-SqR"/>
                                         <constraint firstItem="XdG-7p-d9c" firstAttribute="bottom" secondItem="dHB-ho-Dz6" secondAttribute="top" constant="-20" id="r6z-fc-9ee"/>
                                         <constraint firstAttribute="trailing" secondItem="dHB-ho-Dz6" secondAttribute="trailing" constant="16" id="rLd-gD-8EY"/>
+                                        <constraint firstAttribute="trailing" secondItem="5oc-ok-mEh" secondAttribute="trailing" id="uOB-S1-sJn"/>
                                     </constraints>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ecu-d9-Fry">
@@ -115,10 +141,75 @@
                         <constraint firstItem="6Z4-IG-yLf" firstAttribute="top" secondItem="jgo-cC-h06" secondAttribute="top" id="n95-yU-7gX"/>
                     </constraints>
                 </scrollView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-yM-Iae">
+                    <rect key="frame" x="0.0" y="1012" width="375" height="106"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DUG-Iq-g0Q">
+                            <rect key="frame" x="16" y="48" width="343" height="42"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y0-xD-u0S">
+                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="42"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                    <state key="normal" title="Gợi ý đáp án">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZi-9H-3uu">
+                                    <rect key="frame" x="179.5" y="0.0" width="163.5" height="42"/>
+                                    <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                    <state key="normal" title="TIẾP TỤC">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="hd2-gJ-tGr"/>
+                            </constraints>
+                        </stackView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="các ngữ pháp liên quan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk8-av-d8t">
+                            <rect key="frame" x="100.5" y="8" width="174.5" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="2Zc-Fc-f2D"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                            <color key="textColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Dk8-av-d8t" firstAttribute="top" secondItem="0nL-yM-Iae" secondAttribute="top" constant="8" id="NEx-g5-cjH"/>
+                        <constraint firstItem="DUG-Iq-g0Q" firstAttribute="leading" secondItem="0nL-yM-Iae" secondAttribute="leading" constant="16" id="Oji-jZ-UCr"/>
+                        <constraint firstItem="Dk8-av-d8t" firstAttribute="centerX" secondItem="0nL-yM-Iae" secondAttribute="centerX" id="UxL-mQ-XHj"/>
+                        <constraint firstAttribute="trailing" secondItem="DUG-Iq-g0Q" secondAttribute="trailing" constant="16" id="bMe-3I-Hqb"/>
+                        <constraint firstAttribute="bottom" secondItem="DUG-Iq-g0Q" secondAttribute="bottom" constant="16" id="sTg-gd-eZI"/>
+                        <constraint firstAttribute="height" constant="106" id="yUv-rU-IYX"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="0nL-yM-Iae" secondAttribute="trailing" id="7rJ-GT-fp3"/>
+                <constraint firstAttribute="bottom" secondItem="0nL-yM-Iae" secondAttribute="bottom" id="Q1V-F2-8Dl"/>
                 <constraint firstItem="jgo-cC-h06" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qsq-oh-MCr"/>
+                <constraint firstItem="0nL-yM-Iae" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Qz8-Gv-Bwy"/>
                 <constraint firstItem="jgo-cC-h06" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bXR-pU-xc4"/>
                 <constraint firstAttribute="trailing" secondItem="jgo-cC-h06" secondAttribute="trailing" id="fqd-yn-nzp"/>
                 <constraint firstAttribute="bottom" secondItem="jgo-cC-h06" secondAttribute="bottom" id="urv-Aa-bSH"/>
