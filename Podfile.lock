@@ -102,6 +102,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - ObjectMapper (3.4.2)
+  - Popover (1.2.2)
   - Protobuf (3.7.0)
   - SDWebImage (4.4.6):
     - SDWebImage/Core (= 4.4.6)
@@ -124,6 +125,7 @@ DEPENDENCIES:
   - ImageSlideshow/SDWebImage
   - IQKeyboardManagerSwift
   - ObjectMapper
+  - Popover
   - SDWebImage
   - SwiftyJSON
   - XLPagerTabStrip
@@ -153,6 +155,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - nanopb
     - ObjectMapper
+    - Popover
     - Protobuf
     - SDWebImage
     - SwiftyJSON
@@ -182,11 +185,12 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 0f0ae8935360b4003e6ea1ac7c19898f01e2f7c7
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   ObjectMapper: 0d4402610f4e468903ae64629eec4784531e5c51
+  Popover: 21e357f86d45c8d9e29a41a4adbca3664d6e511f
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
   SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
 
-PODFILE CHECKSUM: 3411feb783082f831fe61c74768d8af034c62ff2
+PODFILE CHECKSUM: 32c2b7d2368a2525a34c00f2e8929c9f75d26033
 
 COCOAPODS: 1.6.1

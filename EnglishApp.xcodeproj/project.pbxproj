@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		7643DE8022A38CA500B7C323 /* SearchVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */; };
+		7643DE8122A38CA500B7C323 /* SearchVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */; };
+		7643DE8222A38CA500B7C323 /* SearchVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */; };
+		7643DE8422A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE8322A38CDA00B7C323 /* SearchVocabularyView.xib */; };
+		7643DE8522A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE8322A38CDA00B7C323 /* SearchVocabularyView.xib */; };
+		7643DE8622A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE8322A38CDA00B7C323 /* SearchVocabularyView.xib */; };
 		76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
@@ -1400,6 +1406,8 @@
 		5F8A2F0B17383302206113F1 /* Pods_EnglishApp_Prod.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_Prod.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		70F0180DFFE303ECA7AF66FA /* Pods-EnglishApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.debug.xcconfig"; sourceTree = "<group>"; };
 		759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp_AppStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVocabularyView.swift; sourceTree = "<group>"; };
+		7643DE8322A38CDA00B7C323 /* SearchVocabularyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVocabularyView.xib; sourceTree = "<group>"; };
 		76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionResultPopUp.swift; sourceTree = "<group>"; };
 		76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggesstionView.swift; sourceTree = "<group>"; };
 		76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggesstionView.xib; sourceTree = "<group>"; };
@@ -1920,6 +1928,15 @@
 				C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		7643DE7E22A38C8A00B7C323 /* ViewSearchVocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */,
+				7643DE8322A38CDA00B7C323 /* SearchVocabularyView.xib */,
+			);
+			path = ViewSearchVocabulary;
 			sourceTree = "<group>";
 		};
 		76483BDC229ED1220079F9A1 /* SuggestionResultPopUp */ = {
@@ -2581,6 +2598,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				7643DE7E22A38C8A00B7C323 /* ViewSearchVocabulary */,
 				769A3BDC22A24E7A00CA55BD /* Time */,
 				769A3BA9229FE52500CA55BD /* Calendar */,
 				76CE31D52296302E00E998FB /* ViewPoint */,
@@ -3642,6 +3660,7 @@
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76CE32422296A61100E998FB /* CellQuestion.xib in Resources */,
 				76CE31D222961FC300E998FB /* ResultViewController.xib in Resources */,
+				7643DE8422A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
 				DE9F0F90228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
@@ -3744,6 +3763,7 @@
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76CE32432296A61100E998FB /* CellQuestion.xib in Resources */,
 				76CE31D322961FC300E998FB /* ResultViewController.xib in Resources */,
+				7643DE8522A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
 				DE9F0F91228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
@@ -3846,6 +3866,7 @@
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76CE32442296A61100E998FB /* CellQuestion.xib in Resources */,
 				76CE31D422961FC300E998FB /* ResultViewController.xib in Resources */,
+				7643DE8622A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
 				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */,
 				DE9F0F92228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
@@ -3930,6 +3951,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -3952,6 +3974,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -4032,6 +4055,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -4054,6 +4078,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -4112,6 +4137,7 @@
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/ImageSlideshow/ImageSlideshow.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Popover/Popover.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -4134,6 +4160,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ImageSlideshow.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Popover.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -4304,6 +4331,7 @@
 				766D131A228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB32289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DEC62AE222930EC400D7CECE /* BeePackInteractor.swift in Sources */,
+				7643DE8022A38CA500B7C323 /* SearchVocabularyView.swift in Sources */,
 				DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670A228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE361F362283E85000FA3B0D /* PhotoEntity.swift in Sources */,
@@ -4676,6 +4704,7 @@
 				766D131B228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB42289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DEC62AE322930EC400D7CECE /* BeePackInteractor.swift in Sources */,
+				7643DE8122A38CA500B7C323 /* SearchVocabularyView.swift in Sources */,
 				DE952FDD2287DF4800E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670B228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE952FDE2287DF4800E3F688 /* PhotoEntity.swift in Sources */,
@@ -5048,6 +5077,7 @@
 				766D131C228EE9E4005E47F0 /* LessonRouter.swift in Sources */,
 				DE3A8CB52289BBF30080A8CB /* CompetitionPresenter.swift in Sources */,
 				DEC62AE422930EC400D7CECE /* BeePackInteractor.swift in Sources */,
+				7643DE8222A38CA500B7C323 /* SearchVocabularyView.swift in Sources */,
 				DE95308B2287DF6400E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670C228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
 				DE95308C2287DF6400E3F688 /* PhotoEntity.swift in Sources */,

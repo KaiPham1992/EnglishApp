@@ -9,26 +9,30 @@
 //
 
 import UIKit
+import Popover
 
 class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
 
 	var presenter: NameExercisePresenterProtocol?
 
+    @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vCountTime: ViewTime!
     @IBOutlet weak var scrollView: UIScrollView!
+    var numberLine = 0
+    let popover = Popover()
     
     @IBAction func clickMore(_ sender: Any) {
         if isShowMore {
             btnMore.setTitle("An bot", for: .normal)
             UIView.animate(withDuration: 0.1) {
-                self.lbDetailQuestion.numberOfLines = 0
+                self.heightTVContent.constant = AppFont.fontRegular14.lineHeight * CGFloat(self.numberLine) + 16
                 self.heightScrollView.constant = self.vProfile.frame.size.height + self.heightTB + 20
                 self.view.layoutIfNeeded()
             }
         } else {
             btnMore.setTitle("Xem them", for: .normal)
             UIView.animate(withDuration: 0.1) {
-                self.lbDetailQuestion.numberOfLines = 8
+                self.heightTVContent.constant = AppFont.fontRegular14.lineHeight * 8 + 16
                 self.heightScrollView.constant = self.vProfile.frame.size.height + self.heightTB + 20
                 self.view.layoutIfNeeded()
             }
@@ -38,14 +42,15 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
+        tvContent.textContainer.lineFragmentPadding = 0
         self.heightScrollView.constant = self.vProfile.frame.size.height + self.tbvNameExercise.contentSize.height + 20
     }
     
+    @IBOutlet weak var heightTVContent: NSLayoutConstraint!
     @IBOutlet weak var heightVBlur: NSLayoutConstraint!
     @IBOutlet weak var vBlur: ViewGradient!
     @IBOutlet weak var btnMore: UIButton!
     @IBOutlet weak var heightMore: NSLayoutConstraint!
-    @IBOutlet weak var lbDetailQuestion: UILabel!
     @IBOutlet weak var vProfile: UIView!
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
     @IBOutlet weak var tbvNameExercise: UITableView!
@@ -55,6 +60,8 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
     var isShowMore = true
     override func viewDidLoad() {
         super.viewDidLoad()
+        heightTVContent.constant = AppFont.fontRegular14.lineHeight * 8 + 16
+        tvContent.textContainerInset = UIEdgeInsets.zero
         vCountTime.setupTime(min: 60)
         vCountTime.delegate = self
         vBlur.setupThreeGradient(beginColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), centerColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.74), endColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
@@ -62,9 +69,10 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         tbvNameExercise.dataSource = self
         tbvNameExercise.delegate = self
         scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 106, right: 0)
-        lbDetailQuestion.text = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion "
+        detectQuestion()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
-            let number = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion ".getHeightLabel(width: self.lbDetailQuestion.frame.width, font: AppFont.fontRegular14)
+            let number = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion test".getHeightLabel(width: self.tvContent.frame.width, font: AppFont.fontRegular14)
+            self.numberLine = Int(number)
             if number > 8 {
                 self.heightVBlur.constant = 100
             } else {
@@ -73,12 +81,66 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         }
         
     }
+    
+    func detectQuestion(){
+        let question = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion test"
+        let  textArray = question.components(separatedBy: " ")
+        let attributedText = NSMutableAttributedString()
+        for word in textArray {
+            let attributed = NSMutableAttributedString(string: word + " ")
+            let range = NSRange(location: 0, length: word.count)
+            let myCustomAttributed = [ NSAttributedString.Key.init(rawValue: "tapped"):word, NSAttributedString.Key.font : AppFont.fontRegular14] as [NSAttributedString.Key : Any]
+            attributed.addAttributes(myCustomAttributed, range: range)
+            attributedText.append(attributed)
+        }
+        tvContent.attributedText = attributedText
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tap)
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer){
+        let content = sender.view as! UITextView
+        let layoutManager = content.layoutManager
+        var location = sender.location(in: content)
+        
+        location.x -= content.contentInset.left
+        location.y -= content.contentInset.top
+        
+        print(location.x)
+        print(location.y)
+        let characterIndex  = layoutManager.characterIndex(for: location, in: content.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        if characterIndex < content.textStorage.length {
+            print("Your character is at index: \(characterIndex)")
+            let myRange = NSRange(location: characterIndex, length: 1)
+            let subString = (content.attributedText.string as NSString).substring(with: myRange)
+            print("character at index: \(subString)")
+            let attributeName = "tapped" //make sure this matches the name in viewDidLoad()
+            let attributeValue = content.attributedText!.attribute(NSAttributedString.Key("tapped"), at: characterIndex, effectiveRange: nil) as? String
+            if let value = attributeValue {
+                setupPopOver(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2, title: value)
+                print("You tapped on \(attributeName) and the value is: \(value)")
+            }
+        }
+    }
+    
+    func setupPopOver(x:CGFloat, y: CGFloat,title: String){
+        popover.removeFromSuperview()
+        let startPoint = CGPoint(x: x, y: y)
+        let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
+        aView.setTitle(title: title)
+        popover.blackOverlayColor = .clear
+        popover.popoverColor = .white
+        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25))
+        popover.layer.cornerRadius = 5
+        popover.show(aView, point: startPoint, inView: tvContent)
+    }
+    
     override func setUpNavigation() {
         super.setUpNavigation()
         setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
         addBackToNavigation()
     }
-    
 }
 
 extension NameExerciseViewController : TimeDelegate{

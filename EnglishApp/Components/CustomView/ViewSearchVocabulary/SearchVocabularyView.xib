@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVocabularyView" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="lblTitle" destination="fxw-Cw-kbu" id="6Yn-Kg-pbe"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Whe-nq-95b">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+                    <rect key="frame" x="0.0" y="10" width="414" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jav-eW-s2O">
+                            <rect key="frame" x="382" y="3" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="1qP-Op-qXO"/>
+                                <constraint firstAttribute="width" constant="24" id="HT6-tn-MIC"/>
+                            </constraints>
+                            <state key="normal" backgroundImage="Material_Icons_black_volume_up"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="/ə'pi:l/ /ə'pi:l/" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHq-i8-Aiq">
+                            <rect key="frame" x="302" y="6" width="75" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="X9l-U1-Hfn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                            <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="appeal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-Cw-kbu">
+                            <rect key="frame" x="8" y="7" width="284" height="16"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zso-aJ-s2O">
+                            <rect key="frame" x="0.0" y="28" width="414" height="1"/>
+                            <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="PX4-4l-zZk"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="sự kêu gọi" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxL-xi-lNH">
+                            <rect key="frame" x="8" y="34" width="398" height="16"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzE-Cu-poR">
+                            <rect key="frame" x="0.0" y="54" width="414" height="26"/>
+                            <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                            <state key="normal" title="Xem chi tiết">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="nzE-Cu-poR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0fE-b3-uXO"/>
+                        <constraint firstItem="kxL-xi-lNH" firstAttribute="leading" secondItem="fxw-Cw-kbu" secondAttribute="leading" id="7Jo-zn-ZLn"/>
+                        <constraint firstItem="PHq-i8-Aiq" firstAttribute="centerY" secondItem="Jav-eW-s2O" secondAttribute="centerY" id="BGu-Cw-v5d"/>
+                        <constraint firstItem="fxw-Cw-kbu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="CiE-RK-Kgk"/>
+                        <constraint firstAttribute="trailing" secondItem="Jav-eW-s2O" secondAttribute="trailing" constant="8" id="DGz-vS-FVe"/>
+                        <constraint firstAttribute="trailing" secondItem="zso-aJ-s2O" secondAttribute="trailing" id="Mhs-1n-QnI"/>
+                        <constraint firstItem="kxL-xi-lNH" firstAttribute="top" secondItem="zso-aJ-s2O" secondAttribute="bottom" constant="5" id="ThT-UG-Byh"/>
+                        <constraint firstItem="fxw-Cw-kbu" firstAttribute="centerY" secondItem="PHq-i8-Aiq" secondAttribute="centerY" id="Uc6-E0-ylS"/>
+                        <constraint firstAttribute="trailing" secondItem="nzE-Cu-poR" secondAttribute="trailing" id="WFz-uV-fZd"/>
+                        <constraint firstItem="kxL-xi-lNH" firstAttribute="trailing" secondItem="Jav-eW-s2O" secondAttribute="trailing" id="Wpl-JV-fRw"/>
+                        <constraint firstItem="nzE-Cu-poR" firstAttribute="top" secondItem="kxL-xi-lNH" secondAttribute="bottom" constant="4" id="ZdT-FI-goP"/>
+                        <constraint firstItem="zso-aJ-s2O" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="eBd-yY-o0Q"/>
+                        <constraint firstItem="PHq-i8-Aiq" firstAttribute="leading" secondItem="fxw-Cw-kbu" secondAttribute="trailing" constant="10" id="fqx-ut-bMF"/>
+                        <constraint firstItem="zso-aJ-s2O" firstAttribute="top" secondItem="fxw-Cw-kbu" secondAttribute="bottom" constant="5" id="fyb-zq-wi4"/>
+                        <constraint firstAttribute="bottom" secondItem="nzE-Cu-poR" secondAttribute="bottom" id="gMi-T6-y6t"/>
+                        <constraint firstItem="Jav-eW-s2O" firstAttribute="leading" secondItem="PHq-i8-Aiq" secondAttribute="trailing" constant="5" id="i8U-z9-9XR"/>
+                        <constraint firstItem="Jav-eW-s2O" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="yEK-7o-W0a"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="3NJ-II-ts8"/>
+                <constraint firstItem="iN0-l3-epB" firstAttribute="leading" secondItem="Whe-nq-95b" secondAttribute="leading" id="VcS-AN-V7r"/>
+                <constraint firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="eCG-qh-nYe"/>
+                <constraint firstItem="iN0-l3-epB" firstAttribute="top" secondItem="Whe-nq-95b" secondAttribute="top" constant="10" id="v3A-LJ-pRM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="86.956521739130437" y="294.64285714285711"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Material_Icons_black_volume_up" width="24" height="24"/>
+    </resources>
+</document>

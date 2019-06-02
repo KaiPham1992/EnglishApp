@@ -16,6 +16,7 @@ def main_pods
     pod 'Firebase/Messaging'
     pod 'ImageSlideshow'
     pod 'ImageSlideshow/SDWebImage'
+    pod 'Popover'
 #    pod 'Google-Mobile-Ads-SDK'
     pod 'XLPagerTabStrip'
 end
