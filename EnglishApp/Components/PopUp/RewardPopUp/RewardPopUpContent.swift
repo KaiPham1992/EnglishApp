@@ -12,3 +12,4 @@ class RewardPopUpContent: BaseViewXib {
     @IBOutlet weak var lbMessage: UILabel!
     @IBOutlet weak var btnYes: UIButton!
 }
+

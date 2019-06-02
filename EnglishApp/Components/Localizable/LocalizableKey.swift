@@ -224,4 +224,12 @@ struct LocalizableKey {
     // Notificaiton
     static let titleNotification = "titleNotification"
     static let titleNotificationDetail = "titleNotificationDetail"
+    
+    // up grade
+    static let requireUpGrade = "requireUpGrade"
+    static let btnUpGrade = "btnUpGrade"
+    static let levelUp = "levelUp"
+    
+    static let changeLanguage = "changeLanguage"
+    static let bxh = "bxh"
 }

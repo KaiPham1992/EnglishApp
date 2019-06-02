@@ -86,6 +86,14 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             delegateController?.controllerSelected(controller: ChangePasswordRouter.createModule())
             AppRouter.shared.pushTo(viewController: ChangePasswordRouter.createModule())
             
+        case AppImage.imgLanguage:
+            delegateController?.controllerSelected(controller: ChangeLanguageRouter.createModule())
+            AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
+            
+        case AppImage.imgTop:
+            delegateController?.controllerSelected(controller: BXHRouter.createModule())
+            AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
+            
         case AppImage.imgLogout:
             PopUpHelper.shared.showLogout(completionNo: {
                 print("No")

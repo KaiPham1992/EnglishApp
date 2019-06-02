@@ -224,3 +224,10 @@
 // Notificaiton
 "titleNotification" = "Thông báo";
 "titleNotificationDetail" = "Chi tiết thông báo";
+
+// upgrade
+"requireUpGrade" = "Nâng cấp để sử dụng tính năng này";
+"btnUpGrade" = "Nâng cấp";
+"levelUp" = "Lên cấp";
+"changeLanguage" = "Đổi ngôn ngữ";
+"bxh" = "Bảng xếp hạng";

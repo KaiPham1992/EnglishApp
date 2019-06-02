@@ -53,4 +53,7 @@ struct AppImage {
     
     static let imgCloseRed = UIImage(named: "close_red")!
     static let imgTickGreen = UIImage(named: "tick_green")!
+    
+    static let imgRadioChecked = UIImage(named: "radio_checked")!
+    static let imgRadioUnChecked = UIImage(named: "radio_unchecked")!
 }

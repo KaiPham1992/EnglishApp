@@ -66,7 +66,11 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     }
     
     @objc func btnNotificationTapped() {
-        self.push(controller: NotificationListRouter.createModule())
+//        self.push(controller: NotificationListRouter.createModule())
+        
+        PopUpHelper.shared.showLevelUp {
+            print("OK")
+        }
     }
     
     @objc func btnMenuTapped() {
