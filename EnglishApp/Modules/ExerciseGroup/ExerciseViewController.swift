@@ -19,6 +19,7 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
     }
     
     @IBAction func clickPracticeExercise(_ sender: Any) {
+        self.presenter?.gotoPracticeExercise()
     }
     
     @IBAction func clickLevelExercise(_ sender: Any) {
@@ -26,6 +27,7 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
     }
     
     @IBAction func clickAssignExercise(_ sender: Any) {
+        self.presenter?.gotoAssignExercise()
     }
     
     

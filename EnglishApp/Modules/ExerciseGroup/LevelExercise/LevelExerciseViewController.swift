@@ -10,15 +10,27 @@
 
 import UIKit
 
+
+enum AssignLevel {
+    case assign
+    case level
+}
+
 class LevelExerciseViewController: BaseViewController, LevelExerciseViewProtocol {
 
 	var presenter: LevelExercisePresenterProtocol?
     
     @IBOutlet weak var tbvLevelExercise: UITableView!
+    var type: AssignLevel = .level
     
     override func setUpViews() {
         super.setUpViews()
-        tbvLevelExercise.registerXibFile(CellLevelExercise.self)
+        if type == .level {
+            tbvLevelExercise.registerXibFile(CellLevelExercise.self)
+        } else {
+            tbvLevelExercise.registerXibFile(CellAssignExercise.self)
+        }
+        
         tbvLevelExercise.dataSource = self
         tbvLevelExercise.delegate = self
     }
@@ -37,15 +49,22 @@ extension LevelExerciseViewController : UITableViewDataSource{
         return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
+        if type == .level {
+            let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
+            return cell
+        }
+        let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
         return cell
     }
 }
 extension LevelExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.presenter?.gotoExercise()
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
 }

@@ -14,6 +14,9 @@ import Foundation
 protocol ExerciseWireframeProtocol: class {
     func gotoCreateExercise()
     func gotoLevelExercise()
+    func gotoPracticeExercise()
+    func gotoAssignExercise()
+    
 }
 //MARK: Presenter -
 protocol ExercisePresenterProtocol: class {
@@ -21,6 +24,8 @@ protocol ExercisePresenterProtocol: class {
     var interactor: ExerciseInteractorInputProtocol? { get set }
     func gotoCreateExercise()
     func gotoLevelExercise()
+    func gotoPracticeExercise()
+    func gotoAssignExercise()
 }
 
 //MARK: Interactor -

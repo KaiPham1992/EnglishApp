@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="61" id="KGk-i7-Jjw" customClass="CellAssignExercise" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="371" height="61"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="371" height="60.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Bài tập 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pn-ug-NNR">
+                        <rect key="frame" x="24" y="6" width="302" height="22.5"/>
+                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hạn hoàn thành: 18:00 27/03/2019" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaB-Gy-XTL">
+                        <rect key="frame" x="24" y="28.5" width="302" height="28"/>
+                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                        <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glg-Ze-lfb">
+                        <rect key="frame" x="331" y="18.5" width="24" height="24"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="24" id="DX6-uD-aDa"/>
+                            <constraint firstAttribute="height" constant="24" id="uue-9H-DC0"/>
+                        </constraints>
+                        <state key="normal" backgroundImage="tick"/>
+                    </button>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tbY-KJ-jZd">
+                        <rect key="frame" x="-31" y="59.5" width="402" height="1"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="G4a-QD-9hL"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="iaB-Gy-XTL" secondAttribute="bottom" constant="4" id="4ff-CS-cH3"/>
+                    <constraint firstItem="glg-Ze-lfb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="6dr-n8-Ug0"/>
+                    <constraint firstItem="iaB-Gy-XTL" firstAttribute="leading" secondItem="4pn-ug-NNR" secondAttribute="leading" id="8Eo-rd-ejH"/>
+                    <constraint firstItem="glg-Ze-lfb" firstAttribute="leading" secondItem="4pn-ug-NNR" secondAttribute="trailing" constant="5" id="9Gj-Ab-7Vk"/>
+                    <constraint firstItem="4pn-ug-NNR" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="DXl-eL-Rdy"/>
+                    <constraint firstAttribute="bottom" secondItem="tbY-KJ-jZd" secondAttribute="bottom" id="IaU-YL-Lc9"/>
+                    <constraint firstItem="tbY-KJ-jZd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="-31" id="LMb-8Z-I7Q"/>
+                    <constraint firstAttribute="trailing" secondItem="glg-Ze-lfb" secondAttribute="trailing" constant="16" id="ThO-m3-X3J"/>
+                    <constraint firstAttribute="trailing" secondItem="tbY-KJ-jZd" secondAttribute="trailing" id="UDE-mX-VQl"/>
+                    <constraint firstItem="4pn-ug-NNR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="bwj-bu-RSm"/>
+                    <constraint firstItem="iaB-Gy-XTL" firstAttribute="trailing" secondItem="4pn-ug-NNR" secondAttribute="trailing" id="rqs-Ia-uIJ"/>
+                    <constraint firstItem="iaB-Gy-XTL" firstAttribute="top" secondItem="4pn-ug-NNR" secondAttribute="bottom" id="ySO-Yc-zqJ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="94.927536231884062" y="122.20982142857142"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="tick" width="24" height="24"/>
+    </resources>
+</document>

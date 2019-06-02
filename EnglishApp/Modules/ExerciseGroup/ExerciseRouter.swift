@@ -11,7 +11,7 @@
 import UIKit
 
 class ExerciseRouter: ExerciseWireframeProtocol {
-
+    
     weak var viewController: UIViewController?
 
     static func createModule() -> UIViewController {
@@ -33,7 +33,15 @@ class ExerciseRouter: ExerciseWireframeProtocol {
         self.viewController?.push(controller: vc,animated: true)
     }
     func gotoLevelExercise(){
-        let vc = LevelExerciseRouter.createModule()
+        let vc = LevelExerciseRouter.createModule(type: .level)
+        self.viewController?.push(controller: vc,animated: true)
+    }
+    func gotoPracticeExercise() {
+        let vc = ChoiceExerciseRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
+    func gotoAssignExercise() {
+        let vc = LevelExerciseRouter.createModule(type: .assign)
         self.viewController?.push(controller: vc,animated: true)
     }
 }

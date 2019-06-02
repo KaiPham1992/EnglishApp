@@ -11,7 +11,7 @@
 import UIKit
 
 class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInteractorOutputProtocol {
-
+   
     weak private var view: LevelExerciseViewProtocol?
     var interactor: LevelExerciseInteractorInputProtocol?
     private let router: LevelExerciseWireframeProtocol
@@ -21,5 +21,8 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
         self.interactor = interactor
         self.router = router
     }
-
+    
+    func gotoExercise() {
+        self.router.gotoExercise()
+    }
 }

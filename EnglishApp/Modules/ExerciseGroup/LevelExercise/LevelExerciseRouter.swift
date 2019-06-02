@@ -27,4 +27,23 @@ class LevelExerciseRouter: LevelExerciseWireframeProtocol {
 
         return view
     }
+    
+    static func createModule(type: AssignLevel = .level) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = LevelExerciseViewController(nibName: nil, bundle: nil)
+        view.type = type
+        let interactor = LevelExerciseInteractor()
+        let router = LevelExerciseRouter()
+        let presenter = LevelExercisePresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
+    func gotoExercise(){
+        let vc = NameExerciseRouter.createModule()
+        self.viewController?.push(controller: vc, animated: true)
+    }
 }
