@@ -100,4 +100,9 @@ class PopUpHelper {
         popUp.showPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, completionNo: completionYes, completionYes: completionNo)
     }
     
+    func showReward(diamond: Int, completionYes: CompletionClosure?) {
+        let popUp = RewardPopUp()
+        popUp.showPopup(diamond: diamond, completionYes: completionYes)
+    }
+    
 }

@@ -733,6 +733,15 @@
 		DE49F82A22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */; };
 		DE49F82B22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */; };
 		DE49F82C22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */; };
+		DE49F82F22A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F82E22A3E0CE00A92C63 /* RewardPopUpContent.swift */; };
+		DE49F83022A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F82E22A3E0CE00A92C63 /* RewardPopUpContent.swift */; };
+		DE49F83122A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F82E22A3E0CE00A92C63 /* RewardPopUpContent.swift */; };
+		DE49F83322A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F83222A3E10A00A92C63 /* RewardPopUpContent.xib */; };
+		DE49F83422A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F83222A3E10A00A92C63 /* RewardPopUpContent.xib */; };
+		DE49F83522A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F83222A3E10A00A92C63 /* RewardPopUpContent.xib */; };
+		DE49F83722A3E23A00A92C63 /* RewardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */; };
+		DE49F83822A3E23A00A92C63 /* RewardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */; };
+		DE49F83922A3E23A00A92C63 /* RewardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */; };
 		DE7D14B9228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BA228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BB228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
@@ -1825,6 +1834,9 @@
 		DE49F81822A3DB9C00A92C63 /* NotificationDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailProtocols.swift; sourceTree = "<group>"; };
 		DE49F81922A3DB9C00A92C63 /* NotificationDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailInteractor.swift; sourceTree = "<group>"; };
 		DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailViewController.xib; sourceTree = "<group>"; };
+		DE49F82E22A3E0CE00A92C63 /* RewardPopUpContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPopUpContent.swift; sourceTree = "<group>"; };
+		DE49F83222A3E10A00A92C63 /* RewardPopUpContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardPopUpContent.xib; sourceTree = "<group>"; };
+		DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPopUp.swift; sourceTree = "<group>"; };
 		DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationBar.swift; sourceTree = "<group>"; };
 		DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNavigationBar.xib; sourceTree = "<group>"; };
 		DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
@@ -2837,6 +2849,7 @@
 		DE361E502283E60500FA3B0D /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				DE49F82D22A3E09400A92C63 /* RewardPopUp */,
 				76483BEA229EE3830079F9A1 /* UpdateAccountPopUp */,
 				76483BDC229ED1220079F9A1 /* SuggestionResultPopUp */,
 				DEC62AA42293004B00D7CECE /* ThanksReportPopUp */,
@@ -3164,6 +3177,16 @@
 				DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */,
 			);
 			path = NotificationDetail;
+			sourceTree = "<group>";
+		};
+		DE49F82D22A3E09400A92C63 /* RewardPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F82E22A3E0CE00A92C63 /* RewardPopUpContent.swift */,
+				DE49F83222A3E10A00A92C63 /* RewardPopUpContent.xib */,
+				DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */,
+			);
+			path = RewardPopUp;
 			sourceTree = "<group>";
 		};
 		DE750BAE228C424300596D3B /* Font */ = {
@@ -3841,6 +3864,7 @@
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD18FF22A25AB10054861D /* BeePackCell.xib in Resources */,
 				DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
+				DE49F83322A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE31FE22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
@@ -3955,6 +3979,7 @@
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD190022A25AB10054861D /* BeePackCell.xib in Resources */,
 				DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
+				DE49F83422A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE31FF22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
@@ -4069,6 +4094,7 @@
 				DEC62ACE22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD190122A25AB10054861D /* BeePackCell.xib in Resources */,
 				DEF1C24E229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
+				DE49F83522A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE320022963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
@@ -4673,6 +4699,7 @@
 				766D137F228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1302228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEDE228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
+				DE49F82F22A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */,
 				DE953118228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE361F552283E8E200FA3B0D /* ParentNotificationEntity.swift in Sources */,
 				DE953129228808ED00E3F688 /* ProfileViewController.swift in Sources */,
@@ -4867,6 +4894,7 @@
 				76F7F437229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BEC229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
+				DE49F83722A3E23A00A92C63 /* RewardPopUp.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CCF2289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DECD190322A25E1A0054861D /* BeePackEntity.swift in Sources */,
@@ -5071,6 +5099,7 @@
 				766D1380228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1303228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEDF228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
+				DE49F83022A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */,
 				DE953119228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE952FEF2287DF4800E3F688 /* ParentNotificationEntity.swift in Sources */,
 				DE95312A228808ED00E3F688 /* ProfileViewController.swift in Sources */,
@@ -5265,6 +5294,7 @@
 				76F7F438229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BED229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
+				DE49F83822A3E23A00A92C63 /* RewardPopUp.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD02289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DECD190422A25E1A0054861D /* BeePackEntity.swift in Sources */,
@@ -5469,6 +5499,7 @@
 				766D1381228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				766D1304228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEE0228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
+				DE49F83122A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */,
 				DE95311A228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE95309D2287DF6400E3F688 /* ParentNotificationEntity.swift in Sources */,
 				DE95312B228808ED00E3F688 /* ProfileViewController.swift in Sources */,
@@ -5663,6 +5694,7 @@
 				76F7F439229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BEE229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
+				DE49F83922A3E23A00A92C63 /* RewardPopUp.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD12289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DECD190522A25E1A0054861D /* BeePackEntity.swift in Sources */,
