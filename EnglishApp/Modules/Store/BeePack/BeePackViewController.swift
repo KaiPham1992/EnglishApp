@@ -11,18 +11,54 @@
 import UIKit
 import XLPagerTabStrip
 
-class BeePackViewController: UIViewController, BeePackViewProtocol {
-
-	var presenter: BeePackPresenterProtocol?
-
-	override func viewDidLoad() {
-        super.viewDidLoad()
+class BeePackViewController: BaseViewController, BeePackViewProtocol {
+    
+    var presenter: BeePackPresenterProtocol?
+    @IBOutlet weak var tbBeePack: UITableView!
+    var listBeePack = [BeePackEntity]() {
+        didSet {
+            tbBeePack.reloadData()
+        }
     }
-
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureTable()
+        
+        listBeePack = BeePackEntity.toArray()
+    }
+    
 }
 
 extension BeePackViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: LocalizableKey.beePack.showLanguage)
+    }
+}
+
+extension BeePackViewController: UITableViewDelegate, UITableViewDataSource {
+    func configureTable() {
+        tbBeePack.delegate = self
+        tbBeePack.dataSource = self
+        tbBeePack.registerXibFile(BeePackCell.self)
+        tbBeePack.separatorStyle = .none
+        
+        tbBeePack.estimatedRowHeight = 55
+        tbBeePack.rowHeight = UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(BeePackCell.self, for: indexPath)
+        cell.item = self.listBeePack[indexPath.item]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return listBeePack.count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 110
     }
 }
