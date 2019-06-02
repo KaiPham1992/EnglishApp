@@ -126,14 +126,14 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
     
     func setupPopOver(x:CGFloat, y: CGFloat,title: String){
         popover.removeFromSuperview()
-        let startPoint = CGPoint(x: x, y: y)
+        let point = tvContent.convert(CGPoint(x: x, y: y), to: self.view)
         let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
         aView.setTitle(title: title)
         popover.blackOverlayColor = .clear
         popover.popoverColor = .white
-        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25))
+        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
         popover.layer.cornerRadius = 5
-        popover.show(aView, point: startPoint, inView: tvContent)
+        popover.show(aView, point: point, inView: self.view)
     }
     
     override func setUpNavigation() {
