@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="142" id="KGk-i7-Jjw" customClass="NotificationCell" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="141.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Admin vừa trả lời câu hỏi của bạn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJa-V2-Ixx">
+                        <rect key="frame" x="16" y="8" width="288" height="18"/>
+                        <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15h 07-03-2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGi-MA-S1Z">
+                        <rect key="frame" x="16" y="34" width="288" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="7wS-Fj-aOW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nunc lacus, facilisis vitae sodales eu, dictum et est…" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bfU-cf-Cp5">
+                        <rect key="frame" x="16" y="66" width="288" height="59.5"/>
+                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                        <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JUw-rn-OPs">
+                        <rect key="frame" x="0.0" y="140.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="oWM-9u-29g"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="bfU-cf-Cp5" firstAttribute="trailing" secondItem="SGi-MA-S1Z" secondAttribute="trailing" id="62D-5k-6JQ"/>
+                    <constraint firstItem="JUw-rn-OPs" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="8ds-v3-MCi"/>
+                    <constraint firstItem="SGi-MA-S1Z" firstAttribute="top" secondItem="EJa-V2-Ixx" secondAttribute="bottom" constant="8" id="EQr-4e-b1P"/>
+                    <constraint firstItem="EJa-V2-Ixx" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="EmL-uZ-lX6"/>
+                    <constraint firstItem="SGi-MA-S1Z" firstAttribute="trailing" secondItem="EJa-V2-Ixx" secondAttribute="trailing" id="F4j-lk-fZ3"/>
+                    <constraint firstItem="bfU-cf-Cp5" firstAttribute="leading" secondItem="SGi-MA-S1Z" secondAttribute="leading" id="HYk-im-vkC"/>
+                    <constraint firstAttribute="bottom" secondItem="bfU-cf-Cp5" secondAttribute="bottom" constant="16" id="NxK-0Y-Dmt"/>
+                    <constraint firstItem="bfU-cf-Cp5" firstAttribute="top" secondItem="SGi-MA-S1Z" secondAttribute="bottom" constant="12" id="ZvL-UN-jC0"/>
+                    <constraint firstItem="EJa-V2-Ixx" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="b7o-J1-07t"/>
+                    <constraint firstAttribute="trailing" secondItem="JUw-rn-OPs" secondAttribute="trailing" id="f18-zg-aSN"/>
+                    <constraint firstItem="SGi-MA-S1Z" firstAttribute="leading" secondItem="EJa-V2-Ixx" secondAttribute="leading" id="nFr-yn-xDD"/>
+                    <constraint firstAttribute="trailing" secondItem="EJa-V2-Ixx" secondAttribute="trailing" constant="16" id="som-2V-zKo"/>
+                    <constraint firstAttribute="bottom" secondItem="JUw-rn-OPs" secondAttribute="bottom" id="w3p-nG-c9b"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.25892857142856"/>
+        </tableViewCell>
+    </objects>
+</document>

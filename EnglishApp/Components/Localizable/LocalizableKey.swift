@@ -220,4 +220,8 @@ struct LocalizableKey {
     static let hour = "hour"
     static let min = "min"
     static let second = "second"
+    
+    // Notificaiton
+    static let titleNotification = "titleNotification"
+    static let titleNotificationDetail = "titleNotificationDetail"
 }

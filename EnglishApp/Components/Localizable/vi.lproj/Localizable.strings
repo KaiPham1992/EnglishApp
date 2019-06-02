@@ -216,7 +216,11 @@
 
 //hour
 
-â
+
 
 //"money_money" = "Tiền";
-â
+
+
+// Notificaiton
+"titleNotification" = "Thông báo";
+"titleNotificationDetail" = "Chi tiết thông báo";

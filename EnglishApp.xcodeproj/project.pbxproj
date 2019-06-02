@@ -691,6 +691,48 @@
 		DE49F7EE22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */; };
 		DE49F7EF22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */; };
 		DE49F7F022A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */; };
+		DE49F7F922A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F322A3D81D00A92C63 /* NotificationListPresenter.swift */; };
+		DE49F7FA22A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F322A3D81D00A92C63 /* NotificationListPresenter.swift */; };
+		DE49F7FB22A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F322A3D81D00A92C63 /* NotificationListPresenter.swift */; };
+		DE49F7FC22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F422A3D81D00A92C63 /* NotificationListRouter.swift */; };
+		DE49F7FD22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F422A3D81D00A92C63 /* NotificationListRouter.swift */; };
+		DE49F7FE22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F422A3D81D00A92C63 /* NotificationListRouter.swift */; };
+		DE49F7FF22A3D81D00A92C63 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F522A3D81D00A92C63 /* NotificationListViewController.swift */; };
+		DE49F80022A3D81D00A92C63 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F522A3D81D00A92C63 /* NotificationListViewController.swift */; };
+		DE49F80122A3D81D00A92C63 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F522A3D81D00A92C63 /* NotificationListViewController.swift */; };
+		DE49F80222A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F622A3D81D00A92C63 /* NotificationListProtocols.swift */; };
+		DE49F80322A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F622A3D81D00A92C63 /* NotificationListProtocols.swift */; };
+		DE49F80422A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F622A3D81D00A92C63 /* NotificationListProtocols.swift */; };
+		DE49F80522A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F722A3D81D00A92C63 /* NotificationListInteractor.swift */; };
+		DE49F80622A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F722A3D81D00A92C63 /* NotificationListInteractor.swift */; };
+		DE49F80722A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7F722A3D81D00A92C63 /* NotificationListInteractor.swift */; };
+		DE49F80822A3D81D00A92C63 /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7F822A3D81D00A92C63 /* NotificationListViewController.xib */; };
+		DE49F80922A3D81D00A92C63 /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7F822A3D81D00A92C63 /* NotificationListViewController.xib */; };
+		DE49F80A22A3D81D00A92C63 /* NotificationListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7F822A3D81D00A92C63 /* NotificationListViewController.xib */; };
+		DE49F80E22A3D83A00A92C63 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F80C22A3D83A00A92C63 /* NotificationCell.swift */; };
+		DE49F80F22A3D83A00A92C63 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F80C22A3D83A00A92C63 /* NotificationCell.swift */; };
+		DE49F81022A3D83A00A92C63 /* NotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F80C22A3D83A00A92C63 /* NotificationCell.swift */; };
+		DE49F81122A3D83A00A92C63 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F80D22A3D83A00A92C63 /* NotificationCell.xib */; };
+		DE49F81222A3D83A00A92C63 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F80D22A3D83A00A92C63 /* NotificationCell.xib */; };
+		DE49F81322A3D83A00A92C63 /* NotificationCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F80D22A3D83A00A92C63 /* NotificationCell.xib */; };
+		DE49F81B22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81522A3DB9C00A92C63 /* NotificationDetailPresenter.swift */; };
+		DE49F81C22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81522A3DB9C00A92C63 /* NotificationDetailPresenter.swift */; };
+		DE49F81D22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81522A3DB9C00A92C63 /* NotificationDetailPresenter.swift */; };
+		DE49F81E22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81622A3DB9C00A92C63 /* NotificationDetailRouter.swift */; };
+		DE49F81F22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81622A3DB9C00A92C63 /* NotificationDetailRouter.swift */; };
+		DE49F82022A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81622A3DB9C00A92C63 /* NotificationDetailRouter.swift */; };
+		DE49F82122A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81722A3DB9C00A92C63 /* NotificationDetailViewController.swift */; };
+		DE49F82222A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81722A3DB9C00A92C63 /* NotificationDetailViewController.swift */; };
+		DE49F82322A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81722A3DB9C00A92C63 /* NotificationDetailViewController.swift */; };
+		DE49F82422A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81822A3DB9C00A92C63 /* NotificationDetailProtocols.swift */; };
+		DE49F82522A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81822A3DB9C00A92C63 /* NotificationDetailProtocols.swift */; };
+		DE49F82622A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81822A3DB9C00A92C63 /* NotificationDetailProtocols.swift */; };
+		DE49F82722A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81922A3DB9C00A92C63 /* NotificationDetailInteractor.swift */; };
+		DE49F82822A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81922A3DB9C00A92C63 /* NotificationDetailInteractor.swift */; };
+		DE49F82922A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F81922A3DB9C00A92C63 /* NotificationDetailInteractor.swift */; };
+		DE49F82A22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */; };
+		DE49F82B22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */; };
+		DE49F82C22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */; };
 		DE7D14B9228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BA228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BB228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
@@ -1769,6 +1811,20 @@
 		DE49F7E222A3CB7400A92C63 /* ChangeGiftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeGiftCell.xib; sourceTree = "<group>"; };
 		DE49F7E922A3D1AD00A92C63 /* ChangeGiftTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGiftTitleCell.swift; sourceTree = "<group>"; };
 		DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeGiftTitleCell.xib; sourceTree = "<group>"; };
+		DE49F7F322A3D81D00A92C63 /* NotificationListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListPresenter.swift; sourceTree = "<group>"; };
+		DE49F7F422A3D81D00A92C63 /* NotificationListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListRouter.swift; sourceTree = "<group>"; };
+		DE49F7F522A3D81D00A92C63 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
+		DE49F7F622A3D81D00A92C63 /* NotificationListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListProtocols.swift; sourceTree = "<group>"; };
+		DE49F7F722A3D81D00A92C63 /* NotificationListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListInteractor.swift; sourceTree = "<group>"; };
+		DE49F7F822A3D81D00A92C63 /* NotificationListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationListViewController.xib; sourceTree = "<group>"; };
+		DE49F80C22A3D83A00A92C63 /* NotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCell.swift; sourceTree = "<group>"; };
+		DE49F80D22A3D83A00A92C63 /* NotificationCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCell.xib; sourceTree = "<group>"; };
+		DE49F81522A3DB9C00A92C63 /* NotificationDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailPresenter.swift; sourceTree = "<group>"; };
+		DE49F81622A3DB9C00A92C63 /* NotificationDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailRouter.swift; sourceTree = "<group>"; };
+		DE49F81722A3DB9C00A92C63 /* NotificationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailViewController.swift; sourceTree = "<group>"; };
+		DE49F81822A3DB9C00A92C63 /* NotificationDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailProtocols.swift; sourceTree = "<group>"; };
+		DE49F81922A3DB9C00A92C63 /* NotificationDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailInteractor.swift; sourceTree = "<group>"; };
+		DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationDetailViewController.xib; sourceTree = "<group>"; };
 		DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationBar.swift; sourceTree = "<group>"; };
 		DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNavigationBar.xib; sourceTree = "<group>"; };
 		DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
@@ -2577,6 +2633,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				DE49F7F122A3D7FD00A92C63 /* Notification */,
 				76CE31BC22961FAC00E998FB /* ResultGroup */,
 				DEC62AB122930D4B00D7CECE /* Store */,
 				76F7F4302294212A001E9984 /* ExerciseGroup */,
@@ -3062,6 +3119,51 @@
 				DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE49F7F122A3D7FD00A92C63 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F81422A3DB8900A92C63 /* NotificationDetail */,
+				DE49F7F222A3D80F00A92C63 /* NotificationList */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		DE49F7F222A3D80F00A92C63 /* NotificationList */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F80B22A3D82900A92C63 /* Cell */,
+				DE49F7F322A3D81D00A92C63 /* NotificationListPresenter.swift */,
+				DE49F7F422A3D81D00A92C63 /* NotificationListRouter.swift */,
+				DE49F7F522A3D81D00A92C63 /* NotificationListViewController.swift */,
+				DE49F7F622A3D81D00A92C63 /* NotificationListProtocols.swift */,
+				DE49F7F722A3D81D00A92C63 /* NotificationListInteractor.swift */,
+				DE49F7F822A3D81D00A92C63 /* NotificationListViewController.xib */,
+			);
+			path = NotificationList;
+			sourceTree = "<group>";
+		};
+		DE49F80B22A3D82900A92C63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F80C22A3D83A00A92C63 /* NotificationCell.swift */,
+				DE49F80D22A3D83A00A92C63 /* NotificationCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		DE49F81422A3DB8900A92C63 /* NotificationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F81522A3DB9C00A92C63 /* NotificationDetailPresenter.swift */,
+				DE49F81622A3DB9C00A92C63 /* NotificationDetailRouter.swift */,
+				DE49F81722A3DB9C00A92C63 /* NotificationDetailViewController.swift */,
+				DE49F81822A3DB9C00A92C63 /* NotificationDetailProtocols.swift */,
+				DE49F81922A3DB9C00A92C63 /* NotificationDetailInteractor.swift */,
+				DE49F81A22A3DB9C00A92C63 /* NotificationDetailViewController.xib */,
+			);
+			path = NotificationDetail;
 			sourceTree = "<group>";
 		};
 		DE750BAE228C424300596D3B /* Font */ = {
@@ -3733,6 +3835,7 @@
 				DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
+				DE49F82A22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
@@ -3756,6 +3859,8 @@
 				769A3BD922A0A69200CA55BD /* DateCell.xib in Resources */,
 				DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				76CF0C7B22906822003C4B4B /* CommentViewController.xib in Resources */,
+				DE49F81122A3D83A00A92C63 /* NotificationCell.xib in Resources */,
+				DE49F80822A3D81D00A92C63 /* NotificationListViewController.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE49F7DE22A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
@@ -3844,6 +3949,7 @@
 				DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
+				DE49F82B22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
@@ -3867,6 +3973,8 @@
 				769A3BDA22A0A69200CA55BD /* DateCell.xib in Resources */,
 				DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				76CF0C7C22906822003C4B4B /* CommentViewController.xib in Resources */,
+				DE49F81222A3D83A00A92C63 /* NotificationCell.xib in Resources */,
+				DE49F80922A3D81D00A92C63 /* NotificationListViewController.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE49F7DF22A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
@@ -3955,6 +4063,7 @@
 				DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
+				DE49F82C22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACE22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
@@ -3978,6 +4087,8 @@
 				769A3BDB22A0A69200CA55BD /* DateCell.xib in Resources */,
 				DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
 				76CF0C7D22906822003C4B4B /* CommentViewController.xib in Resources */,
+				DE49F81322A3D83A00A92C63 /* NotificationCell.xib in Resources */,
+				DE49F80A22A3D81D00A92C63 /* NotificationListViewController.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
 				DE49F7E022A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
@@ -4378,6 +4489,7 @@
 				76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DEECF89122871D0400A4678B /* SignUpViewController.swift in Sources */,
 				DE361DFE2283E57900FA3B0D /* UITextFiled+extension.swift in Sources */,
+				DE49F7FC22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE95315822883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
@@ -4387,6 +4499,7 @@
 				76E2FEC7228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
 				DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953187228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
+				DE49F82122A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
 				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEBD672F228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
@@ -4434,16 +4547,21 @@
 				DEB9612E22898F1F0046801B /* QAProtocols.swift in Sources */,
 				DEBCBC7222945C8300DF7F74 /* InfoPackView.swift in Sources */,
 				DE3A8C9C2289B93F0080A8CB /* QADetailRouter.swift in Sources */,
+				DE49F82422A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */,
 				DE3A8CD92289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE361F272283E85000FA3B0D /* NotificationEntity.swift in Sources */,
+				DE49F80222A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */,
+				DE49F7F922A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */,
 				DE361E672283E60500FA3B0D /* AppImage.swift in Sources */,
 				76DB938A228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE22289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE49F7E322A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
+				DE49F82722A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
 				DE95317B228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE361EAA2283E6DB00FA3B0D /* CustomTextfield.swift in Sources */,
 				766D1366228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
 				DEBD6723228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
+				DE49F81E22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
 				76CE31C922961FC300E998FB /* ResultViewController.swift in Sources */,
 				DE361DE52283E54C00FA3B0D /* BaseTableCell.swift in Sources */,
 				DEC62ABD22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
@@ -4454,6 +4572,7 @@
 				DE952F872287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE2ADE6922841B9E003768CE /* HomePresenter.swift in Sources */,
 				DE952F942287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DE49F81B22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
 				DEC62ADF22930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE952F992287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE95312C228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
@@ -4544,6 +4663,7 @@
 				766D1369228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				76CE31A62295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				769A3BAB229FE53A00CA55BD /* CalendarView.swift in Sources */,
+				DE49F80522A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1308228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DECD191622A269560054861D /* DetailPackProtocols.swift in Sources */,
@@ -4603,6 +4723,7 @@
 				DEC62AC022930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76CE323622968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
+				DE49F7FF22A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76CE318A2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
 				76E2FEEA228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
@@ -4610,6 +4731,7 @@
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
 				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
 				DEBD674C228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
+				DE49F80E22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DEB5847A2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
@@ -4765,6 +4887,7 @@
 				76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE952FB22287DF4800E3F688 /* SignUpViewController.swift in Sources */,
 				DE952FB32287DF4800E3F688 /* UITextFiled+extension.swift in Sources */,
+				DE49F7FD22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
 				DE95315922883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
@@ -4774,6 +4897,7 @@
 				76E2FEC8228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
 				DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953188228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
+				DE49F82222A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
 				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEBD6730228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
@@ -4821,16 +4945,21 @@
 				DEB9612F22898F1F0046801B /* QAProtocols.swift in Sources */,
 				DEBCBC7322945C8300DF7F74 /* InfoPackView.swift in Sources */,
 				DE3A8C9D2289B93F0080A8CB /* QADetailRouter.swift in Sources */,
+				DE49F82522A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */,
 				DE3A8CDA2289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE952FC82287DF4800E3F688 /* NotificationEntity.swift in Sources */,
+				DE49F80322A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */,
+				DE49F7FA22A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */,
 				DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */,
 				76DB938B228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE32289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE49F7E422A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
+				DE49F82822A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
 				DE95317C228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */,
 				766D1367228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
 				DEBD6724228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
+				DE49F81F22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
 				76CE31CA22961FC300E998FB /* ResultViewController.swift in Sources */,
 				DE952FCB2287DF4800E3F688 /* BaseTableCell.swift in Sources */,
 				DEC62ABE22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
@@ -4841,6 +4970,7 @@
 				DE952FCF2287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE952FD02287DF4800E3F688 /* HomePresenter.swift in Sources */,
 				DE952FD12287DF4800E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DE49F81C22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
 				DEC62AE022930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE952FD22287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE95312D228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
@@ -4931,6 +5061,7 @@
 				766D136A228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				76CE31A72295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				769A3BAC229FE53A00CA55BD /* CalendarView.swift in Sources */,
+				DE49F80622A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1309228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DECD191722A269560054861D /* DetailPackProtocols.swift in Sources */,
@@ -4990,6 +5121,7 @@
 				DEC62AC122930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76CE323722968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
+				DE49F80022A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76CE318B2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
 				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
 				76E2FEEB228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
@@ -4997,6 +5129,7 @@
 				DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */,
 				DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */,
 				DEBD674D228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
+				DE49F80F22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DEB5847B2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
@@ -5152,6 +5285,7 @@
 				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
 				DE9530612287DF6400E3F688 /* UITextFiled+extension.swift in Sources */,
+				DE49F7FE22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
 				DE95315A22883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
@@ -5161,6 +5295,7 @@
 				76E2FEC9228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
 				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953189228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
+				DE49F82322A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
 				DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEBD6731228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */,
@@ -5208,16 +5343,21 @@
 				DEB9613022898F1F0046801B /* QAProtocols.swift in Sources */,
 				DEBCBC7422945C8300DF7F74 /* InfoPackView.swift in Sources */,
 				DE3A8C9E2289B93F0080A8CB /* QADetailRouter.swift in Sources */,
+				DE49F82622A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */,
 				DE3A8CDB2289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE9530762287DF6400E3F688 /* NotificationEntity.swift in Sources */,
+				DE49F80422A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */,
+				DE49F7FB22A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */,
 				DE9530772287DF6400E3F688 /* AppImage.swift in Sources */,
 				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				DE49F7E522A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
+				DE49F82922A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
 				DE95317D228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE9530782287DF6400E3F688 /* CustomTextfield.swift in Sources */,
 				766D1368228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
 				DEBD6725228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
+				DE49F82022A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
 				76CE31CB22961FC300E998FB /* ResultViewController.swift in Sources */,
 				DE9530792287DF6400E3F688 /* BaseTableCell.swift in Sources */,
 				DEC62ABF22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
@@ -5228,6 +5368,7 @@
 				DE95307D2287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE95307E2287DF6400E3F688 /* HomePresenter.swift in Sources */,
 				DE95307F2287DF6400E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				DE49F81D22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
 				DEC62AE122930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE9530802287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
 				DE95312E228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
@@ -5318,6 +5459,7 @@
 				766D136B228F2608005E47F0 /* ListLessonRouter.swift in Sources */,
 				76CE31A82295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				769A3BAD229FE53A00CA55BD /* CalendarView.swift in Sources */,
+				DE49F80722A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DECD191822A269560054861D /* DetailPackProtocols.swift in Sources */,
@@ -5377,6 +5519,7 @@
 				DEC62AC222930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76CE323822968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
 				76E2FED2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
+				DE49F80122A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76CE318C2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
 				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
 				76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
@@ -5384,6 +5527,7 @@
 				DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */,
 				DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */,
 				DEBD674E228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
+				DE49F81022A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DEB5847C2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */,

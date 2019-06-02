@@ -66,11 +66,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     }
     
     @objc func btnNotificationTapped() {
-        PopUpHelper.shared.showLeaveHomeWork(completionNo: {
-            print("No")
-        }) {
-            print("yes")
-        }
+        self.push(controller: NotificationListRouter.createModule())
     }
     
     @objc func btnMenuTapped() {
