@@ -12,4 +12,9 @@ class InfoPackView: BaseViewXib {
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var imgIcon: UIImageView!
     
+    func setTitleImage(title: String, image: UIImage) {
+        self.lbTitle.text = title
+        self.imgIcon.image = image
+    }
+    
 }

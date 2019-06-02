@@ -8,8 +8,13 @@
 
 import UIKit
 
+protocol StudyPackViewDelegate: class {
+    func btnDetailTapped()
+}
+
 class StudyPackView: BaseViewXib {
     @IBOutlet weak var cvStudyPack: UICollectionView!
+    weak var delegate: StudyPackViewDelegate?
     
     override func setUpViews() {
         super.setUpViews()
@@ -17,7 +22,7 @@ class StudyPackView: BaseViewXib {
     }
 }
 
-extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, StudyPackViewCellDelegate {
     func configureCollection() {
         cvStudyPack.delegate = self
         cvStudyPack.dataSource = self
@@ -33,7 +38,7 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(StudyPackViewCell.self, indexPath: indexPath)
-        
+        cell.delegate = self
         return cell
     }
     
@@ -44,5 +49,9 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = self.cvStudyPack.frame.width / 2.5
         return CGSize(width: width, height: cvStudyPack.frame.height)
+    }
+    
+    func btnDetailTapped() {
+        delegate?.btnDetailTapped()
     }
 }

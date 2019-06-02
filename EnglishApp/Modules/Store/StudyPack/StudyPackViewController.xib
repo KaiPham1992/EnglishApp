@@ -9,9 +9,18 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudyPackViewController">
             <connections>
+                <outlet property="tbBeePack" destination="8qc-HP-fPr" id="QCr-6l-gzs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,21 +29,85 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YlZ-8N-He7" customClass="StudyPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="20" width="375" height="200"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8qc-HP-fPr">
+                    <rect key="frame" x="0.0" y="20" width="375" height="567"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wTB-39-YzJ">
+                    <rect key="frame" x="0.0" y="587" width="375" height="80"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1r-a4-9zr">
+                            <rect key="frame" x="261" y="39" width="90" height="33"/>
+                            <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="90" id="bF9-bt-SvV"/>
+                                <constraint firstAttribute="height" constant="33" id="ujE-ly-3ZK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                            <state key="normal" title="GỬI">
+                                <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                        </button>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập mã code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rNi-dq-6dm">
+                            <rect key="frame" x="16" y="42" width="237" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="OL5-ou-r8T"/>
+                            </constraints>
+                            <nil key="textColor"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nhập mã code" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwU-k9-chZ">
+                            <rect key="frame" x="16" y="11.5" width="237" height="22.5"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="20"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jyF-lT-XSH">
+                            <rect key="frame" x="16" y="71" width="237" height="1"/>
+                            <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="uBq-A7-BJ0"/>
+                            </constraints>
+                        </view>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="200" id="ctW-Pj-L7n"/>
+                        <constraint firstItem="rNi-dq-6dm" firstAttribute="top" secondItem="WwU-k9-chZ" secondAttribute="bottom" constant="8" id="73O-Ps-EyX"/>
+                        <constraint firstItem="rNi-dq-6dm" firstAttribute="bottom" secondItem="C1r-a4-9zr" secondAttribute="bottom" id="87X-yk-KLL"/>
+                        <constraint firstItem="C1r-a4-9zr" firstAttribute="leading" secondItem="rNi-dq-6dm" secondAttribute="trailing" constant="8" id="Gza-2B-kBK"/>
+                        <constraint firstItem="jyF-lT-XSH" firstAttribute="trailing" secondItem="rNi-dq-6dm" secondAttribute="trailing" id="HtI-rB-ZY1"/>
+                        <constraint firstAttribute="trailing" secondItem="C1r-a4-9zr" secondAttribute="trailing" constant="24" id="KUa-Gg-FS8"/>
+                        <constraint firstItem="WwU-k9-chZ" firstAttribute="leading" secondItem="rNi-dq-6dm" secondAttribute="leading" id="SbR-uW-OYz"/>
+                        <constraint firstItem="jyF-lT-XSH" firstAttribute="leading" secondItem="rNi-dq-6dm" secondAttribute="leading" id="W8A-Ll-8kK"/>
+                        <constraint firstItem="WwU-k9-chZ" firstAttribute="trailing" secondItem="rNi-dq-6dm" secondAttribute="trailing" id="ZFR-az-6hj"/>
+                        <constraint firstAttribute="bottom" secondItem="C1r-a4-9zr" secondAttribute="bottom" constant="8" id="aFP-fE-vEe"/>
+                        <constraint firstAttribute="height" constant="80" id="gY0-ig-VoW"/>
+                        <constraint firstItem="rNi-dq-6dm" firstAttribute="leading" secondItem="wTB-39-YzJ" secondAttribute="leading" constant="16" id="mp7-tP-f0G"/>
+                        <constraint firstItem="jyF-lT-XSH" firstAttribute="bottom" secondItem="rNi-dq-6dm" secondAttribute="bottom" id="s9B-5X-UI4"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="YlZ-8N-He7" firstAttribute="leading" secondItem="flE-BE-HZr" secondAttribute="leading" id="Ci6-bU-j1v"/>
-                <constraint firstItem="YlZ-8N-He7" firstAttribute="top" secondItem="flE-BE-HZr" secondAttribute="top" id="UST-2E-d2C"/>
-                <constraint firstItem="flE-BE-HZr" firstAttribute="trailing" secondItem="YlZ-8N-He7" secondAttribute="trailing" id="yHm-8j-1fc"/>
+                <constraint firstItem="8qc-HP-fPr" firstAttribute="top" secondItem="flE-BE-HZr" secondAttribute="top" id="Cc3-k8-Cpa"/>
+                <constraint firstItem="wTB-39-YzJ" firstAttribute="leading" secondItem="flE-BE-HZr" secondAttribute="leading" id="Ky4-xv-6JI"/>
+                <constraint firstItem="wTB-39-YzJ" firstAttribute="top" secondItem="8qc-HP-fPr" secondAttribute="bottom" id="g0h-4I-g0W"/>
+                <constraint firstItem="flE-BE-HZr" firstAttribute="bottom" secondItem="wTB-39-YzJ" secondAttribute="bottom" id="pdb-QT-Vl7"/>
+                <constraint firstItem="flE-BE-HZr" firstAttribute="trailing" secondItem="8qc-HP-fPr" secondAttribute="trailing" id="rqi-2v-hNW"/>
+                <constraint firstItem="8qc-HP-fPr" firstAttribute="leading" secondItem="flE-BE-HZr" secondAttribute="leading" id="sCG-7P-pME"/>
+                <constraint firstItem="flE-BE-HZr" firstAttribute="trailing" secondItem="wTB-39-YzJ" secondAttribute="trailing" id="yU8-iI-7D7"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="flE-BE-HZr"/>
+            <point key="canvasLocation" x="109.59999999999999" y="130.88455772113943"/>
         </view>
     </objects>
 </document>

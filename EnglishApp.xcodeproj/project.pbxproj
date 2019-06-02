@@ -673,6 +673,24 @@
 		DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE3CC33D2283DD980037DBE4 /* AppDelegate.swift */; };
 		DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3442283DD990037DBE4 /* Assets.xcassets */; };
 		DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DE3CC3462283DD990037DBE4 /* LaunchScreen.storyboard */; };
+		DE49F7DB22A3CABA00A92C63 /* StudyPackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7D922A3CABA00A92C63 /* StudyPackCell.swift */; };
+		DE49F7DC22A3CABA00A92C63 /* StudyPackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7D922A3CABA00A92C63 /* StudyPackCell.swift */; };
+		DE49F7DD22A3CABA00A92C63 /* StudyPackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7D922A3CABA00A92C63 /* StudyPackCell.swift */; };
+		DE49F7DE22A3CABA00A92C63 /* StudyPackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7DA22A3CABA00A92C63 /* StudyPackCell.xib */; };
+		DE49F7DF22A3CABA00A92C63 /* StudyPackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7DA22A3CABA00A92C63 /* StudyPackCell.xib */; };
+		DE49F7E022A3CABA00A92C63 /* StudyPackCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7DA22A3CABA00A92C63 /* StudyPackCell.xib */; };
+		DE49F7E322A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7E122A3CB7400A92C63 /* ChangeGiftCell.swift */; };
+		DE49F7E422A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7E122A3CB7400A92C63 /* ChangeGiftCell.swift */; };
+		DE49F7E522A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7E122A3CB7400A92C63 /* ChangeGiftCell.swift */; };
+		DE49F7E622A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7E222A3CB7400A92C63 /* ChangeGiftCell.xib */; };
+		DE49F7E722A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7E222A3CB7400A92C63 /* ChangeGiftCell.xib */; };
+		DE49F7E822A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7E222A3CB7400A92C63 /* ChangeGiftCell.xib */; };
+		DE49F7EB22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7E922A3D1AD00A92C63 /* ChangeGiftTitleCell.swift */; };
+		DE49F7EC22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7E922A3D1AD00A92C63 /* ChangeGiftTitleCell.swift */; };
+		DE49F7ED22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F7E922A3D1AD00A92C63 /* ChangeGiftTitleCell.swift */; };
+		DE49F7EE22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */; };
+		DE49F7EF22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */; };
+		DE49F7F022A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */; };
 		DE7D14B9228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BA228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BB228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
@@ -1745,6 +1763,12 @@
 		DE3CC3442283DD990037DBE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE3CC3472283DD990037DBE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DE3CC3492283DD990037DBE4 /* EnglishApp_Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EnglishApp_Dev-Info.plist"; sourceTree = "<group>"; };
+		DE49F7D922A3CABA00A92C63 /* StudyPackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackCell.swift; sourceTree = "<group>"; };
+		DE49F7DA22A3CABA00A92C63 /* StudyPackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyPackCell.xib; sourceTree = "<group>"; };
+		DE49F7E122A3CB7400A92C63 /* ChangeGiftCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGiftCell.swift; sourceTree = "<group>"; };
+		DE49F7E222A3CB7400A92C63 /* ChangeGiftCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeGiftCell.xib; sourceTree = "<group>"; };
+		DE49F7E922A3D1AD00A92C63 /* ChangeGiftTitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeGiftTitleCell.swift; sourceTree = "<group>"; };
+		DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangeGiftTitleCell.xib; sourceTree = "<group>"; };
 		DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationBar.swift; sourceTree = "<group>"; };
 		DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNavigationBar.xib; sourceTree = "<group>"; };
 		DE952F532287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
@@ -3027,6 +3051,19 @@
 			path = EnglishApp;
 			sourceTree = "<group>";
 		};
+		DE49F7D822A3CA8500A92C63 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				DE49F7D922A3CABA00A92C63 /* StudyPackCell.swift */,
+				DE49F7DA22A3CABA00A92C63 /* StudyPackCell.xib */,
+				DE49F7E122A3CB7400A92C63 /* ChangeGiftCell.swift */,
+				DE49F7E222A3CB7400A92C63 /* ChangeGiftCell.xib */,
+				DE49F7E922A3D1AD00A92C63 /* ChangeGiftTitleCell.swift */,
+				DE49F7EA22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		DE750BAE228C424300596D3B /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -3402,6 +3439,7 @@
 		DEC62AB622930DF500D7CECE /* StudyPack */ = {
 			isa = PBXGroup;
 			children = (
+				DE49F7D822A3CA8500A92C63 /* Cell */,
 				DEBCBC5E22945AF400DF7F74 /* StudyPackView */,
 				DEC62AB722930E0E00D7CECE /* StudyPackPresenter.swift */,
 				DEC62AB822930E0E00D7CECE /* StudyPackRouter.swift */,
@@ -3720,6 +3758,7 @@
 				76CF0C7B22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				DE49F7DE22A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
 				DEF1C26822903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				76CE3220229653D500E998FB /* CellResultCompetition.xib in Resources */,
@@ -3730,6 +3769,7 @@
 				76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584802291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				DE49F7E622A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */,
 				DEF1C27122903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
 				DEF1C25622903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
@@ -3754,6 +3794,7 @@
 				76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD192E22A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31B82295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
+				DE49F7EE22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -3828,6 +3869,7 @@
 				76CF0C7C22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				DE49F7DF22A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
 				DEF1C26922903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				76CE3221229653D500E998FB /* CellResultCompetition.xib in Resources */,
@@ -3838,6 +3880,7 @@
 				76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584812291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				DE49F7E722A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */,
 				DEF1C27222903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
 				DEF1C25722903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
@@ -3862,6 +3905,7 @@
 				76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD192F22A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31B92295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
+				DE49F7EF22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
 				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -3936,6 +3980,7 @@
 				76CF0C7D22906822003C4B4B /* CommentViewController.xib in Resources */,
 				DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED5228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				DE49F7E022A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
 				DEF1C26A22903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				76CE3222229653D500E998FB /* CellResultCompetition.xib in Resources */,
@@ -3946,6 +3991,7 @@
 				76CF0C86229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584822291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				DE49F7E822A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */,
 				DEF1C27322903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
 				DEF1C25822903557005AD1A3 /* HomeActionCell.xib in Resources */,
 				766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
@@ -3970,6 +4016,7 @@
 				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD193022A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31BA2295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
+				DE49F7F022A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
 				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -4392,6 +4439,7 @@
 				DE361E672283E60500FA3B0D /* AppImage.swift in Sources */,
 				76DB938A228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE22289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				DE49F7E322A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE95317B228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE361EAA2283E6DB00FA3B0D /* CustomTextfield.swift in Sources */,
 				766D1366228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
@@ -4602,6 +4650,7 @@
 				DE361F332283E85000FA3B0D /* UserEntity.swift in Sources */,
 				DE361F342283E85000FA3B0D /* FaceBookEntity.swift in Sources */,
 				76E2FEC4228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
+				DE49F7DB22A3CABA00A92C63 /* StudyPackCell.swift in Sources */,
 				DEECF89E22871D1B00A4678B /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CC82289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
 				DE953184228846D400E3F688 /* ChangePasswordProtocols.swift in Sources */,
@@ -4672,6 +4721,7 @@
 				DECD193222A26EE20054861D /* DetailPackEntity.swift in Sources */,
 				DE361F292283E85000FA3B0D /* BaseEntity.swift in Sources */,
 				DE953181228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				DE49F7EB22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				DEF1C25C22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A3228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				76CE31A92295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
@@ -4776,6 +4826,7 @@
 				DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */,
 				76DB938B228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE32289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				DE49F7E422A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE95317C228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */,
 				766D1367228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
@@ -4986,6 +5037,7 @@
 				DE9530152287DF4800E3F688 /* UserEntity.swift in Sources */,
 				DE9530162287DF4800E3F688 /* FaceBookEntity.swift in Sources */,
 				76E2FEC5228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
+				DE49F7DC22A3CABA00A92C63 /* StudyPackCell.swift in Sources */,
 				DE9530172287DF4800E3F688 /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CC92289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
 				DE953185228846D400E3F688 /* ChangePasswordProtocols.swift in Sources */,
@@ -5056,6 +5108,7 @@
 				DECD193322A26EE20054861D /* DetailPackEntity.swift in Sources */,
 				DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */,
 				DE953182228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				DE49F7EC22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				DEF1C25D22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A4228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				76CE31AA2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
@@ -5160,6 +5213,7 @@
 				DE9530772287DF6400E3F688 /* AppImage.swift in Sources */,
 				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				DE49F7E522A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE95317D228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE9530782287DF6400E3F688 /* CustomTextfield.swift in Sources */,
 				766D1368228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
@@ -5370,6 +5424,7 @@
 				DE9530C32287DF6400E3F688 /* UserEntity.swift in Sources */,
 				DE9530C42287DF6400E3F688 /* FaceBookEntity.swift in Sources */,
 				76E2FEC6228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
+				DE49F7DD22A3CABA00A92C63 /* StudyPackCell.swift in Sources */,
 				DE9530C52287DF6400E3F688 /* ForgotPasswordViewController.swift in Sources */,
 				DE3A8CCA2289BC3E0080A8CB /* CompetitionCell.swift in Sources */,
 				DE953186228846D400E3F688 /* ChangePasswordProtocols.swift in Sources */,
@@ -5440,6 +5495,7 @@
 				DECD193422A26EE20054861D /* DetailPackEntity.swift in Sources */,
 				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,
 				DE953183228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
+				DE49F7ED22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				DEF1C25E22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A5228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				76CE31AB2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,

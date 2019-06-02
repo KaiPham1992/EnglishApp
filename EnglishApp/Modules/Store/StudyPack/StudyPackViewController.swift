@@ -14,9 +14,11 @@ import XLPagerTabStrip
 class StudyPackViewController: UIViewController, StudyPackViewProtocol {
 
 	var presenter: StudyPackPresenterProtocol?
+    @IBOutlet weak var tbBeePack: UITableView!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        configureTable()
     }
 
 }
@@ -28,3 +30,63 @@ extension StudyPackViewController: IndicatorInfoProvider{
     }
 }
 
+extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
+    func configureTable() {
+        tbBeePack.delegate = self
+        tbBeePack.dataSource = self
+        tbBeePack.registerXibFile(StudyPackCell.self)
+        tbBeePack.registerXibFile(ChangeGiftCell.self)
+        tbBeePack.registerXibFile(ChangeGiftTitleCell.self)
+        
+        tbBeePack.separatorStyle = .none
+        
+        tbBeePack.estimatedRowHeight = 55
+        tbBeePack.rowHeight = UITableView.automaticDimension
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeue(StudyPackCell.self, for: indexPath)
+            cell.vStudyPack.delegate = self
+            return cell
+        } else {
+            if indexPath.item == 0 {
+                let cell = tableView.dequeue(ChangeGiftTitleCell.self, for: indexPath)
+                
+                return cell
+            } else {
+                let cell = tableView.dequeue(ChangeGiftCell.self, for: indexPath)
+                
+                return cell
+            }
+        }
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        }
+        return 10
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 250
+        } else {
+            return indexPath.item == 0 ? 60: 124
+        }
+    }
+}
+
+extension StudyPackViewController: StudyPackViewDelegate {
+    func btnDetailTapped() {
+        self.push(controller: DetailPackRouter.createModule())
+    }
+}
