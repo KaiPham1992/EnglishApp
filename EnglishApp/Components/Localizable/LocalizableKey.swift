@@ -185,6 +185,7 @@ struct LocalizableKey {
     static let phrasal_verb = "phrasal_verb"
     static let cloze_test = "cloze_test"
     static let try_hard = "try_hard"
+    static let task_every_date = "task_every_date"
     
     
     //result
@@ -194,6 +195,8 @@ struct LocalizableKey {
     static let back_gome = "back_gome"
     static let result_competion = "result_competion"
     static let result_group = "result_group"
+    static let see_explain = "see_explain"
+    static let respond_question = "respond_question"
     
     //popup
     static let confirm = "confirm"

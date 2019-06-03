@@ -22,7 +22,7 @@ class SeeNoteViewController: BaseViewController, SeeNoteViewProtocol {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: "Ghi chu 1")
-        addButtonImageToNavigation(image: #imageLiteral(resourceName: "ic_pencil_white"), style: .right, action: #selector(clickButtonRight))
+        addButtonImageToNavigation(image: #imageLiteral(resourceName: "edit"), style: .right, action: #selector(clickButtonRight))
     }
     @objc func clickButtonRight(){
         

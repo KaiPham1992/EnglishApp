@@ -21,5 +21,9 @@ class HistoryExercisePresenter: HistoryExercisePresenterProtocol, HistoryExercis
         self.interactor = interactor
         self.router = router
     }
+    
+    func gotoHistoryDate() {
+        self.router.gotoHistoryDate()
+    }
 
 }

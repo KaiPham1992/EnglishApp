@@ -14,14 +14,23 @@ class HistoryExerciseViewController: BaseViewController, HistoryExerciseViewProt
 
 	var presenter: HistoryExercisePresenterProtocol?
 
+    
+    @IBOutlet weak var calendar: CalendarView!
+    
     override func setUpViews() {
         super.setUpViews()
+        calendar.delegate = self
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        setTitleNavigation(title: LocalizableKey.history_exercise.showLanguage)
+        self.tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
+        setTitleNavigation(title: LocalizableKey.history_exercise.showLanguage)
     }
-
+}
+extension HistoryExerciseViewController: ClickDateDelegate{
+    func clickDate(index: Int) {
+        self.presenter?.gotoHistoryDate()
+    }
 }

@@ -50,6 +50,16 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var vBlur: ViewGradient!
     var attributed: NSMutableAttributedString?
     
+    var isExercise = true {
+        didSet{
+            if isExercise == false {
+                self.listSelect = [true,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true]
+            } else {
+                self.listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+            }
+        }
+    }
+    
     
     var numberLine: Int = 0
     let listQuestion : [String] = ["dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6"]
@@ -57,11 +67,13 @@ class CellExercise: UICollectionViewCell {
     
     
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
-    var listSelect : [Bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+    var listSelect : [Bool] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
+       
         setupView()
+        
     }
     
     func setupView(){
@@ -167,7 +179,7 @@ extension CellExercise: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        cell.setupData(title: listQuestion[indexPath.row])
+        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
         cell.indexPath = indexPath
         cell.isSelect = listSelect[indexPath.row]
         cell.delegate = self

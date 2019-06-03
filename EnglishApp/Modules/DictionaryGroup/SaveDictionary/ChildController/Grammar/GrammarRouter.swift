@@ -42,4 +42,14 @@ class GrammarRouter: GrammarWireframeProtocol {
         
         return view
     }
+    
+    func gotoNote(){
+        let vc = SeeNoteRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
+    
+    func gotoAddNote(){
+        let vc = AddNoteRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }

@@ -9,10 +9,12 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 enum LessonRecipe {
     case lesson
     case recipe
+    case exercise_date
 }
 
 class ListLessonViewController: BaseViewController, ListLessonViewProtocol {
@@ -60,8 +62,20 @@ extension ListLessonViewController: UITableViewDelegate{
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailLessonRouter.createModule(titleNavi: self.presenter?.getLessonIndexPath(indexPath: indexPath) ?? "")
-        self.push(controller: vc,animated: true)
+        if type == .exercise_date {
+            let vc = TaskDateRouter.createModule()
+            self.push(controller: vc,animated: true)
+        } else {
+            let vc = DetailLessonRouter.createModule(titleNavi: self.presenter?.getLessonIndexPath(indexPath: indexPath) ?? "")
+            self.push(controller: vc,animated: true)
+        }
+        
+    }
+}
+
+extension ListLessonViewController : IndicatorInfoProvider{
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: LocalizableKey.task_every_date.showLanguage)
     }
 }
 

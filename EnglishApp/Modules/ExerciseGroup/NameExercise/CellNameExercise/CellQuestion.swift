@@ -15,18 +15,33 @@ protocol ClickQuestionDelegate: class {
 class CellQuestion: UITableViewCell {
     
     @IBOutlet weak var vBG: UIView!
-
+    @IBOutlet weak var btnChoice: UIButton!
+    
     @IBAction func clickMore(_ sender: Any) {
         
     }
+    
     @IBAction func clickQuestion(_ sender: Any) {
         self.isSelect = !self.isSelect
         delegate?.clickQuestion(indexPath: self.indexPath, isSelect: self.isSelect)
     }
     
+    var isExercise = true{
+        didSet{
+            if !isExercise {
+                btnChoice.isUserInteractionEnabled = false
+            }
+        }
+    }
+    
     var isSelect : Bool = false {
         didSet{
-            setSelect(isSelect: self.isSelect)
+            if isExercise {
+                setSelect(isSelect: self.isSelect)
+            } else {
+                setResult(isSelect: self.isSelect)
+            }
+            
         }
     }
     var indexPath: IndexPath?
@@ -38,8 +53,23 @@ class CellQuestion: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func setupData(title: String){
+    func setupData(title: String,isExercise: Bool){
+        self.isExercise = isExercise
         lbQuestion.text = title
+    }
+    
+    func setResult(isSelect: Bool){
+        if isSelect && indexPath?.row == 0 {
+            vBG.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+            heightMore.constant = 24
+        } else {
+            if isSelect {
+                vBG.backgroundColor = #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
+            } else {
+                vBG.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+            }
+             heightMore.constant = 0
+        }
     }
     
     func setSelect(isSelect: Bool){
