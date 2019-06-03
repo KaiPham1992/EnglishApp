@@ -59,7 +59,7 @@ extension LevelExerciseViewController : UITableViewDataSource{
         return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if type == .level {
+        if type == .level || type == .tryhard {
             let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
             return cell
         }
