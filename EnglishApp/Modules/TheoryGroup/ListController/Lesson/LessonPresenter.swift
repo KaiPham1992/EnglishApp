@@ -21,5 +21,9 @@ class LessonPresenter: LessonPresenterProtocol, LessonInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+    
+    func gotoLesson() {
+        self.router.gotoLesson()
+    }
 
 }

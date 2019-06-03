@@ -41,4 +41,9 @@ class LessonRouter: LessonWireframeProtocol {
         
         return view
     }
+    
+    func gotoLesson(){
+        let vc = ListLessonRouter.createModule()
+        self.viewController?.push(controller: vc, animated: true)
+    }
 }

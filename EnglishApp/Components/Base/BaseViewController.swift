@@ -187,6 +187,42 @@ extension BaseViewController {
         self.navigationItem.rightBarButtonItems = [button1, button2]
     }
     
+    func addTwoViewToNavigation(view1: UIView?,image1: UIImage?, action1: Selector?, view2: UIView?,image2: UIImage?, action2: Selector?) {
+        showNavigation()
+        let button1 : UIBarButtonItem!
+        if image1 != nil {
+            let btn1 = UIButton()
+            btn1.setImage(image1, for: .normal)
+            if let newAction = action1 {
+                btn1.addTarget(self, action: newAction, for: .touchUpInside)
+            }
+            
+            btn1.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            btn1.contentHorizontalAlignment = .right
+            button1 = UIBarButtonItem(customView: btn1)
+        } else {
+            button1 = UIBarButtonItem(customView: view1 ?? UIView())
+        }
+        
+        let button2 : UIBarButtonItem!
+        
+        if image2 != nil {
+            let btn2 = UIButton()
+            btn2.setBackgroundImage(image2, for: .normal)
+            if let newAction = action2 {
+                btn2.addTarget(self, action: newAction, for: .touchUpInside)
+            }
+            btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            btn2.contentHorizontalAlignment = .right
+            button2 = UIBarButtonItem(customView: btn2)
+        } else {
+            button2 = UIBarButtonItem(customView: view2 ?? UIView())
+        }
+        
+        //---
+        self.navigationItem.rightBarButtonItems = [button2, button1]
+    }
+    
     func addButtonTextToNavigation(title: String, style: StyleNavigation, action: Selector?, textColor: UIColor = AppColor.rightNavigation) {
         
         showNavigation()

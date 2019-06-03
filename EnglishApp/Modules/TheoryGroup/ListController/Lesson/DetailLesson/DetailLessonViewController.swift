@@ -13,6 +13,7 @@ import UIKit
 class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
 
 	var presenter: DetailLessonPresenterProtocol?
+    var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
     override func setUpViews() {
         super.setUpViews()
     }
@@ -21,14 +22,13 @@ class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: "Thi hien tai don")
-        addTwoButtonToNavigation(image1: #imageLiteral(resourceName: "ic_facorite_2"), action1: #selector(clickHeart), image2: #imageLiteral(resourceName: "add"), action2: #selector(clickMessage))
+        viewMessage.action = {
+            print("Message")
+        }
+        addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
     }
     
     @objc func clickHeart(){
-        
-    }
-    
-    @objc func clickMessage(){
         
     }
 }
