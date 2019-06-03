@@ -50,13 +50,11 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var heightVBlur: NSLayoutConstraint!
     @IBOutlet weak var vBlur: ViewGradient!
     var attributed: NSMutableAttributedString?
-    
+    var listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     var isExercise = true {
         didSet{
             if isExercise == false {
                 self.listSelect = [true,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true]
-            } else {
-                self.listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
             }
         }
     }
@@ -68,7 +66,6 @@ class CellExercise: UICollectionViewCell {
     
     
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
-    var listSelect : [Bool] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
