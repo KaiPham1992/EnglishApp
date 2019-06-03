@@ -26,10 +26,17 @@ struct AppImage {
     static let imgMission = UIImage(named: "ic_arrown")!
     
     // tababr
-    static let imgTabbarHome = UIImage(named: "HOME")!.withRenderingMode(.alwaysTemplate)
-    static let imgTabbarProgramer = UIImage(named: "ic_book_2")!.withRenderingMode(.alwaysTemplate)
-    static let imgTabbarHomeWork = UIImage(named: "ic_gym_2")!.withRenderingMode(.alwaysTemplate)
-    static let imgTabbarCompetition = UIImage(named: "ic_fire")!.withRenderingMode(.alwaysTemplate)
+    static let imgTabbarHome = UIImage(named: "ic_home")!.withRenderingMode(.alwaysOriginal)
+      static let imgTabbarHomeSelected = UIImage(named: "ic_home_selected")!.withRenderingMode(.alwaysOriginal)
+    
+    static let imgTabbarProgramer = UIImage(named: "ic_book")!.withRenderingMode(.alwaysOriginal)
+    static let imgTabbarProgramerSelected = UIImage(named: "ic_book_selected")!.withRenderingMode(.alwaysOriginal)
+    
+    static let imgTabbarHomeWork = UIImage(named: "ic_home_work")!.withRenderingMode(.alwaysOriginal)
+    static let imgTabbarHomeWorkSelected = UIImage(named: "ic_home_work_selected")!.withRenderingMode(.alwaysOriginal)
+    
+    static let imgTabbarCompetition = UIImage(named: "ic_fire")!.withRenderingMode(.alwaysOriginal)
+    static let imgTabbarCompetitionSelected = UIImage(named: "ic_fire_selected")!.withRenderingMode(.alwaysOriginal)
     
     // Menu
     static let imgTop = UIImage(named: "ic_ranking")!.withRenderingMode(.alwaysTemplate)

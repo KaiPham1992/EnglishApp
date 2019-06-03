@@ -24,6 +24,9 @@ class MainTabbar: UITabBarController {
         super.viewDidLoad()
         self.delegate = self
         setUpTabbar()
+        
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158], for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17], for: .selected)
     }
     
     override func viewDidLayoutSubviews() {
@@ -55,13 +58,15 @@ class MainTabbar: UITabBarController {
         let vcCompetition = CompetitionRouter.createModule()
         
         
-        vcHome.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarHome, normalImage: AppImage.imgTabbarHome)
+        vcHome.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarHomeSelected, normalImage: AppImage.imgTabbarHome)
         vcHome.title = LocalizableKey.tabbarHome.showLanguage
-        vcProgramer.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarProgramer, normalImage: AppImage.imgTabbarProgramer)
+        
+        vcProgramer.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarProgramerSelected, normalImage: AppImage.imgTabbarProgramer)
         vcProgramer.title = LocalizableKey.tabbarProgram.showLanguage
-        vcHomeWork.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarHomeWork, normalImage: AppImage.imgTabbarHomeWork)
+        
+        vcHomeWork.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarHomeWorkSelected, normalImage: AppImage.imgTabbarHomeWork)
         vcHomeWork.title = LocalizableKey.tabbarHomeWork.showLanguage
-        vcCompetition.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarCompetition, normalImage: AppImage.imgTabbarCompetition)
+        vcCompetition.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarCompetitionSelected, normalImage: AppImage.imgTabbarCompetition)
         vcCompetition.title = LocalizableKey.tabbarCompetition.showLanguage
         
         listViewController = [vcHome, vcProgramer, vcHomeWork, vcCompetition]
