@@ -18,6 +18,8 @@ protocol ListLessonWireframeProtocol: class {
 protocol ListLessonPresenterProtocol: class {
 
     var interactor: ListLessonInteractorInputProtocol? { get set }
+    func getLessonIndexPath(indexPath: IndexPath) -> String
+    func numberLesson() -> Int
 }
 
 //MARK: Interactor -

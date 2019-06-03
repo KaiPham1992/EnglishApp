@@ -27,4 +27,19 @@ class DetailLessonRouter: DetailLessonWireframeProtocol {
 
         return view
     }
+    
+    static func createModule(titleNavi: String) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = DetailLessonViewController(nibName: nil, bundle: nil)
+        view.titleNavi = titleNavi
+        let interactor = DetailLessonInteractor()
+        let router = DetailLessonRouter()
+        let presenter = DetailLessonPresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }

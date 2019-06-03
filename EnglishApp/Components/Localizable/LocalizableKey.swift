@@ -232,4 +232,12 @@ struct LocalizableKey {
     
     static let changeLanguage = "changeLanguage"
     static let bxh = "bxh"
+    
+    
+    //lesson
+    
+    static let simple_present = "simple_present"
+    static let present_perfect = "present_perfect"
+    static let present_countinous = "present_countinous"
+    static let past_simple = "past_simple"
 }

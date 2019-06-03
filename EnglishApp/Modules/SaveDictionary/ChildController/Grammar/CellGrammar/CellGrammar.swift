@@ -10,9 +10,14 @@ import UIKit
 
 class CellGrammar: UITableViewCell {
 
+    @IBOutlet weak var lblTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+    }
+    
+    func setupTitle(title: String){
+        lblTitle.text = title
     }
     
 }

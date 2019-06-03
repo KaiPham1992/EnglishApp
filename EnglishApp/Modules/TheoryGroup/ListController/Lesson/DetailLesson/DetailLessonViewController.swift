@@ -13,6 +13,7 @@ import UIKit
 class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
 
 	var presenter: DetailLessonPresenterProtocol?
+    var titleNavi: String = ""
     var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
     override func setUpViews() {
         super.setUpViews()
@@ -21,7 +22,7 @@ class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: "Thi hien tai don")
+        setTitleNavigation(title: titleNavi)
         viewMessage.action = {
             print("Message")
         }

@@ -231,3 +231,10 @@
 "levelUp" = "Lên cấp";
 "changeLanguage" = "Đổi ngôn ngữ";
 "bxh" = "Bảng xếp hạng";
+
+//lesson
+
+"simple_present" = "Thì hiện tại đơn";
+"present_perfect" = "Thì hiện tại hoàn thành";
+"present_countinous" = "Thì hiện tại tiếp diễn";
+"past_simple" = "Thì quá khứ đơn";
