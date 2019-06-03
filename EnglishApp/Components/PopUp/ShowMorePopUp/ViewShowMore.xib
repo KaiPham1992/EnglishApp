@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewShowMore" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="btnClose" destination="x21-xF-fwi" id="YvM-zL-mzm"/>
+                <outlet property="lblText" destination="KaO-Fd-tCM" id="5bj-S4-aIN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="588"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x21-xF-fwi">
+                    <rect key="frame" x="374" y="5" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="KGV-q2-fsq"/>
+                        <constraint firstAttribute="width" constant="24" id="fa8-wW-eQ9"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="ic_cancel_2"/>
+                </button>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PO6-Nv-Hnp">
+                    <rect key="frame" x="16" y="34" width="382" height="538"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dNw-ax-s6k">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="16"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KaO-Fd-tCM">
+                                    <rect key="frame" x="0.0" y="0.0" width="382" height="16"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                    <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="0.56000000000000005" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="KaO-Fd-tCM" firstAttribute="leading" secondItem="dNw-ax-s6k" secondAttribute="leading" id="LW8-aL-qY9"/>
+                                <constraint firstItem="KaO-Fd-tCM" firstAttribute="top" secondItem="dNw-ax-s6k" secondAttribute="top" id="bkA-j8-7oE"/>
+                                <constraint firstAttribute="bottom" secondItem="KaO-Fd-tCM" secondAttribute="bottom" id="fUb-cQ-pho"/>
+                                <constraint firstAttribute="trailing" secondItem="KaO-Fd-tCM" secondAttribute="trailing" id="vgu-li-TAZ"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="dNw-ax-s6k" firstAttribute="width" secondItem="PO6-Nv-Hnp" secondAttribute="width" id="Par-Tf-qvK"/>
+                        <constraint firstItem="dNw-ax-s6k" firstAttribute="top" secondItem="PO6-Nv-Hnp" secondAttribute="top" id="SOd-Ri-gf4"/>
+                        <constraint firstItem="dNw-ax-s6k" firstAttribute="leading" secondItem="PO6-Nv-Hnp" secondAttribute="leading" id="UCt-7u-pxU"/>
+                        <constraint firstAttribute="bottom" secondItem="dNw-ax-s6k" secondAttribute="bottom" id="qOi-03-AN7"/>
+                        <constraint firstAttribute="trailing" secondItem="dNw-ax-s6k" secondAttribute="trailing" id="t1C-S1-ZWG"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="PO6-Nv-Hnp" firstAttribute="top" secondItem="x21-xF-fwi" secondAttribute="bottom" constant="5" id="4Wu-8r-M7s"/>
+                <constraint firstItem="PO6-Nv-Hnp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="5u2-iP-VvQ"/>
+                <constraint firstItem="x21-xF-fwi" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="B8v-70-tph"/>
+                <constraint firstAttribute="trailing" secondItem="PO6-Nv-Hnp" secondAttribute="trailing" constant="16" id="jcu-kP-q8G"/>
+                <constraint firstAttribute="bottom" secondItem="PO6-Nv-Hnp" secondAttribute="bottom" constant="16" id="mC9-JI-EtZ"/>
+                <constraint firstAttribute="trailing" secondItem="x21-xF-fwi" secondAttribute="trailing" constant="16" id="vzH-a6-sm9"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="211.60714285714286"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_cancel_2" width="24" height="24"/>
+    </resources>
+</document>

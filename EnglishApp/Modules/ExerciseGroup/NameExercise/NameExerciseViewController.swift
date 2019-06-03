@@ -22,6 +22,13 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
             lblIndexQuestion.text = "\(self.currentIndex + 1)/40 câu"
         }
     }
+    @IBAction func suggestResult(_ sender: Any) {
+        PopUpHelper.shared.showSuggesstionResult(diamond: {
+        
+        }) {
+        
+        }
+    }
     
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
@@ -73,7 +80,7 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 
 extension NameExerciseViewController : CellExerciseDelegate{
     func showMoreQuestion(text: String) {
-        
+        PopUpHelper.shared.showMorePopUp(content: text)
     }
 }
 

@@ -33,6 +33,15 @@
 		7643DEA022A4DD3600B7C323 /* CellExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE9C22A4DD3600B7C323 /* CellExercise.xib */; };
 		7643DEA122A4DD3600B7C323 /* CellExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE9C22A4DD3600B7C323 /* CellExercise.xib */; };
 		7643DEA222A4DD3600B7C323 /* CellExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE9C22A4DD3600B7C323 /* CellExercise.xib */; };
+		7643DEA522A503FC00B7C323 /* ViewShowMore.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DEA422A503FC00B7C323 /* ViewShowMore.xib */; };
+		7643DEA622A503FC00B7C323 /* ViewShowMore.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DEA422A503FC00B7C323 /* ViewShowMore.xib */; };
+		7643DEA722A503FC00B7C323 /* ViewShowMore.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DEA422A503FC00B7C323 /* ViewShowMore.xib */; };
+		7643DEA922A5041200B7C323 /* ViewShowMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEA822A5041200B7C323 /* ViewShowMore.swift */; };
+		7643DEAA22A5041200B7C323 /* ViewShowMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEA822A5041200B7C323 /* ViewShowMore.swift */; };
+		7643DEAB22A5041200B7C323 /* ViewShowMore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEA822A5041200B7C323 /* ViewShowMore.swift */; };
+		7643DEAD22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */; };
+		7643DEAE22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */; };
+		7643DEAF22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */; };
 		76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
@@ -1621,6 +1630,9 @@
 		7643DE9622A4C0A800B7C323 /* ViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMessage.swift; sourceTree = "<group>"; };
 		7643DE9B22A4DD3600B7C323 /* CellExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExercise.swift; sourceTree = "<group>"; };
 		7643DE9C22A4DD3600B7C323 /* CellExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellExercise.xib; sourceTree = "<group>"; };
+		7643DEA422A503FC00B7C323 /* ViewShowMore.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewShowMore.xib; sourceTree = "<group>"; };
+		7643DEA822A5041200B7C323 /* ViewShowMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShowMore.swift; sourceTree = "<group>"; };
+		7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMorePopUp.swift; sourceTree = "<group>"; };
 		76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionResultPopUp.swift; sourceTree = "<group>"; };
 		76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggesstionView.swift; sourceTree = "<group>"; };
 		76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggesstionView.xib; sourceTree = "<group>"; };
@@ -2237,6 +2249,9 @@
 		7643DEA322A4EE2700B7C323 /* ShowMorePopUp */ = {
 			isa = PBXGroup;
 			children = (
+				7643DEA422A503FC00B7C323 /* ViewShowMore.xib */,
+				7643DEA822A5041200B7C323 /* ViewShowMore.swift */,
+				7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */,
 			);
 			path = ShowMorePopUp;
 			sourceTree = "<group>";
@@ -4119,6 +4134,7 @@
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
 				769A3BDE22A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				DEB5848C2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
+				7643DEA522A503FC00B7C323 /* ViewShowMore.xib in Resources */,
 				DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				769A3BD922A0A69200CA55BD /* DateCell.xib in Resources */,
 				DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
@@ -4244,6 +4260,7 @@
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
 				769A3BDF22A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				DEB5848D2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
+				7643DEA622A503FC00B7C323 /* ViewShowMore.xib in Resources */,
 				DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				769A3BDA22A0A69200CA55BD /* DateCell.xib in Resources */,
 				DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
@@ -4369,6 +4386,7 @@
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
 				769A3BE022A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				DEB5848E2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
+				7643DEA722A503FC00B7C323 /* ViewShowMore.xib in Resources */,
 				DEBD6734228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
 				769A3BDB22A0A69200CA55BD /* DateCell.xib in Resources */,
 				DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */,
@@ -4887,6 +4905,7 @@
 				76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DB229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				7643DEAD22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */,
 				DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE89D21E22A42592000638B0 /* BXHPresenter.swift in Sources */,
@@ -4916,6 +4935,7 @@
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
 				DEC62AD622930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6922914B8D0043A62D /* UIDevice+extension.swift in Sources */,
+				7643DEA922A5041200B7C323 /* ViewShowMore.swift in Sources */,
 				76CE31F222963EDE00E998FB /* ResultGroupRouter.swift in Sources */,
 				DE95315B22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE361F472283E85000FA3B0D /* CommonEndPoint.swift in Sources */,
@@ -5307,6 +5327,7 @@
 				76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DC229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				7643DEAE22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */,
 				DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE89D21F22A42592000638B0 /* BXHPresenter.swift in Sources */,
@@ -5336,6 +5357,7 @@
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
 				DEC62AD722930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6A22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
+				7643DEAA22A5041200B7C323 /* ViewShowMore.swift in Sources */,
 				76CE31F322963EDE00E998FB /* ResultGroupRouter.swift in Sources */,
 				DE95315C22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE952FDC2287DF4800E3F688 /* CommonEndPoint.swift in Sources */,
@@ -5727,6 +5749,7 @@
 				76DB93AB228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DD229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				7643DEAF22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */,
 				DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE9530842287DF6400E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
 				DE89D22022A42592000638B0 /* BXHPresenter.swift in Sources */,
@@ -5756,6 +5779,7 @@
 				DE9530892287DF6400E3F688 /* EndPointType.swift in Sources */,
 				DEC62AD822930EC400D7CECE /* BeePackPresenter.swift in Sources */,
 				DEDDEF6B22914B8D0043A62D /* UIDevice+extension.swift in Sources */,
+				7643DEAB22A5041200B7C323 /* ViewShowMore.swift in Sources */,
 				76CE31F422963EDE00E998FB /* ResultGroupRouter.swift in Sources */,
 				DE95315D22883FB100E3F688 /* PreviewProfileViewController.swift in Sources */,
 				DE95308A2287DF6400E3F688 /* CommonEndPoint.swift in Sources */,
