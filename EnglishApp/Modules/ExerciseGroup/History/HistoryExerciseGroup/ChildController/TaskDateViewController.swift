@@ -49,7 +49,7 @@ class TaskDateViewController: BaseViewController, TaskDateViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         self.tabBarController?.tabBar.isHidden = true
-        setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
+        setTitleNavigation(title: LocalizableKey.task_every_date.showLanguage)
         addBackToNavigation()
     }
 
