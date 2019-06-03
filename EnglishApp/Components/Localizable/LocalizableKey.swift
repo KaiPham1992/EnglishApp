@@ -240,4 +240,5 @@ struct LocalizableKey {
     static let present_perfect = "present_perfect"
     static let present_countinous = "present_countinous"
     static let past_simple = "past_simple"
+    static let theory = "theory"
 }

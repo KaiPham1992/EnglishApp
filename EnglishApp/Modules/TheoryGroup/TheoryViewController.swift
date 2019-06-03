@@ -17,7 +17,7 @@ class TheoryViewController: PageViewController, TheoryViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        setTitleNavigation(title: "Ly thuyet")
+        setTitleNavigation(title: LocalizableKey.theory.showLanguage)
         addButtonImageToNavigation(image: #imageLiteral(resourceName: "Material_Icons_white_search"), style: .right, action: #selector(clickButtonSearch))
     }
     @objc func clickButtonSearch(){
