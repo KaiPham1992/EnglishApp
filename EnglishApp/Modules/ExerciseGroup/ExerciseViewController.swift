@@ -43,10 +43,10 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
     override func setUpViews() {
         super.setUpViews()
         
-        vCreateExercise.setupGradient(beginColor: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), endColor: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1))
-        vPracticeExercise.setupGradient(beginColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1), endColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1))
-        vLevelExercise.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1))
-        vAssignExercise.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1))
+        vCreateExercise.setupGradient(beginColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1), endColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 0.56))
+        vPracticeExercise.setupGradient(beginColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1), endColor: #colorLiteral(red: 0, green: 0.9490196078, blue: 0.9960784314, alpha: 1))
+        vLevelExercise.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 0.56))
+        vAssignExercise.setupGradient(beginColor: #colorLiteral(red: 0.1725490196, green: 0.8549019608, blue: 0.8117647059, alpha: 1), endColor: #colorLiteral(red: 0.1725490196, green: 0.8549019608, blue: 0.8117647059, alpha: 0.56))
         
         lbCreateExercise.text = LocalizableKey.create_exercise.showLanguage
         lbPracticeExercise.text = LocalizableKey.practice.showLanguage

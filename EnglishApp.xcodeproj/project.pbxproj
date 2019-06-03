@@ -2216,6 +2216,16 @@
 			path = ViewMessage;
 			sourceTree = "<group>";
 		};
+		7643DE9A22A4D32100B7C323 /* DictionaryGroup */ = {
+			isa = PBXGroup;
+			children = (
+				76E2FEBD228DBA990014B1F4 /* SaveDictionary */,
+				76DB937D228C56380081A36E /* Dictionary */,
+				76DB9396228C73720081A36E /* MoreDictionary */,
+			);
+			path = DictionaryGroup;
+			sourceTree = "<group>";
+		};
 		76483BDC229ED1220079F9A1 /* SuggestionResultPopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -2766,6 +2776,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				7643DE9A22A4D32100B7C323 /* DictionaryGroup */,
 				DE89D21722A42521000638B0 /* BXH */,
 				DE89D1F522A41DF6000638B0 /* ChangeLanguage */,
 				DE89D1C922A4126C000638B0 /* WebView */,
@@ -2778,9 +2789,6 @@
 				DEDDEF6322914A790043A62D /* MainTabbar */,
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
 				DEBD6742228D6840004B74C8 /* DailyMission */,
-				76E2FEBD228DBA990014B1F4 /* SaveDictionary */,
-				76DB9396228C73720081A36E /* MoreDictionary */,
-				76DB937D228C56380081A36E /* Dictionary */,
 				DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */,
 				DE3A8C922289B9210080A8CB /* QADetail */,
 				DEB9611E22898F080046801B /* QA */,
