@@ -26,10 +26,15 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
     func getItemIndexPath(indexPath : IndexPath)->String{
         return listNameExercise[indexPath.row]
     }
+    
     init(interface: CreateExerciseViewProtocol, interactor: CreateExerciseInteractorInputProtocol?, router: CreateExerciseWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func gotoChoiceExercise() {
+        self.router.gotoChoiceExercise()
     }
 
 }

@@ -75,7 +75,7 @@ extension CreateExerciseViewController : UITableViewDataSource{
 }
 extension CreateExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.presenter?.gotoChoiceExercise()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

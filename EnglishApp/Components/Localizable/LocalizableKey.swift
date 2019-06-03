@@ -184,6 +184,7 @@ struct LocalizableKey {
     static let listening = "listening"
     static let phrasal_verb = "phrasal_verb"
     static let cloze_test = "cloze_test"
+    static let try_hard = "try_hard"
     
     
     //result

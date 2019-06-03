@@ -27,4 +27,9 @@ class CreateExerciseRouter: CreateExerciseWireframeProtocol {
 
         return view
     }
+    
+    func gotoChoiceExercise(){
+        let vc = ChoiceExerciseRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }
