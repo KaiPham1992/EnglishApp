@@ -16,6 +16,7 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
 
 	var presenter: CreateExercisePresenterProtocol?
 
+    @IBOutlet weak var btnDoExercise: UIButton!
     @IBOutlet weak var edEnterExercise: UITextField!
     @IBOutlet weak var lbNameExercise: UILabel!
     @IBOutlet weak var tbvCreateExercise: UITableView!
@@ -28,6 +29,7 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
         tbvCreateExercise.delegate = self
         lbNameExercise.text = LocalizableKey.name_exercise.showLanguage
         edEnterExercise.placeholder = LocalizableKey.enter_name_exercise.showLanguage
+        btnDoExercise.setTitle(LocalizableKey.do_exercise.showLanguage, for: .normal)
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
             self.setupDropDown()
         }
@@ -55,13 +57,17 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
 }
 extension CreateExerciseViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+       return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        let row = self.presenter?.getNumberRow() ?? 0
+        return row
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellCreateExercise.self, for: indexPath)
+        cell.setupData(title: self.presenter?.getItemIndexPath(indexPath: indexPath) ?? "")
         cell.delegate = self
         cell.indexPath = indexPath
         return cell
@@ -71,6 +77,7 @@ extension CreateExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }

@@ -12,10 +12,20 @@ import UIKit
 
 class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseInteractorOutputProtocol {
 
+    let listNameExercise = [LocalizableKey.wordForm.showLanguage,LocalizableKey.preposition.showLanguage,LocalizableKey.rewriting.showLanguage,LocalizableKey.verb_form.showLanguage,LocalizableKey.listening.showLanguage,LocalizableKey.phrasal_verb.showLanguage,LocalizableKey.cloze_test.showLanguage]
+    
     weak private var view: CreateExerciseViewProtocol?
     var interactor: CreateExerciseInteractorInputProtocol?
     private let router: CreateExerciseWireframeProtocol
 
+    
+    func getNumberRow() -> Int {
+        return listNameExercise.count
+    }
+    
+    func getItemIndexPath(indexPath : IndexPath)->String{
+        return listNameExercise[indexPath.row]
+    }
     init(interface: CreateExerciseViewProtocol, interactor: CreateExerciseInteractorInputProtocol?, router: CreateExerciseWireframeProtocol) {
         self.view = interface
         self.interactor = interactor

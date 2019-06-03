@@ -25,7 +25,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-zg-XWz">
-                        <rect key="frame" x="32" y="32.5" width="42" height="21"/>
+                        <rect key="frame" x="32" y="32.5" width="141" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -106,6 +106,7 @@
                     <constraint firstItem="DYe-dn-Mqh" firstAttribute="centerY" secondItem="jw0-Dz-VQR" secondAttribute="centerY" id="nf4-B1-y7v"/>
                     <constraint firstAttribute="trailing" secondItem="JDf-AQ-FEt" secondAttribute="trailing" id="pCq-3G-976"/>
                     <constraint firstItem="Ct8-JR-Vwd" firstAttribute="bottom" secondItem="DYe-dn-Mqh" secondAttribute="bottom" id="tCZ-xB-Fjt"/>
+                    <constraint firstItem="Ct8-JR-Vwd" firstAttribute="leading" secondItem="zqE-zg-XWz" secondAttribute="trailing" constant="5" id="vNI-Z7-ENH"/>
                     <constraint firstItem="zqE-zg-XWz" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="xdZ-Z7-03k"/>
                 </constraints>
             </tableViewCellContentView>
@@ -114,6 +115,7 @@
                 <outlet property="edNumber" destination="jw0-Dz-VQR" id="sKB-5k-oDI"/>
                 <outlet property="imgDown" destination="mKE-R3-LCG" id="C5q-KE-cs3"/>
                 <outlet property="lbType" destination="wyP-ra-V1t" id="tOH-ZH-vSo"/>
+                <outlet property="lblTitle" destination="zqE-zg-XWz" id="GUg-RU-FJO"/>
                 <outlet property="vType" destination="DYe-dn-Mqh" id="iq3-5N-7AW"/>
             </connections>
             <point key="canvasLocation" x="65.94202898550725" y="66.964285714285708"/>

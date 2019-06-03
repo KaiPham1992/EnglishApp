@@ -15,6 +15,7 @@ protocol ChoiceType : class {
 
 class CellCreateExercise: UITableViewCell {
     
+    @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var edNumber: UITextField!
     @IBOutlet weak var vType: UIView!
     @IBOutlet weak var lbType: UILabel!
@@ -36,6 +37,10 @@ class CellCreateExercise: UITableViewCell {
         UIView.animate(withDuration: 0.2) {
             self.imgDown.transform = self.imgDown.transform.rotated(by: CGFloat(Double.pi))
         }
+    }
+    
+    func setupData(title: String){
+        lblTitle.text = title
     }
     func setupTitle(title: String){
         lbType.text = title

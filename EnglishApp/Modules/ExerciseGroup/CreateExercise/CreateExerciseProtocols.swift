@@ -18,6 +18,8 @@ protocol CreateExerciseWireframeProtocol: class {
 protocol CreateExercisePresenterProtocol: class {
 
     var interactor: CreateExerciseInteractorInputProtocol? { get set }
+    func getNumberRow() -> Int
+    func getItemIndexPath(indexPath : IndexPath)->String
 }
 
 //MARK: Interactor -

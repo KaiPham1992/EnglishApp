@@ -176,7 +176,15 @@ struct LocalizableKey {
     static let choice_exercise = "choice_exercise"
     static let exercise_level = "exercise_level"
     static let history_exercise = "history_exercise"
-
+    static let do_exercise = "do_exercise"
+    static let word_form = "word_form"
+    static let preposition = "preposition"
+    static let rewriting = "rewriting"
+    static let verb_form = "verb_form"
+    static let listening = "listening"
+    static let phrasal_verb = "phrasal_verb"
+    static let cloze_test = "cloze_test"
+    
     
     //result
     static let result = "result"

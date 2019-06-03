@@ -173,6 +173,14 @@
 "choice_exercise" = "Chọn bài tập";
 "exercise_level" = "Cấp độ bài tập";
 "history_exercise" = "Lịch sử kiểm tra";
+"do_exercise" = "Làm bài tập";
+"word_form" = "Word Form";
+"preposition" = "Preposition";
+"rewriting" = "Rewriting";
+"verb_form" = "Verb Form";
+"listening" = "Listening";
+"phrasal_verb" = "Phrasal Verb";
+"cloze_test" = "Cloze Test";
 
 //result
 "result" = "Kết quả";
