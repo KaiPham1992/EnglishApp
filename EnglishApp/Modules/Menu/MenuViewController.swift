@@ -98,6 +98,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         case AppImage.imgHistoryCheck:
             delegateController?.controllerSelected(controller: HistoryExerciseRouter.createModule())
             AppRouter.shared.pushTo(viewController: HistoryExerciseRouter.createModule())
+            
+        case AppImage.imgPrivacy:
+            delegateController?.controllerSelected(controller: WebViewController.initFromNib())
+            AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
         case AppImage.imgLogout:
             PopUpHelper.shared.showLogout(completionNo: {
                 print("No")

@@ -51,6 +51,18 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         removeHeaderHome()
     }
     
+//    override func  WillAppear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//        super.viewWillAppear(animated)
+//        addHeaderHome()
+//    }
+//
+//    override func viewWillDisappear(_ animated: Bool) {
+//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+//        super.viewWillDisappear(animated)
+//        removeHeaderHome()
+//    }
+    
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
         nav.addSubview(header)

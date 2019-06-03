@@ -24,20 +24,11 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="313.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7U-99-2Bt">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q7U-99-2Bt" customClass="TopThreeView" customModule="EnglishApp_AppStore" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_background" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-Hv-BPV">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mLk-Hv-BPV" firstAttribute="top" secondItem="Q7U-99-2Bt" secondAttribute="top" id="Awe-d1-duq"/>
                             <constraint firstAttribute="height" constant="150" id="cL4-j6-qKm"/>
-                            <constraint firstAttribute="trailing" secondItem="mLk-Hv-BPV" secondAttribute="trailing" id="fXj-OP-HsT"/>
-                            <constraint firstAttribute="bottom" secondItem="mLk-Hv-BPV" secondAttribute="bottom" id="l2k-ho-YNy"/>
-                            <constraint firstItem="mLk-Hv-BPV" firstAttribute="leading" secondItem="Q7U-99-2Bt" secondAttribute="leading" id="tls-3l-4dO"/>
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMx-Ab-fVG">
@@ -52,7 +43,7 @@
                         </state>
                     </button>
                 </subviews>
-                <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="yMx-Ab-fVG" firstAttribute="top" secondItem="Q7U-99-2Bt" secondAttribute="bottom" constant="16" id="0gg-mT-skt"/>
                     <constraint firstAttribute="trailing" secondItem="Q7U-99-2Bt" secondAttribute="trailing" id="8nE-iT-0uU"/>
@@ -66,7 +57,4 @@
             <point key="canvasLocation" x="13.043478260869566" y="-54.910714285714285"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="img_background" width="414" height="150"/>
-    </resources>
 </document>

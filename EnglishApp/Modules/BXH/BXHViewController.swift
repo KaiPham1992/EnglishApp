@@ -13,6 +13,7 @@ import UIKit
 class BXHViewController: BaseViewController, BXHViewProtocol {
 
 	var presenter: BXHPresenterProtocol?
+     @IBOutlet weak var tbBXH: UITableView!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,5 +24,44 @@ class BXHViewController: BaseViewController, BXHViewProtocol {
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.bxh.showLanguage)
     }
+    override func setUpViews() {
+        super.setUpViews()
+        configureTable()
+    }
 
+}
+
+
+extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
+    func configureTable() {
+        tbBXH.delegate = self
+        tbBXH.dataSource = self
+        tbBXH.registerXibFile(BXHCell.self)
+        tbBXH.registerXibFile(BXHTop3Cell.self)
+        tbBXH.separatorStyle = .none
+        
+        tbBXH.estimatedRowHeight = 55
+        tbBXH.rowHeight = UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.item == 0 {
+            let cell = tableView.dequeue(BXHTop3Cell.self, for: indexPath)
+            
+            return cell
+        }
+        
+        
+        let cell = tableView.dequeue(BXHCell.self, for: indexPath)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.item == 0 ? 150: 78 
+    }
 }
