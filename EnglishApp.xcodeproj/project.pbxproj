@@ -27,6 +27,12 @@
 		7643DE9722A4C0A800B7C323 /* ViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE9622A4C0A800B7C323 /* ViewMessage.swift */; };
 		7643DE9822A4C0A800B7C323 /* ViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE9622A4C0A800B7C323 /* ViewMessage.swift */; };
 		7643DE9922A4C0A800B7C323 /* ViewMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE9622A4C0A800B7C323 /* ViewMessage.swift */; };
+		7643DE9D22A4DD3600B7C323 /* CellExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE9B22A4DD3600B7C323 /* CellExercise.swift */; };
+		7643DE9E22A4DD3600B7C323 /* CellExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE9B22A4DD3600B7C323 /* CellExercise.swift */; };
+		7643DE9F22A4DD3600B7C323 /* CellExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE9B22A4DD3600B7C323 /* CellExercise.swift */; };
+		7643DEA022A4DD3600B7C323 /* CellExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE9C22A4DD3600B7C323 /* CellExercise.xib */; };
+		7643DEA122A4DD3600B7C323 /* CellExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE9C22A4DD3600B7C323 /* CellExercise.xib */; };
+		7643DEA222A4DD3600B7C323 /* CellExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DE9C22A4DD3600B7C323 /* CellExercise.xib */; };
 		76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
@@ -1613,6 +1619,8 @@
 		7643DE8A22A3A0E900B7C323 /* CellAssignExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellAssignExercise.xib; sourceTree = "<group>"; };
 		7643DE9222A4C09A00B7C323 /* ViewMessage.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewMessage.xib; sourceTree = "<group>"; };
 		7643DE9622A4C0A800B7C323 /* ViewMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMessage.swift; sourceTree = "<group>"; };
+		7643DE9B22A4DD3600B7C323 /* CellExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellExercise.swift; sourceTree = "<group>"; };
+		7643DE9C22A4DD3600B7C323 /* CellExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellExercise.xib; sourceTree = "<group>"; };
 		76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionResultPopUp.swift; sourceTree = "<group>"; };
 		76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggesstionView.swift; sourceTree = "<group>"; };
 		76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggesstionView.xib; sourceTree = "<group>"; };
@@ -2226,6 +2234,13 @@
 			path = DictionaryGroup;
 			sourceTree = "<group>";
 		};
+		7643DEA322A4EE2700B7C323 /* ShowMorePopUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShowMorePopUp;
+			sourceTree = "<group>";
+		};
 		76483BDC229ED1220079F9A1 /* SuggestionResultPopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -2496,6 +2511,8 @@
 			children = (
 				76CE323D2296A61100E998FB /* CellQuestion.swift */,
 				76CE323E2296A61100E998FB /* CellQuestion.xib */,
+				7643DE9B22A4DD3600B7C323 /* CellExercise.swift */,
+				7643DE9C22A4DD3600B7C323 /* CellExercise.xib */,
 			);
 			path = CellNameExercise;
 			sourceTree = "<group>";
@@ -2982,6 +2999,7 @@
 		DE361E502283E60500FA3B0D /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				7643DEA322A4EE2700B7C323 /* ShowMorePopUp */,
 				DE89D1E822A41AF2000638B0 /* LevelUpPopUp */,
 				DE89D1D222A41395000638B0 /* RequireUpgradePopUp */,
 				DE49F82D22A3E09400A92C63 /* RewardPopUp */,
@@ -4144,6 +4162,7 @@
 				DECD192622A269860054861D /* HeaderPackCell.xib in Resources */,
 				DEBCBC7622945C9A00DF7F74 /* InfoPackView.xib in Resources */,
 				DE361E8C2283E60500FA3B0D /* AppCheckBox.xib in Resources */,
+				7643DEA022A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD192E22A26B4A0054861D /* DetailPackCell.xib in Resources */,
@@ -4268,6 +4287,7 @@
 				DECD192722A269860054861D /* HeaderPackCell.xib in Resources */,
 				DEBCBC7722945C9A00DF7F74 /* InfoPackView.xib in Resources */,
 				DE95304C2287DF4800E3F688 /* AppCheckBox.xib in Resources */,
+				7643DEA122A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD192F22A26B4A0054861D /* DetailPackCell.xib in Resources */,
@@ -4392,6 +4412,7 @@
 				DECD192822A269860054861D /* HeaderPackCell.xib in Resources */,
 				DEBCBC7822945C9A00DF7F74 /* InfoPackView.xib in Resources */,
 				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
+				7643DEA222A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD193022A26B4A0054861D /* DetailPackCell.xib in Resources */,
@@ -4872,6 +4893,7 @@
 				76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
 				76CF0C7222906822003C4B4B /* CommentViewController.swift in Sources */,
+				7643DE9D22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBB229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
@@ -5291,6 +5313,7 @@
 				76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
 				76CF0C7322906822003C4B4B /* CommentViewController.swift in Sources */,
+				7643DE9E22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBC229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
@@ -5710,6 +5733,7 @@
 				76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
 				76CF0C7422906822003C4B4B /* CommentViewController.swift in Sources */,
+				7643DE9F22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBD229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */,
 				DE95314A2288324300E3F688 /* EditProfileInteractor.swift in Sources */,

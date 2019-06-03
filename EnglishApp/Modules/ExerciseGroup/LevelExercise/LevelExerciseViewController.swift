@@ -30,12 +30,12 @@ class LevelExerciseViewController: BaseViewController, LevelExerciseViewProtocol
         } else {
             tbvLevelExercise.registerXibFile(CellAssignExercise.self)
         }
-        
         tbvLevelExercise.dataSource = self
         tbvLevelExercise.delegate = self
     }
     override func setUpNavigation() {
         super.setUpNavigation()
+        self.tabBarController?.tabBar.isHidden = true
         setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
         addBackToNavigation()
     }

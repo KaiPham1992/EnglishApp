@@ -15,181 +15,70 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
 
 	var presenter: NameExercisePresenterProtocol?
 
-    @IBOutlet weak var tvContent: UITextView!
-    @IBOutlet weak var vCountTime: ViewTime!
-    @IBOutlet weak var scrollView: UIScrollView!
-    var numberLine = 0
-    let popover = Popover()
-    
-    @IBAction func clickMore(_ sender: Any) {
-        if isShowMore {
-            btnMore.setTitle("An bot", for: .normal)
-            UIView.animate(withDuration: 0.1) {
-                self.heightTVContent.constant = AppFont.fontRegular14.lineHeight * CGFloat(self.numberLine) + 16
-                self.heightScrollView.constant = self.vProfile.frame.size.height + self.heightTB + 20
-                self.view.layoutIfNeeded()
-            }
-        } else {
-            btnMore.setTitle("Xem them", for: .normal)
-            UIView.animate(withDuration: 0.1) {
-                self.heightTVContent.constant = AppFont.fontRegular14.lineHeight * 8 + 16
-                self.heightScrollView.constant = self.vProfile.frame.size.height + self.heightTB + 20
-                self.view.layoutIfNeeded()
-            }
+    @IBAction func clickNext(_ sender: Any) {
+        if self.currentIndex + 1 < 6{
+            self.currentIndex += 1
+            clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex, section: 0), at: .right, animated: true)
+            lblIndexQuestion.text = "\(self.currentIndex + 1)/40 câu"
         }
-        self.isShowMore = !isShowMore
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tvContent.textContainer.lineFragmentPadding = 0
-        self.heightScrollView.constant = self.vProfile.frame.size.height + self.tbvNameExercise.contentSize.height + 20
-    }
+    @IBOutlet weak var lblIndexQuestion: UILabel!
+    @IBOutlet weak var clvQuestion: UICollectionView!
+    @IBOutlet weak var vCountTime: ViewTime!
+    var currentIndex = 0 
     
-    @IBOutlet weak var heightTVContent: NSLayoutConstraint!
-    @IBOutlet weak var heightVBlur: NSLayoutConstraint!
-    @IBOutlet weak var vBlur: ViewGradient!
-    @IBOutlet weak var btnMore: UIButton!
-    @IBOutlet weak var heightMore: NSLayoutConstraint!
-    @IBOutlet weak var vProfile: UIView!
-    @IBOutlet weak var heightScrollView: NSLayoutConstraint!
-    @IBOutlet weak var tbvNameExercise: UITableView!
-    var heightTB : CGFloat = 0
-    let listQuestion : [String] = ["dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasdasdasdasdasdasdasd","8","9","10","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasdasdasdasdasdasdasd","8","9","10","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasdasdasdasdasdasdasd","8","9","10"]
-    var listSelect : [Bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    var isShowMore = true
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        heightTVContent.constant = AppFont.fontRegular14.lineHeight * 8 + 16
-        tvContent.textContainerInset = UIEdgeInsets.zero
+    
+//    var isShowMore = true
+    override func setUpViews() {
+        super.setUpViews()
+        clvQuestion.registerXibCell(CellExercise.self)
+        clvQuestion.delegate = self
+        clvQuestion.dataSource = self
         vCountTime.setupTime(min: 60)
         vCountTime.delegate = self
-        vBlur.setupThreeGradient(beginColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), centerColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0.74), endColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0))
-        tbvNameExercise.registerXibFile(CellQuestion.self)
-        tbvNameExercise.dataSource = self
-        tbvNameExercise.delegate = self
-        scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 106, right: 0)
-        detectQuestion()
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
-            let number = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion test".getHeightLabel(width: self.tvContent.frame.width, font: AppFont.fontRegular14)
-            self.numberLine = Int(number)
-            if number > 8 {
-                self.heightVBlur.constant = 100
-            } else {
-                self.heightMore.constant = 0
-            }
-        }
-        
-    }
-    
-    func detectQuestion(){
-        let question = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion,In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life. It makes our world a small village.In the writer's opinion test"
-        let  textArray = question.components(separatedBy: " ")
-        let attributedText = NSMutableAttributedString()
-        for word in textArray {
-            let attributed = NSMutableAttributedString(string: word + " ")
-            let range = NSRange(location: 0, length: word.count)
-            let myCustomAttributed = [ NSAttributedString.Key.init(rawValue: "tapped"):word, NSAttributedString.Key.font : AppFont.fontRegular14] as [NSAttributedString.Key : Any]
-            attributed.addAttributes(myCustomAttributed, range: range)
-            attributedText.append(attributed)
-        }
-        tvContent.attributedText = attributedText
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tap)
-    }
-    
-    @objc func handleTap(sender: UITapGestureRecognizer){
-        let content = sender.view as! UITextView
-        let layoutManager = content.layoutManager
-        var location = sender.location(in: content)
-        
-        location.x -= content.contentInset.left
-        location.y -= content.contentInset.top
-        
-        print(location.x)
-        print(location.y)
-        let characterIndex  = layoutManager.characterIndex(for: location, in: content.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-        if characterIndex < content.textStorage.length {
-            print("Your character is at index: \(characterIndex)")
-            let myRange = NSRange(location: characterIndex, length: 1)
-            let subString = (content.attributedText.string as NSString).substring(with: myRange)
-            print("character at index: \(subString)")
-            let attributeName = "tapped" //make sure this matches the name in viewDidLoad()
-            let attributeValue = content.attributedText!.attribute(NSAttributedString.Key("tapped"), at: characterIndex, effectiveRange: nil) as? String
-            if let value = attributeValue {
-                setupPopOver(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2, title: value)
-                print("You tapped on \(attributeName) and the value is: \(value)")
-            }
-        }
-    }
-    
-    func setupPopOver(x:CGFloat, y: CGFloat,title: String){
-        popover.removeFromSuperview()
-        let point = tvContent.convert(CGPoint(x: x, y: y), to: self.view)
-        let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-        aView.setTitle(title: title)
-        popover.blackOverlayColor = .clear
-        popover.popoverColor = .white
-        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
-        popover.layer.cornerRadius = 5
-        popover.show(aView, point: point, inView: self.view)
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
+        self.tabBarController?.tabBar.isHidden = true
         setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
         addBackToNavigation()
+    }
+}
+extension NameExerciseViewController : UICollectionViewDelegate{
+    
+}
+extension NameExerciseViewController : UICollectionViewDelegateFlowLayout{
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0.00009
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.clvQuestion.frame.width, height: self.clvQuestion.frame.height)
+    }
+}
+extension NameExerciseViewController: UICollectionViewDataSource{
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+         return 6
+    }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+        cell.delegate = self
+        return cell
+    }
+}
+
+extension NameExerciseViewController : CellExerciseDelegate{
+    func showMoreQuestion(text: String) {
+        
     }
 }
 
 extension NameExerciseViewController : TimeDelegate{
     func endTime() {
         
-    }
-}
-
-extension NameExerciseViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 30
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        cell.setupData(title: listQuestion[indexPath.row])
-        cell.indexPath = indexPath
-        cell.isSelect = listSelect[indexPath.row]
-        cell.delegate = self
-        heightTB = tableView.contentSize.height
-        heightScrollView.constant = vProfile.frame.height + heightTB + 20
-        return cell
-    }
-}
-
-extension NameExerciseViewController : ClickQuestionDelegate{
-    func clickQuestion(indexPath: IndexPath?, isSelect: Bool) {
-        self.listSelect[indexPath?.row ?? 0] = isSelect
-    }
-}
-extension NameExerciseViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //show popup suggestion result
-//        PopUpHelper.shared.showSuggesstionResult(diamond: {
-//
-//        }) {
-//
-//        }
-        //show pop update account
-//        PopUpHelper.shared.showUpdateAccount {
-//
-//        }
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
     }
 }

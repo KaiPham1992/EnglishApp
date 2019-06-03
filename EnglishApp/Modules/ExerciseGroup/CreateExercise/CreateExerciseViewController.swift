@@ -35,6 +35,7 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
     }
     override func setUpNavigation() {
         super.setUpNavigation()
+        self.tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.create_exercise.showLanguage)
     }
