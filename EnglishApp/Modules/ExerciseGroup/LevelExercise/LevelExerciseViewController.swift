@@ -14,6 +14,7 @@ import UIKit
 enum AssignLevel {
     case assign
     case level
+    case tryhard
 }
 
 class LevelExerciseViewController: BaseViewController, LevelExerciseViewProtocol {
@@ -25,7 +26,7 @@ class LevelExerciseViewController: BaseViewController, LevelExerciseViewProtocol
     
     override func setUpViews() {
         super.setUpViews()
-        if type == .level {
+        if type == .level || type == .tryhard {
             tbvLevelExercise.registerXibFile(CellLevelExercise.self)
         } else {
             tbvLevelExercise.registerXibFile(CellAssignExercise.self)
@@ -36,8 +37,17 @@ class LevelExerciseViewController: BaseViewController, LevelExerciseViewProtocol
     override func setUpNavigation() {
         super.setUpNavigation()
         self.tabBarController?.tabBar.isHidden = true
-        setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
         addBackToNavigation()
+        if type == .level {
+            setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
+        }
+        
+        if type == .tryhard{
+            setTitleNavigation(title: LocalizableKey.try_hard.showLanguage)
+        }
+        if type == .assign{
+            setTitleNavigation(title: LocalizableKey.assign_exercise.showLanguage)
+        }
     }
 
 }

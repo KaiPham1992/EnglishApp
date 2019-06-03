@@ -42,24 +42,6 @@
 		7643DEAD22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */; };
 		7643DEAE22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */; };
 		7643DEAF22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */; };
-		7643DEB722A55B2F00B7C323 /* TryHardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB122A55B2F00B7C323 /* TryHardPresenter.swift */; };
-		7643DEB822A55B2F00B7C323 /* TryHardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB122A55B2F00B7C323 /* TryHardPresenter.swift */; };
-		7643DEB922A55B2F00B7C323 /* TryHardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB122A55B2F00B7C323 /* TryHardPresenter.swift */; };
-		7643DEBA22A55B2F00B7C323 /* TryHardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB222A55B2F00B7C323 /* TryHardRouter.swift */; };
-		7643DEBB22A55B2F00B7C323 /* TryHardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB222A55B2F00B7C323 /* TryHardRouter.swift */; };
-		7643DEBC22A55B2F00B7C323 /* TryHardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB222A55B2F00B7C323 /* TryHardRouter.swift */; };
-		7643DEBD22A55B2F00B7C323 /* TryHardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB322A55B2F00B7C323 /* TryHardViewController.swift */; };
-		7643DEBE22A55B2F00B7C323 /* TryHardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB322A55B2F00B7C323 /* TryHardViewController.swift */; };
-		7643DEBF22A55B2F00B7C323 /* TryHardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB322A55B2F00B7C323 /* TryHardViewController.swift */; };
-		7643DEC022A55B2F00B7C323 /* TryHardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB422A55B2F00B7C323 /* TryHardProtocols.swift */; };
-		7643DEC122A55B2F00B7C323 /* TryHardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB422A55B2F00B7C323 /* TryHardProtocols.swift */; };
-		7643DEC222A55B2F00B7C323 /* TryHardProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB422A55B2F00B7C323 /* TryHardProtocols.swift */; };
-		7643DEC322A55B2F00B7C323 /* TryHardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB522A55B2F00B7C323 /* TryHardInteractor.swift */; };
-		7643DEC422A55B2F00B7C323 /* TryHardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB522A55B2F00B7C323 /* TryHardInteractor.swift */; };
-		7643DEC522A55B2F00B7C323 /* TryHardInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DEB522A55B2F00B7C323 /* TryHardInteractor.swift */; };
-		7643DEC622A55B2F00B7C323 /* TryHardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DEB622A55B2F00B7C323 /* TryHardViewController.xib */; };
-		7643DEC722A55B2F00B7C323 /* TryHardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DEB622A55B2F00B7C323 /* TryHardViewController.xib */; };
-		7643DEC822A55B2F00B7C323 /* TryHardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7643DEB622A55B2F00B7C323 /* TryHardViewController.xib */; };
 		76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
 		76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */; };
@@ -1651,12 +1633,6 @@
 		7643DEA422A503FC00B7C323 /* ViewShowMore.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewShowMore.xib; sourceTree = "<group>"; };
 		7643DEA822A5041200B7C323 /* ViewShowMore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewShowMore.swift; sourceTree = "<group>"; };
 		7643DEAC22A505EB00B7C323 /* ShowMorePopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowMorePopUp.swift; sourceTree = "<group>"; };
-		7643DEB122A55B2F00B7C323 /* TryHardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHardPresenter.swift; sourceTree = "<group>"; };
-		7643DEB222A55B2F00B7C323 /* TryHardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHardRouter.swift; sourceTree = "<group>"; };
-		7643DEB322A55B2F00B7C323 /* TryHardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHardViewController.swift; sourceTree = "<group>"; };
-		7643DEB422A55B2F00B7C323 /* TryHardProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHardProtocols.swift; sourceTree = "<group>"; };
-		7643DEB522A55B2F00B7C323 /* TryHardInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TryHardInteractor.swift; sourceTree = "<group>"; };
-		7643DEB622A55B2F00B7C323 /* TryHardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TryHardViewController.xib; sourceTree = "<group>"; };
 		76483BDD229ED13C0079F9A1 /* SuggestionResultPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestionResultPopUp.swift; sourceTree = "<group>"; };
 		76483BE2229ED1CE0079F9A1 /* SuggesstionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggesstionView.swift; sourceTree = "<group>"; };
 		76483BE6229ED1DD0079F9A1 /* SuggesstionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuggesstionView.xib; sourceTree = "<group>"; };
@@ -2280,19 +2256,6 @@
 			path = ShowMorePopUp;
 			sourceTree = "<group>";
 		};
-		7643DEB022A55B1800B7C323 /* TryHard */ = {
-			isa = PBXGroup;
-			children = (
-				7643DEB122A55B2F00B7C323 /* TryHardPresenter.swift */,
-				7643DEB222A55B2F00B7C323 /* TryHardRouter.swift */,
-				7643DEB322A55B2F00B7C323 /* TryHardViewController.swift */,
-				7643DEB422A55B2F00B7C323 /* TryHardProtocols.swift */,
-				7643DEB522A55B2F00B7C323 /* TryHardInteractor.swift */,
-				7643DEB622A55B2F00B7C323 /* TryHardViewController.xib */,
-			);
-			path = TryHard;
-			sourceTree = "<group>";
-		};
 		76483BDC229ED1220079F9A1 /* SuggestionResultPopUp */ = {
 			isa = PBXGroup;
 			children = (
@@ -2739,7 +2702,6 @@
 		76F7F4302294212A001E9984 /* ExerciseGroup */ = {
 			isa = PBXGroup;
 			children = (
-				7643DEB022A55B1800B7C323 /* TryHard */,
 				769A3BAE229FE55B00CA55BD /* History */,
 				76CE322322968C5E00E998FB /* NameExercise */,
 				76CE31992295AE1E00E998FB /* ChoiceExercise */,
@@ -4247,7 +4209,6 @@
 				DE95310E2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314B2288324300E3F688 /* EditProfileViewController.xib in Resources */,
 				DEC62AA12292FA2800D7CECE /* HomeNavigationView.xib in Resources */,
-				7643DEC622A55B2F00B7C323 /* TryHardViewController.xib in Resources */,
 				DE3CC3452283DD990037DBE4 /* Assets.xcassets in Resources */,
 				76CE31D72296304700E998FB /* ViewPoint.xib in Resources */,
 				DE361E722283E60500FA3B0D /* AppTextField.xib in Resources */,
@@ -4374,7 +4335,6 @@
 				DE95310F2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314C2288324300E3F688 /* EditProfileViewController.xib in Resources */,
 				DEC62AA22292FA2800D7CECE /* HomeNavigationView.xib in Resources */,
-				7643DEC722A55B2F00B7C323 /* TryHardViewController.xib in Resources */,
 				DE9530522287DF4800E3F688 /* Assets.xcassets in Resources */,
 				76CE31D82296304700E998FB /* ViewPoint.xib in Resources */,
 				DE9530532287DF4800E3F688 /* AppTextField.xib in Resources */,
@@ -4501,7 +4461,6 @@
 				DE9531102287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314D2288324300E3F688 /* EditProfileViewController.xib in Resources */,
 				DEC62AA32292FA2800D7CECE /* HomeNavigationView.xib in Resources */,
-				7643DEC822A55B2F00B7C323 /* TryHardViewController.xib in Resources */,
 				DE9531002287DF6400E3F688 /* Assets.xcassets in Resources */,
 				76CE31D92296304700E998FB /* ViewPoint.xib in Resources */,
 				DE9531012287DF6400E3F688 /* AppTextField.xib in Resources */,
@@ -4846,7 +4805,6 @@
 				DE49F7FC22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE95315822883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
-				7643DEC022A55B2F00B7C323 /* TryHardProtocols.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
 				76CE321D229653D500E998FB /* CellResultCompetition.swift in Sources */,
 				DE952F802287D2A700E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
@@ -4953,7 +4911,6 @@
 				DE89D21E22A42592000638B0 /* BXHPresenter.swift in Sources */,
 				76CF0C6C22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE361E682283E60500FA3B0D /* Strings.swift in Sources */,
-				7643DEBD22A55B2F00B7C323 /* TryHardViewController.swift in Sources */,
 				76CF0C7222906822003C4B4B /* CommentViewController.swift in Sources */,
 				7643DE9D22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBB229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
@@ -5070,7 +5027,6 @@
 				DE361E9A2283E60500FA3B0D /* StringReachability.swift in Sources */,
 				76CE323F2296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE952F842287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
-				7643DEC322A55B2F00B7C323 /* TryHardInteractor.swift in Sources */,
 				76F7F453229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */,
 				76483BF0229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -5101,7 +5057,6 @@
 				DE89D21122A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
 				DE89D22A22A42592000638B0 /* BXHInteractor.swift in Sources */,
-				7643DEB722A55B2F00B7C323 /* TryHardPresenter.swift in Sources */,
 				76E2FEEA228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				769A3BC8229FE74A00CA55BD /* MothView.swift in Sources */,
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
@@ -5110,7 +5065,6 @@
 				DE49F80E22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DEB5847A2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
-				7643DEBA22A55B2F00B7C323 /* TryHardRouter.swift in Sources */,
 				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
 				76F7F450229466DD001E9984 /* CreateExercisePresenter.swift in Sources */,
@@ -5273,7 +5227,6 @@
 				DE49F7FD22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
 				DE95315922883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
-				7643DEC122A55B2F00B7C323 /* TryHardProtocols.swift in Sources */,
 				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
 				76CE321E229653D500E998FB /* CellResultCompetition.swift in Sources */,
 				DE952FB62287DF4800E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
@@ -5380,7 +5333,6 @@
 				DE89D21F22A42592000638B0 /* BXHPresenter.swift in Sources */,
 				76CF0C6D22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE952FD72287DF4800E3F688 /* Strings.swift in Sources */,
-				7643DEBE22A55B2F00B7C323 /* TryHardViewController.swift in Sources */,
 				76CF0C7322906822003C4B4B /* CommentViewController.swift in Sources */,
 				7643DE9E22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBC229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
@@ -5497,7 +5449,6 @@
 				DE952FFB2287DF4800E3F688 /* StringReachability.swift in Sources */,
 				76CE32402296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE952FFC2287DF4800E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
-				7643DEC422A55B2F00B7C323 /* TryHardInteractor.swift in Sources */,
 				76F7F454229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE952FFD2287DF4800E3F688 /* MenuProtocols.swift in Sources */,
 				76483BF1229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -5528,7 +5479,6 @@
 				DE89D21222A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
 				DE89D22B22A42592000638B0 /* BXHInteractor.swift in Sources */,
-				7643DEB822A55B2F00B7C323 /* TryHardPresenter.swift in Sources */,
 				76E2FEEB228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				769A3BC9229FE74A00CA55BD /* MothView.swift in Sources */,
 				DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */,
@@ -5537,7 +5487,6 @@
 				DE49F80F22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DEB5847B2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
-				7643DEBB22A55B2F00B7C323 /* TryHardRouter.swift in Sources */,
 				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */,
 				76F7F451229466DD001E9984 /* CreateExercisePresenter.swift in Sources */,
@@ -5700,7 +5649,6 @@
 				DE49F7FE22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
 				DE95315A22883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
-				7643DEC222A55B2F00B7C323 /* TryHardProtocols.swift in Sources */,
 				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
 				76CE321F229653D500E998FB /* CellResultCompetition.swift in Sources */,
 				DE9530642287DF6400E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
@@ -5807,7 +5755,6 @@
 				DE89D22022A42592000638B0 /* BXHPresenter.swift in Sources */,
 				76CF0C6E22906822003C4B4B /* CommentPresenter.swift in Sources */,
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
-				7643DEBF22A55B2F00B7C323 /* TryHardViewController.swift in Sources */,
 				76CF0C7422906822003C4B4B /* CommentViewController.swift in Sources */,
 				7643DE9F22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBD229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
@@ -5924,7 +5871,6 @@
 				DE9530A92287DF6400E3F688 /* StringReachability.swift in Sources */,
 				76CE32412296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE9530AA2287DF6400E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
-				7643DEC522A55B2F00B7C323 /* TryHardInteractor.swift in Sources */,
 				76F7F455229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE9530AB2287DF6400E3F688 /* MenuProtocols.swift in Sources */,
 				76483BF2229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -5955,7 +5901,6 @@
 				DE89D21322A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
 				DE89D22C22A42592000638B0 /* BXHInteractor.swift in Sources */,
-				7643DEB922A55B2F00B7C323 /* TryHardPresenter.swift in Sources */,
 				76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				769A3BCA229FE74A00CA55BD /* MothView.swift in Sources */,
 				DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */,
@@ -5964,7 +5909,6 @@
 				DE49F81022A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DEB5847C2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
-				7643DEBC22A55B2F00B7C323 /* TryHardRouter.swift in Sources */,
 				DE9530B52287DF6400E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530B62287DF6400E3F688 /* AppTextField.swift in Sources */,
 				76F7F452229466DD001E9984 /* CreateExercisePresenter.swift in Sources */,
