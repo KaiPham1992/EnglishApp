@@ -27,4 +27,19 @@ class ListLessonRouter: ListLessonWireframeProtocol {
 
         return view
     }
+    static func createModule(type: LessonRecipe = .lesson) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = ListLessonViewController(nibName: nil, bundle: nil)
+        view.type = type
+        let interactor = ListLessonInteractor()
+        let router = ListLessonRouter()
+        let presenter = ListLessonPresenter(interface: view, interactor: interactor, router: router)
+        presenter.type = type
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }

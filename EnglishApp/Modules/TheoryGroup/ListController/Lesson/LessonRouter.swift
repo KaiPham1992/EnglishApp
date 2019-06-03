@@ -43,7 +43,12 @@ class LessonRouter: LessonWireframeProtocol {
     }
     
     func gotoLesson(){
-        let vc = ListLessonRouter.createModule()
+        let vc = ListLessonRouter.createModule(type: .lesson)
+        self.viewController?.push(controller: vc, animated: true)
+    }
+    
+    func gotoRecipe() {
+        let vc = ListLessonRouter.createModule(type: .recipe)
         self.viewController?.push(controller: vc, animated: true)
     }
 }

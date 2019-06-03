@@ -17,6 +17,8 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
     private let router: ListLessonWireframeProtocol
     
     var listLesson : [String] = [LocalizableKey.simple_present.showLanguage,LocalizableKey.present_perfect.showLanguage,LocalizableKey.present_countinous.showLanguage,LocalizableKey.past_simple.showLanguage]
+    var listIdioms : [String] = [LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage]
+    var type : LessonRecipe = .lesson
 
     init(interface: ListLessonViewProtocol, interactor: ListLessonInteractorInputProtocol?, router: ListLessonWireframeProtocol) {
         self.view = interface
@@ -26,10 +28,16 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
     
     
     func numberLesson() -> Int {
-        return listLesson.count
+        if type == .lesson{
+            return listLesson.count
+        }
+        return listIdioms.count
     }
     func getLessonIndexPath(indexPath: IndexPath) -> String{
-        return listLesson[indexPath.row]
+        if type == .lesson {
+            return listLesson[indexPath.row]
+        }
+        return listIdioms[indexPath.row]
     }
 
 }

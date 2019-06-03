@@ -26,4 +26,7 @@ class LessonPresenter: LessonPresenterProtocol, LessonInteractorOutputProtocol {
         self.router.gotoLesson()
     }
 
+    func gotoRecipe() {
+        self.router.gotoRecipe()
+    }
 }

@@ -13,12 +13,14 @@ import Foundation
 //MARK: Wireframe -
 protocol LessonWireframeProtocol: class {
     func gotoLesson()
+    func gotoRecipe()
 }
 //MARK: Presenter -
 protocol LessonPresenterProtocol: class {
 
     var interactor: LessonInteractorInputProtocol? { get set }
     func gotoLesson()
+    func gotoRecipe()
 }
 
 //MARK: Interactor -

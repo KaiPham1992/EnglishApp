@@ -22,15 +22,28 @@ class LessonViewController: UIViewController, LessonViewProtocol {
     var type: TheoryType = .lesson
 
     @IBAction func clickPhrasalVerbs(_ sender: Any) {
-        self.presenter?.gotoLesson()
+        if type == .lesson{
+            self.presenter?.gotoLesson()
+        } else {
+            self.presenter?.gotoRecipe()
+        }
+        
     }
     
     @IBAction func clickGrammar(_ sender: Any) {
-        self.presenter?.gotoLesson()
+        if type == .lesson{
+            self.presenter?.gotoLesson()
+        } else {
+            self.presenter?.gotoRecipe()
+        }
     }
     
     @IBAction func clickPhonetics(_ sender: Any) {
-        self.presenter?.gotoLesson()
+        if type == .lesson{
+            self.presenter?.gotoLesson()
+        } else {
+            self.presenter?.gotoRecipe()
+        }
     }
     
     @IBOutlet weak var lbPhrasalVerbs: UILabel!

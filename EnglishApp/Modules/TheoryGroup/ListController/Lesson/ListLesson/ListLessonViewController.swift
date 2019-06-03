@@ -10,11 +10,17 @@
 
 import UIKit
 
+enum LessonRecipe {
+    case lesson
+    case recipe
+}
+
 class ListLessonViewController: BaseViewController, ListLessonViewProtocol {
 
 	var presenter: ListLessonPresenterProtocol?
 
     @IBOutlet weak var tbvLesson: UITableView!
+    var type : LessonRecipe = .lesson
     override func viewDidLoad() {
         super.viewDidLoad()
         tbvLesson.registerXibFile(CellGrammar.self)
@@ -24,7 +30,12 @@ class ListLessonViewController: BaseViewController, ListLessonViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.lesson.showLanguage)
+        if type == .lesson{
+            setTitleNavigation(title: LocalizableKey.lesson.showLanguage)
+        } else {
+            setTitleNavigation(title: LocalizableKey.recipe.showLanguage)
+        }
+        
     }
 }
 extension ListLessonViewController : UITableViewDataSource{
