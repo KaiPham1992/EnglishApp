@@ -22,4 +22,8 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.router = router
     }
 
+    
+    func gotoDetailVocabulary() {
+        self.router.gotoDetailVocabulary()
+    }
 }

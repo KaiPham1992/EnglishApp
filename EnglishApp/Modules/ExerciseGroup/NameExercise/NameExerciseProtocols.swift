@@ -12,12 +12,13 @@ import Foundation
 
 //MARK: Wireframe -
 protocol NameExerciseWireframeProtocol: class {
-
+    func gotoDetailVocabulary()
 }
 //MARK: Presenter -
 protocol NameExercisePresenterProtocol: class {
 
     var interactor: NameExerciseInteractorInputProtocol? { get set }
+    func gotoDetailVocabulary()
 }
 
 //MARK: Interactor -

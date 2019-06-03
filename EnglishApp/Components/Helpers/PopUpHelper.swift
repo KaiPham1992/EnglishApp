@@ -27,6 +27,11 @@ class PopUpHelper {
         popup.showPopUp(content: content)
     }
     
+    func showMorePopUpAttributed(attributed: NSMutableAttributedString, completionMessage: CompletionMessage?){
+        let popup = ShowMorePopUp()
+        popup.showPopUpAttributed(attributed: attributed, completionMessage: completionMessage)
+    }
+    
     func showUpdateAccount(confirm: CompletionClosure?){
         let popup = UpdateAccountPopup()
         popup.showPopup(confirm: confirm)

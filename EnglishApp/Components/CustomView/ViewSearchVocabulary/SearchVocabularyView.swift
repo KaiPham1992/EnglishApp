@@ -11,6 +11,7 @@ import UIKit
 
 class SearchVocabularyView: BaseViewXib{
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var btnDetail: UIButton!
     override func setUpViews() {
         super.setUpViews()
     }

@@ -46,6 +46,7 @@ class BasePopUpView: UIView {
     
     var completionNo: CompletionClosure?
     var completionYes: CompletionClosure?
+    var completionMessage: CompletionMessage?
     
     private var widthContent: CGFloat = 0
     private var heightContent: CGFloat = 0

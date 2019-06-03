@@ -10,13 +10,16 @@ import UIKit
 import Popover
 
 protocol CellExerciseDelegate: class {
-    func showMoreQuestion(text: String)
+    func showMoreQuestion(attributed: NSMutableAttributedString)
+    func showDetailVocubulary(text: String)
 }
 
 class CellExercise: UICollectionViewCell {
     
     @IBAction func showMoreQuestion(_ sender: Any) {
-        delegate?.showMoreQuestion(text: tvContent.text)
+        if let attributed = self.attributed {
+            delegate?.showMoreQuestion(attributed: attributed)
+        }
     }
     
     //    @IBAction func clickMore(_ sender: Any) {
@@ -45,6 +48,7 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var heightTVContent: NSLayoutConstraint!
     @IBOutlet weak var heightVBlur: NSLayoutConstraint!
     @IBOutlet weak var vBlur: ViewGradient!
+    var attributed: NSMutableAttributedString?
     
     
     var numberLine: Int = 0
@@ -92,6 +96,7 @@ class CellExercise: UICollectionViewCell {
             attributed.addAttributes(myCustomAttributed, range: range)
             attributedText.append(attributed)
         }
+        self.attributed = attributedText
         tvContent.attributedText = attributedText
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
@@ -127,12 +132,16 @@ class CellExercise: UICollectionViewCell {
         popover.removeFromSuperview()
         let point = tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
         let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
+        aView.btnDetail.addTarget(self, action: #selector(clickDetail), for: .touchUpInside)
         aView.setTitle(title: title)
         popover.blackOverlayColor = .clear
         popover.popoverColor = .white
         popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
         popover.layer.cornerRadius = 5
         popover.show(aView, point: point, inView: self.contentView)
+    }
+    @objc func clickDetail(){
+        delegate?.showDetailVocubulary(text: "")
     }
 }
 extension CellExercise : UITableViewDelegate{

@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVocabularyView" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="btnDetail" destination="nzE-Cu-poR" id="g1s-AG-XHF"/>
                 <outlet property="lblTitle" destination="fxw-Cw-kbu" id="6Yn-Kg-pbe"/>
             </connections>
         </placeholder>
@@ -36,7 +37,7 @@
                             <state key="normal" backgroundImage="Material_Icons_black_volume_up"/>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="/ə'pi:l/ /ə'pi:l/" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHq-i8-Aiq">
-                            <rect key="frame" x="302" y="6" width="75" height="18"/>
+                            <rect key="frame" x="302" y="5.5" width="75" height="19"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="X9l-U1-Hfn"/>
                             </constraints>
@@ -57,13 +58,13 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="sự kêu gọi" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxL-xi-lNH">
-                            <rect key="frame" x="8" y="34" width="398" height="16"/>
+                            <rect key="frame" x="8" y="34" width="398" height="16.5"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzE-Cu-poR">
-                            <rect key="frame" x="0.0" y="54" width="414" height="26"/>
+                            <rect key="frame" x="0.0" y="54.5" width="414" height="25.5"/>
                             <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <state key="normal" title="Xem chi tiết">

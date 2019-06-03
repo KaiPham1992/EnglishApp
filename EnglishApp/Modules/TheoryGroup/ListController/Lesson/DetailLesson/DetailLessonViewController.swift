@@ -10,10 +10,17 @@
 
 import UIKit
 
+
+enum DetailLessonVocabulary{
+    case detailLesson
+    case vocabulary
+}
 class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
 
 	var presenter: DetailLessonPresenterProtocol?
     var titleNavi: String = ""
+    var type : DetailLessonVocabulary = .detailLesson
+    
     var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
     override func setUpViews() {
         super.setUpViews()
@@ -23,10 +30,15 @@ class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: titleNavi)
-        viewMessage.action = {
-            print("Message")
+        if type == .detailLesson{
+            viewMessage.action = {
+                print("Message")
+            }
+            addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
+        } else {
+            addButtonToNavigation(image: UIImage(named:"Material_Icons_white_favorite")!, style: .right, action: #selector(clickHeart))
         }
-        addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
+        
     }
     
     @objc func clickHeart(){

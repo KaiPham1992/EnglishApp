@@ -27,4 +27,9 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
 
         return view
     }
+    
+    func gotoDetailVocabulary(){
+        let vc = DetailLessonRouter.createModule(titleNavi: LocalizableKey.vocabulary.showLanguage,type: .vocabulary)
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }
