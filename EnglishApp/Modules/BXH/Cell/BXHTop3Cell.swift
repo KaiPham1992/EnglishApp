@@ -1,17 +1,18 @@
 //
-//  HomeHeaderCell.swift
+//  BXHTop3Cell.swift
 //  EnglishApp
 //
-//  Created by Kai Pham on 5/18/19.
+//  Created by Kai Pham on 6/3/19.
 //  Copyright © 2019 demo. All rights reserved.
 //
 
 import UIKit
 
-class HomeHeaderCell: BaseTableCell {
+class BXHTop3Cell: BaseTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
 }

@@ -94,6 +94,10 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             delegateController?.controllerSelected(controller: BXHRouter.createModule())
             AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
             
+        case AppImage.imgPrivacy:
+            delegateController?.controllerSelected(controller: WebViewController.initFromNib())
+            AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
+            
         case AppImage.imgLogout:
             PopUpHelper.shared.showLogout(completionNo: {
                 print("No")

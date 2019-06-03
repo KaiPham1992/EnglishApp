@@ -34,7 +34,7 @@ struct AppImage {
     // Menu
     static let imgTop = UIImage(named: "ic_ranking")!.withRenderingMode(.alwaysTemplate)
     static let imgInfo = UIImage(named: "Info")!.withRenderingMode(.alwaysTemplate)
-    static let imgQA = UIImage(named: "close")!.withRenderingMode(.alwaysTemplate)
+    static let imgQA = UIImage(named: "ic_conversation")!.withRenderingMode(.alwaysTemplate)
     static let imgLanguage = UIImage(named: "ic_language")!.withRenderingMode(.alwaysTemplate)
     static let imgSaved = UIImage(named: "ic_facorite_2")!.withRenderingMode(.alwaysTemplate)
     static let imgHistoryCheck = UIImage(named: "history_test")!.withRenderingMode(.alwaysTemplate)

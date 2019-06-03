@@ -1552,6 +1552,24 @@
 		DECD193222A26EE20054861D /* DetailPackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD193122A26EE20054861D /* DetailPackEntity.swift */; };
 		DECD193322A26EE20054861D /* DetailPackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD193122A26EE20054861D /* DetailPackEntity.swift */; };
 		DECD193422A26EE20054861D /* DetailPackEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD193122A26EE20054861D /* DetailPackEntity.swift */; };
+		DED5A00322A562AE00872261 /* TopThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A00222A562AE00872261 /* TopThreeView.swift */; };
+		DED5A00422A562AE00872261 /* TopThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A00222A562AE00872261 /* TopThreeView.swift */; };
+		DED5A00522A562AE00872261 /* TopThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A00222A562AE00872261 /* TopThreeView.swift */; };
+		DED5A00722A562C300872261 /* TopThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A00622A562C300872261 /* TopThreeView.xib */; };
+		DED5A00822A562C300872261 /* TopThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A00622A562C300872261 /* TopThreeView.xib */; };
+		DED5A00922A562C300872261 /* TopThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A00622A562C300872261 /* TopThreeView.xib */; };
+		DED5A00C22A579CC00872261 /* BXHTop3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A00A22A579CC00872261 /* BXHTop3Cell.swift */; };
+		DED5A00D22A579CC00872261 /* BXHTop3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A00A22A579CC00872261 /* BXHTop3Cell.swift */; };
+		DED5A00E22A579CC00872261 /* BXHTop3Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A00A22A579CC00872261 /* BXHTop3Cell.swift */; };
+		DED5A00F22A579CC00872261 /* BXHTop3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A00B22A579CC00872261 /* BXHTop3Cell.xib */; };
+		DED5A01022A579CC00872261 /* BXHTop3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A00B22A579CC00872261 /* BXHTop3Cell.xib */; };
+		DED5A01122A579CC00872261 /* BXHTop3Cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A00B22A579CC00872261 /* BXHTop3Cell.xib */; };
+		DED5A01422A579F800872261 /* BXHCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01222A579F800872261 /* BXHCell.swift */; };
+		DED5A01522A579F800872261 /* BXHCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01222A579F800872261 /* BXHCell.swift */; };
+		DED5A01622A579F800872261 /* BXHCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01222A579F800872261 /* BXHCell.swift */; };
+		DED5A01722A579F800872261 /* BXHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A01322A579F800872261 /* BXHCell.xib */; };
+		DED5A01822A579F800872261 /* BXHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A01322A579F800872261 /* BXHCell.xib */; };
+		DED5A01922A579F800872261 /* BXHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A01322A579F800872261 /* BXHCell.xib */; };
 		DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
@@ -2127,6 +2145,12 @@
 		DECD192922A26B4A0054861D /* DetailPackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPackCell.swift; sourceTree = "<group>"; };
 		DECD192A22A26B4A0054861D /* DetailPackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailPackCell.xib; sourceTree = "<group>"; };
 		DECD193122A26EE20054861D /* DetailPackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPackEntity.swift; sourceTree = "<group>"; };
+		DED5A00222A562AE00872261 /* TopThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopThreeView.swift; sourceTree = "<group>"; };
+		DED5A00622A562C300872261 /* TopThreeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TopThreeView.xib; sourceTree = "<group>"; };
+		DED5A00A22A579CC00872261 /* BXHTop3Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXHTop3Cell.swift; sourceTree = "<group>"; };
+		DED5A00B22A579CC00872261 /* BXHTop3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXHTop3Cell.xib; sourceTree = "<group>"; };
+		DED5A01222A579F800872261 /* BXHCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXHCell.swift; sourceTree = "<group>"; };
+		DED5A01322A579F800872261 /* BXHCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXHCell.xib; sourceTree = "<group>"; };
 		DEDDEF6422914A980043A62D /* MainTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
 		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
@@ -2921,6 +2945,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				DED5A00122A5629A00872261 /* TopThreeView */,
 				7643DE9122A4C07E00B7C323 /* ViewMessage */,
 				7643DE7E22A38C8A00B7C323 /* ViewSearchVocabulary */,
 				769A3BDC22A24E7A00CA55BD /* Time */,
@@ -3457,6 +3482,10 @@
 			children = (
 				DE89D23122A425CB000638B0 /* BXHView.swift */,
 				DE89D23522A425E2000638B0 /* BXHView.xib */,
+				DED5A00A22A579CC00872261 /* BXHTop3Cell.swift */,
+				DED5A00B22A579CC00872261 /* BXHTop3Cell.xib */,
+				DED5A01222A579F800872261 /* BXHCell.swift */,
+				DED5A01322A579F800872261 /* BXHCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -3877,6 +3906,15 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		DED5A00122A5629A00872261 /* TopThreeView */ = {
+			isa = PBXGroup;
+			children = (
+				DED5A00222A562AE00872261 /* TopThreeView.swift */,
+				DED5A00622A562C300872261 /* TopThreeView.xib */,
+			);
+			path = TopThreeView;
+			sourceTree = "<group>";
+		};
 		DEDDEF6322914A790043A62D /* MainTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -4111,6 +4149,7 @@
 				DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
+				DED5A00F22A579CC00872261 /* BXHTop3Cell.xib in Resources */,
 				DE49F82A22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				DE89D1D822A413DA000638B0 /* RequireUpgradeContent.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
@@ -4149,6 +4188,7 @@
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				DE89D20B22A41E09000638B0 /* ChangeLanguageViewController.xib in Resources */,
 				76CE3220229653D500E998FB /* CellResultCompetition.xib in Resources */,
+				DED5A01722A579F800872261 /* BXHCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46822946928001E9984 /* CellCreateExercise.xib in Resources */,
@@ -4185,6 +4225,7 @@
 				76CE31B82295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE49F7EE22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
 				DE361DDB2283E4BD00FA3B0D /* LoginViewController.xib in Resources */,
+				DED5A00722A562C300872261 /* TopThreeView.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				769A3BC4229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
@@ -4237,6 +4278,7 @@
 				DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
+				DED5A01022A579CC00872261 /* BXHTop3Cell.xib in Resources */,
 				DE49F82B22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				DE89D1D922A413DA000638B0 /* RequireUpgradeContent.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
@@ -4275,6 +4317,7 @@
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				DE89D20C22A41E09000638B0 /* ChangeLanguageViewController.xib in Resources */,
 				76CE3221229653D500E998FB /* CellResultCompetition.xib in Resources */,
+				DED5A01822A579F800872261 /* BXHCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46922946928001E9984 /* CellCreateExercise.xib in Resources */,
@@ -4311,6 +4354,7 @@
 				76CE31B92295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE49F7EF22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
 				DE95304E2287DF4800E3F688 /* LoginViewController.xib in Resources */,
+				DED5A00822A562C300872261 /* TopThreeView.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				769A3BC5229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
@@ -4363,6 +4407,7 @@
 				DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
+				DED5A01122A579CC00872261 /* BXHTop3Cell.xib in Resources */,
 				DE49F82C22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				DE89D1DA22A413DA000638B0 /* RequireUpgradeContent.xib in Resources */,
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
@@ -4401,6 +4446,7 @@
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				DE89D20D22A41E09000638B0 /* ChangeLanguageViewController.xib in Resources */,
 				76CE3222229653D500E998FB /* CellResultCompetition.xib in Resources */,
+				DED5A01922A579F800872261 /* BXHCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46A22946928001E9984 /* CellCreateExercise.xib in Resources */,
@@ -4437,6 +4483,7 @@
 				76CE31BA2295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE49F7F022A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
 				DE9530FC2287DF6400E3F688 /* LoginViewController.xib in Resources */,
+				DED5A00922A562C300872261 /* TopThreeView.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				769A3BC6229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
@@ -4877,6 +4924,7 @@
 				DE95317B228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE361EAA2283E6DB00FA3B0D /* CustomTextfield.swift in Sources */,
 				766D1366228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
+				DED5A00322A562AE00872261 /* TopThreeView.swift in Sources */,
 				DEBD6723228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE49F81E22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
 				76CE31C922961FC300E998FB /* ResultViewController.swift in Sources */,
@@ -4991,6 +5039,7 @@
 				DE49F80522A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1308228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
+				DED5A01422A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191622A269560054861D /* DetailPackProtocols.swift in Sources */,
 				DEB584882291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				76CE31A02295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
@@ -5098,6 +5147,7 @@
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
 				76F7F459229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */,
+				DED5A00C22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
 				76E2FF43228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE361DE72283E54C00FA3B0D /* BaseView.swift in Sources */,
 				DE361F392283E85000FA3B0D /* APIError.swift in Sources */,
@@ -5299,6 +5349,7 @@
 				DE95317C228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */,
 				766D1367228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
+				DED5A00422A562AE00872261 /* TopThreeView.swift in Sources */,
 				DEBD6724228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE49F81F22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
 				76CE31CA22961FC300E998FB /* ResultViewController.swift in Sources */,
@@ -5413,6 +5464,7 @@
 				DE49F80622A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D1309228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
+				DED5A01522A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191722A269560054861D /* DetailPackProtocols.swift in Sources */,
 				DEB584892291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				76CE31A12295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
@@ -5520,6 +5572,7 @@
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45A229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */,
+				DED5A00D22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
 				76E2FF44228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530132287DF4800E3F688 /* BaseView.swift in Sources */,
 				DE9530142287DF4800E3F688 /* APIError.swift in Sources */,
@@ -5721,6 +5774,7 @@
 				DE95317D228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE9530782287DF6400E3F688 /* CustomTextfield.swift in Sources */,
 				766D1368228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
+				DED5A00522A562AE00872261 /* TopThreeView.swift in Sources */,
 				DEBD6725228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE49F82022A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
 				76CE31CB22961FC300E998FB /* ResultViewController.swift in Sources */,
@@ -5835,6 +5889,7 @@
 				DE49F80722A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
+				DED5A01622A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191822A269560054861D /* DetailPackProtocols.swift in Sources */,
 				DEB5848A2291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				76CE31A22295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
@@ -5942,6 +5997,7 @@
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45B229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */,
+				DED5A00E22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
 				76E2FF45228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */,
 				DE9530C22287DF6400E3F688 /* APIError.swift in Sources */,
