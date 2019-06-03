@@ -12,6 +12,7 @@ import Popover
 protocol CellExerciseDelegate: class {
     func showMoreQuestion(attributed: NSMutableAttributedString)
     func showDetailVocubulary(text: String)
+    func showMoreResulr(result: String)
 }
 
 class CellExercise: UICollectionViewCell {
@@ -189,6 +190,10 @@ extension CellExercise: UITableViewDataSource{
 }
 
 extension CellExercise : ClickQuestionDelegate{
+    func showMoreResult(result: String) {
+        delegate?.showMoreResulr(result: result)
+    }
+    
     func clickQuestion(indexPath: IndexPath?, isSelect: Bool) {
         self.listSelect[indexPath?.row ?? 0] = isSelect
     }

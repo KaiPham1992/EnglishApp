@@ -80,6 +80,10 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 }
 
 extension NameExerciseViewController : CellExerciseDelegate{
+    func showMoreResulr(result: String) {
+        PopUpHelper.shared.showMorePopUp(content: result)
+    }
+    
     func showMoreQuestion(attributed: NSMutableAttributedString) {
         PopUpHelper.shared.showMorePopUpAttributed(attributed: attributed) { (text) in
             self.presenter?.gotoDetailVocabulary()

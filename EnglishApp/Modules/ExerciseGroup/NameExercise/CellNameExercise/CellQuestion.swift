@@ -10,6 +10,7 @@ import UIKit
 
 protocol ClickQuestionDelegate: class {
     func clickQuestion(indexPath: IndexPath?,isSelect: Bool)
+    func showMoreResult(result: String)
 }
 
 class CellQuestion: UITableViewCell {
@@ -18,7 +19,7 @@ class CellQuestion: UITableViewCell {
     @IBOutlet weak var btnChoice: UIButton!
     
     @IBAction func clickMore(_ sender: Any) {
-        
+        delegate?.showMoreResult(result: lbQuestion.text ?? "")
     }
     
     @IBAction func clickQuestion(_ sender: Any) {
