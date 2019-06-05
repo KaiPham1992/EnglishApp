@@ -89,15 +89,19 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         case AppImage.imgLanguage:
             delegateController?.controllerSelected(controller: ChangeLanguageRouter.createModule())
             AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
-            
+        case AppImage.imgSaved:
+            delegateController?.controllerSelected(controller: SaveDictionaryRouter.createModule())
+            AppRouter.shared.pushTo(viewController: SaveDictionaryRouter.createModule())
         case AppImage.imgTop:
             delegateController?.controllerSelected(controller: BXHRouter.createModule())
             AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
+        case AppImage.imgHistoryCheck:
+            delegateController?.controllerSelected(controller: HistoryExerciseRouter.createModule())
+            AppRouter.shared.pushTo(viewController: HistoryExerciseRouter.createModule())
             
         case AppImage.imgPrivacy:
             delegateController?.controllerSelected(controller: WebViewController.initFromNib())
             AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
-            
         case AppImage.imgLogout:
             PopUpHelper.shared.showLogout(completionNo: {
                 print("No")

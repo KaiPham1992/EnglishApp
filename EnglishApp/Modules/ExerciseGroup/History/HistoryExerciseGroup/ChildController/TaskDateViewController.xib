@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TaskDateViewController">
+            <connections>
+                <outlet property="btnRespondQuestion" destination="jl9-jR-Sqg" id="5wT-TW-eUC"/>
+                <outlet property="btnSeeExplain" destination="Xeu-8C-e7y" id="bQN-aP-nyL"/>
+                <outlet property="clvQuestion" destination="hk2-zo-jb8" id="hVV-As-H5w"/>
+                <outlet property="lblIndexQuestion" destination="yA8-Vi-W6Q" id="Or6-PF-kHS"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAF-cS-3R5">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="53.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/40 câu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yA8-Vi-W6Q">
+                            <rect key="frame" x="16" y="21" width="87" height="22.5"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="20"/>
+                            <color key="textColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="yA8-Vi-W6Q" firstAttribute="top" secondItem="IAF-cS-3R5" secondAttribute="top" constant="21" id="Nct-eZ-bKI"/>
+                        <constraint firstItem="yA8-Vi-W6Q" firstAttribute="leading" secondItem="IAF-cS-3R5" secondAttribute="leading" constant="16" id="dnF-BN-Ds4"/>
+                        <constraint firstAttribute="bottom" secondItem="yA8-Vi-W6Q" secondAttribute="bottom" constant="10" id="yFC-Kn-sJg"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="hk2-zo-jb8">
+                    <rect key="frame" x="0.0" y="53.5" width="375" height="539.5"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="cP6-Ad-o5R">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z25-dx-sqX">
+                    <rect key="frame" x="0.0" y="593" width="375" height="74"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="toq-gi-WPO">
+                            <rect key="frame" x="16" y="16" width="343" height="42"/>
+                            <subviews>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xeu-8C-e7y">
+                                    <rect key="frame" x="0.0" y="0.0" width="163.5" height="42"/>
+                                    <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                    <state key="normal" title="XEM GIAI THICH">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="seeExplain:" destination="-1" eventType="touchUpInside" id="pqk-g7-nA5"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl9-jR-Sqg">
+                                    <rect key="frame" x="179.5" y="0.0" width="163.5" height="42"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                    <state key="normal" title="BAO CAO CAU HOI">
+                                        <color key="titleColor" red="1" green="0.18823529410000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="suggestResult:" destination="-1" eventType="touchUpInside" id="36O-4U-jMY"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="42" id="UM0-zb-Rao"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="toq-gi-WPO" firstAttribute="leading" secondItem="Z25-dx-sqX" secondAttribute="leading" constant="16" id="1yX-kQ-Nex"/>
+                        <constraint firstItem="toq-gi-WPO" firstAttribute="top" secondItem="Z25-dx-sqX" secondAttribute="top" constant="16" id="SEb-Xs-8f2"/>
+                        <constraint firstAttribute="trailing" secondItem="toq-gi-WPO" secondAttribute="trailing" constant="16" id="Zzr-36-XTI"/>
+                        <constraint firstAttribute="bottom" secondItem="toq-gi-WPO" secondAttribute="bottom" constant="16" id="bhj-1a-1Dx"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="IAF-cS-3R5" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BYg-RJ-Ibr"/>
+                <constraint firstItem="Z25-dx-sqX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BwQ-37-4f3"/>
+                <constraint firstAttribute="trailing" secondItem="IAF-cS-3R5" secondAttribute="trailing" id="Jup-sv-kVc"/>
+                <constraint firstItem="hk2-zo-jb8" firstAttribute="top" secondItem="IAF-cS-3R5" secondAttribute="bottom" id="V9r-1O-oj9"/>
+                <constraint firstAttribute="trailing" secondItem="hk2-zo-jb8" secondAttribute="trailing" id="XVi-NJ-nGw"/>
+                <constraint firstItem="hk2-zo-jb8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="dGr-7a-dhx"/>
+                <constraint firstAttribute="bottom" secondItem="Z25-dx-sqX" secondAttribute="bottom" id="fju-7N-CGN"/>
+                <constraint firstAttribute="trailing" secondItem="Z25-dx-sqX" secondAttribute="trailing" id="gLF-zx-1Lw"/>
+                <constraint firstItem="IAF-cS-3R5" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="tk8-Jn-3fO"/>
+                <constraint firstItem="Z25-dx-sqX" firstAttribute="top" secondItem="hk2-zo-jb8" secondAttribute="bottom" id="vgT-tS-07n"/>
+            </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="145.27736131934034"/>
+        </view>
+    </objects>
+</document>

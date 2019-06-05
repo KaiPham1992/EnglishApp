@@ -19,12 +19,21 @@ enum TypeSave{
 
 class GrammarViewController: UIViewController, GrammarViewProtocol {
 
+    @IBAction func addNote(_ sender: Any) {
+        self.presenter?.gotoAddNote()
+    }
+    @IBOutlet weak var heightButtonAddNote: NSLayoutConstraint!
     @IBOutlet weak var tbvGrammar: UITableView!
     var presenter: GrammarPresenterProtocol?
     var type : TypeSave = .grammar
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        if type == .grammar || type == .vocabulary {
+            heightButtonAddNote.constant = 0
+        } else{
+            heightButtonAddNote.constant = 52
+        }
         tbvGrammar.registerXibFile(CellGrammar.self)
         tbvGrammar.dataSource = self
         tbvGrammar.delegate = self
@@ -45,6 +54,11 @@ extension GrammarViewController : UITableViewDataSource{
 extension GrammarViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if type == .note {
+            self.presenter?.gotoNote()
+        }
     }
 }
 extension GrammarViewController: IndicatorInfoProvider{

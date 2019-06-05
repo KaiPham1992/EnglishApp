@@ -9,7 +9,14 @@
 import Foundation
 import UIKit
 
+protocol ClickDateDelegate: class {
+    func clickDate(index: Int)
+}
+
 class CalendarView : UIView{
+    
+    weak var delegate : ClickDateDelegate?
+    
     let monthView : MonthView = {
         let view = MonthView()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -199,6 +206,9 @@ extension CalendarView : UICollectionViewDataSource{
         } else {
             let date = indexPath.row - firstWeekDayOfMonth + 2
             cell.enableCell(date: date)
+            if indexPath.row % 2 == 0 {
+                cell.showDot()
+            }
         }
         
         return cell
@@ -217,7 +227,9 @@ extension CalendarView : UICollectionViewDelegateFlowLayout{
 extension CalendarView : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! DateCell
-        cell.showDot()
+        if indexPath.row % 2 == 0 {
+            delegate?.clickDate(index: indexPath.row)
+        }
+        
     }
 }

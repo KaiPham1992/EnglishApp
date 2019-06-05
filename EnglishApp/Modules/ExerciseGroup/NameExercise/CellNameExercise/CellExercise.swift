@@ -12,6 +12,7 @@ import Popover
 protocol CellExerciseDelegate: class {
     func showMoreQuestion(attributed: NSMutableAttributedString)
     func showDetailVocubulary(text: String)
+    func showMoreResulr(result: String)
 }
 
 class CellExercise: UICollectionViewCell {
@@ -49,6 +50,14 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var heightVBlur: NSLayoutConstraint!
     @IBOutlet weak var vBlur: ViewGradient!
     var attributed: NSMutableAttributedString?
+    var listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
+    var isExercise = true {
+        didSet{
+            if isExercise == false {
+                self.listSelect = [true,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true]
+            }
+        }
+    }
     
     
     var numberLine: Int = 0
@@ -57,11 +66,12 @@ class CellExercise: UICollectionViewCell {
     
     
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
-    var listSelect : [Bool] = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     
     override func awakeFromNib() {
         super.awakeFromNib()
+       
         setupView()
+        
     }
     
     func setupView(){
@@ -167,7 +177,7 @@ extension CellExercise: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        cell.setupData(title: listQuestion[indexPath.row])
+        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
         cell.indexPath = indexPath
         cell.isSelect = listSelect[indexPath.row]
         cell.delegate = self
@@ -177,6 +187,10 @@ extension CellExercise: UITableViewDataSource{
 }
 
 extension CellExercise : ClickQuestionDelegate{
+    func showMoreResult(result: String) {
+        delegate?.showMoreResulr(result: result)
+    }
+    
     func clickQuestion(indexPath: IndexPath?, isSelect: Bool) {
         self.listSelect[indexPath?.row ?? 0] = isSelect
     }

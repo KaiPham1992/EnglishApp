@@ -25,6 +25,11 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [GrammarRouter.createModule(type:.grammar),GrammarRouter.createModule(type:.vocabulary),GrammarRouter.createModule(type:.note)]
     }

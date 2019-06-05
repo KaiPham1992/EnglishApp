@@ -12,12 +12,15 @@ import Foundation
 
 //MARK: Wireframe -
 protocol GrammarWireframeProtocol: class {
-
+    func gotoNote()
+    func gotoAddNote()
 }
 //MARK: Presenter -
 protocol GrammarPresenterProtocol: class {
 
     var interactor: GrammarInteractorInputProtocol? { get set }
+    func gotoNote()
+    func gotoAddNote()
 }
 
 //MARK: Interactor -

@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 class CompetitionViewController: BaseViewController, CompetitionViewProtocol {
     @IBOutlet weak var tbCompetition: UITableView!
@@ -63,5 +64,11 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 170
+    }
+}
+
+extension CompetitionViewController: IndicatorInfoProvider{
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: LocalizableKey.titleCompetition.showLanguage)
     }
 }

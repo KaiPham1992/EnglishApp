@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
 
@@ -29,6 +30,8 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
     @IBAction func clickAssignExercise(_ sender: Any) {
         self.presenter?.gotoAssignExercise()
     }
+    
+    var isShowTabbar = true
     
     
     @IBOutlet weak var lbAssignExercise: UILabel!
@@ -55,13 +58,19 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+        if isShowTabbar {
+            self.tabBarController?.tabBar.isHidden = false
+        }
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
         setTitleNavigation(title: LocalizableKey.exercise.showLanguage)
     }
-    
+}
 
+extension ExerciseViewController: IndicatorInfoProvider{
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: LocalizableKey.exercise.showLanguage)
+    }
 }

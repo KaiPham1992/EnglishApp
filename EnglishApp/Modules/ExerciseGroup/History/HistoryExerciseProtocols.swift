@@ -12,12 +12,13 @@ import Foundation
 
 //MARK: Wireframe -
 protocol HistoryExerciseWireframeProtocol: class {
-
+    func gotoHistoryDate()
 }
 //MARK: Presenter -
 protocol HistoryExercisePresenterProtocol: class {
 
     var interactor: HistoryExerciseInteractorInputProtocol? { get set }
+    func gotoHistoryDate()
 }
 
 //MARK: Interactor -

@@ -87,6 +87,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="btnChoice" destination="7uR-73-3au" id="ReU-qQ-yaJ"/>
                 <outlet property="heightMore" destination="dUs-Zf-maP" id="INy-mM-O2R"/>
                 <outlet property="lbQuestion" destination="CV9-zw-bxg" id="PhD-Z7-Ow1"/>
                 <outlet property="vBG" destination="UwO-Sh-gVy" id="L6S-3o-I3F"/>

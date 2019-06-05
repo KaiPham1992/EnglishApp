@@ -15,7 +15,7 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
     weak private var view: ListLessonViewProtocol?
     var interactor: ListLessonInteractorInputProtocol?
     private let router: ListLessonWireframeProtocol
-    
+
     var listLesson : [String] = [LocalizableKey.simple_present.showLanguage,LocalizableKey.present_perfect.showLanguage,LocalizableKey.present_countinous.showLanguage,LocalizableKey.past_simple.showLanguage]
     var listIdioms : [String] = [LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage]
     var type : LessonRecipe = .lesson

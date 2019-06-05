@@ -27,4 +27,9 @@ class HistoryExerciseRouter: HistoryExerciseWireframeProtocol {
 
         return view
     }
+    
+    func gotoHistoryDate(){
+        let vc = HistoryExerciseDateRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }
