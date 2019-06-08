@@ -50,11 +50,18 @@ struct AppImage {
     static let imgLogout = UIImage(named: "ic_logout")!.withRenderingMode(.alwaysTemplate)
     
     //---
-    static let img099 = UIImage(named: "0_99")!
-    static let img199 = UIImage(named: "1_99")!
-    static let img999 = UIImage(named: "9_99")!
-    static let img4999 = UIImage(named: "49_99")!
-    static let img9999 = UIImage(named: "99_99")!
+    static let imgIcon10k = UIImage(named: "0_99")!
+    static let imgIcon100k = UIImage(named: "1_99")!
+    static let imgIcon1Tr = UIImage(named: "9_99")!
+    static let imgIcon2Tr = UIImage(named: "49_99")!
+    static let imgIcon5Tr = UIImage(named: "99_99")!
+    
+    
+    static let img10k = UIImage(named: "10k")!
+    static let img100k = UIImage(named: "100k")!
+    static let img1tr = UIImage(named: "1tr")!
+    static let img2tr = UIImage(named: "2tr")!
+    static let img5tr = UIImage(named: "10k")!
     
     //---
     

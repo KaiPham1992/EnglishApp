@@ -11,6 +11,7 @@ import UIKit
 class BeePackCell: BaseTableCell {
     @IBOutlet weak var lbMoney: UILabel!
     @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var imgBackground: UIImageView!
     
     var item: BeePackEntity? {
         didSet {
@@ -18,6 +19,7 @@ class BeePackCell: BaseTableCell {
             
             imgIcon.image = bee.image
             lbMoney.text = bee.money?.description&
+            imgBackground.image = bee.background
             
         }
     }

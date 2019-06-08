@@ -255,4 +255,5 @@ struct LocalizableKey {
     static let theory = "theory"
     
     static let messagePackage = "messagePackage"
+    static let find = "find"
 }

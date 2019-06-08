@@ -28,4 +28,9 @@ class DailyMissionViewController: BaseViewController, DailyMissionViewProtocol {
         btnStart.setTitle(LocalizableKey.startMission.showLanguage.showLanguage.uppercased(), for: .normal)
         lbMessage.text = LocalizableKey.messageDailyMission.showLanguage
     }
+    
+    @IBAction func btnStartTapped() {
+        let vc = NameExerciseRouter.createModule()
+        self.push(controller: vc)
+    }
 }

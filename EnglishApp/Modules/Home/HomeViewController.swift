@@ -80,12 +80,6 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     
     @objc func btnNotificationTapped() {
         self.push(controller: NotificationListRouter.createModule())
-        
-//        PopUpHelper.shared.showLevelUp(completionYes: {
-//            print("Yes")
-//        }) {
-//            print(" ")
-//        }
     }
     
     @objc func btnMenuTapped() {
@@ -187,7 +181,7 @@ extension HomeViewController: HomeActionCellDelegate {
     }
     
     func btnFindWorkTapped() {
-        
+        self.push(controller: FindRouter.createModule())
     }
     
     
