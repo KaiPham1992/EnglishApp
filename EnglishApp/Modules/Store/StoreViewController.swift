@@ -17,6 +17,8 @@ class StoreViewController: PageViewController, TheoryViewProtocol {
         super.viewDidLoad()
         setTitleNavigation(title: LocalizableKey.titleStore.showLanguage)
         addBackToNavigation()
+        
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

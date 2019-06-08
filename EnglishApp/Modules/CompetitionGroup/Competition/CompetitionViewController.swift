@@ -51,6 +51,10 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
         cell.competitionEntity = listCompetition[indexPath.item]
         cell.btnJoin.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
+        //---
+        cell.btnShare.tag = indexPath.item
+        cell.btnShare.addTarget(self, action: #selector(btnShareTapped), for: .touchUpInside)
+        
         return cell
     }
     
@@ -60,6 +64,10 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
     
     @objc func btnJoinTapped() {
         self.push(controller: SelectTeamRouter.createModule())
+    }
+    
+    @objc func btnShareTapped() {
+        ShareNativeHelper.shared.showShareLinkInstall()
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

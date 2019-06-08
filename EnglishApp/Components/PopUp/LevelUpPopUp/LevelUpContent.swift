@@ -10,14 +10,16 @@ import UIKit
 
 class LevelUpContent: BaseViewXib {
     @IBOutlet weak var btnYes: UIButton!
+    @IBOutlet weak var btnPackage: UIButton!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbMessage: UILabel!
+    @IBOutlet weak var lbPackage: UILabel!
     
     override func setUpViews() {
         super.setUpViews()
         
         lbTitle.text = LocalizableKey.levelUp.showLanguage
-//        lbMessage.text = LocalizableKey.reportMessagePopUp.showLanguage
+        lbPackage.text = LocalizableKey.messagePackage.showLanguage.uppercased()
         btnYes.setTitle(LocalizableKey.confirm.showLanguage.uppercased(), for: .normal)
     }
 }

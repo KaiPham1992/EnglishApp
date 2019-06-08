@@ -20,8 +20,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LevelUpContent" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="btnPackage" destination="bu1-eu-xKL" id="FgE-4D-YTf"/>
                 <outlet property="btnYes" destination="al9-fH-Mf8" id="ucj-Lp-CI9"/>
                 <outlet property="lbMessage" destination="JAF-7u-q9R" id="S2v-NU-b7Z"/>
+                <outlet property="lbPackage" destination="d9i-DP-Dyx" id="Pj5-TM-i6e"/>
                 <outlet property="lbTitle" destination="VKy-YL-pGD" id="ZvC-fR-9hA"/>
             </connections>
         </placeholder>
@@ -45,6 +47,18 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Các gói nâng cấp phù hợp với bạn" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9i-DP-Dyx">
+                    <rect key="frame" x="20" y="208" width="374" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="N63-IB-GY9"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                    <color key="textColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bu1-eu-xKL">
+                    <rect key="frame" x="20" y="208" width="374" height="20"/>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="al9-fH-Mf8">
                     <rect key="frame" x="132" y="334" width="150" height="40"/>
                     <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,8 +81,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="d9i-DP-Dyx" secondAttribute="trailing" constant="20" id="0uH-Vf-qXq"/>
+                <constraint firstItem="d9i-DP-Dyx" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="52E-Qk-cEz"/>
+                <constraint firstItem="bu1-eu-xKL" firstAttribute="leading" secondItem="d9i-DP-Dyx" secondAttribute="leading" id="Gn9-RG-P1m"/>
                 <constraint firstItem="Ga4-Nd-NpW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="IQ9-iQ-4IR"/>
+                <constraint firstItem="d9i-DP-Dyx" firstAttribute="top" secondItem="JAF-7u-q9R" secondAttribute="bottom" constant="9" id="Npu-KY-z8e"/>
                 <constraint firstItem="VKy-YL-pGD" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="P2s-xd-o42"/>
+                <constraint firstItem="bu1-eu-xKL" firstAttribute="trailing" secondItem="d9i-DP-Dyx" secondAttribute="trailing" id="V2r-yI-D7j"/>
+                <constraint firstItem="bu1-eu-xKL" firstAttribute="bottom" secondItem="d9i-DP-Dyx" secondAttribute="bottom" id="Xrw-Hg-GWV"/>
                 <constraint firstItem="al9-fH-Mf8" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="YyH-IY-Zj4"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="al9-fH-Mf8" secondAttribute="bottom" constant="24" id="aXG-wL-vMT"/>
                 <constraint firstItem="JAF-7u-q9R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="dp8-Wi-se9"/>
@@ -76,6 +96,7 @@
                 <constraint firstItem="VKy-YL-pGD" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="gRb-R2-m69"/>
                 <constraint firstAttribute="trailing" secondItem="JAF-7u-q9R" secondAttribute="trailing" constant="20" id="ge4-fk-qIX"/>
                 <constraint firstItem="JAF-7u-q9R" firstAttribute="top" secondItem="Ga4-Nd-NpW" secondAttribute="bottom" constant="8" id="hfw-Ox-NjZ"/>
+                <constraint firstItem="bu1-eu-xKL" firstAttribute="top" secondItem="d9i-DP-Dyx" secondAttribute="top" id="hjM-qb-qXx"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

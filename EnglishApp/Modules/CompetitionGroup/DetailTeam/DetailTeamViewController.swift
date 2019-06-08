@@ -27,7 +27,7 @@ class DetailTeamViewController: BaseViewController, DetailTeamViewProtocol {
         super.setTitleUI()
         addBackToNavigation()
         
-        btnStart.setTitle("\(LocalizableKey.startAfter.showLanguage.uppercased()) 8:40:00", for: .normal)
+        btnStart.setTitle("\(LocalizableKey.startAfter.showLanguage.uppercased())", for: .normal)
         btnExplain.setTitle(LocalizableKey.explainConpetition.showLanguage.uppercased(), for: .normal)
         btnLeave.setTitle(LocalizableKey.leaveTeam.showLanguage.uppercased(), for: .normal)
     }

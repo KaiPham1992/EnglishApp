@@ -799,6 +799,9 @@
 		DE49F83722A3E23A00A92C63 /* RewardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */; };
 		DE49F83822A3E23A00A92C63 /* RewardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */; };
 		DE49F83922A3E23A00A92C63 /* RewardPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */; };
+		DE6FDB0722AB5F4000960422 /* ShareNativeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FDB0622AB5F4000960422 /* ShareNativeHelper.swift */; };
+		DE6FDB0822AB5F4000960422 /* ShareNativeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FDB0622AB5F4000960422 /* ShareNativeHelper.swift */; };
+		DE6FDB0922AB5F4000960422 /* ShareNativeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6FDB0622AB5F4000960422 /* ShareNativeHelper.swift */; };
 		DE7D14B9228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BA228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
 		DE7D14BB228EA28A00713084 /* TitleNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */; };
@@ -2027,6 +2030,7 @@
 		DE49F82E22A3E0CE00A92C63 /* RewardPopUpContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPopUpContent.swift; sourceTree = "<group>"; };
 		DE49F83222A3E10A00A92C63 /* RewardPopUpContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RewardPopUpContent.xib; sourceTree = "<group>"; };
 		DE49F83622A3E23A00A92C63 /* RewardPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPopUp.swift; sourceTree = "<group>"; };
+		DE6FDB0622AB5F4000960422 /* ShareNativeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareNativeHelper.swift; sourceTree = "<group>"; };
 		DE7D14B8228EA28A00713084 /* TitleNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleNavigationBar.swift; sourceTree = "<group>"; };
 		DE7D14BC228EA2B500713084 /* TitleNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleNavigationBar.xib; sourceTree = "<group>"; };
 		DE89D1CA22A4126C000638B0 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -3132,6 +3136,7 @@
 				DE361E4E2283E60500FA3B0D /* Utils.swift */,
 				DE361E4F2283E60500FA3B0D /* StringReachability.swift */,
 				DEECF87822870AEB00A4678B /* LanguageHelper.swift */,
+				DE6FDB0622AB5F4000960422 /* ShareNativeHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -5022,6 +5027,7 @@
 				769A3BB8229FE66F00CA55BD /* HistoryExerciseRouter.swift in Sources */,
 				DE3A8CBC2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				766D1317228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
+				DE6FDB0722AB5F4000960422 /* ShareNativeHelper.swift in Sources */,
 				DE95315522883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE361E692283E60500FA3B0D /* AppColor.swift in Sources */,
 				DEBCBC6022945B0900DF7F74 /* StudyPackView.swift in Sources */,
@@ -5462,6 +5468,7 @@
 				769A3BB9229FE66F00CA55BD /* HistoryExerciseRouter.swift in Sources */,
 				DE3A8CBD2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				766D1318228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
+				DE6FDB0822AB5F4000960422 /* ShareNativeHelper.swift in Sources */,
 				DE95315622883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE952FC42287DF4800E3F688 /* AppColor.swift in Sources */,
 				DEBCBC6122945B0900DF7F74 /* StudyPackView.swift in Sources */,
@@ -5902,6 +5909,7 @@
 				769A3BBA229FE66F00CA55BD /* HistoryExerciseRouter.swift in Sources */,
 				DE3A8CBE2289BBF30080A8CB /* CompetitionProtocols.swift in Sources */,
 				766D1319228EE9E4005E47F0 /* LessonPresenter.swift in Sources */,
+				DE6FDB0922AB5F4000960422 /* ShareNativeHelper.swift in Sources */,
 				DE95315722883FB100E3F688 /* PreviewProfilePresenter.swift in Sources */,
 				DE9530722287DF6400E3F688 /* AppColor.swift in Sources */,
 				DEBCBC6222945B0900DF7F74 /* StudyPackView.swift in Sources */,

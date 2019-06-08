@@ -22,7 +22,7 @@ struct AppImage {
     
     static let imgDictionary = UIImage(named: "ic_dictionary")!
     static let imgStore = UIImage(named: "ic_store")!
-    static let imgFindWork = UIImage(named: "ic_arrown")!
+    static let imgFindWork = UIImage(named: "ic_search")!
     static let imgMission = UIImage(named: "ic_arrown")!
     
     // tababr

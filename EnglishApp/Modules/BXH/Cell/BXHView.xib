@@ -39,24 +39,29 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kim cương III: 180000 điểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EGm-et-noZ">
-                    <rect key="frame" x="107.5" y="104" width="211.5" height="18"/>
-                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                    <rect key="frame" x="107.5" y="102" width="185" height="16"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ophelia Grant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N71-XV-NR2">
-                    <rect key="frame" x="107.5" y="82" width="211.5" height="18"/>
-                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
+                    <rect key="frame" x="107.5" y="82" width="185" height="16"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="king" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-TI-HO6">
-                    <rect key="frame" x="381" y="87.5" width="25" height="25"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="crown" translatesAutoresizingMaskIntoConstraints="NO" id="NtI-iE-Byd">
+                    <rect key="frame" x="334" y="80" width="40" height="40"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="Imo-Es-idA"/>
-                        <constraint firstAttribute="width" constant="25" id="mHI-LX-Na3"/>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="oRV-oJ-ed9"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="25" id="xme-Bs-cAo"/>
+                        <constraint firstAttribute="width" constant="40" id="6dd-CX-SC2"/>
+                        <constraint firstAttribute="height" constant="40" id="af6-Z6-gv0"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="king" translatesAutoresizingMaskIntoConstraints="NO" id="aUz-TI-HO6">
+                    <rect key="frame" x="366" y="80" width="40" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Imo-Es-idA"/>
+                        <constraint firstAttribute="width" constant="40" id="mHI-LX-Na3"/>
                     </constraints>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar" translatesAutoresizingMaskIntoConstraints="NO" id="xhB-dv-ElK">
@@ -82,6 +87,7 @@
                 <constraint firstItem="EGm-et-noZ" firstAttribute="leading" secondItem="N71-XV-NR2" secondAttribute="leading" id="G8z-Kb-w9Z"/>
                 <constraint firstItem="N71-XV-NR2" firstAttribute="top" secondItem="xhB-dv-ElK" secondAttribute="top" constant="5" id="HhH-je-KKF"/>
                 <constraint firstItem="trg-7a-ERm" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="KKf-OZ-UUd"/>
+                <constraint firstItem="aUz-TI-HO6" firstAttribute="leading" secondItem="NtI-iE-Byd" secondAttribute="trailing" constant="-8" id="LCo-Iu-lLc"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ON8-dC-l8r" secondAttribute="trailing" id="Qqa-XI-HSW"/>
                 <constraint firstItem="trg-7a-ERm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="VKS-6u-00z"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="aUz-TI-HO6" secondAttribute="trailing" constant="8" id="Vsf-ZB-330"/>
@@ -89,6 +95,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ON8-dC-l8r" secondAttribute="bottom" id="g5C-Dd-jau"/>
                 <constraint firstItem="xhB-dv-ElK" firstAttribute="centerY" secondItem="trg-7a-ERm" secondAttribute="centerY" id="h7W-m5-71e"/>
                 <constraint firstItem="ON8-dC-l8r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="laS-va-bya"/>
+                <constraint firstItem="NtI-iE-Byd" firstAttribute="centerY" secondItem="aUz-TI-HO6" secondAttribute="centerY" id="xYb-Vw-jTw"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
@@ -97,6 +104,7 @@
     </objects>
     <resources>
         <image name="avatar" width="46" height="47"/>
+        <image name="crown" width="70" height="70"/>
         <image name="king" width="70" height="70"/>
     </resources>
 </document>

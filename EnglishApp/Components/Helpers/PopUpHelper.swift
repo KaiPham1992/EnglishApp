@@ -120,8 +120,8 @@ class PopUpHelper {
         popUp.showPopUp(completionNo: completionNo, completionYes: completionYes)
     }
     
-    func showLevelUp(completionYes: CompletionClosure?) {
+    func showLevelUp(completionYes: CompletionClosure?, completionPackage: CompletionClosure?) {
         let popUp = LevelUpPopUp()
-        popUp.showPopUp(completionYes: completionYes)
+        popUp.showPopUp(completionYes: completionYes, completionPackage: completionPackage)
     }
 }

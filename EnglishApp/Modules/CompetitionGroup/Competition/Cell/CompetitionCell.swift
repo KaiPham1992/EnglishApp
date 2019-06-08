@@ -15,6 +15,7 @@ class CompetitionCell: BaseTableCell {
     @IBOutlet weak var lbCountTeam: UILabel!
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var btnJoin: UIButton!
+    @IBOutlet weak var btnShare: UIButton!
     
     var competitionEntity: CompetitionEntity? {
         didSet {

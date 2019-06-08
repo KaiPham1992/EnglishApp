@@ -28,7 +28,7 @@ class HomeActionCell: UITableViewCell {
         vDictionnary.setImageAndTitle(image: AppImage.imgDictionary, title: LocalizableKey.homeDictionary.showLanguage)
         vStore.setImageAndTitle(image: AppImage.imgStore, title: LocalizableKey.homeStore.showLanguage)
         vMission.setImageAndTitle(image: AppImage.imgMission, title: LocalizableKey.homeMission.showLanguage)
-        vFindWork.setImageAndTitle(image: AppImage.imgMission, title: LocalizableKey.homeFindWork.showLanguage)
+        vFindWork.setImageAndTitle(image: AppImage.imgFindWork, title: LocalizableKey.homeFindWork.showLanguage)
         
         vDictionnary.btnAction.tag = 2001
         vStore.btnAction.tag = 2002

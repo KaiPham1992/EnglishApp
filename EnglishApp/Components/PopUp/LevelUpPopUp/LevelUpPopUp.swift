@@ -16,18 +16,27 @@ class LevelUpPopUp: BasePopUpView {
         return view
     }()
     
+    var completionPackage: CompletionClosure?
+    
     override func setupView() {
         super.setupView()
         
         vContent.addSubview(thanksReportContent)
         thanksReportContent.fillSuperview()
         thanksReportContent.btnYes.addTarget(self, action: #selector(btnYesTapped), for: .touchUpInside)
+        thanksReportContent.btnPackage.addTarget(self, action: #selector(btnPackageTapped), for: .touchUpInside)
     }
     
-    func showPopUp(completionYes: CompletionClosure?) {
+    func showPopUp(completionYes: CompletionClosure?, completionPackage: CompletionClosure?) {
         self.completionYes = completionYes
+        self.completionPackage = completionPackage
         
-        super.showPopUp(height: 250)
+        super.showPopUp(height: 280)
+    }
+    
+    @objc func btnPackageTapped() {
+        hidePopUp()
+        completionPackage?()
     }
     
     @objc func btnYesTapped() {

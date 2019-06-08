@@ -46,6 +46,10 @@ class EditProfileViewController: BaseViewController, EditProfileViewProtocol {
         setTitleNavigation(title: LocalizableKey.EditProfile.showLanguage)
         btnSave.setTitle(LocalizableKey.titleSave.showLanguage, for: .normal)
         imgAvatar.setBorder(borderWidth: 4, borderColor: AppColor.yellow, cornerRadius: 50)
+        
+        vEmail.tfInput.text = "ngocduong2310@gmail.com"
+        vEmail.tfInput.isEnabled = false
+        vEmail.tfInput.textColor = vEmail.tfInput.textColor!.withAlphaComponent(0.5)
     }
     
     @IBAction func btnSavedTapped() {

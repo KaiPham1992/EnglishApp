@@ -85,7 +85,7 @@
 
 
 // Detail team
-"startAfter" = "Bắt đầu sau: ";
+"startAfter" = "Bắt đầu";
 "explainConpetition" = "Giải thích về cuộc thi";
 "leaveTeam" = "Rời nhóm";
 "createGroup" = "Tạo nhóm";
@@ -251,4 +251,6 @@
 "present_countinous" = "Thì hiện tại tiếp diễn";
 "past_simple" = "Thì quá khứ đơn";
 "theory" = "Lý thuyết";
+
+"messagePackage" = "Các gói nâng cấp phù hợp với bạn";
 

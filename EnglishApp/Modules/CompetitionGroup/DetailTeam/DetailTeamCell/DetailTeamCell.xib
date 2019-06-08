@@ -49,7 +49,7 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="king" translatesAutoresizingMaskIntoConstraints="NO" id="x69-VH-jc4">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="leader" translatesAutoresizingMaskIntoConstraints="NO" id="x69-VH-jc4">
                         <rect key="frame" x="264" y="18.5" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="fgn-Ya-WMI"/>
@@ -108,6 +108,6 @@
     </objects>
     <resources>
         <image name="avatar" width="46" height="47"/>
-        <image name="king" width="70" height="70"/>
+        <image name="leader" width="42" height="42"/>
     </resources>
 </document>
