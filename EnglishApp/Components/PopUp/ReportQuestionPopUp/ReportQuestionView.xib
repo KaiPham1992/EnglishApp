@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReportQuestionView" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCancel" destination="Qka-Eg-UOA" id="1dM-Vg-7x6"/>
+                <outlet property="btnReport" destination="Wuy-oJ-gHH" id="SjC-mG-l0w"/>
+                <outlet property="lblDescription" destination="tHV-Zn-Hwh" id="eAL-Fb-EKS"/>
+                <outlet property="lblTitle" destination="i32-ik-ceM" id="fGL-ip-vgB"/>
+                <outlet property="tfEnterContent" destination="WTz-eU-rps" id="aWj-8p-Bwr"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="244"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Báo cáo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i32-ik-ceM">
+                    <rect key="frame" x="155" y="28" width="104" height="27"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="24"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mô tả" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tHV-Zn-Hwh">
+                    <rect key="frame" x="15" y="80" width="42.5" height="16"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-bo-CCI">
+                    <rect key="frame" x="15" y="125" width="384" height="1"/>
+                    <color key="backgroundColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Sa5-ss-JpV"/>
+                    </constraints>
+                </view>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="yEh-TV-JJZ">
+                    <rect key="frame" x="42" y="161" width="330" height="40"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qka-Eg-UOA">
+                            <rect key="frame" x="0.0" y="0.0" width="153" height="40"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                            <state key="normal" title="HUỶ">
+                                <color key="titleColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickCancel:" destination="-1" eventType="touchUpInside" id="n5k-Sb-bYz"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wuy-oJ-gHH">
+                            <rect key="frame" x="177" y="0.0" width="153" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                            <state key="normal" title="Báo cáo">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="clickReport:" destination="-1" eventType="touchUpInside" id="5L3-wa-Q46"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="uod-pD-giq"/>
+                    </constraints>
+                </stackView>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập nội dung" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WTz-eU-rps">
+                    <rect key="frame" x="15" y="104" width="384" height="16"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="WTz-eU-rps" secondAttribute="trailing" constant="15" id="3BL-sc-ibi"/>
+                <constraint firstItem="yEh-TV-JJZ" firstAttribute="trailing" secondItem="IFa-bo-CCI" secondAttribute="trailing" constant="-27" id="7Fb-kW-957"/>
+                <constraint firstItem="yEh-TV-JJZ" firstAttribute="leading" secondItem="IFa-bo-CCI" secondAttribute="leading" constant="27" id="9S3-rz-ABP"/>
+                <constraint firstItem="IFa-bo-CCI" firstAttribute="leading" secondItem="WTz-eU-rps" secondAttribute="leading" id="AG7-JM-BuT"/>
+                <constraint firstItem="yEh-TV-JJZ" firstAttribute="top" secondItem="IFa-bo-CCI" secondAttribute="bottom" constant="35" id="B7Y-3E-yUz"/>
+                <constraint firstItem="tHV-Zn-Hwh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="MWg-xG-VQ2"/>
+                <constraint firstItem="tHV-Zn-Hwh" firstAttribute="top" secondItem="i32-ik-ceM" secondAttribute="bottom" constant="25" id="TK8-gi-obA"/>
+                <constraint firstItem="i32-ik-ceM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="Tuw-a1-y5t"/>
+                <constraint firstItem="WTz-eU-rps" firstAttribute="top" secondItem="tHV-Zn-Hwh" secondAttribute="bottom" constant="8" id="XSm-sU-MBY"/>
+                <constraint firstItem="IFa-bo-CCI" firstAttribute="top" secondItem="WTz-eU-rps" secondAttribute="bottom" constant="5" id="h2r-6D-z6t"/>
+                <constraint firstItem="WTz-eU-rps" firstAttribute="leading" secondItem="tHV-Zn-Hwh" secondAttribute="leading" id="wwQ-xR-baf"/>
+                <constraint firstItem="IFa-bo-CCI" firstAttribute="trailing" secondItem="WTz-eU-rps" secondAttribute="trailing" id="y4m-MA-XtA"/>
+                <constraint firstItem="i32-ik-ceM" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="zbh-mq-ZnY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="137.68115942028987" y="296.65178571428572"/>
+        </view>
+    </objects>
+</document>

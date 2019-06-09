@@ -25,12 +25,12 @@ class TaskDateViewController: BaseViewController, TaskDateViewProtocol {
     @IBAction func seeExplain(_ sender: Any) {
         self.presenter?.gotoExplain()
     }
-    @IBAction func suggestResult(_ sender: Any) {
-//        PopUpHelper.shared.showSuggesstionResult(diamond: {
-//
-//        }) {
-//
-//        }
+    @IBAction func reportQuestion(_ sender: Any) {
+        PopUpHelper.shared.showReportQuestion(cancel: {
+            
+        }) {
+            
+        }
     }
     
     override func setUpViews() {

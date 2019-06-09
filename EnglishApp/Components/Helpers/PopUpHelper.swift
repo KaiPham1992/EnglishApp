@@ -22,6 +22,12 @@ class PopUpHelper {
         popup.showPopup(diamod: diamond, money: money)
     }
     
+    
+    func showReportQuestion(cancel: CompletionClosure?,report: CompletionClosure?){
+        let popup = ReportQuestionPopUp()
+        popup.showPopUp(cancel: cancel, report: report)
+    }
+    
     func showMorePopUp(content: String){
         let popup = ShowMorePopUp()
         popup.showPopUp(content: content)

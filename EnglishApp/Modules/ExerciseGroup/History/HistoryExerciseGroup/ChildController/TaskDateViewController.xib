@@ -80,7 +80,7 @@
                                         <action selector="seeExplain:" destination="-1" eventType="touchUpInside" id="pqk-g7-nA5"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl9-jR-Sqg">
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jl9-jR-Sqg">
                                     <rect key="frame" x="179.5" y="0.0" width="163.5" height="42"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                     <state key="normal" title="BAO CAO CAU HOI">
@@ -95,7 +95,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="suggestResult:" destination="-1" eventType="touchUpInside" id="36O-4U-jMY"/>
+                                        <action selector="reportQuestion:" destination="-1" eventType="touchUpInside" id="qms-98-jpV"/>
                                     </connections>
                                 </button>
                             </subviews>
