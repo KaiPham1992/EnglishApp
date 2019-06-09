@@ -29,6 +29,12 @@ class ListLessonViewController: BaseViewController, ListLessonViewProtocol {
         tbvLesson.dataSource = self
         tbvLesson.delegate = self
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()

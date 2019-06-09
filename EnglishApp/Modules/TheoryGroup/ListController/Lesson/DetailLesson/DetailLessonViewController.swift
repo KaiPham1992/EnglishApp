@@ -32,7 +32,7 @@ class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
         setTitleNavigation(title: titleNavi)
         if type == .detailLesson{
             viewMessage.action = {
-                print("Message")
+                self.push(controller: CommentRouter.createModule(),animated: true)
             }
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
         } else {

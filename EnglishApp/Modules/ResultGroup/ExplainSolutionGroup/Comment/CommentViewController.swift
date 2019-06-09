@@ -23,6 +23,11 @@ class CommentViewController: BaseViewController, CommentViewProtocol {
         tbvComment.delegate = self
         tbvComment.dataSource = self
     }
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        addBackToNavigation()
+        setTitleNavigation(title: LocalizableKey.comment.showLanguage)
+    }
 }
 
 extension CommentViewController: IndicatorInfoProvider{
