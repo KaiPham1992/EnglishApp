@@ -34,7 +34,7 @@ class ViewTime: BaseViewXib{
     }
     
     func setupTime(min: Int){
-        lblTime.text = "\(min)"
+        lblTime.text = "\(min):00 min"
         self.time = min * 60
     }
     
