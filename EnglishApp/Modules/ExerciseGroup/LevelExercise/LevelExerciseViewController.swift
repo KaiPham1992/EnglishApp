@@ -69,7 +69,18 @@ extension LevelExerciseViewController : UITableViewDataSource{
 }
 extension LevelExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.gotoExercise()
+        if type == .tryhard {
+            self.presenter?.gotoChoiceExercise()
+        }
+        
+        if type == .level{
+            self.presenter?.gotoTryHard()
+        }
+        
+        if type == .assign{
+            self.presenter?.gotoExercise()
+        }
+        
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

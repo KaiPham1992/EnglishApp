@@ -25,4 +25,11 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
     func gotoExercise() {
         self.router.gotoExercise()
     }
+    
+    func gotoTryHard() {
+        self.router.gotoTryHard()
+    }
+    func gotoChoiceExercise() {
+        self.router.gotoChoiceExercise()
+    }
 }

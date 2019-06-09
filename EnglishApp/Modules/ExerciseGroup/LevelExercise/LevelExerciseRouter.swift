@@ -46,4 +46,14 @@ class LevelExerciseRouter: LevelExerciseWireframeProtocol {
         let vc = NameExerciseRouter.createModule()
         self.viewController?.push(controller: vc, animated: true)
     }
+    
+    func gotoTryHard(){
+        let vc = LevelExerciseRouter.createModule(type: .tryhard)
+        self.viewController?.push(controller: vc,animated: true)
+    }
+    
+    func gotoChoiceExercise(){
+        let vc = ChoiceExerciseRouter.createModule(type: .choice)
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }
