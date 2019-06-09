@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NameExerciseViewController">
             <connections>
+                <outlet property="btnNext" destination="IZi-9H-3uu" id="g1c-YN-G02"/>
                 <outlet property="clvQuestion" destination="ont-YC-zDm" id="6of-BV-yVi"/>
                 <outlet property="lblIndexQuestion" destination="hUu-hT-VhW" id="K9z-Zj-vVV"/>
                 <outlet property="vCountTime" destination="X92-RA-yrm" id="Z0o-R1-zOj"/>
@@ -58,7 +59,7 @@
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ont-YC-zDm">
-                    <rect key="frame" x="0.0" y="69" width="375" height="676"/>
+                    <rect key="frame" x="0.0" y="69" width="375" height="708"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qhm-yA-IND">
                         <size key="itemSize" width="50" height="50"/>
@@ -68,10 +69,10 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0nL-yM-Iae">
-                    <rect key="frame" x="0.0" y="745" width="375" height="106"/>
+                    <rect key="frame" x="0.0" y="777" width="375" height="74"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="DUG-Iq-g0Q">
-                            <rect key="frame" x="16" y="48" width="343" height="42"/>
+                            <rect key="frame" x="16" y="16" width="343" height="42"/>
                             <subviews>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y0-xD-u0S">
                                     <rect key="frame" x="0.0" y="0.0" width="163.5" height="42"/>
@@ -94,7 +95,7 @@
                                         <action selector="suggestResult:" destination="-1" eventType="touchUpInside" id="lbP-dx-F1L"/>
                                     </connections>
                                 </button>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZi-9H-3uu">
+                                <button opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZi-9H-3uu">
                                     <rect key="frame" x="179.5" y="0.0" width="163.5" height="42"/>
                                     <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
@@ -115,24 +116,13 @@
                                 <constraint firstAttribute="height" constant="42" id="hd2-gJ-tGr"/>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="các ngữ pháp liên quan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk8-av-d8t">
-                            <rect key="frame" x="100.5" y="8" width="174.5" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="24" id="2Zc-Fc-f2D"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                            <color key="textColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="Dk8-av-d8t" firstAttribute="top" secondItem="0nL-yM-Iae" secondAttribute="top" constant="8" id="NEx-g5-cjH"/>
+                        <constraint firstItem="DUG-Iq-g0Q" firstAttribute="top" secondItem="0nL-yM-Iae" secondAttribute="top" constant="16" id="BCS-Ja-e0T"/>
                         <constraint firstItem="DUG-Iq-g0Q" firstAttribute="leading" secondItem="0nL-yM-Iae" secondAttribute="leading" constant="16" id="Oji-jZ-UCr"/>
-                        <constraint firstItem="Dk8-av-d8t" firstAttribute="centerX" secondItem="0nL-yM-Iae" secondAttribute="centerX" id="UxL-mQ-XHj"/>
                         <constraint firstAttribute="trailing" secondItem="DUG-Iq-g0Q" secondAttribute="trailing" constant="16" id="bMe-3I-Hqb"/>
                         <constraint firstAttribute="bottom" secondItem="DUG-Iq-g0Q" secondAttribute="bottom" constant="16" id="sTg-gd-eZI"/>
-                        <constraint firstAttribute="height" constant="106" id="yUv-rU-IYX"/>
                     </constraints>
                 </view>
             </subviews>

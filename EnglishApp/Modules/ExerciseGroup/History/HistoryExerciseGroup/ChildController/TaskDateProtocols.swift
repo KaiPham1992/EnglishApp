@@ -12,12 +12,13 @@ import Foundation
 
 //MARK: Wireframe -
 protocol TaskDateWireframeProtocol: class {
-
+    func gotoExplain()
 }
 //MARK: Presenter -
 protocol TaskDatePresenterProtocol: class {
 
     var interactor: TaskDateInteractorInputProtocol? { get set }
+    func gotoExplain()
 }
 
 //MARK: Interactor -

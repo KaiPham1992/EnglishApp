@@ -186,6 +186,7 @@ struct LocalizableKey {
     static let cloze_test = "cloze_test"
     static let try_hard = "try_hard"
     static let task_every_date = "task_every_date"
+    static let time_end = "time_end"
     
     
     //result
@@ -197,6 +198,7 @@ struct LocalizableKey {
     static let result_group = "result_group"
     static let see_explain = "see_explain"
     static let respond_question = "respond_question"
+    static let explain_solution = "explain_solution"
     
     //popup
     static let confirm = "confirm"

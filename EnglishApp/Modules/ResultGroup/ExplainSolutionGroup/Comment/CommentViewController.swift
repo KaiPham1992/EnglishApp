@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 class CommentViewController: BaseViewController, CommentViewProtocol {
 
@@ -22,10 +23,11 @@ class CommentViewController: BaseViewController, CommentViewProtocol {
         tbvComment.delegate = self
         tbvComment.dataSource = self
     }
-    
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        setTitleNavigation(title: LocalizableKey.comment.showLanguage)
+}
+
+extension CommentViewController: IndicatorInfoProvider{
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: LocalizableKey.comment.showLanguage)
     }
 }
 

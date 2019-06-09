@@ -13,6 +13,8 @@ import XLPagerTabStrip
 
 class ResultViewController: BaseViewController, ResultViewProtocol {
 
+    @IBOutlet weak var vInfo: UIView!
+    @IBOutlet weak var heightScrollView: NSLayoutConstraint!
     @IBOutlet weak var trailingStackView: NSLayoutConstraint!
     @IBOutlet weak var leadingStackView: NSLayoutConstraint!
     @IBOutlet weak var stackView: UIStackView!
@@ -62,7 +64,7 @@ extension ResultViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 6
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellResult.self, for: indexPath)
@@ -71,12 +73,13 @@ extension ResultViewController : UITableViewDataSource{
         } else {
             cell.setupData(isTrue: false)
         }
+        heightScrollView.constant = 10 + vInfo.frame.height + tbvResult.contentSize.height
         return cell
     }
 }
 extension ResultViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        self.presenter?.gotoResultQuestion(title: "\(indexPath.row + 1)/6")
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44

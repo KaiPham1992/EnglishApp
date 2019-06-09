@@ -23,11 +23,7 @@ class TaskDateViewController: BaseViewController, TaskDateViewProtocol {
 	
 
     @IBAction func seeExplain(_ sender: Any) {
-//        if self.currentIndex + 1 < 6{
-//            self.currentIndex += 1
-//            clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex, section: 0), at: .right, animated: true)
-//            lblIndexQuestion.text = "\(self.currentIndex + 1)/40 câu"
-//        }
+        self.presenter?.gotoExplain()
     }
     @IBAction func suggestResult(_ sender: Any) {
 //        PopUpHelper.shared.showSuggesstionResult(diamond: {
@@ -44,11 +40,12 @@ class TaskDateViewController: BaseViewController, TaskDateViewProtocol {
         clvQuestion.registerXibCell(CellExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
+        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isTranslucent = true
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
         setTitleNavigation(title: LocalizableKey.task_every_date.showLanguage)
         addBackToNavigation()
     }
@@ -66,8 +63,8 @@ extension TaskDateViewController : UICollectionViewDelegateFlowLayout{
     }
     
     func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        let index = Int(targetContentOffset.pointee.x) / Int(scrollView.frame.width)
-        lblIndexQuestion.text = "\(index + 1)/40 câu"
+//        let index = Int(targetContentOffset.pointee.x) / Int(scrollView.frame.width)
+//        lblIndexQuestion.text = "\(index + 1)/40"
     }
 }
 extension TaskDateViewController: UICollectionViewDataSource{

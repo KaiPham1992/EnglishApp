@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="302" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-ch-1F6">
-                                        <rect key="frame" x="0.0" y="0.0" width="302" height="209"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="189"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hh-EP-rfq">
                                                 <rect key="frame" x="16" y="10" width="183.5" height="18"/>
@@ -42,7 +42,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-eN-hh2">
-                                                <rect key="frame" x="14" y="48" width="274" height="141"/>
+                                                <rect key="frame" x="14" y="28" width="274" height="141"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="141" id="oHX-bS-d62"/>
@@ -52,7 +52,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkZ-w4-d5Q" customClass="ViewGradient" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="109" width="302" height="100"/>
+                                                <rect key="frame" x="0.0" y="89" width="302" height="100"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qe-qj-YrB">
                                                         <rect key="frame" x="0.0" y="76" width="302" height="24"/>
@@ -80,7 +80,7 @@
                                         <constraints>
                                             <constraint firstItem="XkZ-w4-d5Q" firstAttribute="bottom" secondItem="KRm-eN-hh2" secondAttribute="bottom" constant="20" id="9Ne-iX-uiC"/>
                                             <constraint firstItem="KRm-eN-hh2" firstAttribute="leading" secondItem="hxi-ch-1F6" secondAttribute="leading" constant="14" id="CIO-H9-rdl"/>
-                                            <constraint firstItem="KRm-eN-hh2" firstAttribute="top" secondItem="5hh-EP-rfq" secondAttribute="bottom" constant="20" id="UJO-zq-vZo"/>
+                                            <constraint firstItem="KRm-eN-hh2" firstAttribute="top" secondItem="5hh-EP-rfq" secondAttribute="bottom" id="UJO-zq-vZo"/>
                                             <constraint firstAttribute="trailing" secondItem="KRm-eN-hh2" secondAttribute="trailing" constant="14" id="VaF-jb-Rkb"/>
                                             <constraint firstAttribute="bottom" secondItem="KRm-eN-hh2" secondAttribute="bottom" constant="20" id="YQd-OW-hee"/>
                                             <constraint firstItem="5hh-EP-rfq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="top" constant="10" id="p4L-fz-Dxs"/>
@@ -90,7 +90,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yD4-u9-JSq">
-                                        <rect key="frame" x="0.0" y="209" width="302" height="791"/>
+                                        <rect key="frame" x="0.0" y="189" width="302" height="811"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>

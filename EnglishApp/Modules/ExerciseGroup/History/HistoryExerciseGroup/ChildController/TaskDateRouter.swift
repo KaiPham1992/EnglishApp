@@ -27,4 +27,9 @@ class TaskDateRouter: TaskDateWireframeProtocol {
 
         return view
     }
+    
+    func gotoExplain(){
+        let vc = ExplainSolutionGroupRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }

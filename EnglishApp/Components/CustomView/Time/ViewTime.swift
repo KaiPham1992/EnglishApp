@@ -11,6 +11,7 @@ import UIKit
     
 protocol TimeDelegate: class {
     func endTime()
+    func startTime()
 }
 
 class ViewTime: BaseViewXib{
@@ -33,6 +34,7 @@ class ViewTime: BaseViewXib{
     }
     
     func setupTime(min: Int){
+        lblTime.text = "\(min)"
         self.time = min * 60
     }
     
@@ -40,6 +42,7 @@ class ViewTime: BaseViewXib{
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(changeTime), userInfo: nil, repeats: true)
         }
+        delegate?.startTime()
     }
     @objc func changeTime(){
         if self.time == 0 {

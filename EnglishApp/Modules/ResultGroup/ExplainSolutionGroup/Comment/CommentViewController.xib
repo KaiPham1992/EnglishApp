@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -17,11 +17,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EpG-jL-IOz">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EpG-jL-IOz">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -30,7 +30,7 @@
                 <constraint firstAttribute="trailing" secondItem="EpG-jL-IOz" secondAttribute="trailing" id="Y3C-qN-7ve"/>
                 <constraint firstItem="EpG-jL-IOz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f24-yc-eDV"/>
                 <constraint firstItem="EpG-jL-IOz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hSW-CF-pvC"/>
-                <constraint firstAttribute="bottom" secondItem="EpG-jL-IOz" secondAttribute="bottom" id="i13-UE-TL7"/>
+                <constraint firstItem="EpG-jL-IOz" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="zw0-j5-rgw"/>
             </constraints>
         </view>
     </objects>

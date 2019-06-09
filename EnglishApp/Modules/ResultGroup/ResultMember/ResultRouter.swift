@@ -13,6 +13,7 @@ import UIKit
 enum TypeResult: String {
     case result
     case resultCompetion
+    case resultExercise
 }
 
 class ResultRouter: ResultWireframeProtocol {
@@ -45,5 +46,10 @@ class ResultRouter: ResultWireframeProtocol {
         router.viewController = view
         
         return view
+    }
+    
+    func gotoResultQuestion(title: String){
+        let vc = TaskDateRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
     }
 }

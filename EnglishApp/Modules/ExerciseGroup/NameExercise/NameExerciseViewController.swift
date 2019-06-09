@@ -17,12 +17,18 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
 	var presenter: NameExercisePresenterProtocol?
 
     @IBAction func clickNext(_ sender: Any) {
-        if self.currentIndex + 1 < 6{
+        if !isEnd {
+            if self.currentIndex + 1 >= 5 {
+                self.isEnd = true
+            }
+            lblIndexQuestion.text = "\(self.currentIndex + 1)/6"
             self.currentIndex += 1
             clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex, section: 0), at: .right, animated: true)
-            lblIndexQuestion.text = "\(self.currentIndex + 1)/40 câu"
+            return
         }
+        self.presenter?.gotoResult()
     }
+    
     @IBAction func suggestResult(_ sender: Any) {
         PopUpHelper.shared.showSuggesstionResult(diamond: {
         
@@ -31,10 +37,16 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         }
     }
     
+    @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
     @IBOutlet weak var vCountTime: ViewTime!
-    var currentIndex = 0 
+    var currentIndex = 0
+    var isEnd : Bool = false{
+        didSet {
+            btnNext.setTitle(LocalizableKey.time_end.showLanguage, for: .normal)
+        }
+    }
     
     
 //    var isShowMore = true
@@ -43,7 +55,7 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         clvQuestion.registerXibCell(CellExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
-        vCountTime.setupTime(min: 60)
+        vCountTime.setupTime(min: 2)
         vCountTime.delegate = self
     }
     
@@ -52,6 +64,10 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         self.tabBarController?.tabBar.isHidden = true
         setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
         addBackToNavigation()
+        addButtonToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy") ?? UIImage(), style: .right, action: #selector(deleteExercise))
+    }
+    @objc func deleteExercise(){
+        self.pop(animated: true)
     }
 }
 extension NameExerciseViewController : UICollectionViewDelegate{
@@ -60,6 +76,10 @@ extension NameExerciseViewController : UICollectionViewDelegate{
 extension NameExerciseViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.00009
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.clvQuestion.frame.width, height: self.clvQuestion.frame.height)
@@ -95,7 +115,11 @@ extension NameExerciseViewController : CellExerciseDelegate{
 }
 
 extension NameExerciseViewController : TimeDelegate{
+    func startTime() {
+        btnNext.isUserInteractionEnabled = true
+    }
+    
     func endTime() {
-        
+        self.isEnd = true
     }
 }

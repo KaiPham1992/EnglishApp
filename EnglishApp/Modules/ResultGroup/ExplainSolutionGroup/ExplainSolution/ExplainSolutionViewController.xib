@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExplainSolutionViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hrr-sd-uMQ">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rbG-hm-SNT">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="26"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XyB-SF-UZc">
+                                    <rect key="frame" x="16" y="5" width="343" height="16"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="XyB-SF-UZc" firstAttribute="leading" secondItem="rbG-hm-SNT" secondAttribute="leading" constant="16" id="08L-iy-cth"/>
+                                <constraint firstAttribute="bottom" secondItem="XyB-SF-UZc" secondAttribute="bottom" constant="5" id="DMk-O3-y2J"/>
+                                <constraint firstAttribute="trailing" secondItem="XyB-SF-UZc" secondAttribute="trailing" constant="16" id="YhD-7M-7aj"/>
+                                <constraint firstItem="XyB-SF-UZc" firstAttribute="leading" secondItem="rbG-hm-SNT" secondAttribute="leading" constant="16" id="aet-uR-a2N"/>
+                                <constraint firstItem="XyB-SF-UZc" firstAttribute="top" secondItem="rbG-hm-SNT" secondAttribute="top" constant="5" id="lY9-e1-TaV"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="rbG-hm-SNT" secondAttribute="bottom" id="8gG-CV-3cR"/>
+                        <constraint firstAttribute="trailing" secondItem="rbG-hm-SNT" secondAttribute="trailing" id="PjX-7h-v6E"/>
+                        <constraint firstItem="rbG-hm-SNT" firstAttribute="top" secondItem="hrr-sd-uMQ" secondAttribute="top" id="VGH-h9-Kux"/>
+                        <constraint firstItem="rbG-hm-SNT" firstAttribute="leading" secondItem="hrr-sd-uMQ" secondAttribute="leading" id="aaa-5s-ePM"/>
+                        <constraint firstItem="rbG-hm-SNT" firstAttribute="width" secondItem="hrr-sd-uMQ" secondAttribute="width" id="n5c-tA-mfk"/>
+                    </constraints>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="hrr-sd-uMQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2Oy-bf-Wgm"/>
+                <constraint firstItem="hrr-sd-uMQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="3IY-6c-AH5"/>
+                <constraint firstAttribute="bottom" secondItem="hrr-sd-uMQ" secondAttribute="bottom" id="l8h-E0-cHm"/>
+                <constraint firstAttribute="trailing" secondItem="hrr-sd-uMQ" secondAttribute="trailing" id="yeA-Ut-SIa"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

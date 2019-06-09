@@ -12,12 +12,13 @@ import Foundation
 
 //MARK: Wireframe -
 protocol ResultWireframeProtocol: class {
-
+    func gotoResultQuestion(title: String)
 }
 //MARK: Presenter -
 protocol ResultPresenterProtocol: class {
 
     var interactor: ResultInteractorInputProtocol? { get set }
+    func gotoResultQuestion(title: String)
 }
 
 //MARK: Interactor -

@@ -26,4 +26,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     func gotoDetailVocabulary() {
         self.router.gotoDetailVocabulary()
     }
+    func gotoResult() {
+        self.router.gotoResult()
+    }
 }

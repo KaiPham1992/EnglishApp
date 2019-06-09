@@ -10,7 +10,6 @@ import Foundation
 import XLPagerTabStrip
 
 class PageViewController : ButtonBarPagerTabStripViewController{
-    
     override func viewDidLoad() {
         self.setupPage()
         super.viewDidLoad()

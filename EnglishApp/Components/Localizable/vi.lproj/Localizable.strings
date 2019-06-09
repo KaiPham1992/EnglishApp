@@ -183,6 +183,7 @@
 "cloze_test" = "Cloze Test";
 "try_hard" = "Luyện tập";
 "task_every_date" = "Nhiệm vụ hàng ngày";
+"time_end" = "Kết thúc";
 
 //result
 "result" = "Kết quả";
@@ -193,6 +194,7 @@
 "result_group" = "Kết quả đội";
 "see_explain" = "XEM GIẢI THÍCH";
 "respond_question" = "BÁO CÁO CÂU HỎI";
+"explain_solution" = "Giải thích đáp án";
 
 
 //popup

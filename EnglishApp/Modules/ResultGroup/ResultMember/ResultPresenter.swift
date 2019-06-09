@@ -21,5 +21,8 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
+    func gotoResultQuestion(title: String) {
+        self.router.gotoResultQuestion(title: title)
+    }
 
 }
