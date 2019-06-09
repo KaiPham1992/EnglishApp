@@ -29,7 +29,9 @@ class TaskDateViewController: BaseViewController, TaskDateViewProtocol {
         PopUpHelper.shared.showReportQuestion(cancel: {
             
         }) {
-            
+            PopUpHelper.shared.showReportSuccessed(complete: {
+                
+            })
         }
     }
     

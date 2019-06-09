@@ -206,6 +206,10 @@ struct LocalizableKey {
     static let diamond = "diamond"
     static let money = "money"
     
+    static let enter_content = "enter_content"
+    static let cancel_upper = "cancel_upper"
+    static let complete_upper = "complete_upper"
+    
     
     //month
     static let january = "January"

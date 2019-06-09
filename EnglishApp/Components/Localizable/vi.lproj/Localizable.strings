@@ -202,6 +202,11 @@
 "update_account" = "Nâng cấp tài khoản thành công";
 "diamond" = "Kim cương";
 "money" = " tiền";
+"report" = "BÁO CÁO";
+"description" = "Miêu tả";
+"enter_content" = "Nhập nội dung";
+"cancel_upper" = "HUỶ";
+"complete_upper" = "HOÀN THÀNH";
 
 
 //month

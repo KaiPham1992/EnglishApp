@@ -16,6 +16,10 @@ class PopUpHelper {
         popUp.showPopUp(message: message, completionNo: completionNo, completionYes: completionYes)
     }
     
+    func showReportSuccessed(complete: CompletionClosure?){
+        let popup = ReportSuccessedPopUp()
+        popup.showPopUp(complete: complete)
+    }
     
     func showSuggesstionResult(diamond: CompletionClosure?,money: CompletionClosure?){
         let popup = SuggestionResultPopUp()
