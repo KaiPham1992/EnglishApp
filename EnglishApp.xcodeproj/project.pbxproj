@@ -21,6 +21,9 @@
 		7629BDDE22ACD3B90051B835 /* ReportSuccessedPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDDD22ACD3B90051B835 /* ReportSuccessedPopUp.swift */; };
 		7629BDDF22ACD3B90051B835 /* ReportSuccessedPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDDD22ACD3B90051B835 /* ReportSuccessedPopUp.swift */; };
 		7629BDE022ACD3B90051B835 /* ReportSuccessedPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDDD22ACD3B90051B835 /* ReportSuccessedPopUp.swift */; };
+		7629BDE322ACF0B60051B835 /* TextFieldBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDE222ACF0B60051B835 /* TextFieldBee.swift */; };
+		7629BDE422ACF0B60051B835 /* TextFieldBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDE222ACF0B60051B835 /* TextFieldBee.swift */; };
+		7629BDE522ACF0B60051B835 /* TextFieldBee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDE222ACF0B60051B835 /* TextFieldBee.swift */; };
 		7643DE8022A38CA500B7C323 /* SearchVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */; };
 		7643DE8122A38CA500B7C323 /* SearchVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */; };
 		7643DE8222A38CA500B7C323 /* SearchVocabularyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */; };
@@ -1779,6 +1782,7 @@
 		7629BDD522ACD2450051B835 /* ReportSuccessedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSuccessedView.swift; sourceTree = "<group>"; };
 		7629BDD922ACD2580051B835 /* ReportSuccessedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportSuccessedView.xib; sourceTree = "<group>"; };
 		7629BDDD22ACD3B90051B835 /* ReportSuccessedPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportSuccessedPopUp.swift; sourceTree = "<group>"; };
+		7629BDE222ACF0B60051B835 /* TextFieldBee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldBee.swift; sourceTree = "<group>"; };
 		7643DE7F22A38CA500B7C323 /* SearchVocabularyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVocabularyView.swift; sourceTree = "<group>"; };
 		7643DE8322A38CDA00B7C323 /* SearchVocabularyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchVocabularyView.xib; sourceTree = "<group>"; };
 		7643DE8922A3A0E900B7C323 /* CellAssignExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellAssignExercise.swift; sourceTree = "<group>"; };
@@ -2430,6 +2434,14 @@
 				7629BDDD22ACD3B90051B835 /* ReportSuccessedPopUp.swift */,
 			);
 			path = ReportSuccessedPopUp;
+			sourceTree = "<group>";
+		};
+		7629BDE122ACF0A00051B835 /* TextFieldBee */ = {
+			isa = PBXGroup;
+			children = (
+				7629BDE222ACF0B60051B835 /* TextFieldBee.swift */,
+			);
+			path = TextFieldBee;
 			sourceTree = "<group>";
 		};
 		7643DE7E22A38C8A00B7C323 /* ViewSearchVocabulary */ = {
@@ -3202,6 +3214,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				7629BDE122ACF0A00051B835 /* TextFieldBee */,
 				DED5A00122A5629A00872261 /* TopThreeView */,
 				7643DE9122A4C07E00B7C323 /* ViewMessage */,
 				7643DE7E22A38C8A00B7C323 /* ViewSearchVocabulary */,
@@ -5497,6 +5510,7 @@
 				76CE31EF22963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
 				76F7F459229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
+				7629BDE322ACF0B60051B835 /* TextFieldBee.swift in Sources */,
 				76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */,
 				DED5A00C22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
 				76E2FF43228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
@@ -5958,6 +5972,7 @@
 				76CE31F022963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45A229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
+				7629BDE422ACF0B60051B835 /* TextFieldBee.swift in Sources */,
 				76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */,
 				DED5A00D22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
 				76E2FF44228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
@@ -6419,6 +6434,7 @@
 				76CE31F122963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45B229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
+				7629BDE522ACF0B60051B835 /* TextFieldBee.swift in Sources */,
 				76CF0C83229068AB003C4B4B /* CellComment.swift in Sources */,
 				DED5A00E22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
 				76E2FF45228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,

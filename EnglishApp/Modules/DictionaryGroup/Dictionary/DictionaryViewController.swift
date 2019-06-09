@@ -13,16 +13,25 @@ import DropDown
 
 class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
 
+    @IBOutlet weak var imgPolygon: UIImageView!
     @IBOutlet weak var lblDictionary: UILabel!
     @IBOutlet weak var viewDictionary: UIView!
-    @IBOutlet weak var tfSearch: UITextField!
+    @IBOutlet weak var tfSearch: TextFieldBee!
     
     var presenter: DictionaryPresenterProtocol?
     let dropDownDictionary = DropDown()
     let dropDownSearch = DropDown()
 
+    @IBAction func clickDictionary(_ sender: Any) {
+        if dropDownDictionary.isHidden {
+            self.rotateImage()
+            dropDownDictionary.show()
+        }
+    }
     override func setUpViews() {
         super.setUpViews()
+        tfSearch.offset
+        self.tabBarController?.tabBar.isHidden = true
         lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
             self.setupDropDown()
@@ -31,6 +40,8 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
             self.getData()
         }
     }
+    
+    
 
     override func setUpNavigation() {
         super.setUpNavigation()
@@ -40,12 +51,12 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
     }
     
     @objc func clickButtonRight(){
-        
+        self.push(controller: MoreDictionaryRouter.createModule(),animated: true)
     }
     
     private func getData(){
         dropDownDictionary.dataSource = [LocalizableKey.vietnamese_to_english.showLanguage,LocalizableKey.english_to_english.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.japanese_to_vietnamese.showLanguage]
-        dropDownDictionary.show()
+//        dropDownDictionary.show()
 //        dropDownSearch.dataSource = ["a","b","c"]
 //        dropDownSearch.show()
     }
@@ -63,7 +74,14 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
         }
         // Action triggered on selection
         dropDownDictionary.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.dropDownSearch.hide()
+            self.lblDictionary.text = item
+            self.rotateImage()
+            self.dropDownDictionary.hide()
+            
+        }
+        
+        dropDownDictionary.cancelAction = { [unowned self] in
+            self.rotateImage()
         }
         
         //dropdownSearch
@@ -78,6 +96,12 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
         // Action triggered on selection
         dropDownSearch.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDownSearch.hide()
+        }
+    }
+    
+    func rotateImage(){
+        UIView.animate(withDuration: 0.2) {
+            self.imgPolygon.transform = self.imgPolygon.transform.rotated(by: CGFloat(Double.pi))
         }
     }
 }
