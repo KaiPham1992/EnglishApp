@@ -88,6 +88,6 @@ extension ResultViewController : UITableViewDelegate{
 
 extension ResultViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.result.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.individual.showLanguage)
     }
 }

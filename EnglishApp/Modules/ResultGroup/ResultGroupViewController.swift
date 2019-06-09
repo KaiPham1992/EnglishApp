@@ -18,7 +18,7 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.result_group.showLanguage)
+        setTitleNavigation(title: LocalizableKey.result.showLanguage)
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

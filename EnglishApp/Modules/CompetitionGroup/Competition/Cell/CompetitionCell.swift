@@ -16,6 +16,16 @@ class CompetitionCell: BaseTableCell {
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var btnJoin: UIButton!
     @IBOutlet weak var btnShare: UIButton!
+    var type: ResultCompetition = .result{
+        didSet{
+            if type == .result{
+                btnJoin.setTitle(LocalizableKey.see_explain.showLanguage, for: .normal)
+            }
+            if type == .competition{
+                btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage, for: .normal)
+            }
+        }
+    }
     
     var competitionEntity: CompetitionEntity? {
         didSet {

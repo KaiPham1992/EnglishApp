@@ -11,6 +11,11 @@
 import UIKit
 import XLPagerTabStrip
 
+enum ResultCompetition {
+    case result
+    case competition
+}
+
 class CompetitionViewController: BaseViewController, CompetitionViewProtocol {
     @IBOutlet weak var tbCompetition: UITableView!
 	var presenter: CompetitionPresenterProtocol?
@@ -20,6 +25,8 @@ class CompetitionViewController: BaseViewController, CompetitionViewProtocol {
             tbCompetition.reloadData()
         }
     }
+    
+    var type : ResultCompetition = .competition
     
     override func setTitleUI() {
         super.setTitleUI()
@@ -48,6 +55,7 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CompetitionCell.self, for: indexPath)
+        cell.type = self.type
         cell.competitionEntity = listCompetition[indexPath.item]
         cell.btnJoin.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
@@ -63,7 +71,13 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     @objc func btnJoinTapped() {
-        self.push(controller: SelectTeamRouter.createModule())
+        if type == .competition{
+            self.push(controller: SelectTeamRouter.createModule())
+        }
+        if type == .result{
+            self.push(controller: ResultGroupRouter.createModule())
+        }
+       
     }
     
     @objc func btnShareTapped() {
@@ -77,6 +91,6 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension CompetitionViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.titleCompetition.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.action.showLanguage)
     }
 }

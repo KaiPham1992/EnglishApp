@@ -199,6 +199,8 @@ struct LocalizableKey {
     static let see_explain = "see_explain"
     static let respond_question = "respond_question"
     static let explain_solution = "explain_solution"
+    static let individual = "individual"
+    static let action = "action"
     
     //popup
     static let confirm = "confirm"
