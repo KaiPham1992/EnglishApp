@@ -52,4 +52,14 @@ class GrammarRouter: GrammarWireframeProtocol {
         let vc = AddNoteRouter.createModule()
         self.viewController?.push(controller: vc,animated: true)
     }
+    
+    func gotoDetailVocabulary(){
+        let vc = DetailLessonRouter.createModule(titleNavi: LocalizableKey.vocabulary.showLanguage, type: .vocabulary)
+        self.viewController?.push(controller: vc,animated: true)
+    }
+    
+    func gotoDetailGrammar(){
+        let vc = DetailLessonRouter.createModule(titleNavi: LocalizableKey.grammar.showLanguage, type: .detailLesson)
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }

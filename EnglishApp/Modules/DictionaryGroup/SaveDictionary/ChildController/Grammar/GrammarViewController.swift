@@ -59,6 +59,12 @@ extension GrammarViewController: UITableViewDelegate{
         if type == .note {
             self.presenter?.gotoNote()
         }
+        if type == .vocabulary{
+            self.presenter?.gotoDetailVocabulary()
+        }
+        if type == .grammar {
+            self.presenter?.gotoDetailGrammar()
+        }
     }
 }
 extension GrammarViewController: IndicatorInfoProvider{

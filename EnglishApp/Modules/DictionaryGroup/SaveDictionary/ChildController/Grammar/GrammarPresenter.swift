@@ -29,4 +29,12 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
     func gotoAddNote() {
         self.router.gotoAddNote()
     }
+    
+    func gotoDetailVocabulary() {
+        self.router.gotoDetailVocabulary()
+    }
+    
+    func gotoDetailGrammar() {
+        self.router.gotoDetailGrammar()
+    }
 }

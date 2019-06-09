@@ -14,6 +14,8 @@ import Foundation
 protocol GrammarWireframeProtocol: class {
     func gotoNote()
     func gotoAddNote()
+    func gotoDetailVocabulary()
+    func gotoDetailGrammar()
 }
 //MARK: Presenter -
 protocol GrammarPresenterProtocol: class {
@@ -21,6 +23,8 @@ protocol GrammarPresenterProtocol: class {
     var interactor: GrammarInteractorInputProtocol? { get set }
     func gotoNote()
     func gotoAddNote()
+    func gotoDetailVocabulary()
+    func gotoDetailGrammar()
 }
 
 //MARK: Interactor -
