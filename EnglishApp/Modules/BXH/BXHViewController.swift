@@ -21,6 +21,8 @@ class BXHViewController: BaseViewController, BXHViewProtocol {
     
     override func setUpNavigation() {
         super.setUpNavigation()
+        
+        hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.bxh.showLanguage)
     }
@@ -29,6 +31,10 @@ class BXHViewController: BaseViewController, BXHViewProtocol {
         configureTable()
     }
 
+    override func btnBackTapped() {
+        showTabbar()
+        self.pop()
+    }
 }
 
 

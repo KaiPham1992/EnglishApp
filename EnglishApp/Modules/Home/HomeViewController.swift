@@ -117,7 +117,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             if indexPath.item == 0 {
                 let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
-                
+                cell.btnTestBegin.addTarget(self, action: #selector(btnTestBeginTapped), for: .touchUpInside)
                 return cell
             } else {
                 let cell = tableView.dequeue(HomeActionCell.self, for: indexPath)
@@ -152,6 +152,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             return indexPath.item == 0 ? 60: UITableView.automaticDimension
         }
+    }
+    
+    @objc func btnTestBeginTapped() {
+        self.push(controller: NameExerciseRouter.createModule())
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

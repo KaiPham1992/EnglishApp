@@ -27,11 +27,16 @@ class QAViewController: BaseViewController, QAViewProtocol {
     
     override func setTitleUI() {
         super.setTitleUI()
-        
+        hideTabbar()
         lbWhatQa.text = LocalizableKey.whatQA.showLanguage
         lbMessage.text = LocalizableKey.messageQA.showLanguage
         tfQuestion.placeholder = LocalizableKey.enterQA.showLanguage
         lbOlderQA.text = LocalizableKey.qAOlder.showLanguage
+    }
+    
+    override func btnBackTapped() {
+        showTabbar()
+        self.pop()
     }
     
     override func setUpNavigation() {

@@ -22,7 +22,6 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
     @IBOutlet weak var vDisplayName: AppTextField!
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vLocation: AppTextField!
-    @IBOutlet weak var vCode: AppTextField!
     @IBOutlet weak var imgAvatar: UIImageView!
 
 	override func viewDidLoad() {
@@ -32,9 +31,16 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         
+        hideTabbar()
+        
         addBackToNavigation()
         addButtonToNavigation(image: AppImage.imgEditProfile, style: .right, action: #selector(btnEditTapped))
         
+    }
+    
+    override func btnBackTapped() {
+        showTabbar()
+        self.pop()
     }
     
     @objc func btnEditTapped() {
@@ -47,10 +53,14 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
         vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage)
         vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
-        vCode.setTitleAndPlaceHolder(title: LocalizableKey.CodeNumber.showLanguage)
+        
         imgAvatar.setBorder(borderWidth: 2, borderColor: AppColor.yellow, cornerRadius: 30)
         lbTitleBee.text = LocalizableKey.titleBee.showLanguage
         lbTitleDiamon.text = LocalizableKey.titleDiamon.showLanguage
+        
+        vDisplayName.tfInput.isEnabled = false
+        vEmail.tfInput.isEnabled = false
+        vLocation.tfInput.isEnabled = false
     }
     
     @IBAction func btnBeeTapped() {

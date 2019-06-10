@@ -20,10 +20,10 @@ class CompetitionEntity : BaseEntity {
     convenience init(name: String) {
         self.init()
         self.name = name
-        self.timeStart = "16"
-        self.countTeam = "20"
+        self.timeStart = "Thời gian bắt đầu 16h"
+        self.countTeam = "Số đội 20"
         self.content = "Team đang thi đấu nhào vô anh em ơi"
-        self.condition = "Vàng 1"
+        self.condition = "Vàng  "
     }
     
     override func mapping(map: Map) {
@@ -34,7 +34,7 @@ class CompetitionEntity : BaseEntity {
     class func toArray() -> [CompetitionEntity] {
         var listHistory = [CompetitionEntity]()
         for i in 0...10 {
-            let newHis = CompetitionEntity(name: "Cuoc thi \(i+1)")
+            let newHis = CompetitionEntity(name: "Cuộc thi \(i+1)")
             listHistory.append(newHis)
         }
         

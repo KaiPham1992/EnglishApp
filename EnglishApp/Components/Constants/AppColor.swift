@@ -16,6 +16,7 @@ struct AppColor {
     static let color48_48_48 = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1)
     
     static let color255_211_17 = UIColor(red: 255/255, green: 211/255, blue: 17/255, alpha: 1)
+    static let color189_189_189 = UIColor(red: 189/255, green: 189/255, blue: 189/255, alpha: 1)
     static let color158_158_158 = UIColor(red: 158/255, green: 158/255, blue: 158/255, alpha: 1)
     
     
@@ -41,5 +42,7 @@ struct AppColor {
     
     static let selectedBXH = UIColor(red: 255/255, green: 211/255, blue: 17/255, alpha: 0.25)
     static let nomalBXH = UIColor.white
+    
+     static let color117_117_117 = UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 1)
     
 }

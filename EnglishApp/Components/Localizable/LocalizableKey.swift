@@ -43,6 +43,7 @@ struct LocalizableKey {
     
     // profil
     static let DisplayName = "DisplayName"
+    static let enterDisplayName = "enterDisplayName"
     static let TitleProfile = "TitleProfile"
     static let Location = "Location"
     static let CodeNumber = "CodeNumber"
@@ -264,4 +265,5 @@ struct LocalizableKey {
     
     static let messagePackage = "messagePackage"
     static let find = "find"
+    static let privacyAndPolicy = "PrivacyAndPolicy"
 }

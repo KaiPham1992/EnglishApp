@@ -146,13 +146,14 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bạn chưa có tài khoản? Đăng Kí" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5N-Vg-jIZ">
-                    <rect key="frame" x="20" y="617" width="335" height="30"/>
+                    <rect key="frame" x="20" y="621" width="335" height="26"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YSX-c6-SkD">
-                    <rect key="frame" x="20" y="617" width="335" height="30"/>
+                    <rect key="frame" x="20" y="621" width="335" height="26"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                     <state key="normal">
                         <color key="titleColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -161,13 +162,13 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quên mật khẩu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Rl-ID-CSx">
-                    <rect key="frame" x="20" y="586" width="335" height="26"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="20" y="595" width="335" height="26"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I6f-bs-Zb3">
-                    <rect key="frame" x="20" y="586" width="335" height="26"/>
+                    <rect key="frame" x="20" y="595" width="335" height="26"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                     <connections>
                         <action selector="btnForgotPassTapped" destination="-1" eventType="touchUpInside" id="DSZ-gu-jgP"/>
@@ -177,7 +178,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="LNp-p9-VGy" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="07K-TB-IGe"/>
-                <constraint firstItem="g5N-Vg-jIZ" firstAttribute="top" secondItem="0Rl-ID-CSx" secondAttribute="bottom" constant="5" id="3pM-9J-Jgj"/>
+                <constraint firstItem="g5N-Vg-jIZ" firstAttribute="top" secondItem="0Rl-ID-CSx" secondAttribute="bottom" id="3pM-9J-Jgj"/>
                 <constraint firstItem="QGN-9Y-aDf" firstAttribute="trailing" secondItem="PWu-va-Vhf" secondAttribute="trailing" constant="40" id="4jc-Lh-ylM"/>
                 <constraint firstItem="0Rl-ID-CSx" firstAttribute="leading" secondItem="g5N-Vg-jIZ" secondAttribute="leading" id="8iH-8J-vi1"/>
                 <constraint firstItem="QGN-9Y-aDf" firstAttribute="trailing" secondItem="g5N-Vg-jIZ" secondAttribute="trailing" constant="20" id="D3G-kH-eQb"/>

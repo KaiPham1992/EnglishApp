@@ -34,6 +34,7 @@ class WebViewController: BaseViewController {
         super.setUpNavigation()
         tabBarController?.tabBar.isHidden = true
         addButtonToNavigation(image: AppImage.imgBack, style: .left, action: #selector(self.tapBackButton))
+        setTitleNavigation(title: LocalizableKey.privacyAndPolicy.showLanguage)
     }
     
     @objc func tapBackButton(){
@@ -48,8 +49,6 @@ class WebViewController: BaseViewController {
         if mainUrl.contains("http") {
             if let url = URL(string: mainUrl) {
                 let urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
-                
-                //            ProgressView.shared.show()
                 wkMain.loadRequest(urlRequest)
             }
         } else {

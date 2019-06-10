@@ -49,11 +49,11 @@ class MenuCell: BaseTableCell {
             
             
             if isSelected {
-                lbTitle.textColor = AppColor.yellow
-                imgIcon.tintColor = AppColor.yellow
+                lbTitle.textColor = AppColor.color255_211_17
+                imgIcon.tintColor = AppColor.color255_211_17
             } else {
-                lbTitle.textColor = .black
-                imgIcon.tintColor = .black
+                lbTitle.textColor = AppColor.color117_117_117
+                imgIcon.tintColor = AppColor.color117_117_117
             }
             
         }

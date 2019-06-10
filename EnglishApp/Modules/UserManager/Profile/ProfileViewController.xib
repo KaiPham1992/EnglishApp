@@ -21,7 +21,6 @@
                 <outlet property="lbDiamon" destination="QAP-Fz-HFt" id="QO1-1X-sxY"/>
                 <outlet property="lbTitleBee" destination="NgC-1c-Z27" id="irK-si-V4g"/>
                 <outlet property="lbTitleDiamon" destination="aXo-hV-YPw" id="6PF-x0-Gd0"/>
-                <outlet property="vCode" destination="Dj1-dU-G5b" id="Rkd-Hg-ii6"/>
                 <outlet property="vDisplayName" destination="mTj-nj-pKU" id="58f-Tb-lzy"/>
                 <outlet property="vEmail" destination="Xzg-rX-TXa" id="Nbs-ao-Maw"/>
                 <outlet property="vLocation" destination="XPW-Dm-PVI" id="G7t-2I-GgV"/>
@@ -49,8 +48,8 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vàng 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXD-VN-vBp">
-                            <rect key="frame" x="68" y="35" width="49.5" height="20"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vàng III" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXD-VN-vBp">
+                            <rect key="frame" x="68" y="35" width="53" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="dzw-Hf-r52"/>
                             </constraints>
@@ -59,7 +58,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.000 điểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-Ym-HM7">
-                            <rect key="frame" x="137.5" y="35" width="76" height="20"/>
+                            <rect key="frame" x="141" y="35" width="76" height="20"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -100,11 +99,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mww-qS-XOx">
                     <rect key="frame" x="27" y="120" width="155" height="64"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="ic_matong" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPo-h6-7Hu">
-                            <rect key="frame" x="4" y="0.0" width="12" height="64"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="Money" highlighted="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uPo-h6-7Hu">
+                            <rect key="frame" x="4" y="0.0" width="32" height="64"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgC-1c-Z27">
-                            <rect key="frame" x="24" y="11.5" width="131" height="21"/>
+                            <rect key="frame" x="44" y="11.5" width="111" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Ysi-e2-uLp"/>
                             </constraints>
@@ -113,7 +112,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 hũ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lib-HW-C4q">
-                            <rect key="frame" x="24" y="33" width="131" height="14.5"/>
+                            <rect key="frame" x="44" y="33" width="111" height="14.5"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                             <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -224,26 +223,18 @@
                     <rect key="frame" x="27" y="364" width="320" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-dU-G5b" customClass="AppTextField" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                    <rect key="frame" x="27" y="439" width="320" height="50"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </view>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="QwL-Dy-vK5" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0du-0a-4LL"/>
                 <constraint firstItem="XPW-Dm-PVI" firstAttribute="top" secondItem="Xzg-rX-TXa" secondAttribute="bottom" constant="25" id="0nc-Hi-5KL"/>
-                <constraint firstItem="Dj1-dU-G5b" firstAttribute="leading" secondItem="XPW-Dm-PVI" secondAttribute="leading" id="0pb-4Q-fNO"/>
                 <constraint firstItem="Xzg-rX-TXa" firstAttribute="leading" secondItem="mTj-nj-pKU" secondAttribute="leading" id="1vF-yr-Smf"/>
                 <constraint firstItem="QwL-Dy-vK5" firstAttribute="leading" secondItem="Mww-qS-XOx" secondAttribute="trailing" constant="5" id="4Rw-Gk-a8f"/>
                 <constraint firstItem="Xzg-rX-TXa" firstAttribute="top" secondItem="mTj-nj-pKU" secondAttribute="bottom" constant="25" id="4vt-3Q-s46"/>
                 <constraint firstItem="XPW-Dm-PVI" firstAttribute="height" secondItem="Xzg-rX-TXa" secondAttribute="height" id="5oM-UL-XcF"/>
                 <constraint firstItem="XPW-Dm-PVI" firstAttribute="leading" secondItem="Xzg-rX-TXa" secondAttribute="leading" id="7Va-WB-kMU"/>
-                <constraint firstItem="Dj1-dU-G5b" firstAttribute="top" secondItem="XPW-Dm-PVI" secondAttribute="bottom" constant="25" id="B0p-Rz-KHf"/>
                 <constraint firstItem="Xzg-rX-TXa" firstAttribute="height" secondItem="mTj-nj-pKU" secondAttribute="height" id="Bg2-kS-mf8"/>
-                <constraint firstItem="Dj1-dU-G5b" firstAttribute="height" secondItem="XPW-Dm-PVI" secondAttribute="height" id="CDT-o2-329"/>
                 <constraint firstItem="mTj-nj-pKU" firstAttribute="trailing" secondItem="tNj-TA-l9W" secondAttribute="trailing" id="ENL-ts-kOO"/>
-                <constraint firstItem="Dj1-dU-G5b" firstAttribute="trailing" secondItem="XPW-Dm-PVI" secondAttribute="trailing" id="Fvp-D1-EYH"/>
                 <constraint firstItem="tNj-TA-l9W" firstAttribute="leading" secondItem="Mww-qS-XOx" secondAttribute="trailing" constant="10" id="LSb-oF-rqp"/>
                 <constraint firstItem="Mww-qS-XOx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="171/414" id="N7z-CY-Qxc"/>
                 <constraint firstItem="QwL-Dy-vK5" firstAttribute="top" secondItem="vsC-Sd-isL" secondAttribute="bottom" constant="20" id="Udp-Zh-v9y"/>
@@ -261,9 +252,9 @@
         </view>
     </objects>
     <resources>
+        <image name="Money" width="32" height="32"/>
         <image name="add_green" width="24" height="24"/>
         <image name="ic_Gold_III" width="33" height="32"/>
         <image name="ic_kimcuong" width="32" height="32"/>
-        <image name="ic_matong" width="12" height="12"/>
     </resources>
 </document>

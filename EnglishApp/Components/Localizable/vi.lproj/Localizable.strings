@@ -19,7 +19,7 @@
 
 // Login Page
 
-"LoginEmail" = "Mail";
+"LoginEmail" = "Email";
 "LoginEmailPlaceHolder" = "Nhập email của bạn";
 "LoginPassword" = "Mật khẩu";
 "LoginButtonLogin" = "Đăng nhập";
@@ -41,9 +41,10 @@
 
 // Profile
 "DisplayName" = "Tên hiển thị";
+"enterDisplayName" = "Nhập tên hiển thị";
 "Location" = "Lãnh thổ";
 "CodeNumber"  = "Mã code";
-"TitleProfile" = "Thông tin tài khoản";
+"TitleProfile" = "Thông tin cá nhân";
 "EditProfile" = "Sửa thông tin";
 "titleSave" = "LƯU";
 "titleDiamon" = "titleDiamon";
@@ -81,7 +82,7 @@
 "timeStart" = "Bắt đầu sau: ";
 "countTeam" = "Số đội: ";
 "selectTeamJoin" = "Chọn nhóm tham gia";
-"joinTeam" = "Vào nhóm";
+"joinTeam" = "Tham gia";
 
 
 // Detail team
@@ -263,4 +264,4 @@
 
 "messagePackage" = "Các gói nâng cấp phù hợp với bạn";
 "find" = "Tìm kiếm";
-
+"PrivacyAndPolicy" = "Chính sách và điều khoản";

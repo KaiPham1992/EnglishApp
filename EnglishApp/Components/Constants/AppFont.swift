@@ -13,6 +13,7 @@ struct AppFont {
     static let fontRegular16 = UIFont(name: "Comfortaa-Regular", size: 16)!
     static let fontRegular14 = UIFont(name: "Comfortaa-Regular", size: 14)!
     static let fontRegular12 = UIFont(name: "Comfortaa-Regular", size: 12)!
+    static let fontRegular8 = UIFont(name: "Comfortaa-Regular", size: 8)!
     
     static let fontBold12 = UIFont(name: "Comfortaa-Bold", size: 12)!
     static let fontBold14 = UIFont(name: "Comfortaa-Bold", size: 14)!

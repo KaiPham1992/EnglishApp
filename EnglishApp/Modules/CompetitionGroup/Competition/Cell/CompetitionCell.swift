@@ -22,7 +22,7 @@ class CompetitionCell: BaseTableCell {
                 btnJoin.setTitle(LocalizableKey.see_explain.showLanguage, for: .normal)
             }
             if type == .competition{
-                btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage, for: .normal)
+                btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
             }
         }
     }

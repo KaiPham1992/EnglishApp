@@ -46,7 +46,10 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YCI-EH-O0h">
-                    <rect key="frame" x="50" y="47.5" width="356" height="18"/>
+                    <rect key="frame" x="50" y="44" width="356" height="25"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="25" id="AFH-mF-1KT"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>

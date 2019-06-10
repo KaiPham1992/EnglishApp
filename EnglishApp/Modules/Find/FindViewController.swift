@@ -22,12 +22,17 @@ class FindViewController: BaseViewController, FindViewProtocol {
 
     override func setTitleUI() {
         super.setTitleUI()
-        
+        hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.find.showLanguage)
         
         vAppSearch.setTitleAndPlaceHolder(placeHolder: "In my opinion, the")
         configureTable()
+    }
+    
+    override func btnBackTapped() {
+        showTabbar()
+        self.pop()
     }
 }
 

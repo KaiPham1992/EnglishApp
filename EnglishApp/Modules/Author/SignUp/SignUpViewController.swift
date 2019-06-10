@@ -13,7 +13,7 @@ import UIKit
 class SignUpViewController: BaseViewController {
     
     var presenter: SignUpPresenterProtocol?
-    
+    @IBOutlet weak var vDisplayName: AppTextField!
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vPassword: AppTextField!
     @IBOutlet weak var vRePassword: AppTextField!
@@ -27,15 +27,20 @@ class SignUpViewController: BaseViewController {
     }
     
     override func setTitleUI() {
+        self.hideNavigation()
+        
+        vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage, placeHolder: LocalizableKey.enterDisplayName.showLanguage)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
         vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
-        vRePassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
+        vRePassword.setTitleAndPlaceHolder(title: LocalizableKey.reNewPassword.showLanguage, placeHolder: "********")
         btnSignUp.setTitle(LocalizableKey.LoginButtonSignUp.showLanguage, for: .normal)
         vPassword.tfInput.isSecureTextEntry = true
         vRePassword.tfInput.isSecureTextEntry = true
-        
-        addBackToNavigation()
+    }
+    
+    @IBAction func btnBackBlackTapped() {
+        self.pop()
     }
     
     @IBAction func btnSignUpTapped() {

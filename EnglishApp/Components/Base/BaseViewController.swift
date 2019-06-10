@@ -75,6 +75,14 @@ open class BaseViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
+    func hideTabbar() {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    func showTabbar() {
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
     func setTitleView(titleView: UIView) {
         titleView.frame = CGRect(x: 0, y: 0, width: 1000, height: 49)
         self.navigationItem.titleView = titleView

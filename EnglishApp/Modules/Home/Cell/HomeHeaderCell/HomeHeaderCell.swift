@@ -9,9 +9,11 @@
 import UIKit
 
 class HomeHeaderCell: BaseTableCell {
+    @IBOutlet weak var btnTestBegin: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 }

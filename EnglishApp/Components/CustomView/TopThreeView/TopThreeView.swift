@@ -6,8 +6,54 @@
 //  Copyright © 2019 demo. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class TopThreeView: BaseViewXib {
+    @IBOutlet weak var lbNametop1: UILabel!
+    @IBOutlet weak var lbPointtop1: UILabel!
     
+    @IBOutlet weak var lbNametop2: UILabel!
+    @IBOutlet weak var lbPointtop2: UILabel!
+    
+    @IBOutlet weak var lbNametop3: UILabel!
+    @IBOutlet weak var lbPointtop3: UILabel!
+    
+    @IBOutlet weak var imgAvatar1: UIImageView!
+    @IBOutlet weak var widthAvartar1: NSLayoutConstraint!
+    @IBOutlet weak var widthContent1: NSLayoutConstraint!
+    
+    @IBOutlet weak var imgAvatar2: UIImageView!
+    @IBOutlet weak var widthAvartar2: NSLayoutConstraint!
+    @IBOutlet weak var widthContent2: NSLayoutConstraint!
+
+    @IBOutlet weak var imgAvatar3: UIImageView!
+    @IBOutlet weak var widthAvartar3: NSLayoutConstraint!
+    @IBOutlet weak var widthContent3: NSLayoutConstraint!
+    
+    override func setUpViews() {
+        super.setUpViews()
+        
+        if UIDevice.current.isIphone4Inch() {
+            lbNametop1.font = AppFont.fontRegular8
+            lbNametop2.font = AppFont.fontRegular8
+            lbNametop3.font = AppFont.fontRegular8
+            
+            lbPointtop1.font = AppFont.fontRegular8
+            lbPointtop2.font = AppFont.fontRegular8
+            lbPointtop3.font = AppFont.fontRegular8
+            
+            widthAvartar1.constant = 60
+            widthContent1.constant = 100
+            imgAvatar1.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+            
+            widthAvartar2.constant = 60
+            widthContent2.constant = 100
+            imgAvatar2.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+            
+            widthAvartar3.constant = 60
+            widthContent3.constant = 100
+            imgAvatar3.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+        }
+        
+    }
 }

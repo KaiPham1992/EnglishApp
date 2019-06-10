@@ -60,8 +60,8 @@ class LoginViewController: BaseViewController {
         lbForgot.text = LocalizableKey.ForgotPass.showLanguage
         
         let attr = NSMutableAttributedString()
-        let attr1 = LocalizableKey.NotYetAccount.showLanguage.uppercased().toAttributedString(color: AppColor.color48_48_48, font: AppFont.fontRegular12)
-        let attr2 = " \(LocalizableKey.Register.showLanguage.uppercased())".toAttributedString(color: AppColor.color255_211_17, font: AppFont.fontRegular14, isUnderLine: true)
+        let attr1 = LocalizableKey.NotYetAccount.showLanguage.toAttributedString(color: AppColor.color48_48_48, font: AppFont.fontRegular12)
+        let attr2 = " \(LocalizableKey.Register.showLanguage)".toAttributedString(color: AppColor.color255_211_17, font: AppFont.fontRegular12, isUnderLine: true)
         attr.append(attr1)
         attr.append(attr2)
         lbRegister.attributedText = attr

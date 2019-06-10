@@ -23,6 +23,8 @@ class DailyMissionViewController: BaseViewController, DailyMissionViewProtocol {
     override func setTitleUI() {
         super.setTitleUI()
         
+        hideTabbar()
+        
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
         btnStart.setTitle(LocalizableKey.startMission.showLanguage.showLanguage.uppercased(), for: .normal)
@@ -32,5 +34,10 @@ class DailyMissionViewController: BaseViewController, DailyMissionViewProtocol {
     @IBAction func btnStartTapped() {
         let vc = NameExerciseRouter.createModule()
         self.push(controller: vc)
+    }
+    
+    override func btnBackTapped() {
+        showTabbar()
+        self.pop()
     }
 }

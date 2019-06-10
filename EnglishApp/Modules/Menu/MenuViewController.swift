@@ -17,6 +17,7 @@ protocol MenuViewControllerDelegate: class {
 
 class MenuViewController: UIViewController, MenuViewProtocol {
     @IBOutlet weak var tbMenu: UITableView!
+    @IBOutlet weak var lbVersion: UILabel!
 
 	var presenter: MenuPresenterProtocol?
     weak var delegate: MenuProtocol?
@@ -32,6 +33,14 @@ class MenuViewController: UIViewController, MenuViewProtocol {
         super.viewDidLoad()
         configureTable()
         listMenuItem = MenuItem.toArray()
+        
+        setVersion()
+    }
+    
+    private func setVersion() {
+        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String {
+            lbVersion.text = "Version \(appVersion)"
+        }
     }
 
 }
