@@ -180,8 +180,8 @@ extension CellExercise: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
         cell.indexPath = indexPath
+        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
         cell.isSelect = listSelect[indexPath.row]
         cell.delegate = self
         heightScrollView.constant = vQuestion.frame.height + tbvNameExercise.contentSize.height + 25
