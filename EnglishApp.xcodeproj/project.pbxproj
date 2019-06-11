@@ -81,6 +81,15 @@
 		765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
 		765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
 		765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
+		766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
+		766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
+		766AE7EC22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
+		766AE7EE22AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7ED22AFCAB4002D474E /* ConfirmPopUpView.swift */; };
+		766AE7EF22AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7ED22AFCAB4002D474E /* ConfirmPopUpView.swift */; };
+		766AE7F022AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7ED22AFCAB4002D474E /* ConfirmPopUpView.swift */; };
+		766AE7F222AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766AE7F122AFCAC5002D474E /* ConfirmPopUpView.xib */; };
+		766AE7F322AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766AE7F122AFCAC5002D474E /* ConfirmPopUpView.xib */; };
+		766AE7F422AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766AE7F122AFCAC5002D474E /* ConfirmPopUpView.xib */; };
 		766D12FC228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
 		766D12FD228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
 		766D12FE228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */; };
@@ -1802,6 +1811,9 @@
 		76483BF3229EE3F00079F9A1 /* UpdateAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateAccountView.xib; sourceTree = "<group>"; };
 		765110BF229312EC004A060A /* CellHeaderComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHeaderComment.swift; sourceTree = "<group>"; };
 		765110C0229312EC004A060A /* CellHeaderComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellHeaderComment.xib; sourceTree = "<group>"; };
+		766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopUp.swift; sourceTree = "<group>"; };
+		766AE7ED22AFCAB4002D474E /* ConfirmPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopUpView.swift; sourceTree = "<group>"; };
+		766AE7F122AFCAC5002D474E /* ConfirmPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPopUpView.xib; sourceTree = "<group>"; };
 		766D12F6228EE8DA005E47F0 /* TheoryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryPresenter.swift; sourceTree = "<group>"; };
 		766D12F7228EE8DA005E47F0 /* TheoryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryRouter.swift; sourceTree = "<group>"; };
 		766D12F8228EE8DA005E47F0 /* TheoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryViewController.swift; sourceTree = "<group>"; };
@@ -2514,6 +2526,16 @@
 				76483BF3229EE3F00079F9A1 /* UpdateAccountView.xib */,
 			);
 			path = UpdateAccountPopUp;
+			sourceTree = "<group>";
+		};
+		766AE7E822AFCA7C002D474E /* ConfirmPopUp */ = {
+			isa = PBXGroup;
+			children = (
+				766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */,
+				766AE7ED22AFCAB4002D474E /* ConfirmPopUpView.swift */,
+				766AE7F122AFCAC5002D474E /* ConfirmPopUpView.xib */,
+			);
+			path = ConfirmPopUp;
 			sourceTree = "<group>";
 		};
 		766D12F5228EE8C6005E47F0 /* TheoryGroup */ = {
@@ -3310,6 +3332,7 @@
 		DE361E502283E60500FA3B0D /* PopUp */ = {
 			isa = PBXGroup;
 			children = (
+				766AE7E822AFCA7C002D474E /* ConfirmPopUp */,
 				7629BDD422ACD2230051B835 /* ReportSuccessedPopUp */,
 				76BD143522ACC70700A48635 /* ReportQuestionPopUp */,
 				7643DEA322A4EE2700B7C323 /* ShowMorePopUp */,
@@ -4556,6 +4579,7 @@
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2022AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9322A4C09A00B7C323 /* ViewMessage.xib in Resources */,
+				766AE7F222AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */,
 				76F7F446229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76CE32422296A61100E998FB /* CellQuestion.xib in Resources */,
@@ -4694,6 +4718,7 @@
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2122AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9422A4C09A00B7C323 /* ViewMessage.xib in Resources */,
+				766AE7F322AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */,
 				76F7F447229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76CE32432296A61100E998FB /* CellQuestion.xib in Resources */,
@@ -4832,6 +4857,7 @@
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2222AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9522A4C09A00B7C323 /* ViewMessage.xib in Resources */,
+				766AE7F422AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */,
 				76F7F448229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				76CE32442296A61100E998FB /* CellQuestion.xib in Resources */,
@@ -5486,6 +5512,7 @@
 				76BD142C22ACB8B500A48635 /* ExplainSolutionProtocols.swift in Sources */,
 				7629BDD622ACD2450051B835 /* ReportSuccessedView.swift in Sources */,
 				DECD192322A269860054861D /* HeaderPackCell.swift in Sources */,
+				766AE7EE22AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */,
 				766D135C228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				765110C1229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612822898F1F0046801B /* QARouter.swift in Sources */,
@@ -5529,6 +5556,7 @@
 				DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
 				76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */,
+				766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141322ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
@@ -5948,6 +5976,7 @@
 				76BD142D22ACB8B500A48635 /* ExplainSolutionProtocols.swift in Sources */,
 				7629BDD722ACD2450051B835 /* ReportSuccessedView.swift in Sources */,
 				DECD192422A269860054861D /* HeaderPackCell.swift in Sources */,
+				766AE7EF22AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */,
 				766D135D228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				765110C2229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612922898F1F0046801B /* QARouter.swift in Sources */,
@@ -5991,6 +6020,7 @@
 				DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */,
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
 				76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */,
+				766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141422ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
@@ -6410,6 +6440,7 @@
 				76BD142E22ACB8B500A48635 /* ExplainSolutionProtocols.swift in Sources */,
 				7629BDD822ACD2450051B835 /* ReportSuccessedView.swift in Sources */,
 				DECD192522A269860054861D /* HeaderPackCell.swift in Sources */,
+				766AE7F022AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */,
 				766D135E228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
@@ -6453,6 +6484,7 @@
 				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
 				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,
 				76CF0C7A22906822003C4B4B /* CommentInteractor.swift in Sources */,
+				766AE7EC22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
 				DE953128228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141522ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
