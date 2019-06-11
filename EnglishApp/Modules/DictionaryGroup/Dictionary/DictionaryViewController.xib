@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DictionaryViewController">
             <connections>
+                <outlet property="btnSearch" destination="kGL-HV-3PZ" id="Q8K-US-YS3"/>
                 <outlet property="imgPolygon" destination="csO-EW-DSW" id="IU7-kQ-K48"/>
                 <outlet property="lblDictionary" destination="Vhz-EI-uqB" id="DEa-oj-zYA"/>
                 <outlet property="tfSearch" destination="TBR-R9-mjb" id="bpg-Du-9E3"/>

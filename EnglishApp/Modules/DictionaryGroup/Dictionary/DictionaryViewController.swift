@@ -13,6 +13,7 @@ import DropDown
 
 class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
 
+    @IBOutlet weak var btnSearch: UIButton!
     @IBOutlet weak var imgPolygon: UIImageView!
     @IBOutlet weak var lblDictionary: UILabel!
     @IBOutlet weak var viewDictionary: UIView!
