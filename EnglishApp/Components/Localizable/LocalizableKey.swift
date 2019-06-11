@@ -188,6 +188,7 @@ struct LocalizableKey {
     static let try_hard = "try_hard"
     static let task_every_date = "task_every_date"
     static let time_end = "time_end"
+    static let see_more = "see_more"
     
     
     //result
