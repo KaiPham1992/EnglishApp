@@ -120,6 +120,7 @@ struct LocalizableKey {
     
     static let saved = "saved"
     static let grammar = "grammar"
+    static let grammar_upper = "grammar_upper"
     static let vocabulary = "vocabulary"
     static let note = "note"
     static let writeNote = "write_note"
@@ -189,6 +190,8 @@ struct LocalizableKey {
     static let task_every_date = "task_every_date"
     static let time_end = "time_end"
     static let see_more = "see_more"
+    static let sentence = "sentence"
+    
     
     
     //result
@@ -209,6 +212,7 @@ struct LocalizableKey {
     static let update_account = "update_account"
     static let diamond = "diamond"
     static let money = "money"
+    static let update = "update"
     
     static let enter_content = "enter_content"
     static let cancel_upper = "cancel_upper"

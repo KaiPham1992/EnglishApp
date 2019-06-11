@@ -64,7 +64,7 @@ class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtoc
         dropDown.width = self.vLine.frame.width
         
         dropDown.setupCornerRadius(0)
-        dropDown.dataSource = ["1","2","3"]
+        dropDown.dataSource = ["Elementary","Intermediate","Advanced"]
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             return
         }

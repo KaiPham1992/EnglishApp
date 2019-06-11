@@ -13,6 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol CreateExerciseWireframeProtocol: class {
     func gotoChoiceExercise()
+    func gotoExercise()
 }
 //MARK: Presenter -
 protocol CreateExercisePresenterProtocol: class {
@@ -21,6 +22,7 @@ protocol CreateExercisePresenterProtocol: class {
     func getNumberRow() -> Int
     func getItemIndexPath(indexPath : IndexPath)->String
     func gotoChoiceExercise()
+    func gotoExercise()
 }
 
 //MARK: Interactor -

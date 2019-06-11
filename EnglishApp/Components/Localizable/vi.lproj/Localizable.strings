@@ -186,6 +186,7 @@
 "task_every_date" = "Nhiệm vụ hàng ngày";
 "time_end" = "Kết thúc";
 "see_more" = "Xem thêm";
+"sentence" = "câu";
 
 //result
 "result" = "Kết quả";
@@ -211,6 +212,7 @@
 "enter_content" = "Nhập nội dung";
 "cancel_upper" = "HUỶ";
 "complete_upper" = "HOÀN THÀNH";
+"update" = "Nâng cấp";
 
 
 //month

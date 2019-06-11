@@ -57,7 +57,7 @@ class LessonViewController: UIViewController, LessonViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         if type == .lesson {
-            lbGrammar.text = LocalizableKey.grammar.showLanguage
+            lbGrammar.text = LocalizableKey.grammar_upper.showLanguage
             lbPhonetics.text = LocalizableKey.phonetics.showLanguage
             lbPhrasalVerbs.text = LocalizableKey.phrasal_verbs.showLanguage
         }
@@ -68,9 +68,9 @@ class LessonViewController: UIViewController, LessonViewProtocol {
             lbPhrasalVerbs.text = LocalizableKey.idiams.showLanguage
         }
         
-        vPhrasalVerbs.setupGradient(beginColor: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1), endColor: #colorLiteral(red: 0.7254902124, green: 0.4784313738, blue: 0.09803921729, alpha: 1))
-        vGrammar.setupGradient(beginColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1), endColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1))
-        vPhonetics.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1))
+        vPhrasalVerbs.setupGradient(beginColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1), endColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 0.56))
+        vGrammar.setupGradient(beginColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1), endColor: #colorLiteral(red: 0, green: 0.9490196078, blue: 0.9960784314, alpha: 1))
+        vPhonetics.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 0.56))
         
     }
 
