@@ -34,7 +34,7 @@ class UpdateFeatureView: BaseViewXib{
         vVideo.setupTitle(title: "Xem tất cả bài giảng")
         vSlide.setupTitle(title: "Xem tất cả bài giảng")
         vLorem.setupTitle(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
-        btnCancel.setTitle(LocalizableKey.cancel.showLanguage, for: .normal)
+        btnCancel.setTitle(LocalizableKey.cancel.showLanguage.uppercased, for: .normal)
         btnUpdate.setTitle(LocalizableKey.update.showLanguage.uppercased(), for: .normal)
     }
 }
