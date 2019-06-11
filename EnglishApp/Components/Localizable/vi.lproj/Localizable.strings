@@ -122,7 +122,7 @@
 //theory
 
 "phrasal_verbs" = "Phrasal Verbs";
-"grammar" = "Grammar";
+"grammar_upper" = "Grammar";
 "phonetics" = "Phonetics";
 "lesson" = "Bài học";
 "recipe" = "Công thức";
