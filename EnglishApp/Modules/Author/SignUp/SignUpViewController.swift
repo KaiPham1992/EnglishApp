@@ -24,6 +24,8 @@ class SignUpViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter?.getCaptcha()
     }
     
     override func setTitleUI() {
@@ -45,7 +47,7 @@ class SignUpViewController: BaseViewController {
     
     @IBAction func btnSignUpTapped() {
         if validateInputData() {
-            let param = SignUpParam(email: vEmail.getText(), password: vPassword.getText(), captcha: tfCaptcha.text&)
+            let param = SignUpParam(email: vEmail.getText(), password: vPassword.getText(), captcha: tfCaptcha.text&, displayName: vDisplayName.getText())
             
             presenter?.signUp(param: param)
         }
@@ -58,7 +60,7 @@ class SignUpViewController: BaseViewController {
 
 extension SignUpViewController {
     func validateInputData() -> Bool {
-        if self.vEmail.tfInput.text == "" || self.vPassword.tfInput.text == "" || self.vRePassword.tfInput.text == "" || self.tfCaptcha.text == "" {
+        if self.vDisplayName.tfInput.text == "" || self.vEmail.tfInput.text == "" || self.vPassword.tfInput.text == "" || self.vRePassword.tfInput.text == "" || self.tfCaptcha.text == "" {
             hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
             return false
         }
@@ -95,25 +97,12 @@ extension SignUpViewController: SignUpViewProtocol {
     }
     
     func signUpSuccess(user: UserEntity?) {
-        
+        print(user!.toJSON())
         
     }
     
     func signUpError(error: APIError) {
         presenter?.getCaptcha()
-        switch error.message {
-        case "USER_IS_EXISTED":
-            lbStatus.text = "Tên đăng nhập đã tồn tại"
-        case "WRONG_CAPTCHA":
-            lbStatus.text = "Mã captcha không trùng khớp"
-        case "EMAIL_IS_EXISTED":
-            lbStatus.text = "Email đã tồn tại"
-        case "CODE_INTRODUCTION_IS_NOT_EXISTED":
-            lbStatus.text = "Mã giới thiệu không tồn tại"
-        case "NOT_OLD_ENOUGH":
-            lbStatus.text = "Bạn không đủ tuổi để đăng ký"
-        default:
-            break
-        }
+        hideError(isHidden: false, message:  error.message&.showLanguage)
     }
 }

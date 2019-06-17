@@ -27,6 +27,12 @@ class SelectTeamViewController: BaseViewController, SelectTeamViewProtocol {
         configureTable()
         
         listTeam = TeamEntity.toArray()
+        hideTabbar()
+    }
+    
+    override func btnBackTapped() {
+        showTabbar()
+        self.pop()
     }
 
     override func setTitleUI() {

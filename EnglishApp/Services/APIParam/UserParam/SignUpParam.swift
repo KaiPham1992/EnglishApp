@@ -13,6 +13,7 @@ class SignUpParam: BaseParam {
     var password        : String?
     var rePassword        : String?
     var captcha         : String?
+    var fullName         : String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -21,16 +22,19 @@ class SignUpParam: BaseParam {
         self.password       <- map["password"]
         self.rePassword       <- map["repassword"]
         self.captcha        <- map["captcha"]
+        self.fullName        <- map["fullname"]
     }
     
     init(email      : String?,
          password   : String?,
-         captcha    : String?) {
+         captcha    : String?,
+         displayName: String?) {
         super.init()
         self.email          = email
         self.password       = password
         self.captcha        = captcha
         self.rePassword = password
+        self.fullName = displayName
         
     }
     

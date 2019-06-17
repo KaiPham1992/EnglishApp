@@ -27,11 +27,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
-        AppRouter.shared.setTest()
+        checkLogin()
+        AppRouter.shared.updateRootView()
         configureGoogle()
         
         return true
     }
+    
+    func checkLogin() {
+        Provider.shared.userAPIService.checkLogin(success: { _ in
+            
+        }) { _error in
+            if let _ = _error?.code {
+                UserDefaultHelper.shared.clearUser()
+                AppRouter.shared.openLogin()
+                return
+            } else {
+                return
+            }
+        }
+    }
+    
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:], sourceApplication: String) -> Bool {
         let fb = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)

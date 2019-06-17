@@ -23,7 +23,7 @@ class BaseParam: NSObject, Mappable {
     
     public static func addDeviceParams(inputParams : Dictionary<String, Any>) -> Dictionary<String, Any> {
         var params = inputParams;
-        if let appVersion = Bundle.main.infoDictionary?["CFBundleVersion"]  as? String {
+        if let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"]  as? String {
             params[Params.appVersion] =  appVersion
         }
         
