@@ -29,11 +29,18 @@ class GrammarViewController: UIViewController, GrammarViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        if type == .grammar || type == .vocabulary {
+        if type == .grammar {
             heightButtonAddNote.constant = 0
-        } else{
+        }
+        
+        if type == .vocabulary {
+            heightButtonAddNote.constant = 0
+        }
+        
+        if type == .note {
             heightButtonAddNote.constant = 52
         }
+        
         tbvGrammar.registerXibFile(CellGrammar.self)
         tbvGrammar.dataSource = self
         tbvGrammar.delegate = self
