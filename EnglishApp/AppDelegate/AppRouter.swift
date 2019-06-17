@@ -16,7 +16,7 @@ class AppRouter {
     var rootNavigation: UINavigationController?
     
     func updateRootView() {
-        if UserDefaultHelper.shared.userToken&.isEmpty  {
+        if !UserDefaultHelper.shared.userToken&.isEmpty  {
             openHome()
         } else {
             openLogin()
@@ -58,5 +58,4 @@ class AppRouter {
         let tabBar = MainTabbar()
         windowApp.rootViewController = tabBar
     }
-    
 }

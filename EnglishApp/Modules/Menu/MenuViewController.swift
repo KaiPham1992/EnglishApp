@@ -113,9 +113,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
         case AppImage.imgLogout:
             PopUpHelper.shared.showLogout(completionNo: {
-                print("No")
-            }) {
                 self.logout()
+            }) {
+               
             }
         default:
             break

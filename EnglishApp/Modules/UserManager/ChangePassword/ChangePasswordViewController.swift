@@ -44,7 +44,7 @@ class ChangePasswordViewController: BaseViewController {
     
     @IBAction func btnChangeTapped() {
         if validateInputData() {
-            
+            presenter?.changePassword(password: self.vCurrenPass.getText().sha256(), newPassword: self.vNewPass.getText().sha256())
         }
     }
 }

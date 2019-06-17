@@ -84,13 +84,9 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func btnLoginTapped() {
-//        if validateInputData() {
-//            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
-//        }
-        
-       
-        
-        AppRouter.shared.openHome()
+        if validateInputData() {
+            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
+        }
     }
     
     @IBAction func btnForgotPassTapped() {
@@ -143,26 +139,12 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        guard let _user = user else { return }
-        
-        UserDefaultHelper.shared.saveUser(user: _user)
+        AppRouter.shared.openHome()
     }
     
     func didError(error: APIError?) {
-        if let message = error?.message {
-            switch message {
-            case "INVALID_USERNAME_OR_PASSWORD":
-                UserDefaultHelper.shared.clearUser()
-                hideError(isHidden: false, message:  LocalizableKey.emptyLoginEmailPassword.showLanguage)
-                break
-            case "USER_IS_NOT_VERIFY":
-                break
-            case "PHONE_IS_EXISTED":
-               break
-            default:
-                break
-            }
-        }
-        
+        guard let message = error?.message else { return }
+        UserDefaultHelper.shared.clearUser()
+        hideError(isHidden: false, message:  message.showLanguage)
     }
 }
