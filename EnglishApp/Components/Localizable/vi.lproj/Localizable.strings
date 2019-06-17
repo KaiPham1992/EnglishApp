@@ -122,7 +122,7 @@
 //theory
 
 "phrasal_verbs" = "Phrasal Verbs";
-"grammar" = "Grammar";
+"grammar_upper" = "Grammar";
 "phonetics" = "Phonetics";
 "lesson" = "Bài học";
 "recipe" = "Công thức";
@@ -185,6 +185,8 @@
 "try_hard" = "Luyện tập";
 "task_every_date" = "Nhiệm vụ hàng ngày";
 "time_end" = "Kết thúc";
+"see_more" = "Xem thêm";
+"sentence" = "câu";
 
 //result
 "result" = "Kết quả";
@@ -210,6 +212,7 @@
 "enter_content" = "Nhập nội dung";
 "cancel_upper" = "HUỶ";
 "complete_upper" = "HOÀN THÀNH";
+"update" = "Nâng cấp";
 
 
 //month

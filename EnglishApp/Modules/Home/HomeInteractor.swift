@@ -13,4 +13,5 @@ import UIKit
 class HomeInteractor: HomeInteractorInputProtocol {
 
     weak var presenter: HomeInteractorOutputProtocol?
+    
 }

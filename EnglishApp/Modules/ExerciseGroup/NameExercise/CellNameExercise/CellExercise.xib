@@ -90,7 +90,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yD4-u9-JSq">
-                                        <rect key="frame" x="0.0" y="189" width="302" height="811"/>
+                                        <rect key="frame" x="0.0" y="214" width="302" height="786"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -101,7 +101,7 @@
                                     <constraint firstAttribute="trailing" secondItem="yD4-u9-JSq" secondAttribute="trailing" id="B5I-1Y-yRx"/>
                                     <constraint firstItem="hxi-ch-1F6" firstAttribute="leading" secondItem="Ih8-EC-UFW" secondAttribute="leading" id="C78-vc-lkf"/>
                                     <constraint firstItem="hxi-ch-1F6" firstAttribute="top" secondItem="Ih8-EC-UFW" secondAttribute="top" id="S7L-6m-Hyz"/>
-                                    <constraint firstItem="yD4-u9-JSq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="bottom" id="g5Y-DO-lra"/>
+                                    <constraint firstItem="yD4-u9-JSq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="bottom" constant="25" id="g5Y-DO-lra"/>
                                     <constraint firstAttribute="height" constant="1000" id="liS-4A-3QI"/>
                                     <constraint firstAttribute="bottom" secondItem="yD4-u9-JSq" secondAttribute="bottom" id="zdB-Fd-nXl"/>
                                 </constraints>
@@ -125,6 +125,7 @@
             </constraints>
             <size key="customSize" width="302" height="889"/>
             <connections>
+                <outlet property="btnSeeMore" destination="6Qe-qj-YrB" id="Rua-fr-Crq"/>
                 <outlet property="heightScrollView" destination="liS-4A-3QI" id="UOB-sw-HqD"/>
                 <outlet property="heightTVContent" destination="oHX-bS-d62" id="hUH-eo-Nt7"/>
                 <outlet property="heightVBlur" destination="X63-Uf-2Ep" id="hmN-QJ-gUC"/>

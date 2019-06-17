@@ -16,6 +16,14 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
 
 	var presenter: CreateExercisePresenterProtocol?
 
+    @IBAction func doExercise(_ sender: Any) {
+        PopUpHelper.shared.showUpdateFeature(completeUpdate: {
+            self.presenter?.gotoExercise()
+        }) {
+            
+        }
+    }
+    @IBOutlet weak var lblSum: UILabel!
     @IBOutlet weak var btnDoExercise: UIButton!
     @IBOutlet weak var edEnterExercise: UITextField!
     @IBOutlet weak var lbNameExercise: UILabel!
@@ -24,6 +32,7 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
    
     override func setUpViews() {
         super.setUpViews()
+        lblSum.text = "100/100 " + LocalizableKey.sentence.showLanguage
         tbvCreateExercise.registerXibFile(CellCreateExercise.self)
         tbvCreateExercise.dataSource = self
         tbvCreateExercise.delegate = self
@@ -47,8 +56,8 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
         dropDown.backgroundColor = UIColor(red: 255/255, green: 211/255, blue: 17/255, alpha: 1)
         dropDown.width = 135
         
-        dropDown.setupCornerRadius(0)
-        dropDown.dataSource = ["1","2","3"]
+        dropDown.setupCornerRadius(2)
+        dropDown.dataSource = ["Elementary","Intermediate","Advanced"]
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             return
         }
@@ -85,7 +94,7 @@ extension CreateExerciseViewController : UITableViewDelegate{
 extension CreateExerciseViewController : ChoiceType{
     func choiceDrop(view: UIView, indexPath: IndexPath?) {
         dropDown.anchorView = view
-        dropDown.bottomOffset = CGPoint(x: 0, y: (view.frame.height))
+        dropDown.bottomOffset = CGPoint(x: 0, y: (view.frame.height + 5))
         
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDown.hide()

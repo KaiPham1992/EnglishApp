@@ -13,6 +13,7 @@ import DropDown
 
 class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
 
+    @IBOutlet weak var lblSearch: UILabel!
     @IBOutlet weak var imgPolygon: UIImageView!
     @IBOutlet weak var lblDictionary: UILabel!
     @IBOutlet weak var viewDictionary: UIView!
@@ -30,7 +31,7 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
     }
     override func setUpViews() {
         super.setUpViews()
-        tfSearch.offset
+       lblSearch.text = LocalizableKey.search.showLanguage
         self.tabBarController?.tabBar.isHidden = true
         lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {

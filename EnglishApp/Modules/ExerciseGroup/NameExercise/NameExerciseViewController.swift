@@ -67,11 +67,9 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         addButtonToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy") ?? UIImage(), style: .right, action: #selector(deleteExercise))
     }
     @objc func deleteExercise(){
-        PopUpHelper.shared.showYesNo(message: "Ban co muon thoat bai tap", completionNo: {
-            
-        }) {
+        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage, complete: {
             self.pop(animated: true)
-        }
+        }) 
     }
 }
 extension NameExerciseViewController : UICollectionViewDelegate{

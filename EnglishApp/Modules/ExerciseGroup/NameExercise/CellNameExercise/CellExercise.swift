@@ -17,6 +17,7 @@ protocol CellExerciseDelegate: class {
 
 class CellExercise: UICollectionViewCell {
     
+    @IBOutlet weak var btnSeeMore: UIButton!
     @IBAction func showMoreQuestion(_ sender: Any) {
         if let attributed = self.attributed {
             delegate?.showMoreQuestion(attributed: attributed)
@@ -75,6 +76,8 @@ class CellExercise: UICollectionViewCell {
     }
     
     func setupView(){
+        btnSeeMore.setTitle(LocalizableKey.see_more.showLanguage.uppercased()
+            , for: .normal)
         heightTVContent.constant = AppFont.fontRegular14.lineHeight * 8 + 16
         tvContent.textContainerInset = UIEdgeInsets.zero
         tvContent.textContainer.lineFragmentPadding = 0
@@ -177,11 +180,11 @@ extension CellExercise: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
         cell.indexPath = indexPath
+        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
         cell.isSelect = listSelect[indexPath.row]
         cell.delegate = self
-        heightScrollView.constant = vQuestion.frame.height + tbvNameExercise.contentSize.height
+        heightScrollView.constant = vQuestion.frame.height + tbvNameExercise.contentSize.height + 25
         return cell
     }
 }

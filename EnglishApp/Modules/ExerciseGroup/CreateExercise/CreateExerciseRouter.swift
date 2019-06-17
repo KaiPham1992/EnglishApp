@@ -32,4 +32,9 @@ class CreateExerciseRouter: CreateExerciseWireframeProtocol {
         let vc = ChoiceExerciseRouter.createModule()
         self.viewController?.push(controller: vc,animated: true)
     }
+    
+    func gotoExercise(){
+        let vc = NameExerciseRouter.createModule()
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }

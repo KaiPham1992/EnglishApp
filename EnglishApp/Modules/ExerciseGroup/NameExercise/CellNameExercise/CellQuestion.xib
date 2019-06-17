@@ -23,17 +23,17 @@
                         <rect key="frame" x="16" y="0.0" width="288" height="31.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hya-E2-If7">
-                                <rect key="frame" x="18" y="9" width="11" height="18"/>
+                                <rect key="frame" x="18" y="9" width="20" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="77b-0t-6z2"/>
-                                    <constraint firstAttribute="width" constant="11" id="ubb-vg-lxf"/>
+                                    <constraint firstAttribute="width" constant="20" id="ubb-vg-lxf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLab" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV9-zw-bxg">
-                                <rect key="frame" x="39" y="8" width="212" height="18.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LabelLab" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CV9-zw-bxg">
+                                <rect key="frame" x="48" y="8" width="203" height="18.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -90,6 +90,7 @@
                 <outlet property="btnChoice" destination="7uR-73-3au" id="ReU-qQ-yaJ"/>
                 <outlet property="heightMore" destination="dUs-Zf-maP" id="INy-mM-O2R"/>
                 <outlet property="lbQuestion" destination="CV9-zw-bxg" id="PhD-Z7-Ow1"/>
+                <outlet property="lblIndex" destination="Hya-E2-If7" id="Yuf-gh-ztK"/>
                 <outlet property="vBG" destination="UwO-Sh-gVy" id="L6S-3o-I3F"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="111.83035714285714"/>

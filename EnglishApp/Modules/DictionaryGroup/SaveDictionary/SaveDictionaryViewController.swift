@@ -19,7 +19,7 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
         super.viewDidLoad()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.saved.showLanguage)
-        addButtonImageToNavigation(image: #imageLiteral(resourceName: "Material_Icons_black_delete"), style: .right, action: #selector(clickButtonRight))
+        addButtonImageToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy-1")!, style: .right, action: #selector(clickButtonRight))
     }
     @objc func clickButtonRight(){
         

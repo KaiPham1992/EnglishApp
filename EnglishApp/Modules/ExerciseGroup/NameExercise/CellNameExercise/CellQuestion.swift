@@ -21,6 +21,7 @@ class CellQuestion: UITableViewCell {
     @IBAction func clickMore(_ sender: Any) {
         delegate?.showMoreResult(result: lbQuestion.text ?? "")
     }
+    @IBOutlet weak var lblIndex: UILabel!
     
     @IBAction func clickQuestion(_ sender: Any) {
         self.isSelect = !self.isSelect
@@ -56,6 +57,7 @@ class CellQuestion: UITableViewCell {
     
     func setupData(title: String,isExercise: Bool){
         self.isExercise = isExercise
+        lblIndex.text = "\((indexPath?.row ?? 0) + 1)"
         lbQuestion.text = title
     }
     

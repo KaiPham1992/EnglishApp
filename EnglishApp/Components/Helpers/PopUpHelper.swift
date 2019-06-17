@@ -16,6 +16,16 @@ class PopUpHelper {
         popUp.showPopUp(message: message, completionNo: completionNo, completionYes: completionYes)
     }
     
+    func showUpdateFeature(completeUpdate: CompletionClosure?,completeCancel: CompletionClosure?){
+        let popup = UpdateFeaturePopUp()
+        popup.showPopUp(completeUpdate: completeUpdate, completeCancel: completeCancel)
+    }
+    
+    func showComfirmPopUp(message: String,titleYes: String,titleNo: String,complete: CompletionClosure?){
+        let popup = ConfirmPopUp()
+        popup.showPopUp(message: message, titleYes: titleYes, titleNo: titleNo, complete: complete)
+    }
+    
     func showReportSuccessed(complete: CompletionClosure?){
         let popup = ReportSuccessedPopUp()
         popup.showPopUp(complete: complete)

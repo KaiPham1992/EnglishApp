@@ -231,7 +231,7 @@ extension BaseViewController {
         self.navigationItem.rightBarButtonItems = [button2, button1]
     }
     
-    func addButtonTextToNavigation(title: String, style: StyleNavigation, action: Selector?, textColor: UIColor = AppColor.rightNavigation) {
+    func addButtonTextToNavigation(title: String, style: StyleNavigation, action: Selector?, textColor: UIColor = AppColor.rightNavigation, font : UIFont = UIFont.systemFont(ofSize: 17)) {
         
         showNavigation()
         let btn = UIButton()
@@ -241,7 +241,7 @@ extension BaseViewController {
             newTitle = title
         }
         
-        btn.setAttributed(title: newTitle, color: textColor, font: UIFont.systemFont(ofSize: 17))
+        btn.setAttributed(title: newTitle, color: textColor, font: font)
         
         btn.setTitleColor(textColor, for: .normal)
         if let newAction = action {

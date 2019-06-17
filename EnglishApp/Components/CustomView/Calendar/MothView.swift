@@ -33,6 +33,7 @@ class MonthView: UIView{
     let btLeft : UIButton = {
         let view = UIButton()
         view.setBackgroundImage(#imageLiteral(resourceName: "tick"), for: .normal)
+        view.transform = view.transform.rotated(by: CGFloat(Double.pi))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.setTitle("", for: .normal)
         return view
@@ -74,13 +75,13 @@ class MonthView: UIView{
         
         lblTitle.centerXToSuperview()
         lblTitle.topAnchor.constraint(equalTo: self.topAnchor, constant: 10).isActive = true
-        btRight.heightAnchor.constraint(equalToConstant: 14).isActive = true
-        btRight.widthAnchor.constraint(equalToConstant: 14).isActive = true
+        btRight.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        btRight.widthAnchor.constraint(equalToConstant: 18).isActive = true
         btRight.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: 0).isActive = true
         btRight.centerYToSuperview()
         
-        btLeft.heightAnchor.constraint(equalToConstant: 14).isActive = true
-        btLeft.widthAnchor.constraint(equalToConstant: 14).isActive = true
+        btLeft.heightAnchor.constraint(equalToConstant: 18).isActive = true
+        btLeft.widthAnchor.constraint(equalToConstant: 18).isActive = true
         btLeft.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 0).isActive = true
         btLeft.centerYToSuperview()
         btLeft.addTarget(self, action: #selector(clickButton), for: .touchUpInside)

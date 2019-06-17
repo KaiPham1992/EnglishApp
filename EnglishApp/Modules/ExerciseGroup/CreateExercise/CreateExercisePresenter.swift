@@ -36,5 +36,8 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
     func gotoChoiceExercise() {
         self.router.gotoChoiceExercise()
     }
+    func gotoExercise() {
+        self.router.gotoExercise()
+    }
 
 }

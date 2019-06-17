@@ -22,5 +22,9 @@ class AddNoteViewController: BaseViewController, AddNoteViewProtocol {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.writeNote.showLanguage)
+        addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish),textColor: .black, font: AppFont.fontBold16)
+    }
+    @objc func clickFinish(){
+        self.pop(animated: true)
     }
 }
