@@ -23,11 +23,16 @@ extension SaveEndpoint : EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .getListNote:
+            return .post
         }
     }
     
     var parameters: JSONDictionary {
         switch self {
+        case .getListNote(let temp):
+            return ["" : temp]
+            
         }
     }
     
