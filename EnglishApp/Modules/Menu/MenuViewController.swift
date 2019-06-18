@@ -18,6 +18,7 @@ protocol MenuViewControllerDelegate: class {
 class MenuViewController: UIViewController, MenuViewProtocol {
     @IBOutlet weak var tbMenu: UITableView!
     @IBOutlet weak var lbVersion: UILabel!
+    @IBOutlet weak var header: HeaderUserView!
 
 	var presenter: MenuPresenterProtocol?
     weak var delegate: MenuProtocol?
@@ -35,6 +36,12 @@ class MenuViewController: UIViewController, MenuViewProtocol {
         listMenuItem = MenuItem.toArray()
         
         setVersion()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        header.user = UserDefaultHelper.shared.loginUserInfo
     }
     
     private func setVersion() {

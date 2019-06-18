@@ -10,7 +10,7 @@
 
 import UIKit
 
-class EditProfileViewController: BaseViewController, EditProfileViewProtocol {
+class EditProfileViewController: BaseViewController {
 
 	var presenter: EditProfilePresenterProtocol?
     @IBOutlet weak var vEmail: AppTextField!
@@ -28,12 +28,23 @@ class EditProfileViewController: BaseViewController, EditProfileViewProtocol {
         super.setUpNavigation()
         addBackToNavigation()
         
+        showProfile()
+        
         //--
-        vLocation.listItem = [
-            TagEntity(name: "Viet Nam 0"),
-            TagEntity(name: "Viet Nam 1"),
-            TagEntity(name: "Viet Nam 2")
-        ]
+//        vLocation.listItem = [
+//            TagEntity(name: "Viet Nam 0"),
+//            TagEntity(name: "Viet Nam 1"),
+//            TagEntity(name: "Viet Nam 2")
+//        ]
+    }
+    
+    func showProfile() {
+        guard let user = UserDefaultHelper.shared.loginUserInfo else { return }
+        vDisplayName.tfInput.text = user.displayName
+        vEmail.tfInput.text = user.email
+        vLocation.tfInput.text = user.national
+        
+        imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
     }
 
     override func setTitleUI() {
@@ -46,13 +57,43 @@ class EditProfileViewController: BaseViewController, EditProfileViewProtocol {
         setTitleNavigation(title: LocalizableKey.EditProfile.showLanguage)
         btnSave.setTitle(LocalizableKey.titleSave.showLanguage, for: .normal)
         imgAvatar.setBorder(borderWidth: 4, borderColor: AppColor.yellow, cornerRadius: 50)
-        
-        vEmail.tfInput.text = "ngocduong2310@gmail.com"
         vEmail.tfInput.isEnabled = false
         vEmail.tfInput.textColor = vEmail.tfInput.textColor!.withAlphaComponent(0.5)
     }
     
     @IBAction func btnSavedTapped() {
-        self.push(controller: PreviewProfileRouter.createModule())
+        logout()
+    }
+    
+    @IBAction func btnAvatarTapped() {
+        SelectPhotoCanCropPopUp.shared.showCropPicker(controller: self) { image in
+            guard let _iamge = image else { return }
+            self.imgAvatar.image = _iamge
+//            self.presenter?.updateAvatar(image: _iamge)
+        }
+    }
+}
+
+extension EditProfileViewController: EditProfileViewProtocol {
+    func didErrorUpdateProfile(error: APIError?) {
+        
+    }
+    
+    func didSuccessUpdateProfile(user: UserEntity?) {
+        
+    }
+}
+
+
+extension EditProfileViewController {
+    func logout() {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.logout(success: { (_) in
+            ProgressView.shared.hide()
+            UserDefaultHelper.shared.clearUser()
+            AppRouter.shared.openLogin()
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
     }
 }

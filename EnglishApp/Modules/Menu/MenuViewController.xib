@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
             <connections>
+                <outlet property="header" destination="hYN-1n-bct" id="fez-ZN-8zj"/>
                 <outlet property="lbVersion" destination="WQS-uf-fpc" id="WNC-mH-WTd"/>
                 <outlet property="tbMenu" destination="mrk-ff-eaa" id="zJX-aN-OZc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

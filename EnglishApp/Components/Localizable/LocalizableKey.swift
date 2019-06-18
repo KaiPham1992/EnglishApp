@@ -105,6 +105,7 @@ struct LocalizableKey {
     static let dailyMissionTitle = "dailyMissionTitle"
     static let startMission = "startMission"
     
+    
     // Report
     static let report = "report"
     static let description = "description"
@@ -166,6 +167,7 @@ struct LocalizableKey {
 
     //comment
     static let comment = "comment"
+    static let point = "point"
     
     //exercise
     static let exercise = "exercise"

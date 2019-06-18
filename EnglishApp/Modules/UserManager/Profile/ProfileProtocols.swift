@@ -18,12 +18,14 @@ protocol ProfileWireframeProtocol: class {
 protocol ProfilePresenterProtocol: class {
 
     var interactor: ProfileInteractorInputProtocol? { get set }
+    func getProfile()
 }
 
 //MARK: Interactor -
 protocol ProfileInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func didGetProfile(user: UserEntity)
 }
 
 protocol ProfileInteractorInputProtocol: class {
@@ -31,6 +33,7 @@ protocol ProfileInteractorInputProtocol: class {
     var presenter: ProfileInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    func getProfile()
 }
 
 //MARK: View -
@@ -39,4 +42,5 @@ protocol ProfileViewProtocol: class {
     var presenter: ProfilePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetProfile(user: UserEntity)
 }

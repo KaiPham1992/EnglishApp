@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ProfileViewController: BaseViewController, ProfileViewProtocol {
+class ProfileViewController: BaseViewController {
 
 	var presenter: ProfilePresenterProtocol?
     @IBOutlet weak var lbBee: UILabel!
@@ -23,9 +23,15 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vLocation: AppTextField!
     @IBOutlet weak var imgAvatar: UIImageView!
+    
+    @IBOutlet weak var lbFullName: UILabel!
+    @IBOutlet weak var lbLevel: UILabel!
+    @IBOutlet weak var lbPoint: UILabel!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        
+        presenter?.getProfile()
     }
     
     override func setUpNavigation() {
@@ -69,5 +75,21 @@ class ProfileViewController: BaseViewController, ProfileViewProtocol {
     
     @IBAction func btnDiamonTapped() {
         self.push(controller: HistoryBeeRouter.createModule())
+    }
+}
+
+extension ProfileViewController: ProfileViewProtocol {
+    func didGetProfile(user: UserEntity) {
+        vDisplayName.tfInput.text = user.displayName
+        vEmail.tfInput.text = user.email
+        vLocation.tfInput.text = user.national
+        lbFullName.text = user.fullName
+        lbLevel.text = user.rankName
+        lbBee.text = user.amountDiamond*.description
+        lbDiamon.text = user.amountHoney*.description
+        lbPoint.text = "\(user.amountPoint*.description) \(LocalizableKey.point.showLanguage)"
+        imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+        
+        UserDefaultHelper.shared.saveUser(user: user)
     }
 }

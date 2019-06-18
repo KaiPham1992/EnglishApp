@@ -19,6 +19,7 @@ struct AppImage {
     static let imgMenu = UIImage(named: "ic_menu")!
     static let imgNotification = UIImage(named: "THONG_BAO")!
     static let imgEditProfile = UIImage(named: "edit")!
+    static let imgPlaceHolder = UIImage(named: "placeHolderImage")!
     
     static let imgDictionary = UIImage(named: "ic_dictionary")!
     static let imgStore = UIImage(named: "ic_store")!

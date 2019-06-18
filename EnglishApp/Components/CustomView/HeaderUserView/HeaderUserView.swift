@@ -9,14 +9,29 @@
 import UIKit
 
 class HeaderUserView: BaseViewXib {
-    @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var lbPoint: UILabel!
+    @IBOutlet weak var lbDiamond: UILabel!
+    @IBOutlet weak var lbHoney: UILabel!
+    @IBOutlet weak var lbFullName: UILabel!
+    
+    var user: UserEntity? {
+        didSet {
+            guard let user = user else { return }
+            lbPoint.text = user.amountPoint*.description
+            lbDiamond.text = user.amountDiamond*.description
+            lbHoney.text = user.amountHoney*.description
+            lbFullName.text = user.fullName
+            imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+        }
+    }
     
     override func setUpViews() {
         super.setUpViews()
         
         self.backgroundColor = AppColor.yellow
         
-        imgIcon.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)
+        imgAvatar.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)
     }
     
     

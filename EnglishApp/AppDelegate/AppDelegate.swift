@@ -22,14 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
         IQKeyboardManager.shared.enable = true
+        configureGoogle()
+        ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         //---
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         
         checkLogin()
-        AppRouter.shared.updateRootView()
-        configureGoogle()
+//        AppRouter.shared.setTest()
+        AppRouter.shared.openLogin()
+        
         
         return true
     }
@@ -50,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:], sourceApplication: String) -> Bool {
-        let fb = FBSDKApplicationDelegate.sharedInstance().application(app, open: url, options: options)
+        let fb = ApplicationDelegate.shared.application(app, open: url, options: options)
         let gg = GIDSignIn.sharedInstance().handle(url as URL?,
                                                    sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                    annotation: options[UIApplication.OpenURLOptionsKey.annotation])

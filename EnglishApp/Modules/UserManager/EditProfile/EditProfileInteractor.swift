@@ -13,4 +13,34 @@ import UIKit
 class EditProfileInteractor: EditProfileInteractorInputProtocol {
 
     weak var presenter: EditProfileInteractorOutputProtocol?
+    
+    func updateProfile(userInfo: UpdateProfileParam) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.updateProfile(param: userInfo, success: { (user) in
+            ProgressView.shared.hide()
+            if let user = user {
+                self.presenter?.didSuccessUpdateProfile(user: user)
+                UserDefaultHelper.shared.loginUserInfo = user
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+            self.presenter?.didErrorUpdateProfile(error: error)
+        }
+    }
+    
+    func updateAvatar(image: UIImage) {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.uploadAvatar(image: image, success: { _user in
+            guard var user = UserDefaultHelper.shared.loginUserInfo else {return }
+            ProgressView.shared.hide()
+            
+            user.imgSrc = _user?.imgSrc
+            user.imgCropSrc = _user?.imgCropSrc
+            UserDefaultHelper.shared.loginUserInfo = user
+            
+        }, failure: { error in
+            ProgressView.shared.hide()
+            self.presenter?.didErrorUpdateProfile(error: error)
+        })
+    }
 }

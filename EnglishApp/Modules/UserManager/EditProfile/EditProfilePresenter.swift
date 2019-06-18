@@ -22,4 +22,20 @@ class EditProfilePresenter: EditProfilePresenterProtocol, EditProfileInteractorO
         self.router = router
     }
 
+    func updateProfile(userInfo: UpdateProfileParam) {
+        interactor?.updateProfile(userInfo: userInfo)
+    }
+    
+    func updateAvatar(image: UIImage) {
+        interactor?.updateAvatar(image: image)
+    }
+    
+    func didSuccessUpdateProfile(user: UserEntity?) {
+        view?.didSuccessUpdateProfile(user: user)
+    }
+    
+    func didErrorUpdateProfile(error: APIError?) {
+        view?.didErrorUpdateProfile(error: error)
+    }
+
 }

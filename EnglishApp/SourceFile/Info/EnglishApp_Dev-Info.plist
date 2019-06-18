@@ -4,6 +4,8 @@
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<key>CFBundleDisplayName</key>
+	<string>Obee Dev</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -55,6 +57,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Obee muốn truy cập camera để lấy ảnh thay avatar</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Obee muốn truy cập hình ảnh để lấy ảnh thay avatar</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Comfortaa-Regular.ttf</string>

@@ -35,19 +35,16 @@ class UserDefaultHelper {
     
     var loginUserInfo: UserEntity? {
         get {
-            if let savedUser = UserDefaults.standard.object(forKey: UserDefaultHelperKey.loginUserInfo.rawValue) as? Data {
-                let decoder = JSONDecoder()
-                if let user = try? decoder.decode(UserEntity.self, from: savedUser) {
-                    return user
-                }
+            if let savedUser = UserDefaults.standard.object(forKey: UserDefaultHelperKey.loginUserInfo.rawValue) as? String {
+                let user = Mapper<UserEntity>().map(JSONString: savedUser)
+                return user
             }
             return nil
         }
         set(loginUserInfo) {
-            let encoder = JSONEncoder()
-            if let encoded = try? encoder.encode(loginUserInfo) {
-                UserDefaults.standard.set(encoded, forKey: UserDefaultHelperKey.loginUserInfo.rawValue)
-            }
+            guard let json = loginUserInfo?.toJSONString() else { return }
+            
+            UserDefaults.standard.set(json, forKey: UserDefaultHelperKey.loginUserInfo.rawValue)
         }
     }
     
@@ -98,6 +95,5 @@ extension UserDefaultHelper {
     
     func saveUser(user: UserEntity) {
         loginUserInfo = user
-        userToken = user.jwt&
     }
 }

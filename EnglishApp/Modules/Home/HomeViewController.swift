@@ -68,6 +68,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         nav.addSubview(header)
         header.anchor(widthConstant: 240, heightConstant: 42)
         header.centerSuperview()
+        header.user = UserDefaultHelper.shared.loginUserInfo
         //---
         
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))

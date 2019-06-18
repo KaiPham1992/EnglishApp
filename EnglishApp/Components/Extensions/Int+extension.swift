@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ObjectMapper
 postfix operator *
 
 postfix func *<T>(element: T?) -> Int {
@@ -48,4 +49,27 @@ public extension Double {
         return Double.random * (max - min) + min
     }
 
+}
+
+
+class StringToIntTransform: TransformType {
+    public typealias Object     = Int
+    public typealias JSON       = String
+    
+    public init() {}
+    
+    open func transformFromJSON(_ value: Any?) -> Int? {
+        if let timeStr = value as? String {
+            return Int(timeStr)
+        }
+        
+        return nil
+    }
+    
+    open func transformToJSON(_ value: Int?) -> String? {
+        if let intValue = value {
+            return intValue.description
+        }
+        return nil
+    }
 }

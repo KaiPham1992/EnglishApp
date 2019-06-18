@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-struct UserEntity: Mappable, Codable  {
+class UserEntity: BaseEntity  {
     
     var id: String?
     var email: String?
@@ -20,15 +20,14 @@ struct UserEntity: Mappable, Codable  {
     var languageCode: String?
     var amountDiamond: Int?
     var amountHoney: Int?
-    var rankId: Int?
+    var amountPoint: Int?
+    var rankId: String?
     var rankName: String?
     var jwt: String?
     var socialImage: String?
+    var displayName: String?
     
-    init?(map: Map) {
-    }
-    
-    mutating func mapping(map: Map) {
+    override func mapping(map: Map) {
         self.id             <- map["_id"]
         self.email       <- map["email"]
         self.fullName          <- map["fullname"]
@@ -36,29 +35,16 @@ struct UserEntity: Mappable, Codable  {
         self.imgSrc          <- map["img_src"]
         self.imgCropSrc      <- map["crop_img_src"]
         self.languageCode       <- map["language_code"]
-        self.amountDiamond         <- map["amount_diamond"]
-        self.amountHoney         <- map["amount_honey"]
+        self.amountDiamond         <- (map["amount_diamond"], StringToIntTransform())
+        self.amountHoney         <- (map["amount_honey"], StringToIntTransform())
+         self.amountPoint         <- (map["amount_point"], StringToIntTransform())
         self.rankId     <- map["rank_id"]
         self.rankName      <- map["rank_name"]
         self.jwt <- map["jwt"]
-        
+        self.displayName <- map["username"]
         self.socialImage <- map["social_img_src"]
         
     }
-    
-//    init (displayName: String, phoneNumber: String,phoneCode: String, birthday: String, gender: String? = nil, houseAddress: String? = nil, companyAddress: String? = nil, lat1: String? = nil, long1: String? = nil,lat2: String? = nil, long2: String? = nil) {
-//        self.fullName       = displayName
-//        self.phone          = phoneNumber
-//        self.phoneCode      = phoneCode
-//        self.birthday       = birthday
-//        self.gender         = gender
-//        self.houseAddress   = houseAddress
-//        self.companyAddress = companyAddress
-//        self.latAddress1    = lat1
-//        self.latAddress2    = lat2
-//        self.longAddress1   = long1
-//        self.longAddress2   = long2
-//    }
     
     var urlAvatar:  URL? {
         if let urlString = self.imgCropSrc, let url = URL(string: BASE_URL_IMAGE + urlString) {

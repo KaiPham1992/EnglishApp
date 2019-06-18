@@ -21,5 +21,13 @@ class ProfilePresenter: ProfilePresenterProtocol, ProfileInteractorOutputProtoco
         self.interactor = interactor
         self.router = router
     }
+    
+    func getProfile() {
+        interactor?.getProfile()
+    }
+    
+    func didGetProfile(user: UserEntity) {
+        view?.didGetProfile(user: user)
+    }
 
 }

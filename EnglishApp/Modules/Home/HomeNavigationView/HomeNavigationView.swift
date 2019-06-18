@@ -11,5 +11,7 @@ import UIKit
 class HomeNavigationView: BaseViewXib {
     @IBOutlet weak var btnMenu: UIButton!
     @IBOutlet weak var btnNotification: UIButton!
+    @IBOutlet weak var vHeader: HeaderUserView!
+    
     
 }

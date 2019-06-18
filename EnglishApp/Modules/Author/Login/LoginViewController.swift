@@ -107,7 +107,6 @@ class LoginViewController: BaseViewController {
         self.view.endEditing(true)
         self.FBlogin()
     }
-
 }
 
 extension LoginViewController {
@@ -139,7 +138,8 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        AppRouter.shared.openHome()
+//        AppRouter.shared.openHome()
+        self.push(controller: EditProfileRouter.createModule())
     }
     
     func didError(error: APIError?) {
