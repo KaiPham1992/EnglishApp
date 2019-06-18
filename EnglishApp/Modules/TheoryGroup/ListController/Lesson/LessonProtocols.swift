@@ -12,15 +12,15 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LessonWireframeProtocol: class {
-    func gotoLesson()
-    func gotoRecipe()
+    func gotoLesson(lesson_category_id: String)
+    func gotoRecipe(lesson_category_id: String)
 }
 //MARK: Presenter -
 protocol LessonPresenterProtocol: class {
 
     var interactor: LessonInteractorInputProtocol? { get set }
-    func gotoLesson()
-    func gotoRecipe()
+    func gotoLesson(lesson_category_id: String)
+    func gotoRecipe(lesson_category_id: String)
 }
 
 //MARK: Interactor -

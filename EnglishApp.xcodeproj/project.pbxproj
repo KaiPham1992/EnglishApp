@@ -570,6 +570,21 @@
 		76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */; };
 		76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */; };
 		76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */; };
+		76E852F622B945870039751A /* TheoryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852F522B945870039751A /* TheoryEndpoint.swift */; };
+		76E852F722B945870039751A /* TheoryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852F522B945870039751A /* TheoryEndpoint.swift */; };
+		76E852F822B945870039751A /* TheoryEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852F522B945870039751A /* TheoryEndpoint.swift */; };
+		76E852FA22B946CA0039751A /* TheoryAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852F922B946CA0039751A /* TheoryAPIService.swift */; };
+		76E852FB22B946CA0039751A /* TheoryAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852F922B946CA0039751A /* TheoryAPIService.swift */; };
+		76E852FC22B946CA0039751A /* TheoryAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852F922B946CA0039751A /* TheoryAPIService.swift */; };
+		76E852FE22B9477D0039751A /* LessonCatelogyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852FD22B9477D0039751A /* LessonCatelogyEntity.swift */; };
+		76E852FF22B9477D0039751A /* LessonCatelogyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852FD22B9477D0039751A /* LessonCatelogyEntity.swift */; };
+		76E8530022B9477D0039751A /* LessonCatelogyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E852FD22B9477D0039751A /* LessonCatelogyEntity.swift */; };
+		76E8530222B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530122B958EC0039751A /* LessonCatelogyDetailEntity.swift */; };
+		76E8530322B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530122B958EC0039751A /* LessonCatelogyDetailEntity.swift */; };
+		76E8530422B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530122B958EC0039751A /* LessonCatelogyDetailEntity.swift */; };
+		76E8530622B95EB90039751A /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530522B95EB90039751A /* SearchEntity.swift */; };
+		76E8530722B95EB90039751A /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530522B95EB90039751A /* SearchEntity.swift */; };
+		76E8530822B95EB90039751A /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530522B95EB90039751A /* SearchEntity.swift */; };
 		76EE391C22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
 		76EE391D22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
 		76EE391E22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
@@ -2001,6 +2016,11 @@
 		76E2FF4C228DD2120014B1F4 /* SeeNoteProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeNoteProtocols.swift; sourceTree = "<group>"; };
 		76E2FF4D228DD2120014B1F4 /* SeeNoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeeNoteInteractor.swift; sourceTree = "<group>"; };
 		76E2FF4E228DD2120014B1F4 /* SeeNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SeeNoteViewController.xib; sourceTree = "<group>"; };
+		76E852F522B945870039751A /* TheoryEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryEndpoint.swift; sourceTree = "<group>"; };
+		76E852F922B946CA0039751A /* TheoryAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheoryAPIService.swift; sourceTree = "<group>"; };
+		76E852FD22B9477D0039751A /* LessonCatelogyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCatelogyEntity.swift; sourceTree = "<group>"; };
+		76E8530122B958EC0039751A /* LessonCatelogyDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCatelogyDetailEntity.swift; sourceTree = "<group>"; };
+		76E8530522B95EB90039751A /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDatePresenter.swift; sourceTree = "<group>"; };
 		76EE391722A5777700DD8960 /* HistoryExerciseDateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateRouter.swift; sourceTree = "<group>"; };
 		76EE391822A5777700DD8960 /* HistoryExerciseDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateViewController.swift; sourceTree = "<group>"; };
@@ -3065,6 +3085,16 @@
 			path = AddNote;
 			sourceTree = "<group>";
 		};
+		76E852F422B945590039751A /* TheoryGroup */ = {
+			isa = PBXGroup;
+			children = (
+				76E852FD22B9477D0039751A /* LessonCatelogyEntity.swift */,
+				76E8530122B958EC0039751A /* LessonCatelogyDetailEntity.swift */,
+				76E8530522B95EB90039751A /* SearchEntity.swift */,
+			);
+			path = TheoryGroup;
+			sourceTree = "<group>";
+		};
 		76EE392F22A581B200DD8960 /* ChildController */ = {
 			isa = PBXGroup;
 			children = (
@@ -3454,6 +3484,7 @@
 		DE361EEB2283E84F00FA3B0D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				76E852F422B945590039751A /* TheoryGroup */,
 				764083F922B7C990002D9401 /* SaveGroup */,
 				DE361EEE2283E84F00FA3B0D /* NotificationEntity.swift */,
 				DE361EF02283E84F00FA3B0D /* BaseEntity.swift */,
@@ -3542,6 +3573,7 @@
 				DE361F1A2283E85000FA3B0D /* UserEndPoint.swift */,
 				DE361F1B2283E85000FA3B0D /* NotificationEndPoint.swift */,
 				7640840222B7CB45002D9401 /* SaveEndpoint.swift */,
+				76E852F522B945870039751A /* TheoryEndpoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -3562,6 +3594,7 @@
 				DE361F222283E85000FA3B0D /* APIServiceProvider */,
 				DE361F242283E85000FA3B0D /* UserAPIService.swift */,
 				764083FE22B7CA6E002D9401 /* SaveAPIService.swift */,
+				76E852F922B946CA0039751A /* TheoryAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -5343,8 +5376,10 @@
 				DEB9613A228993640046801B /* QACell.swift in Sources */,
 				76CE31932295A9E700E998FB /* CellLevelExercise.swift in Sources */,
 				DE952F8C2287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				76E852F622B945870039751A /* TheoryEndpoint.swift in Sources */,
 				DE361F2F2283E85000FA3B0D /* PhoneEntity.swift in Sources */,
 				DE89D1DC22A413F5000638B0 /* RequireUpgradeContent.swift in Sources */,
+				76E852FE22B9477D0039751A /* LessonCatelogyEntity.swift in Sources */,
 				DE952F912287D2A700E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEB9612E22898F1F0046801B /* QAProtocols.swift in Sources */,
 				DEBCBC7222945C8300DF7F74 /* InfoPackView.swift in Sources */,
@@ -5410,6 +5445,7 @@
 				769A3BBB229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
+				76E8530622B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
 				76CE31CF22961FC300E998FB /* ResultInteractor.swift in Sources */,
@@ -5493,6 +5529,7 @@
 				769A3BAB229FE53A00CA55BD /* CalendarView.swift in Sources */,
 				DE49F80522A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE952F862287D2A700E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				76E8530222B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */,
 				766D1308228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DED5A01422A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191622A269560054861D /* DetailPackProtocols.swift in Sources */,
@@ -5557,6 +5594,7 @@
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
 				DEC62AC022930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76CE323622968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
+				76E852FA22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F7FF22A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76CE318A2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
@@ -5814,8 +5852,10 @@
 				DEB9613B228993640046801B /* QACell.swift in Sources */,
 				76CE31942295A9E700E998FB /* CellLevelExercise.swift in Sources */,
 				DE952FC52287DF4800E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				76E852F722B945870039751A /* TheoryEndpoint.swift in Sources */,
 				DE952FC62287DF4800E3F688 /* PhoneEntity.swift in Sources */,
 				DE89D1DD22A413F5000638B0 /* RequireUpgradeContent.swift in Sources */,
+				76E852FF22B9477D0039751A /* LessonCatelogyEntity.swift in Sources */,
 				DE952FC72287DF4800E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEB9612F22898F1F0046801B /* QAProtocols.swift in Sources */,
 				DEBCBC7322945C8300DF7F74 /* InfoPackView.swift in Sources */,
@@ -5881,6 +5921,7 @@
 				769A3BBC229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */,
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
+				76E8530722B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
 				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
 				76CE31D022961FC300E998FB /* ResultInteractor.swift in Sources */,
@@ -5964,6 +6005,7 @@
 				769A3BAC229FE53A00CA55BD /* CalendarView.swift in Sources */,
 				DE49F80622A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE952FED2287DF4800E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				76E8530322B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */,
 				766D1309228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DED5A01522A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191722A269560054861D /* DetailPackProtocols.swift in Sources */,
@@ -6028,6 +6070,7 @@
 				DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */,
 				DEC62AC122930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76CE323722968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
+				76E852FB22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F80022A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76CE318B2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
@@ -6285,8 +6328,10 @@
 				DEB9613C228993640046801B /* QACell.swift in Sources */,
 				76CE31952295A9E700E998FB /* CellLevelExercise.swift in Sources */,
 				DE9530732287DF6400E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				76E852F822B945870039751A /* TheoryEndpoint.swift in Sources */,
 				DE9530742287DF6400E3F688 /* PhoneEntity.swift in Sources */,
 				DE89D1DE22A413F5000638B0 /* RequireUpgradeContent.swift in Sources */,
+				76E8530022B9477D0039751A /* LessonCatelogyEntity.swift in Sources */,
 				DE9530752287DF6400E3F688 /* KActivityIndicatorAnimationLineScaleParty.swift in Sources */,
 				DEB9613022898F1F0046801B /* QAProtocols.swift in Sources */,
 				DEBCBC7422945C8300DF7F74 /* InfoPackView.swift in Sources */,
@@ -6352,6 +6397,7 @@
 				769A3BBD229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */,
 				DE95314A2288324300E3F688 /* EditProfileInteractor.swift in Sources */,
+				76E8530822B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
 				DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */,
 				76CE31D122961FC300E998FB /* ResultInteractor.swift in Sources */,
@@ -6435,6 +6481,7 @@
 				769A3BAD229FE53A00CA55BD /* CalendarView.swift in Sources */,
 				DE49F80722A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				76E8530422B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */,
 				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
 				DED5A01622A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191822A269560054861D /* DetailPackProtocols.swift in Sources */,
@@ -6499,6 +6546,7 @@
 				DE9530B12287DF6400E3F688 /* UserEndPoint.swift in Sources */,
 				DEC62AC222930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				76CE323822968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
+				76E852FC22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F80122A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76CE318C2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,

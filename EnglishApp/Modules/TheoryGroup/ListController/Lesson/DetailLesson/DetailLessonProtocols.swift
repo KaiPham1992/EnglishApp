@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: Wireframe -
 protocol DetailLessonWireframeProtocol: class {
@@ -18,17 +19,21 @@ protocol DetailLessonWireframeProtocol: class {
 protocol DetailLessonPresenterProtocol: class {
 
     var interactor: DetailLessonInteractorInputProtocol? { get set }
+    func getLessonDetail(lesson_id: Int)
+    func getContentLesson() -> NSAttributedString?
 }
 
 //MARK: Interactor -
 protocol DetailLessonInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getLessonDetailSuccessed(lessonDetail: LessonCatelogyDetail)
 }
 
 protocol DetailLessonInteractorInputProtocol: class {
 
     var presenter: DetailLessonInteractorOutputProtocol?  { get set }
+    func getLessonDetail(lesson_id: Int)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +42,7 @@ protocol DetailLessonInteractorInputProtocol: class {
 protocol DetailLessonViewProtocol: class {
 
     var presenter: DetailLessonPresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }
