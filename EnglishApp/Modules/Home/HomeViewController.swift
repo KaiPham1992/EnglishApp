@@ -9,10 +9,15 @@
 //
 
 import UIKit
+protocol HomeViewControllerDelegate: class {
+    func showLefMenuTapped()
+}
 
 class HomeViewController: BaseViewController, HomeViewProtocol {
     @IBOutlet weak var tbHome: UITableView!
     var presenter: HomePresenterProtocol?
+    
+    weak var delegate: HomeViewControllerDelegate?
     
     var listMenuItem = [MenuItem]() {
         didSet {
@@ -51,18 +56,6 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         removeHeaderHome()
     }
     
-//    override func  WillAppear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-//        super.viewWillAppear(animated)
-//        addHeaderHome()
-//    }
-//
-//    override func viewWillDisappear(_ animated: Bool) {
-//        self.navigationController?.setNavigationBarHidden(false, animated: animated)
-//        super.viewWillDisappear(animated)
-//        removeHeaderHome()
-//    }
-    
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
         nav.addSubview(header)
@@ -84,13 +77,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     }
     
     @objc func btnMenuTapped() {
-        showHideMenu()
-    }
-    
-    func showHideMenu() {
-        if let containerController = navigationController?.parent as? SideMenuViewController {
-            containerController.toggleLeftPanel()
-        }
+       self.delegate?.showLefMenuTapped()
     }
 }
 

@@ -16,7 +16,7 @@ class EditProfileRouter: EditProfileWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = EditProfileViewController(nibName: nil, bundle: nil)
+        let view = EditProfileViewController.initFromNib()
         let interactor = EditProfileInteractor()
         let router = EditProfileRouter()
         let presenter = EditProfilePresenter(interface: view, interactor: interactor, router: router)

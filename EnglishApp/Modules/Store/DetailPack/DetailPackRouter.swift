@@ -16,7 +16,7 @@ class DetailPackRouter: DetailPackWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = DetailPackViewController(nibName: nil, bundle: nil)
+        let view = DetailPackViewController.initFromNib()
         let interactor = DetailPackInteractor()
         let router = DetailPackRouter()
         let presenter = DetailPackPresenter(interface: view, interactor: interactor, router: router)

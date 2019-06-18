@@ -22,7 +22,7 @@ class ResultRouter: ResultWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ResultViewController(nibName: nil, bundle: nil)
+        let view = ResultViewController.initFromNib()
         let interactor = ResultInteractor()
         let router = ResultRouter()
         let presenter = ResultPresenter(interface: view, interactor: interactor, router: router)

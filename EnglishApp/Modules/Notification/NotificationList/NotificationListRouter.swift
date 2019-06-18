@@ -16,7 +16,7 @@ class NotificationListRouter: NotificationListWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = NotificationListViewController(nibName: nil, bundle: nil)
+        let view = NotificationListViewController.initFromNib()
         let interactor = NotificationListInteractor()
         let router = NotificationListRouter()
         let presenter = NotificationListPresenter(interface: view, interactor: interactor, router: router)

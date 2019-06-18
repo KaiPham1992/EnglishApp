@@ -16,7 +16,7 @@ class CreateExerciseRouter: CreateExerciseWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = CreateExerciseViewController(nibName: nil, bundle: nil)
+        let view = CreateExerciseViewController.initFromNib()
         let interactor = CreateExerciseInteractor()
         let router = CreateExerciseRouter()
         let presenter = CreateExercisePresenter(interface: view, interactor: interactor, router: router)

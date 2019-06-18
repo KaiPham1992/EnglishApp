@@ -16,7 +16,7 @@ class AddNoteRouter: AddNoteWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = AddNoteViewController(nibName: nil, bundle: nil)
+        let view = AddNoteViewController.initFromNib()
         let interactor = AddNoteInteractor()
         let router = AddNoteRouter()
         let presenter = AddNotePresenter(interface: view, interactor: interactor, router: router)

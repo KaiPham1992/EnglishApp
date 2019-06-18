@@ -30,8 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         checkLogin()
-//        AppRouter.shared.setTest()
-        AppRouter.shared.openLogin()
+        AppRouter.shared.updateRootView()
         
         
         return true

@@ -14,9 +14,9 @@ class ProfileRouter: ProfileWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> ProfileViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ProfileViewController(nibName: nil, bundle: nil)
+        let view = ProfileViewController.initFromNib()
         let interactor = ProfileInteractor()
         let router = ProfileRouter()
         let presenter = ProfilePresenter(interface: view, interactor: interactor, router: router)

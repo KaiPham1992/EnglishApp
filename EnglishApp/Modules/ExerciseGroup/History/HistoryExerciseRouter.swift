@@ -14,9 +14,9 @@ class HistoryExerciseRouter: HistoryExerciseWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> HistoryExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = HistoryExerciseViewController(nibName: nil, bundle: nil)
+        let view = HistoryExerciseViewController.initFromNib()
         let interactor = HistoryExerciseInteractor()
         let router = HistoryExerciseRouter()
         let presenter = HistoryExercisePresenter(interface: view, interactor: interactor, router: router)

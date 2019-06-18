@@ -16,7 +16,7 @@ class StudyPackRouter: StudyPackWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = StudyPackViewController(nibName: nil, bundle: nil)
+        let view = StudyPackViewController.initFromNib()
         let interactor = StudyPackInteractor()
         let router = StudyPackRouter()
         let presenter = StudyPackPresenter(interface: view, interactor: interactor, router: router)

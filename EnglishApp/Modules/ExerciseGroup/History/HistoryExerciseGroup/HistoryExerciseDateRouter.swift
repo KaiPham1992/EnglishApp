@@ -16,7 +16,7 @@ class HistoryExerciseDateRouter: HistoryExerciseDateWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = HistoryExerciseDateViewController(nibName: nil, bundle: nil)
+        let view = HistoryExerciseDateViewController.initFromNib()
         let interactor = HistoryExerciseDateInteractor()
         let router = HistoryExerciseDateRouter()
         let presenter = HistoryExerciseDatePresenter(interface: view, interactor: interactor, router: router)

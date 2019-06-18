@@ -138,8 +138,7 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-//        AppRouter.shared.openHome()
-        self.push(controller: EditProfileRouter.createModule())
+        AppRouter.shared.openHome()
     }
     
     func didError(error: APIError?) {

@@ -14,9 +14,9 @@ class ChangePasswordRouter: ChangePasswordWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> ChangePasswordViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ChangePasswordViewController(nibName: nil, bundle: nil)
+        let view = ChangePasswordViewController.initFromNib()
         let interactor = ChangePasswordInteractor()
         let router = ChangePasswordRouter()
         let presenter = ChangePasswordPresenter(interface: view, interactor: interactor, router: router)

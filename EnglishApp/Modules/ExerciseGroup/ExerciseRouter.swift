@@ -16,7 +16,7 @@ class ExerciseRouter: ExerciseWireframeProtocol {
 
     static func createModule(isShowTabbar: Bool = true) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ExerciseViewController(nibName: nil, bundle: nil)
+        let view = ExerciseViewController.initFromNib()
         view.isShowTabbar = isShowTabbar
         let interactor = ExerciseInteractor()
         let router = ExerciseRouter()

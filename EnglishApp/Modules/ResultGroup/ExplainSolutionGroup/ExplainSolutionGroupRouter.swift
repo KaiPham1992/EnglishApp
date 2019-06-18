@@ -16,7 +16,7 @@ class ExplainSolutionGroupRouter: ExplainSolutionGroupWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ExplainSolutionGroupViewController(nibName: nil, bundle: nil)
+        let view = ExplainSolutionGroupViewController.initFromNib()
         let interactor = ExplainSolutionGroupInteractor()
         let router = ExplainSolutionGroupRouter()
         let presenter = ExplainSolutionGroupPresenter(interface: view, interactor: interactor, router: router)

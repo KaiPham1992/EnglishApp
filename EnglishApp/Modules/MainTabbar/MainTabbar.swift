@@ -28,6 +28,7 @@ class MainTabbar: UITabBarController {
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158, NSAttributedString.Key.font: AppFont.fontRegular12], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
+        self.hidesBottomBarWhenPushed = true 
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,7 +54,7 @@ class MainTabbar: UITabBarController {
     func setUpTabbar() {
         navigationItem.setHidesBackButton(true, animated: true)
         
-        let vcHome = AppContainerViewController()
+        let vcHome = ContainerViewController()
         let vcProgramer = TheoryRouter.createModule()
         let vcHomeWork = ExerciseRouter.createModule()
         let vcCompetition = CompetitionRouter.createModule()

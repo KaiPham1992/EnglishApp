@@ -14,9 +14,9 @@ class SaveDictionaryRouter: SaveDictionaryWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> SaveDictionaryViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = SaveDictionaryViewController(nibName: nil, bundle: nil)
+        let view = SaveDictionaryViewController.initFromNib()
         let interactor = SaveDictionaryInteractor()
         let router = SaveDictionaryRouter()
         let presenter = SaveDictionaryPresenter(interface: view, interactor: interactor, router: router)

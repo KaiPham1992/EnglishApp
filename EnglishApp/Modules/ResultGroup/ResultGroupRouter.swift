@@ -16,7 +16,7 @@ class ResultGroupRouter: ResultGroupWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ResultGroupViewController(nibName: nil, bundle: nil)
+        let view = ResultGroupViewController.initFromNib()
         let interactor = ResultGroupInteractor()
         let router = ResultGroupRouter()
         let presenter = ResultGroupPresenter(interface: view, interactor: interactor, router: router)

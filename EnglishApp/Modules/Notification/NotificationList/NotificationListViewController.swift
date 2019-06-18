@@ -24,12 +24,13 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
         super.setUpNavigation()
          addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.titleNotification.showLanguage)
+        
+        hideTabbar()
     }
     
     override func setTitleUI() {
         super.setTitleUI()
     }
-
 }
 
 
