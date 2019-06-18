@@ -11,7 +11,7 @@
 import UIKit
 
 protocol MenuViewControllerDelegate: class {
-    func controllerSelected(controller: UIViewController)
+    func controllerSelected(itemSelected: MenuItem)
 }
 
 
@@ -87,59 +87,9 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func pushViewController(itemSelected: MenuItem) {
+        delegateController?.controllerSelected(itemSelected: itemSelected)
         
-        guard let itemIcon = itemSelected.imgIcon else { return }
-        switch itemIcon {
-        case AppImage.imgInfo:
-            delegateController?.controllerSelected(controller: ProfileRouter.createModule())
-            AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
-            
-        case AppImage.imgQA:
-            delegateController?.controllerSelected(controller: QARouter.createModule())
-            AppRouter.shared.pushTo(viewController: QARouter.createModule())
-            
-        case AppImage.imgChangePass:
-            delegateController?.controllerSelected(controller: ChangePasswordRouter.createModule())
-            AppRouter.shared.pushTo(viewController: ChangePasswordRouter.createModule())
-            
-        case AppImage.imgLanguage:
-            delegateController?.controllerSelected(controller: ChangeLanguageRouter.createModule())
-            AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
-        case AppImage.imgSaved:
-            delegateController?.controllerSelected(controller: SaveDictionaryRouter.createModule())
-            AppRouter.shared.pushTo(viewController: SaveDictionaryRouter.createModule())
-        case AppImage.imgTop:
-            delegateController?.controllerSelected(controller: BXHRouter.createModule())
-            AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
-        case AppImage.imgHistoryCheck:
-            delegateController?.controllerSelected(controller: HistoryExerciseRouter.createModule())
-            AppRouter.shared.pushTo(viewController: HistoryExerciseRouter.createModule())
-            
-        case AppImage.imgPrivacy:
-            delegateController?.controllerSelected(controller: WebViewController.initFromNib())
-            AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
-        case AppImage.imgLogout:
-            PopUpHelper.shared.showLogout(completionNo: {
-                self.logout()
-            }) {
-               
-            }
-        default:
-            break
-        }
     }
     
 }
 
-extension MenuViewController {
-    func logout() {
-        ProgressView.shared.show()
-        Provider.shared.userAPIService.logout(success: { (_) in
-            ProgressView.shared.hide()
-            UserDefaultHelper.shared.clearUser()
-            AppRouter.shared.openLogin()
-        }) { (error) in
-            ProgressView.shared.hide()
-        }
-    }
-}

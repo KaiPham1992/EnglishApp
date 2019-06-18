@@ -16,7 +16,7 @@ class DictionaryRouter: DictionaryWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = DictionaryViewController(nibName: nil, bundle: nil)
+        let view = DictionaryViewController.initFromNib()
         let interactor = DictionaryInteractor()
         let router = DictionaryRouter()
         let presenter = DictionaryPresenter(interface: view, interactor: interactor, router: router)

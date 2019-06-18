@@ -16,7 +16,7 @@ class BeePackRouter: BeePackWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = BeePackViewController(nibName: nil, bundle: nil)
+        let view = BeePackViewController.initFromNib()
         let interactor = BeePackInteractor()
         let router = BeePackRouter()
         let presenter = BeePackPresenter(interface: view, interactor: interactor, router: router)

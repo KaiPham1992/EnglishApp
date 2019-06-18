@@ -16,7 +16,7 @@ class ResultCompetitionRouter: ResultCompetitionWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ResultCompetitionViewController(nibName: nil, bundle: nil)
+        let view = ResultCompetitionViewController.initFromNib()
         let interactor = ResultCompetitionInteractor()
         let router = ResultCompetitionRouter()
         let presenter = ResultCompetitionPresenter(interface: view, interactor: interactor, router: router)

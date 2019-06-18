@@ -16,7 +16,7 @@ class FindRouter: FindWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = FindViewController(nibName: nil, bundle: nil)
+        let view = FindViewController.initFromNib()
         let interactor = FindInteractor()
         let router = FindRouter()
         let presenter = FindPresenter(interface: view, interactor: interactor, router: router)

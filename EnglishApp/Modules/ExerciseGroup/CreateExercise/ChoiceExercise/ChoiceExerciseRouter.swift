@@ -16,7 +16,7 @@ class ChoiceExerciseRouter: ChoiceExerciseWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ChoiceExerciseViewController(nibName: nil, bundle: nil)
+        let view = ChoiceExerciseViewController.initFromNib()
         let interactor = ChoiceExerciseInteractor()
         let router = ChoiceExerciseRouter()
         let presenter = ChoiceExercisePresenter(interface: view, interactor: interactor, router: router)

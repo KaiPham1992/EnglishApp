@@ -14,9 +14,9 @@ class ChangeLanguageRouter: ChangeLanguageWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> ChangeLanguageViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = ChangeLanguageViewController(nibName: nil, bundle: nil)
+        let view = ChangeLanguageViewController.initFromNib()
         let interactor = ChangeLanguageInteractor()
         let router = ChangeLanguageRouter()
         let presenter = ChangeLanguagePresenter(interface: view, interactor: interactor, router: router)

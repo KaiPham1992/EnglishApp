@@ -14,9 +14,9 @@ class QARouter: QAWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> QAViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = QAViewController(nibName: nil, bundle: nil)
+        let view = QAViewController.initFromNib()
         let interactor = QAInteractor()
         let router = QARouter()
         let presenter = QAPresenter(interface: view, interactor: interactor, router: router)

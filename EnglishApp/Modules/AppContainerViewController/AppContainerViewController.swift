@@ -19,16 +19,16 @@ class AppContainerViewController: SideMenuViewController {
     
     init() {
         super.init(drawerDirection: .left, drawerWidth: 308, menuViewController: vcMenu)
-        vcMenu.delegateController = self
+//        vcMenu.delegateController = self
     }
     
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
-extension AppContainerViewController: MenuViewControllerDelegate {
-    func controllerSelected(controller: UIViewController) {
-        vcHome.showHideMenu()
-    }
-}
+//
+//extension AppContainerViewController: MenuViewControllerDelegate {
+//    func controllerSelected(controller: UIViewController) {
+//        vcHome.showHideMenu()
+//    }
+//}

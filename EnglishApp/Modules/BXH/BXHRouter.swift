@@ -14,9 +14,9 @@ class BXHRouter: BXHWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> BXHViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = BXHViewController(nibName: nil, bundle: nil)
+        let view = BXHViewController.initFromNib()
         let interactor = BXHInteractor()
         let router = BXHRouter()
         let presenter = BXHPresenter(interface: view, interactor: interactor, router: router)

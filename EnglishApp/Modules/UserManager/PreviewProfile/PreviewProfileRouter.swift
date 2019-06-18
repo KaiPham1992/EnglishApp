@@ -16,7 +16,7 @@ class PreviewProfileRouter: PreviewProfileWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = PreviewProfileViewController(nibName: nil, bundle: nil)
+        let view = PreviewProfileViewController.initFromNib()
         let interactor = PreviewProfileInteractor()
         let router = PreviewProfileRouter()
         let presenter = PreviewProfilePresenter(interface: view, interactor: interactor, router: router)

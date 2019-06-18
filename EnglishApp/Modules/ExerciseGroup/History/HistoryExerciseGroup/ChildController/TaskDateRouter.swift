@@ -16,7 +16,7 @@ class TaskDateRouter: TaskDateWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = TaskDateViewController(nibName: nil, bundle: nil)
+        let view = TaskDateViewController.initFromNib()
         let interactor = TaskDateInteractor()
         let router = TaskDateRouter()
         let presenter = TaskDatePresenter(interface: view, interactor: interactor, router: router)

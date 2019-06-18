@@ -16,7 +16,7 @@ class MoreDictionaryRouter: MoreDictionaryWireframeProtocol {
 
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = MoreDictionaryViewController(nibName: nil, bundle: nil)
+        let view = MoreDictionaryViewController.initFromNib()
         let interactor = MoreDictionaryInteractor()
         let router = MoreDictionaryRouter()
         let presenter = MoreDictionaryPresenter(interface: view, interactor: interactor, router: router)
