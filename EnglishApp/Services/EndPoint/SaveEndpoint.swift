@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum SaveEndpoint {
-    case getListNote(temp: Int)
+    case getListNote(offset: Int)
 }
 
 extension SaveEndpoint : EndPointType {
@@ -30,9 +30,8 @@ extension SaveEndpoint : EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
-        case .getListNote(let temp):
-            return ["" : temp]
-            
+        case .getListNote(let offset):
+            return ["offset" : offset,"limit":limit]
         }
     }
     

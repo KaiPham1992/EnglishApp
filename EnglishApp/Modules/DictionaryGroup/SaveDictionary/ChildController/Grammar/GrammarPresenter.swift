@@ -11,10 +11,12 @@
 import UIKit
 
 class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtocol {
-
+   
     weak private var view: GrammarViewProtocol?
     var interactor: GrammarInteractorInputProtocol?
     private let router: GrammarWireframeProtocol
+    var listRespone : [NoteRespone] = []
+    var isLoadmore: Bool = true
 
     init(interface: GrammarViewProtocol, interactor: GrammarInteractorInputProtocol?, router: GrammarWireframeProtocol) {
         self.view = interface
@@ -36,5 +38,27 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
     
     func gotoDetailGrammar() {
         self.router.gotoDetailGrammar()
+    }
+    
+    func getNumberRow() -> Int {
+        return listRespone.count
+    }
+    
+    func getItemIndexPath(indexPath: IndexPath) -> NoteRespone?{
+        return listRespone[indexPath.row]
+    }
+    
+    func getListNote(offset: Int) {
+        if isLoadmore {
+            self.interactor?.getListNote(offset: offset)
+        }
+    }
+    
+    func getListNoteSuccessed(listNote: [NoteRespone]) {
+        if listNote.count < limit {
+            isLoadmore = false
+        }
+        self.listRespone += listNote
+        self.view?.reloadView()
     }
 }

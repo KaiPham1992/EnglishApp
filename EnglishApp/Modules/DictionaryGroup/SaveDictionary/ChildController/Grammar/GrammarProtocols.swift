@@ -25,17 +25,22 @@ protocol GrammarPresenterProtocol: class {
     func gotoAddNote()
     func gotoDetailVocabulary()
     func gotoDetailGrammar()
+    func getListNote(offset: Int)
+    func getItemIndexPath(indexPath: IndexPath) -> NoteRespone?
+    func getNumberRow() -> Int
 }
 
 //MARK: Interactor -
 protocol GrammarInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getListNoteSuccessed(listNote: [NoteRespone])
 }
 
 protocol GrammarInteractorInputProtocol: class {
 
     var presenter: GrammarInteractorOutputProtocol?  { get set }
+    func getListNote(offset: Int)
 
     /* Presenter -> Interactor */
 }
@@ -44,6 +49,8 @@ protocol GrammarInteractorInputProtocol: class {
 protocol GrammarViewProtocol: class {
 
     var presenter: GrammarPresenterProtocol?  { get set }
+    
+    func reloadView()
 
     /* Presenter -> ViewController */
 }
