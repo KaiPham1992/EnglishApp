@@ -655,7 +655,6 @@
 		DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE5422841755003768CE /* GoogleService-Prod-Info.plist */; };
 		DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE5522841755003768CE /* GoogleService-Dev-Info.plist */; };
 		DE2ADE5D22841A68003768CE /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5C22841A68003768CE /* SideMenuViewController.swift */; };
-		DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5F22841B61003768CE /* AppContainerViewController.swift */; };
 		DE2ADE6922841B9E003768CE /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6322841B9E003768CE /* HomePresenter.swift */; };
 		DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6422841B9E003768CE /* HomeRouter.swift */; };
 		DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE6522841B9E003768CE /* HomeViewController.swift */; };
@@ -1193,7 +1192,6 @@
 		DE95303A2287DF4800E3F688 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88A22871D0400A4678B /* SignUpRouter.swift */; };
 		DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F732287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */; };
 		DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F7B2287D2A700E3F688 /* ProgressView.swift */; };
-		DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5F22841B61003768CE /* AppContainerViewController.swift */; };
 		DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF42283E57900FA3B0D /* Button+extension.swift */; };
 		DE9530422287DF4800E3F688 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88222870D1700A4678B /* Localizable.strings */; };
 		DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */; };
@@ -1354,7 +1352,6 @@
 		DE9530E82287DF6400E3F688 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEECF88A22871D0400A4678B /* SignUpRouter.swift */; };
 		DE9530E92287DF6400E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F732287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift */; };
 		DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE952F7B2287D2A700E3F688 /* ProgressView.swift */; };
-		DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE5F22841B61003768CE /* AppContainerViewController.swift */; };
 		DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DF42283E57900FA3B0D /* Button+extension.swift */; };
 		DE9530F02287DF6400E3F688 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = DEECF88222870D1700A4678B /* Localizable.strings */; };
 		DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEECF89B22871D1B00A4678B /* ForgotPasswordViewController.xib */; };
@@ -2044,7 +2041,6 @@
 		DE2ADE5422841755003768CE /* GoogleService-Prod-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Prod-Info.plist"; sourceTree = "<group>"; };
 		DE2ADE5522841755003768CE /* GoogleService-Dev-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Dev-Info.plist"; sourceTree = "<group>"; };
 		DE2ADE5C22841A68003768CE /* SideMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
-		DE2ADE5F22841B61003768CE /* AppContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainerViewController.swift; sourceTree = "<group>"; };
 		DE2ADE6322841B9E003768CE /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		DE2ADE6422841B9E003768CE /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		DE2ADE6522841B9E003768CE /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -3159,14 +3155,6 @@
 			path = SideMenu;
 			sourceTree = "<group>";
 		};
-		DE2ADE5E22841B34003768CE /* AppContainerViewController */ = {
-			isa = PBXGroup;
-			children = (
-				DE2ADE5F22841B61003768CE /* AppContainerViewController.swift */,
-			);
-			path = AppContainerViewController;
-			sourceTree = "<group>";
-		};
 		DE2ADE6122841B8A003768CE /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -3219,7 +3207,6 @@
 				DE95311B228808D600E3F688 /* UserManager */,
 				DE2ADE6222841B8E003768CE /* Menu */,
 				DE2ADE6122841B8A003768CE /* Home */,
-				DE2ADE5E22841B34003768CE /* AppContainerViewController */,
 				DE361DCE2283E48200FA3B0D /* Author */,
 			);
 			path = Modules;
@@ -4470,6 +4457,7 @@
 				DE3CC3382283DD980037DBE4 /* Resources */,
 				ECC81D57BA8A2F47335BA0EE /* [CP] Embed Pods Frameworks */,
 				F7321019EC4AC75D7A647D72 /* [CP] Copy Pods Resources */,
+				DE04709A22BA635D00438206 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -5004,6 +4992,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		DE04709A22BA635D00438206 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" aed16a54a9d939707e0755e6e727909e8c4950ee 54fb1cc9d30afad5f97d8579c7d15bced41c9049c6132c0121d041020b74b5d1\n\n";
 		};
 		DE952FAF2287DF4800E3F688 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -5746,7 +5751,6 @@
 				DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */,
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
-				DE2ADE6022841B61003768CE /* AppContainerViewController.swift in Sources */,
 				76CE323322968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
 				76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1382228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
@@ -6220,7 +6224,6 @@
 				DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */,
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
-				DE95303D2287DF4800E3F688 /* AppContainerViewController.swift in Sources */,
 				76CE323422968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
 				76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1383228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
@@ -6694,7 +6697,6 @@
 				DE9530EA2287DF6400E3F688 /* ProgressView.swift in Sources */,
 				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6728228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
-				DE9530EB2287DF6400E3F688 /* AppContainerViewController.swift in Sources */,
 				76CE323522968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
 				76CF0C8C22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1384228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
@@ -6894,7 +6896,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Math Adhoc com.engma.englishapp";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.englishapp";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEV;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

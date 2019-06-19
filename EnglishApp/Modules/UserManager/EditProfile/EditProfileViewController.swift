@@ -62,14 +62,14 @@ class EditProfileViewController: BaseViewController {
     }
     
     @IBAction func btnSavedTapped() {
-        logout()
+        
     }
     
     @IBAction func btnAvatarTapped() {
         SelectPhotoCanCropPopUp.shared.showCropPicker(controller: self) { image in
             guard let _iamge = image else { return }
             self.imgAvatar.image = _iamge
-//            self.presenter?.updateAvatar(image: _iamge)
+            self.presenter?.updateAvatar(image: _iamge)
         }
     }
 }

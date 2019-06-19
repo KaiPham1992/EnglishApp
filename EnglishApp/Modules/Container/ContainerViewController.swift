@@ -36,33 +36,6 @@ class ContainerViewController: BaseViewController {
     
     var vcLeftMenu:  MenuViewController!
     
-    
-    //---
-    var profileVC: ProfileViewController!
-    var profileNC: UINavigationController!
-    //-
-    var bxhVC: BXHViewController!
-    var bxhNC: UINavigationController!
-    //
-    var qaVC: QAViewController!
-    var qaNC: UINavigationController!
-    //--
-    var languageVC: ChangeLanguageViewController!
-    var languageNC: UINavigationController!
-    
-    //---
-    var saveVC: SaveDictionaryViewController!
-    var saveNC: UINavigationController!
-    //---
-    var historyVC: HistoryExerciseViewController!
-    var historyNC: UINavigationController!
-    //--
-    var termOfUseVC: WebViewController!
-    var termOfUseNC: UINavigationController!
-    //--
-    var changePasswordVC: ChangePasswordViewController!
-    var changePasswordNC: UINavigationController!
-    
     var widthMenuConstraint: NSLayoutConstraint?
     var widthMenu: CGFloat = 0
     
@@ -97,43 +70,11 @@ class ContainerViewController: BaseViewController {
         view.addSubview(vContentMenu)
         vContentMenu.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
         
-        profileVC = ProfileRouter.createModule()
-        profileNC = UINavigationController(rootViewController: profileVC)
-//        giftListVC.delegate = self
-        
-        //--
-        bxhVC  = BXHRouter.createModule()
-        bxhNC = UINavigationController(rootViewController: profileVC)
-//        profileVC.delegate = self
-        //--
-        qaVC = QARouter.createModule()
-        qaNC = UINavigationController(rootViewController: qaVC)
-//        listContractVC.delegate = self
-        //---
-        languageVC = ChangeLanguageRouter.createModule()
-        languageNC = UINavigationController(rootViewController: languageVC)
-//        historyContainerVC.delegate = self
-        //---
-        saveVC = SaveDictionaryRouter.createModule()
-        saveNC = UINavigationController(rootViewController: saveVC)
-//        orderContainerVC.delegate = self
-        //
-        historyVC = HistoryExerciseRouter.createModule()
-        historyNC = UINavigationController(rootViewController: historyVC)
-//        favoriteContainerVC.delegate = self
-        //---
-        termOfUseVC = WebViewController.initFromNib()
-        termOfUseNC = UINavigationController(rootViewController: termOfUseVC)
-//        termOfUseVC.delegate = self
-        //---
-        changePasswordVC = ChangePasswordRouter.createModule()
-        changePasswordNC = UINavigationController(rootViewController: changePasswordVC)
-//        changePasswordVC.delegate = self
         
         tapGesture = UITapGestureRecognizer(target: self, action: #selector(rootViewTapped))
         vcHome = HomeRouter.createModule() 
         ncHome = UINavigationController(rootViewController: vcHome)
-       
+        
         AppRouter.shared.rootNavigation = ncHome
         addFullToMain(controller: ncHome)
         addBlackView()
@@ -151,28 +92,36 @@ class ContainerViewController: BaseViewController {
 extension ContainerViewController: MenuViewControllerDelegate, HomeViewControllerDelegate {
     
     func controllerSelected(itemSelected: MenuItem) {
-        self.hideMenu()
+        
         guard let itemIcon = itemSelected.imgIcon else { return }
         switch itemIcon {
         case AppImage.imgInfo:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
             
         case AppImage.imgQA:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: QARouter.createModule())
             
         case AppImage.imgChangePass:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: ChangePasswordRouter.createModule())
             
         case AppImage.imgLanguage:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
         case AppImage.imgSaved:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: SaveDictionaryRouter.createModule())
         case AppImage.imgTop:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
         case AppImage.imgHistoryCheck:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: HistoryExerciseRouter.createModule())
             
         case AppImage.imgPrivacy:
+            self.hideMenu()
             AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
         case AppImage.imgLogout:
             PopUpHelper.shared.showLogout(completionNo: {
@@ -184,7 +133,7 @@ extension ContainerViewController: MenuViewControllerDelegate, HomeViewControlle
             break
         }
     }
-
+    
     func showLefMenuTapped() {
         self.showMenu()
     }

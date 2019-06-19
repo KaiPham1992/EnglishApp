@@ -12,6 +12,8 @@ import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Fabric.with([Crashlytics.self])
+        Crashlytics.sharedInstance().debugMode = true
+        Fabric.sharedSDK().debug = true 
         LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
         IQKeyboardManager.shared.enable = true
         configureGoogle()

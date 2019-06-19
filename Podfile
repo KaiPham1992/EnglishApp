@@ -19,6 +19,8 @@ def main_pods
     pod 'Popover'
 #    pod 'Google-Mobile-Ads-SDK'
     pod 'XLPagerTabStrip'
+    pod 'Fabric'
+    pod 'Crashlytics'
 end
 
 target 'EnglishApp_Dev' do

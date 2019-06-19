@@ -46,9 +46,6 @@ class MainTabbar: UITabBarController {
         newFrame.origin.y = view.frame.size.height - newTabBarHeight
         tabBar.barTintColor = UIColor.white
         tabBar.frame = newFrame
-        
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : UIColor.black.cgColor], for: UIControl.State.normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.yellow.cgColor], for: UIControl.State.selected)
     }
     
     func setUpTabbar() {
