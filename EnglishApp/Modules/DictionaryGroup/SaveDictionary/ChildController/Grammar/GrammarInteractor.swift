@@ -11,6 +11,16 @@
 import UIKit
 
 class GrammarInteractor: GrammarInteractorInputProtocol {
-
+    
     weak var presenter: GrammarInteractorOutputProtocol?
+    
+    func getListNote(offset: Int) {
+        ProgressView.shared.show()
+        Provider.shared.saveAPIService.getListNote(offset: offset, success: { (listNote) in
+            ProgressView.shared.hide()
+            self.presenter?.getListNoteSuccessed(listNote: listNote)
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

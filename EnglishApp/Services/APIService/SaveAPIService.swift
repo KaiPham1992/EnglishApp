@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SaveAPIServiceProtocol {
-    func getListNote(success: @escaping SuccessHandler<NoteRespone>.array, failed: @escaping RequestFailure)
+    func getListNote(offset: Int,success: @escaping SuccessHandler<NoteRespone>.array, failure: @escaping RequestFailure)
 }
 
 class SaveAPIService : SaveAPIServiceProtocol {
@@ -20,7 +20,8 @@ class SaveAPIService : SaveAPIServiceProtocol {
     init(network: APINetworkProtocol) {
         self.network = network
     }
-    func getListNote(success: @escaping SuccessHandler<NoteRespone>.array, failed: @escaping RequestFailure) {
-        
+    func getListNote(offset: Int,success: @escaping SuccessHandler<NoteRespone>.array, failure: @escaping RequestFailure) {
+        let endpint = SaveEndpoint.getListNote(offset: offset)
+        network.requestData(endPoint: endpint, success: MapperData.mapArray(success), failure: failure)
     }
 }

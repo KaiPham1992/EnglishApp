@@ -17,7 +17,7 @@ enum TypeSave{
     case note
 }
 
-class GrammarViewController: UIViewController, GrammarViewProtocol {
+class GrammarViewController: UIViewController {
 
     @IBAction func addNote(_ sender: Any) {
         self.presenter?.gotoAddNote()
@@ -26,9 +26,14 @@ class GrammarViewController: UIViewController, GrammarViewProtocol {
     @IBOutlet weak var tbvGrammar: UITableView!
     var presenter: GrammarPresenterProtocol?
     var type : TypeSave = .grammar
+    var offset = 0
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        tbvGrammar.registerXibFile(CellGrammar.self)
+        tbvGrammar.dataSource = self
+        tbvGrammar.delegate = self
+        
         if type == .grammar {
             heightButtonAddNote.constant = 0
         }
@@ -39,23 +44,39 @@ class GrammarViewController: UIViewController, GrammarViewProtocol {
         
         if type == .note {
             heightButtonAddNote.constant = 52
+            self.presenter?.getListNote(offset: self.offset)
         }
         
-        tbvGrammar.registerXibFile(CellGrammar.self)
-        tbvGrammar.dataSource = self
-        tbvGrammar.delegate = self
+       
     }
 }
+extension GrammarViewController : GrammarViewProtocol {
+    func reloadView() {
+        tbvGrammar.reloadData()
+    }
+}
+
 extension GrammarViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.presenter?.getNumberRow() ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
+        if let data = self.presenter?.getItemIndexPath(indexPath: indexPath) {
+            cell.setupTitle(title: data.name&)
+        }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.getNumberRow() ?? 0
+        if indexPath.row == row - 1 {
+            self.offset += 1
+            self.presenter?.getListNote(offset: self.offset)
+        }
     }
 }
 extension GrammarViewController: UITableViewDelegate{
