@@ -11,6 +11,20 @@
 import UIKit
 
 class DetailLessonInteractor: DetailLessonInteractorInputProtocol {
-
+    
     weak var presenter: DetailLessonInteractorOutputProtocol?
+    
+    func getLessonDetail(lesson_id: Int) {
+        ProgressView.shared.show()
+        Provider.shared.theoryAPIService.getLessonDetail(lesson_id: lesson_id, success: { (lessonDetail) in
+            ProgressView.shared.hide()
+            if let _lessonDetail = lessonDetail {
+                self.presenter?.getLessonDetailSuccessed(lessonDetail: _lessonDetail)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
+    
+
 }

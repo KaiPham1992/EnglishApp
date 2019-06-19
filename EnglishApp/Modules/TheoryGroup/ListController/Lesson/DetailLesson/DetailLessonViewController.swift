@@ -15,11 +15,12 @@ enum DetailLessonVocabulary{
     case detailLesson
     case vocabulary
 }
-class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
+class DetailLessonViewController: BaseViewController {
 
-	var presenter: DetailLessonPresenterProtocol?
-    var titleNavi: String = ""
+    @IBOutlet weak var lbContent: UILabel!
+    var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
+    var lesson: LessonCatelogy?
     
     var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
     override func setUpViews() {
@@ -29,7 +30,11 @@ class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: titleNavi)
+        if let _lesson = lesson {
+            setTitleNavigation(title: _lesson.name&)
+            self.presenter?.getLessonDetail(lesson_id: Int(_lesson._id&) ?? 0)
+        }
+        
         if type == .detailLesson{
             viewMessage.action = {
                 self.push(controller: CommentRouter.createModule(),animated: true)
@@ -43,5 +48,13 @@ class DetailLessonViewController: BaseViewController, DetailLessonViewProtocol {
     
     @objc func clickHeart(){
         
+    }
+}
+
+extension DetailLessonViewController:DetailLessonViewProtocol{
+    func reloadView() {
+        if let attribute = self.presenter?.getContentLesson(){
+            self.lbContent.attributedText = attribute
+        }
     }
 }

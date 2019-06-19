@@ -22,11 +22,11 @@ class LessonPresenter: LessonPresenterProtocol, LessonInteractorOutputProtocol {
         self.router = router
     }
     
-    func gotoLesson() {
-        self.router.gotoLesson()
+    func gotoLesson(lesson_category_id: String) {
+        self.router.gotoLesson(lesson_category_id: lesson_category_id)
     }
 
-    func gotoRecipe() {
-        self.router.gotoRecipe()
+    func gotoRecipe(lesson_category_id: String) {
+        self.router.gotoRecipe(lesson_category_id: lesson_category_id)
     }
 }

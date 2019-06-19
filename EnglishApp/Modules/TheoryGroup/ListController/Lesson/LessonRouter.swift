@@ -42,13 +42,13 @@ class LessonRouter: LessonWireframeProtocol {
         return view
     }
     
-    func gotoLesson(){
-        let vc = ListLessonRouter.createModule(type: .lesson)
+    func gotoLesson(lesson_category_id: String){
+        let vc = ListLessonRouter.createModule(type: .lesson,lesson_category_id: lesson_category_id)
         self.viewController?.push(controller: vc, animated: true)
     }
     
-    func gotoRecipe() {
-        let vc = ListLessonRouter.createModule(type: .recipe)
+    func gotoRecipe(lesson_category_id: String) {
+        let vc = ListLessonRouter.createModule(type: .recipe,lesson_category_id : lesson_category_id)
         self.viewController?.push(controller: vc, animated: true)
     }
 }

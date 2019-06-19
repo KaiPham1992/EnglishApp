@@ -11,14 +11,12 @@
 import UIKit
 
 class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutputProtocol {
-
+   
     weak private var view: ListLessonViewProtocol?
     var interactor: ListLessonInteractorInputProtocol?
     private let router: ListLessonWireframeProtocol
-
-    var listLesson : [String] = [LocalizableKey.simple_present.showLanguage,LocalizableKey.present_perfect.showLanguage,LocalizableKey.present_countinous.showLanguage,LocalizableKey.past_simple.showLanguage]
-    var listIdioms : [String] = [LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage,LocalizableKey.idiams.showLanguage]
-    var type : LessonRecipe = .lesson
+    var listLesson: [LessonCatelogy] = []
+    var isLoadmore: Bool = true
 
     init(interface: ListLessonViewProtocol, interactor: ListLessonInteractorInputProtocol?, router: ListLessonWireframeProtocol) {
         self.view = interface
@@ -28,16 +26,27 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
     
     
     func numberLesson() -> Int {
-        if type == .lesson{
-            return listLesson.count
-        }
-        return listIdioms.count
+        return listLesson.count
     }
-    func getLessonIndexPath(indexPath: IndexPath) -> String{
-        if type == .lesson {
-            return listLesson[indexPath.row]
-        }
-        return listIdioms[indexPath.row]
+    func getLessonIndexPath(indexPath: IndexPath) -> String?{
+        return listLesson[indexPath.row].name
     }
-
+    
+    func getLesson(indexPath: IndexPath) -> LessonCatelogy?{
+        return listLesson[indexPath.row]
+    }
+    
+    func getListLesson(lesson_category_id: String,offset: Int) {
+        if isLoadmore {
+           self.interactor?.getListLesson(lesson_category_id: lesson_category_id,offset: offset)
+        }
+    }
+    
+    func getListLessonSuccessed(listLesson: [LessonCatelogy]) {
+        if listLesson.count < limit{
+            isLoadmore = false
+        }
+        self.listLesson = listLesson
+        self.view?.reloadView()
+    }
 }

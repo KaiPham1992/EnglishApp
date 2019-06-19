@@ -17,17 +17,23 @@ enum LessonRecipe {
     case exercise_date
 }
 
-class ListLessonViewController: BaseViewController, ListLessonViewProtocol {
+var limit = 25
+
+class ListLessonViewController: BaseViewController {
 
 	var presenter: ListLessonPresenterProtocol?
 
     @IBOutlet weak var tbvLesson: UITableView!
     var type : LessonRecipe = .lesson
+    var lesson_category_id: String = "1"
+    var offset : Int = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tbvLesson.registerXibFile(CellGrammar.self)
         tbvLesson.dataSource = self
         tbvLesson.delegate = self
+        self.presenter?.getListLesson(lesson_category_id: self.lesson_category_id, offset: offset)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +52,13 @@ class ListLessonViewController: BaseViewController, ListLessonViewProtocol {
         
     }
 }
+
+extension ListLessonViewController: ListLessonViewProtocol {
+    func reloadView() {
+        self.tbvLesson.reloadData()
+    }
+}
+
 extension ListLessonViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -72,7 +85,7 @@ extension ListLessonViewController: UITableViewDelegate{
             let vc = TaskDateRouter.createModule()
             self.push(controller: vc,animated: true)
         } else {
-            let vc = DetailLessonRouter.createModule(titleNavi: self.presenter?.getLessonIndexPath(indexPath: indexPath) ?? "")
+            let vc = DetailLessonRouter.createModule(lesson: self.presenter?.getLesson(indexPath: indexPath), type: .detailLesson)
             self.push(controller: vc,animated: true)
         }
         

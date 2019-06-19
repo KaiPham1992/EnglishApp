@@ -23,26 +23,26 @@ class LessonViewController: UIViewController, LessonViewProtocol {
 
     @IBAction func clickPhrasalVerbs(_ sender: Any) {
         if type == .lesson{
-            self.presenter?.gotoLesson()
+            self.presenter?.gotoLesson(lesson_category_id: "1")
         } else {
-            self.presenter?.gotoRecipe()
+            self.presenter?.gotoRecipe(lesson_category_id: "4")
         }
         
     }
     
     @IBAction func clickGrammar(_ sender: Any) {
         if type == .lesson{
-            self.presenter?.gotoLesson()
+            self.presenter?.gotoLesson(lesson_category_id: "2")
         } else {
-            self.presenter?.gotoRecipe()
+            self.presenter?.gotoRecipe(lesson_category_id: "5")
         }
     }
     
     @IBAction func clickPhonetics(_ sender: Any) {
         if type == .lesson{
-            self.presenter?.gotoLesson()
+            self.presenter?.gotoLesson(lesson_category_id: "3")
         } else {
-            self.presenter?.gotoRecipe()
+            self.presenter?.gotoRecipe(lesson_category_id: "6")
         }
     }
     
@@ -71,7 +71,6 @@ class LessonViewController: UIViewController, LessonViewProtocol {
         vPhrasalVerbs.setupGradient(beginColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1), endColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 0.56))
         vGrammar.setupGradient(beginColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1), endColor: #colorLiteral(red: 0, green: 0.9490196078, blue: 0.9960784314, alpha: 1))
         vPhonetics.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 0.56))
-        
     }
 
 }

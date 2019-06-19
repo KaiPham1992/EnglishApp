@@ -28,4 +28,12 @@ class Provider {
     var notificationAPIService: NotificationAPIServiceProtocol {
         return NotificationAPIService(network: networkManager)
     }
+    
+    var saveAPIService: SaveAPIService {
+        return SaveAPIService(network: networkManager)
+    }
+    
+    var theoryAPIService: TheoryAPIService{
+        return TheoryAPIService(network: networkManager)
+    }
 }
