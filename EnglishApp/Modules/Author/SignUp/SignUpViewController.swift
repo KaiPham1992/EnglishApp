@@ -62,8 +62,18 @@ class SignUpViewController: BaseViewController {
 
 extension SignUpViewController {
     func validateInputData() -> Bool {
-        if self.vDisplayName.tfInput.text == "" || self.vEmail.tfInput.text == "" || self.vPassword.tfInput.text == "" || self.vRePassword.tfInput.text == "" || self.tfCaptcha.text == "" {
+        if self.vDisplayName.tfInput.text == "" && self.vEmail.tfInput.text == "" && self.vPassword.tfInput.text == "" && self.vRePassword.tfInput.text == "" && self.tfCaptcha.text == "" {
             hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
+            return false
+        }
+        
+        if self.vDisplayName.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.pleaseEnterDisplayName.showLanguage)
+            return false
+        }
+        
+        if self.vEmail.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.pleaseEnterEmail.showLanguage)
             return false
         }
         
@@ -72,13 +82,28 @@ extension SignUpViewController {
             return false
         }
         
+        if self.vPassword.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.pleaseEnterPassword.showLanguage)
+            return false
+        }
+        
         if let password = self.vPassword.tfInput.text, password.count < 6 {
             hideError(isHidden: false, message:  LocalizableKey.invalidLoginPassword.showLanguage)
             return false
         }
         
+        if self.vRePassword.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.pleaseEnterRePassword.showLanguage)
+            return false
+        }
+        
         if self.vPassword.tfInput.text& != self.vRePassword.tfInput.text& {
             hideError(isHidden: false, message:  LocalizableKey.passwordDifference.showLanguage)
+            return false
+        }
+        
+        if self.tfCaptcha.text == "" {
+            hideError(isHidden: false, message:  LocalizableKey.emptyCapcha.showLanguage)
             return false
         }
         hideError()

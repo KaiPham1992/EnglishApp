@@ -79,6 +79,14 @@ class ContainerViewController: BaseViewController {
         // DELEGATE
         vcHome.delegate = self
         vcLeftMenu.delegateController = self
+        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.init("HideMenu"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(btnHideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
+    }
+    
+    @objc func btnHideMenu() {
+        self.hideMenu()
     }
 }
 

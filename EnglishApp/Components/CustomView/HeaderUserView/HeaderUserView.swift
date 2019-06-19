@@ -26,6 +26,12 @@ class HeaderUserView: BaseViewXib {
         }
     }
     
+    
+    @IBAction func btnGoToProfile() {
+        AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
+        NotificationCenter.default.post(name: NSNotification.Name.init("HideMenu"), object: nil)
+    }
+    
     override func setUpViews() {
         super.setUpViews()
         

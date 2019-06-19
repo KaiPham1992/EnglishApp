@@ -66,6 +66,7 @@ struct LocalizableKey {
     static let changePasssword = "changePasssword"
     static let changePassswordSuccess = "changePassswordSuccess"
     static let editProfileSuccess = "editProfileSuccess"
+    static let emptyCapcha = "emptyCapcha"
     
     static let popUpLogout = "popUpLogout"
     static let agree = "agree"
@@ -275,4 +276,13 @@ struct LocalizableKey {
     static let messagePackage = "messagePackage"
     static let find = "find"
     static let privacyAndPolicy = "PrivacyAndPolicy"
+    
+    static let pleaseEnterEmail = "pleaseEnterEmail"
+    
+    static let pleaseEnterDisplayName = "pleaseEnterDisplayName"
+    static let pleaseEnterPassword = "pleaseEnterPassword"
+    static let pleaseEnterCurrentPassword = "pleaseEnterCurrentPassword"
+    static let pleaseEnterNewPassword = "pleaseEnterNewPassword"
+    static let pleaseEnterRePassword = "pleaseEnterRePassword"
+    static let pleaseTurnOnInternet = "pleaseTurnOnInternet"
 }

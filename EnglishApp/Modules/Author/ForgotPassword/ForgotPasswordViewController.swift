@@ -31,7 +31,7 @@ class ForgotPasswordViewController: BaseViewController {
     
     override func setTitleUI() {
         super.setTitleUI()
-        
+        setColorStatusBar()
         setTitleNavigation(title: LocalizableKey.ForgotTitle.showLanguage)
         btnSendEmail.setTitle(LocalizableKey.SentEmail.showLanguage.uppercased(), for: .normal)
         lbMessage.text = LocalizableKey.ForgotPasswordMessage.showLanguage
@@ -48,7 +48,7 @@ class ForgotPasswordViewController: BaseViewController {
 extension ForgotPasswordViewController {
     func validateInputData() -> Bool {
         if self.vEmail.tfInput.text == "" {
-            hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
+            hideError(isHidden: false, message: LocalizableKey.pleaseEnterEmail.showLanguage)
             return false
         }
         
@@ -69,11 +69,12 @@ extension ForgotPasswordViewController {
 
 extension ForgotPasswordViewController: ForgotPasswordViewProtocol {
     func didForgotPassword(data: BaseResponse?) {
-//        PopUpHelper.shared.showMessageHaveAds(message: "Đã gửi Email thành công !")
-//        self.navigationController?.popViewController(animated: true)
+        PopUpHelper.shared.sentNewPassword {
+            self.pop()
+        }
     }
     
     func didForgotPassword(error: APIError?) {
-//        lbNotice.text = MessageString.messageEmailNoHave
+        hideError(isHidden: false, message: error?.message&.showLanguage)
     }
 }

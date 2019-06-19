@@ -31,6 +31,12 @@
                             <constraint firstAttribute="height" constant="150" id="cL4-j6-qKm"/>
                         </constraints>
                     </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWj-14-Z6G">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="150"/>
+                        <connections>
+                            <action selector="btnBXHTapped" destination="KGk-i7-Jjw" eventType="touchUpInside" id="KhO-NX-uD0"/>
+                        </connections>
+                    </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMx-Ab-fVG">
                         <rect key="frame" x="16" y="166" width="288" height="40"/>
                         <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,8 +53,12 @@
                 <constraints>
                     <constraint firstItem="yMx-Ab-fVG" firstAttribute="top" secondItem="Q7U-99-2Bt" secondAttribute="bottom" constant="16" id="0gg-mT-skt"/>
                     <constraint firstAttribute="trailing" secondItem="Q7U-99-2Bt" secondAttribute="trailing" id="8nE-iT-0uU"/>
+                    <constraint firstItem="LWj-14-Z6G" firstAttribute="top" secondItem="Q7U-99-2Bt" secondAttribute="top" id="D4E-Fa-6Me"/>
+                    <constraint firstItem="LWj-14-Z6G" firstAttribute="leading" secondItem="Q7U-99-2Bt" secondAttribute="leading" id="K3J-se-UEy"/>
                     <constraint firstItem="yMx-Ab-fVG" firstAttribute="leading" secondItem="Q7U-99-2Bt" secondAttribute="leading" constant="16" id="RQm-4q-tMb"/>
+                    <constraint firstItem="LWj-14-Z6G" firstAttribute="bottom" secondItem="Q7U-99-2Bt" secondAttribute="bottom" id="TyX-TW-3Mb"/>
                     <constraint firstItem="Q7U-99-2Bt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Znt-eC-u3s"/>
+                    <constraint firstItem="LWj-14-Z6G" firstAttribute="trailing" secondItem="Q7U-99-2Bt" secondAttribute="trailing" id="azL-gC-qHm"/>
                     <constraint firstItem="yMx-Ab-fVG" firstAttribute="trailing" secondItem="Q7U-99-2Bt" secondAttribute="trailing" constant="-16" id="bWH-b2-o4T"/>
                     <constraint firstItem="Q7U-99-2Bt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yRZ-d2-ODV"/>
                 </constraints>

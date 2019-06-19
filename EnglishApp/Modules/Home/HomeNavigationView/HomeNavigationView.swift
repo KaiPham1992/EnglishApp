@@ -13,5 +13,4 @@ class HomeNavigationView: BaseViewXib {
     @IBOutlet weak var btnNotification: UIButton!
     @IBOutlet weak var vHeader: HeaderUserView!
     
-    
 }

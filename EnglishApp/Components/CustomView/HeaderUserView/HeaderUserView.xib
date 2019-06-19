@@ -167,6 +167,12 @@
                         </view>
                     </subviews>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-tt-nX6">
+                    <rect key="frame" x="0.0" y="44" width="414" height="97"/>
+                    <connections>
+                        <action selector="btnGoToProfile" destination="-1" eventType="touchUpInside" id="rK8-Et-OBU"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -175,7 +181,11 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="G12-EU-7y2" secondAttribute="trailing" constant="5" id="Gw1-c8-sz9"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="height" secondItem="XuH-Dp-7KT" secondAttribute="height" id="Qur-yY-TL4"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y3d-Um-xm0"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gjg-tt-nX6" secondAttribute="bottom" id="bob-Mc-X5I"/>
+                <constraint firstItem="gjg-tt-nX6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qFl-CE-Pdg"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tkB-Ah-Q2l"/>
+                <constraint firstItem="gjg-tt-nX6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yxm-1h-qSv"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gjg-tt-nX6" secondAttribute="trailing" id="zxN-13-xf9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

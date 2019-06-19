@@ -67,10 +67,10 @@ class PopUpHelper {
         popUp.showPopUp(message: LocalizableKey.popUpLogout.showLanguage, completionNo: completionNo, completionYes: completionYes)
     }
     
-    func showNotification(message: String, completionYes: CompletionClosure?) {
-        let popUp = NotificationPopUp()
-        popUp.showPopUp(message: message, completion: completionYes)
-    }
+//    func showNotification(message: String, completionYes: CompletionClosure?) {
+//        let popUp = NotificationPopUp()
+//        popUp.showPopUp(message: message, completion: completionYes)
+//    }
     
     func showCreateGroup(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
         let popUp = CreateGroupPopUp()
@@ -154,5 +154,15 @@ class PopUpHelper {
     func showEditProfile(completionYes: CompletionClosure?) {
         let popUp = UpdateAccountPopup()
         popUp.showPopup(message: LocalizableKey.editProfileSuccess.showLanguage, confirm: completionYes)
+    }
+    
+    func showNoInternet(completionYes: CompletionClosure?) {
+        let popUp = UpdateAccountPopup()
+        popUp.showPopup(message: LocalizableKey.pleaseTurnOnInternet.showLanguage, confirm: completionYes)
+    }
+    
+    func sentNewPassword(completionYes: CompletionClosure?) {
+        let popUp = UpdateAccountPopup()
+        popUp.showPopup(message: "SENT_NEW_PASSWORD".showLanguage, confirm: completionYes)
     }
 }

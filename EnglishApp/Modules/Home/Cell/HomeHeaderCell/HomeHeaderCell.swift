@@ -11,6 +11,10 @@ import UIKit
 class HomeHeaderCell: BaseTableCell {
     @IBOutlet weak var btnTestBegin: UIButton!
 
+    @IBAction func btnBXHTapped() {
+        AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

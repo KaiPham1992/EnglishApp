@@ -23,8 +23,8 @@ enum LoginType {
 
 
 class LoginViewController: BaseViewController {
-
-	var presenter: LoginPresenterProtocol?
+    
+    var presenter: LoginPresenterProtocol?
     
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vPassword: AppTextField!
@@ -37,8 +37,8 @@ class LoginViewController: BaseViewController {
     
     var loginType = LoginType.normal
     var paramLogin: Any?
-
-	override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
     
@@ -99,12 +99,24 @@ class LoginViewController: BaseViewController {
     
     @IBAction func btnLoginGmail() {
         self.view.endEditing(true)
+        if !Utils.isConnectedToInternet() {
+            PopUpHelper.shared.showNoInternet {
+            }
+            return
+        }
+        
         GIDSignIn.sharedInstance().signOut()
         GIDSignIn.sharedInstance().signIn()
     }
     
     @IBAction func btnLoginFacebook() {
         self.view.endEditing(true)
+        if !Utils.isConnectedToInternet() {
+            PopUpHelper.shared.showNoInternet {
+            }
+            return
+        }
+        
         self.FBlogin()
     }
 }
@@ -112,8 +124,13 @@ class LoginViewController: BaseViewController {
 extension LoginViewController {
     func validateInputData() -> Bool {
         
-        if self.vEmail.tfInput.text == "" || self.vPassword.tfInput.text == "" {
+        if self.vEmail.tfInput.text == "" && self.vPassword.tfInput.text == "" {
             hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
+            return false
+        }
+        
+        if self.vEmail.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.pleaseEnterEmail.showLanguage)
             return false
         }
         
@@ -121,6 +138,12 @@ extension LoginViewController {
             hideError(isHidden: false, message:  LocalizableKey.invalidLoginEmail.showLanguage)
             return false
         }
+        if self.vPassword.tfInput.text == "" {
+            hideError(isHidden: false, message: LocalizableKey.pleaseEnterPassword.showLanguage)
+            return false
+        }
+        
+        
         if let password = self.vPassword.tfInput.text, password.count < 6 {
             hideError(isHidden: false, message:  LocalizableKey.invalidLoginPassword.showLanguage)
             return false

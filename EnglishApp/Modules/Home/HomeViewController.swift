@@ -41,7 +41,9 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         super.viewDidLoad()
         configureTable()
         presenter?.getHomeRecently()
+        
     }
+    
     
     override func setUpViews() {
         super.setUpViews()

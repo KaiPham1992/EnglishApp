@@ -50,6 +50,13 @@ protocol NetworkRequestProtocol {
 struct NetworkRequest: NetworkRequestProtocol {
     func requestData(endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
         
+        if !Utils.isConnectedToInternet() {
+            PopUpHelper.shared.showNoInternet {
+                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
+            }
+            return
+        }
+        
         let url = makeUrl(path: endPoint.path)
         let encoding = getAlamofireEncoding(httpMethod: endPoint.httpMethod)
         //let manager = Alamofire.SessionManager.default
@@ -68,7 +75,13 @@ struct NetworkRequest: NetworkRequestProtocol {
     }
     
     func uploadAvatar(image: UIImage, endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
-      
+        if !Utils.isConnectedToInternet() {
+            PopUpHelper.shared.showNoInternet {
+                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
+            }
+            return
+        }
+        
         let url = makeUrl(path: endPoint.path)
         
         let manager = Alamofire.SessionManager.default
@@ -122,6 +135,12 @@ struct NetworkRequest: NetworkRequestProtocol {
     }
     
     func uploadImages(image: UIImage, endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
+        if !Utils.isConnectedToInternet() {
+            PopUpHelper.shared.showNoInternet {
+               failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
+            }
+            return
+        }
         
         let url = makeUrl(path: endPoint.path)
         

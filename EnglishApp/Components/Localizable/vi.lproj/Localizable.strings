@@ -28,16 +28,23 @@
 "NotYetAccount" = "Bạn chưa có tài khoản?";
 "Register" = "Đăng ký";
 "LoginButtonSignUp" = "ĐĂNG KÝ";
-"passwordDifference" = "Mật khẩu không giống nhau";
+"passwordDifference" = "Nhập lại sai mật khẩu";
 
 // Forgot password page
 "ForgotPasswordMessage" = "Nhập địa chỉ email liên kết với tài khoản của bạn.Sau đó kiểm tra hòm thư";
 "SentEmail" = "Gửi email";
 "ForgotTitle" = "Quên mật khẩu";
 
-"invalidLoginEmail" = "Email không chính xác";
-"invalidLoginPassword" = "Mật khẩu không chính xác";
+"invalidLoginEmail" = "Địa chỉ email sai format";
+"invalidLoginPassword" = "Mật khẩu phải có 6 kí tự trở lên";
 "emptyLoginEmailPassword"  = "Vui lòng nhập đầy đủ thông tin";
+"emptyCapcha" = "Vui lòng nhập mã captcha";
+
+"pleaseEnterEmail" = "Vui lòng nhập email";
+"pleaseEnterDisplayName" = "Vui lòng nhập tên hiển thị";
+"pleaseEnterPassword" = "Vui lòng nhập mật khẩu";
+"pleaseEnterRePassword" = "Vui lòng nhập lại mật khẩu";
+"pleaseTurnOnInternet" = "Vui lòng mở internet";
 
 // Profile
 "DisplayName" = "Tên hiển thị";
@@ -276,7 +283,11 @@
 "WRONG_CAPTCHA" = "Mã captcha không trùng khớp";
 "USER_IS_EXISTED" = "Tên đăng nhập đã tồn tại";
 "EMAIL_IS_EXISTED" = "Email đã tồn tại";
-"INVALID_USERNAME_OR_PASSWORD" = "Sai tên đăng nhập hoặc mật khẩu";
+"INVALID_USERNAME_OR_PASSWORD" = "Vui lòng kiểm tra lại email hoặc mật khẩu";
 "changePassswordSuccess" = "Đổi mật khẩu thành công";
 "INVALID_CURRENT_PASSWORD" = "Mật khẩu hiện tại không đúng";
 "editProfileSuccess" = "Chỉnh sửa thông tin thành công";
+"USER_IS_NOT_EXISTED" = "Email không tồn tại trong hệ thống";
+"SENT_NEW_PASSWORD" = "Mật khẩu mới được gửi về email";
+"pleaseEnterCurrentPassword" = "Vui lòng nhập mật khẩu hiện tại";
+"pleaseEnterNewPassword" = "Vui lòng nhập mật khẩu mới";

@@ -53,13 +53,33 @@ class ChangePasswordViewController: BaseViewController {
 extension ChangePasswordViewController {
     func validateInputData() -> Bool {
         
-        if self.vCurrenPass.tfInput.text == "" || self.vNewPass.tfInput.text == "" || self.VReNewPass.tfInput.text == "" {
+        if self.vCurrenPass.tfInput.text == "" && self.vNewPass.tfInput.text == "" && self.VReNewPass.tfInput.text == "" {
             hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
             return false
         }
         
-        if self.vCurrenPass.tfInput.text&.count < 6 || self.vNewPass.tfInput.text&.count < 6 || self.VReNewPass.tfInput.text&.count < 6 {
+        if self.vCurrenPass.getText() == "" {
+            hideError(isHidden: false, message:  LocalizableKey.pleaseEnterCurrentPassword.showLanguage)
+            return false
+        }
+        
+        if self.vCurrenPass.tfInput.text&.count < 6 {
             hideError(isHidden: false, message:  LocalizableKey.invalidLoginPassword.showLanguage)
+            return false
+        }
+        
+        if self.vNewPass.getText() == "" {
+            hideError(isHidden: false, message:  LocalizableKey.pleaseEnterNewPassword.showLanguage)
+            return false
+        }
+        
+        if self.vNewPass.tfInput.text&.count < 6 {
+            hideError(isHidden: false, message:  LocalizableKey.invalidLoginPassword.showLanguage)
+            return false
+        }
+        
+        if self.VReNewPass.getText() == "" {
+            hideError(isHidden: false, message:  LocalizableKey.pleaseEnterRePassword.showLanguage)
             return false
         }
         
