@@ -30,24 +30,24 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nâng cấp tài khoản thành công." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rqi-FQ-8dn">
-                    <rect key="frame" x="37.5" y="10" width="300" height="45"/>
+                    <rect key="frame" x="37.5" y="10" width="300" height="50"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="300" id="0Lv-P0-rm1"/>
-                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="56" id="how-Kt-wov"/>
+                        <constraint firstAttribute="height" constant="50" id="Nl5-Uo-qs4"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_tung_tien" translatesAutoresizingMaskIntoConstraints="NO" id="mHs-DA-lRr">
-                    <rect key="frame" x="107.5" y="62" width="160" height="110"/>
+                    <rect key="frame" x="107.5" y="67" width="160" height="110"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="110" id="8WD-CT-n6d"/>
                         <constraint firstAttribute="width" constant="160" id="B8o-DS-54K"/>
                     </constraints>
                 </imageView>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HmI-o4-nOW">
-                    <rect key="frame" x="112.5" y="196" width="150" height="32"/>
+                    <rect key="frame" x="112.5" y="201" width="150" height="32"/>
                     <color key="backgroundColor" red="1" green="0.89870297299377067" blue="0.048158361281318562" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="IbI-NB-Dr0"/>

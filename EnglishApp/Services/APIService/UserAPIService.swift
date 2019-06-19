@@ -30,13 +30,14 @@ protocol UserAPIServiceProtocol {
     func updateProfileSocial(param: UpdateProfileSocial, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
     func uploadAvatar(image: UIImage, success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
     
-     func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
+    func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
+    func getHomeRecently(success: @escaping SuccessHandler<RecentlyEntity>.object, failure: @escaping RequestFailure)
     
 }
 
 
 class UserAPIService: UserAPIServiceProtocol {
-   
+    
     private let network: APINetworkProtocol
     
     init(network: APINetworkProtocol) {
@@ -109,6 +110,11 @@ class UserAPIService: UserAPIServiceProtocol {
     
     func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.getProfileUser
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getHomeRecently(success: @escaping SuccessHandler<RecentlyEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = UserEndPoint.getRecently
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     

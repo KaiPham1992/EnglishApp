@@ -10,11 +10,21 @@ import Alamofire
 
 enum CommonEndPoint {
     case uploadImages(image: UIImage)
+    case getNationals
 }
 
 extension CommonEndPoint: EndPointType {
     var path: String {
-        return "_api/common/upload_tmp_img"
+        
+        switch self {
+        case .uploadImages:
+            return "_api/common/upload_tmp_img"
+        case .getNationals:
+            return "_api/nation/get_list_nation"
+            
+        default:
+            break
+        }
     }
     
     var httpMethod: HTTPMethod {

@@ -33,7 +33,7 @@ class ChangePasswordViewController: BaseViewController {
        
         setTitleNavigation(title: LocalizableKey.changePasssword.showLanguage)
         vCurrenPass.setTitleAndPlaceHolder(title: LocalizableKey.currentPassword.showLanguage, placeHolder: LocalizableKey.currentPasswordLogin.showLanguage)
-//        vCurrenPass.tfInput.isSecureTextEntry = true
+        vCurrenPass.tfInput.isSecureTextEntry = true
         vNewPass.tfInput.isSecureTextEntry = true
         VReNewPass.tfInput.isSecureTextEntry = true
         
@@ -81,16 +81,15 @@ extension ChangePasswordViewController {
 
 extension ChangePasswordViewController: ChangePasswordViewProtocol {
     func didChangePassword(data: BaseResponseString?) {
-        PopUpHelper.shared.showNotification(message: LocalizableKey.changePasswordSuccess.showLanguage) {
+        
+        PopUpHelper.shared.showChangePasswordSuccess(completionYes: {
             self.pop()
-        }
+        })
     }
     
     func didChangePassword(error: APIError?) {
         guard let messageError = error?.message else { return }
-        if messageError == "INVALID_CURRENT_PASSWORD" {
-            hideError(isHidden: false, message: messageError&.showLanguage)
-        }
+        hideError(isHidden: false, message: messageError&.showLanguage)
     }
     
 }

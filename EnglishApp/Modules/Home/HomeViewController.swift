@@ -31,9 +31,16 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         return header
     }()
     
+    var listActivities = [Acitvity]() {
+        didSet {
+             tbHome.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        presenter?.getHomeRecently()
     }
     
     override func setUpViews() {
@@ -79,6 +86,10 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     @objc func btnMenuTapped() {
        self.delegate?.showLefMenuTapped()
     }
+    
+    func didGetActivities(activities: [Acitvity]) {
+        self.listActivities = activities
+    }
 }
 
 
@@ -94,6 +105,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         
         tbHome.estimatedRowHeight = 120
         tbHome.rowHeight = UITableView.automaticDimension
+        tbHome.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         
     }
     
@@ -119,7 +131,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
-                
+                cell.actity = self.listActivities[indexPath.item - 1]
                 return cell
             }
         }
@@ -129,7 +141,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 2
         } else {
-            return 11
+            if self.listActivities.count == 0 {
+                return 0
+            } else {
+                return self.listActivities.count + 1
+            }
         }
         
     }
@@ -175,6 +191,5 @@ extension HomeViewController: HomeActionCellDelegate {
     func btnFindWorkTapped() {
         self.push(controller: FindRouter.createModule())
     }
-    
     
 }

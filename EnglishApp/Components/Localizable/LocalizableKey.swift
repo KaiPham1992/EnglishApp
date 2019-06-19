@@ -64,6 +64,8 @@ struct LocalizableKey {
     static let newPassword = "newPassword"
     static let reNewPassword = "reNewPassword"
     static let changePasssword = "changePasssword"
+    static let changePassswordSuccess = "changePassswordSuccess"
+    static let editProfileSuccess = "editProfileSuccess"
     
     static let popUpLogout = "popUpLogout"
     static let agree = "agree"

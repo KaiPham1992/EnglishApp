@@ -50,15 +50,8 @@ class ContainerViewController: BaseViewController {
         return view
     }()
     
-    func setMacaroOrangeStatusBar() {
-        guard let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView else { return }
-        statusBar.backgroundColor = AppColor.yellow
-        UIApplication.shared.statusBarStyle = .lightContent
-        statusBar.tintColor =  AppColor.yellow
-    }
-    
     override func setUpViews() {
-        setMacaroOrangeStatusBar()
+        setColorStatusBar()
         //-- Main
         view.addSubview(vContainerMain)
         vContainerMain.fillSuperviewNotSafe()

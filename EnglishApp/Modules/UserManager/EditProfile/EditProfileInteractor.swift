@@ -31,7 +31,7 @@ class EditProfileInteractor: EditProfileInteractorInputProtocol {
     func updateAvatar(image: UIImage) {
         ProgressView.shared.show()
         Provider.shared.userAPIService.uploadAvatar(image: image, success: { _user in
-            guard var user = UserDefaultHelper.shared.loginUserInfo else {return }
+            guard let user = UserDefaultHelper.shared.loginUserInfo else {return }
             ProgressView.shared.hide()
             
             user.imgSrc = _user?.imgSrc

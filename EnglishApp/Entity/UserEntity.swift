@@ -56,4 +56,12 @@ class UserEntity: BaseEntity  {
         
         return nil
     }
+    
+    var nameShowUI: String {
+        if self.fullName&.isEmpty {
+            return self.displayName&
+        }
+        
+        return self.fullName&
+    }
 }

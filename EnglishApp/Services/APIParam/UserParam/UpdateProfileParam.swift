@@ -20,13 +20,11 @@ class UpdateProfileParam: BaseParam {
         self.fullName      <- map["fullname"]
     }
     
-    init(
-        nationalId: Int?,
-        fullName   : String?) {
+     init(nationalId: Int?, fullName: String?) {
         super.init()
-        
         self.nationalId       = nationalId
         self.fullName       = fullName
+        
     }
     
     required init?(map: Map) {

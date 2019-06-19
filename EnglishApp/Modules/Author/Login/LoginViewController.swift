@@ -44,12 +44,12 @@ class LoginViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
     }
     
     override func setTitleUI() {
+        setColorStatusBar(color: .white)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
         vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")

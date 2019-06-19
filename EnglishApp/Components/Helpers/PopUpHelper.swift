@@ -145,4 +145,14 @@ class PopUpHelper {
         let popUp = LevelUpPopUp()
         popUp.showPopUp(completionYes: completionYes, completionPackage: completionPackage)
     }
+    
+    func showChangePasswordSuccess(completionYes: CompletionClosure?) {
+        let popUp = UpdateAccountPopup()
+        popUp.showPopup(message: LocalizableKey.changePassswordSuccess.showLanguage, confirm: completionYes)
+    }
+    
+    func showEditProfile(completionYes: CompletionClosure?) {
+        let popUp = UpdateAccountPopup()
+        popUp.showPopup(message: LocalizableKey.editProfileSuccess.showLanguage, confirm: completionYes)
+    }
 }

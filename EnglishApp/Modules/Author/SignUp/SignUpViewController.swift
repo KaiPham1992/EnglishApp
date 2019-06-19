@@ -26,11 +26,13 @@ class SignUpViewController: BaseViewController {
         super.viewDidLoad()
         
         presenter?.getCaptcha()
+        
     }
+    
     
     override func setTitleUI() {
         self.hideNavigation()
-        
+        setColorStatusBar(color: AppColor.yellowLogin)
         vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage, placeHolder: LocalizableKey.enterDisplayName.showLanguage)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
@@ -97,8 +99,7 @@ extension SignUpViewController: SignUpViewProtocol {
     }
     
     func signUpSuccess(user: UserEntity?) {
-        print(user!.toJSON())
-        
+        AppRouter.shared.openHome()
     }
     
     func signUpError(error: APIError) {

@@ -29,18 +29,23 @@ class EditProfileViewController: BaseViewController {
         addBackToNavigation()
         
         showProfile()
+        getNational()
         
-        //--
-//        vLocation.listItem = [
-//            TagEntity(name: "Viet Nam 0"),
-//            TagEntity(name: "Viet Nam 1"),
-//            TagEntity(name: "Viet Nam 2")
-//        ]
+    }
+    
+    func getNational() {
+        ProgressView.shared.show()
+        Provider.shared.commonAPIService.getNationals(success: { nationals in
+            ProgressView.shared.hide()
+            self.vLocation.listItem = nationals
+        }) { _ in
+            ProgressView.shared.hide()
+        }
     }
     
     func showProfile() {
         guard let user = UserDefaultHelper.shared.loginUserInfo else { return }
-        vDisplayName.tfInput.text = user.displayName
+        vDisplayName.tfInput.text = user.nameShowUI
         vEmail.tfInput.text = user.email
         vLocation.tfInput.text = user.national
         
@@ -62,7 +67,13 @@ class EditProfileViewController: BaseViewController {
     }
     
     @IBAction func btnSavedTapped() {
-        
+        var param: UpdateProfileParam!
+        if let national = self.vLocation.selectedItem as? NationalEntity {
+            param = UpdateProfileParam(nationalId: Int(national.id&), fullName: vDisplayName.getText())
+        } else {
+            param = UpdateProfileParam(nationalId: nil, fullName: vDisplayName.getText())
+        }
+        presenter?.updateProfile(userInfo: param)
     }
     
     @IBAction func btnAvatarTapped() {
@@ -72,15 +83,23 @@ class EditProfileViewController: BaseViewController {
             self.presenter?.updateAvatar(image: _iamge)
         }
     }
+    
+    func hideError(isHidden: Bool = true, message: String? = nil){
+        lbError.isHidden = isHidden
+        lbError.text = message ?? ""
+    }
 }
 
 extension EditProfileViewController: EditProfileViewProtocol {
     func didErrorUpdateProfile(error: APIError?) {
-        
+        guard let message = error?.message else { return }
+        hideError(isHidden: false, message: message.showLanguage)
     }
     
     func didSuccessUpdateProfile(user: UserEntity?) {
-        
+        PopUpHelper.shared.showEditProfile {
+            self.pop()
+        }
     }
 }
 

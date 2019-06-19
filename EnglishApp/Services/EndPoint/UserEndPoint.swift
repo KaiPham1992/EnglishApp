@@ -43,6 +43,7 @@ enum UserEndPoint {
     case getProfileUser
     
     case getGPSPosition(lat: String, long: String)
+    case getRecently
 }
 
 extension UserEndPoint: EndPointType {
@@ -96,6 +97,8 @@ extension UserEndPoint: EndPointType {
             return "_api/user/get_profile_user"
         case .getGPSPosition:
             return "_api/user/get_gps_position"
+        case .getRecently:
+            return "_api/home/get_recent_activity_list"
         }
         
     }
@@ -104,7 +107,7 @@ extension UserEndPoint: EndPointType {
         
         switch self {
             
-        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser, .getGPSPosition:
+        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser, .getGPSPosition, .getRecently:
             return .post
         case .getCaptcha, .getIntroduceList, .getProfileUser:
             return .get
@@ -151,15 +154,6 @@ extension UserEndPoint: EndPointType {
         case .updateProfile(let param):
             let params = BaseParam.addDeviceParams(inputParams: param.toJSON())
             return params
-//            let param = ["fullname":        param.fullName ?? "",
-//                         "phone_number":    param.phone ?? "",
-//                         "phone_code":      param.phoneCode ?? "",
-//                         "birthday":        param.birthday ?? "",
-//                         "gender":          param.gender ?? "",
-//                         "address_1":       param.houseAddress ?? "",
-//                         "address_2":       param.companyAddress ?? "",
-//                         "latitude_2":      param.latAddress2 ?? ""] as [String: Any]
-//            return param
         case .verifyPhone(let code, let phone, let phoneCode):
             let param = ["code_verify": code,
                          "phone_number": phone,
@@ -212,6 +206,8 @@ extension UserEndPoint: EndPointType {
         case .getGPSPosition(let lat, let long):
             return ["current_latitude": lat,
                     "current_longitude": long]
+        case .getRecently:
+            return [:]
         }
     }
     
@@ -223,7 +219,6 @@ extension UserEndPoint: EndPointType {
             return header
         default:
             var header = DefaultHeader().addAuthHeader()
-            header["Type"] = "client"
             return header
         }
         

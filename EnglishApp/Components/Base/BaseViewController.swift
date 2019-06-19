@@ -42,6 +42,13 @@ open class BaseViewController: UIViewController {
         return UIStatusBarStyle.lightContent
     }
     
+    func setColorStatusBar(color: UIColor = AppColor.yellow) {
+        guard let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView else { return }
+        statusBar.backgroundColor = color
+        UIApplication.shared.statusBarStyle = .lightContent
+        statusBar.tintColor =  color
+    }
+    
     func setUpNavigation() {
         guard let navigationController = self.navigationController else { return }
         //---

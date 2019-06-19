@@ -22,4 +22,12 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         self.router = router
     }
 
+    func getHomeRecently() {
+        Provider.shared.userAPIService.getHomeRecently(success: { active in
+            guard let acti = active?.activities else { return }
+            self.view?.didGetActivities(activities: acti)
+        }) { _ in
+            
+        }
+    }
 }

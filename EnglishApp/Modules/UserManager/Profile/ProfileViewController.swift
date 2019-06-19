@@ -85,7 +85,7 @@ class ProfileViewController: BaseViewController {
 
 extension ProfileViewController: ProfileViewProtocol {
     func didGetProfile(user: UserEntity) {
-        vDisplayName.tfInput.text = user.displayName
+        vDisplayName.tfInput.text = user.nameShowUI
         vEmail.tfInput.text = user.email
         vLocation.tfInput.text = user.national
         lbFullName.text = user.fullName

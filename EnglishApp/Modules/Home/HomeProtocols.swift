@@ -18,6 +18,7 @@ protocol HomeWireframeProtocol: class {
 protocol HomePresenterProtocol: class {
 
     var interactor: HomeInteractorInputProtocol? { get set }
+    func getHomeRecently()
 }
 
 //MARK: Interactor -
@@ -39,4 +40,6 @@ protocol HomeViewProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    
+    func didGetActivities(activities: [Acitvity])
 }

@@ -31,4 +31,10 @@ class UpdateAccountPopup: BasePopUpView {
         self.completionYes = confirm
         self.showPopUp(height: 260)
     }
+    
+    func showPopup(message: String, confirm: CompletionClosure?){
+         view.lblTitle.text = message
+        self.completionYes = confirm
+        self.showPopUp(height: 260)
+    }
 }

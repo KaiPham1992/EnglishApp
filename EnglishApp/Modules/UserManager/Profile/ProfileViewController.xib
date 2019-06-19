@@ -102,7 +102,7 @@
                             <rect key="frame" x="4" y="0.0" width="32" height="64"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgC-1c-Z27">
-                            <rect key="frame" x="44" y="11.5" width="111" height="21"/>
+                            <rect key="frame" x="36" y="11.5" width="119" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="Ysi-e2-uLp"/>
                             </constraints>
@@ -111,7 +111,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 hũ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lib-HW-C4q">
-                            <rect key="frame" x="44" y="33" width="111" height="14.5"/>
+                            <rect key="frame" x="36" y="33" width="119" height="14.5"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                             <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -132,7 +132,7 @@
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="NgC-1c-Z27" firstAttribute="leading" secondItem="uPo-h6-7Hu" secondAttribute="trailing" constant="8" id="0VU-3p-qyn"/>
+                        <constraint firstItem="NgC-1c-Z27" firstAttribute="leading" secondItem="uPo-h6-7Hu" secondAttribute="trailing" id="0VU-3p-qyn"/>
                         <constraint firstAttribute="height" constant="64" id="1Gx-mV-fCO"/>
                         <constraint firstAttribute="bottom" secondItem="uPo-h6-7Hu" secondAttribute="bottom" id="2WX-yR-GOM"/>
                         <constraint firstItem="NgC-1c-Z27" firstAttribute="centerY" secondItem="uPo-h6-7Hu" secondAttribute="centerY" constant="-10" id="6bQ-wF-ZOS"/>
@@ -168,7 +168,7 @@
                             <rect key="frame" x="4" y="0.0" width="32" height="64"/>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tiền" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXo-hV-YPw">
-                            <rect key="frame" x="44" y="11.5" width="111" height="21"/>
+                            <rect key="frame" x="39" y="11.5" width="116" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="21" id="n1t-vA-d8H"/>
                             </constraints>
@@ -177,7 +177,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.000 điểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-Fz-HFt">
-                            <rect key="frame" x="44" y="33" width="111" height="14.5"/>
+                            <rect key="frame" x="39" y="33" width="116" height="14.5"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                             <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -194,7 +194,7 @@
                         <constraint firstItem="TaL-gM-pPn" firstAttribute="top" secondItem="tNj-TA-l9W" secondAttribute="top" id="1hL-S3-ggL"/>
                         <constraint firstAttribute="bottom" secondItem="TaL-gM-pPn" secondAttribute="bottom" id="2DJ-8E-T6a"/>
                         <constraint firstAttribute="trailing" secondItem="aXo-hV-YPw" secondAttribute="trailing" id="3fV-E3-ZhW"/>
-                        <constraint firstItem="aXo-hV-YPw" firstAttribute="leading" secondItem="hYi-MI-j9M" secondAttribute="trailing" constant="8" id="5Wp-Ve-T5E"/>
+                        <constraint firstItem="aXo-hV-YPw" firstAttribute="leading" secondItem="hYi-MI-j9M" secondAttribute="trailing" constant="3" id="5Wp-Ve-T5E"/>
                         <constraint firstItem="hYi-MI-j9M" firstAttribute="leading" secondItem="tNj-TA-l9W" secondAttribute="leading" constant="4" id="FIc-l1-eB7"/>
                         <constraint firstItem="aXo-hV-YPw" firstAttribute="centerY" secondItem="hYi-MI-j9M" secondAttribute="centerY" constant="-10" id="Jwm-EN-vjX"/>
                         <constraint firstAttribute="trailing" secondItem="TaL-gM-pPn" secondAttribute="trailing" id="a46-7K-ItZ"/>

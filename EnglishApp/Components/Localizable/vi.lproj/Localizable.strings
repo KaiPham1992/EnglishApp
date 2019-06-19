@@ -277,3 +277,6 @@
 "USER_IS_EXISTED" = "Tên đăng nhập đã tồn tại";
 "EMAIL_IS_EXISTED" = "Email đã tồn tại";
 "INVALID_USERNAME_OR_PASSWORD" = "Sai tên đăng nhập hoặc mật khẩu";
+"changePassswordSuccess" = "Đổi mật khẩu thành công";
+"INVALID_CURRENT_PASSWORD" = "Mật khẩu hiện tại không đúng";
+"editProfileSuccess" = "Chỉnh sửa thông tin thành công";
