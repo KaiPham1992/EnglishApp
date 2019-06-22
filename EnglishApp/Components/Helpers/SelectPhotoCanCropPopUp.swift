@@ -36,13 +36,19 @@ class SelectPhotoCanCropPopUp: NSObject {
             strongSelf.presentImagePicker(sourceType: .photoLibrary)
         }
         
-        let actionCancel = UIAlertAction(title: "Huỷ", style: UIAlertAction.Style.cancel) { _ in
+        let actionCancel = UIAlertAction(title: "Huỷ", style: UIAlertAction.Style.default) { _ in
             
         }
         
         alert.addAction(actionCamera)
         alert.addAction(actionPhoto)
         alert.addAction(actionCancel)
+        
+        if let popoverController = alert.popoverPresentationController {
+            popoverController.sourceView = controller.view
+            popoverController.sourceRect = CGRect(x: controller.view.bounds.midX, y: controller.view.bounds.midY, width: 0, height: 0)
+            popoverController.permittedArrowDirections = []
+        }
         
         controller.present(alert, animated: true, completion: nil)
     }
