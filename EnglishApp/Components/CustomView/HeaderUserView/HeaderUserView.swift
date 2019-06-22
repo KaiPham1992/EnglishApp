@@ -18,7 +18,7 @@ class HeaderUserView: BaseViewXib {
     var user: UserEntity? {
         didSet {
             guard let user = user else { return }
-            lbPoint.text = user.amountPoint*.description
+            lbPoint.text = user.rankName
             lbDiamond.text = user.amountDiamond*.description
             lbHoney.text = user.amountHoney*.description
             lbFullName.text = user.fullName

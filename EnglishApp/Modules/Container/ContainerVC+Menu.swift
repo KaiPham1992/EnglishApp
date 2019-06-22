@@ -42,6 +42,7 @@ extension ContainerViewController {
     func addMenuViewController(vcMenu: UIViewController) {
         // add menu
         addChild(vcMenu)
+        
         self.vContentMenu.addSubview(vcMenu.view)
         
         vcMenu.view.anchor(view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, topConstant: 0, leftConstant: 0, bottomConstant: 0)

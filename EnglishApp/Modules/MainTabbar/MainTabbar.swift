@@ -12,7 +12,7 @@ protocol TabbarProtocol: class {
     func tabbarSelected(index: Int)
 }
 
-let tabIconInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
+let tabIconInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 let tabBarIncrease: CGFloat = 13
 
 class MainTabbar: UITabBarController {
@@ -51,7 +51,7 @@ class MainTabbar: UITabBarController {
     func setUpTabbar() {
         navigationItem.setHidesBackButton(true, animated: true)
         
-        let vcHome = ContainerViewController()
+        let vcHome = HomeRouter.createModule()
         let vcProgramer = TheoryRouter.createModule()
         let vcHomeWork = ExerciseRouter.createModule()
         let vcCompetition = CompetitionRouter.createModule()
@@ -70,14 +70,14 @@ class MainTabbar: UITabBarController {
         
         listViewController = [vcHome, vcProgramer, vcHomeWork, vcCompetition]
         
-        for controller in listViewController {
-            controller.tabBarItem.imageInsets = tabIconInsets
-        }
+//        for controller in listViewController {
+//            controller.tabBarItem.imageInsets = tabIconInsets
+//        }
         
         if UIDevice.current.isIphone5_8Inch() == true {
             UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 4)
         } else {
-            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -4)
+//            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -8)
         }
         
         self.tabBar.tintColor = UIColor.white
@@ -87,13 +87,9 @@ class MainTabbar: UITabBarController {
     func addViewControllerToTabbar(listViewController: [UIViewController]) {
         var listNavigationController = [UIViewController]()
         
-        for (index, vc) in listViewController.enumerated() {
-            if index != 0 {
-                let nc = UINavigationController(rootViewController: vc)
-                listNavigationController.append(nc)
-            } else {
-                listNavigationController.append(vc)
-            }
+        for (_, vc) in listViewController.enumerated() {
+            let nc = UINavigationController(rootViewController: vc)
+            listNavigationController.append(nc)
         }
         
         self.viewControllers = listNavigationController

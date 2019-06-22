@@ -33,6 +33,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var lbForgot: UILabel!
     @IBOutlet weak var lbRegister: UILabel!
     @IBOutlet weak var lbError: UILabel!
+    @IBOutlet weak var heightError: NSLayoutConstraint!
     
     
     var loginType = LoginType.normal
@@ -52,7 +53,7 @@ class LoginViewController: BaseViewController {
         setColorStatusBar(color: .white)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
-        vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
+        vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: LocalizableKey.enterPassword.showLanguage)
         vPassword.tfInput.isSecureTextEntry = true 
         
         btnLogin.setTitle(LocalizableKey.LoginButtonLogin.showLanguage.uppercased(), for: .normal)
@@ -155,6 +156,7 @@ extension LoginViewController {
     func hideError(isHidden: Bool = true, message: String? = nil){
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
+        heightError.constant = 40
     }
 }
 

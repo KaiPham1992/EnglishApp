@@ -42,6 +42,12 @@ class MenuViewController: UIViewController, MenuViewProtocol {
         super.viewWillAppear(animated)
         
         header.user = UserDefaultHelper.shared.loginUserInfo
+        
+        self.listMenuItem.forEach { item in
+            item.isSelected = false
+        }
+        
+        tbMenu.reloadData()
     }
     
     private func setVersion() {

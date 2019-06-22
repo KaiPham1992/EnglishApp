@@ -74,13 +74,16 @@ class AppDropDown: BaseViewXib {
         
         dropDown.cellNib = UINib(nibName: "AppDropDownCell", bundle:  nil)
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
-            //            guard let cell = cell as? AppDropDownCell else { return }
+                        guard let cell = cell as? AppDropDownCell else { return }
+            
+            cell.lbContent.text = item
             return
         }
         
         // Action triggered on selection
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.tfInput.text = item
+
             self.selectedItem = self.listItem[index]
             self.delegateDropDown?.didChangedValue(sender: self, item: self.selectedItem)
         }
