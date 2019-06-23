@@ -10,7 +10,7 @@
 
 import UIKit
 
-class QAViewController: BaseViewController, QAViewProtocol {
+class QAViewController: BaseViewController {
 
 	var presenter: QAPresenterProtocol?
     @IBOutlet weak var tbHistory: UITableView!
@@ -48,11 +48,11 @@ class QAViewController: BaseViewController, QAViewProtocol {
         super.viewDidLoad()
         configureTable()
         
-        listHistory = QAEntity.toArray()
+        presenter?.getQA()
     }
     
     @IBAction func btnSearchTapped() {
-        
+        presenter?.sendQA(qa: tfQuestion.text&)
     }
 
 }
@@ -82,5 +82,11 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = QADetailRouter.createModule(qa: self.listHistory[indexPath.item])
         self.push(controller: vc)
+    }
+}
+
+extension QAViewController: QAViewProtocol {
+    func didGetQA(list: [QAEntity]) {
+        self.listHistory = list
     }
 }

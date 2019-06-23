@@ -11,7 +11,8 @@
 import UIKit
 
 class QAPresenter: QAPresenterProtocol, QAInteractorOutputProtocol {
-
+    var listQA: [QAEntity] = [QAEntity]()
+    
     weak private var view: QAViewProtocol?
     var interactor: QAInteractorInputProtocol?
     private let router: QAWireframeProtocol
@@ -22,4 +23,33 @@ class QAPresenter: QAPresenterProtocol, QAInteractorOutputProtocol {
         self.router = router
     }
 
+    func getQA() {
+        ProgressView.shared.show()
+        Provider.shared.qAAPIService.getQA(offset: 0, success: { list in
+            ProgressView.shared.hide()
+            self.listQA = list
+            self.view?.didGetQA(list: self.listQA )
+        }) { error in
+            ProgressView.shared.hide()
+        }
+    }
+    
+    func loadMoreQA() {
+        Provider.shared.qAAPIService.getQA(offset: listQA.count, success: { list in
+            self.listQA.append(contentsOf: list)
+            self.view?.didGetQA(list: self.listQA )
+        }) { error in
+            
+        }
+    }
+    
+    func sendQA(qa: String) {
+        ProgressView.shared.show()
+        Provider.shared.qAAPIService.sendQA(question: qa, success: { _ in
+            self.getQA()
+        }) { error in
+            ProgressView.shared.hide()
+        }
+    }
+    
 }

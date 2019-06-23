@@ -1486,6 +1486,12 @@
 		DE9F0F90228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
 		DE9F0F91228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
 		DE9F0F92228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
+		DEA932A222BF7ED80050FB1D /* QAEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */; };
+		DEA932A322BF7ED80050FB1D /* QAEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */; };
+		DEA932A422BF7ED80050FB1D /* QAEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */; };
+		DEA932A622BF804B0050FB1D /* QAAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A522BF804B0050FB1D /* QAAPIService.swift */; };
+		DEA932A722BF804B0050FB1D /* QAAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A522BF804B0050FB1D /* QAAPIService.swift */; };
+		DEA932A822BF804B0050FB1D /* QAAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A522BF804B0050FB1D /* QAAPIService.swift */; };
 		DEB584712291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */; };
 		DEB584722291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */; };
 		DEB584732291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */; };
@@ -2315,6 +2321,8 @@
 		DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEndPoint.swift; sourceTree = "<group>"; };
+		DEA932A522BF804B0050FB1D /* QAAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAAPIService.swift; sourceTree = "<group>"; };
 		DEB5846B2291ABD700FE0356 /* HistoryBeePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeePresenter.swift; sourceTree = "<group>"; };
 		DEB5846C2291ABD700FE0356 /* HistoryBeeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeRouter.swift; sourceTree = "<group>"; };
 		DEB5846D2291ABD700FE0356 /* HistoryBeeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryBeeViewController.swift; sourceTree = "<group>"; };
@@ -3565,12 +3573,13 @@
 		DE361F132283E85000FA3B0D /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
-				DE361F152283E85000FA3B0D /* CommonEndPoint.swift */,
 				DE361F182283E85000FA3B0D /* Base */,
+				DE361F152283E85000FA3B0D /* CommonEndPoint.swift */,
 				DE361F1A2283E85000FA3B0D /* UserEndPoint.swift */,
 				DE361F1B2283E85000FA3B0D /* NotificationEndPoint.swift */,
 				7640840222B7CB45002D9401 /* SaveEndpoint.swift */,
 				76E852F522B945870039751A /* TheoryEndpoint.swift */,
+				DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -3586,12 +3595,13 @@
 		DE361F1C2283E85000FA3B0D /* APIService */ = {
 			isa = PBXGroup;
 			children = (
+				DE361F222283E85000FA3B0D /* APIServiceProvider */,
 				DE361F1D2283E85000FA3B0D /* CommonAPIService.swift */,
 				DE361F212283E85000FA3B0D /* NotificationAPIService.swift */,
-				DE361F222283E85000FA3B0D /* APIServiceProvider */,
 				DE361F242283E85000FA3B0D /* UserAPIService.swift */,
 				764083FE22B7CA6E002D9401 /* SaveAPIService.swift */,
 				76E852F922B946CA0039751A /* TheoryAPIService.swift */,
+				DEA932A522BF804B0050FB1D /* QAAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -5341,6 +5351,7 @@
 				DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953187228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE49F82122A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
+				DEA932A222BF7ED80050FB1D /* QAEndPoint.swift in Sources */,
 				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEBD672F228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
@@ -5578,6 +5589,7 @@
 				DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */,
 				DE952F8E2287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE3A8C992289B93F0080A8CB /* QADetailPresenter.swift in Sources */,
+				DEA932A622BF804B0050FB1D /* QAAPIService.swift in Sources */,
 				DE361DE42283E54C00FA3B0D /* BaseViewXib.swift in Sources */,
 				DE952F7F2287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				DE952FA02287D2A700E3F688 /* FadeInOutAnimation.swift in Sources */,
@@ -5818,6 +5830,7 @@
 				DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953188228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE49F82222A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
+				DEA932A322BF7ED80050FB1D /* QAEndPoint.swift in Sources */,
 				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEBD6730228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
@@ -6055,6 +6068,7 @@
 				DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */,
 				DE952FF72287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE3A8C9A2289B93F0080A8CB /* QADetailPresenter.swift in Sources */,
+				DEA932A722BF804B0050FB1D /* QAAPIService.swift in Sources */,
 				DE952FF82287DF4800E3F688 /* BaseViewXib.swift in Sources */,
 				DE952FF92287DF4800E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				DE952FFA2287DF4800E3F688 /* FadeInOutAnimation.swift in Sources */,
@@ -6295,6 +6309,7 @@
 				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953189228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE49F82322A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
+				DEA932A422BF7ED80050FB1D /* QAEndPoint.swift in Sources */,
 				DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEBD6731228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
 				DE9530672287DF6400E3F688 /* SendCommentParam.swift in Sources */,
@@ -6532,6 +6547,7 @@
 				DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */,
 				DE9530A52287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
 				DE3A8C9B2289B93F0080A8CB /* QADetailPresenter.swift in Sources */,
+				DEA932A822BF804B0050FB1D /* QAAPIService.swift in Sources */,
 				DE9530A62287DF6400E3F688 /* BaseViewXib.swift in Sources */,
 				DE9530A72287DF6400E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */,
