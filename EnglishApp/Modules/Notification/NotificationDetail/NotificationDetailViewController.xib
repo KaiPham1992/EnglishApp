@@ -20,6 +20,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NotificationDetailViewController">
             <connections>
+                <outlet property="heightImage" destination="5Yw-Rt-DqA" id="pM3-OD-q9d"/>
+                <outlet property="imgIcon" destination="2iY-51-MMS" id="lhJ-0b-S4n"/>
+                <outlet property="lbContent" destination="i3n-4M-z49" id="Ah0-uB-Upc"/>
+                <outlet property="lbTime" destination="NRW-ap-lKp" id="iEC-ZY-eh0"/>
+                <outlet property="lbTitle" destination="sqv-PS-ktR" id="Aw9-5N-8u2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -32,23 +37,23 @@
                     <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jXL-nc-bnL">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="818.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="807.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2iY-51-MMS">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="211"/>
-                                    <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolderImage" translatesAutoresizingMaskIntoConstraints="NO" id="2iY-51-MMS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" secondItem="2iY-51-MMS" secondAttribute="height" multiplier="16:9" id="k1X-Ad-BqV"/>
+                                        <constraint firstAttribute="height" constant="200" id="5Yw-Rt-DqA"/>
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="255" text="WORD OF THE DAY" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqv-PS-ktR">
-                                    <rect key="frame" x="16" y="227" width="343" height="20.5"/>
+                                    <rect key="frame" x="16" y="216" width="343" height="20.5"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18:00 29-03-2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRW-ap-lKp">
-                                    <rect key="frame" x="16" y="255.5" width="343" height="21"/>
+                                    <rect key="frame" x="16" y="244.5" width="343" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="ueV-Wm-DwX"/>
                                     </constraints>
@@ -57,8 +62,8 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i3n-4M-z49">
-                                    <rect key="frame" x="16" y="284.5" width="343" height="484"/>
-                                    <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed nunc in enim sodales luctus et nec augue. Aenean pretium consectetur felis, nec cursus lorem congue vel. In eu leo mauris. Donec vel nisi vitae ex ornare mattis. Praesent mollis magna non congue tempus. Etiam nec massa dui. Quisque ut turpis malesuada, dignissim risus sed, pharetra erat. Proin ac blandit sapien. Etiam aliquam dui lectus. Maecenas ac vulputate quam. Mauris bibendum tempor varius. Vestibulum semper mauris vel cursus placerat. Praesent vel volutpat orci. Praesent erat velit, ullamcorper quis viverra non, interdum sed nunc. Vestibulum fringilla libero auctor condimentum viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed nunc in enim sodales luctus et nec augue. Aenean pretium consectetur felis, nec cursus lorem congue vel. In eu leo mauris. Donec vel nisi vitae ex ornare mattis. Praesent mollis magna non congue tempus. Etiam nec massa dui. Quisque ut turpis malesuada, dignissim risus sed, pharetra erat. Proin ac blandit sapien. Etiam aliquam dui lectus. Maecenas ac vulputate quam. Mauris bibendum tempor varius. Vestibulum semper mauris vel cursus placerat. Praesent vel volutpat orci. Praesent erat velit, ullamcorper quis viverra non, interdum sed nunc. Vestibulum fringilla libero auctor condimentum viverra.</mutableString>
+                                    <rect key="frame" x="16" y="273.5" width="343" height="484"/>
+                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed nunc in enim sodales luctus et nec augue. Aenean pretium consectetur felis, nec cursus lorem congue vel. In eu leo mauris. Donec vel nisi vitae ex ornare mattis. Praesent mollis magna non congue tempus. Etiam nec massa dui. Quisque ut turpis malesuada, dignissim risus sed, pharetra erat. Proin ac blandit sapien. Etiam aliquam dui lectus. Maecenas ac vulputate quam. Mauris bibendum tempor varius. Vestibulum semper mauris vel cursus placerat. Praesent vel volutpat orci. Praesent erat velit, ullamcorper quis viverra non, interdum sed nunc. Vestibulum fringilla libero auctor condimentum viverra.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed nunc in enim sodales luctus et nec augue. Aenean pretium consectetur felis, nec cursus lorem congue vel. In eu leo mauris. Donec vel nisi vitae ex ornare mattis. Praesent mollis magna non congue tempus. Etiam nec massa dui. Quisque ut turpis malesuada, dignissim risus sed, pharetra erat. Proin ac blandit sapien. Etiam aliquam dui lectus. Maecenas ac vulputate quam. Mauris bibendum tempor varius. Vestibulum semper mauris vel cursus placerat. Praesent vel volutpat orci. Praesent erat velit, ullamcorper quis viverra non, interdum sed nunc. Vestibulum fringilla libero auctor condimentum viverra.</string>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                     <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -101,4 +106,7 @@
             <viewLayoutGuide key="safeArea" id="olP-WO-aWw"/>
         </view>
     </objects>
+    <resources>
+        <image name="placeHolderImage" width="250" height="250"/>
+    </resources>
 </document>

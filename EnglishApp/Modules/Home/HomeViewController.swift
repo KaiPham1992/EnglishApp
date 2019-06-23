@@ -73,6 +73,18 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         self.tabBarController?.tabBar.isHidden = false
         setColorStatusBar()
         addHeaderHome()
+        countNotification()
+    }
+    
+    func countNotification() {
+         self.addButtonNotificationNavigation(count: 0, action: #selector(self.btnNotificationTapped))
+        Provider.shared.notificationAPIService.getNotification(offset: 0, success: { parentNotification in
+            guard let total = parentNotification?.totalUnread else { return }
+            UIApplication.shared.applicationIconBadgeNumber = total
+            self.addButtonNotificationNavigation(count: total, action: #selector(self.btnNotificationTapped))
+        }) { _ in
+            
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -89,7 +101,8 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         //---
         
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
-        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: #selector(btnNotificationTapped))
+//        addButtonNotificationNavigation(count: 10, action: nil)
+//        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: #selector(btnNotificationTapped))
     }
     
     func removeHeaderHome() {
@@ -295,5 +308,4 @@ extension HomeViewController: MenuViewControllerDelegate {
             ProgressView.shared.hide()
         }
     }
-    
 }

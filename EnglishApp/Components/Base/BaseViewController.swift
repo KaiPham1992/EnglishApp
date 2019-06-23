@@ -97,7 +97,7 @@ open class BaseViewController: UIViewController {
     }
     
     func setNavigationColor(color: UIColor = AppColor.yellow) {
-         self.navigationController?.navigationBar.barTintColor = color
+        self.navigationController?.navigationBar.barTintColor = color
     }
     
     func pushUpFromBottomView(controller: UIViewController) {
@@ -140,6 +140,40 @@ extension BaseViewController {
             self.navigationItem.rightBarButtonItem = button
             btn.contentHorizontalAlignment = .right
         }
+    }
+    
+    func addButtonNotificationNavigation(count: Int, action: Selector?) {
+        showNavigation()
+        let btn = UIButton()
+        btn.setImage(AppImage.imgNotification, for: .normal)
+        if let newAction = action {
+            btn.addTarget(self, action: newAction, for: .touchUpInside)
+        }
+        
+        btn.frame = CGRect(x: 0, y: 0, width: 60, height: 44)
+        
+        if count > 0 {
+            let lbCount = UILabel()
+            lbCount.backgroundColor = .red
+            lbCount.font = AppFont.fontRegular8
+            btn.addSubview(lbCount)
+            
+            lbCount.textAlignment = .center
+            lbCount.textColor = .white
+            lbCount.text = count.description
+            
+            lbCount.anchor(btn.topAnchor, right: btn.rightAnchor, topConstant: -4, rightConstant: -4, widthConstant: 16, heightConstant: 16)
+            lbCount.setBorder(cornerRadius: 8)
+            
+            if count > 9 {
+                lbCount.text = "9+"
+            }
+        }
+        
+        
+        let button = UIBarButtonItem(customView: btn)
+        self.navigationItem.rightBarButtonItem = button
+        btn.contentHorizontalAlignment = .right
     }
     
     func addButtonToNavigation(title: String, style: StyleNavigation, action: Selector?, backgroundColor: UIColor = UIColor.white, textColor: UIColor = UIColor.black, font: UIFont = UIFont.systemFont(ofSize: 17), cornerRadius: CGFloat = 0, size: CGSize = CGSize(width: 20, height: 10)) -> UIButton{
@@ -345,9 +379,9 @@ extension BaseViewController {
     
     func addHeaderUser() {
         let header = HeaderUserView()
-     
-//        header.frame = CGRect(x: 0, y: 0, width: 414, height: 375)
-//         self.navigationItem.titleView = header
+        
+        //        header.frame = CGRect(x: 0, y: 0, width: 414, height: 375)
+        //         self.navigationItem.titleView = header
         self.navigationController?.navigationBar.addSubview(header)
         header.fillSuperview()
     }

@@ -9,8 +9,8 @@
 import Alamofire
 
 enum NotificationEndPoint {
-    case getNotification(offset: Int, limit: Int?)
-    case readNotification(notificationId: String)
+    case getNotification(offset: Int)
+    case readNotification(notificationId: Int)
 }
 
 extension NotificationEndPoint: EndPointType {
@@ -29,14 +29,10 @@ extension NotificationEndPoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
-        case .getNotification(let offset, let limit):
-            if let _ = limit {
-                return ["offset": "\(offset)", "limit": ""]
-            } else {
-                return ["offset": "\(offset)", "limit": "\(limitLoad)"]
-            }
+        case .getNotification(let offset):
+            return ["offset": "\(offset)", "limit": limit]
         case .readNotification(let id):
-            return ["notification_ids":"\(id)"]
+            return ["notification_ids": [id]]
         }
     }
     

@@ -14,6 +14,7 @@ struct AppColor {
     static let yellowLogin = UIColor(hexString: "fbf0bf")
     
     static let color48_48_48 = UIColor(red: 48/255, green: 48/255, blue: 48/255, alpha: 1)
+    static let notificationNotRead = UIColor(red: 255/255, green: 244/255, blue: 195/255, alpha: 1)
     
     static let color255_211_17 = UIColor(red: 255/255, green: 211/255, blue: 17/255, alpha: 1)
     static let color189_189_189 = UIColor(red: 189/255, green: 189/255, blue: 189/255, alpha: 1)
