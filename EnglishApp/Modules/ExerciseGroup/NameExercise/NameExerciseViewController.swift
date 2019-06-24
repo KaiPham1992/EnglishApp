@@ -52,7 +52,7 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
 //    var isShowMore = true
     override func setUpViews() {
         super.setUpViews()
-        clvQuestion.registerXibCell(CellExercise.self)
+        clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
         vCountTime.setupTime(min: 2)
@@ -95,8 +95,9 @@ extension NameExerciseViewController: UICollectionViewDataSource{
          return 6
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
-        cell.delegate = self
+        let cell = collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
+        cell.setupCell(numberView: 10)
+//        cell.delegate = self
         return cell
     }
 }

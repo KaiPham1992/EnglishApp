@@ -1,47 +1,34 @@
 //
-//  CellExercise.swift
+//  CellFillExercise.swift
 //  EnglishApp
 //
-//  Created by vinova on 6/3/19.
+//  Created by vinova on 6/24/19.
 //  Copyright © 2019 demo. All rights reserved.
 //
 
 import UIKit
 import Popover
 
-protocol CellExerciseDelegate: class {
-    func showMoreQuestion(attributed: NSMutableAttributedString)
-    func showDetailVocubulary(text: String)
-    func showMoreResulr(result: String)
-}
+class CellFillExercise: UICollectionViewCell {
 
-class CellExercise: UICollectionViewCell {
-    
+    @IBOutlet weak var heightStackView: NSLayoutConstraint!
+    @IBOutlet weak var stvFillQuestion: UIStackView!
     weak var delegate: CellExerciseDelegate?
     @IBOutlet weak var tvContent: UITextView!
-    @IBOutlet weak var vQuestion: UIView!
-    @IBOutlet weak var tbvNameExercise: UITableView!
+    
     var attributed: NSMutableAttributedString?
-    var listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    var isExercise = true {
-        didSet{
-            if isExercise == false {
-                self.listSelect = [true,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true]
-            }
-        }
-    }
     
     
     var numberLine: Int = 0
-    let listQuestion : [String] = ["dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6"]
-     let popover = Popover()
     
+    let popover = Popover()
     
-    @IBOutlet weak var heightScrollView: NSLayoutConstraint!
+    var listViewAnswer : [ViewFillQuestion] = []
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
+        
         setupView()
         
     }
@@ -49,9 +36,6 @@ class CellExercise: UICollectionViewCell {
     func setupView(){
         tvContent.textContainerInset = UIEdgeInsets.zero
         tvContent.textContainer.lineFragmentPadding = 0
-        tbvNameExercise.registerXibFile(CellQuestion.self)
-        tbvNameExercise.dataSource = self
-        tbvNameExercise.delegate = self
         detectQuestion()
     }
     
@@ -110,46 +94,24 @@ class CellExercise: UICollectionViewCell {
         popover.layer.cornerRadius = 5
         popover.show(aView, point: point, inView: self.contentView)
     }
+    
     @objc func clickDetail(){
         delegate?.showDetailVocubulary(text: "")
     }
-}
-extension CellExercise : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //show pop update account
-        //        PopUpHelper.shared.showUpdateAccount {
-        //
-        //        }
-    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-}
-extension CellExercise: UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        cell.indexPath = indexPath
-//        cell.delegate = self
-//        cell.indexPath = indexPath
-//        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
-//        cell.delegate = self
-        heightScrollView.constant = vQuestion.frame.height + tbvNameExercise.contentSize.height + 25
-        return cell
-    }
-}
-
-extension CellExercise : ClickQuestionDelegate{
-    func showMoreResult(result: String) {
-        delegate?.showMoreResulr(result: result)
-    }
     
-    func clickQuestion(indexPath: IndexPath?, isSelect: Bool) {
-        self.listSelect[indexPath?.row ?? 0] = isSelect
+    func setupCell(numberView: Int){
+        for index in 1...numberView {
+            let view = ViewFillQuestion()
+            view.setupTag(tag: index)
+            self.stvFillQuestion.addArrangedSubview(view)
+            self.listViewAnswer.append(view)
+            view.delegate = self
+        }
+        self.heightStackView.constant = CGFloat(40 * numberView)
+    }
+}
+extension CellFillExercise : TextViewChangeHeightDelegate {
+    func distanceChange(distance: CGFloat) {
+        self.heightStackView.constant += distance
     }
 }

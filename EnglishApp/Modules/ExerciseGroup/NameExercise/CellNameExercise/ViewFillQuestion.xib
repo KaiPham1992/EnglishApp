@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewFillQuestion" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="lblNumberQuestion" destination="fHw-cV-Fzp" id="Bxc-sA-HdE"/>
+                <outlet property="tvContent" destination="Rkg-CK-nlC" id="pga-2f-y4m"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="450" height="40"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cau 10" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-cV-Fzp">
+                    <rect key="frame" x="10" y="11" width="60" height="15.666666666666664"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="60" id="6KM-vJ-WCs"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="KPe-G2-Zwr">
+                    <rect key="frame" x="320" y="6" width="120" height="29"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mLk-8z-dQl">
+                            <rect key="frame" x="0.0" y="0.0" width="33.333333333333336" height="29"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="ic_reading"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ukQ-Bx-AG9">
+                            <rect key="frame" x="43.333333333333314" y="0.0" width="33.333333333333343" height="29"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="ic_link"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fsx-qw-fLk">
+                            <rect key="frame" x="86.666666666666686" y="0.0" width="33.333333333333343" height="29"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <state key="normal" image="ic_exclamation"/>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="120" id="DSZ-Ys-0UW"/>
+                        <constraint firstAttribute="height" constant="29" id="Wzb-ye-8BW"/>
+                    </constraints>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-fC-Nks">
+                    <rect key="frame" x="75" y="37" width="236" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="AvN-7f-HhF"/>
+                    </constraints>
+                </view>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" scrollEnabled="NO" text="Lorem" translatesAutoresizingMaskIntoConstraints="NO" id="Rkg-CK-nlC">
+                    <rect key="frame" x="75" y="0.0" width="236" height="31"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fHw-cV-Fzp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="11" id="3se-RY-7s3"/>
+                <constraint firstAttribute="trailing" secondItem="KPe-G2-Zwr" secondAttribute="trailing" constant="10" id="5jx-21-zKG"/>
+                <constraint firstItem="KPe-G2-Zwr" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="E2J-17-nUH"/>
+                <constraint firstItem="Rkg-CK-nlC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Emt-Ga-TaH"/>
+                <constraint firstItem="0zZ-fC-Nks" firstAttribute="trailing" secondItem="Rkg-CK-nlC" secondAttribute="trailing" id="J0B-LL-sD0"/>
+                <constraint firstItem="Rkg-CK-nlC" firstAttribute="leading" secondItem="fHw-cV-Fzp" secondAttribute="trailing" constant="5" id="RCx-h8-gng"/>
+                <constraint firstItem="mLk-8z-dQl" firstAttribute="leading" secondItem="Rkg-CK-nlC" secondAttribute="trailing" constant="9" id="VEU-Dx-KrR"/>
+                <constraint firstAttribute="bottom" secondItem="Rkg-CK-nlC" secondAttribute="bottom" constant="9" id="gFp-Iu-dLd"/>
+                <constraint firstItem="fHw-cV-Fzp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="pah-01-QY3"/>
+                <constraint firstAttribute="bottom" secondItem="0zZ-fC-Nks" secondAttribute="bottom" constant="2" id="rrQ-Q2-OTd"/>
+                <constraint firstItem="0zZ-fC-Nks" firstAttribute="leading" secondItem="Rkg-CK-nlC" secondAttribute="leading" id="xn5-hq-7gF"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="JVC-1D-jt4"/>
+            <point key="canvasLocation" x="163.768115942029" y="182.8125"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_exclamation" width="32" height="32"/>
+        <image name="ic_link" width="32" height="32"/>
+        <image name="ic_reading" width="32" height="32"/>
+    </resources>
+</document>

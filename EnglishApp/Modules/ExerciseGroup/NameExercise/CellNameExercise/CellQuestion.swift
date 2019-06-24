@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import DropDown
 
 protocol ClickQuestionDelegate: class {
     func clickQuestion(indexPath: IndexPath?,isSelect: Bool)
@@ -15,73 +16,49 @@ protocol ClickQuestionDelegate: class {
 
 class CellQuestion: UITableViewCell {
     
-    @IBOutlet weak var vBG: UIView!
-    @IBOutlet weak var btnChoice: UIButton!
-    
-    @IBAction func clickMore(_ sender: Any) {
-        delegate?.showMoreResult(result: lbQuestion.text ?? "")
-    }
-    @IBOutlet weak var lblIndex: UILabel!
-    
     @IBAction func clickQuestion(_ sender: Any) {
-        self.isSelect = !self.isSelect
-        delegate?.clickQuestion(indexPath: self.indexPath, isSelect: self.isSelect)
+        dropDown.show()
     }
     
-    var isExercise = true{
-        didSet{
-            if !isExercise {
-                btnChoice.isUserInteractionEnabled = false
-            }
-        }
-    }
-    
-    var isSelect : Bool = false {
-        didSet{
-            if isExercise {
-                setSelect(isSelect: self.isSelect)
-            } else {
-                setResult(isSelect: self.isSelect)
-            }
-            
-        }
-    }
+    @IBOutlet weak var lbNumber: UILabel!
+    @IBOutlet weak var lbAnswer: UILabel!
+    @IBOutlet weak var vQuestion: UIView!
     var indexPath: IndexPath?
     weak var delegate: ClickQuestionDelegate?
-    @IBOutlet weak var heightMore: NSLayoutConstraint!
-    @IBOutlet weak var lbQuestion: UILabel!
+    let dropDown = DropDown()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.setupDropDown()
+        }
     }
+    
+    
+    func setupDropDown(){
+        dropDown.anchorView = vQuestion
+        dropDown.bottomOffset = CGPoint(x: 0, y: (vQuestion.frame.height + 5))
+        dropDown.backgroundColor = .white
+        dropDown.cellNib = UINib(nibName: "CellDropDownQuestion", bundle: nil)
+        dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            guard let cell = cell as? CellDropDownQuestion else { return }
+            
+            // Setup your custom UI components
+            cell.lbAnswer.text = item
+            
+        }
+        dropDown.width = vQuestion.frame.width
+        dropDown.setupCornerRadius(2)
+        dropDown.dataSource = ["A","B","C","D"]
+        
+        dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.lbAnswer.text = item
+        }
+    }
+    
     
     func setupData(title: String,isExercise: Bool){
-        self.isExercise = isExercise
-        lblIndex.text = "\((indexPath?.row ?? 0) + 1)"
-        lbQuestion.text = title
-    }
-    
-    func setResult(isSelect: Bool){
-        if isSelect && indexPath?.row == 0 {
-            vBG.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-            heightMore.constant = 24
-        } else {
-            if isSelect {
-                vBG.backgroundColor = #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
-            } else {
-                vBG.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
-            }
-             heightMore.constant = 0
-        }
-    }
-    
-    func setSelect(isSelect: Bool){
-        if isSelect{
-            vBG.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
-            heightMore.constant = 24
-        } else {
-            vBG.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
-            heightMore.constant = 0
-        }
+        self.lbNumber.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1)"
     }
 }
