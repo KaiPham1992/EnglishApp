@@ -14,10 +14,26 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
 
     @IBOutlet weak var tbNotification: UITableView!
 	var presenter: NotificationListPresenterProtocol?
+    
+    let refreshControl = UIRefreshControl()
+    
+    var listNotification = [NotificationEntity]() {
+        didSet {
+            tbNotification.reloadData()
+        }
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        presenter?.getNotification()
+        
+        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+    }
+    
+    @objc func pullToRefresh() {
+        refreshControl.endRefreshing()
+        presenter?.getNotification()
     }
     
     override func setUpNavigation() {
@@ -31,6 +47,10 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
     override func setTitleUI() {
         super.setTitleUI()
     }
+    
+    func didLoadNotification(listNotification: [NotificationEntity]) {
+        self.listNotification = listNotification
+    }
 }
 
 
@@ -40,22 +60,38 @@ extension NotificationListViewController: UITableViewDelegate, UITableViewDataSo
         tbNotification.dataSource = self
         tbNotification.registerXibFile(NotificationCell.self)
         tbNotification.separatorStyle = .none
+        tbNotification.clipsToBounds = true
         
         tbNotification.estimatedRowHeight = 55
         tbNotification.rowHeight = UITableView.automaticDimension
+        
+        tbNotification.refreshControl = self.refreshControl
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(NotificationCell.self, for: indexPath)
+        cell.notification = self.listNotification[indexPath.item]
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return listNotification.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.push(controller: NotificationDetailRouter.createModule())
+        let noti = self.listNotification[indexPath.item]
+        if let id = Int(noti.id&) {
+            presenter?.readNotification(id: id)
+        }
+        
+        self.push(controller: NotificationDetailRouter.createModule(notification: noti))
+        
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if self.listNotification.count > 5 && indexPath.item >= self.listNotification.count - 5 {
+            presenter?.loadMoreNotification()
+        }
     }
 }

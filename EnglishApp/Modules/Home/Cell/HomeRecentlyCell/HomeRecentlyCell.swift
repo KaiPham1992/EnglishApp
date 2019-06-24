@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeRecentlyCell: UITableViewCell {
+class HomeRecentlyCell: BaseTableCell {
 
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!

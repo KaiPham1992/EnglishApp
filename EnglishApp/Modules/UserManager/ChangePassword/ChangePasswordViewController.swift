@@ -37,8 +37,8 @@ class ChangePasswordViewController: BaseViewController {
         vNewPass.tfInput.isSecureTextEntry = true
         VReNewPass.tfInput.isSecureTextEntry = true
         
-        vNewPass.setTitleAndPlaceHolder(title: LocalizableKey.newPassword.showLanguage, placeHolder: "********")
-        VReNewPass.setTitleAndPlaceHolder(title: LocalizableKey.reNewPassword.showLanguage, placeHolder: "********")
+        vNewPass.setTitleAndPlaceHolder(title: LocalizableKey.newPassword.showLanguage, placeHolder: LocalizableKey.enterPassword.showLanguage)
+        VReNewPass.setTitleAndPlaceHolder(title: LocalizableKey.reNewPassword.showLanguage, placeHolder: LocalizableKey.enterRePassword.showLanguage)
         btnChange.setTitle(LocalizableKey.changePasssword.showLanguage.uppercased(), for: .normal)
     }
     

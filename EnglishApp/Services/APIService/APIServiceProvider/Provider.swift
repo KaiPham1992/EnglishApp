@@ -36,4 +36,8 @@ class Provider {
     var theoryAPIService: TheoryAPIService{
         return TheoryAPIService(network: networkManager)
     }
+    
+    var qAAPIService: QAAPIServiceProtocol{
+        return QAAPIService(network: networkManager)
+    }
 }

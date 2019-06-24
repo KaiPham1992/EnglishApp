@@ -15,7 +15,16 @@ protocol HomeViewControllerDelegate: class {
 
 class HomeViewController: BaseViewController, HomeViewProtocol {
     @IBOutlet weak var tbHome: UITableView!
+    
     var presenter: HomePresenterProtocol?
+    var vcMenu:  MenuViewController!
+    
+    lazy var btnOver: UIButton = {
+       let btn = UIButton()
+        btn.backgroundColor = UIColor.black.withAlphaComponent(0.3)
+        btn.addTarget(self, action: #selector(hideMenu), for: .touchUpInside)
+        return btn
+    }()
     
     weak var delegate: HomeViewControllerDelegate?
     
@@ -33,7 +42,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     
     var listActivities = [Acitvity]() {
         didSet {
-             tbHome.reloadData()
+            tbHome.reloadData()
         }
     }
     
@@ -47,6 +56,11 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     
     override func setUpViews() {
         super.setUpViews()
+        vcMenu = MenuRouter.createModule()
+        
+        AppRouter.shared.rootNavigation = self.navigationController
+        NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
         
     }
     
@@ -57,7 +71,20 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        setColorStatusBar()
         addHeaderHome()
+        countNotification()
+    }
+    
+    func countNotification() {
+         self.addButtonNotificationNavigation(count: 0, action: #selector(self.btnNotificationTapped))
+        Provider.shared.notificationAPIService.getNotification(offset: 0, success: { parentNotification in
+            guard let total = parentNotification?.totalUnread else { return }
+            UIApplication.shared.applicationIconBadgeNumber = total
+            self.addButtonNotificationNavigation(count: total, action: #selector(self.btnNotificationTapped))
+        }) { _ in
+            
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,7 +101,8 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         //---
         
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
-        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: #selector(btnNotificationTapped))
+//        addButtonNotificationNavigation(count: 10, action: nil)
+//        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: #selector(btnNotificationTapped))
     }
     
     func removeHeaderHome() {
@@ -86,7 +114,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
     }
     
     @objc func btnMenuTapped() {
-       self.delegate?.showLefMenuTapped()
+        showMenu()
     }
     
     func didGetActivities(activities: [Acitvity]) {
@@ -194,4 +222,90 @@ extension HomeViewController: HomeActionCellDelegate {
         self.push(controller: FindRouter.createModule())
     }
     
+}
+
+extension HomeViewController: MenuViewControllerDelegate {
+    func controllerSelected(itemSelected: MenuItem) {
+        
+        guard let itemIcon = itemSelected.imgIcon else { return }
+        switch itemIcon {
+        case AppImage.imgInfo:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
+            
+            
+        case AppImage.imgQA:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: QARouter.createModule())
+            
+        case AppImage.imgChangePass:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: ChangePasswordRouter.createModule())
+            
+        case AppImage.imgLanguage:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
+        case AppImage.imgSaved:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: SaveDictionaryRouter.createModule())
+        case AppImage.imgTop:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
+        case AppImage.imgHistoryCheck:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: HistoryExerciseRouter.createModule())
+            
+        case AppImage.imgPrivacy:
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
+        case AppImage.imgLogout:
+            PopUpHelper.shared.showLogout(completionNo: {
+                self.logout()
+            }) {
+                
+            }
+        default:
+            break
+        }
+    }
+    
+    func showMenu() {
+        guard let window = UIApplication.shared.keyWindow else { return }
+        window.addSubview(btnOver)
+        btnOver.anchor(window.topAnchor, left: window.leftAnchor, bottom: window.bottomAnchor, right: window.rightAnchor, topConstant: -40, leftConstant: 0, bottomConstant: 0, rightConstant: 0)
+        
+        window.addSubview(vcMenu.view)
+        vcMenu.viewWillAppear(true)
+        vcMenu.delegateController = self
+        vcMenu.view.frame = CGRect(x: -300, y: 0, width: 300, height: window.frame.height)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.vcMenu.view.frame = CGRect(x: 0, y: 0, width: 300, height: window.frame.height)
+        }
+    }
+    
+    @objc func hideMenu() {
+        self.btnOver.removeFromSuperview()
+        guard let window = UIApplication.shared.keyWindow else { return }
+        UIView.animate(withDuration: 0.3, animations: {
+            self.vcMenu.view.frame = CGRect(x: -300, y: 0, width: 300, height: window.frame.height)
+            
+        }) { _ in
+            self.vcMenu.view.removeFromSuperview()
+            
+        }
+        
+        
+    }
+    
+    func logout() {
+        ProgressView.shared.show()
+        Provider.shared.userAPIService.logout(success: { (_) in
+            ProgressView.shared.hide()
+            UserDefaultHelper.shared.clearUser()
+            AppRouter.shared.openLogin()
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

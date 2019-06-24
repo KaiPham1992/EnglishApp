@@ -18,6 +18,11 @@ protocol QAWireframeProtocol: class {
 protocol QAPresenterProtocol: class {
 
     var interactor: QAInteractorInputProtocol? { get set }
+    
+    var listQA: [QAEntity] {get set}
+    func getQA()
+    func loadMoreQA()
+    func sendQA(qa: String)
 }
 
 //MARK: Interactor -
@@ -39,4 +44,5 @@ protocol QAViewProtocol: class {
     var presenter: QAPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetQA(list: [QAEntity])
 }

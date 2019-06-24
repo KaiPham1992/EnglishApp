@@ -214,11 +214,11 @@ extension UserEndPoint: EndPointType {
     var headers: HTTPHeaders? {
         switch self {
         case .updateProfileSocial:
-            var header: [String: String] = ["Content-Type": "application/json"]
+            let header: [String: String] = ["Content-Type": "application/json"]
 //            header["Authorization"] = "Bearer " + DataManager.shared.tempToken
             return header
         default:
-            var header = DefaultHeader().addAuthHeader()
+            let header = DefaultHeader().addAuthHeader()
             return header
         }
         

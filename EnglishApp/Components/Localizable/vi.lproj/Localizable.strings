@@ -291,3 +291,8 @@
 "SENT_NEW_PASSWORD" = "Mật khẩu mới được gửi về email";
 "pleaseEnterCurrentPassword" = "Vui lòng nhập mật khẩu hiện tại";
 "pleaseEnterNewPassword" = "Vui lòng nhập mật khẩu mới";
+
+"enterPassword" = "Nhập mật khẩu";
+"enterRePassword" = "Nhập lại mật khẩu";
+"enterCaptcha" = "Nhập captcha";
+"signUpSuccess" = "Đắng ký thành công";

@@ -13,23 +13,23 @@ class NotificationEntity: BaseEntity {
     var id: String?
     var title: String?
     var content: String?
+    
     var isReadString: String?
     var isRead: Bool?
     var readTime: Date?
     var createTime: Date?
-    var createFromTimestamp: Date?
+    
     var actionKey: String?
     var screen: String?
     var objectId: String?
+    var url: URL?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
         self.id <- map["_id"]
-        self.title <- map["_title"]
-        self.content <- map["_content"]
-//        self.createTime <- (map["create_time"], yyyyMMddHHmmssTransform())
-//        self.readTime <- (map["read_time"], yyyyMMddHHmmssTransform())
-        self.createFromTimestamp <- (map["create_time_mi"], AppTimestampTransform())
+        self.title <- map["title"]
+        self.content <- map["content"]
+        self.createTime <- (map["created_time_mi"], AppTimestampTransform())
         self.isRead <- map["is_read"]
         self.isReadString <- map["is_read"]
         self.isRead =  self.isReadString == "1"

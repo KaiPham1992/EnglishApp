@@ -36,11 +36,13 @@ class SignUpViewController: BaseViewController {
         vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage, placeHolder: LocalizableKey.enterDisplayName.showLanguage)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
-        vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: "********")
-        vRePassword.setTitleAndPlaceHolder(title: LocalizableKey.reNewPassword.showLanguage, placeHolder: "********")
+        vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: LocalizableKey.enterPassword.showLanguage)
+        vRePassword.setTitleAndPlaceHolder(title: LocalizableKey.reNewPassword.showLanguage, placeHolder: LocalizableKey.enterRePassword.showLanguage)
         btnSignUp.setTitle(LocalizableKey.LoginButtonSignUp.showLanguage, for: .normal)
         vPassword.tfInput.isSecureTextEntry = true
         vRePassword.tfInput.isSecureTextEntry = true
+        
+        tfCaptcha.placeholder = LocalizableKey.enterCaptcha.showLanguage
     }
     
     @IBAction func btnBackBlackTapped() {
@@ -124,7 +126,9 @@ extension SignUpViewController: SignUpViewProtocol {
     }
     
     func signUpSuccess(user: UserEntity?) {
-        AppRouter.shared.openHome()
+        PopUpHelper.shared.showSignUpSuccess {
+            AppRouter.shared.openHome()
+        }
     }
     
     func signUpError(error: APIError) {

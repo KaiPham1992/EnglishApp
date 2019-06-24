@@ -10,6 +10,8 @@ import UIKit
 import DropDown
 
 class AppDropDownCell: DropDownCell {
+    @IBOutlet weak var lbContent: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }

@@ -72,6 +72,9 @@
                                         <constraint firstAttribute="width" constant="30" id="sVe-2V-83K"/>
                                     </constraints>
                                     <state key="normal" image="GoToQA"/>
+                                    <connections>
+                                        <action selector="btnSearchTapped" destination="-1" eventType="touchUpInside" id="UhT-ph-MLx"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 kim cương cho 1 lần đặt câu hỏi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dBh-gC-Lki">
                                     <rect key="frame" x="20" y="109" width="335" height="11.5"/>

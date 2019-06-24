@@ -18,6 +18,11 @@ protocol NotificationListWireframeProtocol: class {
 protocol NotificationListPresenterProtocol: class {
 
     var interactor: NotificationListInteractorInputProtocol? { get set }
+    
+    func getNotification()
+    func loadMoreNotification()
+    func readNotification(id: Int)
+    var canLoadMore: Bool {get set }
 }
 
 //MARK: Interactor -
@@ -39,4 +44,5 @@ protocol NotificationListViewProtocol: class {
     var presenter: NotificationListPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didLoadNotification(listNotification: [NotificationEntity]) 
 }

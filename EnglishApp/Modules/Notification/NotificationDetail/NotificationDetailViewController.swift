@@ -13,9 +13,33 @@ import UIKit
 class NotificationDetailViewController: BaseViewController, NotificationDetailViewProtocol {
 
 	var presenter: NotificationDetailPresenterProtocol?
+    var notification: NotificationEntity?
+    
+    @IBOutlet weak var imgIcon: UIImageView!
+    @IBOutlet weak var lbTitle: UILabel!
+    @IBOutlet weak var lbContent: UILabel!
+    @IBOutlet weak var lbTime: UILabel!
+    
+    @IBOutlet weak var heightImage: NSLayoutConstraint!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        showData()
+        
+        
+    }
+    
+    func showData() {
+        guard let notification = notification else { return }
+        lbContent.text = notification.content
+        lbTime.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
+        lbTitle.text = notification.title
+        
+        if notification.url == nil {
+            heightImage.constant = 0
+        } else {
+            heightImage.constant = 9 * self.view.frame.width/16
+        }
     }
 
     override func setUpNavigation() {

@@ -23,9 +23,10 @@ class QAEntity: BaseEntity {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        self.id <- map["id"]
-        self.title <- map["title"]
-        self.date <- map["date"]
+        self.id <- map["_id"]
+        self.title <- map["question_name"]
+        self.content <- map["content"]
+        self.date <- (map["create_time_mi"], AppTimestampTransform())
     }
     
     class func toArray() -> [QAEntity] {

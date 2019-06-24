@@ -15,11 +15,51 @@ class NotificationListPresenter: NotificationListPresenterProtocol, Notification
     weak private var view: NotificationListViewProtocol?
     var interactor: NotificationListInteractorInputProtocol?
     private let router: NotificationListWireframeProtocol
+    
+    var listNotification = [NotificationEntity]()
+    var canLoadMore: Bool = false
 
     init(interface: NotificationListViewProtocol, interactor: NotificationListInteractorInputProtocol?, router: NotificationListWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
+    
+    func getNotification() {
+        ProgressView.shared.show()
+        Provider.shared.notificationAPIService.getNotification(offset: 0, success: { object in
+            ProgressView.shared.hide()
+            guard let list = object?.notifications else { return }
+            self.listNotification = list
+            self.canLoadMore = list.count == limit
+            self.view?.didLoadNotification(listNotification: self.listNotification)
+        }) { error in
+            ProgressView.shared.hide()
+        }
+    }
+    
+    func loadMoreNotification() {
+        if !canLoadMore {
+            return
+        }
+        
+        Provider.shared.notificationAPIService.getNotification(offset: self.listNotification.count, success: { object in
+            guard let list = object?.notifications else { return }
+            self.canLoadMore = list.count == limit
+            self.listNotification.append(contentsOf: list)
+            self.view?.didLoadNotification(listNotification: self.listNotification)
+        }) { error in
+            
+        }
+    }
+    
+    func readNotification(id: Int) {
+        Provider.shared.notificationAPIService.readNotification(notificationId: id, success: { _ in
+            
+        }) { _ in
+            
+        }
+    }
 
+    
 }

@@ -151,6 +151,11 @@ class PopUpHelper {
         popUp.showPopup(message: LocalizableKey.changePassswordSuccess.showLanguage, confirm: completionYes)
     }
     
+    func showSignUpSuccess(completionYes: CompletionClosure?) {
+        let popUp = UpdateAccountPopup()
+        popUp.showPopup(message: LocalizableKey.signUpSuccess.showLanguage, confirm: completionYes)
+    }
+    
     func showEditProfile(completionYes: CompletionClosure?) {
         let popUp = UpdateAccountPopup()
         popUp.showPopup(message: LocalizableKey.editProfileSuccess.showLanguage, confirm: completionYes)
