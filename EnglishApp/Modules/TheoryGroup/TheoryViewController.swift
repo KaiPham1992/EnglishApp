@@ -17,6 +17,7 @@ class TheoryViewController: PageViewController, TheoryViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        
         setTitleNavigation(title: LocalizableKey.theory.showLanguage)
         addButtonImageToNavigation(image: #imageLiteral(resourceName: "Material_Icons_white_search"), style: .right, action: #selector(clickButtonSearch))
     }
@@ -29,6 +30,7 @@ class TheoryViewController: PageViewController, TheoryViewProtocol {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = false
         self.edgesForExtendedLayout = UIRectEdge.bottom
+        self.view.window?.isHidden = true
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

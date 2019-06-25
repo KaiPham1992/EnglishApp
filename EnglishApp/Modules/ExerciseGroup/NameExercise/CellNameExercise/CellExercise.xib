@@ -33,7 +33,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="302" height="1000"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-ch-1F6">
-                                        <rect key="frame" x="0.0" y="0.0" width="302" height="189"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="489.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hh-EP-rfq">
                                                 <rect key="frame" x="16" y="10" width="183.5" height="18"/>
@@ -42,55 +42,35 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-eN-hh2">
-                                                <rect key="frame" x="14" y="28" width="274" height="141"/>
+                                                <rect key="frame" x="14" y="28" width="274" height="156.5"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="141" id="oHX-bS-d62"/>
-                                                </constraints>
-                                                <string key="text">In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wdsadhjasjdgasjhdgajsdgjasdgasdjhasgddasdhjkagsdhjasdasghdagsdfasdasgdfasgdfasgdfahsgdfas</string>
+                                                <string key="text">In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a internet.</string>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkZ-w4-d5Q" customClass="ViewGradient" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="89" width="302" height="100"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Qe-qj-YrB">
-                                                        <rect key="frame" x="0.0" y="76" width="302" height="24"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="24" id="val-9J-whX"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                                                        <color key="tintColor" red="0.12549019610000001" green="0.70980392160000005" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <state key="normal" title="Xem them"/>
-                                                        <connections>
-                                                            <action selector="showMoreQuestion:" destination="gTV-IL-0wX" eventType="touchUpInside" id="VwI-Ew-YCn"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="bottom" secondItem="6Qe-qj-YrB" secondAttribute="bottom" id="SXv-RW-kv9"/>
-                                                    <constraint firstAttribute="height" constant="100" id="X63-Uf-2Ep"/>
-                                                    <constraint firstItem="6Qe-qj-YrB" firstAttribute="leading" secondItem="XkZ-w4-d5Q" secondAttribute="leading" id="ec9-uG-BVK"/>
-                                                    <constraint firstAttribute="trailing" secondItem="6Qe-qj-YrB" secondAttribute="trailing" id="qj2-2C-0xQ"/>
-                                                </constraints>
-                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zm-RA-tz8">
+                                                <rect key="frame" x="14" y="192.5" width="274" height="297"/>
+                                                <string key="text">1. A logo is a _________. A. company’s name B. special company C. type of product D. company symbol 2. A popular form of advertising is to _________.  A. wear jeans B. use logo C. watch TV D. use different products  3. A good slogan is _________.  A. easy to remember B. useful to produce C. simple to make D. easy to buy  4. The main purpose of an advertisement is to _________.  A. sell you something you do not want B. make you feel rich and famous  C. make you buy the product D. pay the TV station </string>
+                                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="XkZ-w4-d5Q" firstAttribute="bottom" secondItem="KRm-eN-hh2" secondAttribute="bottom" constant="20" id="9Ne-iX-uiC"/>
                                             <constraint firstItem="KRm-eN-hh2" firstAttribute="leading" secondItem="hxi-ch-1F6" secondAttribute="leading" constant="14" id="CIO-H9-rdl"/>
+                                            <constraint firstItem="0zm-RA-tz8" firstAttribute="top" secondItem="KRm-eN-hh2" secondAttribute="bottom" constant="8" id="LrT-6h-Lrz"/>
+                                            <constraint firstItem="0zm-RA-tz8" firstAttribute="leading" secondItem="KRm-eN-hh2" secondAttribute="leading" id="OVH-Z1-Mya"/>
+                                            <constraint firstAttribute="bottom" secondItem="0zm-RA-tz8" secondAttribute="bottom" id="QiP-hh-FXO"/>
                                             <constraint firstItem="KRm-eN-hh2" firstAttribute="top" secondItem="5hh-EP-rfq" secondAttribute="bottom" id="UJO-zq-vZo"/>
                                             <constraint firstAttribute="trailing" secondItem="KRm-eN-hh2" secondAttribute="trailing" constant="14" id="VaF-jb-Rkb"/>
-                                            <constraint firstAttribute="bottom" secondItem="KRm-eN-hh2" secondAttribute="bottom" constant="20" id="YQd-OW-hee"/>
+                                            <constraint firstItem="0zm-RA-tz8" firstAttribute="trailing" secondItem="KRm-eN-hh2" secondAttribute="trailing" id="Y81-UE-Vdj"/>
                                             <constraint firstItem="5hh-EP-rfq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="top" constant="10" id="p4L-fz-Dxs"/>
-                                            <constraint firstItem="XkZ-w4-d5Q" firstAttribute="leading" secondItem="hxi-ch-1F6" secondAttribute="leading" id="pPc-nn-SRE"/>
-                                            <constraint firstAttribute="trailing" secondItem="XkZ-w4-d5Q" secondAttribute="trailing" id="u65-IG-gVa"/>
                                             <constraint firstItem="5hh-EP-rfq" firstAttribute="leading" secondItem="hxi-ch-1F6" secondAttribute="leading" constant="16" id="wT1-W3-0IY"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yD4-u9-JSq">
-                                        <rect key="frame" x="0.0" y="214" width="302" height="786"/>
+                                        <rect key="frame" x="0.0" y="499.5" width="302" height="500.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </tableView>
                                 </subviews>
@@ -101,7 +81,7 @@
                                     <constraint firstAttribute="trailing" secondItem="yD4-u9-JSq" secondAttribute="trailing" id="B5I-1Y-yRx"/>
                                     <constraint firstItem="hxi-ch-1F6" firstAttribute="leading" secondItem="Ih8-EC-UFW" secondAttribute="leading" id="C78-vc-lkf"/>
                                     <constraint firstItem="hxi-ch-1F6" firstAttribute="top" secondItem="Ih8-EC-UFW" secondAttribute="top" id="S7L-6m-Hyz"/>
-                                    <constraint firstItem="yD4-u9-JSq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="bottom" constant="25" id="g5Y-DO-lra"/>
+                                    <constraint firstItem="yD4-u9-JSq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="bottom" constant="10" id="dag-M4-5PP"/>
                                     <constraint firstAttribute="height" constant="1000" id="liS-4A-3QI"/>
                                     <constraint firstAttribute="bottom" secondItem="yD4-u9-JSq" secondAttribute="bottom" id="zdB-Fd-nXl"/>
                                 </constraints>
@@ -125,13 +105,9 @@
             </constraints>
             <size key="customSize" width="302" height="889"/>
             <connections>
-                <outlet property="btnSeeMore" destination="6Qe-qj-YrB" id="Rua-fr-Crq"/>
                 <outlet property="heightScrollView" destination="liS-4A-3QI" id="UOB-sw-HqD"/>
-                <outlet property="heightTVContent" destination="oHX-bS-d62" id="hUH-eo-Nt7"/>
-                <outlet property="heightVBlur" destination="X63-Uf-2Ep" id="hmN-QJ-gUC"/>
                 <outlet property="tbvNameExercise" destination="yD4-u9-JSq" id="Jn7-EO-dKz"/>
                 <outlet property="tvContent" destination="KRm-eN-hh2" id="PKM-sD-Nsu"/>
-                <outlet property="vBlur" destination="XkZ-w4-d5Q" id="Bov-u5-BQb"/>
                 <outlet property="vQuestion" destination="hxi-ch-1F6" id="Ycq-hI-GMp"/>
             </connections>
             <point key="canvasLocation" x="320.28985507246381" y="389.39732142857139"/>

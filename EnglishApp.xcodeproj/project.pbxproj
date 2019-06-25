@@ -189,6 +189,24 @@
 		766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
 		766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
 		766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 766D137E228F2629005E47F0 /* DetailLessonViewController.xib */; };
+		76870EA322C0EE6100F12544 /* ViewFillQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EA222C0EE6100F12544 /* ViewFillQuestion.xib */; };
+		76870EA422C0EE6100F12544 /* ViewFillQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EA222C0EE6100F12544 /* ViewFillQuestion.xib */; };
+		76870EA522C0EE6100F12544 /* ViewFillQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EA222C0EE6100F12544 /* ViewFillQuestion.xib */; };
+		76870EA722C0EE7700F12544 /* ViewFillQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EA622C0EE7700F12544 /* ViewFillQuestion.swift */; };
+		76870EA822C0EE7700F12544 /* ViewFillQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EA622C0EE7700F12544 /* ViewFillQuestion.swift */; };
+		76870EA922C0EE7700F12544 /* ViewFillQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EA622C0EE7700F12544 /* ViewFillQuestion.swift */; };
+		76870EAC22C0F00900F12544 /* CellFillExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EAA22C0F00900F12544 /* CellFillExercise.swift */; };
+		76870EAD22C0F00900F12544 /* CellFillExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EAA22C0F00900F12544 /* CellFillExercise.swift */; };
+		76870EAE22C0F00900F12544 /* CellFillExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EAA22C0F00900F12544 /* CellFillExercise.swift */; };
+		76870EAF22C0F00900F12544 /* CellFillExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EAB22C0F00900F12544 /* CellFillExercise.xib */; };
+		76870EB022C0F00900F12544 /* CellFillExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EAB22C0F00900F12544 /* CellFillExercise.xib */; };
+		76870EB122C0F00900F12544 /* CellFillExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EAB22C0F00900F12544 /* CellFillExercise.xib */; };
+		768ED33322BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */; };
+		768ED33422BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */; };
+		768ED33522BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */; };
+		768ED33622BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768ED33222BDB63400D8BEB0 /* CellDropDownQuestion.xib */; };
+		768ED33722BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768ED33222BDB63400D8BEB0 /* CellDropDownQuestion.xib */; };
+		768ED33822BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 768ED33222BDB63400D8BEB0 /* CellDropDownQuestion.xib */; };
 		769A3BAB229FE53A00CA55BD /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BAA229FE53A00CA55BD /* CalendarView.swift */; };
 		769A3BAC229FE53A00CA55BD /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BAA229FE53A00CA55BD /* CalendarView.swift */; };
 		769A3BAD229FE53A00CA55BD /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BAA229FE53A00CA55BD /* CalendarView.swift */; };
@@ -1904,6 +1922,12 @@
 		766D137C228F2629005E47F0 /* DetailLessonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonProtocols.swift; sourceTree = "<group>"; };
 		766D137D228F2629005E47F0 /* DetailLessonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailLessonInteractor.swift; sourceTree = "<group>"; };
 		766D137E228F2629005E47F0 /* DetailLessonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailLessonViewController.xib; sourceTree = "<group>"; };
+		76870EA222C0EE6100F12544 /* ViewFillQuestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewFillQuestion.xib; sourceTree = "<group>"; };
+		76870EA622C0EE7700F12544 /* ViewFillQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFillQuestion.swift; sourceTree = "<group>"; };
+		76870EAA22C0F00900F12544 /* CellFillExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFillExercise.swift; sourceTree = "<group>"; };
+		76870EAB22C0F00900F12544 /* CellFillExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellFillExercise.xib; sourceTree = "<group>"; };
+		768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDropDownQuestion.swift; sourceTree = "<group>"; };
+		768ED33222BDB63400D8BEB0 /* CellDropDownQuestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellDropDownQuestion.xib; sourceTree = "<group>"; };
 		769A3BAA229FE53A00CA55BD /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		769A3BAF229FE66E00CA55BD /* HistoryExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExercisePresenter.swift; sourceTree = "<group>"; };
 		769A3BB0229FE66F00CA55BD /* HistoryExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseRouter.swift; sourceTree = "<group>"; };
@@ -2934,6 +2958,12 @@
 				76CE323E2296A61100E998FB /* CellQuestion.xib */,
 				7643DE9B22A4DD3600B7C323 /* CellExercise.swift */,
 				7643DE9C22A4DD3600B7C323 /* CellExercise.xib */,
+				768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */,
+				768ED33222BDB63400D8BEB0 /* CellDropDownQuestion.xib */,
+				76870EA222C0EE6100F12544 /* ViewFillQuestion.xib */,
+				76870EA622C0EE7700F12544 /* ViewFillQuestion.swift */,
+				76870EAA22C0F00900F12544 /* CellFillExercise.swift */,
+				76870EAB22C0F00900F12544 /* CellFillExercise.xib */,
 			);
 			path = CellNameExercise;
 			sourceTree = "<group>";
@@ -4620,6 +4650,7 @@
 				76CE31AF2295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
+				76870EAF22C0F00900F12544 /* CellFillExercise.xib in Resources */,
 				76CE31962295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				76EE392B22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */,
 				DE89D23622A425E2000638B0 /* BXHView.xib in Resources */,
@@ -4652,6 +4683,7 @@
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584802291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
+				76870EA322C0EE6100F12544 /* ViewFillQuestion.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DE49F7E622A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */,
 				DEF1C27122903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
@@ -4688,6 +4720,7 @@
 				DED5A00722A562C300872261 /* TopThreeView.xib in Resources */,
 				76BD143B22ACC75500A48635 /* ReportQuestionView.xib in Resources */,
 				76BD143222ACB8B500A48635 /* ExplainSolutionViewController.xib in Resources */,
+				768ED33622BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				769A3BC4229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
@@ -4761,6 +4794,7 @@
 				76CE31B02295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
+				76870EB022C0F00900F12544 /* CellFillExercise.xib in Resources */,
 				76CE31972295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				76EE392C22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */,
 				DE89D23722A425E2000638B0 /* BXHView.xib in Resources */,
@@ -4793,6 +4827,7 @@
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584812291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
+				76870EA422C0EE6100F12544 /* ViewFillQuestion.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DE49F7E722A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */,
 				DEF1C27222903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
@@ -4829,6 +4864,7 @@
 				DED5A00822A562C300872261 /* TopThreeView.xib in Resources */,
 				76BD143C22ACC75500A48635 /* ReportQuestionView.xib in Resources */,
 				76BD143322ACB8B500A48635 /* ExplainSolutionViewController.xib in Resources */,
+				768ED33722BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				769A3BC5229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
@@ -4902,6 +4938,7 @@
 				76CE31B12295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
+				76870EB122C0F00900F12544 /* CellFillExercise.xib in Resources */,
 				76CE31982295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				76EE392D22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */,
 				DE89D23822A425E2000638B0 /* BXHView.xib in Resources */,
@@ -4934,6 +4971,7 @@
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				76CF0C86229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584822291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
+				76870EA522C0EE6100F12544 /* ViewFillQuestion.xib in Resources */,
 				766D1328228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
 				DE49F7E822A3CB7400A92C63 /* ChangeGiftCell.xib in Resources */,
 				DEF1C27322903FA5005AD1A3 /* HomeRecentlyCell.xib in Resources */,
@@ -4970,6 +5008,7 @@
 				DED5A00922A562C300872261 /* TopThreeView.xib in Resources */,
 				76BD143D22ACC75500A48635 /* ReportQuestionView.xib in Resources */,
 				76BD143422ACB8B500A48635 /* ExplainSolutionViewController.xib in Resources */,
+				768ED33822BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
 				769A3BC6229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
@@ -5398,6 +5437,7 @@
 				76EE391C22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
 				76F7F443229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
+				76870EA722C0EE7700F12544 /* ViewFillQuestion.swift in Sources */,
 				76E2FECA228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DEC62AC922930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				769A3BB8229FE66F00CA55BD /* HistoryExerciseRouter.swift in Sources */,
@@ -5413,6 +5453,7 @@
 				DEB9613A228993640046801B /* QACell.swift in Sources */,
 				76CE31932295A9E700E998FB /* CellLevelExercise.swift in Sources */,
 				DE952F8C2287D2A700E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				768ED33322BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */,
 				76E852F622B945870039751A /* TheoryEndpoint.swift in Sources */,
 				DE361F2F2283E85000FA3B0D /* PhoneEntity.swift in Sources */,
 				DE89D1DC22A413F5000638B0 /* RequireUpgradeContent.swift in Sources */,
@@ -5605,6 +5646,7 @@
 				DE361DE42283E54C00FA3B0D /* BaseViewXib.swift in Sources */,
 				DE952F7F2287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				DE952FA02287D2A700E3F688 /* FadeInOutAnimation.swift in Sources */,
+				76870EAC22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE361E9A2283E60500FA3B0D /* StringReachability.swift in Sources */,
 				76CE323F2296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE952F842287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -5879,6 +5921,7 @@
 				76EE391D22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
 				76F7F444229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
+				76870EA822C0EE7700F12544 /* ViewFillQuestion.swift in Sources */,
 				76E2FECB228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DEC62ACA22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				769A3BB9229FE66F00CA55BD /* HistoryExerciseRouter.swift in Sources */,
@@ -5894,6 +5937,7 @@
 				DEB9613B228993640046801B /* QACell.swift in Sources */,
 				76CE31942295A9E700E998FB /* CellLevelExercise.swift in Sources */,
 				DE952FC52287DF4800E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				768ED33422BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */,
 				76E852F722B945870039751A /* TheoryEndpoint.swift in Sources */,
 				DE952FC62287DF4800E3F688 /* PhoneEntity.swift in Sources */,
 				DE89D1DD22A413F5000638B0 /* RequireUpgradeContent.swift in Sources */,
@@ -6086,6 +6130,7 @@
 				DE952FF82287DF4800E3F688 /* BaseViewXib.swift in Sources */,
 				DE952FF92287DF4800E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				DE952FFA2287DF4800E3F688 /* FadeInOutAnimation.swift in Sources */,
+				76870EAD22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE952FFB2287DF4800E3F688 /* StringReachability.swift in Sources */,
 				76CE32402296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE952FFC2287DF4800E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
@@ -6360,6 +6405,7 @@
 				76EE391E22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
 				76F7F445229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
+				76870EA922C0EE7700F12544 /* ViewFillQuestion.swift in Sources */,
 				76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DEC62ACB22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
 				769A3BBA229FE66F00CA55BD /* HistoryExerciseRouter.swift in Sources */,
@@ -6375,6 +6421,7 @@
 				DEB9613C228993640046801B /* QACell.swift in Sources */,
 				76CE31952295A9E700E998FB /* CellLevelExercise.swift in Sources */,
 				DE9530732287DF6400E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
+				768ED33522BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */,
 				76E852F822B945870039751A /* TheoryEndpoint.swift in Sources */,
 				DE9530742287DF6400E3F688 /* PhoneEntity.swift in Sources */,
 				DE89D1DE22A413F5000638B0 /* RequireUpgradeContent.swift in Sources */,
@@ -6567,6 +6614,7 @@
 				DE9530A62287DF6400E3F688 /* BaseViewXib.swift in Sources */,
 				DE9530A72287DF6400E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */,
+				76870EAE22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE9530A92287DF6400E3F688 /* StringReachability.swift in Sources */,
 				76CE32412296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE9530AA2287DF6400E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
