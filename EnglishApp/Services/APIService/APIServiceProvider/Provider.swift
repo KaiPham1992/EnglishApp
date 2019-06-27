@@ -44,4 +44,8 @@ class Provider {
     var findAPIService: FindAPIServiceProtocol {
         return FindAPIService(network: networkManager)
     }
+    
+    var exerciseAPIService: ExerciseAPIServiceProtocol {
+        return ExerciseAPIService(network: networkManager)
+    }
 }

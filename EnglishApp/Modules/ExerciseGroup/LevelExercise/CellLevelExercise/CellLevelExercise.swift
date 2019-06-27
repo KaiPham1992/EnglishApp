@@ -10,6 +10,7 @@ import UIKit
 
 class CellLevelExercise: UITableViewCell {
 
+    @IBOutlet weak var lblNameExercise: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

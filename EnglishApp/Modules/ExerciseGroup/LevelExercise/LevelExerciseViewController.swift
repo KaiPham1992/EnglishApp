@@ -11,23 +11,25 @@
 import UIKit
 
 
-enum AssignLevel {
-    case assign
-    case level
-    case tryhard
+enum AssignLevel : Int {
+    case assign = 1
+    case level = 2
+    case tryhard = 3
 }
 
-class LevelExerciseViewController: BaseViewController, LevelExerciseViewProtocol {
+class LevelExerciseViewController: BaseViewController {
 
 	var presenter: LevelExercisePresenterProtocol?
     
     @IBOutlet weak var tbvLevelExercise: UITableView!
     var type: AssignLevel = .level
+    var offset: Int = 0 
     
     override func setUpViews() {
         super.setUpViews()
         if type == .level || type == .tryhard {
             tbvLevelExercise.registerXibFile(CellLevelExercise.self)
+            self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
         } else {
             tbvLevelExercise.registerXibFile(CellAssignExercise.self)
         }
@@ -51,20 +53,42 @@ class LevelExerciseViewController: BaseViewController, LevelExerciseViewProtocol
     }
 
 }
+
+extension LevelExerciseViewController : LevelExerciseViewProtocol{
+    func reloadView() {
+        tbvLevelExercise.reloadData()
+    }
+}
+
 extension LevelExerciseViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if type == .level || type == .tryhard {
+            let row = self.presenter?.getNumberRow() ?? 0
+            return row
+        } else {
+            return 10
+        }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if type == .level || type == .tryhard {
             let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
+            if let dataCell = self.presenter?.getItemExercise(indexPath: indexPath) {
+                cell.lblNameExercise.text = dataCell.name&
+            }
             return cell
         }
         let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
         return cell
+    }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.getNumberRow() ?? 0
+        if indexPath.row  == row - 1{
+            self.offset += limit
+            self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
+        }
     }
 }
 extension LevelExerciseViewController : UITableViewDelegate{

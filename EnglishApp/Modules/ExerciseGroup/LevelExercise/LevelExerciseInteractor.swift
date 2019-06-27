@@ -11,6 +11,20 @@
 import UIKit
 
 class LevelExerciseInteractor: LevelExerciseInteractorInputProtocol {
+    
 
     weak var presenter: LevelExerciseInteractorOutputProtocol?
+    
+    func getListExercise(category_id: Int,offset: Int) {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.getListExercise(type_test: 5, category_id: category_id, level: 1, offset: offset, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getListExerciseSuccessed(respone: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
+    
 }

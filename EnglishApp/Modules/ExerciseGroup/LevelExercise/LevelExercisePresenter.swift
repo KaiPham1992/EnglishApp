@@ -12,9 +12,12 @@ import UIKit
 
 class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInteractorOutputProtocol {
    
+   
     weak private var view: LevelExerciseViewProtocol?
     var interactor: LevelExerciseInteractorInputProtocol?
     private let router: LevelExerciseWireframeProtocol
+    var exerciseEntity: ListExerciseEntity?
+    var isLoadMore = true
 
     init(interface: LevelExerciseViewProtocol, interactor: LevelExerciseInteractorInputProtocol?, router: LevelExerciseWireframeProtocol) {
         self.view = interface
@@ -26,10 +29,32 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
         self.router.gotoExercise()
     }
     
+    func getNumberRow() -> Int? {
+        return exerciseEntity?.total_exercises
+    }
+    
+    func getItemExercise(indexPath: IndexPath) -> ExerciseEntity?{
+        return exerciseEntity?.exercises?[indexPath.row]
+    }
+    
     func gotoTryHard() {
         self.router.gotoTryHard()
     }
     func gotoChoiceExercise() {
         self.router.gotoChoiceExercise()
     }
+    func getListExercise(category_id: Int,offset: Int) {
+        if isLoadMore {
+            self.interactor?.getListExercise(category_id: category_id,offset: offset)
+        }
+    }
+    
+    func getListExerciseSuccessed(respone: ListExerciseEntity) {
+        self.exerciseEntity = respone
+        if (respone.exercises?.count ?? 0) < limit {
+            isLoadMore = false
+        }
+        self.view?.reloadView()
+    }
+    
 }
