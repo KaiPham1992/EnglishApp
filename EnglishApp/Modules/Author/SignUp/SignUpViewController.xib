@@ -21,6 +21,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController">
             <connections>
                 <outlet property="btnSignUp" destination="a74-Eu-grb" id="2Lu-Ew-q5n"/>
+                <outlet property="heightError" destination="lQh-Lo-Jbd" id="dyF-Mb-7fC"/>
                 <outlet property="imgCaptcha" destination="K6B-hg-kcZ" id="H4F-Y9-NL3"/>
                 <outlet property="lbStatus" destination="n6Y-yr-aQe" id="dnM-VF-6Dw"/>
                 <outlet property="tfCaptcha" destination="Pl2-Ln-QFb" id="UuU-j9-DdC"/>
@@ -112,7 +113,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6Y-yr-aQe">
                                     <rect key="frame" x="40" y="679" width="295" height="0.0"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" id="lQh-Lo-Jbd"/>
+                                        <constraint firstAttribute="height" id="lQh-Lo-Jbd"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>

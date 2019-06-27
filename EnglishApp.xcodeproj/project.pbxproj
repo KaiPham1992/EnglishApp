@@ -288,6 +288,72 @@
 		76BD143B22ACC75500A48635 /* ReportQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BD143A22ACC75500A48635 /* ReportQuestionView.xib */; };
 		76BD143C22ACC75500A48635 /* ReportQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BD143A22ACC75500A48635 /* ReportQuestionView.xib */; };
 		76BD143D22ACC75500A48635 /* ReportQuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76BD143A22ACC75500A48635 /* ReportQuestionView.xib */; };
+		76C8E2E022C19AB80076E65B /* ResultExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DA22C19AB80076E65B /* ResultExercisePresenter.swift */; };
+		76C8E2E122C19AB80076E65B /* ResultExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DA22C19AB80076E65B /* ResultExercisePresenter.swift */; };
+		76C8E2E222C19AB80076E65B /* ResultExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DA22C19AB80076E65B /* ResultExercisePresenter.swift */; };
+		76C8E2E322C19AB80076E65B /* ResultExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DB22C19AB80076E65B /* ResultExerciseRouter.swift */; };
+		76C8E2E422C19AB80076E65B /* ResultExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DB22C19AB80076E65B /* ResultExerciseRouter.swift */; };
+		76C8E2E522C19AB80076E65B /* ResultExerciseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DB22C19AB80076E65B /* ResultExerciseRouter.swift */; };
+		76C8E2E622C19AB80076E65B /* ResultExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DC22C19AB80076E65B /* ResultExerciseViewController.swift */; };
+		76C8E2E722C19AB80076E65B /* ResultExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DC22C19AB80076E65B /* ResultExerciseViewController.swift */; };
+		76C8E2E822C19AB80076E65B /* ResultExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DC22C19AB80076E65B /* ResultExerciseViewController.swift */; };
+		76C8E2E922C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DD22C19AB80076E65B /* ResultExerciseProtocols.swift */; };
+		76C8E2EA22C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DD22C19AB80076E65B /* ResultExerciseProtocols.swift */; };
+		76C8E2EB22C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DD22C19AB80076E65B /* ResultExerciseProtocols.swift */; };
+		76C8E2EC22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DE22C19AB80076E65B /* ResultExerciseInteractor.swift */; };
+		76C8E2ED22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DE22C19AB80076E65B /* ResultExerciseInteractor.swift */; };
+		76C8E2EE22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2DE22C19AB80076E65B /* ResultExerciseInteractor.swift */; };
+		76C8E2EF22C19AB80076E65B /* ResultExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2DF22C19AB80076E65B /* ResultExerciseViewController.xib */; };
+		76C8E2F022C19AB80076E65B /* ResultExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2DF22C19AB80076E65B /* ResultExerciseViewController.xib */; };
+		76C8E2F122C19AB80076E65B /* ResultExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2DF22C19AB80076E65B /* ResultExerciseViewController.xib */; };
+		76C8E2F522C19AE00076E65B /* CellResultFillQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2F322C19AE00076E65B /* CellResultFillQuestion.swift */; };
+		76C8E2F622C19AE00076E65B /* CellResultFillQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2F322C19AE00076E65B /* CellResultFillQuestion.swift */; };
+		76C8E2F722C19AE00076E65B /* CellResultFillQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2F322C19AE00076E65B /* CellResultFillQuestion.swift */; };
+		76C8E2F822C19AE00076E65B /* CellResultFillQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */; };
+		76C8E2F922C19AE00076E65B /* CellResultFillQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */; };
+		76C8E2FA22C19AE00076E65B /* CellResultFillQuestion.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */; };
+		76C8E2FD22C19B0C0076E65B /* CellResultExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */; };
+		76C8E2FE22C19B0C0076E65B /* CellResultExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */; };
+		76C8E2FF22C19B0C0076E65B /* CellResultExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */; };
+		76C8E30022C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
+		76C8E30122C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
+		76C8E30222C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
+		76C92F8922C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
+		76C92F8A22C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
+		76C92F8B22C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
+		76C92F8D22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
+		76C92F8E22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
+		76C92F8F22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
+		76C92F9122C4496E00E8ED69 /* FindEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */; };
+		76C92F9222C4496E00E8ED69 /* FindEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */; };
+		76C92F9322C4496E00E8ED69 /* FindEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */; };
+		76C92F9622C4878300E8ED69 /* ExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9522C4878300E8ED69 /* ExerciseEntity.swift */; };
+		76C92F9722C4878300E8ED69 /* ExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9522C4878300E8ED69 /* ExerciseEntity.swift */; };
+		76C92F9822C4878300E8ED69 /* ExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9522C4878300E8ED69 /* ExerciseEntity.swift */; };
+		76C92F9A22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9922C4888400E8ED69 /* ViewExerciseEntity.swift */; };
+		76C92F9B22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9922C4888400E8ED69 /* ViewExerciseEntity.swift */; };
+		76C92F9C22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9922C4888400E8ED69 /* ViewExerciseEntity.swift */; };
+		76C92F9E22C4895000E8ED69 /* QuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9D22C4895000E8ED69 /* QuestionEntity.swift */; };
+		76C92F9F22C4895000E8ED69 /* QuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9D22C4895000E8ED69 /* QuestionEntity.swift */; };
+		76C92FA022C4895000E8ED69 /* QuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9D22C4895000E8ED69 /* QuestionEntity.swift */; };
+		76C92FA222C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA122C48A0400E8ED69 /* ChildQuestionEntity.swift */; };
+		76C92FA322C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA122C48A0400E8ED69 /* ChildQuestionEntity.swift */; };
+		76C92FA422C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA122C48A0400E8ED69 /* ChildQuestionEntity.swift */; };
+		76C92FA622C48A7000E8ED69 /* OptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA522C48A7000E8ED69 /* OptionEntity.swift */; };
+		76C92FA722C48A7000E8ED69 /* OptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA522C48A7000E8ED69 /* OptionEntity.swift */; };
+		76C92FA822C48A7000E8ED69 /* OptionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA522C48A7000E8ED69 /* OptionEntity.swift */; };
+		76C92FAA22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA922C49E2700E8ED69 /* ExerciseAPIService.swift */; };
+		76C92FAB22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA922C49E2700E8ED69 /* ExerciseAPIService.swift */; };
+		76C92FAC22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FA922C49E2700E8ED69 /* ExerciseAPIService.swift */; };
+		76C92FAE22C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FAD22C4A1AA00E8ED69 /* ListExerciseEntity.swift */; };
+		76C92FAF22C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FAD22C4A1AA00E8ED69 /* ListExerciseEntity.swift */; };
+		76C92FB022C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FAD22C4A1AA00E8ED69 /* ListExerciseEntity.swift */; };
+		76C92FB222C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FB122C4A23600E8ED69 /* ExerciseEnpoint.swift */; };
+		76C92FB322C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FB122C4A23600E8ED69 /* ExerciseEnpoint.swift */; };
+		76C92FB422C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FB122C4A23600E8ED69 /* ExerciseEnpoint.swift */; };
+		76C92FB622C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FB522C4A93200E8ED69 /* LevelExerciseEntity.swift */; };
+		76C92FB722C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FB522C4A93200E8ED69 /* LevelExerciseEntity.swift */; };
+		76C92FB822C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92FB522C4A93200E8ED69 /* LevelExerciseEntity.swift */; };
 		76CE317E2295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
 		76CE317F2295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
 		76CE31802295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
@@ -1495,15 +1561,6 @@
 		DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */; };
 		DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */; };
 		DE95318C228846D400E3F688 /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */; };
-		DE9F0F8A228C700800A99869 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */; };
-		DE9F0F8B228C700800A99869 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */; };
-		DE9F0F8C228C700800A99869 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */; };
-		DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */; };
-		DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */; };
-		DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */; };
-		DE9F0F90228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
-		DE9F0F91228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
-		DE9F0F92228C700800A99869 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */; };
 		DEA932A222BF7ED80050FB1D /* QAEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */; };
 		DEA932A322BF7ED80050FB1D /* QAEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */; };
 		DEA932A422BF7ED80050FB1D /* QAEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */; };
@@ -1714,6 +1771,15 @@
 		DEC62AE522930EC400D7CECE /* BeePackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AD522930EC400D7CECE /* BeePackViewController.xib */; };
 		DEC62AE622930EC400D7CECE /* BeePackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AD522930EC400D7CECE /* BeePackViewController.xib */; };
 		DEC62AE722930EC400D7CECE /* BeePackViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEC62AD522930EC400D7CECE /* BeePackViewController.xib */; };
+		DEC7F92222C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F91F22C4EDA90096D3D1 /* Comfortaa-Regular.ttf */; };
+		DEC7F92322C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F91F22C4EDA90096D3D1 /* Comfortaa-Regular.ttf */; };
+		DEC7F92422C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F91F22C4EDA90096D3D1 /* Comfortaa-Regular.ttf */; };
+		DEC7F92522C4EDAA0096D3D1 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92022C4EDA90096D3D1 /* Comfortaa-Bold.ttf */; };
+		DEC7F92622C4EDAA0096D3D1 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92022C4EDA90096D3D1 /* Comfortaa-Bold.ttf */; };
+		DEC7F92722C4EDAA0096D3D1 /* Comfortaa-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92022C4EDA90096D3D1 /* Comfortaa-Bold.ttf */; };
+		DEC7F92822C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */; };
+		DEC7F92922C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */; };
+		DEC7F92A22C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */; };
 		DECD18FC22A25AB10054861D /* BeePackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD18FA22A25AB10054861D /* BeePackCell.swift */; };
 		DECD18FD22A25AB10054861D /* BeePackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD18FA22A25AB10054861D /* BeePackCell.swift */; };
 		DECD18FE22A25AB10054861D /* BeePackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD18FA22A25AB10054861D /* BeePackCell.swift */; };
@@ -1955,6 +2021,28 @@
 		76BD142222ACB8B500A48635 /* ExplainSolutionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExplainSolutionViewController.xib; sourceTree = "<group>"; };
 		76BD143622ACC73500A48635 /* ReportQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportQuestionView.swift; sourceTree = "<group>"; };
 		76BD143A22ACC75500A48635 /* ReportQuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportQuestionView.xib; sourceTree = "<group>"; };
+		76C8E2DA22C19AB80076E65B /* ResultExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExercisePresenter.swift; sourceTree = "<group>"; };
+		76C8E2DB22C19AB80076E65B /* ResultExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExerciseRouter.swift; sourceTree = "<group>"; };
+		76C8E2DC22C19AB80076E65B /* ResultExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExerciseViewController.swift; sourceTree = "<group>"; };
+		76C8E2DD22C19AB80076E65B /* ResultExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExerciseProtocols.swift; sourceTree = "<group>"; };
+		76C8E2DE22C19AB80076E65B /* ResultExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExerciseInteractor.swift; sourceTree = "<group>"; };
+		76C8E2DF22C19AB80076E65B /* ResultExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultExerciseViewController.xib; sourceTree = "<group>"; };
+		76C8E2F322C19AE00076E65B /* CellResultFillQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultFillQuestion.swift; sourceTree = "<group>"; };
+		76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultFillQuestion.xib; sourceTree = "<group>"; };
+		76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultExercise.swift; sourceTree = "<group>"; };
+		76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultExercise.xib; sourceTree = "<group>"; };
+		76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAPIService.swift; sourceTree = "<group>"; };
+		76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEnpoint.swift; sourceTree = "<group>"; };
+		76C92F9522C4878300E8ED69 /* ExerciseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEntity.swift; sourceTree = "<group>"; };
+		76C92F9922C4888400E8ED69 /* ViewExerciseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExerciseEntity.swift; sourceTree = "<group>"; };
+		76C92F9D22C4895000E8ED69 /* QuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionEntity.swift; sourceTree = "<group>"; };
+		76C92FA122C48A0400E8ED69 /* ChildQuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildQuestionEntity.swift; sourceTree = "<group>"; };
+		76C92FA522C48A7000E8ED69 /* OptionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionEntity.swift; sourceTree = "<group>"; };
+		76C92FA922C49E2700E8ED69 /* ExerciseAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseAPIService.swift; sourceTree = "<group>"; };
+		76C92FAD22C4A1AA00E8ED69 /* ListExerciseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListExerciseEntity.swift; sourceTree = "<group>"; };
+		76C92FB122C4A23600E8ED69 /* ExerciseEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEnpoint.swift; sourceTree = "<group>"; };
+		76C92FB522C4A93200E8ED69 /* LevelExerciseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseEntity.swift; sourceTree = "<group>"; };
 		76CE31782295A95300E998FB /* LevelExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExercisePresenter.swift; sourceTree = "<group>"; };
 		76CE31792295A95300E998FB /* LevelExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseRouter.swift; sourceTree = "<group>"; };
 		76CE317A2295A95300E998FB /* LevelExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseViewController.swift; sourceTree = "<group>"; };
@@ -2348,9 +2436,6 @@
 		DE953178228846D400E3F688 /* ChangePasswordProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordProtocols.swift; sourceTree = "<group>"; };
 		DE953179228846D400E3F688 /* ChangePasswordInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordInteractor.swift; sourceTree = "<group>"; };
 		DE95317A228846D400E3F688 /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
-		DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
-		DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
-		DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAEndPoint.swift; sourceTree = "<group>"; };
 		DEA932A522BF804B0050FB1D /* QAAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QAAPIService.swift; sourceTree = "<group>"; };
 		DEA932A922BFDF1C0050FB1D /* ProductEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductEntity.swift; sourceTree = "<group>"; };
@@ -2421,6 +2506,9 @@
 		DEC62AD322930EC400D7CECE /* BeePackProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackProtocols.swift; sourceTree = "<group>"; };
 		DEC62AD422930EC400D7CECE /* BeePackInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackInteractor.swift; sourceTree = "<group>"; };
 		DEC62AD522930EC400D7CECE /* BeePackViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeePackViewController.xib; sourceTree = "<group>"; };
+		DEC7F91F22C4EDA90096D3D1 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
+		DEC7F92022C4EDA90096D3D1 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
+		DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
 		DECD18FA22A25AB10054861D /* BeePackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackCell.swift; sourceTree = "<group>"; };
 		DECD18FB22A25AB10054861D /* BeePackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeePackCell.xib; sourceTree = "<group>"; };
 		DECD190222A25E1A0054861D /* BeePackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackEntity.swift; sourceTree = "<group>"; };
@@ -2818,6 +2906,53 @@
 			path = ReportQuestionPopUp;
 			sourceTree = "<group>";
 		};
+		76C8E2D922C19A940076E65B /* ResultExercise */ = {
+			isa = PBXGroup;
+			children = (
+				76C8E2F222C19AC10076E65B /* Cell */,
+				76C8E2DA22C19AB80076E65B /* ResultExercisePresenter.swift */,
+				76C8E2DB22C19AB80076E65B /* ResultExerciseRouter.swift */,
+				76C8E2DC22C19AB80076E65B /* ResultExerciseViewController.swift */,
+				76C8E2DD22C19AB80076E65B /* ResultExerciseProtocols.swift */,
+				76C8E2DE22C19AB80076E65B /* ResultExerciseInteractor.swift */,
+				76C8E2DF22C19AB80076E65B /* ResultExerciseViewController.xib */,
+			);
+			path = ResultExercise;
+			sourceTree = "<group>";
+		};
+		76C8E2F222C19AC10076E65B /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				76C8E2F322C19AE00076E65B /* CellResultFillQuestion.swift */,
+				76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */,
+				76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */,
+				76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		76C92F8722C3B9FC00E8ED69 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		76C92F9422C4876C00E8ED69 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				76C92F9522C4878300E8ED69 /* ExerciseEntity.swift */,
+				76C92F9922C4888400E8ED69 /* ViewExerciseEntity.swift */,
+				76C92F9D22C4895000E8ED69 /* QuestionEntity.swift */,
+				76C92FA122C48A0400E8ED69 /* ChildQuestionEntity.swift */,
+				76C92FA522C48A7000E8ED69 /* OptionEntity.swift */,
+				76C92FAD22C4A1AA00E8ED69 /* ListExerciseEntity.swift */,
+				76C92FB522C4A93200E8ED69 /* LevelExerciseEntity.swift */,
+			);
+			path = Exercise;
+			sourceTree = "<group>";
+		};
 		76CE31772295A93400E998FB /* LevelExercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -2869,6 +3004,7 @@
 		76CE31BC22961FAC00E998FB /* ResultGroup */ = {
 			isa = PBXGroup;
 			children = (
+				76C8E2D922C19A940076E65B /* ResultExercise */,
 				76BD140322ACB87000A48635 /* ExplainSolutionGroup */,
 				76CE32012296536C00E998FB /* ResultCompetition */,
 				76CE31E822963EBA00E998FB /* ResultMember */,
@@ -3525,6 +3661,8 @@
 		DE361EEB2283E84F00FA3B0D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				76C92F9422C4876C00E8ED69 /* Exercise */,
+				76C92F8722C3B9FC00E8ED69 /* Result */,
 				76E852F422B945590039751A /* TheoryGroup */,
 				764083F922B7C990002D9401 /* SaveGroup */,
 				DE361EEE2283E84F00FA3B0D /* NotificationEntity.swift */,
@@ -3620,6 +3758,8 @@
 				76E852F522B945870039751A /* TheoryEndpoint.swift */,
 				DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */,
 				DEA932AD22BFE0600050FB1D /* ProductEndPoint.swift */,
+				76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */,
+				76C92FB122C4A23600E8ED69 /* ExerciseEnpoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -3642,6 +3782,8 @@
 				764083FE22B7CA6E002D9401 /* SaveAPIService.swift */,
 				76E852F922B946CA0039751A /* TheoryAPIService.swift */,
 				DEA932A522BF804B0050FB1D /* QAAPIService.swift */,
+				76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */,
+				76C92FA922C49E2700E8ED69 /* ExerciseAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -3854,9 +3996,9 @@
 		DE750BAE228C424300596D3B /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				DE9F0F88228C700800A99869 /* Comfortaa-Bold.ttf */,
-				DE9F0F87228C700700A99869 /* Comfortaa-Light.ttf */,
-				DE9F0F89228C700800A99869 /* Comfortaa-Regular.ttf */,
+				DEC7F92022C4EDA90096D3D1 /* Comfortaa-Bold.ttf */,
+				DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */,
+				DEC7F91F22C4EDA90096D3D1 /* Comfortaa-Regular.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -4623,13 +4765,14 @@
 				DEECF88022870D1700A4678B /* Localizable.strings in Resources */,
 				DEECF8A122871D1B00A4678B /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613422898F1F0046801B /* QAViewController.xib in Resources */,
+				DEC7F92822C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */,
 				DEC62AE522930EC400D7CECE /* BeePackViewController.xib in Resources */,
 				DE3A8CC22289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
-				DE9F0F8A228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C25F22903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BD228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBCBC6422945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
+				DEC7F92222C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DED5A00F22A579CC00872261 /* BXHTop3Cell.xib in Resources */,
@@ -4645,8 +4788,8 @@
 				DE49F83322A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE31FE22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
+				76C8E2EF22C19AB80076E65B /* ResultExerciseViewController.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
-				DE9F0F8D228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76CE31AF2295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
@@ -4676,6 +4819,7 @@
 				DE361E832283E60500FA3B0D /* AppDropDownCell.xib in Resources */,
 				DE89D20B22A41E09000638B0 /* ChangeLanguageViewController.xib in Resources */,
 				76CE3220229653D500E998FB /* CellResultCompetition.xib in Resources */,
+				76C8E2F822C19AE00076E65B /* CellResultFillQuestion.xib in Resources */,
 				DED5A01722A579F800872261 /* BXHCell.xib in Resources */,
 				76E2FEF6228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */,
@@ -4691,6 +4835,7 @@
 				766AE80022B0234D002D474E /* UpdateFeatureView.xib in Resources */,
 				DE6FDB2922AB909600960422 /* FindCell.xib in Resources */,
 				766D138E228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
+				76C8E30022C19B0C0076E65B /* CellResultExercise.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
 				76483BF4229EE3F00079F9A1 /* UpdateAccountView.xib in Resources */,
 				DE89D22D22A42592000638B0 /* BXHViewController.xib in Resources */,
@@ -4737,13 +4882,13 @@
 				766AE7F222AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */,
 				76F7F446229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF12289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				DEC7F92522C4EDAA0096D3D1 /* Comfortaa-Bold.ttf in Resources */,
 				76CE32422296A61100E998FB /* CellQuestion.xib in Resources */,
 				DE89D1E522A41639000638B0 /* RequireUpgradeCell.xib in Resources */,
 				76CE31D222961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8422A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
-				DE9F0F90228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
 				DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310E2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314B2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -4767,13 +4912,14 @@
 				DE9530422287DF4800E3F688 /* Localizable.strings in Resources */,
 				DE9530432287DF4800E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613522898F1F0046801B /* QAViewController.xib in Resources */,
+				DEC7F92922C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */,
 				DEC62AE622930EC400D7CECE /* BeePackViewController.xib in Resources */,
 				DE3A8CC32289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
-				DE9F0F8B228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C26022903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BE228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBCBC6522945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
+				DEC7F92322C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DED5A01022A579CC00872261 /* BXHTop3Cell.xib in Resources */,
@@ -4789,8 +4935,8 @@
 				DE49F83422A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE31FF22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
+				76C8E2F022C19AB80076E65B /* ResultExerciseViewController.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
-				DE9F0F8E228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76CE31B02295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
@@ -4820,6 +4966,7 @@
 				DE9530492287DF4800E3F688 /* AppDropDownCell.xib in Resources */,
 				DE89D20C22A41E09000638B0 /* ChangeLanguageViewController.xib in Resources */,
 				76CE3221229653D500E998FB /* CellResultCompetition.xib in Resources */,
+				76C8E2F922C19AE00076E65B /* CellResultFillQuestion.xib in Resources */,
 				DED5A01822A579F800872261 /* BXHCell.xib in Resources */,
 				76E2FEF7228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */,
@@ -4835,6 +4982,7 @@
 				766AE80122B0234D002D474E /* UpdateFeatureView.xib in Resources */,
 				DE6FDB2A22AB909600960422 /* FindCell.xib in Resources */,
 				766D138F228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
+				76C8E30122C19B0C0076E65B /* CellResultExercise.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
 				76483BF5229EE3F00079F9A1 /* UpdateAccountView.xib in Resources */,
 				DE89D22E22A42592000638B0 /* BXHViewController.xib in Resources */,
@@ -4881,13 +5029,13 @@
 				766AE7F322AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */,
 				76F7F447229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF22289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				DEC7F92622C4EDAA0096D3D1 /* Comfortaa-Bold.ttf in Resources */,
 				76CE32432296A61100E998FB /* CellQuestion.xib in Resources */,
 				DE89D1E622A41639000638B0 /* RequireUpgradeCell.xib in Resources */,
 				76CE31D322961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8522A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
-				DE9F0F91228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
 				DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE95310F2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314C2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -4911,13 +5059,14 @@
 				DE9530F02287DF6400E3F688 /* Localizable.strings in Resources */,
 				DE9530F12287DF6400E3F688 /* ForgotPasswordViewController.xib in Resources */,
 				DEB9613622898F1F0046801B /* QAViewController.xib in Resources */,
+				DEC7F92A22C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */,
 				DEC62AE722930EC400D7CECE /* BeePackViewController.xib in Resources */,
 				DE3A8CC42289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
-				DE9F0F8C228C700800A99869 /* Comfortaa-Light.ttf in Resources */,
 				DEF1C26122903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				DE7D14BF228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBCBC6622945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
+				DEC7F92422C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DED5A01122A579CC00872261 /* BXHTop3Cell.xib in Resources */,
@@ -4933,8 +5082,8 @@
 				DE49F83522A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE320022963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
+				76C8E2F122C19AB80076E65B /* ResultExerciseViewController.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
-				DE9F0F8F228C700800A99869 /* Comfortaa-Bold.ttf in Resources */,
 				76CE31B12295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
@@ -4964,6 +5113,7 @@
 				DE9530F72287DF6400E3F688 /* AppDropDownCell.xib in Resources */,
 				DE89D20D22A41E09000638B0 /* ChangeLanguageViewController.xib in Resources */,
 				76CE3222229653D500E998FB /* CellResultCompetition.xib in Resources */,
+				76C8E2FA22C19AE00076E65B /* CellResultFillQuestion.xib in Resources */,
 				DED5A01922A579F800872261 /* BXHCell.xib in Resources */,
 				76E2FEF8228DBB610014B1F4 /* CellGrammar.xib in Resources */,
 				765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */,
@@ -4979,6 +5129,7 @@
 				766AE80222B0234D002D474E /* UpdateFeatureView.xib in Resources */,
 				DE6FDB2B22AB909600960422 /* FindCell.xib in Resources */,
 				766D1390228F2629005E47F0 /* DetailLessonViewController.xib in Resources */,
+				76C8E30222C19B0C0076E65B /* CellResultExercise.xib in Resources */,
 				DE9530F82287DF6400E3F688 /* AppSearchBar.xib in Resources */,
 				76483BF6229EE3F00079F9A1 /* UpdateAccountView.xib in Resources */,
 				DE89D22F22A42592000638B0 /* BXHViewController.xib in Resources */,
@@ -5025,13 +5176,13 @@
 				766AE7F422AFCAC5002D474E /* ConfirmPopUpView.xib in Resources */,
 				76F7F448229421BD001E9984 /* ExerciseViewController.xib in Resources */,
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
+				DEC7F92722C4EDAA0096D3D1 /* Comfortaa-Bold.ttf in Resources */,
 				76CE32442296A61100E998FB /* CellQuestion.xib in Resources */,
 				DE89D1E722A41639000638B0 /* RequireUpgradeCell.xib in Resources */,
 				76CE31D422961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8622A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
 				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530FF2287DF6400E3F688 /* GoogleService-Prod-Info.plist in Resources */,
-				DE9F0F92228C700800A99869 /* Comfortaa-Regular.ttf in Resources */,
 				DE9531162287E00A00E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
 				DE9531102287DFFB00E3F688 /* EnglishApp_Prod-Info.plist in Resources */,
 				DE95314D2288324300E3F688 /* EditProfileViewController.xib in Resources */,
@@ -5382,6 +5533,7 @@
 			files = (
 				DE3A8CEE2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A0228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				76C92F9622C4878300E8ED69 /* ExerciseEntity.swift in Sources */,
 				DEC62AD922930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE952F812287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */,
@@ -5416,10 +5568,12 @@
 				DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
+				76C92FA222C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CC22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				76BD140D22ACB88C00A48635 /* ExplainSolutionGroupRouter.swift in Sources */,
 				DEBD6737228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
+				76C8E2F522C19AE00076E65B /* CellResultFillQuestion.swift in Sources */,
 				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
 				DE89D1E222A41639000638B0 /* RequireUpgradeCell.swift in Sources */,
@@ -5429,6 +5583,7 @@
 				DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */,
 				76E2FF58228DD2120014B1F4 /* SeeNoteProtocols.swift in Sources */,
 				76E2FEFB228DC4C20014B1F4 /* PageViewController.swift in Sources */,
+				76C92FA622C48A7000E8ED69 /* OptionEntity.swift in Sources */,
 				DE361DFF2283E57900FA3B0D /* NSObjectProtocol+Extension.swift in Sources */,
 				DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
@@ -5436,6 +5591,7 @@
 				DE89D20522A41E09000638B0 /* ChangeLanguageProtocols.swift in Sources */,
 				76EE391C22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
+				76C8E2FD22C19B0C0076E65B /* CellResultExercise.swift in Sources */,
 				76F7F443229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
 				76870EA722C0EE7700F12544 /* ViewFillQuestion.swift in Sources */,
 				76E2FECA228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
@@ -5470,6 +5626,7 @@
 				DE361E672283E60500FA3B0D /* AppImage.swift in Sources */,
 				76DB938A228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE22289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				76C92F9E22C4895000E8ED69 /* QuestionEntity.swift in Sources */,
 				DE49F7E322A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE49F82722A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
 				DE95317B228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
@@ -5501,6 +5658,7 @@
 				DE95317E228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AA22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
 				76EE393C22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
+				76C92F8922C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
 				76EE392222A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8B22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -5557,6 +5715,7 @@
 				7643DE8022A38CA500B7C323 /* SearchVocabularyView.swift in Sources */,
 				DE2ADE5622841756003768CE /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670A228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
+				76C8E2E622C19AB80076E65B /* ResultExerciseViewController.swift in Sources */,
 				7629BDD122ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */,
 				76BD141022ACB88C00A48635 /* ExplainSolutionGroupViewController.swift in Sources */,
 				DE361F362283E85000FA3B0D /* PhotoEntity.swift in Sources */,
@@ -5574,6 +5733,7 @@
 				DE361DDA2283E4BD00FA3B0D /* LoginInteractor.swift in Sources */,
 				DEECF89322871D0400A4678B /* SignUpInteractor.swift in Sources */,
 				76CE31A32295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
+				76C92FAA22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */,
 				76E2FF4F228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				76CF0C7522906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D136F228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
@@ -5591,6 +5751,7 @@
 				76F7F46522946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				769A3BE222A24FF000CA55BD /* ViewTime.swift in Sources */,
+				76C92F9122C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
 				DE89D1EF22A41B44000638B0 /* LevelUpContent.swift in Sources */,
@@ -5645,11 +5806,13 @@
 				DEA932A622BF804B0050FB1D /* QAAPIService.swift in Sources */,
 				DE361DE42283E54C00FA3B0D /* BaseViewXib.swift in Sources */,
 				DE952F7F2287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				76C8E2E022C19AB80076E65B /* ResultExercisePresenter.swift in Sources */,
 				DE952FA02287D2A700E3F688 /* FadeInOutAnimation.swift in Sources */,
 				76870EAC22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE361E9A2283E60500FA3B0D /* StringReachability.swift in Sources */,
 				76CE323F2296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE952F842287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				76C92FB622C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */,
 				76F7F453229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */,
 				76483BF0229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -5679,6 +5842,7 @@
 				76E852FA22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F7FF22A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
+				76C8E2EC22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */,
 				76CE318A2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
 				DE89D21122A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
@@ -5747,6 +5911,7 @@
 				DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */,
 				DEECF89C22871D1B00A4678B /* ForgotPasswordPresenter.swift in Sources */,
 				DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */,
+				76C92F8D22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
 				76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
@@ -5754,6 +5919,7 @@
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141322ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				76C8E2E322C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				DE89D1FF22A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
 				76F7F456229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
 				76CE32142296539000E998FB /* ResultCompetitionInteractor.swift in Sources */,
@@ -5761,6 +5927,7 @@
 				DEECF88F22871D0400A4678B /* SignUpPresenter.swift in Sources */,
 				76E2FF37228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				DE361E822283E60500FA3B0D /* AppDropDown.swift in Sources */,
+				76C92FAE22C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */,
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
 				764083FB22B7C9A8002D9401 /* NoteRespone.swift in Sources */,
 				DE953171228842D700E3F688 /* HistoryEntity.swift in Sources */,
@@ -5808,6 +5975,7 @@
 				76CE31F822963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
 				DEF1C25322903557005AD1A3 /* HomeActionCell.swift in Sources */,
+				76C92F9A22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322A22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
 				76EE392822A5777700DD8960 /* HistoryExerciseDateInteractor.swift in Sources */,
 				DE2ADE6A22841B9E003768CE /* HomeRouter.swift in Sources */,
@@ -5842,6 +6010,7 @@
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				76CE323322968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
+				76C92FB222C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */,
 				76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1382228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC622930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
@@ -5855,6 +6024,7 @@
 				DECD190322A25E1A0054861D /* BeePackEntity.swift in Sources */,
 				DEF1C26E22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				76CE32082296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
+				76C8E2E922C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */,
 				DEBD673B228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 				DE6FDB1D22AB869A00960422 /* FindInteractor.swift in Sources */,
 			);
@@ -5866,6 +6036,7 @@
 			files = (
 				DE3A8CEF2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A1228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				76C92F9722C4878300E8ED69 /* ExerciseEntity.swift in Sources */,
 				DEC62ADA22930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE952FB12287DF4800E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */,
@@ -5900,10 +6071,12 @@
 				DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
+				76C92FA322C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CD22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				76BD140E22ACB88C00A48635 /* ExplainSolutionGroupRouter.swift in Sources */,
 				DEBD6738228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
+				76C8E2F622C19AE00076E65B /* CellResultFillQuestion.swift in Sources */,
 				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
 				DE89D1E322A41639000638B0 /* RequireUpgradeCell.swift in Sources */,
@@ -5913,6 +6086,7 @@
 				DE952FC02287DF4800E3F688 /* LoginPresenter.swift in Sources */,
 				76E2FF59228DD2120014B1F4 /* SeeNoteProtocols.swift in Sources */,
 				76E2FEFC228DC4C20014B1F4 /* PageViewController.swift in Sources */,
+				76C92FA722C48A7000E8ED69 /* OptionEntity.swift in Sources */,
 				DE952FC12287DF4800E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
 				DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
@@ -5920,6 +6094,7 @@
 				DE89D20622A41E09000638B0 /* ChangeLanguageProtocols.swift in Sources */,
 				76EE391D22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
+				76C8E2FE22C19B0C0076E65B /* CellResultExercise.swift in Sources */,
 				76F7F444229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
 				76870EA822C0EE7700F12544 /* ViewFillQuestion.swift in Sources */,
 				76E2FECB228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
@@ -5954,6 +6129,7 @@
 				DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */,
 				76DB938B228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE32289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				76C92F9F22C4895000E8ED69 /* QuestionEntity.swift in Sources */,
 				DE49F7E422A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE49F82822A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
 				DE95317C228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
@@ -5985,6 +6161,7 @@
 				DE95317F228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AB22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
 				76EE393D22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
+				76C92F8A22C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392322A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8C22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -6041,6 +6218,7 @@
 				7643DE8122A38CA500B7C323 /* SearchVocabularyView.swift in Sources */,
 				DE952FDD2287DF4800E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670B228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
+				76C8E2E722C19AB80076E65B /* ResultExerciseViewController.swift in Sources */,
 				7629BDD222ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */,
 				76BD141122ACB88C00A48635 /* ExplainSolutionGroupViewController.swift in Sources */,
 				DE952FDE2287DF4800E3F688 /* PhotoEntity.swift in Sources */,
@@ -6058,6 +6236,7 @@
 				DE952FE42287DF4800E3F688 /* LoginInteractor.swift in Sources */,
 				DE952FE52287DF4800E3F688 /* SignUpInteractor.swift in Sources */,
 				76CE31A42295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
+				76C92FAB22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */,
 				76E2FF50228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				76CF0C7622906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1370228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
@@ -6075,6 +6254,7 @@
 				76F7F46622946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
 				769A3BE322A24FF000CA55BD /* ViewTime.swift in Sources */,
+				76C92F9222C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
 				DE89D1F022A41B44000638B0 /* LevelUpContent.swift in Sources */,
@@ -6129,11 +6309,13 @@
 				DEA932A722BF804B0050FB1D /* QAAPIService.swift in Sources */,
 				DE952FF82287DF4800E3F688 /* BaseViewXib.swift in Sources */,
 				DE952FF92287DF4800E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				76C8E2E122C19AB80076E65B /* ResultExercisePresenter.swift in Sources */,
 				DE952FFA2287DF4800E3F688 /* FadeInOutAnimation.swift in Sources */,
 				76870EAD22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE952FFB2287DF4800E3F688 /* StringReachability.swift in Sources */,
 				76CE32402296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE952FFC2287DF4800E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				76C92FB722C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */,
 				76F7F454229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE952FFD2287DF4800E3F688 /* MenuProtocols.swift in Sources */,
 				76483BF1229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -6163,6 +6345,7 @@
 				76E852FB22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F80022A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
+				76C8E2ED22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */,
 				76CE318B2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
 				DE89D21222A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
@@ -6231,6 +6414,7 @@
 				DE9530192287DF4800E3F688 /* AppDelegate.swift in Sources */,
 				DE95301A2287DF4800E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */,
+				76C92F8E22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
 				76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
@@ -6238,6 +6422,7 @@
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141422ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				76C8E2E422C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				DE89D20022A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
 				76F7F457229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
 				76CE32152296539000E998FB /* ResultCompetitionInteractor.swift in Sources */,
@@ -6245,6 +6430,7 @@
 				DE95301D2287DF4800E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF38228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				DE95301E2287DF4800E3F688 /* AppDropDown.swift in Sources */,
+				76C92FAF22C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */,
 				DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */,
 				764083FC22B7C9A8002D9401 /* NoteRespone.swift in Sources */,
 				DE953172228842D700E3F688 /* HistoryEntity.swift in Sources */,
@@ -6292,6 +6478,7 @@
 				76CE31F922963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
 				DEF1C25422903557005AD1A3 /* HomeActionCell.swift in Sources */,
+				76C92F9B22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322B22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
 				76EE392922A5777700DD8960 /* HistoryExerciseDateInteractor.swift in Sources */,
 				DE95302F2287DF4800E3F688 /* HomeRouter.swift in Sources */,
@@ -6326,6 +6513,7 @@
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				76CE323422968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
+				76C92FB322C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */,
 				76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1383228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC722930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
@@ -6339,6 +6527,7 @@
 				DECD190422A25E1A0054861D /* BeePackEntity.swift in Sources */,
 				DEF1C26F22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				76CE32092296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
+				76C8E2EA22C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */,
 				DEBD673C228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 				DE6FDB1E22AB869A00960422 /* FindInteractor.swift in Sources */,
 			);
@@ -6350,6 +6539,7 @@
 			files = (
 				DE3A8CF02289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A2228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				76C92F9822C4878300E8ED69 /* ExerciseEntity.swift in Sources */,
 				DEC62ADB22930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE95305F2287DF6400E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
@@ -6384,10 +6574,12 @@
 				DEBD674B228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C24A229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320D2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
+				76C92FA422C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CE22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				76BD140F22ACB88C00A48635 /* ExplainSolutionGroupRouter.swift in Sources */,
 				DEBD6739228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
+				76C8E2F722C19AE00076E65B /* CellResultFillQuestion.swift in Sources */,
 				DE95306B2287DF6400E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
 				DE95306C2287DF6400E3F688 /* BasePopUpView.swift in Sources */,
 				DE89D1E422A41639000638B0 /* RequireUpgradeCell.swift in Sources */,
@@ -6397,6 +6589,7 @@
 				DE95306E2287DF6400E3F688 /* LoginPresenter.swift in Sources */,
 				76E2FF5A228DD2120014B1F4 /* SeeNoteProtocols.swift in Sources */,
 				76E2FEFD228DC4C20014B1F4 /* PageViewController.swift in Sources */,
+				76C92FA822C48A7000E8ED69 /* OptionEntity.swift in Sources */,
 				DE95306F2287DF6400E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
 				DE9530702287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				76DB93B4228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
@@ -6404,6 +6597,7 @@
 				DE89D20722A41E09000638B0 /* ChangeLanguageProtocols.swift in Sources */,
 				76EE391E22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
+				76C8E2FF22C19B0C0076E65B /* CellResultExercise.swift in Sources */,
 				76F7F445229421BD001E9984 /* ExerciseInteractor.swift in Sources */,
 				76870EA922C0EE7700F12544 /* ViewFillQuestion.swift in Sources */,
 				76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
@@ -6438,6 +6632,7 @@
 				DE9530772287DF6400E3F688 /* AppImage.swift in Sources */,
 				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				76C92FA022C4895000E8ED69 /* QuestionEntity.swift in Sources */,
 				DE49F7E522A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE49F82922A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
 				DE95317D228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
@@ -6469,6 +6664,7 @@
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AC22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
 				76EE393E22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
+				76C92F8B22C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392422A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8D22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -6525,6 +6721,7 @@
 				7643DE8222A38CA500B7C323 /* SearchVocabularyView.swift in Sources */,
 				DE95308B2287DF6400E3F688 /* AppDelegate+GoogleSignIn.swift in Sources */,
 				DEBD670C228D201A004B74C8 /* DetailTeamProtocols.swift in Sources */,
+				76C8E2E822C19AB80076E65B /* ResultExerciseViewController.swift in Sources */,
 				7629BDD322ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */,
 				76BD141222ACB88C00A48635 /* ExplainSolutionGroupViewController.swift in Sources */,
 				DE95308C2287DF6400E3F688 /* PhotoEntity.swift in Sources */,
@@ -6542,6 +6739,7 @@
 				DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */,
 				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
 				76CE31A52295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
+				76C92FAC22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */,
 				76E2FF51228DD2120014B1F4 /* SeeNotePresenter.swift in Sources */,
 				76CF0C7722906822003C4B4B /* CommentProtocols.swift in Sources */,
 				766D1371228F2609005E47F0 /* ListLessonProtocols.swift in Sources */,
@@ -6559,6 +6757,7 @@
 				76F7F46722946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
 				769A3BE422A24FF000CA55BD /* ViewTime.swift in Sources */,
+				76C92F9322C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				DE89D1F122A41B44000638B0 /* LevelUpContent.swift in Sources */,
@@ -6613,11 +6812,13 @@
 				DEA932A822BF804B0050FB1D /* QAAPIService.swift in Sources */,
 				DE9530A62287DF6400E3F688 /* BaseViewXib.swift in Sources */,
 				DE9530A72287DF6400E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				76C8E2E222C19AB80076E65B /* ResultExercisePresenter.swift in Sources */,
 				DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */,
 				76870EAE22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE9530A92287DF6400E3F688 /* StringReachability.swift in Sources */,
 				76CE32412296A61100E998FB /* CellQuestion.swift in Sources */,
 				DE9530AA2287DF6400E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
+				76C92FB822C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */,
 				76F7F455229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE9530AB2287DF6400E3F688 /* MenuProtocols.swift in Sources */,
 				76483BF2229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -6647,6 +6848,7 @@
 				76E852FC22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED2228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F80122A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
+				76C8E2EE22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */,
 				76CE318C2295A95300E998FB /* LevelExerciseInteractor.swift in Sources */,
 				DE89D21322A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
@@ -6715,6 +6917,7 @@
 				DE9530C72287DF6400E3F688 /* AppDelegate.swift in Sources */,
 				DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
+				76C92F8F22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
 				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,
 				76CF0C7A22906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EC22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
@@ -6722,6 +6925,7 @@
 				DE3A8CA12289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141522ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
 				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				76C8E2E522C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				DE89D20122A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
 				76F7F458229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
 				76CE32162296539000E998FB /* ResultCompetitionInteractor.swift in Sources */,
@@ -6729,6 +6933,7 @@
 				DE9530CB2287DF6400E3F688 /* SignUpPresenter.swift in Sources */,
 				76E2FF39228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				DE9530CC2287DF6400E3F688 /* AppDropDown.swift in Sources */,
+				76C92FB022C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */,
 				DE9530CD2287DF6400E3F688 /* HomeViewController.swift in Sources */,
 				764083FD22B7C9A8002D9401 /* NoteRespone.swift in Sources */,
 				DE953173228842D700E3F688 /* HistoryEntity.swift in Sources */,
@@ -6776,6 +6981,7 @@
 				76CE31FA22963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DE9530DC2287DF6400E3F688 /* SignUpProtocols.swift in Sources */,
 				DEF1C25522903557005AD1A3 /* HomeActionCell.swift in Sources */,
+				76C92F9C22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322C22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
 				76EE392A22A5777700DD8960 /* HistoryExerciseDateInteractor.swift in Sources */,
 				DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */,
@@ -6810,6 +7016,7 @@
 				76DB939F228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6728228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				76CE323522968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
+				76C92FB422C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */,
 				76CF0C8C22906D09003C4B4B /* ViewComment.swift in Sources */,
 				766D1384228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC822930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
@@ -6823,6 +7030,7 @@
 				DECD190522A25E1A0054861D /* BeePackEntity.swift in Sources */,
 				DEF1C27022903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				76CE320A2296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
+				76C8E2EB22C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */,
 				DEBD673D228D48EB004B74C8 /* CreateGroupContent.swift in Sources */,
 				DE6FDB1F22AB869A00960422 /* FindInteractor.swift in Sources */,
 			);

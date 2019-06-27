@@ -48,6 +48,9 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lblSearch" destination="ehz-7m-pdh" id="S5W-FN-wmj"/>
+            </connections>
         </tableViewCell>
     </objects>
 </document>

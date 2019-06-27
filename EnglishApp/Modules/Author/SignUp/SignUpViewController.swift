@@ -22,6 +22,8 @@ class SignUpViewController: BaseViewController {
     @IBOutlet weak var lbStatus: UILabel!
     @IBOutlet weak var imgCaptcha: UIImageView!
     
+    @IBOutlet weak var heightError: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,6 +52,8 @@ class SignUpViewController: BaseViewController {
     }
     
     @IBAction func btnSignUpTapped() {
+        dismissKeyBoard()
+        heightError.constant = 0
         if validateInputData() {
             let param = SignUpParam(email: vEmail.getText(), password: vPassword.getText(), captcha: tfCaptcha.text&, displayName: vDisplayName.getText())
             
@@ -58,6 +62,7 @@ class SignUpViewController: BaseViewController {
     }
     
     @IBAction func btnReloadCaptcha() {
+        dismissKeyBoard()
         presenter?.getCaptcha()
     }
 }
@@ -68,43 +73,43 @@ extension SignUpViewController {
             hideError(isHidden: false, message: LocalizableKey.emptyLoginEmailPassword.showLanguage)
             return false
         }
-        
+
         if self.vDisplayName.tfInput.text == "" {
             hideError(isHidden: false, message: LocalizableKey.pleaseEnterDisplayName.showLanguage)
             return false
         }
-        
+
         if self.vEmail.tfInput.text == "" {
             hideError(isHidden: false, message: LocalizableKey.pleaseEnterEmail.showLanguage)
             return false
         }
-        
+
         if let email = self.vEmail.tfInput.text, email.isValidEmail() == false {
             hideError(isHidden: false, message:  LocalizableKey.invalidLoginEmail.showLanguage)
             return false
         }
-        
+
         if self.vPassword.tfInput.text == "" {
             hideError(isHidden: false, message: LocalizableKey.pleaseEnterPassword.showLanguage)
             return false
         }
-        
+
         if let password = self.vPassword.tfInput.text, password.count < 6 {
             hideError(isHidden: false, message:  LocalizableKey.invalidLoginPassword.showLanguage)
             return false
         }
-        
+
         if self.vRePassword.tfInput.text == "" {
             hideError(isHidden: false, message: LocalizableKey.pleaseEnterRePassword.showLanguage)
             return false
         }
-        
+
         if self.vPassword.tfInput.text& != self.vRePassword.tfInput.text& {
             hideError(isHidden: false, message:  LocalizableKey.passwordDifference.showLanguage)
             return false
         }
-        
-        if self.tfCaptcha.text == "" {
+
+        if self.tfCaptcha.text == "" || self.tfCaptcha.text&.contains(" ") || self.tfCaptcha.text&.hasSpecialCharacters()   {
             hideError(isHidden: false, message:  LocalizableKey.emptyCapcha.showLanguage)
             return false
         }
@@ -115,6 +120,7 @@ extension SignUpViewController {
     func hideError(isHidden: Bool = true, message: String? = nil){
         lbStatus.isHidden = isHidden
         lbStatus.text = message ?? ""
+        heightError.constant = 40
     }
 }
 

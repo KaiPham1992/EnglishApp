@@ -26,6 +26,7 @@ class UserEntity: BaseEntity  {
     var jwt: String?
     var socialImage: String?
     var displayName: String?
+    var socialType: String?
     
     override func mapping(map: Map) {
         self.id             <- map["_id"]
@@ -43,6 +44,7 @@ class UserEntity: BaseEntity  {
         self.jwt <- map["jwt"]
         self.displayName <- map["username"]
         self.socialImage <- map["social_img_src"]
+        self.socialType <- map["social_type"]
         
     }
     

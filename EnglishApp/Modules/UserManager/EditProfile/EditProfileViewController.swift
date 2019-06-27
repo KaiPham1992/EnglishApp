@@ -49,7 +49,7 @@ class EditProfileViewController: BaseViewController {
         vEmail.tfInput.text = user.email
         vLocation.tfInput.text = user.national
         
-        imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+        imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
     }
 
     override func setTitleUI() {
@@ -67,6 +67,12 @@ class EditProfileViewController: BaseViewController {
     }
     
     @IBAction func btnSavedTapped() {
+        
+        if vDisplayName.getText().isEmpty {
+            hideError(isHidden: false, message: LocalizableKey.enterDisplayName.showLanguage)
+            return 
+        }
+        
         var param: UpdateProfileParam!
         if let national = self.vLocation.selectedItem as? NationalEntity {
             param = UpdateProfileParam(nationalId: Int(national.id&), fullName: vDisplayName.getText())

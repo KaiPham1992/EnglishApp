@@ -11,15 +11,46 @@
 import UIKit
 
 class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
-
+    
     weak private var view: FindViewProtocol?
     var interactor: FindInteractorInputProtocol?
     private let router: FindWireframeProtocol
+    var searchRespone : [SearchEntity] = []
+    var error: APIError?
 
     init(interface: FindViewProtocol, interactor: FindInteractorInputProtocol?, router: FindWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
+    
+    func getMessageError() -> String? {
+        return error?.message
+    }
+    
+    func getNumberSearch() -> Int {
+        return searchRespone.count
+    }
+    
+    func getTextSearch(indexPath: IndexPath) -> String? {
+        return searchRespone[indexPath.row].name
+    }
+    
+    
+    func searchExercise(text: String) {
+        self.interactor?.searchExercise(text: text)
+    }
+    
+    func searchExerciseSuccessed(respone: [SearchEntity]) {
+        searchRespone = respone
+        self.view?.reloadView()
+    }
+    
+    func searchExerciseFailed(error: APIError) {
+        self.error = error
+        self.view?.showErrorSearchFailed()
+    }
+    
+
 
 }

@@ -12,6 +12,7 @@ class AppSearchBar: BaseViewXib {
     @IBOutlet weak var tfInput: UITextField!
     @IBOutlet weak var vContain: UIView!
     @IBOutlet weak var btnSearch: UIButton!
+    var actionSearch : ((String) -> ())?
     
     func setTitleAndPlaceHolder(placeHolder: String? = nil) {
         if placeHolder != nil {
@@ -24,6 +25,6 @@ class AppSearchBar: BaseViewXib {
     }
     
     @IBAction func btnSearchTapped() {
-        print("btn Search Tapped")
+        actionSearch?(tfInput.text ?? "")
     }
 }

@@ -23,19 +23,12 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
             }
             lblIndexQuestion.text = "\(self.currentIndex + 1)/6"
             self.currentIndex += 1
-            clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex, section: 0), at: .right, animated: true)
+            clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex, section: 0), at: .right, animated: false)
             return
         }
         self.presenter?.gotoResult()
     }
     
-    @IBAction func suggestResult(_ sender: Any) {
-        PopUpHelper.shared.showSuggesstionResult(diamond: {
-        
-        }) {
-        
-        }
-    }
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
@@ -97,7 +90,7 @@ extension NameExerciseViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
         cell.setupCell(numberView: 10)
-//        cell.delegate = self
+        cell.delegate = self
         return cell
     }
 }

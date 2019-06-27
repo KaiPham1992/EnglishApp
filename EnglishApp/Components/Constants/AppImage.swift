@@ -71,4 +71,6 @@ struct AppImage {
     
     static let imgRadioChecked = UIImage(named: "radio_checked")!
     static let imgRadioUnChecked = UIImage(named: "radio_unchecked")!
+    
+    static let avatarDefault = UIImage(named: "avatarDefautl")!
 }

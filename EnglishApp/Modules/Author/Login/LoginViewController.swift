@@ -85,6 +85,8 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func btnLoginTapped() {
+        heightError.constant = 0
+        dismissKeyBoard()
         if validateInputData() {
             presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
         }
@@ -156,7 +158,7 @@ extension LoginViewController {
     func hideError(isHidden: Bool = true, message: String? = nil){
         lbError.isHidden = isHidden
         lbError.text = message ?? ""
-        heightError.constant = 40
+        heightError.constant = lbError.isHidden ? 0 : 40
     }
 }
 

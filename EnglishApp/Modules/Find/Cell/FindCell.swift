@@ -10,6 +10,8 @@ import UIKit
 
 class FindCell: BaseTableCell {
 
+    @IBOutlet weak var lblSearch: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

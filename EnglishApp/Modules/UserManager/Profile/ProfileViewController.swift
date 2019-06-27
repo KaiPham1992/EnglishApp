@@ -85,15 +85,15 @@ class ProfileViewController: BaseViewController {
 
 extension ProfileViewController: ProfileViewProtocol {
     func didGetProfile(user: UserEntity) {
-        vDisplayName.tfInput.text = user.nameShowUI
-        vEmail.tfInput.text = user.email
-        vLocation.tfInput.text = user.national
+        vDisplayName.lbPlaceHolder.text = user.nameShowUI
+        vEmail.lbPlaceHolder.text = user.email
+        vLocation.lbPlaceHolder.text = user.national
         lbFullName.text = user.fullName
         lbLevel.text = user.rankName
-        lbBee.text = user.amountDiamond*.description
-        lbDiamon.text = user.amountHoney*.description
+        lbBee.text = user.amountDiamond*.description + " \(LocalizableKey.boxHoney.showLanguage)"
+        lbDiamon.text = user.amountHoney*.description + " \(LocalizableKey.point.showLanguage)"
         lbPoint.text = "\(user.amountPoint*.description) \(LocalizableKey.point.showLanguage)"
-        imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+        imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
         
         UserDefaultHelper.shared.saveUser(user: user)
     }

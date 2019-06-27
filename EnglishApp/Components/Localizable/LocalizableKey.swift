@@ -74,7 +74,8 @@ struct LocalizableKey {
     static let cancel = "cancel"
     static let changePasswordSuccess = "changePasswordSuccess"
     static let popleaveHomeWork = "popleaveHomeWork"
-    
+    static let boxHoney = "boxHoney"
+    static let titleHistoryNap = "titleHistoryNap"
     
     // QA
     

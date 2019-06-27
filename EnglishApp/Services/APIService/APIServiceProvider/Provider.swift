@@ -40,4 +40,12 @@ class Provider {
     var qAAPIService: QAAPIServiceProtocol{
         return QAAPIService(network: networkManager)
     }
+    
+    var findAPIService: FindAPIServiceProtocol {
+        return FindAPIService(network: networkManager)
+    }
+    
+    var exerciseAPIService: ExerciseAPIServiceProtocol {
+        return ExerciseAPIService(network: networkManager)
+    }
 }

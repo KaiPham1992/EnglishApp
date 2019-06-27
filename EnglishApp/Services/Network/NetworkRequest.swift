@@ -52,7 +52,8 @@ struct NetworkRequest: NetworkRequestProtocol {
         
         if !Utils.isConnectedToInternet() {
             PopUpHelper.shared.showNoInternet {
-                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
+                ProgressView.shared.hide()
+//                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
             }
             return
         }
@@ -77,7 +78,8 @@ struct NetworkRequest: NetworkRequestProtocol {
     func uploadAvatar(image: UIImage, endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
         if !Utils.isConnectedToInternet() {
             PopUpHelper.shared.showNoInternet {
-                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
+                ProgressView.shared.hide()
+//                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
             }
             return
         }

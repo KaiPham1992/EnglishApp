@@ -111,7 +111,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 hũ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lib-HW-C4q">
-                            <rect key="frame" x="36" y="33" width="119" height="14.5"/>
+                            <rect key="frame" x="36" y="33" width="119" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="iUH-fQ-D8k"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                             <color key="textColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
@@ -177,7 +180,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2.000 điểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAP-Fz-HFt">
-                            <rect key="frame" x="39" y="33" width="116" height="14.5"/>
+                            <rect key="frame" x="39" y="33" width="116" height="18"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="18" id="Vt6-Df-CJB"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                             <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>

@@ -23,6 +23,7 @@ class HistoryBeeViewController: BaseViewController, HistoryBeeViewProtocol {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
+        setTitleNavigation(title: LocalizableKey.titleHistoryNap.showLanguage)
     }
 
 }

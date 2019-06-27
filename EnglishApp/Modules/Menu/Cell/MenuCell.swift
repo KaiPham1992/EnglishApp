@@ -20,17 +20,31 @@ class MenuItem {
     }
     
     class func toArray() -> [MenuItem] {
+        if UserDefaultHelper.shared.loginUserInfo?.socialType == nil {
+            return [
+                MenuItem(imgIcon: AppImage.imgInfo, title: LocalizableKey.MenuInfo.showLanguage),
+                MenuItem(imgIcon: AppImage.imgTop, title: LocalizableKey.MenuTop.showLanguage),
+                MenuItem(imgIcon: AppImage.imgQA, title: LocalizableKey.MenuQA.showLanguage),
+                MenuItem(imgIcon: AppImage.imgLanguage, title: LocalizableKey.MenuLanguage.showLanguage),
+                MenuItem(imgIcon: AppImage.imgSaved, title: LocalizableKey.MenuSaved.showLanguage),
+                MenuItem(imgIcon: AppImage.imgHistoryCheck, title: LocalizableKey.MenuHistory.showLanguage),
+                MenuItem(imgIcon: AppImage.imgPrivacy, title: LocalizableKey.MenuPrivacy.showLanguage),
+                MenuItem(imgIcon: AppImage.imgChangePass, title: LocalizableKey.MenuChangePassword.showLanguage),
+                MenuItem(imgIcon: AppImage.imgLogout, title: LocalizableKey.MenuLogout.showLanguage)
+            ]
+        }
+        
         return [
-        MenuItem(imgIcon: AppImage.imgInfo, title: LocalizableKey.MenuInfo.showLanguage),
-        MenuItem(imgIcon: AppImage.imgTop, title: LocalizableKey.MenuTop.showLanguage),
-        MenuItem(imgIcon: AppImage.imgQA, title: LocalizableKey.MenuQA.showLanguage),
-        MenuItem(imgIcon: AppImage.imgLanguage, title: LocalizableKey.MenuLanguage.showLanguage),
-        MenuItem(imgIcon: AppImage.imgSaved, title: LocalizableKey.MenuSaved.showLanguage),
-        MenuItem(imgIcon: AppImage.imgHistoryCheck, title: LocalizableKey.MenuHistory.showLanguage),
-        MenuItem(imgIcon: AppImage.imgPrivacy, title: LocalizableKey.MenuPrivacy.showLanguage),
-        MenuItem(imgIcon: AppImage.imgChangePass, title: LocalizableKey.MenuChangePassword.showLanguage),
-        MenuItem(imgIcon: AppImage.imgLogout, title: LocalizableKey.MenuLogout.showLanguage)
+            MenuItem(imgIcon: AppImage.imgInfo, title: LocalizableKey.MenuInfo.showLanguage),
+            MenuItem(imgIcon: AppImage.imgTop, title: LocalizableKey.MenuTop.showLanguage),
+            MenuItem(imgIcon: AppImage.imgQA, title: LocalizableKey.MenuQA.showLanguage),
+            MenuItem(imgIcon: AppImage.imgLanguage, title: LocalizableKey.MenuLanguage.showLanguage),
+            MenuItem(imgIcon: AppImage.imgSaved, title: LocalizableKey.MenuSaved.showLanguage),
+            MenuItem(imgIcon: AppImage.imgHistoryCheck, title: LocalizableKey.MenuHistory.showLanguage),
+            MenuItem(imgIcon: AppImage.imgPrivacy, title: LocalizableKey.MenuPrivacy.showLanguage),
+            MenuItem(imgIcon: AppImage.imgLogout, title: LocalizableKey.MenuLogout.showLanguage)
         ]
+        
     }
 }
 

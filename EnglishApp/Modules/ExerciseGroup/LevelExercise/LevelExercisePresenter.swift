@@ -15,6 +15,10 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
     weak private var view: LevelExerciseViewProtocol?
     var interactor: LevelExerciseInteractorInputProtocol?
     private let router: LevelExerciseWireframeProtocol
+    var exerciseEntity: ListExerciseEntity?
+    var levelExerciseEntity: LevelExerciseEntity?
+    var isLoadMore = true
+    var isLoadMoreLevel = true
 
     init(interface: LevelExerciseViewProtocol, interactor: LevelExerciseInteractorInputProtocol?, router: LevelExerciseWireframeProtocol) {
         self.view = interface
@@ -26,10 +30,54 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
         self.router.gotoExercise()
     }
     
+    func getNumberRow() -> Int? {
+        return exerciseEntity?.total_exercises
+    }
+    
+    func getItemExercise(indexPath: IndexPath) -> ExerciseEntity?{
+        return exerciseEntity?.exercises?[indexPath.row]
+    }
+    
     func gotoTryHard() {
         self.router.gotoTryHard()
     }
     func gotoChoiceExercise() {
         self.router.gotoChoiceExercise()
     }
+    func getListExercise(category_id: Int,offset: Int) {
+        if isLoadMore {
+            self.interactor?.getListExercise(category_id: category_id,offset: offset)
+        }
+    }
+    
+    func getLevelExercise(type_test: Int,offset: Int){
+        if isLoadMoreLevel {
+            self.interactor?.getLevelExercise(type_test: type_test, offset: offset)
+        }
+    }
+    
+    func getNumberRowLevel() -> Int? {
+        return levelExerciseEntity?.total_records
+    }
+    
+    func getItemLevelExercise(indexPath: IndexPath) -> SearchEntity? {
+        return levelExerciseEntity?.study_categories?[indexPath.row]
+    }
+    
+    func getListLevelExerciseSuccessed(respone: LevelExerciseEntity){
+        self.levelExerciseEntity = respone
+        if  (respone.study_categories?.count ?? 0) < limit {
+            isLoadMoreLevel = false
+        }
+        self.view?.reloadView()
+    }
+    
+    func getListExerciseSuccessed(respone: ListExerciseEntity) {
+        self.exerciseEntity = respone
+        if (respone.exercises?.count ?? 0) < limit {
+            isLoadMore = false
+        }
+        self.view?.reloadView()
+    }
+    
 }

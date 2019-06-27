@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AppTextField" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="lbPlaceHolder" destination="0ji-sT-HN2" id="7Vv-Ll-tvU"/>
                 <outlet property="lbTitle" destination="0Yp-lv-Bel" id="rHc-JE-DZJ"/>
                 <outlet property="tfInput" destination="hgd-5V-CHC" id="cpM-lw-5nk"/>
                 <outlet property="vLine" destination="J1L-mP-C5K" id="jJe-fV-n8j"/>
@@ -39,8 +40,14 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-5V-CHC">
-                    <rect key="frame" x="0.0" y="64" width="414" height="89"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ji-sT-HN2">
+                    <rect key="frame" x="0.0" y="64" width="414" height="88"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hgd-5V-CHC">
+                    <rect key="frame" x="0.0" y="64" width="414" height="88"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
@@ -80,12 +87,16 @@
             <constraints>
                 <constraint firstItem="hgd-5V-CHC" firstAttribute="leading" secondItem="0Yp-lv-Bel" secondAttribute="leading" id="12d-9Z-Bf2"/>
                 <constraint firstItem="J1L-mP-C5K" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="1T9-Tp-6ep"/>
+                <constraint firstItem="0ji-sT-HN2" firstAttribute="bottom" secondItem="hgd-5V-CHC" secondAttribute="bottom" id="5N8-FQ-xaV"/>
                 <constraint firstItem="0Yp-lv-Bel" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="8Fu-An-hQG"/>
                 <constraint firstItem="J1L-mP-C5K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="-3" id="Mi6-Yd-OQZ"/>
                 <constraint firstItem="hgd-5V-CHC" firstAttribute="top" secondItem="0Yp-lv-Bel" secondAttribute="bottom" id="Tdy-gL-Q2V"/>
+                <constraint firstItem="0ji-sT-HN2" firstAttribute="top" secondItem="hgd-5V-CHC" secondAttribute="top" id="WGZ-r1-dBm"/>
+                <constraint firstItem="0ji-sT-HN2" firstAttribute="leading" secondItem="hgd-5V-CHC" secondAttribute="leading" id="XPZ-WS-Lcl"/>
                 <constraint firstItem="0Yp-lv-Bel" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="ccA-LI-MrF"/>
                 <constraint firstItem="0Yp-lv-Bel" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ieq-JT-BYD"/>
-                <constraint firstItem="J1L-mP-C5K" firstAttribute="top" secondItem="hgd-5V-CHC" secondAttribute="bottom" id="jGo-bP-FUv"/>
+                <constraint firstItem="J1L-mP-C5K" firstAttribute="top" secondItem="hgd-5V-CHC" secondAttribute="bottom" constant="1" id="l7b-62-KmV"/>
+                <constraint firstItem="0ji-sT-HN2" firstAttribute="trailing" secondItem="hgd-5V-CHC" secondAttribute="trailing" id="lo7-Qn-TNV"/>
                 <constraint firstItem="J1L-mP-C5K" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" constant="-3" id="urD-bs-cvo"/>
                 <constraint firstItem="hgd-5V-CHC" firstAttribute="trailing" secondItem="0Yp-lv-Bel" secondAttribute="trailing" id="zhI-bQ-bYP"/>
             </constraints>
