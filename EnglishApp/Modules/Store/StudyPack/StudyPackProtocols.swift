@@ -18,6 +18,7 @@ protocol StudyPackWireframeProtocol: class {
 protocol StudyPackPresenterProtocol: class {
 
     var interactor: StudyPackInteractorInputProtocol? { get set }
+    func getProduct()
 }
 
 //MARK: Interactor -
@@ -39,4 +40,5 @@ protocol StudyPackViewProtocol: class {
     var presenter: StudyPackPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetProduct(product: ProductCollectionEntity)
 }

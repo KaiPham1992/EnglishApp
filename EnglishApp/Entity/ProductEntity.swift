@@ -7,6 +7,20 @@
 //
 
 import ObjectMapper
+class ProductCollectionEntity: BaseEntity {
+    var groupUpgrade = [ProductEntity]()
+    var groupHoney = [ProductEntity]()
+    var groupGift = [ProductEntity]()
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        self.groupUpgrade <- map["group_gift"]
+        self.groupHoney <- map["group_honey"]
+        self.groupGift <- map["group_gift"]
+    }
+}
+
+
 
 class ProductEntity: BaseEntity {
    
@@ -20,6 +34,7 @@ class ProductEntity: BaseEntity {
     var amountHoney: String?
     var createDate: Date?
     var nationId: String?
+    var amountDiamond: String?
     
     
     override func mapping(map: Map) {
@@ -32,6 +47,7 @@ class ProductEntity: BaseEntity {
         self.cropLogo <- map["crop_logo"]
         self.durationAmount <- map["duration_amount"]
         self.durationUnit <- map["duration_unit"]
+        self.amountDiamond <- map["amountDiamond"]
         self.amountHoney <- map["amount_honey"]
         self.nationId <- map["nation_id"]
         

@@ -15,10 +15,21 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
 
 	var presenter: StudyPackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
+    
+    var collectionProduct = ProductCollectionEntity() {
+        didSet {
+            tbBeePack.reloadData()
+        }
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        presenter?.getProduct()
+    }
+    
+    func didGetProduct(product: ProductCollectionEntity) {
+        collectionProduct = product
     }
 
 }
@@ -60,6 +71,7 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeue(ChangeGiftCell.self, for: indexPath)
+                cell.product = self.collectionProduct.groupGift[indexPath.item - 1]
                 
                 return cell
             }
@@ -72,7 +84,7 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         }
-        return 10
+        return collectionProduct.groupGift.count + 1
     }
     
     

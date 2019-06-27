@@ -15,6 +15,7 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
     
     var presenter: BeePackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
+    
     var listBeePack = [BeePackEntity]() {
         didSet {
             tbBeePack.reloadData()
@@ -50,6 +51,7 @@ extension BeePackViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(BeePackCell.self, for: indexPath)
         cell.item = self.listBeePack[indexPath.item]
+        
         return cell
     }
     

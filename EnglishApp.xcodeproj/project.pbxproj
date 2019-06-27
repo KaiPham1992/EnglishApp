@@ -1780,6 +1780,9 @@
 		DEC7F92822C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */; };
 		DEC7F92922C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */; };
 		DEC7F92A22C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */; };
+		DEC7F92C22C509CB0096D3D1 /* ProductAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7F92B22C509CB0096D3D1 /* ProductAPIService.swift */; };
+		DEC7F92D22C509CB0096D3D1 /* ProductAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7F92B22C509CB0096D3D1 /* ProductAPIService.swift */; };
+		DEC7F92E22C509CB0096D3D1 /* ProductAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC7F92B22C509CB0096D3D1 /* ProductAPIService.swift */; };
 		DECD18FC22A25AB10054861D /* BeePackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD18FA22A25AB10054861D /* BeePackCell.swift */; };
 		DECD18FD22A25AB10054861D /* BeePackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD18FA22A25AB10054861D /* BeePackCell.swift */; };
 		DECD18FE22A25AB10054861D /* BeePackCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DECD18FA22A25AB10054861D /* BeePackCell.swift */; };
@@ -2509,6 +2512,7 @@
 		DEC7F91F22C4EDA90096D3D1 /* Comfortaa-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Regular.ttf"; sourceTree = "<group>"; };
 		DEC7F92022C4EDA90096D3D1 /* Comfortaa-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Bold.ttf"; sourceTree = "<group>"; };
 		DEC7F92122C4EDAA0096D3D1 /* Comfortaa-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Comfortaa-Light.ttf"; sourceTree = "<group>"; };
+		DEC7F92B22C509CB0096D3D1 /* ProductAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductAPIService.swift; sourceTree = "<group>"; };
 		DECD18FA22A25AB10054861D /* BeePackCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackCell.swift; sourceTree = "<group>"; };
 		DECD18FB22A25AB10054861D /* BeePackCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BeePackCell.xib; sourceTree = "<group>"; };
 		DECD190222A25E1A0054861D /* BeePackEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeePackEntity.swift; sourceTree = "<group>"; };
@@ -3784,6 +3788,7 @@
 				DEA932A522BF804B0050FB1D /* QAAPIService.swift */,
 				76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */,
 				76C92FA922C49E2700E8ED69 /* ExerciseAPIService.swift */,
+				DEC7F92B22C509CB0096D3D1 /* ProductAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -5987,6 +5992,7 @@
 				DECD193222A26EE20054861D /* DetailPackEntity.swift in Sources */,
 				7640840322B7CB45002D9401 /* SaveEndpoint.swift in Sources */,
 				76EE391F22A5777700DD8960 /* HistoryExerciseDateRouter.swift in Sources */,
+				DEC7F92C22C509CB0096D3D1 /* ProductAPIService.swift in Sources */,
 				DE361F292283E85000FA3B0D /* BaseEntity.swift in Sources */,
 				DE953181228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
 				DED5A02422A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */,
@@ -6490,6 +6496,7 @@
 				DECD193322A26EE20054861D /* DetailPackEntity.swift in Sources */,
 				7640840422B7CB45002D9401 /* SaveEndpoint.swift in Sources */,
 				76EE392022A5777700DD8960 /* HistoryExerciseDateRouter.swift in Sources */,
+				DEC7F92D22C509CB0096D3D1 /* ProductAPIService.swift in Sources */,
 				DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */,
 				DE953182228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
 				DED5A02522A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */,
@@ -6993,6 +7000,7 @@
 				DECD193422A26EE20054861D /* DetailPackEntity.swift in Sources */,
 				7640840522B7CB45002D9401 /* SaveEndpoint.swift in Sources */,
 				76EE392122A5777700DD8960 /* HistoryExerciseDateRouter.swift in Sources */,
+				DEC7F92E22C509CB0096D3D1 /* ProductAPIService.swift in Sources */,
 				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,
 				DE953183228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
 				DED5A02622A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */,

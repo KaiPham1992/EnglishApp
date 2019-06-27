@@ -11,6 +11,17 @@
 import UIKit
 
 class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputProtocol {
+    func getProduct() {
+        Provider.shared.productAPIService.getListProduct(success: { collectionProduct in
+            guard let product = collectionProduct else { return }
+            self.view?.didGetProduct(product: product)
+        }) { _ in
+            
+        }
+    }
+    
+    
+    
 
     weak private var view: StudyPackViewProtocol?
     var interactor: StudyPackInteractorInputProtocol?
@@ -21,5 +32,7 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
         self.interactor = interactor
         self.router = router
     }
+    
+
 
 }

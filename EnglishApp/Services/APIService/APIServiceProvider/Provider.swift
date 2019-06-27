@@ -48,4 +48,9 @@ class Provider {
     var exerciseAPIService: ExerciseAPIServiceProtocol {
         return ExerciseAPIService(network: networkManager)
     }
+    
+    var productAPIService: ProductAPIServiceProtocol {
+        return ProductAPIService(network: networkManager)
+    }
+    
 }

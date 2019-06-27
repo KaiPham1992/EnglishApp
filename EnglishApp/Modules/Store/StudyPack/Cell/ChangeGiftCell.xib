@@ -85,6 +85,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imgIcon" destination="pgt-5C-jkb" id="KvX-HM-PLr"/>
+                <outlet property="lbContent" destination="MQk-1a-EFS" id="fTf-Cf-0wl"/>
+                <outlet property="lbCountDiamon" destination="FHQ-4x-VXT" id="wXD-0t-AoV"/>
+                <outlet property="lbCountHoney" destination="EpJ-ft-plD" id="Aqp-U4-wa2"/>
+                <outlet property="lbTitle" destination="ib7-YC-kZz" id="kVY-v4-oXX"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="59.598214285714285"/>
         </tableViewCell>
     </objects>

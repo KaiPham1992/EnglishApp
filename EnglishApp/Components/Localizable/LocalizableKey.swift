@@ -291,4 +291,5 @@ struct LocalizableKey {
     static let enterPassword = "enterPassword"
     static let enterRePassword = "enterRePassword"
     static let enterCaptcha = "enterCaptcha"
+    static let boxHoneyTitle = "boxHoneyTitle"
 } 
