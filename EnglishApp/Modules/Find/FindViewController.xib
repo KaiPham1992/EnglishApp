@@ -13,6 +13,9 @@
         <array key="Comfortaa-Bold.ttf">
             <string>Comfortaa-Bold</string>
         </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindViewController">
@@ -65,6 +68,11 @@
                         <constraint firstAttribute="bottom" secondItem="wkW-e6-NdW" secondAttribute="bottom" id="oZq-X5-RbB"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có kết quả tìm kiếm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-54-dXq">
+                    <rect key="frame" x="91" y="325.5" width="193" height="16"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bOy-Gu-yGC">
                     <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -72,11 +80,13 @@
             </subviews>
             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="Utm-54-dXq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="13S-SQ-IfS"/>
                 <constraint firstItem="pb4-Fg-far" firstAttribute="trailing" secondItem="bOy-Gu-yGC" secondAttribute="trailing" id="HBD-DB-niZ"/>
                 <constraint firstItem="bOy-Gu-yGC" firstAttribute="leading" secondItem="pb4-Fg-far" secondAttribute="leading" id="Ksc-lD-C6A"/>
                 <constraint firstItem="pb4-Fg-far" firstAttribute="trailing" secondItem="PHi-LO-2ya" secondAttribute="trailing" id="OSf-Z1-B2c"/>
                 <constraint firstItem="PHi-LO-2ya" firstAttribute="leading" secondItem="pb4-Fg-far" secondAttribute="leading" id="R3a-Ea-hT8"/>
                 <constraint firstItem="mKU-6d-Tfg" firstAttribute="leading" secondItem="pb4-Fg-far" secondAttribute="leading" id="ZEE-US-NHF"/>
+                <constraint firstItem="Utm-54-dXq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eIk-pq-Yr1"/>
                 <constraint firstItem="mKU-6d-Tfg" firstAttribute="top" secondItem="pb4-Fg-far" secondAttribute="top" id="jWV-zy-GAw"/>
                 <constraint firstItem="bOy-Gu-yGC" firstAttribute="top" secondItem="PHi-LO-2ya" secondAttribute="bottom" id="juM-Pm-FnI"/>
                 <constraint firstItem="pb4-Fg-far" firstAttribute="bottom" secondItem="bOy-Gu-yGC" secondAttribute="bottom" id="kST-or-BhH"/>

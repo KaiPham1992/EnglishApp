@@ -318,6 +318,15 @@
 		76C8E30022C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
 		76C8E30122C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
 		76C8E30222C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
+		76C92F8922C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
+		76C92F8A22C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
+		76C92F8B22C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
+		76C92F8D22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
+		76C92F8E22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
+		76C92F8F22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
+		76C92F9122C4496E00E8ED69 /* FindEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */; };
+		76C92F9222C4496E00E8ED69 /* FindEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */; };
+		76C92F9322C4496E00E8ED69 /* FindEnpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */; };
 		76CE317E2295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
 		76CE317F2295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
 		76CE31802295A95300E998FB /* LevelExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CE31782295A95300E998FB /* LevelExercisePresenter.swift */; };
@@ -1989,6 +1998,9 @@
 		76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultFillQuestion.xib; sourceTree = "<group>"; };
 		76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultExercise.swift; sourceTree = "<group>"; };
 		76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultExercise.xib; sourceTree = "<group>"; };
+		76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAPIService.swift; sourceTree = "<group>"; };
+		76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEnpoint.swift; sourceTree = "<group>"; };
 		76CE31782295A95300E998FB /* LevelExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExercisePresenter.swift; sourceTree = "<group>"; };
 		76CE31792295A95300E998FB /* LevelExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseRouter.swift; sourceTree = "<group>"; };
 		76CE317A2295A95300E998FB /* LevelExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelExerciseViewController.swift; sourceTree = "<group>"; };
@@ -2875,6 +2887,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		76C92F8722C3B9FC00E8ED69 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
 		76CE31772295A93400E998FB /* LevelExercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -3583,6 +3603,7 @@
 		DE361EEB2283E84F00FA3B0D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				76C92F8722C3B9FC00E8ED69 /* Result */,
 				76E852F422B945590039751A /* TheoryGroup */,
 				764083F922B7C990002D9401 /* SaveGroup */,
 				DE361EEE2283E84F00FA3B0D /* NotificationEntity.swift */,
@@ -3676,6 +3697,7 @@
 				7640840222B7CB45002D9401 /* SaveEndpoint.swift */,
 				76E852F522B945870039751A /* TheoryEndpoint.swift */,
 				DEA932A122BF7ED80050FB1D /* QAEndPoint.swift */,
+				76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -3698,6 +3720,7 @@
 				764083FE22B7CA6E002D9401 /* SaveAPIService.swift */,
 				76E852F922B946CA0039751A /* TheoryAPIService.swift */,
 				DEA932A522BF804B0050FB1D /* QAAPIService.swift */,
+				76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -5566,6 +5589,7 @@
 				DE952F8A2287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317E228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				76EE393C22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
+				76C92F8922C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
 				76EE392222A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8B22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -5657,6 +5681,7 @@
 				76F7F46522946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				769A3BE222A24FF000CA55BD /* ViewTime.swift in Sources */,
+				76C92F9122C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
 				DE89D1EF22A41B44000638B0 /* LevelUpContent.swift in Sources */,
@@ -5815,6 +5840,7 @@
 				DE3CC33E2283DD980037DBE4 /* AppDelegate.swift in Sources */,
 				DEECF89C22871D1B00A4678B /* ForgotPasswordPresenter.swift in Sources */,
 				DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */,
+				76C92F8D22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
 				76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
@@ -6055,6 +6081,7 @@
 				DE952FD32287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317F228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				76EE393D22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
+				76C92F8A22C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392322A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8C22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -6146,6 +6173,7 @@
 				76F7F46622946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
 				769A3BE322A24FF000CA55BD /* ViewTime.swift in Sources */,
+				76C92F9222C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
 				DE89D1F022A41B44000638B0 /* LevelUpContent.swift in Sources */,
@@ -6304,6 +6332,7 @@
 				DE9530192287DF4800E3F688 /* AppDelegate.swift in Sources */,
 				DE95301A2287DF4800E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */,
+				76C92F8E22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
 				76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
@@ -6544,6 +6573,7 @@
 				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				76EE393E22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
+				76C92F8B22C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392422A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8D22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -6635,6 +6665,7 @@
 				76F7F46722946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE9530962287DF6400E3F688 /* Utils.swift in Sources */,
 				769A3BE422A24FF000CA55BD /* ViewTime.swift in Sources */,
+				76C92F9322C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				DE89D1F122A41B44000638B0 /* LevelUpContent.swift in Sources */,
@@ -6793,6 +6824,7 @@
 				DE9530C72287DF6400E3F688 /* AppDelegate.swift in Sources */,
 				DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
+				76C92F8F22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
 				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,
 				76CF0C7A22906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EC22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,

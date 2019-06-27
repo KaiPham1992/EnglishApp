@@ -10,9 +10,6 @@ import Foundation
 //QAAPIService
 
 
-import Foundation
-
-
 protocol QAAPIServiceProtocol {
     func getQA(offset: Int, success: @escaping SuccessHandler<QAEntity>.array,failure: @escaping RequestFailure)
     func detailQA(id: Int,success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)

@@ -11,6 +11,22 @@
 import UIKit
 
 class FindInteractor: FindInteractorInputProtocol {
-
+ 
     weak var presenter: FindInteractorOutputProtocol?
+    
+    func searchExercise(text: String) {
+        ProgressView.shared.show()
+        Provider.shared.findAPIService.searchExercise(text: text, success: { (respone) in
+            ProgressView.shared.hide()
+            self.presenter?.searchExerciseSuccessed(respone: respone)
+        }) { (error) in
+            ProgressView.shared.hide()
+            if let _error = error {
+               self.presenter?.searchExerciseFailed(error: _error)
+            }
+            
+        }
+    }
+    
+
 }

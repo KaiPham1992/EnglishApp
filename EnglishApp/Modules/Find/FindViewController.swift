@@ -10,7 +10,7 @@
 
 import UIKit
 
-class FindViewController: BaseViewController, FindViewProtocol {
+class FindViewController: BaseViewController {
 
 	var presenter: FindPresenterProtocol?
     @IBOutlet weak var vAppSearch: AppSearchBar!
@@ -26,13 +26,30 @@ class FindViewController: BaseViewController, FindViewProtocol {
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.find.showLanguage)
         
-        vAppSearch.setTitleAndPlaceHolder(placeHolder: "In my opinion, the")
+        vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.find.showLanguage)
+        vAppSearch.actionSearch = searchExercise
         configureTable()
+    }
+    
+    func searchExercise(text: String){
+        self.presenter?.searchExercise(text: text)
     }
     
     override func btnBackTapped() {
         showTabbar()
         self.pop()
+    }
+}
+extension FindViewController: FindViewProtocol{
+    func reloadView() {
+        tbResult.reloadData()
+    }
+    
+    func showErrorSearchFailed() {
+        PopUpHelper.shared.showYesNo(message: self.presenter?.getMessageError() ?? "", completionNo: {
+        }) {
+            self.push(controller: StoreViewController())
+        }
     }
 }
 
@@ -51,12 +68,20 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
-        
+        if let textSearch = self.presenter?.getTextSearch(indexPath: indexPath){
+            cell.lblSearch.text = textSearch
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        let row = self.presenter?.getNumberSearch() ?? 0
+        if row == 0 {
+            tbResult.isHidden = true
+            return 0
+        }
+        tbResult.isHidden = false
+        return row
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
