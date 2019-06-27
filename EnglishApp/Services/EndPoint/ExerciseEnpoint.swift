@@ -12,6 +12,7 @@ import Alamofire
 enum ExerciseEnpoint {
     case getListExercise(type_test: Int, category_id: Int,level: Int,offset: Int)
     case getViewExercise(id: Int)
+    case getLevelExercise(type_test: Int,offset: Int)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -21,6 +22,8 @@ extension ExerciseEnpoint: EndPointType {
             return "_api/exercise/get_list_exercise"
         case .getViewExercise(let id):
             return "_api/exercise/get_view_exercise/\(id)"
+        case .getLevelExercise:
+            return "_api/exercise/get_list_study_pack_exercise"
         }
     }
     
@@ -30,6 +33,8 @@ extension ExerciseEnpoint: EndPointType {
             return .post
         case .getViewExercise:
             return .get
+        case .getLevelExercise:
+            return .post
         }
     }
     
@@ -44,6 +49,8 @@ extension ExerciseEnpoint: EndPointType {
             ]
         case .getViewExercise:
             return ["":""]
+        case .getLevelExercise(let type_test,let offset):
+            return ["type_test": type_test,"offset":offset,"limit":limit]
             
         }
     }

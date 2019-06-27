@@ -27,12 +27,20 @@ class LevelExerciseViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        if type == .level || type == .tryhard {
+        if type == .tryhard {
             tbvLevelExercise.registerXibFile(CellLevelExercise.self)
             self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
-        } else {
+        }
+        
+        if type == .assign {
             tbvLevelExercise.registerXibFile(CellAssignExercise.self)
         }
+        
+        if  type == .level  {
+            tbvLevelExercise.registerXibFile(CellLevelExercise.self)
+            self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
+        }
+        
         tbvLevelExercise.dataSource = self
         tbvLevelExercise.delegate = self
     }
@@ -65,17 +73,28 @@ extension LevelExerciseViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if type == .level || type == .tryhard {
+        if type == .tryhard {
             let row = self.presenter?.getNumberRow() ?? 0
             return row
-        } else {
-            return 10
         }
+        
+        if type == .level {
+            let row = self.presenter?.getNumberRowLevel() ?? 0
+            return row
+        }
+        return 10
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if type == .level || type == .tryhard {
+        if type == .tryhard {
             let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
             if let dataCell = self.presenter?.getItemExercise(indexPath: indexPath) {
+                cell.lblNameExercise.text = dataCell.name&
+            }
+            return cell
+        }
+        if type == .level {
+            let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
+            if let dataCell = self.presenter?.getItemLevelExercise(indexPath: indexPath) {
                 cell.lblNameExercise.text = dataCell.name&
             }
             return cell
@@ -87,7 +106,12 @@ extension LevelExerciseViewController : UITableViewDataSource{
         let row = self.presenter?.getNumberRow() ?? 0
         if indexPath.row  == row - 1{
             self.offset += limit
-            self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
+            if type == .tryhard {
+                self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
+            }
+            if type == .level {
+                self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
+            }
         }
     }
 }

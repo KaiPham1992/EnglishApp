@@ -26,6 +26,9 @@ protocol LevelExercisePresenterProtocol: class {
     func getListExercise(category_id: Int,offset: Int)
     func getItemExercise(indexPath: IndexPath) -> ExerciseEntity?
     func getNumberRow() -> Int?
+    func getNumberRowLevel() -> Int?
+    func getItemLevelExercise(indexPath: IndexPath) -> SearchEntity?
+    func getLevelExercise(type_test: Int,offset: Int)
 }
 
 //MARK: Interactor -
@@ -33,12 +36,14 @@ protocol LevelExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getListExerciseSuccessed(respone: ListExerciseEntity)
+    func getListLevelExerciseSuccessed(respone: LevelExerciseEntity)
 }
 
 protocol LevelExerciseInteractorInputProtocol: class {
 
     var presenter: LevelExerciseInteractorOutputProtocol?  { get set }
     func getListExercise(category_id: Int,offset: Int)
+    func getLevelExercise(type_test: Int,offset: Int) 
 
     /* Presenter -> Interactor */
 }
