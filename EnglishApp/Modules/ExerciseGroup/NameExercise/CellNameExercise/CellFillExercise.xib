@@ -114,6 +114,7 @@
             <size key="customSize" width="322" height="724"/>
             <connections>
                 <outlet property="heightStackView" destination="y2R-8t-6wd" id="O46-GP-6d0"/>
+                <outlet property="lbQuestion" destination="kJv-VQ-CdD" id="Scd-jr-two"/>
                 <outlet property="stvFillQuestion" destination="IUK-7N-Oz2" id="9bw-Ib-kug"/>
                 <outlet property="tvContent" destination="Xe3-JY-wQk" id="h72-Yi-cik"/>
             </connections>

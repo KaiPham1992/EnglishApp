@@ -64,8 +64,9 @@ class CellExercise: UICollectionViewCell {
     
     func setupCell(dataCell: QuestionEntity){
         DispatchQueue.main.async {
-            self.detectQuestion(contextQuestion: dataCell.content_extend&)
-//            self.lblChildQuestion.text = dataCell.answers?.first?.sequence&
+            //big question
+            self.detectQuestion(contextQuestion: "")
+            self.lblChildQuestion.text = dataCell.content_extend&
             self.answer = dataCell.answers ?? []
         }
     }
@@ -142,13 +143,16 @@ extension CellExercise: UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
+        if let listAnswer = self.getDataSource(indexPath: indexPath) {
+            cell.dataSource = listAnswer
+        }
         cell.indexPath = indexPath
-//        cell.delegate = self
-//        cell.indexPath = indexPath
-//        cell.setupData(title: listQuestion[indexPath.row],isExercise: self.isExercise)
-//        cell.delegate = self
         heightScrollView.constant = vQuestion.frame.height + tbvNameExercise.contentSize.height + 25
         return cell
+    }
+    
+    func getDataSource(indexPath: IndexPath) -> [String]? {
+        return self.answer[indexPath.row].options?.map{$0.value}.compactMap{$0}
     }
 }
 

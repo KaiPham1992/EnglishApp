@@ -15,6 +15,7 @@ class CellFillExercise: UICollectionViewCell {
     @IBOutlet weak var stvFillQuestion: UIStackView!
     weak var delegate: CellExerciseDelegate?
     @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var lbQuestion: UILabel!
     
     var attributed: NSMutableAttributedString?
     
@@ -36,27 +37,31 @@ class CellFillExercise: UICollectionViewCell {
     func setupView(){
         tvContent.textContainerInset = UIEdgeInsets.zero
         tvContent.textContainer.lineFragmentPadding = 0
-        detectQuestion()
     }
     
-    func detectQuestion(){
+    func setupCell(data: QuestionEntity){
         DispatchQueue.main.async {
-            let question = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life.In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life"
-            let  textArray = question.components(separatedBy: " ")
-            let attributedText = NSMutableAttributedString()
-            for word in textArray {
-                let attributed = NSMutableAttributedString(string: word + " ")
-                let range = NSRange(location: 0, length: word.count)
-                let myCustomAttributed = [ NSAttributedString.Key.init(rawValue: "tapped"):word, NSAttributedString.Key.font : AppFont.fontRegular14] as [NSAttributedString.Key : Any]
-                attributed.addAttributes(myCustomAttributed, range: range)
-                attributedText.append(attributed)
-            }
-            self.attributed = attributedText
-            self.tvContent.attributedText = attributedText
-            let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
-            tap.numberOfTapsRequired = 2
-            self.tvContent.addGestureRecognizer(tap)
+            self.detectQuestion(text: "")
+            self.lbQuestion.text = data.content_extend&
+            self.setFillCell(numberView: data.answers?.count ?? 0)
         }
+    }
+    
+    func detectQuestion(text: String){
+        let  textArray = text.components(separatedBy: " ")
+        let attributedText = NSMutableAttributedString()
+        for word in textArray {
+            let attributed = NSMutableAttributedString(string: word + " ")
+            let range = NSRange(location: 0, length: word.count)
+            let myCustomAttributed = [ NSAttributedString.Key.init(rawValue: "tapped"):word, NSAttributedString.Key.font : AppFont.fontRegular14] as [NSAttributedString.Key : Any]
+            attributed.addAttributes(myCustomAttributed, range: range)
+            attributedText.append(attributed)
+        }
+        self.attributed = attributedText
+        self.tvContent.attributedText = attributedText
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+        tap.numberOfTapsRequired = 2
+        self.tvContent.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
@@ -103,19 +108,15 @@ class CellFillExercise: UICollectionViewCell {
         delegate?.showDetailVocubulary(text: "")
     }
     
-    func setupCell(numberView: Int){
-        DispatchQueue.main.async {
-            for index in 1...numberView {
-                let view = ViewFillQuestion()
-                view.setupTag(tag: index)
-                self.stvFillQuestion.addArrangedSubview(view)
-                self.listViewAnswer.append(view)
-                view.delegate = self
-            }
-            self.heightStackView.constant = CGFloat(40 * numberView)
+    func setFillCell(numberView: Int){
+        for index in 1...numberView {
+            let view = ViewFillQuestion()
+            view.setupTag(tag: index)
+            self.stvFillQuestion.addArrangedSubview(view)
+            self.listViewAnswer.append(view)
+            view.delegate = self
         }
-        
-        
+        self.heightStackView.constant = CGFloat(40 * numberView)
     }
 }
 extension CellFillExercise : TextViewChangeHeightDelegate {

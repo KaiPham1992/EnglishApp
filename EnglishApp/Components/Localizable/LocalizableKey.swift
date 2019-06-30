@@ -198,6 +198,7 @@ struct LocalizableKey {
     static let time_end = "time_end"
     static let see_more = "see_more"
     static let sentence = "sentence"
+    static let next = "next"
     
     
     

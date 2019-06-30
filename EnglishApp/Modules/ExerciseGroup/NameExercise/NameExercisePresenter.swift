@@ -35,6 +35,10 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         return exerciseEntity?.questions?.count
     }
     
+    func getAllTime() -> [Int]? {
+        return exerciseEntity?.questions?.map{$0.question_time}.compactMap{Int($0 ?? "0")}
+    }
+    
     func getTime(index: Int) -> Int? {
         return Int(exerciseEntity?.questions?[index].question_time ?? "0")
     }

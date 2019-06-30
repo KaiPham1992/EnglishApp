@@ -71,7 +71,6 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
-        cell.setupCell(numberView: 10)
         //        cell.delegate = self
         return cell
     }

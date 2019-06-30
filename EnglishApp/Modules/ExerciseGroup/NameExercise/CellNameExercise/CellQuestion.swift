@@ -16,9 +16,21 @@ protocol ClickQuestionDelegate: class {
 
 class CellQuestion: UITableViewCell {
     
+    @IBOutlet weak var imgDropDown: UIImageView!
     @IBAction func clickQuestion(_ sender: Any) {
+        self.isShow = !self.isShow
         dropDown.show()
     }
+    
+    var dataSource  : [String] = []
+    var isShow = false {
+        didSet {
+            UIView.animate(withDuration: 0.2) {
+                 self.imgDropDown.transform = self.imgDropDown.transform.rotated(by: CGFloat(Double.pi))
+            }
+        }
+    }
+    
     
     @IBOutlet weak var lbNumber: UILabel!
     @IBOutlet weak var lbAnswer: UILabel!
@@ -35,7 +47,6 @@ class CellQuestion: UITableViewCell {
         }
     }
     
-    
     func setupDropDown(){
         dropDown.anchorView = vQuestion
         dropDown.bottomOffset = CGPoint(x: 0, y: (vQuestion.frame.height + 5))
@@ -46,14 +57,21 @@ class CellQuestion: UITableViewCell {
             
             // Setup your custom UI components
             cell.lbAnswer.text = item
-            
         }
+        
         dropDown.width = vQuestion.frame.width
         dropDown.setupCornerRadius(2)
-        dropDown.dataSource = ["A","B","C","D"]
+        dropDown.dataSource = dataSource
         
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.isShow = !self.isShow
+            self.lbAnswer.isHidden = false
+            self.vQuestion.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
             self.lbAnswer.text = item
+        }
+        
+        dropDown.cancelAction = { [unowned self] in
+            self.isShow = !self.isShow
         }
     }
     

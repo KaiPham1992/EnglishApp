@@ -33,9 +33,26 @@ class ViewTime: BaseViewXib{
         
     }
     
+    func getCurrentTime() -> Int{
+        return self.time
+    }
+    
+    func stopTimer() {
+        if self.timer != nil {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
+    }
+    
+    func setupTimeStartNow(min: Int) {
+        self.time = min
+        self.setupTimer(time: self.time)
+        startTimer()
+    }
+    
     func setupTime(min: Int){
-        lblTime.text = "\(min):00 min"
-        self.time = min * 60
+        self.time = min
+        self.setupTimer(time: self.time)
     }
     
     func startTimer(){
@@ -44,23 +61,21 @@ class ViewTime: BaseViewXib{
         }
         delegate?.startTime()
     }
+    
     @objc func changeTime(){
         if self.time == 0 {
             stopTimer()
             
         } else {
             self.time -= 1
-            let second = self.time % 60
-            let min : Int = self.time / 60
-            let timeText = "\(min):\(second) \(LocalizableKey.min.showLanguage)"
-            lblTime.text = timeText
+            self.setupTimer(time: self.time)
         }
     }
     
-    func stopTimer(){
-        if timer != nil {
-            timer?.invalidate()
-            timer = nil
-        }
+    func setupTimer(time: Int){
+        let second = self.time % 60
+        let min : Int = self.time / 60
+        let timeText = second < 10 ? "\(min):0\(second) \(LocalizableKey.min.showLanguage)" : "\(min):\(second) \(LocalizableKey.min.showLanguage)"
+        lblTime.text = timeText
     }
 }
