@@ -436,3 +436,23 @@ extension String{
         return String.dateFormatter.date(from: self)
     }
 }
+
+
+extension String {
+    func formatNumber(style: String = " ",number: Int = 3) -> String {
+        if self.count <= number {
+            return self
+        }
+        var index = 1
+        let firstCount = self.count % number
+        let result = self.reduce("") { (result, char) -> String in
+            if (index - firstCount) % number == 0 {
+                index += 1
+                return result + String(char) + style
+            }
+            index += 1
+            return result + String(char)
+        }
+        return result
+    }
+}

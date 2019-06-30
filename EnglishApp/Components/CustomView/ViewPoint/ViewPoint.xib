@@ -14,7 +14,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewPoint" customModule="EnglishApp_AppStore" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewPoint" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <connections>
+                <outlet property="imgView" destination="ble-9r-P9I" id="0px-QX-NLP"/>
+                <outlet property="lblNumber" destination="Nsu-OP-yYU" id="puG-GE-GCe"/>
+                <outlet property="lblTitle" destination="Dp8-m0-RV2" id="PB2-wd-d2g"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="178" height="67"/>

@@ -23,6 +23,7 @@ protocol ListLessonPresenterProtocol: class {
     func getListLesson(lesson_category_id: String,offset: Int)
     func getLesson(indexPath: IndexPath) -> LessonCatelogy?
     func getTaskEveryDate(date: String,offset: Int)
+    func getIdTestResult(indexPath: IndexPath) -> String?
 }
 
 //MARK: Interactor -

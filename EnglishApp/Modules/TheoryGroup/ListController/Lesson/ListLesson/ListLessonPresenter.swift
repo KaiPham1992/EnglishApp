@@ -32,6 +32,10 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
         return listLesson[indexPath.row].name
     }
     
+    func getIdTestResult(indexPath: IndexPath) -> String? {
+        return listLesson[indexPath.row]._id
+    }
+    
     func getLesson(indexPath: IndexPath) -> LessonCatelogy?{
         return listLesson[indexPath.row]
     }

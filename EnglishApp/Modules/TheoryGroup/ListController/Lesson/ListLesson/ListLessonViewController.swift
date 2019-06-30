@@ -88,7 +88,7 @@ extension ListLessonViewController: UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if type == .exercise_date {
-            let vc = TaskDateRouter.createModule()
+            let vc = ResultRouter.createModule(type: .result, id: self.presenter?.getIdTestResult(indexPath: indexPath) ?? "")
             self.push(controller: vc,animated: true)
         } else {
             let vc = DetailLessonRouter.createModule(lesson: self.presenter?.getLesson(indexPath: indexPath), type: .detailLesson)

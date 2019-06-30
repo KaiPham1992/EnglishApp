@@ -53,4 +53,7 @@ class Provider {
         return ProductAPIService(network: networkManager)
     }
     
+    var resultAPIService: ResultAPIServiceProtocol {
+        return ResultAPIService(network: networkManager)
+    }
 }

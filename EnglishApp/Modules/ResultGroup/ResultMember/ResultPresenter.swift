@@ -11,10 +11,11 @@
 import UIKit
 
 class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
-
+    
     weak private var view: ResultViewProtocol?
     var interactor: ResultInteractorInputProtocol?
     private let router: ResultWireframeProtocol
+    var testResultProfile: TestResultProfileEntity?
 
     init(interface: ResultViewProtocol, interactor: ResultInteractorInputProtocol?, router: ResultWireframeProtocol) {
         self.view = interface
@@ -24,5 +25,48 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
     func gotoResultQuestion(title: String) {
         self.router.gotoResultQuestion(title: title)
     }
+    
+    func getImageProfile() -> String?{
+        return testResultProfile?.img_src
+    }
+    
+    func getAmountDiamond() -> String?{
+        return testResultProfile?.amount_diamond
+    }
+    
+    func getAmoutRank() -> String?{
+        return testResultProfile?.amount_rank
+    }
+    
+    func getTotalTime() -> String {
+        let time = Int(testResultProfile?.total_time ?? "0") ?? 0
+        let min = time/60
+        let second = time % 60
+        if second < 10 {
+            return "\(min): 0\(second) \(LocalizableKey.min.showLanguage)"
+        }
+        return "\(min):\(second) \(LocalizableKey.min.showLanguage)"
+    }
+    
+    func getNumberQuestion() -> Int?{
+        return testResultProfile?.questions?.count
+    }
+    
+    func getPointQuestion(indexPath: IndexPath) -> Int?{
+        return Int(testResultProfile?.questions?[indexPath.row].score ?? "0")
+    }
+    
+    func getTotalPoint() -> String {
+        return (testResultProfile?.total_score?.formatNumber() ?? "") + " " + LocalizableKey.point.showLanguage
+    }
 
+    
+    func getViewResult(id: String) {
+        self.interactor?.getViewResult(id: id)
+    }
+    
+    func getViewTestResultSuccessed(respone: TestResultProfileEntity) {
+        self.testResultProfile = respone
+        self.view?.reloadView()
+    }
 }

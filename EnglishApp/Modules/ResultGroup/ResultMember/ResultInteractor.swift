@@ -13,4 +13,15 @@ import UIKit
 class ResultInteractor: ResultInteractorInputProtocol {
 
     weak var presenter: ResultInteractorOutputProtocol?
+    func getViewResult(id: String) {
+        ProgressView.shared.show()
+        Provider.shared.resultAPIService.getViewTestResultProfile(id: id, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getViewTestResultSuccessed(respone: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

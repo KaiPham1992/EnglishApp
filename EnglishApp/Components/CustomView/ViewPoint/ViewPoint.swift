@@ -7,7 +7,15 @@
 //
 
 import Foundation
+import UIKit
 
 class ViewPoint: BaseViewXib {
+    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var lblNumber: UILabel!
+    
+    func setupNumber(number: String){
+        lblNumber.text = number
+    }
     
 }

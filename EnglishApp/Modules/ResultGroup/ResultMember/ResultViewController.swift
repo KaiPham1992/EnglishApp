@@ -10,11 +10,15 @@
 
 import UIKit
 import XLPagerTabStrip
+import SDWebImage
 
-class ResultViewController: BaseViewController, ResultViewProtocol {
+class ResultViewController: BaseViewController {
 
+    @IBOutlet weak var lblTime: UILabel!
+    @IBOutlet weak var lblPoint: UILabel!
+    @IBOutlet weak var imgAVT: UIImageView!
     @IBOutlet weak var vInfo: UIView!
-    @IBOutlet weak var heightScrollView: NSLayoutConstraint!
+    @IBOutlet weak var heightTableView: NSLayoutConstraint!
     @IBOutlet weak var trailingStackView: NSLayoutConstraint!
     @IBOutlet weak var leadingStackView: NSLayoutConstraint!
     @IBOutlet weak var stackView: UIStackView!
@@ -23,21 +27,26 @@ class ResultViewController: BaseViewController, ResultViewProtocol {
     @IBOutlet weak var lblTimeDoExercise: UILabel!
     @IBOutlet weak var lblPointSum: UILabel!
     @IBOutlet weak var tbvResult: UITableView!
-    @IBOutlet weak var viewTime: ViewPoint!
+    @IBOutlet weak var viewLevel: ViewPoint!
     var type : TypeResult = .result
     var presenter: ResultPresenterProtocol?
+    var id: String = "1"
 
     override func setUpViews() {
         super.setUpViews()
+        viewRank.imgView.image = #imageLiteral(resourceName: "ic_kimcuong")
+        viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
+        viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
+        viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
         if type == .result {
             viewRank.isHidden = false
             leadingStackView.constant = 28
             trailingStackView.constant = 28
+            self.presenter?.getViewResult(id: id)
         } else {
             viewRank.isHidden = true
             leadingStackView.constant = 16
             trailingStackView.constant = 16
-            
         }
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbvResult.registerXibFile(CellResult.self)
@@ -56,24 +65,43 @@ class ResultViewController: BaseViewController, ResultViewProtocol {
         } else {
             setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         }
-        
+    }
+    
+}
+
+extension ResultViewController: ResultViewProtocol{
+    func reloadView() {
+        self.tbvResult.reloadData()
+        imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), completed: nil)
+        lblPoint.text = self.presenter?.getTotalPoint()&
+        lblTime.text = self.presenter?.getTotalTime()&
+        viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
+        viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
     }
 }
+
 extension ResultViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        let row = self.presenter?.getNumberQuestion() ?? 0
+        return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellResult.self, for: indexPath)
-        if indexPath.row % 2 == 0{
-            cell.setupData(isTrue: true)
-        } else {
-            cell.setupData(isTrue: false)
+        cell.indexPath = indexPath
+        if let dataCell = self.presenter?.getPointQuestion(indexPath: indexPath){
+            if dataCell > 0 {
+                cell.setupData(isTrue: true, point: String(dataCell))
+            } else if dataCell < 0 {
+                cell.setupData(isTrue: false, point: String(dataCell))
+            } else {
+                cell.setupDataDefault(point: String(dataCell))
+            }
         }
-        heightScrollView.constant = 10 + vInfo.frame.height + tbvResult.contentSize.height
+        
+        heightTableView.constant = tbvResult.contentSize.height
         return cell
     }
 }

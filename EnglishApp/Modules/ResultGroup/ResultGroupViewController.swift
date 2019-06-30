@@ -22,6 +22,6 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [ResultRouter.createModule(type: .result),ResultCompetitionRouter.createModule()]
+        return [ResultRouter.createModule(type: .result,id: "1"),ResultCompetitionRouter.createModule()]
     }
 }

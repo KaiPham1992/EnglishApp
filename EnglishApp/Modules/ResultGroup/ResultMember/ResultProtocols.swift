@@ -19,17 +19,27 @@ protocol ResultPresenterProtocol: class {
 
     var interactor: ResultInteractorInputProtocol? { get set }
     func gotoResultQuestion(title: String)
+    func getViewResult(id: String)
+    func getImageProfile() -> String?
+    func getAmountDiamond() -> String?
+    func getAmoutRank() -> String?
+    func getTotalTime() -> String
+    func getTotalPoint() -> String
+    func getPointQuestion(indexPath: IndexPath) -> Int?
+    func getNumberQuestion() -> Int?
 }
 
 //MARK: Interactor -
 protocol ResultInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getViewTestResultSuccessed(respone: TestResultProfileEntity)
 }
 
 protocol ResultInteractorInputProtocol: class {
 
     var presenter: ResultInteractorOutputProtocol?  { get set }
+    func getViewResult(id: String)
 
     /* Presenter -> Interactor */
 }
@@ -38,6 +48,7 @@ protocol ResultInteractorInputProtocol: class {
 protocol ResultViewProtocol: class {
 
     var presenter: ResultPresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }
