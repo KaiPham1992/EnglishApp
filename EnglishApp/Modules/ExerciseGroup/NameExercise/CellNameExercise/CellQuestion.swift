@@ -30,7 +30,6 @@ class CellQuestion: UITableViewCell {
         }
     }
     
-    
     @IBOutlet weak var lbNumber: UILabel!
     @IBOutlet weak var lbAnswer: UILabel!
     @IBOutlet weak var vQuestion: UIView!
