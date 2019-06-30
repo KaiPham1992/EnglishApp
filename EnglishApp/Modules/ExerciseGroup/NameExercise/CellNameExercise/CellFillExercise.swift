@@ -15,7 +15,6 @@ class CellFillExercise: UICollectionViewCell {
     @IBOutlet weak var stvFillQuestion: UIStackView!
     weak var delegate: CellExerciseDelegate?
     @IBOutlet weak var tvContent: UITextView!
-    @IBOutlet weak var lbQuestion: UILabel!
     
     var attributed: NSMutableAttributedString?
     
@@ -41,8 +40,7 @@ class CellFillExercise: UICollectionViewCell {
     
     func setupCell(data: QuestionEntity){
         DispatchQueue.main.async {
-            self.detectQuestion(text: "")
-            self.lbQuestion.text = data.content_extend&
+            self.detectQuestion(text: data.content_extend&)
             self.setFillCell(numberView: data.answers?.count ?? 0)
         }
     }

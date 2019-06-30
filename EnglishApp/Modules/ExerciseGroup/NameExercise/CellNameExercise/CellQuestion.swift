@@ -10,7 +10,6 @@ import UIKit
 import DropDown
 
 protocol ClickQuestionDelegate: class {
-    func clickQuestion(indexPath: IndexPath?,isSelect: Bool)
     func showMoreResult(result: String)
 }
 

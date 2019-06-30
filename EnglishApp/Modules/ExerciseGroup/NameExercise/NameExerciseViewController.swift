@@ -64,6 +64,7 @@ class NameExerciseViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        clvQuestion.isHidden = true
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
@@ -168,6 +169,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
 extension NameExerciseViewController : TimeDelegate{
     func startTime() {
         btnNext.isUserInteractionEnabled = true
+        clvQuestion.isHidden = false
     }
     
     func endTime() {

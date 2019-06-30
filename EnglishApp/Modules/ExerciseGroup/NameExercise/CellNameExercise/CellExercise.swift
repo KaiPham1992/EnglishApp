@@ -17,11 +17,11 @@ protocol CellExerciseDelegate: class {
 
 class CellExercise: UICollectionViewCell {
     
+    @IBOutlet weak var heightTableView: NSLayoutConstraint!
     weak var delegate: CellExerciseDelegate?
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vQuestion: UIView!
     @IBOutlet weak var tbvNameExercise: UITableView!
-    @IBOutlet weak var lblChildQuestion: UILabel!
     
     var attributed: NSMutableAttributedString?
     var answer: [ChildQuestionEntity] = []{
@@ -30,28 +30,12 @@ class CellExercise: UICollectionViewCell {
         }
     }
     
-    var listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    var isExercise = true {
-        didSet{
-            if isExercise == false {
-                self.listSelect = [true,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true]
-            }
-        }
-    }
-    
-    
     var numberLine: Int = 0
-    let listQuestion : [String] = ["dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6"]
      let popover = Popover()
-    
-    
-    @IBOutlet weak var heightScrollView: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-       
         setupView()
-        
     }
     
     func setupView(){
@@ -64,9 +48,7 @@ class CellExercise: UICollectionViewCell {
     
     func setupCell(dataCell: QuestionEntity){
         DispatchQueue.main.async {
-            //big question
-            self.detectQuestion(contextQuestion: "")
-            self.lblChildQuestion.text = dataCell.content_extend&
+            self.detectQuestion(contextQuestion: dataCell.content_extend&)
             self.answer = dataCell.answers ?? []
         }
     }
@@ -138,16 +120,18 @@ extension CellExercise: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.answer.count
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
         if let listAnswer = self.getDataSource(indexPath: indexPath) {
             cell.dataSource = listAnswer
         }
         cell.indexPath = indexPath
-        heightScrollView.constant = vQuestion.frame.height + tbvNameExercise.contentSize.height + 25
+        heightTableView.constant = tbvNameExercise.contentSize.height
         return cell
     }
     
@@ -159,9 +143,5 @@ extension CellExercise: UITableViewDataSource{
 extension CellExercise : ClickQuestionDelegate{
     func showMoreResult(result: String) {
         delegate?.showMoreResulr(result: result)
-    }
-    
-    func clickQuestion(indexPath: IndexPath?, isSelect: Bool) {
-        self.listSelect[indexPath?.row ?? 0] = isSelect
     }
 }

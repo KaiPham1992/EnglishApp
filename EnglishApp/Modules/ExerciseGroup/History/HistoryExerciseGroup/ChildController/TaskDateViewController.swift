@@ -78,7 +78,6 @@ extension TaskDateViewController: UICollectionViewDataSource{
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
-        cell.isExercise = false
         cell.delegate = self
         return cell
     }

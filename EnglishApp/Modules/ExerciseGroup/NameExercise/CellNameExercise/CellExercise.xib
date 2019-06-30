@@ -30,55 +30,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="302" height="889"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih8-EC-UFW">
-                                <rect key="frame" x="0.0" y="0.0" width="302" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="188"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-ch-1F6">
-                                        <rect key="frame" x="0.0" y="0.0" width="302" height="489.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="78"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hh-EP-rfq">
-                                                <rect key="frame" x="16" y="10" width="183.5" height="18"/>
+                                                <rect key="frame" x="14" y="10" width="183.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-eN-hh2">
-                                                <rect key="frame" x="14" y="28" width="274" height="156.5"/>
+                                                <rect key="frame" x="14" y="36" width="274" height="32"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a internet.</string>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zm-RA-tz8">
-                                                <rect key="frame" x="14" y="192.5" width="274" height="297"/>
-                                                <string key="text">1. A logo is a _________. A. company’s name B. special company C. type of product D. company symbol 2. A popular form of advertising is to _________. 
- A. wear jeans B. use logo C. watch TV D. use different products 
- 3. A good slogan is _________. 
- A. easy to remember B. useful to produce C. simple to make D. easy to buy 
- 4. The main purpose of an advertisement is to _________. 
- A. sell you something you do not want B. make you feel rich and famous 
- C. make you buy the product D. pay the TV station
- </string>
-                                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="KRm-eN-hh2" firstAttribute="leading" secondItem="hxi-ch-1F6" secondAttribute="leading" constant="14" id="CIO-H9-rdl"/>
-                                            <constraint firstItem="0zm-RA-tz8" firstAttribute="top" secondItem="KRm-eN-hh2" secondAttribute="bottom" constant="8" id="LrT-6h-Lrz"/>
-                                            <constraint firstItem="0zm-RA-tz8" firstAttribute="leading" secondItem="KRm-eN-hh2" secondAttribute="leading" id="OVH-Z1-Mya"/>
-                                            <constraint firstAttribute="bottom" secondItem="0zm-RA-tz8" secondAttribute="bottom" id="QiP-hh-FXO"/>
-                                            <constraint firstItem="KRm-eN-hh2" firstAttribute="top" secondItem="5hh-EP-rfq" secondAttribute="bottom" id="UJO-zq-vZo"/>
+                                            <constraint firstItem="KRm-eN-hh2" firstAttribute="top" secondItem="5hh-EP-rfq" secondAttribute="bottom" constant="8" id="UJO-zq-vZo"/>
                                             <constraint firstAttribute="trailing" secondItem="KRm-eN-hh2" secondAttribute="trailing" constant="14" id="VaF-jb-Rkb"/>
-                                            <constraint firstItem="0zm-RA-tz8" firstAttribute="trailing" secondItem="KRm-eN-hh2" secondAttribute="trailing" id="Y81-UE-Vdj"/>
+                                            <constraint firstAttribute="bottom" secondItem="KRm-eN-hh2" secondAttribute="bottom" constant="10" id="ZBr-ui-HxH"/>
                                             <constraint firstItem="5hh-EP-rfq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="top" constant="10" id="p4L-fz-Dxs"/>
-                                            <constraint firstItem="5hh-EP-rfq" firstAttribute="leading" secondItem="hxi-ch-1F6" secondAttribute="leading" constant="16" id="wT1-W3-0IY"/>
+                                            <constraint firstItem="5hh-EP-rfq" firstAttribute="leading" secondItem="hxi-ch-1F6" secondAttribute="leading" constant="14" id="wT1-W3-0IY"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yD4-u9-JSq">
-                                        <rect key="frame" x="0.0" y="499.5" width="302" height="500.5"/>
+                                        <rect key="frame" x="0.0" y="88" width="302" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="HdB-sK-HEY"/>
+                                        </constraints>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +74,6 @@
                                     <constraint firstItem="hxi-ch-1F6" firstAttribute="leading" secondItem="Ih8-EC-UFW" secondAttribute="leading" id="C78-vc-lkf"/>
                                     <constraint firstItem="hxi-ch-1F6" firstAttribute="top" secondItem="Ih8-EC-UFW" secondAttribute="top" id="S7L-6m-Hyz"/>
                                     <constraint firstItem="yD4-u9-JSq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="bottom" constant="10" id="dag-M4-5PP"/>
-                                    <constraint firstAttribute="height" constant="1000" id="liS-4A-3QI"/>
                                     <constraint firstAttribute="bottom" secondItem="yD4-u9-JSq" secondAttribute="bottom" id="zdB-Fd-nXl"/>
                                 </constraints>
                             </view>
@@ -112,8 +96,7 @@
             </constraints>
             <size key="customSize" width="302" height="889"/>
             <connections>
-                <outlet property="heightScrollView" destination="liS-4A-3QI" id="UOB-sw-HqD"/>
-                <outlet property="lblChildQuestion" destination="0zm-RA-tz8" id="Y8i-1c-zPC"/>
+                <outlet property="heightTableView" destination="HdB-sK-HEY" id="sdW-YS-fWw"/>
                 <outlet property="tbvNameExercise" destination="yD4-u9-JSq" id="Jn7-EO-dKz"/>
                 <outlet property="tvContent" destination="KRm-eN-hh2" id="PKM-sD-Nsu"/>
                 <outlet property="vQuestion" destination="hxi-ch-1F6" id="Ycq-hI-GMp"/>
