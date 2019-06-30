@@ -14,6 +14,8 @@ enum ExerciseEnpoint {
     case getViewExercise(id: Int)
     case getLevelExercise(type_test: Int,offset: Int)
     case getViewEntrance
+    case getResultCaledar(from: String,to: String)
+    case getTestResult(date: String,offset: Int)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -27,6 +29,10 @@ extension ExerciseEnpoint: EndPointType {
             return "_api/exercise/get_list_study_pack_exercise"
         case .getViewEntrance:
             return "_api/exercise/do_entrance_test"
+        case .getResultCaledar:
+            return "_api/result/get_list_test_result_calendar"
+        case .getTestResult:
+            return "_api/result/get_list_test_result"
         }
     }
     
@@ -40,6 +46,10 @@ extension ExerciseEnpoint: EndPointType {
             return .post
         case .getViewEntrance:
             return .get
+        case .getResultCaledar:
+            return .post
+        case .getTestResult:
+            return .post
 
         }
     }
@@ -60,6 +70,10 @@ extension ExerciseEnpoint: EndPointType {
         case .getViewEntrance:
             return ["":""]
             
+        case .getResultCaledar(let from, let to):
+            return ["date_from":from,"date_to":to]
+        case .getTestResult(let date, let offset):
+            return ["date": date,"offset": offset,"limit": limit]
         }
     }
     

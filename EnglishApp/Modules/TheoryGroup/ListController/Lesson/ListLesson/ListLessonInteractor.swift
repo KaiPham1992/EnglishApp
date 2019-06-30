@@ -24,5 +24,15 @@ class ListLessonInteractor: ListLessonInteractorInputProtocol {
         }
     }
     
-
+    func getTaskEveryDate(date: String,offset: Int) {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.getTestResult(date: date, offset: offset, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getListLessonSuccessed(listLesson: _respone.self_created_test?.compactMap{LessonCatelogy(selfCreatedTestEntity: $0)} ?? [])
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

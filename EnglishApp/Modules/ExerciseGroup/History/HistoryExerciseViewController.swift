@@ -10,7 +10,8 @@
 
 import UIKit
 
-class HistoryExerciseViewController: BaseViewController, HistoryExerciseViewProtocol {
+class HistoryExerciseViewController: BaseViewController {
+    
 
 	var presenter: HistoryExercisePresenterProtocol?
 
@@ -20,6 +21,11 @@ class HistoryExerciseViewController: BaseViewController, HistoryExerciseViewProt
     override func setUpViews() {
         super.setUpViews()
         calendar.delegate = self
+        calendar.actionTranformDate = tranformDate
+    }
+    
+    func tranformDate(from: String,to : String){
+        self.presenter?.getResultCalendar(from: from, to: to)
     }
     
     override func setUpNavigation() {
@@ -27,10 +33,20 @@ class HistoryExerciseViewController: BaseViewController, HistoryExerciseViewProt
         self.tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.history_exercise.showLanguage)
+        self.presenter?.getResultCalendar(from: calendar.getFromDate(), to: calendar.getToDate())
     }
 }
+
+extension HistoryExerciseViewController : HistoryExerciseViewProtocol{
+    func reloadView() {
+        if let dateEnable = self.presenter?.getDate() {
+             calendar.dateEnable = dateEnable
+        }
+    }
+}
+
 extension HistoryExerciseViewController: ClickDateDelegate{
-    func clickDate(index: Int) {
-        self.presenter?.gotoHistoryDate()
+    func clickDate(date: String) {
+        self.presenter?.gotoHistoryDate(date:date)
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ClickDateDelegate: class {
-    func clickDate(index: Int)
+    func clickDate(date: String)
 }
 
 class CalendarView : UIView{
@@ -29,6 +29,8 @@ class CalendarView : UIView{
         return view
     }()
     
+    var actionTranformDate: ((String,String)->())?
+    
     let clvDate : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 14, left: 0, bottom: 0, right: 0)
@@ -46,6 +48,11 @@ class CalendarView : UIView{
     var firstWeekDayOfMonth = 0   //(Sunday-Saturday 1-7)
     var todayDate = 0
     var isLeft = false
+    var dateEnable: [Int] = [] {
+        didSet{
+            clvDate.reloadData()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -57,6 +64,15 @@ class CalendarView : UIView{
         super.init(coder: aDecoder)
         setupData()
         setupView()
+    }
+    
+    func getFromDate() -> String {
+        let date = "\(currentYear)-\(currentMonthIndex)-01"
+        return date
+    }
+    func getToDate() -> String{
+        let date = "\(currentYear)-\(currentMonthIndex)-\(numOfDaysInMonth[currentMonthIndex-1])"
+        return date
     }
     
     func setupData(){
@@ -118,12 +134,14 @@ class CalendarView : UIView{
     }
     
     func reloadView(isLeft: Bool){
+        actionTranformDate?(self.getFromDate(),self.getToDate())
+        dateEnable.removeAll()
         if isLeft {
-            UIView.transition(with: clvDate, duration: 0.5, options: .transitionFlipFromLeft, animations: {
+            UIView.transition(with: clvDate, duration: 0.5, options: .allowAnimatedContent, animations: {
                 self.clvDate.reloadData()
             }, completion: nil)
         } else {
-            UIView.transition(with: clvDate, duration: 0.5, options: .transitionFlipFromRight, animations: {
+            UIView.transition(with: clvDate, duration: 0.5, options: .allowAnimatedContent, animations: {
                 self.clvDate.reloadData()
             }, completion: nil)
         }
@@ -179,7 +197,7 @@ extension CalendarView : DidChangeMonthDelegate{
         if month == 1 && year % 4 == 0{
             numOfDaysInMonth[month] = 29
         } else {
-            numOfDaysInMonth[month] = 28
+            numOfDaysInMonth[1] = 28
         }
         self.firstWeekDayOfMonth = getFirstWeekDate()
         reloadView(isLeft: self.isLeft)
@@ -206,11 +224,10 @@ extension CalendarView : UICollectionViewDataSource{
         } else {
             let date = indexPath.row - firstWeekDayOfMonth + 2
             cell.enableCell(date: date)
-            if indexPath.row % 2 == 0 {
+            if dateEnable.count > 0 && dateEnable.contains(date) {
                 cell.showDot()
             }
         }
-        
         return cell
     }
 }
@@ -227,8 +244,9 @@ extension CalendarView : UICollectionViewDelegateFlowLayout{
 extension CalendarView : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.row % 2 == 0 {
-            delegate?.clickDate(index: indexPath.row)
+        let date = indexPath.row - firstWeekDayOfMonth + 2
+        if dateEnable.contains(date) {
+            delegate?.clickDate(date: "\(currentYear)-\(currentMonthIndex)-\(date)")
         }
         
     }

@@ -26,6 +26,7 @@ class ListLessonViewController: BaseViewController {
     @IBOutlet weak var tbvLesson: UITableView!
     var type : LessonRecipe = .lesson
     var lesson_category_id: String = "1"
+    var date: String = ""
     var offset : Int = 0
     
     override func viewDidLoad() {
@@ -33,7 +34,12 @@ class ListLessonViewController: BaseViewController {
         tbvLesson.registerXibFile(CellGrammar.self)
         tbvLesson.dataSource = self
         tbvLesson.delegate = self
-        self.presenter?.getListLesson(lesson_category_id: self.lesson_category_id, offset: offset)
+        if type == .exercise_date {
+            self.presenter?.getTaskEveryDate(date: date, offset: self.offset)
+        } else {
+            self.presenter?.getListLesson(lesson_category_id: self.lesson_category_id, offset: offset)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {

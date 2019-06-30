@@ -13,4 +13,13 @@ import UIKit
 class HistoryExerciseInteractor: HistoryExerciseInteractorInputProtocol {
 
     weak var presenter: HistoryExerciseInteractorOutputProtocol?
+    
+    func getResultCalendar(from: String, to: String) {
+        Provider.shared.exerciseAPIService.getResultCalendar(from: from, to: to, success: { (respone) in
+            if let _respone = respone {
+                self.presenter?.getResultCalendarSuccessed(respone: _respone)
+            }
+        }) { (error) in
+        }
+    }
 }

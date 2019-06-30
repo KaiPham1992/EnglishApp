@@ -32,6 +32,8 @@ enum AppDateFormat: String {
     case yyyyMMdd = "yyyy-MM-dd"
     case HHmm = "HH:mm"
     case ha = "ha"
+    case yyyyMMddHHmmss               = "yyyy-MM-dd HH:mm:ss"
+    
     
     case hhmmddmmyyy             = "hh:mm dd-MM-yyyy"
 

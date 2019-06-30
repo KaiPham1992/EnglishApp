@@ -15,6 +15,7 @@ class HistoryExercisePresenter: HistoryExercisePresenterProtocol, HistoryExercis
     weak private var view: HistoryExerciseViewProtocol?
     var interactor: HistoryExerciseInteractorInputProtocol?
     private let router: HistoryExerciseWireframeProtocol
+    var calendarEntity: DateCalendarEntity?
 
     init(interface: HistoryExerciseViewProtocol, interactor: HistoryExerciseInteractorInputProtocol?, router: HistoryExerciseWireframeProtocol) {
         self.view = interface
@@ -22,8 +23,21 @@ class HistoryExercisePresenter: HistoryExercisePresenterProtocol, HistoryExercis
         self.router = router
     }
     
-    func gotoHistoryDate() {
-        self.router.gotoHistoryDate()
+    func gotoHistoryDate(date: String) {
+        self.router.gotoHistoryDate(date: date)
+    }
+    
+    func getResultCalendarSuccessed(respone: DateCalendarEntity) {
+        self.calendarEntity = respone
+        self.view?.reloadView()
+    }
+    
+    func getDate() -> [Int]? {
+        return calendarEntity?.date?.map{Date(gtFormat: $0, gfFormat: AppDateFormat.yyyyMMddHHmmss)?.day}.compactMap{$0}
+    }
+    
+    func getResultCalendar(from: String, to: String) {
+        self.interactor?.getResultCalendar(from: from, to: to)
     }
 
 }

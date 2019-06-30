@@ -12,24 +12,28 @@ import Foundation
 
 //MARK: Wireframe -
 protocol HistoryExerciseWireframeProtocol: class {
-    func gotoHistoryDate()
+    func gotoHistoryDate(date: String)
 }
 //MARK: Presenter -
 protocol HistoryExercisePresenterProtocol: class {
 
     var interactor: HistoryExerciseInteractorInputProtocol? { get set }
-    func gotoHistoryDate()
+    func gotoHistoryDate(date: String)
+    func getResultCalendar(from: String,to: String)
+    func getDate() -> [Int]?
 }
 
 //MARK: Interactor -
 protocol HistoryExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getResultCalendarSuccessed(respone: DateCalendarEntity)
 }
 
 protocol HistoryExerciseInteractorInputProtocol: class {
 
     var presenter: HistoryExerciseInteractorOutputProtocol?  { get set }
+    func getResultCalendar(from: String,to: String)
 
     /* Presenter -> Interactor */
 }
@@ -38,6 +42,7 @@ protocol HistoryExerciseInteractorInputProtocol: class {
 protocol HistoryExerciseViewProtocol: class {
 
     var presenter: HistoryExercisePresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }

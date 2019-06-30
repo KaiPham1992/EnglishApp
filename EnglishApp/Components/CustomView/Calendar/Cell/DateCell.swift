@@ -19,6 +19,7 @@ class DateCell: UICollectionViewCell {
     }
     
     func disableCell(date: Int){
+        vDot.isHidden = true
         self.isUserInteractionEnabled = false
         vBackGround.backgroundColor = UIColor(red: 237/255, green: 242/255, blue: 245/255, alpha: 1)
         lblDate.text = "\(date)"
@@ -26,6 +27,7 @@ class DateCell: UICollectionViewCell {
     }
     
     func enableCell(date: Int){
+        vDot.isHidden = true
         self.isUserInteractionEnabled = true
         vBackGround.backgroundColor = .white
         lblDate.alpha = 1
