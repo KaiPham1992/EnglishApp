@@ -11,10 +11,11 @@
 import UIKit
 
 class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteractorOutputProtocol {
-
+ 
     weak private var view: NameExerciseViewProtocol?
     var interactor: NameExerciseInteractorInputProtocol?
     private let router: NameExerciseWireframeProtocol
+    var exerciseEntity: ViewExerciseEntity?
 
     init(interface: NameExerciseViewProtocol, interactor: NameExerciseInteractorInputProtocol?, router: NameExerciseWireframeProtocol) {
         self.view = interface
@@ -29,4 +30,31 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     func gotoResult() {
         self.router.gotoResult()
     }
+    
+    func getNumber() -> Int? {
+        return exerciseEntity?.questions?.count
+    }
+    
+    func getTime(index: Int) -> Int? {
+        return Int(exerciseEntity?.questions?[index].question_time ?? "0")
+    }
+    
+    func getQuestion(indexPath: IndexPath) -> QuestionEntity? {
+        return exerciseEntity?.questions?[indexPath.row]
+    }
+    
+    func getViewExercise() {
+        
+    }
+    
+    func getViewEntranceTest() {
+        self.interactor?.getViewEntranceTest()
+    }
+    
+    func getExerciseSuccessed(respone: ViewExerciseEntity) {
+        self.exerciseEntity = respone
+        self.view?.reloadView()
+    }
+    
+
 }

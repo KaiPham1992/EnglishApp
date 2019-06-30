@@ -50,7 +50,14 @@
                                             </textView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zm-RA-tz8">
                                                 <rect key="frame" x="14" y="192.5" width="274" height="297"/>
-                                                <string key="text">1. A logo is a _________. A. company’s name B. special company C. type of product D. company symbol 2. A popular form of advertising is to _________.  A. wear jeans B. use logo C. watch TV D. use different products  3. A good slogan is _________.  A. easy to remember B. useful to produce C. simple to make D. easy to buy  4. The main purpose of an advertisement is to _________.  A. sell you something you do not want B. make you feel rich and famous  C. make you buy the product D. pay the TV station </string>
+                                                <string key="text">1. A logo is a _________. A. company’s name B. special company C. type of product D. company symbol 2. A popular form of advertising is to _________. 
+ A. wear jeans B. use logo C. watch TV D. use different products 
+ 3. A good slogan is _________. 
+ A. easy to remember B. useful to produce C. simple to make D. easy to buy 
+ 4. The main purpose of an advertisement is to _________. 
+ A. sell you something you do not want B. make you feel rich and famous 
+ C. make you buy the product D. pay the TV station
+ </string>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -106,6 +113,7 @@
             <size key="customSize" width="302" height="889"/>
             <connections>
                 <outlet property="heightScrollView" destination="liS-4A-3QI" id="UOB-sw-HqD"/>
+                <outlet property="lblChildQuestion" destination="0zm-RA-tz8" id="Y8i-1c-zPC"/>
                 <outlet property="tbvNameExercise" destination="yD4-u9-JSq" id="Jn7-EO-dKz"/>
                 <outlet property="tvContent" destination="KRm-eN-hh2" id="PKM-sD-Nsu"/>
                 <outlet property="vQuestion" destination="hxi-ch-1F6" id="Ycq-hI-GMp"/>

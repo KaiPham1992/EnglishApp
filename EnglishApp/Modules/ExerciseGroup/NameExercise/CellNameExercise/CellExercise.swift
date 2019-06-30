@@ -21,7 +21,15 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vQuestion: UIView!
     @IBOutlet weak var tbvNameExercise: UITableView!
+    @IBOutlet weak var lblChildQuestion: UILabel!
+    
     var attributed: NSMutableAttributedString?
+    var answer: [ChildQuestionEntity] = []{
+        didSet{
+            tbvNameExercise.reloadData()
+        }
+    }
+    
     var listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
     var isExercise = true {
         didSet{
@@ -52,12 +60,18 @@ class CellExercise: UICollectionViewCell {
         tbvNameExercise.registerXibFile(CellQuestion.self)
         tbvNameExercise.dataSource = self
         tbvNameExercise.delegate = self
-        detectQuestion()
     }
     
-    func detectQuestion(){
-        let question = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life.In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life"
-        let  textArray = question.components(separatedBy: " ")
+    func setupCell(dataCell: QuestionEntity){
+        DispatchQueue.main.async {
+            self.detectQuestion(contextQuestion: dataCell.content_extend&)
+//            self.lblChildQuestion.text = dataCell.answers?.first?.sequence&
+            self.answer = dataCell.answers ?? []
+        }
+    }
+    
+    func detectQuestion(contextQuestion: String){
+        let  textArray = contextQuestion.components(separatedBy: " ")
         let attributedText = NSMutableAttributedString()
         for word in textArray {
             let attributed = NSMutableAttributedString(string: word + " ")
@@ -115,12 +129,6 @@ class CellExercise: UICollectionViewCell {
     }
 }
 extension CellExercise : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //show pop update account
-        //        PopUpHelper.shared.showUpdateAccount {
-        //
-        //        }
-    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -130,7 +138,7 @@ extension CellExercise: UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return self.answer.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)

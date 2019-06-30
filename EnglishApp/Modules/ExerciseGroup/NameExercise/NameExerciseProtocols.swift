@@ -21,17 +21,25 @@ protocol NameExercisePresenterProtocol: class {
     var interactor: NameExerciseInteractorInputProtocol? { get set }
     func gotoDetailVocabulary()
     func gotoResult()
+    func getViewExercise()
+    func getViewEntranceTest()
+    func getTime(index: Int) -> Int?
+    func getNumber() -> Int?
+    func getQuestion(indexPath: IndexPath) -> QuestionEntity?
 }
 
 //MARK: Interactor -
 protocol NameExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getExerciseSuccessed(respone: ViewExerciseEntity)
 }
 
 protocol NameExerciseInteractorInputProtocol: class {
 
     var presenter: NameExerciseInteractorOutputProtocol?  { get set }
+    func getViewExercise()
+    func getViewEntranceTest()
 
     /* Presenter -> Interactor */
 }
@@ -42,4 +50,5 @@ protocol NameExerciseViewProtocol: class {
     var presenter: NameExercisePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func reloadView()
 }

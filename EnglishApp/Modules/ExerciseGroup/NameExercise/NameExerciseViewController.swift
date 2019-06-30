@@ -12,7 +12,7 @@ import UIKit
 import Popover
 
 
-class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
+class NameExerciseViewController: BaseViewController {
 
 	var presenter: NameExercisePresenterProtocol?
 
@@ -34,6 +34,8 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
     @IBOutlet weak var vCountTime: ViewTime!
+    
+    
     var currentIndex = 0
     var isEnd : Bool = false{
         didSet {
@@ -41,15 +43,15 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         }
     }
     
-    
-//    var isShowMore = true
     override func setUpViews() {
         super.setUpViews()
         clvQuestion.registerXibCell(CellFillExercise.self)
+        clvQuestion.registerXibCell(CellExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
         vCountTime.setupTime(min: 2)
         vCountTime.delegate = self
+        self.presenter?.getViewEntranceTest()
     }
     
     override func setUpNavigation() {
@@ -63,6 +65,13 @@ class NameExerciseViewController: BaseViewController, NameExerciseViewProtocol {
         PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage, complete: {
             self.pop(animated: true)
         }) 
+    }
+}
+
+extension NameExerciseViewController :NameExerciseViewProtocol{
+    func reloadView() {
+        vCountTime.setupTime(min: self.presenter?.getTime(index: 0) ?? 0)
+        clvQuestion.reloadData()
     }
 }
 extension NameExerciseViewController : UICollectionViewDelegate{
@@ -85,13 +94,22 @@ extension NameExerciseViewController: UICollectionViewDataSource{
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return 6
+         return self.presenter?.getNumber() ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
-        cell.setupCell(numberView: 10)
-        cell.delegate = self
-        return cell
+       
+//        cell.setupCell(numberView: 10)
+        if let data = self.presenter?.getQuestion(indexPath: indexPath), let type = data.answers?.first?.type {
+            print("type ",type)
+            if type == "1" {
+                let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+                return cell
+            }
+            let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
+            return cell
+        }
+//        cell.delegate = self
+        return UICollectionViewCell()
     }
 }
 

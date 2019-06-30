@@ -13,6 +13,7 @@ class QuestionEntity : Mappable {
     
     var _id : String?
     var content_extend : String?
+    var question_time: String?
     var answers : [ChildQuestionEntity]?
     
     required init?(map: Map) {
@@ -21,6 +22,7 @@ class QuestionEntity : Mappable {
     
     func mapping(map: Map) {
         self._id <- map["_id"]
+        self.question_time <- map["question_time"]
         self.content_extend <- map["content_extend"]
         self.answers <- map["answers"]
     }

@@ -12,9 +12,16 @@ protocol ExerciseAPIServiceProtocol {
     func getListExercise(type_test: Int, category_id: Int,level: Int,offset:Int,success: @escaping SuccessHandler<ListExerciseEntity>.object, failure: @escaping RequestFailure)
     func getViewExercise(id: Int,success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
     func getLevelExercise(type_test: Int,offset: Int,success: @escaping SuccessHandler<LevelExerciseEntity>.object, failure: @escaping RequestFailure)
+    func getEntranceExercise(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
+    
+    func getEntranceExercise(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ExerciseEnpoint.getViewEntrance
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
     func getLevelExercise(type_test: Int, offset: Int, success: @escaping SuccessHandler<LevelExerciseEntity>.object, failure: @escaping RequestFailure) {
         let enpoint = ExerciseEnpoint.getLevelExercise(type_test: type_test, offset: offset)
         network.requestData(endPoint: enpoint, success: MapperData.mapObject(success), failure: failure)

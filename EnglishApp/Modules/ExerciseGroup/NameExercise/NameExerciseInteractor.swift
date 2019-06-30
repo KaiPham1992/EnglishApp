@@ -11,6 +11,24 @@
 import UIKit
 
 class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
+  
 
     weak var presenter: NameExerciseInteractorOutputProtocol?
+    
+    func getViewExercise() {
+        
+    }
+    
+    func getViewEntranceTest() {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.getEntranceExercise(success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getExerciseSuccessed(respone: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
+    
 }
