@@ -12,21 +12,23 @@ import UIKit
 import XLPagerTabStrip
 
 class BeePackViewController: BaseViewController, BeePackViewProtocol {
-    
+
     var presenter: BeePackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
     
-    var listBeePack = [BeePackEntity]() {
+    var listBeePack = [ProductEntity]() {
         didSet {
+            
             tbBeePack.reloadData()
+            
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        
-        listBeePack = BeePackEntity.toArray()
+//        listBeePack = BeePackEntity.toArray()
+        listBeePack = UserDefaultHelper.shared.collectionProduct.groupHoney
     }
     
 }
@@ -50,13 +52,13 @@ extension BeePackViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(BeePackCell.self, for: indexPath)
-        cell.item = self.listBeePack[indexPath.item]
-        
+//        cell.item = self.listBeePack[indexPath.item]
+        cell.item = self.listBeePack[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listBeePack.count
+        return self.listBeePack.count
     }
     
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 protocol StudyPackViewCellDelegate: class {
     func btnDetailTapped()
@@ -14,14 +15,20 @@ protocol StudyPackViewCellDelegate: class {
 
 class StudyPackViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var lbPackageName: UILabel!
+    @IBOutlet weak var lbDetail: UILabel!
     @IBOutlet weak var vPreviewAll: InfoPackView!
     @IBOutlet weak var vDoAll: InfoPackView!
     @IBOutlet weak var vCanComment: InfoPackView!
     @IBOutlet weak var vCanCreateWork: InfoPackView!
     @IBOutlet weak var vWorkDependOnLevel: InfoPackView!
     
+    @IBOutlet weak var imgIcon: UIImageView!
+    
+    var product = ProductEntity()
     weak var delegate: StudyPackViewCellDelegate?
 
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -32,6 +39,20 @@ class StudyPackViewCell: UICollectionViewCell {
         vWorkDependOnLevel.setTitleImage(title: "Bài tập cho theo cấp độ", image: AppImage.imgCloseRed)
     }
     
+    func getData(product: ProductEntity){
+        self.product = product
+        displayData()
+    }
+    func displayData(){
+        lbPackageName.text = product.name
+        if let amountHoney = product.amountHoney{
+            lbDetail.text = "\(amountHoney) hũ mật ong - \(product.durationAmount&) \(product.durationUnit& == "YEAR" ? "NĂM" : "MONTH")"
+        }
+        if let amountDiamond = product.amountDiamond{
+            lbDetail.text = "\(amountDiamond) kim cương - \(product.durationAmount&) \(product.durationUnit& == "YEAR" ? "NĂM" : "MONTH")"
+        }
+        imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+    }
     @IBAction func btnDetailTapped() {
         delegate?.btnDetailTapped()
     }
