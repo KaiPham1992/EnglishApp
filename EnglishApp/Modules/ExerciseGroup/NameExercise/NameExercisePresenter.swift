@@ -39,6 +39,11 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         return exerciseEntity?.questions?.map{$0.question_time}.compactMap{Int($0 ?? "0")}
     }
     
+    
+    func getAllIdQuestion() -> [Int]?{
+        return exerciseEntity?.questions?.map{Int($0._id ?? "0")}.compactMap{$0}
+    }
+    
     func getTime(index: Int) -> Int? {
         return Int(exerciseEntity?.questions?[index].question_time ?? "0")
     }

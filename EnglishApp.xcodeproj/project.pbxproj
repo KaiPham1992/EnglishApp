@@ -216,9 +216,6 @@
 		768074A122C90E5D0015A75C /* QuestionChoiceResultParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A022C90E5D0015A75C /* QuestionChoiceResultParam.swift */; };
 		768074A222C90E5D0015A75C /* QuestionChoiceResultParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A022C90E5D0015A75C /* QuestionChoiceResultParam.swift */; };
 		768074A322C90E5D0015A75C /* QuestionChoiceResultParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A022C90E5D0015A75C /* QuestionChoiceResultParam.swift */; };
-		768074A622C90F6C0015A75C /* AnswerChoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A522C90F6C0015A75C /* AnswerChoiceParam.swift */; };
-		768074A722C90F6C0015A75C /* AnswerChoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A522C90F6C0015A75C /* AnswerChoiceParam.swift */; };
-		768074A822C90F6C0015A75C /* AnswerChoiceParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A522C90F6C0015A75C /* AnswerChoiceParam.swift */; };
 		768074AA22C910390015A75C /* QuestionSubmitParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A922C910390015A75C /* QuestionSubmitParam.swift */; };
 		768074AB22C910390015A75C /* QuestionSubmitParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A922C910390015A75C /* QuestionSubmitParam.swift */; };
 		768074AC22C910390015A75C /* QuestionSubmitParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074A922C910390015A75C /* QuestionSubmitParam.swift */; };
@@ -2033,7 +2030,6 @@
 		7680749422C8737E0015A75C /* ResultAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultAPIService.swift; sourceTree = "<group>"; };
 		7680749C22C88A910015A75C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		768074A022C90E5D0015A75C /* QuestionChoiceResultParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceResultParam.swift; sourceTree = "<group>"; };
-		768074A522C90F6C0015A75C /* AnswerChoiceParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChoiceParam.swift; sourceTree = "<group>"; };
 		768074A922C910390015A75C /* QuestionSubmitParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSubmitParam.swift; sourceTree = "<group>"; };
 		768074AD22C910E80015A75C /* SubmitExerciseParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitExerciseParam.swift; sourceTree = "<group>"; };
 		76870EA222C0EE6100F12544 /* ViewFillQuestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewFillQuestion.xib; sourceTree = "<group>"; };
@@ -2877,7 +2873,6 @@
 			isa = PBXGroup;
 			children = (
 				768074A022C90E5D0015A75C /* QuestionChoiceResultParam.swift */,
-				768074A522C90F6C0015A75C /* AnswerChoiceParam.swift */,
 				768074A922C910390015A75C /* QuestionSubmitParam.swift */,
 				768074AD22C910E80015A75C /* SubmitExerciseParam.swift */,
 			);
@@ -5858,7 +5853,6 @@
 				769A3BBE229FE66F00CA55BD /* HistoryExerciseProtocols.swift in Sources */,
 				DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */,
 				DECD191922A269560054861D /* DetailPackInteractor.swift in Sources */,
-				768074A622C90F6C0015A75C /* AnswerChoiceParam.swift in Sources */,
 				DE89D23222A425CB000638B0 /* BXHView.swift in Sources */,
 				DE361DD92283E4BD00FA3B0D /* LoginProtocols.swift in Sources */,
 				DE361E9D2283E60500FA3B0D /* NotificationPopUp.swift in Sources */,
@@ -6373,7 +6367,6 @@
 				769A3BBF229FE66F00CA55BD /* HistoryExerciseProtocols.swift in Sources */,
 				DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */,
 				DECD191A22A269560054861D /* DetailPackInteractor.swift in Sources */,
-				768074A722C90F6C0015A75C /* AnswerChoiceParam.swift in Sources */,
 				DE89D23322A425CB000638B0 /* BXHView.swift in Sources */,
 				DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */,
 				DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */,
@@ -6888,7 +6881,6 @@
 				769A3BC0229FE66F00CA55BD /* HistoryExerciseProtocols.swift in Sources */,
 				DE95309E2287DF6400E3F688 /* LoginRouter.swift in Sources */,
 				DECD191B22A269560054861D /* DetailPackInteractor.swift in Sources */,
-				768074A822C90F6C0015A75C /* AnswerChoiceParam.swift in Sources */,
 				DE89D23422A425CB000638B0 /* BXHView.swift in Sources */,
 				DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */,
 				DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */,

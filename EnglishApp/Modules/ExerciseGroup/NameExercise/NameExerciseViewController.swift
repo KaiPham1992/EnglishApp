@@ -62,6 +62,8 @@ class NameExerciseViewController: BaseViewController {
         }
     }
     
+    var listAnswerQuestion : [QuestionSubmitParam] = []
+    
     override func setUpViews() {
         super.setUpViews()
         clvQuestion.isHidden = true
@@ -109,6 +111,9 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         self.numberQuestion = self.presenter?.getNumber() ?? 0
         self.arrTime = self.presenter?.getAllTime() ?? []
         lblIndexQuestion.text = "1/\(numberQuestion)"
+        if let _listIdQuestion = self.presenter?.getAllIdQuestion() {
+            self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0)}
+        }
         vCountTime.setupTime(min: self.arrTime[0])
         clvQuestion.reloadData()
     }

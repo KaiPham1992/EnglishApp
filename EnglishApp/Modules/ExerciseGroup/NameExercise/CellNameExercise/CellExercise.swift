@@ -26,12 +26,14 @@ class CellExercise: UICollectionViewCell {
     var attributed: NSMutableAttributedString?
     var answer: [ChildQuestionEntity] = []{
         didSet{
+            self.listAnswer = answer.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)}
             tbvNameExercise.reloadData()
         }
     }
     
     var numberLine: Int = 0
      let popover = Popover()
+    var listAnswer : [QuestionChoiceResultParam] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -50,6 +52,7 @@ class CellExercise: UICollectionViewCell {
         DispatchQueue.main.async {
             self.detectQuestion(contextQuestion: dataCell.content_extend&)
             self.answer = dataCell.answers ?? []
+            
         }
     }
     
@@ -127,10 +130,12 @@ extension CellExercise: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        if let listAnswer = self.getDataSource(indexPath: indexPath) {
+        cell.indexPath = indexPath
+        if let listAnswer = self.getDataSource(indexPath: indexPath), let option = self.getIdOption(indexPath: indexPath){
+            cell.idOption = option
             cell.dataSource = listAnswer
         }
-        cell.indexPath = indexPath
+        cell.delegate = self
         heightTableView.constant = tbvNameExercise.contentSize.height
         return cell
     }
@@ -138,10 +143,15 @@ extension CellExercise: UITableViewDataSource{
     func getDataSource(indexPath: IndexPath) -> [String]? {
         return self.answer[indexPath.row].options?.map{$0.value}.compactMap{$0}
     }
+    func getIdOption(indexPath: IndexPath) -> [Int]?{
+        return self.answer[indexPath.row].options?.map{Int($0._id ?? "0")}.compactMap{$0}
+    }
 }
 
 extension CellExercise : ClickQuestionDelegate{
-    func showMoreResult(result: String) {
-        delegate?.showMoreResulr(result: result)
+    func changeAnswer(id: Int, indexPath: IndexPath?) {
+        if let _indexPath = indexPath {
+            self.listAnswer[_indexPath.row].option_id = id
+        }
     }
 }

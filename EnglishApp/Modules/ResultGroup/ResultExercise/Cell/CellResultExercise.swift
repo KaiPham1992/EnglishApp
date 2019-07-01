@@ -17,18 +17,9 @@ class CellResultExercise: UICollectionViewCell {
     @IBOutlet weak var tbvResultQuestion: UITableView!
     @IBOutlet weak var heightScrollView: NSLayoutConstraint!
     var attributed: NSMutableAttributedString?
-    var listSelect = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false]
-    var isExercise = true {
-        didSet{
-            if isExercise == false {
-                self.listSelect = [true,false,false,true,false,true,false,false,false,false,false,false,false,false,false,false,false,true]
-            }
-        }
-    }
     
     
     var numberLine: Int = 0
-    let listQuestion : [String] = ["dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6","dasghdasjkdhasjdhasjdasjdhasdhasjkdhajksdhajskdhajks","czxnbcnmxzbcxzbcnxzbcmnzxbcmnzxbcmnzbczmnbcmnzxbcmznxbcmnxz","1","4","5","6"]
     let popover = Popover()
     
     override func awakeFromNib() {
@@ -133,11 +124,7 @@ extension CellResultExercise: UITableViewDataSource{
 }
 
 extension CellResultExercise : ClickQuestionDelegate{
-    func showMoreResult(result: String) {
-        delegate?.showMoreResulr(result: result)
-    }
-    
-    func clickQuestion(indexPath: IndexPath?, isSelect: Bool) {
-        self.listSelect[indexPath?.row ?? 0] = isSelect
+    func changeAnswer(id: Int, indexPath: IndexPath?) {
+        
     }
 }

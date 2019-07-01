@@ -10,7 +10,7 @@ import UIKit
 import DropDown
 
 protocol ClickQuestionDelegate: class {
-    func showMoreResult(result: String)
+    func changeAnswer(id: Int,indexPath: IndexPath?)
 }
 
 class CellQuestion: UITableViewCell {
@@ -22,6 +22,7 @@ class CellQuestion: UITableViewCell {
     }
     
     var dataSource  : [String] = []
+    var idOption : [Int] = []
     var isShow = false {
         didSet {
             UIView.animate(withDuration: 0.2) {
@@ -54,6 +55,7 @@ class CellQuestion: UITableViewCell {
             guard let cell = cell as? CellDropDownQuestion else { return }
             
             // Setup your custom UI components
+            
             cell.lbAnswer.text = item
         }
         
@@ -66,6 +68,7 @@ class CellQuestion: UITableViewCell {
             self.lbAnswer.isHidden = false
             self.vQuestion.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
             self.lbAnswer.text = item
+            self.delegate?.changeAnswer(id: self.idOption[index], indexPath: self.indexPath)
         }
         
         dropDown.cancelAction = { [unowned self] in

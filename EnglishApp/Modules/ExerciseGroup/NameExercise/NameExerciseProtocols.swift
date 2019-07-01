@@ -27,6 +27,7 @@ protocol NameExercisePresenterProtocol: class {
     func getNumber() -> Int?
     func getQuestion(indexPath: IndexPath) -> QuestionEntity?
     func getAllTime() -> [Int]?
+    func getAllIdQuestion() -> [Int]?
 }
 
 //MARK: Interactor -
