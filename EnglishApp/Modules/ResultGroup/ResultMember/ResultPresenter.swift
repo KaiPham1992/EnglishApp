@@ -62,7 +62,12 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
 
     
     func getViewResult(id: String) {
-        self.interactor?.getViewResult(id: id)
+        if testResultProfile == nil {
+            self.interactor?.getViewResult(id: id)
+        } else {
+            self.view?.reloadView()
+        }
+        
     }
     
     func getViewTestResultSuccessed(respone: TestResultProfileEntity) {

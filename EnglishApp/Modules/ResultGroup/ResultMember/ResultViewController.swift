@@ -14,6 +14,9 @@ import SDWebImage
 
 class ResultViewController: BaseViewController {
 
+    @IBAction func backHome(_ sender: Any) {
+        self.navigationController?.popToRootViewController(animated: true)
+    }
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblPoint: UILabel!
     @IBOutlet weak var imgAVT: UIImageView!
@@ -38,11 +41,11 @@ class ResultViewController: BaseViewController {
         viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
+        self.presenter?.getViewResult(id: id)
         if type == .result {
             viewRank.isHidden = false
             leadingStackView.constant = 28
             trailingStackView.constant = 28
-            self.presenter?.getViewResult(id: id)
         } else {
             viewRank.isHidden = true
             leadingStackView.constant = 16
@@ -52,7 +55,7 @@ class ResultViewController: BaseViewController {
         tbvResult.registerXibFile(CellResult.self)
         tbvResult.dataSource = self
         tbvResult.delegate = self
-        btnBackHome.setTitle(LocalizableKey.back_gome.showLanguage, for: .normal)
+        btnBackHome.setTitle(LocalizableKey.back_gome.showLanguage.uppercased(), for: .normal)
         lblPointSum.text = LocalizableKey.sum_point.showLanguage
         lblTimeDoExercise.text = LocalizableKey.time_do_exercise.showLanguage
     }
@@ -75,7 +78,9 @@ extension ResultViewController: ResultViewProtocol{
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), completed: nil)
         lblPoint.text = self.presenter?.getTotalPoint()&
         lblTime.text = self.presenter?.getTotalTime()&
-        viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
+        if type == .result {
+            viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
+        }
         viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
     }
 }

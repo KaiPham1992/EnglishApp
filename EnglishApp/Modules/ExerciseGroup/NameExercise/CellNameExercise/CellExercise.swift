@@ -32,7 +32,7 @@ class CellExercise: UICollectionViewCell {
     }
     
     var numberLine: Int = 0
-     let popover = Popover()
+    let popover = Popover()
     var listAnswer : [QuestionChoiceResultParam] = []
     
     override func awakeFromNib() {

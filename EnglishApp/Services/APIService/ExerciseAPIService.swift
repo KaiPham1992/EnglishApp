@@ -15,11 +15,16 @@ protocol ExerciseAPIServiceProtocol {
     func getEntranceExercise(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
     func getResultCalendar(from: String,to: String,success: @escaping SuccessHandler<DateCalendarEntity>.object, failure: @escaping RequestFailure)
     func getTestResult(date: String,offset: Int,success: @escaping SuccessHandler<TestResultEntity>.object, failure: @escaping RequestFailure)
+    func submitExercise(param: SubmitExerciseParam,success: @escaping SuccessHandler<TestResultProfileEntity>.object, failure: @escaping RequestFailure)
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
     func getTestResult(date: String, offset: Int, success: @escaping SuccessHandler<TestResultEntity>.object, failure: @escaping RequestFailure) {
         let endpoint = ExerciseEnpoint.getTestResult(date: date, offset: offset)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    func submitExercise(param: SubmitExerciseParam, success: @escaping SuccessHandler<TestResultProfileEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ExerciseEnpoint.submitExercise(param: param)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

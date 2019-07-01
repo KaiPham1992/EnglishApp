@@ -13,7 +13,7 @@ class SubmitExerciseParam : BaseParam{
     var exercise_id : Int?
     var total_time : Int?
     var questions : [QuestionSubmitParam]?
-    init(exercise_id : Int, total_time : Int,questions : [QuestionSubmitParam]) {
+    init(exercise_id : Int, total_time : Int,questions : [QuestionSubmitParam] = []) {
         super.init()
         self.exercise_id = exercise_id
         self.total_time = total_time
@@ -23,6 +23,7 @@ class SubmitExerciseParam : BaseParam{
     required init?(map: Map) {
         fatalError("init(map:) has not been implemented")
     }
+    
     
     override func mapping(map: Map) {
         super.mapping(map: map)

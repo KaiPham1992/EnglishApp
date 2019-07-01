@@ -17,7 +17,7 @@ class CellFillExercise: UICollectionViewCell {
     @IBOutlet weak var tvContent: UITextView!
     
     var attributed: NSMutableAttributedString?
-    
+    var listAnswer : [QuestionChoiceResultParam] = []
     
     var numberLine: Int = 0
     
@@ -42,6 +42,7 @@ class CellFillExercise: UICollectionViewCell {
         DispatchQueue.main.async {
             self.detectQuestion(text: data.content_extend&)
             self.setFillCell(numberView: data.answers?.count ?? 0)
+            self.listAnswer = data.answers?.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)} ?? []
         }
     }
     
@@ -118,6 +119,10 @@ class CellFillExercise: UICollectionViewCell {
     }
 }
 extension CellFillExercise : TextViewChangeHeightDelegate {
+    func textChanged(text: String, index: Int) {
+        self.listAnswer[index - 1].value = text
+    }
+    
     func distanceChange(distance: CGFloat) {
         self.heightStackView.constant += distance
     }

@@ -19,14 +19,34 @@ class NameExerciseViewController: BaseViewController {
     @IBAction func clickNext(_ sender: Any) {
         arrTime[self.currentIndex - 1] = vCountTime.getCurrentTime()
         vCountTime.stopTimer()
+        if let param = self.addDataCell(indexPath: IndexPath(row: self.currentIndex - 1, section: 0)) {
+            self.listAnswerQuestion[self.currentIndex - 1].answer = param
+        }
         if self.currentIndex + 1 > numberQuestion {
-            self.presenter?.gotoResult()
+            self.paramSubmit?.questions = listAnswerQuestion
+            if let _param = self.paramSubmit {
+                self.presenter?.submitExercise(param: _param)
+            }
+            
+//            self.presenter?.gotoResult()
         } else {
             self.currentIndex += 1
             lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
             clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
             vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
         }
+    }
+    
+    var paramSubmit : SubmitExerciseParam?
+    
+    func addDataCell(indexPath: IndexPath) -> [QuestionChoiceResultParam]? {
+        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise {
+            return cell.listAnswer
+        }
+        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellFillExercise {
+            return cell.listAnswer
+        }
+        return nil
     }
     
     var numberQuestion : Int = 0
@@ -57,7 +77,7 @@ class NameExerciseViewController: BaseViewController {
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
                 vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
             } else {
-                self.presenter?.gotoResult()
+//                self.presenter?.gotoResult()
             }
         }
     }
@@ -111,8 +131,11 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         self.numberQuestion = self.presenter?.getNumber() ?? 0
         self.arrTime = self.presenter?.getAllTime() ?? []
         lblIndexQuestion.text = "1/\(numberQuestion)"
-        if let _listIdQuestion = self.presenter?.getAllIdQuestion() {
-            self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0)}
+        if let _listIdQuestion = self.presenter?.getAllIdAndTimeQuestion() {
+            self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0,time: $1)}
+        }
+        if let _id = self.presenter?.getIDExercise(), let _totalTime = self.presenter?.getTotalTime() {
+            paramSubmit = SubmitExerciseParam(exercise_id: _id, total_time: _totalTime)
         }
         vCountTime.setupTime(min: self.arrTime[0])
         clvQuestion.reloadData()

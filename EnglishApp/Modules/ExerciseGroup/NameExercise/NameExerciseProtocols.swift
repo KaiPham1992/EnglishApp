@@ -13,21 +13,23 @@ import Foundation
 //MARK: Wireframe -
 protocol NameExerciseWireframeProtocol: class {
     func gotoDetailVocabulary()
-    func gotoResult()
+    func gotoResult(result: TestResultProfileEntity)
 }
 //MARK: Presenter -
 protocol NameExercisePresenterProtocol: class {
 
     var interactor: NameExerciseInteractorInputProtocol? { get set }
     func gotoDetailVocabulary()
-    func gotoResult()
     func getViewExercise()
     func getViewEntranceTest()
     func getTime(index: Int) -> Int?
     func getNumber() -> Int?
     func getQuestion(indexPath: IndexPath) -> QuestionEntity?
     func getAllTime() -> [Int]?
-    func getAllIdQuestion() -> [Int]?
+    func getAllIdAndTimeQuestion() -> [(Int,Int)]?
+    func getIDExercise() -> Int?
+    func getTotalTime() -> Int?
+    func submitExercise(param: SubmitExerciseParam)
 }
 
 //MARK: Interactor -
@@ -35,6 +37,7 @@ protocol NameExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getExerciseSuccessed(respone: ViewExerciseEntity)
+    func gotoResult(result: TestResultProfileEntity)
 }
 
 protocol NameExerciseInteractorInputProtocol: class {
@@ -42,6 +45,7 @@ protocol NameExerciseInteractorInputProtocol: class {
     var presenter: NameExerciseInteractorOutputProtocol?  { get set }
     func getViewExercise()
     func getViewEntranceTest()
+    func submitExercise(param: SubmitExerciseParam)
 
     /* Presenter -> Interactor */
 }

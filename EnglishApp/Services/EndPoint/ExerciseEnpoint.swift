@@ -16,6 +16,7 @@ enum ExerciseEnpoint {
     case getViewEntrance
     case getResultCaledar(from: String,to: String)
     case getTestResult(date: String,offset: Int)
+    case submitExercise(param: SubmitExerciseParam)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -33,6 +34,8 @@ extension ExerciseEnpoint: EndPointType {
             return "_api/result/get_list_test_result_calendar"
         case .getTestResult:
             return "_api/result/get_list_test_result"
+        case .submitExercise:
+            return "_api/result/submit_exercise"
         }
     }
     
@@ -49,6 +52,8 @@ extension ExerciseEnpoint: EndPointType {
         case .getResultCaledar:
             return .post
         case .getTestResult:
+            return .post
+        case .submitExercise:
             return .post
 
         }
@@ -74,6 +79,8 @@ extension ExerciseEnpoint: EndPointType {
             return ["date_from":from,"date_to":to]
         case .getTestResult(let date, let offset):
             return ["date": date,"offset": offset,"limit": limit]
+        case .submitExercise(let param):
+            return param.toJSON()
         }
     }
     

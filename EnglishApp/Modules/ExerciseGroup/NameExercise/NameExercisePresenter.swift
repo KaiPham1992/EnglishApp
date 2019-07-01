@@ -11,7 +11,7 @@
 import UIKit
 
 class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteractorOutputProtocol {
- 
+   
     weak private var view: NameExerciseViewProtocol?
     var interactor: NameExerciseInteractorInputProtocol?
     private let router: NameExerciseWireframeProtocol
@@ -27,21 +27,33 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     func gotoDetailVocabulary() {
         self.router.gotoDetailVocabulary()
     }
-    func gotoResult() {
-        self.router.gotoResult()
-    }
     
     func getNumber() -> Int? {
         return exerciseEntity?.questions?.count
+    }
+    
+    func getIDExercise() -> Int?{
+        return Int(exerciseEntity?._id ?? "0")
     }
     
     func getAllTime() -> [Int]? {
         return exerciseEntity?.questions?.map{$0.question_time}.compactMap{Int($0 ?? "0")}
     }
     
+    func submitExercise(param: SubmitExerciseParam) {
+        self.interactor?.submitExercise(param: param)
+    }
     
-    func getAllIdQuestion() -> [Int]?{
-        return exerciseEntity?.questions?.map{Int($0._id ?? "0")}.compactMap{$0}
+    func getTotalTime() -> Int?{
+        return exerciseEntity?.total_times
+    }
+    
+    func gotoResult(result: TestResultProfileEntity) {
+        self.router.gotoResult(result: result)
+    }
+    
+    func getAllIdAndTimeQuestion() -> [(Int,Int)]?{
+        return exerciseEntity?.questions?.map{(Int($0._id ?? "0") ?? 0,Int($0.question_time ?? "0") ?? 0)}
     }
     
     func getTime(index: Int) -> Int? {

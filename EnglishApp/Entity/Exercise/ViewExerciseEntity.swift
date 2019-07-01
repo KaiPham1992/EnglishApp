@@ -14,7 +14,7 @@ class ViewExerciseEntity: Mappable {
     
     var _id : String?
     var name : String?
-    var total_times : String?
+    var total_times : Int?
     var total_questions : String?
     var questions : [QuestionEntity]?
     required init?(map: Map) {

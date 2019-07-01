@@ -33,8 +33,9 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
         self.viewController?.push(controller: vc,animated: true)
     }
     
-    func gotoResult() {
-        let vc = ResultRouter.createModule(type: .resultExercise,id: "1")
+    func gotoResult(result: TestResultProfileEntity) {
+        let vc = ResultRouter.createModule(type: .resultExercise , result: result)
         self.viewController?.push(controller: vc,animated: true)
     }
+
 }

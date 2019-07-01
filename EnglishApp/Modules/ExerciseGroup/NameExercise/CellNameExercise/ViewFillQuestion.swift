@@ -11,6 +11,7 @@ import UIKit
 
 protocol TextViewChangeHeightDelegate : class{
     func distanceChange(distance: CGFloat)
+    func textChanged(text: String, index: Int)
 }
 
 
@@ -49,6 +50,7 @@ class ViewFillQuestion : BaseViewXib {
 extension ViewFillQuestion : UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
         self.adjustHeight()
+        delegate?.textChanged(text: textView.text, index: self.tagView)
         delegate?.distanceChange(distance: self.tvContent.frame.height + 9 - oldHeight)
     }
 }
