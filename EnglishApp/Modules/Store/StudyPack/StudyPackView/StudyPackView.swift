@@ -14,11 +14,16 @@ protocol StudyPackViewDelegate: class {
 
 class StudyPackView: BaseViewXib {
     @IBOutlet weak var cvStudyPack: UICollectionView!
+    var listProduct = [ProductEntity]()
     weak var delegate: StudyPackViewDelegate?
-    
     override func setUpViews() {
         super.setUpViews()
         configureCollection()
+        
+    }
+    func getData(listProduct: [ProductEntity]){
+        self.listProduct = listProduct
+        cvStudyPack.reloadData()
     }
 }
 
@@ -39,11 +44,12 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(StudyPackViewCell.self, indexPath: indexPath)
         cell.delegate = self
+        cell.getData(product: listProduct[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return listProduct.count
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

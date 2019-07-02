@@ -21,7 +21,7 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
     }
     
     
-    
+    weak private var viewBeePack: BeePackViewProtocol?
 
     weak private var view: StudyPackViewProtocol?
     var interactor: StudyPackInteractorInputProtocol?
