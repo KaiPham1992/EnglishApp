@@ -13,6 +13,22 @@ import FirebaseMessaging
 import SwiftyJSON
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    func configureFirebase() {
+        #if APPSTORE
+        let googleServiceFile = "GoogleService-Prod-Info"
+        #else
+        let googleServiceFile = "GoogleService-Dev-Info"
+        #endif
+        
+        let filePath = Bundle.main.path(forResource: googleServiceFile, ofType: "plist")!
+        guard let options = FirebaseOptions(contentsOfFile: filePath) else {
+            print("There are some problems with GoogleService-Info file")
+            return
+        }
+        
+        FirebaseApp.configure(options: options)
+    }
+    
     func configurePushNotification(application: UIApplication) {
         Messaging.messaging().delegate = self
         

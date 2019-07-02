@@ -18,7 +18,7 @@ class CompetitionCell: BaseTableCell {
     @IBOutlet weak var btnShare: UIButton!
     var type: ResultCompetition = .result{
         didSet{
-            if type == .result{
+            if type == .result {
                 btnJoin.setTitle(LocalizableKey.see_explain.showLanguage, for: .normal)
             }
             if type == .competition{

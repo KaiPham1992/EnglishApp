@@ -32,6 +32,7 @@ enum UserDefaultHelperKey: String {
 class UserDefaultHelper {
     static let shared = UserDefaultHelper()
     private let userDefaultManager = UserDefaults.standard
+    var collectionProduct = ProductCollectionEntity()
     
     var loginUserInfo: UserEntity? {
         get {
@@ -77,6 +78,7 @@ class UserDefaultHelper {
             save(value: newToken, key: .userToken)
         }
     }
+    
 }
 
 extension UserDefaultHelper {
@@ -96,4 +98,5 @@ extension UserDefaultHelper {
     func saveUser(user: UserEntity) {
         loginUserInfo = user
     }
+    
 }

@@ -2,12 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>UIAppFonts</key>
-    <array>
-        <string>Comfortaa-Regular.ttf</string>
-        <string>Comfortaa-Bold.ttf</string>
-        <string>Comfortaa-Light.ttf</string>
-    </array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
@@ -44,7 +38,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>201906241419</string>
+	<string>201906280145</string>
 	<key>Fabric</key>
 	<dict>
 		<key>APIKey</key>

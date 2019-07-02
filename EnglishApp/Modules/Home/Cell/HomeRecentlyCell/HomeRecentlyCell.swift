@@ -13,6 +13,7 @@ class HomeRecentlyCell: BaseTableCell {
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbContent: UILabel!
+    
     var actity: Acitvity? {
         didSet {
             guard let activity = actity else { return }

@@ -13,13 +13,14 @@ class BeePackCell: BaseTableCell {
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var imgBackground: UIImageView!
     
-    var item: BeePackEntity? {
+    var item: ProductEntity? {
         didSet {
             guard let bee = item else { return }
-            
-            imgIcon.image = bee.image
-            lbMoney.text = bee.money?.description&
-            imgBackground.image = bee.background
+            imgIcon.sd_setImage(with: bee.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+            lbMoney.text = "\(bee.money&) VND\n \(bee.name&)"
+//            imgIcon.image = bee.image
+//            lbMoney.text = bee.money?.description&
+//            imgBackground.image = bee.background
             
         }
     }
