@@ -14,6 +14,7 @@ import Foundation
 protocol CreateExerciseWireframeProtocol: class {
     func gotoChoiceExercise()
     func gotoExercise()
+    func gotoExercise(viewExerciseEntity: ViewExerciseEntity)
 }
 //MARK: Presenter -
 protocol CreateExercisePresenterProtocol: class {
@@ -23,18 +24,27 @@ protocol CreateExercisePresenterProtocol: class {
     func getItemIndexPath(indexPath : IndexPath)->String
     func gotoChoiceExercise()
     func gotoExercise()
+    func getListCatelogy()
+    func getCateloriesParam() -> [CategoryParam]
+    func changeLevelParam(indexPath: IndexPath,level: Int)
+    func changeNumberQuestion(indexPath: IndexPath,number: Int)
+    func gotoCreateExercise(param: CreateExerciseParam)
 }
 
 //MARK: Interactor -
 protocol CreateExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getListCatelogySuccessed(respone: [SearchEntity])
+    func createExerciseSuccessed(respone: ViewExerciseEntity)
 }
 
 protocol CreateExerciseInteractorInputProtocol: class {
 
     var presenter: CreateExerciseInteractorOutputProtocol?  { get set }
-
+    func getListCatelogy()
+    func gotoCreateExercise(param: CreateExerciseParam)
+    
     /* Presenter -> Interactor */
 }
 
@@ -42,6 +52,7 @@ protocol CreateExerciseInteractorInputProtocol: class {
 protocol CreateExerciseViewProtocol: class {
 
     var presenter: CreateExercisePresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }

@@ -29,7 +29,7 @@
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw0-Dz-VQR">
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw0-Dz-VQR">
                         <rect key="frame" x="321" y="31" width="32" height="24"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="32" id="4vK-dJ-WBS"/>
@@ -37,7 +37,7 @@
                         </constraints>
                         <nil key="textColor"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
-                        <textInputTraits key="textInputTraits"/>
+                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -46,6 +46,9 @@
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="numberChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="s1a-kH-Ylt"/>
+                        </connections>
                     </textField>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-dn-Mqh">
                         <rect key="frame" x="178" y="31" width="135" height="24"/>

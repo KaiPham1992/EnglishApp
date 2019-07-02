@@ -205,7 +205,7 @@
                         <constraint firstAttribute="trailing" secondItem="rfI-H2-0rk" secondAttribute="trailing" id="egm-N1-cK6"/>
                     </constraints>
                 </scrollView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQu-gg-xdd">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQu-gg-xdd">
                     <rect key="frame" x="16" y="603" width="343" height="40"/>
                     <color key="backgroundColor" red="0.12549019607843137" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>

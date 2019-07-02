@@ -28,6 +28,22 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
         return view
     }
     
+    static func createModule(viewExerciseEntity: ViewExerciseEntity) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = NameExerciseViewController.initFromNib()
+        let interactor = NameExerciseInteractor()
+        let router = NameExerciseRouter()
+        let presenter = NameExercisePresenter(interface: view, interactor: interactor, router: router)
+        presenter.exerciseEntity = viewExerciseEntity
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
+    
+    
     func gotoDetailVocabulary(){
         let vc = DetailLessonRouter.createModule()
         self.viewController?.push(controller: vc,animated: true)

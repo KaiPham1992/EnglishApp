@@ -17,6 +17,8 @@ enum ExerciseEnpoint {
     case getResultCaledar(from: String,to: String)
     case getTestResult(date: String,offset: Int)
     case submitExercise(param: SubmitExerciseParam)
+    case getListExerciseCatelogy
+    case createExercise(param: CreateExerciseParam)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -36,6 +38,10 @@ extension ExerciseEnpoint: EndPointType {
             return "_api/result/get_list_test_result"
         case .submitExercise:
             return "_api/result/submit_exercise"
+        case .getListExerciseCatelogy:
+            return "_api/exercise/get_list_exercise_category"
+        case .createExercise:
+            return "_api/exercise/create_exercise"
         }
     }
     
@@ -55,12 +61,20 @@ extension ExerciseEnpoint: EndPointType {
             return .post
         case .submitExercise:
             return .post
+        case .getListExerciseCatelogy:
+            return .post
+        case .createExercise:
+            return .post
 
         }
     }
     
     var parameters: JSONDictionary {
         switch self {
+        case .createExercise(let param):
+            return param.toJSON()
+        case .getListExerciseCatelogy:
+            return ["":""]
         case .getListExercise(let type_test,let category_id,let level,let offset):
             return [    "type_test": type_test,
                         "category_id": category_id,

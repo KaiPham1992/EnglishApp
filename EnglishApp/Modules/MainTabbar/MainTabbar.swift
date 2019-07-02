@@ -97,7 +97,6 @@ class MainTabbar: UITabBarController {
     
     func setBarItem(title: String? = nil, selectedImage: UIImage?, normalImage: UIImage?) -> UITabBarItem {
         let item = UITabBarItem(title: title, image: normalImage, selectedImage: selectedImage)
-        
         return item
     }
 }

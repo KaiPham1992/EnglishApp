@@ -11,9 +11,14 @@ import DropDown
 
 protocol ChoiceType : class {
     func choiceDrop(view: UIView,indexPath: IndexPath?)
+    func changeNumberQuestion(number: Int, indexPath: IndexPath?)
 }
 
 class CellCreateExercise: UITableViewCell {
+    @IBAction func numberChanged(_ sender: Any) {
+        let number = edNumber.text == "" ? 0 : Int(edNumber.text ?? "0")!
+        delegate?.changeNumberQuestion(number: number, indexPath: indexPath)
+    }
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var edNumber: UITextField!
@@ -42,6 +47,7 @@ class CellCreateExercise: UITableViewCell {
     func setupData(title: String){
         lblTitle.text = title
     }
+    
     func setupTitle(title: String){
         lbType.text = title
         rotateImage()

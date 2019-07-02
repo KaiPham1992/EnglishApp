@@ -69,7 +69,11 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     }
     
     func getViewEntranceTest() {
-        self.interactor?.getViewEntranceTest()
+        if exerciseEntity == nil {
+            self.interactor?.getViewEntranceTest()
+        } else {
+            self.view?.reloadView()
+        }
     }
     
     func getExerciseSuccessed(respone: ViewExerciseEntity) {

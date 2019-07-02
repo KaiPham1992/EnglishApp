@@ -12,19 +12,19 @@ import UIKit
 
 class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseInteractorOutputProtocol {
 
-    let listNameExercise = [LocalizableKey.wordForm.showLanguage,LocalizableKey.preposition.showLanguage,LocalizableKey.rewriting.showLanguage,LocalizableKey.verb_form.showLanguage,LocalizableKey.listening.showLanguage,LocalizableKey.phrasal_verb.showLanguage,LocalizableKey.cloze_test.showLanguage]
-    
     weak private var view: CreateExerciseViewProtocol?
     var interactor: CreateExerciseInteractorInputProtocol?
     private let router: CreateExerciseWireframeProtocol
 
+    var listCatelogyExercise: [SearchEntity] = []
+    var listCateloriesParam : [CategoryParam] = []
     
     func getNumberRow() -> Int {
-        return listNameExercise.count
+        return listCatelogyExercise.count
     }
     
     func getItemIndexPath(indexPath : IndexPath)->String{
-        return listNameExercise[indexPath.row]
+        return listCatelogyExercise.map{$0.name}.compactMap{$0}[indexPath.row]
     }
     
     init(interface: CreateExerciseViewProtocol, interactor: CreateExerciseInteractorInputProtocol?, router: CreateExerciseWireframeProtocol) {
@@ -33,11 +33,40 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
         self.router = router
     }
     
+    func getCateloriesParam() -> [CategoryParam] {
+        return self.listCateloriesParam
+    }
+    
+    func changeLevelParam(indexPath: IndexPath,level: Int) {
+        self.listCateloriesParam[indexPath.row].level = level
+    }
+    
+    func changeNumberQuestion(indexPath: IndexPath,number: Int){
+        self.listCateloriesParam[indexPath.row].number_of_question = number
+    }
+    
     func gotoChoiceExercise() {
         self.router.gotoChoiceExercise()
     }
     func gotoExercise() {
         self.router.gotoExercise()
     }
-
+    
+    func getListCatelogy() {
+        self.interactor?.getListCatelogy()
+    }
+    
+    func getListCatelogySuccessed(respone: [SearchEntity]) {
+        self.listCatelogyExercise = respone
+        self.listCateloriesParam = respone.map{CategoryParam(categ_id: Int($0._id&) ?? 0)}
+        self.view?.reloadView()
+    }
+    func gotoCreateExercise(param: CreateExerciseParam) {
+        self.interactor?.gotoCreateExercise(param: param)
+    }
+    
+    
+    func createExerciseSuccessed(respone: ViewExerciseEntity) {
+        self.router.gotoExercise(viewExerciseEntity: respone)
+    }
 }

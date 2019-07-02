@@ -11,6 +11,7 @@
 import UIKit
 
 class CreateExerciseRouter: CreateExerciseWireframeProtocol {
+  
 
     weak var viewController: UIViewController?
 
@@ -37,4 +38,10 @@ class CreateExerciseRouter: CreateExerciseWireframeProtocol {
         let vc = NameExerciseRouter.createModule()
         self.viewController?.push(controller: vc,animated: true)
     }
+    
+    func gotoExercise(viewExerciseEntity: ViewExerciseEntity) {
+        let vc = NameExerciseRouter.createModule(viewExerciseEntity: viewExerciseEntity)
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

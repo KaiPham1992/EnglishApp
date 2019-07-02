@@ -561,6 +561,15 @@
 		76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
 		76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
 		76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76CF0C8D22906D18003C4B4B /* ViewComment.xib */; };
+		76CF521C22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF521B22CB9E1E00A9D205 /* CatelogyEntity.swift */; };
+		76CF521D22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF521B22CB9E1E00A9D205 /* CatelogyEntity.swift */; };
+		76CF521E22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF521B22CB9E1E00A9D205 /* CatelogyEntity.swift */; };
+		76CF522022CBA40B00A9D205 /* CategoryParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF521F22CBA40B00A9D205 /* CategoryParam.swift */; };
+		76CF522122CBA40B00A9D205 /* CategoryParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF521F22CBA40B00A9D205 /* CategoryParam.swift */; };
+		76CF522222CBA40B00A9D205 /* CategoryParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF521F22CBA40B00A9D205 /* CategoryParam.swift */; };
+		76CF522422CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF522322CBA5FA00A9D205 /* CreateExerciseParam.swift */; };
+		76CF522522CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF522322CBA5FA00A9D205 /* CreateExerciseParam.swift */; };
+		76CF522622CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CF522322CBA5FA00A9D205 /* CreateExerciseParam.swift */; };
 		76DB9384228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9385228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
 		76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DB937E228C56640081A36E /* DictionaryPresenter.swift */; };
@@ -2145,6 +2154,9 @@
 		76CF0C80229068AB003C4B4B /* CellComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellComment.xib; sourceTree = "<group>"; };
 		76CF0C8922906D09003C4B4B /* ViewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewComment.swift; sourceTree = "<group>"; };
 		76CF0C8D22906D18003C4B4B /* ViewComment.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewComment.xib; sourceTree = "<group>"; };
+		76CF521B22CB9E1E00A9D205 /* CatelogyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatelogyEntity.swift; sourceTree = "<group>"; };
+		76CF521F22CBA40B00A9D205 /* CategoryParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryParam.swift; sourceTree = "<group>"; };
+		76CF522322CBA5FA00A9D205 /* CreateExerciseParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateExerciseParam.swift; sourceTree = "<group>"; };
 		76DB937E228C56640081A36E /* DictionaryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryPresenter.swift; sourceTree = "<group>"; };
 		76DB937F228C56640081A36E /* DictionaryRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryRouter.swift; sourceTree = "<group>"; };
 		76DB9380228C56640081A36E /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
@@ -2875,6 +2887,8 @@
 				768074A022C90E5D0015A75C /* QuestionChoiceResultParam.swift */,
 				768074A922C910390015A75C /* QuestionSubmitParam.swift */,
 				768074AD22C910E80015A75C /* SubmitExerciseParam.swift */,
+				76CF521F22CBA40B00A9D205 /* CategoryParam.swift */,
+				76CF522322CBA5FA00A9D205 /* CreateExerciseParam.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -3008,6 +3022,7 @@
 				7680747C22C859170015A75C /* DateCalendarEntity.swift */,
 				7680748022C869B60015A75C /* TestResultEntity.swift */,
 				7680748422C86CD60015A75C /* SelfCreatedTestEntity.swift */,
+				76CF521B22CB9E1E00A9D205 /* CatelogyEntity.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -5730,6 +5745,7 @@
 				7643DE8B22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
 				76F7F440229421BD001E9984 /* ExerciseProtocols.swift in Sources */,
 				7629BDDE22ACD3B90051B835 /* ReportSuccessedPopUp.swift in Sources */,
+				76CF521C22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */,
 				76CE323022968C7D00E998FB /* NameExerciseViewController.swift in Sources */,
 				76CE31812295A95300E998FB /* LevelExerciseRouter.swift in Sources */,
 				76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
@@ -5747,6 +5763,7 @@
 				7643DE9D22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBB229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */,
+				76CF522022CBA40B00A9D205 /* CategoryParam.swift in Sources */,
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				76E8530622B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
@@ -6089,6 +6106,7 @@
 				766D1382228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC622930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				766AE7FC22B02330002D474E /* UpdateFeatureView.swift in Sources */,
+				76CF522422CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */,
 				76F7F437229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BEC229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
@@ -6244,6 +6262,7 @@
 				7643DE8C22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
 				76F7F441229421BD001E9984 /* ExerciseProtocols.swift in Sources */,
 				7629BDDF22ACD3B90051B835 /* ReportSuccessedPopUp.swift in Sources */,
+				76CF521D22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */,
 				76CE323122968C7D00E998FB /* NameExerciseViewController.swift in Sources */,
 				76CE31822295A95300E998FB /* LevelExerciseRouter.swift in Sources */,
 				76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
@@ -6261,6 +6280,7 @@
 				7643DE9E22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBC229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */,
+				76CF522122CBA40B00A9D205 /* CategoryParam.swift in Sources */,
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				76E8530722B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
@@ -6603,6 +6623,7 @@
 				766D1383228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC722930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				766AE7FD22B02330002D474E /* UpdateFeatureView.swift in Sources */,
+				76CF522522CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */,
 				76F7F438229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BED229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
@@ -6758,6 +6779,7 @@
 				7643DE8D22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
 				76F7F442229421BD001E9984 /* ExerciseProtocols.swift in Sources */,
 				7629BDE022ACD3B90051B835 /* ReportSuccessedPopUp.swift in Sources */,
+				76CF521E22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */,
 				76CE323222968C7D00E998FB /* NameExerciseViewController.swift in Sources */,
 				76CE31832295A95300E998FB /* LevelExerciseRouter.swift in Sources */,
 				76DB93AB228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
@@ -6775,6 +6797,7 @@
 				7643DE9F22A4DD3600B7C323 /* CellExercise.swift in Sources */,
 				769A3BBD229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */,
+				76CF522222CBA40B00A9D205 /* CategoryParam.swift in Sources */,
 				DE95314A2288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				76E8530822B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
@@ -7117,6 +7140,7 @@
 				766D1384228F2629005E47F0 /* DetailLessonRouter.swift in Sources */,
 				DEC62AC822930E0E00D7CECE /* StudyPackProtocols.swift in Sources */,
 				766AE7FE22B02330002D474E /* UpdateFeatureView.swift in Sources */,
+				76CF522622CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */,
 				76F7F439229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BEE229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,

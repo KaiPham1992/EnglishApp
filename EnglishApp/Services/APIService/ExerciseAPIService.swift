@@ -16,9 +16,21 @@ protocol ExerciseAPIServiceProtocol {
     func getResultCalendar(from: String,to: String,success: @escaping SuccessHandler<DateCalendarEntity>.object, failure: @escaping RequestFailure)
     func getTestResult(date: String,offset: Int,success: @escaping SuccessHandler<TestResultEntity>.object, failure: @escaping RequestFailure)
     func submitExercise(param: SubmitExerciseParam,success: @escaping SuccessHandler<TestResultProfileEntity>.object, failure: @escaping RequestFailure)
+    func getListExerciseCatelogy(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
+    func createExercise(param: CreateExerciseParam,success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
+    func createExercise(param: CreateExerciseParam, success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ExerciseEnpoint.createExercise(param: param)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getListExerciseCatelogy(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ExerciseEnpoint.getListExerciseCatelogy
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
     func getTestResult(date: String, offset: Int, success: @escaping SuccessHandler<TestResultEntity>.object, failure: @escaping RequestFailure) {
         let endpoint = ExerciseEnpoint.getTestResult(date: date, offset: offset)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)

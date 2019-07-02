@@ -12,13 +12,15 @@ import UIKit
 import DropDown
 
 
-class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtocol {
-
+class CreateExerciseViewController: BaseViewController {
+   
 	var presenter: CreateExercisePresenterProtocol?
 
     @IBAction func doExercise(_ sender: Any) {
         PopUpHelper.shared.showUpdateFeature(completeUpdate: {
-            self.presenter?.gotoExercise()
+//            self.presenter?.gotoExercise()
+            let param = CreateExerciseParam(name: self.edEnterExercise.text ?? "", categories: self.presenter?.getCateloriesParam() ?? [])
+            self.presenter?.gotoCreateExercise(param: param)
         }) {
             
         }
@@ -32,6 +34,7 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
    
     override func setUpViews() {
         super.setUpViews()
+        self.presenter?.getListCatelogy()
         lblSum.text = "100/100 " + LocalizableKey.sentence.showLanguage
         tbvCreateExercise.registerXibFile(CellCreateExercise.self)
         tbvCreateExercise.dataSource = self
@@ -64,6 +67,14 @@ class CreateExerciseViewController: BaseViewController, CreateExerciseViewProtoc
         
     }
 }
+
+extension CreateExerciseViewController : CreateExerciseViewProtocol{
+    func reloadView() {
+        self.tbvCreateExercise.reloadData()
+        
+    }
+}
+
 extension CreateExerciseViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
        return 1
@@ -91,6 +102,7 @@ extension CreateExerciseViewController : UITableViewDelegate{
         return 60
     }
 }
+
 extension CreateExerciseViewController : ChoiceType{
     func choiceDrop(view: UIView, indexPath: IndexPath?) {
         dropDown.anchorView = view
@@ -100,13 +112,17 @@ extension CreateExerciseViewController : ChoiceType{
             self.dropDown.hide()
             let cell = self.tbvCreateExercise.cellForRow(at: indexPath!) as! CellCreateExercise
             cell.setupTitle(title: item)
+            print(index)
+            self.presenter?.changeLevelParam(indexPath: indexPath ?? IndexPath(row: 0, section: 0), level: index + 1)
         }
         dropDown.cancelAction = {[unowned self] in
             let cell = self.tbvCreateExercise.cellForRow(at: indexPath!) as! CellCreateExercise
             cell.rotateImage()
-            
         }
-        
         dropDown.show()
+    }
+    
+    func changeNumberQuestion(number: Int, indexPath: IndexPath?) {
+        self.presenter?.changeNumberQuestion(indexPath: indexPath ?? IndexPath(row: 0, section: 0), number: number)
     }
 }
