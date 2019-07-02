@@ -19,7 +19,6 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
     var collectionProduct = ProductCollectionEntity() {
         didSet {
             tbBeePack.reloadData()
-            
         }
     }
 
@@ -32,7 +31,6 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
     func didGetProduct(product: ProductCollectionEntity) {
         collectionProduct = product
         UserDefaultHelper.shared.collectionProduct = product
-        
     }
 
 }

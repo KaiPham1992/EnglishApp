@@ -37,19 +37,5 @@ extension AppDelegate {
 //        statusBar.backgroundColor = AppColor.red
     }
     
-    private func configureFirebase() {
-        #if APPSTORE
-        let googleServiceFile = "GoogleService-Prod-Info"
-        #else
-        let googleServiceFile = "GoogleService-Dev-Info"
-        #endif
-        
-        let filePath = Bundle.main.path(forResource: googleServiceFile, ofType: "plist")!
-        guard let options = FirebaseOptions(contentsOfFile: filePath) else {
-            print("There are some problems with GoogleService-Info file")
-            return
-        }
-        
-        FirebaseApp.configure(options: options)
-    }
+
 }
