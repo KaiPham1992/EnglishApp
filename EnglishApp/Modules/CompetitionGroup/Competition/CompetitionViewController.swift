@@ -16,7 +16,9 @@ enum ResultCompetition {
     case competition
 }
 
-class CompetitionViewController: BaseViewController, CompetitionViewProtocol {
+class CompetitionViewController: BaseViewController {
+    
+    
     @IBOutlet weak var tbCompetition: UITableView!
 	var presenter: CompetitionPresenterProtocol?
     
@@ -92,5 +94,15 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
 extension CompetitionViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: LocalizableKey.action.showLanguage)
+    }
+}
+extension CompetitionViewController: CompetitionViewProtocol{
+    func didGetList(competitionList: CollectionCompetitionEntity) {
+        guard let competition = competitionList.competitionEntity else {return}
+        self.listCompetition = competition
+    }
+    
+    func didGetList(error: Error) {
+        print(error.localizedDescription)
     }
 }
