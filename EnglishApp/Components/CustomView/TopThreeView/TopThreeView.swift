@@ -30,6 +30,12 @@ class TopThreeView: BaseViewXib {
     @IBOutlet weak var widthAvartar3: NSLayoutConstraint!
     @IBOutlet weak var widthContent3: NSLayoutConstraint!
     
+    var listTopThree = [UserEntity](){
+        didSet{
+            // display data
+        }
+    }
+        
     override func setUpViews() {
         super.setUpViews()
         

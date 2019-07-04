@@ -13,7 +13,7 @@ protocol HomeViewControllerDelegate: class {
     func showLefMenuTapped()
 }
 
-class HomeViewController: BaseViewController, HomeViewProtocol {
+class HomeViewController: BaseViewController {
     @IBOutlet weak var tbHome: UITableView!
     
     var presenter: HomePresenterProtocol?
@@ -50,7 +50,7 @@ class HomeViewController: BaseViewController, HomeViewProtocol {
         super.viewDidLoad()
         configureTable()
         presenter?.getHomeRecently()
-        
+        presenter?.getTopThree()
     }
     
     
@@ -308,4 +308,19 @@ extension HomeViewController: MenuViewControllerDelegate {
             ProgressView.shared.hide()
         }
     }
+}
+extension HomeViewController: HomeViewProtocol{
+    func didGetTopThree(listTopThree: [UserEntity]) {
+        let topThreeView = TopThreeView()
+        topThreeView.listTopThree = listTopThree
+    }
+    
+    func didGetTopThree(userInfo: UserEntity) {
+    }
+    
+    func didGetTopThree(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
 }

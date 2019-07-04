@@ -706,6 +706,10 @@
 		76E8530622B95EB90039751A /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530522B95EB90039751A /* SearchEntity.swift */; };
 		76E8530722B95EB90039751A /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530522B95EB90039751A /* SearchEntity.swift */; };
 		76E8530822B95EB90039751A /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E8530522B95EB90039751A /* SearchEntity.swift */; };
+		76EC6FEE22CE3BD700E7538C /* HomeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FED22CE3BD700E7538C /* HomeEndPoint.swift */; };
+		76EC6FEF22CE3BD700E7538C /* HomeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FED22CE3BD700E7538C /* HomeEndPoint.swift */; };
+		76EC6FF122CE3C5A00E7538C /* HomeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FF022CE3C5A00E7538C /* HomeAPIService.swift */; };
+		76EC6FF222CE3C5A00E7538C /* HomeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FF022CE3C5A00E7538C /* HomeAPIService.swift */; };
 		76EE391C22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
 		76EE391D22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
 		76EE391E22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
@@ -2198,6 +2202,8 @@
 		76E852FD22B9477D0039751A /* LessonCatelogyEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCatelogyEntity.swift; sourceTree = "<group>"; };
 		76E8530122B958EC0039751A /* LessonCatelogyDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCatelogyDetailEntity.swift; sourceTree = "<group>"; };
 		76E8530522B95EB90039751A /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
+		76EC6FED22CE3BD700E7538C /* HomeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndPoint.swift; sourceTree = "<group>"; };
+		76EC6FF022CE3C5A00E7538C /* HomeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIService.swift; sourceTree = "<group>"; };
 		76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDatePresenter.swift; sourceTree = "<group>"; };
 		76EE391722A5777700DD8960 /* HistoryExerciseDateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateRouter.swift; sourceTree = "<group>"; };
 		76EE391822A5777700DD8960 /* HistoryExerciseDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateViewController.swift; sourceTree = "<group>"; };
@@ -3828,6 +3834,7 @@
 				76C92FB122C4A23600E8ED69 /* ExerciseEnpoint.swift */,
 				7680749022C8734C0015A75C /* ResultEndpoint.swift */,
 				1B94899122CBA27B00BEDADB /* CompetitionEndPoint.swift */,
+				76EC6FED22CE3BD700E7538C /* HomeEndPoint.swift */,
 			);
 			path = EndPoint;
 			sourceTree = "<group>";
@@ -3855,6 +3862,7 @@
 				DEC7F92B22C509CB0096D3D1 /* ProductAPIService.swift */,
 				7680749422C8737E0015A75C /* ResultAPIService.swift */,
 				1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */,
+				76EC6FF022CE3C5A00E7538C /* HomeAPIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -5581,6 +5589,7 @@
 				DE2ADE5D22841A68003768CE /* SideMenuViewController.swift in Sources */,
 				DE952F872287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE2ADE6922841B9E003768CE /* HomePresenter.swift in Sources */,
+				76EC6FEE22CE3BD700E7538C /* HomeEndPoint.swift in Sources */,
 				DE6FDB1A22AB869A00960422 /* FindProtocols.swift in Sources */,
 				DE952F942287D2A700E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				DE49F81B22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
@@ -5795,6 +5804,7 @@
 				DEBD674C228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DE49F80E22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
+				76EC6FF122CE3C5A00E7538C /* HomeAPIService.swift in Sources */,
 				DEB5847A2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE952F9F2287D2A700E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE361E712283E60500FA3B0D /* AppTextField.swift in Sources */,
@@ -6097,6 +6107,7 @@
 				DE952FCE2287DF4800E3F688 /* SideMenuViewController.swift in Sources */,
 				DE952FCF2287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE952FD02287DF4800E3F688 /* HomePresenter.swift in Sources */,
+				76EC6FEF22CE3BD700E7538C /* HomeEndPoint.swift in Sources */,
 				DE6FDB1B22AB869A00960422 /* FindProtocols.swift in Sources */,
 				DE952FD12287DF4800E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
 				DE49F81C22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
@@ -6311,6 +6322,7 @@
 				DEBD674D228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DE49F80F22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
+				76EC6FF222CE3C5A00E7538C /* HomeAPIService.swift in Sources */,
 				DEB5847B2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
 				DE9530072287DF4800E3F688 /* KActivityIndicatorShape.swift in Sources */,
 				DE9530082287DF4800E3F688 /* AppTextField.swift in Sources */,

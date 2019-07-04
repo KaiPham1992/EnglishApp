@@ -30,4 +30,18 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
             
         }
     }
+    
+    func getTopThree() {
+        Provider.shared.homeAPIService.getTopThree(success: { (collectionUserEntity) in
+            guard let userInfo = collectionUserEntity?.user_info else {return}
+            self.view?.didGetTopThree(userInfo: userInfo)
+            
+            guard let listTopThree = collectionUserEntity?.leader_boards else {return}
+            self.view?.didGetTopThree(listTopThree: listTopThree)
+
+        }) { (error) in
+            guard let error = error else {return}
+            self.view?.didGetTopThree(error: error)
+        }
+    }
 }

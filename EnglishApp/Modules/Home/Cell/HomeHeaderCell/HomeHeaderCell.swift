@@ -10,7 +10,8 @@ import UIKit
 
 class HomeHeaderCell: BaseTableCell {
     @IBOutlet weak var btnTestBegin: UIButton!
-
+    @IBOutlet weak var topThreeView: TopThreeView!
+    
     @IBAction func btnBXHTapped() {
         AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
     }

@@ -60,4 +60,8 @@ class Provider {
     var competitionAPIService: CompetitionAPIServiceProtocol{
         return CompetitionAPIService(network: networkManager)
     }
+    
+    var homeAPIService: HomeAPIServiceProtocol{
+        return HomeAPIService(network: networkManager)
+    }
 }
