@@ -8,6 +8,19 @@
 
 import Foundation
 import ObjectMapper
+class CollectionUserEntity: BaseEntity{
+    var count_notify: Int?
+    var count_fight_test: Int?
+    var user_info: UserEntity?
+    var leader_boards: [UserEntity]?
+    
+    override func mapping(map: Map) {
+        self.count_notify <- map["count_notify"]
+        self.count_fight_test <- map["count_fight_test"]
+        self.user_info <- map["user_info"]
+        self.leader_boards <- map["leader_boards"]
+    }
+}
 
 class UserEntity: BaseEntity  {
     
@@ -27,6 +40,13 @@ class UserEntity: BaseEntity  {
     var socialImage: String?
     var displayName: String?
     var socialType: String?
+    var rankPoint: Int?
+    var is_entrance_test: String?
+    
+    var typeUser: String?
+    var amountRank: Int?
+    var level: String?
+    
     
     override func mapping(map: Map) {
         self.id             <- map["_id"]
@@ -38,14 +58,19 @@ class UserEntity: BaseEntity  {
         self.languageCode       <- map["language_code"]
         self.amountDiamond         <- (map["amount_diamond"], StringToIntTransform())
         self.amountHoney         <- (map["amount_honey"], StringToIntTransform())
-         self.amountPoint         <- (map["amount_point"], StringToIntTransform())
+        self.amountPoint         <- (map["amount_point"], StringToIntTransform())
         self.rankId     <- map["rank_id"]
         self.rankName      <- map["rank_name"]
+        self.rankPoint <- (map["rank_point"], StringToIntTransform())
         self.jwt <- map["jwt"]
         self.displayName <- map["username"]
         self.socialImage <- map["social_img_src"]
         self.socialType <- map["social_type"]
+        self.is_entrance_test <- map["is_entrance_test"]
         
+        self.typeUser <- map["type_user"]
+        self.amountRank <- (map["amount_rank"],StringToIntTransform())
+        self.level <- map["level"]
     }
     
     var urlAvatar:  URL? {

@@ -19,6 +19,7 @@ protocol HomePresenterProtocol: class {
 
     var interactor: HomeInteractorInputProtocol? { get set }
     func getHomeRecently()
+    func getTopThree()
 }
 
 //MARK: Interactor -
@@ -42,4 +43,7 @@ protocol HomeViewProtocol: class {
     /* Presenter -> ViewController */
     
     func didGetActivities(activities: [Acitvity])
+    func didGetTopThree(listTopThree: [UserEntity])
+    func didGetTopThree(userInfo: UserEntity)
+    func didGetTopThree(error: Error)
 }

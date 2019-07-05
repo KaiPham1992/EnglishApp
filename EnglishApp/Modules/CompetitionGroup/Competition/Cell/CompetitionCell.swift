@@ -31,8 +31,8 @@ class CompetitionCell: BaseTableCell {
         didSet {
             guard let competitionEntity = competitionEntity else { return }
             lbName.text = competitionEntity.name
-            lbCondition.text = "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.condition&)"
-            lbTimeStart.text = competitionEntity.timeStart
+//            lbCondition.text = "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.condition&)"
+            lbTimeStart.text = competitionEntity.startTime
             lbCountTeam.text = competitionEntity.countTeam
             lbContent.text = competitionEntity.content
             

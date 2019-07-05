@@ -11,6 +11,17 @@
 import UIKit
 
 class CompetitionPresenter: CompetitionPresenterProtocol, CompetitionInteractorOutputProtocol {
+    func getListFight() {
+        
+        Provider.shared.competitionAPIService.getListFight(success: { (collectionCompetition) in
+            guard let competition = collectionCompetition else{return}
+            self.view?.didGetList(competitionList: competition)
+        }) { (error) in
+            guard let _error = error else {return}
+            self.view?.didGetList(error: _error)
+        }
+    }
+    
 
     weak private var view: CompetitionViewProtocol?
     var interactor: CompetitionInteractorInputProtocol?
