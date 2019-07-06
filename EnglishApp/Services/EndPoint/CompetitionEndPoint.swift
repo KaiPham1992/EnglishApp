@@ -16,7 +16,7 @@ extension CompetitionEndPoint: EndPointType{
     var path: String {
         switch self {
         case .getListFight:
-            return "/_api/fight/get_list_fight_test"
+            return "_api/fight/get_list_fight_test"
         }
     }
     

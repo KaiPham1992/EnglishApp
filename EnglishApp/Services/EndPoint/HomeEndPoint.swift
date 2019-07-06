@@ -11,18 +11,21 @@ import Alamofire
 
 enum HomeEndPoint{
     case getTopThree
+    case getListLeaderBoard
 }
 extension HomeEndPoint: EndPointType{
     var path: String {
         switch self {
         case .getTopThree:
-            return "/_api/home/get_home_summary"
+            return "_api/home/get_home_summary"
+        case .getListLeaderBoard:
+            return "_api/leader_board/get_list_leader_board"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getTopThree:
+        case .getTopThree, .getListLeaderBoard:
             return .post
             
         }
@@ -30,7 +33,7 @@ extension HomeEndPoint: EndPointType{
     
     var parameters: JSONDictionary {
         switch self {
-        case .getTopThree:
+        case .getTopThree, .getListLeaderBoard:
             return [:]
         }
     }

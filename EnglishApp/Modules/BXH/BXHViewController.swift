@@ -10,13 +10,20 @@
 
 import UIKit
 
-class BXHViewController: BaseViewController, BXHViewProtocol {
+class BXHViewController: BaseViewController {
 
 	var presenter: BXHPresenterProtocol?
      @IBOutlet weak var tbBXH: UITableView!
 
+    var listLeaderBoard = LeaderBoardEntity(){
+        didSet{
+            tbBXH.reloadData()
+        }
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
+        presenter?.getListLeaderBoard()
     }
     
     override func setUpNavigation() {
@@ -64,10 +71,22 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return listLeaderBoard.total ?? 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.item == 0 ? 150: 78 
     }
+}
+extension BXHViewController: BXHViewProtocol{
+    func didGetList(listLeaderBoard: LeaderBoardEntity) {
+        self.listLeaderBoard = listLeaderBoard
+        print(listLeaderBoard.fullName)
+    }
+    
+    func didGetList(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
 }

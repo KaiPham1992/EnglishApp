@@ -719,6 +719,8 @@
 		76EC6FEF22CE3BD700E7538C /* HomeEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FED22CE3BD700E7538C /* HomeEndPoint.swift */; };
 		76EC6FF122CE3C5A00E7538C /* HomeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FF022CE3C5A00E7538C /* HomeAPIService.swift */; };
 		76EC6FF222CE3C5A00E7538C /* HomeAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FF022CE3C5A00E7538C /* HomeAPIService.swift */; };
+		76EC6FF422CE504300E7538C /* LeaderBoardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FF322CE504300E7538C /* LeaderBoardEntity.swift */; };
+		76EC6FF522CE504300E7538C /* LeaderBoardEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EC6FF322CE504300E7538C /* LeaderBoardEntity.swift */; };
 		76EE391C22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
 		76EE391D22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
 		76EE391E22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */; };
@@ -2216,6 +2218,7 @@
 		76E8530522B95EB90039751A /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		76EC6FED22CE3BD700E7538C /* HomeEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEndPoint.swift; sourceTree = "<group>"; };
 		76EC6FF022CE3C5A00E7538C /* HomeAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPIService.swift; sourceTree = "<group>"; };
+		76EC6FF322CE504300E7538C /* LeaderBoardEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderBoardEntity.swift; sourceTree = "<group>"; };
 		76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDatePresenter.swift; sourceTree = "<group>"; };
 		76EE391722A5777700DD8960 /* HistoryExerciseDateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateRouter.swift; sourceTree = "<group>"; };
 		76EE391822A5777700DD8960 /* HistoryExerciseDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateViewController.swift; sourceTree = "<group>"; };
@@ -3767,6 +3770,7 @@
 				DE04709B22BA671400438206 /* NationalEntity.swift */,
 				DE04709F22BA85FE00438206 /* RecentlyEntity.swift */,
 				DEA932A922BFDF1C0050FB1D /* ProductEntity.swift */,
+				76EC6FF322CE504300E7538C /* LeaderBoardEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -5523,6 +5527,7 @@
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
+				76EC6FF422CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76C92FA222C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CC22961FC300E998FB /* ResultProtocols.swift in Sources */,
@@ -6044,6 +6049,7 @@
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
+				76EC6FF522CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76C92FA322C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CD22961FC300E998FB /* ResultProtocols.swift in Sources */,
