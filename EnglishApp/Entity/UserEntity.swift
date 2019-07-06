@@ -62,6 +62,9 @@ class UserEntity: BaseEntity  {
         self.rankId     <- map["rank_id"]
         self.rankName      <- map["rank_name"]
         self.rankPoint <- (map["rank_point"], StringToIntTransform())
+        if self.rankPoint == nil{
+            self.rankPoint <- map["point_rank"]
+        }
         self.jwt <- map["jwt"]
         self.displayName <- map["username"]
         self.socialImage <- map["social_img_src"]

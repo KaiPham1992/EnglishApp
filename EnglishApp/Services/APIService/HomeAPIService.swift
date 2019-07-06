@@ -10,12 +10,18 @@ import Foundation
 
 protocol HomeAPIServiceProtocol {
     func getTopThree(success: @escaping SuccessHandler<CollectionUserEntity>.object,failure: @escaping RequestFailure)
+    func getListLeaderBoard(success: @escaping SuccessHandler<LeaderBoardEntity>.object,failure: @escaping RequestFailure)
 }
 
 class HomeAPIService: HomeAPIServiceProtocol {
     
     func getTopThree( success: @escaping SuccessHandler<CollectionUserEntity>.object, failure: @escaping RequestFailure) {
         let endpoint = HomeEndPoint.getTopThree
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getListLeaderBoard(success: @escaping SuccessHandler<LeaderBoardEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = HomeEndPoint.getListLeaderBoard
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

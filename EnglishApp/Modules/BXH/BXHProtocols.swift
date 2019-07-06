@@ -18,6 +18,7 @@ protocol BXHWireframeProtocol: class {
 protocol BXHPresenterProtocol: class {
 
     var interactor: BXHInteractorInputProtocol? { get set }
+    func getListLeaderBoard()
 }
 
 //MARK: Interactor -
@@ -39,4 +40,6 @@ protocol BXHViewProtocol: class {
     var presenter: BXHPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetList(listLeaderBoard: LeaderBoardEntity)
+    func didGetList(error: Error)
 }

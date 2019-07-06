@@ -22,4 +22,14 @@ class BXHPresenter: BXHPresenterProtocol, BXHInteractorOutputProtocol {
         self.router = router
     }
 
+    func getListLeaderBoard() {
+        Provider.shared.homeAPIService.getListLeaderBoard(success: { (listLeaderBoard) in
+            guard let listLeaderBoard = listLeaderBoard else {return}
+            self.view?.didGetList(listLeaderBoard: listLeaderBoard)
+            
+        }) { (error) in
+            guard let error = error else {return}
+            self.view?.didGetList(error: error)
+        }
+    }
 }

@@ -54,6 +54,7 @@ class CompetitionEntity : BaseEntity {
         self.image <- map["image"]
         self.exercise_id <- map["exercise_id"]
         self.is_fight_joined <- map["is_fight_joined"]
+        self.content <- map["description"]
         
     }
     

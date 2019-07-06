@@ -40,6 +40,7 @@ class CompetitionViewController: BaseViewController {
         
         listCompetition = CompetitionEntity.toArray()
         configureTable()
+        presenter?.getListFight()
     }
 
 }
