@@ -60,18 +60,23 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.item == 0 {
             let cell = tableView.dequeue(BXHTop3Cell.self, for: indexPath)
+            if let topThree = listLeaderBoard.boards{
+                cell.viewTopThree.listTopThree = topThree
+            }
             
             return cell
         }
         
-        
         let cell = tableView.dequeue(BXHCell.self, for: indexPath)
-        cell.viewBXH.user = (self.listLeaderBoard.boards?[indexPath.item])!
+        if let _listLeaderBoard = listLeaderBoard.boards{
+            cell.viewBXH.number = indexPath.item + 3
+            cell.viewBXH.user = _listLeaderBoard[indexPath.item + 2]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listLeaderBoard.total ?? 0
+        return (listLeaderBoard.total ?? 0) - 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

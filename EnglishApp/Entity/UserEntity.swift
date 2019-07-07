@@ -55,6 +55,11 @@ class UserEntity: BaseEntity  {
         self.national       <- map["nation"]
         self.imgSrc          <- map["img_src"]
         self.imgCropSrc      <- map["crop_img_src"]
+        
+        if self.imgCropSrc == nil{
+            self.imgCropSrc      <- map["img_src"]
+        }
+        
         self.languageCode       <- map["language_code"]
         self.amountDiamond         <- (map["amount_diamond"], StringToIntTransform())
         self.amountHoney         <- (map["amount_honey"], StringToIntTransform())
@@ -63,7 +68,10 @@ class UserEntity: BaseEntity  {
         self.rankName      <- map["rank_name"]
         self.rankPoint <- (map["rank_point"], StringToIntTransform())
         if self.rankPoint == nil{
-            self.rankPoint <- map["point_rank"]
+            self.rankPoint <- (map["point_rank"], StringToIntTransform())
+        }
+        if self.rankPoint == nil{
+            self.rankPoint <- (map["amount_rank"], StringToIntTransform())
         }
         self.jwt <- map["jwt"]
         self.displayName <- map["username"]

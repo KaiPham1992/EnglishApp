@@ -30,15 +30,31 @@ class TopThreeView: BaseViewXib {
     @IBOutlet weak var widthAvartar3: NSLayoutConstraint!
     @IBOutlet weak var widthContent3: NSLayoutConstraint!
     
-    var listTopThree = [UserEntity](){
+    var listTopThree : [UserEntity]?{
         didSet{
-            // display data
+            
+            lbNametop1.text = listTopThree?[0].nameShowUI
+            lbNametop2.text = listTopThree?[1].nameShowUI
+            lbNametop3.text = listTopThree?[2].nameShowUI
+            
+            if let point1 = listTopThree?[0].rankPoint,
+                let point2 = listTopThree?[1].rankPoint,
+                let point3 = listTopThree?[2].rankPoint
+                {
+                lbPointtop1.text = "\(point1) \(LocalizableKey.point.showLanguage)"
+                lbPointtop2.text = "\(point2) \(LocalizableKey.point.showLanguage)"
+                lbPointtop3.text = "\(point3) \(LocalizableKey.point.showLanguage)"
+            }
+            print(listTopThree?[0].urlAvatar)
+            imgAvatar1.sd_setImage(with: listTopThree?[0].urlAvatar, placeholderImage: AppImage.avatarDefault)
+            imgAvatar2.sd_setImage(with: listTopThree?[1].urlAvatar, placeholderImage: AppImage.avatarDefault)
+            imgAvatar3.sd_setImage(with: listTopThree?[2].urlAvatar, placeholderImage: AppImage.avatarDefault)
+            
         }
     }
         
     override func setUpViews() {
         super.setUpViews()
-        
         if UIDevice.current.isIphone4Inch() {
             lbNametop1.font = AppFont.fontRegular8
             lbNametop2.font = AppFont.fontRegular8
@@ -62,4 +78,5 @@ class TopThreeView: BaseViewXib {
         }
         
     }
+   
 }
