@@ -20,6 +20,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BXHView" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="imgAvatar" destination="xhB-dv-ElK" id="YsT-a5-Gmc"/>
+                <outlet property="lbLevel" destination="trg-7a-ERm" id="kUm-0G-wQV"/>
+                <outlet property="lbName" destination="N71-XV-NR2" id="vnA-qs-lGC"/>
+                <outlet property="lbRank" destination="EGm-et-noZ" id="OeJ-aI-K8Q"/>
                 <outlet property="vBackground" destination="ON8-dC-l8r" id="YQB-J2-Ihc"/>
             </connections>
         </placeholder>

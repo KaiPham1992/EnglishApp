@@ -23,7 +23,7 @@ class BXHViewController: BaseViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.getListLeaderBoard()
+        presenter?.getListLeaderBoard(quarter: 2, year: 2019)
     }
     
     override func setUpNavigation() {
@@ -66,7 +66,7 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
         
         
         let cell = tableView.dequeue(BXHCell.self, for: indexPath)
-        
+        cell.viewBXH.user = (self.listLeaderBoard.boards?[indexPath.item])!
         return cell
     }
     
@@ -81,7 +81,6 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
 extension BXHViewController: BXHViewProtocol{
     func didGetList(listLeaderBoard: LeaderBoardEntity) {
         self.listLeaderBoard = listLeaderBoard
-        print(listLeaderBoard.fullName)
     }
     
     func didGetList(error: Error) {

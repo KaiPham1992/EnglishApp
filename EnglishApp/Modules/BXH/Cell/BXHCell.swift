@@ -9,7 +9,8 @@
 import UIKit
 
 class BXHCell: BaseTableCell {
-
+    
+    @IBOutlet weak var viewBXH: BXHView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

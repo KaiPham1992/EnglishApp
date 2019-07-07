@@ -18,7 +18,7 @@ protocol BXHWireframeProtocol: class {
 protocol BXHPresenterProtocol: class {
 
     var interactor: BXHInteractorInputProtocol? { get set }
-    func getListLeaderBoard()
+    func getListLeaderBoard(quarter: Int, year: Int)
 }
 
 //MARK: Interactor -

@@ -22,8 +22,8 @@ class BXHPresenter: BXHPresenterProtocol, BXHInteractorOutputProtocol {
         self.router = router
     }
 
-    func getListLeaderBoard() {
-        Provider.shared.homeAPIService.getListLeaderBoard(success: { (listLeaderBoard) in
+    func getListLeaderBoard(quarter: Int, year: Int) {
+        Provider.shared.homeAPIService.getListLeaderBoard(quarter: quarter, year: year, success: { (listLeaderBoard) in
             guard let listLeaderBoard = listLeaderBoard else {return}
             self.view?.didGetList(listLeaderBoard: listLeaderBoard)
             
