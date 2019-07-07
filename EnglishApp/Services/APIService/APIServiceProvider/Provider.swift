@@ -64,4 +64,8 @@ class Provider {
     var homeAPIService: HomeAPIServiceProtocol{
         return HomeAPIService(network: networkManager)
     }
+    
+    var walletLogAPIService: WalletLogAPIServiceProtocol{
+        return WalletLogAPIService(network: networkManager)
+    }
 }

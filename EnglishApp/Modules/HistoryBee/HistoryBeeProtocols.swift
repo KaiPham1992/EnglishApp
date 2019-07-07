@@ -18,6 +18,7 @@ protocol HistoryBeeWireframeProtocol: class {
 protocol HistoryBeePresenterProtocol: class {
 
     var interactor: HistoryBeeInteractorInputProtocol? { get set }
+    func getWalletLog(wallet_type: Int)
 }
 
 //MARK: Interactor -
@@ -39,4 +40,6 @@ protocol HistoryBeeViewProtocol: class {
     var presenter: HistoryBeePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetWalletLog(listWalletLog: [LogEntity])
+    func didGetWalletLog(error: Error)
 }

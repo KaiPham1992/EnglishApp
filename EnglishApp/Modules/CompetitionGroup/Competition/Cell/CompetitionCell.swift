@@ -30,10 +30,16 @@ class CompetitionCell: BaseTableCell {
     var competitionEntity: CompetitionEntity? {
         didSet {
             guard let competitionEntity = competitionEntity else { return }
+            if competitionEntity.is_fight_joined& == "0"{
+                btnJoin.isHidden = false
+            }
             lbName.text = competitionEntity.name
-//            lbCondition.text = "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.condition&)"
-            lbTimeStart.text = competitionEntity.startTime
-            lbCountTeam.text = competitionEntity.countTeam
+            lbCondition.text = "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.rankName&)"
+            if let startTime = competitionEntity.startTime{
+                lbTimeStart.text = "\(LocalizableKey.timeStart.showLanguage)\(startTime.toString(dateFormat: AppDateFormat.commahhmmaddMMMyy))"
+            }
+            
+            lbCountTeam.text = "\(LocalizableKey.countTeam.showLanguage)\(competitionEntity.countTeam&)\(LocalizableKey.team.showLanguage)"
             lbContent.text = competitionEntity.content
             
         }

@@ -14,9 +14,10 @@ class HistoryBeeRouter: HistoryBeeWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(wallet_type: Int) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = HistoryBeeViewController(nibName: nil, bundle: nil)
+        view.wallet_type = wallet_type
         let interactor = HistoryBeeInteractor()
         let router = HistoryBeeRouter()
         let presenter = HistoryBeePresenter(interface: view, interactor: interactor, router: router)

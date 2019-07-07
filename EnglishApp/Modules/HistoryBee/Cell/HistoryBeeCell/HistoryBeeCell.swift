@@ -9,7 +9,16 @@
 import UIKit
 
 class HistoryBeeCell: UITableViewCell {
+    @IBOutlet weak var lbContent: UILabel!
+    @IBOutlet weak var lbDate: UILabel!
 
+    var walletLog: LogEntity?{
+        didSet{
+            lbContent.text = walletLog?.description
+            lbDate.text = walletLog?.date
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

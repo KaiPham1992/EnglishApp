@@ -94,7 +94,7 @@ struct LocalizableKey {
     
     static let selectTeamJoin = "selectTeamJoin"
     static let joinTeam = "joinTeam"
-    
+    static let team = "team"
 
     // Detail team
     static let startAfter = "startAfter"

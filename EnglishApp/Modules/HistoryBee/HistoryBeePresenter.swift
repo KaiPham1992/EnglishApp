@@ -21,5 +21,15 @@ class HistoryBeePresenter: HistoryBeePresenterProtocol, HistoryBeeInteractorOutp
         self.interactor = interactor
         self.router = router
     }
+    
+    func getWalletLog(wallet_type: Int) {
+        Provider.shared.walletLogAPIService.getWalletLog(wallet_type: wallet_type, success: { (walletLog) in
+            guard let listWalletLog = walletLog?.logs else {return}
+            self.view?.didGetWalletLog(listWalletLog: listWalletLog)
+        }) { (error) in
+            guard let error = error else {return}
+            self.view?.didGetWalletLog(error: error)
+        }
+    }
 
 }

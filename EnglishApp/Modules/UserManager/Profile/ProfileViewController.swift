@@ -75,11 +75,11 @@ class ProfileViewController: BaseViewController {
     }
     
     @IBAction func btnBeeTapped() {
-        self.push(controller: HistoryBeeRouter.createModule())
+        self.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
     }
     
     @IBAction func btnDiamonTapped() {
-        self.push(controller: HistoryBeeRouter.createModule())
+        self.push(controller: HistoryBeeRouter.createModule(wallet_type: 1))
     }
 }
 

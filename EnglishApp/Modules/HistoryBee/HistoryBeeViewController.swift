@@ -10,14 +10,22 @@
 
 import UIKit
 
-class HistoryBeeViewController: BaseViewController, HistoryBeeViewProtocol {
+class HistoryBeeViewController: BaseViewController {
 
 	var presenter: HistoryBeePresenterProtocol?
     @IBOutlet weak var tbHistory: UITableView!
 
+    var listWalletLog = [LogEntity](){
+        didSet{
+            tbHistory.reloadData()
+        }
+    }
+    var wallet_type: Int?
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        presenter?.getWalletLog(wallet_type: self.wallet_type ?? 0)
     }
     
     override func setUpNavigation() {
@@ -42,12 +50,12 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(HistoryBeeCell.self, for: indexPath)
-       
+        cell.walletLog = self.listWalletLog[indexPath.item]
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return self.listWalletLog.count
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -68,4 +76,15 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 300
     }
+}
+extension HistoryBeeViewController: HistoryBeeViewProtocol{
+    func didGetWalletLog(listWalletLog: [LogEntity]) {
+        self.listWalletLog = listWalletLog
+    }
+    
+    func didGetWalletLog(error: Error) {
+        print(error.localizedDescription)
+    }
+    
+    
 }
