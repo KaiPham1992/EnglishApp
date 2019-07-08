@@ -46,6 +46,12 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    var listTopThree = [UserEntity](){
+        didSet {
+            tbHome.reloadData()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
@@ -148,6 +154,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.item == 0 {
                 let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
                 cell.btnTestBegin.addTarget(self, action: #selector(btnTestBeginTapped), for: .touchUpInside)
+                print(self.listTopThree.count)
+                cell.topThreeView.listTopThree = self.listTopThree
                 return cell
             } else {
                 let cell = tableView.dequeue(HomeActionCell.self, for: indexPath)
@@ -169,7 +177,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return 2
+            return 2//self.listTopThree.count
         } else {
             if self.listActivities.count == 0 {
                 return 0
@@ -311,8 +319,7 @@ extension HomeViewController: MenuViewControllerDelegate {
 }
 extension HomeViewController: HomeViewProtocol{
     func didGetTopThree(listTopThree: [UserEntity]) {
-        let topThreeView = TopThreeView()
-        topThreeView.listTopThree = listTopThree
+        self.listTopThree = listTopThree
     }
     
     func didGetTopThree(userInfo: UserEntity) {

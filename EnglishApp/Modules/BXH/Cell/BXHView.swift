@@ -15,12 +15,14 @@ class BXHView: BaseViewXib {
     @IBOutlet weak var lbRank: UILabel!
     @IBOutlet weak var imgAvatar: UIImageView!
 
+    var number: Int?
     var user = UserEntity(){
         didSet{
-            lbLevel.text = user.level&
+            
+            lbLevel.text = "\(self.number&)"
             lbName.text = user.nameShowUI
             lbRank.text = "\(user.rankName&): \(user.rankPoint&) \(LocalizableKey.point.showLanguage)"
-            imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+            imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
             
         }
     }
