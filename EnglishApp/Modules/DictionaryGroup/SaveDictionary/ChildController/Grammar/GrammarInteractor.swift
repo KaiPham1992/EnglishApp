@@ -23,4 +23,15 @@ class GrammarInteractor: GrammarInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    func deleteNote(id: [Int]){
+        ProgressView.shared.show()
+        Provider.shared.saveAPIService.deleteNote(id: id, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _ = respone {
+                self.presenter?.deleteNoteSuccessed()
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

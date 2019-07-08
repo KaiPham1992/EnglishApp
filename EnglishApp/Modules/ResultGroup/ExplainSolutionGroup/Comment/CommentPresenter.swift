@@ -11,15 +11,40 @@
 import UIKit
 
 class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtocol {
-
+   
     weak private var view: CommentViewProtocol?
     var interactor: CommentInteractorInputProtocol?
     private let router: CommentWireframeProtocol
+    private var commentEntity: CommentEntity?
 
     init(interface: CommentViewProtocol, interactor: CommentInteractorInputProtocol?, router: CommentWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
-
+    
+    func getComment(idLesson: String) {
+        self.interactor?.getComment(idLesson: idLesson)
+    }
+    
+    func getCommentSuccessed(respone: CommentEntity) {
+        self.commentEntity = respone
+        self.view?.reloadView()
+    }
+    
+    func numberParent() -> Int?{
+        return commentEntity?.data?.count
+    }
+    
+    func numberChildren(section: Int) -> Int?{
+        return commentEntity?.data?[section].children?.count
+    }
+    
+    func getParentComment(section: Int) -> ParentComment?{
+        return commentEntity?.data?[section]
+    }
+    
+    func getChildrenComment(indexPath: IndexPath) -> ChildrenComment? {
+        return commentEntity?.data?[indexPath.section].children?[indexPath.row]
+    }
 }

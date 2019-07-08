@@ -27,4 +27,19 @@ class CommentRouter: CommentWireframeProtocol {
 
         return view
     }
+    
+    static func createModule(id: String) -> CommentViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = CommentViewController.initFromNib()
+        view.idLesson = id
+        let interactor = CommentInteractor()
+        let router = CommentRouter()
+        let presenter = CommentPresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }

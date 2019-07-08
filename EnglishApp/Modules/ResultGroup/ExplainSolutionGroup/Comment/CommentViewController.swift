@@ -11,10 +11,11 @@
 import UIKit
 import XLPagerTabStrip
 
-class CommentViewController: BaseViewController, CommentViewProtocol {
+class CommentViewController: BaseViewController {
 
     @IBOutlet weak var tbvComment: UITableView!
     var presenter: CommentPresenterProtocol?
+    var idLesson: String?
 
     override func setUpViews() {
         super.setUpViews()
@@ -22,11 +23,19 @@ class CommentViewController: BaseViewController, CommentViewProtocol {
         tbvComment.registerXibFile(CellHeaderComment.self)
         tbvComment.delegate = self
         tbvComment.dataSource = self
+        self.presenter?.getComment(idLesson: idLesson&)
     }
+    
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.comment.showLanguage)
+    }
+}
+
+extension CommentViewController: CommentViewProtocol{
+    func reloadView() {
+        tbvComment.reloadData()
     }
 }
 
@@ -38,17 +47,25 @@ extension CommentViewController: IndicatorInfoProvider{
 
 extension CommentViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.presenter?.numberChildren(section: section) ?? 0
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return self.presenter?.numberParent() ?? 0
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellComment.self, for: indexPath)
+        if let dataCell = self.presenter?.getChildrenComment(indexPath: indexPath){
+            cell.setupCellChildren(comment: dataCell)
+        }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let cell = tableView.dequeueTableCell(CellHeaderComment.self)
+        if let dataCell = self.presenter?.getParentComment(section: section){
+            cell.setupCellParent(comment: dataCell)
+        }
         return cell.contentView
     }
 }

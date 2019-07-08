@@ -14,7 +14,7 @@ class AddNoteRouter: AddNoteWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> AddNoteViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = AddNoteViewController.initFromNib()
         let interactor = AddNoteInteractor()

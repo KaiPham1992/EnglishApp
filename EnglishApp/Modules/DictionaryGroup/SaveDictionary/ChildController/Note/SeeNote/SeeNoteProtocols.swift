@@ -18,17 +18,26 @@ protocol SeeNoteWireframeProtocol: class {
 protocol SeeNotePresenterProtocol: class {
 
     var interactor: SeeNoteInteractorInputProtocol? { get set }
+    func getViewNote(idNote: String)
+    func getTitleNote() -> String?
+    func getDescriptionNote() -> String?
+    func getIdNote() -> String?
+    func editNote(idNote: String, description: String)
 }
 
 //MARK: Interactor -
 protocol SeeNoteInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getViewNoteSuccessed(respone: NoteDetailEntity)
+    func editNoteSuccessed()
 }
 
 protocol SeeNoteInteractorInputProtocol: class {
 
     var presenter: SeeNoteInteractorOutputProtocol?  { get set }
+    func getViewNote(idNote: String)
+    func editNote(idNote: String, description: String)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +46,8 @@ protocol SeeNoteInteractorInputProtocol: class {
 protocol SeeNoteViewProtocol: class {
 
     var presenter: SeeNotePresenterProtocol?  { get set }
+    func reloadView()
+    func editNoteSuccessed()
 
     /* Presenter -> ViewController */
 }

@@ -27,4 +27,19 @@ class SeeNoteRouter: SeeNoteWireframeProtocol {
 
         return view
     }
+    
+    static func createModule(idNote: String) -> SeeNoteViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = SeeNoteViewController.initFromNib()
+        view.idNote = idNote
+        let interactor = SeeNoteInteractor()
+        let router = SeeNoteRouter()
+        let presenter = SeeNotePresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }

@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol GrammarWireframeProtocol: class {
-    func gotoNote()
+    func gotoNote(idNote: String)
     func gotoAddNote()
     func gotoDetailVocabulary()
     func gotoDetailGrammar()
@@ -21,13 +21,18 @@ protocol GrammarWireframeProtocol: class {
 protocol GrammarPresenterProtocol: class {
 
     var interactor: GrammarInteractorInputProtocol? { get set }
-    func gotoNote()
+    func gotoNote(idNote: String)
     func gotoAddNote()
     func gotoDetailVocabulary()
     func gotoDetailGrammar()
-    func getListNote(offset: Int)
+    func getListNote(offset: Int,replaceData: Bool)
     func getItemIndexPath(indexPath: IndexPath) -> NoteRespone?
     func getNumberRow() -> Int
+    func changeStatusNote(indexPath: IndexPath)
+    func deleteNote()
+    func cancelDelete()
+    func checkLoadMore() -> Bool
+    func getIdNote(indexPath: IndexPath) -> String?
 }
 
 //MARK: Interactor -
@@ -35,12 +40,14 @@ protocol GrammarInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getListNoteSuccessed(listNote: [NoteRespone])
+    func deleteNoteSuccessed()
 }
 
 protocol GrammarInteractorInputProtocol: class {
 
     var presenter: GrammarInteractorOutputProtocol?  { get set }
     func getListNote(offset: Int)
+    func deleteNote(id: [Int])
 
     /* Presenter -> Interactor */
 }
@@ -51,6 +58,7 @@ protocol GrammarViewProtocol: class {
     var presenter: GrammarPresenterProtocol?  { get set }
     
     func reloadView()
+    func reloadViewAfterDelete()
 
     /* Presenter -> ViewController */
 }

@@ -14,8 +14,15 @@ class RatioButton : UIButton{
             setButton()
         }
     }
-    private let imageChoice = UIImage(named:"ic_Radio_button_on_yellow")
-    private let imageNoChoice = UIImage(named:"Material_Dark_Radio_button_off")
+    var imageChoice = UIImage(named:"ic_Radio_button_on_yellow")
+    var imageNoChoice = UIImage(named:"Material_Dark_Radio_button_off"){
+        didSet{
+            self.setBackgroundImage(imageNoChoice, for: .normal)
+        }
+    }
+    
+    var actionClick : ((_ isChoice: Bool) -> ())?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupView()
@@ -42,5 +49,6 @@ class RatioButton : UIButton{
     
     @objc func clickButton(){
         self.isChocie = !self.isChocie
+        actionClick?(isChocie)
     }
 }

@@ -21,6 +21,11 @@ class DetailLessonViewController: BaseViewController {
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: LessonCatelogy?
+    var isLike = 0{
+        didSet{
+            self.btnLike.setBackgroundImage(isLike == 0 ? UIImage(named:"Material_Icons_white_favorite") : #imageLiteral(resourceName: "Material_Icons_white_favorite-1") , for: .normal)
+        }
+    }
     
     var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
     override func setUpViews() {
@@ -37,7 +42,7 @@ class DetailLessonViewController: BaseViewController {
         
         if type == .detailLesson{
             viewMessage.action = {
-                self.push(controller: CommentRouter.createModule(),animated: true)
+                self.push(controller: CommentRouter.createModule(id: self.lesson?._id ?? "5"),animated: true)
             }
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
         } else {
@@ -47,7 +52,8 @@ class DetailLessonViewController: BaseViewController {
     }
     
     @objc func clickHeart(){
-        
+        isLike = isLike == 0 ? 1 : 0
+        self.presenter?.likeLesson(idLesson: Int(lesson?._id ?? "0") ?? 0 , isFavorite: self.isLike)
     }
 }
 
@@ -55,6 +61,16 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
     func reloadView() {
         if let attribute = self.presenter?.getContentLesson(){
             self.lbContent.attributedText = attribute
+        }
+        if let comment = self.presenter?.getNumberComment(){
+            self.viewMessage.setupNumber(number: comment)
+        }
+        if let _ = self.presenter?.getToggleLike() {
+            self.isLike = 1
+            self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
+        } else {
+            self.isLike = 0
+            self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
         }
     }
 }

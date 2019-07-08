@@ -13,4 +13,16 @@ import UIKit
 class AddNoteInteractor: AddNoteInteractorInputProtocol {
 
     weak var presenter: AddNoteInteractorOutputProtocol?
+    
+    func addNote(description: String){
+        ProgressView.shared.show()
+        Provider.shared.saveAPIService.addNote(description: description, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _ = respone {
+                self.presenter?.addNoteSuccessed()
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

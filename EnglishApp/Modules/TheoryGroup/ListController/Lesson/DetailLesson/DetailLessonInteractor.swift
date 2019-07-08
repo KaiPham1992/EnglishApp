@@ -26,5 +26,11 @@ class DetailLessonInteractor: DetailLessonInteractorInputProtocol {
         }
     }
     
-
+    func likeLesson(idLesson:Int, isFavorite: Int){
+        Provider.shared.theoryAPIService.likeLesson(idLesson: idLesson, isFavorite: isFavorite, success: { (repsone) in
+            
+        }) { (error) in
+            
+        }
+    }
 }

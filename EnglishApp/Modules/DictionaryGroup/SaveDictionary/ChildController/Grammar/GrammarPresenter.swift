@@ -17,6 +17,7 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
     private let router: GrammarWireframeProtocol
     var listRespone : [NoteRespone] = []
     var isLoadmore: Bool = true
+    var replaceData = true
 
     init(interface: GrammarViewProtocol, interactor: GrammarInteractorInputProtocol?, router: GrammarWireframeProtocol) {
         self.view = interface
@@ -24,8 +25,33 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         self.router = router
     }
     
-    func gotoNote() {
-        self.router.gotoNote()
+    func changeStatusNote(indexPath: IndexPath){
+        listRespone[indexPath.row].isDelete = !listRespone[indexPath.row].isDelete
+    }
+    
+    func deleteNote(){
+        let listId = self.listRespone.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0}
+        self.interactor?.deleteNote(id: listId)
+    }
+    
+    func deleteNoteSuccessed(){
+        self.listRespone = self.listRespone.filter{$0.isDelete == false}
+        self.view?.reloadViewAfterDelete()
+    }
+    
+    func cancelDelete(){
+        for index in 0..<listRespone.count{
+            listRespone[index].isDelete = false
+        }
+        self.view?.reloadViewAfterDelete()
+    }
+    
+    func gotoNote(idNote: String) {
+        self.router.gotoNote(idNote: idNote)
+    }
+    
+    func getIdNote(indexPath: IndexPath) -> String?{
+        return listRespone[indexPath.row]._id
     }
     
     func gotoAddNote() {
@@ -48,17 +74,24 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         return listRespone[indexPath.row]
     }
     
-    func getListNote(offset: Int) {
-        if isLoadmore {
-            self.interactor?.getListNote(offset: offset)
-        }
+    func checkLoadMore() -> Bool{
+        return self.isLoadmore
+    }
+    
+    func getListNote(offset: Int,replaceData: Bool) {
+        self.replaceData = replaceData
+        self.interactor?.getListNote(offset: offset)
     }
     
     func getListNoteSuccessed(listNote: [NoteRespone]) {
         if listNote.count < limit {
             isLoadmore = false
         }
-        self.listRespone += listNote
+        if replaceData {
+            self.listRespone = listNote
+        } else {
+            self.listRespone += listNote
+        }
         self.view?.reloadView()
     }
 }

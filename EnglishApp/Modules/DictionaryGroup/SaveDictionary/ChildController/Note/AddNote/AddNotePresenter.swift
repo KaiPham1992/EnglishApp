@@ -11,6 +11,7 @@
 import UIKit
 
 class AddNotePresenter: AddNotePresenterProtocol, AddNoteInteractorOutputProtocol {
+   
 
     weak private var view: AddNoteViewProtocol?
     var interactor: AddNoteInteractorInputProtocol?
@@ -21,5 +22,12 @@ class AddNotePresenter: AddNotePresenterProtocol, AddNoteInteractorOutputProtoco
         self.interactor = interactor
         self.router = router
     }
-
+    
+    func addNote(description: String) {
+        self.interactor?.addNote(description: description)
+    }
+    
+    func addNoteSuccessed() {
+        self.view?.addNoteSuccessed()
+    }
 }

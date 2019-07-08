@@ -13,6 +13,7 @@ class NoteRespone : Mappable {
     
     var _id : String?
     var name : String?
+    var isDelete = false
     
     
     func mapping(map: Map) {

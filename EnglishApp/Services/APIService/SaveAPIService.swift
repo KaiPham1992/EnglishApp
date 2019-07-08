@@ -10,6 +10,10 @@ import Foundation
 
 protocol SaveAPIServiceProtocol {
     func getListNote(offset: Int,success: @escaping SuccessHandler<NoteRespone>.array, failure: @escaping RequestFailure)
+    func deleteNote(id: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func addNote(description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func getViewNote(idNote: String,success: @escaping SuccessHandler<NoteDetailEntity>.object, failure: @escaping RequestFailure)
+    func editNote(idNote: String,description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class SaveAPIService : SaveAPIServiceProtocol {
@@ -23,5 +27,22 @@ class SaveAPIService : SaveAPIServiceProtocol {
     func getListNote(offset: Int,success: @escaping SuccessHandler<NoteRespone>.array, failure: @escaping RequestFailure) {
         let endpint = SaveEndpoint.getListNote(offset: offset)
         network.requestData(endPoint: endpint, success: MapperData.mapArray(success), failure: failure)
+    }
+    func deleteNote(id: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endpoint = SaveEndpoint.deleteNote(id: id)
+        network.requestData(endPoint: endpoint, success: success, failure: failure)
+    }
+    func addNote(description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
+        let endpoint = SaveEndpoint.addNote(description: description)
+        network.requestData(endPoint: endpoint, success: success, failure: failure)
+    }
+    
+    func getViewNote(idNote: String, success: @escaping SuccessHandler<NoteDetailEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = SaveEndpoint.getViewNote(idNote: idNote)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    func editNote(idNote: String,description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
+        let endpoint = SaveEndpoint.editNote(idNote: idNote, description: description)
+        network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
 }

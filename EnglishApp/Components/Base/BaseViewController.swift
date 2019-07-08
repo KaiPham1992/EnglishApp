@@ -17,6 +17,12 @@ open class BaseViewController: UIViewController {
     let mainBackgroundColor = UIColor.white
     let mainNavigationBarColor = UIColor.white
     
+    lazy var btnLike : UIButton = {
+        let btn = UIButton()
+        btn.layer.masksToBounds = true
+        return btn
+    }()
+    
     lazy var btnRight : UIButton = {
         let btn = UIButton()
         btn.layer.masksToBounds = true
@@ -236,7 +242,7 @@ extension BaseViewController {
         self.navigationItem.rightBarButtonItems = [button1, button2]
     }
     
-    func addTwoViewToNavigation(view1: UIView?,image1: UIImage?, action1: Selector?, view2: UIView?,image2: UIImage?, action2: Selector?) {
+    func addTwoViewToNavigation(view1: UIView?,image1: UIImage?, action1: Selector?, view2: UIView?,image2: UIImage?, action2: Selector?) -> (){
         showNavigation()
         let button1 : UIBarButtonItem!
         if image1 != nil {
@@ -256,14 +262,13 @@ extension BaseViewController {
         let button2 : UIBarButtonItem!
         
         if image2 != nil {
-            let btn2 = UIButton()
-            btn2.setBackgroundImage(image2, for: .normal)
+            btnLike.setBackgroundImage(image2, for: .normal)
             if let newAction = action2 {
-                btn2.addTarget(self, action: newAction, for: .touchUpInside)
+                btnLike.addTarget(self, action: newAction, for: .touchUpInside)
             }
-            btn2.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
-            btn2.contentHorizontalAlignment = .right
-            button2 = UIBarButtonItem(customView: btn2)
+            btnLike.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            btnLike.contentHorizontalAlignment = .right
+            button2 = UIBarButtonItem(customView: btnLike)
         } else {
             button2 = UIBarButtonItem(customView: view2 ?? UIView())
         }

@@ -43,13 +43,15 @@ class GrammarRouter: GrammarWireframeProtocol {
         return view
     }
     
-    func gotoNote(){
-        let vc = SeeNoteRouter.createModule()
+    func gotoNote(idNote: String){
+        let vc = SeeNoteRouter.createModule(idNote: idNote)
+        vc.deleagate = viewController as! GrammarViewController
         self.viewController?.push(controller: vc,animated: true)
     }
     
     func gotoAddNote(){
         let vc = AddNoteRouter.createModule()
+        vc.deleagate = viewController as! GrammarViewController
         self.viewController?.push(controller: vc,animated: true)
     }
     

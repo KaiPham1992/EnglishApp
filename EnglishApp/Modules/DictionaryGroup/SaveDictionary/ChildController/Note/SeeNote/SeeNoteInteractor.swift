@@ -13,4 +13,25 @@ import UIKit
 class SeeNoteInteractor: SeeNoteInteractorInputProtocol {
 
     weak var presenter: SeeNoteInteractorOutputProtocol?
+    
+    func getViewNote(idNote: String) {
+        ProgressView.shared.show()
+        Provider.shared.saveAPIService.getViewNote(idNote: idNote, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getViewNoteSuccessed(respone: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
+    func editNote(idNote: String, description: String) {
+        Provider.shared.saveAPIService.editNote(idNote: idNote, description: description, success: { (respone) in
+            if let _ = respone {
+                self.presenter?.editNoteSuccessed()
+            }
+        }) { (error) in
+            
+        }
+    }
 }

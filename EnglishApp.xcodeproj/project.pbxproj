@@ -12,6 +12,18 @@
 		1B94899522CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */; };
 		1B94899622CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */; };
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
+		2AAE21F622D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
+		2AAE21F722D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
+		2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
+		2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
+		2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
+		2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
+		2AEFC30D22D3239400F3D5B6 /* ParentComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */; };
+		2AEFC30E22D3239400F3D5B6 /* ParentComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */; };
+		2AEFC30F22D3239400F3D5B6 /* ParentComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */; };
+		2AEFC31122D3241900F3D5B6 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */; };
+		2AEFC31222D3241900F3D5B6 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */; };
+		2AEFC31322D3241900F3D5B6 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
 		7629BDD122ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDD022ACCBBA0051B835 /* ReportQuestionPopUp.swift */; };
 		7629BDD222ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDD022ACCBBA0051B835 /* ReportQuestionPopUp.swift */; };
@@ -355,9 +367,6 @@
 		76C8E30022C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
 		76C8E30122C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
 		76C8E30222C19B0C0076E65B /* CellResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */; };
-		76C92F8922C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
-		76C92F8A22C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
-		76C92F8B22C3BA3500E8ED69 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */; };
 		76C92F8D22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
 		76C92F8E22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
 		76C92F8F22C4493B00E8ED69 /* FindAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */; };
@@ -1981,6 +1990,10 @@
 		1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionAPIService.swift; sourceTree = "<group>"; };
 		25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		28D786760AE73B0AF55038DE /* Pods-EnglishApp_AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.debug.xcconfig"; sourceTree = "<group>"; };
+		2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailEntity.swift; sourceTree = "<group>"; };
+		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
+		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
+		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
 		3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		3B757D3CF68AEA1A27D502BF /* Pods-EnglishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.release.xcconfig"; sourceTree = "<group>"; };
 		4C6A78A13386B1C2DA9E8046 /* Pods-EnglishApp_AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -2102,7 +2115,6 @@
 		76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultFillQuestion.xib; sourceTree = "<group>"; };
 		76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultExercise.swift; sourceTree = "<group>"; };
 		76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultExercise.xib; sourceTree = "<group>"; };
-		76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
 		76C92F8C22C4493B00E8ED69 /* FindAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindAPIService.swift; sourceTree = "<group>"; };
 		76C92F9022C4496E00E8ED69 /* FindEnpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindEnpoint.swift; sourceTree = "<group>"; };
 		76C92F9522C4878300E8ED69 /* ExerciseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEntity.swift; sourceTree = "<group>"; };
@@ -2728,6 +2740,7 @@
 			isa = PBXGroup;
 			children = (
 				764083FA22B7C9A8002D9401 /* NoteRespone.swift */,
+				2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */,
 			);
 			path = SaveGroup;
 			sourceTree = "<group>";
@@ -3026,7 +3039,6 @@
 		76C92F8722C3B9FC00E8ED69 /* Result */ = {
 			isa = PBXGroup;
 			children = (
-				76C92F8822C3BA3500E8ED69 /* CommentEntity.swift */,
 				7680748822C872270015A75C /* TestResultProfileEntity.swift */,
 				7680748C22C872D70015A75C /* QuestionResultEntity.swift */,
 			);
@@ -3375,6 +3387,9 @@
 				76E852FD22B9477D0039751A /* LessonCatelogyEntity.swift */,
 				76E8530122B958EC0039751A /* LessonCatelogyDetailEntity.swift */,
 				76E8530522B95EB90039751A /* SearchEntity.swift */,
+				2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */,
+				2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */,
+				2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */,
 			);
 			path = TheoryGroup;
 			sourceTree = "<group>";
@@ -5635,7 +5650,6 @@
 				DE95317E228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AA22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
 				76EE393C22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
-				76C92F8922C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
 				76EE392222A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8B22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -5730,6 +5744,7 @@
 				DEB584772291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DED5A02722A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */,
 				DE89D20822A41E09000638B0 /* ChangeLanguageInteractor.swift in Sources */,
+				2AEFC30D22D3239400F3D5B6 /* ParentComment.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				76F7F46522946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
@@ -5823,6 +5838,7 @@
 				DE9531422288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
 				DEC62AC022930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
+				2AEFC31122D3241900F3D5B6 /* CommentEntity.swift in Sources */,
 				76CE323622968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
 				76E852FA22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
@@ -5873,6 +5889,7 @@
 				76BD141622ACB88C00A48635 /* ExplainSolutionGroupInteractor.swift in Sources */,
 				766D1385228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
 				DE89D1EC22A41B44000638B0 /* LevelUpPopUp.swift in Sources */,
+				2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */,
 				76CE32112296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA52289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				1B94899522CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */,
@@ -5887,6 +5904,7 @@
 				76E2FF43228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				7680748122C869B60015A75C /* TestResultEntity.swift in Sources */,
 				DE361DE72283E54C00FA3B0D /* BaseView.swift in Sources */,
+				2AAE21F622D381EB00AE7481 /* NoteDetailEntity.swift in Sources */,
 				DE361F392283E85000FA3B0D /* APIError.swift in Sources */,
 				DE361F332283E85000FA3B0D /* UserEntity.swift in Sources */,
 				DE361F342283E85000FA3B0D /* FaceBookEntity.swift in Sources */,
@@ -6160,7 +6178,6 @@
 				DE95317F228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AB22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
 				76EE393D22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
-				76C92F8A22C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392322A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8C22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -6255,6 +6272,7 @@
 				DEB584782291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				DED5A02822A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */,
 				DE89D20922A41E09000638B0 /* ChangeLanguageInteractor.swift in Sources */,
+				2AEFC30E22D3239400F3D5B6 /* ParentComment.swift in Sources */,
 				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
 				76F7F46622946928001E9984 /* CellCreateExercise.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
@@ -6348,6 +6366,7 @@
 				DE9531432288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */,
 				DEC62AC122930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
+				2AEFC31222D3241900F3D5B6 /* CommentEntity.swift in Sources */,
 				76CE323722968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
 				76E852FB22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
@@ -6398,6 +6417,7 @@
 				76BD141722ACB88C00A48635 /* ExplainSolutionGroupInteractor.swift in Sources */,
 				766D1386228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
 				DE89D1ED22A41B44000638B0 /* LevelUpPopUp.swift in Sources */,
+				2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */,
 				76CE32122296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA62289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				1B94899622CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */,
@@ -6412,6 +6432,7 @@
 				76E2FF44228DD1070014B1F4 /* AddNoteInteractor.swift in Sources */,
 				7680748222C869B60015A75C /* TestResultEntity.swift in Sources */,
 				DE9530132287DF4800E3F688 /* BaseView.swift in Sources */,
+				2AAE21F722D381EB00AE7481 /* NoteDetailEntity.swift in Sources */,
 				DE9530142287DF4800E3F688 /* APIError.swift in Sources */,
 				DE9530152287DF4800E3F688 /* UserEntity.swift in Sources */,
 				DE9530162287DF4800E3F688 /* FaceBookEntity.swift in Sources */,
@@ -6663,6 +6684,7 @@
 				76CE31CB22961FC300E998FB /* ResultViewController.swift in Sources */,
 				766AE7F922B022DE002D474E /* UpdateFeaturePopUp.swift in Sources */,
 				DE9530792287DF6400E3F688 /* BaseTableCell.swift in Sources */,
+				2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */,
 				DEC62ABF22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF54228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE95307A2287DF6400E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
@@ -6683,7 +6705,6 @@
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AC22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
 				76EE393E22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
-				76C92F8B22C3BA3500E8ED69 /* CommentEntity.swift in Sources */,
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392422A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8D22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -6931,6 +6952,7 @@
 				7680748322C869B60015A75C /* TestResultEntity.swift in Sources */,
 				DE9530C12287DF6400E3F688 /* BaseView.swift in Sources */,
 				DE9530C22287DF6400E3F688 /* APIError.swift in Sources */,
+				2AEFC31322D3241900F3D5B6 /* CommentEntity.swift in Sources */,
 				DE9530C32287DF6400E3F688 /* UserEntity.swift in Sources */,
 				DE9530C42287DF6400E3F688 /* FaceBookEntity.swift in Sources */,
 				76E2FEC6228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
@@ -6980,6 +7002,7 @@
 				766D1322228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				7680748722C86CD60015A75C /* SelfCreatedTestEntity.swift in Sources */,
 				DE9530D32287DF6400E3F688 /* Bundle+extension.swift in Sources */,
+				2AEFC30F22D3239400F3D5B6 /* ParentComment.swift in Sources */,
 				769A3BB7229FE66F00CA55BD /* HistoryExercisePresenter.swift in Sources */,
 				DE9530D42287DF6400E3F688 /* LanguageHelper.swift in Sources */,
 				76E2FEE6228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
@@ -7055,6 +7078,7 @@
 				76483BEE229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
 				DE9530EC2287DF6400E3F688 /* Button+extension.swift in Sources */,
 				DE49F83922A3E23A00A92C63 /* RewardPopUp.swift in Sources */,
+				2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */,
 				DE95313E2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD12289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DECD190522A25E1A0054861D /* BeePackEntity.swift in Sources */,
@@ -7213,6 +7237,7 @@
 			baseConfigurationReference = 3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q3TBY53XUC;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Dev-Info.plist";

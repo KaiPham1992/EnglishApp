@@ -18,17 +18,25 @@ protocol CommentWireframeProtocol: class {
 protocol CommentPresenterProtocol: class {
 
     var interactor: CommentInteractorInputProtocol? { get set }
+    func getComment(idLesson: String)
+    func numberParent() -> Int?
+    func numberChildren(section: Int) -> Int?
+    func getParentComment(section: Int) -> ParentComment?
+    func getChildrenComment(indexPath: IndexPath) -> ChildrenComment?
 }
 
 //MARK: Interactor -
 protocol CommentInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    
+    func getCommentSuccessed(respone: CommentEntity)
 }
 
 protocol CommentInteractorInputProtocol: class {
 
     var presenter: CommentInteractorOutputProtocol?  { get set }
+    func getComment(idLesson: String)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +45,7 @@ protocol CommentInteractorInputProtocol: class {
 protocol CommentViewProtocol: class {
 
     var presenter: CommentPresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }
