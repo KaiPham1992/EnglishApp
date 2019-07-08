@@ -76,7 +76,13 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 300
+        if self.wallet_type == 3{
+            return 300
+        }else{
+            return 220
+        }
+        
+        
     }
 }
 extension HistoryBeeViewController: HistoryBeeViewProtocol{

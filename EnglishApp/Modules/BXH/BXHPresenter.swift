@@ -23,11 +23,14 @@ class BXHPresenter: BXHPresenterProtocol, BXHInteractorOutputProtocol {
     }
 
     func getListLeaderBoard(quarter: Int, year: Int) {
+        ProgressView.shared.show()
         Provider.shared.homeAPIService.getListLeaderBoard(quarter: quarter, year: year, success: { (listLeaderBoard) in
+            ProgressView.shared.hide()
             guard let listLeaderBoard = listLeaderBoard else {return}
             self.view?.didGetList(listLeaderBoard: listLeaderBoard)
             
         }) { (error) in
+            ProgressView.shared.hide()
             guard let error = error else {return}
             self.view?.didGetList(error: error)
         }

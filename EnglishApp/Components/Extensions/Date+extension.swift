@@ -12,10 +12,10 @@ import Foundation
 import ObjectMapper
 
 enum AppDateFormat: String {
-
+    
     case ddMMMyyCommahhmma          = "dd MMM yyyy, hh:mm a"
     case commahhmmaddMMMyy          = "hh:mm a, dd-MM-yyyy "
-
+    
     case ddMMMyyyySpacehhmma        = "dd MMM yyyy hh:mm a"
     case ddMMyyyyhhmmma             = "dd-MM-yyyy hh:mm"
     case ddMMMyyyy                  = "dd MMM yyyy"
@@ -24,9 +24,9 @@ enum AppDateFormat: String {
     case MMMMyyyy                   = "MMMM yyyy"
     case hhmma                      =  "hh:mm a"
     case weekdayddMMMyyy            = "EE, dd MMM yyyy"
-//    case dd_MM_YYYY                 = "dd-MM-YYYY"
+    //    case dd_MM_YYYY                 = "dd-MM-YYYY"
     case HHmmddMMyyyy               = "HH:mm dd-MM-yyyy"
-//    case dd_MM_yyyyHHmmm            = "dd-MM-yyyy HH:mm"
+    //    case dd_MM_yyyyHHmmm            = "dd-MM-yyyy HH:mm"
     case ddMMyyyyHHmmm              = "dd MM yyyy HH:mm"
     case yyyyMMddHHmm               = "yyyy-MM-dd HH:mm"
     case MMMyyyy = "MMM yyyy"
@@ -38,7 +38,7 @@ enum AppDateFormat: String {
     
     
     case hhmmddmmyyy             = "hh:mm dd-MM-yyyy"
-
+    
     var formatString: String {
         return self.rawValue
     }
@@ -49,7 +49,7 @@ extension Date {
         let now = Date()
         return self.compare(now) == ComparisonResult.orderedAscending
     }
-
+    
     /// SwifterSwift: ISO8601 string of format (yyyy-MM-dd'T'HH:mm:ss.SSS) from date.
     ///
     ///     Date().iso8601String -> "2017-01-12T14:51:29.574Z"
@@ -60,10 +60,10 @@ extension Date {
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS"
-
+        
         return dateFormatter.string(from: self).appending("Z")
     }
-
+    
     /// SwifterSwift: Create date object from ISO8601 string.
     ///
     ///     let date = Date(iso8601String: "2017-01-12T16:48:00.959Z") // "Jan 12, 2017, 7:48 PM"
@@ -81,7 +81,7 @@ extension Date {
             return nil
         }
     }
-
+    
     init?(gtFormat: String, gfFormat: AppDateFormat) {
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
@@ -93,12 +93,12 @@ extension Date {
             return nil
         }
     }
-
+    
     public var isToday: Bool {
         let calendar = Calendar.autoupdatingCurrent
         return calendar.isDateInToday(self)
     }
-
+    
     /**
      *  Determine if date is within the day tomorrow
      */
@@ -106,7 +106,7 @@ extension Date {
         let calendar = Calendar.autoupdatingCurrent
         return calendar.isDateInTomorrow(self)
     }
-
+    
     /**
      *  Determine if date is within yesterday
      */
@@ -114,7 +114,7 @@ extension Date {
         let calendar = Calendar.autoupdatingCurrent
         return calendar.isDateInYesterday(self)
     }
-
+    
     /**
      *  Determine if date is in a weekend
      */
@@ -124,100 +124,100 @@ extension Date {
         }
         return false
     }
-
+    
     // MARK: - Components
-
+    
     /**
      *  Convenience getter for the date's `era` component
      */
     public var era: Int {
         return component(.era)
     }
-
+    
     /**
      *  Convenience getter for the date's `year` component
      */
     public var year: Int {
         return component(.year)
     }
-
+    
     /**
      *  Convenience getter for the date's `month` component
      */
     public var month: Int {
         return component(.month)
     }
-
+    
     /**
      *  Convenience getter for the date's `week` component
      */
     public var week: Int {
         return component(.weekday)
     }
-
+    
     /**
      *  Convenience getter for the date's `day` component
      */
     public var day: Int {
         return component(.day)
     }
-
+    
     /**
      *  Convenience getter for the date's `hour` component
      */
     public var hour: Int {
         return component(.hour)
     }
-
+    
     /**
      *  Convenience getter for the date's `minute` component
      */
     public var minute: Int {
         return component(.minute)
     }
-
+    
     /**
      *  Convenience getter for the date's `second` component
      */
     public var second: Int {
         return component(.second)
     }
-
+    
     /**
      *  Convenience getter for the date's `weekday` component
      */
     public var weekday: Int {
         return component(.weekday)
     }
-
+    
     /**
      *  Convenience getter for the date's `weekdayOrdinal` component
      */
     public var weekdayOrdinal: Int {
         return component(.weekdayOrdinal)
     }
-
+    
     /**
      *  Convenience getter for the date's `quarter` component
      */
     public var quarter: Int {
         return component(.quarter)
     }
-
+    
     /**
      *  Convenience getter for the date's `weekOfYear` component
      */
     public var weekOfMonth: Int {
         return component(.weekOfMonth)
     }
-
+    
     /**
      *  Convenience getter for the date's `weekOfYear` component
      */
     public var weekOfYear: Int {
         return component(.weekOfYear)
     }
-
+    
     /**
      *  Convenience getter for the date's `yearForWeekOfYear` component
      */
@@ -230,7 +230,7 @@ extension Date {
     public var firstDateInMonth : Date {
         return Calendar.current.date(from: Calendar.current.dateComponents([.year,.month], from: self))!
     }
-
+    
     /**
      *  Convenience getter for the date's `daysInMonth` component
      */
@@ -239,50 +239,63 @@ extension Date {
         let days = calendar.range(of: .day, in: .month, for: self)
         return days!.count
     }
-
+    
     public func component(_ component: Calendar.Component) -> Int {
         let calendar = Calendar.autoupdatingCurrent
         return calendar.component(component, from: self)
     }
-
+    
     func toString(formatString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formatString
         return dateFormatter.string(from: self)
     }
-
+    
     func toString(dateFormat: AppDateFormat) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = dateFormat.formatString
         return dateFormatter.string(from: self)
     }
-
+    
     func toStringUTC(formatString: String) -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = formatString
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         return dateFormatter.string(from: self)
     }
+    
+    public init?(yyyyMMddHHmmss: String) {
+        // https://github.com/justinmakaila/NSDate-ISO-8601/blob/master/NSDateISO8601.swift
+        let dateFormatter = DateFormatter()
+        dateFormatter.locale = Locale.current
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        if let date = dateFormatter.date(from: yyyyMMddHHmmss) {
+            self = date
+        } else {
+            return nil
+        }
+    }
 }
 
 class AppTimestampTransform: TransformType {
     public typealias Object     = Date
     public typealias JSON       = Double
-
+    
     public init() {}
-
+    
     open func transformFromJSON(_ value: Any?) -> Date? {
         if let timeInt = value as? Double {
             return Date(timeIntervalSince1970: TimeInterval(timeInt/1000))
         }
-
+        
         if let timeStr = value as? String {
             return Date(timeIntervalSince1970: TimeInterval(atof(timeStr)))
         }
-
+        
         return nil
     }
-
+    
     open func transformToJSON(_ value: Date?) -> Double? {
         if let date = value {
             return Double(date.timeIntervalSince1970)
@@ -291,3 +304,25 @@ class AppTimestampTransform: TransformType {
     }
 }
 
+open class yyyyMMddHHmmssTransform: TransformType {
+    public typealias Object = Date
+    public typealias JSON = Double
+    
+    public init() {}
+    
+    open func transformFromJSON(_ value: Any?) -> Date? {
+        if let timeStr = value as? String {
+            let date = Date(yyyyMMddHHmmss: timeStr)
+            return date
+        }
+        
+        return nil
+    }
+    
+    open func transformToJSON(_ value: Date?) -> Double? {
+        if let date = value {
+            return Double(date.timeIntervalSince1970)
+        }
+        return nil
+    }
+}

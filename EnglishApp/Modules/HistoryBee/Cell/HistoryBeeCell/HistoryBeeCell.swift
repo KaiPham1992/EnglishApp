@@ -17,7 +17,7 @@ class HistoryBeeCell: UITableViewCell {
         didSet{
             guard let walletLog = self.walletLog else {return}
             lbContent.text = walletLog.description
-            lbDate.text = walletLog.date
+            lbDate.text = walletLog.date?.toString(dateFormat: AppDateFormat.ddMMYYYY)
             
             if  walletLog.amount* < 0 {
                 iconBtn.setImage(AppImage.imgDownPoint, for: .normal)

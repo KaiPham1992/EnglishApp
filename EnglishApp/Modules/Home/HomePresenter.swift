@@ -32,7 +32,9 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
     
     func getTopThree() {
+        ProgressView.shared.show()
         Provider.shared.homeAPIService.getTopThree(success: { (collectionUserEntity) in
+            ProgressView.shared.hide()
             guard let userInfo = collectionUserEntity?.user_info else {return}
             self.view?.didGetTopThree(userInfo: userInfo)
             
@@ -40,6 +42,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
             self.view?.didGetTopThree(listTopThree: listTopThree)
 
         }) { (error) in
+            ProgressView.shared.hide()
             guard let error = error else {return}
             self.view?.didGetTopThree(error: error)
         }
