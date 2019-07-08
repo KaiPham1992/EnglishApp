@@ -23,7 +23,7 @@ class TheoryViewController: PageViewController, TheoryViewProtocol {
     }
     
     @objc func clickButtonSearch(){
-        
+        self.presenter?.gotoSearchTheory()
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -28,5 +28,16 @@ class FindInteractor: FindInteractorInputProtocol {
         }
     }
     
-
+    func searchTheory(text: String){
+        Provider.shared.findAPIService.searchTheory(text: text, success: { (respone) in
+            ProgressView.shared.hide()
+            self.presenter?.searchExerciseSuccessed(respone: respone)
+        }) { (error) in
+            ProgressView.shared.hide()
+            if let _error = error {
+                self.presenter?.searchExerciseFailed(error: _error)
+            }
+            
+        }
+    }
 }

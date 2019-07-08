@@ -27,4 +27,9 @@ class TheoryRouter: TheoryWireframeProtocol {
 
         return view
     }
+    
+    func gotoSearchTheory(){
+        let vc = FindRouter.createModule(type: .searchTheory)
+        viewController?.push(controller: vc,animated: true)
+    }
 }

@@ -21,6 +21,7 @@ class DetailLessonViewController: BaseViewController {
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: LessonCatelogy?
+    var idLesson : String = "1"
     var isLike = 0{
         didSet{
             self.btnLike.setBackgroundImage(isLike == 0 ? UIImage(named:"Material_Icons_white_favorite") : #imageLiteral(resourceName: "Material_Icons_white_favorite-1") , for: .normal)
@@ -30,19 +31,19 @@ class DetailLessonViewController: BaseViewController {
     var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
     override func setUpViews() {
         super.setUpViews()
+        
+        if let _lesson = lesson {
+            idLesson = _lesson._id ?? "1"
+        }
+        self.presenter?.getLessonDetail(lesson_id: Int(self.idLesson) ?? 0)
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        if let _lesson = lesson {
-            setTitleNavigation(title: _lesson.name&)
-            self.presenter?.getLessonDetail(lesson_id: Int(_lesson._id&) ?? 0)
-        }
-        
         if type == .detailLesson{
             viewMessage.action = {
-                self.push(controller: CommentRouter.createModule(id: self.lesson?._id ?? "5"),animated: true)
+                self.push(controller: CommentRouter.createModule(id: self.idLesson),animated: true)
             }
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
         } else {
@@ -53,18 +54,22 @@ class DetailLessonViewController: BaseViewController {
     
     @objc func clickHeart(){
         isLike = isLike == 0 ? 1 : 0
-        self.presenter?.likeLesson(idLesson: Int(lesson?._id ?? "0") ?? 0 , isFavorite: self.isLike)
+        self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 , isFavorite: self.isLike)
     }
 }
 
 extension DetailLessonViewController:DetailLessonViewProtocol{
     func reloadView() {
+        setTitleNavigation(title: self.presenter?.getTitle() ?? "")
         if let attribute = self.presenter?.getContentLesson(){
             self.lbContent.attributedText = attribute
         }
         if let comment = self.presenter?.getNumberComment(){
             self.viewMessage.setupNumber(number: comment)
+        } else {
+            self.viewMessage.setupNumber(number: 0)
         }
+        
         if let _ = self.presenter?.getToggleLike() {
             self.isLike = 1
             self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)

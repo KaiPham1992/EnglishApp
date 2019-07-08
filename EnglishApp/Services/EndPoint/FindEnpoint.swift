@@ -11,6 +11,7 @@ import Alamofire
 
 enum FindEnpoint {
     case searchExercise(text: String)
+    case searchTheory(text: String)
 }
 
 extension FindEnpoint: EndPointType {
@@ -18,6 +19,8 @@ extension FindEnpoint: EndPointType {
         switch self {
         case .searchExercise:
             return "_api/exercise/search_exercise"
+        case .searchTheory:
+            return "_api/lesson/search_lesson"
 
         }
     }
@@ -26,12 +29,16 @@ extension FindEnpoint: EndPointType {
         switch self {
         case .searchExercise:
             return .post
+        case .searchTheory:
+            return .post
         }
     }
     
     var parameters: JSONDictionary {
         switch self {
         case .searchExercise(let text):
+            return ["keyword": text]
+        case .searchTheory(let text):
             return ["keyword": text]
         }
     }

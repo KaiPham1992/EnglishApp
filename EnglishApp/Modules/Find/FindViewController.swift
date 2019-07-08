@@ -12,9 +12,11 @@ import UIKit
 
 class FindViewController: BaseViewController {
 
-	var presenter: FindPresenterProtocol?
+    @IBOutlet weak var viewDiamond: UIView!
+    var presenter: FindPresenterProtocol?
     @IBOutlet weak var vAppSearch: AppSearchBar!
     @IBOutlet weak var tbResult: UITableView!
+    var type : TypeViewSearch = .searchExercise
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,14 +27,24 @@ class FindViewController: BaseViewController {
         hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.find.showLanguage)
-        
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.find.showLanguage)
         vAppSearch.actionSearch = searchExercise
         configureTable()
+        
+        if type == .searchExercise {
+            viewDiamond.isHidden = false
+        } else {
+            viewDiamond.isHidden = true
+        }
     }
     
     func searchExercise(text: String){
-        self.presenter?.searchExercise(text: text)
+        if type == .searchExercise{
+            self.presenter?.searchExercise(text: text)
+        }
+        if type == .searchTheory {
+            self.presenter?.searchTheory(text: text)
+        }
     }
     
     override func btnBackTapped() {
@@ -85,7 +97,10 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.push(controller: NotificationDetailRouter.createModule())
+        if type == .searchTheory {
+            let idLesson = self.presenter?.getIdEntity(indexPath: indexPath) ?? ""
+            self.presenter?.gotoTheoryDetail(idLesson: idLesson)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

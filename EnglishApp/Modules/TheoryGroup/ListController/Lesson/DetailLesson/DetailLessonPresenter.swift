@@ -39,6 +39,10 @@ class DetailLessonPresenter: DetailLessonPresenterProtocol, DetailLessonInteract
         self.view?.reloadView()
     }
     
+    func getTitle() -> String?{
+        return self.lessonDetail?.name
+    }
+    
     func getNumberComment() -> Int? {
         return lessonDetail?.unread_comments
     }

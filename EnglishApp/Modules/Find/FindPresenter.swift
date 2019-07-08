@@ -41,6 +41,14 @@ class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
         self.interactor?.searchExercise(text: text)
     }
     
+    func searchTheory(text: String){
+        self.interactor?.searchTheory(text: text)
+    }
+    
+    func getIdEntity(indexPath: IndexPath) -> String?{
+        return searchRespone[indexPath.row]._id
+    }
+    
     func searchExerciseSuccessed(respone: [SearchEntity]) {
         searchRespone = respone
         self.view?.reloadView()
@@ -51,6 +59,7 @@ class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
         self.view?.showErrorSearchFailed()
     }
     
-
-
+    func gotoTheoryDetail(idLesson: String){
+        self.router.gotoTheoryDetail(idLesson: idLesson)
+    }
 }

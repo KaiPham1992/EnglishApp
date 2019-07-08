@@ -22,4 +22,7 @@ class TheoryPresenter: TheoryPresenterProtocol, TheoryInteractorOutputProtocol {
         self.router = router
     }
 
+    func gotoSearchTheory() {
+        self.router.gotoSearchTheory()
+    }
 }
