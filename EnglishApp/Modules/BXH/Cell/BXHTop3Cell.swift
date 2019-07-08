@@ -10,6 +10,8 @@ import UIKit
 
 class BXHTop3Cell: BaseTableCell {
 
+    @IBOutlet weak var viewTopThree: TopThreeView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
