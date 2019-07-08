@@ -24,6 +24,27 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         self.router = router
     }
     
+    func changeStatusNote(indexPath: IndexPath){
+        listRespone[indexPath.row].isDelete = !listRespone[indexPath.row].isDelete
+    }
+    
+    func deleteNote(){
+        let listId = self.listRespone.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0}
+        self.interactor?.deleteNote(id: listId)
+    }
+    
+    func deleteNoteSuccessed(){
+        self.listRespone = self.listRespone.filter{$0.isDelete == false}
+        self.view?.reloadViewAfterDelete()
+    }
+    
+    func cancelDelete(){
+        for index in 0..<listRespone.count{
+            listRespone[index].isDelete = false
+        }
+        self.view?.reloadViewAfterDelete()
+    }
+    
     func gotoNote() {
         self.router.gotoNote()
     }

@@ -28,6 +28,9 @@ protocol GrammarPresenterProtocol: class {
     func getListNote(offset: Int)
     func getItemIndexPath(indexPath: IndexPath) -> NoteRespone?
     func getNumberRow() -> Int
+    func changeStatusNote(indexPath: IndexPath)
+    func deleteNote()
+    func cancelDelete()
 }
 
 //MARK: Interactor -
@@ -35,12 +38,14 @@ protocol GrammarInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getListNoteSuccessed(listNote: [NoteRespone])
+    func deleteNoteSuccessed()
 }
 
 protocol GrammarInteractorInputProtocol: class {
 
     var presenter: GrammarInteractorOutputProtocol?  { get set }
     func getListNote(offset: Int)
+    func deleteNote(id: [Int])
 
     /* Presenter -> Interactor */
 }
@@ -51,6 +56,7 @@ protocol GrammarViewProtocol: class {
     var presenter: GrammarPresenterProtocol?  { get set }
     
     func reloadView()
+    func reloadViewAfterDelete()
 
     /* Presenter -> ViewController */
 }

@@ -7229,6 +7229,7 @@
 			baseConfigurationReference = 3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q3TBY53XUC;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Dev-Info.plist";

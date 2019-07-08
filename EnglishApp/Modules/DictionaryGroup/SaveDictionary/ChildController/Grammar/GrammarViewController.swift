@@ -22,11 +22,15 @@ class GrammarViewController: UIViewController {
     @IBAction func addNote(_ sender: Any) {
         self.presenter?.gotoAddNote()
     }
+    
     @IBOutlet weak var heightButtonAddNote: NSLayoutConstraint!
     @IBOutlet weak var tbvGrammar: UITableView!
     var presenter: GrammarPresenterProtocol?
     var type : TypeSave = .grammar
     var offset = 0
+    var isDelete = false
+    
+    var actionDeleteFinish : (()->())?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,17 +50,36 @@ class GrammarViewController: UIViewController {
             heightButtonAddNote.constant = 52
             self.presenter?.getListNote(offset: self.offset)
         }
-        
-       
+    }
+    
+    func deleteNote(){
+        self.presenter?.deleteNote()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.presenter?.cancelDelete()
+        actionDeleteFinish?()
     }
 }
 extension GrammarViewController : GrammarViewProtocol {
     func reloadView() {
         tbvGrammar.reloadData()
     }
+    
+    func reloadViewAfterDelete(){
+        isDelete = false
+        tbvGrammar.reloadData()
+        actionDeleteFinish?()
+    }
 }
 
 extension GrammarViewController : UITableViewDataSource{
+    
+    func changeStatusDelete(index: IndexPath){
+        self.presenter?.changeStatusNote(indexPath: index)
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -66,8 +89,16 @@ extension GrammarViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
         if let data = self.presenter?.getItemIndexPath(indexPath: indexPath) {
+            cell.indexPath = indexPath
             cell.setupTitle(title: data.name&)
         }
+        if isDelete {
+            cell.setupDelete()
+            cell.actionClick = changeStatusDelete
+        } else {
+            cell.setupNoDelete()
+        }
+        
         return cell
     }
     

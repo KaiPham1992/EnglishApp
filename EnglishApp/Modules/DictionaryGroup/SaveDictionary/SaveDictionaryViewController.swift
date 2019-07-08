@@ -22,8 +22,24 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
         addButtonImageToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy-1")!, style: .right, action: #selector(clickButtonRight))
         self.edgesForExtendedLayout = UIRectEdge.bottom
     }
+    
     @objc func clickButtonRight(){
-        
+        if let controller = self.viewControllers[self.currentIndex] as? GrammarViewController {
+            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
+            controller.actionDeleteFinish = actionReloadFinish
+            controller.isDelete = true
+            controller.reloadView()
+        }
+    }
+    
+    @objc func clickFinish(){
+        if let controller = self.viewControllers[self.currentIndex] as? GrammarViewController {
+            controller.deleteNote()
+        }
+    }
+    
+    func actionReloadFinish(){
+        addButtonImageToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy-1")!, style: .right, action: #selector(clickButtonRight))
     }
     
     override func viewWillAppear(_ animated: Bool) {
