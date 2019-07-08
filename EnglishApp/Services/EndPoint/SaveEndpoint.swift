@@ -13,6 +13,8 @@ enum SaveEndpoint {
     case getListNote(offset: Int)
     case deleteNote(id: [Int])
     case addNote(description: String)
+    case getViewNote(idNote: String)
+    case editNote(idNote: String,description: String)
 }
 
 extension SaveEndpoint : EndPointType {
@@ -24,6 +26,10 @@ extension SaveEndpoint : EndPointType {
             return "_api/note/delete_note"
         case .addNote:
             return "_api/note/create_note"
+        case .getViewNote(let idNote):
+            return "_api/note/get_view_note/\(idNote)"
+        case .editNote:
+            return "_api/note/edit_note"
         }
     }
     
@@ -34,6 +40,10 @@ extension SaveEndpoint : EndPointType {
         case .deleteNote:
             return .post
         case .addNote:
+            return .post
+        case .getViewNote:
+            return .get
+        case .editNote:
             return .post
         }
     }
@@ -46,6 +56,11 @@ extension SaveEndpoint : EndPointType {
             return ["note_ids": id]
         case .addNote(let desctiption):
             return ["description": desctiption]
+        case .getViewNote:
+            return ["" : ""]
+        case .editNote(let idNote, let description):
+            return ["note_id": idNote,
+                    "description": description]
         }
     }
     

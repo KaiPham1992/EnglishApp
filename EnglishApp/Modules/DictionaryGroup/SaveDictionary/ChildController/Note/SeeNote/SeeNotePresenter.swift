@@ -15,11 +15,41 @@ class SeeNotePresenter: SeeNotePresenterProtocol, SeeNoteInteractorOutputProtoco
     weak private var view: SeeNoteViewProtocol?
     var interactor: SeeNoteInteractorInputProtocol?
     private let router: SeeNoteWireframeProtocol
+    var noteDetail : NoteDetailEntity?
 
     init(interface: SeeNoteViewProtocol, interactor: SeeNoteInteractorInputProtocol?, router: SeeNoteWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func getViewNote(idNote: String) {
+        self.interactor?.getViewNote(idNote: idNote)
+    }
+    
+    func getTitleNote() -> String?{
+        return noteDetail?.name
+    }
+    
+    func getDescriptionNote() -> String?{
+        return noteDetail?.description
+    }
+    
+    func getIdNote() -> String? {
+        return noteDetail?._id
+    }
+    
+    func editNote(idNote: String, description: String) {
+        self.interactor?.editNote(idNote: idNote, description: description)
+    }
+    
+    func getViewNoteSuccessed(respone: NoteDetailEntity) {
+        self.noteDetail = respone
+        self.view?.reloadView()
+    }
+    
+    func editNoteSuccessed() {
+        self.view?.editNoteSuccessed()
     }
 
 }

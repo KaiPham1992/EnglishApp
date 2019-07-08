@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol GrammarWireframeProtocol: class {
-    func gotoNote()
+    func gotoNote(idNote: String)
     func gotoAddNote()
     func gotoDetailVocabulary()
     func gotoDetailGrammar()
@@ -21,7 +21,7 @@ protocol GrammarWireframeProtocol: class {
 protocol GrammarPresenterProtocol: class {
 
     var interactor: GrammarInteractorInputProtocol? { get set }
-    func gotoNote()
+    func gotoNote(idNote: String)
     func gotoAddNote()
     func gotoDetailVocabulary()
     func gotoDetailGrammar()
@@ -32,6 +32,7 @@ protocol GrammarPresenterProtocol: class {
     func deleteNote()
     func cancelDelete()
     func checkLoadMore() -> Bool
+    func getIdNote(indexPath: IndexPath) -> String?
 }
 
 //MARK: Interactor -

@@ -46,8 +46,12 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         self.view?.reloadViewAfterDelete()
     }
     
-    func gotoNote() {
-        self.router.gotoNote()
+    func gotoNote(idNote: String) {
+        self.router.gotoNote(idNote: idNote)
+    }
+    
+    func getIdNote(indexPath: IndexPath) -> String?{
+        return listRespone[indexPath.row]._id
     }
     
     func gotoAddNote() {

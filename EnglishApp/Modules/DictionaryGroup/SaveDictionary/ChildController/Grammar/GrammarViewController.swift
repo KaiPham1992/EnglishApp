@@ -124,7 +124,8 @@ extension GrammarViewController: UITableViewDelegate{
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if type == .note {
-            self.presenter?.gotoNote()
+            let id = self.presenter?.getIdNote(indexPath: indexPath) ?? ""
+            self.presenter?.gotoNote(idNote: id)
         }
         if type == .vocabulary{
             self.presenter?.gotoDetailVocabulary()

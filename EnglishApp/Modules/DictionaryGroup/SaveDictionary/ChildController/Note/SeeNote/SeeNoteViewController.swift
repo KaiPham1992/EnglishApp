@@ -10,22 +10,51 @@
 
 import UIKit
 
-class SeeNoteViewController: BaseViewController, SeeNoteViewProtocol {
+class SeeNoteViewController: BaseViewController {
 
 	var presenter: SeeNotePresenterProtocol?
+    var idNote: String = "1"
+    weak var deleagate: AddNoteDelegate?
 
+    @IBOutlet weak var tvNote: UITextView!
     override func setUpViews() {
         super.setUpViews()
+        self.presenter?.getViewNote(idNote: idNote)
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: "Ghi chu 1")
+        
         addButtonImageToNavigation(image: #imageLiteral(resourceName: "edit"), style: .right, action: #selector(clickButtonRight))
     }
     @objc func clickButtonRight(){
-        
+        addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish),textColor: .black, font: AppFont.fontBold16)
+        tvNote.isEditable = true
+        tvNote.becomeFirstResponder()
+    }
+    
+    @objc func clickFinish(){
+        let description = tvNote.text ?? ""
+        if description != "" {
+            self.presenter?.editNote(idNote: self.presenter?.getIdNote() ?? "", description: description)
+            tvNote.isEditable = false
+            tvNote.resignFirstResponder()
+            addButtonImageToNavigation(image: #imageLiteral(resourceName: "edit"), style: .right, action: #selector(clickButtonRight))
+        }
     }
 
+}
+extension SeeNoteViewController : SeeNoteViewProtocol{
+    func reloadView() {
+        let title = self.presenter?.getTitleNote() ?? ""
+        let description = self.presenter?.getDescriptionNote() ?? ""
+        setTitleNavigation(title: title)
+        tvNote.text = description
+    }
+    
+    func editNoteSuccessed() {
+        deleagate?.addNoteSuccessed()
+        self.pop(animated: true)
+    }
 }
