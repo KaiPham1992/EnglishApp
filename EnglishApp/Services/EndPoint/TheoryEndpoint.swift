@@ -14,6 +14,7 @@ enum TheoryEndpoint {
     case getLessonDetail(lesson_id: Int)
     case searchLesson(keyword: String)
     case getComment(idLesson: String)
+    case likeLesson(idLesson: Int,isFavorite: Int)
 }
 
 extension TheoryEndpoint :EndPointType {
@@ -27,6 +28,8 @@ extension TheoryEndpoint :EndPointType {
             return "_api/lesson/search_lesson"
         case .getComment:
             return "_api/comment/get_list_comment"
+        case .likeLesson:
+            return "_api/like/toggle_like"
         default:
             return ""
         }
@@ -34,7 +37,7 @@ extension TheoryEndpoint :EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getListLesson, .getLessonDetail,.searchLesson, .getComment:
+        case .getListLesson, .getLessonDetail,.searchLesson, .getComment,.likeLesson:
             return .post
         default:
             return .get
@@ -51,6 +54,8 @@ extension TheoryEndpoint :EndPointType {
             return ["keyword": keyword]
         case .getComment(let idLesson):
             return ["lesson_id": Int(idLesson) ?? 0]
+        case .likeLesson(let idLesson, let isFavorite):
+            return ["lesson_id":idLesson,"is_favorite":isFavorite]
         default:
             return ["" : ""]
         }

@@ -21,6 +21,11 @@ class DetailLessonViewController: BaseViewController {
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: LessonCatelogy?
+    var isLike = 0{
+        didSet{
+            self.btnLike.setBackgroundImage(isLike == 0 ? UIImage(named:"Material_Icons_white_favorite") : #imageLiteral(resourceName: "Material_Icons_white_favorite-1") , for: .normal)
+        }
+    }
     
     var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
     override func setUpViews() {
@@ -47,7 +52,8 @@ class DetailLessonViewController: BaseViewController {
     }
     
     @objc func clickHeart(){
-        
+        isLike = isLike == 0 ? 1 : 0
+        self.presenter?.likeLesson(idLesson: Int(lesson?._id ?? "0") ?? 0 , isFavorite: self.isLike)
     }
 }
 
@@ -58,6 +64,13 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
         }
         if let comment = self.presenter?.getNumberComment(){
             self.viewMessage.setupNumber(number: comment)
+        }
+        if let _ = self.presenter?.getToggleLike() {
+            self.isLike = 1
+            self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
+        } else {
+            self.isLike = 0
+            self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
         }
     }
 }
