@@ -177,7 +177,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return self.listTopThree.count
+            return 2//self.listTopThree.count
         } else {
             if self.listActivities.count == 0 {
                 return 0
