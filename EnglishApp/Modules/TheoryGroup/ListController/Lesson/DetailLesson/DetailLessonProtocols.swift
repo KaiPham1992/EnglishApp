@@ -24,6 +24,7 @@ protocol DetailLessonPresenterProtocol: class {
     func getNumberComment() -> Int?
     func getToggleLike() -> Int?
     func likeLesson(idLesson: Int, isFavorite: Int)
+    func getTitle() -> String?
 }
 
 //MARK: Interactor -

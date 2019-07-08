@@ -39,6 +39,7 @@ class CellGrammar: UITableViewCell {
     }
     
     func setupTitle(title: String){
+        btnRemove.isHidden = true
         lblTitle.text = title
     }
     

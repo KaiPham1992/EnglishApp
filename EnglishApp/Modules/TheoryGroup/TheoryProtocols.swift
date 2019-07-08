@@ -12,12 +12,13 @@ import Foundation
 
 //MARK: Wireframe -
 protocol TheoryWireframeProtocol: class {
-
+    func gotoSearchTheory()
 }
 //MARK: Presenter -
 protocol TheoryPresenterProtocol: class {
 
     var interactor: TheoryInteractorInputProtocol? { get set }
+    func gotoSearchTheory()
 }
 
 //MARK: Interactor -

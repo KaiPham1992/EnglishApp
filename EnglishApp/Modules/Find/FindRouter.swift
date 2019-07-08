@@ -10,6 +10,12 @@
 
 import UIKit
 
+
+enum TypeViewSearch {
+    case searchExercise
+    case searchTheory
+}
+
 class FindRouter: FindWireframeProtocol {
 
     weak var viewController: UIViewController?
@@ -26,5 +32,25 @@ class FindRouter: FindWireframeProtocol {
         router.viewController = view
 
         return view
+    }
+    
+    static func createModule(type: TypeViewSearch = .searchExercise) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = FindViewController.initFromNib()
+        view.type = type
+        let interactor = FindInteractor()
+        let router = FindRouter()
+        let presenter = FindPresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
+    
+    func gotoTheoryDetail(idLesson: String) {
+        let vc = DetailLessonRouter.createModule(idLesson: idLesson)
+        self.viewController?.push(controller: vc,animated: true)
     }
 }

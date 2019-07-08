@@ -10,6 +10,7 @@ import Foundation
 
 protocol FindAPIServiceProtocol {
     func searchExercise(text: String,success: @escaping SuccessHandler<SearchEntity>.array, failure: @escaping RequestFailure)
+    func searchTheory(text: String,success: @escaping SuccessHandler<SearchEntity>.array, failure: @escaping RequestFailure)
 }
 
 class FindAPIService: FindAPIServiceProtocol {
@@ -24,5 +25,8 @@ class FindAPIService: FindAPIServiceProtocol {
         let endpoint = FindEnpoint.searchExercise(text: text)
         network.requestData(endPoint: endpoint, success: MapperData.mapArray(success), failure: failure)
     }
-    
+    func searchTheory(text: String,success: @escaping SuccessHandler<SearchEntity>.array, failure: @escaping RequestFailure){
+        let endpoint = FindEnpoint.searchTheory(text: text)
+        network.requestData(endPoint: endpoint, success: MapperData.mapArray(success), failure: failure)
+    }
 }

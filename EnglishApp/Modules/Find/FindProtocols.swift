@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol FindWireframeProtocol: class {
-
+    func gotoTheoryDetail(idLesson: String)
 }
 //MARK: Presenter -
 protocol FindPresenterProtocol: class {
@@ -22,6 +22,9 @@ protocol FindPresenterProtocol: class {
     func getMessageError() -> String?
     func getTextSearch(indexPath: IndexPath) -> String?
     func getNumberSearch() -> Int
+    func searchTheory(text: String)
+    func gotoTheoryDetail(idLesson: String)
+    func getIdEntity(indexPath: IndexPath) -> String?
 }
 
 //MARK: Interactor -
@@ -36,6 +39,7 @@ protocol FindInteractorInputProtocol: class {
 
     var presenter: FindInteractorOutputProtocol?  { get set }
     func searchExercise(text: String)
+    func searchTheory(text: String)
 
     /* Presenter -> Interactor */
 }
