@@ -15,6 +15,15 @@
 		2AAE21F622D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F722D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
+		2AAE21FA22D3AA7400AE7481 /* AnswerResultProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */; };
+		2AAE21FB22D3AA7400AE7481 /* AnswerResultProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */; };
+		2AAE21FC22D3AA7400AE7481 /* AnswerResultProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */; };
+		2AAE21FF22D3B2DF00AE7481 /* CellResultChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */; };
+		2AAE220022D3B2DF00AE7481 /* CellResultChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */; };
+		2AAE220122D3B2DF00AE7481 /* CellResultChoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */; };
+		2AAE220222D3B2DF00AE7481 /* CellResultChoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */; };
+		2AAE220322D3B2DF00AE7481 /* CellResultChoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */; };
+		2AAE220422D3B2DF00AE7481 /* CellResultChoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */; };
 		2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
@@ -748,24 +757,6 @@
 		76EE392B22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */; };
 		76EE392C22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */; };
 		76EE392D22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */; };
-		76EE393622A581C300DD8960 /* TaskDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393022A581C300DD8960 /* TaskDatePresenter.swift */; };
-		76EE393722A581C300DD8960 /* TaskDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393022A581C300DD8960 /* TaskDatePresenter.swift */; };
-		76EE393822A581C300DD8960 /* TaskDatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393022A581C300DD8960 /* TaskDatePresenter.swift */; };
-		76EE393922A581C300DD8960 /* TaskDateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393122A581C300DD8960 /* TaskDateRouter.swift */; };
-		76EE393A22A581C300DD8960 /* TaskDateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393122A581C300DD8960 /* TaskDateRouter.swift */; };
-		76EE393B22A581C300DD8960 /* TaskDateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393122A581C300DD8960 /* TaskDateRouter.swift */; };
-		76EE393C22A581C300DD8960 /* TaskDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393222A581C300DD8960 /* TaskDateViewController.swift */; };
-		76EE393D22A581C300DD8960 /* TaskDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393222A581C300DD8960 /* TaskDateViewController.swift */; };
-		76EE393E22A581C300DD8960 /* TaskDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393222A581C300DD8960 /* TaskDateViewController.swift */; };
-		76EE393F22A581C300DD8960 /* TaskDateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393322A581C300DD8960 /* TaskDateProtocols.swift */; };
-		76EE394022A581C300DD8960 /* TaskDateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393322A581C300DD8960 /* TaskDateProtocols.swift */; };
-		76EE394122A581C300DD8960 /* TaskDateProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393322A581C300DD8960 /* TaskDateProtocols.swift */; };
-		76EE394222A581C300DD8960 /* TaskDateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393422A581C300DD8960 /* TaskDateInteractor.swift */; };
-		76EE394322A581C300DD8960 /* TaskDateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393422A581C300DD8960 /* TaskDateInteractor.swift */; };
-		76EE394422A581C300DD8960 /* TaskDateInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EE393422A581C300DD8960 /* TaskDateInteractor.swift */; };
-		76EE394522A581C300DD8960 /* TaskDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE393522A581C300DD8960 /* TaskDateViewController.xib */; };
-		76EE394622A581C300DD8960 /* TaskDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE393522A581C300DD8960 /* TaskDateViewController.xib */; };
-		76EE394722A581C300DD8960 /* TaskDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE393522A581C300DD8960 /* TaskDateViewController.xib */; };
 		76F5E00C22D0F31C00C2E63E /* WalletLogEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F5E00B22D0F31C00C2E63E /* WalletLogEndPoint.swift */; };
 		76F5E00D22D0F31C00C2E63E /* WalletLogEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F5E00B22D0F31C00C2E63E /* WalletLogEndPoint.swift */; };
 		76F5E00F22D0F38700C2E63E /* WalletLogAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F5E00E22D0F38700C2E63E /* WalletLogAPIService.swift */; };
@@ -1991,6 +1982,9 @@
 		25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		28D786760AE73B0AF55038DE /* Pods-EnglishApp_AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.debug.xcconfig"; sourceTree = "<group>"; };
 		2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailEntity.swift; sourceTree = "<group>"; };
+		2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResultProfileEntity.swift; sourceTree = "<group>"; };
+		2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultChoice.swift; sourceTree = "<group>"; };
+		2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultChoice.xib; sourceTree = "<group>"; };
 		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
 		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
 		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
@@ -2243,12 +2237,6 @@
 		76EE391922A5777700DD8960 /* HistoryExerciseDateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateProtocols.swift; sourceTree = "<group>"; };
 		76EE391A22A5777700DD8960 /* HistoryExerciseDateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateInteractor.swift; sourceTree = "<group>"; };
 		76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryExerciseDateViewController.xib; sourceTree = "<group>"; };
-		76EE393022A581C300DD8960 /* TaskDatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDatePresenter.swift; sourceTree = "<group>"; };
-		76EE393122A581C300DD8960 /* TaskDateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateRouter.swift; sourceTree = "<group>"; };
-		76EE393222A581C300DD8960 /* TaskDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateViewController.swift; sourceTree = "<group>"; };
-		76EE393322A581C300DD8960 /* TaskDateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateProtocols.swift; sourceTree = "<group>"; };
-		76EE393422A581C300DD8960 /* TaskDateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDateInteractor.swift; sourceTree = "<group>"; };
-		76EE393522A581C300DD8960 /* TaskDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskDateViewController.xib; sourceTree = "<group>"; };
 		76F5E00B22D0F31C00C2E63E /* WalletLogEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletLogEndPoint.swift; sourceTree = "<group>"; };
 		76F5E00E22D0F38700C2E63E /* WalletLogAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletLogAPIService.swift; sourceTree = "<group>"; };
 		76F5E01122D0F44100C2E63E /* LogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntity.swift; sourceTree = "<group>"; };
@@ -2786,7 +2774,6 @@
 		7643DEC922A567F900B7C323 /* HistoryExerciseGroup */ = {
 			isa = PBXGroup;
 			children = (
-				76EE392F22A581B200DD8960 /* ChildController */,
 				76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */,
 				76EE391722A5777700DD8960 /* HistoryExerciseDateRouter.swift */,
 				76EE391822A5777700DD8960 /* HistoryExerciseDateViewController.swift */,
@@ -3032,6 +3019,8 @@
 				76C8E2F422C19AE00076E65B /* CellResultFillQuestion.xib */,
 				76C8E2FB22C19B0C0076E65B /* CellResultExercise.swift */,
 				76C8E2FC22C19B0C0076E65B /* CellResultExercise.xib */,
+				2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */,
+				2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -3041,6 +3030,7 @@
 			children = (
 				7680748822C872270015A75C /* TestResultProfileEntity.swift */,
 				7680748C22C872D70015A75C /* QuestionResultEntity.swift */,
+				2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -3392,19 +3382,6 @@
 				2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */,
 			);
 			path = TheoryGroup;
-			sourceTree = "<group>";
-		};
-		76EE392F22A581B200DD8960 /* ChildController */ = {
-			isa = PBXGroup;
-			children = (
-				76EE393022A581C300DD8960 /* TaskDatePresenter.swift */,
-				76EE393122A581C300DD8960 /* TaskDateRouter.swift */,
-				76EE393222A581C300DD8960 /* TaskDateViewController.swift */,
-				76EE393322A581C300DD8960 /* TaskDateProtocols.swift */,
-				76EE393422A581C300DD8960 /* TaskDateInteractor.swift */,
-				76EE393522A581C300DD8960 /* TaskDateViewController.xib */,
-			);
-			path = ChildController;
 			sourceTree = "<group>";
 		};
 		76F7F4302294212A001E9984 /* ExerciseGroup */ = {
@@ -4908,12 +4885,12 @@
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD18FF22A25AB10054861D /* BeePackCell.xib in Resources */,
-				76EE394522A581C300DD8960 /* TaskDateViewController.xib in Resources */,
 				DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE49F83322A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE31FE22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE361E812283E60500FA3B0D /* AppDropDown.xib in Resources */,
 				76C8E2EF22C19AB80076E65B /* ResultExerciseViewController.xib in Resources */,
+				2AAE220222D3B2DF00AE7481 /* CellResultChoice.xib in Resources */,
 				DEECF8752287041900A4678B /* MenuCell.xib in Resources */,
 				76CE31AF2295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
@@ -5055,12 +5032,12 @@
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD190022A25AB10054861D /* BeePackCell.xib in Resources */,
-				76EE394622A581C300DD8960 /* TaskDateViewController.xib in Resources */,
 				DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE49F83422A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE31FF22963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530452287DF4800E3F688 /* AppDropDown.xib in Resources */,
 				76C8E2F022C19AB80076E65B /* ResultExerciseViewController.xib in Resources */,
+				2AAE220322D3B2DF00AE7481 /* CellResultChoice.xib in Resources */,
 				DE9530462287DF4800E3F688 /* MenuCell.xib in Resources */,
 				76CE31B02295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
@@ -5202,12 +5179,12 @@
 				DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACE22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD190122A25AB10054861D /* BeePackCell.xib in Resources */,
-				76EE394722A581C300DD8960 /* TaskDateViewController.xib in Resources */,
 				DEF1C24E229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
 				DE49F83522A3E10A00A92C63 /* RewardPopUpContent.xib in Resources */,
 				76CE320022963EDE00E998FB /* ResultGroupViewController.xib in Resources */,
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				76C8E2F122C19AB80076E65B /* ResultExerciseViewController.xib in Resources */,
+				2AAE220422D3B2DF00AE7481 /* CellResultChoice.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
 				76CE31B12295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
@@ -5576,7 +5553,6 @@
 				DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				7680748D22C872D70015A75C /* QuestionResultEntity.swift in Sources */,
 				76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
-				76EE394222A581C300DD8960 /* TaskDateInteractor.swift in Sources */,
 				DE89D20522A41E09000638B0 /* ChangeLanguageProtocols.swift in Sources */,
 				76EE391C22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE361E982283E60500FA3B0D /* AnimationHelper.swift in Sources */,
@@ -5649,7 +5625,6 @@
 				DE952F8A2287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317E228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AA22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
-				76EE393C22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
 				DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */,
 				76EE392222A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8B22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -5925,6 +5900,7 @@
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141322ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
+				2AAE21FF22D3B2DF00AE7481 /* CellResultChoice.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				76C8E2E322C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				DE89D1FF22A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
@@ -5968,9 +5944,7 @@
 				DE361F3D2283E85000FA3B0D /* NetworkRequest.swift in Sources */,
 				768074AE22C910E80015A75C /* SubmitExerciseParam.swift in Sources */,
 				DE361E8D2283E60500FA3B0D /* AppCheckBox.swift in Sources */,
-				76EE393922A581C300DD8960 /* TaskDateRouter.swift in Sources */,
 				DE953123228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
-				76EE393622A581C300DD8960 /* TaskDatePresenter.swift in Sources */,
 				DE952F9A2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				76DB938D228C56640081A36E /* DictionaryProtocols.swift in Sources */,
 				DEB584742291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */,
@@ -6011,7 +5985,6 @@
 				DE361E8B2283E60500FA3B0D /* AppTextView.swift in Sources */,
 				DE361DF72283E57900FA3B0D /* Date+extension.swift in Sources */,
 				DE89D22122A42592000638B0 /* BXHRouter.swift in Sources */,
-				76EE393F22A581C300DD8960 /* TaskDateProtocols.swift in Sources */,
 				DEECF89D22871D1B00A4678B /* ForgotPasswordRouter.swift in Sources */,
 				76CE31842295A95300E998FB /* LevelExerciseViewController.swift in Sources */,
 				DEECF89022871D0400A4678B /* SignUpRouter.swift in Sources */,
@@ -6029,6 +6002,7 @@
 				76CF522422CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */,
 				76F7F437229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BEC229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
+				2AAE21FA22D3AA7400AE7481 /* AnswerResultProfileEntity.swift in Sources */,
 				DE361E002283E57900FA3B0D /* Button+extension.swift in Sources */,
 				DE49F83722A3E23A00A92C63 /* RewardPopUp.swift in Sources */,
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
@@ -6104,7 +6078,6 @@
 				DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				7680748E22C872D70015A75C /* QuestionResultEntity.swift in Sources */,
 				76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
-				76EE394322A581C300DD8960 /* TaskDateInteractor.swift in Sources */,
 				DE89D20622A41E09000638B0 /* ChangeLanguageProtocols.swift in Sources */,
 				76EE391D22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE952FC32287DF4800E3F688 /* AnimationHelper.swift in Sources */,
@@ -6177,7 +6150,6 @@
 				DE952FD32287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE95317F228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AB22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
-				76EE393D22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
 				DE952FD42287DF4800E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392322A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8C22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -6453,6 +6425,7 @@
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				76BD141422ACB88C00A48635 /* ExplainSolutionGroupProtocols.swift in Sources */,
+				2AAE220022D3B2DF00AE7481 /* CellResultChoice.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				76C8E2E422C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				DE89D20022A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
@@ -6496,9 +6469,7 @@
 				DE9530282287DF4800E3F688 /* NetworkRequest.swift in Sources */,
 				768074AF22C910E80015A75C /* SubmitExerciseParam.swift in Sources */,
 				DE9530292287DF4800E3F688 /* AppCheckBox.swift in Sources */,
-				76EE393A22A581C300DD8960 /* TaskDateRouter.swift in Sources */,
 				DE953124228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
-				76EE393722A581C300DD8960 /* TaskDatePresenter.swift in Sources */,
 				DE95302A2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				76DB938E228C56640081A36E /* DictionaryProtocols.swift in Sources */,
 				DEB584752291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */,
@@ -6539,7 +6510,6 @@
 				DE9530372287DF4800E3F688 /* AppTextView.swift in Sources */,
 				DE9530382287DF4800E3F688 /* Date+extension.swift in Sources */,
 				DE89D22222A42592000638B0 /* BXHRouter.swift in Sources */,
-				76EE394022A581C300DD8960 /* TaskDateProtocols.swift in Sources */,
 				DE9530392287DF4800E3F688 /* ForgotPasswordRouter.swift in Sources */,
 				76CE31852295A95300E998FB /* LevelExerciseViewController.swift in Sources */,
 				DE95303A2287DF4800E3F688 /* SignUpRouter.swift in Sources */,
@@ -6557,6 +6527,7 @@
 				76CF522522CBA5FA00A9D205 /* CreateExerciseParam.swift in Sources */,
 				76F7F438229421BD001E9984 /* ExercisePresenter.swift in Sources */,
 				76483BED229EE3A40079F9A1 /* UpdateAccountPopUp.swift in Sources */,
+				2AAE21FB22D3AA7400AE7481 /* AnswerResultProfileEntity.swift in Sources */,
 				DE95303E2287DF4800E3F688 /* Button+extension.swift in Sources */,
 				DE49F83822A3E23A00A92C63 /* RewardPopUp.swift in Sources */,
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
@@ -6631,7 +6602,6 @@
 				DE9530702287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				7680748F22C872D70015A75C /* QuestionResultEntity.swift in Sources */,
 				76DB93B4228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
-				76EE394422A581C300DD8960 /* TaskDateInteractor.swift in Sources */,
 				DE89D20722A41E09000638B0 /* ChangeLanguageProtocols.swift in Sources */,
 				76EE391E22A5777700DD8960 /* HistoryExerciseDatePresenter.swift in Sources */,
 				DE9530712287DF6400E3F688 /* AnimationHelper.swift in Sources */,
@@ -6668,6 +6638,7 @@
 				DE9530762287DF6400E3F688 /* NotificationEntity.swift in Sources */,
 				DE49F80422A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */,
 				DE49F7FB22A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */,
+				2AAE21FC22D3AA7400AE7481 /* AnswerResultProfileEntity.swift in Sources */,
 				DE9530772287DF6400E3F688 /* AppImage.swift in Sources */,
 				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
@@ -6704,7 +6675,6 @@
 				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AC22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
-				76EE393E22A581C300DD8960 /* TaskDateViewController.swift in Sources */,
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
 				76EE392422A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,
 				7643DE8D22A3A0E900B7C323 /* CellAssignExercise.swift in Sources */,
@@ -7014,11 +6984,10 @@
 				769A3BC3229FE66F00CA55BD /* HistoryExerciseInteractor.swift in Sources */,
 				DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530D62287DF6400E3F688 /* NetworkRequest.swift in Sources */,
+				2AAE220122D3B2DF00AE7481 /* CellResultChoice.swift in Sources */,
 				768074B022C910E80015A75C /* SubmitExerciseParam.swift in Sources */,
 				DE9530D72287DF6400E3F688 /* AppCheckBox.swift in Sources */,
-				76EE393B22A581C300DD8960 /* TaskDateRouter.swift in Sources */,
 				DE953125228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
-				76EE393822A581C300DD8960 /* TaskDatePresenter.swift in Sources */,
 				DE9530D82287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				76DB938F228C56640081A36E /* DictionaryProtocols.swift in Sources */,
 				DEB584762291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */,
@@ -7058,7 +7027,6 @@
 				DE9530E52287DF6400E3F688 /* AppTextView.swift in Sources */,
 				DE9530E62287DF6400E3F688 /* Date+extension.swift in Sources */,
 				DE89D22322A42592000638B0 /* BXHRouter.swift in Sources */,
-				76EE394122A581C300DD8960 /* TaskDateProtocols.swift in Sources */,
 				DE9530E72287DF6400E3F688 /* ForgotPasswordRouter.swift in Sources */,
 				76CE31862295A95300E998FB /* LevelExerciseViewController.swift in Sources */,
 				DE9530E82287DF6400E3F688 /* SignUpRouter.swift in Sources */,

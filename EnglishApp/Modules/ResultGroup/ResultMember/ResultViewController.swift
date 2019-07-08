@@ -17,6 +17,7 @@ class ResultViewController: BaseViewController {
     @IBAction func backHome(_ sender: Any) {
         self.navigationController?.popToRootViewController(animated: true)
     }
+    
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblPoint: UILabel!
     @IBOutlet weak var imgAVT: UIImageView!
@@ -70,6 +71,9 @@ class ResultViewController: BaseViewController {
         }
     }
     
+    override func btnBackTapped() {
+         self.navigationController?.popToRootViewController(animated: true)
+    }
 }
 
 extension ResultViewController: ResultViewProtocol{
@@ -89,10 +93,12 @@ extension ResultViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row = self.presenter?.getNumberQuestion() ?? 0
         return row
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellResult.self, for: indexPath)
         cell.indexPath = indexPath
@@ -111,9 +117,14 @@ extension ResultViewController : UITableViewDataSource{
     }
 }
 extension ResultViewController : UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.gotoResultQuestion(title: "\(indexPath.row + 1)/6")
+        if let question = self.presenter?.getListAnswer() {
+            self.presenter?.gotoResultQuestion(listAswer: question, index: indexPath.row)
+        }
+        
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 44
     }

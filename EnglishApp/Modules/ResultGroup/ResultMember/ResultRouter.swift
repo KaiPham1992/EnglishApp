@@ -67,8 +67,8 @@ class ResultRouter: ResultWireframeProtocol {
         return view
     }
     
-    func gotoResultQuestion(title: String){
-        let vc = TaskDateRouter.createModule()
+    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int){
+        let vc = ResultExerciseRouter.createModule(listAnswer: listAswer, index: index)
         self.viewController?.push(controller: vc,animated: true)
     }
 }

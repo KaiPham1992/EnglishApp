@@ -20,65 +20,50 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CellResultExercise" customModule="EnglishApp_AppStore" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="341" height="735"/>
+            <rect key="frame" x="0.0" y="0.0" width="341" height="1040"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="341" height="735"/>
+                <rect key="frame" x="0.0" y="0.0" width="341" height="1040"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odi-L7-hYK">
-                        <rect key="frame" x="0.0" y="0.0" width="341" height="735"/>
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="1040"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7k-hZ-JJF">
-                                <rect key="frame" x="0.0" y="0.0" width="341" height="1000"/>
+                                <rect key="frame" x="0.0" y="0.0" width="341" height="243"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpI-Gd-d2F">
-                                        <rect key="frame" x="0.0" y="0.0" width="341" height="427"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="341" height="63"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chọn câu trả lời đúng" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57x-mg-Vn4">
-                                                <rect key="frame" x="16" y="10" width="183.5" height="18"/>
+                                                <rect key="frame" x="16" y="0.0" width="183.5" height="18"/>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXF-RU-zzr">
-                                                <rect key="frame" x="14" y="28" width="313" height="141"/>
+                                                <rect key="frame" x="14" y="26" width="313" height="32"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <string key="text">In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a internet.</string>
                                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rny-xH-bvG">
-                                                <rect key="frame" x="14" y="177" width="313" height="250"/>
-                                                <string key="text">1. A logo is a _________. A. company’s name B. special company C. type of product D. company symbol 2. A popular form of advertising is to _________. 
- A. wear jeans B. use logo C. watch TV D. use different products 
- 3. A good slogan is _________. 
- A. easy to remember B. useful to produce C. simple to make D. easy to buy 
- 4. The main purpose of an advertisement is to _________. 
- A. sell you something you do not want B. make you feel rich and famous 
- C. make you buy the product D. pay the TV station
- </string>
-                                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="Rny-xH-bvG" firstAttribute="leading" secondItem="WXF-RU-zzr" secondAttribute="leading" id="0Ua-9r-MWU"/>
                                             <constraint firstAttribute="trailing" secondItem="WXF-RU-zzr" secondAttribute="trailing" constant="14" id="3aN-qu-AZe"/>
                                             <constraint firstItem="WXF-RU-zzr" firstAttribute="leading" secondItem="LpI-Gd-d2F" secondAttribute="leading" constant="14" id="Ui4-p6-DpR"/>
                                             <constraint firstItem="57x-mg-Vn4" firstAttribute="leading" secondItem="LpI-Gd-d2F" secondAttribute="leading" constant="16" id="WK0-g3-9CC"/>
-                                            <constraint firstItem="Rny-xH-bvG" firstAttribute="trailing" secondItem="WXF-RU-zzr" secondAttribute="trailing" id="YDZ-kP-fnX"/>
-                                            <constraint firstItem="WXF-RU-zzr" firstAttribute="top" secondItem="57x-mg-Vn4" secondAttribute="bottom" id="cl3-Uw-ZAU"/>
-                                            <constraint firstItem="57x-mg-Vn4" firstAttribute="top" secondItem="LpI-Gd-d2F" secondAttribute="top" constant="10" id="cux-ZI-mQB"/>
-                                            <constraint firstAttribute="bottom" secondItem="Rny-xH-bvG" secondAttribute="bottom" id="n0a-pg-aXN"/>
-                                            <constraint firstItem="Rny-xH-bvG" firstAttribute="top" secondItem="WXF-RU-zzr" secondAttribute="bottom" constant="8" id="yOM-AM-ZFj"/>
+                                            <constraint firstItem="WXF-RU-zzr" firstAttribute="top" secondItem="57x-mg-Vn4" secondAttribute="bottom" constant="8" id="cl3-Uw-ZAU"/>
+                                            <constraint firstItem="57x-mg-Vn4" firstAttribute="top" secondItem="LpI-Gd-d2F" secondAttribute="top" id="cux-ZI-mQB"/>
+                                            <constraint firstAttribute="bottom" secondItem="WXF-RU-zzr" secondAttribute="bottom" constant="5" id="rp8-O7-8ct"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-Vs-7gF">
-                                        <rect key="frame" x="0.0" y="437" width="341" height="563"/>
+                                        <rect key="frame" x="0.0" y="63" width="341" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="qkE-ND-SwM"/>
+                                        </constraints>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -86,11 +71,10 @@
                                     <constraint firstItem="LpI-Gd-d2F" firstAttribute="top" secondItem="a7k-hZ-JJF" secondAttribute="top" id="7cU-pR-u7w"/>
                                     <constraint firstItem="LpI-Gd-d2F" firstAttribute="leading" secondItem="a7k-hZ-JJF" secondAttribute="leading" id="7dx-3p-yRP"/>
                                     <constraint firstAttribute="trailing" secondItem="rUo-Vs-7gF" secondAttribute="trailing" id="guD-wL-Tpa"/>
-                                    <constraint firstAttribute="bottom" secondItem="rUo-Vs-7gF" secondAttribute="bottom" id="l0H-aM-Elp"/>
+                                    <constraint firstAttribute="bottom" secondItem="rUo-Vs-7gF" secondAttribute="bottom" constant="80" id="l0H-aM-Elp"/>
                                     <constraint firstItem="rUo-Vs-7gF" firstAttribute="leading" secondItem="a7k-hZ-JJF" secondAttribute="leading" id="oKg-43-8C1"/>
-                                    <constraint firstAttribute="height" constant="1000" id="tJq-fb-xEm"/>
                                     <constraint firstAttribute="trailing" secondItem="LpI-Gd-d2F" secondAttribute="trailing" id="vag-S3-TjP"/>
-                                    <constraint firstItem="rUo-Vs-7gF" firstAttribute="top" secondItem="LpI-Gd-d2F" secondAttribute="bottom" constant="10" id="yTE-oH-Cdg"/>
+                                    <constraint firstItem="rUo-Vs-7gF" firstAttribute="top" secondItem="LpI-Gd-d2F" secondAttribute="bottom" id="yTE-oH-Cdg"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -110,14 +94,14 @@
                 <constraint firstAttribute="trailing" secondItem="Odi-L7-hYK" secondAttribute="trailing" id="ODz-vS-UhJ"/>
                 <constraint firstItem="Odi-L7-hYK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="y60-Y7-vqV"/>
             </constraints>
-            <size key="customSize" width="341" height="735"/>
+            <size key="customSize" width="341" height="1040"/>
             <connections>
-                <outlet property="heightScrollView" destination="tJq-fb-xEm" id="4E3-zl-3I5"/>
+                <outlet property="heightTableView" destination="qkE-ND-SwM" id="VlS-sw-rOF"/>
                 <outlet property="tbvResultQuestion" destination="rUo-Vs-7gF" id="Qxy-Es-vyO"/>
                 <outlet property="tvContent" destination="WXF-RU-zzr" id="9NZ-AB-KvA"/>
                 <outlet property="vQuestion" destination="LpI-Gd-d2F" id="Vn8-B2-S3y"/>
             </connections>
-            <point key="canvasLocation" x="348.55072463768118" y="338.50446428571428"/>
+            <point key="canvasLocation" x="348.55072463768118" y="440.625"/>
         </collectionViewCell>
     </objects>
 </document>

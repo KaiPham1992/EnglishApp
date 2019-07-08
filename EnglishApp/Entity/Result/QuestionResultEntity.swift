@@ -10,10 +10,12 @@ import Foundation
 import ObjectMapper
 
 class QuestionResultEntity : Mappable {
-    
     var _id : String?
     var question_id : String?
+    var content : String?
     var score : String?
+    var time : String?
+    var answers : [AnswerResultProfileEntity]?
     
     required init?(map: Map) {
         
@@ -22,6 +24,9 @@ class QuestionResultEntity : Mappable {
     func mapping(map: Map) {
        self._id <- map["_id"]
        self.question_id <- map["question_id"]
+       self.content <- map["content"]
        self.score <- map["score"]
+       self.time <- map["time"]
+       self.answers <- map["answers"]
     }
 }

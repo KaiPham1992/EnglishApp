@@ -19,6 +19,7 @@ class TestResultProfileEntity: Mappable {
     var social_img_src : String?
     var attach_img_src : String?
     var questions : [QuestionResultEntity]?
+    
     required init?(map: Map) {
         
     }
