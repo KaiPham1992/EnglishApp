@@ -13,6 +13,7 @@ class CollectionLogEntity: Mappable{
     var total_records: Int?
     var total_wallets: Int?
     var logs: [LogEntity]?
+    
     required init?(map: Map) {
         
     }
@@ -27,7 +28,7 @@ class LogEntity: Mappable{
     
     var description: String?
     var date: String?
-    var amount: String?
+    var amount: Int?
     
     required init?(map: Map) {
         
@@ -36,7 +37,7 @@ class LogEntity: Mappable{
     func mapping(map: Map) {
         self.description <- map["description"]
         self.date <- map["date"]
-        self.amount <- map["amount"]
+        self.amount <- (map["amount"], StringToIntTransform())
     }
     
 }
