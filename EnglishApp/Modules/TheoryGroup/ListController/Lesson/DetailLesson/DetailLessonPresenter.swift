@@ -39,6 +39,8 @@ class DetailLessonPresenter: DetailLessonPresenterProtocol, DetailLessonInteract
         self.view?.reloadView()
     }
     
-
+    func getNumberComment() -> Int? {
+        return lessonDetail?.unread_comments
+    }
 
 }

@@ -21,6 +21,7 @@ protocol DetailLessonPresenterProtocol: class {
     var interactor: DetailLessonInteractorInputProtocol? { get set }
     func getLessonDetail(lesson_id: Int)
     func getContentLesson() -> NSAttributedString?
+    func getNumberComment() -> Int?
 }
 
 //MARK: Interactor -

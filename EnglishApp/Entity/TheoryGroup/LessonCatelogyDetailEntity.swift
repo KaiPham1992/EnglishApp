@@ -14,6 +14,7 @@ class LessonCatelogyDetail : Mappable{
     var _id : String?
     var name : String?
     var content : String?
+    var unread_comments: Int?
     
     required init?(map: Map) {
         
@@ -23,5 +24,6 @@ class LessonCatelogyDetail : Mappable{
         self._id <- map["_id"]
         self.name <- map["name"]
         self.content <- map["content"]
+        self.unread_comments <- map["unread_comments"]
     }
 }

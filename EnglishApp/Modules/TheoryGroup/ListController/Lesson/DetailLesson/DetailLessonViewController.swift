@@ -37,7 +37,7 @@ class DetailLessonViewController: BaseViewController {
         
         if type == .detailLesson{
             viewMessage.action = {
-                self.push(controller: CommentRouter.createModule(),animated: true)
+                self.push(controller: CommentRouter.createModule(id: self.lesson?._id ?? "5"),animated: true)
             }
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
         } else {
@@ -55,6 +55,9 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
     func reloadView() {
         if let attribute = self.presenter?.getContentLesson(){
             self.lbContent.attributedText = attribute
+        }
+        if let comment = self.presenter?.getNumberComment(){
+            self.viewMessage.setupNumber(number: comment)
         }
     }
 }

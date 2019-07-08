@@ -13,4 +13,16 @@ import UIKit
 class CommentInteractor: CommentInteractorInputProtocol {
 
     weak var presenter: CommentInteractorOutputProtocol?
+    
+    func getComment(idLesson: String) {
+        ProgressView.shared.show()
+        Provider.shared.theoryAPIService.getComment(idLesson: idLesson, success: { (listComment) in
+            ProgressView.shared.hide()
+            if let _lisComment = listComment {
+                self.presenter?.getCommentSuccessed(respone: _lisComment)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }
