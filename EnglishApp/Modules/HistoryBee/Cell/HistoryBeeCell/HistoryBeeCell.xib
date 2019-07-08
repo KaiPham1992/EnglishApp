@@ -58,6 +58,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="iconBtn" destination="O1c-jK-fZQ" id="O3a-6w-k38"/>
                 <outlet property="lbContent" destination="JYv-TZ-MBD" id="xBp-do-FOB"/>
                 <outlet property="lbDate" destination="5fS-qD-cVq" id="vRK-04-2Ft"/>
             </connections>

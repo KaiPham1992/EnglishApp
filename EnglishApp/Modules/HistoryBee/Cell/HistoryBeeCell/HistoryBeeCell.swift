@@ -11,11 +11,19 @@ import UIKit
 class HistoryBeeCell: UITableViewCell {
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var lbDate: UILabel!
-
+    @IBOutlet weak var iconBtn: UIButton!
+    
     var walletLog: LogEntity?{
         didSet{
-            lbContent.text = walletLog?.description
-            lbDate.text = walletLog?.date
+            guard let walletLog = self.walletLog else {return}
+            lbContent.text = walletLog.description
+            lbDate.text = walletLog.date
+            
+            if  walletLog.amount* < 0 {
+                iconBtn.setImage(AppImage.imgDownPoint, for: .normal)
+            }else{
+                iconBtn.setImage(AppImage.imgUpPoint, for: .normal)
+            }
         }
     }
     

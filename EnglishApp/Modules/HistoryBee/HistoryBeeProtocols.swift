@@ -40,6 +40,6 @@ protocol HistoryBeeViewProtocol: class {
     var presenter: HistoryBeePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didGetWalletLog(listWalletLog: [LogEntity])
+    func didGetWalletLog(listWalletLog: CollectionLogEntity)
     func didGetWalletLog(error: Error)
 }
