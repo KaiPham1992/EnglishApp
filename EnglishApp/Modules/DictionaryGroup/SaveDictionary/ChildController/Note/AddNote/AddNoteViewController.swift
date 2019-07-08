@@ -10,9 +10,15 @@
 
 import UIKit
 
-class AddNoteViewController: BaseViewController, AddNoteViewProtocol {
+protocol AddNoteDelegate: class {
+    func addNoteSuccessed()
+}
 
-	var presenter: AddNotePresenterProtocol?
+class AddNoteViewController: BaseViewController {
+
+    @IBOutlet weak var tvNote: UITextView!
+    var presenter: AddNotePresenterProtocol?
+    weak var deleagate: AddNoteDelegate?
 
     override func setUpViews() {
         super.setUpViews()
@@ -24,7 +30,17 @@ class AddNoteViewController: BaseViewController, AddNoteViewProtocol {
         setTitleNavigation(title: LocalizableKey.writeNote.showLanguage)
         addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish),textColor: .black, font: AppFont.fontBold16)
     }
+    
     @objc func clickFinish(){
+        let content = tvNote.text ?? ""
+        if content != "" {
+            self.presenter?.addNote(description: content)
+        }
+    }
+}
+extension AddNoteViewController : AddNoteViewProtocol{
+    func addNoteSuccessed() {
+        deleagate?.addNoteSuccessed()
         self.pop(animated: true)
     }
 }

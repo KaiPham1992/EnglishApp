@@ -25,12 +25,13 @@ protocol GrammarPresenterProtocol: class {
     func gotoAddNote()
     func gotoDetailVocabulary()
     func gotoDetailGrammar()
-    func getListNote(offset: Int)
+    func getListNote(offset: Int,replaceData: Bool)
     func getItemIndexPath(indexPath: IndexPath) -> NoteRespone?
     func getNumberRow() -> Int
     func changeStatusNote(indexPath: IndexPath)
     func deleteNote()
     func cancelDelete()
+    func checkLoadMore() -> Bool
 }
 
 //MARK: Interactor -

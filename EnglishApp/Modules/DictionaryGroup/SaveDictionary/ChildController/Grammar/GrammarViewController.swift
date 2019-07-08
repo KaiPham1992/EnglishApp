@@ -48,7 +48,7 @@ class GrammarViewController: UIViewController {
         
         if type == .note {
             heightButtonAddNote.constant = 52
-            self.presenter?.getListNote(offset: self.offset)
+            self.presenter?.getListNote(offset: self.offset,replaceData: true)
         }
     }
     
@@ -71,6 +71,13 @@ extension GrammarViewController : GrammarViewProtocol {
         isDelete = false
         tbvGrammar.reloadData()
         actionDeleteFinish?()
+    }
+}
+
+extension GrammarViewController : AddNoteDelegate{
+    func addNoteSuccessed() {
+        self.offset = 0
+        self.presenter?.getListNote(offset: self.offset,replaceData: true)
     }
 }
 
@@ -104,9 +111,10 @@ extension GrammarViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let row = self.presenter?.getNumberRow() ?? 0
-        if indexPath.row == row - 1 {
+        let isLoadMore = self.presenter?.checkLoadMore() ?? false
+        if indexPath.row == row - 1 && isLoadMore{
             self.offset += 1
-            self.presenter?.getListNote(offset: self.offset)
+            self.presenter?.getListNote(offset: self.offset,replaceData: false)
         }
     }
 }

@@ -50,6 +50,7 @@ class GrammarRouter: GrammarWireframeProtocol {
     
     func gotoAddNote(){
         let vc = AddNoteRouter.createModule()
+        vc.deleagate = viewController as! GrammarViewController
         self.viewController?.push(controller: vc,animated: true)
     }
     

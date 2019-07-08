@@ -11,6 +11,7 @@ import Foundation
 protocol SaveAPIServiceProtocol {
     func getListNote(offset: Int,success: @escaping SuccessHandler<NoteRespone>.array, failure: @escaping RequestFailure)
     func deleteNote(id: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func addNote(description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class SaveAPIService : SaveAPIServiceProtocol {
@@ -27,6 +28,10 @@ class SaveAPIService : SaveAPIServiceProtocol {
     }
     func deleteNote(id: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endpoint = SaveEndpoint.deleteNote(id: id)
+        network.requestData(endPoint: endpoint, success: success, failure: failure)
+    }
+    func addNote(description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
+        let endpoint = SaveEndpoint.addNote(description: description)
         network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
 }

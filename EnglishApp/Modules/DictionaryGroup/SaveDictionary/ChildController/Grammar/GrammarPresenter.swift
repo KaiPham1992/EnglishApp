@@ -17,6 +17,7 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
     private let router: GrammarWireframeProtocol
     var listRespone : [NoteRespone] = []
     var isLoadmore: Bool = true
+    var replaceData = true
 
     init(interface: GrammarViewProtocol, interactor: GrammarInteractorInputProtocol?, router: GrammarWireframeProtocol) {
         self.view = interface
@@ -69,17 +70,24 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         return listRespone[indexPath.row]
     }
     
-    func getListNote(offset: Int) {
-        if isLoadmore {
-            self.interactor?.getListNote(offset: offset)
-        }
+    func checkLoadMore() -> Bool{
+        return self.isLoadmore
+    }
+    
+    func getListNote(offset: Int,replaceData: Bool) {
+        self.replaceData = replaceData
+        self.interactor?.getListNote(offset: offset)
     }
     
     func getListNoteSuccessed(listNote: [NoteRespone]) {
         if listNote.count < limit {
             isLoadmore = false
         }
-        self.listRespone += listNote
+        if replaceData {
+            self.listRespone = listNote
+        } else {
+            self.listRespone += listNote
+        }
         self.view?.reloadView()
     }
 }

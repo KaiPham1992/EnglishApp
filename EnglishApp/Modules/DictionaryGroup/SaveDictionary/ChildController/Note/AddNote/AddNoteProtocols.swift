@@ -18,17 +18,20 @@ protocol AddNoteWireframeProtocol: class {
 protocol AddNotePresenterProtocol: class {
 
     var interactor: AddNoteInteractorInputProtocol? { get set }
+    func addNote(description: String)
 }
 
 //MARK: Interactor -
 protocol AddNoteInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func addNoteSuccessed()
 }
 
 protocol AddNoteInteractorInputProtocol: class {
 
     var presenter: AddNoteInteractorOutputProtocol?  { get set }
+    func addNote(description: String)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +40,7 @@ protocol AddNoteInteractorInputProtocol: class {
 protocol AddNoteViewProtocol: class {
 
     var presenter: AddNotePresenterProtocol?  { get set }
+    func addNoteSuccessed()
 
     /* Presenter -> ViewController */
 }

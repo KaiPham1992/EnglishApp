@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddNoteViewController">
             <connections>
+                <outlet property="tvNote" destination="o24-gi-aAA" id="2j4-2t-tb2"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,58 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q36-lS-hlH">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="o24-gi-aAA">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PN2-UI-QBK">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="446"/>
-                            <subviews>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BZG-VU-Pn4">
-                                    <rect key="frame" x="16" y="16" width="343" height="200"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="YNe-4a-3KD"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uvc-Xp-hzC">
-                                    <rect key="frame" x="16" y="226" width="343" height="200"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="200" id="9i3-Lj-nfL"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="trailing" secondItem="BZG-VU-Pn4" secondAttribute="trailing" constant="16" id="60U-vp-Weq"/>
-                                <constraint firstItem="BZG-VU-Pn4" firstAttribute="top" secondItem="PN2-UI-QBK" secondAttribute="top" constant="16" id="7Ru-L1-Roi"/>
-                                <constraint firstItem="uvc-Xp-hzC" firstAttribute="trailing" secondItem="BZG-VU-Pn4" secondAttribute="trailing" id="Q2l-Qt-0cI"/>
-                                <constraint firstItem="BZG-VU-Pn4" firstAttribute="leading" secondItem="PN2-UI-QBK" secondAttribute="leading" constant="16" id="Uol-Tg-Dv6"/>
-                                <constraint firstAttribute="bottom" secondItem="uvc-Xp-hzC" secondAttribute="bottom" constant="20" id="dTD-af-oxH"/>
-                                <constraint firstItem="BZG-VU-Pn4" firstAttribute="bottom" secondItem="uvc-Xp-hzC" secondAttribute="top" constant="-10" id="ee0-XJ-UZE"/>
-                                <constraint firstItem="uvc-Xp-hzC" firstAttribute="leading" secondItem="BZG-VU-Pn4" secondAttribute="leading" id="gm8-CB-m58"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="trailing" secondItem="PN2-UI-QBK" secondAttribute="trailing" id="JO1-8h-GiX"/>
-                        <constraint firstItem="PN2-UI-QBK" firstAttribute="top" secondItem="q36-lS-hlH" secondAttribute="top" id="K1G-9X-Rhe"/>
-                        <constraint firstAttribute="bottom" secondItem="PN2-UI-QBK" secondAttribute="bottom" id="MJw-b6-HUf"/>
-                        <constraint firstItem="PN2-UI-QBK" firstAttribute="width" secondItem="q36-lS-hlH" secondAttribute="width" id="XRw-bl-wA4"/>
-                        <constraint firstItem="PN2-UI-QBK" firstAttribute="leading" secondItem="q36-lS-hlH" secondAttribute="leading" id="c1D-JA-ubn"/>
-                    </constraints>
-                </scrollView>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="q36-lS-hlH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ALd-xu-C7c"/>
-                <constraint firstAttribute="trailing" secondItem="q36-lS-hlH" secondAttribute="trailing" id="BIM-2f-Dj6"/>
-                <constraint firstAttribute="bottom" secondItem="q36-lS-hlH" secondAttribute="bottom" id="VjG-FN-RWi"/>
-                <constraint firstItem="q36-lS-hlH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="www-4u-z5A"/>
+                <constraint firstItem="o24-gi-aAA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HuR-Q6-HoU"/>
+                <constraint firstAttribute="trailing" secondItem="o24-gi-aAA" secondAttribute="trailing" id="W51-fr-mC2"/>
+                <constraint firstItem="o24-gi-aAA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ZO3-Rn-Qfq"/>
+                <constraint firstAttribute="bottom" secondItem="o24-gi-aAA" secondAttribute="bottom" id="xas-R4-XJa"/>
             </constraints>
         </view>
     </objects>
