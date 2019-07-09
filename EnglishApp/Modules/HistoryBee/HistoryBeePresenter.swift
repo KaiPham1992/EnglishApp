@@ -23,10 +23,13 @@ class HistoryBeePresenter: HistoryBeePresenterProtocol, HistoryBeeInteractorOutp
     }
     
     func getWalletLog(wallet_type: Int) {
+        ProgressView.shared.show()
         Provider.shared.walletLogAPIService.getWalletLog(wallet_type: wallet_type, success: { (walletLog) in
+            ProgressView.shared.hide()
             guard let listWalletLog = walletLog else {return}
             self.view?.didGetWalletLog(listWalletLog: listWalletLog)
         }) { (error) in
+            ProgressView.shared.hide()
             guard let error = error else {return}
             self.view?.didGetWalletLog(error: error)
         }

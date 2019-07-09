@@ -12,11 +12,13 @@ import UIKit
 
 class CompetitionPresenter: CompetitionPresenterProtocol, CompetitionInteractorOutputProtocol {
     func getListFight() {
-        
+        ProgressView.shared.show()
         Provider.shared.competitionAPIService.getListFight(success: { (collectionCompetition) in
+            ProgressView.shared.hide()
             guard let competition = collectionCompetition else{return}
             self.view?.didGetList(competitionList: competition)
         }) { (error) in
+            ProgressView.shared.hide()
             guard let _error = error else {return}
             self.view?.didGetList(error: _error)
         }

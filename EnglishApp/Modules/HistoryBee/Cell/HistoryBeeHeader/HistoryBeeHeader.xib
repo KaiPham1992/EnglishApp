@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryBeeHeader" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="btnAdd" destination="gi4-sB-oDE" id="987-Vn-mIB"/>
+                <outlet property="heightOfButton" destination="F1d-tj-xbg" id="XZD-FA-GJF"/>
                 <outlet property="imgIcon" destination="GsD-qN-Vqc" id="RTG-Cm-c5j"/>
                 <outlet property="lbTotal" destination="q5w-S9-8Aj" id="pT0-Eb-FeF"/>
             </connections>
@@ -63,6 +64,7 @@
                 <constraint firstItem="gi4-sB-oDE" firstAttribute="top" secondItem="q5w-S9-8Aj" secondAttribute="bottom" constant="20" id="zFX-Uc-ERy"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="-172" y="15"/>
         </view>
     </objects>
     <resources>
