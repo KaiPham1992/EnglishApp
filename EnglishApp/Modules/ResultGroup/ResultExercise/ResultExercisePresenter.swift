@@ -15,11 +15,19 @@ class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseIn
     weak private var view: ResultExerciseViewProtocol?
     var interactor: ResultExerciseInteractorInputProtocol?
     private let router: ResultExerciseWireframeProtocol
+    var listAnswer: [QuestionResultEntity] = []
 
     init(interface: ResultExerciseViewProtocol, interactor: ResultExerciseInteractorInputProtocol?, router: ResultExerciseWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
-
+    
+    func getNumberAnswer() -> Int{
+        return listAnswer.count
+    }
+    
+    func getAnswer(indexPath: IndexPath) -> QuestionResultEntity{
+        return listAnswer[indexPath.row]
+    }
 }

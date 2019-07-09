@@ -22,8 +22,13 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func gotoResultQuestion(title: String) {
-        self.router.gotoResultQuestion(title: title)
+    
+    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int) {
+        self.router.gotoResultQuestion(listAswer: listAswer, index: index)
+    }
+    
+    func getListAnswer() -> [QuestionResultEntity]?{
+        return testResultProfile?.questions
     }
     
     func getImageProfile() -> String?{

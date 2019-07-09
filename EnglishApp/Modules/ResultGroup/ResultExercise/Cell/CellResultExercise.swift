@@ -15,31 +15,35 @@ class CellResultExercise: UICollectionViewCell {
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vQuestion: UIView!
     @IBOutlet weak var tbvResultQuestion: UITableView!
-    @IBOutlet weak var heightScrollView: NSLayoutConstraint!
+    @IBOutlet weak var heightTableView: NSLayoutConstraint!
     var attributed: NSMutableAttributedString?
-    
+    var dataCell: QuestionResultEntity?{
+        didSet{
+            detectQuestion()
+            tbvResultQuestion.reloadData()
+        }
+    }
     
     var numberLine: Int = 0
     let popover = Popover()
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setupView()
-        
     }
     
     func setupView(){
         tvContent.textContainerInset = UIEdgeInsets.zero
         tvContent.textContainer.lineFragmentPadding = 0
-        tbvResultQuestion.registerXibFile(CellQuestion.self)
+        tbvResultQuestion.registerXibFile(CellResultFillQuestion.self)
+        tbvResultQuestion.registerXibFile(CellResultChoice.self)
         tbvResultQuestion.dataSource = self
         tbvResultQuestion.delegate = self
         detectQuestion()
     }
     
     func detectQuestion(){
-        let question = "In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life.In my opinion, the Internet is a very fast and convenient way for me to get information. I can also communicate with my friends and relatives by means of e-mail or chatting. However, I don't use the Internet very often because I don't have much time. For me, the Internet is a wonderful invention of modern life"
+        let question = dataCell?.content ?? ""
         let  textArray = question.components(separatedBy: " ")
         let attributedText = NSMutableAttributedString()
         for word in textArray {
@@ -99,12 +103,6 @@ class CellResultExercise: UICollectionViewCell {
 }
 extension CellResultExercise : UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //show pop update account
-        //        PopUpHelper.shared.showUpdateAccount {
-        //
-        //        }
-    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }
@@ -114,11 +112,27 @@ extension CellResultExercise: UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 18
+        return dataCell?.answers?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let type = dataCell?.answers?.first?.type else {
+            return UITableViewCell()
+        }
+        if type == "1" {
+            let cell = tableView.dequeue(CellResultChoice.self, for: indexPath)
+            cell.indexPath = indexPath
+            if let answer = dataCell?.answers?[indexPath.row] {
+                cell.setupCell(answer: answer)
+            }
+            heightTableView.constant = tbvResultQuestion.contentSize.height
+            return cell
+        }
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
-        heightScrollView.constant = vQuestion.frame.height + tbvResultQuestion.contentSize.height + 25
+        cell.indexPath = indexPath
+        if let answer = dataCell?.answers?[indexPath.row] {
+            cell.setupCell(answer: answer)
+        }
+        heightTableView.constant = tbvResultQuestion.contentSize.height
         return cell
     }
 }

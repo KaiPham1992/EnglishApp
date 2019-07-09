@@ -12,13 +12,13 @@ import Foundation
 
 //MARK: Wireframe -
 protocol ResultWireframeProtocol: class {
-    func gotoResultQuestion(title: String)
+    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int)
 }
 //MARK: Presenter -
 protocol ResultPresenterProtocol: class {
 
     var interactor: ResultInteractorInputProtocol? { get set }
-    func gotoResultQuestion(title: String)
+    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int)
     func getViewResult(id: String)
     func getImageProfile() -> String?
     func getAmountDiamond() -> String?
@@ -27,6 +27,7 @@ protocol ResultPresenterProtocol: class {
     func getTotalPoint() -> String
     func getPointQuestion(indexPath: IndexPath) -> Int?
     func getNumberQuestion() -> Int?
+    func getListAnswer() -> [QuestionResultEntity]?
 }
 
 //MARK: Interactor -

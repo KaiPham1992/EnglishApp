@@ -27,8 +27,6 @@ class NameExerciseViewController: BaseViewController {
             if let _param = self.paramSubmit {
                 self.presenter?.submitExercise(param: _param)
             }
-            
-//            self.presenter?.gotoResult()
         } else {
             self.currentIndex += 1
             lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"

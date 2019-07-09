@@ -18,6 +18,8 @@ protocol ResultExerciseWireframeProtocol: class {
 protocol ResultExercisePresenterProtocol: class {
 
     var interactor: ResultExerciseInteractorInputProtocol? { get set }
+    func getNumberAnswer() -> Int
+    func getAnswer(indexPath: IndexPath) -> QuestionResultEntity
 }
 
 //MARK: Interactor -
