@@ -11,20 +11,23 @@ import Alamofire
 
 enum CompetitionEndPoint{
     case getListFight
+    case getListFightTestTeam(competitionId: Int)
 }
 extension CompetitionEndPoint: EndPointType{
     var path: String {
         switch self {
         case .getListFight:
             return "_api/fight/get_list_fight_test"
+        case .getListFightTestTeam:
+            return "_api/fight/get_list_fight_test_team"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getListFight:
+        case .getListFight, .getListFightTestTeam:
             return .post
-
+        
         }
     }
     
@@ -32,6 +35,8 @@ extension CompetitionEndPoint: EndPointType{
         switch self {
         case .getListFight:
             return [:]
+        case .getListFightTestTeam(let competitionId):
+            return ["competition_id": competitionId]
         }
     }
     

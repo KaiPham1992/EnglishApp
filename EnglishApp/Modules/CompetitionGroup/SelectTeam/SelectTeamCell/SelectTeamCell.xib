@@ -84,6 +84,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnJoin" destination="1vt-Lv-JLb" id="DFZ-aA-5Jn"/>
+                <outlet property="imgTeam" destination="CdJ-Tm-Dqi" id="m4B-pG-hHR"/>
                 <outlet property="lbCountMember" destination="tK8-nK-gB6" id="D5G-fK-CCk"/>
                 <outlet property="lbName" destination="xNV-yD-y1v" id="BOM-1q-1SG"/>
             </connections>

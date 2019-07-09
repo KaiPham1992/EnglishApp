@@ -10,12 +10,13 @@
 
 import UIKit
 
-class SelectTeamViewController: BaseViewController, SelectTeamViewProtocol {
+class SelectTeamViewController: BaseViewController {
 
 	var presenter: SelectTeamPresenterProtocol?
     
     @IBOutlet weak var tbTeam: UITableView!
     
+    var maxMember = 0
     var listTeam = [TeamEntity]() {
         didSet {
             tbTeam.reloadData()
@@ -26,7 +27,8 @@ class SelectTeamViewController: BaseViewController, SelectTeamViewProtocol {
         super.viewDidLoad()
         configureTable()
         
-        listTeam = TeamEntity.toArray()
+//        listTeam = TeamEntity.toArray()
+        presenter?.getListFightTestTeam(competitionId: 1)
         hideTabbar()
     }
     
@@ -64,7 +66,7 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(SelectTeamCell.self, for: indexPath)
-        cell.team = listTeam[indexPath.item]
+        cell.displayData(maxMember: self.maxMember, team: listTeam[indexPath.item])
         cell.btnJoin.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
         return cell
@@ -81,5 +83,17 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+}
+extension SelectTeamViewController: SelectTeamViewProtocol{
+    func didGetListFightTestTeam(error: Error) {
+        print(error.localizedDescription)
+    }
+    func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity) {
+        guard let _listTeam = collectionTeam.teams, let _maxMember = collectionTeam.maxMember else {
+            return
+        }
+        self.listTeam = _listTeam
+        self.maxMember = _maxMember
     }
 }

@@ -18,6 +18,7 @@ protocol SelectTeamWireframeProtocol: class {
 protocol SelectTeamPresenterProtocol: class {
 
     var interactor: SelectTeamInteractorInputProtocol? { get set }
+    func getListFightTestTeam(competitionId: Int)
 }
 
 //MARK: Interactor -
@@ -39,4 +40,6 @@ protocol SelectTeamViewProtocol: class {
     var presenter: SelectTeamPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity)
+    func didGetListFightTestTeam(error: Error)
 }
