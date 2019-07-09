@@ -10,6 +10,7 @@ import Foundation
 
 protocol CompetitionAPIServiceProtocol {
     func getListFight(success: @escaping SuccessHandler<CollectionCompetitionEntity>.object,failure: @escaping RequestFailure)
+    func getListFightTestTeam(competitionId: Int, success: @escaping SuccessHandler<CollectionTeamEntity>.object,failure: @escaping RequestFailure)
 }
 
 class CompetitionAPIService: CompetitionAPIServiceProtocol {
@@ -19,6 +20,10 @@ class CompetitionAPIService: CompetitionAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
+    func getListFightTestTeam(competitionId: Int, success: @escaping SuccessHandler<CollectionTeamEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = CompetitionEndPoint.getListFightTestTeam(competitionId: competitionId)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
     private let network: APINetworkProtocol
     
     init(network: APINetworkProtocol) {
