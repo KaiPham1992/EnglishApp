@@ -13,12 +13,23 @@ import XLPagerTabStrip
 
 class CommentViewController: BaseViewController {
 
+    @IBAction func sendMessage(_ sender: Any) {
+        let content = tfEnterComment.text ?? ""
+        if content != "" {
+            self.presenter?.addComment(idLesson: Int(self.idLesson ?? "0") ?? 0, content: content)
+        }
+    }
+    
+    @IBOutlet weak var bottomViewComment: NSLayoutConstraint!
+    @IBOutlet weak var tfEnterComment: UITextField!
+    @IBOutlet weak var viewComment: UIView!
     @IBOutlet weak var tbvComment: UITableView!
     var presenter: CommentPresenterProtocol?
     var idLesson: String?
 
     override func setUpViews() {
         super.setUpViews()
+        addKeyboardNotification()
         tbvComment.registerXibFile(CellComment.self)
         tbvComment.registerXibFile(CellHeaderComment.self)
         tbvComment.delegate = self
@@ -30,6 +41,20 @@ class CommentViewController: BaseViewController {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.comment.showLanguage)
+    }
+    
+    override func keyboardWillShow(_ notification: Notification) {
+        if let keyboard = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            if #available(iOS 11.0, *) {
+                bottomViewComment.constant = keyboard.cgRectValue.height - self.view.safeAreaInsets.bottom
+            } else {
+                bottomViewComment.constant = keyboard.cgRectValue.height
+            }
+        }
+    }
+    
+    override func keyboardWillHide(_ notification: Notification) {
+        bottomViewComment.constant = 0
     }
 }
 

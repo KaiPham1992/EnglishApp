@@ -23,6 +23,7 @@ protocol CommentPresenterProtocol: class {
     func numberChildren(section: Int) -> Int?
     func getParentComment(section: Int) -> ParentComment?
     func getChildrenComment(indexPath: IndexPath) -> ChildrenComment?
+    func addComment(idLesson: Int, content: String)
 }
 
 //MARK: Interactor -
@@ -37,6 +38,7 @@ protocol CommentInteractorInputProtocol: class {
 
     var presenter: CommentInteractorOutputProtocol?  { get set }
     func getComment(idLesson: String)
+    func addComment(idLesson: Int, content: String)
 
     /* Presenter -> Interactor */
 }

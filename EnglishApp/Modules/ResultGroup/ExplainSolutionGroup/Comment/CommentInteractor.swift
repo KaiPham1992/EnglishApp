@@ -25,4 +25,14 @@ class CommentInteractor: CommentInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func addComment(idLesson: Int, content: String) {
+        Provider.shared.theoryAPIService.addComment(idLesson: idLesson, content: content, success: { (respone) in
+            if let _ = respone {
+                
+            }
+        }) { (error) in
+            
+        }
+    }
 }

@@ -47,4 +47,8 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
     func getChildrenComment(indexPath: IndexPath) -> ChildrenComment? {
         return commentEntity?.data?[indexPath.section].children?[indexPath.row]
     }
+    
+    func addComment(idLesson: Int, content: String) {
+        self.interactor?.addComment(idLesson: idLesson, content: content)
+    }
 }
