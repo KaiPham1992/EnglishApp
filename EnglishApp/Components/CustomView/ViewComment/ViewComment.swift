@@ -30,9 +30,7 @@ class ViewComment: BaseViewXib{
         lblTimeCreate.text = data.created_date
         lblContent.text = data.content
         if let status = data.status {
-            lblWait.isHidden = status == "1" ? false : true
-        } else {
-            lblWait.isHidden = false
+            lblWait.isHidden = status == "1" ? false  : true
         }
     }
     
@@ -42,8 +40,6 @@ class ViewComment: BaseViewXib{
         lblContent.text = data.content
         if let status = data.status {
             lblWait.isHidden = status == "1" ? false : true
-        } else {
-            lblWait.isHidden = false
         }
     }
 }

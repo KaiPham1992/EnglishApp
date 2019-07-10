@@ -14,9 +14,15 @@ protocol TheoryAPIServiceProtocol {
     func getLessonDetail(lesson_id: Int,success: @escaping SuccessHandler<LessonCatelogyDetail>.object,failure: @escaping RequestFailure)
     func getComment(idLesson: String,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure)
     func likeLesson(idLesson: Int,isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func addComment(idLesson: Int,content: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class TheoryAPIService: TheoryAPIServiceProtocol{
+    
+    func addComment(idLesson: Int, content: String, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endpoint = TheoryEndpoint.addComment(idLesson: idLesson, content: content)
+        network.requestData(endPoint: endpoint, success: success, failure: failure)
+    }
     
     func likeLesson(idLesson: Int, isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endpoint = TheoryEndpoint.likeLesson(idLesson: idLesson, isFavorite: isFavorite)

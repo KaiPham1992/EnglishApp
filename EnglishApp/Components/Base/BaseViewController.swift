@@ -347,7 +347,7 @@ extension BaseViewController {
         
     }
     
-    @objc func keyboardWillHide() {
+    @objc func keyboardWillHide(_ notification: Notification) {
         
     }
 }
