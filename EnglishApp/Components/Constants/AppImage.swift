@@ -80,4 +80,7 @@ struct AppImage {
     
     static let imgDownPoint = UIImage(named: "down_point")!
     static let imgUpPoint = UIImage(named: "up_point")!
+    
+    static let imgPremium = UIImage(named: "crown")!
+    static let imgStudyPack = UIImage(named: "king")!
 }

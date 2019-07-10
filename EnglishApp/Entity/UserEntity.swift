@@ -43,7 +43,7 @@ class UserEntity: BaseEntity  {
     var rankPoint: Int?
     var is_entrance_test: String?
     
-    var typeUser: String?
+    var typeUser = [String]()
     var amountRank: Int?
     var level: String?
     
@@ -63,7 +63,7 @@ class UserEntity: BaseEntity  {
         self.languageCode       <- map["language_code"]
         self.amountDiamond         <- (map["amount_diamond"], StringToIntTransform())
         self.amountHoney         <- (map["amount_honey"], StringToIntTransform())
-        self.amountPoint         <- (map["amount_point"], StringToIntTransform())
+//        self.amountPoint         <- (map["rank_point"], StringToIntTransform())
         self.rankId     <- map["rank_id"]
         self.rankName      <- map["rank_name"]
         self.rankPoint <- (map["rank_point"], StringToIntTransform())
@@ -102,4 +102,19 @@ class UserEntity: BaseEntity  {
         
         return self.fullName&
     }
+    
+    var imageStudyPack: UIImage? {
+        if self.typeUser.contains("STUDY_PACK") {
+            return AppImage.imgStudyPack
+        }
+        return nil
+    }
+    
+    var imagePremium: UIImage? {
+        if self.typeUser.contains("PREMIUM") {
+            return AppImage.imgPremium
+        }
+        return nil
+    }
+    
 }

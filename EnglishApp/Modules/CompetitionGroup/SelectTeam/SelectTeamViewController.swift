@@ -17,6 +17,7 @@ class SelectTeamViewController: BaseViewController {
     @IBOutlet weak var tbTeam: UITableView!
     
     var maxMember = 0
+    var competitionId: Int?
     var listTeam = [TeamEntity]() {
         didSet {
             tbTeam.reloadData()
@@ -28,7 +29,7 @@ class SelectTeamViewController: BaseViewController {
         configureTable()
         
 //        listTeam = TeamEntity.toArray()
-        presenter?.getListFightTestTeam(competitionId: 1)
+        presenter?.getListFightTestTeam(competitionId: competitionId*)
         hideTabbar()
     }
     

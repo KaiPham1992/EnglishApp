@@ -152,8 +152,8 @@ extension UserEndPoint: EndPointType {
             param = BaseParam.addDeviceParams(inputParams: param)
             return param
         case .updateProfile(let param):
-            let params = BaseParam.addDeviceParams(inputParams: param.toJSON())
-            return params
+//            let params = BaseParam.addDeviceParams(inputParams: param.toJSON())
+            return param.toJSON()
         case .verifyPhone(let code, let phone, let phoneCode):
             let param = ["code_verify": code,
                          "phone_number": phone,

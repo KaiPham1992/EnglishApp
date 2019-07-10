@@ -16,7 +16,7 @@ class UpdateProfileParam: BaseParam {
     override func mapping(map: Map) {
         super.mapping(map: map)
         
-        self.nationalId          <- map["national_id"]
+        self.nationalId          <- map["nation_id"]
         self.fullName      <- map["fullname"]
     }
     

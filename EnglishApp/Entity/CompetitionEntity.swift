@@ -51,7 +51,7 @@ class CompetitionEntity : BaseEntity {
         self.countTeam <- map["number_team"]
         self.startDate <- map["start_date"]
         
-        self.startTime <- (map["start_time_mi"], AppTimestampTransform())
+        self.startTime <- (map["start_date"], yyyyMMddHHmmssTransform())
         self.image <- map["image"]
         self.exercise_id <- map["exercise_id"]
         self.is_fight_joined <- map["is_fight_joined"]
