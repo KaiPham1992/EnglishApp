@@ -92,7 +92,7 @@ extension ProfileViewController: ProfileViewProtocol {
         lbLevel.text = user.rankName
         lbBee.text = user.amountDiamond*.description + " \(LocalizableKey.boxHoney.showLanguage)"
         lbDiamon.text = user.amountHoney*.description + " \(LocalizableKey.point.showLanguage)"
-        lbPoint.text = "\(user.amountPoint*.description) \(LocalizableKey.point.showLanguage)"
+        lbPoint.text = "\(user.rankPoint*.description) \(LocalizableKey.point.showLanguage)"
         imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
         
         UserDefaultHelper.shared.saveUser(user: user)

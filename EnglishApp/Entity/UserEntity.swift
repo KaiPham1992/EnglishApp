@@ -33,7 +33,7 @@ class UserEntity: BaseEntity  {
     var languageCode: String?
     var amountDiamond: Int?
     var amountHoney: Int?
-    var amountPoint: Int?
+//    var amountPoint: Int?
     var rankId: String?
     var rankName: String?
     var jwt: String?
