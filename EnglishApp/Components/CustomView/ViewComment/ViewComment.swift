@@ -16,6 +16,7 @@ class ViewComment: BaseViewXib{
         
     }
     
+    @IBOutlet weak var lblWait: UILabel!
     @IBOutlet weak var imgAVT: UIImageView!
     @IBOutlet weak var lblNameUser: UILabel!
     @IBOutlet weak var lblContent: UILabel!
@@ -25,12 +26,24 @@ class ViewComment: BaseViewXib{
     }
     
     func setupViewChildren(data: ChildrenComment){
+        imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + data.img_src&), completed: nil)
         lblTimeCreate.text = data.created_date
         lblContent.text = data.content
+        if let status = data.status {
+            lblWait.isHidden = status == "1" ? false : true
+        } else {
+            lblWait.isHidden = false
+        }
     }
     
     func setupViewParent(data: ParentComment){
+        imgAVT.sd_setImage(with: URL(string:  BASE_URL_IMAGE + data.img_src&), completed: nil)
         lblTimeCreate.text = data.created_date
         lblContent.text = data.content
+        if let status = data.status {
+            lblWait.isHidden = status == "1" ? false : true
+        } else {
+            lblWait.isHidden = false
+        }
     }
 }

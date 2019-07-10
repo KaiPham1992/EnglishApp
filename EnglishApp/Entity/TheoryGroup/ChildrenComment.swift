@@ -21,6 +21,9 @@ class ChildrenComment: Mappable{
     var updated_date : String?
     var created_time_mi : String?
     var is_waiting_approved : String?
+    var social_img_src : String?
+    var attach_img_src : String?
+    var img_src: String?
     
     required init?(map: Map) {
         
@@ -38,5 +41,8 @@ class ChildrenComment: Mappable{
        self.updated_date <- map["updated_date"]
        self.created_time_mi <- map["created_time_mi"]
        self.is_waiting_approved <- map["is_waiting_approved"]
+        self.social_img_src <- map["social_img_src"]
+        self.attach_img_src <- map["attach_img_src"]
+        self.img_src <- map["img_src"]
     }
 }
