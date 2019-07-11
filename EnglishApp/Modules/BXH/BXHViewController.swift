@@ -14,7 +14,8 @@ class BXHViewController: BaseViewController {
 
 	var presenter: BXHPresenterProtocol?
     @IBOutlet weak var tbBXH: UITableView!
-
+    @IBOutlet weak var vUser: BXHView!
+    
     var listLeaderBoard = LeaderBoardEntity(){
         didSet{
             tbBXH.reloadData()
@@ -86,6 +87,9 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
 extension BXHViewController: BXHViewProtocol{
     func didGetList(listLeaderBoard: LeaderBoardEntity) {
         self.listLeaderBoard = listLeaderBoard
+        
+        guard let user = listLeaderBoard.user else {return}
+        self.vUser.user = user
     }
     
     func didGetList(error: Error) {

@@ -26,6 +26,7 @@ class ProductEntity: BaseEntity {
    
     var id: String?
     var name: String?
+    var content: String?
     var type: String?
     var logo: String?
     var cropLogo: String?
@@ -43,6 +44,7 @@ class ProductEntity: BaseEntity {
         self.createDate <- (map["created_time_mi"], AppTimestampTransform())
         self.name <- map["name"]
         self.type <- map["type"]
+        self.content <- map["description"]
         self.logo <- map["logo"]
         self.cropLogo <- map["crop_logo"]
         self.durationAmount <- map["duration_amount"]

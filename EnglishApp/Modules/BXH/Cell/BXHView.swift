@@ -10,20 +10,23 @@ import UIKit
 
 class BXHView: BaseViewXib {
 
-    @IBOutlet weak var lbLevel: UILabel!
+    @IBOutlet weak var lbNumber: UILabel!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbRank: UILabel!
     @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var imgStudyPack: UIImageView!
+    @IBOutlet weak var imgPremium: UIImageView!
 
     var number: Int?
     var user = UserEntity(){
         didSet{
             
-            lbLevel.text = "\(self.number&)"
+            lbNumber.text = "\(self.number&)"
             lbName.text = user.nameShowUI
             lbRank.text = "\(user.rankName&): \(user.rankPoint&) \(LocalizableKey.point.showLanguage)"
             imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
-            
+            imgPremium.image = user.imagePremium
+            imgStudyPack.image = user.imageStudyPack
         }
     }
     

@@ -240,7 +240,8 @@ struct LocalizableKey {
     static let october = "October"
     static let november = "November"
     static let december = "December"
-
+    static let YEAR = "YEAR"
+    
     //week
     static let su = "Su"
     static let mo = "Mo"

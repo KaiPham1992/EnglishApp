@@ -46,10 +46,10 @@ class StudyPackViewCell: UICollectionViewCell {
     func displayData(){
         lbPackageName.text = product.name
         if let amountHoney = product.amountHoney{
-            lbDetail.text = "\(amountHoney) hũ mật ong - \(product.durationAmount&) \(product.durationUnit& == "YEAR" ? "NĂM" : "MONTH")"
+            lbDetail.text = "\(amountHoney) \(LocalizableKey.boxHoney.showLanguage) - \(product.durationAmount&) \(product.durationUnit&) \(LocalizableKey.YEAR.showLanguage)"
         }
         if let amountDiamond = product.amountDiamond{
-            lbDetail.text = "\(amountDiamond) kim cương - \(product.durationAmount&) \(product.durationUnit& == "YEAR" ? "NĂM" : "MONTH")"
+            lbDetail.text = "\(amountDiamond) \(LocalizableKey.diamond.showLanguage) - \(product.durationAmount&) \(product.durationUnit&) \(LocalizableKey.YEAR.showLanguage)"
         }
         imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
     }
