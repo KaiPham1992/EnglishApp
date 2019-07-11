@@ -24,7 +24,17 @@ class CompetitionPresenter: CompetitionPresenterProtocol, CompetitionInteractorO
         }
     }
     
-
+    func getListResultFight() {
+        Provider.shared.competitionAPIService.getListResultFight(success: { (respone) in
+            if let _respone = respone{
+                self.view?.didGetResultFight(resultFight: _respone)
+            }
+        }) { (error) in
+            if let _error = error {
+                self.view?.didGetList(error: _error)
+            }
+        }
+    }
     weak private var view: CompetitionViewProtocol?
     var interactor: CompetitionInteractorInputProtocol?
     private let router: CompetitionWireframeProtocol

@@ -38,11 +38,14 @@ class CompetitionViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         
-        listCompetition = CompetitionEntity.toArray()
+//        listCompetition = CompetitionEntity.toArray()
         configureTable()
-        presenter?.getListFight()
+        if type == .competition{
+            presenter?.getListFight()
+        } else {
+            self.presenter?.getListResultFight()
+        }
     }
-
 }
 
 extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource {
@@ -70,7 +73,13 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listCompetition.count
+        let row = listCompetition.count
+        if row == 0 {
+            self.tbCompetition.isHidden = true
+            return 0
+        }
+        self.tbCompetition.isHidden = false
+        return row
     }
     
     @objc func btnJoinTapped() {
@@ -105,5 +114,10 @@ extension CompetitionViewController: CompetitionViewProtocol{
     
     func didGetList(error: Error) {
         print(error.localizedDescription)
+    }
+    
+    func didGetResultFight(resultFight: CompetitionProfileEntity) {
+        guard let competition = resultFight.results else {return}
+        self.listCompetition = competition.map{CompetitionEntity(competitionResultsProfileEntity: $0)}.compactMap{$0}
     }
 }

@@ -13,4 +13,6 @@ import UIKit
 class CompetitionInteractor: CompetitionInteractorInputProtocol {
 
     weak var presenter: CompetitionInteractorOutputProtocol?
+    
+    
 }
