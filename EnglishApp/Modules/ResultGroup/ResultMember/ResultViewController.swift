@@ -42,16 +42,22 @@ class ResultViewController: BaseViewController {
         viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
-        self.presenter?.getViewResult(id: id)
+        
         if type == .result {
             viewRank.isHidden = false
             leadingStackView.constant = 28
             trailingStackView.constant = 28
-        } else {
+            self.presenter?.getViewResult(id: id)
+        }
+        if type == .resultCompetion {
             viewRank.isHidden = true
             leadingStackView.constant = 16
             trailingStackView.constant = 16
         }
+        if type == .resultExercise {
+            
+        }
+        
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbvResult.registerXibFile(CellResult.self)
         tbvResult.dataSource = self
@@ -59,6 +65,7 @@ class ResultViewController: BaseViewController {
         btnBackHome.setTitle(LocalizableKey.back_gome.showLanguage.uppercased(), for: .normal)
         lblPointSum.text = LocalizableKey.sum_point.showLanguage
         lblTimeDoExercise.text = LocalizableKey.time_do_exercise.showLanguage
+        self.edgesForExtendedLayout = UIRectEdge.bottom
     }
     
     override func setUpNavigation() {

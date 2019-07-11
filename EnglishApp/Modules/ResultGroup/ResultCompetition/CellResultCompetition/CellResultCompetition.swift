@@ -10,6 +10,9 @@ import UIKit
 
 class CellResultCompetition: UITableViewCell {
 
+    @IBOutlet weak var lblPoint: UILabel!
+    @IBOutlet weak var lblNameTeam: UILabel!
+    @IBOutlet weak var imgAVTTeam: UIImageView!
     @IBOutlet weak var imgRank: UIImageView!
     @IBOutlet weak var lbRank: UILabel!
     override func awakeFromNib() {
@@ -18,24 +21,28 @@ class CellResultCompetition: UITableViewCell {
         self.selectionStyle = .none
     }
     
-    func setupData(rank: Int){
-        if rank == 0 {
+    func setupData(dataCell: CompetitionResultTeamEntity){
+        imgAVTTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + dataCell.img_src&), completed: nil)
+        lblNameTeam.text = dataCell.name
+        lblPoint.text = " " + LocalizableKey.point.showLanguage
+        let rank : Int = dataCell.position ?? 0
+        if rank == 1 {
             lbRank.isHidden = true
             imgRank.image = #imageLiteral(resourceName: "001-gold-medal")
             return
         }
-        if rank == 1{
+        if rank == 2{
             lbRank.isHidden = true
             imgRank.image = #imageLiteral(resourceName: "ic_silver-medal")
             return
         }
-        if rank == 2{
+        if rank == 3{
             lbRank.isHidden = true
             imgRank.image = #imageLiteral(resourceName: "ic_bronze-medal")
             return
         }
         lbRank.isHidden = false
         imgRank.isHidden = true
-        lbRank.text = "Hang \(rank + 1)"
+        lbRank.text = LocalizableKey.rank.showLanguage + " \(rank + 1)"
     }
 }

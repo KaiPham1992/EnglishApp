@@ -13,4 +13,16 @@ import UIKit
 class ResultCompetitionInteractor: ResultCompetitionInteractorInputProtocol {
 
     weak var presenter: ResultCompetitionInteractorOutputProtocol?
+    
+    func getResultTeam(idCompetition: String) {
+        if let id = Int(idCompetition) {
+            ProgressView.shared.show()
+            Provider.shared.resultAPIService.getResultTeam(idCompetition: id, success: { (respone) in
+                ProgressView.shared.hide()
+                self.presenter?.getResultTeamSuccessed(respone: respone)
+            }) { (error) in
+                ProgressView.shared.hide()
+            }
+        }
+    }
 }

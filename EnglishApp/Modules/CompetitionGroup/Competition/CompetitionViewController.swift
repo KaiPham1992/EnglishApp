@@ -82,12 +82,12 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
         return row
     }
     
-    @objc func btnJoinTapped() {
+    @objc func btnJoinTapped(sender: UIButton) {
         if type == .competition{
             self.push(controller: SelectTeamRouter.createModule())
         }
         if type == .result{
-            self.push(controller: ResultGroupRouter.createModule())
+            self.push(controller: ResultGroupRouter.createModule(idCompetition: listCompetition[sender.tag].id&))
         }
        
     }

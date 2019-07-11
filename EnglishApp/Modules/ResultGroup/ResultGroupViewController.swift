@@ -14,14 +14,16 @@ import XLPagerTabStrip
 class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
 
 	var presenter: ResultGroupPresenterProtocol?
+    var idCompetition: String = "0"
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.result.showLanguage)
+        self.edgesForExtendedLayout = .bottom
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [ResultRouter.createModule(type: .result,id: "1"),ResultCompetitionRouter.createModule()]
+        return [ResultRouter.createModule(type: .result,id: self.idCompetition),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
     }
 }

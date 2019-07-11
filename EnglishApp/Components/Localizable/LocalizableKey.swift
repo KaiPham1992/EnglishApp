@@ -203,6 +203,7 @@ struct LocalizableKey {
     
     
     //result
+    static let rank = "rank"
     static let result = "result"
     static let sum_point = "sum_point"
     static let time_do_exercise = "time_do_exercise"

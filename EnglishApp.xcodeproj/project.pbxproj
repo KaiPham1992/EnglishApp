@@ -30,6 +30,9 @@
 		2AC7A21A22D78D83004ADFEE /* CompetitionProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */; };
 		2AC7A21B22D78D83004ADFEE /* CompetitionProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */; };
 		2AC7A21C22D78D83004ADFEE /* CompetitionProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */; };
+		2AC7A21E22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
+		2AC7A21F22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
+		2AC7A22022D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
 		2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
@@ -1993,6 +1996,7 @@
 		2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultChoice.xib; sourceTree = "<group>"; };
 		2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultsProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionProfileEntity.swift; sourceTree = "<group>"; };
+		2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultTeamEntity.swift; sourceTree = "<group>"; };
 		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
 		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
 		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
@@ -3041,6 +3045,7 @@
 				2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */,
 				2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */,
 				2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */,
+				2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -5745,6 +5750,7 @@
 				DEB584712291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DED5A02122A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
+				2AC7A21E22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
 				76483BE3229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
@@ -6272,6 +6278,7 @@
 				DEB584722291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
 				DED5A02222A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
+				2AC7A21F22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
 				76483BE4229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
@@ -7041,6 +7048,7 @@
 				DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				DE9530E42287DF6400E3F688 /* YesNoContentView.swift in Sources */,
 				DE9530E52287DF6400E3F688 /* AppTextView.swift in Sources */,
+				2AC7A22022D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
 				DE9530E62287DF6400E3F688 /* Date+extension.swift in Sources */,
 				DE89D22322A42592000638B0 /* BXHRouter.swift in Sources */,
 				DE9530E72287DF6400E3F688 /* ForgotPasswordRouter.swift in Sources */,

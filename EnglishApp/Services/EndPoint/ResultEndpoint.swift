@@ -11,6 +11,7 @@ import Alamofire
 
 enum ResultEndpoint {
     case getViewTestResultProfile(id: String)
+    case getResultTeam(id: Int)
 }
 
 extension ResultEndpoint: EndPointType {
@@ -18,6 +19,8 @@ extension ResultEndpoint: EndPointType {
         switch self {
         case .getViewTestResultProfile(let id):
             return "_api/result/get_view_test_result/\(id)"
+        case .getResultTeam:
+            return "_api/result/get_list_fight_test_team_result"
         }
     }
     
@@ -25,6 +28,8 @@ extension ResultEndpoint: EndPointType {
         switch self {
         case .getViewTestResultProfile:
             return .get
+        case .getResultTeam:
+            return .post
         }
     }
     
@@ -32,6 +37,8 @@ extension ResultEndpoint: EndPointType {
         switch self {
         case .getViewTestResultProfile:
             return ["":""]
+        case .getResultTeam(let competition):
+            return ["competition_id": competition]
         }
     }
     
