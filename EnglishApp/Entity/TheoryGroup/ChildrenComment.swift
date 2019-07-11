@@ -24,12 +24,14 @@ class ChildrenComment: Mappable{
     var social_img_src : String?
     var attach_img_src : String?
     var img_src: String?
+    var fullname: String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
+       self.fullname <- map["fullname"]
        self._id <- map["_id"]
        self.content <- map["content"]
        self.status <- map["status"]
