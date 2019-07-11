@@ -11,7 +11,6 @@ import Alamofire
 
 enum ExerciseEnpoint {
     case getListExercise(type_test: Int, category_id: Int,level: Int,offset: Int)
-    case getViewExercise(id: Int)
     case getLevelExercise(type_test: Int,offset: Int)
     case getViewEntrance
     case getResultCaledar(from: String,to: String)
@@ -19,6 +18,8 @@ enum ExerciseEnpoint {
     case submitExercise(param: SubmitExerciseParam)
     case getListExerciseCatelogy
     case createExercise(param: CreateExerciseParam)
+    case getViewExercise(id: String)
+    case exitExercise(id: Int)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -26,8 +27,6 @@ extension ExerciseEnpoint: EndPointType {
         switch self {
         case .getListExercise:
             return "_api/exercise/get_list_exercise"
-        case .getViewExercise(let id):
-            return "_api/exercise/get_view_exercise/\(id)"
         case .getLevelExercise:
             return "_api/exercise/get_list_study_pack_exercise"
         case .getViewEntrance:
@@ -42,11 +41,17 @@ extension ExerciseEnpoint: EndPointType {
             return "_api/exercise/get_list_exercise_category"
         case .createExercise:
             return "_api/exercise/create_exercise"
+        case .getViewExercise(let id):
+            return "_api/exercise/get_view_exercise/\(id)"
+        case .exitExercise:
+            return "_api/result/exit_exercise"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .exitExercise:
+            return .post
         case .getListExercise:
             return .post
         case .getViewExercise:
@@ -71,6 +76,10 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .exitExercise(let id):
+            return ["exercise_id": id ]
+        case .getViewExercise:
+            return ["":""]
         case .createExercise(let param):
             return param.toJSON()
         case .getListExerciseCatelogy:
@@ -82,8 +91,6 @@ extension ExerciseEnpoint: EndPointType {
                         "offset":offset,
                         "limit": limit
             ]
-        case .getViewExercise:
-            return ["":""]
         case .getLevelExercise(let type_test,let offset):
             return ["type_test": type_test,"offset":offset,"limit":limit]
         case .getViewEntrance:

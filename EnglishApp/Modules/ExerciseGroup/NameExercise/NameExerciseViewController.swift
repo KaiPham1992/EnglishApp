@@ -81,6 +81,7 @@ class NameExerciseViewController: BaseViewController {
     }
     
     var listAnswerQuestion : [QuestionSubmitParam] = []
+    var idExercise : String = ""
     
     override func setUpViews() {
         super.setUpViews()
@@ -91,7 +92,11 @@ class NameExerciseViewController: BaseViewController {
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
         vCountTime.delegate = self
-        self.presenter?.getViewEntranceTest()
+        if idExercise != "" {
+            self.presenter?.getViewExercise(id: self.idExercise)
+        } else {
+            self.presenter?.getViewEntranceTest()
+        }
     }
     
     override func setUpNavigation() {
