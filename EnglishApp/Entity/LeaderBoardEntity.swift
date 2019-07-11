@@ -33,7 +33,7 @@ class LeaderBoardEntity: BaseEntity{
         self.socialImage <- map["social_img_src"]
         self.total <- map["total_records"]
         self.boards <- map["boards"]
-        
+        self.attachImage <- map["attach_img_src"]
         
     }
 }

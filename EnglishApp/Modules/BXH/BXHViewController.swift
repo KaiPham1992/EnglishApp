@@ -13,7 +13,7 @@ import UIKit
 class BXHViewController: BaseViewController {
 
 	var presenter: BXHPresenterProtocol?
-     @IBOutlet weak var tbBXH: UITableView!
+    @IBOutlet weak var tbBXH: UITableView!
 
     var listLeaderBoard = LeaderBoardEntity(){
         didSet{

@@ -73,9 +73,12 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
         return listCompetition.count
     }
     
-    @objc func btnJoinTapped() {
+    @objc func btnJoinTapped(button: UIButton) {
+        guard let competitionId = listCompetition[button.tag].id else {
+            return
+        }
         if type == .competition{
-            self.push(controller: SelectTeamRouter.createModule())
+            self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
         }
         if type == .result{
             self.push(controller: ResultGroupRouter.createModule())

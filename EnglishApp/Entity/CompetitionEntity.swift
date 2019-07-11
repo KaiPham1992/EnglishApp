@@ -22,7 +22,7 @@ class CollectionCompetitionEntity: BaseEntity{
     }
 }
 class CompetitionEntity : BaseEntity {
-    var id: String?
+    var id: Int?
     var name: String?
     var rankName: String?
     var countTeam: String?
@@ -45,7 +45,7 @@ class CompetitionEntity : BaseEntity {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        self.id <- map["id"]
+        self.id <- (map["_id"], StringToIntTransform())
         self.name <- map["name"]
         self.rankName <- map["rank_name"]
         self.countTeam <- map["number_team"]
