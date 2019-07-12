@@ -11,32 +11,42 @@
 import UIKit
 import XLPagerTabStrip
 
-class ResultCompetitionViewController: UIViewController, ResultCompetitionViewProtocol {
+class ResultCompetitionViewController: UIViewController {
 
 	var presenter: ResultCompetitionPresenterProtocol?
     
     @IBOutlet weak var tbvResultCompetition: UITableView!
-    
-    
+    var idCompetition: String = ""
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         tbvResultCompetition.registerXibFile(CellResultCompetition.self)
         tbvResultCompetition.dataSource = self
         tbvResultCompetition.delegate = self
+        self.presenter?.getResultTeam(idCompetition: idCompetition)
     }
 
 }
+
+extension ResultCompetitionViewController : ResultCompetitionViewProtocol{
+    func reloadView(){
+        tbvResultCompetition.reloadData()
+    }
+}
+
 extension ResultCompetitionViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.presenter?.getNumberResult() ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellResultCompetition.self, for: indexPath)
-        cell.setupData(rank: indexPath.row)
+        if let dataCell = self.presenter?.getItemAtIndexPath(indexPath: indexPath){
+            cell.setupData(dataCell: dataCell)
+        }
         return cell
     }
 }

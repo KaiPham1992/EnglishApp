@@ -42,16 +42,25 @@ class ResultViewController: BaseViewController {
         viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
-        self.presenter?.getViewResult(id: id)
-        if type == .result {
+        
+        if type == .resultExercise {
             viewRank.isHidden = false
             leadingStackView.constant = 28
             trailingStackView.constant = 28
-        } else {
+            self.presenter?.getViewResult(id: id)
+        }
+        if type == .resultCompetion {
             viewRank.isHidden = true
             leadingStackView.constant = 16
             trailingStackView.constant = 16
         }
+        if type == .result {
+            viewRank.isHidden = false
+            leadingStackView.constant = 28
+            trailingStackView.constant = 28
+            self.presenter?.getViewResultUserCompetition(idCompetition: self.id)
+        }
+        
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbvResult.registerXibFile(CellResult.self)
         tbvResult.dataSource = self
@@ -59,6 +68,7 @@ class ResultViewController: BaseViewController {
         btnBackHome.setTitle(LocalizableKey.back_gome.showLanguage.uppercased(), for: .normal)
         lblPointSum.text = LocalizableKey.sum_point.showLanguage
         lblTimeDoExercise.text = LocalizableKey.time_do_exercise.showLanguage
+        self.edgesForExtendedLayout = UIRectEdge.bottom
     }
     
     override func setUpNavigation() {
@@ -82,7 +92,7 @@ extension ResultViewController: ResultViewProtocol{
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), completed: nil)
         lblPoint.text = self.presenter?.getTotalPoint()&
         lblTime.text = self.presenter?.getTotalTime()&
-        if type == .result {
+        if type == .result || type == .resultExercise {
             viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
         }
         viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")

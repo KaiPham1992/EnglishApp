@@ -11,7 +11,7 @@
 import UIKit
 
 class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
-    
+   
     weak private var view: ResultViewProtocol?
     var interactor: ResultInteractorInputProtocol?
     private let router: ResultWireframeProtocol
@@ -36,11 +36,11 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
     }
     
     func getAmountDiamond() -> String?{
-        return testResultProfile?.amount_diamond
+        return testResultProfile?.amount_diamond ?? "0"
     }
     
     func getAmoutRank() -> String?{
-        return testResultProfile?.amount_rank
+        return testResultProfile?.amount_rank ?? "0"
     }
     
     func getTotalTime() -> String {
@@ -79,4 +79,10 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.testResultProfile = respone
         self.view?.reloadView()
     }
+    
+    func getViewResultUserCompetition(idCompetition: String) {
+        self.interactor?.getViewResultUserCompetition(idCompetition: idCompetition)
+    }
+    
+    
 }

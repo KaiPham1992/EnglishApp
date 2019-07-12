@@ -197,6 +197,7 @@
 "next" = "Tiếp";
 
 //result
+"rank" = "Hạng";
 "result" = "Kết quả";
 "sum_point" = "Tổng điểm:";
 "time_do_exercise" = "Thời gian làm bài:";
