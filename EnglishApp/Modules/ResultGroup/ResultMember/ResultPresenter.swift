@@ -11,7 +11,7 @@
 import UIKit
 
 class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
-    
+   
     weak private var view: ResultViewProtocol?
     var interactor: ResultInteractorInputProtocol?
     private let router: ResultWireframeProtocol
@@ -79,4 +79,10 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.testResultProfile = respone
         self.view?.reloadView()
     }
+    
+    func getViewResultUserCompetition(idCompetition: String) {
+        self.interactor?.getViewResultUserCompetition(idCompetition: idCompetition)
+    }
+    
+    
 }

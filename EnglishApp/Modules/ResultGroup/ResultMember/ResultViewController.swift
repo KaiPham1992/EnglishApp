@@ -43,7 +43,7 @@ class ResultViewController: BaseViewController {
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
         
-        if type == .result || type == .resultExercise {
+        if type == .resultExercise {
             viewRank.isHidden = false
             leadingStackView.constant = 28
             trailingStackView.constant = 28
@@ -53,6 +53,12 @@ class ResultViewController: BaseViewController {
             viewRank.isHidden = true
             leadingStackView.constant = 16
             trailingStackView.constant = 16
+        }
+        if type == .result {
+            viewRank.isHidden = false
+            leadingStackView.constant = 28
+            trailingStackView.constant = 28
+            self.presenter?.getViewResultUserCompetition(idCompetition: self.id)
         }
         
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)

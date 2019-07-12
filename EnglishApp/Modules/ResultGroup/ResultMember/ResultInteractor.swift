@@ -24,4 +24,18 @@ class ResultInteractor: ResultInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func getViewResultUserCompetition(idCompetition: String) {
+        if let id = Int(idCompetition){
+            ProgressView.shared.show()
+            Provider.shared.resultAPIService.getResultUser(idCompetition: id, success: { (respone) in
+                ProgressView.shared.hide()
+                if let _respone = respone {
+                    self.presenter?.getViewTestResultSuccessed(respone: _respone)
+                }
+            }) { (error) in
+                ProgressView.shared.hide()
+            }
+        }
+    }
 }
