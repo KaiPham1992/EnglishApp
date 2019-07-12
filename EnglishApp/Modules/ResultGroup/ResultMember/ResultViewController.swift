@@ -43,7 +43,7 @@ class ResultViewController: BaseViewController {
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
         
-        if type == .result {
+        if type == .result || type == .resultExercise {
             viewRank.isHidden = false
             leadingStackView.constant = 28
             trailingStackView.constant = 28
@@ -53,9 +53,6 @@ class ResultViewController: BaseViewController {
             viewRank.isHidden = true
             leadingStackView.constant = 16
             trailingStackView.constant = 16
-        }
-        if type == .resultExercise {
-            
         }
         
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
@@ -89,7 +86,7 @@ extension ResultViewController: ResultViewProtocol{
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), completed: nil)
         lblPoint.text = self.presenter?.getTotalPoint()&
         lblTime.text = self.presenter?.getTotalTime()&
-        if type == .result {
+        if type == .result || type == .resultExercise {
             viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
         }
         viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")

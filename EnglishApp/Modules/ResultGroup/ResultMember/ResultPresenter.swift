@@ -36,11 +36,11 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
     }
     
     func getAmountDiamond() -> String?{
-        return testResultProfile?.amount_diamond
+        return testResultProfile?.amount_diamond ?? "0"
     }
     
     func getAmoutRank() -> String?{
-        return testResultProfile?.amount_rank
+        return testResultProfile?.amount_rank ?? "0"
     }
     
     func getTotalTime() -> String {
