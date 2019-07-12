@@ -14,8 +14,16 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
  
     weak var presenter: NameExerciseInteractorOutputProtocol?
     
-    func getViewExercise() {
-        
+    func getViewExercise(id: String) {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.getViewExercise(id: id, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getExerciseSuccessed(respone: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
     }
     
     func submitExercise(param: SubmitExerciseParam) {
@@ -42,4 +50,13 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
         }
     }
     
+    func exitExercise(id : Int){
+        Provider.shared.exerciseAPIService.exitExercise(id: id, success: { (respone) in
+            if let _ = respone {
+                
+            }
+        }) { (error) in
+            
+        }
+    }
 }

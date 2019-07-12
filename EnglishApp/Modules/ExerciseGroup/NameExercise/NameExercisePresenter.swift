@@ -64,8 +64,8 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         return exerciseEntity?.questions?[indexPath.row]
     }
     
-    func getViewExercise() {
-        
+    func getViewExercise(id: String) {
+        self.interactor?.getViewExercise(id: id)
     }
     
     func getViewEntranceTest() {

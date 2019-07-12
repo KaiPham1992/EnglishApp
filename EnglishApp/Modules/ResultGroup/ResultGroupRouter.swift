@@ -27,4 +27,18 @@ class ResultGroupRouter: ResultGroupWireframeProtocol {
 
         return view
     }
+    static func createModule(idCompetition: String) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = ResultGroupViewController.initFromNib()
+        view.idCompetition = idCompetition
+        let interactor = ResultGroupInteractor()
+        let router = ResultGroupRouter()
+        let presenter = ResultGroupPresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }

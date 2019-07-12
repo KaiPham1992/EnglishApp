@@ -29,6 +29,7 @@ class ViewComment: BaseViewXib{
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + data.img_src&), completed: nil)
         lblTimeCreate.text = data.created_date
         lblContent.text = data.content
+        lblNameUser.text = data.fullname
         if let status = data.status {
             lblWait.isHidden = status == "1" ? false  : true
         }
@@ -38,6 +39,7 @@ class ViewComment: BaseViewXib{
         imgAVT.sd_setImage(with: URL(string:  BASE_URL_IMAGE + data.img_src&), completed: nil)
         lblTimeCreate.text = data.created_date
         lblContent.text = data.content
+        lblNameUser.text = data.fullname
         if let status = data.status {
             lblWait.isHidden = status == "1" ? false : true
         }

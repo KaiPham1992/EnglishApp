@@ -20,7 +20,7 @@ protocol NameExercisePresenterProtocol: class {
 
     var interactor: NameExerciseInteractorInputProtocol? { get set }
     func gotoDetailVocabulary()
-    func getViewExercise()
+    func getViewExercise(id: String)
     func getViewEntranceTest()
     func getTime(index: Int) -> Int?
     func getNumber() -> Int?
@@ -43,7 +43,7 @@ protocol NameExerciseInteractorOutputProtocol: class {
 protocol NameExerciseInteractorInputProtocol: class {
 
     var presenter: NameExerciseInteractorOutputProtocol?  { get set }
-    func getViewExercise()
+    func getViewExercise(id: String)
     func getViewEntranceTest()
     func submitExercise(param: SubmitExerciseParam)
 
