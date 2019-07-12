@@ -72,28 +72,19 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="1fJ-cC-Xfb">
                                 <rect key="frame" x="8" y="96" width="190" height="80"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-Rd-qwK" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="190" height="16"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Iaq-J6-jot">
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="80"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Wq-8J-XtJ" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="16" width="190" height="16"/>
-                                        <color key="backgroundColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfC-AX-YFa" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="32" width="190" height="16"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IAu-Xx-53F" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="48" width="190" height="16"/>
-                                        <color key="backgroundColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vGE-3J-ie9" customClass="InfoPackView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="64" width="190" height="16"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </view>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Iaq-J6-jot" firstAttribute="top" secondItem="1fJ-cC-Xfb" secondAttribute="top" id="FEe-F8-QWs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Iaq-J6-jot" secondAttribute="trailing" id="X6x-JI-Cs4"/>
+                                    <constraint firstItem="Iaq-J6-jot" firstAttribute="leading" secondItem="1fJ-cC-Xfb" secondAttribute="leading" id="gfu-uE-uQr"/>
+                                    <constraint firstAttribute="bottom" secondItem="Iaq-J6-jot" secondAttribute="bottom" id="ori-I0-WeD"/>
                                     <constraint firstAttribute="height" constant="80" id="sSW-V0-uS7"/>
                                 </constraints>
                             </stackView>
@@ -175,11 +166,7 @@
                 <outlet property="imgIcon" destination="ERG-Rh-GKh" id="jGm-OD-hwa"/>
                 <outlet property="lbDetail" destination="xWK-6y-MPZ" id="NgX-ug-aX9"/>
                 <outlet property="lbPackageName" destination="i29-Zc-CfT" id="H0q-ga-lYK"/>
-                <outlet property="vCanComment" destination="hfC-AX-YFa" id="1VQ-AR-Lti"/>
-                <outlet property="vCanCreateWork" destination="IAu-Xx-53F" id="Abc-CT-37U"/>
-                <outlet property="vDoAll" destination="2Wq-8J-XtJ" id="QTa-F5-Fbw"/>
-                <outlet property="vPreviewAll" destination="WXI-Rd-qwK" id="WMO-Dx-iRq"/>
-                <outlet property="vWorkDependOnLevel" destination="vGE-3J-ie9" id="ARZ-fL-9od"/>
+                <outlet property="tvDetails" destination="Iaq-J6-jot" id="3mr-LL-OHt"/>
             </connections>
             <point key="canvasLocation" x="250.72463768115944" y="15.736607142857142"/>
         </collectionViewCell>
