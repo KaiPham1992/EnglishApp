@@ -23,7 +23,7 @@ class SelectTeamCell: BaseTableCell {
         lbName.text = team.name
         lbCountMember.text = "\(team.countMember*)/\(maxMember*)"
         imgTeam.sd_setImage(with: team.urlImage, placeholderImage: AppImage.avatarDefault)
-        if team.isTeamJoined ?? false{
+        if (team.isTeamJoined ?? 0) == 0{
             btnJoin.isHidden = true
         }else{
             btnJoin.isHidden = false

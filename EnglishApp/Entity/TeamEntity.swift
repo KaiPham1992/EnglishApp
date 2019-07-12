@@ -17,9 +17,11 @@ class CollectionTeamEntity: BaseEntity{
     
     override func mapping(map: Map) {
         super.mapping(map: map)
+        self.teams <- map["teams"]
+        self.isFightJoined <- map["is_fight_joined"]
         self.numberTeam <- (map["number_team"], StringToIntTransform())
         self.maxMember <- (map["max_member"], StringToIntTransform())
-        self.teams <- map["teams"]
+        
     }
 }
 class TeamEntity: BaseEntity {
@@ -30,7 +32,7 @@ class TeamEntity: BaseEntity {
     var socialImgSrc: String?
     var attachImgSrc: String?
     var countMember: String?
-    var isTeamJoined: Bool?
+    var isTeamJoined: Int?
    
     convenience init(name: String) {
         self.init()
@@ -42,7 +44,7 @@ class TeamEntity: BaseEntity {
         super.mapping(map: map)
         self.id <- map["_id"]
         self.name <- map["name"]
-        self.leader <- map["leader"]
+        self.leader <- map["leader_id"]
         self.countMember <- map["current"]
         self.imgSrc <- map["img_src"]
         self.socialImgSrc <- map["social_img_src"]
