@@ -11,6 +11,7 @@ import Foundation
 class PopUpHelper {
     static let shared = PopUpHelper()
     
+    
     func showYesNo(message: String, completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
         let popUp = YesNoPopUp()
         popUp.showPopUp(message: message, completionNo: completionNo, completionYes: completionYes)
