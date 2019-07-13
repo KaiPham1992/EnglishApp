@@ -72,7 +72,8 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = HistoryBeeHeader()
         header.displayData(walletType: self.wallet_type, total: self.totalWallet)
-            return header
+        header.delegate = self
+        return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -88,6 +89,11 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
 extension HistoryBeeViewController: HistoryBeeViewProtocol{
     func didGetWalletLog(listWalletLog: CollectionLogEntity) {
         if let _listWalletLog = listWalletLog.logs, let _totalWallet = listWalletLog.total_wallets{
+            if _listWalletLog.count == 0{
+                showNoData()
+            }else{
+                hideNoData()
+            }
             self.listWalletLog = _listWalletLog
             self.totalWallet = _totalWallet
         }
@@ -100,4 +106,14 @@ extension HistoryBeeViewController: HistoryBeeViewProtocol{
     }
     
     
+}
+
+extension HistoryBeeViewController: HistoryBeeHeaderDelegate{
+    func btnAddTapped() {
+//        self.push(controller: viewController)
+        let storeViewController = StoreViewController()
+        storeViewController.moveToViewController(at: 1)
+//        storeViewController.reloadPagerTabStripView()
+        self.push(controller: storeViewController)
+    }
 }
