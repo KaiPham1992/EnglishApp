@@ -162,12 +162,18 @@ class PopUpHelper {
     }
     
     func showNoInternet(completionYes: CompletionClosure?) {
-        let popUp = UpdateAccountPopup()
-        popUp.showPopup(message: LocalizableKey.pleaseTurnOnInternet.showLanguage, confirm: completionYes)
+        let popUp = NotificationPopUp()
+        popUp.showPopUp(message: LocalizableKey.pleaseTurnOnInternet.showLanguage, completion: completionYes)
+    }
+    
+    func showError(message: String, completionYes: CompletionClosure?) {
+        let popUp = NotificationPopUp()
+        popUp.showPopUp(message: message, completion: completionYes)
     }
     
     func sentNewPassword(completionYes: CompletionClosure?) {
         let popUp = UpdateAccountPopup()
         popUp.showPopup(message: "SENT_NEW_PASSWORD".showLanguage, confirm: completionYes)
     }
+    
 }
