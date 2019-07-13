@@ -21,6 +21,12 @@ class SelectTeamViewController: BaseViewController {
     var listTeam = [TeamEntity]() {
         didSet {
             tbTeam.reloadData()
+            
+            if listTeam.count == 0 {
+                showNoData()
+            } else {
+                hideNoData()
+            }
         }
     }
 
@@ -91,10 +97,11 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
         print(error.localizedDescription)
     }
     func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity) {
-        guard let _listTeam = collectionTeam.teams, let _maxMember = collectionTeam.maxMember else {
+        guard  let _maxMember = collectionTeam.maxMember else {
+            showNoData()
             return
         }
-        self.listTeam = _listTeam
+        self.listTeam = collectionTeam.teams
         self.maxMember = _maxMember
     }
 }

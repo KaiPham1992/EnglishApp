@@ -47,8 +47,10 @@ class CommentViewController: BaseViewController {
         if let keyboard = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             if #available(iOS 11.0, *) {
                 bottomViewComment.constant = keyboard.cgRectValue.height - self.view.safeAreaInsets.bottom
+                self.view.layoutIfNeeded()
             } else {
                 bottomViewComment.constant = keyboard.cgRectValue.height
+                self.view.layoutIfNeeded()
             }
         }
     }
