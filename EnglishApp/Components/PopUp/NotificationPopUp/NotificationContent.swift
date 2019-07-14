@@ -1,8 +1,8 @@
 //
-//  NotificationContent.swift
+//  YesNoContentView.swift
 //  Ipos
 //
-//  Created by Kai Pham on 5/6/19.
+//  Created by Kai Pham on 4/19/19.
 //  Copyright © 2019 edward. All rights reserved.
 //
 

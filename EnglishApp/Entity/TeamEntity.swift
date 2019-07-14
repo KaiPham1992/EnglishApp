@@ -13,7 +13,7 @@ class CollectionTeamEntity: BaseEntity{
     var numberTeam: Int?
     var maxMember: Int?
     var isFightJoined: Int?
-    var teams: [TeamEntity]?
+    var teams = [TeamEntity]()
     
     override func mapping(map: Map) {
         super.mapping(map: map)

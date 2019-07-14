@@ -11,6 +11,7 @@ import Foundation
 class PopUpHelper {
     static let shared = PopUpHelper()
     
+    
     func showYesNo(message: String, completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
         let popUp = YesNoPopUp()
         popUp.showPopUp(message: message, completionNo: completionNo, completionYes: completionYes)
@@ -162,12 +163,18 @@ class PopUpHelper {
     }
     
     func showNoInternet(completionYes: CompletionClosure?) {
-        let popUp = UpdateAccountPopup()
-        popUp.showPopup(message: LocalizableKey.pleaseTurnOnInternet.showLanguage, confirm: completionYes)
+        let popUp = NotificationPopUp()
+        popUp.showPopUp(message: LocalizableKey.pleaseTurnOnInternet.showLanguage, completion: completionYes)
+    }
+    
+    func showError(message: String, completionYes: CompletionClosure?) {
+        let popUp = NotificationPopUp()
+        popUp.showPopUp(message: message, completion: completionYes)
     }
     
     func sentNewPassword(completionYes: CompletionClosure?) {
         let popUp = UpdateAccountPopup()
         popUp.showPopup(message: "SENT_NEW_PASSWORD".showLanguage, confirm: completionYes)
     }
+    
 }

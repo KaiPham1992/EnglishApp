@@ -36,6 +36,14 @@ open class BaseViewController: UIViewController {
         setUpViews()
     }
     
+    let lbNodata: UILabel = {
+        let btn = UILabel()
+        btn.textAlignment = .center
+        btn.font = AppFont.fontRegular14
+        
+        return btn
+    }()
+    
     func setUpViews() {}
     func setTitleUI() {}
     
@@ -124,6 +132,19 @@ open class BaseViewController: UIViewController {
         navigationController?.view.layer.add(transition, forKey: nil)
         _ = navigationController?.popViewController(animated: false)
     }
+    
+    //---
+    func showNoData() {
+        lbNodata.removeFromSuperview()
+        self.view.addSubview(lbNodata)
+        lbNodata.text = LocalizableKey.lbNoData.showLanguage
+        lbNodata.centerSuperview()
+    }
+    
+    func hideNoData() {
+        lbNodata.removeFromSuperview()
+    }
+    
 }
 
 // MARK: Add button left, right, title

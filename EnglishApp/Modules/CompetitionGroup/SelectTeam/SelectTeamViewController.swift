@@ -18,7 +18,19 @@ class SelectTeamViewController: BaseViewController {
     
     var maxMember = 0
     var competitionId: Int?
-    var listTeam = [TeamEntity]()
+
+    var listTeam = [TeamEntity]() {
+        didSet {
+            tbTeam.reloadData()
+            
+            if listTeam.count == 0 {
+                showNoData()
+            } else {
+                hideNoData()
+            }
+        }
+    }
+
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
@@ -88,17 +100,15 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
         
     }
     func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity) {
-        guard let _listTeam = collectionTeam.teams, let _maxMember = collectionTeam.maxMember else {
+        guard  let _maxMember = collectionTeam.maxMember else {
+            showNoData()
             return
         }
-        self.listTeam = _listTeam
+        self.listTeam = collectionTeam.teams
         self.maxMember = _maxMember
         tbTeam.reloadData()
     }
     func didCreateTeamSuccessed(collectionTeam: TeamEntity){
-        listTeam.append(collectionTeam)
-        UIView.performWithoutAnimation {
-            self.tbTeam.reloadData()
-        }
+        listTeam.append(collectionTeam) 
     }
 }
