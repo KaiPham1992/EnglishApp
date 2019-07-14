@@ -167,6 +167,8 @@
 "studyPack" = "Gói nâng cấp";
 "beePack" = "Gói mật ong";
 "titleStore" = "Cửa hàng";
+"enterCode" = "Nhập mã code";
+"send" = "Gửi";
 
 //comment
 "comment" = "Bình luận";

@@ -15,6 +15,9 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
 
 	var presenter: StudyPackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
+    @IBOutlet weak var lbCode: UILabel!
+    @IBOutlet weak var tfCode: UITextField!
+    @IBOutlet weak var btnSend: UIButton!
     
     var collectionProduct = ProductCollectionEntity() {
         didSet {
@@ -25,12 +28,25 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        setUpView()
         presenter?.getProduct()
     }
     
     func didGetProduct(product: ProductCollectionEntity) {
         collectionProduct = product
         UserDefaultHelper.shared.collectionProduct = product
+    }
+    
+    func setUpView(){
+        lbCode.text = LocalizableKey.enterCode.showLanguage
+        tfCode.placeholder = LocalizableKey.enterCode.showLanguage
+        btnSend.setTitle(LocalizableKey.send.showLanguage, for: .normal)
+    }
+    
+    @IBAction func btnSendTapped(){
+        if let code = tfCode.text {
+            presenter?.sendRedeem(code: code)
+        }
     }
 
 }
@@ -102,5 +118,15 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
 extension StudyPackViewController: StudyPackViewDelegate {
     func btnDetailTapped() {
         self.push(controller: DetailPackRouter.createModule())
+    }
+}
+
+extension StudyPackViewController{
+    func didSendRedeem(data: QAEntity) {
+        //
+    }
+    
+    func didSendRedeem(error: Error) {
+        //
     }
 }

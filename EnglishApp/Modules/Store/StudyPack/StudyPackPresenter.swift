@@ -20,6 +20,18 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
         }
     }
     
+    func sendRedeem(code: String) {
+        ProgressView.shared.show()
+        Provider.shared.productAPIService.sendRedeem(code: code, success: { (success) in
+            ProgressView.shared.hide()
+//            guard let data = success else {return}
+//            self.view?.didSendRedeem(data: data)
+        }) { (error) in
+            ProgressView.shared.hide()
+            guard let error = error else {return}
+            self.view?.didSendRedeem(error: error)
+        }
+    }
     
     weak private var viewBeePack: BeePackViewProtocol?
 

@@ -19,6 +19,7 @@ protocol StudyPackPresenterProtocol: class {
 
     var interactor: StudyPackInteractorInputProtocol? { get set }
     func getProduct()
+    func sendRedeem(code: String)
 }
 
 //MARK: Interactor -
@@ -41,4 +42,6 @@ protocol StudyPackViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetProduct(product: ProductCollectionEntity)
+    func didSendRedeem(data: QAEntity)
+    func didSendRedeem(error: Error)
 }
