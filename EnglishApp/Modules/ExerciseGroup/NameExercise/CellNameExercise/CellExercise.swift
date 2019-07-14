@@ -92,8 +92,11 @@ class CellExercise: UICollectionViewCell {
             let attributeName = "tapped" //make sure this matches the name in viewDidLoad()
             let attributeValue = content.attributedText!.attribute(NSAttributedString.Key("tapped"), at: characterIndex, effectiveRange: nil) as? String
             if let value = attributeValue {
-                setupPopOver(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2, title: value)
-                print("You tapped on \(attributeName) and the value is: \(value)")
+                if subString != "" && subString != "\n" {
+                    setupPopOver(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2, title: value)
+                    print("You tapped on \(attributeName) and the value is: \(value)")
+                }
+                
             }
         }
     }

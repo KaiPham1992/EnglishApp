@@ -27,11 +27,10 @@ class ConfirmPopUpView: BaseViewXib{
     
     override func setUpViews() {
         super.setUpViews()
-        
     }
     
     func setupPopUp(message: String, titleYes: String = "Yes", titleNo: String = "No"){
-        lblMessage.text = message
+        lblMessage.text = "\n"+message
         btnNo.setTitle(titleNo, for: .normal)
         btnYes.setTitle(titleYes, for: .normal)
         

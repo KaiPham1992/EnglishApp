@@ -15,6 +15,7 @@ import SDWebImage
 class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
+        NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -82,6 +83,7 @@ class ResultViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
+         NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
          self.navigationController?.popToRootViewController(animated: true)
     }
 }

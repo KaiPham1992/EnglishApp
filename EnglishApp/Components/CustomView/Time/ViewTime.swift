@@ -12,19 +12,26 @@ import UIKit
 protocol TimeDelegate: class {
     func endTime()
     func startTime()
+    func pauseTime()
 }
 
 class ViewTime: BaseViewXib{
     @IBAction func clickPlay(_ sender: Any) {
-        btnPlay.isHidden = true
-        startTimer()
+        if !isStart {
+            viewPlay.isHidden = true
+            startTimer()
+        } else {
+            viewPlay.isHidden = false
+            pauseTimer()
+        }
+        
     }
+    @IBOutlet weak var viewPlay: UIView!
     
     var timer : Timer?
+    var isStart = false
     
     weak var delegate: TimeDelegate?
-    
-    @IBOutlet weak var btnPlay: UIButton!
     var time = 60
     
     @IBOutlet weak var lblTime: UILabel!
@@ -56,15 +63,28 @@ class ViewTime: BaseViewXib{
     }
     
     func startTimer(){
+        self.isStart = true
+        viewPlay.isHidden = true
         if timer == nil {
             timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(changeTime), userInfo: nil, repeats: true)
         }
         delegate?.startTime()
     }
     
+    func pauseTimer(){
+        self.isStart = false
+        viewPlay.isHidden = false
+        if self.timer != nil {
+            self.timer?.invalidate()
+            self.timer = nil
+        }
+        delegate?.pauseTime()
+    }
+    
     @objc func changeTime(){
         if self.time == 0 {
             stopTimer()
+            delegate?.endTime()
             
         } else {
             self.time -= 1

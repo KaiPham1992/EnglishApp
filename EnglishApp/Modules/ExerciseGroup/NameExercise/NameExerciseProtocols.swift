@@ -30,6 +30,7 @@ protocol NameExercisePresenterProtocol: class {
     func getIDExercise() -> Int?
     func getTotalTime() -> Int?
     func submitExercise(param: SubmitExerciseParam)
+    func getAllTime() -> Int?
 }
 
 //MARK: Interactor -

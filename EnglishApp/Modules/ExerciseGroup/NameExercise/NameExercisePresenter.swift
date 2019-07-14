@@ -56,6 +56,10 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         return exerciseEntity?.questions?.map{(Int($0._id ?? "0") ?? 0,Int($0.question_time ?? "0") ?? 0)}
     }
     
+    func getAllTime() -> Int? {
+        return exerciseEntity?.total_times
+    }
+    
     func getTime(index: Int) -> Int? {
         return Int(exerciseEntity?.questions?[index].question_time ?? "0")
     }

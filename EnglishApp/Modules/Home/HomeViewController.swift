@@ -67,6 +67,15 @@ class HomeViewController: BaseViewController {
         AppRouter.shared.rootNavigation = self.navigationController
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
+        
+    }
+    
+    @objc func testEntranceComplete(){
+        self.hideTestEntrance()
+        PopUpHelper.shared.showError(message: "Chúc mừng bạn đã hoàn thành bài trắc nghiệm đầu vào, Obee tặng bạn 500 kim cương.") {
+            
+        }
         
     }
     
@@ -190,14 +199,16 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return indexPath.item == 0 ? 222: 150
+            return indexPath.item == 0 ? UITableView.automaticDimension : 150
         } else {
             return indexPath.item == 0 ? 60: UITableView.automaticDimension
         }
     }
     
     @objc func btnTestBeginTapped() {
-        self.push(controller: NameExerciseRouter.createModule())
+        let vc = NameExerciseRouter.createModule()
+        vc.exerciseDelegate = self
+        self.push(controller: vc)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -210,6 +221,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         ////        pushViewController(itemSelected: itemSelected)
         //
         //        tbHome.reloadData()
+    }
+}
+extension HomeViewController : ExerciseDelegate {
+    func confirmOutTestEntrance() {
+        self.hideTestEntrance()
+    }
+    
+    func hideTestEntrance(){
+        if let cell = tbHome.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderCell{
+            cell.isTestedEnstrane = true
+            tbHome.beginUpdates()
+            tbHome.endUpdates()
+        }
     }
 }
 
