@@ -35,6 +35,13 @@ class CommentViewController: BaseViewController {
         tbvComment.delegate = self
         tbvComment.dataSource = self
         self.presenter?.getComment(idLesson: idLesson&)
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func setUpNavigation() {
@@ -43,17 +50,23 @@ class CommentViewController: BaseViewController {
         setTitleNavigation(title: LocalizableKey.comment.showLanguage)
     }
     
-    override func keyboardWillShow(_ notification: Notification) {
-        if let keyboard = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+    @objc func keyboardShow(_ notification: NSNotification) {
+        if let keyboard = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             if #available(iOS 11.0, *) {
-                bottomViewComment.constant = keyboard.cgRectValue.height - self.view.safeAreaInsets.bottom
+                UIView.animate(withDuration: 0.2) {
+                    self.bottomViewComment.constant = keyboard.height - self.view.safeAreaInsets.bottom
+                    self.view.layoutIfNeeded()
+                }
             } else {
-                bottomViewComment.constant = keyboard.cgRectValue.height
+                UIView.animate(withDuration: 0.2) {
+                    self.bottomViewComment.constant = keyboard.height
+                    self.view.layoutIfNeeded()
+                }
             }
         }
     }
     
-    override func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardHide(_ notification: NSNotification) {
         bottomViewComment.constant = 0
     }
 }
@@ -64,11 +77,11 @@ extension CommentViewController: CommentViewProtocol{
     }
 }
 
-extension CommentViewController: IndicatorInfoProvider{
-    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.comment.showLanguage)
-    }
-}
+//extension CommentViewController: IndicatorInfoProvider{
+//    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+//        return IndicatorInfo(title: LocalizableKey.comment.showLanguage)
+//    }
+//}
 
 extension CommentViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

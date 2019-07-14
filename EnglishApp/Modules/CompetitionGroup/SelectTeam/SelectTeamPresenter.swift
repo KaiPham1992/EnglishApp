@@ -24,6 +24,21 @@ class SelectTeamPresenter: SelectTeamPresenterProtocol, SelectTeamInteractorOutp
         }
     }
     
+    
+    func createTeam(id: Int, name: String) {
+        ProgressView.shared.show()
+        Provider.shared.competitionAPIService.createTeamFight(idCompetition: id, name: name, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.view?.didCreateTeamSuccessed(collectionTeam: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+            if let _error = error {
+                self.view?.didGetListFightTestTeam(error: _error)
+            }
+        }
+    }
 
     weak private var view: SelectTeamViewProtocol?
     var interactor: SelectTeamInteractorInputProtocol?

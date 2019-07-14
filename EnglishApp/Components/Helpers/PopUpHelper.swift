@@ -72,7 +72,7 @@ class PopUpHelper {
 //        popUp.showPopUp(message: message, completion: completionYes)
 //    }
     
-    func showCreateGroup(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+    func showCreateGroup(completionNo: CompletionClosure?, completionYes: CompletionMessage?) {
         let popUp = CreateGroupPopUp()
         popUp.showPopUp(titlePopUp: LocalizableKey.createGroup.showLanguage,
                         titleInput: LocalizableKey.nameGroup.showLanguage,
@@ -91,7 +91,7 @@ class PopUpHelper {
         popUp.showPopUp(message: LocalizableKey.leaveTeamPopUp.showLanguage, completionNo: completionYes, completionYes: completionNo)
     }
     
-    func showReport(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+    func showReport(completionNo: CompletionClosure?, completionYes: CompletionMessage?) {
         let popUp = CreateGroupPopUp()
         popUp.showPopUp(titlePopUp: LocalizableKey.createGroup.showLanguage,
                         titleInput: LocalizableKey.nameGroup.showLanguage,

@@ -338,16 +338,15 @@ extension BaseViewController {
 
 extension BaseViewController {
     func addKeyboardNotification() {
-        NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc func keyboardWillShow(_ notification: Notification) {
+    @objc func keyboardWillShow(_ notification: NSNotification) {
         
     }
     
-    @objc func keyboardWillHide(_ notification: Notification) {
+    @objc func keyboardWillHide(_ notification: NSNotification) {
         
     }
 }
