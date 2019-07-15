@@ -163,6 +163,11 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.item == 0 {
                 let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
                 cell.btnTestBegin.addTarget(self, action: #selector(btnTestBeginTapped), for: .touchUpInside)
+                if let _ = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test {
+                    cell.isTestedEnstrane = true
+                } else {
+                    cell.isTestedEnstrane = false
+                }
                 print(self.listTopThree.count)
                 cell.topThreeView.listTopThree = self.listTopThree
                 return cell
@@ -352,6 +357,4 @@ extension HomeViewController: HomeViewProtocol{
     func didGetTopThree(error: Error) {
         print(error.localizedDescription)
     }
-    
-    
 }
