@@ -43,5 +43,5 @@ protocol SelectTeamViewProtocol: class {
     /* Presenter -> ViewController */
     func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity)
     func didCreateTeamSuccessed(collectionTeam: TeamEntity)
-    func didGetListFightTestTeam(error: Error)
+    func didGetListFightTestTeam(error: APIError)
 }

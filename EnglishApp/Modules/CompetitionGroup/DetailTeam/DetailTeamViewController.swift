@@ -10,23 +10,25 @@
 
 import UIKit
 
-class DetailTeamViewController: BaseViewController, DetailTeamViewProtocol {
+class DetailTeamViewController: BaseViewController {
 
-	var presenter: DetailTeamPresenterProtocol?
+    @IBOutlet weak var lblMember: UILabel!
+    var presenter: DetailTeamPresenterProtocol?
     @IBOutlet weak var tbTeam: UITableView!
     @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var btnExplain: UIButton!
     @IBOutlet weak var btnLeave: UIButton!
+    var id: String = "0"
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        self.presenter?.getDetailTeam(id: self.id)
     }
 
     override func setTitleUI() {
         super.setTitleUI()
         addBackToNavigation()
-        
         btnStart.setTitle("\(LocalizableKey.startAfter.showLanguage.uppercased())", for: .normal)
         btnExplain.setTitle(LocalizableKey.explainConpetition.showLanguage.uppercased(), for: .normal)
         btnLeave.setTitle(LocalizableKey.leaveTeam.showLanguage.uppercased(), for: .normal)
@@ -49,6 +51,16 @@ class DetailTeamViewController: BaseViewController, DetailTeamViewProtocol {
     }
 }
 
+extension DetailTeamViewController : DetailTeamViewProtocol {
+    func reloadView() {
+        if let teamInfor = self.presenter?.getTeamInfo() {
+            setTitleNavigation(title: teamInfor.name&)
+            lblMember.text = teamInfor.toPercentMember()
+        }
+        tbTeam.reloadData()
+    }
+}
+
 extension DetailTeamViewController: UITableViewDelegate, UITableViewDataSource {
     func configureTable() {
         tbTeam.delegate = self
@@ -63,14 +75,20 @@ extension DetailTeamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(DetailTeamCell.self, for: indexPath)
         cell.lbIndex.text = "\(indexPath.item + 1)"
-//        cell.team = listTeam[indexPath.item]
-//        cell.btnJoin.tag = indexPath.item
-//        cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
+        if let dataCell = self.presenter?.getUserIndexPath(indexPath: indexPath) {
+            cell.member = dataCell
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let row = self.presenter?.getNumberRow() ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
+        return row
     }
     
     @objc func btnJoinTapped() {

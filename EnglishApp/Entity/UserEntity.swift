@@ -46,9 +46,11 @@ class UserEntity: BaseEntity  {
     var typeUser = [String]()
     var amountRank: Int?
     var level: String?
+    var isLeader: Int?
     
     
     override func mapping(map: Map) {
+        self.isLeader <- map["is_leader"]
         self.id             <- map["_id"]
         self.email       <- map["email"]
         self.fullName          <- map["fullname"]

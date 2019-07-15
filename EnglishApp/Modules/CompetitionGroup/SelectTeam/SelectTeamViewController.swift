@@ -86,9 +86,11 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
         return listTeam.count
     }
     
-    @objc func btnJoinTapped() {
-        let vc = DetailTeamRouter.createModule()
-        self.push(controller: vc)
+    @objc func btnJoinTapped(sender: UIButton) {
+        if let id = listTeam[sender.tag].id {
+            let vc = DetailTeamRouter.createModule(id: id)
+            self.push(controller: vc)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -96,8 +98,8 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 extension SelectTeamViewController: SelectTeamViewProtocol{
-    func didGetListFightTestTeam(error: Error) {
-        
+    func didGetListFightTestTeam(error: APIError) {
+        PopUpHelper.shared.showError(message: error.message&, completionYes: nil)
     }
     func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity) {
         guard  let _maxMember = collectionTeam.maxMember else {

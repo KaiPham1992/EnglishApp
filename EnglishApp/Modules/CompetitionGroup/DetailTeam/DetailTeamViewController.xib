@@ -20,6 +20,7 @@
                 <outlet property="btnExplain" destination="4FT-6D-ywJ" id="g1X-K0-gep"/>
                 <outlet property="btnLeave" destination="ytt-Ns-5gE" id="RAN-Xf-8v9"/>
                 <outlet property="btnStart" destination="oln-Kf-GXf" id="j5B-T8-fkX"/>
+                <outlet property="lblMember" destination="IOT-de-uhT" id="O7d-os-cI9"/>
                 <outlet property="tbTeam" destination="I6g-NX-dyi" id="ALH-Zu-fPb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -32,7 +33,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zK8-9v-J2D">
                     <rect key="frame" x="0.0" y="20" width="375" height="42"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5/20 thành viên" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOT-de-uhT">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOT-de-uhT">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                             <nil key="textColor"/>

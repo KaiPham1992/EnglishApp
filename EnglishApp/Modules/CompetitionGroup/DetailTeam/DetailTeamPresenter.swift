@@ -15,11 +15,34 @@ class DetailTeamPresenter: DetailTeamPresenterProtocol, DetailTeamInteractorOutp
     weak private var view: DetailTeamViewProtocol?
     var interactor: DetailTeamInteractorInputProtocol?
     private let router: DetailTeamWireframeProtocol
+    
+    private var teamDetail : DetailTeamEntity?
 
     init(interface: DetailTeamViewProtocol, interactor: DetailTeamInteractorInputProtocol?, router: DetailTeamWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func getDetailTeam(id: String) {
+        self.interactor?.getDetailTeam(id: id)
+    }
+    
+    func getNumberRow() -> Int?{
+        return self.teamDetail?.members?.count
+    }
+    
+    func getUserIndexPath(indexPath: IndexPath) -> UserEntity?{
+        return teamDetail?.members?[indexPath.row]
+    }
+    
+    func getTeamInfo() -> TeamEntity? {
+        return teamDetail?.team_info
+    }
+    
+    func getDetailTeamSuccessed(respone: DetailTeamEntity) {
+        self.teamDetail = respone
+        self.view?.reloadView()
     }
 
 }

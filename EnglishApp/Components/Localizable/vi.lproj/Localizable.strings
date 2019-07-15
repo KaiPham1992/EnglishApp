@@ -91,6 +91,7 @@
 "selectTeamJoin" = "Chọn nhóm tham gia";
 "joinTeam" = "Tham gia";
 "team" = " đội";
+"member" = "Thành viên";
 
 // Detail team
 "startAfter" = "Bắt đầu";

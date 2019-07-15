@@ -13,4 +13,16 @@ import UIKit
 class DetailTeamInteractor: DetailTeamInteractorInputProtocol {
 
     weak var presenter: DetailTeamInteractorOutputProtocol?
+    
+    func getDetailTeam(id: String) {
+        ProgressView.shared.show()
+        Provider.shared.competitionAPIService.getDetailTeam(id: id, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getDetailTeamSuccessed(respone: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

@@ -18,17 +18,23 @@ protocol DetailTeamWireframeProtocol: class {
 protocol DetailTeamPresenterProtocol: class {
 
     var interactor: DetailTeamInteractorInputProtocol? { get set }
+    func getDetailTeam(id: String)
+    func getNumberRow() -> Int?
+    func getUserIndexPath(indexPath: IndexPath) -> UserEntity?
+    func getTeamInfo() -> TeamEntity?
 }
 
 //MARK: Interactor -
 protocol DetailTeamInteractorOutputProtocol: class {
 
+    func getDetailTeamSuccessed(respone: DetailTeamEntity)
     /* Interactor -> Presenter */
 }
 
 protocol DetailTeamInteractorInputProtocol: class {
 
     var presenter: DetailTeamInteractorOutputProtocol?  { get set }
+    func getDetailTeam(id: String)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +43,7 @@ protocol DetailTeamInteractorInputProtocol: class {
 protocol DetailTeamViewProtocol: class {
 
     var presenter: DetailTeamPresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }

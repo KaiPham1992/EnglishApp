@@ -33,6 +33,7 @@ class TeamEntity: BaseEntity {
     var attachImgSrc: String?
     var countMember: String?
     var isTeamJoined: Int?
+    var maxMember: String?
    
     convenience init(name: String) {
         self.init()
@@ -43,6 +44,7 @@ class TeamEntity: BaseEntity {
     override func mapping(map: Map) {
         super.mapping(map: map)
         self.id <- map["_id"]
+        self.maxMember <- map["max_member"]
         self.name <- map["name"]
         self.leader <- map["leader_id"]
         self.countMember <- map["current"]
@@ -50,6 +52,10 @@ class TeamEntity: BaseEntity {
         self.socialImgSrc <- map["social_img_src"]
         self.attachImgSrc <- map["attach_img_src"]
         self.isTeamJoined <- map["is_team_joined"]
+    }
+
+    func toPercentMember() -> String{
+        return self.countMember& + "/" + self.maxMember& + " \(LocalizableKey.member.showLanguage)"
     }
     
     var urlImage:  URL? {
