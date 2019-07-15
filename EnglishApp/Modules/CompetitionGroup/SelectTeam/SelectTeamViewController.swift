@@ -68,10 +68,6 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
         tbTeam.delegate = self
         tbTeam.dataSource = self
         tbTeam.registerXibFile(SelectTeamCell.self)
-        tbTeam.separatorStyle = .none
-        
-        tbTeam.estimatedRowHeight = 55
-        tbTeam.rowHeight = UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,6 +90,10 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
 }

@@ -10,6 +10,8 @@ import UIKit
 
 class SelectTeamCell: BaseTableCell {
 
+    @IBOutlet weak var heightBtnJoin: NSLayoutConstraint!
+    @IBOutlet weak var btnJoined: UIButton!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbCountMember: UILabel!
     @IBOutlet weak var btnJoin: UIButton!
@@ -23,10 +25,17 @@ class SelectTeamCell: BaseTableCell {
         lbName.text = team.name
         lbCountMember.text = "\(team.countMember*)/\(maxMember*)"
         imgTeam.sd_setImage(with: team.urlImage, placeholderImage: AppImage.avatarDefault)
-        if (team.isTeamJoined ?? 0) == 0{
-            btnJoin.isHidden = true
-        }else{
-            btnJoin.isHidden = false
+        if (team.isTeamJoined ?? 0) == 0 {
+            btnJoined.isHidden = true
+            heightBtnJoin.constant = 24
+        } else {
+            btnJoined.isHidden = false
+            heightBtnJoin.constant = 0
+        }
+        
+        if Int(team.countMember&) == maxMember {
+            btnJoined.isHidden = true
+            heightBtnJoin.constant = 0
         }
     }
 }

@@ -44,5 +44,13 @@ class DetailTeamPresenter: DetailTeamPresenterProtocol, DetailTeamInteractorOutp
         self.teamDetail = respone
         self.view?.reloadView()
     }
+    
+    func leaveTeam(id: String) {
+        self.interactor?.leaveTeam(id: id)
+    }
+    
+    func leaveTeamSuccessed() {
+        self.view?.leaveTeamSuccessed()
+    }
 
 }

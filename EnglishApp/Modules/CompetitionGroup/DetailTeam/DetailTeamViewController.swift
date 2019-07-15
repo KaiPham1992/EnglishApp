@@ -44,7 +44,7 @@ class DetailTeamViewController: BaseViewController {
     
     @IBAction func btnLeaveTapped() {
         PopUpHelper.shared.showLeaveGroup(completionNo: {
-            print("Huỷ")
+            self.presenter?.leaveTeam(id: self.id)
         }) {
             self.pop()
         }
@@ -58,6 +58,10 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
             lblMember.text = teamInfor.toPercentMember()
         }
         tbTeam.reloadData()
+    }
+    
+    func leaveTeamSuccessed() {
+        self.pop(animated: true)
     }
 }
 

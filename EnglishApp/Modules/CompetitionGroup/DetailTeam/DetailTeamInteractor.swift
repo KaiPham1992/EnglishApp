@@ -25,4 +25,16 @@ class DetailTeamInteractor: DetailTeamInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func leaveTeam(id: String) {
+        ProgressView.shared.show()
+        Provider.shared.competitionAPIService.leaveTeam(id: id, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _ = respone {
+                self.presenter?.leaveTeamSuccessed()
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }
