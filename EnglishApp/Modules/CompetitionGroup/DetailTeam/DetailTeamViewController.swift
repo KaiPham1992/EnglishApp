@@ -44,9 +44,9 @@ class DetailTeamViewController: BaseViewController {
     
     @IBAction func btnLeaveTapped() {
         PopUpHelper.shared.showLeaveGroup(completionNo: {
-            self.presenter?.leaveTeam(id: self.id)
+            
         }) {
-            self.pop()
+            self.presenter?.leaveTeam(id: self.id)
         }
     }
 }
