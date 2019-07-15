@@ -28,7 +28,7 @@ class CreateGroupPopUp: BasePopUpView {
         vYesNoContentView.btnYes.addTarget(self, action: #selector(btnYesTapped), for: .touchUpInside)
     }
     
-    func showPopUp(titlePopUp: String, titleInput: String, placeHolderInput: String, titleNo: String, titleYes: String, completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
+    func showPopUp(titlePopUp: String, titleInput: String, placeHolderInput: String, titleNo: String, titleYes: String, completionNo: CompletionClosure?, completionYes: CompletionMessage?) {
         
         vYesNoContentView.lbTitle.text = titlePopUp
         vYesNoContentView.tfInput.setTitleAndPlaceHolder(title: titleInput, placeHolder: placeHolderInput)
@@ -38,7 +38,7 @@ class CreateGroupPopUp: BasePopUpView {
         
         
         self.completionNo = completionNo
-        self.completionYes = completionYes
+        self.completionMessage = completionYes
         
         super.showPopUp(height: 180)
     }
@@ -50,6 +50,6 @@ class CreateGroupPopUp: BasePopUpView {
     
     @objc func btnYesTapped() {
         hidePopUp()
-        completionYes?()
+        completionMessage?(vYesNoContentView.tfInput.tfInput.text)
     }
 }

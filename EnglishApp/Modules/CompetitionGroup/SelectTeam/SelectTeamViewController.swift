@@ -18,6 +18,7 @@ class SelectTeamViewController: BaseViewController {
     
     var maxMember = 0
     var competitionId: Int?
+
     var listTeam = [TeamEntity]() {
         didSet {
             tbTeam.reloadData()
@@ -52,9 +53,11 @@ class SelectTeamViewController: BaseViewController {
     
     @IBAction func btnCreateGroup() {
         PopUpHelper.shared.showCreateGroup(completionNo: {
-            print("Cancel")
-        }) {
-            print("Yes")
+            
+        }) { [unowned self] (message) in
+            if let _message = message {
+                self.presenter?.createTeam(id: self.competitionId ?? 0, name: _message)
+            }
         }
     }
 }
@@ -94,7 +97,7 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
 }
 extension SelectTeamViewController: SelectTeamViewProtocol{
     func didGetListFightTestTeam(error: Error) {
-        print(error.localizedDescription)
+        
     }
     func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity) {
         guard  let _maxMember = collectionTeam.maxMember else {
@@ -103,5 +106,9 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
         }
         self.listTeam = collectionTeam.teams
         self.maxMember = _maxMember
+        tbTeam.reloadData()
+    }
+    func didCreateTeamSuccessed(collectionTeam: TeamEntity){
+        listTeam.append(collectionTeam) 
     }
 }

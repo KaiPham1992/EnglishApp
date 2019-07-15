@@ -14,7 +14,7 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> NameExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = NameExerciseViewController.initFromNib()
         let interactor = NameExerciseInteractor()
@@ -28,7 +28,7 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(viewExerciseEntity: ViewExerciseEntity) -> UIViewController {
+    static func createModule(viewExerciseEntity: ViewExerciseEntity) -> NameExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = NameExerciseViewController.initFromNib()
         let interactor = NameExerciseInteractor()

@@ -34,7 +34,11 @@ class CellQuestion: UITableViewCell {
     @IBOutlet weak var lbNumber: UILabel!
     @IBOutlet weak var lbAnswer: UILabel!
     @IBOutlet weak var vQuestion: UIView!
-    var indexPath: IndexPath?
+    var indexPath: IndexPath? {
+        didSet {
+            self.lbNumber.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1)"
+        }
+    }
     weak var delegate: ClickQuestionDelegate?
     let dropDown = DropDown()
     
@@ -74,10 +78,5 @@ class CellQuestion: UITableViewCell {
         dropDown.cancelAction = { [unowned self] in
             self.isShow = !self.isShow
         }
-    }
-    
-    
-    func setupData(title: String,isExercise: Bool){
-        self.lbNumber.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1)"
     }
 }

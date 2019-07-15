@@ -193,8 +193,9 @@
 "task_every_date" = "Nhiệm vụ hàng ngày";
 "time_end" = "Kết thúc";
 "see_more" = "Xem thêm";
-"sentence" = "câu";
-"next" = "Tiếp";
+"sentence" = "Câu";
+"next" = "Tiếp tục";
+"do_entrance" = "Trắc nghiệm đầu vào";
 
 //result
 "rank" = "Hạng";

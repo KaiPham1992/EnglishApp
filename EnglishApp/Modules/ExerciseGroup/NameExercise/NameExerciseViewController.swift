@@ -11,13 +11,17 @@
 import UIKit
 import Popover
 
+protocol ExerciseDelegate: class {
+    func confirmOutTestEntrance()
+}
 
 class NameExerciseViewController: BaseViewController {
 
 	var presenter: NameExercisePresenterProtocol?
+    weak var exerciseDelegate: ExerciseDelegate?
 
     @IBAction func clickNext(_ sender: Any) {
-        arrTime[self.currentIndex - 1] = vCountTime.getCurrentTime()
+//        arrTime[self.currentIndex - 1] = vCountTime.getCurrentTime()
         vCountTime.stopTimer()
         if let param = self.addDataCell(indexPath: IndexPath(row: self.currentIndex - 1, section: 0)) {
             self.listAnswerQuestion[self.currentIndex - 1].answer = param
@@ -31,7 +35,7 @@ class NameExerciseViewController: BaseViewController {
             self.currentIndex += 1
             lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
             clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-            vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
+//            vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
         }
     }
     
@@ -48,13 +52,14 @@ class NameExerciseViewController: BaseViewController {
     }
     
     var numberQuestion : Int = 0
+    var currentTime : Int = 0
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
     @IBOutlet weak var vCountTime: ViewTime!
     
-    var arrTime : [Int] = []
+//    var arrTime : [Int] = []
     var currentIndex = 1 {
         didSet{
             if self.currentIndex == numberQuestion {
@@ -67,16 +72,17 @@ class NameExerciseViewController: BaseViewController {
     
     var isEnd : Bool = false{
         didSet {
-            self.arrTime[self.currentIndex] = 0
+//            self.arrTime[self.currentIndex] = 0
             vCountTime.stopTimer()
             if self.currentIndex < numberQuestion {
-                self.currentIndex += 1
+                self.currentIndex = numberQuestion
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-                vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
+//                vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
             } else {
 //                self.presenter?.gotoResult()
             }
+            self.disableUserInteractionCell()
         }
     }
     
@@ -85,7 +91,7 @@ class NameExerciseViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        clvQuestion.isHidden = true
+//        clvQuestion.isHidden = true
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
@@ -102,29 +108,44 @@ class NameExerciseViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         self.tabBarController?.tabBar.isHidden = true
-        setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
+        if idExercise != "" {
+            setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
+        } else {
+            setTitleNavigation(title: LocalizableKey.do_entrance.showLanguage)
+        }
+        
         addBackToNavigation()
         addButtonToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy") ?? UIImage(), style: .right, action: #selector(deleteExercise))
     }
     
+    func disableUserInteractionCell(){
+        clvQuestion.isUserInteractionEnabled = false
+    }
+    
     @objc func deleteExercise(){
-        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage, complete: {
-            self.pop(animated: true)
-        })
+        if !isEnd {
+            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: {
+                self.exerciseDelegate?.confirmOutTestEntrance()
+                self.pop(animated: true)
+            })
+        }
     }
     
     override func btnBackTapped() {
         if self.currentIndex == 1 {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage, complete: {
+            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: {
+                self.exerciseDelegate?.confirmOutTestEntrance()
                 self.pop(animated: true)
             })
         } else {
-            arrTime[self.currentIndex-1] = vCountTime.getCurrentTime()
-            vCountTime.stopTimer()
-            self.currentIndex -= 1
-            lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-            clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
-            vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex-1])
+//            arrTime[self.currentIndex-1] = vCountTime.getCurrentTime()
+            if !isEnd {
+                self.currentIndex -= 1
+                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
+            }
+            
+//            vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex-1])
         }
     }
 }
@@ -132,7 +153,9 @@ class NameExerciseViewController: BaseViewController {
 extension NameExerciseViewController :NameExerciseViewProtocol{
     func reloadView() {
         self.numberQuestion = self.presenter?.getNumber() ?? 0
-        self.arrTime = self.presenter?.getAllTime() ?? []
+//        self.currentTime = self.presenter?.getAllTime() ?? 0
+          self.currentTime = 10
+//        self.arrTime = self.presenter?.getAllTime() ?? []
         lblIndexQuestion.text = "1/\(numberQuestion)"
         if let _listIdQuestion = self.presenter?.getAllIdAndTimeQuestion() {
             self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0,time: $1)}
@@ -140,7 +163,8 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         if let _id = self.presenter?.getIDExercise(), let _totalTime = self.presenter?.getTotalTime() {
             paramSubmit = SubmitExerciseParam(exercise_id: _id, total_time: _totalTime)
         }
-        vCountTime.setupTime(min: self.arrTime[0])
+//        vCountTime.setupTime(min: self.arrTime[0])
+        vCountTime.setupTimeStartNow(min: self.currentTime)
         clvQuestion.reloadData()
     }
 }
@@ -205,5 +229,10 @@ extension NameExerciseViewController : TimeDelegate{
     
     func endTime() {
         self.isEnd = true
+    }
+    
+    func pauseTime() {
+        btnNext.isUserInteractionEnabled = false
+        clvQuestion.isHidden = true
     }
 }
