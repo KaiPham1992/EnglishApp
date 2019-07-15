@@ -77,6 +77,7 @@ struct AppImage {
     
     static let imgHoney = UIImage(named: "Money")!
     static let imgDiamond = UIImage(named: "ic_kimcuong")!
+    static let imgHoneyLarge = UIImage(named: "logo_mat_ong")!
     
     static let imgDownPoint = UIImage(named: "down_point")!
     static let imgUpPoint = UIImage(named: "up_point")!
