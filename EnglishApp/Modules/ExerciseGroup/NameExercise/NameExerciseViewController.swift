@@ -153,8 +153,8 @@ class NameExerciseViewController: BaseViewController {
 extension NameExerciseViewController :NameExerciseViewProtocol{
     func reloadView() {
         self.numberQuestion = self.presenter?.getNumber() ?? 0
-//        self.currentTime = self.presenter?.getAllTime() ?? 0
-          self.currentTime = 10
+        self.currentTime = self.presenter?.getAllTime() ?? 0
+//          self.currentTime = 10
 //        self.arrTime = self.presenter?.getAllTime() ?? []
         lblIndexQuestion.text = "1/\(numberQuestion)"
         if let _listIdQuestion = self.presenter?.getAllIdAndTimeQuestion() {

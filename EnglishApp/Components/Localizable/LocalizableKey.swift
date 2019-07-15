@@ -138,7 +138,7 @@ struct LocalizableKey {
     static let lesson = "lesson"
     static let recipe = "recipe"
     
-    static let idiams = "idioms"
+    static let idiams = "Idioms"
     static let wordUsage = "word_usage"
     static let wordForm = "word_form"
     
