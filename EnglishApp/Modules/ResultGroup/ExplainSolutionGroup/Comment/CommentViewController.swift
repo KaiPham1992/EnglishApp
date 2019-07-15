@@ -26,6 +26,7 @@ class CommentViewController: BaseViewController {
     @IBOutlet weak var tbvComment: UITableView!
     var presenter: CommentPresenterProtocol?
     var idLesson: String?
+    var idParent: Int?
 
     override func setUpViews() {
         super.setUpViews()
@@ -73,6 +74,7 @@ class CommentViewController: BaseViewController {
 
 extension CommentViewController: CommentViewProtocol{
     func reloadView() {
+        self.idParent = nil
         tbvComment.reloadData()
     }
 }

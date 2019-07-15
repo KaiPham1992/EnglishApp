@@ -29,7 +29,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="114"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="68"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7As-m6-wzv">
@@ -45,18 +45,18 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="Dmassiani" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PpD-Gp-7nJ">
-                    <rect key="frame" x="60" y="0.0" width="354" height="86"/>
+                    <rect key="frame" x="60" y="0.0" width="354" height="40"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="12"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmH-6N-6To">
-                    <rect key="frame" x="60" y="90" width="354" height="0.0"/>
+                    <rect key="frame" x="60" y="44" width="354" height="0.0"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                     <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEr-pv-2xa">
-                    <rect key="frame" x="60" y="94" width="354" height="0.0"/>
+                    <rect key="frame" x="60" y="48" width="354" height="0.0"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="SNK-dq-mKe"/>
                     </constraints>
@@ -65,20 +65,20 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Material_Icons_black_reply" translatesAutoresizingMaskIntoConstraints="NO" id="ubc-1G-04N">
-                    <rect key="frame" x="60" y="98" width="16" height="16"/>
+                    <rect key="frame" x="60" y="52" width="16" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="h7Q-dw-dZx"/>
                         <constraint firstAttribute="width" constant="16" id="wRZ-gQ-DrE"/>
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trả lời" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AE4-jU-uye">
-                    <rect key="frame" x="84" y="91" width="38" height="30"/>
+                    <rect key="frame" x="84" y="53.5" width="38" height="13.5"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                     <color key="textColor" red="1" green="0.63529411764705879" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chờ phê duyệt" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXm-1c-UgK">
-                    <rect key="frame" x="322" y="91" width="92" height="13.5"/>
+                    <rect key="frame" x="322" y="53.5" width="92" height="13.5"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                     <color key="textColor" red="1" green="0.63529411764705879" blue="0.18431372549019609" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                     </userDefinedRuntimeAttributes>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gah-8Z-TeH">
-                    <rect key="frame" x="60" y="91" width="62" height="30"/>
+                    <rect key="frame" x="60" y="52" width="62" height="16"/>
                     <connections>
                         <action selector="replyComment:" destination="-1" eventType="touchUpInside" id="JFU-k8-YtY"/>
                     </connections>
@@ -104,14 +104,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="gah-8Z-TeH" firstAttribute="bottom" secondItem="AE4-jU-uye" secondAttribute="bottom" id="1b3-JU-nr4"/>
                 <constraint firstItem="PpD-Gp-7nJ" firstAttribute="top" secondItem="7As-m6-wzv" secondAttribute="top" id="3V0-1K-Aha"/>
+                <constraint firstItem="zXm-1c-UgK" firstAttribute="centerY" secondItem="AE4-jU-uye" secondAttribute="centerY" id="5XR-IR-mJh"/>
                 <constraint firstItem="zXm-1c-UgK" firstAttribute="trailing" secondItem="xEr-pv-2xa" secondAttribute="trailing" id="8Cy-P9-aen"/>
+                <constraint firstItem="gah-8Z-TeH" firstAttribute="bottom" secondItem="ubc-1G-04N" secondAttribute="bottom" id="8EN-Mn-aKs"/>
                 <constraint firstItem="nmH-6N-6To" firstAttribute="leading" secondItem="PpD-Gp-7nJ" secondAttribute="leading" id="9Rk-wu-wm9"/>
                 <constraint firstItem="xEr-pv-2xa" firstAttribute="leading" secondItem="nmH-6N-6To" secondAttribute="leading" id="GbN-nG-IEM"/>
                 <constraint firstItem="ubc-1G-04N" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="Jvg-Mo-XIp"/>
                 <constraint firstItem="ubc-1G-04N" firstAttribute="leading" secondItem="xEr-pv-2xa" secondAttribute="leading" id="MaX-J5-pzW"/>
                 <constraint firstItem="xEr-pv-2xa" firstAttribute="trailing" secondItem="nmH-6N-6To" secondAttribute="trailing" id="MgG-zd-C95"/>
+                <constraint firstItem="gah-8Z-TeH" firstAttribute="top" secondItem="ubc-1G-04N" secondAttribute="top" id="YjI-7p-AX3"/>
                 <constraint firstItem="nmH-6N-6To" firstAttribute="trailing" secondItem="PpD-Gp-7nJ" secondAttribute="trailing" id="Yzc-Gb-MSA"/>
                 <constraint firstItem="9Bc-4R-6If" firstAttribute="trailing" secondItem="7As-m6-wzv" secondAttribute="trailing" id="ZWy-2h-Zmq"/>
                 <constraint firstItem="9Bc-4R-6If" firstAttribute="bottom" secondItem="7As-m6-wzv" secondAttribute="bottom" id="a3p-j8-HXf"/>
@@ -120,18 +122,16 @@
                 <constraint firstItem="AE4-jU-uye" firstAttribute="centerY" secondItem="ubc-1G-04N" secondAttribute="centerY" id="iHk-SU-tWB"/>
                 <constraint firstItem="nmH-6N-6To" firstAttribute="top" secondItem="PpD-Gp-7nJ" secondAttribute="bottom" constant="4" id="jcn-zR-cul"/>
                 <constraint firstItem="PpD-Gp-7nJ" firstAttribute="leading" secondItem="7As-m6-wzv" secondAttribute="trailing" constant="12" id="kAw-1l-Vg6"/>
-                <constraint firstItem="gah-8Z-TeH" firstAttribute="top" secondItem="AE4-jU-uye" secondAttribute="top" id="lCm-52-DMo"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="PpD-Gp-7nJ" secondAttribute="trailing" id="lIm-RI-ZCC"/>
                 <constraint firstItem="ubc-1G-04N" firstAttribute="top" secondItem="xEr-pv-2xa" secondAttribute="bottom" constant="4" id="nZJ-dr-VlL"/>
                 <constraint firstItem="gah-8Z-TeH" firstAttribute="trailing" secondItem="AE4-jU-uye" secondAttribute="trailing" id="pCd-3A-c1p"/>
-                <constraint firstItem="zXm-1c-UgK" firstAttribute="top" secondItem="AE4-jU-uye" secondAttribute="top" id="rQw-eT-Jde"/>
                 <constraint firstItem="gah-8Z-TeH" firstAttribute="leading" secondItem="ubc-1G-04N" secondAttribute="leading" id="vBH-0m-wiS"/>
                 <constraint firstItem="7As-m6-wzv" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zKn-la-5Mv"/>
                 <constraint firstItem="xEr-pv-2xa" firstAttribute="top" secondItem="nmH-6N-6To" secondAttribute="bottom" constant="4" id="zcC-Mu-3RM"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="140.57971014492756" y="133.92857142857142"/>
+            <point key="canvasLocation" x="140.57971014492756" y="118.52678571428571"/>
         </view>
     </objects>
     <resources>
