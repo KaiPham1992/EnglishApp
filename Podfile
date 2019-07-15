@@ -21,7 +21,6 @@ def main_pods
     pod 'XLPagerTabStrip'
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'RealmSwift'
 end
 
 target 'EnglishApp_Dev' do
