@@ -7,30 +7,33 @@
 //
 
 import UIKit
+protocol HistoryBeeHeaderDelegate {
+    func btnAddTapped()
+}
 
-class HistoryBeeHeader: BaseViewXib {
+class HistoryBeeHeader:  BaseViewXib {
     @IBOutlet weak var lbTotal: UILabel!
     @IBOutlet weak var btnAdd: UIButton!
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var heightOfButton: NSLayoutConstraint!
-
+    
+    var delegate: HistoryBeeHeaderDelegate?
+    
     func displayData(walletType: Int, total: Int){
         if walletType == 3{
-            imgIcon.image = AppImage.imgHoney
+            imgIcon.image = AppImage.imgHoneyLarge
             lbTotal.text = "\(total) \(LocalizableKey.boxHoneyTitle.showLanguage)"
-            btnAdd.setTitle("\(LocalizableKey.addBee.showLanguage)", for: .normal)
+            btnAdd.setTitle("\(LocalizableKey.ADDBEE.showLanguage)", for: .normal)
             heightOfButton.constant = 44
-//            btnAdd.isHidden = false
+            btnAdd.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
         }else{
             imgIcon.image = AppImage.imgDiamond
             lbTotal.text = "\(total) \(LocalizableKey.diamond.showLanguage)"
             heightOfButton.constant = 0
-//            btnAdd.isHidden = true
         }
-        
-        
-        
-            
+    }
+    @objc func btnTapped(){
+        self.delegate?.btnAddTapped()
     }
 
 }

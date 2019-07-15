@@ -96,6 +96,7 @@ class HomeViewController: BaseViewController {
         Provider.shared.notificationAPIService.getNotification(offset: 0, success: { parentNotification in
             guard let total = parentNotification?.totalUnread else { return }
             UIApplication.shared.applicationIconBadgeNumber = total
+            
             self.addButtonNotificationNavigation(count: total, action: #selector(self.btnNotificationTapped))
         }) { _ in
             
