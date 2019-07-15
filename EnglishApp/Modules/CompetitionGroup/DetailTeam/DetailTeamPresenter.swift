@@ -16,7 +16,7 @@ class DetailTeamPresenter: DetailTeamPresenterProtocol, DetailTeamInteractorOutp
     var interactor: DetailTeamInteractorInputProtocol?
     private let router: DetailTeamWireframeProtocol
     
-    private var teamDetail : DetailTeamEntity?
+    var teamDetail : DetailTeamEntity?
 
     init(interface: DetailTeamViewProtocol, interactor: DetailTeamInteractorInputProtocol?, router: DetailTeamWireframeProtocol) {
         self.view = interface
@@ -25,7 +25,11 @@ class DetailTeamPresenter: DetailTeamPresenterProtocol, DetailTeamInteractorOutp
     }
     
     func getDetailTeam(id: String) {
-        self.interactor?.getDetailTeam(id: id)
+        if teamDetail == nil {
+            self.interactor?.getDetailTeam(id: id)
+        } else {
+            self.view?.reloadView()
+        }
     }
     
     func getNumberRow() -> Int?{

@@ -11,6 +11,19 @@
 import UIKit
 
 class SelectTeamPresenter: SelectTeamPresenterProtocol, SelectTeamInteractorOutputProtocol {
+    func joinTeam(id: String) {
+        ProgressView.shared.show()
+        Provider.shared.competitionAPIService.joinTeam(id: id, success: { (respone) in
+            ProgressView.shared.hide()
+            guard let _respone = respone else {return}
+            self.view?.joinTeamSuccessed(respone: _respone)
+        }) { (error) in
+            ProgressView.shared.hide()
+            guard let error = error else {return}
+            self.view?.joinTeamFailed(error: error)
+        }
+    }
+    
     func getListFightTestTeam(competitionId: Int) {
         ProgressView.shared.show()
         Provider.shared.competitionAPIService.getListFightTestTeam(competitionId: competitionId, success: { (listTeam) in

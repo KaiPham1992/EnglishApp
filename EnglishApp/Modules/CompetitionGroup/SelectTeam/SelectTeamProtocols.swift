@@ -20,6 +20,7 @@ protocol SelectTeamPresenterProtocol: class {
     var interactor: SelectTeamInteractorInputProtocol? { get set }
     func getListFightTestTeam(competitionId: Int)
     func createTeam(id: Int,name: String)
+    func joinTeam(id: String)
     
 }
 
@@ -44,4 +45,6 @@ protocol SelectTeamViewProtocol: class {
     func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity)
     func didCreateTeamSuccessed(collectionTeam: TeamEntity)
     func didGetListFightTestTeam(error: APIError)
+    func joinTeamSuccessed(respone: DetailTeamEntity)
+    func joinTeamFailed(error: APIError)
 }

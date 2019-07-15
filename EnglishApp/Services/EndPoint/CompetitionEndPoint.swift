@@ -16,10 +16,13 @@ enum CompetitionEndPoint{
     case createTeamFight(id: Int,name: String)
     case getDetailTeam(id: String)
     case leaveTeam(id: String)
+    case joinTeam(id: String)
 }
 extension CompetitionEndPoint: EndPointType{
     var path: String {
         switch self {
+        case .joinTeam(let id):
+            return "_api/fight/join_fight_test_team/\(id)"
         case .leaveTeam(let id):
             return "_api/fight/leave_fight_test_team/\(id)"
         case .getDetailTeam(let id):
@@ -37,7 +40,7 @@ extension CompetitionEndPoint: EndPointType{
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getDetailTeam,.leaveTeam:
+        case .getDetailTeam,.leaveTeam,.joinTeam:
             return .get
         case .getListFight, .getListFightTestTeam,.getListResultFight,.createTeamFight:
             return .post
@@ -47,6 +50,8 @@ extension CompetitionEndPoint: EndPointType{
     
     var parameters: JSONDictionary {
         switch self {
+        case .joinTeam:
+            return ["":""]
         case .leaveTeam:
             return ["":""]
         case .getDetailTeam:

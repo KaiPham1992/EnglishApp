@@ -19,6 +19,8 @@ class DetailTeamViewController: BaseViewController {
     @IBOutlet weak var btnExplain: UIButton!
     @IBOutlet weak var btnLeave: UIButton!
     var id: String = "0"
+    var actionLeaveTeam : (()->())?
+    var actionBackView: (() -> ())?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,6 +51,10 @@ class DetailTeamViewController: BaseViewController {
             self.presenter?.leaveTeam(id: self.id)
         }
     }
+    override func btnBackTapped() {
+        actionBackView?()
+        super.btnBackTapped()
+    }
 }
 
 extension DetailTeamViewController : DetailTeamViewProtocol {
@@ -61,6 +67,7 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
     }
     
     func leaveTeamSuccessed() {
+        actionLeaveTeam?()
         self.pop(animated: true)
     }
 }

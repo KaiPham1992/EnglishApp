@@ -74,7 +74,9 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(SelectTeamCell.self, for: indexPath)
         cell.displayData(maxMember: self.maxMember, team: listTeam[indexPath.item])
         cell.btnJoin.tag = indexPath.item
+        cell.btnJoined.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
+        cell.btnJoined.addTarget(self, action: #selector(btnJoined), for: .touchUpInside)
         return cell
     }
     
@@ -82,10 +84,22 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
         return listTeam.count
     }
     
-    @objc func btnJoinTapped(sender: UIButton) {
+    @objc func btnJoined(sender: UIButton) {
         if let id = listTeam[sender.tag].id {
             let vc = DetailTeamRouter.createModule(id: id)
+            vc.actionLeaveTeam = { [weak self] in
+                self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0)
+            }
             self.push(controller: vc)
+        }
+    }
+    @objc func btnJoinTapped(sender: UIButton) {
+//        if let id = listTeam[sender.tag].id {
+//            let vc = DetailTeamRouter.createModule(id: id)
+//            self.push(controller: vc)
+//        }
+        if let id = listTeam[sender.tag].id {
+            self.presenter?.joinTeam(id: id)
         }
     }
     
@@ -98,6 +112,19 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 extension SelectTeamViewController: SelectTeamViewProtocol{
+    
+    func joinTeamFailed(error: APIError) {
+        PopUpHelper.shared.showError(message: error.message&, completionYes: nil)
+    }
+    
+    func joinTeamSuccessed(respone: DetailTeamEntity) {
+        let vc = DetailTeamRouter.createModule(teamDetail: respone)
+        vc.actionBackView = { [weak self] in
+            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0)
+        }
+        self.push(controller: vc)
+    }
+    
     func didGetListFightTestTeam(error: APIError) {
         PopUpHelper.shared.showError(message: error.message&, completionYes: nil)
     }
