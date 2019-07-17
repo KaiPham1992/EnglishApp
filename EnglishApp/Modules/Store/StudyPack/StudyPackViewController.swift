@@ -117,7 +117,7 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension StudyPackViewController: StudyPackViewDelegate {
     func btnDetailTapped() {
-        self.push(controller: DetailPackRouter.createModule())
+        self.push(controller: StudyPackDetailRouter.createModule(product: self.collectionProduct.groupUpgrade[0]))
     }
 }
 

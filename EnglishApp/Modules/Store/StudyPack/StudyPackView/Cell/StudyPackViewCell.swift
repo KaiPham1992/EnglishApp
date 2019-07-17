@@ -25,6 +25,10 @@ class StudyPackViewCell: UICollectionViewCell {
     @IBOutlet weak var tvDetails: UITextView!
     @IBOutlet weak var imgIcon: UIImageView!
     
+    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var btnDetail: UIButton!
+
+    
     var product = ProductEntity()
     weak var delegate: StudyPackViewCellDelegate?
 
@@ -43,17 +47,25 @@ class StudyPackViewCell: UICollectionViewCell {
         self.product = product
         displayData()
     }
+//    func displayData(){
+//        lbPackageName.text = product.name
+//        if let amountHoney = product.amountHoney{
+//            lbDetail.text = "\(amountHoney) \(LocalizableKey.boxHoney.showLanguage) - \(product.durationAmount&) \(product.durationUnit&) \(LocalizableKey.YEAR.showLanguage)"
+//        }
+//        if let amountDiamond = product.amountDiamond{
+//            lbDetail.text = "\(amountDiamond) \(LocalizableKey.diamond.showLanguage) - \(product.durationAmount&) \(product.durationUnit&) \(LocalizableKey.YEAR.showLanguage)"
+//        }
+//        imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+//        print(product.content)
+//        tvDetails.attributedText = product.content?.htmlToAttributedString
+//    }
+    
     func displayData(){
-        lbPackageName.text = product.name
-        if let amountHoney = product.amountHoney{
-            lbDetail.text = "\(amountHoney) \(LocalizableKey.boxHoney.showLanguage) - \(product.durationAmount&) \(product.durationUnit&) \(LocalizableKey.YEAR.showLanguage)"
+        if let htmlString = product.content{
+            webView.loadHTMLString(htmlString, baseURL: nil)
         }
-        if let amountDiamond = product.amountDiamond{
-            lbDetail.text = "\(amountDiamond) \(LocalizableKey.diamond.showLanguage) - \(product.durationAmount&) \(product.durationUnit&) \(LocalizableKey.YEAR.showLanguage)"
-        }
-        imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
-        print(product.content)
-        tvDetails.attributedText = product.content?.htmlToAttributedString
+        
+        btnDetail.setTitle(LocalizableKey.detail.showLanguage, for: .normal)
     }
     @IBAction func btnDetailTapped() {
         delegate?.btnDetailTapped()

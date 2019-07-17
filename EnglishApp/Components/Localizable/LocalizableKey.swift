@@ -173,6 +173,8 @@ struct LocalizableKey {
     static let titleStore = "titleStore"
     static let enterCode = "enterCode"
     static let send = "send"
+    static let detail = "detail"
+    static let upgrade = "upgrade"
 
     //comment
     static let comment = "comment"
