@@ -26,11 +26,11 @@ class ChoiceExerciseViewController: BaseViewController {
     let dropDown = DropDown()
     
     //to view choiceexercise or level exercise
-    var type : AssignLevelTryHard = .level
+    var type : Int = 0
     var id: String  = "0"
     var level = 1 {
         didSet{
-            self.presenter?.getViewChoiceExercise(typeTest: type.rawValue, catelogyId: Int(id) ?? 0, level: level)
+            self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(id) ?? 0, level: level)
         }
     }
 
@@ -44,7 +44,7 @@ class ChoiceExerciseViewController: BaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.setupDropDown()
         }
-        self.presenter?.getViewChoiceExercise(typeTest: type.rawValue, catelogyId: Int(id) ?? 0, level: level)
+        self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(id) ?? 0, level: level)
         
     }
     
@@ -114,6 +114,8 @@ extension ChoiceExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }

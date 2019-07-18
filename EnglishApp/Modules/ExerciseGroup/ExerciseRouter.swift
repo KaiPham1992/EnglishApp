@@ -34,15 +34,15 @@ class ExerciseRouter: ExerciseWireframeProtocol {
         self.viewController?.push(controller: vc,animated: true)
     }
     func gotoLevelExercise(){
-        let vc = LevelExerciseRouter.createModule(type: .level)
+        let vc = LevelExerciseRouter.createModule()
         self.viewController?.push(controller: vc,animated: true)
     }
     func gotoPracticeExercise() {
-        let vc = LevelExerciseRouter.createModule(type: .tryhard)
+        let vc = CatelogyExerciseRouter.createModule(typeTest: TypeExercise.practice.rawValue)
         self.viewController?.push(controller: vc,animated: true)
     }
     func gotoAssignExercise() {
-        let vc = LevelExerciseRouter.createModule(type: .assign)
+        let vc = AssignExerciseRouter.createModule()
         self.viewController?.push(controller: vc,animated: true)
     }
 }

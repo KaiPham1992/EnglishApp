@@ -28,7 +28,7 @@ class ChoiceExerciseRouter: ChoiceExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(type: AssignLevelTryHard = .level,id: String) -> ChoiceExerciseViewController {
+    static func createModule(type: Int = 0,id: String) -> ChoiceExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ChoiceExerciseViewController(nibName: nil, bundle: nil)
         view.type = type

@@ -28,37 +28,27 @@ class LevelExerciseRouter: LevelExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(type: AssignLevelTryHard = .level) -> UIViewController {
-        // Change to get view from storyboard if not using progammatic UI
-        let view = LevelExerciseViewController.initFromNib()
-        view.type = type
-        let interactor = LevelExerciseInteractor()
-        let router = LevelExerciseRouter()
-        let presenter = LevelExercisePresenter(interface: view, interactor: interactor, router: router)
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        router.viewController = view
-        
-        return view
+//    static func createModule(type: Int = 0) -> UIViewController {
+//        // Change to get view from storyboard if not using progammatic UI
+//        let view = LevelExerciseViewController.initFromNib()
+//        view.type = type
+//        let interactor = LevelExerciseInteractor()
+//        let router = LevelExerciseRouter()
+//        let presenter = LevelExercisePresenter(interface: view, interactor: interactor, router: router)
+//
+//        view.presenter = presenter
+//        interactor.presenter = presenter
+//        router.viewController = view
+//
+//        return view
+//    }
+    func gotoCatelogy(){
+        let vc = CatelogyExerciseRouter.createModule(typeTest: TypeExercise.level.rawValue)
+        self.viewController?.push(controller: vc)
     }
     
-    func gotoChoiceExercise(type: AssignLevelTryHard, id: String) {
+    func gotoChoiceExercise(type: Int, id: String) {
         let vc = ChoiceExerciseRouter.createModule(type: type, id: id)
         self.viewController?.push(controller: vc,animated: true)
     }
-//    func gotoExercise(){
-//        let vc = NameExerciseRouter.createModule()
-//        self.viewController?.push(controller: vc, animated: true)
-//    }
-//
-//    func gotoTryHard(){
-//        let vc = LevelExerciseRouter.createModule(type: .tryhard)
-//        self.viewController?.push(controller: vc,animated: true)
-//    }
-//
-//    func gotoChoiceExercise(){
-//        let vc = ChoiceExerciseRouter.createModule(type: .choice)
-//        self.viewController?.push(controller: vc,animated: true)
-//    }
 }
