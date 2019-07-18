@@ -11,9 +11,9 @@
 import UIKit
 
 
-enum AssignLevel : Int {
-    case assign = 1
-    case level = 2
+enum AssignLevelTryHard : Int {
+    case assign = 6
+    case level = 7
     case tryhard = 3
 }
 
@@ -22,27 +22,40 @@ class LevelExerciseViewController: BaseViewController {
 	var presenter: LevelExercisePresenterProtocol?
     
     @IBOutlet weak var tbvLevelExercise: UITableView!
-    var type: AssignLevel = .level
+    var type: AssignLevelTryHard = .level
     var offset: Int = 0 
     
     override func setUpViews() {
         super.setUpViews()
-        if type == .tryhard {
-            tbvLevelExercise.registerXibFile(CellLevelExercise.self)
-            self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
+//        if type == .tryhard {
+//            tbvLevelExercise.registerXibFile(CellLevelExercise.self)
+//            self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
+//        }
+//
+//        if type == .assign {
+//            tbvLevelExercise.registerXibFile(CellAssignExercise.self)
+//        }
+//
+//        if  type == .level  {
+//            tbvLevelExercise.registerXibFile(CellLevelExercise.self)
+//            self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
+//        }
+    
+        tbvLevelExercise.registerXibFile(CellLevelExercise.self)
+        tbvLevelExercise.dataSource = self
+        tbvLevelExercise.delegate = self
+        
+        if type == .level {
+            self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
+        }
+
+        if  type == .tryhard {
+            self.presenter?.getListCatelogy()
         }
         
         if type == .assign {
-            tbvLevelExercise.registerXibFile(CellAssignExercise.self)
+            
         }
-        
-        if  type == .level  {
-            tbvLevelExercise.registerXibFile(CellLevelExercise.self)
-            self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
-        }
-        
-        tbvLevelExercise.dataSource = self
-        tbvLevelExercise.delegate = self
     }
     override func setUpNavigation() {
         super.setUpNavigation()
@@ -73,61 +86,71 @@ extension LevelExerciseViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if type == .tryhard {
-            let row = self.presenter?.getNumberRow() ?? 0
-            return row
-        }
-        
-        if type == .level {
-            let row = self.presenter?.getNumberRowLevel() ?? 0
-            return row
-        }
-        return 10
+//        if type == .tryhard {
+//            let row = self.presenter?.getNumberRow() ?? 0
+//            return row
+//        }
+//
+//        if type == .level {
+//            let row = self.presenter?.getNumberRowLevel() ?? 0
+//            return row
+//        }
+        let row = type == .level ? self.presenter?.levelExerciseEntity?.study_categories?.count ?? 0 : self.presenter?.catelogy?.categories?.count ?? 0
+        return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if type == .tryhard {
-            let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
-            if let dataCell = self.presenter?.getItemExercise(indexPath: indexPath) {
-                cell.lblNameExercise.text = dataCell.name&
-            }
-            return cell
-        }
+//        if type == .tryhard {
+//            let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
+//            if let dataCell = self.presenter?.getItemExercise(indexPath: indexPath) {
+//                cell.lblNameExercise.text = dataCell.name&
+//            }
+//            return cell
+//        }
+//        if type == .level {
+//            let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
+//            if let dataCell = self.presenter?.getItemLevelExercise(indexPath: indexPath) {
+//                cell.lblNameExercise.text = dataCell.name&
+//            }
+//            return cell
+//        }
+//        let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
+        
+        let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
         if type == .level {
-            let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
-            if let dataCell = self.presenter?.getItemLevelExercise(indexPath: indexPath) {
+            if let dataCell = self.presenter?.levelExerciseEntity?.study_categories?[indexPath.row] {
                 cell.lblNameExercise.text = dataCell.name&
             }
-            return cell
+        } else {
+            if let dataCell = self.presenter?.catelogy?.categories?[indexPath.row] {
+                cell.lblNameExercise.text = dataCell.name&
+            }
         }
-        let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
+        
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.getNumberRow() ?? 0
-        if indexPath.row  == row - 1{
-            self.offset += limit
-            if type == .tryhard {
-                self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
-            }
-            if type == .level {
-                self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
-            }
-        }
+//        let row = self.presenter?.getNumberRow() ?? 0
+//        if indexPath.row  == row - 1{
+//            self.offset += limit
+//            if type == .tryhard {
+//                self.presenter?.getListExercise(category_id: type.rawValue, offset: self.offset)
+//            }
+//            if type == .level {
+//                self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
+//            }
+//        }
     }
 }
 extension LevelExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if type == .tryhard {
-            self.presenter?.gotoChoiceExercise()
+        var id : String = "0"
+        if type == .level {
+            id = self.presenter?.levelExerciseEntity?.study_categories?[indexPath.row]._id ?? "0"
+        } else {
+            id = self.presenter?.catelogy?.categories?[indexPath.row]._id ?? "0"
         }
         
-        if type == .level{
-            self.presenter?.gotoTryHard()
-        }
-        
-        if type == .assign{
-            self.presenter?.gotoExercise()
-        }
+        self.presenter?.gotoChoiceExercise(type: type, id: id)
         
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

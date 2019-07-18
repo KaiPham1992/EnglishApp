@@ -20,11 +20,17 @@ enum ExerciseEnpoint {
     case createExercise(param: CreateExerciseParam)
     case getViewExercise(id: String)
     case exitExercise(id: Int)
+    case getListCatelogy
+    case getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int)
 }
 
 extension ExerciseEnpoint: EndPointType {
     var path: String {
         switch self {
+        case .getViewChoiceExercise:
+            return "_api/exercise/get_list_exercise"
+        case .getListCatelogy:
+            return "_api/exercise/get_list_exercise_category"
         case .getListExercise:
             return "_api/exercise/get_list_exercise"
         case .getLevelExercise:
@@ -50,6 +56,10 @@ extension ExerciseEnpoint: EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .getViewChoiceExercise:
+            return .post
+        case .getListCatelogy:
+            return .post
         case .exitExercise:
             return .post
         case .getListExercise:
@@ -76,6 +86,12 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .getViewChoiceExercise(let typeTest, let catelogyId, let level):
+            return [    "type_test": typeTest,
+                        "category_id": catelogyId,
+                        "level": level]
+        case .getListCatelogy:
+            return ["":""]
         case .exitExercise(let id):
             return ["exercise_id": id ]
         case .getViewExercise:

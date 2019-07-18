@@ -15,11 +15,21 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
     weak private var view: ChoiceExerciseViewProtocol?
     var interactor: ChoiceExerciseInteractorInputProtocol?
     private let router: ChoiceExerciseWireframeProtocol
+    var exerciseChoiceEntity: ExerciseChoiceEntity?
 
     init(interface: ChoiceExerciseViewProtocol, interactor: ChoiceExerciseInteractorInputProtocol?, router: ChoiceExerciseWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int) {
+        self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level)
+    }
+    
+    func getViewChoiceExerciseSuccessed(respone: ExerciseChoiceEntity) {
+        self.exerciseChoiceEntity = respone
+        self.view?.reloadView()
     }
 
 }

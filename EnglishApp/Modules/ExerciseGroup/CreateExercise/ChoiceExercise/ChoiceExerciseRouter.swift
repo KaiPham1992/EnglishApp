@@ -28,10 +28,11 @@ class ChoiceExerciseRouter: ChoiceExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(type: TypeExerxcier = .level) -> ChoiceExerciseViewController {
+    static func createModule(type: AssignLevelTryHard = .level,id: String) -> ChoiceExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ChoiceExerciseViewController(nibName: nil, bundle: nil)
         view.type = type
+        view.id = id
         let interactor = ChoiceExerciseInteractor()
         let router = ChoiceExerciseRouter()
         let presenter = ChoiceExercisePresenter(interface: view, interactor: interactor, router: router)

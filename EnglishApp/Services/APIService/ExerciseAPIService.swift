@@ -19,9 +19,22 @@ protocol ExerciseAPIServiceProtocol {
     func createExercise(param: CreateExerciseParam,success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
     func getViewExercise(id: String,success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
     func exitExercise(id: Int,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func exitExercise(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
+    
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func exitExercise(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.getListCatelogy
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
     func exitExercise(id: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endpoint = ExerciseEnpoint.exitExercise(id: id)
         network.requestData(endPoint: endpoint, success: success, failure: failure)

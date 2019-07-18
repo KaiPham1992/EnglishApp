@@ -11,13 +11,8 @@
 import UIKit
 import DropDown
 
-enum TypeExerxcier {
-    case choice
-    case level
-}
 
-
-class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtocol {
+class ChoiceExerciseViewController: BaseViewController {
     @IBOutlet weak var lbExerciseLevel: UILabel!
     
     @IBAction func clickChoiceType(_ sender: Any) {
@@ -31,7 +26,13 @@ class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtoc
     let dropDown = DropDown()
     
     //to view choiceexercise or level exercise
-    var type : TypeExerxcier = .level
+    var type : AssignLevelTryHard = .level
+    var id: String  = "0"
+    var level = 1 {
+        didSet{
+            self.presenter?.getViewChoiceExercise(typeTest: type.rawValue, catelogyId: Int(id) ?? 0, level: level)
+        }
+    }
 
     @IBOutlet weak var vLine: UIView!
     override func setUpViews() {
@@ -43,6 +44,8 @@ class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtoc
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.setupDropDown()
         }
+        self.presenter?.getViewChoiceExercise(typeTest: type.rawValue, catelogyId: Int(id) ?? 0, level: level)
+        
     }
     
     func rotateImage(){
@@ -70,6 +73,7 @@ class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtoc
         }
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDown.hide()
+            self.level = index + 1
             self.lbType.text = item
             self.rotateImage()
         }
@@ -78,15 +82,31 @@ class ChoiceExerciseViewController: BaseViewController, ChoiceExerciseViewProtoc
         }
     }
 }
+extension ChoiceExerciseViewController : ChoiceExerciseViewProtocol {
+    func reloadView() {
+        tbvChoiceExercise.reloadData()
+    }
+}
+
 extension ChoiceExerciseViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        let row = self.presenter?.exerciseChoiceEntity?.exercises?.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
+        return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellChoiceExercise.self, for: indexPath)
+        cell.level = self.level
+        if let dataCell = self.presenter?.exerciseChoiceEntity?.exercises?[indexPath.row] {
+            cell.name = dataCell.name ?? ""
+        }
         return cell
     }
 }

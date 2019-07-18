@@ -17,18 +17,22 @@ protocol ChoiceExerciseWireframeProtocol: class {
 //MARK: Presenter -
 protocol ChoiceExercisePresenterProtocol: class {
 
+    var exerciseChoiceEntity : ExerciseChoiceEntity? {get set}
     var interactor: ChoiceExerciseInteractorInputProtocol? { get set }
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int,level: Int)
 }
 
 //MARK: Interactor -
 protocol ChoiceExerciseInteractorOutputProtocol: class {
 
+    func getViewChoiceExerciseSuccessed(respone: ExerciseChoiceEntity)
     /* Interactor -> Presenter */
 }
 
 protocol ChoiceExerciseInteractorInputProtocol: class {
 
     var presenter: ChoiceExerciseInteractorOutputProtocol?  { get set }
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int,level: Int)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +41,7 @@ protocol ChoiceExerciseInteractorInputProtocol: class {
 protocol ChoiceExerciseViewProtocol: class {
 
     var presenter: ChoiceExercisePresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }

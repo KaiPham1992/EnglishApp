@@ -19,6 +19,7 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
     var levelExerciseEntity: LevelExerciseEntity?
     var isLoadMore = true
     var isLoadMoreLevel = true
+    var catelogy: CatelogyEntity?
 
     init(interface: LevelExerciseViewProtocol, interactor: LevelExerciseInteractorInputProtocol?, router: LevelExerciseWireframeProtocol) {
         self.view = interface
@@ -26,10 +27,16 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
         self.router = router
     }
     
-    func gotoExercise() {
-        self.router.gotoExercise()
+    func getListCatelogy() {
+        self.interactor?.getListCatelogy()
     }
+
     
+    func getListCatelogySuccessed(respone: CatelogyEntity) {
+        self.catelogy = respone
+        self.view?.reloadView()
+    }
+
     func getNumberRow() -> Int? {
         return exerciseEntity?.total_exercises
     }
@@ -38,12 +45,10 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
         return exerciseEntity?.exercises?[indexPath.row]
     }
     
-    func gotoTryHard() {
-        self.router.gotoTryHard()
+    func gotoChoiceExercise(type: AssignLevelTryHard, id: String) {
+        self.router.gotoChoiceExercise(type: type, id: id)
     }
-    func gotoChoiceExercise() {
-        self.router.gotoChoiceExercise()
-    }
+    
     func getListExercise(category_id: Int,offset: Int) {
         if isLoadMore {
             self.interactor?.getListExercise(category_id: category_id,offset: offset)

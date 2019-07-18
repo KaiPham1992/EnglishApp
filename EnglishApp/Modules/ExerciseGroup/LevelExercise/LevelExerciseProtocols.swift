@@ -12,23 +12,23 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LevelExerciseWireframeProtocol: class {
-    func gotoExercise()
-    func gotoTryHard()
-    func gotoChoiceExercise()
+    func gotoChoiceExercise(type: AssignLevelTryHard,id: String)
 }
 //MARK: Presenter -
 protocol LevelExercisePresenterProtocol: class {
 
     var interactor: LevelExerciseInteractorInputProtocol? { get set }
-    func gotoExercise()
-    func gotoTryHard()
-    func gotoChoiceExercise()
+    var catelogy: CatelogyEntity? {get set}
+    var levelExerciseEntity: LevelExerciseEntity?{get set}
     func getListExercise(category_id: Int,offset: Int)
     func getItemExercise(indexPath: IndexPath) -> ExerciseEntity?
     func getNumberRow() -> Int?
     func getNumberRowLevel() -> Int?
     func getItemLevelExercise(indexPath: IndexPath) -> SearchEntity?
     func getLevelExercise(type_test: Int,offset: Int)
+    func getListCatelogy()
+    
+    func gotoChoiceExercise(type: AssignLevelTryHard,id: String)
 }
 
 //MARK: Interactor -
@@ -37,13 +37,15 @@ protocol LevelExerciseInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func getListExerciseSuccessed(respone: ListExerciseEntity)
     func getListLevelExerciseSuccessed(respone: LevelExerciseEntity)
+    func getListCatelogySuccessed(respone: CatelogyEntity)
 }
 
 protocol LevelExerciseInteractorInputProtocol: class {
 
     var presenter: LevelExerciseInteractorOutputProtocol?  { get set }
     func getListExercise(category_id: Int,offset: Int)
-    func getLevelExercise(type_test: Int,offset: Int) 
+    func getLevelExercise(type_test: Int,offset: Int)
+    func getListCatelogy()
 
     /* Presenter -> Interactor */
 }

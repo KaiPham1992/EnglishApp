@@ -27,6 +27,18 @@ class LevelExerciseInteractor: LevelExerciseInteractorInputProtocol {
         }
     }
     
+    func getListCatelogy() {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.getListExerciseCatelogy(success: { (respone) in
+            ProgressView.shared.hide()
+            if let _respone = respone {
+                self.presenter?.getListCatelogySuccessed(respone: _respone)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
+    
     func getLevelExercise(type_test: Int,offset: Int) {
         ProgressView.shared.show()
         Provider.shared.exerciseAPIService.getLevelExercise(type_test: type_test, offset: offset, success: { (respone) in

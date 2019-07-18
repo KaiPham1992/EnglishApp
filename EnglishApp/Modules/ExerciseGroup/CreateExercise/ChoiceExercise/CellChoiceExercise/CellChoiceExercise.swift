@@ -10,15 +10,35 @@ import UIKit
 
 class CellChoiceExercise: UITableViewCell {
 
+    @IBOutlet weak var lblLevelExercise: UILabel!
+    @IBOutlet weak var lblNameExercise: UILabel!
+    var level = 1 {
+        didSet{
+            setLevel()
+        }
+    }
+    
+    var name = "" {
+        didSet{
+            lblNameExercise.text = name
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    private func setLevel(){
+        if level == 1 {
+            lblLevelExercise.text = "Elementary"
+        }
+        if level == 2{
+            lblLevelExercise.text = "Intermediate"
+        }
+        if level == 3 {
+            lblLevelExercise.text = "Advanced"
+        }
     }
     
 }

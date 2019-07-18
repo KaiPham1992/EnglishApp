@@ -28,7 +28,7 @@ class LevelExerciseRouter: LevelExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(type: AssignLevel = .level) -> UIViewController {
+    static func createModule(type: AssignLevelTryHard = .level) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = LevelExerciseViewController.initFromNib()
         view.type = type
@@ -42,18 +42,23 @@ class LevelExerciseRouter: LevelExerciseWireframeProtocol {
         
         return view
     }
-    func gotoExercise(){
-        let vc = NameExerciseRouter.createModule()
-        self.viewController?.push(controller: vc, animated: true)
-    }
     
-    func gotoTryHard(){
-        let vc = LevelExerciseRouter.createModule(type: .tryhard)
+    func gotoChoiceExercise(type: AssignLevelTryHard, id: String) {
+        let vc = ChoiceExerciseRouter.createModule(type: type, id: id)
         self.viewController?.push(controller: vc,animated: true)
     }
-    
-    func gotoChoiceExercise(){
-        let vc = ChoiceExerciseRouter.createModule(type: .choice)
-        self.viewController?.push(controller: vc,animated: true)
-    }
+//    func gotoExercise(){
+//        let vc = NameExerciseRouter.createModule()
+//        self.viewController?.push(controller: vc, animated: true)
+//    }
+//
+//    func gotoTryHard(){
+//        let vc = LevelExerciseRouter.createModule(type: .tryhard)
+//        self.viewController?.push(controller: vc,animated: true)
+//    }
+//
+//    func gotoChoiceExercise(){
+//        let vc = ChoiceExerciseRouter.createModule(type: .choice)
+//        self.viewController?.push(controller: vc,animated: true)
+//    }
 }
