@@ -112,7 +112,9 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
 }
 extension ChoiceExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let id = self.presenter?.exerciseChoiceEntity?.exercises?[indexPath.row]._id {
+            self.presenter?.gotoExercise(id: id)
+        }
     }
     
     

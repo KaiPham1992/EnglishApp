@@ -43,4 +43,9 @@ class ChoiceExerciseRouter: ChoiceExerciseWireframeProtocol {
         
         return view
     }
+    
+    func gotoExercise(id: String) {
+        let vc = NameExerciseRouter.createModule(id: id)
+        self.viewController?.push(controller: vc)
+    }
 }

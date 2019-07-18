@@ -31,6 +31,7 @@ protocol NameExercisePresenterProtocol: class {
     func getTotalTime() -> Int?
     func submitExercise(param: SubmitExerciseParam)
     func getAllTime() -> Int?
+    func getDailyMisson()
 }
 
 //MARK: Interactor -
@@ -39,6 +40,7 @@ protocol NameExerciseInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func getExerciseSuccessed(respone: ViewExerciseEntity)
     func gotoResult(result: TestResultProfileEntity)
+    func getExerciseFailed(error:APIError)
 }
 
 protocol NameExerciseInteractorInputProtocol: class {
@@ -47,6 +49,7 @@ protocol NameExerciseInteractorInputProtocol: class {
     func getViewExercise(id: String)
     func getViewEntranceTest()
     func submitExercise(param: SubmitExerciseParam)
+    func getDailyMisson()
 
     /* Presenter -> Interactor */
 }
@@ -58,4 +61,5 @@ protocol NameExerciseViewProtocol: class {
 
     /* Presenter -> ViewController */
     func reloadView()
+    func getExerciseFailed(error:APIError)
 }

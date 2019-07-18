@@ -23,6 +23,10 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
         self.router = router
     }
     
+    func gotoExercise(id: String) {
+        self.router.gotoExercise(id: id)
+    }
+    
     func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int) {
         self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level)
     }

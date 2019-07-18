@@ -23,6 +23,9 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.router = router
     }
 
+    func getDailyMisson() {
+        self.interactor?.getDailyMisson()
+    }
     
     func gotoDetailVocabulary() {
         self.router.gotoDetailVocabulary()
@@ -85,5 +88,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.view?.reloadView()
     }
     
-
+    func getExerciseFailed(error: APIError) {
+        self.view?.getExerciseFailed(error: error)
+    }
 }

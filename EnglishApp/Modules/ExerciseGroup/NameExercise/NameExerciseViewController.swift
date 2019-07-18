@@ -53,6 +53,7 @@ class NameExerciseViewController: BaseViewController {
     
     var numberQuestion : Int = 0
     var currentTime : Int = 0
+    var isTaskDate = false
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
@@ -100,7 +101,10 @@ class NameExerciseViewController: BaseViewController {
         vCountTime.delegate = self
         if idExercise != "" {
             self.presenter?.getViewExercise(id: self.idExercise)
-        } else {
+        } else if isTaskDate {
+            self.presenter?.getDailyMisson()
+        }
+        else {
             self.presenter?.getViewEntranceTest()
         }
     }
@@ -110,7 +114,10 @@ class NameExerciseViewController: BaseViewController {
         self.tabBarController?.tabBar.isHidden = true
         if idExercise != "" {
             setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
-        } else {
+        } else if isTaskDate {
+            setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
+        }
+        else {
             setTitleNavigation(title: LocalizableKey.do_entrance.showLanguage)
         }
         
@@ -166,6 +173,12 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
 //        vCountTime.setupTime(min: self.arrTime[0])
         vCountTime.setupTimeStartNow(min: self.currentTime)
         clvQuestion.reloadData()
+    }
+    
+    func getExerciseFailed(error: APIError) {
+        PopUpHelper.shared.showError(message: error.message&) {
+            
+        }
     }
 }
 extension NameExerciseViewController : UICollectionViewDelegate{

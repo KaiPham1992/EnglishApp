@@ -1805,24 +1805,6 @@
 		DEBD673F228D4905004B74C8 /* CreateGroupContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */; };
 		DEBD6740228D4905004B74C8 /* CreateGroupContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */; };
 		DEBD6741228D4905004B74C8 /* CreateGroupContent.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */; };
-		DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */; };
-		DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */; };
-		DEBD674B228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */; };
-		DEBD674C228D6850004B74C8 /* DailyMissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */; };
-		DEBD674D228D6850004B74C8 /* DailyMissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */; };
-		DEBD674E228D6850004B74C8 /* DailyMissionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */; };
-		DEBD674F228D6850004B74C8 /* DailyMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */; };
-		DEBD6750228D6850004B74C8 /* DailyMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */; };
-		DEBD6751228D6850004B74C8 /* DailyMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */; };
-		DEBD6752228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */; };
-		DEBD6753228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */; };
-		DEBD6754228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */; };
-		DEBD6755228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */; };
-		DEBD6756228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */; };
-		DEBD6757228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */; };
-		DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
-		DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
-		DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */; };
 		DEC62A9D2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */; };
 		DEC62A9E2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */; };
 		DEC62A9F2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */; };
@@ -2629,12 +2611,6 @@
 		DEBD6736228D48DA004B74C8 /* CreateGroupPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupPopUp.swift; sourceTree = "<group>"; };
 		DEBD673A228D48EB004B74C8 /* CreateGroupContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupContent.swift; sourceTree = "<group>"; };
 		DEBD673E228D4905004B74C8 /* CreateGroupContent.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreateGroupContent.xib; sourceTree = "<group>"; };
-		DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionPresenter.swift; sourceTree = "<group>"; };
-		DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionRouter.swift; sourceTree = "<group>"; };
-		DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionViewController.swift; sourceTree = "<group>"; };
-		DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionProtocols.swift; sourceTree = "<group>"; };
-		DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissionInteractor.swift; sourceTree = "<group>"; };
-		DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyMissionViewController.xib; sourceTree = "<group>"; };
 		DEC62A9C2292FA0D00D7CECE /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
 		DEC62AA02292FA2800D7CECE /* HomeNavigationView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNavigationView.xib; sourceTree = "<group>"; };
 		DEC62AA52293006100D7CECE /* ThanksReportPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksReportPopUp.swift; sourceTree = "<group>"; };
@@ -3507,8 +3483,9 @@
 				2A5E25F822E0D018009D6203 /* LevelExercise */,
 				2A01B6B422E0C50C0004977E /* CatelogyExercise */,
 				769A3BAE229FE55B00CA55BD /* History */,
-				76CE322322968C5E00E998FB /* NameExercise */,
+				76CE31992295AE1E00E998FB /* ChoiceExercise */,
 				76F7F449229466C0001E9984 /* CreateExercise */,
+				76CE322322968C5E00E998FB /* NameExercise */,
 				76F7F431229421BD001E9984 /* ExercisePresenter.swift */,
 				76F7F432229421BD001E9984 /* ExerciseRouter.swift */,
 				76F7F433229421BD001E9984 /* ExerciseViewController.swift */,
@@ -3522,7 +3499,6 @@
 		76F7F449229466C0001E9984 /* CreateExercise */ = {
 			isa = PBXGroup;
 			children = (
-				76CE31992295AE1E00E998FB /* ChoiceExercise */,
 				76F7F46222946911001E9984 /* CellCreateExercise */,
 				76F7F44A229466DD001E9984 /* CreateExercisePresenter.swift */,
 				76F7F44B229466DD001E9984 /* CreateExerciseRouter.swift */,
@@ -3615,7 +3591,6 @@
 				DEB5846A2291ABBF00FE0356 /* HistoryBee */,
 				DEDDEF6322914A790043A62D /* MainTabbar */,
 				766D12F5228EE8C6005E47F0 /* TheoryGroup */,
-				DEBD6742228D6840004B74C8 /* DailyMission */,
 				DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */,
 				DE3A8C922289B9210080A8CB /* QADetail */,
 				DEB9611E22898F080046801B /* QA */,
@@ -4630,19 +4605,6 @@
 			path = CreateGroupPopUp;
 			sourceTree = "<group>";
 		};
-		DEBD6742228D6840004B74C8 /* DailyMission */ = {
-			isa = PBXGroup;
-			children = (
-				DEBD6743228D6850004B74C8 /* DailyMissionPresenter.swift */,
-				DEBD6744228D6850004B74C8 /* DailyMissionRouter.swift */,
-				DEBD6745228D6850004B74C8 /* DailyMissionViewController.swift */,
-				DEBD6746228D6850004B74C8 /* DailyMissionProtocols.swift */,
-				DEBD6747228D6850004B74C8 /* DailyMissionInteractor.swift */,
-				DEBD6748228D6850004B74C8 /* DailyMissionViewController.xib */,
-			);
-			path = DailyMission;
-			sourceTree = "<group>";
-		};
 		DEC62A9B2292F9E600D7CECE /* HomeNavigationView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4991,7 +4953,6 @@
 				2A5E262722E0D119009D6203 /* AssignExerciseViewController.xib in Resources */,
 				DE7D14BD228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBCBC6422945B4400DF7F74 /* StudyPackView.xib in Resources */,
-				DEBD6758228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				DEC7F92222C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
@@ -5140,7 +5101,6 @@
 				2A5E262822E0D119009D6203 /* AssignExerciseViewController.xib in Resources */,
 				DE7D14BE228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBCBC6522945B4400DF7F74 /* StudyPackView.xib in Resources */,
-				DEBD6759228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				DEC7F92322C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
@@ -5289,7 +5249,6 @@
 				2A5E262922E0D119009D6203 /* AssignExerciseViewController.xib in Resources */,
 				DE7D14BF228EA2B500713084 /* TitleNavigationBar.xib in Resources */,
 				DEBCBC6622945B4400DF7F74 /* StudyPackView.xib in Resources */,
-				DEBD675A228D6850004B74C8 /* DailyMissionViewController.xib in Resources */,
 				DEC7F92422C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
@@ -5654,7 +5613,6 @@
 				2A5E261B22E0D119009D6203 /* AssignExerciseRouter.swift in Sources */,
 				DE952F902287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
-				DEBD6749228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76EC6FF422CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
@@ -5902,7 +5860,6 @@
 				7680749522C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				7643DE9722A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */,
-				DEBD674F228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				DE89D20222A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
 				76DB9390228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */,
@@ -5933,7 +5890,6 @@
 				DEECF8772287075B00A4678B /* UITable+extension.swift in Sources */,
 				DE3A8CB92289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE361DE32283E54C00FA3B0D /* BaseViewController.swift in Sources */,
-				DEBD6755228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */,
 				76E2FF40228DD1070014B1F4 /* AddNoteProtocols.swift in Sources */,
 				DE95315E22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
 				76E2FEF3228DBB610014B1F4 /* CellGrammar.swift in Sources */,
@@ -5959,7 +5915,6 @@
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
 				DED5A02A22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */,
 				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
-				DEBD674C228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DE49F80E22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				76EC6FF122CE3C5A00E7538C /* HomeAPIService.swift in Sources */,
@@ -6071,7 +6026,6 @@
 				DEC62AC322930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB62289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				76F7F43A229421BD001E9984 /* ExerciseRouter.swift in Sources */,
-				DEBD6752228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				769A3BC1229FE66F00CA55BD /* HistoryExerciseInteractor.swift in Sources */,
 				DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE361F3D2283E85000FA3B0D /* NetworkRequest.swift in Sources */,
@@ -6194,7 +6148,6 @@
 				2A5E261C22E0D119009D6203 /* AssignExerciseRouter.swift in Sources */,
 				DE952FBB2287DF4800E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
-				DEBD674A228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76EC6FF522CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
@@ -6442,7 +6395,6 @@
 				7680749622C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				7643DE9822A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */,
-				DEBD6750228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				DE89D20322A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
 				76DB9391228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE952FF62287DF4800E3F688 /* LoginViewController.swift in Sources */,
@@ -6473,7 +6425,6 @@
 				DE952FFF2287DF4800E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBA2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530002287DF4800E3F688 /* BaseViewController.swift in Sources */,
-				DEBD6756228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */,
 				76E2FF41228DD1070014B1F4 /* AddNoteProtocols.swift in Sources */,
 				DE95315F22883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
 				76E2FEF4228DBB610014B1F4 /* CellGrammar.swift in Sources */,
@@ -6499,7 +6450,6 @@
 				DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */,
 				DED5A02B22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */,
 				DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */,
-				DEBD674D228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DE49F80F22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				76EC6FF222CE3C5A00E7538C /* HomeAPIService.swift in Sources */,
@@ -6611,7 +6561,6 @@
 				DEC62AC422930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB72289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				76F7F43B229421BD001E9984 /* ExerciseRouter.swift in Sources */,
-				DEBD6753228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				769A3BC2229FE66F00CA55BD /* HistoryExerciseInteractor.swift in Sources */,
 				DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530282287DF4800E3F688 /* NetworkRequest.swift in Sources */,
@@ -6735,7 +6684,6 @@
 				DE7D14BB228EA28A00713084 /* TitleNavigationBar.swift in Sources */,
 				DE9530692287DF6400E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DE95306A2287DF6400E3F688 /* ForgotPasswordInteractor.swift in Sources */,
-				DEBD674B228D6850004B74C8 /* DailyMissionPresenter.swift in Sources */,
 				2A5E262622E0D119009D6203 /* AssignExerciseInteractor.swift in Sources */,
 				DEF1C24A229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320D2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
@@ -6979,7 +6927,6 @@
 				7680749722C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				7643DE9922A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C7122906822003C4B4B /* CommentRouter.swift in Sources */,
-				DEBD6751228D6850004B74C8 /* DailyMissionViewController.swift in Sources */,
 				DE89D20422A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
 				76DB9392228C56640081A36E /* DictionaryInteractor.swift in Sources */,
 				DE9530A42287DF6400E3F688 /* LoginViewController.swift in Sources */,
@@ -7011,7 +6958,6 @@
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
 				DE3A8CBB2289BBF30080A8CB /* CompetitionViewController.swift in Sources */,
 				DE9530AE2287DF6400E3F688 /* BaseViewController.swift in Sources */,
-				DEBD6757228D6850004B74C8 /* DailyMissionInteractor.swift in Sources */,
 				76E2FF42228DD1070014B1F4 /* AddNoteProtocols.swift in Sources */,
 				DE95316022883FB100E3F688 /* PreviewProfileProtocols.swift in Sources */,
 				76E2FEF5228DBB610014B1F4 /* CellGrammar.swift in Sources */,
@@ -7036,7 +6982,6 @@
 				DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */,
 				DED5A02C22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */,
 				DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */,
-				DEBD674E228D6850004B74C8 /* DailyMissionRouter.swift in Sources */,
 				DE49F81022A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
 				DEB5847C2291ABD700FE0356 /* HistoryBeeProtocols.swift in Sources */,
@@ -7145,7 +7090,6 @@
 				DEC62AC522930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
 				DE3A8CB82289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				76F7F43C229421BD001E9984 /* ExerciseRouter.swift in Sources */,
-				DEBD6754228D6850004B74C8 /* DailyMissionProtocols.swift in Sources */,
 				769A3BC3229FE66F00CA55BD /* HistoryExerciseInteractor.swift in Sources */,
 				DE9530D52287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530D62287DF6400E3F688 /* NetworkRequest.swift in Sources */,
