@@ -253,7 +253,7 @@ extension HomeViewController: HomeActionCellDelegate {
     }
     
     func btnMissionTapped() {
-        self.push(controller: NameExerciseRouter.createModule(isTaskDate: true))
+        self.push(controller: DailyMissonRouter.createModule())
     }
     
     func btnFindWorkTapped() {

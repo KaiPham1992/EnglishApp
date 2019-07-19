@@ -84,6 +84,24 @@
 		2AAE220222D3B2DF00AE7481 /* CellResultChoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */; };
 		2AAE220322D3B2DF00AE7481 /* CellResultChoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */; };
 		2AAE220422D3B2DF00AE7481 /* CellResultChoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */; };
+		2AB4A04822E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04222E1E87C00557B5F /* DailyMissonPresenter.swift */; };
+		2AB4A04922E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04222E1E87C00557B5F /* DailyMissonPresenter.swift */; };
+		2AB4A04A22E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04222E1E87C00557B5F /* DailyMissonPresenter.swift */; };
+		2AB4A04B22E1E87C00557B5F /* DailyMissonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04322E1E87C00557B5F /* DailyMissonRouter.swift */; };
+		2AB4A04C22E1E87C00557B5F /* DailyMissonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04322E1E87C00557B5F /* DailyMissonRouter.swift */; };
+		2AB4A04D22E1E87C00557B5F /* DailyMissonRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04322E1E87C00557B5F /* DailyMissonRouter.swift */; };
+		2AB4A04E22E1E87C00557B5F /* DailyMissonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04422E1E87C00557B5F /* DailyMissonViewController.swift */; };
+		2AB4A04F22E1E87C00557B5F /* DailyMissonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04422E1E87C00557B5F /* DailyMissonViewController.swift */; };
+		2AB4A05022E1E87C00557B5F /* DailyMissonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04422E1E87C00557B5F /* DailyMissonViewController.swift */; };
+		2AB4A05122E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04522E1E87C00557B5F /* DailyMissonProtocols.swift */; };
+		2AB4A05222E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04522E1E87C00557B5F /* DailyMissonProtocols.swift */; };
+		2AB4A05322E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04522E1E87C00557B5F /* DailyMissonProtocols.swift */; };
+		2AB4A05422E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04622E1E87C00557B5F /* DailyMissonInteractor.swift */; };
+		2AB4A05522E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04622E1E87C00557B5F /* DailyMissonInteractor.swift */; };
+		2AB4A05622E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB4A04622E1E87C00557B5F /* DailyMissonInteractor.swift */; };
+		2AB4A05722E1E87C00557B5F /* DailyMissonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4A04722E1E87C00557B5F /* DailyMissonViewController.xib */; };
+		2AB4A05822E1E87C00557B5F /* DailyMissonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4A04722E1E87C00557B5F /* DailyMissonViewController.xib */; };
+		2AB4A05922E1E87C00557B5F /* DailyMissonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4A04722E1E87C00557B5F /* DailyMissonViewController.xib */; };
 		2AC7A21622D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */; };
 		2AC7A21722D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */; };
 		2AC7A21822D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */; };
@@ -2038,6 +2056,12 @@
 		2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResultProfileEntity.swift; sourceTree = "<group>"; };
 		2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultChoice.swift; sourceTree = "<group>"; };
 		2AAE21FE22D3B2DF00AE7481 /* CellResultChoice.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellResultChoice.xib; sourceTree = "<group>"; };
+		2AB4A04222E1E87C00557B5F /* DailyMissonPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissonPresenter.swift; sourceTree = "<group>"; };
+		2AB4A04322E1E87C00557B5F /* DailyMissonRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissonRouter.swift; sourceTree = "<group>"; };
+		2AB4A04422E1E87C00557B5F /* DailyMissonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissonViewController.swift; sourceTree = "<group>"; };
+		2AB4A04522E1E87C00557B5F /* DailyMissonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissonProtocols.swift; sourceTree = "<group>"; };
+		2AB4A04622E1E87C00557B5F /* DailyMissonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyMissonInteractor.swift; sourceTree = "<group>"; };
+		2AB4A04722E1E87C00557B5F /* DailyMissonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyMissonViewController.xib; sourceTree = "<group>"; };
 		2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultsProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultTeamEntity.swift; sourceTree = "<group>"; };
@@ -2782,6 +2806,19 @@
 				2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */,
 			);
 			path = Competition;
+			sourceTree = "<group>";
+		};
+		2AB4A04122E1E86900557B5F /* DailyMisson */ = {
+			isa = PBXGroup;
+			children = (
+				2AB4A04222E1E87C00557B5F /* DailyMissonPresenter.swift */,
+				2AB4A04322E1E87C00557B5F /* DailyMissonRouter.swift */,
+				2AB4A04422E1E87C00557B5F /* DailyMissonViewController.swift */,
+				2AB4A04522E1E87C00557B5F /* DailyMissonProtocols.swift */,
+				2AB4A04622E1E87C00557B5F /* DailyMissonInteractor.swift */,
+				2AB4A04722E1E87C00557B5F /* DailyMissonViewController.xib */,
+			);
+			path = DailyMisson;
 			sourceTree = "<group>";
 		};
 		2DF10F38001118A94DAFC38F /* Frameworks */ = {
@@ -3579,6 +3616,7 @@
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2AB4A04122E1E86900557B5F /* DailyMisson */,
 				DE6FDB0A22AB868600960422 /* Find */,
 				7643DE9A22A4D32100B7C323 /* DictionaryGroup */,
 				DE89D21722A42521000638B0 /* BXH */,
@@ -5059,6 +5097,7 @@
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DED5A03022A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
+				2AB4A05722E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2022AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9322A4C09A00B7C323 /* ViewMessage.xib in Resources */,
@@ -5207,6 +5246,7 @@
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DED5A03122A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
+				2AB4A05822E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2122AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9422A4C09A00B7C323 /* ViewMessage.xib in Resources */,
@@ -5355,6 +5395,7 @@
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DED5A03222A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
+				2AB4A05922E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2222AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9522A4C09A00B7C323 /* ViewMessage.xib in Resources */,
@@ -5603,6 +5644,7 @@
 				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEA932AE22BFE0600050FB1D /* ProductEndPoint.swift in Sources */,
 				DEBD672F228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
+				2AB4A04822E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */,
 				DE361F422283E85000FA3B0D /* SendCommentParam.swift in Sources */,
 				DE2ADE6C22841B9E003768CE /* HomeProtocols.swift in Sources */,
 				76CE31FB22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */,
@@ -5613,6 +5655,7 @@
 				2A5E261B22E0D119009D6203 /* AssignExerciseRouter.swift in Sources */,
 				DE952F902287D2A700E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
+				2AB4A05422E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */,
 				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76EC6FF422CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
@@ -5842,6 +5885,7 @@
 				766D1302228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEDE228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE49F82F22A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */,
+				2AB4A04E22E1E87C00557B5F /* DailyMissonViewController.swift in Sources */,
 				DE953118228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE361F552283E8E200FA3B0D /* ParentNotificationEntity.swift in Sources */,
 				DE953129228808ED00E3F688 /* ProfileViewController.swift in Sources */,
@@ -5857,6 +5901,7 @@
 				766D1388228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE04709C22BA671400438206 /* NationalEntity.swift in Sources */,
+				2AB4A05122E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749522C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				7643DE9722A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */,
@@ -5961,6 +6006,7 @@
 				76CE31EF22963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
 				76F7F459229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
+				2AB4A04B22E1E87C00557B5F /* DailyMissonRouter.swift in Sources */,
 				7629BDE322ACF0B60051B835 /* TextFieldBee.swift in Sources */,
 				76CF0C81229068AB003C4B4B /* CellComment.swift in Sources */,
 				DED5A00C22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
@@ -6138,6 +6184,7 @@
 				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEA932AF22BFE0600050FB1D /* ProductEndPoint.swift in Sources */,
 				DEBD6730228D47E0004B74C8 /* ExplainCompetitionInteractor.swift in Sources */,
+				2AB4A04922E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */,
 				DE952FB92287DF4800E3F688 /* SendCommentParam.swift in Sources */,
 				DE952FBA2287DF4800E3F688 /* HomeProtocols.swift in Sources */,
 				76CE31FC22963EDE00E998FB /* ResultGroupInteractor.swift in Sources */,
@@ -6148,6 +6195,7 @@
 				2A5E261C22E0D119009D6203 /* AssignExerciseRouter.swift in Sources */,
 				DE952FBB2287DF4800E3F688 /* KActivityIndicatorAnimationLineScale.swift in Sources */,
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
+				2AB4A05522E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */,
 				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76EC6FF522CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
@@ -6377,6 +6425,7 @@
 				766D1303228EE8DA005E47F0 /* TheoryViewController.swift in Sources */,
 				76E2FEDF228DBAF10014B1F4 /* GrammarPresenter.swift in Sources */,
 				DE49F83022A3E0CE00A92C63 /* RewardPopUpContent.swift in Sources */,
+				2AB4A04F22E1E87C00557B5F /* DailyMissonViewController.swift in Sources */,
 				DE953119228807AA00E3F688 /* AppRouter.swift in Sources */,
 				DE952FEF2287DF4800E3F688 /* ParentNotificationEntity.swift in Sources */,
 				DE95312A228808ED00E3F688 /* ProfileViewController.swift in Sources */,
@@ -6392,6 +6441,7 @@
 				766D1389228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE04709D22BA671400438206 /* NationalEntity.swift in Sources */,
+				2AB4A05222E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749622C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				7643DE9822A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */,
@@ -6496,6 +6546,7 @@
 				76CE31F022963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45A229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
+				2AB4A04C22E1E87C00557B5F /* DailyMissonRouter.swift in Sources */,
 				7629BDE422ACF0B60051B835 /* TextFieldBee.swift in Sources */,
 				76CF0C82229068AB003C4B4B /* CellComment.swift in Sources */,
 				DED5A00D22A579CC00872261 /* BXHTop3Cell.swift in Sources */,
@@ -6745,6 +6796,7 @@
 				DE49F80422A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */,
 				DE49F7FB22A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */,
 				2AAE21FC22D3AA7400AE7481 /* AnswerResultProfileEntity.swift in Sources */,
+				2AB4A05322E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				DE9530772287DF6400E3F688 /* AppImage.swift in Sources */,
 				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
@@ -6764,6 +6816,7 @@
 				2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */,
 				DEC62ABF22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF54228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
+				2AB4A04D22E1E87C00557B5F /* DailyMissonRouter.swift in Sources */,
 				DE95307A2287DF6400E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE95307B2287DF6400E3F688 /* UpdateProfileSocial.swift in Sources */,
 				DE95307C2287DF6400E3F688 /* SideMenuViewController.swift in Sources */,
@@ -6900,6 +6953,7 @@
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				76E8530422B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */,
 				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
+				2AB4A05622E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */,
 				DED5A01622A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191822A269560054861D /* DetailPackProtocols.swift in Sources */,
 				DEB5848A2291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
@@ -6953,6 +7007,7 @@
 				766D136E228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
 				DE95316C2288418F00E3F688 /* HistoryCell.swift in Sources */,
 				76CE31F722963EDE00E998FB /* ResultGroupViewController.swift in Sources */,
+				2AB4A04A22E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */,
 				76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				76BD142B22ACB8B500A48635 /* ExplainSolutionViewController.swift in Sources */,
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
@@ -7067,6 +7122,7 @@
 				DEB9613322898F1F0046801B /* QAInteractor.swift in Sources */,
 				DEB584932291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA42289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
+				2AB4A05022E1E87C00557B5F /* DailyMissonViewController.swift in Sources */,
 				DE9530CE2287DF6400E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				76CE31C822961FC300E998FB /* ResultRouter.swift in Sources */,
 				DEC62AAC2293007200D7CECE /* ThanksReportContent.swift in Sources */,
