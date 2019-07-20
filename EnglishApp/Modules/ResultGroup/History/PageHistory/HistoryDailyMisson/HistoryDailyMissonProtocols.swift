@@ -18,8 +18,8 @@ protocol HistoryDailyMissonWireframeProtocol: class {
 protocol HistoryDailyMissonPresenterProtocol: class {
 
     var interactor: HistoryDailyMissonInteractorInputProtocol? { get set }
-    var listLesson: [LessonCatelogy]? {get set}
-    func getTaskEveryDate(date: String,offset: Int)
+    var listResultDailyMisson: [LessonCatelogy]? {get set}
+    func getHistoryExercise(type: Int,date: String,offset: Int)
 }
 
 //MARK: Interactor -
@@ -33,7 +33,7 @@ protocol HistoryDailyMissonInteractorInputProtocol: class {
 
     var presenter: HistoryDailyMissonInteractorOutputProtocol?  { get set }
     
-    func getTaskEveryDate(date: String,offset: Int)
+    func getHistoryExercise(type: Int,date: String,offset: Int)
 
     /* Presenter -> Interactor */
 }

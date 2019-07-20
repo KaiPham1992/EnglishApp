@@ -14,6 +14,7 @@ enum TypeResult: String {
     case result
     case resultCompetion
     case resultExercise
+    case history
 }
 
 class ResultRouter: ResultWireframeProtocol {

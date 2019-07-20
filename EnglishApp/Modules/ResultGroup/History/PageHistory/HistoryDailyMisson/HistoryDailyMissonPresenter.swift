@@ -16,7 +16,7 @@ class HistoryDailyMissonPresenter: HistoryDailyMissonPresenterProtocol, HistoryD
     var interactor: HistoryDailyMissonInteractorInputProtocol?
     private let router: HistoryDailyMissonWireframeProtocol
     
-    var listLesson: [LessonCatelogy]?
+    var listResultDailyMisson: [LessonCatelogy]?
     var isLoadmore: Bool = true
 
     init(interface: HistoryDailyMissonViewProtocol, interactor: HistoryDailyMissonInteractorInputProtocol?, router: HistoryDailyMissonWireframeProtocol) {
@@ -26,9 +26,9 @@ class HistoryDailyMissonPresenter: HistoryDailyMissonPresenterProtocol, HistoryD
     }
     
     
-    func getTaskEveryDate(date: String,offset:Int) {
+    func getHistoryExercise(type: Int,date: String,offset:Int) {
         if isLoadmore {
-            self.interactor?.getTaskEveryDate(date: date, offset: offset)
+            self.interactor?.getHistoryExercise(type: type,date: date, offset: offset)
         }
     }
     
@@ -36,7 +36,7 @@ class HistoryDailyMissonPresenter: HistoryDailyMissonPresenterProtocol, HistoryD
         if listLesson.count < limit{
             isLoadmore = false
         }
-        self.listLesson = listLesson
+        self.listResultDailyMisson = listLesson
         self.view?.reloadView()
     }
 }

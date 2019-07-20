@@ -48,7 +48,7 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         let min = time/60
         let second = time % 60
         if second < 10 {
-            return "\(min): 0\(second) \(LocalizableKey.min.showLanguage)"
+            return "\(min):0\(second) \(LocalizableKey.min.showLanguage)"
         }
         return "\(min):\(second) \(LocalizableKey.min.showLanguage)"
     }

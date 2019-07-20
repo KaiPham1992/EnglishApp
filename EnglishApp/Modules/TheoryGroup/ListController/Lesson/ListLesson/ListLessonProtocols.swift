@@ -22,7 +22,6 @@ protocol ListLessonPresenterProtocol: class {
     func numberLesson() -> Int
     func getListLesson(lesson_category_id: String,offset: Int)
     func getLesson(indexPath: IndexPath) -> LessonCatelogy?
-    func getTaskEveryDate(date: String,offset: Int)
     func getIdTestResult(indexPath: IndexPath) -> String?
 }
 
@@ -38,7 +37,6 @@ protocol ListLessonInteractorInputProtocol: class {
 
     var presenter: ListLessonInteractorOutputProtocol?  { get set }
     func getListLesson(lesson_category_id: String,offset: Int)
-    func getTaskEveryDate(date: String,offset: Int)
 
     /* Presenter -> Interactor */
 }

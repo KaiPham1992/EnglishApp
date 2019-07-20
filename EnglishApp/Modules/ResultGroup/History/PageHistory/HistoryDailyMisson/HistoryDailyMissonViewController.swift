@@ -11,6 +11,10 @@
 import UIKit
 import XLPagerTabStrip
 
+enum TypeHistoryExercise : Int{
+    case history = 2
+}
+
 class HistoryDailyMissonViewController: BaseViewController {
 
 	var presenter: HistoryDailyMissonPresenterProtocol?
@@ -18,13 +22,14 @@ class HistoryDailyMissonViewController: BaseViewController {
     @IBOutlet weak var tbvLesson: UITableView!
     var date: String = ""
     var offset : Int = 0
+    var type : TypeHistoryExercise = .history
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tbvLesson.registerXibFile(CellGrammar.self)
         tbvLesson.dataSource = self
         tbvLesson.delegate = self
-        self.presenter?.getTaskEveryDate(date: date, offset: self.offset)
+        self.presenter?.getHistoryExercise(type: type.rawValue,date: date, offset: self.offset)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +50,7 @@ extension HistoryDailyMissonViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.listLesson?.count ?? 0
+        let row = self.presenter?.listResultDailyMisson?.count ?? 0
         if row == 0 {
             showNoData()
         } else {
@@ -56,7 +61,7 @@ extension HistoryDailyMissonViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        if let dataCell = self.presenter?.listLesson?[indexPath.row] {
+        if let dataCell = self.presenter?.listResultDailyMisson?[indexPath.row] {
             cell.setupTitle(title: dataCell.name&)
         }
         return cell
@@ -68,7 +73,7 @@ extension HistoryDailyMissonViewController: UITableViewDelegate{
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ResultRouter.createModule(type: .result, id: self.presenter?.listLesson?[indexPath.row].name ?? "")
+        let vc = ResultRouter.createModule(type: .history, id: self.presenter?.listResultDailyMisson?[indexPath.row]._id ?? "")
         self.push(controller: vc,animated: true)
     }
 }

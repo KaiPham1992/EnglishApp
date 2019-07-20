@@ -46,13 +46,6 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
         }
     }
     
-    func getTaskEveryDate(date: String,offset:Int) {
-        if isLoadmore {
-            self.interactor?.getTaskEveryDate(date: date, offset: offset)
-        }
-    }
-    
-    
     func getListLessonSuccessed(listLesson: [LessonCatelogy]) {
         if listLesson.count < limit{
             isLoadmore = false
