@@ -23,6 +23,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vLocation: AppTextField!
     @IBOutlet weak var imgAvatar: UIImageView!
+    @IBOutlet weak var imgRank: UIImageView!
     
     @IBOutlet weak var lbFullName: UILabel!
     @IBOutlet weak var lbLevel: UILabel!
@@ -66,6 +67,9 @@ class ProfileViewController: BaseViewController {
         vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
         
         imgAvatar.setBorder(borderWidth: 2, borderColor: AppColor.yellow, cornerRadius: 30)
+        imgRank.setBorder(borderWidth: 2, borderColor: .white, cornerRadius: 11
+        )
+        
         lbTitleBee.text = LocalizableKey.titleBee.showLanguage
         lbTitleDiamon.text = LocalizableKey.titleDiamon.showLanguage
         

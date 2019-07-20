@@ -16,7 +16,7 @@ class QADetailViewController: BaseViewController, QADetailViewProtocol {
     
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbTime: UILabel!
-    @IBOutlet weak var lbContent: UILabel!
+    @IBOutlet weak var lbContent: UITextView!
 
 	override func viewDidLoad() {
         super.viewDidLoad()

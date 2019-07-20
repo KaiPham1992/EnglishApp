@@ -46,6 +46,10 @@
 "pleaseEnterRePassword" = "Vui lòng nhập lại mật khẩu";
 "pleaseTurnOnInternet" = "Vui lòng mở internet";
 
+// Change Language
+"vietnamese" = "Tiếng Việt";
+"english" = "Tiếng Anh";
+
 // Profile
 "DisplayName" = "Tên hiển thị";
 "enterDisplayName" = "Nhập tên hiển thị";

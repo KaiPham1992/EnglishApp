@@ -18,6 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderUserView" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="imgAvatar" destination="XuH-Dp-7KT" id="8I2-ST-wih"/>
+                <outlet property="imgRank" destination="vbm-dA-P4v" id="ues-Xs-fob"/>
                 <outlet property="lbDiamond" destination="2OK-ka-M96" id="kHR-4L-Jyq"/>
                 <outlet property="lbFullName" destination="Lu1-aH-LJ4" id="S1Q-IZ-GLe"/>
                 <outlet property="lbHoney" destination="WAe-Ea-uBs" id="m6A-z3-Zfr"/>
@@ -173,16 +174,25 @@
                         <action selector="btnGoToProfile" destination="-1" eventType="touchUpInside" id="rK8-Et-OBU"/>
                     </connections>
                 </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gold" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-dA-P4v">
+                    <rect key="frame" x="25" y="95" width="16" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="How-Ge-hZV"/>
+                        <constraint firstAttribute="width" constant="16" id="NEH-1w-g9C"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="centerY" secondItem="XuH-Dp-7KT" secondAttribute="centerY" id="0Oy-aI-EpK"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="leading" secondItem="XuH-Dp-7KT" secondAttribute="trailing" constant="5" id="3Tp-Hu-LME"/>
+                <constraint firstItem="vbm-dA-P4v" firstAttribute="top" secondItem="XuH-Dp-7KT" secondAttribute="bottom" constant="-13.5" id="Dl7-nT-oII"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="G12-EU-7y2" secondAttribute="trailing" constant="5" id="Gw1-c8-sz9"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="height" secondItem="XuH-Dp-7KT" secondAttribute="height" id="Qur-yY-TL4"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y3d-Um-xm0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gjg-tt-nX6" secondAttribute="bottom" id="bob-Mc-X5I"/>
                 <constraint firstItem="gjg-tt-nX6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qFl-CE-Pdg"/>
+                <constraint firstItem="vbm-dA-P4v" firstAttribute="leading" secondItem="XuH-Dp-7KT" secondAttribute="trailing" constant="-17" id="qfU-wz-sFw"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tkB-Ah-Q2l"/>
                 <constraint firstItem="gjg-tt-nX6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yxm-1h-qSv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gjg-tt-nX6" secondAttribute="trailing" id="zxN-13-xf9"/>
