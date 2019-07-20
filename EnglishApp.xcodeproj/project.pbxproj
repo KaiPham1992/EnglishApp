@@ -808,6 +808,18 @@
 		76EE392B22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */; };
 		76EE392C22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */; };
 		76EE392D22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */; };
+		76EF924E22DF67710047DA1A /* StudyPackDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF924D22DF67710047DA1A /* StudyPackDetailPresenter.swift */; };
+		76EF924F22DF67710047DA1A /* StudyPackDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF924D22DF67710047DA1A /* StudyPackDetailPresenter.swift */; };
+		76EF925122DF67810047DA1A /* StudyPackDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925022DF67810047DA1A /* StudyPackDetailRouter.swift */; };
+		76EF925222DF67810047DA1A /* StudyPackDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925022DF67810047DA1A /* StudyPackDetailRouter.swift */; };
+		76EF925722DF67BB0047DA1A /* StudyPackDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925622DF67BB0047DA1A /* StudyPackDetailProtocols.swift */; };
+		76EF925822DF67BB0047DA1A /* StudyPackDetailProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925622DF67BB0047DA1A /* StudyPackDetailProtocols.swift */; };
+		76EF925A22DF67CC0047DA1A /* StudyPackDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925922DF67CC0047DA1A /* StudyPackDetailInteractor.swift */; };
+		76EF925B22DF67CC0047DA1A /* StudyPackDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925922DF67CC0047DA1A /* StudyPackDetailInteractor.swift */; };
+		76EF925E22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925C22DF67E90047DA1A /* StudyPackDetailViewController.swift */; };
+		76EF925F22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EF925C22DF67E90047DA1A /* StudyPackDetailViewController.swift */; };
+		76EF926022DF67E90047DA1A /* StudyPackDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EF925D22DF67E90047DA1A /* StudyPackDetailViewController.xib */; };
+		76EF926122DF67E90047DA1A /* StudyPackDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76EF925D22DF67E90047DA1A /* StudyPackDetailViewController.xib */; };
 		76F5E00C22D0F31C00C2E63E /* WalletLogEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F5E00B22D0F31C00C2E63E /* WalletLogEndPoint.swift */; };
 		76F5E00D22D0F31C00C2E63E /* WalletLogEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F5E00B22D0F31C00C2E63E /* WalletLogEndPoint.swift */; };
 		76F5E00F22D0F38700C2E63E /* WalletLogAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76F5E00E22D0F38700C2E63E /* WalletLogAPIService.swift */; };
@@ -2287,6 +2299,12 @@
 		76EE391922A5777700DD8960 /* HistoryExerciseDateProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateProtocols.swift; sourceTree = "<group>"; };
 		76EE391A22A5777700DD8960 /* HistoryExerciseDateInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryExerciseDateInteractor.swift; sourceTree = "<group>"; };
 		76EE391B22A5777700DD8960 /* HistoryExerciseDateViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryExerciseDateViewController.xib; sourceTree = "<group>"; };
+		76EF924D22DF67710047DA1A /* StudyPackDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackDetailPresenter.swift; sourceTree = "<group>"; };
+		76EF925022DF67810047DA1A /* StudyPackDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackDetailRouter.swift; sourceTree = "<group>"; };
+		76EF925622DF67BB0047DA1A /* StudyPackDetailProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackDetailProtocols.swift; sourceTree = "<group>"; };
+		76EF925922DF67CC0047DA1A /* StudyPackDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackDetailInteractor.swift; sourceTree = "<group>"; };
+		76EF925C22DF67E90047DA1A /* StudyPackDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyPackDetailViewController.swift; sourceTree = "<group>"; };
+		76EF925D22DF67E90047DA1A /* StudyPackDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudyPackDetailViewController.xib; sourceTree = "<group>"; };
 		76F5E00B22D0F31C00C2E63E /* WalletLogEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletLogEndPoint.swift; sourceTree = "<group>"; };
 		76F5E00E22D0F38700C2E63E /* WalletLogAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletLogAPIService.swift; sourceTree = "<group>"; };
 		76F5E01122D0F44100C2E63E /* LogEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogEntity.swift; sourceTree = "<group>"; };
@@ -3476,6 +3494,19 @@
 			path = TheoryGroup;
 			sourceTree = "<group>";
 		};
+		76EF924C22DF67380047DA1A /* StudyPackDetail */ = {
+			isa = PBXGroup;
+			children = (
+				76EF924D22DF67710047DA1A /* StudyPackDetailPresenter.swift */,
+				76EF925022DF67810047DA1A /* StudyPackDetailRouter.swift */,
+				76EF925622DF67BB0047DA1A /* StudyPackDetailProtocols.swift */,
+				76EF925922DF67CC0047DA1A /* StudyPackDetailInteractor.swift */,
+				76EF925C22DF67E90047DA1A /* StudyPackDetailViewController.swift */,
+				76EF925D22DF67E90047DA1A /* StudyPackDetailViewController.xib */,
+			);
+			path = StudyPackDetail;
+			sourceTree = "<group>";
+		};
 		76F7F4302294212A001E9984 /* ExerciseGroup */ = {
 			isa = PBXGroup;
 			children = (
@@ -4627,6 +4658,7 @@
 		DEC62AB122930D4B00D7CECE /* Store */ = {
 			isa = PBXGroup;
 			children = (
+				76EF924C22DF67380047DA1A /* StudyPackDetail */,
 				DECD190622A269440054861D /* DetailPack */,
 				DEC62ACF22930EB300D7CECE /* BeePack */,
 				DEC62AB622930DF500D7CECE /* StudyPack */,
@@ -5050,6 +5082,7 @@
 				768ED33622BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */,
 				DEB9613D228993640046801B /* QACell.xib in Resources */,
 				DE953132228808ED00E3F688 /* ProfileViewController.xib in Resources */,
+				76EF926022DF67E90047DA1A /* StudyPackDetailViewController.xib in Resources */,
 				769A3BC4229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
 				7643DE8E22A3A0E900B7C323 /* CellAssignExercise.xib in Resources */,
 				DE361EA02283E60500FA3B0D /* YesNoContentView.xib in Resources */,
@@ -5198,6 +5231,7 @@
 				768ED33722BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */,
 				DEB9613E228993640046801B /* QACell.xib in Resources */,
 				DE953133228808ED00E3F688 /* ProfileViewController.xib in Resources */,
+				76EF926122DF67E90047DA1A /* StudyPackDetailViewController.xib in Resources */,
 				769A3BC5229FE66F00CA55BD /* HistoryExerciseViewController.xib in Resources */,
 				7643DE8F22A3A0E900B7C323 /* CellAssignExercise.xib in Resources */,
 				DE95304F2287DF4800E3F688 /* YesNoContentView.xib in Resources */,
@@ -5724,6 +5758,7 @@
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				2AA6D38922DC599B006E9859 /* DetailTeamEntity.swift in Sources */,
 				7643DEAD22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */,
+				76EF925A22DF67CC0047DA1A /* StudyPackDetailInteractor.swift in Sources */,
 				DE6FDB1122AB869A00960422 /* FindPresenter.swift in Sources */,
 				DEBD670D228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952F882287D2A700E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
@@ -5884,6 +5919,7 @@
 				DECD18FC22A25AB10054861D /* BeePackCell.swift in Sources */,
 				DE2ADE5722841756003768CE /* AppDelegate+Push.swift in Sources */,
 				766D136C228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
+				76EF925122DF67810047DA1A /* StudyPackDetailRouter.swift in Sources */,
 				DE95316A2288418F00E3F688 /* HistoryCell.swift in Sources */,
 				76CE31F522963EDE00E998FB /* ResultGroupViewController.swift in Sources */,
 				76E2FEE1228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
@@ -6005,6 +6041,7 @@
 				DEB584912291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA22289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				76EF925722DF67BB0047DA1A /* StudyPackDetailProtocols.swift in Sources */,
 				76CE31C622961FC300E998FB /* ResultRouter.swift in Sources */,
 				DEC62AAA2293007200D7CECE /* ThanksReportContent.swift in Sources */,
 				DE952F7C2287D2A700E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
@@ -6016,6 +6053,7 @@
 				DECD190D22A269560054861D /* DetailPackPresenter.swift in Sources */,
 				DE2ADE7522841BB9003768CE /* MenuPresenter.swift in Sources */,
 				766D1320228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
+				76EF925E22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */,
 				7680748522C86CD60015A75C /* SelfCreatedTestEntity.swift in Sources */,
 				DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */,
 				769A3BB5229FE66F00CA55BD /* HistoryExercisePresenter.swift in Sources */,
@@ -6023,6 +6061,7 @@
 				76E2FEE4228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE95312F228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DEC62AC322930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
+				76EF924E22DF67710047DA1A /* StudyPackDetailPresenter.swift in Sources */,
 				DE3A8CB62289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				76F7F43A229421BD001E9984 /* ExerciseRouter.swift in Sources */,
 				769A3BC1229FE66F00CA55BD /* HistoryExerciseInteractor.swift in Sources */,
@@ -6259,6 +6298,7 @@
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				2AA6D38A22DC599B006E9859 /* DetailTeamEntity.swift in Sources */,
 				7643DEAE22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */,
+				76EF925B22DF67CC0047DA1A /* StudyPackDetailInteractor.swift in Sources */,
 				DE6FDB1222AB869A00960422 /* FindPresenter.swift in Sources */,
 				DEBD670E228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
 				DE952FD62287DF4800E3F688 /* KActivityIndicatorAnimationBallPulse.swift in Sources */,
@@ -6419,6 +6459,7 @@
 				DECD18FD22A25AB10054861D /* BeePackCell.swift in Sources */,
 				DE952FFE2287DF4800E3F688 /* AppDelegate+Push.swift in Sources */,
 				766D136D228F2609005E47F0 /* ListLessonViewController.swift in Sources */,
+				76EF925222DF67810047DA1A /* StudyPackDetailRouter.swift in Sources */,
 				DE95316B2288418F00E3F688 /* HistoryCell.swift in Sources */,
 				76CE31F622963EDE00E998FB /* ResultGroupViewController.swift in Sources */,
 				76E2FEE2228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
@@ -6540,6 +6581,7 @@
 				DEB584922291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
 				DE3A8CA32289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
+				76EF925822DF67BB0047DA1A /* StudyPackDetailProtocols.swift in Sources */,
 				76CE31C722961FC300E998FB /* ResultRouter.swift in Sources */,
 				DEC62AAB2293007200D7CECE /* ThanksReportContent.swift in Sources */,
 				DE9530212287DF4800E3F688 /* KActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
@@ -6551,6 +6593,7 @@
 				DECD190E22A269560054861D /* DetailPackPresenter.swift in Sources */,
 				DE9530242287DF4800E3F688 /* MenuPresenter.swift in Sources */,
 				766D1321228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
+				76EF925F22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */,
 				7680748622C86CD60015A75C /* SelfCreatedTestEntity.swift in Sources */,
 				DE9530252287DF4800E3F688 /* Bundle+extension.swift in Sources */,
 				769A3BB6229FE66F00CA55BD /* HistoryExercisePresenter.swift in Sources */,
@@ -6558,6 +6601,7 @@
 				76E2FEE5228DBAF10014B1F4 /* GrammarViewController.swift in Sources */,
 				DE953130228808ED00E3F688 /* ProfileInteractor.swift in Sources */,
 				DEC62AC422930E0E00D7CECE /* StudyPackViewController.swift in Sources */,
+				76EF924F22DF67710047DA1A /* StudyPackDetailPresenter.swift in Sources */,
 				DE3A8CB72289BBF30080A8CB /* CompetitionRouter.swift in Sources */,
 				76F7F43B229421BD001E9984 /* ExerciseRouter.swift in Sources */,
 				769A3BC2229FE66F00CA55BD /* HistoryExerciseInteractor.swift in Sources */,

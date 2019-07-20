@@ -9,7 +9,7 @@
 import UIKit
 
 protocol StudyPackViewDelegate: class {
-    func btnDetailTapped()
+    func btnDetailTapped(index: Int)
 }
 
 class StudyPackView: BaseViewXib {
@@ -45,6 +45,7 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         let cell = collectionView.dequeueCell(StudyPackViewCell.self, indexPath: indexPath)
         cell.delegate = self
         cell.getData(product: listProduct[indexPath.row])
+        cell.btnDetail.tag = indexPath.row
         return cell
     }
     
@@ -56,8 +57,9 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         let width = self.cvStudyPack.frame.width / 2.5
         return CGSize(width: width, height: cvStudyPack.frame.height)
     }
-    
-    func btnDetailTapped() {
-        delegate?.btnDetailTapped()
+
+    func btnDetailTapped(index: Int) {
+        delegate?.btnDetailTapped(index: index)
     }
+    
 }

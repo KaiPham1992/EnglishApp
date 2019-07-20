@@ -170,6 +170,8 @@
 "titleStore" = "Cửa hàng";
 "enterCode" = "Nhập mã code";
 "send" = "Gửi";
+"detail" = "Chi tiết";
+"upgrade" = "Nâng cấp";
 
 //comment
 "comment" = "Bình luận";
