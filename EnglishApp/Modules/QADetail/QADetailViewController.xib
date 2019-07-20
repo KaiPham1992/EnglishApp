@@ -20,8 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QADetailViewController">
             <connections>
-                <outlet property="IQLayoutGuideConstraint" destination="fpK-fX-acu" id="NdJ-T2-Bzz"/>
-                <outlet property="lbContent" destination="fpK-fX-acu" id="D0Y-Zk-nGY"/>
+                <outlet property="lbContent" destination="zP4-gx-woo" id="lTo-al-Y13"/>
                 <outlet property="lbTime" destination="AAA-T6-9LH" id="gQJ-3e-JuY"/>
                 <outlet property="lbTitle" destination="m7P-YA-Ci8" id="nbX-Iz-G58"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -44,24 +43,26 @@
                     <color key="textColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-fX-acu">
-                    <rect key="frame" x="20" y="99.5" width="335" height="16"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zP4-gx-woo">
+                    <rect key="frame" x="16" y="97" width="343" height="554"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="m7P-YA-Ci8" firstAttribute="leading" secondItem="lDn-4T-Lnx" secondAttribute="leading" constant="20" id="2vJ-12-GFt"/>
                 <constraint firstItem="m7P-YA-Ci8" firstAttribute="top" secondItem="lDn-4T-Lnx" secondAttribute="top" constant="30" id="51e-cX-iN1"/>
                 <constraint firstItem="AAA-T6-9LH" firstAttribute="trailing" secondItem="m7P-YA-Ci8" secondAttribute="trailing" id="GKW-0B-Q9M"/>
-                <constraint firstItem="fpK-fX-acu" firstAttribute="top" secondItem="AAA-T6-9LH" secondAttribute="bottom" constant="10" id="HOc-TX-wSi"/>
+                <constraint firstItem="lDn-4T-Lnx" firstAttribute="bottom" secondItem="zP4-gx-woo" secondAttribute="bottom" constant="16" id="Vzr-rx-56y"/>
+                <constraint firstItem="zP4-gx-woo" firstAttribute="leading" secondItem="lDn-4T-Lnx" secondAttribute="leading" constant="16" id="WRM-Ck-jB7"/>
                 <constraint firstItem="AAA-T6-9LH" firstAttribute="leading" secondItem="m7P-YA-Ci8" secondAttribute="leading" id="X0r-xW-JUd"/>
+                <constraint firstItem="zP4-gx-woo" firstAttribute="top" secondItem="AAA-T6-9LH" secondAttribute="bottom" constant="7.5" id="cWC-RT-gUm"/>
                 <constraint firstItem="AAA-T6-9LH" firstAttribute="top" secondItem="m7P-YA-Ci8" secondAttribute="bottom" constant="8" id="i6M-LC-Qpi"/>
                 <constraint firstItem="lDn-4T-Lnx" firstAttribute="trailing" secondItem="m7P-YA-Ci8" secondAttribute="trailing" constant="20" id="j74-QF-AZi"/>
-                <constraint firstItem="fpK-fX-acu" firstAttribute="trailing" secondItem="AAA-T6-9LH" secondAttribute="trailing" id="nNd-Og-2ex"/>
-                <constraint firstItem="fpK-fX-acu" firstAttribute="leading" secondItem="AAA-T6-9LH" secondAttribute="leading" id="waR-nT-E3k"/>
+                <constraint firstItem="lDn-4T-Lnx" firstAttribute="trailing" secondItem="zP4-gx-woo" secondAttribute="trailing" constant="16" id="rlW-m5-g0K"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="lDn-4T-Lnx"/>
         </view>

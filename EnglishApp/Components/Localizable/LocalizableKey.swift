@@ -41,6 +41,11 @@ struct LocalizableKey {
     static let SentEmail = "SentEmail"
     static let ForgotTitle = "ForgotTitle"
     
+    // Change Language
+    static let vietnamese = "vietnamese"
+    static let english = "english"
+    
+    
     // profil
     static let DisplayName = "DisplayName"
     static let enterDisplayName = "enterDisplayName"

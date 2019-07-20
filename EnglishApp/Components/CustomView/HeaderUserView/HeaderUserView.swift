@@ -14,6 +14,7 @@ class HeaderUserView: BaseViewXib {
     @IBOutlet weak var lbDiamond: UILabel!
     @IBOutlet weak var lbHoney: UILabel!
     @IBOutlet weak var lbFullName: UILabel!
+    @IBOutlet weak var imgRank: UIImageView!
     
     var user: UserEntity? {
         didSet {
@@ -38,6 +39,7 @@ class HeaderUserView: BaseViewXib {
         self.backgroundColor = AppColor.yellow
         
         imgAvatar.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)
+        imgRank.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 8)
     }
     
     

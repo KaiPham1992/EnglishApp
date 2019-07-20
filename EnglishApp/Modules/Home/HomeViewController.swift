@@ -111,7 +111,7 @@ class HomeViewController: BaseViewController {
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
         nav.addSubview(header)
-        header.anchor(widthConstant: 240, heightConstant: 42)
+        header.anchor(widthConstant: 260, heightConstant: 42)
         header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
         //---

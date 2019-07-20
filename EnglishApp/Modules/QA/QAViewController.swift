@@ -87,6 +87,11 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension QAViewController: QAViewProtocol {
     func didGetQA(list: [QAEntity]) {
-        self.listHistory = list
+        if list.isEmpty {
+            showNoData()
+        } else {
+            hideNoData()
+            self.listHistory = list
+        }
     }
 }
