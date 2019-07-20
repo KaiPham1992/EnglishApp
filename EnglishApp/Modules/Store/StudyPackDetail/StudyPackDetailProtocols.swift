@@ -16,6 +16,7 @@ protocol StudyPackDetailWireframeProtocol: class {
 protocol StudyPackDetailPresenterProtocol: class {
     
     var interactor: StudyPackDetailInteractorInputProtocol? { get set }
+    func upgradeProduct(productID: Int)
 }
 
 //MARK: Interactor -
@@ -37,4 +38,5 @@ protocol StudyPackDetailViewProtocol: class {
     var presenter: StudyPackDetailPresenterProtocol?  { get set }
     
     /* Presenter -> ViewController */
+    func didUpgrade()
 }

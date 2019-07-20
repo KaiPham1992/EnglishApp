@@ -18,6 +18,7 @@ enum ProductEndPoint {
     case getListProduct
     case sendRedeem(code: String)
     case exchangeGift
+    case upgradeProduct(productID: Int)
 }
 
 extension ProductEndPoint: EndPointType {
@@ -29,13 +30,14 @@ extension ProductEndPoint: EndPointType {
             return "_api/product/send_redeem_code"
         case .exchangeGift:
             return "_api/product/exchange_gift"
-            
+        case .upgradeProduct:
+            return "_api/order/upgrade_product"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getListProduct, .sendRedeem, .exchangeGift:
+        case .getListProduct, .sendRedeem, .exchangeGift, .upgradeProduct:
             return .post
         }
     }
@@ -46,6 +48,8 @@ extension ProductEndPoint: EndPointType {
             return [:]
         case .sendRedeem(let code):
             return ["code": code]
+        case .upgradeProduct(let productID):
+            return ["product_id": productID]
         }
     }
     

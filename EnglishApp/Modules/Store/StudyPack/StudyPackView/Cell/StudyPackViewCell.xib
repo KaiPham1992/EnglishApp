@@ -47,17 +47,29 @@
                                 </connections>
                             </button>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CF-BF-W5y">
-                                <rect key="frame" x="16" y="16" width="174" height="224"/>
+                                <rect key="frame" x="16" y="31" width="174" height="209"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7w-Zc-Mfs">
+                                <rect key="frame" x="16" y="10" width="174" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="FJj-OH-GzC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="C7w-Zc-Mfs" firstAttribute="leading" secondItem="uN3-78-1lZ" secondAttribute="leading" constant="16" id="2WR-vk-YkP"/>
                             <constraint firstAttribute="bottom" secondItem="tDF-AA-jgy" secondAttribute="bottom" constant="16" id="OmP-kf-pcS"/>
                             <constraint firstAttribute="trailing" secondItem="1CF-BF-W5y" secondAttribute="trailing" constant="16" id="P4m-A3-74w"/>
+                            <constraint firstItem="1CF-BF-W5y" firstAttribute="top" secondItem="C7w-Zc-Mfs" secondAttribute="bottom" id="QaE-ot-sXC"/>
                             <constraint firstItem="tDF-AA-jgy" firstAttribute="leading" secondItem="uN3-78-1lZ" secondAttribute="leading" constant="16" id="RxG-Jl-CnQ"/>
+                            <constraint firstItem="C7w-Zc-Mfs" firstAttribute="top" secondItem="uN3-78-1lZ" secondAttribute="top" constant="10" id="ZXi-zG-Re2"/>
                             <constraint firstItem="1CF-BF-W5y" firstAttribute="leading" secondItem="uN3-78-1lZ" secondAttribute="leading" constant="16" id="aE7-kz-dNc"/>
-                            <constraint firstItem="1CF-BF-W5y" firstAttribute="top" secondItem="uN3-78-1lZ" secondAttribute="top" constant="16" id="ayT-IX-pCc"/>
+                            <constraint firstAttribute="trailing" secondItem="C7w-Zc-Mfs" secondAttribute="trailing" constant="16" id="dYq-Wk-mQN"/>
                             <constraint firstItem="tDF-AA-jgy" firstAttribute="top" secondItem="1CF-BF-W5y" secondAttribute="bottom" constant="10" id="jSK-us-HlD"/>
                             <constraint firstAttribute="trailing" secondItem="tDF-AA-jgy" secondAttribute="trailing" constant="16" id="zQJ-Hh-3pf"/>
                         </constraints>
@@ -105,6 +117,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="btnDetail" destination="tDF-AA-jgy" id="BoY-7c-bWl"/>
+                <outlet property="lbName" destination="C7w-Zc-Mfs" id="FjS-EP-TAp"/>
                 <outlet property="webView" destination="1CF-BF-W5y" id="1My-Im-h9Y"/>
             </connections>
             <point key="canvasLocation" x="250.72463768115944" y="15.736607142857142"/>

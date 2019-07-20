@@ -18,11 +18,15 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        webView.scrollView.isScrollEnabled = false
         displayData()
     }
 
     @IBAction func btnUpgradeTapped(){
-        
+        guard let id = Int(product.id&) else {
+            return
+        }
+        presenter?.upgradeProduct(productID: id)
     }
     
     override func setUpNavigation() {
@@ -38,14 +42,8 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         btnUpgrade.setTitle(LocalizableKey.upgrade.showLanguage, for: .normal)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func didUpgrade() {
+        
     }
-    */
-
 }
+
