@@ -77,3 +77,20 @@ class ProductEntity: BaseEntity {
     }
     
 }
+
+class UpgradeInfoEntity: BaseEntity {
+    var id : String?
+    var code : String?
+    var user_id : String?
+    var created_date : String?
+    var created_time_mi : String?
+    
+    override func mapping(map: Map) {
+        super.mapping(map: map)
+        self.id <- map["_id"]
+        self.code <- map["code"]
+        self.user_id <- map["user_id"]
+        self.created_date <- map["created_date"]
+        self.created_time_mi <- map["created_time_mi"]
+    }
+}

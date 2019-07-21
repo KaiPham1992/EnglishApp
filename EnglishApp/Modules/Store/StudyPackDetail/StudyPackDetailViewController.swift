@@ -20,6 +20,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         super.viewDidLoad()
         webView.scrollView.isScrollEnabled = false
         displayData()
+        print("Product ID: \(product.id&)")
     }
 
     @IBAction func btnUpgradeTapped(){
@@ -42,8 +43,14 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         btnUpgrade.setTitle(LocalizableKey.upgrade.showLanguage, for: .normal)
     }
     
-    func didUpgrade() {
-        
+    func didUpgrade(info: UpgradeInfoEntity) {
+        PopUpHelper.shared.showError(message: "Nâng cấp gói thành công\(info.created_date)") {
+            //
+        }
+    }
+    
+    func didUpgrade(error: Error) {
+        print(error.localizedDescription)
     }
 }
 

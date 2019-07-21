@@ -38,5 +38,6 @@ protocol StudyPackDetailViewProtocol: class {
     var presenter: StudyPackDetailPresenterProtocol?  { get set }
     
     /* Presenter -> ViewController */
-    func didUpgrade()
+    func didUpgrade(info: UpgradeInfoEntity)
+    func didUpgrade(error: Error)
 }
