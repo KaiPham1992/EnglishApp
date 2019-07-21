@@ -16,8 +16,10 @@ class CommentViewController: BaseViewController {
     @IBAction func sendMessage(_ sender: Any) {
         let content = tfEnterComment.text ?? ""
         if content != "" {
-            self.presenter?.addComment(idLesson: Int(self.idLesson ?? "0") ?? 0, content: content)
-        }
+            self.presenter?.addComment(idLesson: Int(self.idLesson ?? "0") ?? 0, content: content,idParent: self.idParent,indexSection: self.indexSection)
+            self.tfEnterComment.text = ""
+            self.tfEnterComment.endEditing(true)
+        }   
     }
     
     @IBOutlet weak var bottomViewComment: NSLayoutConstraint!
@@ -27,6 +29,7 @@ class CommentViewController: BaseViewController {
     var presenter: CommentPresenterProtocol?
     var idLesson: String?
     var idParent: Int?
+    var indexSection : Int?
 
     override func setUpViews() {
         super.setUpViews()
@@ -75,15 +78,10 @@ class CommentViewController: BaseViewController {
 extension CommentViewController: CommentViewProtocol{
     func reloadView() {
         self.idParent = nil
+        self.indexSection = nil
         tbvComment.reloadData()
     }
 }
-
-//extension CommentViewController: IndicatorInfoProvider{
-//    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-//        return IndicatorInfo(title: LocalizableKey.comment.showLanguage)
-//    }
-//}
 
 extension CommentViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -95,18 +93,40 @@ extension CommentViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellComment.self, for: indexPath)
+        cell.indexPath = indexPath
         if let dataCell = self.presenter?.getChildrenComment(indexPath: indexPath){
             cell.setupCellChildren(comment: dataCell)
+        }
+        cell.actionReply = { [weak self] (index: IndexPath) in
+            if let id = self?.presenter?.getParentComment(section: index.section)?._id {
+                self?.idParent = Int(id) ?? 0
+                self?.indexSection = index.section
+            }
+            self?.tfEnterComment.becomeFirstResponder()
+            
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let cell = tableView.dequeueTableCell(CellHeaderComment.self)
+        let cell = tableView.dequeue(CellHeaderComment.self, for: IndexPath(row: 0, section: section))
+        cell.indexSection = section
+        cell.delegate = self
+        
         if let dataCell = self.presenter?.getParentComment(section: section){
             cell.setupCellParent(comment: dataCell)
         }
         return cell.contentView
+    }
+}
+
+extension CommentViewController: ActionReplyComment{
+    func replyHeader(indexSection: Int) {
+        if let id = self.presenter?.getParentComment(section: indexSection)?._id {
+            self.idParent = Int(id) ?? 0
+            self.indexSection = indexSection
+        }
+        self.tfEnterComment.becomeFirstResponder()
     }
 }
 

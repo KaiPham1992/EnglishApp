@@ -30,7 +30,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="EpG-jL-IOz">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="696"/>
                     <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WSs-xR-P3U">
@@ -91,7 +91,7 @@
                 <constraint firstAttribute="trailing" secondItem="EpG-jL-IOz" secondAttribute="trailing" id="Y3C-qN-7ve"/>
                 <constraint firstItem="EpG-jL-IOz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f24-yc-eDV"/>
                 <constraint firstItem="EpG-jL-IOz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hSW-CF-pvC"/>
-                <constraint firstItem="EpG-jL-IOz" firstAttribute="bottom" secondItem="Ymi-4w-DKr" secondAttribute="bottom" id="zw0-j5-rgw"/>
+                <constraint firstItem="EpG-jL-IOz" firstAttribute="bottom" secondItem="Ymi-4w-DKr" secondAttribute="bottom" constant="-40" id="zw0-j5-rgw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Ymi-4w-DKr"/>
         </view>

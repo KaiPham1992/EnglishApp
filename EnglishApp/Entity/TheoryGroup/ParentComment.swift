@@ -16,7 +16,7 @@ class ParentComment : Mappable {
     var status : String?
     var created_date : String?
     var created_time_mi : String?
-    var children : [ChildrenComment]?
+    var children : [ParentComment] = []
     var social_img_src : String?
     var attach_img_src : String?
     var img_src: String?
@@ -25,6 +25,7 @@ class ParentComment : Mappable {
     required init?(map: Map) {
         
     }
+    
     func mapping(map: Map) {
        self.fullname <- map["fullname"]
        self._id <- map["_id"]

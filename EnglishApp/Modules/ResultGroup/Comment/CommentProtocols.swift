@@ -22,8 +22,8 @@ protocol CommentPresenterProtocol: class {
     func numberParent() -> Int?
     func numberChildren(section: Int) -> Int?
     func getParentComment(section: Int) -> ParentComment?
-    func getChildrenComment(indexPath: IndexPath) -> ChildrenComment?
-    func addComment(idLesson: Int, content: String)
+    func getChildrenComment(indexPath: IndexPath) -> ParentComment?
+    func addComment(idLesson: Int, content: String,idParent: Int?,indexSection: Int?)
 }
 
 //MARK: Interactor -
@@ -32,13 +32,14 @@ protocol CommentInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     
     func getCommentSuccessed(respone: CommentEntity)
+    func addCommentSuccessed(respone: ParentComment)
 }
 
 protocol CommentInteractorInputProtocol: class {
 
     var presenter: CommentInteractorOutputProtocol?  { get set }
     func getComment(idLesson: String)
-    func addComment(idLesson: Int, content: String)
+    func addComment(idLesson: Int, content: String,idParent: Int?)
 
     /* Presenter -> Interactor */
 }

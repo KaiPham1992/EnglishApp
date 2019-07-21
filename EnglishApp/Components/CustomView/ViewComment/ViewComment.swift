@@ -13,8 +13,10 @@ import UIKit
 class ViewComment: BaseViewXib{
     
     @IBAction func replyComment(_ sender: Any) {
-        
+        actionReply?()
     }
+    
+    var actionReply : (() -> ())?
     
     @IBOutlet weak var lblWait: UILabel!
     @IBOutlet weak var imgAVT: UIImageView!

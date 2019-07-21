@@ -16,6 +16,7 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
     var interactor: CommentInteractorInputProtocol?
     private let router: CommentWireframeProtocol
     private var commentEntity: CommentEntity?
+    var indexSection: Int?
 
     init(interface: CommentViewProtocol, interactor: CommentInteractorInputProtocol?, router: CommentWireframeProtocol) {
         self.view = interface
@@ -25,6 +26,18 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
     
     func getComment(idLesson: String) {
         self.interactor?.getComment(idLesson: idLesson)
+    }
+    
+    func addCommentSuccessed(respone: ParentComment) {
+        if let _index = self.indexSection {
+            self.commentEntity?.data?[_index].children.append(respone)
+            self.indexSection = nil
+            self.view?.reloadView()
+        } else {
+            self.commentEntity?.data?.append(respone)
+            self.indexSection = nil
+            self.view?.reloadView()
+        }
     }
     
     func getCommentSuccessed(respone: CommentEntity) {
@@ -37,18 +50,19 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
     }
     
     func numberChildren(section: Int) -> Int?{
-        return commentEntity?.data?[section].children?.count
+        return commentEntity?.data?[section].children.count
     }
     
     func getParentComment(section: Int) -> ParentComment?{
         return commentEntity?.data?[section]
     }
     
-    func getChildrenComment(indexPath: IndexPath) -> ChildrenComment? {
-        return commentEntity?.data?[indexPath.section].children?[indexPath.row]
+    func getChildrenComment(indexPath: IndexPath) -> ParentComment? {
+        return commentEntity?.data?[indexPath.section].children[indexPath.row]
     }
     
-    func addComment(idLesson: Int, content: String) {
-        self.interactor?.addComment(idLesson: idLesson, content: content)
+    func addComment(idLesson: Int, content: String,idParent: Int?,indexSection: Int?) {
+        self.indexSection = indexSection
+        self.interactor?.addComment(idLesson: idLesson, content: content,idParent: idParent)
     }
 }

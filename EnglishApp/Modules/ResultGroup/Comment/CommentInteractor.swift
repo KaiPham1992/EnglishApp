@@ -26,10 +26,10 @@ class CommentInteractor: CommentInteractorInputProtocol {
         }
     }
     
-    func addComment(idLesson: Int, content: String) {
-        Provider.shared.theoryAPIService.addComment(idLesson: idLesson, content: content, success: { (respone) in
-            if let _ = respone {
-                
+    func addComment(idLesson: Int, content: String,idParent: Int?) {
+        Provider.shared.theoryAPIService.addComment(idLesson: idLesson, content: content, idParent: idParent, success: { (respone) in
+            if let _respone = respone {
+                self.presenter?.addCommentSuccessed(respone: _respone)
             }
         }) { (error) in
             
