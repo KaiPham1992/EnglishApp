@@ -16,10 +16,12 @@ class ExerciseEntity : Mappable {
     var type_test : String?
     var name : String?
     var categ_id : String?
+    var deadline : String?
     required init?(map: Map) {
         
     }
     func mapping(map: Map) {
+        self.deadline <- map["deadline"]
         self._id <- map["_id"]
         self.type_test <- map["type_test"]
         self.name <- map["name"]

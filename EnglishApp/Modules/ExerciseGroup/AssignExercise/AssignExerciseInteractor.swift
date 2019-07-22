@@ -13,4 +13,16 @@ import UIKit
 class AssignExerciseInteractor: AssignExerciseInteractorInputProtocol {
 
     weak var presenter: AssignExerciseInteractorOutputProtocol?
+    
+    func getListAssignExercise(offset: Int, level: Int) {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.getListAssignExercise(offset: offset, level: level, success: { (respone) in
+            ProgressView.shared.hide()
+            if let _response = respone {
+                self.presenter?.getListAssignExerciseSuccessed(respone: _response)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

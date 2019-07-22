@@ -24,6 +24,7 @@ class AssignExerciseViewController: BaseViewController {
         tbvAssignExercise.registerXibFile(CellAssignExercise.self)
         tbvAssignExercise.dataSource = self
         tbvAssignExercise.delegate = self
+        self.presenter?.getListAssignExercise(offset: self.offset, level: 1)
 
     }
     override func setUpNavigation() {
@@ -46,19 +47,32 @@ extension AssignExerciseViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.presenter?.listAssignExercise?.exercises?.count ?? 0
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
+        cell.indexPath = indexPath
+        if let dataCell = self.presenter?.listAssignExercise?.exercises?[indexPath.row]{
+            cell.setupCell(dataCell: dataCell)
+        }
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
+        let row = self.presenter?.listAssignExercise?.exercises?.count ?? 0
+        if indexPath.row == row {
+            self.offset += 1
+            self.presenter?.getListAssignExercise(offset: self.offset, level: 1)
+        }
     }
 }
 extension AssignExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let id = self.presenter?.listAssignExercise?.exercises?[indexPath.row]._id {
+            let vc = NameExerciseRouter.createModule(id: id)
+            self.push(controller: vc)
+        }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

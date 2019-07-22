@@ -18,17 +18,21 @@ protocol AssignExerciseWireframeProtocol: class {
 protocol AssignExercisePresenterProtocol: class {
 
     var interactor: AssignExerciseInteractorInputProtocol? { get set }
+    var listAssignExercise: ExerciseChoiceEntity? {get set}
+    func getListAssignExercise(offset: Int,level: Int)
 }
 
 //MARK: Interactor -
 protocol AssignExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getListAssignExerciseSuccessed(respone: ExerciseChoiceEntity)
 }
 
 protocol AssignExerciseInteractorInputProtocol: class {
 
     var presenter: AssignExerciseInteractorOutputProtocol?  { get set }
+    func getListAssignExercise(offset: Int,level: Int)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +41,7 @@ protocol AssignExerciseInteractorInputProtocol: class {
 protocol AssignExerciseViewProtocol: class {
 
     var presenter: AssignExercisePresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }

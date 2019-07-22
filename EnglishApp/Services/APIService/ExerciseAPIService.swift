@@ -22,10 +22,16 @@ protocol ExerciseAPIServiceProtocol {
     func exitExercise(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
     func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
     func getDailyMisson(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
+    func getListAssignExercise(offset: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
     
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
+    func getListAssignExercise(offset: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.getListAssignExercise(offset: offset, level: level)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
     func getDailyMisson(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure){
         let endpoint = ExerciseEnpoint.getDailyMisson
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
