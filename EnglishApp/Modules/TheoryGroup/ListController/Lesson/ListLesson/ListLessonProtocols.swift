@@ -18,11 +18,8 @@ protocol ListLessonWireframeProtocol: class {
 protocol ListLessonPresenterProtocol: class {
 
     var interactor: ListLessonInteractorInputProtocol? { get set }
-    func getLessonIndexPath(indexPath: IndexPath) -> String?
-    func numberLesson() -> Int
+    var listLesson: LessonsResponse?{get set}
     func getListLesson(lesson_category_id: String,offset: Int)
-    func getLesson(indexPath: IndexPath) -> LessonCatelogy?
-    func getIdTestResult(indexPath: IndexPath) -> String?
 }
 
 //MARK: Interactor -
@@ -30,7 +27,7 @@ protocol ListLessonInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     
-    func getListLessonSuccessed(listLesson: [LessonCatelogy])
+    func getListLessonSuccessed(listLesson: LessonsResponse)
 }
 
 protocol ListLessonInteractorInputProtocol: class {

@@ -20,7 +20,7 @@ class DetailLessonViewController: BaseViewController {
     @IBOutlet weak var lbContent: UILabel!
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
-    var lesson: LessonCatelogy?
+    var lesson: ItemLesson?
     var idLesson : String = "1"
     var isLike = 0{
         didSet{

@@ -15,7 +15,7 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
     weak private var view: ListLessonViewProtocol?
     var interactor: ListLessonInteractorInputProtocol?
     private let router: ListLessonWireframeProtocol
-    var listLesson: [LessonCatelogy] = []
+    var listLesson: LessonsResponse?
     var isLoadmore: Bool = true
 
     init(interface: ListLessonViewProtocol, interactor: ListLessonInteractorInputProtocol?, router: ListLessonWireframeProtocol) {
@@ -24,30 +24,14 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
         self.router = router
     }
     
-    
-    func numberLesson() -> Int {
-        return listLesson.count
-    }
-    func getLessonIndexPath(indexPath: IndexPath) -> String?{
-        return listLesson[indexPath.row].name
-    }
-    
-    func getIdTestResult(indexPath: IndexPath) -> String? {
-        return listLesson[indexPath.row]._id
-    }
-    
-    func getLesson(indexPath: IndexPath) -> LessonCatelogy?{
-        return listLesson[indexPath.row]
-    }
-    
     func getListLesson(lesson_category_id: String,offset: Int) {
         if isLoadmore {
            self.interactor?.getListLesson(lesson_category_id: lesson_category_id,offset: offset)
         }
     }
     
-    func getListLessonSuccessed(listLesson: [LessonCatelogy]) {
-        if listLesson.count < limit{
+    func getListLessonSuccessed(listLesson: LessonsResponse) {
+        if (listLesson.lessons?.count ?? 0) < limit{
             isLoadmore = false
         }
         self.listLesson = listLesson

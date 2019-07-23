@@ -16,11 +16,14 @@ enum TheoryEndpoint {
     case getComment(idLesson: String)
     case likeLesson(idLesson: Int,isFavorite: Int)
     case addComment(idLesson: Int,content: String,idParent: Int?)
+    case getLessonRecipe(type: Int,offset: Int)
 }
 
 extension TheoryEndpoint :EndPointType {
     var path: String {
         switch self {
+        case .getLessonRecipe:
+            return "_api/lesson/get_list_lesson_category"
         case .getListLesson:
             return "_api/lesson/get_list_lesson"
         case .getLessonDetail:
@@ -40,7 +43,7 @@ extension TheoryEndpoint :EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getListLesson, .getLessonDetail,.searchLesson, .getComment,.likeLesson,.addComment:
+        case .getListLesson, .getLessonDetail,.searchLesson, .getComment,.likeLesson,.addComment,.getLessonRecipe:
             return .post
         default:
             return .get
@@ -49,6 +52,10 @@ extension TheoryEndpoint :EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .getLessonRecipe(let type, let offset):
+            return ["limit": 10,
+                    "offset": offset,
+                    "lesson_type_id": type]
         case .getListLesson(let lesson_category_id,let offset):
             return ["lesson_category_id":lesson_category_id, "offset":offset, "limit": limit]
         case .getLessonDetail(let lesson_id):

@@ -42,13 +42,8 @@ class LessonRouter: LessonWireframeProtocol {
         return view
     }
     
-    func gotoLesson(lesson_category_id: String){
-        let vc = ListLessonRouter.createModule(lesson_category_id: lesson_category_id)
-        self.viewController?.push(controller: vc, animated: true)
-    }
-    
-    func gotoRecipe(lesson_category_id: String) {
-        let vc = ListLessonRouter.createModule(lesson_category_id : lesson_category_id)
-        self.viewController?.push(controller: vc, animated: true)
+    func gotoListLesson(id: String) {
+        let vc = ListLessonRouter.createModule(lesson_category_id: id)
+        self.viewController?.push(controller: vc)
     }
 }

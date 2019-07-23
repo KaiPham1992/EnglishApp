@@ -52,13 +52,18 @@ extension ListLessonViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.numberLesson() ?? 0
+        let row = self.presenter?.listLesson?.lessons?.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
         return row
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        cell.setupTitle(title: self.presenter?.getLessonIndexPath(indexPath: indexPath) ?? "")
+        cell.setupTitle(title: self.presenter?.listLesson?.lessons?[indexPath.row].name ?? "")
         return cell
     }
     
@@ -68,7 +73,7 @@ extension ListLessonViewController: UITableViewDelegate{
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailLessonRouter.createModule(lesson: self.presenter?.getLesson(indexPath: indexPath), type: .detailLesson)
+        let vc = DetailLessonRouter.createModule(lesson: self.presenter?.listLesson?.lessons?[indexPath.row], type: .detailLesson)
         self.push(controller: vc,animated: true)
     }
 }

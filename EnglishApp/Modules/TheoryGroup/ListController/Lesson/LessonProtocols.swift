@@ -12,26 +12,28 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LessonWireframeProtocol: class {
-    func gotoLesson(lesson_category_id: String)
-    func gotoRecipe(lesson_category_id: String)
+    func gotoListLesson(id: String)
 }
 //MARK: Presenter -
 protocol LessonPresenterProtocol: class {
 
     var interactor: LessonInteractorInputProtocol? { get set }
-    func gotoLesson(lesson_category_id: String)
-    func gotoRecipe(lesson_category_id: String)
+    var lessonEntity: LessonCategoryEntity? {get set}
+    func getLessonRecipe(type: Int,offset: Int)
+    func gotoListLesson(id: String)
 }
 
 //MARK: Interactor -
 protocol LessonInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getLessonRecipeSuccessed(respone: LessonCategoryEntity)
 }
 
 protocol LessonInteractorInputProtocol: class {
 
     var presenter: LessonInteractorOutputProtocol?  { get set }
+    func getLessonRecipe(type: Int,offset: Int)
 
     /* Presenter -> Interactor */
 }
@@ -40,6 +42,7 @@ protocol LessonInteractorInputProtocol: class {
 protocol LessonViewProtocol: class {
 
     var presenter: LessonPresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }

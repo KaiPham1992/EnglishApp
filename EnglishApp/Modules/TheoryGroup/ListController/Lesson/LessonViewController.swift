@@ -11,68 +11,75 @@
 import UIKit
 import XLPagerTabStrip
 
-enum TheoryType {
-    case lesson
-    case recipe
+enum TheoryType : Int {
+    case lesson = 1
+    case recipe = 2
 }
 
-class LessonViewController: UIViewController, LessonViewProtocol {
+class LessonViewController: BaseViewController {
 
-	var presenter: LessonPresenterProtocol?
+    @IBOutlet weak var tbvLesson: UITableView!
+    var presenter: LessonPresenterProtocol?
     var type: TheoryType = .lesson
-
-    @IBAction func clickPhrasalVerbs(_ sender: Any) {
-        if type == .lesson{
-            self.presenter?.gotoLesson(lesson_category_id: "1")
-        } else {
-            self.presenter?.gotoRecipe(lesson_category_id: "4")
-        }
-        
-    }
-    
-    @IBAction func clickGrammar(_ sender: Any) {
-        if type == .lesson{
-            self.presenter?.gotoLesson(lesson_category_id: "2")
-        } else {
-            self.presenter?.gotoRecipe(lesson_category_id: "5")
-        }
-    }
-    
-    @IBAction func clickPhonetics(_ sender: Any) {
-        if type == .lesson{
-            self.presenter?.gotoLesson(lesson_category_id: "3")
-        } else {
-            self.presenter?.gotoRecipe(lesson_category_id: "6")
-        }
-    }
-    
-    @IBOutlet weak var lbPhrasalVerbs: UILabel!
-    @IBOutlet weak var vPhrasalVerbs: ViewGradient!
-    @IBOutlet weak var vGrammar: ViewGradient!
-    @IBOutlet weak var vPhonetics: ViewGradient!
-    @IBOutlet weak var lbGrammar: UILabel!
-    @IBOutlet weak var lbPhonetics: UILabel!
-    
+    var offset = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if type == .lesson {
-            lbGrammar.text = LocalizableKey.grammar_upper.showLanguage
-            lbPhonetics.text = LocalizableKey.phonetics.showLanguage
-            lbPhrasalVerbs.text = LocalizableKey.phrasal_verbs.showLanguage
-        }
-        
-        if type == .recipe {
-            lbGrammar.text = LocalizableKey.wordUsage.showLanguage
-            lbPhonetics.text = LocalizableKey.wordForm.showLanguage
-            lbPhrasalVerbs.text = LocalizableKey.idiams.showLanguage
-        }
-        
-        vPhrasalVerbs.setupGradient(beginColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1), endColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 0.56))
-        vGrammar.setupGradient(beginColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1), endColor: #colorLiteral(red: 0, green: 0.9490196078, blue: 0.9960784314, alpha: 1))
-        vPhonetics.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.7254901961, alpha: 0.56))
+       tbvLesson.dataSource = self
+        tbvLesson.delegate = self
+        tbvLesson.registerXibFile(CellLesson.self)
+        tbvLesson.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        self.presenter?.getLessonRecipe(type: self.type.rawValue, offset: self.offset)
     }
 
+}
+
+extension LessonViewController : LessonViewProtocol{
+    func reloadView(){
+        tbvLesson.reloadData()
+    }
+}
+
+extension LessonViewController : UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let row = self.presenter?.lessonEntity?.categories?.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
+        return row
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeue(CellLesson.self, for: indexPath)
+        if let dataCell = self.presenter?.lessonEntity?.categories?[indexPath.row] {
+            cell.setupDataCell(dataCell: dataCell)
+        }
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.lessonEntity?.categories?.count ?? 0
+        if indexPath.row == row - 1 {
+            self.offset += 1
+            self.presenter?.getLessonRecipe(type: self.type.rawValue, offset: self.offset)
+        }
+    }
+}
+
+extension LessonViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let id = self.presenter?.lessonEntity?.categories?[indexPath.row]._id {
+            self.presenter?.gotoListLesson(id: id)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 124
+    }
 }
 
 extension LessonViewController: IndicatorInfoProvider{

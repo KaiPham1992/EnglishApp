@@ -12,6 +12,24 @@
 		1B94899522CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */; };
 		1B94899622CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */; };
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
+		2A07430C22E7718E001E82A4 /* CellLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07430A22E7718E001E82A4 /* CellLesson.swift */; };
+		2A07430D22E7718E001E82A4 /* CellLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07430A22E7718E001E82A4 /* CellLesson.swift */; };
+		2A07430E22E7718E001E82A4 /* CellLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07430A22E7718E001E82A4 /* CellLesson.swift */; };
+		2A07430F22E7718E001E82A4 /* CellLesson.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A07430B22E7718E001E82A4 /* CellLesson.xib */; };
+		2A07431022E7718E001E82A4 /* CellLesson.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A07430B22E7718E001E82A4 /* CellLesson.xib */; };
+		2A07431122E7718E001E82A4 /* CellLesson.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A07430B22E7718E001E82A4 /* CellLesson.xib */; };
+		2A07431322E7740F001E82A4 /* ItemLessonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431222E7740F001E82A4 /* ItemLessonCategory.swift */; };
+		2A07431422E7740F001E82A4 /* ItemLessonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431222E7740F001E82A4 /* ItemLessonCategory.swift */; };
+		2A07431522E7740F001E82A4 /* ItemLessonCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431222E7740F001E82A4 /* ItemLessonCategory.swift */; };
+		2A07431722E77481001E82A4 /* LessonCategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431622E77481001E82A4 /* LessonCategoryEntity.swift */; };
+		2A07431822E77481001E82A4 /* LessonCategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431622E77481001E82A4 /* LessonCategoryEntity.swift */; };
+		2A07431922E77481001E82A4 /* LessonCategoryEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431622E77481001E82A4 /* LessonCategoryEntity.swift */; };
+		2A07431B22E77CFD001E82A4 /* ItemLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431A22E77CFD001E82A4 /* ItemLesson.swift */; };
+		2A07431C22E77CFD001E82A4 /* ItemLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431A22E77CFD001E82A4 /* ItemLesson.swift */; };
+		2A07431D22E77CFD001E82A4 /* ItemLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431A22E77CFD001E82A4 /* ItemLesson.swift */; };
+		2A07431F22E77D47001E82A4 /* LessonsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431E22E77D47001E82A4 /* LessonsResponse.swift */; };
+		2A07432022E77D47001E82A4 /* LessonsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431E22E77D47001E82A4 /* LessonsResponse.swift */; };
+		2A07432122E77D47001E82A4 /* LessonsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07431E22E77D47001E82A4 /* LessonsResponse.swift */; };
 		2A15754422E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */; };
 		2A15754522E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */; };
 		2A15754622E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */; };
@@ -2026,6 +2044,12 @@
 		1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionAPIService.swift; sourceTree = "<group>"; };
 		25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		28D786760AE73B0AF55038DE /* Pods-EnglishApp_AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.debug.xcconfig"; sourceTree = "<group>"; };
+		2A07430A22E7718E001E82A4 /* CellLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLesson.swift; sourceTree = "<group>"; };
+		2A07430B22E7718E001E82A4 /* CellLesson.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellLesson.xib; sourceTree = "<group>"; };
+		2A07431222E7740F001E82A4 /* ItemLessonCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLessonCategory.swift; sourceTree = "<group>"; };
+		2A07431622E77481001E82A4 /* LessonCategoryEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonCategoryEntity.swift; sourceTree = "<group>"; };
+		2A07431A22E77CFD001E82A4 /* ItemLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLesson.swift; sourceTree = "<group>"; };
+		2A07431E22E77D47001E82A4 /* LessonsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsResponse.swift; sourceTree = "<group>"; };
 		2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChoiceEntity.swift; sourceTree = "<group>"; };
 		2A5E25C722E0C6A1009D6203 /* CatelogyExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatelogyExercisePresenter.swift; sourceTree = "<group>"; };
 		2A5E25C822E0C6A1009D6203 /* CatelogyExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatelogyExerciseRouter.swift; sourceTree = "<group>"; };
@@ -2755,6 +2779,15 @@
 			path = CatelogyExercise;
 			sourceTree = "<group>";
 		};
+		2A07430922E7716E001E82A4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2A07430A22E7718E001E82A4 /* CellLesson.swift */,
+				2A07430B22E7718E001E82A4 /* CellLesson.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		2A5E25F822E0D018009D6203 /* LevelExercise */ = {
 			isa = PBXGroup;
 			children = (
@@ -3008,6 +3041,7 @@
 		766D130F228EE9A0005E47F0 /* Lesson */ = {
 			isa = PBXGroup;
 			children = (
+				2A07430922E7716E001E82A4 /* Cell */,
 				766D1378228F2613005E47F0 /* DetailLesson */,
 				766D135F228F25F3005E47F0 /* ListLesson */,
 				766D1311228EE9E4005E47F0 /* LessonPresenter.swift */,
@@ -3490,6 +3524,10 @@
 				2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */,
 				2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */,
 				2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */,
+				2A07431222E7740F001E82A4 /* ItemLessonCategory.swift */,
+				2A07431622E77481001E82A4 /* LessonCategoryEntity.swift */,
+				2A07431A22E77CFD001E82A4 /* ItemLesson.swift */,
+				2A07431E22E77D47001E82A4 /* LessonsResponse.swift */,
 			);
 			path = TheoryGroup;
 			sourceTree = "<group>";
@@ -5073,6 +5111,7 @@
 				7643DEA022A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE2ADE5922841756003768CE /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C8E22906D18003C4B4B /* ViewComment.xib in Resources */,
+				2A07430F22E7718E001E82A4 /* CellLesson.xib in Resources */,
 				DECD192E22A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31B82295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE49F7EE22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
@@ -5222,6 +5261,7 @@
 				7643DEA122A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE95304D2287DF4800E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				76CF0C8F22906D18003C4B4B /* ViewComment.xib in Resources */,
+				2A07431022E7718E001E82A4 /* CellLesson.xib in Resources */,
 				DECD192F22A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31B92295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
 				DE49F7EF22A3D1AD00A92C63 /* ChangeGiftTitleCell.xib in Resources */,
@@ -5309,6 +5349,7 @@
 				76EE392D22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */,
 				DE89D23822A425E2000638B0 /* BXHView.xib in Resources */,
 				DEB584962291AD7A00FE0356 /* HistoryBeeCell.xib in Resources */,
+				2A07431122E7718E001E82A4 /* CellLesson.xib in Resources */,
 				76483BE9229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				DE3A8CEA2289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530F62287DF6400E3F688 /* HomeViewController.xib in Resources */,
@@ -5892,8 +5933,10 @@
 				766D1388228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952F822287D2A700E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE04709C22BA671400438206 /* NationalEntity.swift in Sources */,
+				2A07431B22E77CFD001E82A4 /* ItemLesson.swift in Sources */,
 				2AB4A05122E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749522C8737E0015A75C /* ResultAPIService.swift in Sources */,
+				2A07431F22E77D47001E82A4 /* LessonsResponse.swift in Sources */,
 				7643DE9722A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */,
 				DE89D20222A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
@@ -6017,7 +6060,9 @@
 				DEECF89C22871D1B00A4678B /* ForgotPasswordPresenter.swift in Sources */,
 				2AB4A06422E226B900557B5F /* HistoryDailyMissonRouter.swift in Sources */,
 				DEECF88522870DA400A4678B /* LocalizableKey.swift in Sources */,
+				2A07431722E77481001E82A4 /* LessonCategoryEntity.swift in Sources */,
 				76C92F8D22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
+				2A07430C22E7718E001E82A4 /* CellLesson.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
 				76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
@@ -6078,6 +6123,7 @@
 				DE361E7A2283E60500FA3B0D /* AppSearchBar.swift in Sources */,
 				DE952F972287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				2A5E25D022E0C6A1009D6203 /* CatelogyExerciseRouter.swift in Sources */,
+				2A07431322E7740F001E82A4 /* ItemLessonCategory.swift in Sources */,
 				76CE31AC2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672C228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE0470A022BA85FE00438206 /* RecentlyEntity.swift in Sources */,
@@ -6432,8 +6478,10 @@
 				766D1389228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE952FF52287DF4800E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
 				DE04709D22BA671400438206 /* NationalEntity.swift in Sources */,
+				2A07431C22E77CFD001E82A4 /* ItemLesson.swift in Sources */,
 				2AB4A05222E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749622C8737E0015A75C /* ResultAPIService.swift in Sources */,
+				2A07432022E77D47001E82A4 /* LessonsResponse.swift in Sources */,
 				7643DE9822A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */,
 				DE89D20322A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
@@ -6557,7 +6605,9 @@
 				DE95301A2287DF4800E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				2AB4A06522E226B900557B5F /* HistoryDailyMissonRouter.swift in Sources */,
 				DE95301B2287DF4800E3F688 /* LocalizableKey.swift in Sources */,
+				2A07431822E77481001E82A4 /* LessonCategoryEntity.swift in Sources */,
 				76C92F8E22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
+				2A07430D22E7718E001E82A4 /* CellLesson.swift in Sources */,
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
 				76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */,
 				766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
@@ -6618,6 +6668,7 @@
 				DE95302C2287DF4800E3F688 /* AppSearchBar.swift in Sources */,
 				DE95302D2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseSync.swift in Sources */,
 				2A5E25D122E0C6A1009D6203 /* CatelogyExerciseRouter.swift in Sources */,
+				2A07431422E7740F001E82A4 /* ItemLessonCategory.swift in Sources */,
 				76CE31AD2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672D228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
 				DE0470A122BA85FE00438206 /* RecentlyEntity.swift in Sources */,
@@ -6732,6 +6783,7 @@
 				76CE320D2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76C92FA422C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CE22961FC300E998FB /* ResultProtocols.swift in Sources */,
+				2A07431922E77481001E82A4 /* LessonCategoryEntity.swift in Sources */,
 				76483BE0229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				DEBD6739228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
 				76C8E2F722C19AE00076E65B /* CellResultFillQuestion.swift in Sources */,
@@ -6834,6 +6886,7 @@
 				76F7F442229421BD001E9984 /* ExerciseProtocols.swift in Sources */,
 				7629BDE022ACD3B90051B835 /* ReportSuccessedPopUp.swift in Sources */,
 				76CF521E22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */,
+				2A07432122E77D47001E82A4 /* LessonsResponse.swift in Sources */,
 				76CE323222968C7D00E998FB /* NameExerciseViewController.swift in Sources */,
 				76DB93AB228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DD229631C600E998FB /* ViewPoint.swift in Sources */,
@@ -6927,6 +6980,7 @@
 				76C92F9322C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				2A5E25CF22E0C6A1009D6203 /* CatelogyExercisePresenter.swift in Sources */,
+				2A07431522E7740F001E82A4 /* ItemLessonCategory.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				DE89D1F122A41B44000638B0 /* LevelUpContent.swift in Sources */,
 				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,
@@ -7009,6 +7063,7 @@
 				76E2FF3F228DD1070014B1F4 /* AddNoteViewController.swift in Sources */,
 				DE9530AF2287DF6400E3F688 /* PostRecordParam.swift in Sources */,
 				766D12FE228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */,
+				2A07430E22E7718E001E82A4 /* CellLesson.swift in Sources */,
 				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE6FDB2822AB909600960422 /* FindCell.swift in Sources */,
 				DE9531442288324300E3F688 /* EditProfileViewController.swift in Sources */,
@@ -7178,6 +7233,7 @@
 				DE6FDB1622AB869A00960422 /* FindRouter.swift in Sources */,
 				76CE31AB2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
 				DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				2A07431D22E77CFD001E82A4 /* ItemLesson.swift in Sources */,
 				DE9530E42287DF6400E3F688 /* YesNoContentView.swift in Sources */,
 				DE9530E52287DF6400E3F688 /* AppTextView.swift in Sources */,
 				2AC7A22022D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,

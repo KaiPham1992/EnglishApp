@@ -18,7 +18,9 @@ class ListLessonInteractor: ListLessonInteractorInputProtocol {
         ProgressView.shared.show()
         Provider.shared.theoryAPIService.getListLesson(lesson_category_id: Int(lesson_category_id) ?? 0, offset: offset, success: { (listLesson) in
             ProgressView.shared.hide()
-            self.presenter?.getListLessonSuccessed(listLesson: listLesson)
+            if let _response = listLesson {
+                self.presenter?.getListLessonSuccessed(listLesson: _response)
+            }
         }) { (error) in
             ProgressView.shared.hide()
         }

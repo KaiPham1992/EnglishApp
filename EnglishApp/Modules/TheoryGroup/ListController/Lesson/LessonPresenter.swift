@@ -15,6 +15,8 @@ class LessonPresenter: LessonPresenterProtocol, LessonInteractorOutputProtocol {
     weak private var view: LessonViewProtocol?
     var interactor: LessonInteractorInputProtocol?
     private let router: LessonWireframeProtocol
+    var isLoadMore = true
+    var lessonEntity: LessonCategoryEntity?
 
     init(interface: LessonViewProtocol, interactor: LessonInteractorInputProtocol?, router: LessonWireframeProtocol) {
         self.view = interface
@@ -22,11 +24,21 @@ class LessonPresenter: LessonPresenterProtocol, LessonInteractorOutputProtocol {
         self.router = router
     }
     
-    func gotoLesson(lesson_category_id: String) {
-        self.router.gotoLesson(lesson_category_id: lesson_category_id)
+    func getLessonRecipe(type: Int, offset: Int) {
+        if isLoadMore {
+            self.interactor?.getLessonRecipe(type: type, offset: offset)
+        }
     }
-
-    func gotoRecipe(lesson_category_id: String) {
-        self.router.gotoRecipe(lesson_category_id: lesson_category_id)
+    
+    func getLessonRecipeSuccessed(respone: LessonCategoryEntity) {
+        if (respone.categories?.count ?? 0) < 10 {
+            isLoadMore = false
+        }
+        self.lessonEntity = respone
+        self.view?.reloadView()
     }
+    func gotoListLesson(id: String){
+        self.router.gotoListLesson(id: id)
+    }
+    
 }

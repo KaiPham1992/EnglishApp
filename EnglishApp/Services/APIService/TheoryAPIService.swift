@@ -10,14 +10,19 @@ import Foundation
 
 
 protocol TheoryAPIServiceProtocol {
-    func getListLesson(lesson_category_id: Int,offset: Int, success: @escaping SuccessHandler<LessonCatelogy>.array,failure: @escaping RequestFailure)
+    func getListLesson(lesson_category_id: Int,offset: Int, success: @escaping SuccessHandler<LessonsResponse>.object,failure: @escaping RequestFailure)
     func getLessonDetail(lesson_id: Int,success: @escaping SuccessHandler<LessonCatelogyDetail>.object,failure: @escaping RequestFailure)
     func getComment(idLesson: String,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure)
     func likeLesson(idLesson: Int,isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func addComment(idLesson: Int,content: String,idParent: Int?, success: @escaping SuccessHandler<ParentComment>.object, failure: @escaping RequestFailure)
+    func getLessonRecipe(type: Int, offset: Int,success: @escaping SuccessHandler<LessonCategoryEntity>.object, failure: @escaping RequestFailure)
 }
 
 class TheoryAPIService: TheoryAPIServiceProtocol{
+    func getLessonRecipe(type: Int, offset: Int,success: @escaping SuccessHandler<LessonCategoryEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = TheoryEndpoint.getLessonRecipe(type: type, offset: offset)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
     
     func addComment(idLesson: Int, content: String,idParent: Int?, success: @escaping SuccessHandler<ParentComment>.object, failure: @escaping RequestFailure) {
         let endpoint = TheoryEndpoint.addComment(idLesson: idLesson, content: content,idParent: idParent)
@@ -29,9 +34,9 @@ class TheoryAPIService: TheoryAPIServiceProtocol{
         network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
     
-    func getListLesson(lesson_category_id: Int,offset: Int, success: @escaping SuccessHandler<LessonCatelogy>.array, failure: @escaping (APIError?) -> Void) {
+    func getListLesson(lesson_category_id: Int,offset: Int, success: @escaping SuccessHandler<LessonsResponse>.object, failure: @escaping (APIError?) -> Void) {
         let endpoint = TheoryEndpoint.getListLesson(lesson_category_id: lesson_category_id,offset: offset)
-        network.requestData(endPoint: endpoint, success: MapperData.mapArray(success), failure: failure)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     func getLessonDetail(lesson_id: Int, success: @escaping SuccessHandler<LessonCatelogyDetail>.object, failure: @escaping RequestFailure) {
