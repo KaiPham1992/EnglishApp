@@ -37,8 +37,6 @@ class CompetitionViewController: BaseViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        listCompetition = CompetitionEntity.toArray()
         configureTable()
         if type == .competition{
             presenter?.getListFight()

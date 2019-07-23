@@ -227,6 +227,7 @@ struct LocalizableKey {
     static let explain_solution = "explain_solution"
     static let individual = "individual"
     static let action = "action"
+    static let not_correct = "not_correct"
     
     //popup
     static let confirm = "confirm"

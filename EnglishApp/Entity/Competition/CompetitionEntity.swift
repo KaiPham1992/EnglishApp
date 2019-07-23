@@ -32,6 +32,7 @@ class CompetitionEntity : BaseEntity {
     var image: String?
     var exercise_id: String?
     var is_fight_joined: String?
+    var can_join: Int?
    
     
     convenience init(name: String) {
@@ -58,6 +59,7 @@ class CompetitionEntity : BaseEntity {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
+        self.can_join <- map["can_join"]
         self.id <- (map["_id"], StringToIntTransform())
         self.name <- map["name"]
         self.rankName <- map["rank_name"]
