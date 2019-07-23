@@ -11,7 +11,7 @@ import ObjectMapper
 
 class LessonCategoryEntity : Mappable {
     var total_records : Int?
-    var categories : [ItemLessonCategory]?
+    var categories : [ItemLessonCategory] = []
     
     func mapping(map: Map) {
         self.total_records <- map["total_records"]

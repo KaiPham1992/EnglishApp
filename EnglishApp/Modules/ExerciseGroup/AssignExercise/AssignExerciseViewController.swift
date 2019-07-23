@@ -60,7 +60,7 @@ extension AssignExerciseViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let row = self.presenter?.listAssignExercise?.exercises?.count ?? 0
         if indexPath.row == row {
-            self.offset += 1
+            self.offset += limit
             self.presenter?.getListAssignExercise(offset: self.offset)
         }
     }

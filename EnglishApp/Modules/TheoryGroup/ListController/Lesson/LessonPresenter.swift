@@ -31,10 +31,14 @@ class LessonPresenter: LessonPresenterProtocol, LessonInteractorOutputProtocol {
     }
     
     func getLessonRecipeSuccessed(respone: LessonCategoryEntity) {
-        if (respone.categories?.count ?? 0) < 10 {
+        if respone.categories.count < limit {
             isLoadMore = false
         }
-        self.lessonEntity = respone
+        if self.lessonEntity == nil {
+            self.lessonEntity = respone
+        } else {
+            self.lessonEntity?.categories += respone.categories
+        }
         self.view?.reloadView()
     }
     func gotoListLesson(id: String){

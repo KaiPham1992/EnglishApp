@@ -53,7 +53,7 @@ extension TheoryEndpoint :EndPointType {
     var parameters: JSONDictionary {
         switch self {
         case .getLessonRecipe(let type, let offset):
-            return ["limit": 10,
+            return ["limit": limit,
                     "offset": offset,
                     "lesson_type_id": type]
         case .getListLesson(let lesson_category_id,let offset):

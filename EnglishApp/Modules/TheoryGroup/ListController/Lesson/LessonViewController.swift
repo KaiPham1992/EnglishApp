@@ -31,7 +31,6 @@ class LessonViewController: BaseViewController {
         tbvLesson.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         self.presenter?.getLessonRecipe(type: self.type.rawValue, offset: self.offset)
     }
-
 }
 
 extension LessonViewController : LessonViewProtocol{
@@ -45,7 +44,7 @@ extension LessonViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.lessonEntity?.categories?.count ?? 0
+        let row = self.presenter?.lessonEntity?.categories.count ?? 0
         if row == 0 {
             showNoData()
         } else {
@@ -55,16 +54,16 @@ extension LessonViewController : UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellLesson.self, for: indexPath)
-        if let dataCell = self.presenter?.lessonEntity?.categories?[indexPath.row] {
+        if let dataCell = self.presenter?.lessonEntity?.categories[indexPath.row] {
             cell.setupDataCell(dataCell: dataCell)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.lessonEntity?.categories?.count ?? 0
+        let row = self.presenter?.lessonEntity?.categories.count ?? 0
         if indexPath.row == row - 1 {
-            self.offset += 1
+            self.offset += limit
             self.presenter?.getLessonRecipe(type: self.type.rawValue, offset: self.offset)
         }
     }
@@ -72,7 +71,7 @@ extension LessonViewController : UITableViewDataSource{
 
 extension LessonViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.presenter?.lessonEntity?.categories?[indexPath.row]._id {
+        if let id = self.presenter?.lessonEntity?.categories[indexPath.row]._id {
             self.presenter?.gotoListLesson(id: id)
         }
     }
