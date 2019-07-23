@@ -31,10 +31,14 @@ class ListLessonPresenter: ListLessonPresenterProtocol, ListLessonInteractorOutp
     }
     
     func getListLessonSuccessed(listLesson: LessonsResponse) {
-        if (listLesson.lessons?.count ?? 0) < limit{
+        if listLesson.lessons.count < limit{
             isLoadmore = false
         }
-        self.listLesson = listLesson
+        if self.listLesson == nil {
+            self.listLesson = listLesson
+        } else {
+            self.listLesson?.lessons += listLesson.lessons
+        }
         self.view?.reloadView()
     }
 }

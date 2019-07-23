@@ -52,7 +52,7 @@ extension ListLessonViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.listLesson?.lessons?.count ?? 0
+        let row = self.presenter?.listLesson?.lessons.count ?? 0
         if row == 0 {
             showNoData()
         } else {
@@ -63,17 +63,24 @@ extension ListLessonViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        cell.setupTitle(title: self.presenter?.listLesson?.lessons?[indexPath.row].name ?? "")
+        cell.setupTitle(title: self.presenter?.listLesson?.lessons[indexPath.row].name ?? "")
         return cell
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.listLesson?.lessons.count ?? 0
+        if indexPath.row == row - 1 {
+            self.offset += limit
+             self.presenter?.getListLesson(lesson_category_id: self.lesson_category_id, offset: offset)
+        }
+    }
 }
 extension ListLessonViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailLessonRouter.createModule(lesson: self.presenter?.listLesson?.lessons?[indexPath.row], type: .detailLesson)
+        let vc = DetailLessonRouter.createModule(lesson: self.presenter?.listLesson?.lessons[indexPath.row], type: .detailLesson)
         self.push(controller: vc,animated: true)
     }
 }

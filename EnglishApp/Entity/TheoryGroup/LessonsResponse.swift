@@ -11,7 +11,7 @@ import ObjectMapper
 
 class LessonsResponse : Mappable {
     var total_records : Int?
-    var lessons : [ItemLesson]?
+    var lessons : [ItemLesson] = []
     func mapping(map: Map) {
         self.total_records <- map["total_records"]
         self.lessons <- map["lessons"]
