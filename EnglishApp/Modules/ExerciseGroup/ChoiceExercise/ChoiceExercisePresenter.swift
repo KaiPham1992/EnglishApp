@@ -27,8 +27,8 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
         self.router.gotoExercise(id: id)
     }
     
-    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int) {
-        self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level)
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int, studyPackId: Int?) {
+        self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level,studyPackId:studyPackId)
     }
     
     func getViewChoiceExerciseSuccessed(respone: ExerciseChoiceEntity) {

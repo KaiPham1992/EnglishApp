@@ -20,15 +20,15 @@ protocol ExerciseAPIServiceProtocol {
     func getViewExercise(id: String,success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
     func exitExercise(id: Int,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func exitExercise(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
-    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId: Int?,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
     func getDailyMisson(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
-    func getListAssignExercise(offset: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
+    func getListAssignExercise(offset: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
     
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
-    func getListAssignExercise(offset: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure){
-        let endpoint = ExerciseEnpoint.getListAssignExercise(offset: offset, level: level)
+    func getListAssignExercise(offset: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.getListAssignExercise(offset: offset)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
@@ -37,8 +37,8 @@ class ExerciseAPIService: ExerciseAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure){
-        let endpoint = ExerciseEnpoint.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level)
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId: Int?,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level,studyPackId: studyPackId)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

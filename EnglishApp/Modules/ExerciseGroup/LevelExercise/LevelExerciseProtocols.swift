@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LevelExerciseWireframeProtocol: class {
-    func gotoCatelogy()
+    func gotoCatelogy(studyPackId: Int)
 }
 //MARK: Presenter -
 protocol LevelExercisePresenterProtocol: class {
@@ -22,7 +22,7 @@ protocol LevelExercisePresenterProtocol: class {
     var levelExerciseEntity: LevelExerciseEntity?{get set}
     
     func getLevelExercise(type_test: Int,offset: Int)
-    func gotoCatelogy()
+    func gotoCatelogy(studyPackId: Int)
 
 }
 

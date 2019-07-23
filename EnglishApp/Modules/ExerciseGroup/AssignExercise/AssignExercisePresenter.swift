@@ -24,9 +24,9 @@ class AssignExercisePresenter: AssignExercisePresenterProtocol, AssignExerciseIn
         self.router = router
     }
     
-    func getListAssignExercise(offset: Int, level: Int) {
+    func getListAssignExercise(offset: Int) {
         if isLoadMore {
-            self.interactor?.getListAssignExercise(offset: offset, level: level)
+            self.interactor?.getListAssignExercise(offset: offset)
         }
     }
     

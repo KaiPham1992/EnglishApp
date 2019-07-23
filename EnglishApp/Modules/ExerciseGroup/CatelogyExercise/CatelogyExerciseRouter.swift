@@ -43,8 +43,24 @@ class CatelogyExerciseRouter: CatelogyExerciseWireframeProtocol {
         return view
     }
     
-    func gotoChoiceExercise(type: Int, id: String) {
-        let vc = ChoiceExerciseRouter.createModule(type: type, id: id)
+    static func createModule(typeTest: Int,studyPackId: Int) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = CatelogyExerciseViewController(nibName: nil, bundle: nil)
+        view.typeTest = typeTest
+        view.studyPackId = studyPackId
+        let interactor = CatelogyExerciseInteractor()
+        let router = CatelogyExerciseRouter()
+        let presenter = CatelogyExercisePresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
+    
+    func gotoChoiceExercise(type: Int, categoryId: String,studyPackId: Int) {
+        let vc = ChoiceExerciseRouter.createModule(type: type, categoryId: categoryId,studyPackId: studyPackId)
         self.viewController?.push(controller: vc)
     }
 }

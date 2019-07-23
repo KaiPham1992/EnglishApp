@@ -27,8 +27,8 @@ class CatelogyExercisePresenter: CatelogyExercisePresenterProtocol, CatelogyExer
         self.interactor?.getListCatelogy()
     }
     
-    func gotoChoiceExercise(type: Int, id: String) {
-        self.router.gotoChoiceExercise(type: type, id: id)
+    func gotoChoiceExercise(type: Int, categoryId: String,studyPackId: Int) {
+        self.router.gotoChoiceExercise(type: type, categoryId: categoryId,studyPackId: studyPackId)
     }
 
     

@@ -28,11 +28,28 @@ class ChoiceExerciseRouter: ChoiceExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(type: Int = 0,id: String) -> ChoiceExerciseViewController {
+    static func createModule(type: Int = 0,categoryId: String) -> ChoiceExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ChoiceExerciseViewController(nibName: nil, bundle: nil)
         view.type = type
-        view.id = id
+        view.categoryId = categoryId
+        let interactor = ChoiceExerciseInteractor()
+        let router = ChoiceExerciseRouter()
+        let presenter = ChoiceExercisePresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
+    
+    static func createModule(type: Int = 0,categoryId: String,studyPackId: Int) -> ChoiceExerciseViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = ChoiceExerciseViewController(nibName: nil, bundle: nil)
+        view.type = type
+        view.categoryId = categoryId
+        view.studyPackId = studyPackId
         let interactor = ChoiceExerciseInteractor()
         let router = ChoiceExerciseRouter()
         let presenter = ChoiceExercisePresenter(interface: view, interactor: interactor, router: router)

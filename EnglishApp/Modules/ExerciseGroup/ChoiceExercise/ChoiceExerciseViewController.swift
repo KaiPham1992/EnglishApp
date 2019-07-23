@@ -22,15 +22,18 @@ class ChoiceExerciseViewController: BaseViewController {
     @IBOutlet weak var imgDrop: UIImageView!
     @IBOutlet weak var lbType: UILabel!
     @IBOutlet weak var tbvChoiceExercise: UITableView!
+    
     var presenter: ChoiceExercisePresenterProtocol?
     let dropDown = DropDown()
     
     //to view choiceexercise or level exercise
     var type : Int = 0
-    var id: String  = "0"
+    var categoryId: String  = "0"
+    var studyPackId: Int?
+    
     var level = 1 {
         didSet{
-            self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(id) ?? 0, level: level)
+            self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(categoryId) ?? 0, level: level, studyPackId: self.studyPackId)
         }
     }
 
@@ -44,7 +47,7 @@ class ChoiceExerciseViewController: BaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.setupDropDown()
         }
-        self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(id) ?? 0, level: level)
+        self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(categoryId) ?? 0, level: level, studyPackId: self.studyPackId)
         
     }
     

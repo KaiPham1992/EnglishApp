@@ -14,9 +14,9 @@ class ChoiceExerciseInteractor: ChoiceExerciseInteractorInputProtocol {
 
     weak var presenter: ChoiceExerciseInteractorOutputProtocol?
     
-    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int) {
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId:Int?) {
         ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level, success: { (response) in
+        Provider.shared.exerciseAPIService.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level,studyPackId: studyPackId, success: { (response) in
             ProgressView.shared.hide()
             if let _response = response {
                 self.presenter?.getViewChoiceExerciseSuccessed(respone: _response)

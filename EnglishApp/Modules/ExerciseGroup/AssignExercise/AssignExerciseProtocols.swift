@@ -19,7 +19,7 @@ protocol AssignExercisePresenterProtocol: class {
 
     var interactor: AssignExerciseInteractorInputProtocol? { get set }
     var listAssignExercise: ExerciseChoiceEntity? {get set}
-    func getListAssignExercise(offset: Int,level: Int)
+    func getListAssignExercise(offset: Int)
 }
 
 //MARK: Interactor -
@@ -32,7 +32,7 @@ protocol AssignExerciseInteractorOutputProtocol: class {
 protocol AssignExerciseInteractorInputProtocol: class {
 
     var presenter: AssignExerciseInteractorOutputProtocol?  { get set }
-    func getListAssignExercise(offset: Int,level: Int)
+    func getListAssignExercise(offset: Int)
 
     /* Presenter -> Interactor */
 }

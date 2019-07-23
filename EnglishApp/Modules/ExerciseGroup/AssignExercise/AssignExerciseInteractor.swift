@@ -14,9 +14,9 @@ class AssignExerciseInteractor: AssignExerciseInteractorInputProtocol {
 
     weak var presenter: AssignExerciseInteractorOutputProtocol?
     
-    func getListAssignExercise(offset: Int, level: Int) {
+    func getListAssignExercise(offset: Int) {
         ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.getListAssignExercise(offset: offset, level: level, success: { (respone) in
+        Provider.shared.exerciseAPIService.getListAssignExercise(offset: offset, success: { (respone) in
             ProgressView.shared.hide()
             if let _response = respone {
                 self.presenter?.getListAssignExerciseSuccessed(respone: _response)

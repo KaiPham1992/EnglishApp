@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol CatelogyExerciseWireframeProtocol: class {
-    func gotoChoiceExercise(type: Int, id: String)
+    func gotoChoiceExercise(type: Int, categoryId: String,studyPackId: Int)
 }
 //MARK: Presenter -
 protocol CatelogyExercisePresenterProtocol: class {
@@ -22,7 +22,7 @@ protocol CatelogyExercisePresenterProtocol: class {
     var catelogy: CatelogyEntity? {get set}
     
     func getListCatelogy()
-    func gotoChoiceExercise(type: Int, id: String)
+    func gotoChoiceExercise(type: Int, categoryId: String,studyPackId:Int)
 }
 
 //MARK: Interactor -

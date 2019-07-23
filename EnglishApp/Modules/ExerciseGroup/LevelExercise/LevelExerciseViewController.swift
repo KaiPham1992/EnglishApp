@@ -68,7 +68,7 @@ extension LevelExerciseViewController : UITableViewDataSource{
 }
 extension LevelExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.gotoCatelogy()
+        self.presenter?.gotoCatelogy(studyPackId: Int(self.presenter?.levelExerciseEntity?.study_categories?[indexPath.row]._id ?? "") ?? 0)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

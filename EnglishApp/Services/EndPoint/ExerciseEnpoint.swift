@@ -21,9 +21,9 @@ enum ExerciseEnpoint {
     case getViewExercise(id: String)
     case exitExercise(id: Int)
     case getListCatelogy
-    case getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int)
+    case getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId: Int?)
     case getDailyMisson
-    case getListAssignExercise(offset: Int, level: Int)
+    case getListAssignExercise(offset: Int)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -96,15 +96,20 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
-        case .getListAssignExercise(let offset, let level):
+        case .getListAssignExercise(let offset):
             return [    "type_test": 6,
-                        "category_id": 1,
                         "offset": offset,
-                        "level": level,
                         "limit": limit]
         case .getDailyMisson:
             return ["":""]
-        case .getViewChoiceExercise(let typeTest, let catelogyId, let level):
+        case .getViewChoiceExercise(let typeTest, let catelogyId, let level, let studyPackId):
+            if let _studyPackId = studyPackId {
+                return [
+                            "study_pack_id":_studyPackId,
+                            "type_test": typeTest,
+                            "category_id": catelogyId,
+                            "level": level]
+            }
             return [    "type_test": typeTest,
                         "category_id": catelogyId,
                         "level": level]

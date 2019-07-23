@@ -24,7 +24,7 @@ class AssignExerciseViewController: BaseViewController {
         tbvAssignExercise.registerXibFile(CellAssignExercise.self)
         tbvAssignExercise.dataSource = self
         tbvAssignExercise.delegate = self
-        self.presenter?.getListAssignExercise(offset: self.offset, level: 1)
+        self.presenter?.getListAssignExercise(offset: self.offset)
 
     }
     override func setUpNavigation() {
@@ -61,7 +61,7 @@ extension AssignExerciseViewController : UITableViewDataSource{
         let row = self.presenter?.listAssignExercise?.exercises?.count ?? 0
         if indexPath.row == row {
             self.offset += 1
-            self.presenter?.getListAssignExercise(offset: self.offset, level: 1)
+            self.presenter?.getListAssignExercise(offset: self.offset)
         }
     }
 }

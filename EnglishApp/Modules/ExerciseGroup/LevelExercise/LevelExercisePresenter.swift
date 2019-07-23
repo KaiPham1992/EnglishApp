@@ -27,8 +27,8 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
     }
     
     
-    func gotoCatelogy() {
-        self.router.gotoCatelogy()
+    func gotoCatelogy(studyPackId: Int) {
+        self.router.gotoCatelogy(studyPackId: studyPackId)
     }
 
     func getLevelExercise(type_test: Int,offset: Int){

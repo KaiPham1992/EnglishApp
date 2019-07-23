@@ -42,13 +42,13 @@ class LevelExerciseRouter: LevelExerciseWireframeProtocol {
 //
 //        return view
 //    }
-    func gotoCatelogy(){
-        let vc = CatelogyExerciseRouter.createModule(typeTest: TypeExercise.level.rawValue)
+    func gotoCatelogy(studyPackId: Int){
+        let vc = CatelogyExerciseRouter.createModule(typeTest: TypeExercise.level.rawValue,studyPackId: studyPackId)
         self.viewController?.push(controller: vc)
     }
     
     func gotoChoiceExercise(type: Int, id: String) {
-        let vc = ChoiceExerciseRouter.createModule(type: type, id: id)
+        let vc = ChoiceExerciseRouter.createModule(type: type, categoryId: id)
         self.viewController?.push(controller: vc,animated: true)
     }
 }

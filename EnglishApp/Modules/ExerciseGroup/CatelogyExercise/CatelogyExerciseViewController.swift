@@ -17,6 +17,7 @@ class CatelogyExerciseViewController: BaseViewController {
     @IBOutlet weak var tbvLevelExercise: UITableView!
     var offset: Int = 0
     var typeTest = 0
+    var studyPackId : Int = 0
     
     override func setUpViews() {
         super.setUpViews()
@@ -67,7 +68,7 @@ extension CatelogyExerciseViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = self.presenter?.catelogy?.categories?[indexPath.row]._id ?? "0"
-        self.presenter?.gotoChoiceExercise(type: typeTest, id: id)
+        self.presenter?.gotoChoiceExercise(type: typeTest, categoryId: id,studyPackId: self.studyPackId)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
