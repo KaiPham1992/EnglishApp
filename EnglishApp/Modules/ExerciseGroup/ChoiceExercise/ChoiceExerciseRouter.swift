@@ -62,7 +62,7 @@ class ChoiceExerciseRouter: ChoiceExerciseWireframeProtocol {
     }
     
     func gotoExercise(id: String) {
-        let vc = NameExerciseRouter.createModule(id: id)
+        let vc = NameExerciseRouter.createModule(id: id, type: .levelExercise)
         self.viewController?.push(controller: vc)
     }
 }

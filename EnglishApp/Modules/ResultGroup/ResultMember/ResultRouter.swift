@@ -35,7 +35,7 @@ class ResultRouter: ResultWireframeProtocol {
         return view
     }
     
-    static func createModule(type: TypeResult = .result,result: TestResultProfileEntity) -> ResultViewController {
+    static func createModule(type: TypeDoExercise,result: TestResultProfileEntity) -> ResultViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultViewController(nibName: nil, bundle: nil)
         view.type = type
@@ -52,7 +52,7 @@ class ResultRouter: ResultWireframeProtocol {
     }
     
     
-    static func createModule(type: TypeResult = .result,id: String) -> ResultViewController {
+    static func createModule(type: TypeDoExercise,id: String) -> ResultViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultViewController(nibName: nil, bundle: nil)
         view.type = type

@@ -15,9 +15,9 @@ import SDWebImage
 class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
-        if type != .history {
-            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
-        }
+//        if type != .history {
+//            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
+//        }
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -35,7 +35,7 @@ class ResultViewController: BaseViewController {
     @IBOutlet weak var lblPointSum: UILabel!
     @IBOutlet weak var tbvResult: UITableView!
     @IBOutlet weak var viewLevel: ViewPoint!
-    var type : TypeResult = .result
+    var type : TypeDoExercise = .dailyMissonExercise
     var presenter: ResultPresenterProtocol?
     var id: String = "1"
 
@@ -46,25 +46,19 @@ class ResultViewController: BaseViewController {
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
         
-        if type == .resultExercise || type == .history{
-            viewRank.isHidden = false
+        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise {
+            viewRank.isHidden = true
             leadingStackView.constant = 28
             trailingStackView.constant = 28
             self.presenter?.getViewResult(id: id)
         }
-        if type == .resultCompetion {
-            viewRank.isHidden = true
-            leadingStackView.constant = 16
-            trailingStackView.constant = 16
-            self.presenter?.getViewResultUserCompetition(idCompetition: self.id)
-        }
         
-        if type == .result {
-            viewRank.isHidden = false
-            leadingStackView.constant = 28
-            trailingStackView.constant = 28
-            
-        }
+//        if type == .resultCompetion {
+//            viewRank.isHidden = true
+//            leadingStackView.constant = 16
+//            trailingStackView.constant = 16
+//            self.presenter?.getViewResultUserCompetition(idCompetition: self.id)
+//        }
     
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbvResult.registerXibFile(CellResult.self)
@@ -79,17 +73,17 @@ class ResultViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        if type == .result || type == .history{
-            setTitleNavigation(title: LocalizableKey.result.showLanguage)
-        } else {
-            setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
-        }
+//        if type == .result || type == .history{
+//            setTitleNavigation(title: LocalizableKey.result.showLanguage)
+//        } else {
+//            setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
+//        }
     }
     
     override func btnBackTapped() {
-        if type != .history {
-            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
-        }
+//        if type != .history {
+//            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
+//        }
         
          self.navigationController?.popToRootViewController(animated: true)
     }
@@ -101,9 +95,9 @@ extension ResultViewController: ResultViewProtocol{
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), completed: nil)
         lblPoint.text = self.presenter?.getTotalPoint()&
         lblTime.text = self.presenter?.getTotalTime()&
-        if type == .result || type == .resultExercise || type == .history{
-            viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
-        }
+//        if type == .result || type == .resultExercise || type == .history{
+//            viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
+//        }
         viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
     }
 }

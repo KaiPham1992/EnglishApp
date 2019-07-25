@@ -25,11 +25,14 @@ enum ExerciseEnpoint {
     case getDailyMisson
     case getListAssignExercise(offset: Int)
     case getListQuestionCategory
+    case suggestQuestion(id: String)
 }
 
 extension ExerciseEnpoint: EndPointType {
     var path: String {
         switch self {
+        case .suggestQuestion:
+            return "_api/question/suggest_question"
         case .getListQuestionCategory:
             return "_api/question/get_list_question_category"
         case .getListAssignExercise:
@@ -65,6 +68,8 @@ extension ExerciseEnpoint: EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .suggestQuestion:
+            return .post
         case .getListQuestionCategory:
             return .post
         case .getListAssignExercise:
@@ -101,6 +106,8 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .suggestQuestion(let id):
+            return ["question_details_id": id]
         case .getListQuestionCategory:
             return ["":""]
         case .getListAssignExercise(let offset):

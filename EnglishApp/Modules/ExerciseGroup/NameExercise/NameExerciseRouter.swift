@@ -43,10 +43,11 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(id: String) -> NameExerciseViewController {
+    static func createModule(id: String,type: TypeDoExercise) -> NameExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = NameExerciseViewController.initFromNib()
         view.idExercise = id
+        view.typeExercise = type
         let interactor = NameExerciseInteractor()
         let router = NameExerciseRouter()
         let presenter = NameExercisePresenter(interface: view, interactor: interactor, router: router)
@@ -58,10 +59,10 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(isTaskDate: Bool) -> NameExerciseViewController {
+    static func createModule(type: TypeDoExercise) -> NameExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = NameExerciseViewController.initFromNib()
-        view.isTaskDate = isTaskDate
+        view.typeExercise = type
         let interactor = NameExerciseInteractor()
         let router = NameExerciseRouter()
         let presenter = NameExercisePresenter(interface: view, interactor: interactor, router: router)
@@ -79,8 +80,8 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
         self.viewController?.push(controller: vc,animated: true)
     }
     
-    func gotoResult(result: TestResultProfileEntity) {
-        let vc = ResultRouter.createModule(type: .resultExercise , result: result)
+    func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise) {
+        let vc = ResultRouter.createModule(type: type, result: result)
         self.viewController?.push(controller: vc,animated: true)
     }
 

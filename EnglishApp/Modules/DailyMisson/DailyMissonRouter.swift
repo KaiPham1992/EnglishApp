@@ -29,7 +29,7 @@ class DailyMissonRouter: DailyMissonWireframeProtocol {
     }
     
     func gotoDailyMisson() {
-        let vc = NameExerciseRouter.createModule(isTaskDate: true)
+        let vc = NameExerciseRouter.createModule(type: .dailyMissonExercise)
         viewController?.push(controller: vc)
     }
 }

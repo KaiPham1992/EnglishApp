@@ -37,7 +37,7 @@ enum AppDateFormat: String {
     case yyyyMMddHHmmss               = "yyyy-MM-dd HH:mm:ss"
     
     
-    case hhmmddmmyyy             = "hh:mm dd-MM-yyyy"
+    case hhmmddmmyyy             = "hh:mm dd/MM/yyyy"
     
     var formatString: String {
         return self.rawValue

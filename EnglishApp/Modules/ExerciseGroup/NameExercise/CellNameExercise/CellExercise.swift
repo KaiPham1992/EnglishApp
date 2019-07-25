@@ -11,7 +11,7 @@ import Popover
 
 protocol CellExerciseDelegate: class {
     func showDetailVocubulary(text: String)
-    func suggestQuestion(id: String,indexPath: IndexPath)
+    func suggestQuestion(id: String,indexPath: IndexPath,indexQuestion: IndexPath)
 }
 
 class CellExercise: UICollectionViewCell {
@@ -25,13 +25,7 @@ class CellExercise: UICollectionViewCell {
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
     
-    var answer: [ChildQuestionEntity] = []{
-        didSet{
-            self.listAnswer = answer.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)}
-            tbvNameExercise.reloadData()
-        }
-    }
-    
+    var answer: [ChildQuestionEntity] = []
     var numberLine: Int = 0
     let popover = Popover()
     var listAnswer : [QuestionChoiceResultParam] = []
@@ -53,12 +47,13 @@ class CellExercise: UICollectionViewCell {
         DispatchQueue.main.async {
             self.detectQuestion(contextQuestion: dataCell.content_extend&)
             self.answer = dataCell.answers ?? []
-            
+            self.listAnswer = self.answer.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)}
+            self.tbvNameExercise.reloadData()
         }
     }
     
     func detectQuestion(contextQuestion: String){
-        let  textArray = contextQuestion.components(separatedBy: " ")
+        let  textArray = contextQuestion.htmlToString.components(separatedBy: " ")
         let attributedText = NSMutableAttributedString()
         for word in textArray {
             let attributed = NSMutableAttributedString(string: word + " ")
@@ -145,17 +140,24 @@ extension CellExercise: UITableViewDataSource{
     }
     
     func getDataSource(indexPath: IndexPath) -> [String]? {
-        return self.answer[indexPath.row].options?.map{$0.value}.compactMap{$0}
+        return self.answer[indexPath.row].options.map{$0.value}.compactMap{$0}
     }
     func getIdOption(indexPath: IndexPath) -> [Int]?{
-        return self.answer[indexPath.row].options?.map{Int($0._id ?? "0")}.compactMap{$0}
+        return self.answer[indexPath.row].options.map{Int($0._id ?? "0")}.compactMap{$0}
+    }
+    
+    func changeDataSource(index: IndexPath, data: [ChildQuestionEntity]){
+        self.answer = data
+        if let cell = tbvNameExercise.cellForRow(at: index) as? CellQuestion{
+            cell.dataSource = self.getDataSource(indexPath: index) ?? []
+        }
     }
 }
 
 extension CellExercise : ClickQuestionDelegate{
     func suggestQuestion(index: IndexPath) {
         if let _id = answer[index.row]._id {
-            delegate?.suggestQuestion(id: _id, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+            delegate?.suggestQuestion(id: _id, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0),indexQuestion: index)
         }
     }
     

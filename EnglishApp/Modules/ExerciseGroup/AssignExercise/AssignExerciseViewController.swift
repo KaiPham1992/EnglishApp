@@ -68,7 +68,7 @@ extension AssignExerciseViewController : UITableViewDataSource{
 extension AssignExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let id = self.presenter?.listAssignExercise?.exercises?[indexPath.row]._id {
-            let vc = NameExerciseRouter.createModule(id: id)
+            let vc = NameExerciseRouter.createModule(id: id, type: .assignExercise)
             self.push(controller: vc)
         }
     }

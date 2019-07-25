@@ -15,6 +15,15 @@ protocol ExerciseDelegate: class {
     func confirmOutTestEntrance()
 }
 
+enum TypeDoExercise {
+    case createExercise
+    case levelExercise
+    case practiceExercise
+    case assignExercise
+    case dailyMissonExercise
+    case entranceExercise
+}
+
 class NameExerciseViewController: BaseViewController {
 
 	var presenter: NameExercisePresenterProtocol?
@@ -53,12 +62,12 @@ class NameExerciseViewController: BaseViewController {
     
     var numberQuestion : Int = 0
     var currentTime : Int = 0
-    var isTaskDate = false
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
     @IBOutlet weak var vCountTime: ViewTime!
+    var typeExercise: TypeDoExercise = .createExercise
     
 //    var arrTime : [Int] = []
     var currentIndex = 1 {
@@ -99,28 +108,21 @@ class NameExerciseViewController: BaseViewController {
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
         vCountTime.delegate = self
-        if idExercise != "" {
-            self.presenter?.getViewExercise(id: self.idExercise)
-        } else if isTaskDate {
+        self.presenter?.type = self.typeExercise
+        
+        switch typeExercise {
+        case .dailyMissonExercise:
             self.presenter?.getDailyMisson()
-        }
-        else {
+        case .entranceExercise:
             self.presenter?.getViewEntranceTest()
+        default:
+             self.presenter?.getViewExercise(id: self.idExercise)
         }
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
         self.tabBarController?.tabBar.isHidden = true
-        if idExercise != "" {
-            setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
-        } else if isTaskDate {
-            setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
-        }
-        else {
-            setTitleNavigation(title: LocalizableKey.do_entrance.showLanguage)
-        }
-        
         addBackToNavigation()
         addButtonToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy") ?? UIImage(), style: .right, action: #selector(deleteExercise))
     }
@@ -131,18 +133,16 @@ class NameExerciseViewController: BaseViewController {
     
     @objc func deleteExercise(){
         if !isEnd {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: {
-                self.exerciseDelegate?.confirmOutTestEntrance()
-                self.pop(animated: true)
+            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+                self.confirmOutExercise()
             })
         }
     }
     
     override func btnBackTapped() {
         if self.currentIndex == 1 {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: {
-                self.exerciseDelegate?.confirmOutTestEntrance()
-                self.pop(animated: true)
+            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+               self.confirmOutExercise()
             })
         } else {
 //            arrTime[self.currentIndex-1] = vCountTime.getCurrentTime()
@@ -155,10 +155,21 @@ class NameExerciseViewController: BaseViewController {
 //            vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex-1])
         }
     }
+    
+    func confirmOutExercise(){
+        self.presenter?.exitExercise(id: self.presenter?.getIDExercise() ?? 0)
+    }
 }
 
 extension NameExerciseViewController :NameExerciseViewProtocol{
+    func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath) {
+        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise, let dataCell =  self.presenter?.getQuestion(indexPath: indexPath){
+            cell.changeDataSource(index: indexQuestion, data: dataCell.answers ?? [])
+        }
+    }
+    
     func reloadView() {
+        setTitleNavigation(title: self.presenter?.getNameExercise() ?? "")
         self.numberQuestion = self.presenter?.getNumber() ?? 0
         self.currentTime = self.presenter?.getAllTime() ?? 0
 //          self.currentTime = 10
@@ -177,8 +188,10 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     
     func getExerciseFailed(error: APIError) {
         PopUpHelper.shared.showError(message: error.message&) {
-            
         }
+    }
+    func exitSuccessed() {
+        self.exerciseDelegate?.confirmOutTestEntrance()
     }
 }
 extension NameExerciseViewController : UICollectionViewDelegate{
@@ -212,6 +225,7 @@ extension NameExerciseViewController: UICollectionViewDataSource{
                 return cell
             }
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+            cell.indexPath = indexPath
             cell.delegate = self
             cell.setupCell(dataCell: data)
             return cell
@@ -221,8 +235,12 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 }
 
 extension NameExerciseViewController : CellExerciseDelegate{
-    func suggestQuestion(id: String, indexPath: IndexPath) {
-        
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
+        PopUpHelper.shared.showSuggesstionResult(diamond: {
+            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion)
+        }) {
+            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion)
+        }
     }
     
     func showDetailVocubulary(text: String) {

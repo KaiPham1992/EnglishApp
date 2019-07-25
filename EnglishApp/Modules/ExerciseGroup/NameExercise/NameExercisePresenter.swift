@@ -16,6 +16,9 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     var interactor: NameExerciseInteractorInputProtocol?
     private let router: NameExerciseWireframeProtocol
     var exerciseEntity: ViewExerciseEntity?
+    var type : TypeDoExercise = .assignExercise
+    var indexPath: IndexPath?
+    var indexQuestion: IndexPath?
 
     init(interface: NameExerciseViewProtocol, interactor: NameExerciseInteractorInputProtocol?, router: NameExerciseWireframeProtocol) {
         self.view = interface
@@ -26,6 +29,11 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     func getDailyMisson() {
         self.interactor?.getDailyMisson()
     }
+    
+    func getNameExercise() -> String? {
+        return exerciseEntity?.name
+    }
+    
     
     func gotoDetailVocabulary() {
         self.router.gotoDetailVocabulary()
@@ -52,7 +60,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     }
     
     func gotoResult(result: TestResultProfileEntity) {
-        self.router.gotoResult(result: result)
+        self.router.gotoResult(result: result, type: self.type)
     }
     
     func getAllIdAndTimeQuestion() -> [(Int,Int)]?{
@@ -72,15 +80,16 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     }
     
     func getViewExercise(id: String) {
-        self.interactor?.getViewExercise(id: id)
-    }
-    
-    func getViewEntranceTest() {
         if exerciseEntity == nil {
-            self.interactor?.getViewEntranceTest()
+            self.interactor?.getViewExercise(id: id)
         } else {
             self.view?.reloadView()
         }
+        
+    }
+    
+    func getViewEntranceTest() {
+        self.interactor?.getViewEntranceTest()
     }
     
     func getExerciseSuccessed(respone: ViewExerciseEntity) {
@@ -90,5 +99,26 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     
     func getExerciseFailed(error: APIError) {
         self.view?.getExerciseFailed(error: error)
+    }
+    
+    func exitSuccessed(respone: TestResultProfileEntity){
+        self.router.gotoResult(result: respone, type: .levelExercise)
+        self.view?.exitSuccessed()
+    }
+    
+    func exitExercise(id: Int) {
+        self.interactor?.exitExercise(id: id)
+    }
+    
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
+        self.interactor?.suggestQuestion(id: id)
+        self.indexPath = indexPath
+        self.indexQuestion = indexQuestion
+    }
+    
+    func suggestQuestionSuccessed(respone: [String]) {
+        let options = self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options.filter{!respone.contains($0._id ?? "")} ?? []
+        self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options = options
+        self.view?.suggesQuestionSuccessed(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0), indexQuestion: self.indexQuestion ?? IndexPath(row: 0, section: 0))
     }
 }

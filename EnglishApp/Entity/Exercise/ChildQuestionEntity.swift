@@ -14,7 +14,7 @@ class ChildQuestionEntity : Mappable {
     var _id : String?
     var sequence : String?
     var type : String?
-    var options : [OptionEntity]?
+    var options : [OptionEntity] = []
     
     required init?(map: Map) {
         

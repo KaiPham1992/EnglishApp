@@ -13,12 +13,14 @@ import Foundation
 //MARK: Wireframe -
 protocol NameExerciseWireframeProtocol: class {
     func gotoDetailVocabulary()
-    func gotoResult(result: TestResultProfileEntity)
+    func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise)
 }
 //MARK: Presenter -
 protocol NameExercisePresenterProtocol: class {
 
     var interactor: NameExerciseInteractorInputProtocol? { get set }
+    var type : TypeDoExercise {get set}
+    func getNameExercise() -> String?
     func gotoDetailVocabulary()
     func getViewExercise(id: String)
     func getViewEntranceTest()
@@ -32,6 +34,9 @@ protocol NameExercisePresenterProtocol: class {
     func submitExercise(param: SubmitExerciseParam)
     func getAllTime() -> Int?
     func getDailyMisson()
+    func exitExercise(id : Int)
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath)
+    
 }
 
 //MARK: Interactor -
@@ -41,6 +46,9 @@ protocol NameExerciseInteractorOutputProtocol: class {
     func getExerciseSuccessed(respone: ViewExerciseEntity)
     func gotoResult(result: TestResultProfileEntity)
     func getExerciseFailed(error:APIError)
+    func exitSuccessed(respone: TestResultProfileEntity)
+    func suggestQuestionSuccessed(respone: [String])
+    
 }
 
 protocol NameExerciseInteractorInputProtocol: class {
@@ -50,6 +58,8 @@ protocol NameExerciseInteractorInputProtocol: class {
     func getViewEntranceTest()
     func submitExercise(param: SubmitExerciseParam)
     func getDailyMisson()
+    func exitExercise(id : Int)
+    func suggestQuestion(id: String)
 
     /* Presenter -> Interactor */
 }
@@ -62,4 +72,6 @@ protocol NameExerciseViewProtocol: class {
     /* Presenter -> ViewController */
     func reloadView()
     func getExerciseFailed(error:APIError)
+    func exitSuccessed()
+    func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath)
 }

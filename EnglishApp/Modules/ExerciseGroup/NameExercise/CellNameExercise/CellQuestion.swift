@@ -26,7 +26,11 @@ class CellQuestion: UITableViewCell {
         dropDown.show()
     }
     
-    var dataSource  : [String] = []
+    var dataSource  : [String] = [] {
+        didSet{
+            dropDown.dataSource = dataSource
+        }
+    }
     var idOption : [Int] = []
     var isShow = false {
         didSet {

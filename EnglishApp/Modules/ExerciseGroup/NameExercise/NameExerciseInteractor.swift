@@ -76,11 +76,23 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     
     func exitExercise(id : Int){
         Provider.shared.exerciseAPIService.exitExercise(id: id, success: { (respone) in
-            if let _ = respone {
+            if let _respone = respone {
                 
             }
         }) { (error) in
             
+        }
+    }
+    
+    func suggestQuestion(id: String) {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.suggestQuestion(id: id, success: { (response) in
+            ProgressView.shared.hide()
+            if let _response = response, let data = _response.data as? [String] {
+                self.presenter?.suggestQuestionSuccessed(respone: data)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
         }
     }
 }
