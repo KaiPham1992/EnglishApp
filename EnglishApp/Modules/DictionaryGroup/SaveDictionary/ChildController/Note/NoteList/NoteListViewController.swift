@@ -94,7 +94,7 @@ extension NoteListViewController : UITableViewDataSource{
         let row = self.presenter?.getNumberRow() ?? 0
         let isLoadMore = self.presenter?.checkLoadMore() ?? false
         if indexPath.row == row - 1 && isLoadMore{
-            self.offset += 1
+            self.offset += limit
             self.presenter?.getListNote(offset: self.offset,replaceData: false)
         }
     }
