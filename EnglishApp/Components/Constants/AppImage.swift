@@ -84,4 +84,8 @@ struct AppImage {
     
     static let imgPremium = UIImage(named: "crown")!
     static let imgStudyPack = UIImage(named: "king")!
+    
+    static let iconFilter = UIImage(named: "filter")!
+
+    
 }

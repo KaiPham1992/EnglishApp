@@ -44,7 +44,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     }
     
     func didUpgrade(info: UpgradeInfoEntity) {
-        PopUpHelper.shared.showError(message: "Nâng cấp gói thành công\(info.created_date)") {
+        PopUpHelper.shared.showError(message: "Nâng cấp gói thành công") {
             //
         }
     }

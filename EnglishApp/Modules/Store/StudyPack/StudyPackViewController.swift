@@ -124,10 +124,14 @@ extension StudyPackViewController: StudyPackViewDelegate {
 
 extension StudyPackViewController{
     func didSendRedeem(data: QAEntity) {
-        //
+        PopUpHelper.shared.showError(message: "Thành công") {
+            //
+        }
     }
     
-    func didSendRedeem(error: Error) {
-        //
+    func didSendRedeem(error: APIError) {
+        PopUpHelper.shared.showError(message: error.message ?? "") {
+            //
+        }
     }
 }
