@@ -316,3 +316,12 @@
 "boxHoneyTitle" = "hũ mật ong";
 "diamond" = "kim cương";
 "lbNoData" = "Không có dữ liệu";
+
+
+// BHX
+"quater2/2019" = "Quý 2/2019";
+"quater1/2019" = "Quý 1/2019";
+"quater4/2018" = "Quý 4/2018";
+"quater3/2018" = "Quý 3/2018";
+"quater2/2018" = "Quý 2/2018";
+"quater1/2018" = "Quý 1/2018";

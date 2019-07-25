@@ -31,7 +31,7 @@ extension ProductEndPoint: EndPointType {
         case .exchangeGift:
             return "_api/product/exchange_gift"
         case .upgradeProduct:
-            return "_api/order/upgrade_product"
+            return "_api/product/upgrade_product"
         }
     }
     

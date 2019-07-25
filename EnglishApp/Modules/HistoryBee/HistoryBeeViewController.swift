@@ -110,10 +110,11 @@ extension HistoryBeeViewController: HistoryBeeViewProtocol{
 
 extension HistoryBeeViewController: HistoryBeeHeaderDelegate{
     func btnAddTapped() {
-//        self.push(controller: viewController)
         let storeViewController = StoreViewController()
-        storeViewController.moveToViewController(at: 1)
-//        storeViewController.reloadPagerTabStripView()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+            storeViewController.moveToViewController(at: 1)
+//            storeViewController.moveToViewController(at: 1, animated: false)
+        })
         self.push(controller: storeViewController)
     }
 }

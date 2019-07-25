@@ -60,11 +60,9 @@ class StudyPackViewCell: UICollectionViewCell {
 //        tvDetails.attributedText = product.content?.htmlToAttributedString
 //    }
     func setUpView(){
-        lbName.font = AppFont.fontRegular14
     }
     
     func displayData(){
-        lbName.text = product.name&
         if let htmlString = product.content{
             webView.loadHTMLString(htmlString, baseURL: nil)
         }
