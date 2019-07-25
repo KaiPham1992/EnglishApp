@@ -29,19 +29,13 @@ class CreateExerciseRouter: CreateExerciseWireframeProtocol {
         return view
     }
     
-    func gotoChoiceExercise(){
-//        let vc = ChoiceExerciseRouter.createModule()
-//        self.viewController?.push(controller: vc,animated: true)
-    }
-    
-    func gotoExercise(){
-        let vc = NameExerciseRouter.createModule()
-        self.viewController?.push(controller: vc,animated: true)
-    }
-    
     func gotoExercise(viewExerciseEntity: ViewExerciseEntity) {
         let vc = NameExerciseRouter.createModule(viewExerciseEntity: viewExerciseEntity)
         self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
     
+    func gotoStore() {
+        let vc = StoreViewController()
+        self.viewController?.push(controller: vc)
+    }
 }

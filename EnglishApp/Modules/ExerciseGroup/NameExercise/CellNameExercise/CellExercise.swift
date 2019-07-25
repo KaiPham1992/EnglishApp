@@ -10,9 +10,8 @@ import UIKit
 import Popover
 
 protocol CellExerciseDelegate: class {
-    func showMoreQuestion(attributed: NSMutableAttributedString)
     func showDetailVocubulary(text: String)
-    func showMoreResulr(result: String)
+    func suggestQuestion(id: String,indexPath: IndexPath)
 }
 
 class CellExercise: UICollectionViewCell {
@@ -24,6 +23,8 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var tbvNameExercise: UITableView!
     
     var attributed: NSMutableAttributedString?
+    var indexPath: IndexPath?
+    
     var answer: [ChildQuestionEntity] = []{
         didSet{
             self.listAnswer = answer.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)}
@@ -152,6 +153,12 @@ extension CellExercise: UITableViewDataSource{
 }
 
 extension CellExercise : ClickQuestionDelegate{
+    func suggestQuestion(index: IndexPath) {
+        if let _id = answer[index.row]._id {
+            delegate?.suggestQuestion(id: _id, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+        }
+    }
+    
     func changeAnswer(id: Int, indexPath: IndexPath?) {
         if let _indexPath = indexPath {
             self.listAnswer[_indexPath.row].option_id = id

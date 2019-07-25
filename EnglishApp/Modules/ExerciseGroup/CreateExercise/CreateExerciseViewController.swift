@@ -17,14 +17,10 @@ class CreateExerciseViewController: BaseViewController {
 	var presenter: CreateExercisePresenterProtocol?
 
     @IBAction func doExercise(_ sender: Any) {
-        PopUpHelper.shared.showUpdateFeature(completeUpdate: {
-//            self.presenter?.gotoExercise()
-            let param = CreateExerciseParam(name: self.edEnterExercise.text ?? "", categories: self.presenter?.getCateloriesParam() ?? [])
-            self.presenter?.gotoCreateExercise(param: param)
-        }) {
-            
-        }
+        let param = CreateExerciseParam(name: self.edEnterExercise.text ?? "", categories: self.presenter?.getCateloriesParam() ?? [])
+        self.presenter?.gotoCreateExercise(param: param)
     }
+    
     @IBOutlet weak var lblSum: UILabel!
     @IBOutlet weak var btnDoExercise: UIButton!
     @IBOutlet weak var edEnterExercise: UITextField!
@@ -34,19 +30,20 @@ class CreateExerciseViewController: BaseViewController {
    
     override func setUpViews() {
         super.setUpViews()
-        self.presenter?.getListCatelogy()
-        lblSum.text = "100/100 " + LocalizableKey.sentence.showLanguage
+        self.presenter?.getListQuestionCatelogy()
+        lblSum.text = "0/100 " + LocalizableKey.sentence.showLanguage
         tbvCreateExercise.registerXibFile(CellCreateExercise.self)
         tbvCreateExercise.dataSource = self
         tbvCreateExercise.delegate = self
         lbNameExercise.text = LocalizableKey.name_exercise.showLanguage
         edEnterExercise.placeholder = LocalizableKey.enter_name_exercise.showLanguage
         btnDoExercise.setTitle(LocalizableKey.do_exercise.showLanguage, for: .normal)
+        btnDoExercise.backgroundColor = .gray
         DispatchQueue.main.asyncAfter(deadline: .now()+0.1) {
             self.setupDropDown()
         }
-        
     }
+    
     override func setUpNavigation() {
         super.setUpNavigation()
         self.tabBarController?.tabBar.isHidden = true
@@ -69,9 +66,35 @@ class CreateExerciseViewController: BaseViewController {
 }
 
 extension CreateExerciseViewController : CreateExerciseViewProtocol{
+    func upgradeAccount() {
+        PopUpHelper.shared.showUpdateFeature(completeUpdate: {
+            self.presenter?.gotoStore()
+        }) {
+
+        }
+    }
+    
+    func showSumQuestion(sum: Int) {
+        lblSum.text = "\(sum)/100 " + LocalizableKey.sentence.showLanguage
+        if sum == 0 {
+            btnDoExercise.isUserInteractionEnabled = false
+            btnDoExercise.backgroundColor = .gray
+        } else {
+            if sum > 100 {
+                PopUpHelper.shared.showError(message: "Vui lòng nhập tổng số câu hỏi không vượt quá 100.") {
+                    
+                }
+                self.btnDoExercise.isUserInteractionEnabled = false
+                self.btnDoExercise.backgroundColor = .gray
+                return
+            }
+            btnDoExercise.isUserInteractionEnabled = true
+            btnDoExercise.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+        }
+    }
+    
     func reloadView() {
         self.tbvCreateExercise.reloadData()
-        
     }
 }
 
@@ -94,9 +117,6 @@ extension CreateExerciseViewController : UITableViewDataSource{
     }
 }
 extension CreateExerciseViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.gotoChoiceExercise()
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60

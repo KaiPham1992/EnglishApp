@@ -14,16 +14,16 @@ class CreateExerciseInteractor: CreateExerciseInteractorInputProtocol {
    
     weak var presenter: CreateExerciseInteractorOutputProtocol?
     
-    func getListCatelogy() {
+    func getListQuestionCatelogy() {
         ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.getListExerciseCatelogy(success: { (respone) in
+        Provider.shared.exerciseAPIService.getListQuestionCatelogy(success: { (respone) in
             ProgressView.shared.hide()
             if let _respone = respone {
                 self.presenter?.getListCatelogySuccessed(respone: _respone.categories ?? [])
             }
-        }) { (erorr) in
+        }) { (error) in
             ProgressView.shared.hide()
-
+            
         }
     }
     
@@ -36,6 +36,10 @@ class CreateExerciseInteractor: CreateExerciseInteractorInputProtocol {
             }
         }) { (error) in
              ProgressView.shared.hide()
+             guard let _error = error else {return}
+             if _error.message == "UPGRADE TO USE THIS FEATURE" {
+                self.presenter?.upgradeAccount()
+             }
         }
     }
 }

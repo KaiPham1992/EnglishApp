@@ -12,19 +12,17 @@ import Foundation
 
 //MARK: Wireframe -
 protocol CreateExerciseWireframeProtocol: class {
-    func gotoChoiceExercise()
-    func gotoExercise()
     func gotoExercise(viewExerciseEntity: ViewExerciseEntity)
+    func gotoStore()
 }
 //MARK: Presenter -
 protocol CreateExercisePresenterProtocol: class {
 
     var interactor: CreateExerciseInteractorInputProtocol? { get set }
+    func gotoStore()
     func getNumberRow() -> Int
     func getItemIndexPath(indexPath : IndexPath)->String
-    func gotoChoiceExercise()
-    func gotoExercise()
-    func getListCatelogy()
+    func getListQuestionCatelogy()
     func getCateloriesParam() -> [CategoryParam]
     func changeLevelParam(indexPath: IndexPath,level: Int)
     func changeNumberQuestion(indexPath: IndexPath,number: Int)
@@ -37,12 +35,13 @@ protocol CreateExerciseInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func getListCatelogySuccessed(respone: [SearchEntity])
     func createExerciseSuccessed(respone: ViewExerciseEntity)
+    func upgradeAccount()
 }
 
 protocol CreateExerciseInteractorInputProtocol: class {
 
     var presenter: CreateExerciseInteractorOutputProtocol?  { get set }
-    func getListCatelogy()
+    func getListQuestionCatelogy()
     func gotoCreateExercise(param: CreateExerciseParam)
     
     /* Presenter -> Interactor */
@@ -53,6 +52,7 @@ protocol CreateExerciseViewProtocol: class {
 
     var presenter: CreateExercisePresenterProtocol?  { get set }
     func reloadView()
-
+    func showSumQuestion(sum: Int)
+    func upgradeAccount()
     /* Presenter -> ViewController */
 }

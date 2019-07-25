@@ -15,13 +15,15 @@ protocol ChoiceType : class {
 }
 
 class CellCreateExercise: UITableViewCell {
-    @IBAction func numberChanged(_ sender: Any) {
-        let number = edNumber.text == "" ? 0 : Int(edNumber.text ?? "0")!
-        delegate?.changeNumberQuestion(number: number, indexPath: indexPath)
+    
+    @IBAction func changedValueNumber(_ sender: Any) {
+        if let number = Int(edNumber.text&) {
+            delegate?.changeNumberQuestion(number: number, indexPath: indexPath)
+        }
     }
     
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var edNumber: UITextField!
+    @IBOutlet weak var edNumber: TextFieldLimitedCharacter!
     @IBOutlet weak var vType: UIView!
     @IBOutlet weak var lbType: UILabel!
     
@@ -36,6 +38,7 @@ class CellCreateExercise: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        edNumber.setupNumberCharactor(number: 3)
     }
     
     func rotateImage(){

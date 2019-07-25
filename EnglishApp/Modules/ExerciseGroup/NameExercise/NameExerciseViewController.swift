@@ -212,6 +212,7 @@ extension NameExerciseViewController: UICollectionViewDataSource{
                 return cell
             }
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+            cell.delegate = self
             cell.setupCell(dataCell: data)
             return cell
         }
@@ -220,15 +221,10 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 }
 
 extension NameExerciseViewController : CellExerciseDelegate{
-    func showMoreResulr(result: String) {
-        PopUpHelper.shared.showMorePopUp(content: result)
+    func suggestQuestion(id: String, indexPath: IndexPath) {
+        
     }
     
-    func showMoreQuestion(attributed: NSMutableAttributedString) {
-        PopUpHelper.shared.showMorePopUpAttributed(attributed: attributed) { (text) in
-            self.presenter?.gotoDetailVocabulary()
-        }
-    }
     func showDetailVocubulary(text: String) {
         self.presenter?.gotoDetailVocabulary()
     }

@@ -138,6 +138,12 @@ extension CellResultExercise: UITableViewDataSource{
 }
 
 extension CellResultExercise : ClickQuestionDelegate{
+    func suggestQuestion(index: IndexPath) {
+        if let id = self.dataCell?.answers?[index.row]._id {
+            
+        }
+    }
+    
     func changeAnswer(id: Int, indexPath: IndexPath?) {
         
     }

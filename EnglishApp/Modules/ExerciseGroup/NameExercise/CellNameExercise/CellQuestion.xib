@@ -68,6 +68,9 @@
                             <constraint firstAttribute="height" constant="32" id="u0R-8Q-7Wa"/>
                         </constraints>
                         <state key="normal" backgroundImage="Rectangle-1"/>
+                        <connections>
+                            <action selector="suggestQuestion:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="aJx-CV-9gX"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cau 1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6pq-MF-Ovg">
                         <rect key="frame" x="16" y="20" width="55" height="18"/>

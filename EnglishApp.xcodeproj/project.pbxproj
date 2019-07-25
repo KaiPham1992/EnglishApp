@@ -156,6 +156,9 @@
 		2AEFC31122D3241900F3D5B6 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */; };
 		2AEFC31222D3241900F3D5B6 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */; };
 		2AEFC31322D3241900F3D5B6 /* CommentEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */; };
+		2AF2F82E22E9A5B900603444 /* TextFieldLimitedCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2F82D22E9A5B900603444 /* TextFieldLimitedCharacter.swift */; };
+		2AF2F82F22E9A5B900603444 /* TextFieldLimitedCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2F82D22E9A5B900603444 /* TextFieldLimitedCharacter.swift */; };
+		2AF2F83022E9A5B900603444 /* TextFieldLimitedCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2F82D22E9A5B900603444 /* TextFieldLimitedCharacter.swift */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
 		7629BDD122ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDD022ACCBBA0051B835 /* ReportQuestionPopUp.swift */; };
 		7629BDD222ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDD022ACCBBA0051B835 /* ReportQuestionPopUp.swift */; };
@@ -2092,6 +2095,7 @@
 		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
 		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
 		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
+		2AF2F82D22E9A5B900603444 /* TextFieldLimitedCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldLimitedCharacter.swift; sourceTree = "<group>"; };
 		3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.debug.xcconfig"; sourceTree = "<group>"; };
 		3B757D3CF68AEA1A27D502BF /* Pods-EnglishApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp/Pods-EnglishApp.release.xcconfig"; sourceTree = "<group>"; };
 		4C6A78A13386B1C2DA9E8046 /* Pods-EnglishApp_AppStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.release.xcconfig"; sourceTree = "<group>"; };
@@ -2901,6 +2905,7 @@
 			isa = PBXGroup;
 			children = (
 				7629BDE222ACF0B60051B835 /* TextFieldBee.swift */,
+				2AF2F82D22E9A5B900603444 /* TextFieldLimitedCharacter.swift */,
 			);
 			path = TextFieldBee;
 			sourceTree = "<group>";
@@ -6020,6 +6025,7 @@
 				DEB5847D2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				76CE320E2296539000E998FB /* ResultCompetitionViewController.swift in Sources */,
 				DE361E972283E60500FA3B0D /* PopUpHelper.swift in Sources */,
+				2AF2F82E22E9A5B900603444 /* TextFieldLimitedCharacter.swift in Sources */,
 				DE9531452288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE952F852287D2A700E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE952FA12287D2A700E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
@@ -6565,6 +6571,7 @@
 				DEB5847E2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				76CE320F2296539000E998FB /* ResultCompetitionViewController.swift in Sources */,
 				DE95300C2287DF4800E3F688 /* PopUpHelper.swift in Sources */,
+				2AF2F82F22E9A5B900603444 /* TextFieldLimitedCharacter.swift in Sources */,
 				DE9531462288324300E3F688 /* EditProfileProtocols.swift in Sources */,
 				DE95300D2287DF4800E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE95300E2287DF4800E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
@@ -6760,6 +6767,7 @@
 				DE9530642287DF6400E3F688 /* KActivityIndicatorAnimationBallGridPulse.swift in Sources */,
 				DE3A8CE12289C75C0080A8CB /* SelectTeamViewController.swift in Sources */,
 				76E2FEC9228DBAB00014B1F4 /* SaveDictionaryRouter.swift in Sources */,
+				2AF2F83022E9A5B900603444 /* TextFieldLimitedCharacter.swift in Sources */,
 				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953189228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE49F82322A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,

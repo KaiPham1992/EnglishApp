@@ -11,9 +11,14 @@ import DropDown
 
 protocol ClickQuestionDelegate: class {
     func changeAnswer(id: Int,indexPath: IndexPath?)
+    func suggestQuestion(index: IndexPath)
 }
 
 class CellQuestion: UITableViewCell {
+    
+    @IBAction func suggestQuestion(_ sender: Any) {
+        delegate?.suggestQuestion(index: self.indexPath ?? IndexPath(row: 0, section: 0))
+    }
     
     @IBOutlet weak var imgDropDown: UIImageView!
     @IBAction func clickQuestion(_ sender: Any) {

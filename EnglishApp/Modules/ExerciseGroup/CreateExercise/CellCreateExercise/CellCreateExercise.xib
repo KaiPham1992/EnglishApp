@@ -24,15 +24,15 @@
                 <rect key="frame" x="0.0" y="0.0" width="363" height="85.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-zg-XWz">
-                        <rect key="frame" x="32" y="31.5" width="141" height="22.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zqE-zg-XWz">
+                        <rect key="frame" x="32" y="43" width="128" height="0.0"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw0-Dz-VQR">
-                        <rect key="frame" x="321" y="31" width="32" height="24"/>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jw0-Dz-VQR" customClass="TextFieldLimitedCharacter" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                        <rect key="frame" x="308" y="31" width="45" height="24"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="32" id="4vK-dJ-WBS"/>
+                            <constraint firstAttribute="width" constant="45" id="4vK-dJ-WBS"/>
                             <constraint firstAttribute="height" constant="24" id="BMu-2W-GXm"/>
                         </constraints>
                         <nil key="textColor"/>
@@ -47,11 +47,11 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                         <connections>
-                            <action selector="numberChanged:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="s1a-kH-Ylt"/>
+                            <action selector="changedValueNumber:" destination="KGk-i7-Jjw" eventType="editingChanged" id="nhV-d7-D2u"/>
                         </connections>
                     </textField>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-dn-Mqh">
-                        <rect key="frame" x="178" y="31" width="135" height="24"/>
+                        <rect key="frame" x="165" y="31" width="135" height="24"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_down" translatesAutoresizingMaskIntoConstraints="NO" id="mKE-R3-LCG">
                                 <rect key="frame" x="105" y="6" width="20" height="12"/>
@@ -83,7 +83,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ct8-JR-Vwd">
-                        <rect key="frame" x="178" y="31" width="135" height="24"/>
+                        <rect key="frame" x="165" y="31" width="135" height="24"/>
                         <connections>
                             <action selector="clickDrop:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ScB-tC-eVX"/>
                         </connections>

@@ -11,6 +11,7 @@
 import UIKit
 
 class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseInteractorOutputProtocol {
+   
 
     weak private var view: CreateExerciseViewProtocol?
     var interactor: CreateExerciseInteractorInputProtocol?
@@ -43,17 +44,12 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
     
     func changeNumberQuestion(indexPath: IndexPath,number: Int){
         self.listCateloriesParam[indexPath.row].number_of_question = number
+        let sum = listCateloriesParam.map{$0.number_of_question}.compactMap{$0}.getSum()
+        self.view?.showSumQuestion(sum: sum)
     }
     
-    func gotoChoiceExercise() {
-        self.router.gotoChoiceExercise()
-    }
-    func gotoExercise() {
-        self.router.gotoExercise()
-    }
-    
-    func getListCatelogy() {
-        self.interactor?.getListCatelogy()
+    func getListQuestionCatelogy() {
+        self.interactor?.getListQuestionCatelogy()
     }
     
     func getListCatelogySuccessed(respone: [SearchEntity]) {
@@ -68,5 +64,24 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
     
     func createExerciseSuccessed(respone: ViewExerciseEntity) {
         self.router.gotoExercise(viewExerciseEntity: respone)
+    }
+    
+    func upgradeAccount() {
+        self.view?.upgradeAccount()
+    }
+    
+    func gotoStore() {
+        self.router.gotoStore()
+    }
+}
+
+typealias Integer = (Int)
+extension Array where Element == Integer {
+    func getSum() -> Integer {
+        var sum : Integer = 0
+        for item in self {
+            sum += item
+        }
+        return sum
     }
 }

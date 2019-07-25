@@ -73,7 +73,7 @@
                     <rect key="frame" x="0.0" y="122" width="375" height="545"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT1-xF-eIc">
+                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uT1-xF-eIc">
                     <rect key="frame" x="16" y="601" width="343" height="42"/>
                     <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
