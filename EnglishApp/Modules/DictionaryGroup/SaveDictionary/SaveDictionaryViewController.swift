@@ -29,12 +29,26 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
             controller.reloadView()
+            return
+        }
+        if let controller = self.viewControllers[self.currentIndex] as? NoteListViewController {
+            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
+            controller.actionDeleteFinish = actionReloadFinish
+            controller.isDelete = true
+            controller.reloadView()
+            return
         }
     }
     
     @objc func clickFinish(){
         if let controller = self.viewControllers[self.currentIndex] as? GrammarViewController {
             controller.deleteNote()
+            return
+        }
+        
+        if let controller = self.viewControllers[self.currentIndex] as?  NoteListViewController {
+            controller.deleteNote()
+            return
         }
     }
     
@@ -48,7 +62,7 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [GrammarRouter.createModule(type:.grammar),GrammarRouter.createModule(type:.vocabulary),GrammarRouter.createModule(type:.note)]
+        return [GrammarRouter.createModule(type:.grammar),GrammarRouter.createModule(type:.vocabulary),NoteListRouter.createModule()]
     }
 
 }

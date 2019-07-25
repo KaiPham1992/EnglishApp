@@ -9,7 +9,7 @@
 import Foundation
 
 protocol SaveAPIServiceProtocol {
-    func getListNote(offset: Int,success: @escaping SuccessHandler<NoteRespone>.array, failure: @escaping RequestFailure)
+    func getListNote(offset: Int,success: @escaping SuccessHandler<NoteListRespone>.object, failure: @escaping RequestFailure)
     func deleteNote(id: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func addNote(description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func getViewNote(idNote: String,success: @escaping SuccessHandler<NoteDetailEntity>.object, failure: @escaping RequestFailure)
@@ -24,9 +24,9 @@ class SaveAPIService : SaveAPIServiceProtocol {
     init(network: APINetworkProtocol) {
         self.network = network
     }
-    func getListNote(offset: Int,success: @escaping SuccessHandler<NoteRespone>.array, failure: @escaping RequestFailure) {
+    func getListNote(offset: Int,success: @escaping SuccessHandler<NoteListRespone>.object, failure: @escaping RequestFailure) {
         let endpint = SaveEndpoint.getListNote(offset: offset)
-        network.requestData(endPoint: endpint, success: MapperData.mapArray(success), failure: failure)
+        network.requestData(endPoint: endpint, success: MapperData.mapObject(success), failure: failure)
     }
     func deleteNote(id: [Int], success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
         let endpoint = SaveEndpoint.deleteNote(id: id)
