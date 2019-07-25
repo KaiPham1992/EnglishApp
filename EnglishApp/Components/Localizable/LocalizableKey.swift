@@ -217,6 +217,7 @@ struct LocalizableKey {
     //result
     static let rank = "rank"
     static let result = "result"
+    static let result_team = "result_team"
     static let sum_point = "sum_point"
     static let time_do_exercise = "time_do_exercise"
     static let back_gome = "back_gome"
@@ -228,6 +229,7 @@ struct LocalizableKey {
     static let individual = "individual"
     static let action = "action"
     static let not_correct = "not_correct"
+    static let see_result = "see_result"
     
     //popup
     static let confirm = "confirm"

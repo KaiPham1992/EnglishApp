@@ -207,6 +207,7 @@
 "do_entrance" = "Trắc nghiệm đầu vào";
 
 //result
+"result_team" = "Kết quả đội";
 "rank" = "Hạng";
 "result" = "Kết quả";
 "sum_point" = "Tổng điểm:";
@@ -221,6 +222,7 @@
 "action" = "Thi đấu";
 "point" = "Điểm";
 "not_correct" = "Chưa đạt";
+"see_result"= "Xem kết quả";
 
 
 //popup

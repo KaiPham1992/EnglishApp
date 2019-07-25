@@ -44,6 +44,10 @@ class CompetitionViewController: BaseViewController {
             self.presenter?.getListResultFight()
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.tabBarController?.tabBar.isHidden = false
+    }
 }
 
 extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource {
@@ -62,12 +66,27 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
         cell.type = self.type
         cell.competitionEntity = listCompetition[indexPath.item]
         cell.btnJoin.tag = indexPath.item
-        cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
+//        cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
+        cell.actionFight = {[weak self](status, id) in
+            self?.actionFight(status: status, tag: id)
+        }
         //---
         cell.btnShare.tag = indexPath.item
         cell.btnShare.addTarget(self, action: #selector(btnShareTapped), for: .touchUpInside)
         
         return cell
+    }
+    
+    func actionFight(status: String,tag: Int) {
+        guard let competitionId = listCompetition[tag].id else {
+            return
+        }
+        if status == "CAN_JOIN"{
+            self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+        }
+        if status == "DONE"{
+            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(competitionId)))
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,18 +97,6 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
         }
         self.tbCompetition.isHidden = false
         return row
-    }
-    
-    @objc func btnJoinTapped(button: UIButton) {
-        guard let competitionId = listCompetition[button.tag].id else {
-            return
-        }
-        if type == .competition{
-            self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
-        }
-        if type == .result{
-            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(competitionId)))
-        }
     }
     
     @objc func btnShareTapped() {

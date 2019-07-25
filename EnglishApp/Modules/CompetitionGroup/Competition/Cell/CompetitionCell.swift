@@ -27,24 +27,34 @@ class CompetitionCell: BaseTableCell {
         }
     }
     
+    @IBAction func clickFight(_ sender: Any) {
+        actionFight?(self.status,(sender as! UIButton).tag)
+    }
+    
+    var actionFight : ((_ status: String,_ tag: Int)->())?
     var competitionEntity: CompetitionEntity? {
         didSet {
             guard let competitionEntity = competitionEntity else { return }
-            if (competitionEntity.can_join ?? 0) == 0 {
-                btnJoin.isHidden = false
+            switch competitionEntity.status& {
+            case "CANNOT_JOIN":
                 btnJoin.backgroundColor = .clear
                 btnJoin.setTitleColor(#colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1), for: .normal)
                 btnJoin.setTitle(LocalizableKey.not_correct.showLanguage.uppercased(), for: .normal)
                 btnJoin.isUserInteractionEnabled = false
-            } else {
-                btnJoin.backgroundColor = #colorLiteral(red: 0.9607843161, green: 0.7058823705, blue: 0.200000003, alpha: 1)
+            case "CAN_JOIN":
+                btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                 btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
+                btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
                 btnJoin.isUserInteractionEnabled = true
-                if competitionEntity.is_fight_joined& == "0"{
-                    btnJoin.isHidden = false
-                }
+            case "DONE":
+                btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+                btnJoin.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+                btnJoin.setTitle(LocalizableKey.see_result.showLanguage.uppercased(), for: .normal)
+                btnJoin.isUserInteractionEnabled = true
+            default:
+                break
             }
-            
+            self.status = competitionEntity.status&
             lbName.text = competitionEntity.name
             lbCondition.text = "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.rankName&)"
             if let startTime = competitionEntity.startTime{
@@ -56,6 +66,8 @@ class CompetitionCell: BaseTableCell {
             
         }
     }
+    
+    var status : String = "CANNOT_JOIN"
 
     override func awakeFromNib() {
         super.awakeFromNib()

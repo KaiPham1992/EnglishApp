@@ -19,7 +19,10 @@ class ResultCompetitionInteractor: ResultCompetitionInteractorInputProtocol {
             ProgressView.shared.show()
             Provider.shared.resultAPIService.getResultTeam(idCompetition: id, success: { (respone) in
                 ProgressView.shared.hide()
-                self.presenter?.getResultTeamSuccessed(respone: respone)
+                if let _respone = respone {
+                    self.presenter?.getResultTeamSuccessed(respone: _respone.team_results ?? [])
+                }
+               
             }) { (error) in
                 ProgressView.shared.hide()
             }
