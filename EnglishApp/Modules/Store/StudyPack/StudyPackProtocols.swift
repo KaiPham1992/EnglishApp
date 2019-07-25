@@ -43,5 +43,5 @@ protocol StudyPackViewProtocol: class {
     /* Presenter -> ViewController */
     func didGetProduct(product: ProductCollectionEntity)
     func didSendRedeem(data: QAEntity)
-    func didSendRedeem(error: Error)
+    func didSendRedeem(error: APIError)
 }

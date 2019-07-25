@@ -29,8 +29,8 @@ class LanguageEntity: BaseEntity {
     
     static func toArray() -> [LanguageEntity] {
         var listLanguage = [LanguageEntity]()
-        listLanguage.append(LanguageEntity(name: "Vietnamese", key: KeyLanguage.vn))
-        listLanguage.append(LanguageEntity(name: "English", key: KeyLanguage.en))
+        listLanguage.append(LanguageEntity(name: "\(LocalizableKey.vietnamese.showLanguage)", key: KeyLanguage.vn))
+        listLanguage.append(LanguageEntity(name: "\(LocalizableKey.english.showLanguage)", key: KeyLanguage.en))
         
         return listLanguage
     }

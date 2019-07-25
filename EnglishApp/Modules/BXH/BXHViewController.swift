@@ -16,6 +16,9 @@ class BXHViewController: BaseViewController {
     @IBOutlet weak var tbBXH: UITableView!
     @IBOutlet weak var vUser: BXHView!
     
+    @IBOutlet var btnOption: [UIButton]!
+    @IBOutlet weak var viewOption: UIView!
+    
     var listLeaderBoard = LeaderBoardEntity(){
         didSet{
             tbBXH.reloadData()
@@ -33,16 +36,91 @@ class BXHViewController: BaseViewController {
         hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.bxh.showLanguage)
+        addButtonToNavigation(image: AppImage.iconFilter, style: .right, action: #selector(btnFilterTapped))
     }
     override func setUpViews() {
         super.setUpViews()
         configureTable()
+        configureViewOption()
+        configureButtonOption()
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideMenu))
+        self.view.addGestureRecognizer(tapGesture)
     }
 
+    func configureViewOption() {
+        let shadowSize : CGFloat = 20.0
+        let shadowPath = UIBezierPath(rect: CGRect(x: -shadowSize / 2,
+                                                   y: -shadowSize / 2,
+                                                   width: self.viewOption.frame.size.width + shadowSize,
+                                                   height: self.viewOption.frame.size.height + shadowSize))
+        self.viewOption.layer.masksToBounds = false
+        self.viewOption.layer.shadowColor = UIColor.gray.cgColor
+        self.viewOption.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
+        self.viewOption.layer.shadowOpacity = 0.2
+        self.viewOption.layer.shadowPath = shadowPath.cgPath
+    }
+    
+    func configureButtonOption() {
+        btnOption[0].setTitle("\(LocalizableKey.quater22019.showLanguage)", for: .normal)
+        btnOption[1].setTitle("\(LocalizableKey.quater12019.showLanguage)", for: .normal)
+        btnOption[2].setTitle("\(LocalizableKey.quater42018.showLanguage)", for: .normal)
+        btnOption[3].setTitle("\(LocalizableKey.quater32018.showLanguage)", for: .normal)
+        btnOption[4].setTitle("\(LocalizableKey.quater22018.showLanguage)", for: .normal)
+        btnOption[5].setTitle("\(LocalizableKey.quater12018.showLanguage)", for: .normal)
+    }
+        
     override func btnBackTapped() {
         showTabbar()
         self.pop()
     }
+    
+    @objc func btnFilterTapped() {
+//        UIView.animate(withDuration: 0.25, animations: {
+//            self.viewOption.isHidden = !self.viewOption.isHidden
+//        })
+        UIView.transition(with: self.viewOption, duration: 0.25, options: .transitionCrossDissolve, animations: {
+            self.viewOption.isHidden = !self.viewOption.isHidden
+        })
+    }
+    
+    @objc func hideMenu() {
+        if self.viewOption.isHidden == false {
+            btnFilterTapped()
+        }
+    }
+    
+    @IBAction func btnOptionTapped(_ sender: UIButton) {
+        //-- hide menu
+        hideMenu()
+        
+        //-- handle selection
+        var quarter = 0
+        var year = 0
+        
+        switch sender {
+        case btnOption[0]:
+            quarter = 1
+            year = 2019
+        case btnOption[1]:
+            quarter = 1
+            year = 2019
+        case btnOption[2]:
+            quarter = 4
+            year = 2018
+        case btnOption[3]:
+            quarter = 3
+            year = 2018
+        case btnOption[4]:
+            quarter = 2
+            year = 2018
+        default:
+            quarter = 1
+            year = 2018
+        }
+        presenter?.getListLeaderBoard(quarter: quarter, year: year)
+    }
+    
 }
 
 
