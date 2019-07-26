@@ -73,7 +73,7 @@ extension HistoryDailyMissonViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ResultRouter.createModule(type: .dailyMissonExercise, id: self.presenter?.listResultDailyMisson?[indexPath.row]._id ?? "")
+        let vc = ResultRouter.createModule(type: .dailyMissonExercise, id: self.presenter?.listResultDailyMisson?[indexPath.row]._id ?? "",isHistory: true)
         self.push(controller: vc,animated: true)
     }
 }

@@ -52,11 +52,12 @@ class ResultRouter: ResultWireframeProtocol {
     }
     
     
-    static func createModule(type: TypeDoExercise,id: String) -> ResultViewController {
+    static func createModule(type: TypeDoExercise,id: String,isHistory: Bool = false) -> ResultViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultViewController(nibName: nil, bundle: nil)
         view.type = type
         view.id = id
+        view.isHistory = isHistory
         let interactor = ResultInteractor()
         let router = ResultRouter()
         let presenter = ResultPresenter(interface: view, interactor: interactor, router: router)

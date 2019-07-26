@@ -72,7 +72,9 @@ extension HistoryListExerciseViewController : UITableViewDataSource {
 
 extension HistoryListExerciseViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        if let id = self.presenter?.testsResultResponse?.results[indexPath.row]._id {
+            self.presenter?.gotoResult(type: self.type, id: id)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -42,5 +42,8 @@ class HistoryListExercisePresenter: HistoryListExercisePresenterProtocol, Histor
         self.view?.reloadView()
     }
     
+    func gotoResult(type: TypeDoExercise, id: String) {
+        self.router.gotoResult(type: type, id: id)
+    }
 
 }

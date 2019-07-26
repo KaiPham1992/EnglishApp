@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol HistoryListExerciseWireframeProtocol: class {
-
+    func gotoResult(type: TypeDoExercise,id: String)
 }
 //MARK: Presenter -
 protocol HistoryListExercisePresenterProtocol: class {
@@ -20,6 +20,7 @@ protocol HistoryListExercisePresenterProtocol: class {
     var interactor: HistoryListExerciseInteractorInputProtocol? { get set }
     var testsResultResponse : TestsResultRespone? {get set}
     func getListHistoryExercise(type: Int,offset: Int,date: String)
+    func gotoResult(type: TypeDoExercise,id: String)
 }
 
 //MARK: Interactor -

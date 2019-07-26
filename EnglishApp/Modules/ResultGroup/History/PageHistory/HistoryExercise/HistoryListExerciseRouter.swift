@@ -29,4 +29,9 @@ class HistoryListExerciseRouter: HistoryListExerciseWireframeProtocol {
 
         return view
     }
+    
+    func gotoResult(type: TypeDoExercise, id: String) {
+        let vc = ResultRouter.createModule(type: type, id: id,isHistory: true)
+        self.viewController?.push(controller: vc)
+    }
 }
