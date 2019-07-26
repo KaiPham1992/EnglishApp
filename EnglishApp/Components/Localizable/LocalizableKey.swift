@@ -89,9 +89,12 @@ struct LocalizableKey {
     static let messageQA = "messageQA"
     static let qAOlder = "qAOlder"
     static let titleQA = "titleQA"
+    static let notEnoughHoney = "notEnoughHoney"
+    static let deductFiveHoney = "deductFiveHoney"
+    static let pleaseEnterQA = "pleaseEnterQA"
+    static let pleaseEnter255Digit = "pleaseEnter255Digit"
     
     // Competition
-    
     static let titleCompetition = "titleCompetition"
     static let conditionCompetition = "conditionCompetition"
     static let timeStart = "timeStart"
@@ -180,6 +183,8 @@ struct LocalizableKey {
     static let send = "send"
     static let detail = "detail"
     static let upgrade = "upgrade"
+    static let pleaseEnterCode = "pleaseEnterCode"
+    static let notFoundCode = "notFoundCode"
 
     //comment
     static let comment = "comment"
