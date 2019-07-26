@@ -9,7 +9,7 @@
 import Foundation
 import ObjectMapper
 
-class SelfCreatedTestEntity : Mappable {
+class TestResult : Mappable {
     var _id : String?
     var exercise_name : String?
     var type_test : String?

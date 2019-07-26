@@ -9,14 +9,16 @@
 import Foundation
 import ObjectMapper
 
-class TestResultEntity : Mappable {
-    var self_created_test: [SelfCreatedTestEntity]?
+class TestsResultRespone : Mappable {
+    var total_records : String?
+    var results : [TestResult]?
     
     required init?(map: Map) {
         
     }
     func mapping(map: Map) {
-        self.self_created_test <- map["self_created_test"]
+        self.total_records <- map["total_records"]
+        self.results <- map["results"]
     }
     
 }

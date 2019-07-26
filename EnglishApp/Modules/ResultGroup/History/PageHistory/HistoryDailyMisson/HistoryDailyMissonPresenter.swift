@@ -16,7 +16,7 @@ class HistoryDailyMissonPresenter: HistoryDailyMissonPresenterProtocol, HistoryD
     var interactor: HistoryDailyMissonInteractorInputProtocol?
     private let router: HistoryDailyMissonWireframeProtocol
     
-    var listResultDailyMisson: [LessonCatelogy]?
+    var listResultDailyMisson: [TestResult]?
     var isLoadmore: Bool = true
 
     init(interface: HistoryDailyMissonViewProtocol, interactor: HistoryDailyMissonInteractorInputProtocol?, router: HistoryDailyMissonWireframeProtocol) {
@@ -32,7 +32,7 @@ class HistoryDailyMissonPresenter: HistoryDailyMissonPresenterProtocol, HistoryD
         }
     }
     
-    func getListLessonSuccessed(listLesson: [LessonCatelogy]) {
+    func getListLessonSuccessed(listLesson: [TestResult]) {
         if listLesson.count < limit{
             isLoadmore = false
         }

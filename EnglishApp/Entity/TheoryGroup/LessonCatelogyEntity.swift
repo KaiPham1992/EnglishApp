@@ -19,11 +19,11 @@ class LessonCatelogy : Mappable{
         
     }
     
-    init(selfCreatedTestEntity: SelfCreatedTestEntity) {
-        self._id = selfCreatedTestEntity._id
-        self.name = selfCreatedTestEntity.exercise_name
-        self.lesson_category_id = selfCreatedTestEntity.type_test
-    }
+//    init(selfCreatedTestEntity: SelfCreatedTestEntity) {
+//        self._id = selfCreatedTestEntity._id
+//        self.name = selfCreatedTestEntity.exercise_name
+//        self.lesson_category_id = selfCreatedTestEntity.type_test
+//    }
     
     func mapping(map: Map) {
        self._id <- map["_id"]

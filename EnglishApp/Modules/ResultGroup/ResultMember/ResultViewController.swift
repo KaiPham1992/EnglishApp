@@ -46,10 +46,10 @@ class ResultViewController: BaseViewController {
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
         
-        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise {
+        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise {
             viewRank.isHidden = true
-            leadingStackView.constant = 28
-            trailingStackView.constant = 28
+//            leadingStackView.constant = 28
+//            trailingStackView.constant = 28
             self.presenter?.getViewResult(id: id)
         }
         
@@ -73,6 +73,9 @@ class ResultViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
+        if type == .dailyMissonExercise {
+            setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
+        }
 //        if type == .result || type == .history{
 //            setTitleNavigation(title: LocalizableKey.result.showLanguage)
 //        } else {

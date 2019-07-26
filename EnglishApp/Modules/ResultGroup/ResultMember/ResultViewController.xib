@@ -136,14 +136,14 @@
                                                     </constraints>
                                                 </view>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="a4C-uD-VLz">
-                                                    <rect key="frame" x="16" y="104" width="359" height="64"/>
+                                                    <rect key="frame" x="16" y="104" width="343" height="64"/>
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N0p-8g-lUl" customClass="ViewPoint" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="0.0" width="174.5" height="64"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="166.5" height="64"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOa-XP-ehu" customClass="ViewPoint" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                                            <rect key="frame" x="184.5" y="0.0" width="174.5" height="64"/>
+                                                            <rect key="frame" x="176.5" y="0.0" width="166.5" height="64"/>
                                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </view>
                                                     </subviews>
@@ -162,7 +162,7 @@
                                                 <constraint firstItem="EAB-I0-Pox" firstAttribute="top" secondItem="Wq9-6a-m60" secondAttribute="bottom" constant="2" id="Z8O-OH-QGu"/>
                                                 <constraint firstAttribute="trailing" secondItem="Wq9-6a-m60" secondAttribute="trailing" id="Z8l-c8-5RQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="a4C-uD-VLz" secondAttribute="bottom" id="ZnE-be-qm4"/>
-                                                <constraint firstAttribute="trailing" secondItem="a4C-uD-VLz" secondAttribute="trailing" id="bX8-ZY-qBM"/>
+                                                <constraint firstAttribute="trailing" secondItem="a4C-uD-VLz" secondAttribute="trailing" constant="16" id="bX8-ZY-qBM"/>
                                                 <constraint firstAttribute="trailing" secondItem="EAB-I0-Pox" secondAttribute="trailing" id="sNe-M2-boD"/>
                                             </constraints>
                                         </view>

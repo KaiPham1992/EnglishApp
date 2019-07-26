@@ -152,7 +152,7 @@ extension ExerciseEnpoint: EndPointType {
         case .getResultCaledar(let from, let to):
             return ["date_from":from,"date_to":to]
         case .getTestResult(let type, let date, let offset):
-            return ["type": type, "date": date,"offset": offset,"limit": limit]
+            return ["type_test": type, "date": date,"offset": offset,"limit": limit]
         case .submitExercise(let param):
             return param.toJSON()
         }

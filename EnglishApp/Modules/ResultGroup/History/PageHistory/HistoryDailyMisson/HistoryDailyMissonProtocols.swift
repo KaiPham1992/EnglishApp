@@ -18,7 +18,7 @@ protocol HistoryDailyMissonWireframeProtocol: class {
 protocol HistoryDailyMissonPresenterProtocol: class {
 
     var interactor: HistoryDailyMissonInteractorInputProtocol? { get set }
-    var listResultDailyMisson: [LessonCatelogy]? {get set}
+    var listResultDailyMisson: [TestResult]? {get set}
     func getHistoryExercise(type: Int,date: String,offset: Int)
 }
 
@@ -26,7 +26,7 @@ protocol HistoryDailyMissonPresenterProtocol: class {
 protocol HistoryDailyMissonInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func getListLessonSuccessed(listLesson: [LessonCatelogy])
+    func getListLessonSuccessed(listLesson: [TestResult])
 }
 
 protocol HistoryDailyMissonInteractorInputProtocol: class {

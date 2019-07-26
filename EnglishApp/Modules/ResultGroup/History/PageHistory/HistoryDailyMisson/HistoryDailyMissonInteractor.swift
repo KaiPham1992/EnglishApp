@@ -19,7 +19,7 @@ class HistoryDailyMissonInteractor: HistoryDailyMissonInteractorInputProtocol {
         Provider.shared.exerciseAPIService.getTestResult(type: type,date: date, offset: offset, success: { (respone) in
             ProgressView.shared.hide()
             if let _respone = respone {
-                self.presenter?.getListLessonSuccessed(listLesson: _respone.self_created_test?.compactMap{LessonCatelogy(selfCreatedTestEntity: $0)} ?? [])
+                self.presenter?.getListLessonSuccessed(listLesson: _respone.results ?? [])
             }
         }) { (error) in
             ProgressView.shared.hide()

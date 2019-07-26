@@ -28,11 +28,10 @@ class HistoryDailyMissonRouter: HistoryDailyMissonWireframeProtocol {
         return view
     }
     
-    static func createModule(type: TypeHistoryExercise = .history, date: String) -> UIViewController {
+    static func createModule(date: String) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = HistoryDailyMissonViewController(nibName: nil, bundle: nil)
         view.date = date
-        view.type = type
         let interactor = HistoryDailyMissonInteractor()
         let router = HistoryDailyMissonRouter()
         let presenter = HistoryDailyMissonPresenter(interface: view, interactor: interactor, router: router)
