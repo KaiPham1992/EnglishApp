@@ -13,13 +13,15 @@ import UIKit
 class ExerciseRouter: ExerciseWireframeProtocol {
     
     weak var viewController: UIViewController?
+    var date : String = ""
 
-    static func createModule(isShowTabbar: Bool = true) -> UIViewController {
+    static func createModule(isShowTabbar: Bool = true,date: String = "") -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ExerciseViewController.initFromNib()
         view.isShowTabbar = isShowTabbar
         let interactor = ExerciseInteractor()
         let router = ExerciseRouter()
+        router.date = date
         let presenter = ExercisePresenter(interface: view, interactor: interactor, router: router)
 
         view.presenter = presenter
@@ -45,4 +47,24 @@ class ExerciseRouter: ExerciseWireframeProtocol {
         let vc = AssignExerciseRouter.createModule()
         self.viewController?.push(controller: vc,animated: true)
     }
+    func gotoHistoryCreateExercise() {
+        let vc = HistoryListExerciseRouter.createModule(date: date,type_test: TypeDoExercise.createExercise)
+        self.viewController?.push(controller: vc)
+    }
+    
+    func gotoHistoryLevelExercise() {
+        let vc = HistoryListExerciseRouter.createModule(date: date,type_test: TypeDoExercise.levelExercise)
+        self.viewController?.push(controller: vc)
+    }
+    
+    func gotoHistoryPracticeExercise() {
+        let vc = HistoryListExerciseRouter.createModule(date: date,type_test: TypeDoExercise.practiceExercise)
+        self.viewController?.push(controller: vc)
+    }
+    
+    func gotoHistoryAssignExercise() {
+        let vc = HistoryListExerciseRouter.createModule(date: date,type_test:  TypeDoExercise.assignExercise)
+        self.viewController?.push(controller: vc)
+    }
+    
 }

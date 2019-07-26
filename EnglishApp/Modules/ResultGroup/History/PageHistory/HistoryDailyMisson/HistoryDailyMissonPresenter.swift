@@ -32,7 +32,7 @@ class HistoryDailyMissonPresenter: HistoryDailyMissonPresenterProtocol, HistoryD
         }
     }
     
-    func getListLessonSuccessed(listLesson: [TestResult]) {
+    func getHistoryDailyMissonSuccessed(listLesson: [TestResult]) {
         if listLesson.count < limit{
             isLoadmore = false
         }

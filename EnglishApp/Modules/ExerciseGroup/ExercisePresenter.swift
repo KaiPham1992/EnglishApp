@@ -11,6 +11,7 @@
 import UIKit
 
 class ExercisePresenter: ExercisePresenterProtocol, ExerciseInteractorOutputProtocol {
+   
     
     
     weak private var view: ExerciseViewProtocol?
@@ -36,6 +37,23 @@ class ExercisePresenter: ExercisePresenterProtocol, ExerciseInteractorOutputProt
     
     func gotoAssignExercise() {
         self.router.gotoAssignExercise()
+    }
+    
+    
+    func gotoHistoryCreateExercise() {
+        self.router.gotoHistoryCreateExercise()
+    }
+    
+    func gotoHistoryLevelExercise() {
+        self.router.gotoHistoryLevelExercise()
+    }
+    
+    func gotoHistoryPracticeExercise() {
+        self.router.gotoHistoryPracticeExercise()
+    }
+    
+    func gotoHistoryAssignExercise() {
+        self.router.gotoHistoryAssignExercise()
     }
     
 }

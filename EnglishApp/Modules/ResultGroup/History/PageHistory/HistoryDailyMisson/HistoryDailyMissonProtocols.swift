@@ -26,7 +26,7 @@ protocol HistoryDailyMissonPresenterProtocol: class {
 protocol HistoryDailyMissonInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func getListLessonSuccessed(listLesson: [TestResult])
+    func getHistoryDailyMissonSuccessed(listLesson: [TestResult])
 }
 
 protocol HistoryDailyMissonInteractorInputProtocol: class {

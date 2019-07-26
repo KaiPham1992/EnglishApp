@@ -13,6 +13,7 @@ class TestResult : Mappable {
     var _id : String?
     var exercise_name : String?
     var type_test : String?
+    var level : Int?
     required init?(map: Map) {
         
     }
@@ -21,5 +22,6 @@ class TestResult : Mappable {
         self._id <- map["_id"]
         self.exercise_name <- map["exercise_name"]
         self.type_test <- map["type_test"]
+        self.level <- map["level"]
     }
 }

@@ -15,13 +15,13 @@ protocol ExerciseDelegate: class {
     func confirmOutTestEntrance()
 }
 
-enum TypeDoExercise {
-    case createExercise
-    case levelExercise
-    case practiceExercise
-    case assignExercise
-    case dailyMissonExercise
-    case entranceExercise
+enum TypeDoExercise : Int {
+    case createExercise = 5
+    case levelExercise = 7
+    case practiceExercise = 3
+    case assignExercise = 6
+    case dailyMissonExercise = 2
+    case entranceExercise = 1
 }
 
 class NameExerciseViewController: BaseViewController {

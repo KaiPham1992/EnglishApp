@@ -11,7 +11,7 @@ import ObjectMapper
 
 class TestsResultRespone : Mappable {
     var total_records : String?
-    var results : [TestResult]?
+    var results : [TestResult] = []
     
     required init?(map: Map) {
         

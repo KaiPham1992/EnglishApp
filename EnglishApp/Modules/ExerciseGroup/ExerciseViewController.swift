@@ -16,23 +16,41 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
 	var presenter: ExercisePresenterProtocol?
     
     @IBAction func clickCreateExercise(_ sender: Any) {
-        self.presenter?.gotoCreateExercise()
+        if isShowTabbar {
+            self.presenter?.gotoCreateExercise()
+        } else {
+            self.presenter?.gotoHistoryCreateExercise()
+        }
     }
     
     @IBAction func clickPracticeExercise(_ sender: Any) {
-        self.presenter?.gotoPracticeExercise()
+        if isShowTabbar {
+            self.presenter?.gotoPracticeExercise()
+        } else {
+            self.presenter?.gotoHistoryPracticeExercise()
+        }
+        
     }
     
     @IBAction func clickLevelExercise(_ sender: Any) {
-        self.presenter?.gotoLevelExercise()
+        if isShowTabbar {
+            self.presenter?.gotoLevelExercise()
+        } else {
+            self.presenter?.gotoHistoryLevelExercise()
+        }
+       
     }
     
     @IBAction func clickAssignExercise(_ sender: Any) {
-        self.presenter?.gotoAssignExercise()
+        if isShowTabbar {
+            self.presenter?.gotoAssignExercise()
+        } else {
+            self.presenter?.gotoHistoryAssignExercise()
+        }
+        
     }
     
     var isShowTabbar = true
-    
     
     @IBOutlet weak var lbAssignExercise: UILabel!
     @IBOutlet weak var lbLevelExercise: UILabel!

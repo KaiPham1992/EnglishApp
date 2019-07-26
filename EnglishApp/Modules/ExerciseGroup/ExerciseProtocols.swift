@@ -17,6 +17,11 @@ protocol ExerciseWireframeProtocol: class {
     func gotoPracticeExercise()
     func gotoAssignExercise()
     
+    func gotoHistoryCreateExercise()
+    func gotoHistoryLevelExercise()
+    func gotoHistoryPracticeExercise()
+    func gotoHistoryAssignExercise()
+    
 }
 //MARK: Presenter -
 protocol ExercisePresenterProtocol: class {
@@ -26,6 +31,11 @@ protocol ExercisePresenterProtocol: class {
     func gotoLevelExercise()
     func gotoPracticeExercise()
     func gotoAssignExercise()
+    
+    func gotoHistoryCreateExercise()
+    func gotoHistoryLevelExercise()
+    func gotoHistoryPracticeExercise()
+    func gotoHistoryAssignExercise()
 }
 
 //MARK: Interactor -
