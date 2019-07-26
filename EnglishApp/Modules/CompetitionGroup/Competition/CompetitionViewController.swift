@@ -78,15 +78,21 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func actionFight(status: String,tag: Int) {
-        guard let competitionId = listCompetition[tag].id else {
-            return
+        if type == .competition {
+            guard let competitionId = listCompetition[tag].id else {
+                return
+            }
+            if status == "CAN_JOIN"{
+                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+            }
+            if status == "DONE"{
+                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(competitionId)))
+            }
+        } else {
+            let vc = ResultGroupRouter.createModule(idCompetition: String(listCompetition[tag].id ?? 0))
+            self.push(controller: vc)
         }
-        if status == "CAN_JOIN"{
-            self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
-        }
-        if status == "DONE"{
-            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(competitionId)))
-        }
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

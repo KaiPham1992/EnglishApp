@@ -22,7 +22,7 @@ class CellResultCompetition: UITableViewCell {
     }
     
     func setupData(dataCell: CompetitionResultTeamEntity){
-        imgAVTTeam.sd_setImage(with: URL(string: dataCell.social_img_src&), completed: nil)
+        imgAVTTeam.sd_setImage(with: URL(string:BASE_URL_IMAGE + dataCell.img_src&), completed: nil)
         lblNameTeam.text = dataCell.name
         lblPoint.text = " " + LocalizableKey.point.showLanguage
         let rank : Int = dataCell.position ?? 0

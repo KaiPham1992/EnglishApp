@@ -19,7 +19,7 @@ class CompetitionCell: BaseTableCell {
     var type: ResultCompetition = .result{
         didSet{
             if type == .result {
-                btnJoin.setTitle(LocalizableKey.see_explain.showLanguage, for: .normal)
+                btnJoin.setTitle(LocalizableKey.see_result.showLanguage.uppercased(), for: .normal)
             }
             if type == .competition{
                 btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
