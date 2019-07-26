@@ -19,6 +19,9 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
     @IBOutlet weak var tfCode: UITextField!
     @IBOutlet weak var btnSend: UIButton!
     
+    @IBOutlet weak var lbError: UILabel!
+    @IBOutlet weak var heightOfError: NSLayoutConstraint!
+    
     var collectionProduct = ProductCollectionEntity() {
         didSet {
             tbBeePack.reloadData()
@@ -41,11 +44,23 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
         lbCode.text = LocalizableKey.enterCode.showLanguage
         tfCode.placeholder = LocalizableKey.enterCode.showLanguage
         btnSend.setTitle(LocalizableKey.send.showLanguage, for: .normal)
+        
+        tfCode.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        heightOfError.constant = 0
+    }
+    
+    @objc func textDidChange() {
+        if tfCode.text& != "" {
+            heightOfError.constant = 0
+        }
     }
     
     @IBAction func btnSendTapped(){
-        if let code = tfCode.text {
+        if let code = tfCode.text, code != "" {
             presenter?.sendRedeem(code: code)
+        } else {
+            heightOfError.constant = 17
+            lbError.text = LocalizableKey.pleaseEnterCode.showLanguage
         }
     }
 
@@ -130,8 +145,11 @@ extension StudyPackViewController{
     }
     
     func didSendRedeem(error: APIError) {
-        PopUpHelper.shared.showError(message: error.message ?? "") {
-            //
-        }
+//        PopUpHelper.shared.showError(message: error.message ?? "") {
+//            //
+//        }
+        lbError.text = LocalizableKey.notFoundCode.showLanguage
+        heightOfError.constant = 17
     }
 }
+
