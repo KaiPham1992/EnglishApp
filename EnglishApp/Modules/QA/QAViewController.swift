@@ -19,6 +19,9 @@ class QAViewController: BaseViewController {
     @IBOutlet weak var lbOlderQA: UILabel!
     @IBOutlet weak var tfQuestion: UITextField!
     
+    @IBOutlet weak var lbError: UILabel!
+    @IBOutlet weak var heightError: NSLayoutConstraint!
+    
     var listHistory = [QAEntity]() {
         didSet {
             tbHistory.reloadData()
@@ -32,6 +35,9 @@ class QAViewController: BaseViewController {
         lbMessage.text = LocalizableKey.messageQA.showLanguage
         tfQuestion.placeholder = LocalizableKey.enterQA.showLanguage
         lbOlderQA.text = LocalizableKey.qAOlder.showLanguage
+        heightError.constant = 0
+        tfQuestion.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        tfQuestion.delegate = self
     }
     
     override func btnBackTapped() {
@@ -50,9 +56,27 @@ class QAViewController: BaseViewController {
         
         presenter?.getQA()
     }
-    
+
     @IBAction func btnSearchTapped() {
-        presenter?.sendQA(qa: tfQuestion.text&)
+        if UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0 < 5 {
+            PopUpHelper.shared.showNotEnoughtBee(completionNo: nil) {
+                let storeViewController = StoreViewController()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
+                    storeViewController.moveToViewController(at: 1)
+                })
+                self.push(controller: storeViewController)
+            }
+        } else {
+            if tfQuestion.text& == "" {
+                heightError.constant = 18
+                lbError.text = LocalizableKey.pleaseEnterQA.showLanguage
+            } else {
+                PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.deductFiveHoney.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
+                    self.tfQuestion.text = ""
+                    self.presenter?.sendQA(qa: self.tfQuestion.text&)
+                }
+            }
+        }
     }
 
 }
@@ -94,4 +118,31 @@ extension QAViewController: QAViewProtocol {
             self.listHistory = list
         }
     }
+}
+
+extension QAViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 255
+    }
+    
+    @objc func textDidChange() {
+        
+        if tfQuestion.text& != "" {
+            heightError.constant = 0
+        }
+        
+        if tfQuestion.text?.count == 255 {
+            lbError.text = LocalizableKey.pleaseEnter255Digit.showLanguage
+            heightError.constant = 18
+        } else {
+            heightError.constant = 0
+        }
+    }
+    
 }
