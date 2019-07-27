@@ -20,13 +20,13 @@ class CellHistoryListExercise: UITableViewCell {
     
     func setupDatacell(dataCell: TestResult){
         if let _level = dataCell.level {
-            if _level == 1 {
+            if _level == "1" {
                 lblLevel.text = "Elementary"
             }
-            if _level == 2 {
-                lblLevel.text == "Intermediate"
+            if _level == "2" {
+                lblLevel.text = "Intermediate"
             }
-            if _level == 3 {
+            if _level == "3" {
                 lblLevel.text = "Advanced"
             }
         } else {

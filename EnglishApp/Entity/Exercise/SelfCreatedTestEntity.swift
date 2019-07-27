@@ -13,7 +13,7 @@ class TestResult : Mappable {
     var _id : String?
     var exercise_name : String?
     var type_test : String?
-    var level : Int?
+    var level : String?
     required init?(map: Map) {
         
     }
