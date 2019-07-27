@@ -11,7 +11,7 @@ import ObjectMapper
 
 class NoteListRespone : Mappable {
     var total_records : String?
-    var notes : [NoteRespone]?
+    var notes : [NoteRespone] = []
     func mapping(map: Map) {
         self.total_records <- map["total_records"]
         self.notes <- map["notes"]

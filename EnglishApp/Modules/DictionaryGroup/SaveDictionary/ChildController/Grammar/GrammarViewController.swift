@@ -14,46 +14,27 @@ import XLPagerTabStrip
 enum TypeSave{
     case grammar
     case vocabulary
-    case note
 }
 
-class GrammarViewController: UIViewController {
-
-    @IBAction func addNote(_ sender: Any) {
-        self.presenter?.gotoAddNote()
-    }
+class GrammarViewController: BaseViewController {
     
-    @IBOutlet weak var heightButtonAddNote: NSLayoutConstraint!
     @IBOutlet weak var tbvGrammar: UITableView!
     var presenter: GrammarPresenterProtocol?
-    var type : TypeSave = .grammar
     var offset = 0
     var isDelete = false
     
     var actionDeleteFinish : (()->())?
-
-	override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func setUpViews() {
+        super.setUpViews()
         tbvGrammar.registerXibFile(CellGrammar.self)
         tbvGrammar.dataSource = self
         tbvGrammar.delegate = self
-        
-        if type == .grammar {
-            heightButtonAddNote.constant = 0
-        }
-        
-        if type == .vocabulary {
-            heightButtonAddNote.constant = 0
-        }
-        
-        if type == .note {
-            heightButtonAddNote.constant = 52
-            self.presenter?.getListNote(offset: self.offset,replaceData: true)
-        }
+        self.presenter?.getListGrammar(offset: self.offset)
     }
     
-    func deleteNote(){
-        self.presenter?.deleteNote()
+    func deleteGrammar(){
+        self.presenter?.deleteGrammar()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -67,41 +48,39 @@ extension GrammarViewController : GrammarViewProtocol {
         tbvGrammar.reloadData()
     }
     
-    func reloadViewAfterDelete(){
+    func reloadViewAfterDeleted(){
         isDelete = false
         tbvGrammar.reloadData()
         actionDeleteFinish?()
     }
 }
 
-extension GrammarViewController : AddNoteDelegate{
-    func addNoteSuccessed() {
-        self.offset = 0
-        self.presenter?.getListNote(offset: self.offset,replaceData: true)
-    }
-}
-
 extension GrammarViewController : UITableViewDataSource{
-    
-    func changeStatusDelete(index: IndexPath){
-        self.presenter?.changeStatusNote(indexPath: index)
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter?.getNumberRow() ?? 0
+        let row =  self.presenter?.grammarsResponse?.likes.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
+        return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        if let data = self.presenter?.getItemIndexPath(indexPath: indexPath) {
+        if let data = self.presenter?.grammarsResponse?.likes[indexPath.row] {
             cell.indexPath = indexPath
-            cell.setupTitle(title: data.name&)
+            cell.setupTitle(title: data.lesson_name&)
         }
+        
         if isDelete {
             cell.setupDelete()
-            cell.actionClick = changeStatusDelete
+            cell.actionClick = {[weak self] (index) in
+                self?.changeStatusDelete(index: index)
+            }
         } else {
             cell.setupNoDelete()
         }
@@ -110,12 +89,16 @@ extension GrammarViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.getNumberRow() ?? 0
-        let isLoadMore = self.presenter?.checkLoadMore() ?? false
-        if indexPath.row == row - 1 && isLoadMore{
-            self.offset += 1
-            self.presenter?.getListNote(offset: self.offset,replaceData: false)
+        let row = self.presenter?.grammarsResponse?.likes.count ?? 0
+        if indexPath.row == row - 1{
+            self.offset += limit
+            self.presenter?.getListGrammar(offset: self.offset)
         }
+    }
+    
+    func changeStatusDelete(index: IndexPath){
+        let status = self.presenter?.grammarsResponse?.likes[index.row].isDelete ?? false
+        self.presenter?.grammarsResponse?.likes[index.row].isDelete = !status
     }
 }
 extension GrammarViewController: UITableViewDelegate{
@@ -123,26 +106,11 @@ extension GrammarViewController: UITableViewDelegate{
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if type == .note {
-            let id = self.presenter?.getIdNote(indexPath: indexPath) ?? ""
-            self.presenter?.gotoNote(idNote: id)
-        }
-        if type == .vocabulary{
-            self.presenter?.gotoDetailVocabulary()
-        }
-        if type == .grammar {
-            self.presenter?.gotoDetailGrammar()
-        }
+//        self.presenter?.gotoDetailGrammar()
     }
 }
 extension GrammarViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        if type == .grammar {
-            return IndicatorInfo(title: LocalizableKey.grammar.showLanguage)
-        }
-        if type == .note{
-            return IndicatorInfo(title: LocalizableKey.note.showLanguage)
-        }
-        return IndicatorInfo(title: LocalizableKey.vocabulary.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.grammar.showLanguage)
     }
 }

@@ -11,7 +11,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class NoteListViewController: UIViewController {
+class NoteListViewController: BaseViewController {
 
 	var presenter: NoteListPresenterProtocol?
 	
@@ -25,8 +25,8 @@ class NoteListViewController: UIViewController {
     
     var actionDeleteFinish : (()->())?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func setUpViews() {
+        super.setUpViews()
         tbvNoteList.registerXibFile(CellGrammar.self)
         tbvNoteList.dataSource = self
         tbvNoteList.delegate = self
@@ -58,7 +58,7 @@ extension NoteListViewController : NoteListViewProtocol {
 extension NoteListViewController : AddNoteDelegate{
     func addNoteSuccessed() {
         self.offset = 0
-        self.presenter?.getListNote(offset: self.offset,replaceData: true)
+        self.presenter?.getListNote(offset: self.offset, replaceData: true)
     }
 }
 
@@ -72,17 +72,26 @@ extension NoteListViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter?.getNumberRow() ?? 0
+        let row = self.presenter?.noteListRespone?.notes.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
+        return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        if let data = self.presenter?.getItemIndexPath(indexPath: indexPath) {
+        if let data = self.presenter?.noteListRespone?.notes[indexPath.row] {
             cell.indexPath = indexPath
             cell.setupTitle(title: data.name&)
         }
+        
         if isDelete {
             cell.setupDelete()
-            cell.actionClick = changeStatusDelete
+            cell.actionClick = {[weak self] (index) in
+                self?.changeStatusDelete(index: index)
+            }
         } else {
             cell.setupNoDelete()
         }
@@ -91,11 +100,10 @@ extension NoteListViewController : UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.getNumberRow() ?? 0
-        let isLoadMore = self.presenter?.checkLoadMore() ?? false
-        if indexPath.row == row - 1 && isLoadMore{
+        let row = self.presenter?.noteListRespone?.notes.count ?? 0
+        if indexPath.row == row - 1{
             self.offset += limit
-            self.presenter?.getListNote(offset: self.offset,replaceData: false)
+            self.presenter?.getListNote(offset: self.offset, replaceData: false)
         }
     }
 }
@@ -104,7 +112,7 @@ extension NoteListViewController: UITableViewDelegate{
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = self.presenter?.getIdNote(indexPath: indexPath) ?? ""
+        let id = self.presenter?.noteListRespone?.notes[indexPath.row]._id ?? ""
         self.presenter?.gotoNote(idNote: id)
     }
 }

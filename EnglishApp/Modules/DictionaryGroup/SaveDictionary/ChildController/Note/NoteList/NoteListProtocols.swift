@@ -15,26 +15,19 @@ protocol NoteListWireframeProtocol: class {
 
     func gotoNote(idNote: String)
     func gotoAddNote()
-    func gotoDetailVocabulary()
-    func gotoDetailGrammar()
 }
 //MARK: Presenter -
 protocol NoteListPresenterProtocol: class {
 
     var interactor: NoteListInteractorInputProtocol? { get set }
     
+    var noteListRespone : NoteListRespone? {get set}
+    func changeStatusNote(indexPath: IndexPath)
     func gotoNote(idNote: String)
     func gotoAddNote()
-    func gotoDetailVocabulary()
-    func gotoDetailGrammar()
     func getListNote(offset: Int,replaceData: Bool)
-    func getItemIndexPath(indexPath: IndexPath) -> NoteRespone?
-    func getNumberRow() -> Int
-    func changeStatusNote(indexPath: IndexPath)
     func deleteNote()
     func cancelDelete()
-    func checkLoadMore() -> Bool
-    func getIdNote(indexPath: IndexPath) -> String?
 }
 
 //MARK: Interactor -
@@ -42,7 +35,7 @@ protocol NoteListInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     
-    func getListNoteSuccessed(listNote: [NoteRespone])
+    func getListNoteSuccessed(listNote: NoteListRespone)
     func deleteNoteSuccessed()
 }
 

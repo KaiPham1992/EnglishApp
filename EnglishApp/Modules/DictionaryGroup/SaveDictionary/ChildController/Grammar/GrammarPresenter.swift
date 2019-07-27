@@ -15,9 +15,8 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
     weak private var view: GrammarViewProtocol?
     var interactor: GrammarInteractorInputProtocol?
     private let router: GrammarWireframeProtocol
-    var listRespone : [NoteRespone] = []
-    var isLoadmore: Bool = true
-    var replaceData = true
+    var grammarsResponse: GrammarsResponse?
+    var isLoadmore = true
 
     init(interface: GrammarViewProtocol, interactor: GrammarInteractorInputProtocol?, router: GrammarWireframeProtocol) {
         self.view = interface
@@ -25,73 +24,42 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         self.router = router
     }
     
-    func changeStatusNote(indexPath: IndexPath){
-        listRespone[indexPath.row].isDelete = !listRespone[indexPath.row].isDelete
+    func getListGrammar(offset: Int) {
+        if isLoadmore {
+            self.interactor?.getListGrammar(offset: offset)
+        }
     }
     
-    func deleteNote(){
-        let listId = self.listRespone.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0}
-        self.interactor?.deleteNote(id: listId)
+    func getListGrammarSuccessed(respone: GrammarsResponse) {
+        if respone.likes.count < limit {
+            isLoadmore = false
+        }
+        if grammarsResponse == nil {
+            self.grammarsResponse = respone
+        } else {
+            self.grammarsResponse?.likes += respone.likes
+        }
+        self.view?.reloadView()
     }
-    
-    func deleteNoteSuccessed(){
-        self.listRespone = self.listRespone.filter{$0.isDelete == false}
-        self.view?.reloadViewAfterDelete()
+    func deleteGrammar() {
+        let likeList = self.grammarsResponse?.likes.filter{$0.isDelete}.map{Int($0._id ?? "0") ?? 0} ?? []
+        if likeList.count > 0 {
+            self.interactor?.deleteGrammar(likeList: likeList)
+        } else {
+            self.view?.reloadViewAfterDeleted()
+        }
     }
     
     func cancelDelete(){
-        for index in 0..<listRespone.count{
-            listRespone[index].isDelete = false
+        let number = grammarsResponse?.likes.count ?? 0
+        for index in 0..<number{
+            grammarsResponse?.likes[index].isDelete = false
         }
-        self.view?.reloadViewAfterDelete()
+        self.view?.reloadViewAfterDeleted()
     }
     
-    func gotoNote(idNote: String) {
-        self.router.gotoNote(idNote: idNote)
-    }
-    
-    func getIdNote(indexPath: IndexPath) -> String?{
-        return listRespone[indexPath.row]._id
-    }
-    
-    func gotoAddNote() {
-        self.router.gotoAddNote()
-    }
-    
-    func gotoDetailVocabulary() {
-        self.router.gotoDetailVocabulary()
-    }
-    
-    func gotoDetailGrammar() {
-        self.router.gotoDetailGrammar()
-    }
-    
-    func getNumberRow() -> Int {
-        return listRespone.count
-    }
-    
-    func getItemIndexPath(indexPath: IndexPath) -> NoteRespone?{
-        return listRespone[indexPath.row]
-    }
-    
-    func checkLoadMore() -> Bool{
-        return self.isLoadmore
-    }
-    
-    func getListNote(offset: Int,replaceData: Bool) {
-        self.replaceData = replaceData
-        self.interactor?.getListNote(offset: offset)
-    }
-    
-    func getListNoteSuccessed(listNote: [NoteRespone]) {
-        if listNote.count < limit {
-            isLoadmore = false
-        }
-        if replaceData {
-            self.listRespone = listNote
-        } else {
-            self.listRespone += listNote
-        }
-        self.view?.reloadView()
+    func deleteGrammarSuccessed() {
+        grammarsResponse?.likes = self.grammarsResponse?.likes.filter{!$0.isDelete} ?? []
+        self.view?.reloadViewAfterDeleted()
     }
 }

@@ -14,21 +14,24 @@ class GrammarInteractor: GrammarInteractorInputProtocol {
     
     weak var presenter: GrammarInteractorOutputProtocol?
     
-    func getListNote(offset: Int) {
+    func getListGrammar(offset: Int) {
         ProgressView.shared.show()
-        Provider.shared.saveAPIService.getListNote(offset: offset, success: { (response) in
+        Provider.shared.saveAPIService.getListGrammar(offset: offset, success: { (response) in
             ProgressView.shared.hide()
-            self.presenter?.getListNoteSuccessed(listNote: response?.notes ?? [])
+            if let _response = response {
+                self.presenter?.getListGrammarSuccessed(respone: _response)
+            }
         }) { (error) in
             ProgressView.shared.hide()
         }
     }
-    func deleteNote(id: [Int]){
+    
+    func deleteGrammar(likeList: [Int]) {
         ProgressView.shared.show()
-        Provider.shared.saveAPIService.deleteNote(id: id, success: { (respone) in
+        Provider.shared.saveAPIService.deleteListGrammar(likeList: likeList, success: { (response) in
             ProgressView.shared.hide()
-            if let _ = respone {
-                self.presenter?.deleteNoteSuccessed()
+            if let _ = response {
+                self.presenter?.deleteGrammarSuccessed()
             }
         }) { (error) in
             ProgressView.shared.hide()

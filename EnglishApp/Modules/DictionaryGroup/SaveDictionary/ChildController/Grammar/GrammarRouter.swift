@@ -31,7 +31,7 @@ class GrammarRouter: GrammarWireframeProtocol {
     static func createModule(type: TypeSave = .grammar) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = GrammarViewController.initFromNib()
-        view.type = type
+//        view.type = type
         let interactor = GrammarInteractor()
         let router = GrammarRouter()
         let presenter = GrammarPresenter(interface: view, interactor: interactor, router: router)
@@ -41,23 +41,6 @@ class GrammarRouter: GrammarWireframeProtocol {
         router.viewController = view
         
         return view
-    }
-    
-    func gotoNote(idNote: String){
-        let vc = SeeNoteRouter.createModule(idNote: idNote)
-        vc.deleagate = viewController as! GrammarViewController
-        self.viewController?.push(controller: vc,animated: true)
-    }
-    
-    func gotoAddNote(){
-        let vc = AddNoteRouter.createModule()
-        vc.deleagate = viewController as! GrammarViewController
-        self.viewController?.push(controller: vc,animated: true)
-    }
-    
-    func gotoDetailVocabulary(){
-        let vc = DetailLessonRouter.createModule()
-        self.viewController?.push(controller: vc,animated: true)
     }
     
     func gotoDetailGrammar(){

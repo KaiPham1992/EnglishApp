@@ -42,7 +42,7 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
     
     @objc func clickFinish(){
         if let controller = self.viewControllers[self.currentIndex] as? GrammarViewController {
-            controller.deleteNote()
+            controller.deleteGrammar()
             return
         }
         

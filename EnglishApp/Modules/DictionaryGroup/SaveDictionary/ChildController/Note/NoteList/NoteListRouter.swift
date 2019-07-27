@@ -39,14 +39,4 @@ class NoteListRouter: NoteListWireframeProtocol {
         vc.deleagate = viewController as! NoteListViewController
         self.viewController?.push(controller: vc,animated: true)
     }
-    
-    func gotoDetailVocabulary(){
-        let vc = DetailLessonRouter.createModule()
-        self.viewController?.push(controller: vc,animated: true)
-    }
-    
-    func gotoDetailGrammar(){
-        let vc = DetailLessonRouter.createModule()
-        self.viewController?.push(controller: vc,animated: true)
-    }
 }
