@@ -30,26 +30,22 @@ class NameExerciseViewController: BaseViewController {
     weak var exerciseDelegate: ExerciseDelegate?
 
     @IBAction func clickNext(_ sender: Any) {
-//        arrTime[self.currentIndex - 1] = vCountTime.getCurrentTime()
-        vCountTime.stopTimer()
         if let param = self.addDataCell(indexPath: IndexPath(row: self.currentIndex - 1, section: 0)) {
             self.listAnswerQuestion[self.currentIndex - 1].answer = param
         }
         if self.currentIndex + 1 > numberQuestion {
             self.paramSubmit?.questions = listAnswerQuestion
             if let _param = self.paramSubmit {
+                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
                 self.presenter?.submitExercise(param: _param)
             }
         } else {
             self.currentIndex += 1
             lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
             clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-//            vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
         }
     }
-    
-    var paramSubmit : SubmitExerciseParam?
-    
+
     func addDataCell(indexPath: IndexPath) -> [QuestionChoiceResultParam]? {
         if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise {
             return cell.listAnswer
@@ -62,6 +58,9 @@ class NameExerciseViewController: BaseViewController {
     
     var numberQuestion : Int = 0
     var currentTime : Int = 0
+    var listAnswerQuestion : [QuestionSubmitParam] = []
+    var idExercise : String = ""
+    var paramSubmit : SubmitExerciseParam?
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
@@ -69,7 +68,6 @@ class NameExerciseViewController: BaseViewController {
     @IBOutlet weak var vCountTime: ViewTime!
     var typeExercise: TypeDoExercise = .createExercise
     
-//    var arrTime : [Int] = []
     var currentIndex = 1 {
         didSet{
             if self.currentIndex == numberQuestion {
@@ -82,13 +80,11 @@ class NameExerciseViewController: BaseViewController {
     
     var isEnd : Bool = false{
         didSet {
-//            self.arrTime[self.currentIndex] = 0
             vCountTime.stopTimer()
             if self.currentIndex < numberQuestion {
                 self.currentIndex = numberQuestion
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-//                vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex - 1])
             } else {
 //                self.presenter?.gotoResult()
             }
@@ -96,12 +92,8 @@ class NameExerciseViewController: BaseViewController {
         }
     }
     
-    var listAnswerQuestion : [QuestionSubmitParam] = []
-    var idExercise : String = ""
-    
     override func setUpViews() {
         super.setUpViews()
-//        clvQuestion.isHidden = true
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
@@ -145,14 +137,11 @@ class NameExerciseViewController: BaseViewController {
                self.confirmOutExercise()
             })
         } else {
-//            arrTime[self.currentIndex-1] = vCountTime.getCurrentTime()
             if !isEnd {
                 self.currentIndex -= 1
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
             }
-            
-//            vCountTime.setupTimeStartNow(min: arrTime[self.currentIndex-1])
         }
     }
     
@@ -162,6 +151,16 @@ class NameExerciseViewController: BaseViewController {
 }
 
 extension NameExerciseViewController :NameExerciseViewProtocol{
+    func suggestQuestionError() {
+        let errorMessage = self.presenter?.error?.message&
+        var message = "Không đủ mật ong vui lòng nạp thêm."
+        if errorMessage == "NOT_ENOUGH_DIAMOND"{
+            message = "Không đủ kim cương vui lòng nạp thêm."
+        }
+        PopUpHelper.shared.showError(message: message) {
+            
+        }
+    }
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath) {
         if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise, let dataCell =  self.presenter?.getQuestion(indexPath: indexPath){
             cell.changeDataSource(index: indexQuestion, data: dataCell.answers ?? [])
@@ -171,17 +170,15 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     func reloadView() {
         setTitleNavigation(title: self.presenter?.getNameExercise() ?? "")
         self.numberQuestion = self.presenter?.getNumber() ?? 0
+        
         self.currentTime = self.presenter?.getAllTime() ?? 0
-//          self.currentTime = 10
-//        self.arrTime = self.presenter?.getAllTime() ?? []
         lblIndexQuestion.text = "1/\(numberQuestion)"
-        if let _listIdQuestion = self.presenter?.getAllIdAndTimeQuestion() {
-            self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0,time: $1)}
+        if let _listIdQuestion = self.presenter?.getAllId() {
+            self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0,time: 0)}
         }
-        if let _id = self.presenter?.getIDExercise(), let _totalTime = self.presenter?.getTotalTime() {
-            paramSubmit = SubmitExerciseParam(exercise_id: _id, total_time: _totalTime)
+        if let _id = self.presenter?.getIDExercise(){
+            paramSubmit = SubmitExerciseParam(exercise_id: _id)
         }
-//        vCountTime.setupTime(min: self.arrTime[0])
         vCountTime.setupTimeStartNow(min: self.currentTime)
         clvQuestion.reloadData()
     }
@@ -237,9 +234,9 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 extension NameExerciseViewController : CellExerciseDelegate{
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         PopUpHelper.shared.showSuggesstionResult(diamond: {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion)
+            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
         }) {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion)
+            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
         }
     }
     
@@ -249,6 +246,10 @@ extension NameExerciseViewController : CellExerciseDelegate{
 }
 
 extension NameExerciseViewController : TimeDelegate{
+    func changeTime() {
+        self.listAnswerQuestion[self.currentIndex - 1].time += 1 
+    }
+    
     func startTime() {
         btnNext.isUserInteractionEnabled = true
         clvQuestion.isHidden = false

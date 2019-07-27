@@ -84,15 +84,17 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
         }
     }
     
-    func suggestQuestion(id: String) {
+    func suggestQuestion(id: String,isDiamond: Bool) {
         ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.suggestQuestion(id: id, success: { (response) in
+        Provider.shared.exerciseAPIService.suggestQuestion(id: id,isDiamond: isDiamond, success: { (response) in
             ProgressView.shared.hide()
             if let _response = response, let data = _response.data as? [String] {
                 self.presenter?.suggestQuestionSuccessed(respone: data)
             }
         }) { (error) in
             ProgressView.shared.hide()
+            guard let _error = error else {return}
+            self.presenter?.suggestQuestionError(error: _error)
         }
     }
 }

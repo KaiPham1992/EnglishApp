@@ -11,7 +11,7 @@ import ObjectMapper
 
 class QuestionSubmitParam : BaseParam {
     var _id : Int?
-    var time : Int?
+    var time : Int = 0
     var answer : [QuestionChoiceResultParam]?
     init(_id : Int, time : Int = 0 , answer : [QuestionChoiceResultParam] = []) {
         super.init()

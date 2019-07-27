@@ -19,6 +19,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     var type : TypeDoExercise = .assignExercise
     var indexPath: IndexPath?
     var indexQuestion: IndexPath?
+    var error: APIError?
 
     init(interface: NameExerciseViewProtocol, interactor: NameExerciseInteractorInputProtocol?, router: NameExerciseWireframeProtocol) {
         self.view = interface
@@ -63,8 +64,8 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.router.gotoResult(result: result, type: self.type)
     }
     
-    func getAllIdAndTimeQuestion() -> [(Int,Int)]?{
-        return exerciseEntity?.questions?.map{(Int($0._id ?? "0") ?? 0,Int($0.question_time ?? "0") ?? 0)}
+    func getAllId() -> [Int]?{
+        return exerciseEntity?.questions?.map{Int($0._id ?? "0") ?? 0}
     }
     
     func getAllTime() -> Int? {
@@ -110,8 +111,8 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.interactor?.exitExercise(id: id)
     }
     
-    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
-        self.interactor?.suggestQuestion(id: id)
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool) {
+        self.interactor?.suggestQuestion(id: id, isDiamond: isDiamond)
         self.indexPath = indexPath
         self.indexQuestion = indexQuestion
     }
@@ -120,5 +121,9 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         let options = self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options.filter{!respone.contains($0._id ?? "")} ?? []
         self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options = options
         self.view?.suggesQuestionSuccessed(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0), indexQuestion: self.indexQuestion ?? IndexPath(row: 0, section: 0))
+    }
+    func suggestQuestionError(error: APIError) {
+        self.error = error
+        self.view?.suggestQuestionError()
     }
 }

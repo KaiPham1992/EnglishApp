@@ -23,12 +23,12 @@ protocol ExerciseAPIServiceProtocol {
     func getDailyMisson(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
     func getListAssignExercise(offset: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
     func getListQuestionCatelogy(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
-    func suggestQuestion(id: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func suggestQuestion(id: String,isDiamond: Bool,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
-    func suggestQuestion(id: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
-        let endpoint = ExerciseEnpoint.suggestQuestion(id: id)
+    func suggestQuestion(id: String,isDiamond: Bool,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.suggestQuestion(id: id,isDiamond: isDiamond)
         network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
     

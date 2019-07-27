@@ -13,6 +13,7 @@ protocol TimeDelegate: class {
     func endTime()
     func startTime()
     func pauseTime()
+    func changeTime()
 }
 
 class ViewTime: BaseViewXib{
@@ -87,6 +88,7 @@ class ViewTime: BaseViewXib{
             delegate?.endTime()
             
         } else {
+            self.delegate?.changeTime()
             self.time -= 1
             self.setupTimer(time: self.time)
         }

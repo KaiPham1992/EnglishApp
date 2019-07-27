@@ -20,6 +20,7 @@ protocol NameExercisePresenterProtocol: class {
 
     var interactor: NameExerciseInteractorInputProtocol? { get set }
     var type : TypeDoExercise {get set}
+    var error: APIError? {get set}
     func getNameExercise() -> String?
     func gotoDetailVocabulary()
     func getViewExercise(id: String)
@@ -28,14 +29,14 @@ protocol NameExercisePresenterProtocol: class {
     func getNumber() -> Int?
     func getQuestion(indexPath: IndexPath) -> QuestionEntity?
     func getAllTime() -> [Int]?
-    func getAllIdAndTimeQuestion() -> [(Int,Int)]?
+    func getAllId() -> [Int]?
     func getIDExercise() -> Int?
     func getTotalTime() -> Int?
     func submitExercise(param: SubmitExerciseParam)
     func getAllTime() -> Int?
     func getDailyMisson()
     func exitExercise(id : Int)
-    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath)
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)
     
 }
 
@@ -48,7 +49,7 @@ protocol NameExerciseInteractorOutputProtocol: class {
     func getExerciseFailed(error:APIError)
     func exitSuccessed(respone: TestResultProfileEntity)
     func suggestQuestionSuccessed(respone: [String])
-    
+    func suggestQuestionError(error: APIError)
 }
 
 protocol NameExerciseInteractorInputProtocol: class {
@@ -59,7 +60,7 @@ protocol NameExerciseInteractorInputProtocol: class {
     func submitExercise(param: SubmitExerciseParam)
     func getDailyMisson()
     func exitExercise(id : Int)
-    func suggestQuestion(id: String)
+    func suggestQuestion(id: String,isDiamond: Bool)
 
     /* Presenter -> Interactor */
 }
@@ -74,4 +75,5 @@ protocol NameExerciseViewProtocol: class {
     func getExerciseFailed(error:APIError)
     func exitSuccessed()
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath)
+    func suggestQuestionError()
 }

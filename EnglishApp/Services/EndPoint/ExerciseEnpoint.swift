@@ -25,7 +25,7 @@ enum ExerciseEnpoint {
     case getDailyMisson
     case getListAssignExercise(offset: Int)
     case getListQuestionCategory
-    case suggestQuestion(id: String)
+    case suggestQuestion(id: String,isDiamond: Bool)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -106,8 +106,12 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
-        case .suggestQuestion(let id):
-            return ["question_details_id": id]
+        case .suggestQuestion(let id,let isDiamond):
+            if isDiamond {
+                return ["question_details_id": id, "amount_diamond": 10]
+            }
+            return ["question_details_id": id,
+                     "amount_honey": 5]
         case .getListQuestionCategory:
             return ["":""]
         case .getListAssignExercise(let offset):
