@@ -94,8 +94,8 @@ extension ProfileViewController: ProfileViewProtocol {
         vLocation.lbPlaceHolder.text = user.national
         lbFullName.text = user.fullName
         lbLevel.text = user.rankName
-        lbBee.text = user.amountDiamond*.description + " \(LocalizableKey.boxHoney.showLanguage)"
-        lbDiamon.text = user.amountHoney*.description + " \(LocalizableKey.point.showLanguage)"
+        lbBee.text = user.amountHoney*.description + " \(LocalizableKey.boxHoney.showLanguage)"
+        lbDiamon.text = user.amountDiamond*.description + " \(LocalizableKey.point.showLanguage)"
         lbPoint.text = "\(user.rankPoint*.description) \(LocalizableKey.point.showLanguage)"
         imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
         

@@ -107,11 +107,11 @@ extension UserEndPoint: EndPointType {
         
         switch self {
             
-        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser, .getGPSPosition, .getRecently:
+        case .login, .fogotPassword, .checkLogin, .logout, .loginGmail, .loginFacebook, .verifyPhone, .getPointHistory, .getListFavorite, .addFavorite, .addFavoriteStaff, .signUp, .uploadAvatar, .postRating, .getFavourite, .getHistoryBuy, .removeFavourite, .getHistoryCoin, .getRecordByFavoriteUser, .getGPSPosition, .getRecently, .updateProfile:
             return .post
         case .getCaptcha, .getIntroduceList, .getProfileUser:
             return .get
-        case .changePassword, .updateProfile, .updateProfileSocial:
+        case .changePassword, .updateProfileSocial:
             return .put
         }
     }
