@@ -18,6 +18,10 @@ protocol DictionaryWireframeProtocol: class {
 protocol DictionaryPresenterProtocol: class {
 
     var interactor: DictionaryInteractorInputProtocol? { get set }
+    var listSearchVocabulary : [WordEntity] {get set}
+    var detailVocabulary : WordExplainEntity? {get set}
+    func searchVocabulary(text: String)
+    func getDetailVocabulary(id: Int)
 }
 
 //MARK: Interactor -
@@ -37,6 +41,8 @@ protocol DictionaryInteractorInputProtocol: class {
 protocol DictionaryViewProtocol: class {
 
     var presenter: DictionaryPresenterProtocol?  { get set }
+    func searchVocabularySuccessed()
+    func getDetailVocabularySuccessed()
 
     /* Presenter -> ViewController */
 }

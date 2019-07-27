@@ -15,11 +15,24 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
     weak private var view: DictionaryViewProtocol?
     var interactor: DictionaryInteractorInputProtocol?
     private let router: DictionaryWireframeProtocol
-
+    var listSearchVocabulary : [WordEntity] = []
+    var detailVocabulary : WordExplainEntity?
+    
     init(interface: DictionaryViewProtocol, interactor: DictionaryInteractorInputProtocol?, router: DictionaryWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
-
+    
+    func searchVocabulary(text: String) {
+        self.listSearchVocabulary = RealmDBManager.share.filter(objectType: WordEntity.self, key: "word", value: text)
+        self.view?.searchVocabularySuccessed()
+    }
+    
+    func getDetailVocabulary(id: Int) {
+        if let detail = RealmDBManager.share.filter(objectType: WordExplainEntity.self, key: "id", value: id).first {
+            self.detailVocabulary = detail
+            self.view?.getDetailVocabularySuccessed()
+        }
+    }
 }

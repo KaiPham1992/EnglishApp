@@ -11,7 +11,7 @@
 import UIKit
 import DropDown
 
-class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
+class DictionaryViewController: BaseViewController {
 
     @IBOutlet weak var lblSearch: UILabel!
     @IBOutlet weak var imgPolygon: UIImageView!
@@ -19,6 +19,11 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
     @IBOutlet weak var viewDictionary: UIView!
     @IBOutlet weak var tfSearch: TextFieldBee!
     
+    @IBOutlet weak var lblTextSearch: UILabel!
+    @IBAction func searchVocabulary(_ sender: Any) {
+        let text = tfSearch.text ?? ""
+        self.presenter?.searchVocabulary(text: text)
+    }
     var presenter: DictionaryPresenterProtocol?
     let dropDownDictionary = DropDown()
     let dropDownSearch = DropDown()
@@ -41,8 +46,6 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
             self.getData()
         }
     }
-    
-    
 
     override func setUpNavigation() {
         super.setUpNavigation()
@@ -97,6 +100,17 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
         // Action triggered on selection
         dropDownSearch.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDownSearch.hide()
+            DispatchQueue.main.async {
+                self.getDetailVocabulary(index: index, item: item)
+            }
+        }
+    }
+    
+    func getDetailVocabulary(index: Int,item: String){
+        if item != "Không tìm thấy kết quả" {
+            if let id = self.presenter?.listSearchVocabulary[index].id {
+                self.presenter?.getDetailVocabulary(id: id)
+            }
         }
     }
     
@@ -104,5 +118,21 @@ class DictionaryViewController: BaseViewController, DictionaryViewProtocol {
         UIView.animate(withDuration: 0.2) {
             self.imgPolygon.transform = self.imgPolygon.transform.rotated(by: CGFloat(Double.pi))
         }
+    }
+}
+
+extension DictionaryViewController:DictionaryViewProtocol{
+    func searchVocabularySuccessed(){
+        let data = self.presenter?.listSearchVocabulary.map{$0.word} ?? []
+        if data.count == 0 {
+            dropDownSearch.dataSource = ["Không tìm thấy kết quả"]
+        } else {
+            dropDownSearch.dataSource = data
+        }
+        dropDownSearch.show()
+    }
+    
+    func getDetailVocabularySuccessed() {
+        lblTextSearch.text = self.presenter?.detailVocabulary?.explain&
     }
 }

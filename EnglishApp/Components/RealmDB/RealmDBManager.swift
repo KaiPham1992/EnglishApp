@@ -24,6 +24,19 @@ class RealmDBManager {
             database.deleteAll()
         }
     }
+    
+    func filter<T:Object,K: Codable>(objectType: T.Type,key: String,value: K) -> [T]{
+        var query = "\(key) contains '\(value)'"
+        if value is Int {
+            query = "\(key) = \(value)"
+        }
+        let objects = database.objects(objectType).filter(query).toArray()
+        guard let _objects = objects as? [T] else{
+            return []
+        }
+        return _objects
+    }
+    
     func addObject<T:Object>(value: T) {
         try! database.write {
             database.add(value, update: Realm.UpdatePolicy.all)
