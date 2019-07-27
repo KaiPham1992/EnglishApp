@@ -10,6 +10,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import SQLite3
 
 class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
 
@@ -74,7 +75,6 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
          lbLevelExercise.text = LocalizableKey.level_exercise.showLanguage
         lbAssignExercise.text = LocalizableKey.assign_exercise.showLanguage
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         if isShowTabbar {
             self.tabBarController?.tabBar.isHidden = false

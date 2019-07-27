@@ -1,5 +1,6 @@
 # platform :ios, '9.0'
 def main_pods
+    pod 'RealmSwift'
     pod 'SwiftyJSON'
     pod 'Alamofire'
     pod 'ObjectMapper'
