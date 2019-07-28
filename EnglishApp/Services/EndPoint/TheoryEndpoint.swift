@@ -13,7 +13,7 @@ enum TheoryEndpoint {
     case getListLesson(lesson_category_id: Int,offset: Int)
     case getLessonDetail(lesson_id: Int)
     case searchLesson(keyword: String)
-    case getComment(idLesson: String)
+    case getComment(idLesson: String,offset: Int)
     case likeLesson(idLesson: Int,isFavorite: Int)
     case addComment(idLesson: Int,content: String,idParent: Int?)
     case getLessonRecipe(type: Int,offset: Int)
@@ -62,8 +62,8 @@ extension TheoryEndpoint :EndPointType {
             return ["lesson_id": lesson_id]
         case .searchLesson(let keyword):
             return ["keyword": keyword]
-        case .getComment(let idLesson):
-            return ["lesson_id": Int(idLesson) ?? 0]
+        case .getComment(let idLesson,let offset):
+            return ["lesson_id": Int(idLesson) ?? 0,"offset": offset,"limit":limit]
         case .likeLesson(let idLesson, let isFavorite):
             return ["lesson_id":idLesson,"is_favorite":isFavorite]
         case .addComment(let idLesson, let content,let idParent):

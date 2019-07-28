@@ -12,7 +12,7 @@ import Foundation
 protocol TheoryAPIServiceProtocol {
     func getListLesson(lesson_category_id: Int,offset: Int, success: @escaping SuccessHandler<LessonsResponse>.object,failure: @escaping RequestFailure)
     func getLessonDetail(lesson_id: Int,success: @escaping SuccessHandler<LessonCatelogyDetail>.object,failure: @escaping RequestFailure)
-    func getComment(idLesson: String,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure)
+    func getComment(idLesson: String,offset: Int,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure)
     func likeLesson(idLesson: Int,isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func addComment(idLesson: Int,content: String,idParent: Int?, success: @escaping SuccessHandler<ParentComment>.object, failure: @escaping RequestFailure)
     func getLessonRecipe(type: Int, offset: Int,success: @escaping SuccessHandler<LessonCategoryEntity>.object, failure: @escaping RequestFailure)
@@ -49,8 +49,8 @@ class TheoryAPIService: TheoryAPIServiceProtocol{
         network.requestData(endPoint: endpoint, success: MapperData.mapArray(success), failure: failure)
     }
     
-    func getComment(idLesson: String,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure){
-        let endpoint = TheoryEndpoint.getComment(idLesson: idLesson)
+    func getComment(idLesson: String,offset: Int,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = TheoryEndpoint.getComment(idLesson: idLesson,offset: offset)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

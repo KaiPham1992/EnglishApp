@@ -11,7 +11,12 @@ import ObjectMapper
 
 class CommentEntity: Mappable {
     var total_records : Int?
-    var data : [ParentComment]?
+    var data : [ParentComment] = []
+    
+    init(){
+        total_records = 0
+        data = []
+    }
     required init?(map: Map) {
         
     }

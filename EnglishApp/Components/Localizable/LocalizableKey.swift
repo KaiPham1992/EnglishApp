@@ -238,6 +238,7 @@ struct LocalizableKey {
     static let not_correct = "not_correct"
     static let see_result = "see_result"
     static let explain_question = "explain_question"
+    static let confirm_back_result = "confirm_back_result"
     
     //popup
     static let confirm = "confirm"

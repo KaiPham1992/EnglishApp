@@ -9,6 +9,7 @@
 //
 
 import UIKit
+import XLPagerTabStrip
 
 class ExplainExerciseViewController: BaseViewController {
 
@@ -37,5 +38,10 @@ extension ExplainExerciseViewController : ExplainExerciseViewProtocol {
         } else {
             showNoData()
         }
+    }
+}
+extension ExplainExerciseViewController : IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: LocalizableKey.explain_question.showLanguage)
     }
 }

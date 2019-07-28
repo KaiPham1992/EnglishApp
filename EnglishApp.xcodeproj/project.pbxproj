@@ -234,6 +234,24 @@
 		2AED14C322EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
 		2AED14C422EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
 		2AED14C522EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
+		2AED14CD22EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C722EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift */; };
+		2AED14CE22EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C722EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift */; };
+		2AED14CF22EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C722EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift */; };
+		2AED14D022EE14BD0076C223 /* ExplainExerciseGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C822EE14BD0076C223 /* ExplainExerciseGroupRouter.swift */; };
+		2AED14D122EE14BD0076C223 /* ExplainExerciseGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C822EE14BD0076C223 /* ExplainExerciseGroupRouter.swift */; };
+		2AED14D222EE14BD0076C223 /* ExplainExerciseGroupRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C822EE14BD0076C223 /* ExplainExerciseGroupRouter.swift */; };
+		2AED14D322EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C922EE14BD0076C223 /* ExplainExerciseGroupViewController.swift */; };
+		2AED14D422EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C922EE14BD0076C223 /* ExplainExerciseGroupViewController.swift */; };
+		2AED14D522EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C922EE14BD0076C223 /* ExplainExerciseGroupViewController.swift */; };
+		2AED14D622EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14CA22EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift */; };
+		2AED14D722EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14CA22EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift */; };
+		2AED14D822EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14CA22EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift */; };
+		2AED14D922EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14CB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift */; };
+		2AED14DA22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14CB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift */; };
+		2AED14DB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14CB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift */; };
+		2AED14DC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14CC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib */; };
+		2AED14DD22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14CC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib */; };
+		2AED14DE22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14CC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib */; };
 		2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
@@ -2232,6 +2250,12 @@
 		2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWordExplain.db; sourceTree = "<group>"; };
 		2AED14BB22EE0E2F0076C223 /* sqliteWord.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWord.db; sourceTree = "<group>"; };
 		2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainQuestionResponse.swift; sourceTree = "<group>"; };
+		2AED14C722EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseGroupPresenter.swift; sourceTree = "<group>"; };
+		2AED14C822EE14BD0076C223 /* ExplainExerciseGroupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseGroupRouter.swift; sourceTree = "<group>"; };
+		2AED14C922EE14BD0076C223 /* ExplainExerciseGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseGroupViewController.swift; sourceTree = "<group>"; };
+		2AED14CA22EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseGroupProtocols.swift; sourceTree = "<group>"; };
+		2AED14CB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseGroupInteractor.swift; sourceTree = "<group>"; };
+		2AED14CC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExplainExerciseGroupViewController.xib; sourceTree = "<group>"; };
 		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
 		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
 		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
@@ -3091,6 +3115,20 @@
 			path = ExplainExercise;
 			sourceTree = "<group>";
 		};
+		2AED14C622EE148B0076C223 /* ExplainExerciseGroup */ = {
+			isa = PBXGroup;
+			children = (
+				2AED148D22EE02AA0076C223 /* ExplainExercise */,
+				2AED14C722EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift */,
+				2AED14C822EE14BD0076C223 /* ExplainExerciseGroupRouter.swift */,
+				2AED14C922EE14BD0076C223 /* ExplainExerciseGroupViewController.swift */,
+				2AED14CA22EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift */,
+				2AED14CB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift */,
+				2AED14CC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib */,
+			);
+			path = ExplainExerciseGroup;
+			sourceTree = "<group>";
+		};
 		2AF2F83522EA044400603444 /* NoteList */ = {
 			isa = PBXGroup;
 			children = (
@@ -3496,7 +3534,7 @@
 		76CE31BC22961FAC00E998FB /* ResultGroup */ = {
 			isa = PBXGroup;
 			children = (
-				2AED148D22EE02AA0076C223 /* ExplainExercise */,
+				2AED14C622EE148B0076C223 /* ExplainExerciseGroup */,
 				769A3BAE229FE55B00CA55BD /* History */,
 				76C8E2D922C19A940076E65B /* ResultExercise */,
 				76CF0C652290680B003C4B4B /* Comment */,
@@ -5308,6 +5346,7 @@
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
 				769A3BDE22A24E8C00CA55BD /* ViewTime.xib in Resources */,
+				2AED14DC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */,
 				DEB5848C2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				7643DEA522A503FC00B7C323 /* ViewShowMore.xib in Resources */,
 				DEBD6732228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
@@ -5465,6 +5504,7 @@
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
 				769A3BDF22A24E8C00CA55BD /* ViewTime.xib in Resources */,
+				2AED14DD22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */,
 				DEB5848D2291AC9500FE0356 /* HistoryBeeHeader.xib in Resources */,
 				7643DEA622A503FC00B7C323 /* ViewShowMore.xib in Resources */,
 				DEBD6733228D47E0004B74C8 /* ExplainCompetitionViewController.xib in Resources */,
@@ -5682,6 +5722,7 @@
 				DE9530FA2287DF6400E3F688 /* AppCheckBox.xib in Resources */,
 				7643DEA222A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
+				2AED14DE22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */,
 				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD193022A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31BA2295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
@@ -5987,9 +6028,11 @@
 				2AF2F84822EA05BF00603444 /* NoteListInteractor.swift in Sources */,
 				76E2FEFB228DC4C20014B1F4 /* PageViewController.swift in Sources */,
 				76C92FA622C48A7000E8ED69 /* OptionEntity.swift in Sources */,
+				2AED14CD22EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift in Sources */,
 				2A5E25D322E0C6A1009D6203 /* CatelogyExerciseViewController.swift in Sources */,
 				2A15754422E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */,
 				DE361DFF2283E57900FA3B0D /* NSObjectProtocol+Extension.swift in Sources */,
+				2AED14D022EE14BD0076C223 /* ExplainExerciseGroupRouter.swift in Sources */,
 				DE952F8B2287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				7680748D22C872D70015A75C /* QuestionResultEntity.swift in Sources */,
 				76DB93B2228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
@@ -6143,6 +6186,7 @@
 				DE3A8CE52289C75C0080A8CB /* SelectTeamInteractor.swift in Sources */,
 				2AED148122ED8E950076C223 /* VocabularyViewController.swift in Sources */,
 				DE361F3B2283E85000FA3B0D /* Network.swift in Sources */,
+				2AED14D622EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */,
 				DE361F402283E85000FA3B0D /* UpdateProfileParam.swift in Sources */,
 				DED5A02D22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
 				DEB9612B22898F1F0046801B /* QAViewController.swift in Sources */,
@@ -6393,6 +6437,7 @@
 				2AED14A922EE02D50076C223 /* ExplainExerciseProtocols.swift in Sources */,
 				DE361F512283E85000FA3B0D /* NotificationAPIService.swift in Sources */,
 				DECD190D22A269560054861D /* DetailPackPresenter.swift in Sources */,
+				2AED14D322EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */,
 				DE2ADE7522841BB9003768CE /* MenuPresenter.swift in Sources */,
 				766D1320228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				76EF925E22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */,
@@ -6459,6 +6504,7 @@
 				DE89D22122A42592000638B0 /* BXHRouter.swift in Sources */,
 				DEECF89D22871D1B00A4678B /* ForgotPasswordRouter.swift in Sources */,
 				DEECF89022871D0400A4678B /* SignUpRouter.swift in Sources */,
+				2AED14D922EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift in Sources */,
 				DE3A8CF52289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE952F9C2287D2A700E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE952FA22287D2A700E3F688 /* ProgressView.swift in Sources */,
@@ -6563,9 +6609,11 @@
 				2AF2F84922EA05BF00603444 /* NoteListInteractor.swift in Sources */,
 				76E2FEFC228DC4C20014B1F4 /* PageViewController.swift in Sources */,
 				76C92FA722C48A7000E8ED69 /* OptionEntity.swift in Sources */,
+				2AED14CE22EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift in Sources */,
 				2A5E25D422E0C6A1009D6203 /* CatelogyExerciseViewController.swift in Sources */,
 				2A15754522E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */,
 				DE952FC12287DF4800E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
+				2AED14D122EE14BD0076C223 /* ExplainExerciseGroupRouter.swift in Sources */,
 				DE952FC22287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
 				7680748E22C872D70015A75C /* QuestionResultEntity.swift in Sources */,
 				76DB93B3228C73E60081A36E /* MoreDictionaryCell.swift in Sources */,
@@ -6719,6 +6767,7 @@
 				DE3A8CE62289C75C0080A8CB /* SelectTeamInteractor.swift in Sources */,
 				2AED148222ED8E950076C223 /* VocabularyViewController.swift in Sources */,
 				DE952FE12287DF4800E3F688 /* Network.swift in Sources */,
+				2AED14D722EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */,
 				DE952FE22287DF4800E3F688 /* UpdateProfileParam.swift in Sources */,
 				DED5A02E22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
 				DEB9612C22898F1F0046801B /* QAViewController.swift in Sources */,
@@ -6969,6 +7018,7 @@
 				2AED14AA22EE02D50076C223 /* ExplainExerciseProtocols.swift in Sources */,
 				DE9530232287DF4800E3F688 /* NotificationAPIService.swift in Sources */,
 				DECD190E22A269560054861D /* DetailPackPresenter.swift in Sources */,
+				2AED14D422EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */,
 				DE9530242287DF4800E3F688 /* MenuPresenter.swift in Sources */,
 				766D1321228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				76EF925F22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */,
@@ -7035,6 +7085,7 @@
 				DE89D22222A42592000638B0 /* BXHRouter.swift in Sources */,
 				DE9530392287DF4800E3F688 /* ForgotPasswordRouter.swift in Sources */,
 				DE95303A2287DF4800E3F688 /* SignUpRouter.swift in Sources */,
+				2AED14DA22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift in Sources */,
 				DE3A8CF62289C90F0080A8CB /* TeamEntity.swift in Sources */,
 				DE95303B2287DF4800E3F688 /* KActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
 				DE95303C2287DF4800E3F688 /* ProgressView.swift in Sources */,
@@ -7239,6 +7290,7 @@
 				76CE31DD229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE9530832287DF6400E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
 				2A5E260722E0D05B009D6203 /* LevelExercisePresenter.swift in Sources */,
+				2AED14D222EE14BD0076C223 /* ExplainExerciseGroupRouter.swift in Sources */,
 				7643DEAF22A505EB00B7C323 /* ShowMorePopUp.swift in Sources */,
 				DE6FDB1322AB869A00960422 /* FindPresenter.swift in Sources */,
 				DEBD670F228D201A004B74C8 /* DetailTeamInteractor.swift in Sources */,
@@ -7248,6 +7300,7 @@
 				DE9530852287DF6400E3F688 /* Strings.swift in Sources */,
 				76CF0C7422906822003C4B4B /* CommentViewController.swift in Sources */,
 				7643DE9F22A4DD3600B7C323 /* CellExercise.swift in Sources */,
+				2AED14CF22EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift in Sources */,
 				769A3BBD229FE66F00CA55BD /* HistoryExerciseViewController.swift in Sources */,
 				DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */,
 				76CF522222CBA40B00A9D205 /* CategoryParam.swift in Sources */,
@@ -7301,6 +7354,7 @@
 				DE3A8CE72289C75C0080A8CB /* SelectTeamInteractor.swift in Sources */,
 				DE95308F2287DF6400E3F688 /* Network.swift in Sources */,
 				DE9530902287DF6400E3F688 /* UpdateProfileParam.swift in Sources */,
+				2AED14DB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift in Sources */,
 				DED5A02F22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
 				DEB9612D22898F1F0046801B /* QAViewController.swift in Sources */,
 				769A3BD822A0A69200CA55BD /* DateCell.swift in Sources */,
@@ -7324,6 +7378,7 @@
 				766D1307228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				76CE31E32296382D00E998FB /* CellResult.swift in Sources */,
 				DEB584792291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
+				2AED14D522EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */,
 				DED5A02922A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */,
 				2A436B0222EB33A800BD9285 /* HistoryListExerciseInteractor.swift in Sources */,
 				DE89D20A22A41E09000638B0 /* ChangeLanguageInteractor.swift in Sources */,
@@ -7461,6 +7516,7 @@
 				766AE7F022AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */,
 				766D135E228EF078005E47F0 /* ViewGradient.swift in Sources */,
 				765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */,
+				2AED14D822EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
 				DEB5847F2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				76CE32102296539000E998FB /* ResultCompetitionViewController.swift in Sources */,

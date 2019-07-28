@@ -17,6 +17,7 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
     private let router: CommentWireframeProtocol
     private var commentEntity: CommentEntity?
     var indexSection: Int?
+    var isLoadmore = true
 
     init(interface: CommentViewProtocol, interactor: CommentInteractorInputProtocol?, router: CommentWireframeProtocol) {
         self.view = interface
@@ -24,20 +25,27 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
         self.router = router
     }
     
-    func getComment(idLesson: String) {
-        self.interactor?.getComment(idLesson: idLesson)
+    func getComment(idLesson: String,offset: Int) {
+        if isLoadmore {
+            self.interactor?.getComment(idLesson: idLesson,offset: offset)
+        }
+        
     }
     
     func addCommentSuccessed(respone: ParentComment) {
-        if let _index = self.indexSection {
-            self.commentEntity?.data?[_index].children.append(respone)
-            self.indexSection = nil
-            self.view?.reloadView()
+        if commentEntity == nil {
+            commentEntity = CommentEntity()
+            commentEntity?.data.append(respone)
         } else {
-            self.commentEntity?.data?.append(respone)
-            self.indexSection = nil
-            self.view?.reloadView()
+            if let _index = self.indexSection {
+                self.commentEntity?.data[_index].children.append(respone)
+                self.indexSection = nil
+            } else {
+                self.commentEntity?.data.append(respone)
+                self.indexSection = nil
+            }
         }
+        self.view?.reloadView()
     }
     
     func getCommentSuccessed(respone: CommentEntity) {
@@ -46,19 +54,19 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
     }
     
     func numberParent() -> Int?{
-        return commentEntity?.data?.count
+        return commentEntity?.data.count
     }
     
     func numberChildren(section: Int) -> Int?{
-        return commentEntity?.data?[section].children.count
+        return commentEntity?.data[section].children.count
     }
     
     func getParentComment(section: Int) -> ParentComment?{
-        return commentEntity?.data?[section]
+        return commentEntity?.data[section]
     }
     
     func getChildrenComment(indexPath: IndexPath) -> ParentComment? {
-        return commentEntity?.data?[indexPath.section].children[indexPath.row]
+        return commentEntity?.data[indexPath.section].children[indexPath.row]
     }
     
     func addComment(idLesson: Int, content: String,idParent: Int?,indexSection: Int?) {

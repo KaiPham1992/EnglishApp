@@ -18,7 +18,7 @@ protocol CommentWireframeProtocol: class {
 protocol CommentPresenterProtocol: class {
 
     var interactor: CommentInteractorInputProtocol? { get set }
-    func getComment(idLesson: String)
+    func getComment(idLesson: String,offset: Int)
     func numberParent() -> Int?
     func numberChildren(section: Int) -> Int?
     func getParentComment(section: Int) -> ParentComment?
@@ -38,7 +38,7 @@ protocol CommentInteractorOutputProtocol: class {
 protocol CommentInteractorInputProtocol: class {
 
     var presenter: CommentInteractorOutputProtocol?  { get set }
-    func getComment(idLesson: String)
+    func getComment(idLesson: String,offset:Int)
     func addComment(idLesson: Int, content: String,idParent: Int?)
 
     /* Presenter -> Interactor */

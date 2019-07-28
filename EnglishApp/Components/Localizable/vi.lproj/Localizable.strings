@@ -231,6 +231,7 @@
 "not_correct" = "Chưa đạt";
 "see_result"= "Xem kết quả";
 "explain_question" = "Giải thích câu hỏi";
+"confirm_back_result" = "Bạn có muốn thoát khỏi bài tập đang xem?";
 
 //popup
 "confirm" = "XÁC NHẬN";

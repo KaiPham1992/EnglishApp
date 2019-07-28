@@ -23,7 +23,15 @@ class ResultExerciseViewController: BaseViewController, ResultExerciseViewProtoc
                 btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             }
         } else {
-            self.pop(animated: true)
+            let vc = self.navigationController?.viewControllers
+            if (vc?.count ?? 0) > 2 {
+                if let view = vc?[(vc?.count ?? 3)-3] {
+                    self.navigationController?.popToViewController(view, animated: true)
+                }
+            } else {
+                self.pop(animated: true)
+            }
+            
         }
     }
     
@@ -67,7 +75,7 @@ class ResultExerciseViewController: BaseViewController, ResultExerciseViewProtoc
     }
     
     @objc func deleteExercise(){
-        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage, complete: {
+        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.confirm_back_result.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage, complete: {
             self.pop(animated: true)
         })
     }
@@ -109,7 +117,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         return cell
     }
     func explainQuestion(questionId: Int, answerId: Int) {
-        let vc = ExplainExerciseRouter.createModule(id: questionId)
+        let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
         self.push(controller: vc)
     }
 }

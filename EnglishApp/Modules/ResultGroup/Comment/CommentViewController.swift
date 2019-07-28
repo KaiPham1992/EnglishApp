@@ -30,6 +30,7 @@ class CommentViewController: BaseViewController {
     var idLesson: String?
     var idParent: Int?
     var indexSection : Int?
+    var offset = 0
 
     override func setUpViews() {
         super.setUpViews()
@@ -38,7 +39,7 @@ class CommentViewController: BaseViewController {
         tbvComment.registerXibFile(CellHeaderComment.self)
         tbvComment.delegate = self
         tbvComment.dataSource = self
-        self.presenter?.getComment(idLesson: idLesson&)
+        self.presenter?.getComment(idLesson: idLesson&, offset: offset)
         
     }
     
@@ -88,7 +89,13 @@ extension CommentViewController : UITableViewDataSource{
         return self.presenter?.numberChildren(section: section) ?? 0
     }
     func numberOfSections(in tableView: UITableView) -> Int {
-        return self.presenter?.numberParent() ?? 0
+        let row = self.presenter?.numberParent() ?? 0
+        if row == 0 {
+            showNoData()
+        } else{
+            hideNoData()
+        }
+        return row
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -117,6 +124,20 @@ extension CommentViewController : UITableViewDataSource{
             cell.setupCellParent(comment: dataCell)
         }
         return cell.contentView
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        let row = self.presenter?.numberParent() ?? 0
+        if section == row - 1 {
+            self.offset += limit
+            self.presenter?.getComment(idLesson: idLesson&,offset: self.offset)
+        }
+    }
+}
+
+extension CommentViewController : IndicatorInfoProvider {
+    func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        return IndicatorInfo(title: LocalizableKey.comment.showLanguage)
     }
 }
 
