@@ -18,6 +18,7 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
     var grammarsResponse: GrammarsResponse?
     var isLoadmore = true
     var listDelete: [Int] = []
+    var replaceData = false
 
     init(interface: GrammarViewProtocol, interactor: GrammarInteractorInputProtocol?, router: GrammarWireframeProtocol) {
         self.view = interface
@@ -25,9 +26,22 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         self.router = router
     }
     
-    func getListGrammar(offset: Int) {
-        if isLoadmore {
+//    func getListGrammar(offset: Int) {
+//        if isLoadmore {
+//            self.interactor?.getListGrammar(offset: offset)
+//        }
+//    }
+    
+    func getListGrammar(offset: Int,replaceData: Bool) {
+        self.replaceData = replaceData
+        if replaceData {
             self.interactor?.getListGrammar(offset: offset)
+            isLoadmore = true
+            grammarsResponse = nil
+        } else {
+            if isLoadmore {
+                self.interactor?.getListGrammar(offset: offset)
+            }
         }
     }
     
@@ -35,13 +49,19 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         if respone.likes.count < limit {
             isLoadmore = false
         }
-        if grammarsResponse == nil {
-            self.grammarsResponse = respone
+        
+        if !replaceData {
+            if grammarsResponse == nil {
+                self.grammarsResponse = respone
+            } else {
+                self.grammarsResponse?.likes += respone.likes
+            }
         } else {
-            self.grammarsResponse?.likes += respone.likes
+           self.grammarsResponse = respone
         }
         self.view?.reloadView()
     }
+    
     func deleteGrammar() {
         let likeList = self.grammarsResponse?.likes.filter{$0.isDelete}.map{Int($0._id ?? "0") ?? 0} ?? []
         self.listDelete = likeList

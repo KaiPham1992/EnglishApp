@@ -16,8 +16,10 @@ class GrammarEntity : Mappable {
     var is_favorite : String?
     var created_date : String?
     var updated_date : String?
+    var lesson_id: String?
     var isDelete = false
     func mapping(map: Map) {
+        self.lesson_id <- map["lesson_id"]
         self._id <- map["_id"]
         self.lesson_name <- map["lesson_name"]
         self.lesson_category <- map["lesson_category"]

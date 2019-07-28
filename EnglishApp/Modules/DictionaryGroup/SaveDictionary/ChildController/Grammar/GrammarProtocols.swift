@@ -19,7 +19,7 @@ protocol GrammarPresenterProtocol: class {
 
     var interactor: GrammarInteractorInputProtocol? { get set }
     var grammarsResponse : GrammarsResponse? {get set}
-    func getListGrammar(offset: Int)
+    func getListGrammar(offset: Int,replaceData: Bool)
     func deleteGrammar()
     func cancelDelete()
     func confirmDelete()

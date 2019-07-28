@@ -30,7 +30,7 @@ class GrammarViewController: BaseViewController {
         tbvGrammar.registerXibFile(CellGrammar.self)
         tbvGrammar.dataSource = self
         tbvGrammar.delegate = self
-        self.presenter?.getListGrammar(offset: self.offset)
+        self.presenter?.getListGrammar(offset: self.offset,replaceData: true)
     }
     
     func deleteGrammar(){
@@ -41,6 +41,11 @@ class GrammarViewController: BaseViewController {
         super.viewDidDisappear(true)
         self.presenter?.cancelDelete()
         actionDeleteFinish?()
+    }
+    
+    func callAPIAgain(){
+        self.offset = 0
+        self.presenter?.getListGrammar(offset: self.offset,replaceData: true)
     }
 }
 extension GrammarViewController : GrammarViewProtocol {
@@ -97,7 +102,7 @@ extension GrammarViewController : UITableViewDataSource{
         let row = self.presenter?.grammarsResponse?.likes.count ?? 0
         if indexPath.row == row - 1{
             self.offset += limit
-            self.presenter?.getListGrammar(offset: self.offset)
+            self.presenter?.getListGrammar(offset: self.offset, replaceData: false)
         }
     }
     
@@ -111,7 +116,13 @@ extension GrammarViewController: UITableViewDelegate{
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        self.presenter?.gotoDetailGrammar()
+        if let _id = self.presenter?.grammarsResponse?.likes[indexPath.row].lesson_id {
+            let vc = DetailLessonRouter.createModule(idLesson: _id, type: .detailLesson) as! DetailLessonViewController
+            vc.callbackCallAgainAPI = {[unowned self] in
+                self.callAPIAgain()
+            }
+            self.push(controller: vc,animated: true)
+        }
     }
 }
 extension GrammarViewController: IndicatorInfoProvider{

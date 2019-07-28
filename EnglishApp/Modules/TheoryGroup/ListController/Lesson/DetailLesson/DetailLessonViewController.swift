@@ -22,6 +22,9 @@ class DetailLessonViewController: BaseViewController {
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: ItemLesson?
     var idLesson : String = "1"
+    var callbackCallAgainAPI : (()->())?
+    var isClickLikeImage = false
+    
     var isLike = 0{
         didSet{
             self.btnLike.setBackgroundImage(isLike == 0 ? UIImage(named:"Material_Icons_white_favorite") : #imageLiteral(resourceName: "Material_Icons_white_favorite-1") , for: .normal)
@@ -36,6 +39,13 @@ class DetailLessonViewController: BaseViewController {
             idLesson = _lesson._id ?? "1"
         }
         self.presenter?.getLessonDetail(lesson_id: Int(self.idLesson) ?? 0)
+    }
+    
+    override func btnBackTapped() {
+        if isClickLikeImage {
+            self.callbackCallAgainAPI?()
+        }
+        super.btnBackTapped()
     }
     
     override func setUpNavigation() {
@@ -53,6 +63,7 @@ class DetailLessonViewController: BaseViewController {
     }
     
     @objc func clickHeart(){
+        isClickLikeImage = true
         isLike = isLike == 0 ? 1 : 0
         self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 , isFavorite: self.isLike)
     }
