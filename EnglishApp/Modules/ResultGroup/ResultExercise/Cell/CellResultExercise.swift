@@ -24,6 +24,7 @@ class CellResultExercise: UICollectionViewCell {
         }
     }
     
+    var actionExplainExericse : ((_ questionId: Int,_ answerId: Int) -> ())?
     var numberLine: Int = 0
     let popover = Popover()
     
@@ -121,6 +122,9 @@ extension CellResultExercise: UITableViewDataSource{
         if type == "1" {
             let cell = tableView.dequeue(CellResultChoice.self, for: indexPath)
             cell.indexPath = indexPath
+            cell.actionExplainQuestion = {[weak self] (index)in
+                self?.actionExplainQuestion(indexAnswer: index)
+            }
             if let answer = dataCell?.answers?[indexPath.row] {
                 cell.setupCell(answer: answer)
             }
@@ -129,22 +133,17 @@ extension CellResultExercise: UITableViewDataSource{
         }
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
         cell.indexPath = indexPath
+        cell.actionExplainQuestion = {[weak self] (index)in
+            self?.actionExplainQuestion(indexAnswer: index)
+        }
         if let answer = dataCell?.answers?[indexPath.row] {
             cell.setupCell(answer: answer)
         }
         heightTableView.constant = tbvResultQuestion.contentSize.height
         return cell
     }
-}
-
-extension CellResultExercise : ClickQuestionDelegate{
-    func suggestQuestion(index: IndexPath) {
-        if let id = self.dataCell?.answers?[index.row]._id {
-            
-        }
-    }
     
-    func changeAnswer(id: Int, indexPath: IndexPath?) {
-        
+    func actionExplainQuestion(indexAnswer: IndexPath){
+        self.actionExplainExericse?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row]._id ?? "0") ?? 0)
     }
 }

@@ -19,6 +19,11 @@ class ResultExerciseViewController: BaseViewController, ResultExerciseViewProtoc
             self.index += 1
             lblIndexQuestion.text = "\(index + 1)/\(numberAnswer)"
             self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: false)
+            if index + 1 == (self.presenter?.getNumberAnswer() ?? 0) {
+                btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
+            }
+        } else {
+            self.pop(animated: true)
         }
     }
     
@@ -32,9 +37,13 @@ class ResultExerciseViewController: BaseViewController, ResultExerciseViewProtoc
         clvQuestion.registerXibCell(CellResultExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
+        btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: false)
+            if self.index + 1 == (self.presenter?.getNumberAnswer() ?? 0) {
+                self.btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
+            }
         }
     }
     
@@ -43,6 +52,7 @@ class ResultExerciseViewController: BaseViewController, ResultExerciseViewProtoc
             self.index -= 1
             lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
             self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
+            btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         } else {
             super.btnBackTapped()
         }
@@ -90,9 +100,15 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(CellResultExercise.self, indexPath: indexPath)
+        cell.actionExplainExericse = {[weak self] (questionId,answerId) in
+            self?.explainQuestion(questionId: questionId, answerId: answerId)
+        }
         if let dataCell = self.presenter?.getAnswer(indexPath: indexPath){
             cell.dataCell = dataCell
         }
         return cell
+    }
+    func explainQuestion(questionId: Int, answerId: Int) {
+        
     }
 }

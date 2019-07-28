@@ -116,7 +116,10 @@ extension CompetitionViewController: UITableViewDelegate, UITableViewDataSource 
 
 extension CompetitionViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.action.showLanguage)
+        if type == .competition {
+            return IndicatorInfo(title: LocalizableKey.action.showLanguage)
+        }
+        return IndicatorInfo(title: LocalizableKey.titleCompetition.showLanguage)
     }
 }
 extension CompetitionViewController: CompetitionViewProtocol{

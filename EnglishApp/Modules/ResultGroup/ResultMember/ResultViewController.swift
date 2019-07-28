@@ -48,7 +48,7 @@ class ResultViewController: BaseViewController {
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
         
         if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise {
-            viewRank.isHidden = true
+            viewRank.isHidden = false
             self.presenter?.getViewResult(id: id)
         }
         
@@ -106,9 +106,7 @@ extension ResultViewController: ResultViewProtocol{
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), completed: nil)
         lblPoint.text = self.presenter?.getTotalPoint()&
         lblTime.text = self.presenter?.getTotalTime()&
-//        if type == .result || type == .resultExercise || type == .history{
-//            viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
-//        }
+        viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
         viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
     }
 }

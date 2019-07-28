@@ -11,7 +11,7 @@ import UIKit
 class CellResultChoice: UITableViewCell {
     
     @IBAction func clickReading(_ sender: Any) {
-        
+        actionExplainQuestion?(self.indexPath ?? IndexPath(row: 0, section: 0))
     }
     @IBAction func clickCancel(_ sender: Any) {
         
@@ -20,7 +20,7 @@ class CellResultChoice: UITableViewCell {
     @IBAction func clickExclamation(_ sender: Any) {
         
     }
-    
+    var actionExplainQuestion : ((_ index : IndexPath)->())?
     @IBOutlet weak var viewAnswer: UIView!
     @IBOutlet weak var lblAnswer: UILabel!
     @IBOutlet weak var lblNumberQuestion: UILabel!

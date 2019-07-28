@@ -11,13 +11,17 @@ import UIKit
 class CellResultFillQuestion: UITableViewCell {
 
     @IBAction func clickExclamation(_ sender: Any) {
+        
     }
     
     @IBAction func clickLink(_ sender: Any) {
     }
     
     @IBAction func clickReading(_ sender: Any) {
+        actionExplainQuestion?(self.indexPath ?? IndexPath(row: 0, section: 0))
     }
+    
+    var actionExplainQuestion : ((_ index : IndexPath)->())?
     var indexPath: IndexPath?
     @IBOutlet weak var viewLine: UIView!
     @IBOutlet weak var lblAnswer: UILabel!

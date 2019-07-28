@@ -14,7 +14,7 @@ class SQLHelper {
     static let shared = SQLHelper()
     //sqlite into document file
     func convertSQLiteToRealmWordEntity(appendingPathComponent: String,complete: @escaping () -> ()) {
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
             let fileURL = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(appendingPathComponent)
             var database : OpaquePointer?
             if sqlite3_open(fileURL.path, &database) != SQLITE_OK {
@@ -39,13 +39,12 @@ class SQLHelper {
                 print("close database failed")
             }
             database = nil
-            DispatchQueue.main.async {
-                complete()
-            }
+            complete()
         }
+       
     }
     func convertSQLiteToRealmWordExplainEntity(appendingPathComponent: String, complete: @escaping () -> ()){
-        DispatchQueue.global().async {
+        DispatchQueue.main.async {
             let fileURL = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(appendingPathComponent)
             var database : OpaquePointer?
             if sqlite3_open(fileURL.path, &database) != SQLITE_OK {
@@ -71,9 +70,7 @@ class SQLHelper {
                 print("close database failed")
             }
             database = nil
-            DispatchQueue.main.async {
-                complete()
-            }
+            complete()
         }
     }
 }
