@@ -230,7 +230,7 @@
 "point" = "Điểm";
 "not_correct" = "Chưa đạt";
 "see_result"= "Xem kết quả";
-
+"explain_question" = "Giải thích câu hỏi";
 
 //popup
 "confirm" = "XÁC NHẬN";

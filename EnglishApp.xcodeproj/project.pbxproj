@@ -231,6 +231,9 @@
 		2AED14BF22EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
 		2AED14C022EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
 		2AED14C122EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
+		2AED14C322EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
+		2AED14C422EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
+		2AED14C522EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
 		2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
@@ -2228,6 +2231,7 @@
 		2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExplainExerciseViewController.xib; sourceTree = "<group>"; };
 		2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWordExplain.db; sourceTree = "<group>"; };
 		2AED14BB22EE0E2F0076C223 /* sqliteWord.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWord.db; sourceTree = "<group>"; };
+		2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainQuestionResponse.swift; sourceTree = "<group>"; };
 		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
 		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
 		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
@@ -3452,6 +3456,7 @@
 				7680748422C86CD60015A75C /* SelfCreatedTestEntity.swift */,
 				76CF521B22CB9E1E00A9D205 /* CatelogyEntity.swift */,
 				2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */,
+				2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */,
 			);
 			path = Exercise;
 			sourceTree = "<group>";
@@ -6484,6 +6489,7 @@
 				2AED147B22ED8E950076C223 /* VocabularyPresenter.swift in Sources */,
 				DEF1C26E22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				76CE32082296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
+				2AED14C322EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */,
 				2A436B0022EB33A800BD9285 /* HistoryListExerciseInteractor.swift in Sources */,
 				2A5E25D922E0C6A1009D6203 /* CatelogyExerciseInteractor.swift in Sources */,
 				76C8E2E922C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */,
@@ -7059,6 +7065,7 @@
 				2AED147C22ED8E950076C223 /* VocabularyPresenter.swift in Sources */,
 				DEF1C26F22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				76CE32092296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
+				2AED14C422EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */,
 				2A436B0122EB33A800BD9285 /* HistoryListExerciseInteractor.swift in Sources */,
 				2A5E25DA22E0C6A1009D6203 /* CatelogyExerciseInteractor.swift in Sources */,
 				76C8E2EA22C19AB80076E65B /* ResultExerciseProtocols.swift in Sources */,
@@ -7348,6 +7355,7 @@
 				2AB4A05622E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */,
 				DED5A01622A579F800872261 /* BXHCell.swift in Sources */,
 				DECD191822A269560054861D /* DetailPackProtocols.swift in Sources */,
+				2AED14C522EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */,
 				DEB5848A2291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				76CE31A22295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
 				DE95309C2287DF6400E3F688 /* HomeInteractor.swift in Sources */,

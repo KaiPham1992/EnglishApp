@@ -18,17 +18,21 @@ protocol ExplainExerciseWireframeProtocol: class {
 protocol ExplainExercisePresenterProtocol: class {
 
     var interactor: ExplainExerciseInteractorInputProtocol? { get set }
+    var explainQuestion: ExplainQuestionResponse? {get set}
+    func getExplainQuestion(id: Int)
 }
 
 //MARK: Interactor -
 protocol ExplainExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
+    func getExlainQuestionSuccessed(respone: ExplainQuestionResponse)
 }
 
 protocol ExplainExerciseInteractorInputProtocol: class {
 
     var presenter: ExplainExerciseInteractorOutputProtocol?  { get set }
+    func getExplainQuestion(id: Int)
 
     /* Presenter -> Interactor */
 }
@@ -37,6 +41,7 @@ protocol ExplainExerciseInteractorInputProtocol: class {
 protocol ExplainExerciseViewProtocol: class {
 
     var presenter: ExplainExercisePresenterProtocol?  { get set }
+    func reloadView()
 
     /* Presenter -> ViewController */
 }

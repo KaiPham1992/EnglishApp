@@ -109,6 +109,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         return cell
     }
     func explainQuestion(questionId: Int, answerId: Int) {
-        
+        let vc = ExplainExerciseRouter.createModule(id: questionId)
+        self.push(controller: vc)
     }
 }

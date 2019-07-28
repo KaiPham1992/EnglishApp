@@ -10,7 +10,7 @@
 
 import UIKit
 
-class ExplainExerciseViewController: BaseViewController, ExplainExerciseViewProtocol {
+class ExplainExerciseViewController: BaseViewController {
 
 	var presenter: ExplainExercisePresenterProtocol?
 
@@ -20,7 +20,22 @@ class ExplainExerciseViewController: BaseViewController, ExplainExerciseViewProt
     
     override func setUpViews() {
         super.setUpViews()
-        
+        self.presenter?.getExplainQuestion(id: id)
     }
-
+    
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        addBackToNavigation()
+        setTitleNavigation(title: LocalizableKey.explain_question.showLanguage)
+    }
+}
+extension ExplainExerciseViewController : ExplainExerciseViewProtocol {
+    func reloadView() {
+        if let explain = self.presenter?.explainQuestion?.explain {
+            hideNoData()
+            lblExplainQuestion.attributedText = explain.htmlToAttributedString
+        } else {
+            showNoData()
+        }
+    }
 }

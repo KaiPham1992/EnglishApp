@@ -13,4 +13,16 @@ import UIKit
 class ExplainExerciseInteractor: ExplainExerciseInteractorInputProtocol {
 
     weak var presenter: ExplainExerciseInteractorOutputProtocol?
+    
+    func getExplainQuestion(id: Int) {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.explainExercise(id: id, success: { (response) in
+            ProgressView.shared.hide()
+            if let _response = response {
+                self.presenter?.getExlainQuestionSuccessed(respone: _response)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

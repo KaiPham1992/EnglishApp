@@ -15,6 +15,7 @@ class ExplainExercisePresenter: ExplainExercisePresenterProtocol, ExplainExercis
     weak private var view: ExplainExerciseViewProtocol?
     var interactor: ExplainExerciseInteractorInputProtocol?
     private let router: ExplainExerciseWireframeProtocol
+    var explainQuestion: ExplainQuestionResponse?
 
     init(interface: ExplainExerciseViewProtocol, interactor: ExplainExerciseInteractorInputProtocol?, router: ExplainExerciseWireframeProtocol) {
         self.view = interface
@@ -22,4 +23,12 @@ class ExplainExercisePresenter: ExplainExercisePresenterProtocol, ExplainExercis
         self.router = router
     }
 
+    func getExplainQuestion(id: Int) {
+        self.interactor?.getExplainQuestion(id: id)
+    }
+    
+    func getExlainQuestionSuccessed(respone: ExplainQuestionResponse) {
+        self.explainQuestion = respone
+        self.view?.reloadView()
+    }
 }
