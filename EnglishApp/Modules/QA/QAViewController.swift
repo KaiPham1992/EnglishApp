@@ -72,8 +72,11 @@ class QAViewController: BaseViewController {
                 lbError.text = LocalizableKey.pleaseEnterQA.showLanguage
             } else {
                 PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.deductFiveHoney.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
-                    self.tfQuestion.text = ""
                     self.presenter?.sendQA(qa: self.tfQuestion.text&)
+                    self.tfQuestion.text = ""
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.presenter?.getQA()
                 }
             }
         }
