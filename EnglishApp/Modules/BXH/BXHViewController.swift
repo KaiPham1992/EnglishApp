@@ -100,7 +100,7 @@ class BXHViewController: BaseViewController {
         
         switch sender {
         case btnOption[0]:
-            quarter = 1
+            quarter = 2
             year = 2019
         case btnOption[1]:
             quarter = 1
@@ -164,6 +164,8 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
 }
 extension BXHViewController: BXHViewProtocol{
     func didGetList(listLeaderBoard: LeaderBoardEntity) {
+        tbBXH.isHidden = false
+        hideNoData()
         self.listLeaderBoard = listLeaderBoard
         
         guard let user = listLeaderBoard.user else {return}
@@ -172,7 +174,8 @@ extension BXHViewController: BXHViewProtocol{
     
     func didGetList(error: Error) {
         print(error.localizedDescription)
+        tbBXH.isHidden = true
+        showNoData()
     }
-    
-    
+
 }
