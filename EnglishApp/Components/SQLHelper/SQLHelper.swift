@@ -15,9 +15,18 @@ class SQLHelper {
     //sqlite into document file
     func convertSQLiteToRealmWordEntity(appendingPathComponent: String,complete: @escaping () -> ()) {
         DispatchQueue.main.async {
+            //save file in docment
             let fileURL = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(appendingPathComponent)
             var database : OpaquePointer?
-            if sqlite3_open(fileURL.path, &database) != SQLITE_OK {
+            //save file in project
+            guard let path = Bundle.main.path(forResource: "sqliteWord", ofType:"db") else{
+                return
+            }
+            //use with file URL
+//            if sqlite3_open(fileURL.path, &database) != SQLITE_OK {
+//                print("Error open \(fileURL.path)")
+//            }
+            if sqlite3_open(path, &database) != SQLITE_OK {
                 print("Error open \(fileURL.path)")
             }
             var statement : OpaquePointer?
@@ -45,9 +54,18 @@ class SQLHelper {
     }
     func convertSQLiteToRealmWordExplainEntity(appendingPathComponent: String, complete: @escaping () -> ()){
         DispatchQueue.main.async {
+            //save file in docment
             let fileURL = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(appendingPathComponent)
             var database : OpaquePointer?
-            if sqlite3_open(fileURL.path, &database) != SQLITE_OK {
+            //save file in project
+            guard let path = Bundle.main.path(forResource: "sqliteWordExplain", ofType:"db") else{
+                return
+            }
+            //use with file URL
+            //            if sqlite3_open(fileURL.path, &database) != SQLITE_OK {
+            //                print("Error open \(fileURL.path)")
+            //            }
+            if sqlite3_open(path, &database) != SQLITE_OK {
                 print("Error open \(fileURL.path)")
             }
             var statement : OpaquePointer?

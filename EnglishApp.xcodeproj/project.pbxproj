@@ -225,6 +225,12 @@
 		2AED14AF22EE02D50076C223 /* ExplainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */; };
 		2AED14B022EE02D50076C223 /* ExplainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */; };
 		2AED14B122EE02D50076C223 /* ExplainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */; };
+		2AED14BC22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */; };
+		2AED14BD22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */; };
+		2AED14BE22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */; };
+		2AED14BF22EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
+		2AED14C022EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
+		2AED14C122EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
 		2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
@@ -2220,6 +2226,8 @@
 		2AED149D22EE02D50076C223 /* ExplainExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseProtocols.swift; sourceTree = "<group>"; };
 		2AED149E22EE02D50076C223 /* ExplainExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseInteractor.swift; sourceTree = "<group>"; };
 		2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExplainExerciseViewController.xib; sourceTree = "<group>"; };
+		2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWordExplain.db; sourceTree = "<group>"; };
+		2AED14BB22EE0E2F0076C223 /* sqliteWord.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWord.db; sourceTree = "<group>"; };
 		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
 		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
 		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
@@ -3009,6 +3017,8 @@
 		2A9A81F222EC5FD600345C5F /* SQLHelper */ = {
 			isa = PBXGroup;
 			children = (
+				2AED14BB22EE0E2F0076C223 /* sqliteWord.db */,
+				2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */,
 				2A9A81F322EC5FE600345C5F /* SQLHelper.swift */,
 			);
 			path = SQLHelper;
@@ -5332,6 +5342,7 @@
 				76C8E30022C19B0C0076E65B /* CellResultExercise.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
 				76483BF4229EE3F00079F9A1 /* UpdateAccountView.xib in Resources */,
+				2AED14BF22EE0E2F0076C223 /* sqliteWord.db in Resources */,
 				DE89D22D22A42592000638B0 /* BXHViewController.xib in Resources */,
 				76CE31E42296382D00E998FB /* CellResult.xib in Resources */,
 				76F7F45F229466DD001E9984 /* CreateExerciseViewController.xib in Resources */,
@@ -5386,6 +5397,7 @@
 				2A5E260B22E0D05B009D6203 /* LevelExerciseViewController.xib in Resources */,
 				76CE31D222961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8422A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
+				2AED14BC22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
 				DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
@@ -5487,6 +5499,7 @@
 				76C8E30122C19B0C0076E65B /* CellResultExercise.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
 				76483BF5229EE3F00079F9A1 /* UpdateAccountView.xib in Resources */,
+				2AED14C022EE0E2F0076C223 /* sqliteWord.db in Resources */,
 				DE89D22E22A42592000638B0 /* BXHViewController.xib in Resources */,
 				76CE31E52296382D00E998FB /* CellResult.xib in Resources */,
 				76F7F460229466DD001E9984 /* CreateExerciseViewController.xib in Resources */,
@@ -5541,6 +5554,7 @@
 				2A5E260C22E0D05B009D6203 /* LevelExerciseViewController.xib in Resources */,
 				76CE31D322961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8522A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
+				2AED14BD22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
 				DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
@@ -5652,6 +5666,7 @@
 				766D1377228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
 				76CE32192296539000E998FB /* ResultCompetitionViewController.xib in Resources */,
 				2A5E25DE22E0C6A1009D6203 /* CatelogyExerciseViewController.xib in Resources */,
+				2AED14BE22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */,
 				DE95316F2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCD2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
@@ -5683,6 +5698,7 @@
 				DED5A03222A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				2AB4A05922E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
+				2AED14C122EE0E2F0076C223 /* sqliteWord.db in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2222AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9522A4C09A00B7C323 /* ViewMessage.xib in Resources */,
