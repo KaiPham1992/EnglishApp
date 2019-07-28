@@ -13,6 +13,7 @@ class CellGrammar: UITableViewCell {
     @IBOutlet weak var btnRemove: RatioButton!
     @IBOutlet weak var lblTitle: UILabel!
     
+    @IBOutlet weak var widthButton: NSLayoutConstraint!
     var actionClick : ((_ index: IndexPath)->())?
     var indexPath: IndexPath?
     
@@ -25,13 +26,13 @@ class CellGrammar: UITableViewCell {
     
     func setupDelete(){
         btnRemove.isChocie = false
-        btnRemove.isHidden = false
+        widthButton.constant = 20
         btnRemove.actionClick = clickButton
     }
     
     func setupNoDelete(){
         btnRemove.isChocie = false
-        btnRemove.isHidden = true
+        widthButton.constant = 0
     }
     
     func clickButton(isChoice: Bool){
@@ -39,7 +40,7 @@ class CellGrammar: UITableViewCell {
     }
     
     func setupTitle(title: String){
-        btnRemove.isHidden = true
+        widthButton.constant = 0
         lblTitle.text = title
     }
     

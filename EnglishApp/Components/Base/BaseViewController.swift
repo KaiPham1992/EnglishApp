@@ -134,10 +134,10 @@ open class BaseViewController: UIViewController {
     }
     
     //---
-    func showNoData() {
+    func showNoData(text: String = LocalizableKey.lbNoData.showLanguage) {
         lbNodata.removeFromSuperview()
         self.view.addSubview(lbNodata)
-        lbNodata.text = LocalizableKey.lbNoData.showLanguage
+        lbNodata.text = text
         lbNodata.centerSuperview()
     }
     
@@ -377,7 +377,8 @@ extension BaseViewController {
     }
     
     @objc func btnBackTapped() {
-        self.pop()
+        view.endEditing(true)
+        self.pop(animated: true)
     }
     
     func addCloseToNavigation(icon: UIImage = AppImage.imgClose ) {

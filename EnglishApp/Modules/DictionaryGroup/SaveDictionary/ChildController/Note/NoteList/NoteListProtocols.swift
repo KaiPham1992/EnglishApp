@@ -28,6 +28,7 @@ protocol NoteListPresenterProtocol: class {
     func getListNote(offset: Int,replaceData: Bool)
     func deleteNote()
     func cancelDelete()
+    func confirmDelete()
 }
 
 //MARK: Interactor -
@@ -57,6 +58,7 @@ protocol NoteListViewProtocol: class {
     
     func reloadView()
     func reloadViewAfterDelete()
+    func notifyDelete()
 
     /* Presenter -> ViewController */
 }

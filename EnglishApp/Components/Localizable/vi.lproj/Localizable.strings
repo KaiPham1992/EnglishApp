@@ -134,7 +134,8 @@
 "vocabulary" = "Từ vựng";
 "note" = "Ghi chú";
 "write_note" = "Viết ghi chú";
-
+"please_enter_note" = "Vui lòng nhập ghi chú của bạn";
+"cofirm_delete" = "Bạn có chắc chắn muốn xoá những mục này?";
 //theory
 
 "phrasal_verbs" = "Phrasal Verbs";

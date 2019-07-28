@@ -189,6 +189,24 @@
 		2AC7A21E22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
 		2AC7A21F22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
 		2AC7A22022D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
+		2AED147B22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
+		2AED147C22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
+		2AED147D22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
+		2AED147E22ED8E950076C223 /* VocabularyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147622ED8E950076C223 /* VocabularyRouter.swift */; };
+		2AED147F22ED8E950076C223 /* VocabularyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147622ED8E950076C223 /* VocabularyRouter.swift */; };
+		2AED148022ED8E950076C223 /* VocabularyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147622ED8E950076C223 /* VocabularyRouter.swift */; };
+		2AED148122ED8E950076C223 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147722ED8E950076C223 /* VocabularyViewController.swift */; };
+		2AED148222ED8E950076C223 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147722ED8E950076C223 /* VocabularyViewController.swift */; };
+		2AED148322ED8E950076C223 /* VocabularyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147722ED8E950076C223 /* VocabularyViewController.swift */; };
+		2AED148422ED8E950076C223 /* VocabularyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147822ED8E950076C223 /* VocabularyProtocols.swift */; };
+		2AED148522ED8E950076C223 /* VocabularyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147822ED8E950076C223 /* VocabularyProtocols.swift */; };
+		2AED148622ED8E950076C223 /* VocabularyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147822ED8E950076C223 /* VocabularyProtocols.swift */; };
+		2AED148722ED8E950076C223 /* VocabularyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147922ED8E950076C223 /* VocabularyInteractor.swift */; };
+		2AED148822ED8E950076C223 /* VocabularyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147922ED8E950076C223 /* VocabularyInteractor.swift */; };
+		2AED148922ED8E950076C223 /* VocabularyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147922ED8E950076C223 /* VocabularyInteractor.swift */; };
+		2AED148A22ED8E950076C223 /* VocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED147A22ED8E950076C223 /* VocabularyViewController.xib */; };
+		2AED148B22ED8E950076C223 /* VocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED147A22ED8E950076C223 /* VocabularyViewController.xib */; };
+		2AED148C22ED8E950076C223 /* VocabularyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED147A22ED8E950076C223 /* VocabularyViewController.xib */; };
 		2AEFC30922D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30A22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
 		2AEFC30B22D322CA00F3D5B6 /* ChildrenComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */; };
@@ -2172,6 +2190,12 @@
 		2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultsProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultTeamEntity.swift; sourceTree = "<group>"; };
+		2AED147522ED8E950076C223 /* VocabularyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyPresenter.swift; sourceTree = "<group>"; };
+		2AED147622ED8E950076C223 /* VocabularyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyRouter.swift; sourceTree = "<group>"; };
+		2AED147722ED8E950076C223 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
+		2AED147822ED8E950076C223 /* VocabularyProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyProtocols.swift; sourceTree = "<group>"; };
+		2AED147922ED8E950076C223 /* VocabularyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyInteractor.swift; sourceTree = "<group>"; };
+		2AED147A22ED8E950076C223 /* VocabularyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VocabularyViewController.xib; sourceTree = "<group>"; };
 		2AEFC30822D322C900F3D5B6 /* ChildrenComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenComment.swift; sourceTree = "<group>"; };
 		2AEFC30C22D3239400F3D5B6 /* ParentComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentComment.swift; sourceTree = "<group>"; };
 		2AEFC31022D3241900F3D5B6 /* CommentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentEntity.swift; sourceTree = "<group>"; };
@@ -3003,6 +3027,19 @@
 			path = HistoryDailyMisson;
 			sourceTree = "<group>";
 		};
+		2AED147422ED8E6A0076C223 /* Vocabulary */ = {
+			isa = PBXGroup;
+			children = (
+				2AED147522ED8E950076C223 /* VocabularyPresenter.swift */,
+				2AED147622ED8E950076C223 /* VocabularyRouter.swift */,
+				2AED147722ED8E950076C223 /* VocabularyViewController.swift */,
+				2AED147822ED8E950076C223 /* VocabularyProtocols.swift */,
+				2AED147922ED8E950076C223 /* VocabularyInteractor.swift */,
+				2AED147A22ED8E950076C223 /* VocabularyViewController.xib */,
+			);
+			path = Vocabulary;
+			sourceTree = "<group>";
+		};
 		2AF2F83522EA044400603444 /* NoteList */ = {
 			isa = PBXGroup;
 			children = (
@@ -3603,6 +3640,7 @@
 		76E2FED6228DBAB50014B1F4 /* ChildController */ = {
 			isa = PBXGroup;
 			children = (
+				2AED147422ED8E6A0076C223 /* Vocabulary */,
 				76E2FF17228DCF160014B1F4 /* Note */,
 				76E2FED7228DBAE10014B1F4 /* Grammar */,
 			);
@@ -5229,6 +5267,7 @@
 				DE49F80822A3D81D00A92C63 /* NotificationListViewController.xib in Resources */,
 				DE95318A228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED3228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				2AED148A22ED8E950076C223 /* VocabularyViewController.xib in Resources */,
 				2AB4A07022E226B900557B5F /* HistoryDailyMissonViewController.xib in Resources */,
 				DE49F7DE22A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
 				DEF1C26822903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
@@ -5382,6 +5421,7 @@
 				DE49F80922A3D81D00A92C63 /* NotificationListViewController.xib in Resources */,
 				DE95318B228846D400E3F688 /* ChangePasswordViewController.xib in Resources */,
 				76E2FED4228DBAB00014B1F4 /* SaveDictionaryViewController.xib in Resources */,
+				2AED148B22ED8E950076C223 /* VocabularyViewController.xib in Resources */,
 				2AB4A07122E226B900557B5F /* HistoryDailyMissonViewController.xib in Resources */,
 				DE49F7DF22A3CABA00A92C63 /* StudyPackCell.xib in Resources */,
 				DEF1C26922903E32005AD1A3 /* HomeTitleCell.xib in Resources */,
@@ -5589,6 +5629,7 @@
 				DED5A00922A562C300872261 /* TopThreeView.xib in Resources */,
 				76BD143D22ACC75500A48635 /* ReportQuestionView.xib in Resources */,
 				2A436B0522EB33A800BD9285 /* HistoryListExerciseViewController.xib in Resources */,
+				2AED148C22ED8E950076C223 /* VocabularyViewController.xib in Resources */,
 				768ED33822BDB63400D8BEB0 /* CellDropDownQuestion.xib in Resources */,
 				DEB9613F228993640046801B /* QACell.xib in Resources */,
 				DE953134228808ED00E3F688 /* ProfileViewController.xib in Resources */,
@@ -5938,6 +5979,7 @@
 				DE95317B228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE361EAA2283E6DB00FA3B0D /* CustomTextfield.swift in Sources */,
 				766D1366228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
+				2AED148722ED8E950076C223 /* VocabularyInteractor.swift in Sources */,
 				DED5A00322A562AE00872261 /* TopThreeView.swift in Sources */,
 				DEBD6723228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE49F81E22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
@@ -6036,6 +6078,7 @@
 				DEECF89F22871D1B00A4678B /* ForgotPasswordProtocols.swift in Sources */,
 				DEECF86E2286FCAB00A4678B /* HeaderUserView.swift in Sources */,
 				DE3A8CE52289C75C0080A8CB /* SelectTeamInteractor.swift in Sources */,
+				2AED148122ED8E950076C223 /* VocabularyViewController.swift in Sources */,
 				DE361F3B2283E85000FA3B0D /* Network.swift in Sources */,
 				DE361F402283E85000FA3B0D /* UpdateProfileParam.swift in Sources */,
 				DED5A02D22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
@@ -6266,6 +6309,7 @@
 				76E2FF37228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				2A9A81EE22EC5C6300345C5F /* WordExplainEntity.swift in Sources */,
 				DE361E822283E60500FA3B0D /* AppDropDown.swift in Sources */,
+				2AED148422ED8E950076C223 /* VocabularyProtocols.swift in Sources */,
 				76C92FAE22C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */,
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
 				764083FB22B7C9A8002D9401 /* NoteRespone.swift in Sources */,
@@ -6314,6 +6358,7 @@
 				2A07431322E7740F001E82A4 /* ItemLessonCategory.swift in Sources */,
 				76CE31AC2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672C228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
+				2AED147E22ED8E950076C223 /* VocabularyRouter.swift in Sources */,
 				DE0470A022BA85FE00438206 /* RecentlyEntity.swift in Sources */,
 				76CE31F822963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
@@ -6375,6 +6420,7 @@
 				DE95313C2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CCF2289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DECD190322A25E1A0054861D /* BeePackEntity.swift in Sources */,
+				2AED147B22ED8E950076C223 /* VocabularyPresenter.swift in Sources */,
 				DEF1C26E22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				76CE32082296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
 				2A436B0022EB33A800BD9285 /* HistoryListExerciseInteractor.swift in Sources */,
@@ -6503,6 +6549,7 @@
 				DE95317C228846D400E3F688 /* ChangePasswordPresenter.swift in Sources */,
 				DE952FCA2287DF4800E3F688 /* CustomTextfield.swift in Sources */,
 				766D1367228F2608005E47F0 /* ListLessonPresenter.swift in Sources */,
+				2AED148822ED8E950076C223 /* VocabularyInteractor.swift in Sources */,
 				DED5A00422A562AE00872261 /* TopThreeView.swift in Sources */,
 				DEBD6724228D47E0004B74C8 /* ExplainCompetitionPresenter.swift in Sources */,
 				DE49F81F22A3DB9C00A92C63 /* NotificationDetailRouter.swift in Sources */,
@@ -6601,6 +6648,7 @@
 				DE952FDF2287DF4800E3F688 /* ForgotPasswordProtocols.swift in Sources */,
 				DE952FE02287DF4800E3F688 /* HeaderUserView.swift in Sources */,
 				DE3A8CE62289C75C0080A8CB /* SelectTeamInteractor.swift in Sources */,
+				2AED148222ED8E950076C223 /* VocabularyViewController.swift in Sources */,
 				DE952FE12287DF4800E3F688 /* Network.swift in Sources */,
 				DE952FE22287DF4800E3F688 /* UpdateProfileParam.swift in Sources */,
 				DED5A02E22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
@@ -6831,6 +6879,7 @@
 				76E2FF38228DD1060014B1F4 /* AddNotePresenter.swift in Sources */,
 				2A9A81EF22EC5C6300345C5F /* WordExplainEntity.swift in Sources */,
 				DE95301E2287DF4800E3F688 /* AppDropDown.swift in Sources */,
+				2AED148522ED8E950076C223 /* VocabularyProtocols.swift in Sources */,
 				76C92FAF22C4A1AA00E8ED69 /* ListExerciseEntity.swift in Sources */,
 				DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */,
 				764083FC22B7C9A8002D9401 /* NoteRespone.swift in Sources */,
@@ -6879,6 +6928,7 @@
 				2A07431422E7740F001E82A4 /* ItemLessonCategory.swift in Sources */,
 				76CE31AD2295AE3600E998FB /* ChoiceExerciseInteractor.swift in Sources */,
 				DEBD672D228D47E0004B74C8 /* ExplainCompetitionProtocols.swift in Sources */,
+				2AED147F22ED8E950076C223 /* VocabularyRouter.swift in Sources */,
 				DE0470A122BA85FE00438206 /* RecentlyEntity.swift in Sources */,
 				76CE31F922963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
@@ -6940,6 +6990,7 @@
 				DE95313D2288324300E3F688 /* EditProfilePresenter.swift in Sources */,
 				DE3A8CD02289BE8D0080A8CB /* CompetitionEntity.swift in Sources */,
 				DECD190422A25E1A0054861D /* BeePackEntity.swift in Sources */,
+				2AED147C22ED8E950076C223 /* VocabularyPresenter.swift in Sources */,
 				DEF1C26F22903FA5005AD1A3 /* HomeRecentlyCell.swift in Sources */,
 				76CE32092296538F00E998FB /* ResultCompetitionPresenter.swift in Sources */,
 				2A436B0122EB33A800BD9285 /* HistoryListExerciseInteractor.swift in Sources */,
@@ -6966,6 +7017,7 @@
 				2AC7A21822D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */,
 				DE49F7FE22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
+				2AED148322ED8E950076C223 /* VocabularyViewController.swift in Sources */,
 				DE95315A22883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE9530632287DF6400E3F688 /* UIView+extension.swift in Sources */,
 				76CE321F229653D500E998FB /* CellResultCompetition.swift in Sources */,
@@ -7180,6 +7232,7 @@
 				DE95316322883FB100E3F688 /* PreviewProfileInteractor.swift in Sources */,
 				DE9530912287DF6400E3F688 /* BaseResponse.swift in Sources */,
 				DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */,
+				2AED147D22ED8E950076C223 /* VocabularyPresenter.swift in Sources */,
 				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
 				76CE31A52295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
 				76C92FAC22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */,
@@ -7242,6 +7295,7 @@
 				DE89D23422A425CB000638B0 /* BXHView.swift in Sources */,
 				DE95309F2287DF6400E3F688 /* LoginProtocols.swift in Sources */,
 				DE9530A02287DF6400E3F688 /* NotificationPopUp.swift in Sources */,
+				2AED148022ED8E950076C223 /* VocabularyRouter.swift in Sources */,
 				DEBCBC6C22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */,
 				DE9530A12287DF6400E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
@@ -7323,6 +7377,7 @@
 				76CE31C522961FC300E998FB /* ResultPresenter.swift in Sources */,
 				76E2FF57228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				DE9530B92287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				2AED148922ED8E950076C223 /* VocabularyInteractor.swift in Sources */,
 				7629BDD822ACD2450051B835 /* ReportSuccessedView.swift in Sources */,
 				DECD192522A269860054861D /* HeaderPackCell.swift in Sources */,
 				766AE7F022AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */,
@@ -7426,6 +7481,7 @@
 				DE9530D72287DF6400E3F688 /* AppCheckBox.swift in Sources */,
 				DE953125228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE9530D82287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				2AED148622ED8E950076C223 /* VocabularyProtocols.swift in Sources */,
 				2A5E261D22E0D119009D6203 /* AssignExerciseRouter.swift in Sources */,
 				76DB938F228C56640081A36E /* DictionaryProtocols.swift in Sources */,
 				DEB584762291ABD700FE0356 /* HistoryBeeRouter.swift in Sources */,

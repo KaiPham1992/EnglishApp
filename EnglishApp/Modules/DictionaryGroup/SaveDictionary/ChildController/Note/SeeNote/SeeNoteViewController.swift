@@ -35,12 +35,16 @@ class SeeNoteViewController: BaseViewController {
     }
     
     @objc func clickFinish(){
-        let description = tvNote.text ?? ""
+        let description = (tvNote.text ?? "").trim()
         if description != "" {
             self.presenter?.editNote(idNote: self.presenter?.getIdNote() ?? "", description: description)
             tvNote.isEditable = false
             tvNote.resignFirstResponder()
             addButtonImageToNavigation(image: #imageLiteral(resourceName: "edit"), style: .right, action: #selector(clickButtonRight))
+        } else {
+            PopUpHelper.shared.showError(message: LocalizableKey.please_enter_note.showLanguage) {
+                
+            }
         }
     }
 

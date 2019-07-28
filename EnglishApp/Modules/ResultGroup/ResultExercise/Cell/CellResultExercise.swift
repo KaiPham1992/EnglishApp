@@ -43,7 +43,7 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func detectQuestion(){
-        let question = dataCell?.content ?? ""
+        let question = dataCell?.content?.htmlToString ?? ""
         let  textArray = question.components(separatedBy: " ")
         let attributedText = NSMutableAttributedString()
         for word in textArray {

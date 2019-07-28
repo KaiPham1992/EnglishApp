@@ -53,6 +53,11 @@ extension NoteListViewController : NoteListViewProtocol {
         tbvNoteList.reloadData()
         actionDeleteFinish?()
     }
+    func notifyDelete(){
+        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.cofirm_delete.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased()) { [unowned self] in
+            self.presenter?.confirmDelete()
+        }
+    }
 }
 
 extension NoteListViewController : AddNoteDelegate{
@@ -109,8 +114,13 @@ extension NoteListViewController : UITableViewDataSource{
 }
 extension NoteListViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let id = self.presenter?.noteListRespone?.notes[indexPath.row]._id ?? ""
         self.presenter?.gotoNote(idNote: id)

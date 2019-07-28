@@ -10,7 +10,7 @@
 
 import UIKit
 
-var limit = 25
+var limit = 10
 
 class ListLessonViewController: BaseViewController {
 

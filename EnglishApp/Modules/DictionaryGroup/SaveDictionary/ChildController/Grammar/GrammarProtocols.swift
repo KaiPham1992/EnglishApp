@@ -22,6 +22,7 @@ protocol GrammarPresenterProtocol: class {
     func getListGrammar(offset: Int)
     func deleteGrammar()
     func cancelDelete()
+    func confirmDelete()
 }
 
 //MARK: Interactor -
@@ -48,6 +49,7 @@ protocol GrammarViewProtocol: class {
     var presenter: GrammarPresenterProtocol?  { get set }
     func reloadView()
     func reloadViewAfterDeleted()
+    func notifyDelete()
     
 
     /* Presenter -> ViewController */

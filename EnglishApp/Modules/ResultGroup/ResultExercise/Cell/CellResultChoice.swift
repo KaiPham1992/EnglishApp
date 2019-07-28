@@ -33,12 +33,13 @@ class CellResultChoice: UITableViewCell {
     
     func setupCell(answer: AnswerResultProfileEntity){
         lblNumberQuestion.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1)"
-        if let status = answer.status {
-            lblAnswer.text = answer.value
-            viewAnswer.backgroundColor = status == "0" ? #colorLiteral(red: 0.9019607843, green: 0.1882352941, blue: 0.1882352941, alpha: 1) : #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-        } else {
-            lblAnswer.text = ""
-            viewAnswer.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        lblAnswer.text = ""
+        viewAnswer.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
+        if let _ = answer.answer_id {
+            if let status = answer.status {
+                lblAnswer.text = answer.value
+                viewAnswer.backgroundColor = status == "2" ? #colorLiteral(red: 0.9019607843, green: 0.1882352941, blue: 0.1882352941, alpha: 1) : #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+            }
         }
     }
 }

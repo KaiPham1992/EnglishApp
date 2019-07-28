@@ -19,6 +19,7 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
     var isLoadmore: Bool = true
     var noteListRespone : NoteListRespone?
     var replaceData: Bool = false
+    var listDelete : [Int] = []
 
     init(interface: NoteListViewProtocol, interactor: NoteListInteractorInputProtocol?, router: NoteListWireframeProtocol) {
         self.view = interface
@@ -30,6 +31,8 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
         self.replaceData = replaceData
         if replaceData {
             self.interactor?.getListNote(offset: offset)
+            isLoadmore = true
+            noteListRespone = nil
         } else {
             if isLoadmore {
                 self.interactor?.getListNote(offset: offset)
@@ -45,12 +48,16 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
     func deleteNote(){
         
         let listId = self.noteListRespone?.notes.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0} ?? []
-        if listId.count > 0 {
-            self.interactor?.deleteNote(id: listId)
+        self.listDelete = listId
+        if listDelete.count > 0 {
+            self.view?.notifyDelete()
         } else {
             self.view?.reloadViewAfterDelete()
         }
-        
+    }
+    
+    func confirmDelete() {
+        self.interactor?.deleteNote(id: listDelete)
     }
     
     func deleteNoteSuccessed(){

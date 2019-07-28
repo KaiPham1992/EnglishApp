@@ -139,6 +139,8 @@ struct LocalizableKey {
     static let vocabulary = "vocabulary"
     static let note = "note"
     static let writeNote = "write_note"
+    static let please_enter_note = "please_enter_note"
+    static let cofirm_delete = "cofirm_delete"
     
     //theory
     
