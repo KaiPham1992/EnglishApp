@@ -11,7 +11,7 @@ import UIKit
 class CellResultFillQuestion: UITableViewCell {
 
     @IBAction func clickExclamation(_ sender: Any) {
-        
+        actionReportQuestion?(self.indexPath ?? IndexPath(row: 0, section: 0))
     }
     
     @IBAction func clickLink(_ sender: Any) {
@@ -24,6 +24,7 @@ class CellResultFillQuestion: UITableViewCell {
     
     var actionExplainQuestion : ((_ index : IndexPath)->())?
     var actionRelatedGrammar: ((_ index: IndexPath) -> ())?
+    var actionReportQuestion: ((_ index: IndexPath) -> ())?
     var indexPath: IndexPath?
     @IBOutlet weak var viewLine: UIView!
     @IBOutlet weak var lblAnswer: UILabel!

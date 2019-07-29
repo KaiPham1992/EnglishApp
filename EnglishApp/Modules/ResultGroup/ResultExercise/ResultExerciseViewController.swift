@@ -115,10 +115,23 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         cell.actionRelatedGrammar = {[weak self] (questionId,answerId) in
             self?.seeRelatedGrammar(questionId: questionId, answerId: answerId)
         }
+        cell.actionReportQuestion = {[weak self] (questionId,answerId) in
+            self?.reportQuestion(questionId: questionId, answerId: answerId)
+        }
         if let dataCell = self.presenter?.getAnswer(indexPath: indexPath){
             cell.dataCell = dataCell
         }
         return cell
+    }
+    
+    func reportQuestion(questionId: Int, answerId: Int) {
+        PopUpHelper.shared.showReportQuestion(cancel: {
+            
+        }) { [unowned self] in
+            PopUpHelper.shared.showThanks(completionYes: {
+                
+            })
+        }
     }
     
     func seeRelatedGrammar(questionId: Int, answerId: Int) {

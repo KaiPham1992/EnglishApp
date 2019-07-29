@@ -26,6 +26,7 @@ class CellResultExercise: UICollectionViewCell {
     
     var actionExplainExericse : ((_ questionId: Int,_ answerId: Int) -> ())?
     var actionRelatedGrammar : ((_ questionId: Int,_ answerId: Int) -> ())?
+    var actionReportQuestion : ((_ questionId: Int,_ answerId: Int) -> ())?
     var numberLine: Int = 0
     let popover = Popover()
     
@@ -129,6 +130,9 @@ extension CellResultExercise: UITableViewDataSource{
             cell.actionRelatedGrammar = {[weak self] (index) in
                 self?.actionRelatedGrammar(indexAnswer: index)
             }
+            cell.actionReportQuestion = {[weak self] (index)in
+                self?.actionReportQuestion(indexAnswer:index)
+            }
             if let answer = dataCell?.answers?[indexPath.row] {
                 cell.setupCell(answer: answer)
             }
@@ -143,6 +147,9 @@ extension CellResultExercise: UITableViewDataSource{
         cell.actionRelatedGrammar = {[weak self] (index) in
             self?.actionRelatedGrammar(indexAnswer: index)
         }
+        cell.actionReportQuestion = {[weak self] (index)in
+            self?.actionReportQuestion(indexAnswer:index)
+        }
         if let answer = dataCell?.answers?[indexPath.row] {
             cell.setupCell(answer: answer)
         }
@@ -152,6 +159,10 @@ extension CellResultExercise: UITableViewDataSource{
     
     func actionExplainQuestion(indexAnswer: IndexPath){
         self.actionExplainExericse?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row]._id ?? "0") ?? 0)
+    }
+    
+    func actionReportQuestion(indexAnswer: IndexPath){
+        self.actionReportQuestion?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row]._id ?? "0") ?? 0)
     }
     
     func actionRelatedGrammar(indexAnswer: IndexPath){

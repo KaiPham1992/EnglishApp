@@ -18,10 +18,11 @@ class CellResultChoice: UITableViewCell {
     }
     
     @IBAction func clickExclamation(_ sender: Any) {
-        
+        actionReportQuestion?(self.indexPath ?? IndexPath(row: 0, section: 0))
     }
     var actionExplainQuestion : ((_ index : IndexPath)->())?
     var actionRelatedGrammar: ((_ index: IndexPath) -> ())?
+    var actionReportQuestion: ((_ index: IndexPath) -> ())?
     @IBOutlet weak var viewAnswer: UIView!
     @IBOutlet weak var lblAnswer: UILabel!
     @IBOutlet weak var lblNumberQuestion: UILabel!
