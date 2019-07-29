@@ -24,7 +24,7 @@ class CatelogyExerciseViewController: BaseViewController {
         tbvLevelExercise.registerXibFile(CellLevelExercise.self)
         tbvLevelExercise.dataSource = self
         tbvLevelExercise.delegate = self
-        self.presenter?.getListCatelogy()
+        self.presenter?.getListCatelogy(offset: self.offset)
         
     }
     override func setUpNavigation() {
@@ -47,7 +47,7 @@ extension CatelogyExerciseViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.catelogy?.categories?.count ?? 0
+        let row = self.presenter?.catelogy?.categories.count ?? 0
         if row == 0 {
             showNoData()
         } else {
@@ -57,17 +57,23 @@ extension CatelogyExerciseViewController : UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
-        if let dataCell = self.presenter?.catelogy?.categories?[indexPath.row] {
+        if let dataCell = self.presenter?.catelogy?.categories[indexPath.row] {
             cell.lblNameExercise.text = dataCell.name&
         }
         
         return cell
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.catelogy?.categories.count ?? 0
+        if row - 1 == indexPath.row {
+            self.presenter?.getListCatelogy(offset: self.offset)
+        }
+    }
 }
 extension CatelogyExerciseViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = self.presenter?.catelogy?.categories?[indexPath.row]._id ?? "0"
+        let id = self.presenter?.catelogy?.categories[indexPath.row]._id ?? "0"
         self.presenter?.gotoChoiceExercise(type: typeTest, categoryId: id,studyPackId: self.studyPackId)
     }
     

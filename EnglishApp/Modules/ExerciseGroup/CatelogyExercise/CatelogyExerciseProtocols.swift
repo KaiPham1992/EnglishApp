@@ -21,7 +21,7 @@ protocol CatelogyExercisePresenterProtocol: class {
     
     var catelogy: CatelogyEntity? {get set}
     
-    func getListCatelogy()
+    func getListCatelogy(offset: Int)
     func gotoChoiceExercise(type: Int, categoryId: String,studyPackId:Int)
 }
 
@@ -35,7 +35,7 @@ protocol CatelogyExerciseInteractorOutputProtocol: class {
 protocol CatelogyExerciseInteractorInputProtocol: class {
 
     var presenter: CatelogyExerciseInteractorOutputProtocol?  { get set }
-    func getListCatelogy()
+    func getListCatelogy(offset: Int)
 
     /* Presenter -> Interactor */
 }

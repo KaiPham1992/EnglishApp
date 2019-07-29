@@ -16,6 +16,7 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
     var interactor: ChoiceExerciseInteractorInputProtocol?
     private let router: ChoiceExerciseWireframeProtocol
     var exerciseChoiceEntity: ExerciseChoiceEntity?
+    var isLoadmore = true
 
     init(interface: ChoiceExerciseViewProtocol, interactor: ChoiceExerciseInteractorInputProtocol?, router: ChoiceExerciseWireframeProtocol) {
         self.view = interface
@@ -27,12 +28,22 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
         self.router.gotoExercise(id: id)
     }
     
-    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int, studyPackId: Int?) {
-        self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level,studyPackId:studyPackId)
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int, studyPackId: Int?,offset: Int) {
+        if isLoadmore {
+            self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level,studyPackId:studyPackId,offset: offset)
+        }
     }
+        
     
     func getViewChoiceExerciseSuccessed(respone: ExerciseChoiceEntity) {
-        self.exerciseChoiceEntity = respone
+        if respone.exercises.count < limit {
+            isLoadmore = false
+        }
+        if exerciseChoiceEntity == nil {
+            self.exerciseChoiceEntity = respone
+        } else {
+            self.exerciseChoiceEntity?.exercises += respone.exercises
+        }
         self.view?.reloadView()
     }
 

@@ -12,7 +12,7 @@ import ObjectMapper
 class CatelogyEntity : Mappable {
     
     var total_records : Int?
-    var categories : [SearchEntity]?
+    var categories : [SearchEntity] = []
     
     required init?(map: Map) {
         

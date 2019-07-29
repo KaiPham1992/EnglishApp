@@ -47,18 +47,24 @@ extension AssignExerciseViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter?.listAssignExercise?.exercises?.count ?? 0
+        let row = self.presenter?.listAssignExercise?.exercises.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
+        return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
         cell.indexPath = indexPath
-        if let dataCell = self.presenter?.listAssignExercise?.exercises?[indexPath.row]{
+        if let dataCell = self.presenter?.listAssignExercise?.exercises[indexPath.row]{
             cell.setupCell(dataCell: dataCell)
         }
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.listAssignExercise?.exercises?.count ?? 0
+        let row = self.presenter?.listAssignExercise?.exercises.count ?? 0
         if indexPath.row == row {
             self.offset += limit
             self.presenter?.getListAssignExercise(offset: self.offset)
@@ -67,7 +73,7 @@ extension AssignExerciseViewController : UITableViewDataSource{
 }
 extension AssignExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.presenter?.listAssignExercise?.exercises?[indexPath.row]._id {
+        if let id = self.presenter?.listAssignExercise?.exercises[indexPath.row]._id {
             let vc = NameExerciseRouter.createModule(id: id, type: .assignExercise)
             self.push(controller: vc)
         }

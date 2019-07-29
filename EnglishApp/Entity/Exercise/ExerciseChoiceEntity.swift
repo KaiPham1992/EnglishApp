@@ -11,7 +11,7 @@ import ObjectMapper
 
 class ExerciseChoiceEntity : Mappable{
     var total_exercises : Int?
-    var exercises : [ExerciseEntity]?
+    var exercises : [ExerciseEntity] = []
     func mapping(map: Map) {
         
     }

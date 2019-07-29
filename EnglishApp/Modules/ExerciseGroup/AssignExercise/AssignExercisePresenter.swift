@@ -31,10 +31,14 @@ class AssignExercisePresenter: AssignExercisePresenterProtocol, AssignExerciseIn
     }
     
     func getListAssignExerciseSuccessed(respone: ExerciseChoiceEntity) {
-        if (respone.exercises?.count ?? 0) < 25 {
+        if respone.exercises.count < 25 {
             isLoadMore = false
         }
-        self.listAssignExercise = respone
+        if listAssignExercise == nil {
+            self.listAssignExercise = respone
+        } else {
+            self.listAssignExercise?.exercises += respone.exercises
+        }
         self.view?.reloadView()
     }
 

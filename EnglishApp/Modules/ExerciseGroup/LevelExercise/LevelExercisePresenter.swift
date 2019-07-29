@@ -18,7 +18,6 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
     
     var levelExerciseEntity: LevelExerciseEntity?
     var isLoadMore = true
-    var isLoadMoreLevel = true
     
     init(interface: LevelExerciseViewProtocol, interactor: LevelExerciseInteractorInputProtocol?, router: LevelExerciseWireframeProtocol) {
         self.view = interface
@@ -32,15 +31,19 @@ class LevelExercisePresenter: LevelExercisePresenterProtocol, LevelExerciseInter
     }
 
     func getLevelExercise(type_test: Int,offset: Int){
-        if isLoadMoreLevel {
+        if isLoadMore {
             self.interactor?.getLevelExercise(type_test: type_test, offset: offset)
         }
     }
     
     func getListLevelExerciseSuccessed(respone: LevelExerciseEntity){
-        self.levelExerciseEntity = respone
-        if  (respone.study_categories?.count ?? 0) < limit {
-            isLoadMoreLevel = false
+        if respone.study_categories.count < limit {
+            isLoadMore = false
+        }
+        if levelExerciseEntity == nil {
+            self.levelExerciseEntity = respone
+        } else {
+            self.levelExerciseEntity?.study_categories += respone.study_categories
         }
         self.view?.reloadView()
     }

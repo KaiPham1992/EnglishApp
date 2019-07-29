@@ -19,7 +19,7 @@ protocol ChoiceExercisePresenterProtocol: class {
 
     var exerciseChoiceEntity : ExerciseChoiceEntity? {get set}
     var interactor: ChoiceExerciseInteractorInputProtocol? { get set }
-    func getViewChoiceExercise(typeTest: Int, catelogyId: Int,level: Int,studyPackId: Int?)
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int,level: Int,studyPackId: Int?,offset: Int)
     func gotoExercise(id: String)
 }
 
@@ -33,7 +33,7 @@ protocol ChoiceExerciseInteractorOutputProtocol: class {
 protocol ChoiceExerciseInteractorInputProtocol: class {
 
     var presenter: ChoiceExerciseInteractorOutputProtocol?  { get set }
-    func getViewChoiceExercise(typeTest: Int, catelogyId: Int,level: Int,studyPackId: Int?)
+    func getViewChoiceExercise(typeTest: Int, catelogyId: Int,level: Int,studyPackId: Int?,offset: Int)
 
     /* Presenter -> Interactor */
 }

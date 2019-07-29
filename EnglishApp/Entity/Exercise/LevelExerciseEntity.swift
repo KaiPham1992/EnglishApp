@@ -11,7 +11,7 @@ import ObjectMapper
 
 class LevelExerciseEntity : Mappable{
     var total_records : Int?
-    var study_categories : [SearchEntity]?
+    var study_categories : [SearchEntity] = []
     required init?(map: Map) {
         
     }

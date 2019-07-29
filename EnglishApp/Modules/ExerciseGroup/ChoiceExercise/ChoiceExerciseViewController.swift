@@ -30,10 +30,11 @@ class ChoiceExerciseViewController: BaseViewController {
     var type : Int = 0
     var categoryId: String  = "0"
     var studyPackId: Int?
+    var offset = 0
     
     var level = 1 {
         didSet{
-            self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(categoryId) ?? 0, level: level, studyPackId: self.studyPackId)
+            self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(categoryId) ?? 0, level: level, studyPackId: self.studyPackId, offset: self.offset)
         }
     }
 
@@ -47,7 +48,7 @@ class ChoiceExerciseViewController: BaseViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.setupDropDown()
         }
-        self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(categoryId) ?? 0, level: level, studyPackId: self.studyPackId)
+        self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(categoryId) ?? 0, level: level, studyPackId: self.studyPackId, offset: self.offset)
         
     }
     
@@ -96,7 +97,7 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.exerciseChoiceEntity?.exercises?.count ?? 0
+        let row = self.presenter?.exerciseChoiceEntity?.exercises.count ?? 0
         if row == 0 {
             showNoData()
         } else {
@@ -107,15 +108,22 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellChoiceExercise.self, for: indexPath)
         cell.level = self.level
-        if let dataCell = self.presenter?.exerciseChoiceEntity?.exercises?[indexPath.row] {
+        if let dataCell = self.presenter?.exerciseChoiceEntity?.exercises[indexPath.row] {
             cell.name = dataCell.name ?? ""
         }
         return cell
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.exerciseChoiceEntity?.exercises.count ?? 0
+        if row - 1 == indexPath.row {
+            self.offset += limit
+            self.presenter?.getViewChoiceExercise(typeTest: type, catelogyId: Int(categoryId) ?? 0, level: level, studyPackId: self.studyPackId, offset: self.offset)
+        }
+    }
 }
 extension ChoiceExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.presenter?.exerciseChoiceEntity?.exercises?[indexPath.row]._id {
+        if let id = self.presenter?.exerciseChoiceEntity?.exercises[indexPath.row]._id {
             self.presenter?.gotoExercise(id: id)
         }
     }

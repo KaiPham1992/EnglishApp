@@ -53,22 +53,32 @@ extension LevelExerciseViewController : UITableViewDataSource{
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.levelExerciseEntity?.study_categories?.count ?? 0
+        let row = self.presenter?.levelExerciseEntity?.study_categories.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
         return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
-        if let dataCell = self.presenter?.levelExerciseEntity?.study_categories?[indexPath.row] {
+        if let dataCell = self.presenter?.levelExerciseEntity?.study_categories[indexPath.row] {
             cell.lblNameExercise.text = dataCell.name&
         }
         return cell
     }
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.levelExerciseEntity?.study_categories.count ?? 0
+        if indexPath.row == row - 1{
+            self.offset += limit
+            self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
+        }
     }
 }
 extension LevelExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.gotoCatelogy(studyPackId: Int(self.presenter?.levelExerciseEntity?.study_categories?[indexPath.row]._id ?? "") ?? 0)
+        self.presenter?.gotoCatelogy(studyPackId: Int(self.presenter?.levelExerciseEntity?.study_categories[indexPath.row]._id ?? "") ?? 0)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -16,12 +16,12 @@ enum ExerciseEnpoint {
     case getResultCaledar(from: String,to: String)
     case getTestResult(type: Int,date: String,offset: Int)
     case submitExercise(param: SubmitExerciseParam)
-    case getListExerciseCatelogy
+    case getListExerciseCatelogy(offset: Int)
     case createExercise(param: CreateExerciseParam)
     case getViewExercise(id: String)
     case exitExercise(id: Int)
     case getListCatelogy
-    case getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId: Int?)
+    case getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId: Int?,offset: Int)
     case getDailyMisson
     case getListAssignExercise(offset: Int)
     case getListQuestionCategory
@@ -127,15 +127,16 @@ extension ExerciseEnpoint: EndPointType {
                         "limit": limit]
         case .getDailyMisson:
             return ["":""]
-        case .getViewChoiceExercise(let typeTest, let catelogyId, let level, let studyPackId):
+        case .getViewChoiceExercise(let typeTest, let catelogyId, let level, let studyPackId,let offset):
             if let _studyPackId = studyPackId {
-                return [
+                return ["offset": offset, "limit": limit,
                             "study_pack_id":_studyPackId,
                             "type_test": typeTest,
                             "category_id": catelogyId,
                             "level": level]
             }
-            return [    "type_test": typeTest,
+            return ["offset": offset, "limit": limit,
+                        "type_test": typeTest,
                         "category_id": catelogyId,
                         "level": level]
         case .getListCatelogy:
@@ -146,8 +147,8 @@ extension ExerciseEnpoint: EndPointType {
             return ["":""]
         case .createExercise(let param):
             return param.toJSON()
-        case .getListExerciseCatelogy:
-            return ["":""]
+        case .getListExerciseCatelogy(let offset):
+            return ["offset":offset,"limit": limit]
         case .getListExercise(let type_test,let category_id,let level,let offset):
             return [    "type_test": type_test,
                         "category_id": category_id,
