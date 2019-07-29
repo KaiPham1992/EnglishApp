@@ -42,6 +42,6 @@ extension ExplainExerciseViewController : ExplainExerciseViewProtocol {
 }
 extension ExplainExerciseViewController : IndicatorInfoProvider {
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.explain_question.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.explain_solution.showLanguage)
     }
 }

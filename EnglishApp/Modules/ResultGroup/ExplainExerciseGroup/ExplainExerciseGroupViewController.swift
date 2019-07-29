@@ -21,12 +21,12 @@ class ExplainExerciseGroupViewController: PageViewController, ExplainExerciseGro
         self.tabBarController?.tabBar.isHidden = true
         self.edgesForExtendedLayout = UIRectEdge.bottom
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.explain_question.showLanguage)
+        setTitleNavigation(title: LocalizableKey.see_explain.showLanguage)
         
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [ExplainExerciseRouter.createModule(id: id),CommentRouter.createModule(id: String(id))]
+        return [CommentRouter.createModule(id: String(id)),ExplainExerciseRouter.createModule(id: id)]
     }
 
 }

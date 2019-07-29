@@ -66,7 +66,7 @@
                                 <rect key="frame" x="42.5" y="0.0" width="35" height="32"/>
                                 <state key="normal" image="ic_link"/>
                                 <connections>
-                                    <action selector="clickCancel:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="J8f-Ub-zOf"/>
+                                    <action selector="clickLink:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jes-U9-ufZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fo-0e-cmf">

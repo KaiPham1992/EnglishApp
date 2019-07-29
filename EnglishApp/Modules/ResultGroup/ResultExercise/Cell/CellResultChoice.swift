@@ -13,14 +13,15 @@ class CellResultChoice: UITableViewCell {
     @IBAction func clickReading(_ sender: Any) {
         actionExplainQuestion?(self.indexPath ?? IndexPath(row: 0, section: 0))
     }
-    @IBAction func clickCancel(_ sender: Any) {
-        
+    @IBAction func clickLink(_ sender: Any) {
+        actionRelatedGrammar?(self.indexPath ?? IndexPath(row: 0, section: 0))
     }
     
     @IBAction func clickExclamation(_ sender: Any) {
         
     }
     var actionExplainQuestion : ((_ index : IndexPath)->())?
+    var actionRelatedGrammar: ((_ index: IndexPath) -> ())?
     @IBOutlet weak var viewAnswer: UIView!
     @IBOutlet weak var lblAnswer: UILabel!
     @IBOutlet weak var lblNumberQuestion: UILabel!
@@ -38,7 +39,7 @@ class CellResultChoice: UITableViewCell {
         if let _ = answer.answer_id {
             if let status = answer.status {
                 lblAnswer.text = answer.value
-                viewAnswer.backgroundColor = status == "2" ? #colorLiteral(red: 0.9019607843, green: 0.1882352941, blue: 0.1882352941, alpha: 1) : #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+                viewAnswer.backgroundColor = status == "0" ? #colorLiteral(red: 0.9019607843, green: 0.1882352941, blue: 0.1882352941, alpha: 1) : #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
             }
         }
     }

@@ -111,11 +111,21 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         cell.actionExplainExericse = {[weak self] (questionId,answerId) in
             self?.explainQuestion(questionId: questionId, answerId: answerId)
         }
+        
+        cell.actionRelatedGrammar = {[weak self] (questionId,answerId) in
+            self?.seeRelatedGrammar(questionId: questionId, answerId: answerId)
+        }
         if let dataCell = self.presenter?.getAnswer(indexPath: indexPath){
             cell.dataCell = dataCell
         }
         return cell
     }
+    
+    func seeRelatedGrammar(questionId: Int, answerId: Int) {
+        let vc = RelatedGrammarRouter.createModule(id: questionId)
+        self.push(controller: vc)
+    }
+    
     func explainQuestion(questionId: Int, answerId: Int) {
         let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
         self.push(controller: vc)

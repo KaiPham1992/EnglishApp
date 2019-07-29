@@ -117,6 +117,33 @@
 		2A5E262722E0D119009D6203 /* AssignExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E261722E0D118009D6203 /* AssignExerciseViewController.xib */; };
 		2A5E262822E0D119009D6203 /* AssignExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E261722E0D118009D6203 /* AssignExerciseViewController.xib */; };
 		2A5E262922E0D119009D6203 /* AssignExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A5E261722E0D118009D6203 /* AssignExerciseViewController.xib */; };
+		2A6C5EBE22EF4606004B23EF /* RelatedGrammarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EB822EF4606004B23EF /* RelatedGrammarPresenter.swift */; };
+		2A6C5EBF22EF4606004B23EF /* RelatedGrammarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EB822EF4606004B23EF /* RelatedGrammarPresenter.swift */; };
+		2A6C5EC022EF4606004B23EF /* RelatedGrammarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EB822EF4606004B23EF /* RelatedGrammarPresenter.swift */; };
+		2A6C5EC122EF4606004B23EF /* RelatedGrammarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EB922EF4606004B23EF /* RelatedGrammarRouter.swift */; };
+		2A6C5EC222EF4606004B23EF /* RelatedGrammarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EB922EF4606004B23EF /* RelatedGrammarRouter.swift */; };
+		2A6C5EC322EF4606004B23EF /* RelatedGrammarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EB922EF4606004B23EF /* RelatedGrammarRouter.swift */; };
+		2A6C5EC422EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBA22EF4606004B23EF /* RelatedGrammarViewController.swift */; };
+		2A6C5EC522EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBA22EF4606004B23EF /* RelatedGrammarViewController.swift */; };
+		2A6C5EC622EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBA22EF4606004B23EF /* RelatedGrammarViewController.swift */; };
+		2A6C5EC722EF4606004B23EF /* RelatedGrammarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBB22EF4606004B23EF /* RelatedGrammarProtocols.swift */; };
+		2A6C5EC822EF4606004B23EF /* RelatedGrammarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBB22EF4606004B23EF /* RelatedGrammarProtocols.swift */; };
+		2A6C5EC922EF4606004B23EF /* RelatedGrammarProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBB22EF4606004B23EF /* RelatedGrammarProtocols.swift */; };
+		2A6C5ECA22EF4606004B23EF /* RelatedGrammarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBC22EF4606004B23EF /* RelatedGrammarInteractor.swift */; };
+		2A6C5ECB22EF4606004B23EF /* RelatedGrammarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBC22EF4606004B23EF /* RelatedGrammarInteractor.swift */; };
+		2A6C5ECC22EF4606004B23EF /* RelatedGrammarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBC22EF4606004B23EF /* RelatedGrammarInteractor.swift */; };
+		2A6C5ECD22EF4606004B23EF /* RelatedGrammarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBD22EF4606004B23EF /* RelatedGrammarViewController.xib */; };
+		2A6C5ECE22EF4606004B23EF /* RelatedGrammarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBD22EF4606004B23EF /* RelatedGrammarViewController.xib */; };
+		2A6C5ECF22EF4606004B23EF /* RelatedGrammarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C5EBD22EF4606004B23EF /* RelatedGrammarViewController.xib */; };
+		2A6C5ED422EF468F004B23EF /* CellSingleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5ED222EF468F004B23EF /* CellSingleLabel.swift */; };
+		2A6C5ED522EF468F004B23EF /* CellSingleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5ED222EF468F004B23EF /* CellSingleLabel.swift */; };
+		2A6C5ED622EF468F004B23EF /* CellSingleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5ED222EF468F004B23EF /* CellSingleLabel.swift */; };
+		2A6C5ED722EF468F004B23EF /* CellSingleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C5ED322EF468F004B23EF /* CellSingleLabel.xib */; };
+		2A6C5ED822EF468F004B23EF /* CellSingleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C5ED322EF468F004B23EF /* CellSingleLabel.xib */; };
+		2A6C5ED922EF468F004B23EF /* CellSingleLabel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A6C5ED322EF468F004B23EF /* CellSingleLabel.xib */; };
+		2A6C5EDB22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */; };
+		2A6C5EDC22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */; };
+		2A6C5EDD22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */; };
 		2A9A81DD22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
 		2A9A81DE22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
 		2A9A81DF22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
@@ -2211,6 +2238,15 @@
 		2A5E261522E0D118009D6203 /* AssignExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignExerciseProtocols.swift; sourceTree = "<group>"; };
 		2A5E261622E0D118009D6203 /* AssignExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignExerciseInteractor.swift; sourceTree = "<group>"; };
 		2A5E261722E0D118009D6203 /* AssignExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AssignExerciseViewController.xib; sourceTree = "<group>"; };
+		2A6C5EB822EF4606004B23EF /* RelatedGrammarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGrammarPresenter.swift; sourceTree = "<group>"; };
+		2A6C5EB922EF4606004B23EF /* RelatedGrammarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGrammarRouter.swift; sourceTree = "<group>"; };
+		2A6C5EBA22EF4606004B23EF /* RelatedGrammarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGrammarViewController.swift; sourceTree = "<group>"; };
+		2A6C5EBB22EF4606004B23EF /* RelatedGrammarProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGrammarProtocols.swift; sourceTree = "<group>"; };
+		2A6C5EBC22EF4606004B23EF /* RelatedGrammarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedGrammarInteractor.swift; sourceTree = "<group>"; };
+		2A6C5EBD22EF4606004B23EF /* RelatedGrammarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RelatedGrammarViewController.xib; sourceTree = "<group>"; };
+		2A6C5ED222EF468F004B23EF /* CellSingleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSingleLabel.swift; sourceTree = "<group>"; };
+		2A6C5ED322EF468F004B23EF /* CellSingleLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellSingleLabel.xib; sourceTree = "<group>"; };
+		2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedLessonResponse.swift; sourceTree = "<group>"; };
 		2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBManager.swift; sourceTree = "<group>"; };
 		2A9A81E922EC5AA300345C5F /* WordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntity.swift; sourceTree = "<group>"; };
 		2A9A81ED22EC5C6300345C5F /* WordExplainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordExplainEntity.swift; sourceTree = "<group>"; };
@@ -3024,6 +3060,36 @@
 			path = CellAssignExercise;
 			sourceTree = "<group>";
 		};
+		2A6C5E9F22EF45AA004B23EF /* RelatedGrammar */ = {
+			isa = PBXGroup;
+			children = (
+				2A6C5EB822EF4606004B23EF /* RelatedGrammarPresenter.swift */,
+				2A6C5EB922EF4606004B23EF /* RelatedGrammarRouter.swift */,
+				2A6C5EBA22EF4606004B23EF /* RelatedGrammarViewController.swift */,
+				2A6C5EBB22EF4606004B23EF /* RelatedGrammarProtocols.swift */,
+				2A6C5EBC22EF4606004B23EF /* RelatedGrammarInteractor.swift */,
+				2A6C5EBD22EF4606004B23EF /* RelatedGrammarViewController.xib */,
+			);
+			path = RelatedGrammar;
+			sourceTree = "<group>";
+		};
+		2A6C5ED022EF466C004B23EF /* CommonCell */ = {
+			isa = PBXGroup;
+			children = (
+				2A6C5ED122EF4671004B23EF /* CellSingleLabel */,
+			);
+			path = CommonCell;
+			sourceTree = "<group>";
+		};
+		2A6C5ED122EF4671004B23EF /* CellSingleLabel */ = {
+			isa = PBXGroup;
+			children = (
+				2A6C5ED222EF468F004B23EF /* CellSingleLabel.swift */,
+				2A6C5ED322EF468F004B23EF /* CellSingleLabel.xib */,
+			);
+			path = CellSingleLabel;
+			sourceTree = "<group>";
+		};
 		2A9A81DB22EC4B5800345C5F /* RealmDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -3475,6 +3541,7 @@
 				2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */,
 				2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */,
 				2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */,
+				2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -3534,6 +3601,7 @@
 		76CE31BC22961FAC00E998FB /* ResultGroup */ = {
 			isa = PBXGroup;
 			children = (
+				2A6C5E9F22EF45AA004B23EF /* RelatedGrammar */,
 				2AED14C622EE148B0076C223 /* ExplainExerciseGroup */,
 				769A3BAE229FE55B00CA55BD /* History */,
 				76C8E2D922C19A940076E65B /* ResultExercise */,
@@ -3988,6 +4056,7 @@
 		DE361DDC2283E52A00FA3B0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2A6C5ED022EF466C004B23EF /* CommonCell */,
 				2A9A81F222EC5FD600345C5F /* SQLHelper */,
 				2A9A81DB22EC4B5800345C5F /* RealmDB */,
 				DEECF87C22870BBD00A4678B /* Localizable */,
@@ -5322,6 +5391,7 @@
 				DE49F82A22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				766AE80422B02371002D474E /* ViewFeature.xib in Resources */,
 				DE89D1D822A413DA000638B0 /* RequireUpgradeContent.xib in Resources */,
+				2A6C5ED722EF468F004B23EF /* CellSingleLabel.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
@@ -5344,6 +5414,7 @@
 				76483BE7229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				2A436B0C22EB384D00BD9285 /* CellHistoryListExercise.xib in Resources */,
 				DE3A8CE82289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
+				2A6C5ECD22EF4606004B23EF /* RelatedGrammarViewController.xib in Resources */,
 				DE2ADE6E22841B9E003768CE /* HomeViewController.xib in Resources */,
 				769A3BDE22A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				2AED14DC22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */,
@@ -5480,6 +5551,7 @@
 				DE49F82B22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				766AE80522B02371002D474E /* ViewFeature.xib in Resources */,
 				DE89D1D922A413DA000638B0 /* RequireUpgradeContent.xib in Resources */,
+				2A6C5ED822EF468F004B23EF /* CellSingleLabel.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
@@ -5502,6 +5574,7 @@
 				76483BE8229ED1DD0079F9A1 /* SuggesstionView.xib in Resources */,
 				2A436B0D22EB384D00BD9285 /* CellHistoryListExercise.xib in Resources */,
 				DE3A8CE92289C75C0080A8CB /* SelectTeamViewController.xib in Resources */,
+				2A6C5ECE22EF4606004B23EF /* RelatedGrammarViewController.xib in Resources */,
 				DE9530482287DF4800E3F688 /* HomeViewController.xib in Resources */,
 				769A3BDF22A24E8C00CA55BD /* ViewTime.xib in Resources */,
 				2AED14DD22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */,
@@ -5636,6 +5709,7 @@
 				76E2FF48228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF60228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DED5A01122A579CC00872261 /* BXHTop3Cell.xib in Resources */,
+				2A6C5ECF22EF4606004B23EF /* RelatedGrammarViewController.xib in Resources */,
 				DE49F82C22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				766AE80622B02371002D474E /* ViewFeature.xib in Resources */,
 				DE89D1DA22A413DA000638B0 /* RequireUpgradeContent.xib in Resources */,
@@ -5649,6 +5723,7 @@
 				DE9530F32287DF6400E3F688 /* AppDropDown.xib in Resources */,
 				76C8E2F122C19AB80076E65B /* ResultExerciseViewController.xib in Resources */,
 				2AAE220422D3B2DF00AE7481 /* CellResultChoice.xib in Resources */,
+				2A6C5ED922EF468F004B23EF /* CellSingleLabel.xib in Resources */,
 				DE9530F42287DF6400E3F688 /* MenuCell.xib in Resources */,
 				76CE31B12295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
@@ -6072,6 +6147,7 @@
 				DE49F82422A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */,
 				DE3A8CD92289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE361F272283E85000FA3B0D /* NotificationEntity.swift in Sources */,
+				2A6C5ECA22EF4606004B23EF /* RelatedGrammarInteractor.swift in Sources */,
 				DE49F80222A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */,
 				DE49F7F922A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */,
 				DE361E672283E60500FA3B0D /* AppImage.swift in Sources */,
@@ -6142,6 +6218,7 @@
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
 				76CE31CF22961FC300E998FB /* ResultInteractor.swift in Sources */,
+				2A6C5EDB22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
 				764083FF22B7CA6F002D9401 /* SaveAPIService.swift in Sources */,
 				76F5E00F22D0F38700C2E63E /* WalletLogAPIService.swift in Sources */,
 				2AED14A022EE02D50076C223 /* ExplainExercisePresenter.swift in Sources */,
@@ -6158,6 +6235,7 @@
 				76F5E00C22D0F31C00C2E63E /* WalletLogEndPoint.swift in Sources */,
 				768074AA22C910390015A75C /* QuestionSubmitParam.swift in Sources */,
 				766D1372228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
+				2A6C5EBE22EF4606004B23EF /* RelatedGrammarPresenter.swift in Sources */,
 				76CE322D22968C7D00E998FB /* NameExerciseRouter.swift in Sources */,
 				76DB93BA228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE361F4A2283E85000FA3B0D /* EndPointType.swift in Sources */,
@@ -6221,6 +6299,7 @@
 				76C92F9122C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6707228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				2AF2F83F22EA05BF00603444 /* NoteListRouter.swift in Sources */,
+				2A6C5EC122EF4606004B23EF /* RelatedGrammarRouter.swift in Sources */,
 				DE361F3F2283E85000FA3B0D /* SignUpParam.swift in Sources */,
 				DE89D1EF22A41B44000638B0 /* LevelUpContent.swift in Sources */,
 				DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */,
@@ -6271,6 +6350,7 @@
 				2AB4A05122E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749522C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				2A07431F22E77D47001E82A4 /* LessonsResponse.swift in Sources */,
+				2A6C5ED422EF468F004B23EF /* CellSingleLabel.swift in Sources */,
 				7643DE9722A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */,
 				DE89D20222A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
@@ -6317,6 +6397,7 @@
 				DEC62AC022930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				2AEFC31122D3241900F3D5B6 /* CommentEntity.swift in Sources */,
 				76CE323622968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
+				2A6C5EC722EF4606004B23EF /* RelatedGrammarProtocols.swift in Sources */,
 				76E852FA22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F7FF22A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
@@ -6408,6 +6489,7 @@
 				DE3A8C9F2289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				2AAE21FF22D3B2DF00AE7481 /* CellResultChoice.swift in Sources */,
 				76DB9387228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				2A6C5EC422EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */,
 				76C8E2E322C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				DE89D1FF22A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
 				76F7F456229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
@@ -6653,6 +6735,7 @@
 				DE49F82522A3DB9C00A92C63 /* NotificationDetailProtocols.swift in Sources */,
 				DE3A8CDA2289C75C0080A8CB /* SelectTeamPresenter.swift in Sources */,
 				DE952FC82287DF4800E3F688 /* NotificationEntity.swift in Sources */,
+				2A6C5ECB22EF4606004B23EF /* RelatedGrammarInteractor.swift in Sources */,
 				DE49F80322A3D81D00A92C63 /* NotificationListProtocols.swift in Sources */,
 				DE49F7FA22A3D81D00A92C63 /* NotificationListPresenter.swift in Sources */,
 				DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */,
@@ -6723,6 +6806,7 @@
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
 				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
 				76CE31D022961FC300E998FB /* ResultInteractor.swift in Sources */,
+				2A6C5EDC22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
 				7640840022B7CA6F002D9401 /* SaveAPIService.swift in Sources */,
 				76F5E01022D0F38700C2E63E /* WalletLogAPIService.swift in Sources */,
 				2AED14A122EE02D50076C223 /* ExplainExercisePresenter.swift in Sources */,
@@ -6739,6 +6823,7 @@
 				76F5E00D22D0F31C00C2E63E /* WalletLogEndPoint.swift in Sources */,
 				768074AB22C910390015A75C /* QuestionSubmitParam.swift in Sources */,
 				766D1373228F2609005E47F0 /* ListLessonInteractor.swift in Sources */,
+				2A6C5EBF22EF4606004B23EF /* RelatedGrammarPresenter.swift in Sources */,
 				76CE322E22968C7D00E998FB /* NameExerciseRouter.swift in Sources */,
 				76DB93BB228C74B00081A36E /* RatioButton.swift in Sources */,
 				DE952FDB2287DF4800E3F688 /* EndPointType.swift in Sources */,
@@ -6802,6 +6887,7 @@
 				76C92F9222C4496E00E8ED69 /* FindEnpoint.swift in Sources */,
 				DEBD6708228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				2AF2F84022EA05BF00603444 /* NoteListRouter.swift in Sources */,
+				2A6C5EC222EF4606004B23EF /* RelatedGrammarRouter.swift in Sources */,
 				DE952FE92287DF4800E3F688 /* SignUpParam.swift in Sources */,
 				DE89D1F022A41B44000638B0 /* LevelUpContent.swift in Sources */,
 				DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */,
@@ -6852,6 +6938,7 @@
 				2AB4A05222E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749622C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				2A07432022E77D47001E82A4 /* LessonsResponse.swift in Sources */,
+				2A6C5ED522EF468F004B23EF /* CellSingleLabel.swift in Sources */,
 				7643DE9822A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */,
 				DE89D20322A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
@@ -6898,6 +6985,7 @@
 				DEC62AC122930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
 				2AEFC31222D3241900F3D5B6 /* CommentEntity.swift in Sources */,
 				76CE323722968C7D00E998FB /* NameExerciseInteractor.swift in Sources */,
+				2A6C5EC822EF4606004B23EF /* RelatedGrammarProtocols.swift in Sources */,
 				76E852FB22B946CA0039751A /* TheoryAPIService.swift in Sources */,
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F80022A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
@@ -6989,6 +7077,7 @@
 				DE3A8CA02289B93F0080A8CB /* QADetailViewController.swift in Sources */,
 				2AAE220022D3B2DF00AE7481 /* CellResultChoice.swift in Sources */,
 				76DB9388228C56640081A36E /* DictionaryRouter.swift in Sources */,
+				2A6C5EC522EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */,
 				76C8E2E422C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				DE89D20022A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
 				76F7F457229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
@@ -7172,6 +7261,7 @@
 				DEF1C24A229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
 				76CE320D2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				2AF2F84722EA05BF00603444 /* NoteListProtocols.swift in Sources */,
+				2A6C5EC322EF4606004B23EF /* RelatedGrammarRouter.swift in Sources */,
 				76C92FA422C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CE22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				2A07431922E77481001E82A4 /* LessonCategoryEntity.swift in Sources */,
@@ -7391,6 +7481,7 @@
 				2A5E25CF22E0C6A1009D6203 /* CatelogyExercisePresenter.swift in Sources */,
 				2A07431522E7740F001E82A4 /* ItemLessonCategory.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
+				2A6C5EC922EF4606004B23EF /* RelatedGrammarProtocols.swift in Sources */,
 				DE89D1F122A41B44000638B0 /* LevelUpContent.swift in Sources */,
 				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,
 				DEC62A9F2292FA0D00D7CECE /* HomeNavigationView.swift in Sources */,
@@ -7465,6 +7556,8 @@
 				76CE31F722963EDE00E998FB /* ResultGroupViewController.swift in Sources */,
 				2AF2F83422EA00EE00603444 /* ResultTeamCompetitionRespone.swift in Sources */,
 				2AB4A04A22E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */,
+				2A6C5EC622EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */,
+				2A6C5EDD22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
 				76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				2AED14AE22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
@@ -7522,6 +7615,7 @@
 				76CE32102296539000E998FB /* ResultCompetitionViewController.swift in Sources */,
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
 				DE9531472288324300E3F688 /* EditProfileProtocols.swift in Sources */,
+				2A6C5ED622EF468F004B23EF /* CellSingleLabel.swift in Sources */,
 				DE9530BB2287DF6400E3F688 /* KActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
 				DE9530BC2287DF6400E3F688 /* KActivityIndicatorAnimationDelegate.swift in Sources */,
 				DEF1C26722903E32005AD1A3 /* HomeTitleCell.swift in Sources */,
@@ -7536,6 +7630,7 @@
 				DE3A8CA72289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				DE9530BF2287DF6400E3F688 /* MenuCell.swift in Sources */,
 				76CE31F122963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
+				2A6C5EC022EF4606004B23EF /* RelatedGrammarPresenter.swift in Sources */,
 				DE9530C02287DF6400E3F688 /* UIImage+extension.swift in Sources */,
 				76F7F45B229466DD001E9984 /* CreateExerciseProtocols.swift in Sources */,
 				7629BDE522ACF0B60051B835 /* TextFieldBee.swift in Sources */,
@@ -7592,6 +7687,7 @@
 				DEBD6718228D22F2004B74C8 /* DetailTeamCell.swift in Sources */,
 				DECD192D22A26B4A0054861D /* DetailPackCell.swift in Sources */,
 				2A9A81DF22EC4B6B00345C5F /* RealmDBManager.swift in Sources */,
+				2A6C5ECC22EF4606004B23EF /* RelatedGrammarInteractor.swift in Sources */,
 				766D1325228EE9E4005E47F0 /* LessonInteractor.swift in Sources */,
 				2A5E260A22E0D05B009D6203 /* LevelExerciseViewController.swift in Sources */,
 				DE9530D12287DF6400E3F688 /* NotificationAPIService.swift in Sources */,

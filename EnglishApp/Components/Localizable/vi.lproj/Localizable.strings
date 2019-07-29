@@ -222,7 +222,7 @@
 "back_gome" = "Về trang chủ";
 "result_competion" = "Cuộc thi";
 "result_group" = "Kết quả đội";
-"see_explain" = "XEM GIẢI THÍCH";
+"see_explain" = "Xem giải thích";
 "respond_question" = "BÁO CÁO CÂU HỎI";
 "explain_solution" = "Giải thích đáp án";
 "individual" = "Cá nhân";
@@ -232,6 +232,7 @@
 "see_result"= "Xem kết quả";
 "explain_question" = "Giải thích câu hỏi";
 "confirm_back_result" = "Bạn có muốn thoát khỏi bài tập đang xem?";
+"related_lesson" = "Ngữ pháp liên quan";
 
 //popup
 "confirm" = "XÁC NHẬN";

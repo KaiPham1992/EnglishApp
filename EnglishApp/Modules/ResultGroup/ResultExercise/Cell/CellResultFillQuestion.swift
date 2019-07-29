@@ -15,6 +15,7 @@ class CellResultFillQuestion: UITableViewCell {
     }
     
     @IBAction func clickLink(_ sender: Any) {
+        actionRelatedGrammar?(self.indexPath ?? IndexPath(row: 0, section: 0))
     }
     
     @IBAction func clickReading(_ sender: Any) {
@@ -22,6 +23,7 @@ class CellResultFillQuestion: UITableViewCell {
     }
     
     var actionExplainQuestion : ((_ index : IndexPath)->())?
+    var actionRelatedGrammar: ((_ index: IndexPath) -> ())?
     var indexPath: IndexPath?
     @IBOutlet weak var viewLine: UIView!
     @IBOutlet weak var lblAnswer: UILabel!
@@ -35,9 +37,8 @@ class CellResultFillQuestion: UITableViewCell {
         lblNumberAnswer.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1):"
         
         lblAnswer.text = answer.content ?? " "
-        
+        lblAnswer.text = answer.value&
         let status = answer.status ?? "0"
-        
         if status == "0"{
             lblNumberAnswer.textColor = #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
             lblAnswer.textColor = #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
