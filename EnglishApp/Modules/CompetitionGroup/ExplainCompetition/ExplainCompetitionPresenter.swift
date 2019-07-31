@@ -21,5 +21,17 @@ class ExplainCompetitionPresenter: ExplainCompetitionPresenterProtocol, ExplainC
         self.interactor = interactor
         self.router = router
     }
+    
+    func getViewFightTest(idCompetition: String) {
+        ProgressView.shared.show()
+        Provider.shared.competitionAPIService.getViewFightTest(idCompetition: idCompetition, success: { (response) in
+            ProgressView.shared.hide()
+            if let _response = response {
+                self.view?.getViewFightTestSuccessed(desciption: _response.description&)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 
 }

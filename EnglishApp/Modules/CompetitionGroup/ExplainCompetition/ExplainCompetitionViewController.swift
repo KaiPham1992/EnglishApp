@@ -10,13 +10,15 @@
 
 import UIKit
 
-class ExplainCompetitionViewController: BaseViewController, ExplainCompetitionViewProtocol {
+class ExplainCompetitionViewController: BaseViewController {
 
 	var presenter: ExplainCompetitionPresenterProtocol?
     @IBOutlet weak var lbContent: UILabel!
 
+    var idCompetition : String = ""
 	override func viewDidLoad() {
         super.viewDidLoad()
+        self.presenter?.getViewFightTest(idCompetition: idCompetition)
     }
     
     override func setUpNavigation() {
@@ -24,5 +26,10 @@ class ExplainCompetitionViewController: BaseViewController, ExplainCompetitionVi
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.explainConpetition.showLanguage)
     }
-
+}
+extension ExplainCompetitionViewController : ExplainCompetitionViewProtocol {
+    func getViewFightTestSuccessed(desciption: String) {
+        let attr = desciption.html2Attributed
+        lbContent.attributedText = attr
+    }
 }

@@ -77,7 +77,7 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     func exitExercise(id : Int){
         Provider.shared.exerciseAPIService.exitExercise(id: id, success: { (respone) in
             if let _respone = respone {
-                
+                self.presenter?.exitSuccessed(respone: _respone)
             }
         }) { (error) in
             

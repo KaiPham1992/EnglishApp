@@ -103,7 +103,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     }
     
     func exitSuccessed(respone: TestResultProfileEntity){
-        self.router.gotoResult(result: respone, type: .levelExercise)
+        self.router.gotoResult(result: respone, type: .dailyMissonExercise)
         self.view?.exitSuccessed()
     }
     

@@ -16,9 +16,15 @@ protocol CompetitionAPIServiceProtocol {
     func getDetailTeam(id: String,success: @escaping SuccessHandler<DetailTeamEntity>.object,failure: @escaping RequestFailure)
     func leaveTeam(id: String,success: @escaping SuccessHandler<BaseResponse>.object,failure: @escaping RequestFailure)
     func joinTeam(id:String,success: @escaping SuccessHandler<DetailTeamEntity>.object,failure: @escaping RequestFailure)
+    func getViewFightTest(idCompetition: String,success: @escaping SuccessHandler<ViewFightTestResponse>.object,failure: @escaping RequestFailure)
 }
 
 class CompetitionAPIService: CompetitionAPIServiceProtocol {
+    func getViewFightTest(idCompetition: String,success: @escaping SuccessHandler<ViewFightTestResponse>.object,failure: @escaping RequestFailure){
+        let endpoint = CompetitionEndPoint.getViewFightTest(idCompetition: idCompetition)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
     func joinTeam(id:String,success: @escaping SuccessHandler<DetailTeamEntity>.object,failure: @escaping RequestFailure){
         let endpoint = CompetitionEndPoint.joinTeam(id: id)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)

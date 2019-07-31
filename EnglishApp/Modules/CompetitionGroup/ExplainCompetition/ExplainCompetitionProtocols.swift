@@ -18,6 +18,7 @@ protocol ExplainCompetitionWireframeProtocol: class {
 protocol ExplainCompetitionPresenterProtocol: class {
 
     var interactor: ExplainCompetitionInteractorInputProtocol? { get set }
+    func getViewFightTest(idCompetition: String)
 }
 
 //MARK: Interactor -
@@ -37,6 +38,7 @@ protocol ExplainCompetitionInteractorInputProtocol: class {
 protocol ExplainCompetitionViewProtocol: class {
 
     var presenter: ExplainCompetitionPresenterProtocol?  { get set }
+    func getViewFightTestSuccessed(desciption: String)
 
     /* Presenter -> ViewController */
 }
