@@ -321,4 +321,5 @@ struct LocalizableKey {
     static let quater32018 = "quater3/2018"
     static let quater22018 = "quater2/2018"
     static let quater12018 = "quater1/2018"
+    static let all = "all"
 } 

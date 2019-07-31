@@ -11,7 +11,7 @@ import Alamofire
 
 enum HomeEndPoint{
     case getTopThree
-    case getListLeaderBoard(quarter: Int, year: Int)
+    case getListLeaderBoard(quarter: String, year: String, rank: String)
 }
 extension HomeEndPoint: EndPointType{
     var path: String {
@@ -35,8 +35,8 @@ extension HomeEndPoint: EndPointType{
         switch self {
         case .getTopThree:
             return [:]
-        case .getListLeaderBoard(let quarter, let year):
-            let param = ["quarter": quarter, "year": year] as [String: Any]
+        case .getListLeaderBoard(let quarter, let year, let rank):
+            let param = ["quarter": quarter, "year": year, "rank": rank] as [String: Any]
             return param
         }
     }

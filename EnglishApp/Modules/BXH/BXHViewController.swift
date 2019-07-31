@@ -15,9 +15,16 @@ class BXHViewController: BaseViewController {
 	var presenter: BXHPresenterProtocol?
     @IBOutlet weak var tbBXH: UITableView!
     @IBOutlet weak var vUser: BXHView!
-    
+    @IBOutlet weak var lbRank: UILabel!
     @IBOutlet var btnOption: [UIButton]!
     @IBOutlet weak var viewOption: UIView!
+    
+    let arrayRank = ["BRONZE","SILVER","GOLD","PLATINUM","MASTER","TOAA",""]
+    var index = 6
+    
+    var quarter = ""
+    var year = ""
+    var rank = ""
     
     var listLeaderBoard = LeaderBoardEntity(){
         didSet{
@@ -27,7 +34,7 @@ class BXHViewController: BaseViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
-        presenter?.getListLeaderBoard(quarter: 2, year: 2019)
+        presenter?.getListLeaderBoard(quarter: "", year: "", rank: "")
     }
     
     override func setUpNavigation() {
@@ -43,9 +50,20 @@ class BXHViewController: BaseViewController {
         configureTable()
         configureViewOption()
         configureButtonOption()
-        
+        setUpLabelRank()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideMenu))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func setUpLabelRank() {
+        if arrayRank[index] == "" {
+            lbRank.text = LocalizableKey.all.showLanguage
+        } else if arrayRank[index] == "TOAA" {
+            lbRank.text = "The one above all"
+        } else {
+            lbRank.text = arrayRank[index]
+        }
+        
     }
 
     func configureViewOption() {
@@ -95,31 +113,67 @@ class BXHViewController: BaseViewController {
         hideMenu()
         
         //-- handle selection
-        var quarter = 0
-        var year = 0
-        
+
         switch sender {
         case btnOption[0]:
-            quarter = 2
-            year = 2019
+            quarter = "2"
+            year = "2019"
+            setSelectedButton(index: 0)
         case btnOption[1]:
-            quarter = 1
-            year = 2019
+            quarter = "1"
+            year = "2019"
+            setSelectedButton(index: 1)
         case btnOption[2]:
-            quarter = 4
-            year = 2018
+            quarter = "4"
+            year = "2018"
+            setSelectedButton(index: 2)
         case btnOption[3]:
-            quarter = 3
-            year = 2018
+            quarter = "3"
+            year = "2018"
+            setSelectedButton(index: 3)
         case btnOption[4]:
-            quarter = 2
-            year = 2018
+            quarter = "2"
+            year = "2018"
+            setSelectedButton(index: 4)
+        case btnOption[5]:
+            quarter = "1"
+            year = "2018"
+            setSelectedButton(index: 5)
         default:
-            quarter = 1
-            year = 2018
+            break
         }
-        presenter?.getListLeaderBoard(quarter: quarter, year: year)
+        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: "")
     }
+    
+    func setSelectedButton(index: Int) {
+        for i in 0 ... 5 {
+            if i == index {
+                //set grey
+                btnOption[i].backgroundColor = .lightGray
+            }
+            //set white
+            btnOption[i].backgroundColor = .white
+        }
+    }
+    
+    @IBAction func btnLeftTapped() {
+        index += 1
+        if index > 6 {
+            index = 0
+        }
+        setUpLabelRank()
+        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: arrayRank[index])
+    }
+    
+    @IBAction func btnRightTapped() {
+        index -= 1
+        if index < 0 {
+            index = 6
+        }
+        setUpLabelRank()
+        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: arrayRank[index])
+    }
+    
     
 }
 
@@ -137,6 +191,7 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         if indexPath.item == 0 {
             let cell = tableView.dequeue(BXHTop3Cell.self, for: indexPath)
             if let topThree = listLeaderBoard.boards{
@@ -155,6 +210,9 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if listLeaderBoard.total ?? 0 <= 2 {
+            return 1
+        }
         return (listLeaderBoard.total ?? 0) - 2
     }
     
