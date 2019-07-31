@@ -56,7 +56,7 @@ class ProductEntity: BaseEntity {
     }
     
     var urlAvatar:  URL? {
-        if let urlString = self.cropLogo, let url = URL(string: BASE_URL_IMAGE + urlString) {
+        if let urlString = self.logo, let url = URL(string: BASE_URL_IMAGE + urlString) {
             return url
             
         }

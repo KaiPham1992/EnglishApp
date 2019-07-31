@@ -15,19 +15,19 @@ protocol StudyPackViewCellDelegate: class {
 
 class StudyPackViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var lbPackageName: UILabel!
-    @IBOutlet weak var lbDetail: UILabel!
-    @IBOutlet weak var vPreviewAll: InfoPackView!
-    @IBOutlet weak var vDoAll: InfoPackView!
-    @IBOutlet weak var vCanComment: InfoPackView!
-    @IBOutlet weak var vCanCreateWork: InfoPackView!
-    @IBOutlet weak var vWorkDependOnLevel: InfoPackView!
-    @IBOutlet weak var tvDetails: UITextView!
-    @IBOutlet weak var imgIcon: UIImageView!
+//    @IBOutlet weak var lbPackageName: UILabel!
+//    @IBOutlet weak var lbDetail: UILabel!
+//    @IBOutlet weak var vPreviewAll: InfoPackView!
+//    @IBOutlet weak var vDoAll: InfoPackView!
+//    @IBOutlet weak var vCanComment: InfoPackView!
+//    @IBOutlet weak var vCanCreateWork: InfoPackView!
+//    @IBOutlet weak var vWorkDependOnLevel: InfoPackView!
+//    @IBOutlet weak var tvDetails: UITextView!
+    @IBOutlet weak var imgLogo: UIImageView!
     
-    @IBOutlet weak var webView: UIWebView!
+//    @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var btnDetail: UIButton!
-    @IBOutlet weak var lbName: UILabel!
+//    @IBOutlet weak var lbName: UILabel!
     
     var product = ProductEntity()
     weak var delegate: StudyPackViewCellDelegate?
@@ -63,10 +63,8 @@ class StudyPackViewCell: UICollectionViewCell {
     }
     
     func displayData(){
-        if let htmlString = product.content{
-            webView.loadHTMLString(htmlString, baseURL: nil)
-        }
-        btnDetail.setTitle(LocalizableKey.detail.showLanguage, for: .normal)
+        imgLogo.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+//        btnDetail.setTitle(LocalizableKey.detail.showLanguage, for: .normal)
     }
     @IBAction func btnDetailTapped() {
         delegate?.btnDetailTapped(index: btnDetail.tag)

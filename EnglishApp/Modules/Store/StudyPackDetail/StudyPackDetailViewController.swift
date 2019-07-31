@@ -24,7 +24,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     }
 
     @IBAction func btnUpgradeTapped(){
-        guard let id = Int(product.id&) else {
+        guard let id = product.id else {
             return
         }
         presenter?.upgradeProduct(productID: id)
@@ -44,13 +44,15 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     }
     
     func didUpgrade(info: UpgradeInfoEntity) {
-        PopUpHelper.shared.showError(message: "Nâng cấp gói thành công") {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.upgradeSuccess.showLanguage)") {
             //
         }
     }
     
     func didUpgrade(error: Error) {
-        print(error.localizedDescription)
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.getError.showLanguage)") {
+            //
+        }
     }
 }
 

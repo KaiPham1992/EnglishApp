@@ -24,6 +24,7 @@ class HeaderUserView: BaseViewXib {
             lbHoney.text = user.amountHoney*.description
             lbFullName.text = user.fullName
             imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
+            imgRank.sd_setImage(with: user.urlRank, placeholderImage: AppImage.imgPlaceHolder)
         }
     }
     

@@ -187,6 +187,11 @@ struct LocalizableKey {
     static let upgrade = "upgrade"
     static let pleaseEnterCode = "pleaseEnterCode"
     static let notFoundCode = "notFoundCode"
+    static let exchangeGiftTitle = "exchangeGiftTitle"
+    static let exchangeGiftSucess = "exchangeGiftSucess"
+    static let redeemSuccess = "redeemSuccess"
+    static let upgradeSuccess = "upgradeSuccess"
+    static let upgradeBeePack = "upgradeBeePack"
 
     //comment
     static let comment = "comment"
@@ -329,4 +334,8 @@ struct LocalizableKey {
     static let quater32018 = "quater3/2018"
     static let quater22018 = "quater2/2018"
     static let quater12018 = "quater1/2018"
+    static let all = "all"
+    
+    //pop up
+    static let getError = "getError"
 } 

@@ -18,6 +18,7 @@ protocol BeePackWireframeProtocol: class {
 protocol BeePackPresenterProtocol: class {
 
     var interactor: BeePackInteractorInputProtocol? { get set }
+    func upgradeProduct(productID: String)
 }
 
 //MARK: Interactor -
@@ -31,6 +32,7 @@ protocol BeePackInteractorInputProtocol: class {
     var presenter: BeePackInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
+    
 }
 
 //MARK: View -
@@ -39,4 +41,6 @@ protocol BeePackViewProtocol: class {
     var presenter: BeePackPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didUpgrade(info: UpgradeInfoEntity)
+    func didUpgrade(error: Error)
 }
