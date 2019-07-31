@@ -18,8 +18,8 @@ protocol CompetitionWireframeProtocol: class {
 protocol CompetitionPresenterProtocol: class {
 
     var interactor: CompetitionInteractorInputProtocol? { get set }
-    func getListFight()
-    func getListResultFight()
+    func getListFight(offset: Int,replaceData: Bool)
+    func getListResultFight(offset: Int,replaceData: Bool)
     
 }
 
@@ -42,7 +42,7 @@ protocol CompetitionViewProtocol: class {
     var presenter: CompetitionPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didGetList(competitionList: CollectionCompetitionEntity)
-    func didGetResultFight(resultFight: CompetitionProfileEntity)
+    func didGetList(competitionList: CollectionCompetitionEntity,replaceData: Bool)
+    func didGetResultFight(resultFight: CompetitionProfileEntity,replaceData: Bool)
     func didGetList(error: Error)
 }

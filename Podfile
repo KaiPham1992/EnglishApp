@@ -22,6 +22,7 @@ def main_pods
     pod 'XLPagerTabStrip'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'netfox'
 end
 
 target 'EnglishApp_Dev' do
