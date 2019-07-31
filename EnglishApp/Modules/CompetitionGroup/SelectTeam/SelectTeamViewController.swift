@@ -120,7 +120,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     func joinTeamSuccessed(respone: DetailTeamEntity) {
         let vc = DetailTeamRouter.createModule(teamDetail: respone)
         vc.actionBackView = { [weak self] in
-            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0)
+            self?.presenter?.getListFightTestTeam(competitionId: Int(respone.team_info?.id ?? "0") ?? 0)
         }
         self.push(controller: vc)
     }

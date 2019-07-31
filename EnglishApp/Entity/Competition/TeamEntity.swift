@@ -34,6 +34,7 @@ class TeamEntity: BaseEntity {
     var countMember: String?
     var isTeamJoined: Int?
     var maxMember: String?
+    var competition_id: String?
    
     convenience init(name: String) {
         self.init()
@@ -43,6 +44,7 @@ class TeamEntity: BaseEntity {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
+        self.competition_id <- map["competition_id"]
         self.id <- map["_id"]
         self.maxMember <- map["max_member"]
         self.name <- map["name"]

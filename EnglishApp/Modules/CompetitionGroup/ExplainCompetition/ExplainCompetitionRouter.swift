@@ -14,9 +14,10 @@ class ExplainCompetitionRouter: ExplainCompetitionWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule(idCompetition: String) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ExplainCompetitionViewController(nibName: nil, bundle: nil)
+        view.idCompetition = idCompetition
         let interactor = ExplainCompetitionInteractor()
         let router = ExplainCompetitionRouter()
         let presenter = ExplainCompetitionPresenter(interface: view, interactor: interactor, router: router)

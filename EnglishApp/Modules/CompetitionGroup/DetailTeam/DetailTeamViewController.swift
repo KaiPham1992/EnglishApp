@@ -41,7 +41,7 @@ class DetailTeamViewController: BaseViewController {
     }
     
     @IBAction func btnExplainTapped() {
-       self.push(controller: ExplainCompetitionRouter.createModule())
+        self.push(controller: ExplainCompetitionRouter.createModule(idCompetition: self.presenter?.getTeamInfo()?.competition_id ?? "0"))
     }
     
     @IBAction func btnLeaveTapped() {
@@ -61,6 +61,7 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
     func reloadView() {
         if let teamInfor = self.presenter?.getTeamInfo() {
             setTitleNavigation(title: teamInfor.name&)
+            self.id = teamInfor.id ?? "0"
             lblMember.text = teamInfor.toPercentMember()
         }
         tbTeam.reloadData()
