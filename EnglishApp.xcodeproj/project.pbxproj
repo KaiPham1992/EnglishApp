@@ -33,6 +33,9 @@
 		2A15754422E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */; };
 		2A15754522E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */; };
 		2A15754622E0953500A15241 /* ExerciseChoiceEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */; };
+		2A2B015D22F0861E00A08EEA /* ListManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */; };
+		2A2B015E22F0861E00A08EEA /* ListManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */; };
+		2A2B015F22F0861E00A08EEA /* ListManagerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */; };
 		2A2FC79F22EC16F700D7011D /* GrammarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */; };
 		2A2FC7A022EC16F700D7011D /* GrammarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */; };
 		2A2FC7A122EC16F700D7011D /* GrammarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */; };
@@ -2210,6 +2213,7 @@
 		2A07431A22E77CFD001E82A4 /* ItemLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemLesson.swift; sourceTree = "<group>"; };
 		2A07431E22E77D47001E82A4 /* LessonsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonsResponse.swift; sourceTree = "<group>"; };
 		2A15754322E0953500A15241 /* ExerciseChoiceEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseChoiceEntity.swift; sourceTree = "<group>"; };
+		2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManagerVC.swift; sourceTree = "<group>"; };
 		2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarEntity.swift; sourceTree = "<group>"; };
 		2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarsResponse.swift; sourceTree = "<group>"; };
 		2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListExercisePresenter.swift; sourceTree = "<group>"; };
@@ -2998,6 +3002,14 @@
 				2A07430B22E7718E001E82A4 /* CellLesson.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2A2B015A22F085F800A08EEA /* ListManager */ = {
+			isa = PBXGroup;
+			children = (
+				2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */,
+			);
+			path = ListManager;
 			sourceTree = "<group>";
 		};
 		2A436AD522EB327B00BD9285 /* HistoryExercise */ = {
@@ -4056,6 +4068,7 @@
 		DE361DDC2283E52A00FA3B0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2A2B015A22F085F800A08EEA /* ListManager */,
 				2A6C5ED022EF466C004B23EF /* CommonCell */,
 				2A9A81F222EC5FD600345C5F /* SQLHelper */,
 				2A9A81DB22EC4B5800345C5F /* RealmDB */,
@@ -6392,6 +6405,7 @@
 				766D12FC228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */,
 				DE952F8F2287D2A700E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE6FDB2622AB909600960422 /* FindCell.swift in Sources */,
+				2A2B015D22F0861E00A08EEA /* ListManagerVC.swift in Sources */,
 				DE9531422288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE361F4B2283E85000FA3B0D /* UserEndPoint.swift in Sources */,
 				DEC62AC022930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
@@ -6980,6 +6994,7 @@
 				766D12FD228EE8DA005E47F0 /* TheoryPresenter.swift in Sources */,
 				DE9530022287DF4800E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
 				DE6FDB2722AB909600960422 /* FindCell.swift in Sources */,
+				2A2B015E22F0861E00A08EEA /* ListManagerVC.swift in Sources */,
 				DE9531432288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE9530032287DF4800E3F688 /* UserEndPoint.swift in Sources */,
 				DEC62AC122930E0E00D7CECE /* StudyPackRouter.swift in Sources */,
@@ -7524,6 +7539,7 @@
 				DE9530A22287DF6400E3F688 /* String+extension.swift in Sources */,
 				766D138A228F2629005E47F0 /* DetailLessonProtocols.swift in Sources */,
 				DE9530A32287DF6400E3F688 /* KActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				2A2B015F22F0861E00A08EEA /* ListManagerVC.swift in Sources */,
 				DE04709E22BA671400438206 /* NationalEntity.swift in Sources */,
 				7680749722C8737E0015A75C /* ResultAPIService.swift in Sources */,
 				7643DE9922A4C0A800B7C323 /* ViewMessage.swift in Sources */,

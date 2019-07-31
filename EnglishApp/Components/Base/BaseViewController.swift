@@ -32,8 +32,9 @@ open class BaseViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         //store.subscribe(self)
-        setUpNavigation()
         setUpViews()
+        setUpNavigation()
+        
     }
     
     let lbNodata: UILabel = {
