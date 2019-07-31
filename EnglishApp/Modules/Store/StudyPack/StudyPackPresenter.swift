@@ -11,6 +11,19 @@
 import UIKit
 
 class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputProtocol {
+    func exchangeGift(id: String) {
+        ProgressView.shared.show()
+        Provider.shared.productAPIService.exchangeGift(id: id, success: { (success) in
+            ProgressView.shared.hide()
+            self.view?.didExchangeGift()
+        }) { (error) in
+            ProgressView.shared.hide()
+            guard let error = error else {return}
+            print(error.localizedDescription)
+            self.view?.didGetError()
+        }
+    }
+    
     func getProduct() {
         Provider.shared.productAPIService.getListProduct(success: { collectionProduct in
             guard let product = collectionProduct else { return }
@@ -25,7 +38,7 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
         Provider.shared.productAPIService.sendRedeem(code: code, success: { (success) in
             ProgressView.shared.hide()
 //            guard let data = success else {return}
-//            self.view?.didSendRedeem(data: data)
+            self.view?.didSendRedeem()
         }) { (error) in
             ProgressView.shared.hide()
             guard let error = error else {return}

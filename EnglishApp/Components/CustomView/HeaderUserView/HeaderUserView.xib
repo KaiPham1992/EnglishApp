@@ -174,8 +174,8 @@
                         <action selector="btnGoToProfile" destination="-1" eventType="touchUpInside" id="rK8-Et-OBU"/>
                     </connections>
                 </button>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gold" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-dA-P4v">
-                    <rect key="frame" x="25" y="95" width="16" height="16"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_home" translatesAutoresizingMaskIntoConstraints="NO" id="vbm-dA-P4v">
+                    <rect key="frame" x="25" y="93.5" width="16" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="How-Ge-hZV"/>
                         <constraint firstAttribute="width" constant="16" id="NEH-1w-g9C"/>
@@ -186,7 +186,7 @@
             <constraints>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="centerY" secondItem="XuH-Dp-7KT" secondAttribute="centerY" id="0Oy-aI-EpK"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="leading" secondItem="XuH-Dp-7KT" secondAttribute="trailing" constant="5" id="3Tp-Hu-LME"/>
-                <constraint firstItem="vbm-dA-P4v" firstAttribute="top" secondItem="XuH-Dp-7KT" secondAttribute="bottom" constant="-13.5" id="Dl7-nT-oII"/>
+                <constraint firstItem="vbm-dA-P4v" firstAttribute="top" secondItem="XuH-Dp-7KT" secondAttribute="bottom" constant="-15" id="Dl7-nT-oII"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="G12-EU-7y2" secondAttribute="trailing" constant="5" id="Gw1-c8-sz9"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="height" secondItem="XuH-Dp-7KT" secondAttribute="height" id="Qur-yY-TL4"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y3d-Um-xm0"/>
@@ -205,6 +205,7 @@
     <resources>
         <image name="ic_dima" width="12" height="10"/>
         <image name="ic_gold" width="12" height="13"/>
+        <image name="ic_home" width="33" height="32"/>
         <image name="ic_matong" width="12" height="12"/>
         <image name="img_avtar_user" width="42" height="42"/>
     </resources>

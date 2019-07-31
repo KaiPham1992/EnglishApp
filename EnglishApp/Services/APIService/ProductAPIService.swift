@@ -10,14 +10,19 @@ import Foundation
 
 protocol ProductAPIServiceProtocol {
     func getListProduct(success: @escaping SuccessHandler<ProductCollectionEntity>.object,failure: @escaping RequestFailure)
-    func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.array,failure: @escaping RequestFailure)
-//    func exchangeGift(success: @escaping SuccessHandler<QAEntity>.array,failure: @escaping RequestFailure)
-    func upgradeProduc(productID: Int, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
+    func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
+    func exchangeGift(id: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
+    func upgradeProduc(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
     
 }
 
 class ProductAPIService: ProductAPIServiceProtocol {
-    func upgradeProduc(productID: Int, success: @escaping SuccessHandler<UpgradeInfoEntity>.object, failure: @escaping RequestFailure) {
+    func exchangeGift(id: String, success: @escaping SuccessHandler<QAEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ProductEndPoint.exchangeGift(id: id)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func upgradeProduc(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object, failure: @escaping RequestFailure) {
         let endpoint = ProductEndPoint.upgradeProduct(productID: productID)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
@@ -27,9 +32,9 @@ class ProductAPIService: ProductAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.array, failure: @escaping RequestFailure) {
+    func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.object, failure: @escaping RequestFailure) {
         let endpoint = ProductEndPoint.sendRedeem(code: code)
-        network.requestData(endPoint: endpoint, success: MapperData.mapArray(success), failure: failure)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     private let network: APINetworkProtocol

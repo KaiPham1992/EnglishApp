@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class StudyPackDetailPresenter: StudyPackDetailPresenterProtocol, StudyPackDetailInteractorOutputProtocol {
-    func upgradeProduct(productID: Int) {
+    func upgradeProduct(productID: String) {
         Provider.shared.productAPIService.upgradeProduc(productID: productID, success: { (success) in
             guard let success = success else {return}
             self.view?.didUpgrade(info: success)

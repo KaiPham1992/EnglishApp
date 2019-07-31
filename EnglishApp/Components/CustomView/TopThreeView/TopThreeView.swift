@@ -33,26 +33,48 @@ class TopThreeView: BaseViewXib {
     var listTopThree : [UserEntity]?{
         didSet{
             guard let listTopThree = listTopThree else { return }
-            if listTopThree.count < 2 {
+            if listTopThree.count < 2 {return}
+            
+            lbNametop1.text = listTopThree[0].nameShowUI
+            if let point1 = listTopThree[0].rankPoint {
+                lbPointtop1.text = "\(point1) \(LocalizableKey.point.showLanguage)"
+            }
+            imgAvatar1.sd_setImage(with: listTopThree[0].urlAvatar, placeholderImage: AppImage.avatarDefault)
+            if listTopThree.count == 1 {
+                lbNametop2.text = ""
+                lbPointtop2.text = ""
+                lbNametop3.text = ""
+                lbPointtop3.text = ""
+                return
+                
+            }
+            
+            lbNametop2.text = listTopThree[1].nameShowUI
+            if let point2 = listTopThree[1].rankPoint {
+                lbPointtop2.text = "\(point2) \(LocalizableKey.point.showLanguage)"
+
+            }
+            imgAvatar2.sd_setImage(with: listTopThree[1].urlAvatar, placeholderImage: AppImage.avatarDefault)
+            if listTopThree.count == 2 {
+                lbNametop3.text = ""
+                lbPointtop3.text = ""
                 return
             }
             
-            lbNametop1.text = listTopThree[0].nameShowUI
-            lbNametop2.text = listTopThree[1].nameShowUI
             lbNametop3.text = listTopThree[2].nameShowUI
-            
-            if let point1 = listTopThree[0].rankPoint,
-                let point2 = listTopThree[1].rankPoint,
-                let point3 = listTopThree[2].rankPoint
-                {
-                lbPointtop1.text = "\(point1) \(LocalizableKey.point.showLanguage)"
-                lbPointtop2.text = "\(point2) \(LocalizableKey.point.showLanguage)"
+            if let point3 = listTopThree[2].rankPoint {
                 lbPointtop3.text = "\(point3) \(LocalizableKey.point.showLanguage)"
             }
-//            print(listTopThree?[0].urlAvatar)
-            imgAvatar1.sd_setImage(with: listTopThree[0].urlAvatar, placeholderImage: AppImage.avatarDefault)
-            imgAvatar2.sd_setImage(with: listTopThree[1].urlAvatar, placeholderImage: AppImage.avatarDefault)
             imgAvatar3.sd_setImage(with: listTopThree[2].urlAvatar, placeholderImage: AppImage.avatarDefault)
+                
+                
+            
+                
+                
+            
+            
+            
+        
             
         }
     }

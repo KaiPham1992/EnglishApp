@@ -27,14 +27,14 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uN3-78-1lZ">
                         <rect key="frame" x="0.0" y="20" width="206" height="301"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FDp-Xk-Fbf">
+                                <rect key="frame" x="0.0" y="0.0" width="206" height="301"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDF-AA-jgy">
-                                <rect key="frame" x="16" y="250" width="174" height="35"/>
-                                <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="SLo-lr-6Dv"/>
-                                </constraints>
+                                <rect key="frame" x="0.0" y="0.0" width="206" height="301"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                                <state key="normal" title="CHI TIẾT">
+                                <state key="normal">
                                     <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -46,20 +46,17 @@
                                     <action selector="btnDetailTapped" destination="gTV-IL-0wX" eventType="touchUpInside" id="3c8-iI-SIA"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1CF-BF-W5y">
-                                <rect key="frame" x="16" y="16" width="174" height="224"/>
-                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="tDF-AA-jgy" secondAttribute="bottom" constant="16" id="OmP-kf-pcS"/>
-                            <constraint firstAttribute="trailing" secondItem="1CF-BF-W5y" secondAttribute="trailing" constant="16" id="P4m-A3-74w"/>
-                            <constraint firstItem="tDF-AA-jgy" firstAttribute="leading" secondItem="uN3-78-1lZ" secondAttribute="leading" constant="16" id="RxG-Jl-CnQ"/>
-                            <constraint firstItem="1CF-BF-W5y" firstAttribute="leading" secondItem="uN3-78-1lZ" secondAttribute="leading" constant="16" id="aE7-kz-dNc"/>
-                            <constraint firstItem="tDF-AA-jgy" firstAttribute="top" secondItem="1CF-BF-W5y" secondAttribute="bottom" constant="10" id="jSK-us-HlD"/>
-                            <constraint firstItem="1CF-BF-W5y" firstAttribute="top" secondItem="uN3-78-1lZ" secondAttribute="top" constant="16" id="vkE-z7-tb2"/>
-                            <constraint firstAttribute="trailing" secondItem="tDF-AA-jgy" secondAttribute="trailing" constant="16" id="zQJ-Hh-3pf"/>
+                            <constraint firstItem="tDF-AA-jgy" firstAttribute="top" secondItem="uN3-78-1lZ" secondAttribute="top" id="4cc-bJ-FYW"/>
+                            <constraint firstAttribute="bottom" secondItem="FDp-Xk-Fbf" secondAttribute="bottom" id="5vd-TU-hXn"/>
+                            <constraint firstItem="FDp-Xk-Fbf" firstAttribute="leading" secondItem="uN3-78-1lZ" secondAttribute="leading" id="69f-6g-rcO"/>
+                            <constraint firstAttribute="trailing" secondItem="tDF-AA-jgy" secondAttribute="trailing" id="Rfs-yX-UdL"/>
+                            <constraint firstItem="FDp-Xk-Fbf" firstAttribute="top" secondItem="uN3-78-1lZ" secondAttribute="top" id="fJC-wc-Y5o"/>
+                            <constraint firstAttribute="bottom" secondItem="tDF-AA-jgy" secondAttribute="bottom" id="re9-pg-87A"/>
+                            <constraint firstItem="tDF-AA-jgy" firstAttribute="leading" secondItem="uN3-78-1lZ" secondAttribute="leading" id="u1r-ul-EkF"/>
+                            <constraint firstAttribute="trailing" secondItem="FDp-Xk-Fbf" secondAttribute="trailing" id="yTN-0a-QFK"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -105,7 +102,7 @@
             </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="btnDetail" destination="tDF-AA-jgy" id="BoY-7c-bWl"/>
-                <outlet property="webView" destination="1CF-BF-W5y" id="1My-Im-h9Y"/>
+                <outlet property="imgLogo" destination="FDp-Xk-Fbf" id="kAo-17-pr7"/>
             </connections>
             <point key="canvasLocation" x="250.72463768115944" y="15.736607142857142"/>
         </collectionViewCell>
