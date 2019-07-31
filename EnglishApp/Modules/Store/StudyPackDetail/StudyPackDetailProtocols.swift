@@ -16,7 +16,7 @@ protocol StudyPackDetailWireframeProtocol: class {
 protocol StudyPackDetailPresenterProtocol: class {
     
     var interactor: StudyPackDetailInteractorInputProtocol? { get set }
-    func upgradeProduct(productID: Int)
+    func upgradeProduct(productID: String)
 }
 
 //MARK: Interactor -

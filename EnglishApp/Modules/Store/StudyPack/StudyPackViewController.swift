@@ -11,7 +11,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class StudyPackViewController: UIViewController, StudyPackViewProtocol {
+class StudyPackViewController: UIViewController, StudyPackViewProtocol {    
 
 	var presenter: StudyPackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
@@ -33,6 +33,18 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
         configureTable()
         setUpView()
         presenter?.getProduct()
+    }
+    
+    func didExchangeGift() {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.exchangeGiftSucess.showLanguage)") {
+            //do nothing
+        }
+    }
+    
+    func didGetError() {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.getError.showLanguage)") {
+            //do nothing
+        }
     }
     
     func didGetProduct(product: ProductCollectionEntity) {
@@ -61,6 +73,12 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
         } else {
             heightOfError.constant = 17
             lbError.text = LocalizableKey.pleaseEnterCode.showLanguage
+        }
+    }
+    
+    func exchangeGift(id: String) {
+        PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.exchangeGiftTitle.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
+            self.presenter?.exchangeGift(id: id)
         }
     }
 
@@ -105,12 +123,9 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
             } else {
                 let cell = tableView.dequeue(ChangeGiftCell.self, for: indexPath)
                 cell.product = self.collectionProduct.groupGift[indexPath.item - 1]
-                
                 return cell
             }
         }
-        
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -125,7 +140,15 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             return 250
         } else {
-            return indexPath.item == 0 ? 60: 124
+            return indexPath.item == 0 ? 60: 150
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section != 0 && indexPath.item != 0 {
+            if let id = self.collectionProduct.groupGift[indexPath.item - 1].id {
+                exchangeGift(id: id)
+            }
         }
     }
 }
@@ -138,16 +161,14 @@ extension StudyPackViewController: StudyPackViewDelegate {
 }
 
 extension StudyPackViewController{
-    func didSendRedeem(data: QAEntity) {
-        PopUpHelper.shared.showError(message: "Thành công") {
+    func didSendRedeem() {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.redeemSuccess.showLanguage)") {
             //
         }
     }
     
     func didSendRedeem(error: APIError) {
-//        PopUpHelper.shared.showError(message: error.message ?? "") {
-//            //
-//        }
+        didGetError()
         lbError.text = LocalizableKey.notFoundCode.showLanguage
         heightOfError.constant = 17
     }

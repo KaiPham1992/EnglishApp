@@ -12,6 +12,18 @@ import UIKit
 import XLPagerTabStrip
 
 class BeePackViewController: BaseViewController, BeePackViewProtocol {
+    func didUpgrade(info: UpgradeInfoEntity) {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.upgradeSuccess.showLanguage)") {
+            //
+        }
+    }
+    
+    func didUpgrade(error: Error) {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.getError.showLanguage)") {
+            //
+        }
+    }
+    
 
     var presenter: BeePackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
@@ -29,6 +41,12 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
         configureTable()
 //        listBeePack = BeePackEntity.toArray()
         listBeePack = UserDefaultHelper.shared.collectionProduct.groupHoney
+    }
+    
+    func upgradeBeePack(id: String) {
+        PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.upgradeBeePack.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
+            self.presenter?.upgradeProduct(productID: id)
+        }
     }
     
 }
@@ -52,7 +70,6 @@ extension BeePackViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(BeePackCell.self, for: indexPath)
-//        cell.item = self.listBeePack[indexPath.item]
         cell.item = self.listBeePack[indexPath.row]
         return cell
     }
@@ -64,5 +81,11 @@ extension BeePackViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 109
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let id = self.listBeePack[indexPath.item].id {
+            upgradeBeePack(id: id)
+        }
     }
 }

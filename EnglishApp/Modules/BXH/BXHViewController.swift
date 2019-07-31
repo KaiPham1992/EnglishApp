@@ -142,17 +142,17 @@ class BXHViewController: BaseViewController {
         default:
             break
         }
-        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: "")
+        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: rank)
     }
     
     func setSelectedButton(index: Int) {
         for i in 0 ... 5 {
             if i == index {
-                //set grey
-                btnOption[i].backgroundColor = .lightGray
+                btnOption[i].backgroundColor = UIColor.lightGray
+            } else {
+                btnOption[i].backgroundColor = .white
             }
-            //set white
-            btnOption[i].backgroundColor = .white
+            
         }
     }
     
@@ -162,6 +162,7 @@ class BXHViewController: BaseViewController {
             index = 0
         }
         setUpLabelRank()
+        self.rank = arrayRank[index]
         presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: arrayRank[index])
     }
     
@@ -171,9 +172,9 @@ class BXHViewController: BaseViewController {
             index = 6
         }
         setUpLabelRank()
+        self.rank = arrayRank[index]
         presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: arrayRank[index])
     }
-    
     
 }
 

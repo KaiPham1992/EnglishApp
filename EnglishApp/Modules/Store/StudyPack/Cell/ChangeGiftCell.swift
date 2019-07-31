@@ -21,7 +21,7 @@ class ChangeGiftCell: BaseTableCell {
             imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
             
             lbTitle.text = product.name
-            lbContent.text = "Api chưa trả content về"
+            lbContent.text = product.content&.replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: "")
             lbCountHoney.text = product.amountHoney& + " \(LocalizableKey.boxHoneyTitle.showLanguage.lowercased())"
             lbCountDiamon.text = product.amountDiamond& + " \(LocalizableKey.diamond.showLanguage.lowercased())"
             

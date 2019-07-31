@@ -47,7 +47,7 @@ class UserEntity: BaseEntity  {
     var amountRank: Int?
     var level: String?
     var isLeader: Int?
-    
+    var attachImg: String?
     
     override func mapping(map: Map) {
         self.isLeader <- map["is_leader"]
@@ -84,6 +84,7 @@ class UserEntity: BaseEntity  {
         self.typeUser <- map["type_user"]
         self.amountRank <- (map["amount_rank"],StringToIntTransform())
         self.level <- map["level"]
+        self.attachImg <- map["attach_img_src"]
     }
     
     var urlAvatar:  URL? {
@@ -92,6 +93,15 @@ class UserEntity: BaseEntity  {
             
         } else if let urlString = socialImage, let url = URL(string: urlString) {
             return url
+        }
+        
+        return nil
+    }
+    
+    var urlRank: URL? {
+        if let urlString = self.attachImg, let url = URL(string: BASE_URL_IMAGE + urlString) {
+            return url
+            
         }
         
         return nil
