@@ -25,6 +25,8 @@ class BXHViewController: BaseViewController {
     var quarter = ""
     var year = ""
     var rank = ""
+    var listQuaters = [Int]()
+    var listYears = [Int]()
     
     var listLeaderBoard = LeaderBoardEntity(){
         didSet{
@@ -40,6 +42,8 @@ class BXHViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         
+        calculateQuaters()
+        setTitleForFilterOption()
         hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.bxh.showLanguage)
@@ -49,7 +53,6 @@ class BXHViewController: BaseViewController {
         super.setUpViews()
         configureTable()
         configureViewOption()
-        configureButtonOption()
         setUpLabelRank()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideMenu))
         self.view.addGestureRecognizer(tapGesture)
@@ -78,25 +81,12 @@ class BXHViewController: BaseViewController {
         self.viewOption.layer.shadowOpacity = 0.2
         self.viewOption.layer.shadowPath = shadowPath.cgPath
     }
-    
-    func configureButtonOption() {
-        btnOption[0].setTitle("\(LocalizableKey.quater22019.showLanguage)", for: .normal)
-        btnOption[1].setTitle("\(LocalizableKey.quater12019.showLanguage)", for: .normal)
-        btnOption[2].setTitle("\(LocalizableKey.quater42018.showLanguage)", for: .normal)
-        btnOption[3].setTitle("\(LocalizableKey.quater32018.showLanguage)", for: .normal)
-        btnOption[4].setTitle("\(LocalizableKey.quater22018.showLanguage)", for: .normal)
-        btnOption[5].setTitle("\(LocalizableKey.quater12018.showLanguage)", for: .normal)
-    }
-        
     override func btnBackTapped() {
         showTabbar()
         self.pop()
     }
     
     @objc func btnFilterTapped() {
-//        UIView.animate(withDuration: 0.25, animations: {
-//            self.viewOption.isHidden = !self.viewOption.isHidden
-//        })
         UIView.transition(with: self.viewOption, duration: 0.25, options: .transitionCrossDissolve, animations: {
             self.viewOption.isHidden = !self.viewOption.isHidden
         })
@@ -113,36 +103,27 @@ class BXHViewController: BaseViewController {
         hideMenu()
         
         //-- handle selection
-
         switch sender {
         case btnOption[0]:
-            quarter = "2"
-            year = "2019"
-            setSelectedButton(index: 0)
+            handleSelectedButton(index: 0)
         case btnOption[1]:
-            quarter = "1"
-            year = "2019"
-            setSelectedButton(index: 1)
+            handleSelectedButton(index: 1)
         case btnOption[2]:
-            quarter = "4"
-            year = "2018"
-            setSelectedButton(index: 2)
+            handleSelectedButton(index: 2)
         case btnOption[3]:
-            quarter = "3"
-            year = "2018"
-            setSelectedButton(index: 3)
+            handleSelectedButton(index: 3)
         case btnOption[4]:
-            quarter = "2"
-            year = "2018"
-            setSelectedButton(index: 4)
+            handleSelectedButton(index: 4)
         case btnOption[5]:
-            quarter = "1"
-            year = "2018"
-            setSelectedButton(index: 5)
+            handleSelectedButton(index: 5)
         default:
             break
         }
-        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: rank)
+    }
+    
+    func handleSelectedButton(index: Int) {
+        setSelectedButton(index: index)
+        presenter?.getListLeaderBoard(quarter: "\(self.listQuaters[index])", year: "\(self.listYears[index])", rank: self.rank)
     }
     
     func setSelectedButton(index: Int) {
@@ -177,7 +158,41 @@ class BXHViewController: BaseViewController {
     }
     
 }
-
+//--- set up buttons filter
+extension BXHViewController {
+    func calculateQuaters() {
+        let date = Date()
+        let month = date.month
+        var quater = (month - 1) / 3 + 1
+        var year = date.year
+        
+        // -- current quater
+        self.listQuaters.append(quater)
+        self.listYears.append(year)
+        
+        // -- 5 previous quater
+        for _ in 1 ... 5 {
+            var previousQuater = quater - 1
+            var previousYear = year
+            if previousQuater < 1 {
+                previousQuater = 4
+                previousYear -= 1
+            }
+            self.listQuaters.append(previousQuater)
+            self.listYears.append(previousYear)
+            
+            quater = previousQuater
+            year = previousYear
+        }
+    }
+    
+    func setTitleForFilterOption() {
+        for index in 0 ... 5 {
+            btnOption[index].setTitle("\(LocalizableKey.quater.showLanguage) \(self.listQuaters[index])/\(self.listYears[index])", for: .normal)
+        }
+    }
+    
+}
 
 extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     func configureTable() {
@@ -227,8 +242,18 @@ extension BXHViewController: BXHViewProtocol{
         hideNoData()
         self.listLeaderBoard = listLeaderBoard
         
-        guard let user = listLeaderBoard.user else {return}
-        self.vUser.user = user
+        guard let userInfo = listLeaderBoard.user else {return}
+        guard let listUser = listLeaderBoard.boards else {return}
+        var number = 0
+        for index in 0 ... listUser.count {
+            let user = listUser[index]
+            if user.id?.elementsEqual(userInfo.id&) == true {
+                number = index
+                break
+            }
+        }
+        self.vUser.number = number
+        self.vUser.user = userInfo
     }
     
     func didGetList(error: Error) {

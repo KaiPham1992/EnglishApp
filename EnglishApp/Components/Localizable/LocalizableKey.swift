@@ -320,13 +320,8 @@ struct LocalizableKey {
     static let lbNoData = "lbNoData"
     
     //-- BXH
-    static let quater22019 = "quater2/2019"
-    static let quater12019 = "quater1/2019"
-    static let quater42018 = "quater4/2018"
-    static let quater32018 = "quater3/2018"
-    static let quater22018 = "quater2/2018"
-    static let quater12018 = "quater1/2018"
     static let all = "all"
+    static let quater = "quater"
     
     //pop up
     static let getError = "getError"
