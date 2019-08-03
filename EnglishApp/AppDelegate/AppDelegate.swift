@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Fabric.sharedSDK().debug = true 
         LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
         IQKeyboardManager.shared.enable = true
+        
         configureGoogle()
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
