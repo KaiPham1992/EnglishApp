@@ -15,8 +15,6 @@ class CatelogyExercisePresenter: CatelogyExercisePresenterProtocol, CatelogyExer
     weak private var view: CatelogyExerciseViewProtocol?
     var interactor: CatelogyExerciseInteractorInputProtocol?
     private let router: CatelogyExerciseWireframeProtocol
-    var catelogy: CatelogyEntity?
-    var isLoadmore = true
 
     init(interface: CatelogyExerciseViewProtocol, interactor: CatelogyExerciseInteractorInputProtocol?, router: CatelogyExerciseWireframeProtocol) {
         self.view = interface
@@ -25,10 +23,7 @@ class CatelogyExercisePresenter: CatelogyExercisePresenterProtocol, CatelogyExer
     }
     
     func getListCatelogy(offset: Int) {
-        if isLoadmore {
-            self.interactor?.getListCatelogy(offset: offset)
-        }
-        
+        self.interactor?.getListCatelogy(offset: offset)
     }
     
     func gotoChoiceExercise(type: Int, categoryId: String,studyPackId: Int) {
@@ -37,14 +32,6 @@ class CatelogyExercisePresenter: CatelogyExercisePresenterProtocol, CatelogyExer
 
     
     func getListCatelogySuccessed(respone: CatelogyEntity) {
-        if respone.categories.count < limit {
-            isLoadmore = false
-        }
-        if catelogy == nil {
-            self.catelogy = respone
-        } else {
-            self.catelogy?.categories += respone.categories
-        }
-        self.view?.reloadView()
+        self.view?.reloadView(listData: respone.categories)
     }
 }

@@ -10,84 +10,51 @@
 
 import UIKit
 
-class CatelogyExerciseViewController: BaseViewController {
+class CatelogyExerciseViewController: ListManagerVC {
 
 	var presenter: CatelogyExercisePresenterProtocol?
 
     @IBOutlet weak var tbvLevelExercise: UITableView!
-    var offset: Int = 0
     var typeTest = 0
     var studyPackId : Int = 0
     
     override func setUpViews() {
-        super.setUpViews()
-        tbvLevelExercise.registerXibFile(CellLevelExercise.self)
-        tbvLevelExercise.dataSource = self
-        tbvLevelExercise.delegate = self
-        self.presenter?.getListCatelogy(offset: self.offset)
-        
-    }
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
-        addBackToNavigation()
         if typeTest == TypeExercise.level.rawValue {
-            setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
+            customTitle =  LocalizableKey.level_exercise.showLanguage
         }
-        
         if typeTest == TypeExercise.practice.rawValue {
-            setTitleNavigation(title: LocalizableKey.try_hard.showLanguage)
+            customTitle = LocalizableKey.try_hard.showLanguage
         }
+        showButtonBack = true
+        super.setUpViews()
+        self.tabBarController?.tabBar.isHidden = true
     }
     
-}
-
-extension CatelogyExerciseViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func registerTableView() {
+        super.registerTableView()
+        self.tableView.registerXibFile(CellLevelExercise.self)
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.catelogy?.categories.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
+    
+    override func callAPI() {
+        super.callAPI()
+         self.presenter?.getListCatelogy(offset: self.offset)
     }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
-        if let dataCell = self.presenter?.catelogy?.categories[indexPath.row] {
-            cell.lblNameExercise.text = dataCell.name&
-        }
-        
+        let data = item as! SearchEntity
+        cell.lblNameExercise.text = data.name&
         return cell
     }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.catelogy?.categories.count ?? 0
-        if row - 1 == indexPath.row {
-            self.presenter?.getListCatelogy(offset: self.offset)
-        }
-    }
-}
-extension CatelogyExerciseViewController : UITableViewDelegate{
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = self.presenter?.catelogy?.categories[indexPath.row]._id ?? "0"
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! SearchEntity
+        let id = data._id ?? "0"
         self.presenter?.gotoChoiceExercise(type: typeTest, categoryId: id,studyPackId: self.studyPackId)
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
 }
 
-
 extension CatelogyExerciseViewController: CatelogyExerciseViewProtocol {
-    func reloadView() {
-        tbvLevelExercise.reloadData()
+    func reloadView(listData: [SearchEntity]) {
+        initLoadData(data: listData)
     }
 }

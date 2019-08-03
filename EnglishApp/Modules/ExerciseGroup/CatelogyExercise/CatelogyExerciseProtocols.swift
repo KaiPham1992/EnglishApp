@@ -19,8 +19,6 @@ protocol CatelogyExercisePresenterProtocol: class {
 
     var interactor: CatelogyExerciseInteractorInputProtocol? { get set }
     
-    var catelogy: CatelogyEntity? {get set}
-    
     func getListCatelogy(offset: Int)
     func gotoChoiceExercise(type: Int, categoryId: String,studyPackId:Int)
 }
@@ -44,7 +42,7 @@ protocol CatelogyExerciseInteractorInputProtocol: class {
 protocol CatelogyExerciseViewProtocol: class {
 
     var presenter: CatelogyExercisePresenterProtocol?  { get set }
-    func reloadView()
+    func reloadView(listData: [SearchEntity])
 
     /* Presenter -> ViewController */
 }
