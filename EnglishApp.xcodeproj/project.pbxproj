@@ -3250,6 +3250,7 @@
 		2AED14C622EE148B0076C223 /* ExplainExerciseGroup */ = {
 			isa = PBXGroup;
 			children = (
+				2AA20CC522F5517D00F38894 /* CommentQuestion */,
 				2AED148D22EE02AA0076C223 /* ExplainExercise */,
 				2AED14C722EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift */,
 				2AED14C822EE14BD0076C223 /* ExplainExerciseGroupRouter.swift */,
@@ -3667,7 +3668,6 @@
 		76CE31BC22961FAC00E998FB /* ResultGroup */ = {
 			isa = PBXGroup;
 			children = (
-				2AA20CC522F5517D00F38894 /* CommentQuestion */,
 				2A6C5E9F22EF45AA004B23EF /* RelatedGrammar */,
 				2AED14C622EE148B0076C223 /* ExplainExerciseGroup */,
 				769A3BAE229FE55B00CA55BD /* History */,
