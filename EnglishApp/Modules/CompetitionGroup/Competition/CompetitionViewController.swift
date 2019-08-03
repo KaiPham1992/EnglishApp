@@ -29,7 +29,6 @@ class CompetitionViewController: ListManagerVC {
     }
     
     override func callAPI() {
-        self.offset = 0
         if type == .competition{
             presenter?.getListFight(offset: self.offset)
         } else {
