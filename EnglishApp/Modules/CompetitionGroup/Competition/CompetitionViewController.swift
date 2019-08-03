@@ -24,8 +24,8 @@ class CompetitionViewController: ListManagerVC {
     override func setupViewListManager() {
         customTitle = LocalizableKey.titleCompetition.showLanguage
         showButtonBack = false
-        estimateHeightRow = 55
-        heightRow = 0
+//        estimateHeightRow = 20
+//        heightRow = 0// dynamic
     }
     
     override func callAPI() {
@@ -45,7 +45,7 @@ class CompetitionViewController: ListManagerVC {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = false
     }
-    
+  
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeue(CompetitionCell.self, for: indexPath)
         cell.type = self.type
