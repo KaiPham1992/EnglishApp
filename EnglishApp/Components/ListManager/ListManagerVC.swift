@@ -99,9 +99,6 @@ class ListManagerVC: BaseViewController {
         
     }
     
-    func loadMoreData(){
-    }
-    
     func cellForRowListManager(item: Any,_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         return UITableViewCell()
     }
@@ -121,7 +118,8 @@ extension ListManagerVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == listData.count - 1 && isLoadmore{
-            loadMoreData()
+            self.offset += limit
+            callAPI()
         }
     }
 }

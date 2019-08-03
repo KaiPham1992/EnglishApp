@@ -31,20 +31,10 @@ class CompetitionViewController: ListManagerVC {
     override func callAPI() {
         self.offset = 0
         if type == .competition{
-            presenter?.getListFight(offset: self.offset,replaceData: true)
+            presenter?.getListFight(offset: self.offset)
         } else {
-            self.presenter?.getListResultFight(offset: self.offset,replaceData: true)
+            self.presenter?.getListResultFight(offset: self.offset)
         }
-    }
-    
-    override func loadMoreData() {
-        self.offset += limit
-        if type == .competition{
-            presenter?.getListFight(offset: self.offset,replaceData: false)
-        } else {
-            self.presenter?.getListResultFight(offset: self.offset,replaceData: false)
-        }
-        
     }
     
     override func registerTableView() {
@@ -104,7 +94,7 @@ extension CompetitionViewController: IndicatorInfoProvider{
     }
 }
 extension CompetitionViewController: CompetitionViewProtocol{
-    func didGetList(competitionList: CollectionCompetitionEntity,replaceData: Bool) {
+    func didGetList(competitionList: CollectionCompetitionEntity) {
         guard let competition = competitionList.competitionEntity else {return}
         initLoadData(data: competition)
     }
@@ -113,7 +103,7 @@ extension CompetitionViewController: CompetitionViewProtocol{
         print(error.localizedDescription)
     }
     
-    func didGetResultFight(resultFight: CompetitionProfileEntity,replaceData: Bool) {
+    func didGetResultFight(resultFight: CompetitionProfileEntity) {
         guard let competition = resultFight.results else {return}
         initLoadData(data:competition.map{CompetitionEntity(competitionResultsProfileEntity: $0)}.compactMap{$0})
     }
