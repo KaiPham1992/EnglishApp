@@ -13,4 +13,16 @@ import UIKit
 class DictionaryInteractor: DictionaryInteractorInputProtocol {
 
     weak var presenter: DictionaryInteractorOutputProtocol?
+    
+    func getListDictionary() {
+        ProgressView.shared.show()
+        Provider.shared.findAPIService.getListDictionary(success: { (response) in
+            ProgressView.shared.hide()
+            if let _response = response {
+                self.presenter?.getListDictionarySuccessed(listDictionary: _response.dictionaries ?? [])
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

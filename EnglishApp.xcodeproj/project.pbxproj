@@ -162,6 +162,9 @@
 		2A9CAF5C22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */; };
 		2A9CAF5D22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */; };
 		2A9CAF5E22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */; };
+		2AA20CC122F5434400F38894 /* DictionarisResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA20CC022F5434400F38894 /* DictionarisResponse.swift */; };
+		2AA20CC222F5434400F38894 /* DictionarisResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA20CC022F5434400F38894 /* DictionarisResponse.swift */; };
+		2AA20CC322F5434400F38894 /* DictionarisResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA20CC022F5434400F38894 /* DictionarisResponse.swift */; };
 		2AA6D38922DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
 		2AA6D38A22DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
 		2AA6D38B22DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
@@ -2259,6 +2262,7 @@
 		2A9A81ED22EC5C6300345C5F /* WordExplainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordExplainEntity.swift; sourceTree = "<group>"; };
 		2A9A81F322EC5FE600345C5F /* SQLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLHelper.swift; sourceTree = "<group>"; };
 		2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFightTestResponse.swift; sourceTree = "<group>"; };
+		2AA20CC022F5434400F38894 /* DictionarisResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionarisResponse.swift; sourceTree = "<group>"; };
 		2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamEntity.swift; sourceTree = "<group>"; };
 		2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailEntity.swift; sourceTree = "<group>"; };
 		2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResultProfileEntity.swift; sourceTree = "<group>"; };
@@ -3132,6 +3136,14 @@
 				2A9A81F322EC5FE600345C5F /* SQLHelper.swift */,
 			);
 			path = SQLHelper;
+			sourceTree = "<group>";
+		};
+		2AA20CBF22F5432500F38894 /* Dictionaty */ = {
+			isa = PBXGroup;
+			children = (
+				2AA20CC022F5434400F38894 /* DictionarisResponse.swift */,
+			);
+			path = Dictionaty;
 			sourceTree = "<group>";
 		};
 		2AA6D38722DC596E006E9859 /* Competition */ = {
@@ -4292,6 +4304,7 @@
 		DE361EEB2283E84F00FA3B0D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				2AA20CBF22F5432500F38894 /* Dictionaty */,
 				2AA6D38722DC596E006E9859 /* Competition */,
 				76C92F9422C4876C00E8ED69 /* Exercise */,
 				76C92F8722C3B9FC00E8ED69 /* Result */,
@@ -6601,6 +6614,7 @@
 				DE952F832287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				76F5E01222D0F44100C2E63E /* LogEntity.swift in Sources */,
 				DE361E9F2283E60500FA3B0D /* YesNoContentView.swift in Sources */,
+				2AA20CC122F5434400F38894 /* DictionarisResponse.swift in Sources */,
 				DE361E8B2283E60500FA3B0D /* AppTextView.swift in Sources */,
 				DE361DF72283E57900FA3B0D /* Date+extension.swift in Sources */,
 				DE89D22122A42592000638B0 /* BXHRouter.swift in Sources */,
@@ -7191,6 +7205,7 @@
 				DE9530352287DF4800E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
 				76F5E01322D0F44100C2E63E /* LogEntity.swift in Sources */,
 				DE9530362287DF4800E3F688 /* YesNoContentView.swift in Sources */,
+				2AA20CC222F5434400F38894 /* DictionarisResponse.swift in Sources */,
 				DE9530372287DF4800E3F688 /* AppTextView.swift in Sources */,
 				DE9530382287DF4800E3F688 /* Date+extension.swift in Sources */,
 				DE89D22222A42592000638B0 /* BXHRouter.swift in Sources */,
@@ -7678,6 +7693,7 @@
 				DE9530C62287DF6400E3F688 /* AppDropDownCell.swift in Sources */,
 				DE9530C72287DF6400E3F688 /* AppDelegate.swift in Sources */,
 				DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */,
+				2AA20CC322F5434400F38894 /* DictionarisResponse.swift in Sources */,
 				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
 				76C92F8F22C4493B00E8ED69 /* FindAPIService.swift in Sources */,
 				DE9530CA2287DF6400E3F688 /* AppFont.swift in Sources */,

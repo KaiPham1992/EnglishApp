@@ -8,8 +8,9 @@
 
 import Foundation
 import RealmSwift
+import ObjectMapper
 
-class WordEntity : Object {
+class WordEntity : Object,Mappable {
     @objc dynamic var id : Int = 0
     @objc dynamic var word : String = ""
     
@@ -21,5 +22,14 @@ class WordEntity : Object {
         self.init()
         self.id = id
         self.word = word
+    }
+    
+    convenience required init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        self.id <- map["_id"]
+        self.word <- map["name"]
     }
 }

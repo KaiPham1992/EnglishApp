@@ -36,14 +36,12 @@ class DictionaryViewController: BaseViewController {
     }
     override func setUpViews() {
         super.setUpViews()
+        self.presenter?.getListDictionary()
        lblSearch.text = LocalizableKey.search.showLanguage
         self.tabBarController?.tabBar.isHidden = true
         lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
             self.setupDropDown()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            self.getData()
         }
     }
 
@@ -56,13 +54,6 @@ class DictionaryViewController: BaseViewController {
     
     @objc func clickButtonRight(){
         self.push(controller: MoreDictionaryRouter.createModule(),animated: true)
-    }
-    
-    private func getData(){
-        dropDownDictionary.dataSource = [LocalizableKey.vietnamese_to_english.showLanguage,LocalizableKey.english_to_english.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.japanese_to_vietnamese.showLanguage]
-//        dropDownDictionary.show()
-//        dropDownSearch.dataSource = ["a","b","c"]
-//        dropDownSearch.show()
     }
     
     func setupDropDown(){
@@ -134,5 +125,12 @@ extension DictionaryViewController:DictionaryViewProtocol{
     
     func getDetailVocabularySuccessed() {
         lblTextSearch.text = self.presenter?.detailVocabulary?.explain&
+    }
+    
+    func reloadDictionary(){
+        if let dictionary = self.presenter?.listDictionary.first?.name {
+            self.lblDictionary.text = dictionary
+        }
+        self.dropDownDictionary.dataSource = self.presenter?.listDictionary.map{$0.name}.compactMap{$0} ?? []
     }
 }
