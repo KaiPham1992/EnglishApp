@@ -21,7 +21,7 @@ class BXHView: BaseViewXib {
     var user = UserEntity(){
         didSet{
             
-            lbNumber.text = "\(self.number&)"
+            lbNumber.text = "\(self.number*)"
             lbName.text = user.nameShowUI
             lbRank.text = "\(user.rankName&): \(user.rankPoint&) \(LocalizableKey.point.showLanguage)"
             imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
