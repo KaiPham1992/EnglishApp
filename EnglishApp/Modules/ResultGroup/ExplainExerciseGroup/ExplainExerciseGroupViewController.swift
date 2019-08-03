@@ -26,7 +26,7 @@ class ExplainExerciseGroupViewController: PageViewController, ExplainExerciseGro
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [CommentRouter.createModule(id: String(id)),ExplainExerciseRouter.createModule(id: id)]
+        return [CommentQuestionRouter.createModule(id_question: String(id)),ExplainExerciseRouter.createModule(id: id)]
     }
 
 }

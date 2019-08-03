@@ -16,9 +16,20 @@ protocol TheoryAPIServiceProtocol {
     func likeLesson(idLesson: Int,isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func addComment(idLesson: Int,content: String,idParent: Int?, success: @escaping SuccessHandler<ParentComment>.object, failure: @escaping RequestFailure)
     func getLessonRecipe(type: Int, offset: Int,success: @escaping SuccessHandler<LessonCategoryEntity>.object, failure: @escaping RequestFailure)
+    func getCommentQuestion(question_details_id: Int,offset: Int,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure)
+    func addCommentQuestion(question_details_id: Int, content: String,parent_id: Int?,success: @escaping SuccessHandler<ParentComment>.object, failure: @escaping RequestFailure)
 }
 
 class TheoryAPIService: TheoryAPIServiceProtocol{
+    func addCommentQuestion(question_details_id: Int, content: String,parent_id: Int?,success: @escaping SuccessHandler<ParentComment>.object, failure: @escaping RequestFailure){
+        let endpoint = TheoryEndpoint.addCommentQuestion(question_details_id: question_details_id, content: content,parent_id: parent_id)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getCommentQuestion(question_details_id: Int,offset: Int,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = TheoryEndpoint.getCommentQuestion(question_details_id: question_details_id, offset: offset)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
     func getLessonRecipe(type: Int, offset: Int,success: @escaping SuccessHandler<LessonCategoryEntity>.object, failure: @escaping RequestFailure){
         let endpoint = TheoryEndpoint.getLessonRecipe(type: type, offset: offset)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)

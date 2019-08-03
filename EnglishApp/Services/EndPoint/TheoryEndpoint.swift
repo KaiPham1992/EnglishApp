@@ -17,11 +17,17 @@ enum TheoryEndpoint {
     case likeLesson(idLesson: Int,isFavorite: Int)
     case addComment(idLesson: Int,content: String,idParent: Int?)
     case getLessonRecipe(type: Int,offset: Int)
+    case getCommentQuestion(question_details_id: Int,offset: Int)
+    case addCommentQuestion(question_details_id: Int, content: String,parent_id: Int?)
 }
 
 extension TheoryEndpoint :EndPointType {
     var path: String {
         switch self {
+        case .addCommentQuestion:
+            return "_api/comment/create_comment_question"
+        case .getCommentQuestion:
+            return "_api/comment/get_list_comment_question"
         case .getLessonRecipe:
             return "_api/lesson/get_list_lesson_category"
         case .getListLesson:
@@ -43,7 +49,7 @@ extension TheoryEndpoint :EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getListLesson, .getLessonDetail,.searchLesson, .getComment,.likeLesson,.addComment,.getLessonRecipe:
+        case .getListLesson, .getLessonDetail,.searchLesson, .getComment,.likeLesson,.addComment,.getLessonRecipe, .getCommentQuestion, .addCommentQuestion:
             return .post
         default:
             return .get
@@ -52,6 +58,13 @@ extension TheoryEndpoint :EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .addCommentQuestion(let question_details_id, let content,let parent_id):
+            if parent_id == nil {
+                return ["question_details_id":question_details_id,"content":content]
+            }
+            return ["question_details_id":question_details_id,"content":content, "parent_id":parent_id!]
+        case .getCommentQuestion(let question_details_id,let offset):
+            return ["question_details_id":question_details_id, "offset":offset,"limit":limit]
         case .getLessonRecipe(let type, let offset):
             return ["limit": limit,
                     "offset": offset,
