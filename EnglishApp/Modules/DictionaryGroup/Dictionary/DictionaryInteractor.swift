@@ -25,4 +25,16 @@ class DictionaryInteractor: DictionaryInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func lookWordOnline(dictionary_id: Int, word: String) {
+        ProgressView.shared.show()
+        Provider.shared.findAPIService.lookupWordOnline(dictionary_id: dictionary_id, word: word, success: { (response) in
+            ProgressView.shared.hide()
+            if let _response = response {
+                self.presenter?.lookupWordOnlineSuccessed(response: _response)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

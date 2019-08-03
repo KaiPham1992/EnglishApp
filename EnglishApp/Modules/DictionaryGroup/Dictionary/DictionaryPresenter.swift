@@ -44,4 +44,13 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
         self.listDictionary = listDictionary
         self.view?.reloadDictionary()
     }
+    
+    func lookWordOnline(dictionary_id: Int, word: String) {
+        self.interactor?.lookWordOnline(dictionary_id: dictionary_id, word: word)
+    }
+    
+    func lookupWordOnlineSuccessed(response: WordExplainEntity) {
+        self.detailVocabulary = response
+        self.view?.getDetailVocabularySuccessed()
+    }
 }

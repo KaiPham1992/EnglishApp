@@ -24,6 +24,7 @@ protocol DictionaryPresenterProtocol: class {
     func searchVocabulary(text: String)
     func getDetailVocabulary(id: Int)
     func getListDictionary()
+    func lookWordOnline(dictionary_id: Int,word: String)
 }
 
 //MARK: Interactor -
@@ -31,12 +32,14 @@ protocol DictionaryInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getListDictionarySuccessed(listDictionary: [SearchEntity])
+    func lookupWordOnlineSuccessed(response: WordExplainEntity)
 }
 
 protocol DictionaryInteractorInputProtocol: class {
 
     var presenter: DictionaryInteractorOutputProtocol?  { get set }
     func getListDictionary()
+    func lookWordOnline(dictionary_id: Int,word: String)
 
     /* Presenter -> Interactor */
 }

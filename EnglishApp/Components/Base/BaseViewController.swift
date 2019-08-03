@@ -6,6 +6,7 @@
 //  Copyright © 2019 edward. All rights reserved.
 //
 import UIKit
+import Alamofire
 
 enum StyleNavigation {
     case left
@@ -411,5 +412,15 @@ extension BaseViewController {
         //         self.navigationItem.titleView = header
         self.navigationController?.navigationBar.addSubview(header)
         header.fillSuperview()
+    }
+}
+
+//check connection
+
+extension BaseViewController {
+    var isConnection : Bool {
+        get{
+            return NetworkReachabilityManager()?.isReachable ?? false
+        }
     }
 }
