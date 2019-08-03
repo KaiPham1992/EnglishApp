@@ -24,8 +24,6 @@ class CompetitionViewController: ListManagerVC {
     override func setupViewListManager() {
         customTitle = LocalizableKey.titleCompetition.showLanguage
         showButtonBack = false
-        estimateHeightRow = 55
-        heightRow = 0
     }
     
     override func callAPI() {
