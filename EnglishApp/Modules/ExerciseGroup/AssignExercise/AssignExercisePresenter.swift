@@ -15,8 +15,6 @@ class AssignExercisePresenter: AssignExercisePresenterProtocol, AssignExerciseIn
     weak private var view: AssignExerciseViewProtocol?
     var interactor: AssignExerciseInteractorInputProtocol?
     private let router: AssignExerciseWireframeProtocol
-    var listAssignExercise: ExerciseChoiceEntity?
-    var isLoadMore = true
 
     init(interface: AssignExerciseViewProtocol, interactor: AssignExerciseInteractorInputProtocol?, router: AssignExerciseWireframeProtocol) {
         self.view = interface
@@ -25,21 +23,11 @@ class AssignExercisePresenter: AssignExercisePresenterProtocol, AssignExerciseIn
     }
     
     func getListAssignExercise(offset: Int) {
-        if isLoadMore {
-            self.interactor?.getListAssignExercise(offset: offset)
-        }
+        self.interactor?.getListAssignExercise(offset: offset)
     }
     
     func getListAssignExerciseSuccessed(respone: ExerciseChoiceEntity) {
-        if respone.exercises.count < 25 {
-            isLoadMore = false
-        }
-        if listAssignExercise == nil {
-            self.listAssignExercise = respone
-        } else {
-            self.listAssignExercise?.exercises += respone.exercises
-        }
-        self.view?.reloadView()
+        self.view?.reloadView(listData: respone.exercises)
     }
 
 }

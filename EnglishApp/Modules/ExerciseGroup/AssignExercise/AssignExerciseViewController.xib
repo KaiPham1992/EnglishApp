@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AssignExerciseViewController">
             <connections>
-                <outlet property="tbvAssignExercise" destination="m2i-FI-6IQ" id="8PL-KQ-r9U"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,19 +18,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m2i-FI-6IQ">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tableView>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="m2i-FI-6IQ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9Rw-J4-uFh"/>
-                <constraint firstAttribute="trailing" secondItem="m2i-FI-6IQ" secondAttribute="trailing" id="Npi-Ty-Wj4"/>
-                <constraint firstItem="m2i-FI-6IQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Sr2-ol-jjH"/>
-                <constraint firstAttribute="bottom" secondItem="m2i-FI-6IQ" secondAttribute="bottom" id="zLA-QI-x0U"/>
-            </constraints>
         </view>
     </objects>
 </document>
