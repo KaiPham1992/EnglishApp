@@ -38,7 +38,7 @@ class PopUpHelper {
     }
     
     
-    func showReportQuestion(cancel: CompletionClosure?,report: CompletionClosure?){
+    func showReportQuestion(cancel: CompletionClosure?,report: CompletionMessage?){
         let popup = ReportQuestionPopUp()
         popup.showPopUp(cancel: cancel, report: report)
     }

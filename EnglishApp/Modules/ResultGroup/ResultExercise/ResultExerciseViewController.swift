@@ -10,11 +10,8 @@
 
 import UIKit
 
-class ResultExerciseViewController: BaseViewController, ResultExerciseViewProtocol {
-    func reportQuestionSuccessed() {
-        
-    }
-    
+class ResultExerciseViewController: BaseViewController {
+  
 
 	var presenter: ResultExercisePresenterProtocol?
     @IBAction func clickNext(_ sender: Any) {
@@ -131,11 +128,8 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     func reportQuestion(questionId: Int, answerId: Int) {
         PopUpHelper.shared.showReportQuestion(cancel: {
             
-        }) { [unowned self] in
-//            PopUpHelper.shared.showThanks(completionYes: {
-//
-//            })
-//            self.presenter?.reportQuestion(questionDetailId:  , content: <#T##String#>)
+        }) { [unowned self] (message) in
+            self.presenter?.reportQuestion(questionDetailId: questionId, content: message ?? "")
         }
     }
     
@@ -147,5 +141,13 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     func explainQuestion(questionId: Int, answerId: Int) {
         let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
         self.push(controller: vc)
+    }
+}
+
+extension ResultExerciseViewController: ResultExerciseViewProtocol {
+    func reportQuestionSuccessed() {
+        PopUpHelper.shared.showThanks(completionYes: {
+            
+        })
     }
 }

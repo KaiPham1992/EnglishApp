@@ -12,11 +12,11 @@ import UIKit
 
 class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseInteractorOutputProtocol {
     func reportQuestion(questionDetailId: Int, content: String) {
-        
+        self.interactor?.reportQuestion(questionDetailId: questionDetailId, content: content)
     }
     
     func reportQuestionSuccessed() {
-        
+        self.view?.reportQuestionSuccessed()
     }
     
 

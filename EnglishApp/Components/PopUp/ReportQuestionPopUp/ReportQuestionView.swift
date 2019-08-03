@@ -12,14 +12,14 @@ import UIKit
 class ReportQuestionView: BaseViewXib{
     
     var cancel : (() -> ())?
-    var report: (() -> ())?
+    var report: ((_ message: String) -> ())?
     
     @IBAction func clickCancel(_ sender: Any) {
         cancel?()
     }
     
     @IBAction func clickReport(_ sender: Any) {
-        report?()
+        report?(tfEnterContent.text ?? "")
     }
     
     @IBOutlet weak var tfEnterContent: UITextField!
