@@ -49,11 +49,11 @@ class ListManagerVC: BaseViewController {
 
     }
     
-    func initLoadData(data: [Any],replaceData : Bool = true){
+    func initLoadData(data: [Any]){
         if data.count < limit {
             isLoadmore = false
         }
-        if replaceData {
+        if self.offset == 0 {
             self.listData = data
         } else {
             self.listData += data
@@ -90,6 +90,7 @@ class ListManagerVC: BaseViewController {
     
     @objc func actionPullToRefresh(){
         isLoadmore = true
+        self.offset = 0
         callAPI()
         refreshControl.endRefreshing()
     }

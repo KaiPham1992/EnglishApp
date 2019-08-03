@@ -106,7 +106,7 @@ extension CompetitionViewController: IndicatorInfoProvider{
 extension CompetitionViewController: CompetitionViewProtocol{
     func didGetList(competitionList: CollectionCompetitionEntity,replaceData: Bool) {
         guard let competition = competitionList.competitionEntity else {return}
-        initLoadData(data: competition,replaceData: replaceData)
+        initLoadData(data: competition)
     }
     
     func didGetList(error: Error) {
@@ -115,6 +115,6 @@ extension CompetitionViewController: CompetitionViewProtocol{
     
     func didGetResultFight(resultFight: CompetitionProfileEntity,replaceData: Bool) {
         guard let competition = resultFight.results else {return}
-        initLoadData(data:competition.map{CompetitionEntity(competitionResultsProfileEntity: $0)}.compactMap{$0},replaceData: replaceData)
+        initLoadData(data:competition.map{CompetitionEntity(competitionResultsProfileEntity: $0)}.compactMap{$0})
     }
 }

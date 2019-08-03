@@ -11,6 +11,10 @@
 import UIKit
 
 class ResultExerciseInteractor: ResultExerciseInteractorInputProtocol {
+    func reportQuestion(questionDetailId: Int, content: String) {
+        
+    }
+    
 
     weak var presenter: ResultExerciseInteractorOutputProtocol?
 }

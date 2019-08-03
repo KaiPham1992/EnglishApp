@@ -11,6 +11,10 @@
 import UIKit
 
 class ResultExerciseViewController: BaseViewController, ResultExerciseViewProtocol {
+    func reportQuestionSuccessed() {
+        
+    }
+    
 
 	var presenter: ResultExercisePresenterProtocol?
     @IBAction func clickNext(_ sender: Any) {
@@ -128,9 +132,10 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         PopUpHelper.shared.showReportQuestion(cancel: {
             
         }) { [unowned self] in
-            PopUpHelper.shared.showThanks(completionYes: {
-                
-            })
+//            PopUpHelper.shared.showThanks(completionYes: {
+//
+//            })
+//            self.presenter?.reportQuestion(questionDetailId:  , content: <#T##String#>)
         }
     }
     
