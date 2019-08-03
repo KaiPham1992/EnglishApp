@@ -31,8 +31,10 @@ struct MapperData {
     
     static func mapArray<T: Mappable>(_ successHandler: @escaping SuccessHandler<T>.array) -> NetworkSuccess {
         return { baseResponse in
-            let obj = Mapper<T>().mapArray(JSONObject: baseResponse.data)
-            successHandler(obj!)
+            guard let obj = Mapper<T>().mapArray(JSONObject: baseResponse.data) else {
+                return successHandler([])
+            }
+            successHandler(obj)
         }
     }
     

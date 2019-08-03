@@ -59,7 +59,10 @@ class HomeViewController: BaseViewController {
         presenter?.getTopThree()
     }
     
-    
+    override func setTitleUI() {
+        super.setTitleUI()
+        tbHome.reloadData()
+    }
     override func setUpViews() {
         super.setUpViews()
         vcMenu = MenuRouter.createModule()
@@ -73,7 +76,7 @@ class HomeViewController: BaseViewController {
     
     @objc func testEntranceComplete(){
         self.hideTestEntrance()
-        PopUpHelper.shared.showError(message: "Chúc mừng bạn đã hoàn thành bài trắc nghiệm đầu vào, Obee tặng bạn 500 kim cương.") {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.doneInputTest.showLanguage)") {
             
         }
         

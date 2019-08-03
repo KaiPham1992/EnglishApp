@@ -157,6 +157,7 @@ struct LocalizableKey {
     static let homeMission = "homeMission"
     static let homeFindWork = "homeFindWork"
     static let actionRecently = "actionRecently"
+    static let doneInputTest = "doneInputTest"
     
     // TABBAR
     static let tabbarHome = "tabbarHome"
@@ -187,6 +188,7 @@ struct LocalizableKey {
     static let notFoundCode = "notFoundCode"
     static let exchangeGiftTitle = "exchangeGiftTitle"
     static let exchangeGiftSucess = "exchangeGiftSucess"
+    static let exchangeTitle = "exchangeTitle"
     static let redeemSuccess = "redeemSuccess"
     static let upgradeSuccess = "upgradeSuccess"
     static let upgradeBeePack = "upgradeBeePack"

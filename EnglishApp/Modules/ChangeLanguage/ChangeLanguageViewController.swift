@@ -81,5 +81,6 @@ extension ChangeLanguageViewController: UITableViewDelegate, UITableViewDataSour
         
         tbLanguage.reloadData()
         self.viewDidLoad()
+        
     }
 }

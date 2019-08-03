@@ -17,7 +17,7 @@ enum LessonRecipe {
     case exercise_date
 }
 
-var limit = 25
+var limit = 10
 
 class ListLessonViewController: BaseViewController {
 

@@ -20,6 +20,7 @@ protocol QAPresenterProtocol: class {
     var interactor: QAInteractorInputProtocol? { get set }
     
     var listQA: [QAEntity] {get set}
+    var canLoadMore: Bool {get set}
     func getQA()
     func loadMoreQA()
     func sendQA(qa: String)
