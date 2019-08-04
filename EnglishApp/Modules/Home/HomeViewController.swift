@@ -59,10 +59,6 @@ class HomeViewController: BaseViewController {
         presenter?.getTopThree()
     }
     
-    override func setTitleUI() {
-        super.setTitleUI()
-        tbHome.reloadData()
-    }
     override func setUpViews() {
         super.setUpViews()
         vcMenu = MenuRouter.createModule()
@@ -92,6 +88,19 @@ class HomeViewController: BaseViewController {
         setColorStatusBar()
         addHeaderHome()
         countNotification()
+        // -- re init cell after change language
+        reInitCell()
+    }
+    
+    func reInitCell() {
+        //-- action cell
+        if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
+            actionCell.awakeFromNib()
+        }
+        //-- title recently cell
+        if let titleCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 1)) as? HomeTitleCell {
+            titleCell.awakeFromNib()
+        }
     }
     
     func countNotification() {
