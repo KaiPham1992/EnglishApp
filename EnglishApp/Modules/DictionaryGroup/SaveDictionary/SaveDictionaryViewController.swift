@@ -25,7 +25,7 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
     
     @objc func clickButtonRight(){
         if let controller = self.viewControllers[self.currentIndex] as? GrammarViewController {
-            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
+            addButtonTextToNavigation(title: "\(LocalizableKey.done.showLanguage)", style: .right, action: #selector(clickFinish), textColor: .black)
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
             controller.reloadView()

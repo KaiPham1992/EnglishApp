@@ -16,6 +16,9 @@ class FindViewController: BaseViewController {
     var presenter: FindPresenterProtocol?
     @IBOutlet weak var vAppSearch: AppSearchBar!
     @IBOutlet weak var tbResult: UITableView!
+    @IBOutlet weak var lbNoResult: UILabel!
+    @IBOutlet weak var lbFee: UILabel!
+    
     var type : TypeViewSearch = .searchExercise
 
 	override func viewDidLoad() {
@@ -30,6 +33,8 @@ class FindViewController: BaseViewController {
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.find.showLanguage)
         vAppSearch.actionSearch = searchExercise
         configureTable()
+        lbNoResult.text = "\(LocalizableKey.noResultFound.showLanguage)"
+        lbFee.text = "\(LocalizableKey.feeFind.showLanguage)"
         
         if type == .searchExercise {
             viewDiamond.isHidden = false

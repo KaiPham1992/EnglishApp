@@ -81,5 +81,8 @@ extension ChangeLanguageViewController: UITableViewDelegate, UITableViewDataSour
         
         tbLanguage.reloadData()
         self.viewDidLoad()
+        
+        //-- change langguage for tabbar
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "Refresh"), object: nil)
     }
 }

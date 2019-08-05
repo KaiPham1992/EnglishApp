@@ -11,12 +11,13 @@
 import UIKit
 
 class QAPresenter: QAPresenterProtocol, QAInteractorOutputProtocol {
+    var canLoadMore: Bool = false
     var listQA: [QAEntity] = [QAEntity]()
     
     weak private var view: QAViewProtocol?
     var interactor: QAInteractorInputProtocol?
     private let router: QAWireframeProtocol
-
+    
     init(interface: QAViewProtocol, interactor: QAInteractorInputProtocol?, router: QAWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -24,19 +25,27 @@ class QAPresenter: QAPresenterProtocol, QAInteractorOutputProtocol {
     }
 
     func getQA() {
-        ProgressView.shared.show()
-        Provider.shared.qAAPIService.getQA(offset: 0, success: { list in
-            ProgressView.shared.hide()
-            self.listQA = list
-            self.view?.didGetQA(list: self.listQA )
-        }) { error in
-            ProgressView.shared.hide()
-        }
+//        canLoadMore = false
+//        ProgressView.shared.show()
+//        Provider.shared.qAAPIService.getQA(offset: 0, success: { list in
+//            ProgressView.shared.hide()
+//            if list.count == limit {
+//                self.canLoadMore = true
+//            }
+//            self.listQA = list
+//            self.view?.didGetQA(list: self.listQA )
+//        }) { error in
+//            ProgressView.shared.hide()
+//        }
     }
     
     func loadMoreQA() {
+        self.canLoadMore = false
         Provider.shared.qAAPIService.getQA(offset: listQA.count, success: { list in
             self.listQA.append(contentsOf: list)
+            if list.count == limit {
+                self.canLoadMore = true
+            }
             self.view?.didGetQA(list: self.listQA )
         }) { error in
             

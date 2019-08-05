@@ -115,7 +115,7 @@
 "messageDailyMission" = "Hoàn thành nhiệm vụ hàng ngày nhận ngay 1 kim cương và x điểm level";
 "dailyMissionTitle" = "Nhiệm vụ hàng ngày";
 "startMission" = "Bắt đầu";
-
+"doneInputTest" = "Chúc mừng bạn đã hoàn thành bài trắc nghiệm đầu vào, Obee tặng bạn 500 kim cương.";
 
 
 //add dictionary
@@ -188,6 +188,7 @@
 "redeemSuccess" = "Bạn đã redeem quà thành công.";
 "upgradeSuccess" = "Bạn đã nâng cấp gói thành công.";
 "upgradeBeePack" = "Bạn có muốn nâng cấp gói mật ong này?";
+"exchangeTitle" = "ĐỔI QUÀ";
 
 //comment
 "comment" = "Bình luận";
@@ -338,3 +339,6 @@
 
 // Pop up
 "getError" = "Đã xảy ra lỗi.";
+"noResultFound" = "Không có kết quả tìm kiếm.";
+"feeFind" = "Tìm kiếm mất x hũ mật ong hoặc x kim cương.";
+"done" = "Xong";

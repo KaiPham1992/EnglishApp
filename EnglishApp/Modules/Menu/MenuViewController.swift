@@ -46,7 +46,7 @@ class MenuViewController: UIViewController, MenuViewProtocol {
         self.listMenuItem.forEach { item in
             item.isSelected = false
         }
-        
+        listMenuItem = MenuItem.toArray()
         tbMenu.reloadData()
     }
     

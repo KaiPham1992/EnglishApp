@@ -21,6 +21,7 @@ class QAViewController: BaseViewController {
     
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var heightError: NSLayoutConstraint!
+    let frefresh = UIRefreshControl()
     
     var listHistory = [QAEntity]() {
         didSet {
@@ -54,7 +55,7 @@ class QAViewController: BaseViewController {
         super.viewDidLoad()
         configureTable()
         
-        presenter?.getQA()
+        presenter?.loadMoreQA()
     }
 
     @IBAction func btnSearchTapped() {
@@ -86,6 +87,12 @@ class QAViewController: BaseViewController {
 
 
 extension QAViewController: UITableViewDelegate, UITableViewDataSource {
+    @objc func refreshData() {
+        presenter?.listQA.removeAll()
+        presenter?.loadMoreQA()
+        tbHistory.refreshControl?.endRefreshing()
+    }
+    
     func configureTable() {
         tbHistory.delegate = self
         tbHistory.dataSource = self
@@ -94,6 +101,8 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
         
         tbHistory.estimatedRowHeight = 55
         tbHistory.rowHeight = UITableView.automaticDimension
+        tbHistory.refreshControl = frefresh
+        tbHistory.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -109,6 +118,12 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = QADetailRouter.createModule(qa: self.listHistory[indexPath.item])
         self.push(controller: vc)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == 10 && presenter?.canLoadMore == true {
+            presenter?.loadMoreQA()
+        }
     }
 }
 
