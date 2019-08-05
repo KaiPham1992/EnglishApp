@@ -23,8 +23,8 @@ class HeaderUserView: BaseViewXib {
             lbDiamond.text = user.amountDiamond*.description
             lbHoney.text = user.amountHoney*.description
             lbFullName.text = user.fullName
-            imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
-            imgRank.sd_setImage(with: user.urlRank, placeholderImage: AppImage.imgPlaceHolder)
+            imgAvatar.sd_setImage(with: user.urlRank, placeholderImage: AppImage.avatarDefault)
+//            imgRank.sd_setImage(with: user.urlRank, placeholderImage: AppImage.imgPlaceHolder)
         }
     }
     
@@ -39,8 +39,8 @@ class HeaderUserView: BaseViewXib {
         
         self.backgroundColor = AppColor.yellow
         
-        imgAvatar.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)
-        imgRank.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 8)
+//        imgAvatar.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)
+//        imgRank.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 8)
     }
     
     

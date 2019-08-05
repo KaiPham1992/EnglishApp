@@ -23,7 +23,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vLocation: AppTextField!
     @IBOutlet weak var imgAvatar: UIImageView!
-    @IBOutlet weak var imgRank: UIImageView!
+//    @IBOutlet weak var imgRank: UIImageView!
     
     @IBOutlet weak var lbFullName: UILabel!
     @IBOutlet weak var lbLevel: UILabel!
@@ -66,9 +66,8 @@ class ProfileViewController: BaseViewController {
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage)
         vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
         
-        imgAvatar.setBorder(borderWidth: 2, borderColor: AppColor.yellow, cornerRadius: 30)
-        imgRank.setBorder(borderWidth: 2, borderColor: .white, cornerRadius: 11
-        )
+//        imgAvatar.setBorder(borderWidth: 2, borderColor: AppColor.yellow, cornerRadius: 30)
+//        imgRank.setBorder(borderWidth: 2, borderColor: .white, cornerRadius: 11)
         
         lbTitleBee.text = LocalizableKey.titleBee.showLanguage
         lbTitleDiamon.text = LocalizableKey.titleDiamon.showLanguage
@@ -97,7 +96,7 @@ extension ProfileViewController: ProfileViewProtocol {
         lbBee.text = user.amountDiamond*.description + " \(LocalizableKey.boxHoney.showLanguage)"
         lbDiamon.text = user.amountHoney*.description + " \(LocalizableKey.point.showLanguage)"
         lbPoint.text = "\(user.rankPoint*.description) \(LocalizableKey.point.showLanguage)"
-        imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
+        imgAvatar.sd_setImage(with: user.urlRank, placeholderImage: AppImage.avatarDefault)
         
         UserDefaultHelper.shared.saveUser(user: user)
     }
