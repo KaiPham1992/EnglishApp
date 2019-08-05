@@ -81,7 +81,7 @@
 
 //QA
 
-"whatQA" = "Bạn đang thắc mắc điều gì?";
+"whatQA" = "What are you wondering?";
 "enterQA" = "Enter your question";
 "messageQA" = "5 honey for one question";
 "qAOlder" = "Questions you've ever asked";
@@ -219,6 +219,7 @@
 "do_entrance" = "Input test";
 
 //result
+"result_team" = "Result of Team";
 "rank" = "Rank";
 "result" = "Result";
 "sum_point" = "Total point:";
@@ -229,7 +230,7 @@
 "see_explain" = "SEE EXPLAIN";
 "respond_question" = "REPORT THE QUESTION";
 "explain_solution" = "Explain the answer";
-"individual" = "individual";
+"individual" = " ndividual";
 "action" = "Fight";
 "point" = "Point";
 
@@ -333,3 +334,6 @@
 
 // Pop up
 "getError" = "An error occurred. Please try again later.";
+"noResultFound" = "No results found.";
+"feeFind" = "Lost x honey or x diamond for a search.";
+"done" = "Done";

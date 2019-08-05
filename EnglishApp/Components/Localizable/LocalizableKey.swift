@@ -335,4 +335,11 @@ struct LocalizableKey {
     
     //pop up
     static let getError = "getError"
+    
+    // find
+    static let noResultFound = "noResultFound"
+    static let feeFind = "feeFind"
+    
+    // save
+    static let done = "done"
 } 
