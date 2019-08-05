@@ -27,11 +27,14 @@ enum ExerciseEnpoint {
     case getListQuestionCategory
     case suggestQuestion(id: String,isDiamond: Bool)
     case explainExercise(id: Int)
+    case reportQuestion(question_details_id:Int,content: String)
 }
 
 extension ExerciseEnpoint: EndPointType {
     var path: String {
         switch self {
+        case .reportQuestion:
+            return "_api/question/report_question"
         case .explainExercise:
             return "_api/question/explain_question"
         case .suggestQuestion:
@@ -71,6 +74,8 @@ extension ExerciseEnpoint: EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .reportQuestion:
+            return .post
         case .explainExercise:
             return .post
         case .suggestQuestion:
@@ -111,6 +116,8 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .reportQuestion(let question_details_id,let content):
+            return ["question_details_id":question_details_id,"content":content]
         case .explainExercise(let id):
             return ["question_id": id]
         case .suggestQuestion(let id,let isDiamond):

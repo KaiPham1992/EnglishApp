@@ -12,6 +12,9 @@ protocol TabbarProtocol: class {
     func tabbarSelected(index: Int)
 }
 
+extension Notification.Name {
+    static let refreshTabbar = Notification.Name("RefreshTabbar")
+}
 let tabIconInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
 let tabBarIncrease: CGFloat = 13
 
@@ -20,11 +23,15 @@ class MainTabbar: UITabBarController {
     weak var tabbarDelagate: TabbarProtocol?
     var listViewController = [UIViewController]()
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
         setUpTabbar()
-        
+        setUpObserver()
         
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158, NSAttributedString.Key.font: AppFont.fontRegular12], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
@@ -48,7 +55,11 @@ class MainTabbar: UITabBarController {
         tabBar.frame = newFrame
     }
     
-    func setUpTabbar() {
+    func setUpObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(setUpTabbar), name: NSNotification.Name(rawValue: "Refresh"), object: nil)
+    }
+    
+    @objc func setUpTabbar() {
         navigationItem.setHidesBackButton(true, animated: true)
         
         let vcHome = HomeRouter.createModule()

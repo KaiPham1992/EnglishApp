@@ -25,9 +25,14 @@ protocol ExerciseAPIServiceProtocol {
     func getListQuestionCatelogy(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
     func suggestQuestion(id: String,isDiamond: Bool,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func explainExercise(id: Int,success: @escaping SuccessHandler<ExplainQuestionResponse>.object, failure: @escaping RequestFailure)
+    func reportQuestion(question_details_id: Int,content: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
+    func reportQuestion(question_details_id: Int,content: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.reportQuestion(question_details_id: question_details_id, content: content)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
     func explainExercise(id: Int,success: @escaping SuccessHandler<ExplainQuestionResponse>.object, failure: @escaping RequestFailure){
         let endpoint = ExerciseEnpoint.explainExercise(id: id)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)

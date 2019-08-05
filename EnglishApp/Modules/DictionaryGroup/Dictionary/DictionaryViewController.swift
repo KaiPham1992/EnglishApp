@@ -22,11 +22,17 @@ class DictionaryViewController: BaseViewController {
     @IBOutlet weak var lblTextSearch: UILabel!
     @IBAction func searchVocabulary(_ sender: Any) {
         let text = tfSearch.text ?? ""
-        self.presenter?.searchVocabulary(text: text)
+        if isConnection {
+            self.presenter?.getDetailVocabulary(id: idDictionary)
+        } else {
+            self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: text)
+        }
+        
     }
     var presenter: DictionaryPresenterProtocol?
     let dropDownDictionary = DropDown()
     let dropDownSearch = DropDown()
+    var idDictionary: Int = 0
 
     @IBAction func clickDictionary(_ sender: Any) {
         if dropDownDictionary.isHidden {
@@ -36,14 +42,12 @@ class DictionaryViewController: BaseViewController {
     }
     override func setUpViews() {
         super.setUpViews()
+        self.presenter?.getListDictionary()
        lblSearch.text = LocalizableKey.search.showLanguage
         self.tabBarController?.tabBar.isHidden = true
         lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
             self.setupDropDown()
-        }
-        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
-            self.getData()
         }
     }
 
@@ -56,13 +60,6 @@ class DictionaryViewController: BaseViewController {
     
     @objc func clickButtonRight(){
         self.push(controller: MoreDictionaryRouter.createModule(),animated: true)
-    }
-    
-    private func getData(){
-        dropDownDictionary.dataSource = [LocalizableKey.vietnamese_to_english.showLanguage,LocalizableKey.english_to_english.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.japanese_to_vietnamese.showLanguage]
-//        dropDownDictionary.show()
-//        dropDownSearch.dataSource = ["a","b","c"]
-//        dropDownSearch.show()
     }
     
     func setupDropDown(){
@@ -108,8 +105,13 @@ class DictionaryViewController: BaseViewController {
     
     func getDetailVocabulary(index: Int,item: String){
         if item != "Không tìm thấy kết quả" {
-            if let id = self.presenter?.listSearchVocabulary[index].id {
-                self.presenter?.getDetailVocabulary(id: id)
+            tfSearch.text = item
+            if isConnection {
+                self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: tfSearch.text ?? "")
+            } else {
+                if let id = self.presenter?.listSearchVocabulary[index].id {
+                    self.idDictionary = id
+                }
             }
         }
     }
@@ -134,5 +136,13 @@ extension DictionaryViewController:DictionaryViewProtocol{
     
     func getDetailVocabularySuccessed() {
         lblTextSearch.text = self.presenter?.detailVocabulary?.explain&
+    }
+    
+    func reloadDictionary(){
+        if let dictionary = self.presenter?.listDictionary.first {
+            self.lblDictionary.text = dictionary.name&
+            self.idDictionary = Int(dictionary._id ?? "0") ?? 0
+        }
+        self.dropDownDictionary.dataSource = self.presenter?.listDictionary.map{$0.name}.compactMap{$0} ?? []
     }
 }

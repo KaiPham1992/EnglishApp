@@ -10,6 +10,12 @@
 
 import UIKit
 
+//enum LessonRecipe {
+//    case lesson
+//    case recipe
+//    case exercise_date
+//}
+
 var limit = 10
 
 class ListLessonViewController: BaseViewController {

@@ -9,9 +9,10 @@
 import UIKit
 
 class ChangeGiftTitleCell: BaseTableCell {
-
+    @IBOutlet weak var lbTitle: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        lbTitle.text = "\(LocalizableKey.exchangeTitle.showLanguage)"
     }
 }

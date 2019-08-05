@@ -85,13 +85,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="WSs-xR-P3U" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0Yr-Yl-EDH"/>
+                <constraint firstItem="WSs-xR-P3U" firstAttribute="leading" secondItem="Ymi-4w-DKr" secondAttribute="leading" id="0Yr-Yl-EDH"/>
                 <constraint firstItem="Ymi-4w-DKr" firstAttribute="bottom" secondItem="WSs-xR-P3U" secondAttribute="bottom" id="6cA-df-mEJ"/>
-                <constraint firstAttribute="trailing" secondItem="WSs-xR-P3U" secondAttribute="trailing" id="U8F-2w-NZQ"/>
+                <constraint firstItem="Ymi-4w-DKr" firstAttribute="trailing" secondItem="WSs-xR-P3U" secondAttribute="trailing" id="U8F-2w-NZQ"/>
                 <constraint firstAttribute="trailing" secondItem="EpG-jL-IOz" secondAttribute="trailing" id="Y3C-qN-7ve"/>
                 <constraint firstItem="EpG-jL-IOz" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="f24-yc-eDV"/>
                 <constraint firstItem="EpG-jL-IOz" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hSW-CF-pvC"/>
-                <constraint firstItem="EpG-jL-IOz" firstAttribute="bottom" secondItem="Ymi-4w-DKr" secondAttribute="bottom" constant="-40" id="zw0-j5-rgw"/>
+                <constraint firstItem="WSs-xR-P3U" firstAttribute="top" secondItem="EpG-jL-IOz" secondAttribute="bottom" id="oXP-mZ-ey3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Ymi-4w-DKr"/>
         </view>

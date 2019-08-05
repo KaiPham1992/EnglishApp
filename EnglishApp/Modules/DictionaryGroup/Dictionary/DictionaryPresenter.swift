@@ -17,6 +17,7 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
     private let router: DictionaryWireframeProtocol
     var listSearchVocabulary : [WordEntity] = []
     var detailVocabulary : WordExplainEntity?
+    var listDictionary: [SearchEntity] = []
     
     init(interface: DictionaryViewProtocol, interactor: DictionaryInteractorInputProtocol?, router: DictionaryWireframeProtocol) {
         self.view = interface
@@ -34,5 +35,22 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
             self.detailVocabulary = detail
             self.view?.getDetailVocabularySuccessed()
         }
+    }
+    func getListDictionary() {
+        self.interactor?.getListDictionary()
+    }
+    
+    func getListDictionarySuccessed(listDictionary: [SearchEntity]) {
+        self.listDictionary = listDictionary
+        self.view?.reloadDictionary()
+    }
+    
+    func lookWordOnline(dictionary_id: Int, word: String) {
+        self.interactor?.lookWordOnline(dictionary_id: dictionary_id, word: word)
+    }
+    
+    func lookupWordOnlineSuccessed(response: WordExplainEntity) {
+        self.detailVocabulary = response
+        self.view?.getDetailVocabularySuccessed()
     }
 }

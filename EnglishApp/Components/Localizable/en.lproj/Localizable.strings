@@ -1,13 +1,251 @@
-/* 
-  Localizable.strings
-  EnglishApp
+/*
+ Localizable.strings
+ EnglishApp
+ 
+ Created by Kai Pham on 5/11/19.
+ Copyright © 2019 demo. All rights reserved.
+ */
 
-  Created by Kai Pham on 5/11/19.
-  Copyright © 2019 demo. All rights reserved.
-*/
-
+// Menu Page
 "MenuInfo" = "Profile";
-"MenuTop" = "Top";
+"MenuTop" = "Charts";
+"MenuQA" = "Question";
+"MenuLanguage" = "Language";
+"MenuSaved" = "Saved";
+"MenuHistory" = "Test History";
+"MenuPrivacy" = "Policies and Terms";
+"MenuChangePassword" = "Change Password";
+"MenuLogout" = "Logout";
+
+// Login Page
+
+"LoginEmail" = "Email";
+"LoginEmailPlaceHolder" = "Enter your email";
+"LoginPassword" = "Password";
+"LoginButtonLogin" = "Login";
+"FBorGmail" = "Or login by";
+"ForgotPass" = "Forgot password";
+"NotYetAccount" = "You don't have any account ?";
+"Register" = "Register";
+"LoginButtonSignUp" = "REGISTER";
+"passwordDifference" = "Re-password is wrong!";
+
+// Forgot password page
+"ForgotPasswordMessage" = "Enter the email address associated with your account. Then check the mailbox";
+"SentEmail" = "Send email";
+"ForgotTitle" = "Forgot password";
+
+"invalidLoginEmail" = "Invalid email";
+"invalidLoginPassword" = "Password must be more than 6 characters";
+"emptyLoginEmailPassword"  = "Please enter full information";
+"emptyCapcha" = "Please enter captcha code";
+
+"pleaseEnterEmail" = "Please enter email";
+"pleaseEnterDisplayName" = "Please enter display name";
+"pleaseEnterPassword" = "Please enter password";
+"pleaseEnterRePassword" = "Please enter Re-password";
+"pleaseTurnOnInternet" = "Please turn on the internet";
+
+// Change Language
+"vietnamese" = "Vietnamese";
+"english" = "English";
+
+// Profile
+"DisplayName" = "Display name";
+"enterDisplayName" = "Enter display name";
+"Location" = "Nation";
+"CodeNumber"  = "Code";
+"TitleProfile" = "Profile";
+"EditProfile" = "Edit profile";
+"titleSave" = "SAVE";
+"titleDiamon" = "titleDiamon";
+"titleBee" = "titleBee";
+
+// Preview profile
+
+"privateInfo" = "Profile";
+"privateHistory" = "Personal history";
+
+// change passsword
+"currentPassword"  = "Current password";
+"newPassword" = "New password";
+"reNewPassword" = "Re-enter password";
+"changePasssword" = "Change password";
+"currentPasswordLogin" = "Login password";
+"changePasswordSuccess" = "Change password successfully";
+
+// logout
+"popUpLogout" = "Do you want to logout?";
+"agree" = "Yes";
+"cancel" = "No";
+
+//QA
+
+"whatQA" = "Bạn đang thắc mắc điều gì?";
+"enterQA" = "Enter your question";
+"messageQA" = "5 honey for one question";
+"qAOlder" = "Questions you've ever asked";
+"titleQA" = "Question";
+"notEnoughHoney" = "You have not enough honey";
+"deductFiveHoney" = "You are deducted 5 honey for one question";
+"pleaseEnterQA" = "Please enter your question";
+"pleaseEnter255Digit" = "Please enter a question within 255 characters";
+
+// Competition
+"titleCompetition" = "Competition";
+"conditionCompetition" = "Condition: ";
+"timeStart" = "Time Start: ";
+"countTeam" = "Number of teams: ";
+"selectTeamJoin" = "Select team";
+"joinTeam" = "Join";
+"team" = " teams";
+"member" = "Members";
+
+// Detail team
+"startAfter" = "Start";
+"explainConpetition" = "About competition";
+"leaveTeam" = "Leave Team";
+"createGroup" = "Create group";
+"nameGroup" = "Group name";
+"enterNameGroup" = "Enter group name";
+"leaveTeamPopUp" = "Do you want to leave group?";
+"verifyButton" = "Yes";
+
+// Daily mission
+"messageDailyMission" = "Complete daily quests to get 1 diamond and x level point right away";
+"dailyMissionTitle" = "Daily Mission";
+"startMission" = "Start";
+"doneInputTest" = "Congratulations on completing the entrance test, Obee gave you 500 diamonds";
+
+
+//add dictionary
+"search" = "Search";
+"dictionaty" = "Dictionary";
+"vietnamese_to_english" = "Vietnamese - English";
+"english_to_english" = "English - English";
+"english_to_vietnamese" = "English - Vietnamese";
+"japanese_to_vietnamese" = "Japanese - Vietnamese";
+"addDictionary" = "Add dictionary";
+
+//saved
+
+"saved" = "Saved";
+"grammar" = "Grammar";
+"vocabulary" = "Vocabulary";
+"note" = "Note";
+"write_note" = "WWrite note";
+
+//theory
+
+"phrasal_verbs" = "Phrasal Verbs";
+"grammar_upper" = "Grammar";
+"phonetics" = "Phonetics";
+"lesson" = "Lesson";
+"recipe" = "Recipe";
+
+"idiams" = "Idiams";
+"word_usage" = "Word usage";
+"word_form" = "Word form";
+
+// Home
+"homeDictionary" = "Dictionary";
+"homeStore" = "Store";
+"homeMission" = "Mission";
+"homeFindWork" = "Find exercises";
+"actionRecently" = "Recenly action";
+
+"tabbarHome" = "Home";
+"tabbarProgram" = "Theory";
+"tabbarHomeWork" = "Exercises";
+"tabbarCompetition" = "Competition";
+
+// report pop up
+"reportTitlePopUp" = "Report";
+"reportMessagePopUp" = "Thank you for reporting us on this case. We will review and revise as soon as possible.";
+"reportButtonPopUp" = "Complete";
+
+"notEnoughBee" = "You have not enough honey.";
+"addBee" = "Add honey";
+"ADDBEE" = "ADD HONEY";
+"notEnoughDiamon" = "You have not enough diamond.";
+"addDiamon" = "Add diamond";
+"popleaveHomeWork" = "Do you want to leave?";
+
+
+// store
+"studyPack" = "Upgrade package";
+"beePack" = "Honey package";
+"titleStore" = "Store";
+"enterCode" = "Enter code";
+"send" = "Send";
+"detail" = "Detail";
+"upgrade" = "Upgrade";
+"pleaseEnterCode" = "Please enter code";
+"notFoundCode" = "Code does not exist";
+"exchangeGiftTitle" = "Do you want to exchange this gift?";
+"exchangeGiftSucess" = "Exchange gift successfully.";
+"redeemSuccess" = "Redeem successfully.";
+"upgradeSuccess" = "Upgrade successfully.";
+"upgradeBeePack" = "Do you want to upgrade this honey package?";
+"exchangeTitle" = "EXCHANGE GIFT";
+
+//comment
+"comment" = "Comment";
+
+//exercise
+"exercise" = "Exercise";
+"practice" = "Pratice";
+"create_exercise" ="Self-created exercises";
+"level_exercise" ="Level exercises";
+"assign_exercise" = "Assigned assignments";
+"name_exercise" = "Excercise name";
+"enter_name_exercise" = "Enter excercise name";
+"choice_exercise" = "Choose exercise";
+"exercise_level" = "Exercise level";
+"history_exercise" = "Test history";
+"do_exercise" = "Do exercise";
+"preposition" = "Preposition";
+"rewriting" = "Rewriting";
+"verb_form" = "Verb Form";
+"listening" = "Listening";
+"phrasal_verb" = "Phrasal Verb";
+"cloze_test" = "Cloze Test";
+"try_hard" = "Pratice";
+"task_every_date" = "Daily task";
+"time_end" = "The end";
+"see_more" = "See more";
+"sentence" = "Sentence";
+"next" = " ";
+"do_entrance" = "Input test";
+
+//result
+"rank" = "Rank";
+"result" = "Result";
+"sum_point" = "Total point:";
+"time_do_exercise" = "Total time:";
+"back_gome" = "Go home";
+"result_competion" = "Competition";
+"result_group" = "Group result";
+"see_explain" = "SEE EXPLAIN";
+"respond_question" = "REPORT THE QUESTION";
+"explain_solution" = "Explain the answer";
+"individual" = "individual";
+"action" = "Fight";
+"point" = "Point";
+
+
+//popup
+"confirm" = "CONFIRM";
+"update_account" = "Update account successfully";
+"diamond" = "Diamond";
+"money" = " money";
+"report" = "REPORT";
+"description" = "Description";
+"enter_content" = "Enter content";
+"cancel_upper" = "CANCLE";
+"complete_upper" = "COMPLETE";
+"update" = "UPDATE";
+
 
 //month
 "January" = "January";
@@ -22,19 +260,76 @@
 "October"= "October";
 "November" = "November";
 "December" = "December";
-
+"YEAR" = "YEAR";
 
 //week
-
-"Su" = "Su";
-"Mo" = "Mo";
-"Tu" = "Tu";
-"We" = "We";
-"Th" = "Th";
-"Fr"= "Fr";
-"Sa" = "Sa";
+"Su" = "Sunday";
+"Mo" = "Monday";
+"Tu" = "Tuesday";
+"We" = "Wednesday";
+"Th" = "Thurday";
+"Fr"= "Friday";
+"Sa" = "Saturday";
 
 //hour
-"hour" = "hour";
-"min" = "min";
-"second" = "second";
+
+
+
+//"money_money" = "Tiền";
+
+
+// Notificaiton
+"titleNotification" = "Notification";
+"titleNotificationDetail" = "Notification detail";
+
+// upgrade
+"requireUpGrade" = "Upgrade to use this feature";
+"btnUpGrade" = "Upgrade";
+"levelUp" = "Level up";
+"changeLanguage" = "Change language";
+"bxh" = "Charts";
+
+//lesson
+
+"simple_present" = "Present Simple ";
+"present_perfect" = "Present Perfect";
+"present_countinous" = "Present Continous";
+"past_simple" = "Past Simple";
+"theory" = "Theory";
+
+"messagePackage" = "Some package suit you";
+"find" = "Find";
+"PrivacyAndPolicy" = "Policies and Terms";
+
+
+// ERROR
+
+"WRONG_CAPTCHA" = "Wrong captcha code";
+"USER_IS_EXISTED" = "Email already exists";
+"EMAIL_IS_EXISTED" = "Email already exists";
+"INVALID_USERNAME_OR_PASSWORD" = "Please check your email or password";
+"changePassswordSuccess" = "Change password successfully";
+"INVALID_CURRENT_PASSWORD" = "Invalid current password";
+"editProfileSuccess" = "Update profile successfully";
+"USER_IS_NOT_EXISTED" = "Email does not exits";
+"SENT_NEW_PASSWORD" = "New password is sent to your email";
+"pleaseEnterCurrentPassword" = "Please enter current password";
+"pleaseEnterNewPassword" = "Please enter new password";
+
+"enterPassword" = "Enter password";
+"enterRePassword" = "Re-enter password";
+"enterCaptcha" = "Enter captcha";
+"signUpSuccess" = "Register successfully";
+"boxHoney" = "Jar";
+"titleHistoryNap" = "Recharge history";
+"boxHoneyTitle" = "honey";
+"diamond" = "diamond";
+"lbNoData" = "No data";
+
+
+// BHX
+"all" = "All";
+"quater" = "Quater";
+
+// Pop up
+"getError" = "An error occurred. Please try again later.";

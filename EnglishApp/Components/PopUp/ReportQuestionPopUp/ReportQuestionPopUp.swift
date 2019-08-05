@@ -23,16 +23,16 @@ class ReportQuestionPopUp : BasePopUpView{
             self.hidePopUp()
             self.completionNo?()
         }
-        view.report = {
+        view.report = { [unowned self](message) in
             self.hidePopUp()
-            self.completionYes?()
+            self.completionMessage?(message)
         }
         
     }
     
-    func showPopUp(cancel: CompletionClosure?, report: CompletionClosure?){
+    func showPopUp(cancel: CompletionClosure?, report: CompletionMessage?){
         self.completionNo = cancel
-        self.completionYes = report
+        self.completionMessage = report
         self.showPopUp(height: 245)
     }
 }

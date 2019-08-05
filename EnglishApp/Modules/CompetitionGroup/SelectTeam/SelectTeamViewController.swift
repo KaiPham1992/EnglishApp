@@ -138,6 +138,8 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
         tbTeam.reloadData()
     }
     func didCreateTeamSuccessed(collectionTeam: TeamEntity){
+        collectionTeam.isTeamJoined = 1
+        collectionTeam.countMember = "1"
         listTeam.append(collectionTeam) 
     }
 }

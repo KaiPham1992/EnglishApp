@@ -8,8 +8,9 @@
 
 import Foundation
 import RealmSwift
+import ObjectMapper
 
-class WordExplainEntity : Object {
+class WordExplainEntity : Object,Mappable {
     @objc dynamic var id : Int = 0
     @objc dynamic var word : String = ""
     @objc dynamic var explain : String = ""
@@ -23,5 +24,13 @@ class WordExplainEntity : Object {
         self.id = id
         self.word = word
         self.explain = explain
+    }
+    convenience required init?(map: Map) {
+        self.init()
+    }
+    
+    func mapping(map: Map) {
+        self.word <- map["word"]
+        self.explain <- map["explain"]
     }
 }
