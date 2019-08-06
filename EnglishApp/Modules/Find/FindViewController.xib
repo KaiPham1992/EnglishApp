@@ -19,6 +19,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindViewController">
             <connections>
+                <outlet property="lbFee" destination="wkW-e6-NdW" id="gU5-Vr-pyk"/>
+                <outlet property="lbNoResult" destination="Utm-54-dXq" id="5dU-8x-TVU"/>
                 <outlet property="tbResult" destination="bOy-Gu-yGC" id="u4B-rw-1If"/>
                 <outlet property="vAppSearch" destination="uUp-Wl-EQp" id="jBh-ql-EBO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -60,8 +62,8 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PHi-LO-2ya">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm kiếm mất x kim cương hoặc x hủ mật ong" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkW-e6-NdW">
-                                    <rect key="frame" x="16" y="0.0" width="351" height="40"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm kiếm mất x kim cương hoặc x hủ mật ong" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wkW-e6-NdW">
+                                    <rect key="frame" x="16" y="0.0" width="343" height="40"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -70,7 +72,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="Q3z-t3-0Lc"/>
-                                <constraint firstAttribute="trailing" secondItem="wkW-e6-NdW" secondAttribute="trailing" constant="8" id="bC3-vI-0PZ"/>
+                                <constraint firstAttribute="trailing" secondItem="wkW-e6-NdW" secondAttribute="trailing" constant="16" id="bC3-vI-0PZ"/>
                                 <constraint firstItem="wkW-e6-NdW" firstAttribute="leading" secondItem="PHi-LO-2ya" secondAttribute="leading" constant="16" id="ees-Op-CEe"/>
                                 <constraint firstItem="wkW-e6-NdW" firstAttribute="top" secondItem="PHi-LO-2ya" secondAttribute="top" id="hc0-xz-iaJ"/>
                                 <constraint firstAttribute="bottom" secondItem="wkW-e6-NdW" secondAttribute="bottom" id="oZq-X5-RbB"/>
