@@ -17,11 +17,14 @@ enum SaveEndpoint {
     case editNote(idNote: String,description: String)
     case getListGrammar(offset: Int)
     case deleteListGrammar(liekList: [Int])
+    case getListLikesVocab(offset: Int)
 }
 
 extension SaveEndpoint : EndPointType {
     var path: String {
         switch self {
+        case .getListLikesVocab:
+            return "_api/like/get_list_like_vocab"
         case .getListGrammar:
             return "_api/like/get_list_like"
         case .getListNote:
@@ -41,6 +44,8 @@ extension SaveEndpoint : EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .getListLikesVocab:
+            return .post
         case .getListGrammar:
             return .post
         case .getListNote:
@@ -60,6 +65,8 @@ extension SaveEndpoint : EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .getListLikesVocab(let offset):
+            return ["offset":offset,"limit":limit]
         case .getListGrammar(let offset):
             return ["offset": offset,"limit": limit]
         case .getListNote(let offset):

@@ -195,6 +195,12 @@
 		2AA9E36A22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
 		2AA9E36B22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
 		2AA9E36C22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
+		2AA9E36E22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */; };
+		2AA9E36F22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */; };
+		2AA9E37022FB3C320093F5C8 /* WordLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */; };
+		2AA9E37222FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
+		2AA9E37322FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
+		2AA9E37422FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
 		2AAE21F622D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F722D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
@@ -2294,6 +2300,8 @@
 		2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDictionaryResponse.swift; sourceTree = "<group>"; };
 		2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileZipManager.swift; sourceTree = "<group>"; };
 		2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfigDictionary.swift; sourceTree = "<group>"; };
+		2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLikeEntity.swift; sourceTree = "<group>"; };
+		2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLikeResponse.swift; sourceTree = "<group>"; };
 		2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailEntity.swift; sourceTree = "<group>"; };
 		2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResultProfileEntity.swift; sourceTree = "<group>"; };
 		2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultChoice.swift; sourceTree = "<group>"; };
@@ -3340,6 +3348,8 @@
 				2AF2F84E22EA084300603444 /* NoteListRespone.swift */,
 				2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */,
 				2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */,
+				2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */,
+				2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */,
 			);
 			path = SaveGroup;
 			sourceTree = "<group>";
@@ -6251,6 +6261,7 @@
 				DEC62ABD22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF52228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				2AA9E37222FB3C780093F5C8 /* WordLikeResponse.swift in Sources */,
 				DE361F412283E85000FA3B0D /* UpdateProfileSocial.swift in Sources */,
 				DE2ADE5D22841A68003768CE /* SideMenuViewController.swift in Sources */,
 				DE952F872287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -6642,6 +6653,7 @@
 				DE0470A022BA85FE00438206 /* RecentlyEntity.swift in Sources */,
 				76CE31F822963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
+				2AA9E36E22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */,
 				DEF1C25322903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				76C92F9A22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322A22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
@@ -6850,6 +6862,7 @@
 				DEC62ABE22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF53228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952FCC2287DF4800E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				2AA9E37322FB3C780093F5C8 /* WordLikeResponse.swift in Sources */,
 				DE952FCD2287DF4800E3F688 /* UpdateProfileSocial.swift in Sources */,
 				DE952FCE2287DF4800E3F688 /* SideMenuViewController.swift in Sources */,
 				DE952FCF2287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -7241,6 +7254,7 @@
 				DE0470A122BA85FE00438206 /* RecentlyEntity.swift in Sources */,
 				76CE31F922963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
+				2AA9E36F22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */,
 				DEF1C25422903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				76C92F9B22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322B22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
@@ -7433,6 +7447,7 @@
 				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				76C92FA022C4895000E8ED69 /* QuestionEntity.swift in Sources */,
+				2AA9E37022FB3C320093F5C8 /* WordLikeEntity.swift in Sources */,
 				7680748B22C872270015A75C /* TestResultProfileEntity.swift in Sources */,
 				DE49F7E522A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE49F82922A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
@@ -7666,6 +7681,7 @@
 				2AB4A04A22E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */,
 				2A6C5EC622EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */,
 				2A6C5EDD22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
+				2AA9E37422FB3C780093F5C8 /* WordLikeResponse.swift in Sources */,
 				76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				2AED14AE22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,

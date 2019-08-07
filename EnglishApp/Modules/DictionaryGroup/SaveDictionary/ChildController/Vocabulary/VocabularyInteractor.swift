@@ -13,4 +13,16 @@ import UIKit
 class VocabularyInteractor: VocabularyInteractorInputProtocol {
 
     weak var presenter: VocabularyInteractorOutputProtocol?
+    
+    func getListLikeVocab(offset: Int) {
+        ProgressView.shared.show()
+        Provider.shared.saveAPIService.getListLikeVocab(offset: offset, success: { (response) in
+            ProgressView.shared.hide()
+            if let _reponse = response {
+                self.presenter?.getListLikeVocabSuccessed(response: _reponse)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

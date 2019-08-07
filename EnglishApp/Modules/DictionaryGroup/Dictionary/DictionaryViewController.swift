@@ -22,7 +22,7 @@ class DictionaryViewController: BaseViewController {
     @IBOutlet weak var lblTextSearch: UILabel!
     @IBAction func searchVocabulary(_ sender: Any) {
         let text = tfSearch.text ?? ""
-        if isConnection {
+        if !isConnection {
             self.presenter?.getDetailVocabulary(id: idDictionary)
         } else {
             self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: text)
