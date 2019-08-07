@@ -36,12 +36,12 @@ class MoreDictionaryViewController: ListManagerVC {
         let cell = tableView.dequeueTableCell(MoreDictionaryCell.self)
         cell.setupCell(isDownloaded: data.isDownload, title: data.name&)
         cell.actionCell = {[weak self] (isDownloaded) in
-            self?.processFile(isDownloaded: isDownloaded,item: data, indexPath: indexPath)
+            self?.processFile(isDownloaded: isDownloaded,item: data)
         }
         return cell
     }
     
-    func processFile(isDownloaded: Bool,item: ItemDictionaryResponse,indexPath: IndexPath){
+    func processFile(isDownloaded: Bool,item: ItemDictionaryResponse){
         if !isDownloaded {
             let link = BASE_URL + item.link_dictionary&
             ProgressView.shared.show()
@@ -49,15 +49,15 @@ class MoreDictionaryViewController: ListManagerVC {
                 ProgressView.shared.hide()
                 item.isDownload = true
                 self.tableView.reloadData()
-                RealmDBManager.share.addObject(value: item)
+                let object = LocalConfigDictionary(id: item.id ,name: item.name)
+                RealmDBManager.share.addObject(value: object)
             }
         } else {
             ProgressView.shared.show()
             RealmDBManager.share.removeAllObject(type: WordEntity.self)
             RealmDBManager.share.removeAllObject(type: WordExplainEntity.self)
-            RealmDBManager.share.removeObject(type: ItemDictionaryResponse.self,value: item.id)
-            let newItem = ItemDictionaryResponse(id: item.id, name: item.name, link_dictionary: item.link_dictionary, isDownload: false)
-            self.listData[indexPath.row] = newItem
+            RealmDBManager.share.removeObject(type: LocalConfigDictionary.self,value: item.id)
+            item.isDownload = false
             self.tableView.reloadData()
             ProgressView.shared.hide()
         }

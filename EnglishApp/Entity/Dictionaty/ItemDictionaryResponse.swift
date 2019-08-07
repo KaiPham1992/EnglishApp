@@ -10,25 +10,14 @@ import Foundation
 import ObjectMapper
 import RealmSwift
 
-class ItemDictionaryResponse : Object, Mappable {
-    @objc dynamic var id : Int = 0
-    @objc dynamic var name : String = ""
-    @objc dynamic var link_dictionary : String = ""
-    @objc dynamic var isDownload = false
+class ItemDictionaryResponse : Mappable {
+    var id : Int = 0
+    var name : String = ""
+    var link_dictionary : String = ""
+    var isDownload = false
     
-    override static func primaryKey() -> String{
-        return "id"
-    }
     
     func changeStatus(isDownload: Bool) {
-        self.isDownload = isDownload
-    }
-    
-    convenience init(id: Int,name: String,link_dictionary: String,isDownload: Bool){
-        self.init()
-        self.id = id
-        self.name = name
-        self.link_dictionary = link_dictionary
         self.isDownload = isDownload
     }
     
@@ -38,7 +27,6 @@ class ItemDictionaryResponse : Object, Mappable {
         self.link_dictionary <- map["link_dictionary"]
     }
     
-    required convenience init?(map: Map) {
-        self.init()
+    required init?(map: Map) {
     }
 }

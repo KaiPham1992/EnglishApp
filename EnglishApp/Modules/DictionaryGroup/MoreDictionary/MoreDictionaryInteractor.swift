@@ -19,7 +19,7 @@ class MoreDictionaryInteractor: MoreDictionaryInteractorInputProtocol {
         Provider.shared.findAPIService.getListDictionary(success: { (response) in
             if let _response = response {
                 let result = _response.dictionaries ?? []
-                let object = RealmDBManager.share.getDataFromRealm(type: ItemDictionaryResponse.self)
+                let object = RealmDBManager.share.getDataFromRealm(type: LocalConfigDictionary.self)
                 if object.count > 0 {
                     let listId = object.map{$0.id}
                     if listId.count > 0 {

@@ -192,6 +192,9 @@
 		2AA9E36622F9AA310093F5C8 /* FileZipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */; };
 		2AA9E36722F9AA310093F5C8 /* FileZipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */; };
 		2AA9E36822F9AA310093F5C8 /* FileZipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */; };
+		2AA9E36A22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
+		2AA9E36B22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
+		2AA9E36C22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
 		2AAE21F622D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F722D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
@@ -2290,6 +2293,7 @@
 		2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamEntity.swift; sourceTree = "<group>"; };
 		2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDictionaryResponse.swift; sourceTree = "<group>"; };
 		2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileZipManager.swift; sourceTree = "<group>"; };
+		2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfigDictionary.swift; sourceTree = "<group>"; };
 		2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailEntity.swift; sourceTree = "<group>"; };
 		2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResultProfileEntity.swift; sourceTree = "<group>"; };
 		2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultChoice.swift; sourceTree = "<group>"; };
@@ -3165,6 +3169,7 @@
 			children = (
 				2AA20CC022F5434400F38894 /* DictionarisResponse.swift */,
 				2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */,
+				2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */,
 			);
 			path = Dictionaty;
 			sourceTree = "<group>";
@@ -6386,6 +6391,7 @@
 				DED5A02122A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
 				2AC7A21E22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
+				2AA9E36A22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
 				76483BE3229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
@@ -6984,6 +6990,7 @@
 				DED5A02222A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
 				2AC7A21F22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
+				2AA9E36B22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
 				76483BE4229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
@@ -7838,6 +7845,7 @@
 				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
 				DE9530DF2287DF6400E3F688 /* Int+extension.swift in Sources */,
 				DE9530E02287DF6400E3F688 /* CommonAPIService.swift in Sources */,
+				2AA9E36C22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
 				DEC62ADE22930EC400D7CECE /* BeePackViewController.swift in Sources */,
 				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
 				DECD193422A26EE20054861D /* DetailPackEntity.swift in Sources */,
