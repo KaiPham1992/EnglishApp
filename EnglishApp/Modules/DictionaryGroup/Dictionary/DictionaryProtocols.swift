@@ -18,7 +18,7 @@ protocol DictionaryWireframeProtocol: class {
 protocol DictionaryPresenterProtocol: class {
 
     var interactor: DictionaryInteractorInputProtocol? { get set }
-    var listDictionary: [SearchEntity] {get set}
+    var listDictionary: [ItemDictionaryResponse] {get set}
     var listSearchVocabulary : [WordEntity] {get set}
     var detailVocabulary : WordExplainEntity? {get set}
     func searchVocabulary(text: String)
@@ -31,7 +31,7 @@ protocol DictionaryPresenterProtocol: class {
 protocol DictionaryInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func getListDictionarySuccessed(listDictionary: [SearchEntity])
+    func getListDictionarySuccessed(listDictionary: [ItemDictionaryResponse])
     func lookupWordOnlineSuccessed(response: WordExplainEntity)
 }
 

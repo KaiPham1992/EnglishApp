@@ -23,6 +23,7 @@ def main_pods
     pod 'Fabric'
     pod 'Crashlytics'
     pod 'netfox'
+    pod 'Zip', '~> 1.1'
 end
 
 target 'EnglishApp_Dev' do

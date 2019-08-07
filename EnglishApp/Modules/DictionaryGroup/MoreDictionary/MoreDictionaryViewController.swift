@@ -11,62 +11,61 @@
 import UIKit
 import RealmSwift
 
-class MoreDictionaryViewController: BaseViewController, MoreDictionaryViewProtocol {
+class MoreDictionaryViewController: ListManagerVC {
     @IBOutlet weak var tbvDictionary: UITableView!
     
 	var presenter: MoreDictionaryPresenterProtocol?
 
     override func setUpViews() {
+        showButtonBack = true
+        customTitle = LocalizableKey.addDictionary.showLanguage
         super.setUpViews()
-        tbvDictionary.registerXibFile(MoreDictionaryCell.self)
-        tbvDictionary.dataSource = self
-        tbvDictionary.delegate = self
-        print(Realm.Configuration.defaultConfiguration.fileURL)
     }
     
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.addDictionary.showLanguage)
+    override func registerTableView() {
+        super.registerTableView()
+        self.tableView.registerXibFile(MoreDictionaryCell.self)
     }
-}
-
-extension MoreDictionaryViewController: UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    override func callAPI() {
+        self.presenter?.getListDictionary()
     }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! ItemDictionaryResponse
         let cell = tableView.dequeueTableCell(MoreDictionaryCell.self)
-        if indexPath.row < 2 {
-            cell.setupCell(isDownloaded: false, title: self.presenter?.getDictionaryForIndex(indexPath: indexPath) ?? "")
-        } else {
-            cell.setupCell(isDownloaded: true, title: self.presenter?.getDictionaryForIndex(indexPath: indexPath) ?? "")
+        cell.setupCell(isDownloaded: data.isDownload, title: data.name&)
+        cell.actionCell = {[weak self] (isDownloaded) in
+            self?.processFile(isDownloaded: isDownloaded,item: data, indexPath: indexPath)
         }
         return cell
     }
+    
+    func processFile(isDownloaded: Bool,item: ItemDictionaryResponse,indexPath: IndexPath){
+        if !isDownloaded {
+            let link = BASE_URL + item.link_dictionary&
+            ProgressView.shared.show()
+            FileZipManager.shared.downLoadFile(link: link) {
+                ProgressView.shared.hide()
+                item.isDownload = true
+                self.tableView.reloadData()
+                RealmDBManager.share.addObject(value: item)
+            }
+        } else {
+            ProgressView.shared.show()
+            RealmDBManager.share.removeAllObject(type: WordEntity.self)
+            RealmDBManager.share.removeAllObject(type: WordExplainEntity.self)
+            RealmDBManager.share.removeObject(type: ItemDictionaryResponse.self,value: item.id)
+            let newItem = ItemDictionaryResponse(id: item.id, name: item.name, link_dictionary: item.link_dictionary, isDownload: false)
+            self.listData[indexPath.row] = newItem
+            self.tableView.reloadData()
+            ProgressView.shared.hide()
+        }
+    }
 }
 
-extension MoreDictionaryViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 56
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            ProgressView.shared.show()
-            SQLHelper.shared.convertSQLiteToRealmWordEntity(appendingPathComponent: "sqliteWord.db",complete: {
-                ProgressView.shared.hide()
-            })
-            
-        }
-        if indexPath.row == 1 {
-            ProgressView.shared.show()
-            SQLHelper.shared.convertSQLiteToRealmWordExplainEntity(appendingPathComponent: "sqliteWordExplain.db",complete: {
-                ProgressView.shared.hide()
-            })
-        }
+extension MoreDictionaryViewController : MoreDictionaryViewProtocol {
+    func reloadDictionary(data: [ItemDictionaryResponse]){
+        initLoadData(data: data)
     }
 }

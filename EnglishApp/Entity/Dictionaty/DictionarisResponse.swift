@@ -11,7 +11,7 @@ import ObjectMapper
 
 class DictionarisResponse : Mappable {
     var total_records : String?
-    var dictionaries : [SearchEntity]?
+    var dictionaries : [ItemDictionaryResponse]?
     func mapping(map: Map) {
         self.total_records <- map["total_records"]
         self.dictionaries <- map["dictionaries"]

@@ -18,18 +18,20 @@ protocol MoreDictionaryWireframeProtocol: class {
 protocol MoreDictionaryPresenterProtocol: class {
 
     var interactor: MoreDictionaryInteractorInputProtocol? { get set }
-    func getDictionaryForIndex(indexPath: IndexPath) -> String
+    func getListDictionary()
 }
 
 //MARK: Interactor -
 protocol MoreDictionaryInteractorOutputProtocol: class {
 
+    func getListDictionarySuccessed(listDictionary: [ItemDictionaryResponse])
     /* Interactor -> Presenter */
 }
 
 protocol MoreDictionaryInteractorInputProtocol: class {
 
     var presenter: MoreDictionaryInteractorOutputProtocol?  { get set }
+    func getListDictionary()
 
     /* Presenter -> Interactor */
 }
@@ -38,6 +40,7 @@ protocol MoreDictionaryInteractorInputProtocol: class {
 protocol MoreDictionaryViewProtocol: class {
 
     var presenter: MoreDictionaryPresenterProtocol?  { get set }
+    func reloadDictionary(data: [ItemDictionaryResponse])
 
     /* Presenter -> ViewController */
 }

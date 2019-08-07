@@ -140,8 +140,8 @@ extension DictionaryViewController:DictionaryViewProtocol{
     
     func reloadDictionary(){
         if let dictionary = self.presenter?.listDictionary.first {
-            self.lblDictionary.text = dictionary.name&
-            self.idDictionary = Int(dictionary._id ?? "0") ?? 0
+            self.lblDictionary.text = dictionary.name
+            self.idDictionary = dictionary.id
         }
         self.dropDownDictionary.dataSource = self.presenter?.listDictionary.map{$0.name}.compactMap{$0} ?? []
     }

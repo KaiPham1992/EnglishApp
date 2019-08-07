@@ -13,4 +13,28 @@ import UIKit
 class MoreDictionaryInteractor: MoreDictionaryInteractorInputProtocol {
 
     weak var presenter: MoreDictionaryInteractorOutputProtocol?
+    
+    func getListDictionary() {
+        ProgressView.shared.show()
+        Provider.shared.findAPIService.getListDictionary(success: { (response) in
+            if let _response = response {
+                let result = _response.dictionaries ?? []
+                let object = RealmDBManager.share.getDataFromRealm(type: ItemDictionaryResponse.self)
+                if object.count > 0 {
+                    let listId = object.map{$0.id}
+                    if listId.count > 0 {
+                        for (index,item) in result.enumerated() {
+                            if listId.contains(item.id) {
+                                result[index].isDownload = true
+                            }
+                        }
+                    }
+                }
+                self.presenter?.getListDictionarySuccessed(listDictionary: result)
+            }
+            ProgressView.shared.hide()
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }
