@@ -17,12 +17,14 @@ class FightViewController: BaseViewController {
 
     @IBOutlet weak var lblPointTeam: UILabel!
     @IBOutlet weak var lblRankTeam: UILabel!
-    @IBOutlet weak var heightClvRankTeam: NSLayoutConstraint!
+    @IBOutlet weak var heightViewRank: NSLayoutConstraint!
     @IBOutlet weak var clvRankTeam: UICollectionView!
     @IBOutlet weak var lblTitleRank: UILabel!
     
     @IBAction func clickNext(_ sender: Any) {
-        self.presenter?.submitAnswer(param: self.listParamSubmit[self.currentIndex - 1])
+        if listParamSubmit.count > 0 {
+            self.presenter?.submitAnswer(param: self.listParamSubmit[self.currentIndex - 1])
+        }
     }
     
     var numberQuestion : Int = 0
@@ -70,7 +72,6 @@ class FightViewController: BaseViewController {
         clvRankTeam.delegate = self
         clvRankTeam.dataSource = self
         vCountTime.delegate = self
-        heightClvRankTeam.constant = 0
         self.presenter?.getViewFightCompetition(id: String(self.completion_id))
     }
     
@@ -214,9 +215,9 @@ extension FightViewController: UICollectionViewDataSource{
         if collectionView == clvRankTeam {
             let row = self.presenter?.listRank.count ?? 0
             if row == 0 {
-                heightClvRankTeam.constant = 0
+                heightViewRank.constant = 0
             } else {
-                heightClvRankTeam.constant = 80
+                heightViewRank.constant = 80
             }
             return row
         }
