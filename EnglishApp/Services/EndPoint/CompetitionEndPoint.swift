@@ -19,10 +19,13 @@ enum CompetitionEndPoint{
     case joinTeam(id: String)
     case getViewFightTest(idCompetition: String)
     case getViewFightCompetition(id: String)
+    case submitCompetition(param: SubmitCompetitionQuestionResponse)
 }
 extension CompetitionEndPoint: EndPointType{
     var path: String {
         switch self {
+        case .submitCompetition:
+            return "_api/fight/submit_fight_test_question"
         case .getViewFightCompetition(let id):
             return "_api/exercise/do_real_time_test/\(id)"
         case .getViewFightTest(let id):
@@ -48,7 +51,7 @@ extension CompetitionEndPoint: EndPointType{
         switch self {
         case .getDetailTeam,.leaveTeam,.joinTeam,.getViewFightTest,.getViewFightCompetition:
             return .get
-        case .getListFight, .getListFightTestTeam,.getListResultFight,.createTeamFight:
+        case .getListFight, .getListFightTestTeam,.getListResultFight,.createTeamFight,.submitCompetition:
             return .post
         
         }
@@ -56,6 +59,8 @@ extension CompetitionEndPoint: EndPointType{
     
     var parameters: JSONDictionary {
         switch self {
+        case .submitCompetition(let param):
+            return param.toJSON()
         case .getViewFightCompetition:
             return [:]
         case .getViewFightTest:

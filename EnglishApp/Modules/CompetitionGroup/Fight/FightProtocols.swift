@@ -19,21 +19,16 @@ protocol FightWireframeProtocol: class {
 protocol FightPresenterProtocol: class {
 
     var interactor: FightInteractorInputProtocol? { get set }
+    
     var error: APIError? {get set}
     var exerciseEntity: ViewExerciseEntity? {get set}
+    var listRank : [RankTeamEntity] {get set}
     
     func getViewFightCompetition(id: String)
-    
     func gotoDetailVocabulary()
-    func getTime(index: Int) -> Int?
-    func getQuestion(indexPath: IndexPath) -> QuestionEntity?
-    func getAllTime() -> [Int]?
-    func getAllId() -> [Int]?
-    func getIDExercise() -> Int?
-    func getTotalTime() -> Int?
-    func submitExercise(param: SubmitExerciseParam)
     func exitExercise(id : Int)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)
+    func submitAnswer(param: SubmitCompetitionQuestionResponse)
 }
 
 //MARK: Interactor -
@@ -46,6 +41,7 @@ protocol FightInteractorOutputProtocol: class {
     func exitSuccessed(respone: TestResultProfileEntity)
     func suggestQuestionSuccessed(respone: [String])
     func suggestQuestionError(error: APIError)
+    func submitCompetitionSuccessed(listRank: [RankTeamEntity])
 }
 
 protocol FightInteractorInputProtocol: class {
@@ -54,11 +50,10 @@ protocol FightInteractorInputProtocol: class {
     
     func getViewFightCompetition(id: String)
     
-    func getViewEntranceTest()
-    func submitExercise(param: SubmitExerciseParam)
     func exitExercise(id : Int)
     func suggestQuestion(id: String,isDiamond: Bool)
-
+    func submitAnswer(param: SubmitCompetitionQuestionResponse)
+    
     /* Presenter -> Interactor */
 }
 
@@ -72,6 +67,6 @@ protocol FightViewProtocol: class {
     func exitSuccessed()
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath)
     func suggestQuestionError()
-
+    func submitCompetitionSuccessed()
     /* Presenter -> ViewController */
 }

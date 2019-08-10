@@ -11,10 +11,10 @@
 import UIKit
 
 class FightInteractor: FightInteractorInputProtocol {
+   
     func getViewFightCompetition(id: String) {
         ProgressView.shared.showLoadingCompetition()
         Provider.shared.competitionAPIService.getViewFightCompetition(id: id, success: { (response) in
-            ProgressView.shared.hideLoadingCompetition()
             if let _response = response {
                 self.presenter?.getExerciseSuccessed(respone: _response)
             }
@@ -23,52 +23,7 @@ class FightInteractor: FightInteractorInputProtocol {
         }
     }
     
-
     weak var presenter: FightInteractorOutputProtocol?
-    
-    func getViewExercise(id: String) {
-        ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.getViewExercise(id: id, success: { (respone) in
-            ProgressView.shared.hide()
-            if let _respone = respone {
-                self.presenter?.getExerciseSuccessed(respone: _respone)
-            }
-        }) { (error) in
-            ProgressView.shared.hide()
-            guard let _error = error else {
-                return
-            }
-            self.presenter?.getExerciseFailed(error: _error)
-        }
-    }
-    
-    func submitExercise(param: SubmitExerciseParam) {
-        ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.submitExercise(param: param, success: { (respone) in
-            ProgressView.shared.hide()
-            if let _respone = respone {
-                self.presenter?.gotoResult(result: _respone)
-            }
-        }) { (error) in
-            ProgressView.shared.hide()
-        }
-    }
-    
-    func getViewEntranceTest() {
-        ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.getEntranceExercise(success: { (respone) in
-            ProgressView.shared.hide()
-            if let _respone = respone {
-                self.presenter?.getExerciseSuccessed(respone: _respone)
-            }
-        }) { (error) in
-            ProgressView.shared.hide()
-            guard let _error = error else {
-                return
-            }
-            self.presenter?.getExerciseFailed(error: _error)
-        }
-    }
     
     func exitExercise(id : Int){
         Provider.shared.exerciseAPIService.exitExercise(id: id, success: { (respone) in
@@ -77,6 +32,16 @@ class FightInteractor: FightInteractorInputProtocol {
             }
         }) { (error) in
             
+        }
+    }
+    
+    func submitAnswer(param: SubmitCompetitionQuestionResponse) {
+        ProgressView.shared.show()
+        Provider.shared.competitionAPIService.submitCompetition(param: param, success: { (listRank) in
+            ProgressView.shared.hide()
+            self.presenter?.submitCompetitionSuccessed(listRank: listRank)
+        }) { (error) in
+            ProgressView.shared.hide()
         }
     }
     

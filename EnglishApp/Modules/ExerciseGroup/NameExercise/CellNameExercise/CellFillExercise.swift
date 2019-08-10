@@ -19,7 +19,11 @@ class CellFillExercise: UICollectionViewCell {
     weak var delegate: CellExerciseDelegate?
     var attributed: NSMutableAttributedString?
     var numberLine: Int = 0
+    //for competition
+    var listAnswerCompetition : [SubmitAnswerEntity] = []
+    //for exercise
     var listAnswer : [QuestionChoiceResultParam] = []
+    
     private var listViewAnswer : [ViewFillQuestion] = []
     
     override func awakeFromNib() {
@@ -105,7 +109,12 @@ class CellFillExercise: UICollectionViewCell {
             for index in 1...numberView {
                 let view = ViewFillQuestion()
                 view.setupTag(tag: index)
-                view.content = listAnswer[index-1].value ?? ""
+                if listAnswer.count > 0 {
+                    view.content = listAnswer[index-1].value ?? ""
+                }
+                if listAnswerCompetition.count > 0 {
+                    view.content = listAnswerCompetition[index-1].value ?? ""
+                }
                 self.stvFillQuestion.addArrangedSubview(view)
                 self.listViewAnswer.append(view)
                 view.delegate = self
@@ -116,7 +125,14 @@ class CellFillExercise: UICollectionViewCell {
 }
 extension CellFillExercise : TextViewChangeHeightDelegate {
     func textChanged(text: String, index: Int) {
-        self.listAnswer[index - 1].value = text
+        //for exercise
+        if listAnswer.count > 0 {
+            self.listAnswer[index - 1].value = text
+        }
+        //for competition
+        if listAnswerCompetition.count > 0 {
+            self.listAnswerCompetition[index - 1].value = text
+        }
     }
     
     func distanceChange(distance: CGFloat) {

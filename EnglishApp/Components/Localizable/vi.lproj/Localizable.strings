@@ -342,3 +342,7 @@
 "noResultFound" = "Không có kết quả tìm kiếm.";
 "feeFind" = "Tìm kiếm mất x hũ mật ong hoặc x kim cương.";
 "done" = "Xong";
+
+
+//add after
+"rank_of_competition" = "Thứ hạng cuộc thi";

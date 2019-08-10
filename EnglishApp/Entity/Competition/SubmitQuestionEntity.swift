@@ -10,7 +10,6 @@ import Foundation
 import ObjectMapper
 
 class SubmitQuestionEntity : Mappable {
-    
     var question_id : Int = 0
     var sequence : Int = 0
     var answers : [SubmitAnswerEntity] = []
@@ -18,6 +17,9 @@ class SubmitQuestionEntity : Mappable {
         self.question_id <- map["question_id"]
         self.sequence <- map["sequence"]
         self.answers <- map["answers"]
+    }
+    init(){
+        
     }
     required init?(map: Map) {
         

@@ -20,6 +20,11 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
     var indexPath: IndexPath?
     var indexQuestion: IndexPath?
     var error: APIError?
+    var listRank : [RankTeamEntity] = []
+    
+    func submitAnswer(param: SubmitCompetitionQuestionResponse) {
+        self.interactor?.submitAnswer(param: param)
+    }
 
     init(interface: FightViewProtocol, interactor: FightInteractorInputProtocol?, router: FightWireframeProtocol) {
         self.view = interface
@@ -36,36 +41,8 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
         self.router.gotoDetailVocabulary()
     }
     
-    func getIDExercise() -> Int?{
-        return Int(exerciseEntity?._id ?? "0")
-    }
-    
-    func getAllTime() -> [Int]? {
-        return exerciseEntity?.questions?.map{$0.question_time}.compactMap{Int($0 ?? "0")}
-    }
-    
-    func submitExercise(param: SubmitExerciseParam) {
-        self.interactor?.submitExercise(param: param)
-    }
-    
-    func getTotalTime() -> Int?{
-        return exerciseEntity?.total_times
-    }
-    
     func gotoResult(result: TestResultProfileEntity) {
         self.router.gotoResult(result: result, type: .assignExercise)
-    }
-    
-    func getAllId() -> [Int]?{
-        return exerciseEntity?.questions?.map{Int($0._id ?? "0") ?? 0}
-    }
-    
-    func getTime(index: Int) -> Int? {
-        return Int(exerciseEntity?.questions?[index].question_time ?? "0")
-    }
-    
-    func getQuestion(indexPath: IndexPath) -> QuestionEntity? {
-        return exerciseEntity?.questions?[indexPath.row]
     }
 
     func getExerciseSuccessed(respone: ViewExerciseEntity) {
@@ -100,5 +77,10 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
     func suggestQuestionError(error: APIError) {
         self.error = error
         self.view?.suggestQuestionError()
+    }
+    
+    func submitCompetitionSuccessed(listRank: [RankTeamEntity]) {
+        self.listRank = listRank
+        self.view?.submitCompetitionSuccessed()
     }
 }

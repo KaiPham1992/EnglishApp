@@ -14,7 +14,7 @@ class SubmitCompetitionQuestionResponse : Mappable {
     var competition_id : Int = 0
     var team_id : Int = 0
     var time : Int = 0
-    var questions : SubmitAnswerEntity?
+    var questions : SubmitQuestionEntity?
     
     init(competition_id: Int,team_id: Int) {
         self.competition_id = competition_id
