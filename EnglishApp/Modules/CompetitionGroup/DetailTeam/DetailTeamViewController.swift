@@ -37,7 +37,9 @@ class DetailTeamViewController: BaseViewController {
     }
     
     @IBAction func btnStartTapped() {
-       print("Go to competition")
+        //test competition
+        let vc = FightRouter.createModule(exercise_id: self.presenter?.teamDetail?.team_info?.competition_id ?? "")
+        self.push(controller: vc)
     }
     
     @IBAction func btnExplainTapped() {

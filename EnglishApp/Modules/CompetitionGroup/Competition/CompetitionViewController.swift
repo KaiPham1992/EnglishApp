@@ -37,6 +37,7 @@ class CompetitionViewController: ListManagerVC {
     override func registerTableView() {
         super.registerTableView()
         self.tableView.registerXibFile(CompetitionCell.self)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -61,6 +62,7 @@ class CompetitionViewController: ListManagerVC {
         return cell
     }
     func actionFight(status: String,tag: Int) {
+        //correct
         if type == .competition {
             guard let competitionId = (listData[tag] as! CompetitionEntity).id else {
                 return

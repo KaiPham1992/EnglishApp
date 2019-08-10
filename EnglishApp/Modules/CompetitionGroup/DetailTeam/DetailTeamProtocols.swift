@@ -18,6 +18,7 @@ protocol DetailTeamWireframeProtocol: class {
 protocol DetailTeamPresenterProtocol: class {
 
     var interactor: DetailTeamInteractorInputProtocol? { get set }
+    var teamDetail : DetailTeamEntity? {get set}
     func getDetailTeam(id: String)
     func getNumberRow() -> Int?
     func getUserIndexPath(indexPath: IndexPath) -> UserEntity?

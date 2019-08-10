@@ -62,7 +62,7 @@ class CompetitionCell: BaseTableCell {
             }
             
             lbCountTeam.text = "\(LocalizableKey.countTeam.showLanguage)\(competitionEntity.countTeam&)\(LocalizableKey.team.showLanguage)"
-            lbContent.text = competitionEntity.content
+            lbContent.attributedText = competitionEntity.content?.htmlToAttributedString
             
         }
     }
@@ -71,7 +71,7 @@ class CompetitionCell: BaseTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.selectionStyle = .none
     }
     
 }
