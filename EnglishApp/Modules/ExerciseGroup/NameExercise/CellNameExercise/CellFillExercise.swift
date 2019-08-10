@@ -13,24 +13,18 @@ class CellFillExercise: UICollectionViewCell {
 
     @IBOutlet weak var heightStackView: NSLayoutConstraint!
     @IBOutlet weak var stvFillQuestion: UIStackView!
-    weak var delegate: CellExerciseDelegate?
     @IBOutlet weak var tvContent: UITextView!
-    
-    var attributed: NSMutableAttributedString?
-    var listAnswer : [QuestionChoiceResultParam] = []
-    
-    var numberLine: Int = 0
-    
     let popover = Popover()
     
-    var listViewAnswer : [ViewFillQuestion] = []
-    
+    weak var delegate: CellExerciseDelegate?
+    var attributed: NSMutableAttributedString?
+    var numberLine: Int = 0
+    var listAnswer : [QuestionChoiceResultParam] = []
+    private var listViewAnswer : [ViewFillQuestion] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         setupView()
-        
     }
     
     func setupView(){
@@ -42,12 +36,11 @@ class CellFillExercise: UICollectionViewCell {
         DispatchQueue.main.async {
             self.detectQuestion(text: data.content_extend&)
             self.setFillCell(numberView: data.answers?.count ?? 0)
-            self.listAnswer = data.answers?.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)} ?? []
         }
     }
     
     func detectQuestion(text: String){
-        let  textArray = text.components(separatedBy: " ")
+        let  textArray = text.htmlToString.components(separatedBy: " ")
         let attributedText = NSMutableAttributedString()
         for word in textArray {
             let attributed = NSMutableAttributedString(string: word + " ")
@@ -79,7 +72,7 @@ class CellFillExercise: UICollectionViewCell {
             let myRange = NSRange(location: characterIndex, length: 1)
             let subString = (content.attributedText.string as NSString).substring(with: myRange)
             print("character at index: \(subString)")
-            let attributeName = "tapped" //make sure this matches the name in viewDidLoad()
+            let attributeName = "tapped"
             let attributeValue = content.attributedText!.attribute(NSAttributedString.Key("tapped"), at: characterIndex, effectiveRange: nil) as? String
             if let value = attributeValue {
                 setupPopOver(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2, title: value)
@@ -108,14 +101,17 @@ class CellFillExercise: UICollectionViewCell {
     }
     
     func setFillCell(numberView: Int){
-        for index in 1...numberView {
-            let view = ViewFillQuestion()
-            view.setupTag(tag: index)
-            self.stvFillQuestion.addArrangedSubview(view)
-            self.listViewAnswer.append(view)
-            view.delegate = self
+        if stvFillQuestion.subviews.count == 0 {
+            for index in 1...numberView {
+                let view = ViewFillQuestion()
+                view.setupTag(tag: index)
+                view.content = listAnswer[index-1].value ?? ""
+                self.stvFillQuestion.addArrangedSubview(view)
+                self.listViewAnswer.append(view)
+                view.delegate = self
+            }
+            self.heightStackView.constant = CGFloat(40 * numberView)
         }
-        self.heightStackView.constant = CGFloat(40 * numberView)
     }
 }
 extension CellFillExercise : TextViewChangeHeightDelegate {

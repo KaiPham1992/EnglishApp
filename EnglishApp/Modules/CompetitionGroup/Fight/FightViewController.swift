@@ -17,14 +17,14 @@ class FightViewController: BaseViewController {
     
     @IBAction func clickNext(_ sender: Any) {
         if let param = self.addDataCell(indexPath: IndexPath(row: self.currentIndex - 1, section: 0)) {
-            self.listAnswerQuestion[self.currentIndex - 1].answer = param
+//            self.listParamSubmit[self.currentIndex - 1].questions = param
         }
         if self.currentIndex + 1 > numberQuestion {
-            self.paramSubmit?.questions = listAnswerQuestion
-            if let _param = self.paramSubmit {
-                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
-                self.presenter?.submitExercise(param: _param)
-            }
+//            self.paramSubmit?.questions = listAnswerQuestion
+//            if let _param = self.paramSubmit {
+//                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+//                self.presenter?.submitExercise(param: _param)
+//            }
         } else {
             self.currentIndex += 1
             lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
@@ -44,9 +44,9 @@ class FightViewController: BaseViewController {
     
     var numberQuestion : Int = 0
     var currentTime : Int = 0
-    var listAnswerQuestion : [QuestionSubmitParam] = []
-    var idExercise : String = ""
-    var paramSubmit : SubmitExerciseParam?
+    var listParamSubmit : [SubmitCompetitionQuestionResponse] = []
+    var completion_id : Int = 0
+    var team_id : Int = 0
     
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
@@ -70,8 +70,6 @@ class FightViewController: BaseViewController {
                 self.currentIndex = numberQuestion
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-            } else {
-                //                self.presenter?.gotoResult()
             }
             self.disableUserInteractionCell()
         }
@@ -85,7 +83,7 @@ class FightViewController: BaseViewController {
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
         vCountTime.delegate = self
-        self.presenter?.getViewFightCompetition(id: self.idExercise)
+        self.presenter?.getViewFightCompetition(id: String(self.completion_id))
     }
     
     override func setUpNavigation() {
@@ -128,7 +126,6 @@ class FightViewController: BaseViewController {
 
 extension FightViewController :FightViewProtocol{
     func exitSuccessed() {
-        
     }
     
     func suggestQuestionError() {
@@ -140,17 +137,14 @@ extension FightViewController :FightViewProtocol{
     }
     
     func reloadView() {
-        setTitleNavigation(title: self.presenter?.getNameExercise() ?? "")
-        self.numberQuestion = self.presenter?.getNumber() ?? 0
-        
-        self.currentTime = self.presenter?.getAllTime() ?? 0
+        setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
+        self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
+        self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+        for _ in 0..<numberQuestion {
+            let object = SubmitCompetitionQuestionResponse(competition_id: self.completion_id, team_id: self.team_id)
+            self.listParamSubmit.append(object)
+        }
         lblIndexQuestion.text = "1/\(numberQuestion)"
-        if let _listIdQuestion = self.presenter?.getAllId() {
-            self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0,time: 0)}
-        }
-        if let _id = self.presenter?.getIDExercise(){
-            paramSubmit = SubmitExerciseParam(exercise_id: _id)
-        }
         vCountTime.setupTimeStartNow(min: self.currentTime)
         clvQuestion.reloadData()
     }
@@ -159,9 +153,6 @@ extension FightViewController :FightViewProtocol{
         PopUpHelper.shared.showError(message: error.message&) {
         }
     }
-//    func exitSuccessed() {
-//        self.exerciseDelegate?.confirmOutTestEntrance()
-//    }
 }
 extension FightViewController : UICollectionViewDelegate{
     
@@ -183,7 +174,7 @@ extension FightViewController: UICollectionViewDataSource{
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.presenter?.getNumber() ?? 0
+        return self.presenter?.exerciseEntity?.questions?.count ?? 0
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let data = self.presenter?.getQuestion(indexPath: indexPath){
@@ -219,8 +210,8 @@ extension FightViewController : CellExerciseDelegate{
 
 extension FightViewController : TimeDelegate{
     func changeTime() {
-        if listAnswerQuestion.count > 0 {
-            self.listAnswerQuestion[self.currentIndex - 1].time += 1
+        if listParamSubmit.count > 0 {
+            self.listParamSubmit[self.currentIndex - 1].time += 1
         }
         
     }

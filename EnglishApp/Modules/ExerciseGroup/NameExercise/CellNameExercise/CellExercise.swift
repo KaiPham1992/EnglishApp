@@ -47,7 +47,6 @@ class CellExercise: UICollectionViewCell {
         DispatchQueue.main.async {
             self.detectQuestion(contextQuestion: dataCell.content_extend&)
             self.answer = dataCell.answers ?? []
-            self.listAnswer = self.answer.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)}
             self.tbvNameExercise.reloadData()
         }
     }
@@ -130,6 +129,7 @@ extension CellExercise: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
         cell.indexPath = indexPath
+        cell.answer = listAnswer[indexPath.row].value ?? ""
         if let listAnswer = self.getDataSource(indexPath: indexPath), let option = self.getIdOption(indexPath: indexPath){
             cell.idOption = option
             cell.dataSource = listAnswer
@@ -161,9 +161,10 @@ extension CellExercise : ClickQuestionDelegate{
         }
     }
     
-    func changeAnswer(id: Int, indexPath: IndexPath?) {
+    func changeAnswer(idAnswer: Int,valueAnswer: String, indexPath: IndexPath?) {
         if let _indexPath = indexPath {
-            self.listAnswer[_indexPath.row].option_id = id
+            self.listAnswer[_indexPath.row].option_id = idAnswer
+            self.listAnswer[_indexPath.row].value = valueAnswer
         }
     }
 }

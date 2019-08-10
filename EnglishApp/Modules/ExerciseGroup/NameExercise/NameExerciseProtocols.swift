@@ -20,20 +20,16 @@ protocol NameExercisePresenterProtocol: class {
 
     var interactor: NameExerciseInteractorInputProtocol? { get set }
     var type : TypeDoExercise {get set}
+    var exerciseEntity: ViewExerciseEntity? {get set}
     var error: APIError? {get set}
-    func getNameExercise() -> String?
+    
     func gotoDetailVocabulary()
     func getViewExercise(id: String)
     func getViewEntranceTest()
     func getTime(index: Int) -> Int?
-    func getNumber() -> Int?
     func getQuestion(indexPath: IndexPath) -> QuestionEntity?
     func getAllTime() -> [Int]?
-    func getAllId() -> [Int]?
-    func getIDExercise() -> Int?
-    func getTotalTime() -> Int?
     func submitExercise(param: SubmitExerciseParam)
-    func getAllTime() -> Int?
     func getDailyMisson()
     func exitExercise(id : Int)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)

@@ -17,7 +17,6 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
     private let router: FightWireframeProtocol
     
     var exerciseEntity: ViewExerciseEntity?
-    var type : TypeDoExercise = .assignExercise
     var indexPath: IndexPath?
     var indexQuestion: IndexPath?
     var error: APIError?
@@ -32,18 +31,9 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
         self.interactor?.getViewFightCompetition(id: id)
     }
     
-
-    
-    func getNameExercise() -> String? {
-        return exerciseEntity?.name
-    }
     
     func gotoDetailVocabulary() {
         self.router.gotoDetailVocabulary()
-    }
-    
-    func getNumber() -> Int? {
-        return exerciseEntity?.questions?.count
     }
     
     func getIDExercise() -> Int?{
@@ -63,15 +53,11 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
     }
     
     func gotoResult(result: TestResultProfileEntity) {
-        self.router.gotoResult(result: result, type: self.type)
+        self.router.gotoResult(result: result, type: .assignExercise)
     }
     
     func getAllId() -> [Int]?{
         return exerciseEntity?.questions?.map{Int($0._id ?? "0") ?? 0}
-    }
-    
-    func getAllTime() -> Int? {
-        return exerciseEntity?.total_times
     }
     
     func getTime(index: Int) -> Int? {

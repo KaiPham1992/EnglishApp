@@ -20,21 +20,18 @@ protocol FightPresenterProtocol: class {
 
     var interactor: FightInteractorInputProtocol? { get set }
     var error: APIError? {get set}
-    
+    var exerciseEntity: ViewExerciseEntity? {get set}
     
     func getViewFightCompetition(id: String)
     
-    func getNameExercise() -> String?
     func gotoDetailVocabulary()
     func getTime(index: Int) -> Int?
-    func getNumber() -> Int?
     func getQuestion(indexPath: IndexPath) -> QuestionEntity?
     func getAllTime() -> [Int]?
     func getAllId() -> [Int]?
     func getIDExercise() -> Int?
     func getTotalTime() -> Int?
     func submitExercise(param: SubmitExerciseParam)
-    func getAllTime() -> Int?
     func exitExercise(id : Int)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)
 }
