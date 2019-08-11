@@ -9,10 +9,11 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: Wireframe -
 protocol FightWireframeProtocol: class {
-    func gotoDetailVocabulary()
+    func gotoDetailVocabulary(word: WordExplainEntity)
     func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise)
 }
 //MARK: Presenter -
@@ -25,10 +26,11 @@ protocol FightPresenterProtocol: class {
     var listRank : [RankTeamEntity] {get set}
     
     func getViewFightCompetition(id: String)
-    func gotoDetailVocabulary()
+    func gotoDetailVocabulary(word: WordExplainEntity)
     func exitExercise(id : Int)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)
     func submitAnswer(param: SubmitCompetitionQuestionResponse)
+    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
 }
 
 //MARK: Interactor -
@@ -42,6 +44,8 @@ protocol FightInteractorOutputProtocol: class {
     func suggestQuestionSuccessed(respone: [String])
     func suggestQuestionError(error: APIError)
     func submitCompetitionSuccessed(listRank: [RankTeamEntity])
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
+    
 }
 
 protocol FightInteractorInputProtocol: class {
@@ -53,6 +57,7 @@ protocol FightInteractorInputProtocol: class {
     func exitExercise(id : Int)
     func suggestQuestion(id: String,isDiamond: Bool)
     func submitAnswer(param: SubmitCompetitionQuestionResponse)
+    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
     
     /* Presenter -> Interactor */
 }
@@ -68,5 +73,6 @@ protocol FightViewProtocol: class {
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath)
     func suggestQuestionError()
     func submitCompetitionSuccessed()
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
     /* Presenter -> ViewController */
 }

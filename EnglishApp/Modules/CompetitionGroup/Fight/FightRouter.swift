@@ -43,8 +43,8 @@ class FightRouter: FightWireframeProtocol {
         return view
     }
     
-    func gotoDetailVocabulary(){
-        let vc = DetailLessonRouter.createModule()
+    func gotoDetailVocabulary(word: WordExplainEntity){
+        let vc = DetailLessonRouter.createModule(word: word)
         self.viewController?.push(controller: vc,animated: true)
     }
     

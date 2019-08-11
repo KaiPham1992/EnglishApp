@@ -36,11 +36,6 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
         self.interactor?.getViewFightCompetition(id: id)
     }
     
-    
-    func gotoDetailVocabulary() {
-        self.router.gotoDetailVocabulary()
-    }
-    
     func gotoResult(result: TestResultProfileEntity) {
         self.router.gotoResult(result: result, type: .assignExercise)
     }
@@ -82,5 +77,17 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
     func submitCompetitionSuccessed(listRank: [RankTeamEntity]) {
         self.listRank = listRank
         self.view?.submitCompetitionSuccessed()
+    }
+    
+    func gotoDetailVocabulary(word: WordExplainEntity) {
+        self.router.gotoDetailVocabulary(word: word)
+    }
+    
+    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
+        self.interactor?.searchVocabulary(word: word, position: position,index: index)
+    }
+    
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+        self.view?.searchVocabularySuccessed(wordEntity: wordEntity, position: position,index:index)
     }
 }

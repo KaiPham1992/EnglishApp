@@ -197,6 +197,16 @@ extension FightViewController :FightViewProtocol{
         PopUpHelper.shared.showError(message: error.message&) {
         }
     }
+    
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
+            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+        }
+        
+        if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
+            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+        }
+    }
 }
 
 extension FightViewController : UICollectionViewDelegate{
@@ -276,11 +286,11 @@ extension FightViewController: UICollectionViewDataSource{
 extension FightViewController : CellExerciseDelegate{
     
     func showDetailVocubulary(word: WordExplainEntity) {
-        
+        self.presenter?.gotoDetailVocabulary(word: word)
     }
     
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
-        
+        self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }
     
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {

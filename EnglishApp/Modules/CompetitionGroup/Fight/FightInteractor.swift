@@ -58,4 +58,18 @@ class FightInteractor: FightInteractorInputProtocol {
             self.presenter?.suggestQuestionError(error: _error)
         }
     }
+    
+    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
+        if word != "" {
+            Provider.shared.exerciseAPIService.searchVocabulary(word: word, success: { (response) in
+                if let _response = response {
+                    self.presenter?.searchVocabularySuccessed(wordEntity: _response, position: position,index: index)
+                } else {
+                    
+                }
+            }) { (error) in
+                
+            }
+        }
+    }
 }
