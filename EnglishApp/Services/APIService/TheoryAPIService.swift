@@ -13,7 +13,7 @@ protocol TheoryAPIServiceProtocol {
     func getListLesson(lesson_category_id: Int,offset: Int, success: @escaping SuccessHandler<LessonsResponse>.object,failure: @escaping RequestFailure)
     func getLessonDetail(lesson_id: Int,success: @escaping SuccessHandler<LessonCatelogyDetail>.object,failure: @escaping RequestFailure)
     func getComment(idLesson: String,offset: Int,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure)
-    func likeLesson(idLesson: Int,isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func likeLesson(idLesson: Int,idWord: Int?, isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func addComment(idLesson: Int,content: String,idParent: Int?, success: @escaping SuccessHandler<ParentComment>.object, failure: @escaping RequestFailure)
     func getLessonRecipe(type: Int, offset: Int,success: @escaping SuccessHandler<LessonCategoryEntity>.object, failure: @escaping RequestFailure)
     func getCommentQuestion(question_details_id: Int,offset: Int,success: @escaping SuccessHandler<CommentEntity>.object, failure: @escaping RequestFailure)
@@ -40,8 +40,8 @@ class TheoryAPIService: TheoryAPIServiceProtocol{
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func likeLesson(idLesson: Int, isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
-        let endpoint = TheoryEndpoint.likeLesson(idLesson: idLesson, isFavorite: isFavorite)
+    func likeLesson(idLesson: Int,idWord: Int?, isFavorite: Int, success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endpoint = TheoryEndpoint.likeLesson(idLesson: idLesson,idWord: idWord, isFavorite: isFavorite)
         network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
     

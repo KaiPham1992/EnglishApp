@@ -23,7 +23,7 @@ protocol DetailLessonPresenterProtocol: class {
     func getContentLesson() -> NSAttributedString?
     func getNumberComment() -> Int?
     func getToggleLike() -> Int?
-    func likeLesson(idLesson: Int, isFavorite: Int)
+    func likeLesson(idLesson: Int,idWord: Int?, isFavorite: Int)
     func getTitle() -> String?
 }
 
@@ -38,7 +38,7 @@ protocol DetailLessonInteractorInputProtocol: class {
 
     var presenter: DetailLessonInteractorOutputProtocol?  { get set }
     func getLessonDetail(lesson_id: Int)
-    func likeLesson(idLesson: Int, isFavorite: Int)
+    func likeLesson(idLesson: Int,idWord: Int?, isFavorite: Int)
 
     /* Presenter -> Interactor */
 }

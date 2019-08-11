@@ -26,7 +26,7 @@ class DetailLessonViewController: BaseViewController {
     var isClickLikeImage = false
     var vocabulary : WordExplainEntity?
     
-    var isLike = 0{
+    var isLike = 0 {
         didSet{
             self.btnLike.setBackgroundImage(isLike == 0 ? UIImage(named:"Material_Icons_white_favorite") : #imageLiteral(resourceName: "Material_Icons_white_favorite-1") , for: .normal)
         }
@@ -41,7 +41,7 @@ class DetailLessonViewController: BaseViewController {
             self.presenter?.getLessonDetail(lesson_id: Int(self.idLesson) ?? 0)
         }
         
-        if let _vocabulary = self.vocabulary {
+        if let _ = self.vocabulary {
             reloadView()
         }
     }
@@ -62,21 +62,26 @@ class DetailLessonViewController: BaseViewController {
             }
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
         } else {
-            addButtonToNavigation(image: UIImage(named:"Material_Icons_white_favorite")!, style: .right, action: #selector(clickHeart))
+            addButtonLikeToNavigation(image: UIImage(named:"Material_Icons_white_favorite")!, actionSelector: #selector(clickHeart))
         }
         
     }
     
     @objc func clickHeart(){
-        isClickLikeImage = true
-        isLike = isLike == 0 ? 1 : 0
-        self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 , isFavorite: self.isLike)
+        if type == .detailLesson {
+            isClickLikeImage = true
+            isLike = isLike == 0 ? 1 : 0
+        } else {
+            isClickLikeImage = true
+            isLike = isLike == 0 ? 1 : 0
+        }
+        self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 ,idWord: self.vocabulary?.id , isFavorite: self.isLike)
     }
 }
 
 extension DetailLessonViewController:DetailLessonViewProtocol{
     func reloadView() {
-        if idLesson != "0" {
+        if type == .detailLesson {
             setTitleNavigation(title: self.presenter?.getTitle() ?? "")
             if let attribute = self.presenter?.getContentLesson(){
                 self.lbContent.attributedText = attribute

@@ -47,8 +47,8 @@ class DetailLessonPresenter: DetailLessonPresenterProtocol, DetailLessonInteract
         return lessonDetail?.unread_comments
     }
     
-    func likeLesson(idLesson: Int, isFavorite: Int) {
-        self.interactor?.likeLesson(idLesson: idLesson, isFavorite: isFavorite)
+    func likeLesson(idLesson: Int,idWord: Int?, isFavorite: Int) {
+        self.interactor?.likeLesson(idLesson: idLesson, idWord: idWord, isFavorite: isFavorite)
     }
     
     func getToggleLike() -> Int?{

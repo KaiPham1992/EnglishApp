@@ -32,5 +32,6 @@ class WordExplainEntity : Object,Mappable {
     func mapping(map: Map) {
         self.word <- map["word"]
         self.explain <- map["explain"]
+        self.id <- (map["_id"], StringToIntTransform())
     }
 }

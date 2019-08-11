@@ -151,6 +151,16 @@ open class BaseViewController: UIViewController {
 
 // MARK: Add button left, right, title
 extension BaseViewController {
+    func addButtonLikeToNavigation(image: UIImage, actionSelector: Selector?){
+        btnLike.setBackgroundImage(image, for: .normal)
+        if let newAction = actionSelector {
+            btnLike.addTarget(self, action: newAction, for: .touchUpInside)
+        }
+        btnLike.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+        btnLike.contentHorizontalAlignment = .right
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: btnLike)
+    }
+    
     func addButtonToNavigation(image: UIImage, style: StyleNavigation, action: Selector?) {
         showNavigation()
         let btn = UIButton()
