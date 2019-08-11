@@ -24,6 +24,13 @@ class CompetitionViewController: ListManagerVC {
     override func setupViewListManager() {
         customTitle = LocalizableKey.titleCompetition.showLanguage
         showButtonBack = false
+        super.setupViewListManager()
+        NotificationCenter.default.addObserver(self, selector: #selector(leaveCompetition), name: NSNotification.Name(rawValue: "LeaveCompetition"), object: nil)
+    }
+    
+    @objc func leaveCompetition(){
+        self.offset = 0
+        callAPI()
     }
     
     override func callAPI() {

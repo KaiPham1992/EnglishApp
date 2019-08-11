@@ -31,9 +31,9 @@ class CompetitionEntity : BaseEntity {
     var content: String?
     var image: String?
     var exercise_id: String?
-    var is_fight_joined: String?
+    var is_fight_joined: Int?
     var status : String?
-   
+    var start_time_mi : String?
     
     convenience init(name: String) {
         self.init()
@@ -65,6 +65,7 @@ class CompetitionEntity : BaseEntity {
         self.rankName <- map["rank_name"]
         self.countTeam <- map["number_team"]
         self.startDate <- map["start_date"]
+        self.start_time_mi <- map["start_time_mi"]
         
         self.startTime <- (map["start_date"], yyyyMMddHHmmssTransform())
         self.image <- map["image"]

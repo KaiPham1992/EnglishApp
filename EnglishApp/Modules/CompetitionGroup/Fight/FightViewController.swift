@@ -51,12 +51,15 @@ class FightViewController: BaseViewController {
     var isEnd : Bool = false{
         didSet {
             vCountTime.stopTimer()
-            if self.currentIndex < numberQuestion {
-                self.currentIndex = numberQuestion
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
+            if listParamSubmit.count > 0 {
+                self.presenter?.submitAnswer(param: self.listParamSubmit[self.currentIndex - 1])
             }
-            self.disableUserInteractionCell()
+//            if self.currentIndex < numberQuestion {
+//                self.currentIndex = numberQuestion
+//                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+//                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
+//            }
+//            self.disableUserInteractionCell()
         }
     }
     
@@ -87,25 +90,34 @@ class FightViewController: BaseViewController {
     }
     
     @objc func deleteExercise(){
-        if !isEnd {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
-                self.confirmOutExercise()
-            })
-        }
+//        if !isEnd {
+        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+            self.notifyOutCompetition()
+//                self.confirmOutExercise()
+        })
+//        }
+    }
+    
+    private func notifyOutCompetition() {
+        NotificationCenter.default.post(name: NSNotification.Name("LeaveCompetition"), object: nil, userInfo: nil)
     }
     
     override func btnBackTapped() {
-        if self.currentIndex == 1 {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
-                self.confirmOutExercise()
-            })
-        } else {
-            if !isEnd {
-                self.currentIndex -= 1
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
-            }
-        }
+        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+//            self.confirmOutExercise()
+            self.notifyOutCompetition()
+        })
+//        if self.currentIndex == 1 {
+//            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+//                self.confirmOutExercise()
+//            })
+//        } else {
+//            if !isEnd {
+//                self.currentIndex -= 1
+//                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+//                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
+//            }
+//        }
     }
     
     func confirmOutExercise(){
@@ -126,11 +138,17 @@ extension FightViewController :FightViewProtocol{
                 }
             }
             DispatchQueue.main.async {
-                self.lblIndexQuestion.text = "\(self.currentIndex)/\(self.numberQuestion)"
-                self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-                self.clvRankTeam.reloadData()
-                self.lblPointTeam.text = "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage
-                self.lblRankTeam.text = LocalizableKey.rank.showLanguage + " \(teamRank)"
+                if self.currentIndex < self.numberQuestion && !self.isEnd {
+                    self.lblIndexQuestion.text = "\(self.currentIndex)/\(self.numberQuestion)"
+                    self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
+                    self.clvRankTeam.reloadData()
+                    self.lblPointTeam.text = "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage
+                    self.lblRankTeam.text = LocalizableKey.rank.showLanguage + " \(teamRank)"
+                } else {
+                    //go to result -> tranform id.
+                    
+                    
+                }
             }
         }
     }
@@ -140,6 +158,7 @@ extension FightViewController :FightViewProtocol{
     }
     
     func suggestQuestionError() {
+        
     }
     
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath) {
