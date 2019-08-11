@@ -28,7 +28,7 @@ class SelectTeamRouter: SelectTeamWireframeProtocol {
         return view
     }
     
-    static func createModule(competitionId: Int) -> UIViewController {
+    static func createModule(competitionId: Int) -> SelectTeamViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = SelectTeamViewController.initFromNib()
         let interactor = SelectTeamInteractor()

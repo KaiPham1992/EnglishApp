@@ -66,19 +66,25 @@ class CompetitionCell: BaseTableCell {
                             btnJoin.isHidden = true
                         }
                     } else {
-                        btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-                        btnJoin.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-                        btnJoin.isUserInteractionEnabled = true
-                        var distanceTime = Int(startTime - currentTime)
-                        if timer == nil {
-                            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                                if distanceTime > 0 {
-                                    self.processTime(time: distanceTime)
-                                    distanceTime -= 1
-                                } else {
-                                    self.disableTimer()
-                                }
-                            })
+                        if (competitionEntity.is_fight_joined ?? 0) == 0 {
+                            btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+                            btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
+                            btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
+                        } else {
+                            btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+                            btnJoin.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+                            btnJoin.isUserInteractionEnabled = true
+                            var distanceTime = Int(startTime - currentTime)
+                            if timer == nil {
+                                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                                    if distanceTime > 0 {
+                                        self.processTime(time: distanceTime)
+                                        distanceTime -= 1
+                                    } else {
+                                        self.disableTimer()
+                                    }
+                                })
+                            }
                         }
                     }
                 }
@@ -116,19 +122,7 @@ class CompetitionCell: BaseTableCell {
     }
     
     func processTime(time: Int) {
-        DispatchQueue.global().async {
-            let hour : Int = time / 3600
-            let min = (time - hour * 3600)/60
-            let milisecond = time  % 60
-            DispatchQueue.main.async {
-                UIView.performWithoutAnimation {
-                    self.btnJoin.setTitle("\(hour):\(min):\(milisecond < 10 ? "0\(milisecond)" : "\(milisecond)")", for: .normal)
-                }
-            }
-        }
-        
-        
-        
+        self.btnJoin.setTitle(time.convertMilisecondsToTime(), for: .normal)
     }
     
     var status : String = "CANNOT_JOIN"

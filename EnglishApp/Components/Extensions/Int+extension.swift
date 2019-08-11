@@ -73,3 +73,13 @@ class StringToIntTransform: TransformType {
         return nil
     }
 }
+
+
+extension Int {
+    func convertMilisecondsToTime() -> String {
+        let hour : Int = self / 3600
+        let min = (self - hour * 3600)/60
+        let milisecond = self  % 60
+        return "\(hour < 10 ? "0\(hour)" : "\(hour)"):\(min < 10 ? "0\(min)" : "\(min)"):\(milisecond < 10 ? "0\(milisecond)" : "\(milisecond)")"
+    }
+}
