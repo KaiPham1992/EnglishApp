@@ -109,6 +109,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(CellResultExercise.self, indexPath: indexPath)
+        cell.delegate = self
         cell.actionExplainExericse = {[weak self] (questionId,answerId) in
             self?.explainQuestion(questionId: questionId, answerId: answerId)
         }
@@ -149,5 +150,24 @@ extension ResultExerciseViewController: ResultExerciseViewProtocol {
         PopUpHelper.shared.showThanks(completionYes: {
             
         })
+    }
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+        if let cell = self.clvQuestion.cellForItem(at: index) as? CellResultExercise{
+            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+        }
+    }
+}
+
+extension ResultExerciseViewController : CellExerciseDelegate {
+    func showDetailVocubulary(word: WordExplainEntity) {
+        self.presenter?.gotoDetailVocabulary(word: word)
+    }
+    
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
+        
+    }
+    
+    func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
+        self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }
 }

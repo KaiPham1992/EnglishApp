@@ -17,6 +17,7 @@ class CellResultExercise: UICollectionViewCell {
     @IBOutlet weak var tbvResultQuestion: UITableView!
     @IBOutlet weak var heightTableView: NSLayoutConstraint!
     var attributed: NSMutableAttributedString?
+    var indexPath: IndexPath?
     var dataCell: QuestionResultEntity?{
         didSet{
             detectQuestion()
@@ -82,25 +83,28 @@ class CellResultExercise: UICollectionViewCell {
             let attributeName = "tapped" //make sure this matches the name in viewDidLoad()
             let attributeValue = content.attributedText!.attribute(NSAttributedString.Key("tapped"), at: characterIndex, effectiveRange: nil) as? String
             if let value = attributeValue {
-//                setupPopOver(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2, title: value)
+                delegate?.searchVocabulary(word: value.standString(),position: CGPoint(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2),index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
                 print("You tapped on \(attributeName) and the value is: \(value)")
             }
         }
     }
     
     func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
-        popover.removeFromSuperview()
-        let point = tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
-        let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-        aView.actionSeeDetailWord = {[weak self] (word) in
-            self?.gotoDetailVocabulary(word: word)
+        DispatchQueue.main.async {
+            self.popover.removeFromSuperview()
+            let point = self.tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
+            let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
+            //            aView.btnDetail.addTarget(self, action: #selector(self.clickDetail), for: .touchUpInside)
+            aView.actionSeeDetailWord = {[weak self] (word) in
+                self?.gotoDetailVocabulary(word: word)
+            }
+            aView.setTitle(word: word)
+            self.popover.blackOverlayColor = .clear
+            self.popover.popoverColor = .white
+            self.popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
+            self.popover.layer.cornerRadius = 5
+            self.popover.show(aView, point: point, inView: self.contentView)
         }
-        aView.setTitle(word: word)
-        popover.blackOverlayColor = .clear
-        popover.popoverColor = .white
-        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
-        popover.layer.cornerRadius = 5
-        popover.show(aView, point: point, inView: self.contentView)
     }
     
     func gotoDetailVocabulary(word: WordExplainEntity){

@@ -38,4 +38,16 @@ class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseIn
     func getAnswer(indexPath: IndexPath) -> QuestionResultEntity{
         return listAnswer[indexPath.row]
     }
+    
+    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
+        self.interactor?.searchVocabulary(word: word, position: position,index: index)
+    }
+    
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+        self.view?.searchVocabularySuccessed(wordEntity: wordEntity, position: position,index:index)
+    }
+    
+    func gotoDetailVocabulary(word: WordExplainEntity) {
+        self.router.gotoDetailVocabulary(word: word)
+    }
 }

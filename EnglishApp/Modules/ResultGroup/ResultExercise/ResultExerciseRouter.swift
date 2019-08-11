@@ -43,4 +43,9 @@ class ResultExerciseRouter: ResultExerciseWireframeProtocol {
         
         return view
     }
+    
+    func gotoDetailVocabulary(word: WordExplainEntity){
+        let vc = DetailLessonRouter.createModule(word: word)
+        self.viewController?.push(controller: vc,animated: true)
+    }
 }

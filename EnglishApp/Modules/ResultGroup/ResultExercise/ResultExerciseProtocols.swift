@@ -9,10 +9,11 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: Wireframe -
 protocol ResultExerciseWireframeProtocol: class {
-
+    func gotoDetailVocabulary(word: WordExplainEntity)
 }
 //MARK: Presenter -
 protocol ResultExercisePresenterProtocol: class {
@@ -21,6 +22,8 @@ protocol ResultExercisePresenterProtocol: class {
     func getNumberAnswer() -> Int
     func getAnswer(indexPath: IndexPath) -> QuestionResultEntity
     func reportQuestion(questionDetailId: Int, content: String)
+    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
+    func gotoDetailVocabulary(word: WordExplainEntity)
 }
 
 //MARK: Interactor -
@@ -28,6 +31,7 @@ protocol ResultExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func reportQuestionSuccessed()
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
 }
 
 protocol ResultExerciseInteractorInputProtocol: class {
@@ -35,6 +39,7 @@ protocol ResultExerciseInteractorInputProtocol: class {
     var presenter: ResultExerciseInteractorOutputProtocol?  { get set }
     func reportQuestion(questionDetailId: Int, content: String)
 
+    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
     /* Presenter -> Interactor */
 }
 
@@ -43,6 +48,7 @@ protocol ResultExerciseViewProtocol: class {
 
     var presenter: ResultExercisePresenterProtocol?  { get set }
     func reportQuestionSuccessed()
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
 
     /* Presenter -> ViewController */
 }
