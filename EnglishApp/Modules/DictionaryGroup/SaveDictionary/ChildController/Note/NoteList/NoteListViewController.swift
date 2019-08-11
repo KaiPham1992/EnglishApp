@@ -53,6 +53,7 @@ extension NoteListViewController : NoteListViewProtocol {
         tbvNoteList.reloadData()
         actionDeleteFinish?()
     }
+    
     func notifyDelete(){
         PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.cofirm_delete.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased()) { [unowned self] in
             self.presenter?.confirmDelete()

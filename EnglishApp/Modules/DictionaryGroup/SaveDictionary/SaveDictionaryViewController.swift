@@ -38,6 +38,13 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
             controller.reloadView()
             return
         }
+        if let controller = self.viewControllers[self.currentIndex] as? VocabularyViewController {
+            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
+            controller.actionDeleteFinish = actionReloadFinish
+            controller.isDelete = true
+            controller.tableView.reloadData()
+            return
+        }
     }
     
     @objc func clickFinish(){
