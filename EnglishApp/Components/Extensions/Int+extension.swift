@@ -73,3 +73,25 @@ class StringToIntTransform: TransformType {
         return nil
     }
 }
+
+class StringToDoubleTransform: TransformType {
+    public typealias Object     = Double
+    public typealias JSON       = String
+    
+    public init() {}
+    
+    open func transformFromJSON(_ value: Any?) -> Double? {
+        if let timeStr = value as? String {
+            return Double(timeStr)
+        }
+        
+        return nil
+    }
+    
+    open func transformToJSON(_ value: Double?) -> String? {
+        if let intValue = value {
+            return intValue.description
+        }
+        return nil
+    }
+}

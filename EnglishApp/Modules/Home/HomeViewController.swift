@@ -57,6 +57,8 @@ class HomeViewController: BaseViewController {
         configureTable()
         presenter?.getHomeRecently()
         presenter?.getTopThree()
+        
+        PaymentHelper.shared.fetchAvailableProducts()
     }
     
     override func setUpViews() {

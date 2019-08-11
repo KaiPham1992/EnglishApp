@@ -23,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         NFX.sharedInstance().start()
-        Fabric.with([Crashlytics.self])
+//        Fabric.with([Crashlytics.self])
         Crashlytics.sharedInstance().debugMode = true
         Fabric.sharedSDK().debug = true 
         LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)

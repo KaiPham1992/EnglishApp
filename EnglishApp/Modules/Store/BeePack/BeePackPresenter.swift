@@ -21,6 +21,7 @@ class BeePackPresenter: BeePackPresenterProtocol, BeePackInteractorOutputProtoco
         self.interactor = interactor
         self.router = router
     }
+    
     func upgradeProduct(productID: String) {
         Provider.shared.productAPIService.upgradeProduc(productID: productID, success: { (success) in
             guard let success = success else {return}

@@ -27,7 +27,13 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         guard let id = product.id else {
             return
         }
-        presenter?.upgradeProduct(productID: id)
+        ProgressView.shared.show()
+        PaymentHelper.shared.purcharseProduct("product_test_03") {
+            ProgressView.shared.hide()
+            print("<#T##items: Any...##Any#>")
+            self.presenter?.upgradeProduct(productID: id)
+        }
+        
     }
     
     override func setUpNavigation() {

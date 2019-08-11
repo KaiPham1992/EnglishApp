@@ -1098,6 +1098,10 @@
 		DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2ADE7322841BB9003768CE /* MenuInteractor.swift */; };
 		DE2ADE7A22841BB9003768CE /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DE2ADE7422841BB9003768CE /* MenuViewController.xib */; };
 		DE2C07F822857FF100BAE311 /* BaseTabStripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */; };
+		DE2D679522F9BF050055586B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2D679422F9BF050055586B /* StoreKit.framework */; };
+		DE2D679822F9BFFA0055586B /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2D679722F9BFFA0055586B /* PaymentViewModel.swift */; };
+		DE2D679922F9BFFA0055586B /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2D679722F9BFFA0055586B /* PaymentViewModel.swift */; };
+		DE2D679A22F9BFFA0055586B /* PaymentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2D679722F9BFFA0055586B /* PaymentViewModel.swift */; };
 		DE361DD62283E4BD00FA3B0D /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD02283E4BD00FA3B0D /* LoginPresenter.swift */; };
 		DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD12283E4BD00FA3B0D /* LoginRouter.swift */; };
 		DE361DD82283E4BD00FA3B0D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE361DD22283E4BD00FA3B0D /* LoginViewController.swift */; };
@@ -2617,6 +2621,8 @@
 		DE2ADE7322841BB9003768CE /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
 		DE2ADE7422841BB9003768CE /* MenuViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
 		DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabStripViewController.swift; sourceTree = "<group>"; };
+		DE2D679422F9BF050055586B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DE2D679722F9BFFA0055586B /* PaymentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewModel.swift; sourceTree = "<group>"; };
 		DE361DD02283E4BD00FA3B0D /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		DE361DD12283E4BD00FA3B0D /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
 		DE361DD22283E4BD00FA3B0D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -3000,6 +3006,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C26E086031F22EB8D8ABBC4B /* Pods_EnglishApp_Prod.framework in Frameworks */,
+				DE2D679522F9BF050055586B /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3278,6 +3285,7 @@
 		2DF10F38001118A94DAFC38F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE2D679422F9BF050055586B /* StoreKit.framework */,
 				187B6424E15EB5BB969D0CA6 /* Pods_EnglishApp.framework */,
 				759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */,
 				C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */,
@@ -4069,6 +4077,14 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		DE2D679622F9BFC60055586B /* PaymentViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DE2D679722F9BFFA0055586B /* PaymentViewModel.swift */,
+			);
+			path = PaymentViewModel;
+			sourceTree = "<group>";
+		};
 		DE361D912283E1D700FA3B0D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -4342,6 +4358,7 @@
 		DE361EEB2283E84F00FA3B0D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				DE2D679622F9BFC60055586B /* PaymentViewModel */,
 				2AA20CBF22F5432500F38894 /* Dictionaty */,
 				2AA6D38722DC596E006E9859 /* Competition */,
 				76C92F9422C4876C00E8ED69 /* Exercise */,
@@ -5414,6 +5431,13 @@
 					DE3CC3392283DD980037DBE4 = {
 						CreatedOnToolsVersion = 10.2;
 					};
+					DE952FAE2287DF4800E3F688 = {
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
+					};
 				};
 			};
 			buildConfigurationList = DE3CC3352283DD980037DBE4 /* Build configuration list for PBXProject "EnglishApp" */;
@@ -6136,6 +6160,7 @@
 				DE952F9E2287D2A700E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953187228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE49F82122A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
+				DE2D679822F9BFFA0055586B /* PaymentViewModel.swift in Sources */,
 				DEA932A222BF7ED80050FB1D /* QAEndPoint.swift in Sources */,
 				DE952F952287D2A700E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEA932AE22BFE0600050FB1D /* ProductEndPoint.swift in Sources */,
@@ -6732,6 +6757,7 @@
 				DE952FB72287DF4800E3F688 /* KActivityIndicatorType.swift in Sources */,
 				DE953188228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
 				DE49F82222A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
+				DE2D679922F9BFFA0055586B /* PaymentViewModel.swift in Sources */,
 				DEA932A322BF7ED80050FB1D /* QAEndPoint.swift in Sources */,
 				DE952FB82287DF4800E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
 				DEA932AF22BFE0600050FB1D /* ProductEndPoint.swift in Sources */,
@@ -7439,6 +7465,7 @@
 				76E2FF54228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				2AED14A822EE02D50076C223 /* ExplainExerciseViewController.swift in Sources */,
 				2A9A81F022EC5C6300345C5F /* WordExplainEntity.swift in Sources */,
+				DE2D679A22F9BFFA0055586B /* PaymentViewModel.swift in Sources */,
 				2AB4A04D22E1E87C00557B5F /* DailyMissonRouter.swift in Sources */,
 				DE95307A2287DF6400E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
 				DE95307B2287DF6400E3F688 /* UpdateProfileSocial.swift in Sources */,
@@ -8079,17 +8106,18 @@
 			baseConfigurationReference = 5B9797D30EEE2E20FFDA9072 /* Pods-EnglishApp_Prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = Obbe_provisioning;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG PROD";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8101,18 +8129,18 @@
 			baseConfigurationReference = C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "Apple Development: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = Obbe_provisioning;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
