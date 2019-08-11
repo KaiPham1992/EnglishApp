@@ -11,7 +11,6 @@ import UIKit
 class ListManagerVC: BaseViewController {
 
     var tableView: UITableView = UITableView()
-    // if height row = 0 -> set dynamic height
     
     //list data of tableview
     var listData: [Any] = []
@@ -50,11 +49,13 @@ class ListManagerVC: BaseViewController {
         if data.count < limit {
             isLoadmore = false
         }
+        
         if self.offset == 0 {
             self.listData = data
         } else {
             self.listData += data
         }
+        
         self.tableView.reloadData()
     }
     
@@ -92,7 +93,7 @@ class ListManagerVC: BaseViewController {
         refreshControl.endRefreshing()
     }
     
-    func callAPI(){
+    func callAPI() {
         
     }
     
@@ -100,10 +101,12 @@ class ListManagerVC: BaseViewController {
         return UITableViewCell()
     }
 }
+
 extension ListManagerVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -111,7 +114,8 @@ extension ListManagerVC : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == listData.count - 1 && isLoadmore{
+
+        if indexPath.row == listData.count - 1 && isLoadmore {
             self.offset += limit
             callAPI()
         }
@@ -122,6 +126,7 @@ extension ListManagerVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row = listData.count
+        
         if row == 0 {
             showNoData()
         } else {

@@ -51,7 +51,7 @@ class CompetitionViewController: ListManagerVC {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = false
     }
-    
+  
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeue(CompetitionCell.self, for: indexPath)
         cell.type = self.type

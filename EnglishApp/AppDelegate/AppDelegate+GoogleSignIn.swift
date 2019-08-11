@@ -18,9 +18,9 @@ extension AppDelegate {
         
         // get key from fire base : AIzaSyCaOVKfotVN6tQ4sUbv8ssND
         #if APPSTORE
-        GMSServices.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
-        GMSPlacesClient.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
-        GIDSignIn.sharedInstance().clientID = "204187467150-uf817q823gfjullmamdligjgvh257ki9.apps.googleusercontent.com"
+        GMSServices.provideAPIKey("AIzaSyAwDru9BQm6Vj7DeyCSfqZgAJc3V748aug")
+        GMSPlacesClient.provideAPIKey("AIzaSyAwDru9BQm6Vj7DeyCSfqZgAJc3V748aug")
+        GIDSignIn.sharedInstance().clientID = "925930271420-g38602u84281v4htrbc2um3o7i70jbi8.apps.googleusercontent.com"
         #else
         GMSServices.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
         GMSPlacesClient.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")

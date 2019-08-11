@@ -11,10 +11,14 @@ import UIKit
 
 class StudyPackDetailPresenter: StudyPackDetailPresenterProtocol, StudyPackDetailInteractorOutputProtocol {
     func upgradeProduct(productID: String) {
+        ProgressView.shared.show()
         Provider.shared.productAPIService.upgradeProduc(productID: productID, success: { (success) in
+            ProgressView.shared.hide()
             guard let success = success else {return}
+            
             self.view?.didUpgrade(info: success)
         }) { (error) in
+            ProgressView.shared.hide()
             guard let error = error else {return}
             self.view?.didUpgrade(error: error)
         }

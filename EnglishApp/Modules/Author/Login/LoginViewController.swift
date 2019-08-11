@@ -41,6 +41,8 @@ class LoginViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     override func setUpViews() {
@@ -90,6 +92,7 @@ class LoginViewController: BaseViewController {
         if validateInputData() {
             presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
         }
+        
     }
     
     @IBAction func btnForgotPassTapped() {
