@@ -456,3 +456,27 @@ extension String {
         return result
     }
 }
+
+extension String {
+    func isWord() -> Bool {
+        let regular = "[a-zA-Z]"
+        let wordRegular = NSPredicate(format: "SELF MATCHES %@", regular)
+        return wordRegular.evaluate(with: String(self))
+    }
+    //standardized string
+    func standString() -> String{
+        let count = self.count
+        var result = ""
+        for index in 0..<count {
+            if index > 0 && self[index] == "\n" {
+                 break
+            }
+            if !self[index].isWord() {
+                result += ""
+            } else {
+                result += self[index]
+            }
+        }
+        return result
+    }
+}

@@ -21,9 +21,10 @@ class DetailLessonViewController: BaseViewController {
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: ItemLesson?
-    var idLesson : String = "1"
+    var idLesson : String = "0"
     var callbackCallAgainAPI : (()->())?
     var isClickLikeImage = false
+    var vocabulary : WordExplainEntity?
     
     var isLike = 0{
         didSet{
@@ -37,8 +38,12 @@ class DetailLessonViewController: BaseViewController {
         
         if let _lesson = lesson {
             idLesson = _lesson._id ?? "1"
+            self.presenter?.getLessonDetail(lesson_id: Int(self.idLesson) ?? 0)
         }
-        self.presenter?.getLessonDetail(lesson_id: Int(self.idLesson) ?? 0)
+        
+        if let _vocabulary = self.vocabulary {
+            reloadView()
+        }
     }
     
     override func btnBackTapped() {
@@ -71,22 +76,27 @@ class DetailLessonViewController: BaseViewController {
 
 extension DetailLessonViewController:DetailLessonViewProtocol{
     func reloadView() {
-        setTitleNavigation(title: self.presenter?.getTitle() ?? "")
-        if let attribute = self.presenter?.getContentLesson(){
-            self.lbContent.attributedText = attribute
-        }
-        if let comment = self.presenter?.getNumberComment(){
-            self.viewMessage.setupNumber(number: comment)
+        if idLesson != "0" {
+            setTitleNavigation(title: self.presenter?.getTitle() ?? "")
+            if let attribute = self.presenter?.getContentLesson(){
+                self.lbContent.attributedText = attribute
+            }
+            if let comment = self.presenter?.getNumberComment(){
+                self.viewMessage.setupNumber(number: comment)
+            } else {
+                self.viewMessage.setupNumber(number: 0)
+            }
+            
+            if let _ = self.presenter?.getToggleLike() {
+                self.isLike = 1
+                self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
+            } else {
+                self.isLike = 0
+                self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
+            }
         } else {
-            self.viewMessage.setupNumber(number: 0)
-        }
-        
-        if let _ = self.presenter?.getToggleLike() {
-            self.isLike = 1
-            self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
-        } else {
-            self.isLike = 0
-            self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
+            setTitleNavigation(title: self.vocabulary?.word ?? "")
+            self.lbContent.attributedText = self.vocabulary?.explain.html2Attributed
         }
     }
 }

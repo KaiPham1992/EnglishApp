@@ -25,6 +25,7 @@ class CellFillExercise: UICollectionViewCell {
     var listAnswer : [QuestionChoiceResultParam] = []
     
     private var listViewAnswer : [ViewFillQuestion] = []
+    var indexPath: IndexPath?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -79,19 +80,22 @@ class CellFillExercise: UICollectionViewCell {
             let attributeName = "tapped"
             let attributeValue = content.attributedText!.attribute(NSAttributedString.Key("tapped"), at: characterIndex, effectiveRange: nil) as? String
             if let value = attributeValue {
-                setupPopOver(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2, title: value)
+                delegate?.searchVocabulary(word: value.standString(),position: CGPoint(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2),index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
                 print("You tapped on \(attributeName) and the value is: \(value)")
             }
         }
     }
     
-    func setupPopOver(x:CGFloat, y: CGFloat,title: String){
+    func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
         DispatchQueue.main.async {
             self.popover.removeFromSuperview()
             let point = self.tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
             let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-            aView.btnDetail.addTarget(self, action: #selector(self.clickDetail), for: .touchUpInside)
-            aView.setTitle(title: title)
+//            aView.btnDetail.addTarget(self, action: #selector(self.clickDetail), for: .touchUpInside)
+            aView.actionSeeDetailWord = {[weak self] (word) in
+                self?.gotoDetailVocabulary(word: word)
+            }
+            aView.setTitle(word: word)
             self.popover.blackOverlayColor = .clear
             self.popover.popoverColor = .white
             self.popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
@@ -100,8 +104,8 @@ class CellFillExercise: UICollectionViewCell {
         }
     }
     
-    @objc func clickDetail(){
-        delegate?.showDetailVocubulary(text: "")
+    func gotoDetailVocabulary(word: WordExplainEntity){
+        delegate?.showDetailVocubulary(word: word)
     }
     
     func setFillCell(numberView: Int){
@@ -113,7 +117,7 @@ class CellFillExercise: UICollectionViewCell {
                     view.content = listAnswer[index-1].value ?? ""
                 }
                 if listAnswerCompetition.count > 0 {
-                    view.content = listAnswerCompetition[index-1].value ?? ""
+                    view.content = listAnswerCompetition[index-1].value
                 }
                 self.stvFillQuestion.addArrangedSubview(view)
                 self.listViewAnswer.append(view)

@@ -17,7 +17,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchVocabularyView" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="btnDetail" destination="nzE-Cu-poR" id="g1s-AG-XHF"/>
+                <outlet property="btnVolume" destination="Jav-eW-s2O" id="ggW-D7-mZQ"/>
+                <outlet property="lblDetail" destination="kxL-xi-lNH" id="y52-tB-xQU"/>
                 <outlet property="lblTitle" destination="fxw-Cw-kbu" id="6Yn-Kg-pbe"/>
+                <outlet property="lblVolume" destination="PHq-i8-Aiq" id="A3J-jS-yYK"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -36,8 +39,8 @@
                             </constraints>
                             <state key="normal" backgroundImage="Material_Icons_black_volume_up"/>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="/ə'pi:l/ /ə'pi:l/" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHq-i8-Aiq">
-                            <rect key="frame" x="302" y="5.5" width="75" height="19"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHq-i8-Aiq">
+                            <rect key="frame" x="377" y="15" width="0.0" height="0.0"/>
                             <constraints>
                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="75" id="X9l-U1-Hfn"/>
                             </constraints>
@@ -45,31 +48,34 @@
                             <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="appeal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-Cw-kbu">
-                            <rect key="frame" x="8" y="7" width="284" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fxw-Cw-kbu">
+                            <rect key="frame" x="8" y="15" width="359" height="0.0"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zso-aJ-s2O">
-                            <rect key="frame" x="0.0" y="28" width="414" height="1"/>
+                            <rect key="frame" x="0.0" y="20" width="414" height="1"/>
                             <color key="backgroundColor" red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="PX4-4l-zZk"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="sự kêu gọi" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxL-xi-lNH">
-                            <rect key="frame" x="8" y="34" width="398" height="16.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxL-xi-lNH">
+                            <rect key="frame" x="8" y="26" width="398" height="0.0"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzE-Cu-poR">
-                            <rect key="frame" x="0.0" y="54.5" width="414" height="25.5"/>
+                            <rect key="frame" x="0.0" y="30" width="414" height="50"/>
                             <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <state key="normal" title="Xem chi tiết">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="seeDetail:" destination="-1" eventType="touchUpInside" id="Gea-O0-Tbo"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

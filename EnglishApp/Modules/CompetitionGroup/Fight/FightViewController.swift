@@ -274,16 +274,21 @@ extension FightViewController: UICollectionViewDataSource{
 }
 
 extension FightViewController : CellExerciseDelegate{
+    
+    func showDetailVocubulary(word: WordExplainEntity) {
+        
+    }
+    
+    func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
+        
+    }
+    
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         PopUpHelper.shared.showSuggesstionResult(diamond: {
             self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
         }) {
             self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
         }
-    }
-    
-    func showDetailVocubulary(text: String) {
-        self.presenter?.gotoDetailVocabulary()
     }
 }
 

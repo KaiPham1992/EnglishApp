@@ -28,11 +28,14 @@ enum ExerciseEnpoint {
     case suggestQuestion(id: String,isDiamond: Bool)
     case explainExercise(id: Int)
     case reportQuestion(question_details_id:Int,content: String)
+    case searchVocabulary(word: String)
 }
 
 extension ExerciseEnpoint: EndPointType {
     var path: String {
         switch self {
+        case .searchVocabulary:
+            return "_api/dictionary/lookup_word_online"
         case .reportQuestion:
             return "_api/question/report_question"
         case .explainExercise:
@@ -74,6 +77,8 @@ extension ExerciseEnpoint: EndPointType {
     
     var httpMethod: HTTPMethod {
         switch self {
+        case .searchVocabulary:
+            return .post
         case .reportQuestion:
             return .post
         case .explainExercise:
@@ -116,6 +121,9 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
+        case .searchVocabulary(let word):
+            return ["dictionary_id": 1,
+                    "word": word]
         case .reportQuestion(let question_details_id,let content):
             return ["question_details_id":question_details_id,"content":content]
         case .explainExercise(let id):

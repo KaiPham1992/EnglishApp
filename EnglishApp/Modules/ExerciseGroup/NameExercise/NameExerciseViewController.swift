@@ -30,11 +30,7 @@ class NameExerciseViewController: BaseViewController {
     weak var exerciseDelegate: ExerciseDelegate?
 
     @IBAction func clickNext(_ sender: Any) {
-//        if let param = self.addDataCell(indexPath: IndexPath(row: self.currentIndex - 1, section: 0)) {
-//            self.listAnswerQuestion[self.currentIndex - 1].answer = param
-//        }
         if self.currentIndex + 1 > numberQuestion {
-//            self.paramSubmit?.questions = listAnswerQuestion
             if let _param = self.paramSubmit {
                 _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
                 self.presenter?.submitExercise(param: _param)
@@ -45,17 +41,6 @@ class NameExerciseViewController: BaseViewController {
             clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
         }
     }
-
-//    func addDataCell(indexPath: IndexPath) -> [QuestionChoiceResultParam]? {
-//        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise {
-//            return cell.listAnswer
-//        }
-//        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellFillExercise {
-//            return cell.listAnswer
-//        }
-//        return nil
-//    }
-//
     var numberQuestion : Int = 0
     var currentTime : Int = 0
     var listAnswerQuestion : [QuestionSubmitParam] = []
@@ -196,6 +181,16 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     func exitSuccessed() {
         self.exerciseDelegate?.confirmOutTestEntrance()
     }
+    
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
+            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+        }
+        
+        if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
+            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+        }
+    }
 }
 extension NameExerciseViewController : UICollectionViewDelegate{
     
@@ -225,6 +220,7 @@ extension NameExerciseViewController: UICollectionViewDataSource{
             if type == "" || type == "2"{
                 let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
                 cell.setupCell(data: data)
+                cell.indexPath = indexPath
                 cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
                 return cell
             }
@@ -240,6 +236,12 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 }
 
 extension NameExerciseViewController : CellExerciseDelegate{
+    
+    
+    func showDetailVocubulary(word: WordExplainEntity) {
+        self.presenter?.gotoDetailVocabulary(word: word)
+    }
+
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         PopUpHelper.shared.showSuggesstionResult(diamond: {
             self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
@@ -248,8 +250,8 @@ extension NameExerciseViewController : CellExerciseDelegate{
         }
     }
     
-    func showDetailVocubulary(text: String) {
-        self.presenter?.gotoDetailVocabulary()
+    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
+        self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }
 }
 

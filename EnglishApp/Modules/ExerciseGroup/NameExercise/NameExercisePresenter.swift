@@ -31,20 +31,12 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.interactor?.getDailyMisson()
     }
     
-    func gotoDetailVocabulary() {
-        self.router.gotoDetailVocabulary()
-    }
-    
-    func getAllTime() -> [Int]? {
-        return exerciseEntity?.questions?.map{$0.question_time}.compactMap{Int($0 ?? "0")}
+    func gotoDetailVocabulary(word: WordExplainEntity) {
+        self.router.gotoDetailVocabulary(word: word)
     }
     
     func submitExercise(param: SubmitExerciseParam) {
         self.interactor?.submitExercise(param: param)
-    }
-    
-    func getTotalTime() -> Int?{
-        return exerciseEntity?.total_times
     }
     
     func gotoResult(result: TestResultProfileEntity) {
@@ -104,5 +96,13 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     func suggestQuestionError(error: APIError) {
         self.error = error
         self.view?.suggestQuestionError()
+    }
+    
+    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
+        self.interactor?.searchVocabulary(word: word, position: position,index: index)
+    }
+    
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+        self.view?.searchVocabularySuccessed(wordEntity: wordEntity, position: position,index:index)
     }
 }

@@ -9,10 +9,11 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: Wireframe -
 protocol NameExerciseWireframeProtocol: class {
-    func gotoDetailVocabulary()
+    func gotoDetailVocabulary(word: WordExplainEntity)
     func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise)
 }
 //MARK: Presenter -
@@ -23,16 +24,16 @@ protocol NameExercisePresenterProtocol: class {
     var exerciseEntity: ViewExerciseEntity? {get set}
     var error: APIError? {get set}
     
-    func gotoDetailVocabulary()
+    func gotoDetailVocabulary(word: WordExplainEntity)
     func getViewExercise(id: String)
     func getViewEntranceTest()
     func getTime(index: Int) -> Int?
     func getQuestion(indexPath: IndexPath) -> QuestionEntity?
-    func getAllTime() -> [Int]?
     func submitExercise(param: SubmitExerciseParam)
     func getDailyMisson()
     func exitExercise(id : Int)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)
+    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
     
 }
 
@@ -46,6 +47,7 @@ protocol NameExerciseInteractorOutputProtocol: class {
     func exitSuccessed(respone: TestResultProfileEntity)
     func suggestQuestionSuccessed(respone: [String])
     func suggestQuestionError(error: APIError)
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
 }
 
 protocol NameExerciseInteractorInputProtocol: class {
@@ -57,6 +59,7 @@ protocol NameExerciseInteractorInputProtocol: class {
     func getDailyMisson()
     func exitExercise(id : Int)
     func suggestQuestion(id: String,isDiamond: Bool)
+    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
 
     /* Presenter -> Interactor */
 }
@@ -72,4 +75,5 @@ protocol NameExerciseViewProtocol: class {
     func exitSuccessed()
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath)
     func suggestQuestionError()
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
 }
