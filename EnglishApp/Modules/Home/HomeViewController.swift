@@ -226,7 +226,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func btnTestBeginTapped() {
-        let vc = NameExerciseRouter.createModule()
+        let vc = NameExerciseRouter.createModule(id: "", type: .entranceExercise)
         vc.exerciseDelegate = self
         self.push(controller: vc)
     }

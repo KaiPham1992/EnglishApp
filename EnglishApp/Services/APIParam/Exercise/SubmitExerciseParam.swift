@@ -12,7 +12,7 @@ import ObjectMapper
 class SubmitExerciseParam : BaseParam{
     var exercise_id : Int?
     var total_time : Int = 0
-    var questions : [QuestionSubmitParam]?
+    var questions : [QuestionSubmitParam] = []
     init(exercise_id : Int, total_time : Int = 0,questions : [QuestionSubmitParam] = []) {
         super.init()
         self.exercise_id = exercise_id

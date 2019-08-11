@@ -30,11 +30,11 @@ class NameExerciseViewController: BaseViewController {
     weak var exerciseDelegate: ExerciseDelegate?
 
     @IBAction func clickNext(_ sender: Any) {
-        if let param = self.addDataCell(indexPath: IndexPath(row: self.currentIndex - 1, section: 0)) {
-            self.listAnswerQuestion[self.currentIndex - 1].answer = param
-        }
+//        if let param = self.addDataCell(indexPath: IndexPath(row: self.currentIndex - 1, section: 0)) {
+//            self.listAnswerQuestion[self.currentIndex - 1].answer = param
+//        }
         if self.currentIndex + 1 > numberQuestion {
-            self.paramSubmit?.questions = listAnswerQuestion
+//            self.paramSubmit?.questions = listAnswerQuestion
             if let _param = self.paramSubmit {
                 _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
                 self.presenter?.submitExercise(param: _param)
@@ -46,16 +46,16 @@ class NameExerciseViewController: BaseViewController {
         }
     }
 
-    func addDataCell(indexPath: IndexPath) -> [QuestionChoiceResultParam]? {
-        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise {
-            return cell.listAnswer
-        }
-        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellFillExercise {
-            return cell.listAnswer
-        }
-        return nil
-    }
-    
+//    func addDataCell(indexPath: IndexPath) -> [QuestionChoiceResultParam]? {
+//        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise {
+//            return cell.listAnswer
+//        }
+//        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellFillExercise {
+//            return cell.listAnswer
+//        }
+//        return nil
+//    }
+//
     var numberQuestion : Int = 0
     var currentTime : Int = 0
     var listAnswerQuestion : [QuestionSubmitParam] = []
@@ -177,6 +177,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
                     questionSubmitParam.answer = answer
                     self.listAnswerQuestion.append(questionSubmitParam)
                 }
+                self.paramSubmit?.questions = self.listAnswerQuestion
             }
             DispatchQueue.main.async {
                 self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")

@@ -15,9 +15,9 @@ import SDWebImage
 class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
-//        if type != .history {
-//            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
-//        }
+        if type == .entranceExercise {
+            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
+        }
         self.navigationController?.popToRootViewController(animated: true)
     }
     
@@ -47,7 +47,7 @@ class ResultViewController: BaseViewController {
         viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
         viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
         
-        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise {
+        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
             viewRank.isHidden = false
             self.presenter?.getViewResult(id: id)
         }
@@ -89,9 +89,11 @@ class ResultViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-//        if type != .history {
-//            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
-//        }
+        
+        if type == .entranceExercise {
+            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
+        }
+        
         if isHistory {
             super.btnBackTapped()
         } else {
