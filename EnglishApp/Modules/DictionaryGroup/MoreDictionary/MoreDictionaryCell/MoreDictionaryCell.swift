@@ -18,8 +18,14 @@ class MoreDictionaryCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
     }
+    var isDownloaded : Bool = false
+    var actionCell : ((_ idDownloaded: Bool)->())?
+    @IBAction func clickAction(_ sender: Any) {
+        actionCell?(isDownloaded)
+    }
     
     func setupCell(isDownloaded: Bool, title: String){
+        self.isDownloaded = isDownloaded
         lblTitle.text = title
         if isDownloaded {
             heightBtnChocie.constant = 24

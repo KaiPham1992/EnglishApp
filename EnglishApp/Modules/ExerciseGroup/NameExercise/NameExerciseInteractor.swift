@@ -15,14 +15,12 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     weak var presenter: NameExerciseInteractorOutputProtocol?
     
     func getDailyMisson() {
-        ProgressView.shared.show()
+        ProgressView.shared.showLoadingCompetition()
         Provider.shared.exerciseAPIService.getDailyMisson(success: { (respone) in
-            ProgressView.shared.hide()
             if let _respone = respone {
                 self.presenter?.getExerciseSuccessed(respone: _respone)
             }
         }) { (error) in
-            ProgressView.shared.hide()
             guard let _error = error else {
                 return
             }
@@ -31,14 +29,12 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     }
     
     func getViewExercise(id: String) {
-        ProgressView.shared.show()
+        ProgressView.shared.showLoadingCompetition()
         Provider.shared.exerciseAPIService.getViewExercise(id: id, success: { (respone) in
-            ProgressView.shared.hide()
             if let _respone = respone {
                 self.presenter?.getExerciseSuccessed(respone: _respone)
             }
         }) { (error) in
-            ProgressView.shared.hide()
             guard let _error = error else {
                 return
             }
@@ -59,14 +55,12 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     }
     
     func getViewEntranceTest() {
-        ProgressView.shared.show()
+        ProgressView.shared.showLoadingCompetition()
         Provider.shared.exerciseAPIService.getEntranceExercise(success: { (respone) in
-            ProgressView.shared.hide()
             if let _respone = respone {
                 self.presenter?.getExerciseSuccessed(respone: _respone)
             }
         }) { (error) in
-            ProgressView.shared.hide()
             guard let _error = error else {
                 return
             }

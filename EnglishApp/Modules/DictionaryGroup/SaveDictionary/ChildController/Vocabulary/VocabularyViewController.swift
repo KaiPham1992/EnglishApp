@@ -11,17 +11,46 @@
 import UIKit
 import XLPagerTabStrip
 
-class VocabularyViewController: BaseViewController {
+class VocabularyViewController: ListManagerVC {
 
 	var presenter: VocabularyPresenterProtocol?
+    var isDelete = false
 
     override func setUpViews() {
+        showButtonBack = false
         super.setUpViews()
+    }
+    override func registerTableView() {
+        super.registerTableView()
+        tableView.registerXibFile(CellGrammar.self)
+    }
+    override func callAPI() {
+        super.callAPI()
+        self.presenter?.getListLikeVocab(offset: self.offset)
+    }
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! WordLikeEntity
+        let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
+        cell.indexPath = indexPath
+        cell.setupTitle(title: data.word&)
+
+        if isDelete {
+            cell.setupDelete()
+            cell.actionClick = {[weak self] (_) in
+               data.isDelete = !data.isDelete
+            }
+        } else {
+            cell.setupNoDelete()
+        }
         
+        return cell
     }
 }
 extension VocabularyViewController : VocabularyViewProtocol{
-    
+    func reloadView(listResponse: [WordLikeEntity]) {
+        initLoadData(data: listResponse)
+    }
 }
 
 extension VocabularyViewController: IndicatorInfoProvider{

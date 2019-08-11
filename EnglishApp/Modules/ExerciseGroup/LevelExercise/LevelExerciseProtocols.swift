@@ -18,8 +18,6 @@ protocol LevelExerciseWireframeProtocol: class {
 protocol LevelExercisePresenterProtocol: class {
 
     var interactor: LevelExerciseInteractorInputProtocol? { get set }
-   
-    var levelExerciseEntity: LevelExerciseEntity?{get set}
     
     func getLevelExercise(type_test: Int,offset: Int)
     func gotoCatelogy(studyPackId: Int)
@@ -48,7 +46,7 @@ protocol LevelExerciseInteractorInputProtocol: class {
 protocol LevelExerciseViewProtocol: class {
 
     var presenter: LevelExercisePresenterProtocol?  { get set }
-    func reloadView()
+    func reloadView(listData: [SearchEntity])
 
     /* Presenter -> ViewController */
 }

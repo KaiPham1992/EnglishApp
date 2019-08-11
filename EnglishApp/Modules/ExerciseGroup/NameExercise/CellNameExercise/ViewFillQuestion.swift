@@ -26,6 +26,13 @@ class ViewFillQuestion : BaseViewXib {
             lblNumberQuestion.text = LocalizableKey.sentence.showLanguage + " \(tagView):"
         }
     }
+    
+    var content : String = "" {
+        didSet{
+            tvContent.text = content
+        }
+    }
+    
     var oldHeight : CGFloat = 40
     
     override func setUpViews() {

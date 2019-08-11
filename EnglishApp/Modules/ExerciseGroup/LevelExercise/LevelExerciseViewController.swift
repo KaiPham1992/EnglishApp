@@ -17,74 +17,47 @@ enum TypeExercise : Int {
     case assign = 6
 }
 
-class LevelExerciseViewController: BaseViewController {
+class LevelExerciseViewController: ListManagerVC {
 
 	var presenter: LevelExercisePresenterProtocol?
     
     @IBOutlet weak var tbvLevelExercise: UITableView!
     
-    var offset: Int = 0 
-    
     override func setUpViews() {
+        showButtonBack = true
+        customTitle = LocalizableKey.level_exercise.showLanguage
         super.setUpViews()
-
-        tbvLevelExercise.registerXibFile(CellLevelExercise.self)
-        tbvLevelExercise.dataSource = self
-        tbvLevelExercise.delegate = self
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func registerTableView() {
+        super.registerTableView()
+        self.tableView.registerXibFile(CellLevelExercise.self)
+    }
+    
+    override func callAPI() {
+        super.callAPI()
         self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
     }
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
-        addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
-    }
-
-}
-
-extension LevelExerciseViewController : LevelExerciseViewProtocol{
-    func reloadView() {
-        tbvLevelExercise.reloadData()
-    }
-}
-
-extension LevelExerciseViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.levelExerciseEntity?.study_categories.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
-        if let dataCell = self.presenter?.levelExerciseEntity?.study_categories[indexPath.row] {
-            cell.lblNameExercise.text = dataCell.name&
-        }
+        let data = item as! SearchEntity
+        cell.lblNameExercise.text = data.name&
         return cell
     }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.levelExerciseEntity?.study_categories.count ?? 0
-        if indexPath.row == row - 1{
-            self.offset += limit
-            self.presenter?.getLevelExercise(type_test: 7, offset: self.offset)
-        }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! SearchEntity
+        self.presenter?.gotoCatelogy(studyPackId: Int(data._id ?? "") ?? 0)
     }
 }
-extension LevelExerciseViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.gotoCatelogy(studyPackId: Int(self.presenter?.levelExerciseEntity?.study_categories[indexPath.row]._id ?? "") ?? 0)
+extension LevelExerciseViewController : LevelExerciseViewProtocol {
+    func reloadView(listData: [SearchEntity]) {
+        initLoadData(data: listData)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+    func reloadView() {
+        
     }
 }

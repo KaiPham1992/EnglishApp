@@ -66,20 +66,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sed-0u-OdD">
                         <rect key="frame" x="0.0" y="0.0" width="162" height="192.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tên cuộc thi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-lp-gAh">
-                                <rect key="frame" x="15" y="16" width="139" height="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tên cuộc thi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-lp-gAh">
+                                <rect key="frame" x="15" y="16" width="139" height="18"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điều kiện: Kim cương 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Rt-qk2">
-                                <rect key="frame" x="15" y="43" width="139" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Điều kiện: Kim cương 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Rt-qk2">
+                                <rect key="frame" x="15" y="42" width="139" height="16"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-7S-Ynm">
-                                <rect key="frame" x="15" y="67" width="139" height="20"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-7S-Ynm">
+                                <rect key="frame" x="15" y="66" width="139" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="0qZ-Fb-ga9">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -107,8 +107,8 @@
                                     <constraint firstItem="0qZ-Fb-ga9" firstAttribute="top" secondItem="5wk-7S-Ynm" secondAttribute="top" id="yHx-ex-Fd1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-RV-ouV">
-                                <rect key="frame" x="15" y="95" width="139" height="20"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-RV-ouV">
+                                <rect key="frame" x="15" y="94" width="139" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="OIe-Yx-aZT">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -136,8 +136,8 @@
                                     <constraint firstItem="TnP-5l-14Q" firstAttribute="leading" secondItem="OIe-Yx-aZT" secondAttribute="trailing" constant="5" id="zd2-bw-CmZ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consecte adipiscing elit…" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix2-Gj-iTl">
-                                <rect key="frame" x="15" y="123" width="139" height="49.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Lorem ipsum dolor sit amet, consecte adipiscing elit…" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix2-Gj-iTl">
+                                <rect key="frame" x="15" y="122" width="139" height="31.5"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -150,6 +150,7 @@
                             <constraint firstItem="CyJ-lp-gAh" firstAttribute="top" secondItem="Sed-0u-OdD" secondAttribute="top" constant="16" id="DzK-pC-cba"/>
                             <constraint firstItem="O3l-Rt-qk2" firstAttribute="top" secondItem="CyJ-lp-gAh" secondAttribute="bottom" constant="8" id="Tyn-sv-m6G"/>
                             <constraint firstItem="Ix2-Gj-iTl" firstAttribute="trailing" secondItem="pA1-RV-ouV" secondAttribute="trailing" id="V0t-2W-EdB"/>
+                            <constraint firstAttribute="bottom" secondItem="Ix2-Gj-iTl" secondAttribute="bottom" constant="54" id="Vw0-nl-fAJ"/>
                             <constraint firstItem="O3l-Rt-qk2" firstAttribute="leading" secondItem="CyJ-lp-gAh" secondAttribute="leading" id="YMj-Kb-jQ7"/>
                             <constraint firstItem="pA1-RV-ouV" firstAttribute="trailing" secondItem="5wk-7S-Ynm" secondAttribute="trailing" id="byd-eu-MJm"/>
                             <constraint firstItem="5wk-7S-Ynm" firstAttribute="trailing" secondItem="O3l-Rt-qk2" secondAttribute="trailing" id="col-oc-hJ0"/>

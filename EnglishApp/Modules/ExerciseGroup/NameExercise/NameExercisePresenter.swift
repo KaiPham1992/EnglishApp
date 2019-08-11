@@ -31,21 +31,8 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.interactor?.getDailyMisson()
     }
     
-    func getNameExercise() -> String? {
-        return exerciseEntity?.name
-    }
-    
-    
     func gotoDetailVocabulary() {
         self.router.gotoDetailVocabulary()
-    }
-    
-    func getNumber() -> Int? {
-        return exerciseEntity?.questions?.count
-    }
-    
-    func getIDExercise() -> Int?{
-        return Int(exerciseEntity?._id ?? "0")
     }
     
     func getAllTime() -> [Int]? {
@@ -62,14 +49,6 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     
     func gotoResult(result: TestResultProfileEntity) {
         self.router.gotoResult(result: result, type: self.type)
-    }
-    
-    func getAllId() -> [Int]?{
-        return exerciseEntity?.questions?.map{Int($0._id ?? "0") ?? 0}
-    }
-    
-    func getAllTime() -> Int? {
-        return exerciseEntity?.total_times
     }
     
     func getTime(index: Int) -> Int? {

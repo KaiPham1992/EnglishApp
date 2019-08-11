@@ -28,7 +28,10 @@ class CellExercise: UICollectionViewCell {
     var answer: [ChildQuestionEntity] = []
     var numberLine: Int = 0
     let popover = Popover()
+    //for exercise
     var listAnswer : [QuestionChoiceResultParam] = []
+    //for competition
+    var listAnswerCompetition : [SubmitAnswerEntity] = []
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -47,7 +50,6 @@ class CellExercise: UICollectionViewCell {
         DispatchQueue.main.async {
             self.detectQuestion(contextQuestion: dataCell.content_extend&)
             self.answer = dataCell.answers ?? []
-            self.listAnswer = self.answer.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)}
             self.tbvNameExercise.reloadData()
         }
     }
@@ -130,6 +132,15 @@ extension CellExercise: UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
         cell.indexPath = indexPath
+        //for exercise
+        if listAnswer.count > 0  {
+            cell.answer = listAnswer[indexPath.row].value ?? ""
+        }
+        //for competition
+        if listAnswerCompetition.count > 0 {
+            cell.answer = listAnswerCompetition[indexPath.row].value
+        }
+        
         if let listAnswer = self.getDataSource(indexPath: indexPath), let option = self.getIdOption(indexPath: indexPath){
             cell.idOption = option
             cell.dataSource = listAnswer
@@ -161,9 +172,16 @@ extension CellExercise : ClickQuestionDelegate{
         }
     }
     
-    func changeAnswer(id: Int, indexPath: IndexPath?) {
+    func changeAnswer(idAnswer: Int,valueAnswer: String, indexPath: IndexPath?) {
         if let _indexPath = indexPath {
-            self.listAnswer[_indexPath.row].option_id = id
+            if listAnswer.count > 0 {
+                self.listAnswer[_indexPath.row].option_id = idAnswer
+                self.listAnswer[_indexPath.row].value = valueAnswer
+            }
+            if listAnswerCompetition.count > 0 {
+                self.listAnswerCompetition[_indexPath.row].option_id = idAnswer
+                self.listAnswerCompetition[_indexPath.row].value = valueAnswer
+            }
         }
     }
 }

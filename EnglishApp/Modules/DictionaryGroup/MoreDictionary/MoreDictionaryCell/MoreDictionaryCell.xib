@@ -31,8 +31,11 @@
                             <constraint firstAttribute="height" constant="24" id="n8m-JG-FJ7"/>
                         </constraints>
                         <state key="normal" backgroundImage="Material_Icons_black_delete"/>
+                        <connections>
+                            <action selector="clickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Iuo-aV-UqU"/>
+                        </connections>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UA-bE-TAu" customClass="RatioButton" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UA-bE-TAu" customClass="RatioButton" customModule="EnglishApp_AppStore" customModuleProvider="target">
                         <rect key="frame" x="303" y="40" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="LvC-S9-7iQ"/>

@@ -25,6 +25,25 @@ class RealmDBManager {
         }
     }
     
+    func removeAllObject<T: Object>(type: T.Type){
+        try! database.write {
+            let allObject = database.objects(type)
+            database.delete(allObject)
+        }
+    }
+    
+    func removeObject<T: Object>(type: T.Type,value: Int) {
+        DispatchQueue.main.async {
+            let valueTemp = value
+            let objectTemp = self.database.object(ofType: type, forPrimaryKey: valueTemp)
+            if objectTemp != nil {
+                try! self.database.write {
+                    self.database.delete(objectTemp!)
+                }
+            }
+        }
+    }
+    
     func filter<T:Object,K: Codable>(objectType: T.Type,key: String,value: K) -> [T]{
         var query = "\(key) contains '\(value)'"
         if value is Int {
@@ -39,12 +58,12 @@ class RealmDBManager {
     
     func addObject<T:Object>(value: T) {
         try! database.write {
-            database.add(value, update: Realm.UpdatePolicy.all)
+            database.add(value)
         }
     }
     func addSequence<T: Object>(value: [T]){
         try! database.write {
-            database.add(value, update: Realm.UpdatePolicy.all)
+            database.add(value)
         }
     }
 }

@@ -18,7 +18,6 @@ protocol AssignExerciseWireframeProtocol: class {
 protocol AssignExercisePresenterProtocol: class {
 
     var interactor: AssignExerciseInteractorInputProtocol? { get set }
-    var listAssignExercise: ExerciseChoiceEntity? {get set}
     func getListAssignExercise(offset: Int)
 }
 
@@ -41,7 +40,7 @@ protocol AssignExerciseInteractorInputProtocol: class {
 protocol AssignExerciseViewProtocol: class {
 
     var presenter: AssignExercisePresenterProtocol?  { get set }
-    func reloadView()
+    func reloadView(listData: [ExerciseEntity])
 
     /* Presenter -> ViewController */
 }

@@ -21,5 +21,12 @@ class VocabularyPresenter: VocabularyPresenterProtocol, VocabularyInteractorOutp
         self.interactor = interactor
         self.router = router
     }
+    
+    func getListLikeVocab(offset: Int) {
+        self.interactor?.getListLikeVocab(offset: offset)
+    }
 
+    func getListLikeVocabSuccessed(response: WordLikeResponse) {
+        self.view?.reloadView(listResponse: response.likes)
+    }
 }

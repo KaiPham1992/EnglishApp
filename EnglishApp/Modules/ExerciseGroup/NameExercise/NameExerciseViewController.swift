@@ -85,8 +85,6 @@ class NameExerciseViewController: BaseViewController {
                 self.currentIndex = numberQuestion
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-            } else {
-//                self.presenter?.gotoResult()
             }
             self.disableUserInteractionCell()
         }
@@ -146,7 +144,7 @@ class NameExerciseViewController: BaseViewController {
     }
     
     func confirmOutExercise(){
-        self.presenter?.exitExercise(id: self.presenter?.getIDExercise() ?? 0)
+        self.presenter?.exitExercise(id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
     }
 }
 
@@ -168,19 +166,26 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     }
     
     func reloadView() {
-        setTitleNavigation(title: self.presenter?.getNameExercise() ?? "")
-        self.numberQuestion = self.presenter?.getNumber() ?? 0
-        
-        self.currentTime = self.presenter?.getAllTime() ?? 0
-        lblIndexQuestion.text = "1/\(numberQuestion)"
-        if let _listIdQuestion = self.presenter?.getAllId() {
-            self.listAnswerQuestion = _listIdQuestion.map{QuestionSubmitParam(_id: $0,time: 0)}
+        DispatchQueue.global().async {
+            self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
+            self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+            self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
+            if let questions = self.presenter?.exerciseEntity?.questions {
+                for item in questions {
+                    let answer = item.answers?.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)} ?? []
+                    let questionSubmitParam = QuestionSubmitParam(_id: Int(item._id ?? "0") ?? 0)
+                    questionSubmitParam.answer = answer
+                    self.listAnswerQuestion.append(questionSubmitParam)
+                }
+            }
+            DispatchQueue.main.async {
+                self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
+                self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
+                self.vCountTime.setupTimeStartNow(min: self.currentTime)
+                self.clvQuestion.reloadData()
+                ProgressView.shared.hideLoadingCompetition()
+            }
         }
-        if let _id = self.presenter?.getIDExercise(){
-            paramSubmit = SubmitExerciseParam(exercise_id: _id)
-        }
-        vCountTime.setupTimeStartNow(min: self.currentTime)
-        clvQuestion.reloadData()
     }
     
     func getExerciseFailed(error: APIError) {
@@ -211,7 +216,7 @@ extension NameExerciseViewController: UICollectionViewDataSource{
         return 1
     }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return self.presenter?.getNumber() ?? 0
+         return self.numberQuestion
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let data = self.presenter?.getQuestion(indexPath: indexPath){
@@ -219,10 +224,12 @@ extension NameExerciseViewController: UICollectionViewDataSource{
             if type == "" || type == "2"{
                 let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
                 cell.setupCell(data: data)
+                cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
                 return cell
             }
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
             cell.indexPath = indexPath
+            cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
             cell.delegate = self
             cell.setupCell(dataCell: data)
             return cell

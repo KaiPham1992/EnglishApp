@@ -147,6 +147,33 @@
 		2A6C5EDB22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */; };
 		2A6C5EDC22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */; };
 		2A6C5EDD22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */; };
+		2A77694E22FE89A600E12997 /* SubmitAnswerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77694D22FE89A600E12997 /* SubmitAnswerEntity.swift */; };
+		2A77694F22FE89A600E12997 /* SubmitAnswerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77694D22FE89A600E12997 /* SubmitAnswerEntity.swift */; };
+		2A77695022FE89A600E12997 /* SubmitAnswerEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77694D22FE89A600E12997 /* SubmitAnswerEntity.swift */; };
+		2A77695222FE89FD00E12997 /* SubmitQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77695122FE89FD00E12997 /* SubmitQuestionEntity.swift */; };
+		2A77695322FE89FD00E12997 /* SubmitQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77695122FE89FD00E12997 /* SubmitQuestionEntity.swift */; };
+		2A77695422FE89FD00E12997 /* SubmitQuestionEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77695122FE89FD00E12997 /* SubmitQuestionEntity.swift */; };
+		2A77695622FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77695522FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift */; };
+		2A77695722FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77695522FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift */; };
+		2A77695822FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A77695522FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift */; };
+		2A88F4D422FE66F800D59336 /* FightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4CE22FE66F800D59336 /* FightPresenter.swift */; };
+		2A88F4D522FE66F800D59336 /* FightRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4CF22FE66F800D59336 /* FightRouter.swift */; };
+		2A88F4D622FE66F800D59336 /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D022FE66F800D59336 /* FightViewController.swift */; };
+		2A88F4D722FE66F800D59336 /* FightProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D122FE66F800D59336 /* FightProtocols.swift */; };
+		2A88F4D822FE66F800D59336 /* FightInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D222FE66F800D59336 /* FightInteractor.swift */; };
+		2A88F4D922FE66F800D59336 /* FightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88F4D322FE66F800D59336 /* FightViewController.xib */; };
+		2A88F4DA22FE670400D59336 /* FightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4CE22FE66F800D59336 /* FightPresenter.swift */; };
+		2A88F4DB22FE670400D59336 /* FightRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4CF22FE66F800D59336 /* FightRouter.swift */; };
+		2A88F4DC22FE670400D59336 /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D022FE66F800D59336 /* FightViewController.swift */; };
+		2A88F4DD22FE670400D59336 /* FightProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D122FE66F800D59336 /* FightProtocols.swift */; };
+		2A88F4DE22FE670400D59336 /* FightInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D222FE66F800D59336 /* FightInteractor.swift */; };
+		2A88F4DF22FE670400D59336 /* FightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88F4D322FE66F800D59336 /* FightViewController.xib */; };
+		2A88F4E022FE670400D59336 /* FightPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4CE22FE66F800D59336 /* FightPresenter.swift */; };
+		2A88F4E122FE670400D59336 /* FightRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4CF22FE66F800D59336 /* FightRouter.swift */; };
+		2A88F4E222FE670400D59336 /* FightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D022FE66F800D59336 /* FightViewController.swift */; };
+		2A88F4E322FE670400D59336 /* FightProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D122FE66F800D59336 /* FightProtocols.swift */; };
+		2A88F4E422FE670400D59336 /* FightInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A88F4D222FE66F800D59336 /* FightInteractor.swift */; };
+		2A88F4E522FE670400D59336 /* FightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A88F4D322FE66F800D59336 /* FightViewController.xib */; };
 		2A9A81DD22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
 		2A9A81DE22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
 		2A9A81DF22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
@@ -186,6 +213,21 @@
 		2AA6D38922DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
 		2AA6D38A22DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
 		2AA6D38B22DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
+		2AA9E35D22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */; };
+		2AA9E35E22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */; };
+		2AA9E35F22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */; };
+		2AA9E36622F9AA310093F5C8 /* FileZipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */; };
+		2AA9E36722F9AA310093F5C8 /* FileZipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */; };
+		2AA9E36822F9AA310093F5C8 /* FileZipManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */; };
+		2AA9E36A22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
+		2AA9E36B22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
+		2AA9E36C22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */; };
+		2AA9E36E22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */; };
+		2AA9E36F22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */; };
+		2AA9E37022FB3C320093F5C8 /* WordLikeEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */; };
+		2AA9E37222FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
+		2AA9E37322FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
+		2AA9E37422FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
 		2AAE21F622D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F722D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
@@ -234,6 +276,15 @@
 		2AB4A07022E226B900557B5F /* HistoryDailyMissonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4A06022E226B900557B5F /* HistoryDailyMissonViewController.xib */; };
 		2AB4A07122E226B900557B5F /* HistoryDailyMissonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4A06022E226B900557B5F /* HistoryDailyMissonViewController.xib */; };
 		2AB4A07222E226B900557B5F /* HistoryDailyMissonViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AB4A06022E226B900557B5F /* HistoryDailyMissonViewController.xib */; };
+		2AC1467322FEC643002D7D5F /* RankTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1467222FEC643002D7D5F /* RankTeamEntity.swift */; };
+		2AC1467422FEC643002D7D5F /* RankTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1467222FEC643002D7D5F /* RankTeamEntity.swift */; };
+		2AC1467522FEC643002D7D5F /* RankTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1467222FEC643002D7D5F /* RankTeamEntity.swift */; };
+		2AC1467922FECCD1002D7D5F /* CellRankTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1467722FECCD1002D7D5F /* CellRankTeam.swift */; };
+		2AC1467A22FECCD1002D7D5F /* CellRankTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1467722FECCD1002D7D5F /* CellRankTeam.swift */; };
+		2AC1467B22FECCD1002D7D5F /* CellRankTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1467722FECCD1002D7D5F /* CellRankTeam.swift */; };
+		2AC1467C22FECCD1002D7D5F /* CellRankTeam.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1467822FECCD1002D7D5F /* CellRankTeam.xib */; };
+		2AC1467D22FECCD1002D7D5F /* CellRankTeam.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1467822FECCD1002D7D5F /* CellRankTeam.xib */; };
+		2AC1467E22FECCD1002D7D5F /* CellRankTeam.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1467822FECCD1002D7D5F /* CellRankTeam.xib */; };
 		2AC7A21622D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */; };
 		2AC7A21722D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */; };
 		2AC7A21822D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */; };
@@ -279,12 +330,6 @@
 		2AED14AF22EE02D50076C223 /* ExplainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */; };
 		2AED14B022EE02D50076C223 /* ExplainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */; };
 		2AED14B122EE02D50076C223 /* ExplainExerciseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */; };
-		2AED14BC22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */; };
-		2AED14BD22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */; };
-		2AED14BE22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */; };
-		2AED14BF22EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
-		2AED14C022EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
-		2AED14C122EE0E2F0076C223 /* sqliteWord.db in Resources */ = {isa = PBXBuildFile; fileRef = 2AED14BB22EE0E2F0076C223 /* sqliteWord.db */; };
 		2AED14C322EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
 		2AED14C422EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
 		2AED14C522EE0F0D0076C223 /* ExplainQuestionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */; };
@@ -2279,6 +2324,15 @@
 		2A6C5ED222EF468F004B23EF /* CellSingleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellSingleLabel.swift; sourceTree = "<group>"; };
 		2A6C5ED322EF468F004B23EF /* CellSingleLabel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellSingleLabel.xib; sourceTree = "<group>"; };
 		2A6C5EDA22EF488B004B23EF /* RelatedLessonResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedLessonResponse.swift; sourceTree = "<group>"; };
+		2A77694D22FE89A600E12997 /* SubmitAnswerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitAnswerEntity.swift; sourceTree = "<group>"; };
+		2A77695122FE89FD00E12997 /* SubmitQuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitQuestionEntity.swift; sourceTree = "<group>"; };
+		2A77695522FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitCompetitionQuestionResponse.swift; sourceTree = "<group>"; };
+		2A88F4CE22FE66F800D59336 /* FightPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightPresenter.swift; sourceTree = "<group>"; };
+		2A88F4CF22FE66F800D59336 /* FightRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightRouter.swift; sourceTree = "<group>"; };
+		2A88F4D022FE66F800D59336 /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
+		2A88F4D122FE66F800D59336 /* FightProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightProtocols.swift; sourceTree = "<group>"; };
+		2A88F4D222FE66F800D59336 /* FightInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightInteractor.swift; sourceTree = "<group>"; };
+		2A88F4D322FE66F800D59336 /* FightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FightViewController.xib; sourceTree = "<group>"; };
 		2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBManager.swift; sourceTree = "<group>"; };
 		2A9A81E922EC5AA300345C5F /* WordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntity.swift; sourceTree = "<group>"; };
 		2A9A81ED22EC5C6300345C5F /* WordExplainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordExplainEntity.swift; sourceTree = "<group>"; };
@@ -2292,6 +2346,11 @@
 		2AA20CE622F5522400F38894 /* CommentQuestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentQuestionInteractor.swift; sourceTree = "<group>"; };
 		2AA20CE722F5522400F38894 /* CommentQuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentQuestionViewController.xib; sourceTree = "<group>"; };
 		2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamEntity.swift; sourceTree = "<group>"; };
+		2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDictionaryResponse.swift; sourceTree = "<group>"; };
+		2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileZipManager.swift; sourceTree = "<group>"; };
+		2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfigDictionary.swift; sourceTree = "<group>"; };
+		2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLikeEntity.swift; sourceTree = "<group>"; };
+		2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordLikeResponse.swift; sourceTree = "<group>"; };
 		2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailEntity.swift; sourceTree = "<group>"; };
 		2AAE21F922D3AA7400AE7481 /* AnswerResultProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResultProfileEntity.swift; sourceTree = "<group>"; };
 		2AAE21FD22D3B2DF00AE7481 /* CellResultChoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellResultChoice.swift; sourceTree = "<group>"; };
@@ -2308,6 +2367,9 @@
 		2AB4A05E22E226B900557B5F /* HistoryDailyMissonProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDailyMissonProtocols.swift; sourceTree = "<group>"; };
 		2AB4A05F22E226B900557B5F /* HistoryDailyMissonInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDailyMissonInteractor.swift; sourceTree = "<group>"; };
 		2AB4A06022E226B900557B5F /* HistoryDailyMissonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryDailyMissonViewController.xib; sourceTree = "<group>"; };
+		2AC1467222FEC643002D7D5F /* RankTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankTeamEntity.swift; sourceTree = "<group>"; };
+		2AC1467722FECCD1002D7D5F /* CellRankTeam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRankTeam.swift; sourceTree = "<group>"; };
+		2AC1467822FECCD1002D7D5F /* CellRankTeam.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellRankTeam.xib; sourceTree = "<group>"; };
 		2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultsProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultTeamEntity.swift; sourceTree = "<group>"; };
@@ -2323,8 +2385,6 @@
 		2AED149D22EE02D50076C223 /* ExplainExerciseProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseProtocols.swift; sourceTree = "<group>"; };
 		2AED149E22EE02D50076C223 /* ExplainExerciseInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseInteractor.swift; sourceTree = "<group>"; };
 		2AED149F22EE02D50076C223 /* ExplainExerciseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExplainExerciseViewController.xib; sourceTree = "<group>"; };
-		2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWordExplain.db; sourceTree = "<group>"; };
-		2AED14BB22EE0E2F0076C223 /* sqliteWord.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqliteWord.db; sourceTree = "<group>"; };
 		2AED14C222EE0F0D0076C223 /* ExplainQuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainQuestionResponse.swift; sourceTree = "<group>"; };
 		2AED14C722EE14BD0076C223 /* ExplainExerciseGroupPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseGroupPresenter.swift; sourceTree = "<group>"; };
 		2AED14C822EE14BD0076C223 /* ExplainExerciseGroupRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplainExerciseGroupRouter.swift; sourceTree = "<group>"; };
@@ -3141,6 +3201,20 @@
 			path = CellSingleLabel;
 			sourceTree = "<group>";
 		};
+		2A88F4CD22FE66D600D59336 /* Fight */ = {
+			isa = PBXGroup;
+			children = (
+				2AC1467622FECCAD002D7D5F /* Cell */,
+				2A88F4CE22FE66F800D59336 /* FightPresenter.swift */,
+				2A88F4CF22FE66F800D59336 /* FightRouter.swift */,
+				2A88F4D022FE66F800D59336 /* FightViewController.swift */,
+				2A88F4D122FE66F800D59336 /* FightProtocols.swift */,
+				2A88F4D222FE66F800D59336 /* FightInteractor.swift */,
+				2A88F4D322FE66F800D59336 /* FightViewController.xib */,
+			);
+			path = Fight;
+			sourceTree = "<group>";
+		};
 		2A9A81DB22EC4B5800345C5F /* RealmDB */ = {
 			isa = PBXGroup;
 			children = (
@@ -3162,8 +3236,6 @@
 		2A9A81F222EC5FD600345C5F /* SQLHelper */ = {
 			isa = PBXGroup;
 			children = (
-				2AED14BB22EE0E2F0076C223 /* sqliteWord.db */,
-				2AED14BA22EE0E2F0076C223 /* sqliteWordExplain.db */,
 				2A9A81F322EC5FE600345C5F /* SQLHelper.swift */,
 			);
 			path = SQLHelper;
@@ -3173,6 +3245,8 @@
 			isa = PBXGroup;
 			children = (
 				2AA20CC022F5434400F38894 /* DictionarisResponse.swift */,
+				2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */,
+				2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */,
 			);
 			path = Dictionaty;
 			sourceTree = "<group>";
@@ -3198,8 +3272,20 @@
 				2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */,
 				2AF2F83122EA00EE00603444 /* ResultTeamCompetitionRespone.swift */,
 				2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */,
+				2A77694D22FE89A600E12997 /* SubmitAnswerEntity.swift */,
+				2A77695122FE89FD00E12997 /* SubmitQuestionEntity.swift */,
+				2A77695522FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift */,
+				2AC1467222FEC643002D7D5F /* RankTeamEntity.swift */,
 			);
 			path = Competition;
+			sourceTree = "<group>";
+		};
+		2AA9E36422F9AA230093F5C8 /* FileZipManager */ = {
+			isa = PBXGroup;
+			children = (
+				2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */,
+			);
+			path = FileZipManager;
 			sourceTree = "<group>";
 		};
 		2AB4A04122E1E86900557B5F /* DailyMisson */ = {
@@ -3226,6 +3312,15 @@
 				2AB4A06022E226B900557B5F /* HistoryDailyMissonViewController.xib */,
 			);
 			path = HistoryDailyMisson;
+			sourceTree = "<group>";
+		};
+		2AC1467622FECCAD002D7D5F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				2AC1467722FECCD1002D7D5F /* CellRankTeam.swift */,
+				2AC1467822FECCD1002D7D5F /* CellRankTeam.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		2AED147422ED8E6A0076C223 /* Vocabulary */ = {
@@ -3336,6 +3431,8 @@
 				2AF2F84E22EA084300603444 /* NoteListRespone.swift */,
 				2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */,
 				2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */,
+				2AA9E36D22FB3C320093F5C8 /* WordLikeEntity.swift */,
+				2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */,
 			);
 			path = SaveGroup;
 			sourceTree = "<group>";
@@ -4139,6 +4236,7 @@
 		DE361DDC2283E52A00FA3B0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2AA9E36422F9AA230093F5C8 /* FileZipManager */,
 				2A2B015A22F085F800A08EEA /* ListManager */,
 				2A6C5ED022EF466C004B23EF /* CommonCell */,
 				2A9A81F222EC5FD600345C5F /* SQLHelper */,
@@ -4522,6 +4620,7 @@
 		DE3A8CAB2289BBDA0080A8CB /* CompetitionGroup */ = {
 			isa = PBXGroup;
 			children = (
+				2A88F4CD22FE66D600D59336 /* Fight */,
 				DED5A01A22A5838100872261 /* HistoryCompetition */,
 				DEBD671C228D47BD004B74C8 /* ExplainCompetition */,
 				DEBD66FA228D2004004B74C8 /* DetailTeam */,
@@ -5472,6 +5571,7 @@
 				DEB9613422898F1F0046801B /* QAViewController.xib in Resources */,
 				DEC7F92822C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */,
 				DEC62AE522930EC400D7CECE /* BeePackViewController.xib in Resources */,
+				2AC1467C22FECCD1002D7D5F /* CellRankTeam.xib in Resources */,
 				DE3A8CC22289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DEF1C25F22903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				2A5E262722E0D119009D6203 /* AssignExerciseViewController.xib in Resources */,
@@ -5537,6 +5637,7 @@
 				765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46822946928001E9984 /* CellCreateExercise.xib in Resources */,
 				766D1326228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				2A88F4D922FE66F800D59336 /* FightViewController.xib in Resources */,
 				76CF0C84229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584802291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				76870EA322C0EE6100F12544 /* ViewFillQuestion.xib in Resources */,
@@ -5551,7 +5652,6 @@
 				76C8E30022C19B0C0076E65B /* CellResultExercise.xib in Resources */,
 				DE361E792283E60500FA3B0D /* AppSearchBar.xib in Resources */,
 				76483BF4229EE3F00079F9A1 /* UpdateAccountView.xib in Resources */,
-				2AED14BF22EE0E2F0076C223 /* sqliteWord.db in Resources */,
 				DE89D22D22A42592000638B0 /* BXHViewController.xib in Resources */,
 				76CE31E42296382D00E998FB /* CellResult.xib in Resources */,
 				76F7F45F229466DD001E9984 /* CreateExerciseViewController.xib in Resources */,
@@ -5606,7 +5706,6 @@
 				2A5E260B22E0D05B009D6203 /* LevelExerciseViewController.xib in Resources */,
 				76CE31D222961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8422A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
-				2AED14BC22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */,
 				76DB93AC228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE2ADE5822841756003768CE /* GoogleService-Prod-Info.plist in Resources */,
 				DE9531142287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
@@ -5633,6 +5732,7 @@
 				DEB9613522898F1F0046801B /* QAViewController.xib in Resources */,
 				DEC7F92922C4EDAA0096D3D1 /* Comfortaa-Light.ttf in Resources */,
 				DEC62AE622930EC400D7CECE /* BeePackViewController.xib in Resources */,
+				2AC1467D22FECCD1002D7D5F /* CellRankTeam.xib in Resources */,
 				DE3A8CC32289BBF30080A8CB /* CompetitionViewController.xib in Resources */,
 				DEF1C26022903670005AD1A3 /* HomeHeaderCell.xib in Resources */,
 				2A5E262822E0D119009D6203 /* AssignExerciseViewController.xib in Resources */,
@@ -5698,6 +5798,7 @@
 				765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */,
 				76F7F46922946928001E9984 /* CellCreateExercise.xib in Resources */,
 				766D1327228EE9E4005E47F0 /* LessonViewController.xib in Resources */,
+				2A88F4DF22FE670400D59336 /* FightViewController.xib in Resources */,
 				76CF0C85229068AB003C4B4B /* CellComment.xib in Resources */,
 				DEB584812291ABD700FE0356 /* HistoryBeeViewController.xib in Resources */,
 				76870EA422C0EE6100F12544 /* ViewFillQuestion.xib in Resources */,
@@ -5712,7 +5813,6 @@
 				76C8E30122C19B0C0076E65B /* CellResultExercise.xib in Resources */,
 				DE95304A2287DF4800E3F688 /* AppSearchBar.xib in Resources */,
 				76483BF5229EE3F00079F9A1 /* UpdateAccountView.xib in Resources */,
-				2AED14C022EE0E2F0076C223 /* sqliteWord.db in Resources */,
 				DE89D22E22A42592000638B0 /* BXHViewController.xib in Resources */,
 				76CE31E52296382D00E998FB /* CellResult.xib in Resources */,
 				76F7F460229466DD001E9984 /* CreateExerciseViewController.xib in Resources */,
@@ -5767,7 +5867,6 @@
 				2A5E260C22E0D05B009D6203 /* LevelExerciseViewController.xib in Resources */,
 				76CE31D322961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8522A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
-				2AED14BD22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */,
 				76DB93AD228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
 				DE9530512287DF4800E3F688 /* GoogleService-Prod-Info.plist in Resources */,
 				DE9531152287E00900E3F688 /* EnglishApp_Dev-Info.plist in Resources */,
@@ -5882,10 +5981,10 @@
 				766D1377228F2609005E47F0 /* ListLessonViewController.xib in Resources */,
 				76CE32192296539000E998FB /* ResultCompetitionViewController.xib in Resources */,
 				2A5E25DE22E0C6A1009D6203 /* CatelogyExerciseViewController.xib in Resources */,
-				2AED14BE22EE0E2F0076C223 /* sqliteWordExplain.db in Resources */,
 				DE95316F2288418F00E3F688 /* HistoryCell.xib in Resources */,
 				DE9531132287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist in Resources */,
 				DE3A8CCD2289BC3E0080A8CB /* CompetitionCell.xib in Resources */,
+				2A88F4E522FE670400D59336 /* FightViewController.xib in Resources */,
 				DECD191E22A269560054861D /* DetailPackViewController.xib in Resources */,
 				76E2FEEF228DBAF10014B1F4 /* GrammarViewController.xib in Resources */,
 				DECD192822A269860054861D /* HeaderPackCell.xib in Resources */,
@@ -5910,12 +6009,12 @@
 				7643DE9022A3A0E900B7C323 /* CellAssignExercise.xib in Resources */,
 				DE9530FD2287DF6400E3F688 /* YesNoContentView.xib in Resources */,
 				DEBCBC6F22945BA000DF7F74 /* StudyPackViewCell.xib in Resources */,
+				2AC1467E22FECCD1002D7D5F /* CellRankTeam.xib in Resources */,
 				DEBD671B228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				DED5A03222A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				2AB4A05922E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
-				2AED14C122EE0E2F0076C223 /* sqliteWord.db in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
 				DE6FDB2222AB869A00960422 /* FindViewController.xib in Resources */,
 				7643DE9522A4C09A00B7C323 /* ViewMessage.xib in Resources */,
@@ -6150,6 +6249,7 @@
 				DE361DFE2283E57900FA3B0D /* UITextFiled+extension.swift in Sources */,
 				DE89D1D422A413AC000638B0 /* RequireUpgradePopUp.swift in Sources */,
 				DE49F7FC22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
+				2AA9E35D22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */,
 				DE361F532283E85000FA3B0D /* UserAPIService.swift in Sources */,
 				DE95315822883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE361DF82283E57900FA3B0D /* UIView+extension.swift in Sources */,
@@ -6184,6 +6284,7 @@
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76C92FA222C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CC22961FC300E998FB /* ResultProtocols.swift in Sources */,
+				2A88F4D822FE66F800D59336 /* FightInteractor.swift in Sources */,
 				76483BDE229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				2A5E261E22E0D119009D6203 /* AssignExerciseViewController.swift in Sources */,
 				DEBD6737228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
@@ -6251,6 +6352,7 @@
 				DE361E672283E60500FA3B0D /* AppImage.swift in Sources */,
 				76DB938A228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE22289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				2AC1467322FEC643002D7D5F /* RankTeamEntity.swift in Sources */,
 				76C92F9E22C4895000E8ED69 /* QuestionEntity.swift in Sources */,
 				7680748922C872270015A75C /* TestResultProfileEntity.swift in Sources */,
 				DE49F7E322A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
@@ -6268,6 +6370,7 @@
 				DEC62ABD22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF52228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952F7E2287D2A700E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				2AA9E37222FB3C780093F5C8 /* WordLikeResponse.swift in Sources */,
 				DE361F412283E85000FA3B0D /* UpdateProfileSocial.swift in Sources */,
 				DE2ADE5D22841A68003768CE /* SideMenuViewController.swift in Sources */,
 				DE952F872287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -6324,6 +6427,7 @@
 				DE2ADE7722841BB9003768CE /* MenuViewController.swift in Sources */,
 				DEBD6704228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138B228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
+				2A77695222FE89FD00E12997 /* SubmitQuestionEntity.swift in Sources */,
 				DE89D1FC22A41E09000638B0 /* ChangeLanguagePresenter.swift in Sources */,
 				76CE31B52295AE6300E998FB /* CellChoiceExercise.swift in Sources */,
 				76E2FF5B228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
@@ -6408,6 +6512,7 @@
 				DED5A02122A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
 				2AC7A21E22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
+				2AA9E36A22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
 				76483BE3229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
@@ -6453,6 +6558,7 @@
 				2A07431F22E77D47001E82A4 /* LessonsResponse.swift in Sources */,
 				2A6C5ED422EF468F004B23EF /* CellSingleLabel.swift in Sources */,
 				7643DE9722A4C0A800B7C323 /* ViewMessage.swift in Sources */,
+				2A88F4D422FE66F800D59336 /* FightPresenter.swift in Sources */,
 				76CF0C6F22906822003C4B4B /* CommentRouter.swift in Sources */,
 				DE89D20222A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
 				76DB9390228C56640081A36E /* DictionaryInteractor.swift in Sources */,
@@ -6472,6 +6578,7 @@
 				2A9A81F422EC5FE600345C5F /* SQLHelper.swift in Sources */,
 				76C92FB622C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */,
 				76F7F453229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
+				2AA9E36622F9AA310093F5C8 /* FileZipManager.swift in Sources */,
 				DE2ADE7822841BB9003768CE /* MenuProtocols.swift in Sources */,
 				7680747D22C859170015A75C /* DateCalendarEntity.swift in Sources */,
 				76483BF0229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -6527,6 +6634,7 @@
 				2AA20CE822F5522400F38894 /* CommentQuestionPresenter.swift in Sources */,
 				DE361F4C2283E85000FA3B0D /* NotificationEndPoint.swift in Sources */,
 				DE361E9E2283E60500FA3B0D /* NotificationContent.swift in Sources */,
+				2A88F4D622FE66F800D59336 /* FightViewController.swift in Sources */,
 				76CE31C322961FC300E998FB /* ResultPresenter.swift in Sources */,
 				76E2FF55228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				2AED14AC22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,
@@ -6586,6 +6694,7 @@
 				2A07430C22E7718E001E82A4 /* CellLesson.swift in Sources */,
 				DE361E6A2283E60500FA3B0D /* AppFont.swift in Sources */,
 				76CF0C7822906822003C4B4B /* CommentInteractor.swift in Sources */,
+				2A88F4D722FE66F800D59336 /* FightProtocols.swift in Sources */,
 				766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
 				DE953126228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				2A2FC79F22EC16F700D7011D /* GrammarEntity.swift in Sources */,
@@ -6607,8 +6716,10 @@
 				DE2ADE6B22841B9E003768CE /* HomeViewController.swift in Sources */,
 				764083FB22B7C9A8002D9401 /* NoteRespone.swift in Sources */,
 				DE953171228842D700E3F688 /* HistoryEntity.swift in Sources */,
+				2A77695622FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift in Sources */,
 				DEB9613122898F1F0046801B /* QAInteractor.swift in Sources */,
 				DEB584912291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
+				2AC1467922FECCD1002D7D5F /* CellRankTeam.swift in Sources */,
 				DE3A8CA22289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE952F7D2287D2A700E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				76EF925722DF67BB0047DA1A /* StudyPackDetailProtocols.swift in Sources */,
@@ -6640,6 +6751,7 @@
 				DE952F922287D2A700E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE361F3D2283E85000FA3B0D /* NetworkRequest.swift in Sources */,
 				768074AE22C910E80015A75C /* SubmitExerciseParam.swift in Sources */,
+				2A77694E22FE89A600E12997 /* SubmitAnswerEntity.swift in Sources */,
 				DE361E8D2283E60500FA3B0D /* AppCheckBox.swift in Sources */,
 				DE953123228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE952F9A2287D2A700E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
@@ -6657,6 +6769,7 @@
 				DE0470A022BA85FE00438206 /* RecentlyEntity.swift in Sources */,
 				76CE31F822963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DEECF89222871D0400A4678B /* SignUpProtocols.swift in Sources */,
+				2AA9E36E22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */,
 				DEF1C25322903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				76C92F9A22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322A22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
@@ -6697,6 +6810,7 @@
 				76DB939D228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6726228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				2A9A81EA22EC5AA300345C5F /* WordEntity.swift in Sources */,
+				2A88F4D522FE66F800D59336 /* FightRouter.swift in Sources */,
 				76CE323322968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
 				2A436B0922EB384D00BD9285 /* CellHistoryListExercise.swift in Sources */,
 				76C92FB222C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */,
@@ -6747,6 +6861,7 @@
 				DE952FB32287DF4800E3F688 /* UITextFiled+extension.swift in Sources */,
 				DE89D1D522A413AC000638B0 /* RequireUpgradePopUp.swift in Sources */,
 				DE49F7FD22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
+				2AA9E35E22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */,
 				DE952FB42287DF4800E3F688 /* UserAPIService.swift in Sources */,
 				DE95315922883FB100E3F688 /* PreviewProfileRouter.swift in Sources */,
 				DE952FB52287DF4800E3F688 /* UIView+extension.swift in Sources */,
@@ -6781,6 +6896,7 @@
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76C92FA322C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CD22961FC300E998FB /* ResultProtocols.swift in Sources */,
+				2A88F4DE22FE670400D59336 /* FightInteractor.swift in Sources */,
 				76483BDF229ED13C0079F9A1 /* SuggestionResultPopUp.swift in Sources */,
 				2A5E261F22E0D119009D6203 /* AssignExerciseViewController.swift in Sources */,
 				DEBD6738228D48DA004B74C8 /* CreateGroupPopUp.swift in Sources */,
@@ -6848,6 +6964,7 @@
 				DE952FC92287DF4800E3F688 /* AppImage.swift in Sources */,
 				76DB938B228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE32289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
+				2AC1467422FEC643002D7D5F /* RankTeamEntity.swift in Sources */,
 				76C92F9F22C4895000E8ED69 /* QuestionEntity.swift in Sources */,
 				7680748A22C872270015A75C /* TestResultProfileEntity.swift in Sources */,
 				DE49F7E422A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
@@ -6865,6 +6982,7 @@
 				DEC62ABE22930E0E00D7CECE /* StudyPackPresenter.swift in Sources */,
 				76E2FF53228DD2120014B1F4 /* SeeNoteRouter.swift in Sources */,
 				DE952FCC2287DF4800E3F688 /* KActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				2AA9E37322FB3C780093F5C8 /* WordLikeResponse.swift in Sources */,
 				DE952FCD2287DF4800E3F688 /* UpdateProfileSocial.swift in Sources */,
 				DE952FCE2287DF4800E3F688 /* SideMenuViewController.swift in Sources */,
 				DE952FCF2287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
@@ -6921,6 +7039,7 @@
 				DE952FDA2287DF4800E3F688 /* MenuViewController.swift in Sources */,
 				DEBD6705228D201A004B74C8 /* DetailTeamRouter.swift in Sources */,
 				766D138C228F2629005E47F0 /* DetailLessonInteractor.swift in Sources */,
+				2A77695322FE89FD00E12997 /* SubmitQuestionEntity.swift in Sources */,
 				DE89D1FD22A41E09000638B0 /* ChangeLanguagePresenter.swift in Sources */,
 				76CE31B62295AE6300E998FB /* CellChoiceExercise.swift in Sources */,
 				76E2FF5C228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
@@ -7005,6 +7124,7 @@
 				DED5A02222A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
 				2AC7A21F22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
+				2AA9E36B22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
 				76483BE4229ED1CE0079F9A1 /* SuggesstionView.swift in Sources */,
@@ -7050,6 +7170,7 @@
 				2A07432022E77D47001E82A4 /* LessonsResponse.swift in Sources */,
 				2A6C5ED522EF468F004B23EF /* CellSingleLabel.swift in Sources */,
 				7643DE9822A4C0A800B7C323 /* ViewMessage.swift in Sources */,
+				2A88F4DA22FE670400D59336 /* FightPresenter.swift in Sources */,
 				76CF0C7022906822003C4B4B /* CommentRouter.swift in Sources */,
 				DE89D20322A41E09000638B0 /* ChangeLanguageViewController.swift in Sources */,
 				76DB9391228C56640081A36E /* DictionaryInteractor.swift in Sources */,
@@ -7069,6 +7190,7 @@
 				2A9A81F522EC5FE600345C5F /* SQLHelper.swift in Sources */,
 				76C92FB722C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */,
 				76F7F454229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
+				2AA9E36722F9AA310093F5C8 /* FileZipManager.swift in Sources */,
 				DE952FFD2287DF4800E3F688 /* MenuProtocols.swift in Sources */,
 				7680747E22C859170015A75C /* DateCalendarEntity.swift in Sources */,
 				76483BF1229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
@@ -7124,6 +7246,7 @@
 				2AA20CE922F5522400F38894 /* CommentQuestionPresenter.swift in Sources */,
 				DE9530092287DF4800E3F688 /* NotificationEndPoint.swift in Sources */,
 				DE95300A2287DF4800E3F688 /* NotificationContent.swift in Sources */,
+				2A88F4DC22FE670400D59336 /* FightViewController.swift in Sources */,
 				76CE31C422961FC300E998FB /* ResultPresenter.swift in Sources */,
 				76E2FF56228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				2AED14AD22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,
@@ -7183,6 +7306,7 @@
 				2A07430D22E7718E001E82A4 /* CellLesson.swift in Sources */,
 				DE95301C2287DF4800E3F688 /* AppFont.swift in Sources */,
 				76CF0C7922906822003C4B4B /* CommentInteractor.swift in Sources */,
+				2A88F4DD22FE670400D59336 /* FightProtocols.swift in Sources */,
 				766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */,
 				DE953127228808ED00E3F688 /* ProfileRouter.swift in Sources */,
 				2A2FC7A022EC16F700D7011D /* GrammarEntity.swift in Sources */,
@@ -7204,8 +7328,10 @@
 				DE95301F2287DF4800E3F688 /* HomeViewController.swift in Sources */,
 				764083FC22B7C9A8002D9401 /* NoteRespone.swift in Sources */,
 				DE953172228842D700E3F688 /* HistoryEntity.swift in Sources */,
+				2A77695722FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift in Sources */,
 				DEB9613222898F1F0046801B /* QAInteractor.swift in Sources */,
 				DEB584922291AD7900FE0356 /* HistoryBeeCell.swift in Sources */,
+				2AC1467A22FECCD1002D7D5F /* CellRankTeam.swift in Sources */,
 				DE3A8CA32289B93F0080A8CB /* QADetailProtocols.swift in Sources */,
 				DE9530202287DF4800E3F688 /* KActivityIndicatorAnimationOrbit.swift in Sources */,
 				76EF925822DF67BB0047DA1A /* StudyPackDetailProtocols.swift in Sources */,
@@ -7237,6 +7363,7 @@
 				DE9530272287DF4800E3F688 /* KActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
 				DE9530282287DF4800E3F688 /* NetworkRequest.swift in Sources */,
 				768074AF22C910E80015A75C /* SubmitExerciseParam.swift in Sources */,
+				2A77694F22FE89A600E12997 /* SubmitAnswerEntity.swift in Sources */,
 				DE9530292287DF4800E3F688 /* AppCheckBox.swift in Sources */,
 				DE953124228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE95302A2287DF4800E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
@@ -7254,6 +7381,7 @@
 				DE0470A122BA85FE00438206 /* RecentlyEntity.swift in Sources */,
 				76CE31F922963EDE00E998FB /* ResultGroupProtocols.swift in Sources */,
 				DE95302E2287DF4800E3F688 /* SignUpProtocols.swift in Sources */,
+				2AA9E36F22FB3C320093F5C8 /* WordLikeEntity.swift in Sources */,
 				DEF1C25422903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				76C92F9B22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322B22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
@@ -7294,6 +7422,7 @@
 				76DB939E228C73A90081A36E /* MoreDictionaryPresenter.swift in Sources */,
 				DEBD6727228D47E0004B74C8 /* ExplainCompetitionRouter.swift in Sources */,
 				2A9A81EB22EC5AA300345C5F /* WordEntity.swift in Sources */,
+				2A88F4DB22FE670400D59336 /* FightRouter.swift in Sources */,
 				76CE323422968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
 				2A436B0A22EB384D00BD9285 /* CellHistoryListExercise.swift in Sources */,
 				76C92FB322C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */,
@@ -7338,11 +7467,13 @@
 				76C92F9822C4878300E8ED69 /* ExerciseEntity.swift in Sources */,
 				DEC62ADB22930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				2AA20CEA22F5522400F38894 /* CommentQuestionPresenter.swift in Sources */,
+				2A88F4E222FE670400D59336 /* FightViewController.swift in Sources */,
 				DE95305F2287DF6400E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
 				76DB9386228C56640081A36E /* DictionaryPresenter.swift in Sources */,
 				DE9530602287DF6400E3F688 /* SignUpViewController.swift in Sources */,
 				DE9530612287DF6400E3F688 /* UITextFiled+extension.swift in Sources */,
 				DE89D1D622A413AC000638B0 /* RequireUpgradePopUp.swift in Sources */,
+				2AC1467522FEC643002D7D5F /* RankTeamEntity.swift in Sources */,
 				2AC7A21822D78C40004ADFEE /* CompetitionResultsProfileEntity.swift in Sources */,
 				DE49F7FE22A3D81D00A92C63 /* NotificationListRouter.swift in Sources */,
 				DE9530622287DF6400E3F688 /* UserAPIService.swift in Sources */,
@@ -7391,6 +7522,7 @@
 				DE95306D2287DF6400E3F688 /* LoginSocialParam.swift in Sources */,
 				DE95306E2287DF6400E3F688 /* LoginPresenter.swift in Sources */,
 				76E2FF5A228DD2120014B1F4 /* SeeNoteProtocols.swift in Sources */,
+				2AA9E35F22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */,
 				76E2FEFD228DC4C20014B1F4 /* PageViewController.swift in Sources */,
 				76C92FA822C48A7000E8ED69 /* OptionEntity.swift in Sources */,
 				DE95306F2287DF6400E3F688 /* NSObjectProtocol+Extension.swift in Sources */,
@@ -7445,6 +7577,7 @@
 				76DB938C228C56640081A36E /* DictionaryViewController.swift in Sources */,
 				DE3A8CE42289C75C0080A8CB /* SelectTeamProtocols.swift in Sources */,
 				76C92FA022C4895000E8ED69 /* QuestionEntity.swift in Sources */,
+				2AA9E37022FB3C320093F5C8 /* WordLikeEntity.swift in Sources */,
 				7680748B22C872270015A75C /* TestResultProfileEntity.swift in Sources */,
 				DE49F7E522A3CB7400A92C63 /* ChangeGiftCell.swift in Sources */,
 				DE49F82922A3DB9C00A92C63 /* NotificationDetailInteractor.swift in Sources */,
@@ -7525,6 +7658,7 @@
 				DE89D1FE22A41E09000638B0 /* ChangeLanguagePresenter.swift in Sources */,
 				76CE31B72295AE6300E998FB /* CellChoiceExercise.swift in Sources */,
 				76E2FF5D228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
+				2A77695422FE89FD00E12997 /* SubmitQuestionEntity.swift in Sources */,
 				76F7F45E229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
 				2A5E262022E0D119009D6203 /* AssignExerciseViewController.swift in Sources */,
 				76DB93A8228C73A90081A36E /* MoreDictionaryProtocols.swift in Sources */,
@@ -7588,7 +7722,10 @@
 				DEB584792291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				2AED14D522EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */,
 				DED5A02922A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */,
+				2AC1467B22FECCD1002D7D5F /* CellRankTeam.swift in Sources */,
+				2AA9E36822F9AA310093F5C8 /* FileZipManager.swift in Sources */,
 				2A436B0222EB33A800BD9285 /* HistoryListExerciseInteractor.swift in Sources */,
+				2A88F4E422FE670400D59336 /* FightInteractor.swift in Sources */,
 				DE89D20A22A41E09000638B0 /* ChangeLanguageInteractor.swift in Sources */,
 				DE9530952287DF6400E3F688 /* RecordParam.swift in Sources */,
 				76F7F46722946928001E9984 /* CellCreateExercise.swift in Sources */,
@@ -7613,6 +7750,7 @@
 				76CE31A82295AE3600E998FB /* ChoiceExerciseViewController.swift in Sources */,
 				769A3BAD229FE53A00CA55BD /* CalendarView.swift in Sources */,
 				DE49F80722A3D81D00A92C63 /* NotificationListInteractor.swift in Sources */,
+				2A88F4E322FE670400D59336 /* FightProtocols.swift in Sources */,
 				DE95309B2287DF6400E3F688 /* KActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
 				76E8530422B958EC0039751A /* LessonCatelogyDetailEntity.swift in Sources */,
 				766D130A228EE8DA005E47F0 /* TheoryInteractor.swift in Sources */,
@@ -7678,6 +7816,7 @@
 				2AB4A04A22E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */,
 				2A6C5EC622EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */,
 				2A6C5EDD22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
+				2AA9E37422FB3C780093F5C8 /* WordLikeResponse.swift in Sources */,
 				76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				2AED14AE22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,
 				DE9530AD2287DF6400E3F688 /* UITable+extension.swift in Sources */,
@@ -7703,6 +7842,7 @@
 				DE49F80122A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76C8E2EE22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */,
 				DE89D21322A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
+				2A88F4E022FE670400D59336 /* FightPresenter.swift in Sources */,
 				DE9530B22287DF6400E3F688 /* MenuInteractor.swift in Sources */,
 				DE89D22C22A42592000638B0 /* BXHInteractor.swift in Sources */,
 				76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
@@ -7732,6 +7872,7 @@
 				765110C3229312EC004A060A /* CellHeaderComment.swift in Sources */,
 				2AED14D822EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */,
 				DEB9612A22898F1F0046801B /* QARouter.swift in Sources */,
+				2A77695822FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift in Sources */,
 				DEB5847F2291ABD700FE0356 /* HistoryBeeInteractor.swift in Sources */,
 				76CE32102296539000E998FB /* ResultCompetitionViewController.swift in Sources */,
 				DE9530BA2287DF6400E3F688 /* PopUpHelper.swift in Sources */,
@@ -7765,6 +7906,7 @@
 				2AEFC31322D3241900F3D5B6 /* CommentEntity.swift in Sources */,
 				DE9530C32287DF6400E3F688 /* UserEntity.swift in Sources */,
 				2AB4A06622E226B900557B5F /* HistoryDailyMissonRouter.swift in Sources */,
+				2A77695022FE89A600E12997 /* SubmitAnswerEntity.swift in Sources */,
 				DE9530C42287DF6400E3F688 /* FaceBookEntity.swift in Sources */,
 				76E2FEC6228DBAB00014B1F4 /* SaveDictionaryPresenter.swift in Sources */,
 				DE49F7DD22A3CABA00A92C63 /* StudyPackCell.swift in Sources */,
@@ -7774,6 +7916,7 @@
 				768074A322C90E5D0015A75C /* QuestionChoiceResultParam.swift in Sources */,
 				DE9530C62287DF6400E3F688 /* AppDropDownCell.swift in Sources */,
 				DE9530C72287DF6400E3F688 /* AppDelegate.swift in Sources */,
+				2A88F4E122FE670400D59336 /* FightRouter.swift in Sources */,
 				DE9530C82287DF6400E3F688 /* ForgotPasswordPresenter.swift in Sources */,
 				2AA20CC322F5434400F38894 /* DictionarisResponse.swift in Sources */,
 				DE9530C92287DF6400E3F688 /* LocalizableKey.swift in Sources */,
@@ -7857,6 +8000,7 @@
 				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
 				DE9530DF2287DF6400E3F688 /* Int+extension.swift in Sources */,
 				DE9530E02287DF6400E3F688 /* CommonAPIService.swift in Sources */,
+				2AA9E36C22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
 				DEC62ADE22930EC400D7CECE /* BeePackViewController.swift in Sources */,
 				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
 				DECD193422A26EE20054861D /* DetailPackEntity.swift in Sources */,

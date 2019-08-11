@@ -11,10 +11,6 @@ import UIKit
 class ListManagerVC: BaseViewController {
 
     var tableView: UITableView = UITableView()
-    // if height row = 0 -> set dynamic height
-//    var heightRow  : CGFloat = 50
-    //to set dymanic height
-//    var estimateHeightRow : CGFloat = 50
     
     //list data of tableview
     var listData: [Any] = []
@@ -77,7 +73,7 @@ class ListManagerVC: BaseViewController {
         self.tableView.delegate = self
     }
     
-    func didSelectTableView(indexPath: IndexPath){
+    func didSelectTableView(item: Any, indexPath: IndexPath){
         
     }
     
@@ -105,17 +101,16 @@ class ListManagerVC: BaseViewController {
         return UITableViewCell()
     }
 }
-extension ListManagerVC : UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return estimateHeightRow
-//    }
+
+extension ListManagerVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  UITableView.automaticDimension
+        return UITableView.automaticDimension
+
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectTableView(indexPath: indexPath)
+        didSelectTableView(item: listData[indexPath.row], indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

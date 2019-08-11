@@ -19,12 +19,12 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="32" id="KGk-i7-Jjw" customClass="CellResultFillQuestion" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="607" height="32"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="607" height="31.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJR-L2-Ett">
-                        <rect key="frame" x="16" y="10" width="60" height="0.0"/>
+                        <rect key="frame" x="16" y="10.5" width="60" height="0.0"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="nTb-Gc-rOI"/>
                         </constraints>
@@ -33,24 +33,24 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4VX-Qb-RdH">
-                        <rect key="frame" x="479" y="0.0" width="112" height="32"/>
+                        <rect key="frame" x="479" y="0.0" width="112" height="32.5"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oqw-Y8-2Th">
-                                <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                <rect key="frame" x="0.0" y="0.0" width="32" height="32.5"/>
                                 <state key="normal" image="ic_reading"/>
                                 <connections>
                                     <action selector="clickReading:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="ojc-Qq-or2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lvY-Tz-SpW">
-                                <rect key="frame" x="40" y="0.0" width="32" height="32"/>
+                                <rect key="frame" x="40" y="0.0" width="32" height="32.5"/>
                                 <state key="normal" image="ic_link"/>
                                 <connections>
                                     <action selector="clickLink:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HF9-2y-40G"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ruI-od-Z0z">
-                                <rect key="frame" x="80" y="0.0" width="32" height="32"/>
+                                <rect key="frame" x="80" y="0.0" width="32" height="32.5"/>
                                 <state key="normal" title="Button" image="ic_exclamation"/>
                                 <connections>
                                     <action selector="clickExclamation:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="blb-CF-Pdn"/>
@@ -63,14 +63,17 @@
                         </constraints>
                     </stackView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="By0-an-ClJ">
-                        <rect key="frame" x="81" y="28.5" width="393" height="1"/>
+                        <rect key="frame" x="81" y="29.5" width="393" height="1"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="o2O-2c-5Gb"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Suf-by-xid">
-                        <rect key="frame" x="81" y="7" width="393" height="16.5"/>
+                        <rect key="frame" x="81" y="7.5" width="393" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="17" id="jdd-au-5iX"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>

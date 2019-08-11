@@ -10,7 +10,7 @@ import UIKit
 import DropDown
 
 protocol ClickQuestionDelegate: class {
-    func changeAnswer(id: Int,indexPath: IndexPath?)
+    func changeAnswer(idAnswer: Int,valueAnswer: String,indexPath: IndexPath?)
     func suggestQuestion(index: IndexPath)
 }
 
@@ -31,6 +31,23 @@ class CellQuestion: UITableViewCell {
             dropDown.dataSource = dataSource
         }
     }
+    
+    var answer : String = "" {
+        didSet {
+            if answer == "" {
+                self.lbAnswer.isHidden = true
+                self.vQuestion.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
+                self.lbAnswer.text = ""
+            } else {
+                self.lbAnswer.isHidden = false
+                self.vQuestion.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+                self.lbAnswer.text = answer
+            }
+        }
+    }
+    
+    
+    
     var idOption : [Int] = []
     var isShow = false {
         didSet {
@@ -66,9 +83,6 @@ class CellQuestion: UITableViewCell {
         dropDown.cellNib = UINib(nibName: "CellDropDownQuestion", bundle: nil)
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
             guard let cell = cell as? CellDropDownQuestion else { return }
-            
-            // Setup your custom UI components
-            
             cell.lbAnswer.text = item
         }
         
@@ -81,7 +95,7 @@ class CellQuestion: UITableViewCell {
             self.lbAnswer.isHidden = false
             self.vQuestion.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
             self.lbAnswer.text = item
-            self.delegate?.changeAnswer(id: self.idOption[index], indexPath: self.indexPath)
+            self.delegate?.changeAnswer(idAnswer: self.idOption[index],valueAnswer: self.dataSource[index], indexPath: self.indexPath)
         }
         
         dropDown.cancelAction = { [unowned self] in

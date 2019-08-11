@@ -10,79 +10,43 @@
 
 import UIKit
 
-class AssignExerciseViewController: BaseViewController {
+class AssignExerciseViewController: ListManagerVC {
 
 	var presenter: AssignExercisePresenterProtocol?
     
-    @IBOutlet weak var tbvAssignExercise: UITableView!
-
-    
-    var offset: Int = 0
-    
     override func setUpViews() {
+        showButtonBack = true
+        customTitle = LocalizableKey.assign_exercise.showLanguage
         super.setUpViews()
-        tbvAssignExercise.registerXibFile(CellAssignExercise.self)
-        tbvAssignExercise.dataSource = self
-        tbvAssignExercise.delegate = self
-        self.presenter?.getListAssignExercise(offset: self.offset)
-
-    }
-    override func setUpNavigation() {
-        super.setUpNavigation()
         self.tabBarController?.tabBar.isHidden = true
-        addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.assign_exercise.showLanguage)
     }
     
+    override func callAPI() {
+        super.callAPI()
+        self.presenter?.getListAssignExercise(offset: self.offset)
+    }
+    override func registerTableView() {
+        super.registerTableView()
+        self.tableView.registerXibFile(CellAssignExercise.self)
+    }
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! ExerciseEntity
+        let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
+        cell.indexPath = indexPath
+        cell.setupCell(dataCell: data)
+        return cell
+    }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! ExerciseEntity
+        let vc = NameExerciseRouter.createModule(id: data._id&, type: .assignExercise)
+        self.push(controller: vc)
+    }
 }
 
 extension AssignExerciseViewController : AssignExerciseViewProtocol{
-    func reloadView() {
-        tbvAssignExercise.reloadData()
-    }
-}
-
-extension AssignExerciseViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.listAssignExercise?.exercises.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellAssignExercise.self, for: indexPath)
-        cell.indexPath = indexPath
-        if let dataCell = self.presenter?.listAssignExercise?.exercises[indexPath.row]{
-            cell.setupCell(dataCell: dataCell)
-        }
-        return cell
-    }
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.listAssignExercise?.exercises.count ?? 0
-        if indexPath.row == row {
-            self.offset += limit
-            self.presenter?.getListAssignExercise(offset: self.offset)
-        }
-    }
-}
-extension AssignExerciseViewController : UITableViewDelegate{
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.presenter?.listAssignExercise?.exercises[indexPath.row]._id {
-            let vc = NameExerciseRouter.createModule(id: id, type: .assignExercise)
-            self.push(controller: vc)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+    func reloadView(listData: [ExerciseEntity]) {
+        initLoadData(data: listData)
     }
 }

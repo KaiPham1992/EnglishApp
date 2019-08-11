@@ -22,7 +22,7 @@ class DictionaryViewController: BaseViewController {
     @IBOutlet weak var lblTextSearch: UILabel!
     @IBAction func searchVocabulary(_ sender: Any) {
         let text = tfSearch.text ?? ""
-        if isConnection {
+        if !isConnection {
             self.presenter?.getDetailVocabulary(id: idDictionary)
         } else {
             self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: text)
@@ -140,8 +140,8 @@ extension DictionaryViewController:DictionaryViewProtocol{
     
     func reloadDictionary(){
         if let dictionary = self.presenter?.listDictionary.first {
-            self.lblDictionary.text = dictionary.name&
-            self.idDictionary = Int(dictionary._id ?? "0") ?? 0
+            self.lblDictionary.text = dictionary.name
+            self.idDictionary = dictionary.id
         }
         self.dropDownDictionary.dataSource = self.presenter?.listDictionary.map{$0.name}.compactMap{$0} ?? []
     }

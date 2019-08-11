@@ -23,6 +23,14 @@ open class ProgressView {
         return view
     }()
     
+    private var imageLoadingCompetition : UIImageView = {
+        let image = UIImageView(image: #imageLiteral(resourceName: "img_ong_lam_bai"))
+        image.backgroundColor = .white
+        image.contentMode = UIView.ContentMode.scaleAspectFit
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
     
     public static let shared = ProgressView()
     
@@ -45,6 +53,25 @@ open class ProgressView {
             guard let view = UIApplication.topViewController()?.view else { return }
             self.show(view)
         }
+    }
+    
+    func showLoadingCompetition(){
+        DispatchQueue.main.async {
+            guard let window = UIApplication.shared.keyWindow else  { return }
+            self.showFillSuperView(view: window)
+        }
+    }
+    
+    func showFillSuperView(view: UIView){
+        view.addSubview(imageLoadingCompetition)
+        imageLoadingCompetition.fillSuperview()
+    }
+    
+    func hideLoadingCompetition(){
+        DispatchQueue.main.async {
+            self.imageLoadingCompetition.removeFromSuperview()
+        }
+        
     }
     
     func showProgressOnWindow() {

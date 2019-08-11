@@ -15,15 +15,18 @@ class MoreDictionaryPresenter: MoreDictionaryPresenterProtocol, MoreDictionaryIn
     weak private var view: MoreDictionaryViewProtocol?
     var interactor: MoreDictionaryInteractorInputProtocol?
     private let router: MoreDictionaryWireframeProtocol
-    private var listMoreDictionary : [String] = [LocalizableKey.english_to_english.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.english_to_vietnamese.showLanguage,LocalizableKey.japanese_to_vietnamese.showLanguage]
-
+    
     init(interface: MoreDictionaryViewProtocol, interactor: MoreDictionaryInteractorInputProtocol?, router: MoreDictionaryWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
     
-    func getDictionaryForIndex(indexPath: IndexPath) -> String{
-        return listMoreDictionary[indexPath.row]
+    func getListDictionary() {
+        self.interactor?.getListDictionary()
+    }
+    
+    func getListDictionarySuccessed(listDictionary: [ItemDictionaryResponse]) {
+        self.view?.reloadDictionary(data: listDictionary)
     }
 }

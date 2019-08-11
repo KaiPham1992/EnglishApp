@@ -16,6 +16,7 @@ protocol SaveAPIServiceProtocol {
     func editNote(idNote: String,description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func getListGrammar(offset: Int,success: @escaping SuccessHandler<GrammarsResponse>.object, failure: @escaping RequestFailure)
     func deleteListGrammar(likeList: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func getListLikeVocab(offset: Int,success: @escaping SuccessHandler<WordLikeResponse>.object, failure: @escaping RequestFailure )
 }
 
 class SaveAPIService : SaveAPIServiceProtocol {
@@ -25,6 +26,11 @@ class SaveAPIService : SaveAPIServiceProtocol {
     
     init(network: APINetworkProtocol) {
         self.network = network
+    }
+    
+    func getListLikeVocab(offset: Int,success: @escaping SuccessHandler<WordLikeResponse>.object, failure: @escaping RequestFailure ) {
+        let endpoint = SaveEndpoint.getListLikesVocab(offset: offset)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     func deleteListGrammar(likeList: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
