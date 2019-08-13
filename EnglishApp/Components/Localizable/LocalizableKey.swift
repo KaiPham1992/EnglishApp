@@ -332,6 +332,14 @@ struct LocalizableKey {
     //-- BXH
     static let all = "all"
     static let quater = "quater"
+    static let BRONZE = "BRONZE"
+    static let SILVER = "SILVER"
+    static let GOLD = "GOLD"
+    static let PLATINUM = "PLATINUM"
+    static let MASTER = "MASTER"
+    static let TOAA = "TOAA"
+    static let TheOneAboveAll = "TheOneAboveAll"
+    static let ALL = "ALL"
     
     //pop up
     static let getError = "getError"

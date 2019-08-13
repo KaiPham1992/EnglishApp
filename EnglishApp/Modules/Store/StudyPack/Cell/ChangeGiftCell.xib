@@ -35,25 +35,25 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monthly Pass" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ib7-YC-kZz">
-                        <rect key="frame" x="116" y="37" width="196" height="18"/>
+                        <rect key="frame" x="116" y="37" width="179" height="18"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQk-1a-EFS">
-                        <rect key="frame" x="116" y="63" width="196" height="47"/>
+                        <rect key="frame" x="116" y="63" width="179" height="47"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                         <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5 hũ mật ong" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpJ-ft-plD">
-                        <rect key="frame" x="116" y="118" width="97" height="16"/>
+                        <rect key="frame" x="64" y="118" width="97" height="16"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                         <color key="textColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 kim cương" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHQ-4x-VXT">
-                        <rect key="frame" x="218" y="118" width="94" height="16"/>
+                        <rect key="frame" x="201" y="118" width="94" height="16"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                         <color key="textColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -67,9 +67,9 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="ib7-YC-kZz" secondAttribute="trailing" constant="8" id="0oG-Bx-tTy"/>
+                    <constraint firstAttribute="trailing" secondItem="ib7-YC-kZz" secondAttribute="trailing" constant="25" id="0oG-Bx-tTy"/>
+                    <constraint firstItem="FHQ-4x-VXT" firstAttribute="leading" secondItem="EpJ-ft-plD" secondAttribute="trailing" constant="40" id="2YW-4b-doe"/>
                     <constraint firstItem="ib7-YC-kZz" firstAttribute="top" secondItem="pgt-5C-jkb" secondAttribute="top" id="7UG-nu-2Ia"/>
-                    <constraint firstItem="EpJ-ft-plD" firstAttribute="leading" secondItem="MQk-1a-EFS" secondAttribute="leading" id="8n0-fg-h4c"/>
                     <constraint firstItem="MQk-1a-EFS" firstAttribute="top" secondItem="ib7-YC-kZz" secondAttribute="bottom" constant="8" id="B78-TH-d3n"/>
                     <constraint firstItem="MQk-1a-EFS" firstAttribute="leading" secondItem="ib7-YC-kZz" secondAttribute="leading" id="HiG-ZG-oXd"/>
                     <constraint firstItem="MQk-1a-EFS" firstAttribute="trailing" secondItem="ib7-YC-kZz" secondAttribute="trailing" id="Owx-rU-xJ0"/>
