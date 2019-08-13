@@ -76,6 +76,18 @@ class NameExerciseViewController: BaseViewController {
         }
     }
     
+    var isPauseTime = false {
+        didSet{
+            if isPauseTime {
+                btnNext.isUserInteractionEnabled = false
+                clvQuestion.isUserInteractionEnabled = false
+            } else {
+                btnNext.isUserInteractionEnabled = true
+                clvQuestion.isUserInteractionEnabled = true
+            }
+        }
+    }
+    
     override func setUpViews() {
         super.setUpViews()
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
@@ -108,7 +120,7 @@ class NameExerciseViewController: BaseViewController {
     }
     
     @objc func deleteExercise(){
-        if !isEnd {
+        if !isEnd && !isPauseTime {
             PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
                 self.confirmOutExercise()
             })
@@ -116,15 +128,17 @@ class NameExerciseViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        if self.currentIndex == 1 {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
-               self.confirmOutExercise()
-            })
-        } else {
-            if !isEnd {
-                self.currentIndex -= 1
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
+        if !isPauseTime {
+            if self.currentIndex == 1 {
+                PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+                    self.confirmOutExercise()
+                })
+            } else {
+                if !isEnd {
+                    self.currentIndex -= 1
+                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                    clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
+                }
             }
         }
     }
@@ -264,8 +278,7 @@ extension NameExerciseViewController : TimeDelegate{
     }
     
     func startTime() {
-        btnNext.isUserInteractionEnabled = true
-        clvQuestion.isUserInteractionEnabled = true
+        isPauseTime = false
     }
     
     func endTime() {
@@ -273,7 +286,6 @@ extension NameExerciseViewController : TimeDelegate{
     }
     
     func pauseTime() {
-        btnNext.isUserInteractionEnabled = false
-        clvQuestion.isUserInteractionEnabled = false
+        isPauseTime = true
     }
 }
