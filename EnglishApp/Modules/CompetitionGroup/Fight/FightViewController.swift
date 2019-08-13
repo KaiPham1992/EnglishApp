@@ -258,12 +258,14 @@ extension FightViewController: UICollectionViewDataSource{
                 let type = data.answers?.first?.type ?? ""
                 if type == "" || type == "2"{
                     let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
+                    cell.type = .competition
                     cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                     cell.setupCell(data: data)
                     return cell
                 }
                 let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
                 cell.indexPath = indexPath
+                cell.type = .competition
                 cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                 cell.delegate = self
                 cell.setupCell(dataCell: data)

@@ -22,6 +22,7 @@ enum TypeDoExercise : Int {
     case assignExercise = 6
     case dailyMissonExercise = 2
     case entranceExercise = 1
+    case competition = 100
 }
 
 class NameExerciseViewController: BaseViewController {
@@ -219,12 +220,14 @@ extension NameExerciseViewController: UICollectionViewDataSource{
             let type = data.answers?.first?.type ?? ""
             if type == "" || type == "2"{
                 let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
+                cell.type = self.typeExercise
                 cell.setupCell(data: data)
                 cell.indexPath = indexPath
                 cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
                 return cell
             }
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+            cell.type = self.typeExercise
             cell.indexPath = indexPath
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
             cell.delegate = self

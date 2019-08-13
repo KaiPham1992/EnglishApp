@@ -56,12 +56,13 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     }
     
     func getViewEntranceTest() {
-        ProgressView.shared.showLoadingCompetition()
+        ProgressView.shared.show()
         Provider.shared.exerciseAPIService.getEntranceExercise(success: { (respone) in
             if let _respone = respone {
                 self.presenter?.getExerciseSuccessed(respone: _respone)
             }
         }) { (error) in
+            ProgressView.shared.hide()
             guard let _error = error else {
                 return
             }

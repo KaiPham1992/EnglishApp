@@ -16,6 +16,7 @@ protocol ClickQuestionDelegate: class {
 
 class CellQuestion: UITableViewCell {
     
+    @IBOutlet weak var widthButtonSuggestion: NSLayoutConstraint!
     @IBAction func suggestQuestion(_ sender: Any) {
         delegate?.suggestQuestion(index: self.indexPath ?? IndexPath(row: 0, section: 0))
     }
@@ -100,6 +101,14 @@ class CellQuestion: UITableViewCell {
         
         dropDown.cancelAction = { [unowned self] in
             self.isShow = !self.isShow
+        }
+    }
+    
+    func setupButtonSuggestion(isShow: Bool){
+        if isShow {
+            widthButtonSuggestion.constant = 32
+        } else {
+            widthButtonSuggestion.constant = 0
         }
     }
 }

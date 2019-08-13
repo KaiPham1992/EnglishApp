@@ -22,6 +22,7 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vQuestion: UIView!
     @IBOutlet weak var tbvNameExercise: UITableView!
+    var type : TypeDoExercise = .entranceExercise
     
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
@@ -49,17 +50,19 @@ class CellExercise: UICollectionViewCell {
     
     func setupCell(dataCell: QuestionEntity){
         DispatchQueue.main.async {
-            self.detectQuestion(contextQuestion: dataCell.content_extend&)
+            self.detectQuestion(contextQuestion: dataCell.content_extend&,type : self.type)
             self.answer = dataCell.answers ?? []
             self.tbvNameExercise.reloadData()
         }
     }
     
-    func detectQuestion(contextQuestion: String){
+    func detectQuestion(contextQuestion: String,type : TypeDoExercise){
         tvContent.attributedText = contextQuestion.htmlToAttributedString
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tap)
+        if type != .entranceExercise || type != .competition {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            tap.numberOfTapsRequired = 2
+            tvContent.addGestureRecognizer(tap)
+        }
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
@@ -82,7 +85,6 @@ class CellExercise: UICollectionViewCell {
         popover.removeFromSuperview()
         let point = tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
         let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-//        aView.btnDetail.addTarget(self, action: #selector(clickDetail), for: .touchUpInside)
         aView.actionSeeDetailWord = {[weak self] (word) in
             self?.gotoDetailVocabulary(word: word)
         }
@@ -123,6 +125,11 @@ extension CellExercise: UITableViewDataSource{
         if listAnswerCompetition.count > 0 {
             cell.answer = listAnswerCompetition[indexPath.row].value
         }
+        
+        //show hide button suggesstion
+        
+        let isShowButtonSuggesstion = self.type != .entranceExercise && self.type != .competition ? true : false
+        cell.setupButtonSuggestion(isShow: isShowButtonSuggesstion)
         
         if let listAnswer = self.getDataSource(indexPath: indexPath), let option = self.getIdOption(indexPath: indexPath){
             cell.idOption = option

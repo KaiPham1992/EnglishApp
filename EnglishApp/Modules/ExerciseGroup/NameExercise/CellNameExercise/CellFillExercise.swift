@@ -15,7 +15,7 @@ class CellFillExercise: UICollectionViewCell {
     @IBOutlet weak var stvFillQuestion: UIStackView!
     @IBOutlet weak var tvContent: UITextView!
     let popover = Popover()
-    
+    var type : TypeDoExercise = .entranceExercise
     weak var delegate: CellExerciseDelegate?
     var attributed: NSMutableAttributedString?
     var numberLine: Int = 0
@@ -46,9 +46,11 @@ class CellFillExercise: UICollectionViewCell {
     
     func detectQuestion(contextQuestion: String){
         tvContent.attributedText = contextQuestion.htmlToAttributedString
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tap)
+        if type != .entranceExercise && type != .competition {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            tap.numberOfTapsRequired = 2
+            tvContent.addGestureRecognizer(tap)
+        }
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
@@ -72,7 +74,6 @@ class CellFillExercise: UICollectionViewCell {
             self.popover.removeFromSuperview()
             let point = self.tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
             let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-//            aView.btnDetail.addTarget(self, action: #selector(self.clickDetail), for: .touchUpInside)
             aView.actionSeeDetailWord = {[weak self] (word) in
                 self?.gotoDetailVocabulary(word: word)
             }
