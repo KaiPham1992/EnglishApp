@@ -17,7 +17,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
                 <outlet property="imgAvatar" destination="s8v-VP-Z6u" id="gvb-CM-jco"/>
-                <outlet property="imgRank" destination="O6f-1F-46w" id="KIb-NC-Zvz"/>
                 <outlet property="lbBee" destination="Lib-HW-C4q" id="wOP-KZ-svf"/>
                 <outlet property="lbDiamon" destination="QAP-Fz-HFt" id="QO1-1X-sxY"/>
                 <outlet property="lbFullName" destination="7tf-uh-FaU" id="f08-rU-o1M"/>
@@ -47,7 +46,7 @@
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="30"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </imageView>
@@ -229,13 +228,6 @@
                     <rect key="frame" x="27" y="364" width="320" height="50"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_gold" translatesAutoresizingMaskIntoConstraints="NO" id="O6f-1F-46w">
-                    <rect key="frame" x="109" y="67" width="22" height="22"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="22" id="9kx-xU-aqy"/>
-                        <constraint firstAttribute="height" constant="22" id="OqO-fi-6K3"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -248,7 +240,6 @@
                 <constraint firstItem="XPW-Dm-PVI" firstAttribute="leading" secondItem="Xzg-rX-TXa" secondAttribute="leading" id="7Va-WB-kMU"/>
                 <constraint firstItem="Xzg-rX-TXa" firstAttribute="height" secondItem="mTj-nj-pKU" secondAttribute="height" id="Bg2-kS-mf8"/>
                 <constraint firstItem="mTj-nj-pKU" firstAttribute="trailing" secondItem="tNj-TA-l9W" secondAttribute="trailing" id="ENL-ts-kOO"/>
-                <constraint firstItem="O6f-1F-46w" firstAttribute="top" secondItem="s8v-VP-Z6u" secondAttribute="bottom" constant="-23" id="G7D-j8-bUY"/>
                 <constraint firstItem="tNj-TA-l9W" firstAttribute="leading" secondItem="Mww-qS-XOx" secondAttribute="trailing" constant="10" id="LSb-oF-rqp"/>
                 <constraint firstItem="Mww-qS-XOx" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="171/414" id="N7z-CY-Qxc"/>
                 <constraint firstItem="QwL-Dy-vK5" firstAttribute="top" secondItem="vsC-Sd-isL" secondAttribute="bottom" constant="20" id="Udp-Zh-v9y"/>
@@ -257,7 +248,6 @@
                 <constraint firstItem="Mww-qS-XOx" firstAttribute="top" secondItem="vsC-Sd-isL" secondAttribute="bottom" constant="30" id="eJJ-Xx-XfF"/>
                 <constraint firstItem="tNj-TA-l9W" firstAttribute="width" secondItem="Mww-qS-XOx" secondAttribute="width" id="ksr-Iy-7gc"/>
                 <constraint firstItem="Xzg-rX-TXa" firstAttribute="trailing" secondItem="mTj-nj-pKU" secondAttribute="trailing" id="m2e-ZR-Qbj"/>
-                <constraint firstItem="O6f-1F-46w" firstAttribute="leading" secondItem="s8v-VP-Z6u" secondAttribute="trailing" constant="-23.5" id="rNO-s3-Cku"/>
                 <constraint firstItem="vsC-Sd-isL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="y7t-ci-Vew"/>
                 <constraint firstItem="XPW-Dm-PVI" firstAttribute="trailing" secondItem="Xzg-rX-TXa" secondAttribute="trailing" id="ykA-go-fbR"/>
                 <constraint firstItem="tNj-TA-l9W" firstAttribute="centerY" secondItem="Mww-qS-XOx" secondAttribute="centerY" id="zKj-gd-nLk"/>
@@ -269,7 +259,6 @@
     <resources>
         <image name="Money" width="32" height="32"/>
         <image name="add_green" width="24" height="24"/>
-        <image name="ic_gold" width="12" height="13"/>
         <image name="ic_kimcuong" width="32" height="32"/>
     </resources>
 </document>
