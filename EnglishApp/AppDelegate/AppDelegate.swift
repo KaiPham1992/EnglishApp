@@ -15,6 +15,7 @@ import GoogleSignIn
 import Fabric
 import Crashlytics
 import netfox
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,6 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         checkLogin()
         AppRouter.shared.updateRootView()
         
+        //--
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, err) in
+            print("granted: (\(granted)")
+        }
         return true
     }
     
