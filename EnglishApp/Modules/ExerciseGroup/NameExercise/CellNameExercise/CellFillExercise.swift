@@ -39,51 +39,32 @@ class CellFillExercise: UICollectionViewCell {
     
     func setupCell(data: QuestionEntity){
         DispatchQueue.main.async {
-            self.detectQuestion(text: data.content_extend&)
+            self.detectQuestion(contextQuestion: data.content_extend&)
             self.setFillCell(numberView: data.answers?.count ?? 0)
         }
     }
     
-    func detectQuestion(text: String){
-        let  textArray = text.htmlToString.components(separatedBy: " ")
-        let attributedText = NSMutableAttributedString()
-        for word in textArray {
-            let attributed = NSMutableAttributedString(string: word + " ")
-            let range = NSRange(location: 0, length: word.count)
-            let myCustomAttributed = [ NSAttributedString.Key.init(rawValue: "tapped"):word, NSAttributedString.Key.font : AppFont.fontRegular14] as [NSAttributedString.Key : Any]
-            attributed.addAttributes(myCustomAttributed, range: range)
-            attributedText.append(attributed)
-        }
-        self.attributed = attributedText
-        self.tvContent.attributedText = attributedText
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))
+    func detectQuestion(contextQuestion: String){
+        tvContent.attributedText = contextQuestion.htmlToAttributedString
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
-        self.tvContent.addGestureRecognizer(tap)
+        tvContent.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
-        let content = sender.view as! UITextView
-        let layoutManager = content.layoutManager
-        var location = sender.location(in: content)
-        
-        location.x -= content.contentInset.left
-        location.y -= content.contentInset.top
-        
-        print(location.x)
-        print(location.y)
-        let characterIndex  = layoutManager.characterIndex(for: location, in: content.textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
-        if characterIndex < content.textStorage.length {
-            print("Your character is at index: \(characterIndex)")
-            let myRange = NSRange(location: characterIndex, length: 1)
-            let subString = (content.attributedText.string as NSString).substring(with: myRange)
-            print("character at index: \(subString)")
-            let attributeName = "tapped"
-            let attributeValue = content.attributedText!.attribute(NSAttributedString.Key("tapped"), at: characterIndex, effectiveRange: nil) as? String
-            if let value = attributeValue {
-                delegate?.searchVocabulary(word: value.standString(),position: CGPoint(x: sender.location(in: content).x, y: sender.location(in: content).y + AppFont.fontRegular14.lineHeight / 2),index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
-                print("You tapped on \(attributeName) and the value is: \(value)")
+        let point = sender.location(in: tvContent)
+        if let detectedWord = getWordAtPosition(point){
+            delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+        }
+    }
+    
+    private func getWordAtPosition(_ point: CGPoint) -> String?{
+        if let textPosition = tvContent.closestPosition(to: point) {
+            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
+                return tvContent.text(in: range)
             }
         }
+        return nil
     }
     
     func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
