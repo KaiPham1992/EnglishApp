@@ -32,7 +32,7 @@ class ProductEntity: BaseEntity {
     var cropLogo: String?
     var durationAmount: String?
     var durationUnit: String?
-    var amountHoney: Double?
+    var amountHoney: String?
     var createDate: Date?
     var nationId: String?
     var amountDiamond: String?
@@ -50,7 +50,8 @@ class ProductEntity: BaseEntity {
         self.durationAmount <- map["duration_amount"]
         self.durationUnit <- map["duration_unit"]
         self.amountDiamond <- map["amount_diamond"]
-        self.amountHoney <- (map["amount_honey"], StringToDoubleTransform())
+//        self.amountHoney <- (map["amount_honey"], StringToDoubleTransform())
+        self.amountHoney <- map["amount_honey"]
         self.nationId <- map["nation_id"]
         self.amountMoney <- map["amount_money"]
     }

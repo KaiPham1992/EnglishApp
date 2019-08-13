@@ -18,6 +18,7 @@ class ChangeGiftCell: BaseTableCell {
     var product: ProductEntity? {
         didSet {
             guard let product = product else { return }
+            
             imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
             
             lbTitle.text = product.name

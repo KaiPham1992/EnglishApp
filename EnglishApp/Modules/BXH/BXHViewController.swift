@@ -19,7 +19,7 @@ class BXHViewController: BaseViewController {
     @IBOutlet var btnOption: [UIButton]!
     @IBOutlet weak var viewOption: UIView!
     
-    let arrayRank = ["BRONZE","SILVER","GOLD","PLATINUM","MASTER","TOAA",""]
+    let arrayRank = ["\(LocalizableKey.BRONZE.showLanguage)","\(LocalizableKey.SILVER.showLanguage)","\(LocalizableKey.GOLD.showLanguage)","\(LocalizableKey.PLATINUM.showLanguage)","\(LocalizableKey.MASTER.showLanguage)","\(LocalizableKey.TOAA.showLanguage)",""]
     var index = 6
     
     var quarter = ""
@@ -62,7 +62,7 @@ class BXHViewController: BaseViewController {
         if arrayRank[index] == "" {
             lbRank.text = LocalizableKey.all.showLanguage
         } else if arrayRank[index] == "TOAA" {
-            lbRank.text = "The one above all"
+            lbRank.text = "\(LocalizableKey.TheOneAboveAll.showLanguage)"
         } else {
             lbRank.text = arrayRank[index]
         }
