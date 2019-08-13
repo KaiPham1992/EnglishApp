@@ -265,7 +265,7 @@ extension NameExerciseViewController : TimeDelegate{
     
     func startTime() {
         btnNext.isUserInteractionEnabled = true
-        clvQuestion.isHidden = false
+        clvQuestion.isUserInteractionEnabled = true
     }
     
     func endTime() {
@@ -274,6 +274,6 @@ extension NameExerciseViewController : TimeDelegate{
     
     func pauseTime() {
         btnNext.isUserInteractionEnabled = false
-        clvQuestion.isHidden = true
+        clvQuestion.isUserInteractionEnabled = false
     }
 }
