@@ -169,7 +169,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
                 self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
                 self.vCountTime.setupTimeStartNow(min: self.currentTime)
                 self.clvQuestion.reloadData()
-                ProgressView.shared.hideLoadingCompetition()
+                ProgressView.shared.hide()
             }
         }
     }

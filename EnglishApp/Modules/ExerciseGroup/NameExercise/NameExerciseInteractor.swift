@@ -15,12 +15,13 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     weak var presenter: NameExerciseInteractorOutputProtocol?
     
     func getDailyMisson() {
-        ProgressView.shared.showLoadingCompetition()
+        ProgressView.shared.show()
         Provider.shared.exerciseAPIService.getDailyMisson(success: { (respone) in
             if let _respone = respone {
                 self.presenter?.getExerciseSuccessed(respone: _respone)
             }
         }) { (error) in
+            ProgressView.shared.hide()
             guard let _error = error else {
                 return
             }
