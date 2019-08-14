@@ -137,6 +137,11 @@ class PopUpHelper {
         popUp.showPopup(diamond: diamond, completionYes: completionYes)
     }
     
+    func showReward(message: String, completionYes: CompletionClosure?) {
+        let popUp = RewardPopUp()
+        popUp.showPopup(message: message, completionYes: completionYes)
+    }
+    
     func showRequireUpGrade(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
         let popUp = RequireUpgradePopUp()
         popUp.showPopUp(completionNo: completionNo, completionYes: completionYes)

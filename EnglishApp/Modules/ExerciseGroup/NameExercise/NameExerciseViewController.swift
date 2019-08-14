@@ -64,7 +64,7 @@ class NameExerciseViewController: BaseViewController {
         }
     }
     
-    var isEnd : Bool = false{
+    var isEnd : Bool = false {
         didSet {
             vCountTime.stopTimer()
             if self.currentIndex < numberQuestion {
@@ -72,6 +72,7 @@ class NameExerciseViewController: BaseViewController {
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
             }
+            self.vCountTime.isUserInteractionEnabled = false
             self.disableUserInteractionCell()
         }
     }
@@ -173,6 +174,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         DispatchQueue.global().async {
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+//            self.currentTime = 10
             self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             if let questions = self.presenter?.exerciseEntity?.questions {
                 for item in questions {

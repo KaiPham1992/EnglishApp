@@ -74,10 +74,9 @@ class HomeViewController: BaseViewController {
     
     @objc func testEntranceComplete(){
         self.hideTestEntrance()
-        PopUpHelper.shared.showError(message: "\(LocalizableKey.doneInputTest.showLanguage)") {
+        PopUpHelper.shared.showReward(message: LocalizableKey.doneInputTest.showLanguage) {
             
         }
-        
     }
     
     override func setUpNavigation() {
@@ -178,7 +177,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             if indexPath.item == 0 {
                 let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
                 cell.btnTestBegin.addTarget(self, action: #selector(btnTestBeginTapped), for: .touchUpInside)
-                if let _ = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test {
+                if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
                     cell.isTestedEnstrane = true
                 } else {
                     cell.isTestedEnstrane = false

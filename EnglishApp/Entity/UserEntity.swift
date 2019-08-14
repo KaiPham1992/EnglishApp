@@ -41,7 +41,7 @@ class UserEntity: BaseEntity  {
     var displayName: String?
     var socialType: String?
     var rankPoint: Int?
-    var is_entrance_test: String?
+    var is_entrance_test: String = ""
     
     var typeUser = [String]()
     var amountRank: Int?

@@ -76,7 +76,7 @@ class ResultViewController: BaseViewController {
 //            setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
 //        }
 //
-        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise {
+        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
 //            viewRank.isHidden = true
 //            self.presenter?.getViewResult(id: id)
             setTitleNavigation(title: LocalizableKey.result.showLanguage)
