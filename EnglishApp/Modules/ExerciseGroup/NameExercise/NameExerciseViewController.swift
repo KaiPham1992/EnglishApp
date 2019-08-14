@@ -144,7 +144,11 @@ class NameExerciseViewController: BaseViewController {
     }
     
     func confirmOutExercise(){
-        self.presenter?.exitExercise(id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
+        if let _param = self.paramSubmit {
+//            self.presenter?.exitExercise(id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
+            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+            self.presenter?.submitExercise(param: _param)
+        }
     }
 }
 
@@ -235,17 +239,20 @@ extension NameExerciseViewController: UICollectionViewDataSource{
             if type == "" || type == "2"{
                 let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
                 cell.type = self.typeExercise
+                
                 cell.setupCell(data: data)
                 cell.indexPath = indexPath
                 cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
+                cell.delegate = self
                 return cell
             }
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
             cell.type = self.typeExercise
             cell.indexPath = indexPath
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
-            cell.delegate = self
+            
             cell.setupCell(dataCell: data)
+            cell.delegate = self
             return cell
         }
         return UICollectionViewCell()
