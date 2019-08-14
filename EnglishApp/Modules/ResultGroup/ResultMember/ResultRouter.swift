@@ -69,8 +69,8 @@ class ResultRouter: ResultWireframeProtocol {
         return view
     }
     
-    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int){
-        let vc = ResultExerciseRouter.createModule(listAnswer: listAswer, index: index)
+    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int,isHistory: Bool){
+        let vc = ResultExerciseRouter.createModule(listAnswer: listAswer, index: index,isHistory: isHistory)
         self.viewController?.push(controller: vc,animated: true)
     }
 }

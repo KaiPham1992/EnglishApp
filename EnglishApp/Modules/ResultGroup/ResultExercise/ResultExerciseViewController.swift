@@ -14,6 +14,7 @@ class ResultExerciseViewController: BaseViewController {
   
 
 	var presenter: ResultExercisePresenterProtocol?
+    
     @IBAction func clickNext(_ sender: Any) {
         let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
         if index + 1 < numberAnswer {
@@ -24,15 +25,18 @@ class ResultExerciseViewController: BaseViewController {
                 btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             }
         } else {
-            let vc = self.navigationController?.viewControllers
-            if (vc?.count ?? 0) > 2 {
-                if let view = vc?[(vc?.count ?? 3)-3] {
-                    self.navigationController?.popToViewController(view, animated: true)
+            if isHistory {
+                let vc = self.navigationController?.viewControllers
+                if (vc?.count ?? 0) > 2 {
+                    if let view = vc?[(vc?.count ?? 3)-3] {
+                        self.navigationController?.popToViewController(view, animated: true)
+                    }
+                } else {
+                    self.pop(animated: true)
                 }
             } else {
-                self.pop(animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
             }
-            
         }
     }
     
@@ -40,6 +44,7 @@ class ResultExerciseViewController: BaseViewController {
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
     var index: Int = 0
+    var isHistory = false
 
     override func setUpViews() {
         super.setUpViews()
