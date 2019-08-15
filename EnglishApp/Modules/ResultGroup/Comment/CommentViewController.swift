@@ -37,7 +37,6 @@ class CommentViewController: BaseViewController {
 
     override func setUpViews() {
         super.setUpViews()
-        //disable iq keyboard
         IQKeyboardManager.shared.disabledDistanceHandlingClasses.append(CommentViewController.self)
         addKeyboardNotification()
         tbvComment.registerXibFile(CellComment.self)

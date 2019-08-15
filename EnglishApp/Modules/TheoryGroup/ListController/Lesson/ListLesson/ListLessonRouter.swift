@@ -27,10 +27,11 @@ class ListLessonRouter: ListLessonWireframeProtocol {
 
         return view
     }
-    static func createModule(lesson_category_id: String) -> UIViewController {
+    static func createModule(lesson_category_id: String,type: TheoryType) -> ListLessonViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ListLessonViewController(nibName: nil, bundle: nil)
         view.lesson_category_id = lesson_category_id
+        view.type = type
         let interactor = ListLessonInteractor()
         let router = ListLessonRouter()
         let presenter = ListLessonPresenter(interface: view, interactor: interactor, router: router)

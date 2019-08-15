@@ -57,14 +57,28 @@ class DetailLessonViewController: BaseViewController {
         super.setUpNavigation()
         addBackToNavigation()
         if type == .detailLesson{
-            viewMessage.action = {
-                self.push(controller: CommentRouter.createModule(id: self.idLesson),animated: true)
+            viewMessage.action = { [unowned self] in
+                self.gotoComment()
             }
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
         } else {
             addButtonLikeToNavigation(image: UIImage(named:"Material_Icons_white_favorite")!, actionSelector: #selector(clickHeart))
         }
         
+    }
+    
+    func gotoComment() {
+        guard let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium else { return }
+        if isUserPremium {
+            self.push(controller: CommentRouter.createModule(id: self.idLesson),animated: true)
+        } else {
+            PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
+                let vc = StoreViewController()
+                self.push(controller: vc)
+            }) {
+                
+            }
+        }
     }
     
     @objc func clickHeart(){

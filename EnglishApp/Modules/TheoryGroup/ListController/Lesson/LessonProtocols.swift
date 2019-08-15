@@ -12,7 +12,7 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LessonWireframeProtocol: class {
-    func gotoListLesson(id: String)
+    func gotoListLesson(id: String,type: TheoryType)
 }
 //MARK: Presenter -
 protocol LessonPresenterProtocol: class {
@@ -20,7 +20,7 @@ protocol LessonPresenterProtocol: class {
     var interactor: LessonInteractorInputProtocol? { get set }
     var lessonEntity: LessonCategoryEntity? {get set}
     func getLessonRecipe(type: Int,offset: Int)
-    func gotoListLesson(id: String)
+    func gotoListLesson(id: String,type: TheoryType)
 }
 
 //MARK: Interactor -

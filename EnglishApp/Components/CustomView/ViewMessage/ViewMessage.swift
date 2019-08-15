@@ -21,8 +21,8 @@ class ViewMessage: BaseViewXib{
     }
     
     func setupNumber(number: Int){
-        if number > 99 {
-            lblNumber.text = "99+"
+        if number > 9 {
+            lblNumber.text = "9+"
         } else {
             lblNumber.text = "\(number)"
         }
