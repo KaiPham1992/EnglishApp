@@ -22,6 +22,14 @@ class CellCreateExercise: UITableViewCell {
         }
     }
     
+    @IBAction func didEndEdit(_ sender: Any) {
+        let text = edNumber.text ?? ""
+        if text == "" {
+            edNumber.text = "0"
+            delegate?.changeNumberQuestion(number: 0, indexPath: indexPath)
+        }
+    }
+    
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var edNumber: TextFieldLimitedCharacter!
     @IBOutlet weak var vType: UIView!

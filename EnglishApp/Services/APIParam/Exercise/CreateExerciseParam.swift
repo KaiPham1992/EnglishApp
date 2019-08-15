@@ -10,14 +10,12 @@ import Foundation
 import ObjectMapper
 
 class CreateExerciseParam : BaseParam {
-    var name : String?
+    var name : String = ""
     var type_test : Int?
-    var categories : [CategoryParam]?
-    init(name : String = "", type_test : Int = 5, categories : [CategoryParam] = []) {
+    var categories : [CategoryParam] = []
+    init(type_test : Int = 5) {
         super.init()
-       self.name = name
-       self.type_test = type_test
-       self.categories = categories
+        self.type_test = type_test
     }
     
     required init?(map: Map) {

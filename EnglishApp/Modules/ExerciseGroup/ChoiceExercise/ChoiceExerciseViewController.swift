@@ -77,6 +77,7 @@ class ChoiceExerciseViewController: BaseViewController {
         }
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDown.hide()
+            self.offset = 0
             self.level = index + 1
             self.lbType.text = item
             self.rotateImage()

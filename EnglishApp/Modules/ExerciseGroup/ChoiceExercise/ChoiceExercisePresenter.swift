@@ -17,6 +17,7 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
     private let router: ChoiceExerciseWireframeProtocol
     var exerciseChoiceEntity: ExerciseChoiceEntity?
     var isLoadmore = true
+    var offset = 0
 
     init(interface: ChoiceExerciseViewProtocol, interactor: ChoiceExerciseInteractorInputProtocol?, router: ChoiceExerciseWireframeProtocol) {
         self.view = interface
@@ -29,8 +30,14 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
     }
     
     func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int, studyPackId: Int?,offset: Int) {
-        if isLoadmore {
+        self.offset = offset
+        if self.offset == 0 {
+            isLoadmore = true
             self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level,studyPackId:studyPackId,offset: offset)
+        } else {
+            if isLoadmore {
+                 self.interactor?.getViewChoiceExercise(typeTest: typeTest, catelogyId: catelogyId, level: level,studyPackId:studyPackId,offset: offset)
+            }
         }
     }
         
@@ -39,7 +46,7 @@ class ChoiceExercisePresenter: ChoiceExercisePresenterProtocol, ChoiceExerciseIn
         if respone.exercises.count < limit {
             isLoadmore = false
         }
-        if exerciseChoiceEntity == nil {
+        if self.offset == 0 {
             self.exerciseChoiceEntity = respone
         } else {
             self.exerciseChoiceEntity?.exercises += respone.exercises
