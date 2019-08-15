@@ -287,6 +287,11 @@ extension FightViewController: UICollectionViewDataSource{
 
 extension FightViewController : CellExerciseDelegate{
     
+    
+    func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
+//        self.listParamSubmit[indexPath.row].questions?[indexPathRow.row]
+    }
+    
     func showDetailVocubulary(word: WordExplainEntity) {
         self.presenter?.gotoDetailVocabulary(word: word)
     }

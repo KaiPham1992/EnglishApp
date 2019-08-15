@@ -30,7 +30,7 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
     }
     
     func getViewExercise(id: String) {
-        ProgressView.shared.showLoadingCompetition()
+        ProgressView.shared.show()
         Provider.shared.exerciseAPIService.getViewExercise(id: id, success: { (respone) in
             if let _respone = respone {
                 self.presenter?.getExerciseSuccessed(respone: _respone)

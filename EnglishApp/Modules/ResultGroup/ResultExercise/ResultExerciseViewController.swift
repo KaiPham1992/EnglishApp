@@ -164,6 +164,11 @@ extension ResultExerciseViewController: ResultExerciseViewProtocol {
 }
 
 extension ResultExerciseViewController : CellExerciseDelegate {
+    
+    func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
+        
+    }
+    
     func showDetailVocubulary(word: WordExplainEntity) {
         self.presenter?.gotoDetailVocabulary(word: word)
     }

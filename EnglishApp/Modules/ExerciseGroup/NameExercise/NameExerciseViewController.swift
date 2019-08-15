@@ -251,8 +251,9 @@ extension NameExerciseViewController: UICollectionViewDataSource{
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
             cell.type = self.typeExercise
             cell.indexPath = indexPath
+            cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
+            cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
-            
             cell.setupCell(dataCell: data)
             cell.delegate = self
             return cell
@@ -263,6 +264,10 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 
 extension NameExerciseViewController : CellExerciseDelegate{
     
+    func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
+        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].option_id = idAnswer
+        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].value = valueAnswer
+    }
     
     func showDetailVocubulary(word: WordExplainEntity) {
         self.presenter?.gotoDetailVocabulary(word: word)

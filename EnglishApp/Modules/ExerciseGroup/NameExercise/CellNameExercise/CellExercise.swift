@@ -13,6 +13,7 @@ protocol CellExerciseDelegate: class {
     func showDetailVocubulary(word: WordExplainEntity)
     func suggestQuestion(id: String,indexPath: IndexPath,indexQuestion: IndexPath)
     func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
+    func changeAnswer(idAnswer: Int,valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath)
 }
 
 class CellExercise: UICollectionViewCell {
@@ -27,9 +28,11 @@ class CellExercise: UICollectionViewCell {
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
     
-    var answer: [ChildQuestionEntity] = []
+//    var answer: [ChildQuestionEntity] = []
     var numberLine: Int = 0
     let popover = Popover()
+    var listIdOption : [[Int]] = []
+    var listDataSource : [[String]] = []
     //for exercise
     var listAnswer : [QuestionChoiceResultParam] = []
     //for competition
@@ -51,7 +54,7 @@ class CellExercise: UICollectionViewCell {
     func setupCell(dataCell: QuestionEntity){
         DispatchQueue.main.async {
             self.detectQuestion(contextQuestion: dataCell.content_extend&,type : self.type)
-            self.answer = dataCell.answers ?? []
+//            self.answer = dataCell.answers ?? []
             self.tbvNameExercise.reloadData()
         }
     }
@@ -111,7 +114,10 @@ extension CellExercise: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.answer.count
+        if listAnswerCompetition.count > 0 {
+            return listAnswerCompetition.count
+        }
+        return listAnswer.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -125,54 +131,40 @@ extension CellExercise: UITableViewDataSource{
         if listAnswerCompetition.count > 0 {
             cell.answer = listAnswerCompetition[indexPath.row].value
         }
-        
         //show hide button suggesstion
-        
         let isShowButtonSuggesstion = self.type != .entranceExercise && self.type != .competition ? true : false
         cell.setupButtonSuggestion(isShow: isShowButtonSuggesstion)
-        
-        if let listAnswer = self.getDataSource(indexPath: indexPath), let option = self.getIdOption(indexPath: indexPath){
-            cell.idOption = option
-            cell.dataSource = listAnswer
-        }
+        cell.idOption = listIdOption[indexPath.row]
+        cell.dataSource = listDataSource[indexPath.row]
         cell.delegate = self
         heightTableView.constant = tbvNameExercise.contentSize.height
         return cell
     }
     
-    func getDataSource(indexPath: IndexPath) -> [String]? {
-        return self.answer[indexPath.row].options.map{$0.value}.compactMap{$0}
-    }
-    func getIdOption(indexPath: IndexPath) -> [Int]?{
-        return self.answer[indexPath.row].options.map{Int($0._id ?? "0")}.compactMap{$0}
-    }
-    
     func changeDataSource(index: IndexPath, data: [ChildQuestionEntity]){
-        self.answer = data
+//        self.answer = data
+        self.listIdOption[index.row] = data[index.row].options.map{Int($0._id ?? "0") ?? 0}
+        self.listDataSource[index.row] = data[index.row].options.map{$0.value ?? ""}
         if let cell = tbvNameExercise.cellForRow(at: index) as? CellQuestion{
-            cell.dataSource = self.getDataSource(indexPath: index) ?? []
+            cell.dataSource = listDataSource[index.row]
+            cell.idOption = listIdOption[index.row]
+//            cell.dataSource = self.getDataSource(indexPath: index) ?? []
         }
     }
 }
 
 extension CellExercise : ClickQuestionDelegate{
     func suggestQuestion(index: IndexPath) {
-        if let _id = answer[index.row]._id {
-            delegate?.suggestQuestion(id: _id, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0),indexQuestion: index)
+        if let _id = listAnswer[index.row].question_id {
+            delegate?.suggestQuestion(id: String(_id), indexPath: self.indexPath ?? IndexPath(row: 0, section: 0),indexQuestion: index)
         }
     }
     
-    func changeAnswer(idAnswer: Int,valueAnswer: String, indexPath: IndexPath?) {
+    func changeAnswer(index: Int, indexPath: IndexPath?) {
         if let _indexPath = indexPath {
-            if listAnswer.count > 0 {
-                self.listAnswer[_indexPath.row].option_id = idAnswer
-                self.listAnswer[_indexPath.row].value = valueAnswer
-            }
-            if listAnswerCompetition.count > 0 {
-                self.listAnswerCompetition[_indexPath.row].option_id = idAnswer
-                self.listAnswerCompetition[_indexPath.row].value = valueAnswer
-            }
+             self.delegate?.changeAnswer(idAnswer: listIdOption[_indexPath.row][index], valueAnswer: listDataSource[_indexPath.row][index], indexPathRow: _indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
         }
     }
 }
+
 
