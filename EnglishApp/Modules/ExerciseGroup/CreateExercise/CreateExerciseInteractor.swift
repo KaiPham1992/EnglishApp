@@ -19,7 +19,7 @@ class CreateExerciseInteractor: CreateExerciseInteractorInputProtocol {
         Provider.shared.exerciseAPIService.getListQuestionCatelogy(success: { (respone) in
             ProgressView.shared.hide()
             if let _respone = respone {
-                self.presenter?.getListCatelogySuccessed(respone: _respone.categories ?? [])
+                self.presenter?.getListCatelogySuccessed(respone: _respone.categories )
             }
         }) { (error) in
             ProgressView.shared.hide()

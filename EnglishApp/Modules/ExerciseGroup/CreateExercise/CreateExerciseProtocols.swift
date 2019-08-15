@@ -24,7 +24,6 @@ protocol CreateExercisePresenterProtocol: class {
     func getNumberRow() -> Int
     func getItemIndexPath(indexPath : IndexPath)->String
     func getListQuestionCatelogy()
-//    func getCateloriesParam() -> [CategoryParam]
     func changeLevelParam(indexPath: IndexPath,level: Int)
     func changeNumberQuestion(indexPath: IndexPath,number: Int)
     func gotoCreateExercise(param: CreateExerciseParam)
