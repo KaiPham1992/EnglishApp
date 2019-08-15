@@ -289,7 +289,8 @@ extension FightViewController : CellExerciseDelegate{
     
     
     func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
-//        self.listParamSubmit[indexPath.row].questions?[indexPathRow.row]
+        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].option_id = idAnswer
+        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].value = valueAnswer
     }
     
     func showDetailVocubulary(word: WordExplainEntity) {
@@ -301,11 +302,13 @@ extension FightViewController : CellExerciseDelegate{
     }
     
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
-        PopUpHelper.shared.showSuggesstionResult(diamond: {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-        }) {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
-        }
+        //for competition dont support suggestion.
+        
+//        PopUpHelper.shared.showSuggesstionResult(diamond: {
+//            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
+//        }) {
+//            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
+//        }
     }
 }
 
