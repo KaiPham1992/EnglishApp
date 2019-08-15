@@ -122,6 +122,7 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeue(ChangeGiftCell.self, for: indexPath)
+                cell.delegate = self
                 cell.product = self.collectionProduct.groupGift[indexPath.item - 1]
                 return cell
             }
@@ -171,6 +172,18 @@ extension StudyPackViewController{
         didGetError()
         lbError.text = LocalizableKey.notFoundCode.showLanguage
         heightOfError.constant = 17
+    }
+}
+
+// MARK: - ChangeGiftCellDelegate
+extension StudyPackViewController: ChangeGiftCellDelegate {
+    
+    func btnDiamondTapped() {
+        
+    }
+    
+    func btnHoneyTapped() {
+        
     }
 }
 

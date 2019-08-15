@@ -36,7 +36,8 @@ class ProductEntity: BaseEntity {
     var createDate: Date?
     var nationId: String?
     var amountDiamond: String?
-    var amountMoney: String?
+    var amountMoney: Double?
+    var color: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -53,7 +54,8 @@ class ProductEntity: BaseEntity {
 //        self.amountHoney <- (map["amount_honey"], StringToDoubleTransform())
         self.amountHoney <- map["amount_honey"]
         self.nationId <- map["nation_id"]
-        self.amountMoney <- map["amount_money"]
+        self.amountMoney <- (map["amount_money"], StringToDoubleTransform())
+        self.color <- map["color"]
     }
     
     var urlAvatar:  URL? {
@@ -66,16 +68,27 @@ class ProductEntity: BaseEntity {
     }
     
     var money: String?{
-        if let moneyString = self.amountMoney{
+        if let money = self.amountMoney{
+            let newMoney = convertToCurrency(number: money)
 //            let formatter = NumberFormatter()
 //            formatter.numberStyle = .decimal
 //            if let _money = formatter.string(from: Int(moneyString)! as NSNumber) {
 //                return _money
 //            }
-            return moneyString.description
+            return newMoney.description
+//            return moneyString.description
         }
         return ""
         
+    }
+    
+    func convertToCurrency(number: Double) -> String{
+        let myDouble = number
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .decimal
+        let priceString = currencyFormatter.string(from: NSNumber(value: myDouble))!
+        return priceString
     }
     
 }
