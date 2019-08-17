@@ -52,7 +52,11 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
         if respone.data.count < limit {
             isLoadmore = false
         }
-        self.commentEntity = respone
+        if self.commentEntity == nil {
+            self.commentEntity = respone
+        } else {
+            self.commentEntity?.data += respone.data
+        }
         self.view?.reloadView()
     }
     

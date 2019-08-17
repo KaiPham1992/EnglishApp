@@ -37,7 +37,9 @@ class DetailLessonViewController: BaseViewController {
         super.setUpViews()
         
         if let _lesson = lesson {
-            idLesson = _lesson._id ?? "1"
+            idLesson = _lesson._id ?? "0"
+        }
+        if idLesson != "0" {
             self.presenter?.getLessonDetail(lesson_id: Int(self.idLesson) ?? 0)
         }
         
