@@ -57,6 +57,11 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
             controller.deleteNote()
             return
         }
+        
+        if let controller = self.viewControllers[self.currentIndex] as?  VocabularyViewController {
+            controller.deleteVocabulary()
+            return
+        }
     }
     
     func actionReloadFinish(){

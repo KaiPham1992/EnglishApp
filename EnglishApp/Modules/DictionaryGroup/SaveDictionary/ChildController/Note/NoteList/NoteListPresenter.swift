@@ -46,7 +46,6 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
     }
     
     func deleteNote(){
-        
         let listId = self.noteListRespone?.notes.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0} ?? []
         self.listDelete = listId
         if listDelete.count > 0 {

@@ -14,7 +14,7 @@ class VocabularyRouter: VocabularyWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> VocabularyViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = VocabularyViewController(nibName: nil, bundle: nil)
         let interactor = VocabularyInteractor()

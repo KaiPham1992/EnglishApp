@@ -29,4 +29,12 @@ class VocabularyPresenter: VocabularyPresenterProtocol, VocabularyInteractorOutp
     func getListLikeVocabSuccessed(response: WordLikeResponse) {
         self.view?.reloadView(listResponse: response.likes)
     }
+
+    func deleteVocab(listId: [Int]) {
+        self.interactor?.deleteVocab(listId: listId)
+    }
+    
+    func deleteVocabSuccessed() {
+        self.view?.deleteVocabSuccessed()
+    }
 }

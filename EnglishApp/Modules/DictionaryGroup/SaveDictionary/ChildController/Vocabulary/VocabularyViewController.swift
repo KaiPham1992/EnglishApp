@@ -16,6 +16,7 @@ class VocabularyViewController: ListManagerVC {
 	var presenter: VocabularyPresenterProtocol?
     var isDelete = false
     var actionDeleteFinish : (()->())?
+    var listDelete : [Int] = []
 
     override func setUpViews() {
         showButtonBack = false
@@ -32,16 +33,27 @@ class VocabularyViewController: ListManagerVC {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-//        self.presenter?.cancelDelete()
+        self.cancelDelete()
         actionDeleteFinish?()
     }
 
     func notifyDelete(){
         PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.cofirm_delete.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased()) { [unowned self] in
-//            self.presenter?.confirmDelete()
+            self.presenter?.deleteVocab(listId: self.listDelete)
         }
     }
     
+    func deleteVocabulary() {
+        let listVocabulary = self.listData as! [WordLikeEntity]
+        let listId = listVocabulary.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0}
+        self.listDelete = listId
+        if listDelete.count > 0 {
+            self.notifyDelete()
+        } else {
+            self.reloadViewAfterDelete()
+        }
+    }
+
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = item as! WordLikeEntity
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
@@ -60,6 +72,12 @@ class VocabularyViewController: ListManagerVC {
         return cell
     }
     
+    func reloadViewAfterDelete(){
+        isDelete = false
+        tableView.reloadData()
+        actionDeleteFinish?()
+    }
+    
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! WordLikeEntity
         let vc = DetailLessonRouter.createModule(idVocabulary: Int(data.word_id ?? "0") ?? 0)
@@ -73,17 +91,26 @@ class VocabularyViewController: ListManagerVC {
         self.offset = 0
         callAPI()
     }
+    
+    func cancelDelete() {
+        let listVocabulary = self.listData as! [WordLikeEntity]
+        for item in listVocabulary {
+            item.isDelete = false
+        }
+        reloadViewAfterDelete()
+    }
 }
 extension VocabularyViewController : VocabularyViewProtocol{
     func reloadView(listResponse: [WordLikeEntity]) {
         initLoadData(data: listResponse)
     }
     
-    func reloadViewAfterDelete(){
-        isDelete = false
-        tableView.reloadData()
-        actionDeleteFinish?()
+    func deleteVocabSuccessed() {
+        let listVocabulary = self.listData as! [WordLikeEntity]
+        self.listData = listVocabulary.filter{!$0.isDelete}
+        reloadViewAfterDelete()
     }
+   
 }
 
 extension VocabularyViewController: IndicatorInfoProvider{
