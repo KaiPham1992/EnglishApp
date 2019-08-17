@@ -63,7 +63,15 @@ class VocabularyViewController: ListManagerVC {
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! WordLikeEntity
         let vc = DetailLessonRouter.createModule(idVocabulary: Int(data.word_id ?? "0") ?? 0)
+        vc.callbackCallAgainAPI = {[weak self] in
+            self?.callAPIAgain()
+        }
         self.push(controller: vc)
+    }
+    
+    func callAPIAgain(){
+        self.offset = 0
+        callAPI()
     }
 }
 extension VocabularyViewController : VocabularyViewProtocol{

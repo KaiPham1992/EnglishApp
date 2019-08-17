@@ -96,7 +96,7 @@ class DetailLessonViewController: BaseViewController {
             isClickLikeImage = true
             isLike = isLike == 0 ? 1 : 0
         }
-        self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 ,idWord: self.vocabulary?.id , isFavorite: self.isLike)
+        self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 ,idWord: self.vocabulary != nil ? self.vocabulary?.id : self.presenter?.vocabulary?.id , isFavorite: self.isLike)
     }
 }
 
