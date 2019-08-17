@@ -124,9 +124,23 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
             if let vocabulary = self.vocabulary {
                 setTitleNavigation(title: vocabulary.word)
                 self.lbContent.attributedText = vocabulary.explain.html2Attributed
+                if vocabulary.is_favorite {
+                    self.isLike = 1
+                    self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
+                } else {
+                    self.isLike = 0
+                    self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
+                }
             } else {
                 setTitleNavigation(title: self.presenter?.vocabulary?.word ?? "")
                 self.lbContent.attributedText = self.presenter?.vocabulary?.explain.html2Attributed
+                if (self.presenter?.vocabulary?.is_favorite ?? false) {
+                    self.isLike = 1
+                    self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
+                } else {
+                    self.isLike = 0
+                    self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
+                }
             }
         }
     }
