@@ -34,6 +34,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lbAnswer" destination="EKC-ta-w9i" id="yke-75-tpO"/>
+                <outlet property="leadinglbAnswer" destination="vKG-hn-lLp" id="tKd-bk-0tr"/>
                 <outlet property="optionLabel" destination="EKC-ta-w9i" id="20C-1r-EFk"/>
             </connections>
             <point key="canvasLocation" x="47.826086956521742" y="35.491071428571423"/>

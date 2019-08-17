@@ -35,12 +35,15 @@
                             <action selector="clickAction:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Iuo-aV-UqU"/>
                         </connections>
                     </button>
-                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UA-bE-TAu" customClass="RatioButton" customModule="EnglishApp_AppStore" customModuleProvider="target">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UA-bE-TAu" customClass="RatioButton" customModule="EnglishApp_AppStore" customModuleProvider="target">
                         <rect key="frame" x="303" y="40" width="24" height="24"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="24" id="LvC-S9-7iQ"/>
                             <constraint firstAttribute="width" constant="24" id="Mmy-Oh-DHn"/>
                         </constraints>
+                        <connections>
+                            <action selector="setDefaultDictionary:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="rr8-5E-ChD"/>
+                        </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bjl-EQ-0RN">
                         <rect key="frame" x="10" y="43" width="288" height="18"/>

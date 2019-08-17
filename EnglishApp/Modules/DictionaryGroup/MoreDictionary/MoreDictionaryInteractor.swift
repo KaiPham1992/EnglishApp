@@ -22,10 +22,17 @@ class MoreDictionaryInteractor: MoreDictionaryInteractorInputProtocol {
                 let object = RealmDBManager.share.getDataFromRealm(type: LocalConfigDictionary.self)
                 if object.count > 0 {
                     let listId = object.map{$0.id}
+                    var idDefault = 0
+                    if let objectDefault = object.filter({$0.isDefault == 1}).first {
+                        idDefault = objectDefault.id
+                    }
                     if listId.count > 0 {
                         for (index,item) in result.enumerated() {
                             if listId.contains(item.id) {
                                 result[index].isDownload = true
+                            }
+                            if item.id == idDefault {
+                                result[index].isDefault = true
                             }
                         }
                     }

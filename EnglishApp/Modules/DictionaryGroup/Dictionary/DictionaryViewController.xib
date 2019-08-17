@@ -10,6 +10,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
         <array key="Comfortaa-Regular.ttf">
             <string>Comfortaa-Regular</string>
         </array>
@@ -20,6 +23,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DictionaryViewController">
             <connections>
+                <outlet property="heightViewNoDictionary" destination="yX4-66-HhO" id="Dxi-E6-mge"/>
                 <outlet property="imgPolygon" destination="csO-EW-DSW" id="IU7-kQ-K48"/>
                 <outlet property="lblDictionary" destination="Vhz-EI-uqB" id="DEa-oj-zYA"/>
                 <outlet property="lblSearch" destination="zCW-oh-RL5" id="t7M-WG-fHh"/>
@@ -37,9 +41,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qDE-WM-TdO">
                     <rect key="frame" x="16" y="36" width="125" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Viet - Anh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-EI-uqB">
-                            <rect key="frame" x="8" y="10.5" width="71.5" height="19"/>
-                            <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vhz-EI-uqB">
+                            <rect key="frame" x="8" y="20" width="0.0" height="0.0"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -74,7 +78,7 @@
                         <constraint firstAttribute="height" constant="40" id="bHB-rd-tgW"/>
                     </constraints>
                     <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -84,6 +88,9 @@
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="textChanged:" destination="-1" eventType="editingChanged" id="vOb-l8-cj6"/>
+                    </connections>
                 </textField>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h3B-5e-yLV">
                     <rect key="frame" x="16" y="84" width="343" height="40"/>
@@ -98,9 +105,9 @@
                                         <constraint firstAttribute="height" constant="24" id="rUG-9m-jIa"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tra cuu" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCW-oh-RL5">
-                                    <rect key="frame" x="33" y="10.5" width="54" height="19"/>
-                                    <fontDescription key="fontDescription" name="Roboto-Bold" family="Roboto" pointSize="16"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tra cuu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCW-oh-RL5">
+                                    <rect key="frame" x="24.5" y="11" width="62.5" height="18"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -160,11 +167,55 @@
                         <constraint firstAttribute="bottom" secondItem="7vc-ac-SBe" secondAttribute="bottom" constant="319" id="cmg-oJ-vLZ"/>
                     </constraints>
                 </scrollView>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTg-1P-XDc">
+                    <rect key="frame" x="0.0" y="20" width="375" height="0.0"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_quenmatkhau" translatesAutoresizingMaskIntoConstraints="NO" id="ndO-6H-3F6">
+                            <rect key="frame" x="89.5" y="-166" width="196" height="132"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="196" id="Mz5-Y8-umX"/>
+                                <constraint firstAttribute="height" constant="132" id="Skl-OQ-OwI"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có dữ liệu." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q93-DP-lFS">
+                            <rect key="frame" x="124.5" y="-10.5" width="126" height="16"/>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                            <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8bI-Rw-AzC">
+                            <rect key="frame" x="124.5" y="30.5" width="126" height="32"/>
+                            <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="126" id="KsA-wh-ePf"/>
+                                <constraint firstAttribute="height" constant="32" id="sAP-da-2K8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                            <state key="normal" title="Cài đặt">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="gotoSetting:" destination="-1" eventType="touchUpInside" id="sTR-8f-rtD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="Q93-DP-lFS" firstAttribute="top" secondItem="ndO-6H-3F6" secondAttribute="bottom" constant="23.5" id="8LH-t7-W0v"/>
+                        <constraint firstItem="8bI-Rw-AzC" firstAttribute="top" secondItem="Q93-DP-lFS" secondAttribute="bottom" constant="25" id="Ap4-Nn-Xql"/>
+                        <constraint firstItem="ndO-6H-3F6" firstAttribute="centerX" secondItem="dTg-1P-XDc" secondAttribute="centerX" id="USR-nu-1R4"/>
+                        <constraint firstItem="ndO-6H-3F6" firstAttribute="centerY" secondItem="dTg-1P-XDc" secondAttribute="centerY" constant="-100" id="Ztw-hq-mdW"/>
+                        <constraint firstItem="8bI-Rw-AzC" firstAttribute="centerX" secondItem="Q93-DP-lFS" secondAttribute="centerX" id="j9b-xV-bjk"/>
+                        <constraint firstItem="Q93-DP-lFS" firstAttribute="centerX" secondItem="ndO-6H-3F6" secondAttribute="centerX" id="wde-h5-FQ3"/>
+                        <constraint firstAttribute="height" id="yX4-66-HhO"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="yHc-n0-Mnl" firstAttribute="bottom" secondItem="qDE-WM-TdO" secondAttribute="bottom" id="5Ub-4N-MU5"/>
                 <constraint firstItem="TBR-R9-mjb" firstAttribute="top" secondItem="qDE-WM-TdO" secondAttribute="top" id="7NA-gK-Tn6"/>
+                <constraint firstItem="dTg-1P-XDc" firstAttribute="leading" secondItem="4ZE-SS-dMm" secondAttribute="leading" id="9en-Ym-CTB"/>
                 <constraint firstItem="yHc-n0-Mnl" firstAttribute="trailing" secondItem="qDE-WM-TdO" secondAttribute="trailing" id="9t7-tz-d4Y"/>
                 <constraint firstItem="h3B-5e-yLV" firstAttribute="top" secondItem="TBR-R9-mjb" secondAttribute="bottom" constant="8" id="9x3-cZ-E3V"/>
                 <constraint firstItem="kGL-HV-3PZ" firstAttribute="top" secondItem="h3B-5e-yLV" secondAttribute="top" id="BUV-R3-9xm"/>
@@ -174,6 +225,7 @@
                 <constraint firstItem="yHc-n0-Mnl" firstAttribute="top" secondItem="qDE-WM-TdO" secondAttribute="top" id="JkM-aM-krI"/>
                 <constraint firstItem="kGL-HV-3PZ" firstAttribute="trailing" secondItem="TBR-R9-mjb" secondAttribute="trailing" id="JsR-Ju-hsZ"/>
                 <constraint firstItem="pU5-AX-J4h" firstAttribute="trailing" secondItem="kGL-HV-3PZ" secondAttribute="trailing" id="a3d-h8-6bi"/>
+                <constraint firstItem="dTg-1P-XDc" firstAttribute="top" secondItem="4ZE-SS-dMm" secondAttribute="top" id="ehS-pJ-oHZ"/>
                 <constraint firstItem="qDE-WM-TdO" firstAttribute="leading" secondItem="4ZE-SS-dMm" secondAttribute="leading" constant="16" id="icf-n1-dPr"/>
                 <constraint firstItem="qDE-WM-TdO" firstAttribute="top" secondItem="4ZE-SS-dMm" secondAttribute="top" constant="16" id="k6q-VQ-MGY"/>
                 <constraint firstItem="4ZE-SS-dMm" firstAttribute="trailing" secondItem="TBR-R9-mjb" secondAttribute="trailing" constant="16" id="sVD-wP-Qiv"/>
@@ -182,6 +234,7 @@
                 <constraint firstItem="TBR-R9-mjb" firstAttribute="leading" secondItem="qDE-WM-TdO" secondAttribute="trailing" constant="5" id="vEn-G1-wsh"/>
                 <constraint firstItem="kGL-HV-3PZ" firstAttribute="leading" secondItem="h3B-5e-yLV" secondAttribute="leading" id="vUB-bS-dE7"/>
                 <constraint firstItem="kGL-HV-3PZ" firstAttribute="bottom" secondItem="h3B-5e-yLV" secondAttribute="bottom" id="wb5-IX-Bc9"/>
+                <constraint firstItem="4ZE-SS-dMm" firstAttribute="trailing" secondItem="dTg-1P-XDc" secondAttribute="trailing" id="wmb-Gy-rmC"/>
                 <constraint firstItem="kGL-HV-3PZ" firstAttribute="trailing" secondItem="h3B-5e-yLV" secondAttribute="trailing" id="xVA-vJ-1Bs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="4ZE-SS-dMm"/>
@@ -191,5 +244,6 @@
     <resources>
         <image name="Material_Icons_white_arrow_drop_down" width="24" height="24"/>
         <image name="Material_Icons_white_search" width="24" height="24"/>
+        <image name="img_quenmatkhau" width="242" height="200"/>
     </resources>
 </document>

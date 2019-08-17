@@ -16,6 +16,7 @@ import Fabric
 import Crashlytics
 import netfox
 import UserNotifications
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -38,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         checkLogin()
+        realmConfig()
         AppRouter.shared.updateRootView()
         
         //--
@@ -59,6 +61,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 return
             }
         }
+    }
+    
+    func realmConfig() {
+        let config = Realm.Configuration(schemaVersion: 1, migrationBlock: { (migration, oldSchemaVersion) in
+            if oldSchemaVersion < 1 {
+                migration.enumerateObjects(ofType: LocalConfigDictionary.className(), { (oldObject, newObject) in
+                    newObject!["isDefault"] = 0
+                })
+            }
+        })
+        Realm.Configuration.defaultConfiguration = config
     }
     
     
