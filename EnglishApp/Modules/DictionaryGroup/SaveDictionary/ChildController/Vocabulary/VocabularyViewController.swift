@@ -59,6 +59,12 @@ class VocabularyViewController: ListManagerVC {
         
         return cell
     }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! WordLikeEntity
+        let vc = DetailLessonRouter.createModule(idVocabulary: Int(data.word_id ?? "0") ?? 0)
+        self.push(controller: vc)
+    }
 }
 extension VocabularyViewController : VocabularyViewProtocol{
     func reloadView(listResponse: [WordLikeEntity]) {

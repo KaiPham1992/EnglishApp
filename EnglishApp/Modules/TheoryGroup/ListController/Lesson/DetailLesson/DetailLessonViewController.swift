@@ -25,6 +25,7 @@ class DetailLessonViewController: BaseViewController {
     var callbackCallAgainAPI : (()->())?
     var isClickLikeImage = false
     var vocabulary : WordExplainEntity?
+    var idVocabulary : Int?
     
     var isLike = 0 {
         didSet{
@@ -45,6 +46,10 @@ class DetailLessonViewController: BaseViewController {
         
         if let _ = self.vocabulary {
             reloadView()
+        }
+        
+        if let _idVocabulary = idVocabulary {
+            self.presenter?.getViewVocabulary(wordId: _idVocabulary)
         }
     }
     
@@ -116,8 +121,13 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                 self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
             }
         } else {
-            setTitleNavigation(title: self.vocabulary?.word ?? "")
-            self.lbContent.attributedText = self.vocabulary?.explain.html2Attributed
+            if let vocabulary = self.vocabulary {
+                setTitleNavigation(title: vocabulary.word)
+                self.lbContent.attributedText = vocabulary.explain.html2Attributed
+            } else {
+                setTitleNavigation(title: self.presenter?.vocabulary?.word ?? "")
+                self.lbContent.attributedText = self.presenter?.vocabulary?.explain.html2Attributed
+            }
         }
     }
 }
