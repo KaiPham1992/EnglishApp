@@ -25,10 +25,8 @@ class DictionaryViewController: BaseViewController {
         let text = tfSearch.text ?? ""
         currentTextSearch = text
         if idDictionary != 0 && text != "" {
-            if isConnection {
-                self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: text)
-            } else {
-                self.presenter?.searchVocabulary(text: currentTextSearch)
+            if !isConnection {
+               self.presenter?.searchVocabulary(text: currentTextSearch)
             }
         }
     }
@@ -46,8 +44,14 @@ class DictionaryViewController: BaseViewController {
     @IBAction func searchVocabulary(_ sender: Any) {
 //        let text = tfSearch.text ?? ""
         if currentTextSearch != "" {
-            self.presenter?.getDetailWord(text: currentTextSearch)
+            if !isConnection {
+                self.presenter?.getDetailWord(text: currentTextSearch)
+            } else {
+                self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: currentTextSearch)
+            }
+            self.view.endEditing(true)
         }
+       
 
     }
     var presenter: DictionaryPresenterProtocol?
