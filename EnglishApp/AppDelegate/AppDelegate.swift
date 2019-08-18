@@ -43,8 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppRouter.shared.updateRootView()
         
         //--
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, err) in
-            print("granted: (\(granted)")
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, err) in
+            if !didAllow {
+                print("User has declined notifications")
+            }
         }
         return true
     }
