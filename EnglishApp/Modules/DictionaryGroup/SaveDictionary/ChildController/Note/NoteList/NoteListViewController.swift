@@ -123,8 +123,10 @@ extension NoteListViewController: UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let id = self.presenter?.noteListRespone?.notes[indexPath.row]._id ?? ""
-        self.presenter?.gotoNote(idNote: id)
+        if !isDelete {
+            let id = self.presenter?.noteListRespone?.notes[indexPath.row]._id ?? ""
+            self.presenter?.gotoNote(idNote: id)
+        }
     }
 }
 extension NoteListViewController: IndicatorInfoProvider{

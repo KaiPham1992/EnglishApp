@@ -12,10 +12,16 @@ class CellGrammar: UITableViewCell {
 
     @IBOutlet weak var btnRemove: RatioButton!
     @IBOutlet weak var lblTitle: UILabel!
+    @IBOutlet weak var buttonRemove: UIButton!
     
     @IBOutlet weak var widthButton: NSLayoutConstraint!
     var actionClick : ((_ index: IndexPath)->())?
     var indexPath: IndexPath?
+    
+    @IBAction func clickButtonRemove(_ sender: Any) {
+        btnRemove.isChocie = !btnRemove.isChocie
+        actionClick?(indexPath ?? IndexPath(row: 0, section: 0))
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,16 +33,14 @@ class CellGrammar: UITableViewCell {
     func setupDelete(){
         btnRemove.isChocie = false
         widthButton.constant = 20
-        btnRemove.actionClick = clickButton
+//        btnRemove.actionClick = clickButton
+        buttonRemove.isHidden = false
     }
     
     func setupNoDelete(){
         btnRemove.isChocie = false
         widthButton.constant = 0
-    }
-    
-    func clickButton(isChoice: Bool){
-        actionClick?(indexPath ?? IndexPath(row: 0, section: 0))
+        buttonRemove.isHidden = false
     }
     
     func setupTitle(title: String){

@@ -215,7 +215,7 @@ extension BaseViewController {
         btn.contentHorizontalAlignment = .right
     }
     
-    func addButtonToNavigation(title: String, style: StyleNavigation, action: Selector?, backgroundColor: UIColor = UIColor.white, textColor: UIColor = UIColor.black, font: UIFont = UIFont.systemFont(ofSize: 17), cornerRadius: CGFloat = 0, size: CGSize = CGSize(width: 20, height: 10)) -> UIButton{
+    func addButtonToNavigation(title: String, style: StyleNavigation, action: Selector?, backgroundColor: UIColor = UIColor.white, textColor: UIColor = UIColor.black, font: UIFont = UIFont.systemFont(ofSize: 17), cornerRadius: CGFloat = 0, size: CGSize = CGSize(width: 30, height: 20)) -> UIButton{
         
         showNavigation()
         if let newAction = action {
@@ -226,9 +226,9 @@ extension BaseViewController {
         btnRight.backgroundColor = backgroundColor
         btnRight.contentHorizontalAlignment = .center
         //        btnRight.setAttributed(title: title, color: textColor, font: font)
+        btnRight.titleLabel?.font = font
         btnRight.setTitleColor(textColor, for: .normal)
         btnRight.setTitle(title, for: .normal)
-        btnRight.titleLabel?.font = font
         
         let button = UIBarButtonItem(customView: btnRight)
         if style == .left {

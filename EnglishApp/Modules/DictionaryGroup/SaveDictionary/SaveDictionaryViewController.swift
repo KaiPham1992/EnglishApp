@@ -24,22 +24,22 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
     }
     
     @objc func clickButtonRight(){
+        addButtonTextToNavigation(title: "\(LocalizableKey.done.showLanguage)", style: .right, action: #selector(clickFinish), textColor: .black,font: AppFont.fontBold16)
         if let controller = self.viewControllers[self.currentIndex] as? GrammarViewController {
-            addButtonTextToNavigation(title: "\(LocalizableKey.done.showLanguage)", style: .right, action: #selector(clickFinish), textColor: .black)
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
             controller.reloadView()
             return
         }
         if let controller = self.viewControllers[self.currentIndex] as? NoteListViewController {
-            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
+//            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black, font: AppFont.fontRegular16)
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
             controller.reloadView()
             return
         }
         if let controller = self.viewControllers[self.currentIndex] as? VocabularyViewController {
-            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
+//            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
             controller.tableView.reloadData()

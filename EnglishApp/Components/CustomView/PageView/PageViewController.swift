@@ -79,4 +79,30 @@ class PageViewController : ButtonBarPagerTabStripViewController{
         self.navigationItem.titleView = vTitle
         
     }
+    
+    func addButtonTextToNavigation(title: String, style: StyleNavigation, action: Selector?, textColor: UIColor = AppColor.rightNavigation, font : UIFont = UIFont.systemFont(ofSize: 17)) {
+        
+        showNavigation()
+        let btn = UIButton()
+        
+        var newTitle = title
+        if style == .right {
+            newTitle = title
+        }
+        
+        btn.setAttributed(title: newTitle, color: textColor, font: font)
+        
+        btn.setTitleColor(textColor, for: .normal)
+        if let newAction = action {
+            btn.addTarget(self, action: newAction, for: .touchUpInside)
+        }
+        btn.sizeToFit()
+        
+        let button = UIBarButtonItem(customView: btn)
+        if style == .left {
+            self.navigationItem.leftBarButtonItem = button
+        } else {
+            self.navigationItem.rightBarButtonItem = button
+        }
+    }
 }
