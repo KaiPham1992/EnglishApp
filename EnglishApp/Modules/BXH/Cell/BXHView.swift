@@ -16,7 +16,8 @@ class BXHView: BaseViewXib {
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var imgStudyPack: UIImageView!
     @IBOutlet weak var imgPremium: UIImageView!
-
+    @IBOutlet weak var background: UIView!
+    
     var number: Int?
     var user = UserEntity(){
         didSet{

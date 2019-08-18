@@ -336,14 +336,14 @@
 // BHX
 "all" = "Tất cả";
 "quater" = "Quý";
-"BRONZE" = "ĐỒNG";
-"SILVER" = "BẠC";
-"GOLD" = "VÀNG";
-"PLATINUM" = "BẠCH KIM";
-"MASTER" = "CAO THỦ";
+"BRONZE" = "Đồng";
+"SILVER" = "Bạc";
+"GOLD" = "Vàng";
+"PLATINUM" = "Bạch kim";
+"MASTER" = "Cao thủ";
 "TOAA" = "TOAA";
-"TheOneAboveAll" = "MỘT TRÊN TẤT CẢ";
-"ALL" = "TẤT CẢ";
+"TheOneAboveAll" = "Một trên tất cả";
+"ALL" = "Tất  ";
 
 // Pop up
 "getError" = "Đã xảy ra lỗi.";
