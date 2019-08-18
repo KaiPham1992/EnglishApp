@@ -32,14 +32,18 @@ class VocabularyViewController: ListManagerVC {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(true)
-//        self.presenter?.cancelDelete()
+        self.presenter?.cancelDelete()
         actionDeleteFinish?()
     }
 
     func notifyDelete(){
         PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.cofirm_delete.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased()) { [unowned self] in
-//            self.presenter?.confirmDelete()
+            self.presenter?.confirmDelete()
         }
+    }
+    
+    func deleteVocabulary() {
+        presenter?.deleteVocubalary()
     }
     
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -65,9 +69,9 @@ extension VocabularyViewController : VocabularyViewProtocol{
         initLoadData(data: listResponse)
     }
     
-    func reloadViewAfterDelete(){
+    func reloadViewAfterDelete(list: [WordLikeEntity]){
         isDelete = false
-        tableView.reloadData()
+        reloadView(listResponse: list)
         actionDeleteFinish?()
     }
 }

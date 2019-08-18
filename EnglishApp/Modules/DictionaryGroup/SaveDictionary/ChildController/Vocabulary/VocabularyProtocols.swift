@@ -19,6 +19,10 @@ protocol VocabularyPresenterProtocol: class {
 
     var interactor: VocabularyInteractorInputProtocol? { get set }
     func getListLikeVocab(offset: Int)
+    func deleteVocubalary()
+    func confirmDelete()
+    func cancelDelete()
+    var listVocabulary: [WordLikeEntity] {get set}
 }
 
 //MARK: Interactor -
@@ -26,13 +30,14 @@ protocol VocabularyInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getListLikeVocabSuccessed(response: WordLikeResponse)
+    func deleteNoteSuccessed()
 }
 
 protocol VocabularyInteractorInputProtocol: class {
 
     var presenter: VocabularyInteractorOutputProtocol?  { get set }
     func getListLikeVocab(offset: Int)
-
+    func deleteNote(id: [Int])
     /* Presenter -> Interactor */
 }
 
@@ -41,6 +46,7 @@ protocol VocabularyViewProtocol: class {
 
     var presenter: VocabularyPresenterProtocol?  { get set }
     func reloadView(listResponse: [WordLikeEntity])
-
+    func notifyDelete()
+    func reloadViewAfterDelete(list: [WordLikeEntity])
     /* Presenter -> ViewController */
 }

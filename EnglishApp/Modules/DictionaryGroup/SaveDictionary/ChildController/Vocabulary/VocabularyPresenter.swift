@@ -16,6 +16,11 @@ class VocabularyPresenter: VocabularyPresenterProtocol, VocabularyInteractorOutp
     var interactor: VocabularyInteractorInputProtocol?
     private let router: VocabularyWireframeProtocol
 
+    var listVocabulary: [WordLikeEntity] = []
+    var isLoadmore = true
+    var listDelete: [Int] = []
+    var replaceData = false
+    
     init(interface: VocabularyViewProtocol, interactor: VocabularyInteractorInputProtocol?, router: VocabularyWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -27,6 +32,35 @@ class VocabularyPresenter: VocabularyPresenterProtocol, VocabularyInteractorOutp
     }
 
     func getListLikeVocabSuccessed(response: WordLikeResponse) {
+        self.listVocabulary = response.likes
         self.view?.reloadView(listResponse: response.likes)
+    }
+
+    func confirmDelete() {
+        self.interactor?.deleteNote(id: listDelete)
+    }
+    
+    func cancelDelete(){
+        let number = listVocabulary.count ?? 0
+        for index in 0..<number{
+            listVocabulary[index].isDelete = false
+        }
+        self.view?.reloadViewAfterDelete(list: self.listVocabulary)
+    }
+    
+    func deleteNoteSuccessed() {
+        self.listVocabulary = self.listVocabulary.filter{!$0.isDelete} ?? []
+        self.view?.reloadViewAfterDelete(list: self.listVocabulary)
+    }
+    
+    func deleteVocubalary(){
+        
+        let listId = self.listVocabulary.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0} ?? []
+        self.listDelete = listId
+        if listDelete.count > 0 {
+            self.view?.notifyDelete()
+        } else {
+            self.view?.reloadViewAfterDelete(list: self.listVocabulary)
+        }
     }
 }
