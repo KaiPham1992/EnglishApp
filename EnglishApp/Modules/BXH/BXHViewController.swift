@@ -12,12 +12,16 @@ import UIKit
 
 class BXHViewController: BaseViewController {
 
-	var presenter: BXHPresenterProtocol?
     @IBOutlet weak var tbBXH: UITableView!
     @IBOutlet weak var vUser: BXHView!
     @IBOutlet weak var lbRank: UILabel!
     @IBOutlet var btnOption: [UIButton]!
     @IBOutlet weak var viewOption: UIView!
+    
+    var refresh = UIRefreshControl()
+    
+	var presenter: BXHPresenterProtocol?
+    var idUser = ""
     
     let arrayRank = ["\(LocalizableKey.BRONZE.showLanguage)","\(LocalizableKey.SILVER.showLanguage)","\(LocalizableKey.GOLD.showLanguage)","\(LocalizableKey.PLATINUM.showLanguage)","\(LocalizableKey.MASTER.showLanguage)","\(LocalizableKey.TOAA.showLanguage)",""]
     var index = 6
@@ -204,6 +208,13 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
         
         tbBXH.estimatedRowHeight = 55
         tbBXH.rowHeight = UITableView.automaticDimension
+        tbBXH.refreshControl = refresh
+        tbBXH.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    @objc func refreshData() {
+        presenter?.getListLeaderBoard(quarter: self.quarter, year: self.year, rank: self.rank)
+        tbBXH.refreshControl?.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -221,6 +232,11 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
         if let _listLeaderBoard = listLeaderBoard.boards{
             cell.viewBXH.number = indexPath.item + 3
             cell.viewBXH.user = _listLeaderBoard[indexPath.item + 2]
+            if _listLeaderBoard[indexPath.item + 2].id& == self.idUser {
+                cell.viewBXH.background.backgroundColor = AppColor.yellowFBEFC1
+            } else {
+                cell.viewBXH.background.backgroundColor = .white
+            }
         }
         return cell
     }
@@ -252,7 +268,8 @@ extension BXHViewController: BXHViewProtocol{
                 break
             }
         }
-        self.vUser.number = number
+        self.idUser = userInfo.id&
+        self.vUser.number = number + 1
         self.vUser.user = userInfo
     }
     

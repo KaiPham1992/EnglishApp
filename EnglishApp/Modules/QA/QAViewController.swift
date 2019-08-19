@@ -63,13 +63,20 @@ class QAViewController: BaseViewController {
         content.title = "Thông báo"
         content.body = "Bạn bị trừ mật ong."
         content.sound = UNNotificationSound.default
+        content.badge = 1
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 2, repeats: false)
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
         let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if let error = error {
+                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+            }
+        }
     }
     
     @IBAction func btnSearchTapped() {
+        self.dismissKeyBoard()
         if UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0 < 5 {
             PopUpHelper.shared.showNotEnoughtBee(completionNo: nil) {
                 let storeViewController = StoreViewController()
@@ -88,13 +95,9 @@ class QAViewController: BaseViewController {
                     self.tfQuestion.text = ""
                 }
                 
-                //-- push notification
-                pushNotification()
+                //-- remove me
+//                pushNotification()
                 
-                //-- reload list
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    self.presenter?.getQA()
-                }
             }
         }
     }
@@ -152,6 +155,7 @@ extension QAViewController: QAViewProtocol {
             self.listHistory = list
         }
     }
+    
 }
 
 extension QAViewController: UITextFieldDelegate {

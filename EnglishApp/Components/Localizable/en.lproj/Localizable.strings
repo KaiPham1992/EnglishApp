@@ -25,7 +25,7 @@
 "LoginButtonLogin" = "Login";
 "FBorGmail" = "Or login by";
 "ForgotPass" = "Forgot password";
-"NotYetAccount" = "You don't have any account ?";
+"NotYetAccount" = "You don't have any account? ";
 "Register" = "Register";
 "LoginButtonSignUp" = "REGISTER";
 "passwordDifference" = "Re-password is wrong!";
