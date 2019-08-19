@@ -16,7 +16,7 @@ class CompetitionCell: BaseTableCell {
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var btnJoin: UIButton!
     @IBOutlet weak var btnShare: UIButton!
-    var timer: Timer?
+//    var timer: Timer?
     
     var type: ResultCompetition = .result{
         didSet{
@@ -34,12 +34,12 @@ class CompetitionCell: BaseTableCell {
     }
     
     
-    override func prepareForReuse() {
-        if timer != nil {
-            timer?.invalidate()
-            timer = nil
-        }
-    }
+//    override func prepareForReuse() {
+//        if timer != nil {
+//            timer?.invalidate()
+//            timer = nil
+//        }
+//    }
     
     var actionFight : ((_ status: String,_ tag: Int)->())?
     var competitionEntity: CompetitionEntity? {
@@ -53,40 +53,48 @@ class CompetitionCell: BaseTableCell {
                 btnJoin.setTitle(LocalizableKey.not_correct.showLanguage.uppercased(), for: .normal)
                 btnJoin.isUserInteractionEnabled = false
             case "CAN_JOIN":
-                if let startTime = competitionEntity.startTime?.timeIntervalSince1970 {
-                    let currentTime = Date().timeIntervalSince1970
-                    btnJoin.isHidden = false
-                    if startTime < currentTime {
-                        if (competitionEntity.is_fight_joined ?? 0) == 0 {
-                            btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
-                            btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
-                            btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
-                            btnJoin.isUserInteractionEnabled = true
-                        } else {
-                            btnJoin.isHidden = true
-                        }
-                    } else {
-                        if (competitionEntity.is_fight_joined ?? 0) == 0 {
-                            btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
-                            btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
-                            btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
-                        } else {
-                            btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-                            btnJoin.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
-                            btnJoin.isUserInteractionEnabled = true
-                            var distanceTime = Int(startTime - currentTime)
-                            if timer == nil {
-                                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                                    if distanceTime > 0 {
-                                        self.processTime(time: distanceTime)
-                                        distanceTime -= 1
-                                    } else {
-                                        self.disableTimer()
-                                    }
-                                })
-                            }
-                        }
-                    }
+//                if let startTime = competitionEntity.startTime?.timeIntervalSince1970 {
+//                    let currentTime = Date().timeIntervalSince1970
+//                    btnJoin.isHidden = false
+//                    if startTime < currentTime {
+//                        if (competitionEntity.is_fight_joined ?? 0) == 0 {
+//                            btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+//                            btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
+//                            btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
+//                            btnJoin.isUserInteractionEnabled = true
+//                        } else {
+//                            btnJoin.isHidden = true
+//                        }
+//                    } else {
+//                        if (competitionEntity.is_fight_joined ?? 0) == 0 {
+//                            btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+//                            btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
+//                            btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
+//                        } else {
+//                            btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+//                            btnJoin.setTitleColor(#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0), for: .normal)
+//                            btnJoin.isUserInteractionEnabled = true
+//                            var distanceTime = Int(startTime - currentTime)
+//                            if timer == nil {
+//                                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+//                                    if distanceTime > 0 {
+//                                        self.processTime(time: distanceTime)
+//                                        distanceTime -= 1
+//                                    } else {
+//                                        self.disableTimer()
+//                                    }
+//                                })
+//                            }
+//                        }
+//                    }
+//                }
+                if (competitionEntity.is_fight_joined ?? 0) == 0 {
+                    btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+                    btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
+                    btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
+                    btnJoin.isUserInteractionEnabled = true
+                } else {
+                    btnJoin.isHidden = true
                 }
             case "DONE":
                 btnJoin.isHidden = false
@@ -110,20 +118,20 @@ class CompetitionCell: BaseTableCell {
         }
     }
     
-    func disableTimer(){
-        if timer != nil {
-            timer?.invalidate()
-            timer = nil
-        }
-        btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
-        btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
-        btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
-        btnJoin.isUserInteractionEnabled = true
-    }
+//    func disableTimer(){
+//        if timer != nil {
+//            timer?.invalidate()
+//            timer = nil
+//        }
+//        btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+//        btnJoin.setTitleColor(#colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1), for: .normal)
+//        btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
+//        btnJoin.isUserInteractionEnabled = true
+//    }
     
-    func processTime(time: Int) {
-        self.btnJoin.setTitle(time.convertMilisecondsToTime(), for: .normal)
-    }
+//    func processTime(time: Int) {
+//        self.btnJoin.setTitle(time.convertMilisecondsToTime(), for: .normal)
+//    }
     
     var status : String = "CANNOT_JOIN"
 
