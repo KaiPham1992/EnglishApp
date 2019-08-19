@@ -12,6 +12,7 @@ import RealmSwift
 class LocalConfigDictionary : Object {
     @objc dynamic var id: Int = 0
     @objc dynamic var name : String = ""
+    @objc dynamic var isDefault : Int = 0
     
     override static func primaryKey() -> String{
         return "id"
@@ -21,5 +22,9 @@ class LocalConfigDictionary : Object {
         self.init()
         self.id = id
         self.name = name
+    }
+    
+    func setValueDefault(value: Int){
+        self.isDefault = value
     }
 }

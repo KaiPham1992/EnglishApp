@@ -24,6 +24,7 @@ protocol QAPresenterProtocol: class {
     func getQA()
     func loadMoreQA()
     func sendQA(qa: String)
+    
 }
 
 //MARK: Interactor -
@@ -46,4 +47,5 @@ protocol QAViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetQA(list: [QAEntity])
+    func pushNotification()
 }

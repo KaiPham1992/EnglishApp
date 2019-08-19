@@ -20,19 +20,27 @@ class MoreDictionaryCell: UITableViewCell {
     }
     var isDownloaded : Bool = false
     var actionCell : ((_ idDownloaded: Bool)->())?
+    var actionSetDefaultDictionary : ((_ isChoice: Bool) -> ())?
     @IBAction func clickAction(_ sender: Any) {
         actionCell?(isDownloaded)
     }
     
-    func setupCell(isDownloaded: Bool, title: String){
+    @IBAction func setDefaultDictionary(_ sender: Any) {
+        actionSetDefaultDictionary?(btnChoice.isChocie)
+    }
+    
+    func setupCell(isDownloaded: Bool, title: String,isDefault: Bool){
         self.isDownloaded = isDownloaded
         lblTitle.text = title
         if isDownloaded {
             heightBtnChocie.constant = 24
             btnDelete.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_black_delete"), for: .normal)
+            btnChoice.isHidden = false
+            btnChoice.isChocie = isDefault
         } else {
             heightBtnChocie.constant = 0
             btnDelete.setBackgroundImage(#imageLiteral(resourceName: "download"), for: .normal)
+            btnChoice.isHidden = true
         }
     }
 }

@@ -48,14 +48,15 @@ class QAPresenter: QAPresenterProtocol, QAInteractorOutputProtocol {
             }
             self.view?.didGetQA(list: self.listQA )
         }) { error in
-            
         }
     }
     
     func sendQA(qa: String) {
         ProgressView.shared.show()
         Provider.shared.qAAPIService.sendQA(question: qa, success: { _ in
-            self.getQA()
+            ProgressView.shared.hide()
+            self.loadMoreQA()
+            self.view?.pushNotification()
         }) { error in
             ProgressView.shared.hide()
         }

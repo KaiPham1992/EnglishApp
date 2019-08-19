@@ -13,26 +13,52 @@ import DropDown
 
 class DictionaryViewController: BaseViewController {
 
+    @IBAction func gotoSetting(_ sender: Any) {
+        let vc = MoreDictionaryRouter.createModule()
+        vc.callBackChangeDictionary = { [weak self] in
+            self?.setupViewDictionary()
+        }
+        self.push(controller: vc,animated: true)
+    }
+
+    @IBAction func textChanged(_ sender: Any) {
+        let text = tfSearch.text ?? ""
+        currentTextSearch = text
+        if idDictionary != 0 && text != "" {
+            if !isConnection {
+               self.presenter?.searchVocabulary(text: currentTextSearch)
+            }
+        }
+    }
+    
     @IBOutlet weak var lblSearch: UILabel!
     @IBOutlet weak var imgPolygon: UIImageView!
     @IBOutlet weak var lblDictionary: UILabel!
     @IBOutlet weak var viewDictionary: UIView!
     @IBOutlet weak var tfSearch: TextFieldBee!
     
+    @IBOutlet weak var heightViewNoDictionary: NSLayoutConstraint!
     @IBOutlet weak var lblTextSearch: UILabel!
+//    var currentIdSearch = 0
+    var currentTextSearch = ""
     @IBAction func searchVocabulary(_ sender: Any) {
-        let text = tfSearch.text ?? ""
-        if !isConnection {
-            self.presenter?.getDetailVocabulary(id: idDictionary)
-        } else {
-            self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: text)
+//        let text = tfSearch.text ?? ""
+        if currentTextSearch != "" {
+            if !isConnection {
+                self.presenter?.getDetailWord(text: currentTextSearch)
+            } else {
+                self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: currentTextSearch)
+            }
+            self.view.endEditing(true)
         }
-        
+       
+
     }
     var presenter: DictionaryPresenterProtocol?
     let dropDownDictionary = DropDown()
     let dropDownSearch = DropDown()
     var idDictionary: Int = 0
+    var listDictionary : [LocalConfigDictionary] = []
 
     @IBAction func clickDictionary(_ sender: Any) {
         if dropDownDictionary.isHidden {
@@ -40,15 +66,36 @@ class DictionaryViewController: BaseViewController {
             dropDownDictionary.show()
         }
     }
+    
     override func setUpViews() {
         super.setUpViews()
-        self.presenter?.getListDictionary()
-       lblSearch.text = LocalizableKey.search.showLanguage
+//        self.presenter?.getListDictionary()
+        lblSearch.text = LocalizableKey.search.showLanguage
         self.tabBarController?.tabBar.isHidden = true
-        lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
+//        lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
+        self.setupViewDictionary()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {
             self.setupDropDown()
         }
+    }
+    
+    func setupViewDictionary() {
+        self.listDictionary = RealmDBManager.share.getDataFromRealm(type: LocalConfigDictionary.self)
+        if listDictionary.count > 0 {
+            heightViewNoDictionary.constant = 0
+            showNoData()
+        } else {
+            heightViewNoDictionary.constant = self.view.frame.height
+            hideNoData()
+        }
+        if let defaultValue = listDictionary.filter({$0.isDefault == 1}).first{
+            lblDictionary.text = defaultValue.name
+            idDictionary = defaultValue.id
+        } else {
+            lblDictionary.text = ""
+            idDictionary = 0
+        }
+        self.dropDownDictionary.dataSource = self.listDictionary.map{$0.name}
     }
 
     override func setUpNavigation() {
@@ -59,7 +106,11 @@ class DictionaryViewController: BaseViewController {
     }
     
     @objc func clickButtonRight(){
-        self.push(controller: MoreDictionaryRouter.createModule(),animated: true)
+        let vc = MoreDictionaryRouter.createModule()
+        vc.callBackChangeDictionary = { [weak self] in
+            self?.setupViewDictionary()
+        }
+        self.push(controller: vc,animated: true)
     }
     
     func setupDropDown(){
@@ -67,18 +118,29 @@ class DictionaryViewController: BaseViewController {
         dropDownDictionary.anchorView = self.viewDictionary
         dropDownDictionary.backgroundColor = UIColor(red: 32/255, green: 181/255, blue: 85/255, alpha: 1)
 //        dropDownDictionary.backgroundColor = UIColor.white
+        dropDownDictionary.selectionBackgroundColor = .clear
+        dropDownDictionary.textColor = .white
+        dropDownDictionary.selectedTextColor = .white
         dropDownDictionary.width = self.viewDictionary.frame.width
         dropDownDictionary.bottomOffset = CGPoint(x: 0, y: (viewDictionary.frame.height))
         dropDownDictionary.setupCornerRadius(0)
-        dropDownDictionary.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+        dropDownDictionary.cellNib = UINib(nibName: "CellDropDownQuestion", bundle: nil)
+        dropDownDictionary.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) ->
+            Void in
+            if let cell = cell as? CellDropDownQuestion {
+                cell.leadinglbAnswer.constant = 8
+                cell.lbAnswer.font = AppFont.fontRegular12
+                cell.lbAnswer.text = item
+            }
             return
         }
         // Action triggered on selection
         dropDownDictionary.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.idDictionary = self.listDictionary[index].id
+            RealmDBManager.share.updateLocalConfigDictionary(id: self.idDictionary)
             self.lblDictionary.text = item
             self.rotateImage()
             self.dropDownDictionary.hide()
-            
         }
         
         dropDownDictionary.cancelAction = { [unowned self] in
@@ -97,25 +159,32 @@ class DictionaryViewController: BaseViewController {
         // Action triggered on selection
         dropDownSearch.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDownSearch.hide()
-            DispatchQueue.main.async {
-                self.getDetailVocabulary(index: index, item: item)
-            }
-        }
-    }
-    
-    func getDetailVocabulary(index: Int,item: String){
-        if item != "Không tìm thấy kết quả" {
-            tfSearch.text = item
-            if isConnection {
-                self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: tfSearch.text ?? "")
+            if item != "Không tìm thấy kết quả" {
+               self.currentTextSearch = item
             } else {
-                if let id = self.presenter?.listSearchVocabulary[index].id {
-                    self.idDictionary = id
-                }
+                self.currentTextSearch = ""
             }
+            self.tfSearch.text = item
+//            DispatchQueue.main.async {
+//                self.getDetailVocabulary(index: index, item: item)
+//            }
         }
     }
     
+//    func getDetailVocabulary(index: Int,item: String){
+//        tfSearch.text = item
+//        if isConnection {
+//            self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: tfSearch.text ?? "")
+//        } else {
+//            if let id = self.presenter?.listSearchVocabulary[index].id {
+//                self.idDictionary = id
+//            }
+//        }
+//    }
+//    func getGetDetailWord(id: Int) {
+//        
+//    }
+//
     func rotateImage(){
         UIView.animate(withDuration: 0.2) {
             self.imgPolygon.transform = self.imgPolygon.transform.rotated(by: CGFloat(Double.pi))
@@ -135,14 +204,21 @@ extension DictionaryViewController:DictionaryViewProtocol{
     }
     
     func getDetailVocabularySuccessed() {
-        lblTextSearch.text = self.presenter?.detailVocabulary?.explain&
+        if let _detail = self.presenter?.detailVocabulary {
+            lblTextSearch.text = _detail.explain&
+            hideNoData()
+        } else {
+            lblTextSearch.text = ""
+            showNoData()
+        }
+        
     }
     
-    func reloadDictionary(){
-        if let dictionary = self.presenter?.listDictionary.first {
-            self.lblDictionary.text = dictionary.name
-            self.idDictionary = dictionary.id
-        }
-        self.dropDownDictionary.dataSource = self.presenter?.listDictionary.map{$0.name}.compactMap{$0} ?? []
-    }
+//    func reloadDictionary(){
+//        if let dictionary = self.presenter?.listDictionary.first {
+//            self.lblDictionary.text = dictionary.name
+//            self.idDictionary = dictionary.id
+//        }
+//        self.dropDownDictionary.dataSource = self.presenter?.listDictionary.map{$0.name}.compactMap{$0} ?? []
+//    }
 }

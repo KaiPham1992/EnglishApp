@@ -11,6 +11,7 @@ import Foundation
 protocol SaveAPIServiceProtocol {
     func getListNote(offset: Int,success: @escaping SuccessHandler<NoteListRespone>.object, failure: @escaping RequestFailure)
     func deleteNote(id: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
+    func deleteVocabulary(ids: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func addNote(description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func getViewNote(idNote: String,success: @escaping SuccessHandler<NoteDetailEntity>.object, failure: @escaping RequestFailure)
     func editNote(idNote: String,description: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
@@ -26,6 +27,10 @@ class SaveAPIService : SaveAPIServiceProtocol {
     
     init(network: APINetworkProtocol) {
         self.network = network
+    }
+    func deleteVocabulary(ids: [Int],success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure) {
+        let endpoint = SaveEndpoint.deleteVocabulary(ids: ids)
+        network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
     
     func getListLikeVocab(offset: Int,success: @escaping SuccessHandler<WordLikeResponse>.object, failure: @escaping RequestFailure ) {

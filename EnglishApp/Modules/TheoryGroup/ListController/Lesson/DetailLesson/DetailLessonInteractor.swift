@@ -33,4 +33,16 @@ class DetailLessonInteractor: DetailLessonInteractorInputProtocol {
             
         }
     }
+    
+    func getViewVocabulary(wordId: Int) {
+        ProgressView.shared.show()
+        Provider.shared.findAPIService.getViewVocabulary(wordId: wordId, success: { (response) in
+            ProgressView.shared.hide()
+            if let _response = response {
+                self.presenter?.getViewVocabularySuccessed(vocabulary: _response)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

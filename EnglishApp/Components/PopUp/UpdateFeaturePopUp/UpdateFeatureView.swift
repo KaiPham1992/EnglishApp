@@ -31,9 +31,12 @@ class UpdateFeatureView: BaseViewXib{
     
     override func setUpViews() {
         super.setUpViews()
-        vVideo.setupTitle(title: "Xem tất cả bài giảng")
-        vSlide.setupTitle(title: "Xem tất cả bài giảng")
-        vLorem.setupTitle(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+//        vVideo.setupTitle(title: "Xem tất cả bài giảng")
+//        vSlide.setupTitle(title: "Xem tất cả bài giảng")
+//        vLorem.setupTitle(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+        vVideo.isHidden = true
+        vSlide.isHidden = true
+        vLorem.isHidden = true
         btnCancel.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
         btnUpdate.setTitle(LocalizableKey.update.showLanguage.uppercased(), for: .normal)
     }

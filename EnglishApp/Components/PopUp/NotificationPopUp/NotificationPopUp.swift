@@ -23,9 +23,13 @@ class NotificationPopUp: BasePopUpView {
         vNotification.btnOk.addTarget(self, action: #selector(btnOkTapped), for: .touchUpInside)
     }
     
+    override func hidePopUp(success: ((Bool) -> Void)? = nil) {
+        super.hidePopUp(success: success)
+        self.completionYes?()
+    }
+    
     @objc func btnOkTapped() {
         hidePopUp()
-        self.completionYes?()
     }
     
     func showPopUp(message: String, completion: CompletionClosure?) {

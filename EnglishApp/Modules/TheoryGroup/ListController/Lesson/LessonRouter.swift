@@ -42,8 +42,8 @@ class LessonRouter: LessonWireframeProtocol {
         return view
     }
     
-    func gotoListLesson(id: String) {
-        let vc = ListLessonRouter.createModule(lesson_category_id: id)
+    func gotoListLesson(id: String,type: TheoryType) {
+        let vc = ListLessonRouter.createModule(lesson_category_id: id,type: type)
         self.viewController?.push(controller: vc)
     }
 }

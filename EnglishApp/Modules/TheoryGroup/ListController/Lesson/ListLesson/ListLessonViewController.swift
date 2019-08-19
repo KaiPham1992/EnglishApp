@@ -25,6 +25,7 @@ class ListLessonViewController: BaseViewController {
     @IBOutlet weak var tbvLesson: UITableView!
     var lesson_category_id: String = "1"
     var offset : Int = 0
+    var type : TheoryType = .lesson
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +43,12 @@ class ListLessonViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.lesson.showLanguage)
+        if type == .lesson {
+            setTitleNavigation(title: LocalizableKey.lesson.showLanguage)
+        } else {
+            setTitleNavigation(title: LocalizableKey.recipe.showLanguage)
+        }
+        
     }
 }
 

@@ -35,6 +35,12 @@
                             <constraint firstAttribute="width" constant="20" id="rKA-rV-cps"/>
                         </constraints>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J2b-jQ-j5n">
+                        <rect key="frame" x="279" y="0.0" width="41" height="78.5"/>
+                        <connections>
+                            <action selector="clickButtonRemove:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="G1K-zf-bBD"/>
+                        </connections>
+                    </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Vr-nC-0LH">
                         <rect key="frame" x="0.0" y="77.5" width="320" height="1"/>
                         <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,16 +53,21 @@
                     <constraint firstItem="8Vr-nC-0LH" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="1Sv-UN-DJS"/>
                     <constraint firstItem="bZq-tJ-lxg" firstAttribute="leading" secondItem="djO-mG-URO" secondAttribute="trailing" constant="5" id="4Vh-m0-wCk"/>
                     <constraint firstAttribute="trailing" secondItem="bZq-tJ-lxg" secondAttribute="trailing" constant="16" id="8WW-Rc-1qB"/>
+                    <constraint firstAttribute="bottom" secondItem="J2b-jQ-j5n" secondAttribute="bottom" id="Bjk-My-Cky"/>
                     <constraint firstAttribute="trailing" secondItem="8Vr-nC-0LH" secondAttribute="trailing" id="Bko-27-Haz"/>
                     <constraint firstAttribute="bottom" secondItem="djO-mG-URO" secondAttribute="bottom" constant="15" id="F2t-BV-N5z"/>
                     <constraint firstAttribute="bottom" secondItem="8Vr-nC-0LH" secondAttribute="bottom" id="FCb-7A-kVl"/>
+                    <constraint firstItem="J2b-jQ-j5n" firstAttribute="leading" secondItem="djO-mG-URO" secondAttribute="trailing" id="U9k-ab-lz2"/>
                     <constraint firstItem="bZq-tJ-lxg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="WX5-3f-HHo"/>
                     <constraint firstItem="djO-mG-URO" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="a7c-uQ-HlI"/>
+                    <constraint firstAttribute="trailing" secondItem="J2b-jQ-j5n" secondAttribute="trailing" id="rqB-bm-8BM"/>
+                    <constraint firstItem="J2b-jQ-j5n" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="tIA-ff-14K"/>
                     <constraint firstItem="djO-mG-URO" firstAttribute="top" secondItem="bZq-tJ-lxg" secondAttribute="top" id="wD0-u5-aBq"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="btnRemove" destination="bZq-tJ-lxg" id="o6q-ze-F7o"/>
+                <outlet property="buttonRemove" destination="J2b-jQ-j5n" id="T8y-HW-JNk"/>
                 <outlet property="lblTitle" destination="djO-mG-URO" id="MgU-ve-WIh"/>
                 <outlet property="widthButton" destination="rKA-rV-cps" id="q87-e4-bR3"/>
             </connections>

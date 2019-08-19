@@ -19,12 +19,14 @@ protocol DetailLessonWireframeProtocol: class {
 protocol DetailLessonPresenterProtocol: class {
 
     var interactor: DetailLessonInteractorInputProtocol? { get set }
+    var vocabulary : WordExplainEntity? {get set}
     func getLessonDetail(lesson_id: Int)
     func getContentLesson() -> NSAttributedString?
     func getNumberComment() -> Int?
     func getToggleLike() -> Int?
     func likeLesson(idLesson: Int,idWord: Int?, isFavorite: Int)
     func getTitle() -> String?
+    func getViewVocabulary(wordId: Int)
 }
 
 //MARK: Interactor -
@@ -32,6 +34,7 @@ protocol DetailLessonInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getLessonDetailSuccessed(lessonDetail: LessonCatelogyDetail)
+    func getViewVocabularySuccessed(vocabulary: WordExplainEntity)
 }
 
 protocol DetailLessonInteractorInputProtocol: class {
@@ -39,6 +42,7 @@ protocol DetailLessonInteractorInputProtocol: class {
     var presenter: DetailLessonInteractorOutputProtocol?  { get set }
     func getLessonDetail(lesson_id: Int)
     func likeLesson(idLesson: Int,idWord: Int?, isFavorite: Int)
+    func getViewVocabulary(wordId: Int)
 
     /* Presenter -> Interactor */
 }
@@ -48,6 +52,5 @@ protocol DetailLessonViewProtocol: class {
 
     var presenter: DetailLessonPresenterProtocol?  { get set }
     func reloadView()
-
     /* Presenter -> ViewController */
 }

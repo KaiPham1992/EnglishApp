@@ -16,6 +16,7 @@ class DetailLessonPresenter: DetailLessonPresenterProtocol, DetailLessonInteract
     var interactor: DetailLessonInteractorInputProtocol?
     private let router: DetailLessonWireframeProtocol
     var lessonDetail: LessonCatelogyDetail?
+    var vocabulary : WordExplainEntity?
 
     init(interface: DetailLessonViewProtocol, interactor: DetailLessonInteractorInputProtocol?, router: DetailLessonWireframeProtocol) {
         self.view = interface
@@ -25,6 +26,15 @@ class DetailLessonPresenter: DetailLessonPresenterProtocol, DetailLessonInteract
     
     func getLessonDetail(lesson_id: Int) {
         self.interactor?.getLessonDetail(lesson_id: lesson_id)
+    }
+    
+    func getViewVocabulary(wordId: Int) {
+        self.interactor?.getViewVocabulary(wordId: wordId)
+    }
+    
+    func getViewVocabularySuccessed(vocabulary: WordExplainEntity) {
+        self.vocabulary = vocabulary
+        self.view?.reloadView()
     }
     
     func getContentLesson() -> NSAttributedString? {

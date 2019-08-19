@@ -11,9 +11,11 @@ import DropDown
 
 open class CellDropDownQuestion: DropDownCell {
     
+    @IBOutlet open weak var leadinglbAnswer: NSLayoutConstraint!
     @IBOutlet open weak var lbAnswer: UILabel!
     
     override open func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 }

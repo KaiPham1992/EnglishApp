@@ -10,12 +10,13 @@ import UIKit
 import DropDown
 
 protocol ClickQuestionDelegate: class {
-    func changeAnswer(idAnswer: Int,valueAnswer: String,indexPath: IndexPath?)
+    func changeAnswer(index: Int,indexPath: IndexPath?)
     func suggestQuestion(index: IndexPath)
 }
 
 class CellQuestion: UITableViewCell {
     
+    @IBOutlet weak var widthButtonSuggestion: NSLayoutConstraint!
     @IBAction func suggestQuestion(_ sender: Any) {
         delegate?.suggestQuestion(index: self.indexPath ?? IndexPath(row: 0, section: 0))
     }
@@ -46,7 +47,11 @@ class CellQuestion: UITableViewCell {
         }
     }
     
-    
+//    override func prepareForReuse() {
+//        answer = ""
+//        idOption = []
+//        dataSource = []
+//    }
     
     var idOption : [Int] = []
     var isShow = false {
@@ -95,11 +100,19 @@ class CellQuestion: UITableViewCell {
             self.lbAnswer.isHidden = false
             self.vQuestion.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
             self.lbAnswer.text = item
-            self.delegate?.changeAnswer(idAnswer: self.idOption[index],valueAnswer: self.dataSource[index], indexPath: self.indexPath)
+            self.delegate?.changeAnswer(index: index, indexPath: self.indexPath)
         }
         
         dropDown.cancelAction = { [unowned self] in
             self.isShow = !self.isShow
+        }
+    }
+    
+    func setupButtonSuggestion(isShow: Bool){
+        if isShow {
+            widthButtonSuggestion.constant = 32
+        } else {
+            widthButtonSuggestion.constant = 0
         }
     }
 }

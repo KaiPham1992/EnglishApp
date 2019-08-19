@@ -14,6 +14,7 @@ enum FindEnpoint {
     case searchTheory(text: String)
     case getListDictionary
     case lookupWordOnline(dictionary_id: Int,word: String)
+    case getViewVocabulary(wordId: Int)
 }
 
 extension FindEnpoint: EndPointType {
@@ -27,6 +28,8 @@ extension FindEnpoint: EndPointType {
             return "_api/exercise/search_exercise"
         case .searchTheory:
             return "_api/lesson/search_lesson"
+        case .getViewVocabulary:
+            return "_api/dictionary/get_view_vocab"
 
         }
     }
@@ -40,6 +43,8 @@ extension FindEnpoint: EndPointType {
         case .searchExercise:
             return .post
         case .searchTheory:
+            return .post
+        case .getViewVocabulary:
             return .post
         }
     }
@@ -55,6 +60,8 @@ extension FindEnpoint: EndPointType {
             return ["keyword": text]
         case .searchTheory(let text):
             return ["keyword": text]
+        case .getViewVocabulary(let wordId):
+            return ["word_id":wordId]
         }
     }
     

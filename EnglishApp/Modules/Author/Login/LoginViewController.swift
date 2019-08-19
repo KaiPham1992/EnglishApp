@@ -38,10 +38,11 @@ class LoginViewController: BaseViewController {
     
     var loginType = LoginType.normal
     var paramLogin: Any?
+    var passwordText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        vPassword.tfInput.delegate = self
         
     }
     
@@ -56,7 +57,8 @@ class LoginViewController: BaseViewController {
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
         vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: LocalizableKey.enterPassword.showLanguage)
-        vPassword.tfInput.isSecureTextEntry = true 
+//        vPassword.tfInput.isSecureTextEntry = true
+        
         
         btnLogin.setTitle(LocalizableKey.LoginButtonLogin.showLanguage.uppercased(), for: .normal)
         lbFbGmail.text = LocalizableKey.FBorGmail.showLanguage
@@ -64,7 +66,7 @@ class LoginViewController: BaseViewController {
         
         let attr = NSMutableAttributedString()
         let attr1 = LocalizableKey.NotYetAccount.showLanguage.toAttributedString(color: AppColor.color48_48_48, font: AppFont.fontRegular12)
-        let attr2 = " \(LocalizableKey.Register.showLanguage)".toAttributedString(color: AppColor.color255_211_17, font: AppFont.fontRegular12, isUnderLine: true)
+        let attr2 = "\(LocalizableKey.Register.showLanguage)".toAttributedString(color: AppColor.color255_211_17, font: AppFont.fontRegular12, isUnderLine: true)
         attr.append(attr1)
         attr.append(attr2)
         lbRegister.attributedText = attr
@@ -90,7 +92,8 @@ class LoginViewController: BaseViewController {
         heightError.constant = 0
         dismissKeyBoard()
         if validateInputData() {
-            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
+//            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
+            presenter?.login(email: vEmail.tfInput.text&, password: passwordText)
         }
         
     }
@@ -175,5 +178,33 @@ extension LoginViewController: LoginViewProtocol {
         guard let message = error?.message else { return }
         UserDefaultHelper.shared.clearUser()
         hideError(isHidden: false, message:  message.showLanguage)
+    }
+}
+
+extension LoginViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == vPassword.tfInput {
+            
+            var hashPassword = String()
+            let newChar = string.first
+            let offsetToUpdate = passwordText.index(passwordText.startIndex, offsetBy: range.location)
+            
+            if string == "" {
+                passwordText.remove(at: offsetToUpdate)
+                return true
+            }
+            else { passwordText.insert(newChar!, at: offsetToUpdate) }
+            
+            for _ in 0 ..< passwordText.count {  hashPassword += "*" }
+            textField.text = hashPassword
+            if textField.text&.count > 0 {
+                vPassword.textFieldDidChanged(vPassword.tfInput)
+            }
+            print(self.passwordText)
+            return false
+        }
+        return true
     }
 }

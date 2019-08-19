@@ -19,14 +19,15 @@ protocol CreateExerciseWireframeProtocol: class {
 protocol CreateExercisePresenterProtocol: class {
 
     var interactor: CreateExerciseInteractorInputProtocol? { get set }
+    var createExerciseParam : CreateExerciseParam {get}
     func gotoStore()
     func getNumberRow() -> Int
     func getItemIndexPath(indexPath : IndexPath)->String
     func getListQuestionCatelogy()
-    func getCateloriesParam() -> [CategoryParam]
     func changeLevelParam(indexPath: IndexPath,level: Int)
     func changeNumberQuestion(indexPath: IndexPath,number: Int)
     func gotoCreateExercise(param: CreateExerciseParam)
+    func changeNameExercise(name: String)
 }
 
 //MARK: Interactor -
@@ -54,5 +55,6 @@ protocol CreateExerciseViewProtocol: class {
     func reloadView()
     func showSumQuestion(sum: Int)
     func upgradeAccount()
+    func updateView(enableSubmit: Bool)
     /* Presenter -> ViewController */
 }

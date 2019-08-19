@@ -19,6 +19,7 @@ class RealmDBManager {
         let objects = database.objects(type)
         return objects.toArray()
     }
+    
     func removeAllRealm() {
         try! database.write {
             database.deleteAll()
@@ -33,12 +34,25 @@ class RealmDBManager {
     }
     
     func removeObject<T: Object>(type: T.Type,value: Int) {
-        DispatchQueue.main.async {
-            let valueTemp = value
-            let objectTemp = self.database.object(ofType: type, forPrimaryKey: valueTemp)
-            if objectTemp != nil {
-                try! self.database.write {
-                    self.database.delete(objectTemp!)
+        let valueTemp = value
+        let objectTemp = self.database.object(ofType: type, forPrimaryKey: valueTemp)
+        if objectTemp != nil {
+            try! self.database.write {
+                self.database.delete(objectTemp!)
+            }
+        }
+    }
+    
+    func updateLocalConfigDictionary(id: Int) {
+        try! database.write {
+            let objects = self.database.objects(LocalConfigDictionary.self).toArray() as! [LocalConfigDictionary]
+            for object in objects {
+                if object.isDefault == 1 {
+                    object.isDefault = 0
+                } else {
+                    if object.id == id {
+                        object.isDefault = 1
+                    }
                 }
             }
         }

@@ -20,6 +20,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BXHView" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
+                <outlet property="background" destination="ON8-dC-l8r" id="KiB-uk-xV0"/>
                 <outlet property="imgAvatar" destination="xhB-dv-ElK" id="YsT-a5-Gmc"/>
                 <outlet property="imgPremium" destination="NtI-iE-Byd" id="xze-jL-uk2"/>
                 <outlet property="imgStudyPack" destination="aUz-TI-HO6" id="n0I-z0-bxV"/>
@@ -53,7 +54,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ophelia Grant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N71-XV-NR2">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ophelia Grant" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N71-XV-NR2">
                     <rect key="frame" x="103.5" y="82" width="222.5" height="16"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                     <nil key="textColor"/>

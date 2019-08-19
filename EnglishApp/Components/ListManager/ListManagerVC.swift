@@ -48,6 +48,8 @@ class ListManagerVC: BaseViewController {
     func initLoadData(data: [Any]){
         if data.count < limit {
             isLoadmore = false
+        } else {
+            isLoadmore = true
         }
         
         if self.offset == 0 {
@@ -56,7 +58,9 @@ class ListManagerVC: BaseViewController {
             self.listData += data
         }
         
-        self.tableView.reloadData()
+        UIView.performWithoutAnimation {
+            self.tableView.reloadData()
+        }
     }
     
     override func setUpNavigation() {
@@ -94,7 +98,6 @@ class ListManagerVC: BaseViewController {
     }
     
     func callAPI() {
-        
     }
     
     func cellForRowListManager(item: Any,_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{

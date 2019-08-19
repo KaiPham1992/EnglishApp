@@ -16,9 +16,27 @@ class CreateExerciseViewController: BaseViewController {
    
 	var presenter: CreateExercisePresenterProtocol?
 
+    @IBAction func textNameExerciseChange(_ sender: Any) {
+        self.presenter?.changeNameExercise(name: edEnterExercise.text ?? "")
+    }
+    
     @IBAction func doExercise(_ sender: Any) {
-        let param = CreateExerciseParam(name: self.edEnterExercise.text ?? "", categories: self.presenter?.getCateloriesParam() ?? [])
-        self.presenter?.gotoCreateExercise(param: param)
+        self.view.endEditing(true)
+        guard let listCategories = self.presenter?.createExerciseParam.categories else{ return }
+        let sum = listCategories.map{$0.number_of_question ?? 0}.getSum()
+        if sum > 100 {
+            PopUpHelper.shared.showError(message: "Vui lòng nhập tổng số câu hỏi không vượt quá 100.") {
+                
+            }
+        } else if sum < 100 {
+            PopUpHelper.shared.showError(message: "Vui lòng nhập đủ 100 câu.") {
+                
+            }
+        } else {
+            if let _param = self.presenter?.createExerciseParam {
+                self.presenter?.gotoCreateExercise(param: _param)
+            }
+        }
     }
     
     @IBOutlet weak var lblSum: UILabel!
@@ -50,22 +68,35 @@ class CreateExerciseViewController: BaseViewController {
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.create_exercise.showLanguage)
     }
+    
     func setupDropDown(){
-        
-        dropDown.selectionBackgroundColor = .clear
-        dropDown.backgroundColor = UIColor(red: 255/255, green: 211/255, blue: 17/255, alpha: 1)
+        dropDown.backgroundColor = .white
         dropDown.width = 135
-        
         dropDown.setupCornerRadius(2)
-        dropDown.dataSource = ["Elementary","Intermediate","Advanced"]
+        dropDown.cellNib = UINib(nibName: "CellDropDownQuestion", bundle: nil)
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+            if let cell = cell as? CellDropDownQuestion {
+                cell.lbAnswer.font = AppFont.fontRegular14
+                cell.lbAnswer.text = item
+            }
             return
         }
-        
+        dropDown.dataSource = ["Elementary","Intermediate","Advanced"]
     }
 }
 
 extension CreateExerciseViewController : CreateExerciseViewProtocol{
+    
+    func updateView(enableSubmit: Bool) {
+        if enableSubmit {
+            btnDoExercise.isUserInteractionEnabled = true
+            btnDoExercise.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+        } else {
+            btnDoExercise.isUserInteractionEnabled = false
+            btnDoExercise.backgroundColor = .gray
+        }
+    }
+    
     func upgradeAccount() {
         PopUpHelper.shared.showUpdateFeature(completeUpdate: {
             self.presenter?.gotoStore()
@@ -79,17 +110,6 @@ extension CreateExerciseViewController : CreateExerciseViewProtocol{
         if sum == 0 {
             btnDoExercise.isUserInteractionEnabled = false
             btnDoExercise.backgroundColor = .gray
-        } else {
-            if sum > 100 {
-                PopUpHelper.shared.showError(message: "Vui lòng nhập tổng số câu hỏi không vượt quá 100.") {
-                    
-                }
-                self.btnDoExercise.isUserInteractionEnabled = false
-                self.btnDoExercise.backgroundColor = .gray
-                return
-            }
-            btnDoExercise.isUserInteractionEnabled = true
-            btnDoExercise.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
         }
     }
     

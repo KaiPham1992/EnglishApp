@@ -18,7 +18,7 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
     private let router: CreateExerciseWireframeProtocol
 
     var listCatelogyExercise: [SearchEntity] = []
-    var listCateloriesParam : [CategoryParam] = []
+    var createExerciseParam : CreateExerciseParam = CreateExerciseParam()
     
     func getNumberRow() -> Int {
         return listCatelogyExercise.count
@@ -34,18 +34,27 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
         self.router = router
     }
     
-    func getCateloriesParam() -> [CategoryParam] {
-        return self.listCateloriesParam
-    }
-    
     func changeLevelParam(indexPath: IndexPath,level: Int) {
-        self.listCateloriesParam[indexPath.row].level = level
+        self.createExerciseParam.categories[indexPath.row].level = level
     }
     
     func changeNumberQuestion(indexPath: IndexPath,number: Int){
-        self.listCateloriesParam[indexPath.row].number_of_question = number
-        let sum = listCateloriesParam.map{$0.number_of_question}.compactMap{$0}.getSum()
+        self.createExerciseParam.categories[indexPath.row].number_of_question = number
+        let sum = self.createExerciseParam.categories.map{$0.number_of_question}.compactMap{$0}.getSum()
+        self.view?.updateView(enableSubmit: checkEnableButtonSubmit())
         self.view?.showSumQuestion(sum: sum)
+    }
+    
+    func changeNameExercise(name: String) {
+        self.createExerciseParam.name = name
+        self.view?.updateView(enableSubmit: checkEnableButtonSubmit())
+    }
+    
+    private func checkEnableButtonSubmit() -> Bool {
+        if (createExerciseParam.name.trimmingCharacters(in: .whitespacesAndNewlines) != "") && (self.createExerciseParam.categories.map{$0.number_of_question}.compactMap{$0}.getSum() > 0){
+            return true
+        }
+        return false
     }
     
     func getListQuestionCatelogy() {
@@ -54,7 +63,7 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
     
     func getListCatelogySuccessed(respone: [SearchEntity]) {
         self.listCatelogyExercise = respone
-        self.listCateloriesParam = respone.map{CategoryParam(categ_id: Int($0._id&) ?? 0)}
+        self.createExerciseParam.categories = respone.map{CategoryParam(categ_id: Int($0._id&) ?? 0)}
         self.view?.reloadView()
     }
     func gotoCreateExercise(param: CreateExerciseParam) {

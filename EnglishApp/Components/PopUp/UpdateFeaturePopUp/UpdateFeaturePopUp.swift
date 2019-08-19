@@ -33,6 +33,6 @@ class UpdateFeaturePopUp: BasePopUpView {
     func showPopUp(completeUpdate: CompletionClosure?, completeCancel: CompletionClosure?){
         self.completionYes = completeUpdate
         self.completionNo = completeCancel
-        self.showPopUp(height: 290)
+        self.showPopUp(height: 200)
     }
 }

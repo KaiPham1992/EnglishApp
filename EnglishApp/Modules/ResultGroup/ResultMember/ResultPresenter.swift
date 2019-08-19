@@ -23,8 +23,8 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.router = router
     }
     
-    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int) {
-        self.router.gotoResultQuestion(listAswer: listAswer, index: index)
+    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int,isHistory: Bool) {
+        self.router.gotoResultQuestion(listAswer: listAswer, index: index,isHistory: isHistory)
     }
     
     func getListAnswer() -> [QuestionResultEntity]?{

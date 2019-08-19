@@ -22,6 +22,7 @@ enum TypeDoExercise : Int {
     case assignExercise = 6
     case dailyMissonExercise = 2
     case entranceExercise = 1
+    case competition = 100
 }
 
 class NameExerciseViewController: BaseViewController {
@@ -63,7 +64,7 @@ class NameExerciseViewController: BaseViewController {
         }
     }
     
-    var isEnd : Bool = false{
+    var isEnd : Bool = false {
         didSet {
             vCountTime.stopTimer()
             if self.currentIndex < numberQuestion {
@@ -71,7 +72,20 @@ class NameExerciseViewController: BaseViewController {
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
             }
+            self.vCountTime.isUserInteractionEnabled = false
             self.disableUserInteractionCell()
+        }
+    }
+    
+    var isPauseTime = false {
+        didSet{
+            if isPauseTime {
+                btnNext.isUserInteractionEnabled = false
+                clvQuestion.isUserInteractionEnabled = false
+            } else {
+                btnNext.isUserInteractionEnabled = true
+                clvQuestion.isUserInteractionEnabled = true
+            }
         }
     }
     
@@ -107,7 +121,7 @@ class NameExerciseViewController: BaseViewController {
     }
     
     @objc func deleteExercise(){
-        if !isEnd {
+        if !isEnd && !isPauseTime {
             PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
                 self.confirmOutExercise()
             })
@@ -115,21 +129,27 @@ class NameExerciseViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        if self.currentIndex == 1 {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
-               self.confirmOutExercise()
-            })
-        } else {
-            if !isEnd {
-                self.currentIndex -= 1
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
+        if !isPauseTime {
+            if self.currentIndex == 1 {
+                PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+                    self.confirmOutExercise()
+                })
+            } else {
+                if !isEnd {
+                    self.currentIndex -= 1
+                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                    clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
+                }
             }
         }
     }
     
     func confirmOutExercise(){
-        self.presenter?.exitExercise(id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
+        if let _param = self.paramSubmit {
+//            self.presenter?.exitExercise(id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
+            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+            self.presenter?.submitExercise(param: _param)
+        }
     }
 }
 
@@ -154,6 +174,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         DispatchQueue.global().async {
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+//            self.currentTime = 10
             self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             if let questions = self.presenter?.exerciseEntity?.questions {
                 for item in questions {
@@ -169,7 +190,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
                 self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
                 self.vCountTime.setupTimeStartNow(min: self.currentTime)
                 self.clvQuestion.reloadData()
-                ProgressView.shared.hideLoadingCompetition()
+                ProgressView.shared.hide()
             }
         }
     }
@@ -219,16 +240,22 @@ extension NameExerciseViewController: UICollectionViewDataSource{
             let type = data.answers?.first?.type ?? ""
             if type == "" || type == "2"{
                 let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
+                cell.type = self.typeExercise
+                
                 cell.setupCell(data: data)
                 cell.indexPath = indexPath
                 cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
+                cell.delegate = self
                 return cell
             }
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+            cell.type = self.typeExercise
             cell.indexPath = indexPath
+            cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
+            cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
-            cell.delegate = self
             cell.setupCell(dataCell: data)
+            cell.delegate = self
             return cell
         }
         return UICollectionViewCell()
@@ -237,6 +264,10 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 
 extension NameExerciseViewController : CellExerciseDelegate{
     
+    func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
+        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].option_id = idAnswer
+        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].value = valueAnswer
+    }
     
     func showDetailVocubulary(word: WordExplainEntity) {
         self.presenter?.gotoDetailVocabulary(word: word)
@@ -261,8 +292,7 @@ extension NameExerciseViewController : TimeDelegate{
     }
     
     func startTime() {
-        btnNext.isUserInteractionEnabled = true
-        clvQuestion.isHidden = false
+        isPauseTime = false
     }
     
     func endTime() {
@@ -270,7 +300,6 @@ extension NameExerciseViewController : TimeDelegate{
     }
     
     func pauseTime() {
-        btnNext.isUserInteractionEnabled = false
-        clvQuestion.isHidden = true
+        isPauseTime = true
     }
 }

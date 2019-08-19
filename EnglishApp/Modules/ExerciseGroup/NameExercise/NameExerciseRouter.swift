@@ -82,6 +82,13 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
     
     func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise) {
         let vc = ResultRouter.createModule(type: type, result: result)
+        if type == .entranceExercise {
+            let infor = UserDefaultHelper.shared.loginUserInfo
+            if let _infor = infor {
+                _infor.is_entrance_test = "1"
+                UserDefaultHelper.shared.loginUserInfo = _infor
+            }
+        }
         self.viewController?.push(controller: vc,animated: true)
     }
 

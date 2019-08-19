@@ -14,7 +14,7 @@ class MoreDictionaryRouter: MoreDictionaryWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> MoreDictionaryViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = MoreDictionaryViewController.initFromNib()
         let interactor = MoreDictionaryInteractor()

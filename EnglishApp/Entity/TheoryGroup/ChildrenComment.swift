@@ -17,8 +17,8 @@ class ChildrenComment: Mappable{
     var parent_id : String?
     var lesson_id : String?
     var created_by : String?
-    var created_date : String?
-    var updated_date : String?
+    var created_date : Date?
+    var updated_date : Date?
     var created_time_mi : String?
     var is_waiting_approved : String?
     var social_img_src : String?
@@ -39,8 +39,8 @@ class ChildrenComment: Mappable{
        self.parent_id <- map["parent_id"]
        self.lesson_id <- map["lesson_id"]
        self.created_by <- map["created_by"]
-       self.created_date <- map["created_date"]
-       self.updated_date <- map["updated_date"]
+       self.created_date <- (map["created_date"],TranformStringtoDate())
+       self.updated_date <- (map["updated_date"],TranformStringtoDate())
        self.created_time_mi <- map["created_time_mi"]
        self.is_waiting_approved <- map["is_waiting_approved"]
         self.social_img_src <- map["social_img_src"]

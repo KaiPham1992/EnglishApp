@@ -13,7 +13,7 @@
 "MenuLanguage" = "Language";
 "MenuSaved" = "Saved";
 "MenuHistory" = "Test History";
-"MenuPrivacy" = "Policies and Terms";
+"MenuPrivacy" = "Policies & Terms";
 "MenuChangePassword" = "Change Password";
 "MenuLogout" = "Logout";
 
@@ -25,7 +25,7 @@
 "LoginButtonLogin" = "Login";
 "FBorGmail" = "Or login by";
 "ForgotPass" = "Forgot password";
-"NotYetAccount" = "You don't have any account ?";
+"NotYetAccount" = "You don't have any account? ";
 "Register" = "Register";
 "LoginButtonSignUp" = "REGISTER";
 "passwordDifference" = "Re-password is wrong!";
@@ -76,12 +76,12 @@
 
 // logout
 "popUpLogout" = "Do you want to logout?";
-"agree" = "Yes";
-"cancel" = "No";
+"agree" = "YES";
+"cancel" = "NO";
 
 //QA
 
-"whatQA" = "What are you wondering?";
+"whatQA" = "What Are You  ondering?";
 "enterQA" = "Enter your question";
 "messageQA" = "5 honey for one question";
 "qAOlder" = "Questions you've ever asked";
@@ -176,18 +176,18 @@
 "studyPack" = "Upgrade package";
 "beePack" = "Honey package";
 "titleStore" = "Store";
-"enterCode" = "Enter code";
-"send" = "Send";
+"enterCode" = "Enter Code";
+"send" = "SEND";
 "detail" = "Detail";
-"upgrade" = "Upgrade";
+"upgrade" = "UPGRADE";
 "pleaseEnterCode" = "Please enter code";
 "notFoundCode" = "Code does not exist";
 "exchangeGiftTitle" = "Do you want to exchange this gift?";
 "exchangeGiftSucess" = "Exchange gift successfully.";
 "redeemSuccess" = "Redeem successfully.";
 "upgradeSuccess" = "Upgrade successfully.";
-"upgradeBeePack" = "Do you want to upgrade this honey package?";
-"exchangeTitle" = "EXCHANGE GIFT";
+"upgradeBeePack" = "Do you want to buy this honey package?";
+"exchangeTitle" = "Exchange Gift";
 
 //comment
 "comment" = "Comment";
@@ -300,7 +300,7 @@
 
 "messagePackage" = "Some package suit you";
 "find" = "Find";
-"PrivacyAndPolicy" = "Policies and Terms";
+"PrivacyAndPolicy" = "Policies & Terms";
 
 
 // ERROR
@@ -331,6 +331,14 @@
 // BHX
 "all" = "All";
 "quater" = "Quater";
+"BRONZE" = "BRONZE";
+"SILVER" = "SILVER";
+"GOLD" = "GOLD";
+"PLATINUM" = "PLATINUM";
+"MASTER" = "MASTER";
+"TOAA" = "TOAA";
+"TheOneAboveAll" = "THE ONE ABOVE ALL";
+"ALL" = "ALL";
 
 // Pop up
 "getError" = "An error occurred. Please try again later.";

@@ -19,8 +19,14 @@ class CommentViewController: BaseViewController {
     @IBAction func sendMessage(_ sender: Any) {
         let content = tfEnterComment.text ?? ""
         if content != "" {
-            self.presenter?.addComment(idLesson: Int(self.idLesson ?? "0") ?? 0, content: content,idParent: self.idParent,indexSection: self.indexSection)
-            self.tfEnterComment.text = ""
+            if content.count < 256 {
+                self.presenter?.addComment(idLesson: Int(self.idLesson ?? "0") ?? 0, content: content,idParent: self.idParent,indexSection: self.indexSection)
+                self.tfEnterComment.text = ""
+            } else {
+                PopUpHelper.shared.showError(message: "Vui lòng bình luận không vượt quá 255 ký tự.") {
+                    
+                }
+            }
             self.tfEnterComment.endEditing(true)
         }   
     }
@@ -37,8 +43,8 @@ class CommentViewController: BaseViewController {
 
     override func setUpViews() {
         super.setUpViews()
-        //disable iq keyboard
         IQKeyboardManager.shared.disabledDistanceHandlingClasses.append(CommentViewController.self)
+        IQKeyboardManager.shared.disabledToolbarClasses.append(CommentViewController.self)
         addKeyboardNotification()
         tbvComment.registerXibFile(CellComment.self)
         tbvComment.registerXibFile(CellHeaderComment.self)
@@ -161,14 +167,14 @@ extension CommentViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return UITableView.automaticDimension
     }
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
         return 100
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.0001

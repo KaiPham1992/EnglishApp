@@ -25,4 +25,16 @@ class VocabularyInteractor: VocabularyInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func deleteVocab(listId: [Int]) {
+        ProgressView.shared.show()
+        Provider.shared.saveAPIService.deleteVocabulary(ids: listId, success: { (response) in
+            ProgressView.shared.hide()
+            if let _ = response {
+                self.presenter?.deleteVocabSuccessed()
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 }

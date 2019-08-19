@@ -72,7 +72,7 @@ extension LessonViewController : UITableViewDataSource{
 extension LessonViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let id = self.presenter?.lessonEntity?.categories[indexPath.row]._id {
-            self.presenter?.gotoListLesson(id: id)
+            self.presenter?.gotoListLesson(id: id,type: type)
         }
     }
     

@@ -33,6 +33,12 @@ class RewardPopUp: BasePopUpView {
         self.showPopUp(height: 320)
     }
     
+    func showPopup(message: String, completionYes: CompletionClosure?){
+        view.lbMessage.text = message
+        self.completionYes = completionYes
+        self.showPopUp(height: 320)
+    }
+    
     @objc func btnYesTapped() {
         hidePopUp()
         

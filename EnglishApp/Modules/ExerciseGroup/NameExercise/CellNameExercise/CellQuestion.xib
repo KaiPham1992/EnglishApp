@@ -102,6 +102,7 @@
                 <outlet property="lbAnswer" destination="J7b-ux-tul" id="Pm1-aY-MOv"/>
                 <outlet property="lbNumber" destination="6pq-MF-Ovg" id="oOd-Ba-3IO"/>
                 <outlet property="vQuestion" destination="d5W-AV-BuW" id="mYL-6i-WVb"/>
+                <outlet property="widthButtonSuggestion" destination="frO-S2-aLi" id="mLh-4H-aQn"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
         </tableViewCell>

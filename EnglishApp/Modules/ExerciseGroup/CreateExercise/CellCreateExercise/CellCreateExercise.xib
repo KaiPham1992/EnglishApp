@@ -48,6 +48,7 @@
                         </userDefinedRuntimeAttributes>
                         <connections>
                             <action selector="changedValueNumber:" destination="KGk-i7-Jjw" eventType="editingChanged" id="nhV-d7-D2u"/>
+                            <action selector="didEndEdit:" destination="KGk-i7-Jjw" eventType="editingDidEnd" id="DbU-Mo-Ss8"/>
                         </connections>
                     </textField>
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-dn-Mqh">

@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol ChangeGiftCellDelegate {
+    func btnHoneyTapped()
+    func btnDiamondTapped()
+}
+
 class ChangeGiftCell: BaseTableCell {
     @IBOutlet weak var imgIcon: UIImageView!
     @IBOutlet weak var lbTitle: UILabel!
@@ -15,9 +20,11 @@ class ChangeGiftCell: BaseTableCell {
     @IBOutlet weak var lbCountHoney: UILabel!
     @IBOutlet weak var lbCountDiamon: UILabel!
     
+    var delegate: ChangeGiftCellDelegate?
     var product: ProductEntity? {
         didSet {
             guard let product = product else { return }
+            
             imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
             
             lbTitle.text = product.name
@@ -32,4 +39,16 @@ class ChangeGiftCell: BaseTableCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    // -- MARK: - ACTION
+    
+    @IBAction func btnDiamondTapped() {
+        delegate?.btnDiamondTapped()
+    }
+    
+    @IBAction func btnHoneyTapped() {
+        delegate?.btnHoneyTapped()
+    }
+    
+    
 }

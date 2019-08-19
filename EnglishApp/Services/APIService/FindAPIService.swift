@@ -13,6 +13,7 @@ protocol FindAPIServiceProtocol {
     func searchTheory(text: String,success: @escaping SuccessHandler<SearchEntity>.array, failure: @escaping RequestFailure)
     func getListDictionary(success: @escaping SuccessHandler<DictionarisResponse>.object, failure: @escaping RequestFailure)
     func lookupWordOnline(dictionary_id: Int,word: String,success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure)
+    func getViewVocabulary(wordId: Int,success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure)
 }
 
 class FindAPIService: FindAPIServiceProtocol {
@@ -21,6 +22,11 @@ class FindAPIService: FindAPIServiceProtocol {
     
     init(network: APINetworkProtocol) {
         self.network = network
+    }
+    
+    func getViewVocabulary(wordId: Int,success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = FindEnpoint.getViewVocabulary(wordId: wordId)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     func lookupWordOnline(dictionary_id: Int,word: String,success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure) {

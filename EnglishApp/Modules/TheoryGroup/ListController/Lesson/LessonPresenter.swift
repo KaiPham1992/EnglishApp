@@ -41,8 +41,8 @@ class LessonPresenter: LessonPresenterProtocol, LessonInteractorOutputProtocol {
         }
         self.view?.reloadView()
     }
-    func gotoListLesson(id: String){
-        self.router.gotoListLesson(id: id)
+    func gotoListLesson(id: String,type: TheoryType){
+        self.router.gotoListLesson(id: id,type: type)
     }
     
 }

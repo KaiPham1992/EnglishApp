@@ -17,12 +17,19 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
     private let router: DictionaryWireframeProtocol
     var listSearchVocabulary : [WordEntity] = []
     var detailVocabulary : WordExplainEntity?
-    var listDictionary: [ItemDictionaryResponse] = []
+//    var listDictionary: [ItemDictionaryResponse] = []
     
     init(interface: DictionaryViewProtocol, interactor: DictionaryInteractorInputProtocol?, router: DictionaryWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func getDetailWord(text: String) {
+        if let detail = RealmDBManager.share.filter(objectType: WordExplainEntity.self, key: "word", value: text).first {
+            self.detailVocabulary = detail
+            self.view?.getDetailVocabularySuccessed()
+        }
     }
     
     func searchVocabulary(text: String) {
@@ -36,14 +43,14 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
             self.view?.getDetailVocabularySuccessed()
         }
     }
-    func getListDictionary() {
-        self.interactor?.getListDictionary()
-    }
-    
-    func getListDictionarySuccessed(listDictionary: [ItemDictionaryResponse]) {
-        self.listDictionary = listDictionary
-        self.view?.reloadDictionary()
-    }
+//    func getListDictionary() {
+//        self.interactor?.getListDictionary()
+//    }
+//    
+//    func getListDictionarySuccessed(listDictionary: [ItemDictionaryResponse]) {
+//        self.listDictionary = listDictionary
+//        self.view?.reloadDictionary()
+//    }
     
     func lookWordOnline(dictionary_id: Int, word: String) {
         self.interactor?.lookWordOnline(dictionary_id: dictionary_id, word: word)
@@ -51,6 +58,11 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
     
     func lookupWordOnlineSuccessed(response: WordExplainEntity) {
         self.detailVocabulary = response
+        self.view?.getDetailVocabularySuccessed()
+    }
+    
+    func lookupWordOnlineFailed() {
+        self.detailVocabulary = nil
         self.view?.getDetailVocabularySuccessed()
     }
 }

@@ -13,7 +13,7 @@
 "MenuLanguage" = "Ngôn ngữ";
 "MenuSaved" = "Đã lưu";
 "MenuHistory" = "Lịch sử kiểm tra";
-"MenuPrivacy" = "Chính sách và điều khoản";
+"MenuPrivacy" = "Chính sách & điều khoản";
 "MenuChangePassword" = "Đổi mật khẩu";
 "MenuLogout" = "Đăng xuất";
 
@@ -25,7 +25,7 @@
 "LoginButtonLogin" = "Đăng nhập";
 "FBorGmail" = "Hoặc đăng nhập bằng";
 "ForgotPass" = "Quên mật khẩu";
-"NotYetAccount" = "Bạn chưa có tài khoản?";
+"NotYetAccount" = "Bạn chưa có tài khoản? ";
 "Register" = "Đăng ký";
 "LoginButtonSignUp" = "ĐĂNG KÝ";
 "passwordDifference" = "Nhập lại sai mật khẩu";
@@ -76,12 +76,12 @@
 
 // logout
 "popUpLogout" = "Bạn có muốn đăng xuất?";
-"agree" = "Đồng ý";
-"cancel" = "Huỷ";
+"agree" = "ĐỒNG Ý";
+"cancel" = "HUỶ";
 
 //QA
 
-"whatQA" = "Bạn đang thắc mắc điều gì?";
+"whatQA" = "Bạn Đang Thắc Mắc Điều Gì?";
 "enterQA" = "Nhập câu hỏi của bạn";
 "messageQA" = "5 hũ mật ong cho một lần đặt câu hỏi";
 "qAOlder" = "Câu hỏi bạn đã từng đặt";
@@ -125,7 +125,7 @@
 "english_to_english" = "Anh - Anh";
 "english_to_vietnamese" = "Anh - Việt";
 "japanese_to_vietnamese" = "Nhật - Việt";
-"addDictionary" = "Thêm Từ Điển";
+"addDictionary" = "Thêm từ điển";
 
 //saved
 
@@ -177,18 +177,18 @@
 "studyPack" = "Gói nâng cấp";
 "beePack" = "Gói mật ong";
 "titleStore" = "Cửa hàng";
-"enterCode" = "Nhập mã code";
-"send" = "Gửi";
+"enterCode" = "Nhập mã Code";
+"send" = "GỬI";
 "detail" = "Chi tiết";
-"upgrade" = "Nâng cấp";
+"upgrade" = "NÂNG CẤP";
 "pleaseEnterCode" = "Vui lòng nhập mã code";
 "notFoundCode" = "Mã code không tồn tại";
 "exchangeGiftTitle" = "Bạn có muốn đổi quà này không?";
 "exchangeGiftSucess" = "Bạn đã đổi quà thành công.";
 "redeemSuccess" = "Bạn đã redeem quà thành công.";
 "upgradeSuccess" = "Bạn đã nâng cấp gói thành công.";
-"upgradeBeePack" = "Bạn có muốn nâng cấp gói mật ong này?";
-"exchangeTitle" = "ĐỔI QUÀ";
+"upgradeBeePack" = "Bạn có muốn mua gói mật ong này?";
+"exchangeTitle" = "Đổi Quà";
 
 //comment
 "comment" = "Bình luận";
@@ -305,7 +305,7 @@
 
 "messagePackage" = "Các gói nâng cấp phù hợp với bạn";
 "find" = "Tìm kiếm";
-"PrivacyAndPolicy" = "Chính sách và điều khoản";
+"PrivacyAndPolicy" = "Chính sách & điều khoản";
 
 
 // ERROR
@@ -336,6 +336,14 @@
 // BHX
 "all" = "Tất cả";
 "quater" = "Quý";
+"BRONZE" = "Đồng";
+"SILVER" = "Bạc";
+"GOLD" = "Vàng";
+"PLATINUM" = "Bạch kim";
+"MASTER" = "Cao thủ";
+"TOAA" = "TOAA";
+"TheOneAboveAll" = "Một trên tất cả";
+"ALL" = "Tất  ";
 
 // Pop up
 "getError" = "Đã xảy ra lỗi.";

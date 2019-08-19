@@ -15,6 +15,7 @@ class MoreDictionaryViewController: ListManagerVC {
     @IBOutlet weak var tbvDictionary: UITableView!
     
 	var presenter: MoreDictionaryPresenterProtocol?
+    public var callBackChangeDictionary : (() -> ())?
 
     override func setUpViews() {
         showButtonBack = true
@@ -34,11 +35,31 @@ class MoreDictionaryViewController: ListManagerVC {
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = item as! ItemDictionaryResponse
         let cell = tableView.dequeueTableCell(MoreDictionaryCell.self)
-        cell.setupCell(isDownloaded: data.isDownload, title: data.name&)
+        cell.setupCell(isDownloaded: data.isDownload, title: data.name&,isDefault: data.isDefault)
         cell.actionCell = {[weak self] (isDownloaded) in
             self?.processFile(isDownloaded: isDownloaded,item: data)
+            
+        }
+        cell.actionSetDefaultDictionary = {[weak self] (isChoice) in
+            data.isDefault = isChoice
+            self?.setDefaultDictionary(id: data.id)
         }
         return cell
+    }
+    
+    func setDefaultDictionary(id: Int){
+        let listDataItem = listData as! [ItemDictionaryResponse]
+        for item in listDataItem {
+            if item.isDefault {
+                item.isDefault = false
+            } else {
+                if item.id == id {
+                    item.isDefault = true
+                }
+            }
+        }
+        RealmDBManager.share.updateLocalConfigDictionary(id: id)
+        self.callBackChangeDictionary?()
     }
     
     func processFile(isDownloaded: Bool,item: ItemDictionaryResponse){
@@ -50,16 +71,24 @@ class MoreDictionaryViewController: ListManagerVC {
                 item.isDownload = true
                 self.tableView.reloadData()
                 let object = LocalConfigDictionary(id: item.id ,name: item.name)
+                let numberDownloaded = (self.listData as! [ItemDictionaryResponse]).filter({$0.isDownload}).count
+                if numberDownloaded == 1 {
+                    object.isDefault = 1
+                }
                 RealmDBManager.share.addObject(value: object)
+                self.callBackChangeDictionary?()
             }
         } else {
-            ProgressView.shared.show()
-            RealmDBManager.share.removeAllObject(type: WordEntity.self)
-            RealmDBManager.share.removeAllObject(type: WordExplainEntity.self)
-            RealmDBManager.share.removeObject(type: LocalConfigDictionary.self,value: item.id)
-            item.isDownload = false
-            self.tableView.reloadData()
-            ProgressView.shared.hide()
+            DispatchQueue.main.async {
+                ProgressView.shared.show()
+                RealmDBManager.share.removeAllObject(type: WordEntity.self)
+                RealmDBManager.share.removeAllObject(type: WordExplainEntity.self)
+                RealmDBManager.share.removeObject(type: LocalConfigDictionary.self,value: item.id)
+                item.isDownload = false
+                self.tableView.reloadData()
+                ProgressView.shared.hide()
+                self.callBackChangeDictionary?()
+            }
         }
     }
 }

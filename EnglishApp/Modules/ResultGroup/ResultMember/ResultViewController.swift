@@ -76,7 +76,7 @@ class ResultViewController: BaseViewController {
 //            setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
 //        }
 //
-        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise {
+        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
 //            viewRank.isHidden = true
 //            self.presenter?.getViewResult(id: id)
             setTitleNavigation(title: LocalizableKey.result.showLanguage)
@@ -89,7 +89,6 @@ class ResultViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        
         if type == .entranceExercise {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
         }
@@ -144,7 +143,7 @@ extension ResultViewController : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let question = self.presenter?.getListAnswer() {
-            self.presenter?.gotoResultQuestion(listAswer: question, index: indexPath.row)
+            self.presenter?.gotoResultQuestion(listAswer: question, index: indexPath.row, isHistory: self.isHistory)
         }
         
     }

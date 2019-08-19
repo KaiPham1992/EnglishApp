@@ -24,6 +24,9 @@ class SignUpViewController: BaseViewController {
     
     @IBOutlet weak var heightError: NSLayoutConstraint!
     
+    var passwordText: String = ""
+    var rePasswordText: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,8 +44,10 @@ class SignUpViewController: BaseViewController {
         vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: LocalizableKey.enterPassword.showLanguage)
         vRePassword.setTitleAndPlaceHolder(title: LocalizableKey.reNewPassword.showLanguage, placeHolder: LocalizableKey.enterRePassword.showLanguage)
         btnSignUp.setTitle(LocalizableKey.LoginButtonSignUp.showLanguage, for: .normal)
-        vPassword.tfInput.isSecureTextEntry = true
-        vRePassword.tfInput.isSecureTextEntry = true
+//        vPassword.tfInput.isSecureTextEntry = true
+//        vRePassword.tfInput.isSecureTextEntry = true
+        vPassword.tfInput.delegate = self
+        vRePassword.tfInput.delegate = self
         
         tfCaptcha.placeholder = LocalizableKey.enterCaptcha.showLanguage
     }
@@ -54,8 +59,9 @@ class SignUpViewController: BaseViewController {
     @IBAction func btnSignUpTapped() {
         dismissKeyBoard()
         heightError.constant = 0
+        //vPassword.getText()
         if validateInputData() {
-            let param = SignUpParam(email: vEmail.getText(), password: vPassword.getText(), captcha: tfCaptcha.text&, displayName: vDisplayName.getText())
+            let param = SignUpParam(email: vEmail.getText(), password: passwordText, captcha: tfCaptcha.text&, displayName: vDisplayName.getText())
             
             presenter?.signUp(param: param)
         }
@@ -104,7 +110,8 @@ extension SignUpViewController {
             return false
         }
 
-        if self.vPassword.tfInput.text& != self.vRePassword.tfInput.text& {
+//        if self.vPassword.tfInput.text& != self.vRePassword.tfInput.text& {
+        if self.passwordText != rePasswordText {
             hideError(isHidden: false, message:  LocalizableKey.passwordDifference.showLanguage)
             return false
         }
@@ -140,5 +147,51 @@ extension SignUpViewController: SignUpViewProtocol {
     func signUpError(error: APIError) {
         presenter?.getCaptcha()
         hideError(isHidden: false, message:  error.message&.showLanguage)
+    }
+}
+
+extension SignUpViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == vPassword.tfInput {
+            
+            var hashPassword = String()
+            let newChar = string.first
+            let offsetToUpdate = passwordText.index(passwordText.startIndex, offsetBy: range.location)
+            
+            if string == "" {
+                passwordText.remove(at: offsetToUpdate)
+                return true
+            }
+            else { passwordText.insert(newChar!, at: offsetToUpdate) }
+            
+            for _ in 0 ..< passwordText.count {  hashPassword += "*" }
+            textField.text = hashPassword
+            if textField.text&.count > 0 {
+                vPassword.textFieldDidChanged(vPassword.tfInput)
+            }
+            print(self.passwordText)
+            return false
+        } else if textField == vRePassword.tfInput {
+            var hashPassword = String()
+            let newChar = string.first
+            let offsetToUpdate = rePasswordText.index(passwordText.startIndex, offsetBy: range.location)
+            
+            if string == "" {
+                rePasswordText.remove(at: offsetToUpdate)
+                return true
+            }
+            else { rePasswordText.insert(newChar!, at: offsetToUpdate) }
+            
+            for _ in 0 ..< rePasswordText.count {  hashPassword += "*" }
+            textField.text = hashPassword
+            if textField.text&.count > 0 {
+                vRePassword.textFieldDidChanged(vRePassword.tfInput)
+            }
+            print(self.rePasswordText)
+            return false
+        }
+        return true
     }
 }

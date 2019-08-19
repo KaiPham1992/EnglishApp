@@ -117,12 +117,14 @@ extension GrammarViewController: UITableViewDelegate{
         return 50
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let _id = self.presenter?.grammarsResponse?.likes[indexPath.row].lesson_id {
-            let vc = DetailLessonRouter.createModule(idLesson: _id, type: .detailLesson) as! DetailLessonViewController
-            vc.callbackCallAgainAPI = {[unowned self] in
-                self.callAPIAgain()
+        if !isDelete {
+            if let _id = self.presenter?.grammarsResponse?.likes[indexPath.row].lesson_id {
+                let vc = DetailLessonRouter.createModule(idLesson: _id, type: .detailLesson)
+                vc.callbackCallAgainAPI = {[unowned self] in
+                    self.callAPIAgain()
+                }
+                self.push(controller: vc,animated: true)
             }
-            self.push(controller: vc,animated: true)
         }
     }
 }

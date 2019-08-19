@@ -258,12 +258,14 @@ extension FightViewController: UICollectionViewDataSource{
                 let type = data.answers?.first?.type ?? ""
                 if type == "" || type == "2"{
                     let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
+                    cell.type = .competition
                     cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                     cell.setupCell(data: data)
                     return cell
                 }
                 let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
                 cell.indexPath = indexPath
+                cell.type = .competition
                 cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                 cell.delegate = self
                 cell.setupCell(dataCell: data)
@@ -285,6 +287,12 @@ extension FightViewController: UICollectionViewDataSource{
 
 extension FightViewController : CellExerciseDelegate{
     
+    
+    func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
+        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].option_id = idAnswer
+        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].value = valueAnswer
+    }
+    
     func showDetailVocubulary(word: WordExplainEntity) {
         self.presenter?.gotoDetailVocabulary(word: word)
     }
@@ -294,11 +302,13 @@ extension FightViewController : CellExerciseDelegate{
     }
     
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
-        PopUpHelper.shared.showSuggesstionResult(diamond: {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-        }) {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
-        }
+        //for competition dont support suggestion.
+        
+//        PopUpHelper.shared.showSuggesstionResult(diamond: {
+//            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
+//        }) {
+//            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
+//        }
     }
 }
 

@@ -41,7 +41,7 @@ class UserEntity: BaseEntity  {
     var displayName: String?
     var socialType: String?
     var rankPoint: Int?
-    var is_entrance_test: String?
+    var is_entrance_test: String = ""
     
     var typeUser = [String]()
     var amountRank: Int?
@@ -120,6 +120,18 @@ class UserEntity: BaseEntity  {
             return AppImage.imgStudyPack
         }
         return nil
+    }
+    
+    var isUserPremium : Bool {
+        get {
+            return self.typeUser.contains("PREMIUM")
+        }
+    }
+    
+    var isUserStudyPack : Bool {
+        get {
+            return self.typeUser.contains("STUDY_PACK")
+        }
     }
     
     var imagePremium: UIImage? {

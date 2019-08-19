@@ -21,7 +21,7 @@ class PageViewController : ButtonBarPagerTabStripViewController{
         self.settings.style.buttonBarBackgroundColor = .white
         self.settings.style.buttonBarItemBackgroundColor = .white
         self.settings.style.selectedBarBackgroundColor = AppColor.yellow
-        self.settings.style.buttonBarItemFont = AppFont.fontRegular12
+        self.settings.style.buttonBarItemFont = AppFont.fontRegular14
         self.settings.style.buttonBarHeight = 48
         self.settings.style.selectedBarHeight = 2
         self.settings.style.buttonBarMinimumLineSpacing = 0
@@ -78,5 +78,31 @@ class PageViewController : ButtonBarPagerTabStripViewController{
         vTitle.frame = CGRect(x: 0, y: 0, width: 375, height: 44)
         self.navigationItem.titleView = vTitle
         
+    }
+    
+    func addButtonTextToNavigation(title: String, style: StyleNavigation, action: Selector?, textColor: UIColor = AppColor.rightNavigation, font : UIFont = UIFont.systemFont(ofSize: 17)) {
+        
+        showNavigation()
+        let btn = UIButton()
+        
+        var newTitle = title
+        if style == .right {
+            newTitle = title
+        }
+        
+        btn.setAttributed(title: newTitle, color: textColor, font: font)
+        
+        btn.setTitleColor(textColor, for: .normal)
+        if let newAction = action {
+            btn.addTarget(self, action: newAction, for: .touchUpInside)
+        }
+        btn.sizeToFit()
+        
+        let button = UIBarButtonItem(customView: btn)
+        if style == .left {
+            self.navigationItem.leftBarButtonItem = button
+        } else {
+            self.navigationItem.rightBarButtonItem = button
+        }
     }
 }
