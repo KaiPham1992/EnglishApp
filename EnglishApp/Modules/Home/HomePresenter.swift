@@ -47,4 +47,12 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
             self.view?.didGetTopThree(error: error)
         }
     }
+    
+    func getProfile() {
+        interactor?.getProfile()
+    }
+    
+    func didGetProfile(user: UserEntity) {
+        view?.didGetProfile(user: user)
+    }
 }

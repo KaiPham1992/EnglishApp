@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum WalletLogEndPoint{
-    case getWalletLog(wallet_type: Int)
+    case getWalletLog(offset: Int, wallet_type: Int)
 }
 extension WalletLogEndPoint: EndPointType{
     var path: String {
@@ -30,8 +30,8 @@ extension WalletLogEndPoint: EndPointType{
     
     var parameters: JSONDictionary {
         switch self {
-        case .getWalletLog(let wallet_type):
-            return ["wallet_type": wallet_type]
+        case .getWalletLog(let offset, let wallet_type):
+            return ["offset": offset, "limit": limit, "wallet_type": wallet_type]
         }
     }
     

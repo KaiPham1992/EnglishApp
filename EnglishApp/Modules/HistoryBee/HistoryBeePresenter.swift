@@ -16,18 +16,31 @@ class HistoryBeePresenter: HistoryBeePresenterProtocol, HistoryBeeInteractorOutp
     var interactor: HistoryBeeInteractorInputProtocol?
     private let router: HistoryBeeWireframeProtocol
 
+    var canLoadMore: Bool = false
+    var listHistory: [LogEntity] = [LogEntity]()
+    
     init(interface: HistoryBeeViewProtocol, interactor: HistoryBeeInteractorInputProtocol?, router: HistoryBeeWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
         self.router = router
     }
     
+    func numOfRow() -> Int{
+        return self.listHistory.count ?? 0
+    }
+    
     func getWalletLog(wallet_type: Int) {
+        canLoadMore = false
         ProgressView.shared.show()
-        Provider.shared.walletLogAPIService.getWalletLog(wallet_type: wallet_type, success: { (walletLog) in
+        Provider.shared.walletLogAPIService.getWalletLog(offset: listHistory.count, wallet_type: wallet_type, success: { (listWalletLog) in
             ProgressView.shared.hide()
-            guard let listWalletLog = walletLog else {return}
-            self.view?.didGetWalletLog(listWalletLog: listWalletLog)
+            
+            guard let _listWalletLog = listWalletLog?.logs, let _totalWallet = listWalletLog?.total_wallets else {return}
+            if _listWalletLog.count == limit {
+                self.canLoadMore = true
+            }
+            self.listHistory.append(contentsOf: _listWalletLog)
+            self.view?.didGetWalletLog(listWalletLog: _listWalletLog, totalWallet: _totalWallet)
         }) { (error) in
             ProgressView.shared.hide()
             guard let error = error else {return}

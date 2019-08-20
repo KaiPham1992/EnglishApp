@@ -14,7 +14,9 @@ class HistoryBeeViewController: BaseViewController {
 
 	var presenter: HistoryBeePresenterProtocol?
     @IBOutlet weak var tbHistory: UITableView!
-
+    @IBOutlet weak var headerView: HistoryBeeHeader!
+    @IBOutlet weak var heightOfHeader: NSLayoutConstraint!
+    
     var totalWallet = 0
     var wallet_type = 0
     
@@ -27,12 +29,23 @@ class HistoryBeeViewController: BaseViewController {
         super.viewDidLoad()
         configureTable()
         presenter?.getWalletLog(wallet_type: self.wallet_type)
+        
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.titleHistoryNap.showLanguage)
+    }
+    
+    func loadHeaderView() {
+        if self.wallet_type == 3 {
+            heightOfHeader.constant = 300
+        } else {
+            heightOfHeader.constant = 220
+        }
+        headerView.displayData(walletType: self.wallet_type, total: self.totalWallet)
+        headerView.delegate = self
     }
 
 }
@@ -51,12 +64,14 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(HistoryBeeCell.self, for: indexPath)
-        cell.walletLog = self.listWalletLog[indexPath.item]
+        if indexPath.item < presenter?.listHistory.count ?? 0 {
+            cell.walletLog = presenter?.listHistory[indexPath.item]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.listWalletLog.count
+        return presenter?.numOfRow() ?? 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -67,53 +82,54 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
         return 60
     }
     
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row >= ((presenter?.listHistory.count ?? 0) - 5) && presenter?.canLoadMore == true {
+            presenter?.getWalletLog(wallet_type: self.wallet_type)
+        }
+    }
+    
     // header
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = HistoryBeeHeader()
-        header.displayData(walletType: self.wallet_type, total: self.totalWallet)
-        header.delegate = self
-        return header
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if self.wallet_type == 3{
-            return 300
-        }else{
-            return 220
-        }
-        
-        
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let header = HistoryBeeHeader()
+//        header.displayData(walletType: self.wallet_type, total: self.totalWallet)
+//        header.delegate = self
+//        return header
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        if self.wallet_type == 3{
+//            return 300
+//        }else{
+//            return 220
+//        }
+//    }
 }
 extension HistoryBeeViewController: HistoryBeeViewProtocol{
-    func didGetWalletLog(listWalletLog: CollectionLogEntity) {
-        if let _listWalletLog = listWalletLog.logs, let _totalWallet = listWalletLog.total_wallets{
-            if _listWalletLog.count == 0{
-                showNoData()
-            }else{
-                hideNoData()
-            }
-            self.listWalletLog = _listWalletLog
-            self.totalWallet = _totalWallet
+    
+    func didGetWalletLog(listWalletLog: [LogEntity], totalWallet: Int) {
+        
+        if listWalletLog.count == 0 {
+            showNoData()
+        }else{
+            hideNoData()
+            self.listWalletLog = listWalletLog
+            self.totalWallet = totalWallet
+            loadHeaderView()
         }
-        
-        
     }
     
     func didGetWalletLog(error: Error) {
         print(error.localizedDescription)
     }
-    
-    
 }
 
 extension HistoryBeeViewController: HistoryBeeHeaderDelegate{
+    
     func btnAddTapped() {
         let storeViewController = StoreViewController()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
             storeViewController.moveToViewController(at: 1)
-//            storeViewController.moveToViewController(at: 1, animated: false)
         })
         self.push(controller: storeViewController)
     }

@@ -81,7 +81,7 @@
 
 //QA
 
-"whatQA" = "What Are You  ondering?";
+"whatQA" = "What Are You Wondering?";
 "enterQA" = "Enter your question";
 "messageQA" = "5 honey for one question";
 "qAOlder" = "Questions you've ever asked";
@@ -331,14 +331,14 @@
 // BHX
 "all" = "All";
 "quater" = "Quater";
-"BRONZE" = "BRONZE";
-"SILVER" = "SILVER";
-"GOLD" = "GOLD";
-"PLATINUM" = "PLATINUM";
-"MASTER" = "MASTER";
+"BRONZE" = "Bronze";
+"SILVER" = "Silver";
+"GOLD" = "Gold";
+"PLATINUM" = "Platinum";
+"MASTER" = "Master";
 "TOAA" = "TOAA";
-"TheOneAboveAll" = "THE ONE ABOVE ALL";
-"ALL" = "ALL";
+"TheOneAboveAll" = "The one above all";
+"ALL" = "All";
 
 // Pop up
 "getError" = "An error occurred. Please try again later.";

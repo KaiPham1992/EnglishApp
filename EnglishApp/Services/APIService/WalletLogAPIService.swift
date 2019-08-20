@@ -9,13 +9,13 @@
 import Foundation
 
 protocol WalletLogAPIServiceProtocol {
-    func getWalletLog(wallet_type: Int, success: @escaping SuccessHandler<CollectionLogEntity>.object,failure: @escaping RequestFailure)
+    func getWalletLog(offset: Int, wallet_type: Int, success: @escaping SuccessHandler<CollectionLogEntity>.object,failure: @escaping RequestFailure)
 }
 
 class WalletLogAPIService: WalletLogAPIServiceProtocol {
     
-    func getWalletLog(wallet_type: Int, success: @escaping SuccessHandler<CollectionLogEntity>.object, failure: @escaping RequestFailure) {
-        let endpoint = WalletLogEndPoint.getWalletLog(wallet_type: wallet_type)
+    func getWalletLog(offset: Int, wallet_type: Int, success: @escaping SuccessHandler<CollectionLogEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = WalletLogEndPoint.getWalletLog(offset: offset, wallet_type: wallet_type)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

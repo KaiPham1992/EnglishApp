@@ -44,12 +44,22 @@
                         <color key="textColor" red="0.61960784310000006" green="0.61960784310000006" blue="0.61960784310000006" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgD-5W-egE">
+                        <rect key="frame" x="0.0" y="68.5" width="320" height="1"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="UoJ-0U-Czd"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="JYv-TZ-MBD" secondAttribute="trailing" constant="8" id="0Y3-RH-VBb"/>
                     <constraint firstItem="O1c-jK-fZQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="9yE-Pq-KHO"/>
                     <constraint firstItem="5fS-qD-cVq" firstAttribute="top" secondItem="JYv-TZ-MBD" secondAttribute="bottom" constant="8" id="DwI-Mj-82g"/>
+                    <constraint firstItem="bgD-5W-egE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="IkD-nh-40H"/>
                     <constraint firstItem="5fS-qD-cVq" firstAttribute="leading" secondItem="JYv-TZ-MBD" secondAttribute="leading" id="Lxy-Uh-Dnp"/>
+                    <constraint firstAttribute="trailing" secondItem="bgD-5W-egE" secondAttribute="trailing" id="Rva-2H-dZz"/>
+                    <constraint firstAttribute="bottom" secondItem="bgD-5W-egE" secondAttribute="bottom" id="Y3F-Gk-Mxh"/>
                     <constraint firstItem="JYv-TZ-MBD" firstAttribute="leading" secondItem="O1c-jK-fZQ" secondAttribute="trailing" constant="8" id="aZz-p4-oGj"/>
                     <constraint firstItem="5fS-qD-cVq" firstAttribute="trailing" secondItem="JYv-TZ-MBD" secondAttribute="trailing" id="agW-9R-dwd"/>
                     <constraint firstItem="O1c-jK-fZQ" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="lKl-QG-8yl"/>
