@@ -94,7 +94,7 @@
 // Competition
 "titleCompetition" = "Thi đấu";
 "conditionCompetition" = "Điều kiện: ";
-"timeStart" = "Thời gian: ";
+"timeStart" = "Thời gian bắt đầu: ";
 "countTeam" = "Số đội: ";
 "selectTeamJoin" = "Chọn nhóm tham gia";
 "joinTeam" = "Tham gia";
@@ -364,3 +364,4 @@
 
 //setting
 "setting" = "Cài đặt";
+"start" = "Bắt đầu";

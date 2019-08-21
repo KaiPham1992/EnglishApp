@@ -12,12 +12,16 @@ import UIKit
 
 class SelectTeamViewController: BaseViewController {
 
+    
+    @IBOutlet weak var btnCreateTeam: UIButton!
+    
 	var presenter: SelectTeamPresenterProtocol?
     
     @IBOutlet weak var tbTeam: UITableView!
     
     var maxMember = 0
     var competitionId: Int?
+    var isCannotJoin = false
 
     var listTeam = [TeamEntity]() {
         didSet {
@@ -38,6 +42,9 @@ class SelectTeamViewController: BaseViewController {
 //        listTeam = TeamEntity.toArray()
         presenter?.getListFightTestTeam(competitionId: competitionId*)
         hideTabbar()
+        if isCannotJoin {
+            btnCreateTeam.isHidden = true
+        }
     }
     
     override func btnBackTapped() {
@@ -72,7 +79,7 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(SelectTeamCell.self, for: indexPath)
-        cell.displayData(maxMember: self.maxMember, team: listTeam[indexPath.item])
+        cell.displayData(maxMember: self.maxMember, team: listTeam[indexPath.item], isCannotJoin: self.isCannotJoin)
         cell.btnJoin.tag = indexPath.item
         cell.btnJoined.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
@@ -120,7 +127,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     func joinTeamSuccessed(respone: DetailTeamEntity) {
         let vc = DetailTeamRouter.createModule(teamDetail: respone)
         vc.actionBackView = { [weak self] in
-            self?.presenter?.getListFightTestTeam(competitionId: Int(respone.team_info?.id ?? "0") ?? 0)
+            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0)
         }
         self.push(controller: vc)
     }

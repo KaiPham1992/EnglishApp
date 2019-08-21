@@ -28,7 +28,7 @@ class SelectTeamRouter: SelectTeamWireframeProtocol {
         return view
     }
     
-    static func createModule(competitionId: Int) -> SelectTeamViewController {
+    static func createModule(competitionId: Int, isCannotJoin: Bool = false) -> SelectTeamViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = SelectTeamViewController.initFromNib()
         let interactor = SelectTeamInteractor()
@@ -37,6 +37,7 @@ class SelectTeamRouter: SelectTeamWireframeProtocol {
         
         view.presenter = presenter
         view.competitionId = competitionId
+        view.isCannotJoin = isCannotJoin
         interactor.presenter = presenter
         router.viewController = view
         

@@ -360,4 +360,5 @@ struct LocalizableKey {
     static let rank_of_competition = "rank_of_competition"
     
     static let setting = "setting"
+    static let start = "start"
 }
