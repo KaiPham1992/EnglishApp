@@ -55,8 +55,10 @@ class CellCreateExercise: UITableViewCell {
         }
     }
     
-    func setupData(title: String){
-        lblTitle.text = title
+    func setupData(dataCell: SearchEntity){
+        lblTitle.text = dataCell.name&
+        lbType.text = dataCell.typeCreateExercise
+        edNumber.text = "\(dataCell.numberQuestion)"
     }
     
     func setupTitle(title: String){

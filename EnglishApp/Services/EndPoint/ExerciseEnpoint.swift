@@ -24,7 +24,7 @@ enum ExerciseEnpoint {
     case getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId: Int?,offset: Int)
     case getDailyMisson
     case getListAssignExercise(offset: Int)
-    case getListQuestionCategory
+    case getListQuestionCategory(offset: Int)
     case suggestQuestion(id: String,isDiamond: Bool)
     case explainExercise(id: Int)
     case reportQuestion(question_details_id:Int,content: String)
@@ -134,8 +134,8 @@ extension ExerciseEnpoint: EndPointType {
             }
             return ["question_details_id": id,
                      "amount_honey": 5]
-        case .getListQuestionCategory:
-            return ["":""]
+        case .getListQuestionCategory(let offset):
+            return ["offset": offset, "limit": limit]
         case .getListAssignExercise(let offset):
             return [    "type_test": 6,
                         "offset": offset,

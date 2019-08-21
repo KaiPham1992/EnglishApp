@@ -14,6 +14,10 @@ class SearchEntity : Mappable{
     var _id : String?
     var name : String?
     
+    //use for create exercise
+    var typeCreateExercise : String = "Elementary"
+    var numberQuestion : Int = 0
+    
     required init?(map: Map) {
         
     }

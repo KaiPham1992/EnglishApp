@@ -22,10 +22,10 @@ protocol CreateExercisePresenterProtocol: class {
     var createExerciseParam : CreateExerciseParam {get}
     func gotoStore()
     func getNumberRow() -> Int
-    func getItemIndexPath(indexPath : IndexPath)->String
-    func getListQuestionCatelogy()
-    func changeLevelParam(indexPath: IndexPath,level: Int)
-    func changeNumberQuestion(indexPath: IndexPath,number: Int)
+    func getItemIndexPath(indexPath : IndexPath) -> SearchEntity
+    func getListQuestionCatelogy(offset: Int)
+    func changeLevelParam(indexPath: IndexPath, level: Int)
+    func changeNumberQuestion(indexPath: IndexPath, number: Int)
     func gotoCreateExercise(param: CreateExerciseParam)
     func changeNameExercise(name: String)
 }
@@ -42,7 +42,7 @@ protocol CreateExerciseInteractorOutputProtocol: class {
 protocol CreateExerciseInteractorInputProtocol: class {
 
     var presenter: CreateExerciseInteractorOutputProtocol?  { get set }
-    func getListQuestionCatelogy()
+    func getListQuestionCatelogy(offset: Int)
     func gotoCreateExercise(param: CreateExerciseParam)
     
     /* Presenter -> Interactor */
