@@ -195,6 +195,8 @@ struct LocalizableKey {
     static let redeemSuccess = "redeemSuccess"
     static let upgradeSuccess = "upgradeSuccess"
     static let upgradeBeePack = "upgradeBeePack"
+    static let notEnoughHoneyText = "notEnoughHoneyText"
+    static let notEnoughDiamondText = "notEnoughDiamondText"
 
     //comment
     static let comment = "comment"

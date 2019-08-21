@@ -89,8 +89,11 @@ class HomeViewController: BaseViewController {
         setColorStatusBar()
         addHeaderHome()
         countNotification()
+        presenter?.getProfile()
+        
         // -- re init cell after change language
         reInitCell()
+        
     }
     
     func reInitCell() {
@@ -370,5 +373,10 @@ extension HomeViewController: HomeViewProtocol{
     
     func didGetTopThree(error: Error) {
         print(error.localizedDescription)
+    }
+    
+    func didGetProfile(user: UserEntity) {
+        UserDefaultHelper.shared.saveUser(user: user)
+        header.user = user
     }
 }

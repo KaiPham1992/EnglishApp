@@ -190,6 +190,8 @@
 "upgradeSuccess" = "Bạn đã nâng cấp gói thành công.";
 "upgradeBeePack" = "Bạn có muốn mua gói mật ong này?";
 "exchangeTitle" = "Đổi Quà";
+"notEnoughDiamondText" = "Bạn không đủ kim cương.";
+"notEnoughHoneyText" = "Bạn không đủ mật ong.";
 
 //comment
 "comment" = "Bình luận";
@@ -341,10 +343,10 @@
 "SILVER" = "Bạc";
 "GOLD" = "Vàng";
 "PLATINUM" = "Bạch kim";
-"MASTER" = "Cao thủ";
+"MASTER" = "Master";
 "TOAA" = "TOAA";
-"TheOneAboveAll" = "Một trên tất cả";
-"ALL" = "Tất  ";
+"TheOneAboveAll" = "The one above all";
+"ALL" = "Tất cả";
 
 // Pop up
 "getError" = "Đã xảy ra lỗi.";

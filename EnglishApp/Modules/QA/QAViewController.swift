@@ -126,12 +126,14 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(QACell.self, for: indexPath)
-        cell.qa = listHistory[indexPath.item]
+        if indexPath.item < presenter?.listQA.count ?? 0 {
+            cell.qa = presenter?.listQA[indexPath.item]
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listHistory.count
+        return presenter?.listQA.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -140,7 +142,7 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == 10 && presenter?.canLoadMore == true {
+        if indexPath.row >= ((presenter?.listQA.count ?? 0) - 5) && presenter?.canLoadMore == true {
             presenter?.loadMoreQA()
         }
     }
