@@ -99,6 +99,7 @@ struct LocalizableKey {
     static let conditionCompetition = "conditionCompetition"
     static let timeStart = "timeStart"
     static let countTeam = "countTeam"
+    static let competition = "competition"
     
     static let selectTeamJoin = "selectTeamJoin"
     static let joinTeam = "joinTeam"
@@ -297,6 +298,7 @@ struct LocalizableKey {
     static let requireUpGrade = "requireUpGrade"
     static let btnUpGrade = "btnUpGrade"
     static let levelUp = "levelUp"
+    static let point_level = "point_level"
     
     static let changeLanguage = "changeLanguage"
     static let bxh = "bxh"
@@ -354,4 +356,6 @@ struct LocalizableKey {
     //add after
     
     static let rank_of_competition = "rank_of_competition"
+    
+    static let setting = "setting"
 }

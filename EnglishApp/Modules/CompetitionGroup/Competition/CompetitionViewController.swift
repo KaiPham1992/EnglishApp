@@ -96,7 +96,7 @@ extension CompetitionViewController: IndicatorInfoProvider{
         if type == .competition {
             return IndicatorInfo(title: LocalizableKey.action.showLanguage)
         }
-        return IndicatorInfo(title: LocalizableKey.titleCompetition.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.competition.showLanguage)
     }
 }
 extension CompetitionViewController: CompetitionViewProtocol{

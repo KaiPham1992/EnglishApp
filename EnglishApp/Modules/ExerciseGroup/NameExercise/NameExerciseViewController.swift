@@ -31,16 +31,24 @@ class NameExerciseViewController: BaseViewController {
     weak var exerciseDelegate: ExerciseDelegate?
 
     @IBAction func clickNext(_ sender: Any) {
-        if self.currentIndex + 1 > numberQuestion {
-            if let _param = self.paramSubmit {
-                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
-                self.presenter?.submitExercise(param: _param)
+        if !isEnd {
+            if self.currentIndex + 1 > numberQuestion {
+                if let _param = self.paramSubmit {
+                    _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+                    self.presenter?.submitExercise(param: _param, isOut: false)
+                }
+            } else {
+                self.currentIndex += 1
+                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
             }
         } else {
-            self.currentIndex += 1
-            lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-            clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
+            if let _param = self.paramSubmit {
+                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+                self.presenter?.submitExercise(param: _param, isOut: false)
+            }
         }
+        
     }
     var numberQuestion : Int = 0
     var currentTime : Int = 0
@@ -57,7 +65,7 @@ class NameExerciseViewController: BaseViewController {
     var currentIndex = 1 {
         didSet{
             if self.currentIndex == numberQuestion {
-                btnNext.setTitle(LocalizableKey.time_end.showLanguage, for: .normal)
+                btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             } else {
                 btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
             }
@@ -67,11 +75,7 @@ class NameExerciseViewController: BaseViewController {
     var isEnd : Bool = false {
         didSet {
             vCountTime.stopTimer()
-            if self.currentIndex < numberQuestion {
-                self.currentIndex = numberQuestion
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-            }
+            btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             self.vCountTime.isUserInteractionEnabled = false
             self.disableUserInteractionCell()
         }
@@ -148,7 +152,7 @@ class NameExerciseViewController: BaseViewController {
         if let _param = self.paramSubmit {
 //            self.presenter?.exitExercise(id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
-            self.presenter?.submitExercise(param: _param)
+            self.presenter?.submitExercise(param: _param, isOut: true)
         }
     }
 }

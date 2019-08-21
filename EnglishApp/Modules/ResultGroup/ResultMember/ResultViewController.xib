@@ -39,10 +39,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yBA-Wk-Gs0">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfI-H2-0rk">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="543"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="573"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBF-Yx-ndH">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="288"/>
@@ -80,14 +80,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wq9-6a-m60">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng điểm:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTA-VI-wvh">
-                                                            <rect key="frame" x="27" y="12.5" width="217" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTA-VI-wvh">
+                                                            <rect key="frame" x="27" y="21.5" width="217" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 000 điểm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wq-8w-yBn">
-                                                            <rect key="frame" x="249" y="12.5" width="102" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wq-8w-yBn">
+                                                            <rect key="frame" x="249" y="21.5" width="102" height="0.0"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="102" id="r4U-rE-fHM"/>
                                                             </constraints>
@@ -109,14 +109,14 @@
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EAB-I0-Pox">
                                                     <rect key="frame" x="0.0" y="45" width="375" height="43"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tổng điểm:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h95-w4-4pv">
-                                                            <rect key="frame" x="27" y="12.5" width="217" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h95-w4-4pv">
+                                                            <rect key="frame" x="27" y="21.5" width="217" height="0.0"/>
                                                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 000 điểm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhS-eK-BzP">
-                                                            <rect key="frame" x="249" y="12.5" width="102" height="18"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VhS-eK-BzP">
+                                                            <rect key="frame" x="249" y="21.5" width="102" height="0.0"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="102" id="D90-H8-6LF"/>
                                                             </constraints>
@@ -188,7 +188,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ivt-iT-WmL" firstAttribute="width" secondItem="rfI-H2-0rk" secondAttribute="width" id="5pu-Gt-ODd"/>
-                                <constraint firstAttribute="bottom" secondItem="ivt-iT-WmL" secondAttribute="bottom" constant="50" id="986-NC-wSJ"/>
+                                <constraint firstAttribute="bottom" secondItem="ivt-iT-WmL" secondAttribute="bottom" constant="80" id="986-NC-wSJ"/>
                                 <constraint firstItem="zBF-Yx-ndH" firstAttribute="top" secondItem="rfI-H2-0rk" secondAttribute="top" id="9eh-iJ-bTh"/>
                                 <constraint firstItem="ivt-iT-WmL" firstAttribute="centerX" secondItem="rfI-H2-0rk" secondAttribute="centerX" id="ThC-pn-LvM"/>
                                 <constraint firstItem="zBF-Yx-ndH" firstAttribute="leading" secondItem="rfI-H2-0rk" secondAttribute="leading" id="lqE-Dp-IhW"/>
@@ -212,7 +212,7 @@
                         <constraint firstAttribute="height" constant="40" id="73t-rI-qnL"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                    <state key="normal" title="Ve trang chu">
+                    <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <connections>
@@ -227,7 +227,7 @@
                 <constraint firstItem="yBA-Wk-Gs0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Nza-w4-Ne7"/>
                 <constraint firstAttribute="trailing" secondItem="yBA-Wk-Gs0" secondAttribute="trailing" id="SvJ-hC-3pJ"/>
                 <constraint firstAttribute="trailing" secondItem="wQu-gg-xdd" secondAttribute="trailing" constant="16" id="gzb-5i-3VG"/>
-                <constraint firstAttribute="bottom" secondItem="yBA-Wk-Gs0" secondAttribute="bottom" id="rD8-uk-JwK"/>
+                <constraint firstItem="wQu-gg-xdd" firstAttribute="top" secondItem="yBA-Wk-Gs0" secondAttribute="bottom" id="wLx-iI-Qnl"/>
                 <constraint firstAttribute="bottom" secondItem="wQu-gg-xdd" secondAttribute="bottom" constant="24" id="xvS-pF-3nN"/>
             </constraints>
             <point key="canvasLocation" x="138.40000000000001" y="106.59670164917542"/>

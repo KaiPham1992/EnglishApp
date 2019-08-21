@@ -28,18 +28,19 @@ class HistoryListExerciseViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        if type == TypeDoExercise.createExercise {
-            setTitleNavigation(title: LocalizableKey.create_exercise.showLanguage)
-        }
-        if type == TypeDoExercise.levelExercise {
-            setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
-        }
-        if type == TypeDoExercise.practiceExercise {
-            setTitleNavigation(title: LocalizableKey.try_hard.showLanguage)
-        }
-        if type == TypeDoExercise.assignExercise {
-            setTitleNavigation(title: LocalizableKey.assign_exercise.showLanguage)
-        }
+//        if type == TypeDoExercise.createExercise {
+//            setTitleNavigation(title: LocalizableKey.create_exercise.showLanguage)
+//        }
+//        if type == TypeDoExercise.levelExercise {
+//            setTitleNavigation(title: LocalizableKey.level_exercise.showLanguage)
+//        }
+//        if type == TypeDoExercise.practiceExercise {
+//            setTitleNavigation(title: LocalizableKey.try_hard.showLanguage)
+//        }
+//        if type == TypeDoExercise.assignExercise {
+//            setTitleNavigation(title: LocalizableKey.assign_exercise.showLanguage)
+//        }
+        setTitleNavigation(title: LocalizableKey.history_exercise.showLanguage)
     }
 }
 extension HistoryListExerciseViewController : HistoryListExerciseViewProtocol{

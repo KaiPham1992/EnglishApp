@@ -43,6 +43,12 @@ class CellExercise: UICollectionViewCell {
         setupView()
     }
     
+    override func prepareForReuse() {
+        if let tab = tvContent.gestureRecognizers, let item = tab.first {
+            tvContent.removeGestureRecognizer(item)
+        }
+    }
+    
     func setupView(){
         tvContent.textContainerInset = UIEdgeInsets.zero
         tvContent.textContainer.lineFragmentPadding = 0
@@ -61,17 +67,17 @@ class CellExercise: UICollectionViewCell {
     
     func detectQuestion(contextQuestion: String,type : TypeDoExercise){
         tvContent.attributedText = contextQuestion.htmlToAttributedString
-        if type != .entranceExercise || type != .competition {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-            tap.numberOfTapsRequired = 2
-            tvContent.addGestureRecognizer(tap)
-        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
         if let detectedWord = getWordAtPosition(point){
-            delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+            if type != .entranceExercise && type != .competition {
+                delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+            }
         }
     }
     
