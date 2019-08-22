@@ -308,6 +308,7 @@ extension FightViewController : TimeDelegate{
     }
     
     func endTime() {
+        self.isOut = true
         self.isEnd = true
     }
     
