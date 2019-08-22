@@ -27,6 +27,6 @@ class CellRankTeam: UICollectionViewCell {
         }
         lblRank.text = LocalizableKey.rank.showLanguage + "\(position)"
         lblPoint.text = "\(dataCell.total_score ?? "0") " + LocalizableKey.point.showLanguage
-        imgAvtTeam.sd_setImage(with: URL(string: BASE_URL+""), completed: nil)
+        imgAvtTeam.sd_setImage(with: URL(string: BASE_URL + dataCell.img_src&), placeholderImage: #imageLiteral(resourceName: "ic_avatar_default") ,completed: nil)
     }
 }

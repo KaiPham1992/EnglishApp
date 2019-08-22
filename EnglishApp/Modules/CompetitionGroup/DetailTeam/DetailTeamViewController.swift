@@ -23,6 +23,8 @@ class DetailTeamViewController: BaseViewController {
     var actionBackView: (() -> ())?
     var distanceTimeMi : Int = 0
     var timer : Timer?
+    var isTeamJoined = 1
+//    var isStarted = false
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,13 @@ class DetailTeamViewController: BaseViewController {
         btnStart.setTitle("\(LocalizableKey.startAfter.showLanguage.uppercased())", for: .normal)
         btnExplain.setTitle(LocalizableKey.explainConpetition.showLanguage.uppercased(), for: .normal)
         btnLeave.setTitle(LocalizableKey.leaveTeam.showLanguage.uppercased(), for: .normal)
+        if isTeamJoined == 1 {
+            btnLeave.isHidden = false
+            btnStart.isHidden = false
+        } else {
+            btnLeave.isHidden = true
+            btnStart.isHidden = true
+        }
     }
     
     @IBAction func btnStartTapped() {
@@ -49,10 +58,16 @@ class DetailTeamViewController: BaseViewController {
     }
     
     @IBAction func btnLeaveTapped() {
-        PopUpHelper.shared.showLeaveGroup(completionNo: {
-            
-        }) {
-            self.presenter?.leaveTeam(id: self.id)
+        if timer != nil {
+            PopUpHelper.shared.showLeaveGroup(completionNo: {
+                
+            }) {
+                self.presenter?.leaveTeam(id: self.id)
+            }
+        } else {
+            PopUpHelper.shared.showError(message: "Cuộc thi đã bắt đầu không thể rời nhóm.") {
+                
+            }
         }
     }
     override func btnBackTapped() {

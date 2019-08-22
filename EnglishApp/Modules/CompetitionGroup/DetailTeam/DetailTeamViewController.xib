@@ -50,83 +50,80 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-NX-dyi">
-                    <rect key="frame" x="0.0" y="62" width="375" height="385"/>
+                    <rect key="frame" x="0.0" y="62" width="375" height="431"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vph-3v-olh">
-                    <rect key="frame" x="0.0" y="447" width="375" height="220"/>
+                    <rect key="frame" x="0.0" y="493" width="375" height="174"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytt-Ns-5gE">
-                            <rect key="frame" x="26" y="158" width="323" height="42"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="42" id="yy2-LN-SjW"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                            <state key="normal" title="Button">
-                                <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <connections>
-                                <action selector="btnLeaveTapped" destination="-1" eventType="touchUpInside" id="wdb-FP-Yli"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FT-6D-ywJ">
-                            <rect key="frame" x="26" y="100" width="323" height="42"/>
-                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                            <state key="normal" title="Button">
-                                <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="2"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="btnExplainTapped" destination="-1" eventType="touchUpInside" id="GCI-Ej-T2q"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oln-Kf-GXf">
-                            <rect key="frame" x="26" y="42" width="323" height="42"/>
-                            <color key="backgroundColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                            <state key="normal">
-                                <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="2"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="btnStartTapped" destination="-1" eventType="touchUpInside" id="pMY-FI-B48"/>
-                            </connections>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="atI-Zv-B5i">
+                            <rect key="frame" x="0.0" y="16" width="375" height="158"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oln-Kf-GXf">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                    <color key="backgroundColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="btnStartTapped" destination="-1" eventType="touchUpInside" id="pMY-FI-B48"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FT-6D-ywJ">
+                                    <rect key="frame" x="0.0" y="58" width="375" height="42"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="btnExplainTapped" destination="-1" eventType="touchUpInside" id="GCI-Ej-T2q"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ytt-Ns-5gE">
+                                    <rect key="frame" x="0.0" y="116" width="375" height="42"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="42" id="yy2-LN-SjW"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                                    <state key="normal">
+                                        <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="btnLeaveTapped" destination="-1" eventType="touchUpInside" id="wdb-FP-Yli"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.98039215686274506" green="0.98039215686274506" blue="0.98039215686274506" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="oln-Kf-GXf" firstAttribute="height" secondItem="4FT-6D-ywJ" secondAttribute="height" id="1xu-kt-qAr"/>
-                        <constraint firstItem="4FT-6D-ywJ" firstAttribute="height" secondItem="ytt-Ns-5gE" secondAttribute="height" id="2xH-FK-nxS"/>
-                        <constraint firstItem="ytt-Ns-5gE" firstAttribute="top" secondItem="4FT-6D-ywJ" secondAttribute="bottom" constant="16" id="FhD-XA-p9c"/>
-                        <constraint firstItem="4FT-6D-ywJ" firstAttribute="trailing" secondItem="ytt-Ns-5gE" secondAttribute="trailing" id="TjO-y9-WOc"/>
-                        <constraint firstAttribute="trailing" secondItem="ytt-Ns-5gE" secondAttribute="trailing" constant="26" id="UO7-oK-cXM"/>
-                        <constraint firstItem="ytt-Ns-5gE" firstAttribute="leading" secondItem="vph-3v-olh" secondAttribute="leading" constant="26" id="W17-lC-6by"/>
-                        <constraint firstItem="oln-Kf-GXf" firstAttribute="leading" secondItem="4FT-6D-ywJ" secondAttribute="leading" id="ZJl-Dg-suZ"/>
-                        <constraint firstItem="4FT-6D-ywJ" firstAttribute="top" secondItem="oln-Kf-GXf" secondAttribute="bottom" constant="16" id="gSc-pU-4hP"/>
-                        <constraint firstAttribute="bottom" secondItem="ytt-Ns-5gE" secondAttribute="bottom" constant="20" id="lCC-bS-oHS"/>
-                        <constraint firstItem="4FT-6D-ywJ" firstAttribute="leading" secondItem="ytt-Ns-5gE" secondAttribute="leading" id="lJM-Ve-7er"/>
-                        <constraint firstAttribute="height" constant="220" id="vmn-sy-gnH"/>
-                        <constraint firstItem="oln-Kf-GXf" firstAttribute="trailing" secondItem="4FT-6D-ywJ" secondAttribute="trailing" id="xIc-Uk-P5g"/>
+                        <constraint firstItem="atI-Zv-B5i" firstAttribute="leading" secondItem="vph-3v-olh" secondAttribute="leading" id="E7M-d5-L5P"/>
+                        <constraint firstAttribute="trailing" secondItem="atI-Zv-B5i" secondAttribute="trailing" id="N4Z-4t-iFt"/>
+                        <constraint firstItem="atI-Zv-B5i" firstAttribute="top" secondItem="vph-3v-olh" secondAttribute="top" constant="16" id="pQT-94-Ay8"/>
+                        <constraint firstAttribute="bottom" secondItem="atI-Zv-B5i" secondAttribute="bottom" id="shq-xg-Pg3"/>
                     </constraints>
                 </view>
             </subviews>
