@@ -10,6 +10,8 @@
 
 import UIKit
 import Popover
+import AVKit
+import AVFoundation
 
 class FightViewController: BaseViewController {
     
@@ -23,6 +25,10 @@ class FightViewController: BaseViewController {
     @IBOutlet weak var lblTitleRank: UILabel!
     
     @IBAction func clickNext(_ sender: Any) {
+        if player != nil {
+            player?.pause()
+            player = nil
+        }
         if self.currentIndex == numberQuestion {
             isOut = true
         }
@@ -36,6 +42,7 @@ class FightViewController: BaseViewController {
     var team_id : Int = 0
     var isOut = false
     
+    var player : AVPlayer?
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
@@ -73,6 +80,14 @@ class FightViewController: BaseViewController {
         vCountTime.disableClick = true
         vCountTime.delegate = self
         self.presenter?.getViewFightCompetition(id: String(self.completion_id))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if player != nil {
+            player?.pause()
+            player = nil
+        }
     }
     
     override func setUpNavigation() {
@@ -295,6 +310,27 @@ extension FightViewController : CellExerciseDelegate{
     
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
     }
+    
+    func clickAudio(indexPath: IndexPath) {
+        var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
+        numberClick += 1
+        self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
+        if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
+            if numberClick == 1 {
+                let playerItem = AVPlayerItem(url: url)
+                player = AVPlayer(playerItem: playerItem)
+                player?.play()
+            } else {
+                if player != nil {
+                    if numberClick % 2 == 0 {
+                        player?.pause()
+                    } else {
+                        player?.play()
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension FightViewController : TimeDelegate{
@@ -310,6 +346,10 @@ extension FightViewController : TimeDelegate{
     func endTime() {
         self.isOut = true
         self.isEnd = true
+        if player != nil {
+            player?.pause()
+            player = nil
+        }
     }
     
     func pauseTime() {

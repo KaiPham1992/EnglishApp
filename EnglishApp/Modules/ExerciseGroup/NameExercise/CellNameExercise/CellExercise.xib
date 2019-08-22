@@ -27,10 +27,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="302" height="889"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih8-EC-UFW">
-                                <rect key="frame" x="0.0" y="0.0" width="302" height="162"/>
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="177"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio" translatesAutoresizingMaskIntoConstraints="NO" id="12I-x3-EWf">
+                                        <rect key="frame" x="121" y="10" width="60" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="60" id="AF7-hm-ip8"/>
+                                            <constraint firstAttribute="height" id="mcX-tS-25O"/>
+                                        </constraints>
+                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hxi-ch-1F6">
-                                        <rect key="frame" x="0.0" y="0.0" width="302" height="52"/>
+                                        <rect key="frame" x="0.0" y="15" width="302" height="52"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-eN-hh2">
                                                 <rect key="frame" x="14" y="10" width="274" height="32"/>
@@ -48,7 +55,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yD4-u9-JSq">
-                                        <rect key="frame" x="0.0" y="62" width="302" height="100"/>
+                                        <rect key="frame" x="0.0" y="77" width="302" height="100"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="HdB-sK-HEY"/>
@@ -61,7 +68,9 @@
                                     <constraint firstItem="yD4-u9-JSq" firstAttribute="leading" secondItem="Ih8-EC-UFW" secondAttribute="leading" id="6Up-yV-zLP"/>
                                     <constraint firstAttribute="trailing" secondItem="yD4-u9-JSq" secondAttribute="trailing" id="B5I-1Y-yRx"/>
                                     <constraint firstItem="hxi-ch-1F6" firstAttribute="leading" secondItem="Ih8-EC-UFW" secondAttribute="leading" id="C78-vc-lkf"/>
-                                    <constraint firstItem="hxi-ch-1F6" firstAttribute="top" secondItem="Ih8-EC-UFW" secondAttribute="top" id="S7L-6m-Hyz"/>
+                                    <constraint firstItem="12I-x3-EWf" firstAttribute="bottom" secondItem="hxi-ch-1F6" secondAttribute="top" constant="-5" id="GaO-Cz-HOB"/>
+                                    <constraint firstItem="12I-x3-EWf" firstAttribute="centerX" secondItem="Ih8-EC-UFW" secondAttribute="centerX" id="H6d-Hh-0XE"/>
+                                    <constraint firstItem="12I-x3-EWf" firstAttribute="top" secondItem="Ih8-EC-UFW" secondAttribute="top" constant="10" id="LzK-nY-mCf"/>
                                     <constraint firstItem="yD4-u9-JSq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="bottom" constant="10" id="dag-M4-5PP"/>
                                     <constraint firstAttribute="bottom" secondItem="yD4-u9-JSq" secondAttribute="bottom" id="zdB-Fd-nXl"/>
                                 </constraints>
@@ -85,7 +94,9 @@
             </constraints>
             <size key="customSize" width="302" height="889"/>
             <connections>
+                <outlet property="heightAudio" destination="mcX-tS-25O" id="mSA-rO-2Es"/>
                 <outlet property="heightTableView" destination="HdB-sK-HEY" id="sdW-YS-fWw"/>
+                <outlet property="imgAudio" destination="12I-x3-EWf" id="413-Gm-9gs"/>
                 <outlet property="tbvNameExercise" destination="yD4-u9-JSq" id="Jn7-EO-dKz"/>
                 <outlet property="tvContent" destination="KRm-eN-hh2" id="PKM-sD-Nsu"/>
                 <outlet property="vQuestion" destination="hxi-ch-1F6" id="Ycq-hI-GMp"/>
@@ -93,4 +104,7 @@
             <point key="canvasLocation" x="320.28985507246381" y="389.39732142857139"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="audio" width="145.33332824707031" height="139.33332824707031"/>
+    </resources>
 </document>

@@ -10,6 +10,8 @@
 
 import UIKit
 import Popover
+import AVKit
+import AVFoundation
 
 protocol ExerciseDelegate: class {
     func confirmOutTestEntrance()
@@ -29,8 +31,14 @@ class NameExerciseViewController: BaseViewController {
 
 	var presenter: NameExercisePresenterProtocol?
     weak var exerciseDelegate: ExerciseDelegate?
-
+    var player : AVPlayer?
+    
     @IBAction func clickNext(_ sender: Any) {
+        if player != nil {
+            player?.pause()
+            player = nil
+            self.presenter?.exerciseEntity?.questions?[currentIndex - 1].numberClick = 0
+        }
         if !isEnd {
             if self.currentIndex + 1 > numberQuestion {
                 if let _param = self.paramSubmit {
@@ -48,8 +56,8 @@ class NameExerciseViewController: BaseViewController {
                 self.presenter?.submitExercise(param: _param, isOut: false)
             }
         }
-        
     }
+    
     var numberQuestion : Int = 0
     var currentTime : Int = 0
     var listAnswerQuestion : [QuestionSubmitParam] = []
@@ -168,6 +176,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
             
         }
     }
+    
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath) {
         if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise, let dataCell =  self.presenter?.getQuestion(indexPath: indexPath){
             cell.changeDataSource(index: indexQuestion, data: dataCell.answers ?? [])
@@ -203,6 +212,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         PopUpHelper.shared.showError(message: error.message&) {
         }
     }
+    
     func exitSuccessed() {
         self.exerciseDelegate?.confirmOutTestEntrance()
     }
@@ -216,10 +226,20 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
             cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
         }
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        if player != nil {
+//            player?.pause()
+//            player = nil
+//        }
+    }
 }
+
 extension NameExerciseViewController : UICollectionViewDelegate{
     
 }
+
 extension NameExerciseViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0.00009
@@ -228,6 +248,7 @@ extension NameExerciseViewController : UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.clvQuestion.frame.width, height: self.clvQuestion.frame.height)
     }
@@ -236,9 +257,11 @@ extension NameExerciseViewController: UICollectionViewDataSource{
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
          return self.numberQuestion
     }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let data = self.presenter?.getQuestion(indexPath: indexPath){
             let type = data.answers?.first?.type ?? ""
@@ -288,6 +311,30 @@ extension NameExerciseViewController : CellExerciseDelegate{
     func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
         self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }
+        
+    func clickAudio(indexPath: IndexPath) {
+//        if player == nil {
+        var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
+        numberClick += 1
+        self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
+        
+        if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
+            if numberClick == 1 {
+                let playerItem = AVPlayerItem(url: url)
+                player = AVPlayer(playerItem: playerItem)
+                player?.play()
+            } else {
+                if player != nil {
+                    if numberClick % 2 == 0 {
+                        player?.pause()
+                    } else {
+                        player?.play()
+                    }
+                }
+            }
+        }
+//        }
+    }
 }
 
 extension NameExerciseViewController : TimeDelegate{
@@ -297,13 +344,24 @@ extension NameExerciseViewController : TimeDelegate{
     
     func startTime() {
         isPauseTime = false
+        if player != nil {
+            player?.play()
+        }
     }
     
     func endTime() {
         self.isEnd = true
+        if player != nil {
+            player?.pause()
+            player = nil
+            self.presenter?.exerciseEntity?.questions?[currentIndex - 1].numberClick = 0
+        }
     }
     
     func pauseTime() {
         isPauseTime = true
+        if player != nil {
+            player?.pause()
+        }
     }
 }
