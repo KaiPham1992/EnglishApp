@@ -100,6 +100,7 @@
 "joinTeam" = "Join";
 "team" = " teams";
 "member" = "Members";
+"competition" = "Competition";
 
 // Detail team
 "startAfter" = "Start";
@@ -215,7 +216,7 @@
 "time_end" = "The end";
 "see_more" = "See more";
 "sentence" = "Sentence";
-"next" = " ";
+"next" = "Next";
 "do_entrance" = "Input test";
 
 //result
@@ -225,14 +226,15 @@
 "sum_point" = "Total point:";
 "time_do_exercise" = "Total time:";
 "back_gome" = "Go home";
-"result_competion" = "Competition";
+"result_competion" = "Competition Result";
 "result_group" = "Group result";
 "see_explain" = "SEE EXPLAIN";
 "respond_question" = "REPORT THE QUESTION";
 "explain_solution" = "Explain the answer";
 "individual" = " ndividual";
 "action" = "Fight";
-"point" = "Point";
+"point" = "point";
+"confirm_back_result" = "Do you want to exit the currently viewed exercise?";
 
 
 //popup
@@ -289,6 +291,7 @@
 "levelUp" = "Level up";
 "changeLanguage" = "Change language";
 "bxh" = "Charts";
+"point_level" = "Level Point";
 
 //lesson
 
@@ -348,3 +351,10 @@
 
 
 "rank_of_competition" = "Rank of Competition";
+
+//time
+"min" = "min";
+
+//setting
+"setting" = "Setting";
+"start" = "Start";

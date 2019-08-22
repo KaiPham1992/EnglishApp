@@ -19,13 +19,15 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
 
     var listCatelogyExercise: [SearchEntity] = []
     var createExerciseParam : CreateExerciseParam = CreateExerciseParam()
+    var offset: Int = 0
+    var isLoadmore = true
     
     func getNumberRow() -> Int {
         return listCatelogyExercise.count
     }
     
-    func getItemIndexPath(indexPath : IndexPath)->String{
-        return listCatelogyExercise.map{$0.name}.compactMap{$0}[indexPath.row]
+    func getItemIndexPath(indexPath : IndexPath)-> SearchEntity {
+        return listCatelogyExercise[indexPath.row]
     }
     
     init(interface: CreateExerciseViewProtocol, interactor: CreateExerciseInteractorInputProtocol?, router: CreateExerciseWireframeProtocol) {
@@ -36,10 +38,22 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
     
     func changeLevelParam(indexPath: IndexPath,level: Int) {
         self.createExerciseParam.categories[indexPath.row].level = level
+        var type = ""
+        if level == 1 {
+            type = "Elementary"
+        }
+        if level == 2 {
+            type = "Intermediate"
+        }
+        if level == 3 {
+            type = "Advanced"
+        }
+        self.listCatelogyExercise[indexPath.row].typeCreateExercise = type
     }
     
     func changeNumberQuestion(indexPath: IndexPath,number: Int){
         self.createExerciseParam.categories[indexPath.row].number_of_question = number
+        self.listCatelogyExercise[indexPath.row].numberQuestion = number
         let sum = self.createExerciseParam.categories.map{$0.number_of_question}.compactMap{$0}.getSum()
         self.view?.updateView(enableSubmit: checkEnableButtonSubmit())
         self.view?.showSumQuestion(sum: sum)
@@ -57,13 +71,19 @@ class CreateExercisePresenter: CreateExercisePresenterProtocol, CreateExerciseIn
         return false
     }
     
-    func getListQuestionCatelogy() {
-        self.interactor?.getListQuestionCatelogy()
+    func getListQuestionCatelogy(offset: Int) {
+        self.offset = offset
+        if isLoadmore {
+            self.interactor?.getListQuestionCatelogy(offset: offset)
+        }
     }
     
     func getListCatelogySuccessed(respone: [SearchEntity]) {
-        self.listCatelogyExercise = respone
-        self.createExerciseParam.categories = respone.map{CategoryParam(categ_id: Int($0._id&) ?? 0)}
+        if respone.count < limit {
+            isLoadmore = false
+        }
+        self.listCatelogyExercise += respone
+        self.createExerciseParam.categories += respone.map{CategoryParam(categ_id: Int($0._id&) ?? 0)}
         self.view?.reloadView()
     }
     func gotoCreateExercise(param: CreateExerciseParam) {

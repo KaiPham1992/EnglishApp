@@ -75,10 +75,26 @@ class CompetitionViewController: ListManagerVC {
                 return
             }
             if status == "CAN_JOIN"{
-                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+                if let cell = tableView.cellForRow(at: IndexPath(row: tag, section: 0)) as? CompetitionCell {
+                    let isStarted = cell.isStarted
+                    if isStarted {
+                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: 0)
+                        self.push(controller: vc,animated: true)
+                    } else {
+                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+                    }
+                }
             }
             if status == "DONE"{
-                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(competitionId)))
+                let isFightJoined = (listData[tag] as! CompetitionEntity).is_fight_joined ?? 0
+                if isFightJoined == 0 {
+                    self.push(controller: ResultCompetitionRouter.createModule(idCompetition: String((listData[tag] as! CompetitionEntity).id ?? 0)))
+                } else {
+                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String((listData[tag] as! CompetitionEntity).id ?? 0)))
+                }
+            }
+            if status == "CANNOT_JOIN" {
+                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true))
             }
         } else {
             let vc = ResultGroupRouter.createModule(idCompetition: String((listData[tag] as! CompetitionEntity).id ?? 0))
@@ -96,7 +112,7 @@ extension CompetitionViewController: IndicatorInfoProvider{
         if type == .competition {
             return IndicatorInfo(title: LocalizableKey.action.showLanguage)
         }
-        return IndicatorInfo(title: LocalizableKey.titleCompetition.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.competition.showLanguage)
     }
 }
 extension CompetitionViewController: CompetitionViewProtocol{

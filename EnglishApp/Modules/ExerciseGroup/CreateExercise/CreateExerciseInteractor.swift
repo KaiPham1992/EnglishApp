@@ -14,9 +14,9 @@ class CreateExerciseInteractor: CreateExerciseInteractorInputProtocol {
    
     weak var presenter: CreateExerciseInteractorOutputProtocol?
     
-    func getListQuestionCatelogy() {
+    func getListQuestionCatelogy(offset: Int) {
         ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.getListQuestionCatelogy(success: { (respone) in
+        Provider.shared.exerciseAPIService.getListQuestionCatelogy(offset: offset, success: { (respone) in
             ProgressView.shared.hide()
             if let _respone = respone {
                 self.presenter?.getListCatelogySuccessed(respone: _respone.categories )

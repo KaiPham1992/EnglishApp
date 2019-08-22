@@ -11,7 +11,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class ResultCompetitionViewController: UIViewController {
+class ResultCompetitionViewController: BaseViewController {
 
 	var presenter: ResultCompetitionPresenterProtocol?
     
@@ -26,6 +26,11 @@ class ResultCompetitionViewController: UIViewController {
         self.presenter?.getResultTeam(idCompetition: idCompetition)
     }
 
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        addBackToNavigation()
+        setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
+    }
 }
 
 extension ResultCompetitionViewController : ResultCompetitionViewProtocol{

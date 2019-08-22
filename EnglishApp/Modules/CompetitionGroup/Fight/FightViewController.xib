@@ -23,6 +23,7 @@
                 <outlet property="clvQuestion" destination="iTR-uJ-YPF" id="kCq-aO-Njw"/>
                 <outlet property="clvRankTeam" destination="x78-yZ-sSP" id="Bps-wg-3eV"/>
                 <outlet property="heightViewRank" destination="a3j-W0-lWp" id="pPY-3H-fh4"/>
+                <outlet property="imgMyTeam" destination="e1U-Xh-02Y" id="4lK-ZF-ft9"/>
                 <outlet property="lblIndexQuestion" destination="mjT-4m-8a8" id="dBM-nt-gEc"/>
                 <outlet property="lblPointTeam" destination="Utm-2R-YuH" id="bKo-DX-mgX"/>
                 <outlet property="lblRankTeam" destination="PRO-Me-kCo" id="1ML-wr-r7i"/>
@@ -105,21 +106,21 @@
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g31-f6-U4o">
                             <rect key="frame" x="305" y="15.5" width="20" height="20"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e1U-Xh-02Y">
-                                    <rect key="frame" x="2" y="2" width="16" height="16"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e1U-Xh-02Y">
+                                    <rect key="frame" x="1" y="1" width="18" height="18"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                            <real key="value" value="9"/>
+                                            <real key="value" value="9.5"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="e1U-Xh-02Y" firstAttribute="top" secondItem="g31-f6-U4o" secondAttribute="top" constant="2" id="ClU-BI-uBL"/>
-                                <constraint firstAttribute="bottom" secondItem="e1U-Xh-02Y" secondAttribute="bottom" constant="2" id="FZ2-Q9-ase"/>
-                                <constraint firstAttribute="trailing" secondItem="e1U-Xh-02Y" secondAttribute="trailing" constant="2" id="KVO-1W-0Fz"/>
-                                <constraint firstItem="e1U-Xh-02Y" firstAttribute="leading" secondItem="g31-f6-U4o" secondAttribute="leading" constant="2" id="M3S-Em-zeH"/>
+                                <constraint firstItem="e1U-Xh-02Y" firstAttribute="top" secondItem="g31-f6-U4o" secondAttribute="top" constant="1" id="ClU-BI-uBL"/>
+                                <constraint firstAttribute="bottom" secondItem="e1U-Xh-02Y" secondAttribute="bottom" constant="1" id="FZ2-Q9-ase"/>
+                                <constraint firstAttribute="trailing" secondItem="e1U-Xh-02Y" secondAttribute="trailing" constant="1" id="KVO-1W-0Fz"/>
+                                <constraint firstItem="e1U-Xh-02Y" firstAttribute="leading" secondItem="g31-f6-U4o" secondAttribute="leading" constant="1" id="M3S-Em-zeH"/>
                                 <constraint firstAttribute="height" constant="20" id="aiY-aq-61a"/>
                                 <constraint firstAttribute="width" constant="20" id="fRM-TH-gjb"/>
                             </constraints>
@@ -135,7 +136,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRO-Me-kCo">
-                            <rect key="frame" x="132.5" y="18.5" width="164.5" height="13.5"/>
+                            <rect key="frame" x="132.5" y="18.5" width="163.5" height="13.5"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                             <color key="textColor" red="0.12549019607843137" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>

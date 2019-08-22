@@ -38,7 +38,7 @@
                                     <constraint firstAttribute="height" constant="30" id="pyw-2z-qRs"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                                <state key="normal" title="THAM GIA">
+                                <state key="normal">
                                     <color key="titleColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -66,20 +66,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sed-0u-OdD">
                         <rect key="frame" x="0.0" y="0.0" width="162" height="192.5"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Tên cuộc thi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-lp-gAh">
-                                <rect key="frame" x="15" y="16" width="139" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-lp-gAh">
+                                <rect key="frame" x="15" y="16" width="139" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Điều kiện: Kim cương 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Rt-qk2">
-                                <rect key="frame" x="15" y="42" width="139" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Rt-qk2">
+                                <rect key="frame" x="15" y="24" width="139" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-7S-Ynm">
-                                <rect key="frame" x="15" y="66" width="139" height="20"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-7S-Ynm">
+                                <rect key="frame" x="15" y="32" width="139" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="0qZ-Fb-ga9">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -88,7 +88,7 @@
                                             <constraint firstAttribute="width" secondItem="0qZ-Fb-ga9" secondAttribute="height" id="v2d-0X-bpQ"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24 phút bắt đầu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cr-Ze-pYm">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cr-Ze-pYm">
                                         <rect key="frame" x="25" y="0.0" width="114" height="20"/>
                                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
@@ -107,8 +107,8 @@
                                     <constraint firstItem="0qZ-Fb-ga9" firstAttribute="top" secondItem="5wk-7S-Ynm" secondAttribute="top" id="yHx-ex-Fd1"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-RV-ouV">
-                                <rect key="frame" x="15" y="94" width="139" height="20"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-RV-ouV">
+                                <rect key="frame" x="15" y="60" width="139" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="OIe-Yx-aZT">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -117,7 +117,7 @@
                                             <constraint firstAttribute="width" secondItem="OIe-Yx-aZT" secondAttribute="height" id="gJL-JB-U9q"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số đội : 20 đội" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnP-5l-14Q">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnP-5l-14Q">
                                         <rect key="frame" x="25" y="0.0" width="109" height="20"/>
                                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
@@ -136,8 +136,8 @@
                                     <constraint firstItem="TnP-5l-14Q" firstAttribute="leading" secondItem="OIe-Yx-aZT" secondAttribute="trailing" constant="5" id="zd2-bw-CmZ"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" ambiguous="YES" text="Lorem ipsum dolor sit amet, consecte adipiscing elit…" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix2-Gj-iTl">
-                                <rect key="frame" x="15" y="122" width="139" height="31.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix2-Gj-iTl">
+                                <rect key="frame" x="15" y="88" width="139" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -150,11 +150,10 @@
                             <constraint firstItem="CyJ-lp-gAh" firstAttribute="top" secondItem="Sed-0u-OdD" secondAttribute="top" constant="16" id="DzK-pC-cba"/>
                             <constraint firstItem="O3l-Rt-qk2" firstAttribute="top" secondItem="CyJ-lp-gAh" secondAttribute="bottom" constant="8" id="Tyn-sv-m6G"/>
                             <constraint firstItem="Ix2-Gj-iTl" firstAttribute="trailing" secondItem="pA1-RV-ouV" secondAttribute="trailing" id="V0t-2W-EdB"/>
-                            <constraint firstAttribute="bottom" secondItem="Ix2-Gj-iTl" secondAttribute="bottom" constant="54" id="Vw0-nl-fAJ"/>
                             <constraint firstItem="O3l-Rt-qk2" firstAttribute="leading" secondItem="CyJ-lp-gAh" secondAttribute="leading" id="YMj-Kb-jQ7"/>
                             <constraint firstItem="pA1-RV-ouV" firstAttribute="trailing" secondItem="5wk-7S-Ynm" secondAttribute="trailing" id="byd-eu-MJm"/>
                             <constraint firstItem="5wk-7S-Ynm" firstAttribute="trailing" secondItem="O3l-Rt-qk2" secondAttribute="trailing" id="col-oc-hJ0"/>
-                            <constraint firstAttribute="bottom" secondItem="Ix2-Gj-iTl" secondAttribute="bottom" constant="20" id="f1G-wV-l3E"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ix2-Gj-iTl" secondAttribute="bottom" constant="20" id="f1G-wV-l3E"/>
                             <constraint firstAttribute="trailing" secondItem="CyJ-lp-gAh" secondAttribute="trailing" constant="8" id="iAe-hO-Qmn"/>
                             <constraint firstItem="Ix2-Gj-iTl" firstAttribute="leading" secondItem="pA1-RV-ouV" secondAttribute="leading" id="iiv-qi-YR7"/>
                             <constraint firstItem="O3l-Rt-qk2" firstAttribute="trailing" secondItem="CyJ-lp-gAh" secondAttribute="trailing" id="kbd-Np-Szh"/>
@@ -172,13 +171,13 @@
                         </constraints>
                     </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zP-Om-cer">
-                        <rect key="frame" x="165" y="146.5" width="16" height="22"/>
+                        <rect key="frame" x="161" y="146.5" width="16" height="22"/>
                         <state key="normal" image="share"/>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="8zP-Om-cer" firstAttribute="centerY" secondItem="bRp-0l-0NA" secondAttribute="centerY" id="2OK-Te-DrV"/>
-                    <constraint firstItem="bRp-0l-0NA" firstAttribute="leading" secondItem="8zP-Om-cer" secondAttribute="trailing" constant="4" id="3rY-kG-Gg5"/>
+                    <constraint firstItem="bRp-0l-0NA" firstAttribute="leading" secondItem="8zP-Om-cer" secondAttribute="trailing" constant="8" id="3rY-kG-Gg5"/>
                     <constraint firstAttribute="trailing" secondItem="CpV-Uo-Jdl" secondAttribute="trailing" id="GXm-o8-Qny"/>
                     <constraint firstAttribute="bottom" secondItem="CpV-Uo-Jdl" secondAttribute="bottom" id="O9z-Rf-r4f"/>
                     <constraint firstItem="XaQ-Hv-vPl" firstAttribute="leading" secondItem="Sed-0u-OdD" secondAttribute="trailing" constant="8" id="OLS-z4-Zz4"/>

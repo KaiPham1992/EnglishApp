@@ -22,7 +22,9 @@ class ExplainExerciseGroupViewController: PageViewController, ExplainExerciseGro
         self.edgesForExtendedLayout = UIRectEdge.bottom
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.see_explain.showLanguage)
-        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            self.moveToViewController(at: 1)
+        }
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

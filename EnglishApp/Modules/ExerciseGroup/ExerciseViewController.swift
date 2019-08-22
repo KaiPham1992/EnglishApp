@@ -70,10 +70,10 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
         vLevelExercise.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 0.56))
         vAssignExercise.setupGradient(beginColor: #colorLiteral(red: 0.1725490196, green: 0.8549019608, blue: 0.8117647059, alpha: 1), endColor: #colorLiteral(red: 0.1725490196, green: 0.8549019608, blue: 0.8117647059, alpha: 0.56))
         
-        lbCreateExercise.text = LocalizableKey.create_exercise.showLanguage
-        lbPracticeExercise.text = LocalizableKey.practice.showLanguage
-         lbLevelExercise.text = LocalizableKey.level_exercise.showLanguage
-        lbAssignExercise.text = LocalizableKey.assign_exercise.showLanguage
+        lbCreateExercise.attributedText = NSAttributedString(string: LocalizableKey.create_exercise.showLanguage)
+        lbPracticeExercise.attributedText = NSAttributedString(string: LocalizableKey.practice.showLanguage)
+         lbLevelExercise.attributedText = NSAttributedString(string: LocalizableKey.level_exercise.showLanguage)
+        lbAssignExercise.attributedText = NSAttributedString(string: LocalizableKey.assign_exercise.showLanguage)
     }
     override func viewWillAppear(_ animated: Bool) {
         if isShowTabbar {

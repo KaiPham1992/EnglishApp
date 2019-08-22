@@ -13,6 +13,7 @@ import DropDown
 
 class DictionaryViewController: BaseViewController {
 
+    @IBOutlet weak var btnSetting: UIButton!
     @IBAction func gotoSetting(_ sender: Any) {
         let vc = MoreDictionaryRouter.createModule()
         vc.callBackChangeDictionary = { [weak self] in
@@ -71,6 +72,7 @@ class DictionaryViewController: BaseViewController {
         super.setUpViews()
 //        self.presenter?.getListDictionary()
         lblSearch.text = LocalizableKey.search.showLanguage
+        btnSetting.setTitle(LocalizableKey.setting.showLanguage.uppercased(), for: .normal)
         self.tabBarController?.tabBar.isHidden = true
 //        lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
         self.setupViewDictionary()
@@ -205,7 +207,7 @@ extension DictionaryViewController:DictionaryViewProtocol{
     
     func getDetailVocabularySuccessed() {
         if let _detail = self.presenter?.detailVocabulary {
-            lblTextSearch.text = _detail.explain&
+            lblTextSearch.attributedText = _detail.explain.htmlToAttributedString
             hideNoData()
         } else {
             lblTextSearch.text = ""

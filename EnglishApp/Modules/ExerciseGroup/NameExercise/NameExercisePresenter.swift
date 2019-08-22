@@ -20,6 +20,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     var indexPath: IndexPath?
     var indexQuestion: IndexPath?
     var error: APIError?
+    var isOut = false
 
     init(interface: NameExerciseViewProtocol, interactor: NameExerciseInteractorInputProtocol?, router: NameExerciseWireframeProtocol) {
         self.view = interface
@@ -35,12 +36,13 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.router.gotoDetailVocabulary(word: word)
     }
     
-    func submitExercise(param: SubmitExerciseParam) {
+    func submitExercise(param: SubmitExerciseParam,isOut: Bool) {
+        self.isOut = isOut
         self.interactor?.submitExercise(param: param)
     }
     
     func gotoResult(result: TestResultProfileEntity) {
-        self.router.gotoResult(result: result, type: self.type)
+         self.router.gotoResult(result: result, type: self.type, isOut: isOut)
     }
     
     func getTime(index: Int) -> Int? {
@@ -74,7 +76,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     }
     
     func exitSuccessed(respone: TestResultProfileEntity){
-        self.router.gotoResult(result: respone, type: .dailyMissonExercise)
+        self.router.gotoResult(result: respone, type: type, isOut: true)
         self.view?.exitSuccessed()
     }
     
@@ -93,6 +95,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options = options
         self.view?.suggesQuestionSuccessed(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0), indexQuestion: self.indexQuestion ?? IndexPath(row: 0, section: 0))
     }
+    
     func suggestQuestionError(error: APIError) {
         self.error = error
         self.view?.suggestQuestionError()

@@ -12,12 +12,16 @@ import UIKit
 
 class SelectTeamViewController: BaseViewController {
 
+    
+    @IBOutlet weak var btnCreateTeam: UIButton!
+    
 	var presenter: SelectTeamPresenterProtocol?
     
     @IBOutlet weak var tbTeam: UITableView!
     
     var maxMember = 0
     var competitionId: Int?
+    var isCannotJoin = false
 
     var listTeam = [TeamEntity]() {
         didSet {
@@ -34,10 +38,11 @@ class SelectTeamViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        
-//        listTeam = TeamEntity.toArray()
         presenter?.getListFightTestTeam(competitionId: competitionId*)
         hideTabbar()
+        if isCannotJoin {
+            btnCreateTeam.isHidden = true
+        }
     }
     
     override func btnBackTapped() {
@@ -52,11 +57,27 @@ class SelectTeamViewController: BaseViewController {
     }
     
     @IBAction func btnCreateGroup() {
-        PopUpHelper.shared.showCreateGroup(completionNo: {
-            
-        }) { [unowned self] (message) in
-            if let _message = message {
-                self.presenter?.createTeam(id: self.competitionId ?? 0, name: _message)
+        let isUserStudyPack = UserDefaultHelper.shared.loginUserInfo?.isUserStudyPack ?? false
+        let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium ?? false
+        if !isUserStudyPack && !isUserPremium {
+            PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
+                let vc = StoreViewController()
+                self.push(controller: vc)
+            }) {
+                
+            }
+        } else {
+            PopUpHelper.shared.showCreateGroup(completionNo: {
+                
+            }) { [unowned self] (message) in
+                let name = message?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? ""
+                if name.isEmpty {
+                    PopUpHelper.shared.showError(message: " Vui lòng nhập tên nhóm", completionYes: {
+                        
+                    })
+                } else {
+                    self.presenter?.createTeam(id: self.competitionId ?? 0, name: message!)
+                }
             }
         }
     }
@@ -72,7 +93,7 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(SelectTeamCell.self, for: indexPath)
-        cell.displayData(maxMember: self.maxMember, team: listTeam[indexPath.item])
+        cell.displayData(maxMember: self.maxMember, team: listTeam[indexPath.item], isCannotJoin: self.isCannotJoin)
         cell.btnJoin.tag = indexPath.item
         cell.btnJoined.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
@@ -94,10 +115,6 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     @objc func btnJoinTapped(sender: UIButton) {
-//        if let id = listTeam[sender.tag].id {
-//            let vc = DetailTeamRouter.createModule(id: id)
-//            self.push(controller: vc)
-//        }
         if let id = listTeam[sender.tag].id {
             self.presenter?.joinTeam(id: id)
         }
@@ -110,24 +127,36 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let id = listTeam[indexPath.row].id, let isTeamJoined = listTeam[indexPath.row].isTeamJoined {
+            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined)
+            self.push(controller: vc)
+        }
+    }
 }
 extension SelectTeamViewController: SelectTeamViewProtocol{
     
     func joinTeamFailed(error: APIError) {
-        PopUpHelper.shared.showError(message: error.message&, completionYes: nil)
+        if error.message == "THIS USER JOINED TEAM" {
+            PopUpHelper.shared.showError(message: "Bạn đã có nhóm không thể tạo và tham gia nhóm khác.", completionYes: nil)
+        }
     }
     
     func joinTeamSuccessed(respone: DetailTeamEntity) {
         let vc = DetailTeamRouter.createModule(teamDetail: respone)
         vc.actionBackView = { [weak self] in
-            self?.presenter?.getListFightTestTeam(competitionId: Int(respone.team_info?.id ?? "0") ?? 0)
+            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0)
         }
         self.push(controller: vc)
     }
     
     func didGetListFightTestTeam(error: APIError) {
-        PopUpHelper.shared.showError(message: error.message&, completionYes: nil)
+        if error.message == "THIS USER CREATED AND JOINED TEAM" {
+            PopUpHelper.shared.showError(message: "Bạn đã có nhóm không thể tạo và tham gia nhóm khác.", completionYes: nil)
+        }
     }
+    
     func didGetListFightTestTeam(collectionTeam: CollectionTeamEntity) {
         guard  let _maxMember = collectionTeam.maxMember else {
             showNoData()
@@ -137,9 +166,10 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
         self.maxMember = _maxMember
         tbTeam.reloadData()
     }
+    
     func didCreateTeamSuccessed(collectionTeam: TeamEntity){
         collectionTeam.isTeamJoined = 1
         collectionTeam.countMember = "1"
-        listTeam.append(collectionTeam) 
+        listTeam.insert(collectionTeam, at: 0)
     }
 }

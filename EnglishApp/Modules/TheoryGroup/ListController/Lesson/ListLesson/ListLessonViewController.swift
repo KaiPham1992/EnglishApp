@@ -16,7 +16,7 @@ import UIKit
 //    case exercise_date
 //}
 
-var limit = 10
+var limit = 20
 
 class ListLessonViewController: BaseViewController {
 

@@ -14,7 +14,7 @@ import UIKit
 //MARK: Wireframe -
 protocol NameExerciseWireframeProtocol: class {
     func gotoDetailVocabulary(word: WordExplainEntity)
-    func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise)
+    func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise, isOut: Bool)
 }
 //MARK: Presenter -
 protocol NameExercisePresenterProtocol: class {
@@ -29,7 +29,7 @@ protocol NameExercisePresenterProtocol: class {
     func getViewEntranceTest()
     func getTime(index: Int) -> Int?
     func getQuestion(indexPath: IndexPath) -> QuestionEntity?
-    func submitExercise(param: SubmitExerciseParam)
+    func submitExercise(param: SubmitExerciseParam, isOut: Bool)
     func getDailyMisson()
     func exitExercise(id : Int)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)

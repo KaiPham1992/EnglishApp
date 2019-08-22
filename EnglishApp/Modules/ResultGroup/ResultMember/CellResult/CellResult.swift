@@ -21,7 +21,7 @@ class CellResult: UITableViewCell {
     
     func setupData(isTrue: Bool, point: String){
         lblNumberQuestion.text = LocalizableKey.sentence.showLanguage + " " + (String((indexPath?.row ?? 0) + 1))
-        lblPoint.text = point + " " + LocalizableKey.point.showLanguage
+        lblPoint.attributedText = NSAttributedString(string: point + " " + LocalizableKey.point.showLanguage)
         if isTrue{
             vBackground.backgroundColor = UIColor(red: 32/255, green: 191/255, blue: 85/255, alpha: 1)
             return

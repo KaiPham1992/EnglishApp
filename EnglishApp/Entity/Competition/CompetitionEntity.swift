@@ -12,6 +12,7 @@ import ObjectMapper
 class CollectionCompetitionEntity: BaseEntity{
     var total_can_join: Int?
     var total_fight_test: Int?
+    var default_dict_id : String?
     var competitionEntity: [CompetitionEntity]?
     
     override func mapping(map: Map) {
@@ -19,6 +20,7 @@ class CollectionCompetitionEntity: BaseEntity{
         self.total_can_join <- map["total_can_join"]
         self.total_fight_test <- map["total_fight_test"]
         self.competitionEntity <- map["records"]
+        self.default_dict_id <- map["default_dict_id"]
     }
 }
 class CompetitionEntity : BaseEntity {

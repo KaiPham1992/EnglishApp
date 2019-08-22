@@ -22,7 +22,7 @@ protocol ExerciseAPIServiceProtocol {
     func getViewChoiceExercise(typeTest: Int, catelogyId: Int, level: Int,studyPackId: Int?,offset: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
     func getDailyMisson(success: @escaping SuccessHandler<ViewExerciseEntity>.object, failure: @escaping RequestFailure)
     func getListAssignExercise(offset: Int,success: @escaping SuccessHandler<ExerciseChoiceEntity>.object, failure: @escaping RequestFailure)
-    func getListQuestionCatelogy(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
+    func getListQuestionCatelogy(offset: Int, success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure)
     func suggestQuestion(id: String,isDiamond: Bool,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func explainExercise(id: Int,success: @escaping SuccessHandler<ExplainQuestionResponse>.object, failure: @escaping RequestFailure)
     func reportQuestion(question_details_id: Int,content: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
@@ -48,8 +48,8 @@ class ExerciseAPIService: ExerciseAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
     
-    func getListQuestionCatelogy(success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure){
-        let endpoint = ExerciseEnpoint.getListQuestionCategory
+    func getListQuestionCatelogy(offset: Int,success: @escaping SuccessHandler<CatelogyEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.getListQuestionCategory(offset: offset)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

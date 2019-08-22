@@ -42,10 +42,11 @@ class DetailTeamRouter: DetailTeamWireframeProtocol {
         return view
     }
     
-    static func createModule(id: String) -> DetailTeamViewController {
+    static func createModule(id: String, isTeamJoined: Int = 1) -> DetailTeamViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = DetailTeamViewController(nibName: nil, bundle: nil)
         view.id = id
+        view.isTeamJoined = isTeamJoined
         let interactor = DetailTeamInteractor()
         let router = DetailTeamRouter()
         let presenter = DetailTeamPresenter(interface: view, interactor: interactor, router: router)

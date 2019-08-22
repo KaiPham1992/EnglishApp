@@ -74,6 +74,7 @@ class MoreDictionaryViewController: ListManagerVC {
                 let numberDownloaded = (self.listData as! [ItemDictionaryResponse]).filter({$0.isDownload}).count
                 if numberDownloaded == 1 {
                     object.isDefault = 1
+                    item.isDefault = true
                 }
                 RealmDBManager.share.addObject(value: object)
                 self.callBackChangeDictionary?()

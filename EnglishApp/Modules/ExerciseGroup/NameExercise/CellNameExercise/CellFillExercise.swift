@@ -11,6 +11,8 @@ import Popover
 
 class CellFillExercise: UICollectionViewCell {
 
+    @IBOutlet weak var heightAudio: NSLayoutConstraint!
+    @IBOutlet weak var imgAudio: UIImageView!
     @IBOutlet weak var heightStackView: NSLayoutConstraint!
     @IBOutlet weak var stvFillQuestion: UIStackView!
     @IBOutlet weak var tvContent: UITextView!
@@ -33,12 +35,23 @@ class CellFillExercise: UICollectionViewCell {
     }
     
     func setupView(){
+        imgAudio.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickAudio)))
         tvContent.textContainerInset = UIEdgeInsets.zero
         tvContent.textContainer.lineFragmentPadding = 0
     }
     
+    @objc func clickAudio(){
+        delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+    }
+    
     func setupCell(data: QuestionEntity){
         DispatchQueue.main.async {
+            if data.checkHaveAudio() {
+                self.heightAudio.constant = 60
+            } else {
+                self.heightAudio.constant = 0
+            }
+            self.layoutIfNeeded()
             self.detectQuestion(contextQuestion: data.content_extend&)
             self.setFillCell(numberView: data.answers?.count ?? 0)
         }
@@ -46,17 +59,17 @@ class CellFillExercise: UICollectionViewCell {
     
     func detectQuestion(contextQuestion: String){
         tvContent.attributedText = contextQuestion.htmlToAttributedString
-        if type != .entranceExercise && type != .competition {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-            tap.numberOfTapsRequired = 2
-            tvContent.addGestureRecognizer(tap)
-        }
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
         if let detectedWord = getWordAtPosition(point){
-            delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+            if type != .entranceExercise && type != .competition {
+                delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+            }
         }
     }
     
@@ -91,7 +104,7 @@ class CellFillExercise: UICollectionViewCell {
     }
     
     func setFillCell(numberView: Int){
-        if stvFillQuestion.subviews.count == 0 {
+        if stvFillQuestion.subviews.count == 0 && numberView > 0 {
             for index in 1...numberView {
                 let view = ViewFillQuestion()
                 view.setupTag(tag: index)

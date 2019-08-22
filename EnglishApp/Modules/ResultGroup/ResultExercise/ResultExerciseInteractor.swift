@@ -15,9 +15,7 @@ class ResultExerciseInteractor: ResultExerciseInteractorInputProtocol {
         ProgressView.shared.show()
         Provider.shared.exerciseAPIService.reportQuestion(question_details_id: questionDetailId, content: content, success: { (response) in
             ProgressView.shared.hide()
-            if let _ = response {
-                self.presenter?.reportQuestionSuccessed()
-            }
+            self.presenter?.reportQuestionSuccessed()
         }) { (error) in
             ProgressView.shared.hide()
         }
