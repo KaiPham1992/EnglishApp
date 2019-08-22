@@ -10,16 +10,16 @@ import UIKit
 
 class HeaderUserView: BaseViewXib {
     @IBOutlet weak var imgAvatar: UIImageView!
-    @IBOutlet weak var lbPoint: UILabel!
+//    @IBOutlet weak var lbPoint: UILabel!
     @IBOutlet weak var lbDiamond: UILabel!
     @IBOutlet weak var lbHoney: UILabel!
     @IBOutlet weak var lbFullName: UILabel!
-    @IBOutlet weak var imgRank: UIImageView!
+//    @IBOutlet weak var imgRank: UIImageView!
     
     var user: UserEntity? {
         didSet {
             guard let user = user else { return }
-            lbPoint.text = user.rankName
+//            lbPoint.text = user.rankName
             lbDiamond.text = user.amountDiamond*.description
             lbHoney.text = user.amountHoney*.description
             lbFullName.text = user.fullName
