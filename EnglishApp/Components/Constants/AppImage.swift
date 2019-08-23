@@ -76,7 +76,7 @@ struct AppImage {
     
     
     static let imgHoney = UIImage(named: "Money")!
-    static let imgDiamond = UIImage(named: "ic_kimcuong")!
+    static let imgDiamond = UIImage(named: "kim_cuong")!
     static let imgHoneyLarge = UIImage(named: "logo_mat_ong")!
     
     static let imgDownPoint = UIImage(named: "down_point")!
@@ -85,7 +85,7 @@ struct AppImage {
     static let imgPremium = UIImage(named: "crown")!
     static let imgStudyPack = UIImage(named: "king")!
     
-    static let iconFilter = UIImage(named: "filter")!
+    static let iconFilter = UIImage(named: "ic_filter")!
 
     
 }

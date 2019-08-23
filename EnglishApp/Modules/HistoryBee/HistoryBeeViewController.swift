@@ -109,7 +109,7 @@ extension HistoryBeeViewController: HistoryBeeViewProtocol{
     
     func didGetWalletLog(listWalletLog: [LogEntity], totalWallet: Int) {
         
-        if listWalletLog.count == 0 {
+        if presenter?.listHistory.count == 0 {
             showNoData()
         }else{
             hideNoData()
