@@ -45,10 +45,12 @@ class CreateExerciseViewController: BaseViewController {
     @IBOutlet weak var lbNameExercise: UILabel!
     @IBOutlet weak var tbvCreateExercise: UITableView!
     let dropDown = DropDown()
+    var offset = 0
    
     override func setUpViews() {
         super.setUpViews()
-        self.presenter?.getListQuestionCatelogy()
+        tbvCreateExercise.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        self.presenter?.getListQuestionCatelogy(offset: offset)
         lblSum.text = "0/100 " + LocalizableKey.sentence.showLanguage
         tbvCreateExercise.registerXibFile(CellCreateExercise.self)
         tbvCreateExercise.dataSource = self
@@ -130,10 +132,20 @@ extension CreateExerciseViewController : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellCreateExercise.self, for: indexPath)
-        cell.setupData(title: self.presenter?.getItemIndexPath(indexPath: indexPath) ?? "")
+        if let dataCell = self.presenter?.getItemIndexPath(indexPath: indexPath) {
+            cell.setupData(dataCell: dataCell)
+        }
         cell.delegate = self
         cell.indexPath = indexPath
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let row = self.presenter?.getNumberRow() ?? 0
+        if indexPath.row == row - 2 {
+            self.offset += limit
+            self.presenter?.getListQuestionCatelogy(offset: self.offset)
+        }
     }
 }
 extension CreateExerciseViewController : UITableViewDelegate{

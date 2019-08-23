@@ -18,14 +18,17 @@ protocol TimeDelegate: class {
 
 class ViewTime: BaseViewXib{
     @IBAction func clickPlay(_ sender: Any) {
-        if !isStart {
-            viewPlay.isHidden = true
-            startTimer()
+        if disableClick {
+            
         } else {
-            viewPlay.isHidden = false
-            pauseTimer()
+            if !isStart {
+                viewPlay.isHidden = true
+                startTimer()
+            } else {
+                viewPlay.isHidden = false
+                pauseTimer()
+            }
         }
-        
     }
     @IBOutlet weak var viewPlay: UIView!
     
@@ -34,6 +37,7 @@ class ViewTime: BaseViewXib{
     
     weak var delegate: TimeDelegate?
     var time = 60
+    var disableClick = false
     
     @IBOutlet weak var lblTime: UILabel!
     override func setUpViews() {

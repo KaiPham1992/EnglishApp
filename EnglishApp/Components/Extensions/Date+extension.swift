@@ -14,7 +14,7 @@ import ObjectMapper
 enum AppDateFormat: String {
     
     case ddMMMyyCommahhmma          = "dd MMM yyyy, hh:mm a"
-    case commahhmmaddMMMyy          = "hh:mm dd-MM-yyyy "
+    case commahhmmaddMMMyy          = "HH:mm dd-MM-yyyy "
     
     case ddMMMyyyySpacehhmma        = "dd MMM yyyy hh:mm a"
     case ddMMyyyyhhmmma             = "dd-MM-yyyy hh:mm"
@@ -30,14 +30,14 @@ enum AppDateFormat: String {
     case ddMMyyyyHHmmm              = "dd MM yyyy HH:mm"
     case yyyyMMddHHmm               = "yyyy-MM-dd HH:mm"
     case MMMyyyy = "MMM yyyy"
-    case ddMMYYYY = "dd/MM/YYYY"
+    case ddMMYYYY = "dd-MM-YYYY"
     case yyyyMMdd = "yyyy-MM-dd"
     case HHmm = "HH:mm"
     case ha = "ha"
     case yyyyMMddHHmmss               = "yyyy-MM-dd HH:mm:ss"
     
     
-    case hhmmddmmyyy             = "hh:mm dd/MM/yyyy"
+    case hhmmddmmyyy             = "hh:mm dd-MM-yyyy"
     
     var formatString: String {
         return self.rawValue

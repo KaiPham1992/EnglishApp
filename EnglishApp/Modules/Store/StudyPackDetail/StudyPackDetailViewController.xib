@@ -36,19 +36,19 @@
                     </connections>
                 </button>
                 <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqX-2H-QDb">
-                    <rect key="frame" x="16" y="36" width="343" height="557"/>
+                    <rect key="frame" x="0.0" y="20" width="375" height="579"/>
                     <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </webView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Pyy-Ci-JAc" firstAttribute="top" secondItem="cqX-2H-QDb" secondAttribute="bottom" constant="16" id="1I6-an-r9f"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cqX-2H-QDb" secondAttribute="trailing" constant="16" id="Et4-WQ-fNG"/>
+                <constraint firstItem="Pyy-Ci-JAc" firstAttribute="top" secondItem="cqX-2H-QDb" secondAttribute="bottom" constant="10" id="1I6-an-r9f"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cqX-2H-QDb" secondAttribute="trailing" id="Et4-WQ-fNG"/>
                 <constraint firstItem="Pyy-Ci-JAc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="OGP-OQ-5ee"/>
-                <constraint firstItem="cqX-2H-QDb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="P16-ml-wsb"/>
+                <constraint firstItem="cqX-2H-QDb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="P16-ml-wsb"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pyy-Ci-JAc" secondAttribute="trailing" constant="16" id="oc5-as-BU7"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Pyy-Ci-JAc" secondAttribute="bottom" constant="16" id="okq-ff-fcF"/>
-                <constraint firstItem="cqX-2H-QDb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="pJf-Sv-Me6"/>
+                <constraint firstItem="cqX-2H-QDb" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="pJf-Sv-Me6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
         </view>

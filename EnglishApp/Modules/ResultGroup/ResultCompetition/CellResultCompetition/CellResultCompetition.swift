@@ -22,7 +22,7 @@ class CellResultCompetition: UITableViewCell {
     }
     
     func setupData(dataCell: CompetitionResultTeamEntity){
-        imgAVTTeam.sd_setImage(with: URL(string:BASE_URL_IMAGE + dataCell.img_src&), completed: nil)
+        imgAVTTeam.sd_setImage(with: URL(string:BASE_URL_IMAGE + dataCell.img_src&),placeholderImage: #imageLiteral(resourceName: "avatarDefautl"), completed: nil)
         lblNameTeam.text = dataCell.name
         lblPoint.text = " " + LocalizableKey.point.showLanguage
         let rank : Int = dataCell.position ?? 0
@@ -43,6 +43,6 @@ class CellResultCompetition: UITableViewCell {
         }
         lbRank.isHidden = false
         imgRank.isHidden = true
-        lbRank.text = LocalizableKey.rank.showLanguage + " \(rank + 1)"
+        lbRank.text = LocalizableKey.rank.showLanguage + " \(rank)"
     }
 }

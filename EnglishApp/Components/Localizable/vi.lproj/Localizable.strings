@@ -94,12 +94,13 @@
 // Competition
 "titleCompetition" = "Thi đấu";
 "conditionCompetition" = "Điều kiện: ";
-"timeStart" = "Thời gian: ";
+"timeStart" = "Thời gian bắt đầu: ";
 "countTeam" = "Số đội: ";
 "selectTeamJoin" = "Chọn nhóm tham gia";
 "joinTeam" = "Tham gia";
 "team" = " đội";
 "member" = "Thành viên";
+"competition" = "Cuộc thi";
 
 // Detail team
 "startAfter" = "Bắt đầu";
@@ -189,6 +190,8 @@
 "upgradeSuccess" = "Bạn đã nâng cấp gói thành công.";
 "upgradeBeePack" = "Bạn có muốn mua gói mật ong này?";
 "exchangeTitle" = "Đổi Quà";
+"notEnoughDiamondText" = "Bạn không đủ kim cương.";
+"notEnoughHoneyText" = "Bạn không đủ mật ong.";
 
 //comment
 "comment" = "Bình luận";
@@ -226,14 +229,14 @@
 "sum_point" = "Tổng điểm:";
 "time_do_exercise" = "Thời gian làm bài:";
 "back_gome" = "Về trang chủ";
-"result_competion" = "Cuộc thi";
+"result_competion" = "Kết quả cuộc thi";
 "result_group" = "Kết quả đội";
 "see_explain" = "Xem giải thích";
 "respond_question" = "BÁO CÁO CÂU HỎI";
 "explain_solution" = "Giải thích đáp án";
 "individual" = "Cá nhân";
 "action" = "Thi đấu";
-"point" = "Điểm";
+"point" = "điểm";
 "not_correct" = "Chưa đạt";
 "see_result"= "Xem kết quả";
 "explain_question" = "Giải thích câu hỏi";
@@ -245,8 +248,8 @@
 "update_account" = "Nâng cấp tài khoản thành công";
 "diamond" = "Kim cương";
 "money" = " tiền";
-"report" = "BÁO CÁO";
-"description" = "Miêu tả";
+"report" = "Báo cáo";
+"description" = "Mô tả";
 "enter_content" = "Nhập nội dung";
 "cancel_upper" = "HUỶ";
 "complete_upper" = "HOÀN THÀNH";
@@ -294,6 +297,7 @@
 "levelUp" = "Lên cấp";
 "changeLanguage" = "Đổi ngôn ngữ";
 "bxh" = "Bảng xếp hạng";
+"point_level" = "Điểm level";
 
 //lesson
 
@@ -304,7 +308,7 @@
 "theory" = "Lý thuyết";
 
 "messagePackage" = "Các gói nâng cấp phù hợp với bạn";
-"find" = "Tìm kiếm";
+"find" = "Tìm bài tập...";
 "PrivacyAndPolicy" = "Chính sách & điều khoản";
 
 
@@ -329,7 +333,6 @@
 "boxHoney" = "Hũ";
 "titleHistoryNap" = "Lịch sử nạp";
 "boxHoneyTitle" = "hũ mật ong";
-"diamond" = "kim cương";
 "lbNoData" = "Không có dữ liệu";
 
 
@@ -340,10 +343,10 @@
 "SILVER" = "Bạc";
 "GOLD" = "Vàng";
 "PLATINUM" = "Bạch kim";
-"MASTER" = "Cao thủ";
+"MASTER" = "Master";
 "TOAA" = "TOAA";
-"TheOneAboveAll" = "Một trên tất cả";
-"ALL" = "Tất  ";
+"TheOneAboveAll" = "The one above all";
+"ALL" = "Tất cả";
 
 // Pop up
 "getError" = "Đã xảy ra lỗi.";
@@ -354,3 +357,11 @@
 
 //add after
 "rank_of_competition" = "Thứ hạng cuộc thi";
+
+//time
+
+"min" = "phút";
+
+//setting
+"setting" = "Cài đặt";
+"start" = "Bắt đầu";

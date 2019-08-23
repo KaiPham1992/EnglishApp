@@ -261,7 +261,7 @@ extension BXHViewController: BXHViewProtocol{
         guard let userInfo = listLeaderBoard.user else {return}
         guard let listUser = listLeaderBoard.boards else {return}
         var number = 0
-        for index in 0 ... listUser.count {
+        for index in 0 ... (listUser.count - 1) {
             let user = listUser[index]
             if user.id?.elementsEqual(userInfo.id&) == true {
                 number = index

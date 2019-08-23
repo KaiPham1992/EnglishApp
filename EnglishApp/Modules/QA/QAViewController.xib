@@ -26,7 +26,7 @@
                 <outlet property="lbOlderQA" destination="Rs8-PF-8Fk" id="DHR-mN-DTA"/>
                 <outlet property="lbWhatQa" destination="UUb-jn-h3V" id="gKh-n9-njO"/>
                 <outlet property="tbHistory" destination="mMM-wA-DDJ" id="fLC-DC-Kn3"/>
-                <outlet property="tfQuestion" destination="SPb-gg-Fc0" id="h5A-fs-J2q"/>
+                <outlet property="tfQuestion" destination="gbV-7n-ewc" id="ZbM-wf-SUS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -57,7 +57,7 @@
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nhập câu hỏi của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPb-gg-Fc0">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SPb-gg-Fc0">
                                     <rect key="frame" x="20" y="61" width="335" height="40"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="40" id="k9J-VT-fPV"/>
@@ -93,24 +93,37 @@
                                     <color key="textColor" red="1" green="0.21615293242017442" blue="0.12852447331780337" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Nhập câu hỏi của bạn" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gbV-7n-ewc">
+                                    <rect key="frame" x="25" y="61" width="285" height="40"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="L1V-Gi-zcD"/>
+                                    </constraints>
+                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
                             </subviews>
                             <color key="backgroundColor" red="0.12549019607843137" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="QdD-12-jN8" firstAttribute="top" secondItem="SPb-gg-Fc0" secondAttribute="bottom" constant="5" id="1V3-Du-aCn"/>
                                 <constraint firstAttribute="trailing" secondItem="QdD-12-jN8" secondAttribute="trailing" constant="20" id="4JJ-WQ-B4i"/>
+                                <constraint firstItem="gbV-7n-ewc" firstAttribute="height" secondItem="SPb-gg-Fc0" secondAttribute="height" id="69O-Pm-PBV"/>
                                 <constraint firstItem="IvJ-Y5-Sw1" firstAttribute="trailing" secondItem="SPb-gg-Fc0" secondAttribute="trailing" constant="-10" id="7t9-sd-xAC"/>
                                 <constraint firstItem="SPb-gg-Fc0" firstAttribute="leading" secondItem="UUb-jn-h3V" secondAttribute="leading" id="A3X-bs-UvP"/>
                                 <constraint firstAttribute="trailing" secondItem="UUb-jn-h3V" secondAttribute="trailing" constant="20" id="CCa-aP-tSk"/>
+                                <constraint firstItem="gbV-7n-ewc" firstAttribute="leading" secondItem="itQ-8m-Wgr" secondAttribute="leading" constant="25" id="Dui-l3-dUe"/>
                                 <constraint firstItem="IvJ-Y5-Sw1" firstAttribute="centerY" secondItem="SPb-gg-Fc0" secondAttribute="centerY" id="FtL-gI-9iX"/>
                                 <constraint firstItem="dBh-gC-Lki" firstAttribute="top" secondItem="QdD-12-jN8" secondAttribute="bottom" constant="5" id="IO0-W4-HPm"/>
                                 <constraint firstItem="SPb-gg-Fc0" firstAttribute="trailing" secondItem="UUb-jn-h3V" secondAttribute="trailing" id="NhU-Ay-0Yo"/>
                                 <constraint firstItem="UUb-jn-h3V" firstAttribute="leading" secondItem="itQ-8m-Wgr" secondAttribute="leading" constant="20" id="dbf-BE-gg6"/>
+                                <constraint firstItem="IvJ-Y5-Sw1" firstAttribute="leading" secondItem="gbV-7n-ewc" secondAttribute="trailing" constant="5" id="jM4-7z-44S"/>
                                 <constraint firstItem="QdD-12-jN8" firstAttribute="leading" secondItem="itQ-8m-Wgr" secondAttribute="leading" constant="20" id="mA6-9s-Tf2"/>
                                 <constraint firstAttribute="height" constant="150" id="o9w-ZQ-YQt"/>
                                 <constraint firstItem="SPb-gg-Fc0" firstAttribute="top" secondItem="UUb-jn-h3V" secondAttribute="bottom" constant="10" id="pZ0-M5-3EE"/>
                                 <constraint firstItem="dBh-gC-Lki" firstAttribute="trailing" secondItem="SPb-gg-Fc0" secondAttribute="trailing" id="pg6-OB-ObW"/>
                                 <constraint firstItem="dBh-gC-Lki" firstAttribute="leading" secondItem="SPb-gg-Fc0" secondAttribute="leading" id="rVT-Id-cO4"/>
                                 <constraint firstItem="UUb-jn-h3V" firstAttribute="top" secondItem="itQ-8m-Wgr" secondAttribute="top" constant="30" id="vq7-Fg-Itm"/>
+                                <constraint firstItem="gbV-7n-ewc" firstAttribute="centerY" secondItem="SPb-gg-Fc0" secondAttribute="centerY" id="y0E-AX-viz"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

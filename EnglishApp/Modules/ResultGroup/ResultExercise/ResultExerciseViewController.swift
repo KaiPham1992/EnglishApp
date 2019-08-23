@@ -44,10 +44,13 @@ class ResultExerciseViewController: BaseViewController {
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
     var index: Int = 0
+    var tempIndex = 0
     var isHistory = false
 
     override func setUpViews() {
         super.setUpViews()
+        
+        self.tempIndex = index
         clvQuestion.registerXibCell(CellResultExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
@@ -62,7 +65,8 @@ class ResultExerciseViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        if index != 0 {
+        let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
+        if index != 0 && tempIndex + 1 != numberAnswer {
             self.index -= 1
             lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
             self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
@@ -145,8 +149,22 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     }
     
     func explainQuestion(questionId: Int, answerId: Int) {
-        let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
-        self.push(controller: vc)
+        self.gotoExplainQuestion(questionId: questionId)
+    }
+    
+    func gotoExplainQuestion(questionId: Int) {
+        guard let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium else { return }
+        if isUserPremium {
+            let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
+            self.push(controller: vc)
+        } else {
+            PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
+                let vc = StoreViewController()
+                self.push(controller: vc)
+            }) {
+                
+            }
+        }
     }
 }
 
@@ -179,5 +197,9 @@ extension ResultExerciseViewController : CellExerciseDelegate {
     
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
         self.presenter?.searchVocabulary(word: word, position: position, index: index)
+    }
+    
+    func clickAudio(indexPath: IndexPath) {
+        
     }
 }

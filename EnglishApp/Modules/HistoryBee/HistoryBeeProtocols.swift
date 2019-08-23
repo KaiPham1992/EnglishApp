@@ -19,6 +19,10 @@ protocol HistoryBeePresenterProtocol: class {
 
     var interactor: HistoryBeeInteractorInputProtocol? { get set }
     func getWalletLog(wallet_type: Int)
+    var canLoadMore: Bool {get set}
+    var listHistory: [LogEntity] {get set}
+    func numOfRow() -> Int
+    
 }
 
 //MARK: Interactor -
@@ -40,6 +44,6 @@ protocol HistoryBeeViewProtocol: class {
     var presenter: HistoryBeePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didGetWalletLog(listWalletLog: CollectionLogEntity)
+    func didGetWalletLog(listWalletLog: [LogEntity], totalWallet: Int)
     func didGetWalletLog(error: Error)
 }

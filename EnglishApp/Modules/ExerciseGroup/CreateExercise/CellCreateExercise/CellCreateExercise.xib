@@ -54,10 +54,11 @@
                     <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYe-dn-Mqh">
                         <rect key="frame" x="165" y="31" width="135" height="24"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_down" translatesAutoresizingMaskIntoConstraints="NO" id="mKE-R3-LCG">
-                                <rect key="frame" x="105" y="6" width="20" height="12"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="drop_down" translatesAutoresizingMaskIntoConstraints="NO" id="mKE-R3-LCG">
+                                <rect key="frame" x="105" y="2" width="20" height="20"/>
+                                <color key="tintColor" red="0.3803921569" green="0.3803921569" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="12" id="1OD-QI-cnb"/>
+                                    <constraint firstAttribute="height" constant="20" id="1OD-QI-cnb"/>
                                     <constraint firstAttribute="width" constant="20" id="Zmi-35-xH7"/>
                                 </constraints>
                             </imageView>
@@ -126,6 +127,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="img_down" width="64" height="64"/>
+        <image name="drop_down" width="26" height="24"/>
     </resources>
 </document>

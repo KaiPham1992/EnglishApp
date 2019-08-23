@@ -21,6 +21,10 @@ class DetailTeamViewController: BaseViewController {
     var id: String = "0"
     var actionLeaveTeam : (()->())?
     var actionBackView: (() -> ())?
+    var distanceTimeMi : Int = 0
+    var timer : Timer?
+    var isTeamJoined = 1
+//    var isStarted = false
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,13 @@ class DetailTeamViewController: BaseViewController {
         btnStart.setTitle("\(LocalizableKey.startAfter.showLanguage.uppercased())", for: .normal)
         btnExplain.setTitle(LocalizableKey.explainConpetition.showLanguage.uppercased(), for: .normal)
         btnLeave.setTitle(LocalizableKey.leaveTeam.showLanguage.uppercased(), for: .normal)
+        if isTeamJoined == 1 {
+            btnLeave.isHidden = false
+            btnStart.isHidden = false
+        } else {
+            btnLeave.isHidden = true
+            btnStart.isHidden = true
+        }
     }
     
     @IBAction func btnStartTapped() {
@@ -43,14 +54,20 @@ class DetailTeamViewController: BaseViewController {
     }
     
     @IBAction func btnExplainTapped() {
-        self.push(controller: ExplainCompetitionRouter.createModule(idCompetition: self.presenter?.getTeamInfo()?.competition_id ?? "0"))
+        self.push(controller: ExplainCompetitionRouter.createModule(idCompetition: self.presenter?.teamDetail?.team_info?.competition_id ?? "0"))
     }
     
     @IBAction func btnLeaveTapped() {
-        PopUpHelper.shared.showLeaveGroup(completionNo: {
-            
-        }) {
-            self.presenter?.leaveTeam(id: self.id)
+        if timer != nil {
+            PopUpHelper.shared.showLeaveGroup(completionNo: {
+                
+            }) {
+                self.presenter?.leaveTeam(id: self.id)
+            }
+        } else {
+            PopUpHelper.shared.showError(message: "Cuộc thi đã bắt đầu không thể rời nhóm.") {
+                
+            }
         }
     }
     override func btnBackTapped() {
@@ -61,12 +78,46 @@ class DetailTeamViewController: BaseViewController {
 
 extension DetailTeamViewController : DetailTeamViewProtocol {
     func reloadView() {
-        if let teamInfor = self.presenter?.getTeamInfo() {
-            setTitleNavigation(title: teamInfor.name&)
+        DispatchQueue.global().async {
+            guard let teamInfor = self.presenter?.teamDetail?.team_info else { return }
             self.id = teamInfor.id ?? "0"
-            lblMember.text = teamInfor.toPercentMember()
+            let startMi = TimeInterval(teamInfor.start_date?.timeIntervalSince1970 ?? 0)
+            let currentTimeMi = Date().timeIntervalSince1970
+            self.distanceTimeMi = Int(startMi - currentTimeMi)
+            DispatchQueue.main.async {
+                self.setTitleNavigation(title: teamInfor.name&)
+                self.lblMember.text = teamInfor.toPercentMember()
+                if self.distanceTimeMi > 0 {
+                    self.btnStart.setTitle(self.distanceTimeMi.convertMilisecondsToTime(), for: .normal)
+                    if self.timer == nil {
+                        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                            if self.distanceTimeMi > 0 {
+                                self.processTime(time: self.distanceTimeMi)
+                                self.distanceTimeMi -= 1
+                            } else {
+                                self.disableTimer()
+                            }
+                        })
+                    }
+                } else {
+                    self.btnStart.setTitle(LocalizableKey.start.showLanguage.uppercased(), for: .normal)
+                }
+                
+                self.tbTeam.reloadData()
+            }
         }
-        tbTeam.reloadData()
+    }
+    
+    func disableTimer(){
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+        self.btnStart.setTitle(LocalizableKey.start.showLanguage.uppercased(), for: .normal)
+    }
+    
+    func processTime(time: Int) {
+        self.btnStart.setTitle(time.convertMilisecondsToTime(), for: .normal)
     }
     
     func leaveTeamSuccessed() {

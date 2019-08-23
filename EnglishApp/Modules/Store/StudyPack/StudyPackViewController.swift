@@ -35,23 +35,6 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
         presenter?.getProduct()
     }
     
-    func didExchangeGift() {
-        PopUpHelper.shared.showError(message: "\(LocalizableKey.exchangeGiftSucess.showLanguage)") {
-            //do nothing
-        }
-    }
-    
-    func didGetError() {
-        PopUpHelper.shared.showError(message: "\(LocalizableKey.getError.showLanguage)") {
-            //do nothing
-        }
-    }
-    
-    func didGetProduct(product: ProductCollectionEntity) {
-        collectionProduct = product
-        UserDefaultHelper.shared.collectionProduct = product
-    }
-    
     func setUpView(){
         lbCode.text = LocalizableKey.enterCode.showLanguage
         tfCode.placeholder = LocalizableKey.enterCode.showLanguage
@@ -77,9 +60,27 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
     }
     
     func exchangeGift(id: String) {
+        if checkWallet() == false {
+            return
+        }
         PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.exchangeGiftTitle.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
             self.presenter?.exchangeGift(id: id)
         }
+    }
+    
+    func checkWallet() -> Bool {
+        if (UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0) < 10 {
+            PopUpHelper.shared.showError(message: "\(LocalizableKey.notEnoughHoneyText.showLanguage)") {
+                //do nothing
+            }
+            return false
+        } else if (UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0) < 10 {
+            PopUpHelper.shared.showError(message: "\(LocalizableKey.notEnoughDiamondText.showLanguage)") {
+                //do nothing
+            }
+            return false
+        }
+        return true
     }
 
 }
@@ -173,6 +174,24 @@ extension StudyPackViewController{
         lbError.text = LocalizableKey.notFoundCode.showLanguage
         heightOfError.constant = 17
     }
+    
+    func didExchangeGift() {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.exchangeGiftSucess.showLanguage)") {
+            //do nothing
+        }
+    }
+    
+    func didGetError() {
+        PopUpHelper.shared.showError(message: "\(LocalizableKey.getError.showLanguage)") {
+            //do nothing
+        }
+    }
+    
+    func didGetProduct(product: ProductCollectionEntity) {
+        collectionProduct = product
+        UserDefaultHelper.shared.collectionProduct = product
+    }
+    
 }
 
 // MARK: - ChangeGiftCellDelegate

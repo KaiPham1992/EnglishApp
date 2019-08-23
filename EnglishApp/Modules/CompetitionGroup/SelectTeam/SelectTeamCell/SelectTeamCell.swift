@@ -21,21 +21,25 @@ class SelectTeamCell: BaseTableCell {
         
         btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
     }
-    func displayData(maxMember: Int, team: TeamEntity){
+    func displayData(maxMember: Int, team: TeamEntity, isCannotJoin: Bool){
         lbName.text = team.name
         lbCountMember.text = "\(team.countMember*)/\(maxMember*)"
         imgTeam.sd_setImage(with: team.urlImage, placeholderImage: AppImage.avatarDefault)
-        if (team.isTeamJoined ?? 0) == 0 {
+        if isCannotJoin {
             btnJoined.isHidden = true
-            heightBtnJoin.constant = 24
+            heightBtnJoin.constant = 0
         } else {
-            btnJoined.isHidden = false
-            heightBtnJoin.constant = 0
-        }
-        
-        if Int(team.countMember&) == maxMember {
-            btnJoined.isHidden = true
-            heightBtnJoin.constant = 0
+            if (team.isTeamJoined ?? 0) == 0 {
+                btnJoined.isHidden = true
+                heightBtnJoin.constant = 24
+            } else {
+                btnJoined.isHidden = false
+                heightBtnJoin.constant = 0
+            }
+            if Int(team.countMember&) == maxMember {
+                btnJoined.isHidden = true
+                heightBtnJoin.constant = 0
+            }
         }
     }
 }

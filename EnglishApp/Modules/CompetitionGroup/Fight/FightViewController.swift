@@ -10,11 +10,14 @@
 
 import UIKit
 import Popover
+import AVKit
+import AVFoundation
 
 class FightViewController: BaseViewController {
     
     var presenter: FightPresenterProtocol?
 
+    @IBOutlet weak var imgMyTeam: UIImageView!
     @IBOutlet weak var lblPointTeam: UILabel!
     @IBOutlet weak var lblRankTeam: UILabel!
     @IBOutlet weak var heightViewRank: NSLayoutConstraint!
@@ -22,9 +25,14 @@ class FightViewController: BaseViewController {
     @IBOutlet weak var lblTitleRank: UILabel!
     
     @IBAction func clickNext(_ sender: Any) {
-        if listParamSubmit.count > 0 {
-            self.presenter?.submitAnswer(param: self.listParamSubmit[self.currentIndex - 1])
+        if player != nil {
+            player?.pause()
+            player = nil
         }
+        if self.currentIndex == numberQuestion {
+            isOut = true
+        }
+        self.submit()
     }
     
     var numberQuestion : Int = 0
@@ -32,7 +40,9 @@ class FightViewController: BaseViewController {
     var listParamSubmit : [SubmitCompetitionQuestionResponse] = []
     var completion_id : Int = 0
     var team_id : Int = 0
+    var isOut = false
     
+    var player : AVPlayer?
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
@@ -41,7 +51,7 @@ class FightViewController: BaseViewController {
     var currentIndex = 1 {
         didSet{
             if self.currentIndex == numberQuestion {
-                btnNext.setTitle(LocalizableKey.time_end.showLanguage, for: .normal)
+                btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             } else {
                 btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
             }
@@ -51,15 +61,7 @@ class FightViewController: BaseViewController {
     var isEnd : Bool = false{
         didSet {
             vCountTime.stopTimer()
-            if listParamSubmit.count > 0 {
-                self.presenter?.submitAnswer(param: self.listParamSubmit[self.currentIndex - 1])
-            }
-//            if self.currentIndex < numberQuestion {
-//                self.currentIndex = numberQuestion
-//                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-//                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-//            }
-//            self.disableUserInteractionCell()
+            self.submit()
         }
     }
     
@@ -67,6 +69,7 @@ class FightViewController: BaseViewController {
         super.setUpViews()
         lblTitleRank.text = LocalizableKey.rank_of_competition.showLanguage
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
+        clvQuestion.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
         clvQuestion.delegate = self
@@ -74,8 +77,17 @@ class FightViewController: BaseViewController {
         clvRankTeam.registerXibCell(CellRankTeam.self)
         clvRankTeam.delegate = self
         clvRankTeam.dataSource = self
+        vCountTime.disableClick = true
         vCountTime.delegate = self
         self.presenter?.getViewFightCompetition(id: String(self.completion_id))
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        if player != nil {
+            player?.pause()
+            player = nil
+        }
     }
     
     override func setUpNavigation() {
@@ -92,10 +104,18 @@ class FightViewController: BaseViewController {
     @objc func deleteExercise(){
 //        if !isEnd {
         PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+            self.isOut = true
+            self.submit()
             self.notifyOutCompetition()
 //                self.confirmOutExercise()
         })
 //        }
+    }
+    
+    private func submit() {
+        if listParamSubmit.count > 0 {
+            self.presenter?.submitAnswer(param: self.listParamSubmit[self.currentIndex - 1])
+        }
     }
     
     private func notifyOutCompetition() {
@@ -103,21 +123,6 @@ class FightViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
-//            self.confirmOutExercise()
-            self.notifyOutCompetition()
-        })
-//        if self.currentIndex == 1 {
-//            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
-//                self.confirmOutExercise()
-//            })
-//        } else {
-//            if !isEnd {
-//                self.currentIndex -= 1
-//                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-//                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
-//            }
-//        }
     }
     
     func confirmOutExercise(){
@@ -127,29 +132,33 @@ class FightViewController: BaseViewController {
 
 extension FightViewController :FightViewProtocol{
     func submitCompetitionSuccessed() {
-        DispatchQueue.global().async {
-            self.currentIndex += 1
-            var teamRank: Int = 0
-            var teamInfor : RankTeamEntity?
-            for (index,infor) in (self.presenter?.listRank ?? []).enumerated() {
-                if let teamId = Int(infor.team_id ?? "0"), teamId == self.team_id {
-                    teamRank = index + 1
-                    teamInfor = infor
+        if !isOut {
+            DispatchQueue.global().async {
+                var teamRank: Int = 0
+                var teamInfor : RankTeamEntity?
+                for (index,infor) in (self.presenter?.listRank ?? []).enumerated() {
+                    if let teamId = Int(infor.team_id ?? "0"), teamId == self.team_id {
+                        teamRank = index + 1
+                        teamInfor = infor
+                    }
+                }
+                DispatchQueue.main.async {
+                    self.currentIndex += 1
+                    if self.currentIndex <= self.numberQuestion && !self.isEnd {
+                        self.lblPointTeam.text = "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage
+                        self.lblRankTeam.text = LocalizableKey.rank.showLanguage + " " + "\(teamRank)"
+                        self.lblIndexQuestion.text = "\(self.currentIndex)/\(self.numberQuestion)"
+                        self.imgMyTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + (teamInfor?.img_src ?? "")), placeholderImage: #imageLiteral(resourceName: "ic_avatar_default") , completed: nil)
+                        self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
+                        if self.heightViewRank.constant == 0 {
+                            self.heightViewRank.constant = 80
+                        }
+                        self.clvRankTeam.reloadData()
+                    }
                 }
             }
-            DispatchQueue.main.async {
-                if self.currentIndex < self.numberQuestion && !self.isEnd {
-                    self.lblIndexQuestion.text = "\(self.currentIndex)/\(self.numberQuestion)"
-                    self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-                    self.clvRankTeam.reloadData()
-                    self.lblPointTeam.text = "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage
-                    self.lblRankTeam.text = LocalizableKey.rank.showLanguage + " \(teamRank)"
-                } else {
-                    //go to result -> tranform id.
-                    
-                    
-                }
-            }
+        } else {
+            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id)))
         }
     }
     
@@ -243,11 +252,6 @@ extension FightViewController: UICollectionViewDataSource{
         
         if collectionView == clvRankTeam {
             let row = self.presenter?.listRank.count ?? 0
-            if row == 0 {
-                heightViewRank.constant = 0
-            } else {
-                heightViewRank.constant = 80
-            }
             return row
         }
         return 0
@@ -259,16 +263,20 @@ extension FightViewController: UICollectionViewDataSource{
                 if type == "" || type == "2"{
                     let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
                     cell.type = .competition
+                    cell.indexPath = indexPath
                     cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                     cell.setupCell(data: data)
+                    cell.delegate = self
                     return cell
                 }
                 let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
                 cell.indexPath = indexPath
                 cell.type = .competition
+                cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
+                cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
                 cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
-                cell.delegate = self
                 cell.setupCell(dataCell: data)
+                cell.delegate = self
                 return cell
             }
         }
@@ -294,7 +302,6 @@ extension FightViewController : CellExerciseDelegate{
     }
     
     func showDetailVocubulary(word: WordExplainEntity) {
-        self.presenter?.gotoDetailVocabulary(word: word)
     }
     
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
@@ -302,13 +309,27 @@ extension FightViewController : CellExerciseDelegate{
     }
     
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
-        //for competition dont support suggestion.
-        
-//        PopUpHelper.shared.showSuggesstionResult(diamond: {
-//            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-//        }) {
-//            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
-//        }
+    }
+    
+    func clickAudio(indexPath: IndexPath) {
+        var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
+        numberClick += 1
+        self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
+        if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
+            if numberClick == 1 {
+                let playerItem = AVPlayerItem(url: url)
+                player = AVPlayer(playerItem: playerItem)
+                player?.play()
+            } else {
+                if player != nil {
+                    if numberClick % 2 == 0 {
+                        player?.pause()
+                    } else {
+                        player?.play()
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -320,16 +341,17 @@ extension FightViewController : TimeDelegate{
     }
     
     func startTime() {
-        btnNext.isUserInteractionEnabled = true
-        clvQuestion.isHidden = false
     }
     
     func endTime() {
+        self.isOut = true
         self.isEnd = true
+        if player != nil {
+            player?.pause()
+            player = nil
+        }
     }
     
     func pauseTime() {
-        btnNext.isUserInteractionEnabled = false
-        clvQuestion.isHidden = true
     }
 }

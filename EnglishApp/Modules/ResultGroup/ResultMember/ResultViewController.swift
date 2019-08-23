@@ -15,7 +15,7 @@ import SDWebImage
 class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
-        if type == .entranceExercise {
+        if type == .entranceExercise && isOut {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
         }
         self.navigationController?.popToRootViewController(animated: true)
@@ -39,33 +39,26 @@ class ResultViewController: BaseViewController {
     var presenter: ResultPresenterProtocol?
     var id: String = "1"
     var isHistory : Bool = false
+    var isOut = false
 
     override func setUpViews() {
         super.setUpViews()
         viewRank.imgView.image = #imageLiteral(resourceName: "ic_kimcuong")
         viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
-        viewRank.lblTitle.text = LocalizableKey.diamond.showLanguage
-        viewLevel.lblTitle.text  = LocalizableKey.levelUp.showLanguage
-        
+        viewRank.lblTitle.attributedText =  NSAttributedString(string: LocalizableKey.diamond.showLanguage)
+        viewLevel.lblTitle.attributedText = NSAttributedString(string: LocalizableKey.point_level.showLanguage)
         if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
             viewRank.isHidden = false
             self.presenter?.getViewResult(id: id)
         }
-        
-//        if type == .resultCompetion {
-//            viewRank.isHidden = false
-        //            leadingStackView.constant = 28
-        //            trailingStackView.constant = 28
-//            self.presenter?.getViewResultUserCompetition(idCompetition: self.id)
-//        }
     
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbvResult.registerXibFile(CellResult.self)
         tbvResult.dataSource = self
         tbvResult.delegate = self
         btnBackHome.setTitle(LocalizableKey.back_gome.showLanguage.uppercased(), for: .normal)
-        lblPointSum.text = LocalizableKey.sum_point.showLanguage
-        lblTimeDoExercise.text = LocalizableKey.time_do_exercise.showLanguage
+        lblPointSum.attributedText = NSAttributedString(string: LocalizableKey.sum_point.showLanguage)
+        lblTimeDoExercise.attributedText = NSAttributedString(string: LocalizableKey.time_do_exercise.showLanguage)
         self.edgesForExtendedLayout = UIRectEdge.bottom
     }
     
@@ -79,7 +72,9 @@ class ResultViewController: BaseViewController {
         if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
 //            viewRank.isHidden = true
 //            self.presenter?.getViewResult(id: id)
-            setTitleNavigation(title: LocalizableKey.result.showLanguage)
+            
+//            setTitleNavigation(title: LocalizableKey.result.showLanguage)
+            setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         }
 //        if type == .result || type == .history{
 //            setTitleNavigation(title: LocalizableKey.result.showLanguage)
@@ -89,7 +84,7 @@ class ResultViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        if type == .entranceExercise {
+        if type == .entranceExercise && isOut {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
         }
         
@@ -104,9 +99,9 @@ class ResultViewController: BaseViewController {
 extension ResultViewController: ResultViewProtocol{
     func reloadView() {
         self.tbvResult.reloadData()
-        imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), completed: nil)
-        lblPoint.text = self.presenter?.getTotalPoint()&
-        lblTime.text = self.presenter?.getTotalTime()&
+        imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), placeholderImage: UIImage(named: "ic_avatar_default")!, completed: nil)
+        lblPoint.attributedText =  NSAttributedString(string: self.presenter?.getTotalPoint() ?? "0")
+        lblTime.attributedText =  NSAttributedString(string: self.presenter?.getTotalTime() ?? "")
         viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
         viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
     }

@@ -30,7 +30,6 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         ProgressView.shared.show()
         PaymentHelper.shared.purcharseProduct("product_test_03") {
             ProgressView.shared.hide()
-            print("<#T##items: Any...##Any#>")
             self.presenter?.upgradeProduct(productID: id)
         }
         
