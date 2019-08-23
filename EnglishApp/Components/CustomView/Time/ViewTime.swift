@@ -71,6 +71,7 @@ class ViewTime: BaseViewXib{
     private func setupTimerMilisecond(milisecond: Int){
         self.time = self.time + milisecond
         if self.time <= 0 {
+            setupTimeStartNow(min: 0)
             self.delegate?.endTime()
         } else {
             setupTimeStartNow(min: self.time)
