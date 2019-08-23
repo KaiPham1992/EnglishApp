@@ -119,6 +119,7 @@ class NameExerciseViewController: BaseViewController {
         default:
              self.presenter?.getViewExercise(id: self.idExercise)
         }
+        
     }
     
     override func setUpNavigation() {
