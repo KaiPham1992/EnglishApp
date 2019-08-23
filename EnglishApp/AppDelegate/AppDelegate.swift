@@ -89,15 +89,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        print("applicationDidBecomeActive==================================================")
+        print("=========================applicationDidBecomeActive=========================")
         if let _dateTest = dateTestDaillyMisson {
             let date = Date()
-            let distance = date.timeIntervalSince(_dateTest)
-            let day = Int(distance/3600)
-            if day >= 1 {
-                dateTestDaillyMisson = nil
+            let order = Calendar.current.compare(date, to: _dateTest, toGranularity: Calendar.Component.day)
+            switch order {
+            case .orderedSame:
+                break
+            default:
+               dateTestDaillyMisson = nil
             }
-            print("================ \(day) =====================")
+            print("=====================================")
         }
     }
 }
