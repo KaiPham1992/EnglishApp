@@ -17,7 +17,13 @@ class DailyMissonViewController: BaseViewController, DailyMissonViewProtocol {
     var presenter: DailyMissonPresenterProtocol?
 
     @IBAction func startDailiMisson(_ sender: Any) {
-        self.presenter?.gotoDailyMisson()
+        if dateTestDaillyMisson == nil {
+            self.presenter?.gotoDailyMisson()
+        } else {
+            PopUpHelper.shared.showError(message: "Không làm lại được nhiệm vụ hằng ngày cho đến 0h hôm sau") {
+                
+            }
+        }
     }
     override func setUpViews() {
         super.setUpViews()

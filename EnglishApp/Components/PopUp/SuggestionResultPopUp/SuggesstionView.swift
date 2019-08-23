@@ -16,4 +16,10 @@ class SuggesstionView : BaseViewXib{
     @IBOutlet weak var lblDiamond: UILabel!
     @IBOutlet weak var lblMoney: UILabel!
     
+    
+    override func setUpViews() {
+        super.setUpViews()
+        lblDiamond.attributedText = NSAttributedString(string: "10 " + LocalizableKey.diamond.showLanguage.uppercased())
+        lblMoney.attributedText = NSAttributedString(string: "5 " + LocalizableKey.boxHoneyTitle.showLanguage.uppercased())
+    }
 }

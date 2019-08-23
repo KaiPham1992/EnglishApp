@@ -14,6 +14,7 @@ class WordExplainEntity : Object,Mappable {
     @objc dynamic var id : Int = 0
     @objc dynamic var word : String = ""
     @objc dynamic var explain : String = ""
+    @objc dynamic var link_audio : String = ""
     var is_favorite : Bool = false
     
     override static func primaryKey() -> String?{
@@ -35,5 +36,6 @@ class WordExplainEntity : Object,Mappable {
         self.explain <- map["explain"]
         self.id <- (map["_id"], StringToIntTransform())
         self.is_favorite <- map["is_favorite"]
+        self.link_audio <- map["link_audio"]
     }
 }

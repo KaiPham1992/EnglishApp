@@ -87,5 +87,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return fb || gg
         
     }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+        print("applicationDidBecomeActive==================================================")
+        if let _dateTest = dateTestDaillyMisson {
+            let date = Date()
+            let distance = date.timeIntervalSince(_dateTest)
+            let day = Int(distance/3600)
+            if day >= 1 {
+                dateTestDaillyMisson = nil
+            }
+            print("================ \(day) =====================")
+        }
+    }
 }
 
