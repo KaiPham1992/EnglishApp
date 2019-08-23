@@ -86,7 +86,7 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
         if let textSearch = self.presenter?.getTextSearch(indexPath: indexPath){
-            cell.lblSearch.text = textSearch
+            cell.lblSearch.attributedText = NSAttributedString(string: textSearch)
         }
         return cell
     }
