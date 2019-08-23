@@ -30,8 +30,8 @@ class ViewComment: BaseViewXib{
     func setupViewChildren(data: ChildrenComment){
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + data.attach_img_src&), completed: nil)
         lblTimeCreate.text = data.created_date?.toString(dateFormat: AppDateFormat.commahhmmaddMMMyy)
-        lblContent.text = data.content
-        lblNameUser.text = data.fullname
+        lblContent.attributedText = NSAttributedString(string: data.content ?? "")
+        lblNameUser.attributedText = NSAttributedString(string: data.fullname ?? "")
         if let status = data.status {
             lblWait.isHidden = status == "1" ? false  : true
         }
@@ -40,8 +40,8 @@ class ViewComment: BaseViewXib{
     func setupViewParent(data: ParentComment){
         imgAVT.sd_setImage(with: URL(string:  BASE_URL_IMAGE + data.attach_img_src&), completed: nil)
         lblTimeCreate.text = data.created_date?.toString(dateFormat: AppDateFormat.commahhmmaddMMMyy)
-        lblContent.text = data.content
-        lblNameUser.text = data.fullname
+        lblContent.attributedText = NSAttributedString(string: data.content ?? "")
+        lblNameUser.attributedText = NSAttributedString(string: data.fullname ?? "")
         if let status = data.status {
             lblWait.isHidden = status == "1" ? false : true
         }
