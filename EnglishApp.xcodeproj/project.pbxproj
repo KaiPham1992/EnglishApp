@@ -8306,7 +8306,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.englishapp";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPSTORE";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
