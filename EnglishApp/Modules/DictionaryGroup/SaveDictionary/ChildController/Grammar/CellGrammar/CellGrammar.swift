@@ -45,7 +45,7 @@ class CellGrammar: UITableViewCell {
     
     func setupTitle(title: String){
         widthButton.constant = 0
-        lblTitle.text = title
+        lblTitle.attributedText = NSAttributedString(string: title) 
     }
     
 }

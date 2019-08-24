@@ -23,7 +23,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="78.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djO-mG-URO">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cách dùng" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djO-mG-URO">
                         <rect key="frame" x="16" y="15" width="263" height="48.5"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                         <nil key="highlightedColor"/>

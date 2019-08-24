@@ -49,6 +49,7 @@ class CreateExerciseViewController: BaseViewController {
    
     override func setUpViews() {
         super.setUpViews()
+        tbvCreateExercise.keyboardDismissMode = .onDrag
         tbvCreateExercise.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         self.presenter?.getListQuestionCatelogy(offset: offset)
         lblSum.text = "0/100 " + LocalizableKey.sentence.showLanguage
@@ -157,6 +158,7 @@ extension CreateExerciseViewController : UITableViewDelegate{
 
 extension CreateExerciseViewController : ChoiceType{
     func choiceDrop(view: UIView, indexPath: IndexPath?) {
+        self.view.endEditing(true)
         dropDown.anchorView = view
         dropDown.bottomOffset = CGPoint(x: 0, y: (view.frame.height + 5))
         

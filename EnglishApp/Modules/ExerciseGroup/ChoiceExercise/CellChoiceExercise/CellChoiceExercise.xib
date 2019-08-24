@@ -25,8 +25,8 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Elementary" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="se8-OJ-y5p">
-                        <rect key="frame" x="255" y="16.5" width="86" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="258" y="19" width="83" height="16"/>
+                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                         <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -38,7 +38,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwx-Ou-0GA">
-                        <rect key="frame" x="24" y="15.5" width="226" height="22.5"/>
+                        <rect key="frame" x="24" y="15.5" width="229" height="22.5"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                         <nil key="highlightedColor"/>
                     </label>

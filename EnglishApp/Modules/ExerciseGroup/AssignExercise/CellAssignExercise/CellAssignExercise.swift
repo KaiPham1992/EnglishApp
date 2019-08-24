@@ -20,7 +20,7 @@ class CellAssignExercise: UITableViewCell {
     }
     
     func setupCell(dataCell: ExerciseEntity){
-        lblName.text = LocalizableKey.exercise.showLanguage + " " + String((indexPath?.row ?? 0)+1)
-        lblDeadline.text = dataCell.deadline?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
+        lblName.attributedText = NSAttributedString(string: dataCell.name&)
+        lblDeadline.attributedText = NSAttributedString(string: LocalizableKey.deadline.showLanguage + ": " + (dataCell.deadline?.toString(dateFormat: AppDateFormat.hhmmddmmyyy) ?? ""))
     }
 }

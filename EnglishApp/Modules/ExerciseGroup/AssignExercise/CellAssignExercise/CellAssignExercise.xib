@@ -30,7 +30,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaB-Gy-XTL">
-                        <rect key="frame" x="24" y="6" width="302" height="50.5"/>
+                        <rect key="frame" x="24" y="9" width="302" height="47.5"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                         <color key="textColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                     <constraint firstAttribute="trailing" secondItem="tbY-KJ-jZd" secondAttribute="trailing" id="UDE-mX-VQl"/>
                     <constraint firstItem="4pn-ug-NNR" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="bwj-bu-RSm"/>
                     <constraint firstItem="iaB-Gy-XTL" firstAttribute="trailing" secondItem="4pn-ug-NNR" secondAttribute="trailing" id="rqs-Ia-uIJ"/>
-                    <constraint firstItem="iaB-Gy-XTL" firstAttribute="top" secondItem="4pn-ug-NNR" secondAttribute="bottom" id="ySO-Yc-zqJ"/>
+                    <constraint firstItem="iaB-Gy-XTL" firstAttribute="top" secondItem="4pn-ug-NNR" secondAttribute="bottom" constant="3" id="ySO-Yc-zqJ"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -31,13 +31,12 @@ class UpdateFeatureView: BaseViewXib{
     
     override func setUpViews() {
         super.setUpViews()
-//        vVideo.setupTitle(title: "Xem tất cả bài giảng")
-//        vSlide.setupTitle(title: "Xem tất cả bài giảng")
-//        vLorem.setupTitle(title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.")
+        lblTitle.attributedText = NSAttributedString(string: LocalizableKey.requireUpGrade.showLanguage)
         vVideo.isHidden = true
         vSlide.isHidden = true
         vLorem.isHidden = true
         btnCancel.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
-        btnUpdate.setTitle(LocalizableKey.update.showLanguage.uppercased(), for: .normal)
+        btnUpdate.setAttributedTitle(NSAttributedString(string: LocalizableKey.cancel.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor: #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)]), for: .normal)
+        btnUpdate.setAttributedTitle(NSAttributedString(string: LocalizableKey.update.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor: UIColor.black]), for: .normal)
     }
 }

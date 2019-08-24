@@ -130,16 +130,31 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
 }
 extension ChoiceExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium, isUserPremium == true {
-            if let id = self.presenter?.exerciseChoiceEntity?.exercises[indexPath.row]._id {
-                self.presenter?.gotoExercise(id: id)
+        if type == 3 {
+            if let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium, isUserPremium == true {
+                if let id = self.presenter?.exerciseChoiceEntity?.exercises[indexPath.row]._id {
+                    self.presenter?.gotoExercise(id: id)
+                }
+            } else{
+                PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
+                    let vc = StoreViewController()
+                    self.push(controller: vc)
+                }) {
+                    
+                }
             }
-        } else{
-            PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
-                let vc = StoreViewController()
-                self.push(controller: vc)
-            }) {
-                
+        } else {
+            if let isStudyPack = UserDefaultHelper.shared.loginUserInfo?.isUserStudyPack, isStudyPack == true {
+                if let id = self.presenter?.exerciseChoiceEntity?.exercises[indexPath.row]._id {
+                    self.presenter?.gotoExercise(id: id)
+                }
+            } else {
+                PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
+                    let vc = StoreViewController()
+                    self.push(controller: vc)
+                }) {
+                    
+                }
             }
         }
     }

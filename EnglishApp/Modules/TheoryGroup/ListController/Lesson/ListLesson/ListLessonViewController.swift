@@ -89,7 +89,7 @@ extension ListLessonViewController : UITableViewDataSource{
 }
 extension ListLessonViewController: UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 65
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailLessonRouter.createModule(lesson: self.presenter?.listLesson?.lessons[indexPath.row], type: .detailLesson)

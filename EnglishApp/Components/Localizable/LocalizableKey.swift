@@ -362,5 +362,5 @@ struct LocalizableKey {
     static let setting = "setting"
     static let start = "start"
     static let vocabularyDetail = "vocabularyDetail"
-
+    static let deadline = "deadline"
 }
