@@ -475,6 +475,12 @@
 		765110C4229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
 		765110C5229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
 		765110C6229312EC004A060A /* CellHeaderComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 765110C0229312EC004A060A /* CellHeaderComment.xib */; };
+		7666BA172311919B00C762FE /* HomeNoResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7666BA162311919B00C762FE /* HomeNoResultCell.swift */; };
+		7666BA182311919B00C762FE /* HomeNoResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7666BA162311919B00C762FE /* HomeNoResultCell.swift */; };
+		7666BA192311919B00C762FE /* HomeNoResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7666BA162311919B00C762FE /* HomeNoResultCell.swift */; };
+		7666BA1B231191E800C762FE /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7666BA1A231191E800C762FE /* HomeNoResultCell.xib */; };
+		7666BA1C231191E800C762FE /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7666BA1A231191E800C762FE /* HomeNoResultCell.xib */; };
+		7666BA1D231191E800C762FE /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7666BA1A231191E800C762FE /* HomeNoResultCell.xib */; };
 		766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
 		766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
 		766AE7EC22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
@@ -2447,6 +2453,8 @@
 		76483BF3229EE3F00079F9A1 /* UpdateAccountView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UpdateAccountView.xib; sourceTree = "<group>"; };
 		765110BF229312EC004A060A /* CellHeaderComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellHeaderComment.swift; sourceTree = "<group>"; };
 		765110C0229312EC004A060A /* CellHeaderComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellHeaderComment.xib; sourceTree = "<group>"; };
+		7666BA162311919B00C762FE /* HomeNoResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoResultCell.swift; sourceTree = "<group>"; };
+		7666BA1A231191E800C762FE /* HomeNoResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoResultCell.xib; sourceTree = "<group>"; };
 		766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopUp.swift; sourceTree = "<group>"; };
 		766AE7ED22AFCAB4002D474E /* ConfirmPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopUpView.swift; sourceTree = "<group>"; };
 		766AE7F122AFCAC5002D474E /* ConfirmPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPopUpView.xib; sourceTree = "<group>"; };
@@ -3528,6 +3536,15 @@
 				76483BF3229EE3F00079F9A1 /* UpdateAccountView.xib */,
 			);
 			path = UpdateAccountPopUp;
+			sourceTree = "<group>";
+		};
+		7666BA152311916500C762FE /* HomeNoResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				7666BA162311919B00C762FE /* HomeNoResultCell.swift */,
+				7666BA1A231191E800C762FE /* HomeNoResultCell.xib */,
+			);
+			path = HomeNoResultCell;
 			sourceTree = "<group>";
 		};
 		766AE7E822AFCA7C002D474E /* ConfirmPopUp */ = {
@@ -5431,6 +5448,7 @@
 		DEF1C24F22903529005AD1A3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				7666BA152311916500C762FE /* HomeNoResultCell */,
 				DEF1C26B22903F8C005AD1A3 /* HomeRecentlyCell */,
 				DEF1C26222903E19005AD1A3 /* HomeTitleCell */,
 				DEF1C2592290364F005AD1A3 /* HomeHeaderCell */,
@@ -5618,6 +5636,7 @@
 				2A6C5ED722EF468F004B23EF /* CellSingleLabel.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				7666BA1B231191E800C762FE /* HomeNoResultCell.xib in Resources */,
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD18FF22A25AB10054861D /* BeePackCell.xib in Resources */,
 				DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
@@ -5779,6 +5798,7 @@
 				2A6C5ED822EF468F004B23EF /* CellSingleLabel.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				7666BA1C231191E800C762FE /* HomeNoResultCell.xib in Resources */,
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD190022A25AB10054861D /* BeePackCell.xib in Resources */,
 				DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
@@ -6023,6 +6043,7 @@
 				7643DEA222A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				2AED14DE22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */,
+				7666BA1D231191E800C762FE /* HomeNoResultCell.xib in Resources */,
 				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD193022A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31BA2295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
@@ -6671,6 +6692,7 @@
 				76E2FF55228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				2AED14AC22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,
 				DE952F892287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				7666BA172311919B00C762FE /* HomeNoResultCell.swift in Sources */,
 				7629BDD622ACD2450051B835 /* ReportSuccessedView.swift in Sources */,
 				DECD192322A269860054861D /* HeaderPackCell.swift in Sources */,
 				766AE7EE22AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */,
@@ -7285,6 +7307,7 @@
 				76E2FF56228DD2120014B1F4 /* SeeNoteViewController.swift in Sources */,
 				2AED14AD22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,
 				DE95300B2287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				7666BA182311919B00C762FE /* HomeNoResultCell.swift in Sources */,
 				7629BDD722ACD2450051B835 /* ReportSuccessedView.swift in Sources */,
 				DECD192422A269860054861D /* HeaderPackCell.swift in Sources */,
 				766AE7EF22AFCAB4002D474E /* ConfirmPopUpView.swift in Sources */,
@@ -7648,6 +7671,7 @@
 				DE95312E228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
 				766AE80A22B02393002D474E /* ViewFeature.swift in Sources */,
 				769A3BCE22A0A11B00CA55BD /* WeekView.swift in Sources */,
+				7666BA192311919B00C762FE /* HomeNoResultCell.swift in Sources */,
 				DE89D22922A42592000638B0 /* BXHProtocols.swift in Sources */,
 				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,

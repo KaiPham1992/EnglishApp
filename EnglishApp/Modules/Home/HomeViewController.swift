@@ -154,6 +154,7 @@ class HomeViewController: BaseViewController {
     
     func didGetActivities(activities: [Acitvity]) {
         self.listActivities = activities
+        self.listActivities.removeAll()
     }
 }
 
@@ -166,6 +167,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tbHome.registerXibFile(HomeHeaderCell.self)
         tbHome.registerXibFile(HomeRecentlyCell.self)
         tbHome.registerXibFile(HomeTitleCell.self)
+        tbHome.registerXibFile(HomeNoResultCell.self)
         tbHome.separatorStyle = .none
         
         tbHome.estimatedRowHeight = 120
@@ -202,9 +204,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             } else {
-                let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
-                cell.actity = self.listActivities[indexPath.item - 1]
-                return cell
+                if self.listActivities.count == 0 {
+                    // return cell no results
+                    let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
+                    return cell
+                } else {
+                    let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
+                    cell.actity = self.listActivities[indexPath.item - 1]
+                    return cell
+                }
             }
         }
     }
@@ -214,7 +222,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 2//self.listTopThree.count
         } else {
             if self.listActivities.count == 0 {
-                return 0
+                return 2
             } else {
                 return self.listActivities.count + 1
             }
