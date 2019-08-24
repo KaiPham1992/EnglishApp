@@ -23,12 +23,12 @@ class FileZipManager {
                         if let url = URL(string: unzipURL.path + "/sqliteWord.db") {
                             self.removeFile(link: url)
                         }
-                        SQLHelper.shared.convertSQLiteToRealmWordExplainEntity(path: unzipURL.path + "/sqliteWordExplain.db", complete: {
-                            if let url = URL(string: unzipURL.path + "/sqliteWordExplain.db") {
-                                self.removeFile(link: url)
-                            }
-                            completion()
-                        })
+                    })
+                    SQLHelper.shared.convertSQLiteToRealmWordExplainEntity(path: unzipURL.path + "/sqliteWordExplain.db", complete: {
+                        if let url = URL(string: unzipURL.path + "/sqliteWordExplain.db") {
+                            self.removeFile(link: url)
+                        }
+                        completion()
                     })
                 }
             }

@@ -16,6 +16,7 @@ class WordExplainEntity : Object,Mappable {
     @objc dynamic var explain : String = ""
     @objc dynamic var link_audio : String = ""
     var is_favorite : Bool = false
+    @objc dynamic var id_user : Int = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
     
     override static func primaryKey() -> String?{
         return "id"
@@ -26,6 +27,7 @@ class WordExplainEntity : Object,Mappable {
         self.id = id
         self.word = word
         self.explain = explain
+        self.id_user = id_user
     }
     convenience required init?(map: Map) {
         self.init()

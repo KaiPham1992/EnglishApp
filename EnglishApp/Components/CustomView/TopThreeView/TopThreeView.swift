@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class TopThreeView: BaseViewXib {
     @IBOutlet weak var lbNametop1: UILabel!

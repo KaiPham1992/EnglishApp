@@ -33,7 +33,20 @@ class RealmDBManager {
         }
     }
     
-    func removeObject<T: Object>(type: T.Type,value: Int) {
+    func removeAllObject<T: Object, V: Codable>(type: T.Type, key: String, value: V) {
+        try! database.write {
+            var query = "\(key) contains '\(value)'"
+            if value is Int {
+                query = "\(key) = \(value)"
+            }
+            let objects = database.objects(type).filter(query)
+            if objects.count > 0 {
+                database.delete(objects)
+            }
+        }
+    }
+    
+    func removeObject<T: Object>(type: T.Type, value: Int) {
         let valueTemp = value
         let objectTemp = self.database.object(ofType: type, forPrimaryKey: valueTemp)
         if objectTemp != nil {
@@ -43,9 +56,18 @@ class RealmDBManager {
         }
     }
     
-    func updateLocalConfigDictionary(id: Int) {
+    func removeObject<T: Object, V: Codable>(type: T.Type, value: V) {
+        let objectTemp = self.database.object(ofType: type, forPrimaryKey: value)
+        if objectTemp != nil {
+            try! self.database.write {
+                self.database.delete(objectTemp!)
+            }
+        }
+    }
+    
+    func updateLocalConfigDictionary(id: Int,id_user: Int) {
         try! database.write {
-            let objects = self.database.objects(LocalConfigDictionary.self).toArray() as! [LocalConfigDictionary]
+            let objects = self.filter(objectType: LocalConfigDictionary.self, key: "id_user", value: id_user)
             for object in objects {
                 if object.isDefault == 1 {
                     object.isDefault = 0

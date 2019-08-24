@@ -13,6 +13,7 @@ import ObjectMapper
 class WordEntity : Object,Mappable {
     @objc dynamic var id : Int = 0
     @objc dynamic var word : String = ""
+    @objc dynamic var id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
     
     override static func primaryKey() -> String?{
         return "id"

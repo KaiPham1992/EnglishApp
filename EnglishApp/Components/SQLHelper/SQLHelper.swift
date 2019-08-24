@@ -14,18 +14,8 @@ class SQLHelper {
     static let shared = SQLHelper()
     //sqlite into document file
     func convertSQLiteToRealmWordEntity(path: String,complete: @escaping () -> ()) {
-        DispatchQueue.main.async {
-            //save file in docment
-//            let fileURL = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(appendingPathComponent)
+        DispatchQueue.global().async {
             var database : OpaquePointer?
-            //save file in project
-//            guard let path = Bundle.main.path(forResource: "sqliteWord", ofType:"db") else{
-//                return
-//            }
-            //use with file URL
-//            if sqlite3_open(fileURL.path, &database) != SQLITE_OK {
-//                print("Error open \(fileURL.path)")
-//            }
             if sqlite3_open(path, &database) != SQLITE_OK {
                 print("Error open \(path)")
             }
@@ -39,21 +29,22 @@ class SQLHelper {
                 let word  : String = String(cString: sqlite3_column_text(statement, 1))
                 objects.append(WordEntity(id: id, word: word))
             }
-            RealmDBManager.share.addSequence(value: objects)
-            if sqlite3_finalize(statement) != SQLITE_OK {
-                print("finalize statement failed")
+            DispatchQueue.main.async {
+                RealmDBManager.share.addSequence(value: objects)
+                if sqlite3_finalize(statement) != SQLITE_OK {
+                    print("finalize statement failed")
+                }
+                statement = nil
+                if sqlite3_close(database) != SQLITE_OK {
+                    print("close database failed")
+                }
+                database = nil
+                complete()
             }
-            statement = nil
-            if sqlite3_close(database) != SQLITE_OK{
-                print("close database failed")
-            }
-            database = nil
-            complete()
         }
-       
     }
     func convertSQLiteToRealmWordExplainEntity(path: String, complete: @escaping () -> ()){
-        DispatchQueue.main.async {
+        DispatchQueue.global().async {
             //save file in docment
 //            let fileURL = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(appendingPathComponent)
             var database : OpaquePointer?
@@ -79,16 +70,18 @@ class SQLHelper {
                 let explain : String = String(cString: sqlite3_column_text(statement, 2))
                 objects.append(WordExplainEntity(id: id, word: word, explain: explain))
             }
-            RealmDBManager.share.addSequence(value: objects)
-            if sqlite3_finalize(statement) != SQLITE_OK {
-                print("finalize statement failed")
+            DispatchQueue.main.async {
+                RealmDBManager.share.addSequence(value: objects)
+                if sqlite3_finalize(statement) != SQLITE_OK {
+                    print("finalize statement failed")
+                }
+                statement = nil
+                if sqlite3_close(database) != SQLITE_OK{
+                    print("close database failed")
+                }
+                database = nil
+                complete()
             }
-            statement = nil
-            if sqlite3_close(database) != SQLITE_OK{
-                print("close database failed")
-            }
-            database = nil
-            complete()
         }
     }
 }

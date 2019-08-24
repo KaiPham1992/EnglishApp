@@ -21,7 +21,10 @@ class MoreDictionaryViewController: ListManagerVC {
         showButtonBack = true
         customTitle = LocalizableKey.addDictionary.showLanguage
         super.setUpViews()
+        print(Realm.Configuration.defaultConfiguration.fileURL)
     }
+    
+    let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
     
     override func registerTableView() {
         super.registerTableView()
@@ -58,7 +61,7 @@ class MoreDictionaryViewController: ListManagerVC {
                 }
             }
         }
-        RealmDBManager.share.updateLocalConfigDictionary(id: id)
+        RealmDBManager.share.updateLocalConfigDictionary(id: id, id_user: id_user)
         self.callBackChangeDictionary?()
     }
     
@@ -70,7 +73,8 @@ class MoreDictionaryViewController: ListManagerVC {
                 ProgressView.shared.hide()
                 item.isDownload = true
                 self.tableView.reloadData()
-                let object = LocalConfigDictionary(id: item.id ,name: item.name)
+                let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
+                let object = LocalConfigDictionary(id: item.id ,name: item.name, id_user: id_user)
                 let numberDownloaded = (self.listData as! [ItemDictionaryResponse]).filter({$0.isDownload}).count
                 if numberDownloaded == 1 {
                     object.isDefault = 1
@@ -82,9 +86,9 @@ class MoreDictionaryViewController: ListManagerVC {
         } else {
             DispatchQueue.main.async {
                 ProgressView.shared.show()
-                RealmDBManager.share.removeAllObject(type: WordEntity.self)
-                RealmDBManager.share.removeAllObject(type: WordExplainEntity.self)
-                RealmDBManager.share.removeObject(type: LocalConfigDictionary.self,value: item.id)
+                RealmDBManager.share.removeAllObject(type: WordEntity.self, key: "id_user", value: self.id_user)
+                RealmDBManager.share.removeAllObject(type: WordExplainEntity.self, key: "id_user", value: self.id_user)
+                RealmDBManager.share.removeObject(type: LocalConfigDictionary.self, value: "\(item.id)\(self.id_user)")
                 item.isDownload = false
                 self.tableView.reloadData()
                 ProgressView.shared.hide()

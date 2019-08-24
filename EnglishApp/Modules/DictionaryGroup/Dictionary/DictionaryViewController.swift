@@ -52,9 +52,10 @@ class DictionaryViewController: BaseViewController {
             }
             self.view.endEditing(true)
         }
-       
-
     }
+    
+    let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
+    
     var presenter: DictionaryPresenterProtocol?
     let dropDownDictionary = DropDown()
     let dropDownSearch = DropDown()
@@ -82,7 +83,9 @@ class DictionaryViewController: BaseViewController {
     }
     
     func setupViewDictionary() {
-        self.listDictionary = RealmDBManager.share.getDataFromRealm(type: LocalConfigDictionary.self)
+//        self.listDictionary = RealmDBManager.share.getDataFromRealm(type: LocalConfigDictionary.self)
+        
+        self.listDictionary = RealmDBManager.share.filter(objectType: LocalConfigDictionary.self, key: "id_user", value: id_user)
         if listDictionary.count > 0 {
             heightViewNoDictionary.constant = 0
             showNoData()
@@ -139,7 +142,7 @@ class DictionaryViewController: BaseViewController {
         // Action triggered on selection
         dropDownDictionary.selectionAction = { [unowned self] (index: Int, item: String) in
             self.idDictionary = self.listDictionary[index].id
-            RealmDBManager.share.updateLocalConfigDictionary(id: self.idDictionary)
+            RealmDBManager.share.updateLocalConfigDictionary(id: self.idDictionary, id_user: self.id_user)
             self.lblDictionary.text = item
             self.rotateImage()
             self.dropDownDictionary.hide()

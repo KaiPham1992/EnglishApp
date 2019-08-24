@@ -19,7 +19,8 @@ class MoreDictionaryInteractor: MoreDictionaryInteractorInputProtocol {
         Provider.shared.findAPIService.getListDictionary(success: { (response) in
             if let _response = response {
                 let result = _response.dictionaries ?? []
-                let object = RealmDBManager.share.getDataFromRealm(type: LocalConfigDictionary.self)
+                let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
+                let object = RealmDBManager.share.filter(objectType: LocalConfigDictionary.self, key: "id_user", value: id_user)
                 if object.count > 0 {
                     let listId = object.map{$0.id}
                     var idDefault = 0
