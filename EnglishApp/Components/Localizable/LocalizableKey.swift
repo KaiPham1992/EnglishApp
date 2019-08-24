@@ -81,6 +81,7 @@ struct LocalizableKey {
     static let popleaveHomeWork = "popleaveHomeWork"
     static let boxHoney = "boxHoney"
     static let titleHistoryNap = "titleHistoryNap"
+    static let cancelLowercased = "cancelLowercased"
     
     // QA
     
@@ -369,4 +370,5 @@ struct LocalizableKey {
     // pop up choose photo
     static let camera = "camera"
     static let library = "library"
+    static let notAllowGifPhoto = "notAllowGifPhoto"
 }

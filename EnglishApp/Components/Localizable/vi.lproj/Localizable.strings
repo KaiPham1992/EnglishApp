@@ -78,6 +78,7 @@
 "popUpLogout" = "Bạn có muốn đăng xuất?";
 "agree" = "ĐỒNG Ý";
 "cancel" = "HUỶ";
+"cancelLowercased" = "Huỷ";
 
 //QA
 
@@ -373,3 +374,4 @@
 // pop up choose photo
 "camera" = "Chụp ảnh";
 "library" = "Thư viện";
+"notAllowGifPhoto" = "Không thể chọn ảnh GIF";

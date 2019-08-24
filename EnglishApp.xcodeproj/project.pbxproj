@@ -475,6 +475,9 @@
 		7666BA1B231191E800C762FE /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7666BA1A231191E800C762FE /* HomeNoResultCell.xib */; };
 		7666BA1C231191E800C762FE /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7666BA1A231191E800C762FE /* HomeNoResultCell.xib */; };
 		7666BA1D231191E800C762FE /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7666BA1A231191E800C762FE /* HomeNoResultCell.xib */; };
+		7666BA1F231197BD00C762FE /* NSData+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7666BA1E231197BD00C762FE /* NSData+extension.swift */; };
+		7666BA20231197BD00C762FE /* NSData+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7666BA1E231197BD00C762FE /* NSData+extension.swift */; };
+		7666BA21231197BD00C762FE /* NSData+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7666BA1E231197BD00C762FE /* NSData+extension.swift */; };
 		766AE7EA22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
 		766AE7EB22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
 		766AE7EC22AFCA9D002D474E /* ConfirmPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */; };
@@ -2447,6 +2450,7 @@
 		765110C0229312EC004A060A /* CellHeaderComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellHeaderComment.xib; sourceTree = "<group>"; };
 		7666BA162311919B00C762FE /* HomeNoResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNoResultCell.swift; sourceTree = "<group>"; };
 		7666BA1A231191E800C762FE /* HomeNoResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeNoResultCell.xib; sourceTree = "<group>"; };
+		7666BA1E231197BD00C762FE /* NSData+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSData+extension.swift"; sourceTree = "<group>"; };
 		766AE7E922AFCA9D002D474E /* ConfirmPopUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopUp.swift; sourceTree = "<group>"; };
 		766AE7ED22AFCAB4002D474E /* ConfirmPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPopUpView.swift; sourceTree = "<group>"; };
 		766AE7F122AFCAC5002D474E /* ConfirmPopUpView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmPopUpView.xib; sourceTree = "<group>"; };
@@ -4303,6 +4307,7 @@
 				DEECF8762287075B00A4678B /* UITable+extension.swift */,
 				DEECF87A22870B3D00A4678B /* Bundle+extension.swift */,
 				DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */,
+				7666BA1E231197BD00C762FE /* NSData+extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -6429,6 +6434,7 @@
 				76CF521C22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */,
 				2A9CAF5C22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */,
 				76CE323022968C7D00E998FB /* NameExerciseViewController.swift in Sources */,
+				7666BA1F231197BD00C762FE /* NSData+extension.swift in Sources */,
 				76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DB229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
@@ -7042,6 +7048,7 @@
 				76CF521D22CB9E1E00A9D205 /* CatelogyEntity.swift in Sources */,
 				2A9CAF5D22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */,
 				76CE323122968C7D00E998FB /* NameExerciseViewController.swift in Sources */,
+				7666BA20231197BD00C762FE /* NSData+extension.swift in Sources */,
 				76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DC229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
@@ -8041,6 +8048,7 @@
 				DE9530E12287DF6400E3F688 /* Provider.swift in Sources */,
 				DECD193422A26EE20054861D /* DetailPackEntity.swift in Sources */,
 				7640840522B7CB45002D9401 /* SaveEndpoint.swift in Sources */,
+				7666BA21231197BD00C762FE /* NSData+extension.swift in Sources */,
 				76EE392122A5777700DD8960 /* HistoryExerciseDateRouter.swift in Sources */,
 				DEC7F92E22C509CB0096D3D1 /* ProductAPIService.swift in Sources */,
 				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,

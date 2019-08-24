@@ -154,7 +154,6 @@ class HomeViewController: BaseViewController {
     
     func didGetActivities(activities: [Acitvity]) {
         self.listActivities = activities
-        self.listActivities.removeAll()
     }
 }
 

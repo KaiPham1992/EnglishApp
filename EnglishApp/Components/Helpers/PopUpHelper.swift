@@ -181,4 +181,11 @@ class PopUpHelper {
         popUp.showPopup(message: "SENT_NEW_PASSWORD".showLanguage, confirm: completionYes)
     }
     
+    func showNoAllowGifPhoto(completionYes: CompletionClosure?) {
+        let popUp = NotificationPopUp()
+        popUp.setButtonTitle(title: LocalizableKey.cancel.showLanguage.uppercased())
+        
+        popUp.showPopUp(message: LocalizableKey.notAllowGifPhoto.showLanguage, completion: completionYes)
+    }
+    
 }
