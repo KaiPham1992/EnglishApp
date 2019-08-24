@@ -37,7 +37,7 @@ class SelectPhotoCanCropPopUp: NSObject {
             strongSelf.presentImagePicker(sourceType: .photoLibrary)
         }
         
-        let actionCancel = UIAlertAction(title: "\(LocalizableKey.cancel.showLanguage)", style: UIAlertAction.Style.default) { _ in
+        let actionCancel = UIAlertAction(title: "\(LocalizableKey.cancelLowercased.showLanguage)", style: UIAlertAction.Style.default) { _ in
             
         }
         
@@ -66,13 +66,24 @@ class SelectPhotoCanCropPopUp: NSObject {
 }
 
 // MARK:
-extension SelectPhotoCanCropPopUp: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension SelectPhotoCanCropPopUp:
+UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        
         if let imageEdit = info[.editedImage] as? UIImage {
-            imagePickerUIKit.dismiss(animated: true, completion: nil)
-            //            delegate?.didReceivePhoto(image: imageEdit)
-            self.completionImage?(imageEdit)
+            
+            let assetPath = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
+            if assetPath.absoluteString?.hasSuffix("GIF") ??  false {
+                imagePickerUIKit.dismiss(animated: true, completion: nil)
+                PopUpHelper.shared.showNoAllowGifPhoto(completionYes: nil)
+            } else {
+                imagePickerUIKit.dismiss(animated: true, completion: nil)
+                //            delegate?.didReceivePhoto(image: imageEdit)
+                self.completionImage?(imageEdit)
+            }
         }
     }
     

@@ -249,7 +249,7 @@
 "cancel_upper" = "Cancle";
 "complete_upper" = "COMPLETE";
 "update" = "UPDATE";
-
+"cancelLowercased" = "Cancle";
 
 //month
 "January" = "January";
@@ -361,11 +361,10 @@
 "setting" = "Setting";
 "start" = "Start";
 "vocabularyDetail" = "Vocabulary Detail";
-<<<<<<< HEAD
 "deadline" = "Deadline";
-=======
 
 // pop up choose photo
 "camera" = "Camera";
 "library" = "Library";
->>>>>>> feature/feature_truc
+"notAllowGifPhoto" = "Not choose GIF photo";
+
