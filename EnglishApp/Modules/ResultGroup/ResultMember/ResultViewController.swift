@@ -97,12 +97,13 @@ class ResultViewController: BaseViewController {
 
 extension ResultViewController: ResultViewProtocol{
     func reloadView() {
-        self.tbvResult.reloadData()
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), placeholderImage: UIImage(named: "ic_avatar_default")!, completed: nil)
         lblPoint.attributedText =  NSAttributedString(string: self.presenter?.getTotalPoint() ?? "0")
         lblTime.attributedText =  NSAttributedString(string: self.presenter?.getTotalTime() ?? "")
         viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
         viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
+        self.tbvResult.reloadData()
+        
     }
 }
 

@@ -245,7 +245,7 @@
 "report" = "REPORT";
 "description" = "Description";
 "enter_content" = "Enter content";
-"cancel_upper" = "CANCLE";
+"cancel_upper" = "Cancle";
 "complete_upper" = "COMPLETE";
 "update" = "UPDATE";
 
@@ -359,3 +359,4 @@
 "setting" = "Setting";
 "start" = "Start";
 "vocabularyDetail" = "Vocabulary Detail";
+

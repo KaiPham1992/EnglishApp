@@ -19,7 +19,7 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.result_team.showLanguage)
+        setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         self.edgesForExtendedLayout = .bottom
         self.tabBarController?.tabBar.isHidden = true
     }

@@ -33,7 +33,7 @@ class CellResult: UITableViewCell {
         lblPoint.textColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)
         lblNumberQuestion.textColor = #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)
         vBackground.backgroundColor = #colorLiteral(red: 0.8784313725, green: 0.8784313725, blue: 0.8784313725, alpha: 1)
-        lblNumberQuestion.text = LocalizableKey.sentence.showLanguage + " " + (String((indexPath?.row ?? 0) + 1))
-        lblPoint.text = point + " " + LocalizableKey.point.showLanguage
+        lblNumberQuestion.attributedText = NSAttributedString(string: LocalizableKey.sentence.showLanguage + " " + (String((indexPath?.row ?? 0) + 1)))
+        lblPoint.attributedText = NSAttributedString(string: point + " " + LocalizableKey.point.showLanguage)
     }
 }

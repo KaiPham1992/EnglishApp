@@ -14,7 +14,7 @@ class CompetitionResultsProfileEntity: Mappable {
     var name : String?
     var description : String?
     var rank_name : String?
-    var start_date : String?
+    var start_date : Date?
     var number_team : String?
     var image : String?
     var exercise_id : String?
@@ -28,7 +28,7 @@ class CompetitionResultsProfileEntity: Mappable {
         self.name <- map["name"]
         self.description <- map["description"]
         self.rank_name <- map["rank_name"]
-        self.start_date <- map["start_date"]
+        self.start_date <- (map["start_date"], yyyyMMddHHmmssTransform())
         self.number_team <- map["number_team"]
         self.image <- map["image"]
         self.exercise_id <- map["exercise_id"]

@@ -16,6 +16,8 @@ class CompetitionResultTeamEntity: Mappable{
     var social_img_src : String?
     var attach_img_src : String?
     var position : Int?
+    var total_score : String?
+    
     func mapping(map: Map) {
         self.team_id <- map["team_id"]
         self.name <- map["name"]
@@ -23,6 +25,7 @@ class CompetitionResultTeamEntity: Mappable{
         self.social_img_src <- map["social_img_src"]
         self.attach_img_src <- map["attach_img_src"]
         self.position <- map["position"]
+        self.total_score <- map["total_score"]
     }
     
     required init?(map: Map) {

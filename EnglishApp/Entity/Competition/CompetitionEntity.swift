@@ -28,7 +28,7 @@ class CompetitionEntity : BaseEntity {
     var name: String?
     var rankName: String?
     var countTeam: String?
-    var startDate: String?
+    var startDate: Date?
     var startTime: Date?
     var content: String?
     var image: String?
@@ -66,7 +66,7 @@ class CompetitionEntity : BaseEntity {
         self.name <- map["name"]
         self.rankName <- map["rank_name"]
         self.countTeam <- map["number_team"]
-        self.startDate <- map["start_date"]
+        self.startDate <- (map["start_date"], yyyyMMddHHmmssTransform())
         self.start_time_mi <- map["start_time_mi"]
         
         self.startTime <- (map["start_date"], yyyyMMddHHmmssTransform())

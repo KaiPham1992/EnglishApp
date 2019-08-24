@@ -29,7 +29,7 @@ class ResultCompetitionViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
+        setTitleNavigation(title: LocalizableKey.result_team.showLanguage)
     }
 }
 

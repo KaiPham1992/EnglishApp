@@ -12,6 +12,7 @@ class CellHistoryListExercise: UITableViewCell {
     
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var lblLevel: UILabel!
+    @IBOutlet weak var widthButton: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,5 +34,13 @@ class CellHistoryListExercise: UITableViewCell {
             lblLevel.text = ""
         }
         lblTitle.text = dataCell.exercise_name&
+    }
+    
+    func hideWidthButton() {
+        widthButton.constant = 0
+    }
+    
+    func showWidthButton() {
+        widthButton.constant = 24
     }
 }

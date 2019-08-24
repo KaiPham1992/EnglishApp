@@ -77,7 +77,7 @@
 // logout
 "popUpLogout" = "Bạn có muốn đăng xuất?";
 "agree" = "ĐỒNG Ý";
-"cancel" = "HUỶ";
+"cancel" = "Huỷ";
 
 //QA
 
@@ -163,7 +163,7 @@
 
 // report pop up
 "reportTitlePopUp" = "Báo cáo";
-"reportMessagePopUp" = "Cảm ơn bạn đã báo cáo cho chúng tôi về trường hợp này. Chúng tối sẽ xem xét và chỉnh sửa lại sớm nhất.";
+"reportMessagePopUp" = "Cảm ơn bạn đã báo cáo cho chúng tôi về trường hợp này. Chúng tôi sẽ xem xét và chỉnh sửa lại sớm nhất.";
 "reportButtonPopUp" = "Hoàn thành";
 
 "notEnoughBee" = "Bạn không đủ mật ong.";
@@ -206,7 +206,7 @@
 "enter_name_exercise" = "Nhập tên bài tập";
 "choice_exercise" = "Chọn bài tập";
 "exercise_level" = "Cấp độ bài tập";
-"history_exercise" = "Lịch sử kiểm tra";
+"history_exercise" = "Lịch sử bài tập";
 "do_exercise" = "Làm bài tập";
 "preposition" = "Preposition";
 "rewriting" = "Rewriting";

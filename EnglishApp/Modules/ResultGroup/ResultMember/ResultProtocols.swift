@@ -18,6 +18,7 @@ protocol ResultWireframeProtocol: class {
 protocol ResultPresenterProtocol: class {
 
     var interactor: ResultInteractorInputProtocol? { get set }
+    var testResultProfile: TestResultProfileEntity? {get set}
     func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int,isHistory: Bool)
     func getViewResult(id: String)
     func getImageProfile() -> String?

@@ -54,6 +54,14 @@ class CalendarView : UIView{
         }
     }
     
+    let datePicker : CustomDatePicker = {
+        let view = CustomDatePicker()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    var heightDatePicker : NSLayoutConstraint!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupData()
@@ -89,6 +97,7 @@ class CalendarView : UIView{
     
     func setupView(){
         self.addSubview(monthView)
+    
         monthView.delegate = self
         monthView.topAnchor.constraint(equalTo: self.topAnchor, constant: 5).isActive = true
         monthView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 24).isActive = true
@@ -109,6 +118,13 @@ class CalendarView : UIView{
         clvDate.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
 //        clvDate.anchor(weekView.bottomAnchor, left: self.leadingAnchor, bottom: self.bottomAnchor, right: self.rightAnchor, leftConstant: 14, rightConstant:14)
         
+        self.addSubview(datePicker)
+        datePicker.delegate = self
+        datePicker.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
+        datePicker.leadingAnchor.constraint(equalTo: self.leadingAnchor).isActive = true
+        datePicker.trailingAnchor.constraint(equalTo: self.trailingAnchor).isActive = true
+        self.heightDatePicker = datePicker.heightAnchor.constraint(equalToConstant: 0)
+        self.heightDatePicker.isActive = true
         
         clvDate.delegate = self
         clvDate.dataSource = self
@@ -145,6 +161,12 @@ class CalendarView : UIView{
                 self.clvDate.reloadData()
             }, completion: nil)
         }
+    }
+    
+    func reloadView(){
+        actionTranformDate?(self.getFromDate(),self.getToDate())
+        dateEnable.removeAll()
+        self.clvDate.reloadData()
     }
     
     func handleSwipe(isLeft: Bool){
@@ -191,6 +213,14 @@ class CalendarView : UIView{
 }
 
 extension CalendarView : DidChangeMonthDelegate{
+    func didClickShowDatePicker(monthIndex: Int, year: Int) {
+        datePicker.setupTimer(month: currentMonthIndex, year: currentYear)
+        UIView.animate(withDuration: 0.5) {
+            self.heightDatePicker.constant = 200
+            self.layoutIfNeeded()
+        }
+    }
+    
     func didChangeMonth(month: Int, year: Int,isLeft : Bool) {
         self.currentYear = year
         self.currentMonthIndex = month + 1
@@ -241,6 +271,7 @@ extension CalendarView : UICollectionViewDelegateFlowLayout{
         return 0
     }
 }
+
 extension CalendarView : UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -249,5 +280,26 @@ extension CalendarView : UICollectionViewDelegate{
             delegate?.clickDate(date: "\(currentYear)-\(currentMonthIndex)-\(date)")
         }
         
+    }
+}
+
+extension CalendarView : CustomDatePickerDelegate {
+    func cancelDatePicker() {
+        self.heightDatePicker.constant = 0
+        self.layoutIfNeeded()
+    }
+    
+    func doneDatePicker(month: Int, year: Int) {
+        currentMonthIndex = month
+        currentYear = year
+        if month == 1 && year % 4 == 0{
+            numOfDaysInMonth[month] = 29
+        } else {
+            numOfDaysInMonth[1] = 28
+        }
+        monthView.setHandleSwipe(month: currentMonthIndex, year: currentYear)
+        reloadView()
+        self.heightDatePicker.constant = 0
+        self.layoutIfNeeded()
     }
 }

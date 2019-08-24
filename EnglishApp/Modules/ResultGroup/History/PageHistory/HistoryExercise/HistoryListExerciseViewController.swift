@@ -64,6 +64,11 @@ extension HistoryListExerciseViewController : UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellHistoryListExercise.self, for: indexPath)
+        if type == .assignExercise || type == .createExercise {
+            cell.showWidthButton()
+        } else {
+            cell.hideWidthButton()
+        }
         if let dataCell = self.presenter?.testsResultResponse?.results[indexPath.row] {
             cell.setupDatacell(dataCell: dataCell)
         }
