@@ -29,6 +29,7 @@ protocol SignUpInteractorOutputProtocol: class {
     func successCaptcha(image: UIImage)
     func signUpSuccess(user: UserEntity?)
     func signUpError(error: APIError)
+    
 }
 
 protocol SignUpInteractorInputProtocol: class {
@@ -38,6 +39,7 @@ protocol SignUpInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getCaptcha()
     func signUp(param: SignUpParam)
+    func updateAvatar(image: UIImage)
 }
 
 //MARK: View -

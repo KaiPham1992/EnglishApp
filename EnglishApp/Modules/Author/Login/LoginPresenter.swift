@@ -35,6 +35,19 @@ class LoginPresenter: LoginPresenterProtocol {
 
 extension LoginPresenter: LoginInteractorOutputProtocol {
     func didLogin(user: UserEntity?) {
+        
+        // -- Update avatar for the first time log in
+        if user?.attachImg == nil, user?.socialImage != nil {
+            if user?.socialImage != nil {
+                // -- For social network account
+                guard let socialImageUrl = user?.socialImage else { return }
+                let url = URL(string: socialImageUrl)
+                let data = try? Data(contentsOf: url!)
+                guard let socialImage = UIImage(data: data!) else { return  }
+                interactor?.updateAvatar(image: socialImage)
+            }
+        }
+        
         view?.didLogin(user: user)
     }
     

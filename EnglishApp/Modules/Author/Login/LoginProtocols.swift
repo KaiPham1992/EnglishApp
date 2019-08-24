@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: Wireframe -
 protocol LoginWireframeProtocol: class {
@@ -38,6 +39,7 @@ protocol LoginInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func login(email: String, password: String)
     func loginSocial(param: LoginSocialParam)
+    func updateAvatar(image: UIImage)
 }
 
 //MARK: View -
