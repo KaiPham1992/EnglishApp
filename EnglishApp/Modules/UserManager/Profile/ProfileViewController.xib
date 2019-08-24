@@ -36,13 +36,26 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-Sd-isL">
-                    <rect key="frame" x="72.5" y="30" width="230" height="60"/>
+                    <rect key="frame" x="52.5" y="30" width="270" height="60"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-VP-Z6u">
-                            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-s7-e9a">
+                            <rect key="frame" x="-3" y="-3" width="70" height="70"/>
+                            <color key="backgroundColor" red="0.99607843137254903" green="0.75808596986329746" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="60" id="1aO-sB-e2x"/>
-                                <constraint firstAttribute="width" constant="60" id="WQN-7j-zXd"/>
+                                <constraint firstAttribute="width" constant="70" id="8Bq-C6-9pg"/>
+                                <constraint firstAttribute="height" constant="70" id="Sn4-kq-POR"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="35"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8v-VP-Z6u">
+                            <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="64" id="1aO-sB-e2x"/>
+                                <constraint firstAttribute="width" constant="64" id="WQN-7j-zXd"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -51,13 +64,13 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nguyễn Mai Uyên Phương" textAlignment="natural" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tf-uh-FaU">
-                            <rect key="frame" x="68" y="12" width="162" height="16"/>
+                            <rect key="frame" x="72" y="14" width="198" height="16"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vàng III" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXD-VN-vBp">
-                            <rect key="frame" x="68" y="35" width="53" height="20"/>
+                            <rect key="frame" x="72" y="37" width="53" height="20"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="20" id="dzw-Hf-r52"/>
                             </constraints>
@@ -66,7 +79,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.000 điểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xAv-Ym-HM7">
-                            <rect key="frame" x="141" y="35" width="76" height="20"/>
+                            <rect key="frame" x="145" y="37" width="76" height="20"/>
                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -76,12 +89,14 @@
                     <constraints>
                         <constraint firstItem="s8v-VP-Z6u" firstAttribute="leading" secondItem="vsC-Sd-isL" secondAttribute="leading" id="08o-43-gbD"/>
                         <constraint firstItem="tXD-VN-vBp" firstAttribute="leading" secondItem="7tf-uh-FaU" secondAttribute="leading" id="1hY-eK-T1n"/>
+                        <constraint firstItem="eNZ-s7-e9a" firstAttribute="centerX" secondItem="s8v-VP-Z6u" secondAttribute="centerX" id="28n-Z6-5m6"/>
                         <constraint firstItem="xAv-Ym-HM7" firstAttribute="leading" secondItem="tXD-VN-vBp" secondAttribute="trailing" constant="20" id="2cF-Xv-MqR"/>
                         <constraint firstItem="7tf-uh-FaU" firstAttribute="leading" secondItem="s8v-VP-Z6u" secondAttribute="trailing" constant="8" id="3od-cA-SzB"/>
-                        <constraint firstAttribute="width" constant="230" id="8Vw-5s-P7G"/>
+                        <constraint firstAttribute="width" constant="270" id="8Vw-5s-P7G"/>
                         <constraint firstItem="xAv-Ym-HM7" firstAttribute="centerY" secondItem="tXD-VN-vBp" secondAttribute="centerY" id="J1F-eR-YF4"/>
                         <constraint firstItem="tXD-VN-vBp" firstAttribute="centerY" secondItem="s8v-VP-Z6u" secondAttribute="centerY" constant="15" id="PyA-42-4fL"/>
                         <constraint firstItem="xAv-Ym-HM7" firstAttribute="height" secondItem="tXD-VN-vBp" secondAttribute="height" id="QBm-Sg-Kra"/>
+                        <constraint firstItem="eNZ-s7-e9a" firstAttribute="centerY" secondItem="s8v-VP-Z6u" secondAttribute="centerY" id="Vwu-KK-qmi"/>
                         <constraint firstItem="s8v-VP-Z6u" firstAttribute="top" secondItem="vsC-Sd-isL" secondAttribute="top" id="dBI-IT-rGG"/>
                         <constraint firstItem="7tf-uh-FaU" firstAttribute="centerY" secondItem="s8v-VP-Z6u" secondAttribute="centerY" constant="-10" id="okX-qE-gwv"/>
                         <constraint firstAttribute="trailing" secondItem="7tf-uh-FaU" secondAttribute="trailing" id="ubT-q9-H02"/>
