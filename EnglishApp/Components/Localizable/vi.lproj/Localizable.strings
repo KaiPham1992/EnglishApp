@@ -366,3 +366,8 @@
 "setting" = "Cài đặt";
 "start" = "Bắt đầu";
 "vocabularyDetail" = "Chi tiết từ vựng";
+
+
+// pop up choose photo
+"camera" = "Chụp ảnh";
+"library" = "Thư viện";

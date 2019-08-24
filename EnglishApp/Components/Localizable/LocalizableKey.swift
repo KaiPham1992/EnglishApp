@@ -363,4 +363,8 @@ struct LocalizableKey {
     static let start = "start"
     static let vocabularyDetail = "vocabularyDetail"
     
+    
+    // pop up choose photo
+    static let camera = "camera"
+    static let library = "library"
 }

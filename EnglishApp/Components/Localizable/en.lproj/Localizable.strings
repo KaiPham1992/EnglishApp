@@ -359,3 +359,7 @@
 "setting" = "Setting";
 "start" = "Start";
 "vocabularyDetail" = "Vocabulary Detail";
+
+// pop up choose photo
+"camera" = "Camera";
+"library" = "Library";

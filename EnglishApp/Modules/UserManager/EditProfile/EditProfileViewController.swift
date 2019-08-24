@@ -67,7 +67,7 @@ class EditProfileViewController: BaseViewController {
     }
     
     @IBAction func btnSavedTapped() {
-        
+        dismissKeyBoard()
         if vDisplayName.getText().isEmpty {
             hideError(isHidden: false, message: LocalizableKey.enterDisplayName.showLanguage)
             return 
