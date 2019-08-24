@@ -189,6 +189,7 @@
 "upgradeSuccess" = "Upgrade successfully.";
 "upgradeBeePack" = "Do you want to buy this honey package?";
 "exchangeTitle" = "Exchange Gift";
+"usedCode" = "Code is used.";
 
 //comment
 "comment" = "Comment";
@@ -302,7 +303,8 @@
 "theory" = "Theory";
 
 "messagePackage" = "Some package suit you";
-"find" = "Find exercises...";
+"find" = "Find";
+"findExcersise" = "Find exercises...";
 "PrivacyAndPolicy" = "Policies & Terms";
 
 

@@ -70,13 +70,6 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
     
     func checkWallet() -> Bool {
         if (UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0) < 10 {
-//            PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.notEnoughBee.showLanguage)", titleYes: "\(LocalizableKey.ADDBEE.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
-//                let storeViewController = StoreViewController()
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
-//                    storeViewController.moveToViewController(at: 1, animated: false)
-//                })
-//                self.push(controller: storeViewController)
-//            }
             PopUpHelper.shared.showNotEnoughtBee(completionNo: nil) {
                 let storeViewController = StoreViewController()
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
@@ -86,9 +79,7 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
             }
             return false
         } else if (UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0) < 10 {
-            PopUpHelper.shared.showError(message: "\(LocalizableKey.notEnoughDiamondText.showLanguage)") {
-                //do nothing
-            }
+            PopUpHelper.shared.showNotEnoughtDiamon(completionYes: nil)
             return false
         }
         return true
@@ -182,7 +173,11 @@ extension StudyPackViewController{
     
     func didSendRedeem(error: APIError) {
 //        didGetError()
-        lbError.text = LocalizableKey.notFoundCode.showLanguage
+        if error.message&.contains("EXCEED_USAGE_LIMIT") == true {
+            lbError.text = LocalizableKey.usedCode.showLanguage
+        } else {
+            lbError.text = LocalizableKey.notFoundCode.showLanguage
+        }
         heightOfError.constant = 17
     }
     

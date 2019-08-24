@@ -192,6 +192,7 @@
 "exchangeTitle" = "Đổi Quà";
 "notEnoughDiamondText" = "Bạn không đủ kim cương.";
 "notEnoughHoneyText" = "Bạn không đủ mật ong.";
+"usedCode" = "Mã code đã được sử dụng";
 
 //comment
 "comment" = "Bình luận";
@@ -308,7 +309,8 @@
 "theory" = "Lý thuyết";
 
 "messagePackage" = "Các gói nâng cấp phù hợp với bạn";
-"find" = "Tìm bài tập...";
+"find" = "Tìm kiếm";
+"findExcersise" = "Tìm bài tập...";
 "PrivacyAndPolicy" = "Chính sách & điều khoản";
 
 
