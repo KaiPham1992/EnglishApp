@@ -79,7 +79,6 @@
 "agree" = "ĐỒNG Ý";
 "cancel" = "HUỶ";
 "cancelLowercased" = "Huỷ";
->>>>>>> feature/feature_truc
 
 //QA
 
@@ -377,8 +376,4 @@
 // pop up choose photo
 "camera" = "Chụp ảnh";
 "library" = "Thư viện";
-<<<<<<< HEAD
-
-=======
 "notAllowGifPhoto" = "Không thể chọn ảnh GIF";
->>>>>>> feature/feature_truc
