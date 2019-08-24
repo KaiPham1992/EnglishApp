@@ -57,6 +57,8 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
         tbHistory.dataSource = self
         tbHistory.registerXibFile(HistoryBeeCell.self)
         tbHistory.separatorStyle = .none
+        tbHistory.rowHeight = UITableView.automaticDimension
+        tbHistory.estimatedRowHeight = 80
         
 //        tbHistory.estimatedRowHeight = 55
 //        tbHistory.rowHeight = UITableView.automaticDimension
@@ -78,9 +80,9 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 60
+//    }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row >= ((presenter?.listHistory.count ?? 0) - 5) && presenter?.canLoadMore == true {

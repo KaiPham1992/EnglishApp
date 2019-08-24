@@ -83,6 +83,7 @@ class HomeViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
+        setTitleNavigation(title: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,7 +130,7 @@ class HomeViewController: BaseViewController {
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
         nav.addSubview(header)
-        header.anchor(widthConstant: 260, heightConstant: 42)
+        header.anchor(widthConstant: 220, heightConstant: 42)
         header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
         //---

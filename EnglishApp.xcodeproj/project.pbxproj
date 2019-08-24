@@ -664,6 +664,7 @@
 		769A3BE222A24FF000CA55BD /* ViewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BE122A24FF000CA55BD /* ViewTime.swift */; };
 		769A3BE322A24FF000CA55BD /* ViewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BE122A24FF000CA55BD /* ViewTime.swift */; };
 		769A3BE422A24FF000CA55BD /* ViewTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 769A3BE122A24FF000CA55BD /* ViewTime.swift */; };
+		769CC73E2310EE840009DF5E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2D679422F9BF050055586B /* StoreKit.framework */; };
 		76BD143722ACC73500A48635 /* ReportQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD143622ACC73500A48635 /* ReportQuestionView.swift */; };
 		76BD143822ACC73500A48635 /* ReportQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD143622ACC73500A48635 /* ReportQuestionView.swift */; };
 		76BD143922ACC73500A48635 /* ReportQuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BD143622ACC73500A48635 /* ReportQuestionView.swift */; };
@@ -2509,6 +2510,7 @@
 		769A3BD522A0A69200CA55BD /* DateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DateCell.xib; sourceTree = "<group>"; };
 		769A3BDD22A24E8C00CA55BD /* ViewTime.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewTime.xib; sourceTree = "<group>"; };
 		769A3BE122A24FF000CA55BD /* ViewTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewTime.swift; sourceTree = "<group>"; };
+		769CC73F2310EE980009DF5E /* EnglishApp_Dev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EnglishApp_Dev.entitlements; sourceTree = "<group>"; };
 		76BD143622ACC73500A48635 /* ReportQuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportQuestionView.swift; sourceTree = "<group>"; };
 		76BD143A22ACC75500A48635 /* ReportQuestionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReportQuestionView.xib; sourceTree = "<group>"; };
 		76C8E2DA22C19AB80076E65B /* ResultExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultExercisePresenter.swift; sourceTree = "<group>"; };
@@ -3066,6 +3068,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */,
+				769CC73E2310EE840009DF5E /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4697,6 +4700,7 @@
 		DE3CC3312283DD980037DBE4 = {
 			isa = PBXGroup;
 			children = (
+				769CC73F2310EE980009DF5E /* EnglishApp_Dev.entitlements */,
 				DE3CC33C2283DD980037DBE4 /* EnglishApp */,
 				DE3CC33B2283DD980037DBE4 /* Products */,
 				59DD0F1ECE177AA318E5CD57 /* Pods */,
@@ -5547,6 +5551,14 @@
 				TargetAttributes = {
 					DE3CC3392283DD980037DBE4 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					DE952FAE2287DF4800E3F688 = {
 						SystemCapabilities = {
@@ -8228,6 +8240,7 @@
 			baseConfigurationReference = 3993F5B9B7FE46601249EB80 /* Pods-EnglishApp_Dev.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EnglishApp_Dev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q3TBY53XUC;
@@ -8251,6 +8264,7 @@
 			baseConfigurationReference = 25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EnglishApp_Dev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = Q3TBY53XUC;

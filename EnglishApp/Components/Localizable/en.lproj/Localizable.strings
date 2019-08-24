@@ -359,4 +359,11 @@
 "setting" = "Setting";
 "start" = "Start";
 "vocabularyDetail" = "Vocabulary Detail";
+<<<<<<< HEAD
 "deadline" = "Deadline";
+=======
+
+// pop up choose photo
+"camera" = "Camera";
+"library" = "Library";
+>>>>>>> feature/feature_truc

@@ -11,7 +11,7 @@ import StoreKit
 
 class PaymentHelper: NSObject {
     var validProducts: [SKProduct] = []
-    let productIds = ["product_test_03", "product_test_04"]
+    let productIds = ["product_test_01", "product_test_02"]
     var productsRequest: SKProductsRequest?
     
     static let shared = PaymentHelper()
@@ -26,6 +26,7 @@ class PaymentHelper: NSObject {
     
     func purcharseProduct(_ productId: String, completionPurchased: CompletionClosure?) { //2
         guard canMakePurchases(), validProducts.count > 0 else {
+            
             return
         }
 
