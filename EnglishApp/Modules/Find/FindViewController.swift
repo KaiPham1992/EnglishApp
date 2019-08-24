@@ -30,7 +30,7 @@ class FindViewController: BaseViewController {
         hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.find.showLanguage)
-        vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.find.showLanguage)
+        vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
         vAppSearch.actionSearch = searchExercise
         configureTable()
         lbNoResult.text = "\(LocalizableKey.noResultFound.showLanguage)"

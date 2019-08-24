@@ -37,4 +37,8 @@ class NotificationPopUp: BasePopUpView {
         vNotification.lbTitle.text = message
         super.showPopUp(height: 250)
     }
+    
+    func setButtonTitle(title: String) {
+        vNotification.btnOk.setTitle(title, for: .normal)
+    }
 }

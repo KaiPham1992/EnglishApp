@@ -116,12 +116,11 @@ class PopUpHelper {
         popUp.showPopUp(message: LocalizableKey.notEnoughBee.showLanguage, completionNo: completionNo, completionYes: completionYes)
     }
     
-    func showNotEnoughtDiamon(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
-        let popUp = YesNoPopUp()
-        popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
-        popUp.vYesNoContentView.btnYes.setTitle(LocalizableKey.addDiamon.showLanguage.uppercased(), for: .normal)
+    func showNotEnoughtDiamon(completionYes: CompletionClosure?) {
+        let popUp = NotificationPopUp()
+        popUp.setButtonTitle(title: LocalizableKey.cancel.showLanguage.uppercased())
         
-        popUp.showPopUp(message: LocalizableKey.notEnoughDiamon.showLanguage, completionNo: completionNo, completionYes: completionYes)
+        popUp.showPopUp(message: LocalizableKey.notEnoughDiamon.showLanguage, completion: completionYes)
     }
     
     func showLeaveHomeWork(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {

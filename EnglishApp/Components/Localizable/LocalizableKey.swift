@@ -189,6 +189,7 @@ struct LocalizableKey {
     static let upgrade = "upgrade"
     static let pleaseEnterCode = "pleaseEnterCode"
     static let notFoundCode = "notFoundCode"
+    static let usedCode = "usedCode"
     static let exchangeGiftTitle = "exchangeGiftTitle"
     static let exchangeGiftSucess = "exchangeGiftSucess"
     static let exchangeTitle = "exchangeTitle"
@@ -351,6 +352,7 @@ struct LocalizableKey {
     // find
     static let noResultFound = "noResultFound"
     static let feeFind = "feeFind"
+    static let findExcersise = "findExcersise"
     
     // save
     static let done = "done"
