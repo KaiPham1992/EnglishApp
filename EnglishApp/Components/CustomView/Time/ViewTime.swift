@@ -38,15 +38,44 @@ class ViewTime: BaseViewXib{
     weak var delegate: TimeDelegate?
     var time = 60
     var disableClick = false
+    private var currentBackgroundDate : Date = Date()
     
     @IBOutlet weak var lblTime: UILabel!
     override func setUpViews() {
         super.setUpViews()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(turnoffScreen), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(turnonScreen), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc func turnoffScreen() {
+        if isStart {
+            self.stopTimer()
+        }
+    }
+    
+    @objc func turnonScreen() {
+        if isStart {
+            let difference = Int(self.currentBackgroundDate.timeIntervalSince(Date()))
+            self.setupTimerMilisecond(milisecond: difference)
+        }
     }
     
     func getCurrentTime() -> Int{
         return self.time
+    }
+    
+    private func setupTimerMilisecond(milisecond: Int){
+        self.time = self.time + milisecond
+        if self.time <= 0 {
+            setupTimeStartNow(min: 0)
+            self.delegate?.endTime()
+        } else {
+            setupTimeStartNow(min: self.time)
+        }
     }
     
     func stopTimer() {

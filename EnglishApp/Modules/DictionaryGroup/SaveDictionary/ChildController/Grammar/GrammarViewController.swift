@@ -71,6 +71,7 @@ extension GrammarViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row =  self.presenter?.grammarsResponse?.likes.count ?? 0
         if row == 0 {
@@ -80,6 +81,7 @@ extension GrammarViewController : UITableViewDataSource{
         }
         return row
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
         if let data = self.presenter?.grammarsResponse?.likes[indexPath.row] {

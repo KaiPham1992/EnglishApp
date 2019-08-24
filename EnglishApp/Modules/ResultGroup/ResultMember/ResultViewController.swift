@@ -15,8 +15,8 @@ import SDWebImage
 class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
-        if type == .entranceExercise && isOut {
-            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
+        if type == .entranceExercise {
+            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut":self.isOut])
         }
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -84,10 +84,9 @@ class ResultViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        if type == .entranceExercise && isOut {
-            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self])
+        if type == .entranceExercise{
+             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut":self.isOut])
         }
-        
         if isHistory {
             super.btnBackTapped()
         } else {

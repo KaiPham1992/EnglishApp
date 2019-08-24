@@ -17,6 +17,8 @@ protocol ExerciseDelegate: class {
     func confirmOutTestEntrance()
 }
 
+var dateTestDaillyMisson : Date?
+
 enum TypeDoExercise : Int {
     case createExercise = 5
     case levelExercise = 7
@@ -119,6 +121,7 @@ class NameExerciseViewController: BaseViewController {
         default:
              self.presenter?.getViewExercise(id: self.idExercise)
         }
+        
     }
     
     override func setUpNavigation() {
@@ -185,6 +188,9 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     
     func reloadView() {
         DispatchQueue.global().async {
+            if self.typeExercise == .dailyMissonExercise {
+                dateTestDaillyMisson = Date()
+            }
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
 //            self.currentTime = 10

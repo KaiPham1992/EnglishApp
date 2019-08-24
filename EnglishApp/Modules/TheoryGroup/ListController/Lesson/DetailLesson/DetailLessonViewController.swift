@@ -70,6 +70,7 @@ class DetailLessonViewController: BaseViewController {
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
         } else {
             addButtonLikeToNavigation(image: UIImage(named:"Material_Icons_white_favorite")!, actionSelector: #selector(clickHeart))
+             setTitleNavigation(title: LocalizableKey.vocabularyDetail.showLanguage)
         }
         
     }
@@ -132,7 +133,6 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                     self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
                 }
             } else {
-                setTitleNavigation(title: self.presenter?.vocabulary?.word ?? "")
                 self.lbContent.attributedText = self.presenter?.vocabulary?.explain.html2Attributed
                 if (self.presenter?.vocabulary?.is_favorite ?? false) {
                     self.isLike = 1

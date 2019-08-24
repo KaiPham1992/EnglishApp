@@ -72,10 +72,12 @@ class HomeViewController: BaseViewController {
         
     }
     
-    @objc func testEntranceComplete(){
+    @objc func testEntranceComplete(notification: Notification){
         self.hideTestEntrance()
-        PopUpHelper.shared.showReward(message: LocalizableKey.doneInputTest.showLanguage) {
-            
+        if let isOut = notification.userInfo?["isOut"] as? Bool, !isOut {
+            PopUpHelper.shared.showReward(message: LocalizableKey.doneInputTest.showLanguage) {
+                
+            }
         }
     }
     
