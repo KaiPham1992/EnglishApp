@@ -33,8 +33,8 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         cvStudyPack.dataSource = self
         
         if let layout = cvStudyPack.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.minimumLineSpacing = 8
-            layout.minimumInteritemSpacing = 8
+            layout.minimumLineSpacing = 0
+            layout.minimumInteritemSpacing = 0
             layout.scrollDirection = .horizontal
         }
         
@@ -54,7 +54,7 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.cvStudyPack.frame.width / 2.5
+        let width = self.cvStudyPack.frame.width / 2.4
         return CGSize(width: width, height: cvStudyPack.frame.height)
     }
 

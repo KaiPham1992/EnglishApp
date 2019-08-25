@@ -85,7 +85,7 @@ class ResultExerciseViewController: BaseViewController {
     }
     
     @objc func deleteExercise(){
-        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.confirm_back_result.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage, complete: {
+        PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.confirm_back_result.showLanguage, titleYes: LocalizableKey.confirm.showLanguage, titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: {
             self.pop(animated: true)
         })
     }

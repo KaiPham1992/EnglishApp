@@ -44,7 +44,7 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
     }
     
     func upgradeBeePack(id: String) {
-        PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.upgradeBeePack.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
+        PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.upgradeBeePack.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
             self.presenter?.upgradeProduct(productID: id)
         }
     }

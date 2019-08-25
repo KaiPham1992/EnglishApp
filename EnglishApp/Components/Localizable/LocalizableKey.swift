@@ -81,7 +81,6 @@ struct LocalizableKey {
     static let popleaveHomeWork = "popleaveHomeWork"
     static let boxHoney = "boxHoney"
     static let titleHistoryNap = "titleHistoryNap"
-    static let cancelLowercased = "cancelLowercased"
     
     // QA
     

@@ -63,7 +63,7 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
         if checkWallet() == false {
             return
         }
-        PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.exchangeGiftTitle.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
+        PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.exchangeGiftTitle.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
             self.presenter?.exchangeGift(id: id)
         }
     }
@@ -142,7 +142,7 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 250
+            return 230
         } else {
             return indexPath.item == 0 ? 60: 150
         }
