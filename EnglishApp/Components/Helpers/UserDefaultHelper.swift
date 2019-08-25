@@ -61,11 +61,11 @@ class UserDefaultHelper {
     
     var deviceToken: String? {
         get {
-            let value = get(key: .fcmToken) as? String
+            let value = get(key: .deviceToken) as? String
             return value
         }
         set(newToken) {
-            save(value: newToken, key: .fcmToken)
+            save(value: newToken, key: .deviceToken)
         }
     }
     

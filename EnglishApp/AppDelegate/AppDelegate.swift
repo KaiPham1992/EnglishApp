@@ -17,6 +17,7 @@ import Crashlytics
 import netfox
 import UserNotifications
 import RealmSwift
+import FBSDKShareKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -32,6 +33,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.enable = true
         
         configureGoogle()
+        configurePushNotification(application: application)
+        
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         
         //---
@@ -42,12 +45,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realmConfig()
         AppRouter.shared.updateRootView()
         
+       
         //--
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, err) in
-            if !didAllow {
-                print("User has declined notifications")
-            }
-        }
+//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, err) in
+//            if !didAllow {
+//                print("User has declined notifications")
+//            }
+//        }
         return true
     }
     
@@ -127,6 +131,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
             print("=====================================")
         }
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        return ApplicationDelegate.shared.application(app, open: url, options: options)
     }
 }
 

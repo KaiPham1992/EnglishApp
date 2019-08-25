@@ -8,6 +8,7 @@
 
 
 import UIKit
+import FBSDKShareKit
 
 class ShareNativeHelper: NSObject {
     static let shared = ShareNativeHelper()
@@ -35,7 +36,32 @@ class ShareNativeHelper: NSObject {
     }
     
     func showShareLinkInstall() {
-        showShare(items: [])
+//        showShare(items: [])
+        showShareFacebook()
+    }
+    
+    func showShareFacebook() {
+        guard let controller = UIApplication.topViewController() else { return }
+        let content : ShareLinkContent = ShareLinkContent()
+        if let url = URL(string: linkShare) {
+            content.contentURL = url
+        }
+        let shareDialog = ShareDialog(fromViewController: controller, content: content, delegate: self)
+        shareDialog.mode = .native
+        shareDialog.show()
     }
 }
 
+extension ShareNativeHelper : SharingDelegate {
+    func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
+         PopUpHelper.shared.showError(message: "Share thành công.", completionYes: nil)
+    }
+    
+    func sharer(_ sharer: Sharing, didFailWithError error: Error) {
+        PopUpHelper.shared.showError(message: "Facook không khả thi.", completionYes: nil)
+    }
+    
+    func sharerDidCancel(_ sharer: Sharing) {
+        
+    }
+}

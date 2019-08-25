@@ -11,6 +11,7 @@ def main_pods
     pod 'GooglePlaces'
     pod 'FBSDKLoginKit'
     pod 'FBSDKCoreKit'
+    pod 'FBSDKShareKit'
     pod 'GoogleSignIn'
     pod 'DropDown'
     pod 'CryptoSwift'
