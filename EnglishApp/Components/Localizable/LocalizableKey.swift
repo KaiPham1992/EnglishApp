@@ -81,6 +81,7 @@ struct LocalizableKey {
     static let popleaveHomeWork = "popleaveHomeWork"
     static let boxHoney = "boxHoney"
     static let titleHistoryNap = "titleHistoryNap"
+    static let cancelLowercased = "cancelLowercased"
     
     // QA
     
@@ -189,6 +190,7 @@ struct LocalizableKey {
     static let upgrade = "upgrade"
     static let pleaseEnterCode = "pleaseEnterCode"
     static let notFoundCode = "notFoundCode"
+    static let usedCode = "usedCode"
     static let exchangeGiftTitle = "exchangeGiftTitle"
     static let exchangeGiftSucess = "exchangeGiftSucess"
     static let exchangeTitle = "exchangeTitle"
@@ -351,6 +353,7 @@ struct LocalizableKey {
     // find
     static let noResultFound = "noResultFound"
     static let feeFind = "feeFind"
+    static let findExcersise = "findExcersise"
     
     // save
     static let done = "done"
@@ -363,4 +366,9 @@ struct LocalizableKey {
     static let start = "start"
     static let vocabularyDetail = "vocabularyDetail"
     static let deadline = "deadline"
+    
+    // pop up choose photo
+    static let camera = "camera"
+    static let library = "library"
+    static let notAllowGifPhoto = "notAllowGifPhoto"
 }

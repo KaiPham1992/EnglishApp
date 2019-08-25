@@ -189,6 +189,7 @@
 "upgradeSuccess" = "Upgrade successfully.";
 "upgradeBeePack" = "Do you want to buy this honey package?";
 "exchangeTitle" = "Exchange Gift";
+"usedCode" = "Code is used.";
 
 //comment
 "comment" = "Comment";
@@ -248,7 +249,7 @@
 "cancel_upper" = "Cancle";
 "complete_upper" = "COMPLETE";
 "update" = "UPDATE";
-
+"cancelLowercased" = "Cancle";
 
 //month
 "January" = "January";
@@ -302,7 +303,8 @@
 "theory" = "Theory";
 
 "messagePackage" = "Some package suit you";
-"find" = "Find exercises...";
+"find" = "Find";
+"findExcersise" = "Find exercises...";
 "PrivacyAndPolicy" = "Policies & Terms";
 
 
@@ -360,3 +362,9 @@
 "start" = "Start";
 "vocabularyDetail" = "Vocabulary Detail";
 "deadline" = "Deadline";
+
+// pop up choose photo
+"camera" = "Camera";
+"library" = "Library";
+"notAllowGifPhoto" = "Not choose GIF photo";
+

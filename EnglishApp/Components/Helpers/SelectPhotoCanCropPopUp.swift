@@ -8,6 +8,7 @@
 
 
 import UIKit
+import Photos
 class SelectPhotoCanCropPopUp: NSObject {
     
     var controller: UIViewController?
@@ -22,7 +23,7 @@ class SelectPhotoCanCropPopUp: NSObject {
         
         guard let controller = controller else { return }
         let alert = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertController.Style.actionSheet)
-        let actionCamera = UIAlertAction(title: "Chụp ảnh", style: UIAlertAction.Style.default) { [weak self] _ in
+        let actionCamera = UIAlertAction(title: "\(LocalizableKey.camera.showLanguage)", style: UIAlertAction.Style.default) { [weak self] _ in
             guard let strongSelf = self else { return }
             if UIImagePickerController.isSourceTypeAvailable(.camera) {
                 strongSelf.presentImagePicker(sourceType: .camera)
@@ -31,12 +32,12 @@ class SelectPhotoCanCropPopUp: NSObject {
             }
         }
         
-        let actionPhoto = UIAlertAction(title: "Thư viện", style: UIAlertAction.Style.default) { [weak self] _ in
+        let actionPhoto = UIAlertAction(title: "\(LocalizableKey.library.showLanguage)", style: UIAlertAction.Style.default) { [weak self] _ in
             guard let strongSelf = self else { return }
             strongSelf.presentImagePicker(sourceType: .photoLibrary)
         }
         
-        let actionCancel = UIAlertAction(title: "Huỷ", style: UIAlertAction.Style.default) { _ in
+        let actionCancel = UIAlertAction(title: "\(LocalizableKey.cancelLowercased.showLanguage)", style: UIAlertAction.Style.default) { _ in
             
         }
         
@@ -65,14 +66,29 @@ class SelectPhotoCanCropPopUp: NSObject {
 }
 
 // MARK:
-extension SelectPhotoCanCropPopUp: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension SelectPhotoCanCropPopUp:
+UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        
         if let imageEdit = info[.editedImage] as? UIImage {
-            imagePickerUIKit.dismiss(animated: true, completion: nil)
-            //            delegate?.didReceivePhoto(image: imageEdit)
-            self.completionImage?(imageEdit)
+            
+            let assetPath = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
+            if assetPath.absoluteString?.hasSuffix("GIF") ??  false {
+                imagePickerUIKit.dismiss(animated: true, completion: nil)
+                PopUpHelper.shared.showNoAllowGifPhoto(completionYes: nil)
+            } else {
+                imagePickerUIKit.dismiss(animated: true, completion: nil)
+                //            delegate?.didReceivePhoto(image: imageEdit)
+                self.completionImage?(imageEdit)
+            }
         }
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        imagePickerUIKit.dismiss(animated: true, completion: nil)
     }
 }
 

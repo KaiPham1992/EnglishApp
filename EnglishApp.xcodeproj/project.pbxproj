@@ -181,6 +181,12 @@
 		2A8A29F723113A96000D4E35 /* MonthCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8A29F623113A96000D4E35 /* MonthCalendar.swift */; };
 		2A8A29F823113A96000D4E35 /* MonthCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8A29F623113A96000D4E35 /* MonthCalendar.swift */; };
 		2A8A29F923113A96000D4E35 /* MonthCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8A29F623113A96000D4E35 /* MonthCalendar.swift */; };
+		2A9191E923126D17008C1C86 /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9191E723126D17008C1C86 /* HomeNoResultCell.xib */; };
+		2A9191EA23126D17008C1C86 /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9191E723126D17008C1C86 /* HomeNoResultCell.xib */; };
+		2A9191EB23126D17008C1C86 /* HomeNoResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9191E723126D17008C1C86 /* HomeNoResultCell.xib */; };
+		2A9191EC23126D17008C1C86 /* HomeNoResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9191E823126D17008C1C86 /* HomeNoResultCell.swift */; };
+		2A9191ED23126D17008C1C86 /* HomeNoResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9191E823126D17008C1C86 /* HomeNoResultCell.swift */; };
+		2A9191EE23126D17008C1C86 /* HomeNoResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9191E823126D17008C1C86 /* HomeNoResultCell.swift */; };
 		2A9A81DD22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
 		2A9A81DE22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
 		2A9A81DF22EC4B6B00345C5F /* RealmDBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */; };
@@ -2343,6 +2349,8 @@
 		2A88F4D322FE66F800D59336 /* FightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FightViewController.xib; sourceTree = "<group>"; };
 		2A8A29F223111DF9000D4E35 /* CustomDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDatePicker.swift; sourceTree = "<group>"; };
 		2A8A29F623113A96000D4E35 /* MonthCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthCalendar.swift; sourceTree = "<group>"; };
+		2A9191E723126D17008C1C86 /* HomeNoResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNoResultCell.xib; sourceTree = "<group>"; };
+		2A9191E823126D17008C1C86 /* HomeNoResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNoResultCell.swift; sourceTree = "<group>"; };
 		2A9A81DC22EC4B6B00345C5F /* RealmDBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDBManager.swift; sourceTree = "<group>"; };
 		2A9A81E922EC5AA300345C5F /* WordEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordEntity.swift; sourceTree = "<group>"; };
 		2A9A81ED22EC5C6300345C5F /* WordExplainEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordExplainEntity.swift; sourceTree = "<group>"; };
@@ -3233,6 +3241,15 @@
 				2A8A29F623113A96000D4E35 /* MonthCalendar.swift */,
 			);
 			path = CustomDatePicker;
+			sourceTree = "<group>";
+		};
+		2A9191E623126CE2008C1C86 /* HomeNoResultCell */ = {
+			isa = PBXGroup;
+			children = (
+				2A9191E823126D17008C1C86 /* HomeNoResultCell.swift */,
+				2A9191E723126D17008C1C86 /* HomeNoResultCell.xib */,
+			);
+			path = HomeNoResultCell;
 			sourceTree = "<group>";
 		};
 		2A9A81DB22EC4B5800345C5F /* RealmDB */ = {
@@ -5431,6 +5448,7 @@
 		DEF1C24F22903529005AD1A3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				2A9191E623126CE2008C1C86 /* HomeNoResultCell */,
 				DEF1C26B22903F8C005AD1A3 /* HomeRecentlyCell */,
 				DEF1C26222903E19005AD1A3 /* HomeTitleCell */,
 				DEF1C2592290364F005AD1A3 /* HomeHeaderCell */,
@@ -5618,6 +5636,7 @@
 				2A6C5ED722EF468F004B23EF /* CellSingleLabel.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				2A9191E923126D17008C1C86 /* HomeNoResultCell.xib in Resources */,
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD18FF22A25AB10054861D /* BeePackCell.xib in Resources */,
 				DEF1C24C229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
@@ -5779,6 +5798,7 @@
 				2A6C5ED822EF468F004B23EF /* CellSingleLabel.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
+				2A9191EA23126D17008C1C86 /* HomeNoResultCell.xib in Resources */,
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD190022A25AB10054861D /* BeePackCell.xib in Resources */,
 				DEF1C24D229033D2005AD1A3 /* ButtonHomeView.xib in Resources */,
@@ -6023,6 +6043,7 @@
 				7643DEA222A4DD3600B7C323 /* CellExercise.xib in Resources */,
 				DE9530FB2287DF6400E3F688 /* GoogleService-Dev-Info.plist in Resources */,
 				2AED14DE22EE14BD0076C223 /* ExplainExerciseGroupViewController.xib in Resources */,
+				2A9191EB23126D17008C1C86 /* HomeNoResultCell.xib in Resources */,
 				76CF0C9022906D18003C4B4B /* ViewComment.xib in Resources */,
 				DECD193022A26B4A0054861D /* DetailPackCell.xib in Resources */,
 				76CE31BA2295AE6300E998FB /* CellChoiceExercise.xib in Resources */,
@@ -6322,6 +6343,7 @@
 				2A5E262122E0D119009D6203 /* AssignExerciseProtocols.swift in Sources */,
 				76C8E2F522C19AE00076E65B /* CellResultFillQuestion.swift in Sources */,
 				DE952F932287D2A700E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				2A9191EC23126D17008C1C86 /* HomeNoResultCell.swift in Sources */,
 				DE361DE62283E54C00FA3B0D /* BasePopUpView.swift in Sources */,
 				DE89D1E222A41639000638B0 /* RequireUpgradeCell.swift in Sources */,
 				766D131D228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
@@ -6936,6 +6958,7 @@
 				2A5E262222E0D119009D6203 /* AssignExerciseProtocols.swift in Sources */,
 				76C8E2F622C19AE00076E65B /* CellResultFillQuestion.swift in Sources */,
 				DE952FBD2287DF4800E3F688 /* KActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				2A9191ED23126D17008C1C86 /* HomeNoResultCell.swift in Sources */,
 				DE952FBE2287DF4800E3F688 /* BasePopUpView.swift in Sources */,
 				DE89D1E322A41639000638B0 /* RequireUpgradeCell.swift in Sources */,
 				766D131E228EE9E4005E47F0 /* LessonViewController.swift in Sources */,
@@ -7739,6 +7762,7 @@
 				DE9530912287DF6400E3F688 /* BaseResponse.swift in Sources */,
 				DE9530922287DF6400E3F688 /* LoginInteractor.swift in Sources */,
 				2AED147D22ED8E950076C223 /* VocabularyPresenter.swift in Sources */,
+				2A9191EE23126D17008C1C86 /* HomeNoResultCell.swift in Sources */,
 				DE9530932287DF6400E3F688 /* SignUpInteractor.swift in Sources */,
 				76CE31A52295AE3600E998FB /* ChoiceExerciseRouter.swift in Sources */,
 				76C92FAC22C49E2700E8ED69 /* ExerciseAPIService.swift in Sources */,

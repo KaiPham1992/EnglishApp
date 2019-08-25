@@ -77,7 +77,8 @@
 // logout
 "popUpLogout" = "Bạn có muốn đăng xuất?";
 "agree" = "ĐỒNG Ý";
-"cancel" = "Huỷ";
+"cancel" = "HUỶ";
+"cancelLowercased" = "Huỷ";
 
 //QA
 
@@ -192,6 +193,7 @@
 "exchangeTitle" = "Đổi Quà";
 "notEnoughDiamondText" = "Bạn không đủ kim cương.";
 "notEnoughHoneyText" = "Bạn không đủ mật ong.";
+"usedCode" = "Mã code đã được sử dụng";
 
 //comment
 "comment" = "Bình luận";
@@ -308,7 +310,8 @@
 "theory" = "Lý thuyết";
 
 "messagePackage" = "Các gói nâng cấp phù hợp với bạn";
-"find" = "Tìm bài tập...";
+"find" = "Tìm kiếm";
+"findExcersise" = "Tìm bài tập...";
 "PrivacyAndPolicy" = "Chính sách & điều khoản";
 
 
@@ -366,4 +369,11 @@
 "setting" = "Cài đặt";
 "start" = "Bắt đầu";
 "vocabularyDetail" = "Chi tiết từ vựng";
+
 "deadline" = "Hạn hoàn thành";
+
+
+// pop up choose photo
+"camera" = "Chụp ảnh";
+"library" = "Thư viện";
+"notAllowGifPhoto" = "Không thể chọn ảnh GIF";

@@ -83,6 +83,7 @@ class HomeViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
+        setTitleNavigation(title: "")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -129,7 +130,7 @@ class HomeViewController: BaseViewController {
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
         nav.addSubview(header)
-        header.anchor(widthConstant: 260, heightConstant: 42)
+        header.anchor(widthConstant: 220, heightConstant: 42)
         header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
         //---
@@ -165,6 +166,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tbHome.registerXibFile(HomeHeaderCell.self)
         tbHome.registerXibFile(HomeRecentlyCell.self)
         tbHome.registerXibFile(HomeTitleCell.self)
+        tbHome.registerXibFile(HomeNoResultCell.self)
         tbHome.separatorStyle = .none
         
         tbHome.estimatedRowHeight = 120
@@ -201,9 +203,15 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 
                 return cell
             } else {
-                let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
-                cell.actity = self.listActivities[indexPath.item - 1]
-                return cell
+                if self.listActivities.count == 0 {
+                    // return cell no results
+                    let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
+                    return cell
+                } else {
+                    let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
+                    cell.actity = self.listActivities[indexPath.item - 1]
+                    return cell
+                }
             }
         }
     }
@@ -213,7 +221,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             return 2//self.listTopThree.count
         } else {
             if self.listActivities.count == 0 {
-                return 0
+                return 2
             } else {
                 return self.listActivities.count + 1
             }
