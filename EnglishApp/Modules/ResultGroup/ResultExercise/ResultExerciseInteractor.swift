@@ -22,17 +22,17 @@ class ResultExerciseInteractor: ResultExerciseInteractorInputProtocol {
     }
     
     func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
-        if word != "" {
-            Provider.shared.exerciseAPIService.searchVocabulary(word: word, success: { (response) in
-                if let _response = response {
-                    self.presenter?.searchVocabularySuccessed(wordEntity: _response, position: position,index: index)
-                } else {
-                    
-                }
-            }) { (error) in
-                
-            }
-        }
+//        if word != "" {
+//            Provider.shared.exerciseAPIService.searchVocabulary(word: word, id_dictionary: <#String#>, success: { (response) in
+//                if let _response = response {
+//                    self.presenter?.searchVocabularySuccessed(wordEntity: _response, position: position,index: index)
+//                } else {
+//                    
+//                }
+//            }) { (error) in
+//                
+//            }
+//        }
     }
 
     weak var presenter: ResultExerciseInteractorOutputProtocol?

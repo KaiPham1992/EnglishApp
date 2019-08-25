@@ -303,7 +303,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
     }
     
     func showDetailVocubulary(word: WordExplainEntity) {
-        self.presenter?.gotoDetailVocabulary(word: word)
+        self.presenter?.gotoDetailVocabulary(idWord: word.id)
     }
 
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
@@ -315,7 +315,8 @@ extension NameExerciseViewController : CellExerciseDelegate{
     }
     
     func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
-        self.presenter?.searchVocabulary(word: word, position: position, index: index)
+        let id_dictionary = self.presenter?.exerciseEntity?.default_dict_id ?? "0"
+        self.presenter?.searchVocabulary(word: word, id_dictionary: id_dictionary, position: position, index: index)
     }
         
     func clickAudio(indexPath: IndexPath) {

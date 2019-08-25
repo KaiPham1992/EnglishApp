@@ -28,7 +28,7 @@ enum ExerciseEnpoint {
     case suggestQuestion(id: String,isDiamond: Bool)
     case explainExercise(id: Int)
     case reportQuestion(question_details_id:Int,content: String)
-    case searchVocabulary(word: String)
+    case searchVocabulary(word: String,id_dictionary: String)
 }
 
 extension ExerciseEnpoint: EndPointType {
@@ -121,8 +121,8 @@ extension ExerciseEnpoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
-        case .searchVocabulary(let word):
-            return ["dictionary_id": 1,
+        case .searchVocabulary(let word, let id_dictionary):
+            return ["dictionary_id": Int(id_dictionary) ?? 0 ,
                     "word": word]
         case .reportQuestion(let question_details_id,let content):
             return ["question_details_id":question_details_id,"content":content]

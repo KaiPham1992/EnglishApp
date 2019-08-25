@@ -188,7 +188,7 @@ extension ResultExerciseViewController : CellExerciseDelegate {
     }
     
     func showDetailVocubulary(word: WordExplainEntity) {
-        self.presenter?.gotoDetailVocabulary(word: word)
+        self.presenter?.gotoDetailVocabulary(idWord: word.id)
     }
     
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
@@ -196,7 +196,7 @@ extension ResultExerciseViewController : CellExerciseDelegate {
     }
     
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
-        self.presenter?.searchVocabulary(word: word, position: position, index: index)
+//        self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }
     
     func clickAudio(indexPath: IndexPath) {

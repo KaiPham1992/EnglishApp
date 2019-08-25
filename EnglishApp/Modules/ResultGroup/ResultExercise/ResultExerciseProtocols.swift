@@ -13,7 +13,7 @@ import UIKit
 
 //MARK: Wireframe -
 protocol ResultExerciseWireframeProtocol: class {
-    func gotoDetailVocabulary(word: WordExplainEntity)
+    func gotoDetailVocabulary(idWord: Int)
 }
 //MARK: Presenter -
 protocol ResultExercisePresenterProtocol: class {
@@ -23,7 +23,7 @@ protocol ResultExercisePresenterProtocol: class {
     func getAnswer(indexPath: IndexPath) -> QuestionResultEntity
     func reportQuestion(questionDetailId: Int, content: String)
     func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
-    func gotoDetailVocabulary(word: WordExplainEntity)
+    func gotoDetailVocabulary(idWord: Int)
 }
 
 //MARK: Interactor -

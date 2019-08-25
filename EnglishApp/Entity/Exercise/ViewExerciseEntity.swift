@@ -16,12 +16,16 @@ class ViewExerciseEntity: Mappable {
     var name : String?
     var total_times : Int?
     var total_questions : String?
+    var default_dict_id: String?
+    var type_test : String?
     var questions : [QuestionEntity]?
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
+        self.default_dict_id <- map["default_dict_id"]
+        self.type_test <- map["type_test"]
         self._id <- map["_id"]
         self.name <- map["name"]
         self.total_times <- map["total_times"]

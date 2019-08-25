@@ -32,8 +32,8 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.interactor?.getDailyMisson()
     }
     
-    func gotoDetailVocabulary(word: WordExplainEntity) {
-        self.router.gotoDetailVocabulary(word: word)
+    func gotoDetailVocabulary(idWord: Int) {
+        self.router.gotoDetailVocabulary(idWord: idWord)
     }
     
     func submitExercise(param: SubmitExerciseParam,isOut: Bool) {
@@ -110,8 +110,8 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.view?.suggestQuestionError()
     }
     
-    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
-        self.interactor?.searchVocabulary(word: word, position: position,index: index)
+    func searchVocabulary(word: String, id_dictionary: String, position: CGPoint,index: IndexPath) {
+        self.interactor?.searchVocabulary(word: word, id_dictionary: id_dictionary, position: position,index: index)
     }
     
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {

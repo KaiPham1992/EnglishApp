@@ -75,8 +75,8 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
     }
     
     
-    func gotoDetailVocabulary(word: WordExplainEntity){
-        let vc = DetailLessonRouter.createModule(word: word)
+    func gotoDetailVocabulary(idWord: Int){
+        let vc = DetailLessonRouter.createModule(idWord: idWord)
         self.viewController?.push(controller: vc,animated: true)
     }
     

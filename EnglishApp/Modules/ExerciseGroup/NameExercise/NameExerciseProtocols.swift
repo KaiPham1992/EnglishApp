@@ -13,7 +13,7 @@ import UIKit
 
 //MARK: Wireframe -
 protocol NameExerciseWireframeProtocol: class {
-    func gotoDetailVocabulary(word: WordExplainEntity)
+    func gotoDetailVocabulary(idWord: Int)
     func gotoResult(result: TestResultProfileEntity,type: TypeDoExercise, isOut: Bool)
 }
 //MARK: Presenter -
@@ -24,7 +24,7 @@ protocol NameExercisePresenterProtocol: class {
     var exerciseEntity: ViewExerciseEntity? {get set}
     var error: APIError? {get set}
     
-    func gotoDetailVocabulary(word: WordExplainEntity)
+    func gotoDetailVocabulary(idWord: Int)
     func getViewExercise(id: String)
     func getViewEntranceTest()
     func getTime(index: Int) -> Int?
@@ -33,7 +33,7 @@ protocol NameExercisePresenterProtocol: class {
     func getDailyMisson()
     func exitExercise(id : Int)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool)
-    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
+    func searchVocabulary(word: String, id_dictionary: String, position: CGPoint, index: IndexPath)
     
 }
 
@@ -59,7 +59,7 @@ protocol NameExerciseInteractorInputProtocol: class {
     func getDailyMisson()
     func exitExercise(id : Int)
     func suggestQuestion(id: String,isDiamond: Bool)
-    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
+    func searchVocabulary(word: String, id_dictionary: String, position: CGPoint, index: IndexPath)
 
     /* Presenter -> Interactor */
 }

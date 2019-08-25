@@ -94,9 +94,9 @@ class NameExerciseInteractor: NameExerciseInteractorInputProtocol {
         }
     }
     
-    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
+    func searchVocabulary(word: String, id_dictionary: String, position: CGPoint,index: IndexPath) {
         if word != "" {
-            Provider.shared.exerciseAPIService.searchVocabulary(word: word, success: { (response) in
+            Provider.shared.exerciseAPIService.searchVocabulary(word: word, id_dictionary: id_dictionary, success: { (response) in
                 if let _response = response {
                     self.presenter?.searchVocabularySuccessed(wordEntity: _response, position: position,index: index)
                 } else {

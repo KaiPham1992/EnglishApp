@@ -26,12 +26,12 @@ protocol ExerciseAPIServiceProtocol {
     func suggestQuestion(id: String,isDiamond: Bool,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     func explainExercise(id: Int,success: @escaping SuccessHandler<ExplainQuestionResponse>.object, failure: @escaping RequestFailure)
     func reportQuestion(question_details_id: Int,content: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
-    func searchVocabulary(word: String,success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure)
+    func searchVocabulary(word: String, id_dictionary: String, success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure)
 }
 
 class ExerciseAPIService: ExerciseAPIServiceProtocol {
-    func searchVocabulary(word: String,success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure){
-        let endpoint = ExerciseEnpoint.searchVocabulary(word: word)
+    func searchVocabulary(word: String, id_dictionary: String, success: @escaping SuccessHandler<WordExplainEntity>.object, failure: @escaping RequestFailure){
+        let endpoint = ExerciseEnpoint.searchVocabulary(word: word, id_dictionary: id_dictionary)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     func reportQuestion(question_details_id: Int,content: String,success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){

@@ -47,7 +47,7 @@ class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseIn
         self.view?.searchVocabularySuccessed(wordEntity: wordEntity, position: position,index:index)
     }
     
-    func gotoDetailVocabulary(word: WordExplainEntity) {
-        self.router.gotoDetailVocabulary(word: word)
+    func gotoDetailVocabulary(idWord: Int) {
+        self.router.gotoDetailVocabulary(idWord: idWord)
     }
 }

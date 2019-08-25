@@ -305,7 +305,7 @@ extension FightViewController : CellExerciseDelegate{
     }
     
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
-        self.presenter?.searchVocabulary(word: word, position: position, index: index)
+//        self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }
     
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
