@@ -37,7 +37,7 @@ class SelectPhotoCanCropPopUp: NSObject {
             strongSelf.presentImagePicker(sourceType: .photoLibrary)
         }
         
-        let actionCancel = UIAlertAction(title: "\(LocalizableKey.cancelLowercased.showLanguage)", style: UIAlertAction.Style.default) { _ in
+        let actionCancel = UIAlertAction(title: "\(LocalizableKey.cancel.showLanguage)", style: UIAlertAction.Style.default) { _ in
             
         }
         

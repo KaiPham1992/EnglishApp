@@ -90,7 +90,7 @@ class QAViewController: BaseViewController {
                 heightError.constant = 18
                 lbError.text = LocalizableKey.pleaseEnterQA.showLanguage
             } else {
-                PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.deductFiveHoney.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage)") {
+                PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.deductFiveHoney.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
                     self.presenter?.sendQA(qa: self.tfQuestion.text&)
                     self.tfQuestion.text = ""
                 }

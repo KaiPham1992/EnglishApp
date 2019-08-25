@@ -76,9 +76,8 @@
 
 // logout
 "popUpLogout" = "Bạn có muốn đăng xuất?";
-"agree" = "ĐỒNG Ý";
-"cancel" = "HUỶ";
-"cancelLowercased" = "Huỷ";
+"agree" = "Đồng ý";
+"cancel" = "Huỷ";
 
 //QA
 
