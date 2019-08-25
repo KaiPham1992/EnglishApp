@@ -35,17 +35,18 @@ class ShareNativeHelper: NSObject {
         controller.present(controller: activityController)
     }
     
-    func showShareLinkInstall() {
+    func showShareLinkInstall(quote: String = "") {
 //        showShare(items: [])
-        showShareFacebook()
+        showShareFacebook(quote: quote)
     }
     
-    func showShareFacebook() {
+    func showShareFacebook(quote: String = "") {
         guard let controller = UIApplication.topViewController() else { return }
         let content : ShareLinkContent = ShareLinkContent()
         if let url = URL(string: linkShare) {
             content.contentURL = url
         }
+        content.quote = quote
         let shareDialog = ShareDialog(fromViewController: controller, content: content, delegate: self)
         shareDialog.mode = .native
         shareDialog.show()
