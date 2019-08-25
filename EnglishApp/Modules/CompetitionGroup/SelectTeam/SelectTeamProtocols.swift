@@ -18,7 +18,7 @@ protocol SelectTeamWireframeProtocol: class {
 protocol SelectTeamPresenterProtocol: class {
 
     var interactor: SelectTeamInteractorInputProtocol? { get set }
-    func getListFightTestTeam(competitionId: Int)
+    func getListFightTestTeam(competitionId: Int, offset: Int)
     func createTeam(id: Int,name: String)
     func joinTeam(id: String)
     

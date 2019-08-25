@@ -24,7 +24,7 @@ class SelectTeamCell: BaseTableCell {
     func displayData(maxMember: Int, team: TeamEntity, isCannotJoin: Bool){
         lbName.text = team.name
         lbCountMember.text = "\(team.countMember*)/\(maxMember*)"
-        imgTeam.sd_setImage(with: team.urlImage, placeholderImage: AppImage.avatarDefault)
+        imgTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + team.socialImgSrc&) , placeholderImage: AppImage.avatarDefault)
         if isCannotJoin {
             btnJoined.isHidden = true
             heightBtnJoin.constant = 0

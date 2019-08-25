@@ -11,7 +11,7 @@ import Alamofire
 
 enum CompetitionEndPoint{
     case getListFight(offset: Int)
-    case getListFightTestTeam(competitionId: Int)
+    case getListFightTestTeam(competitionId: Int, offset: Int)
     case getListResultFight(offset: Int)
     case createTeamFight(id: Int,name: String)
     case getDetailTeam(id: String)
@@ -78,8 +78,8 @@ extension CompetitionEndPoint: EndPointType{
             return ["offset": offset,"limit":limit]
         case .getListFight(let offset):
             return ["offset": offset,"limit":limit]
-        case .getListFightTestTeam(let competitionId):
-            return ["competition_id": competitionId]
+        case .getListFightTestTeam(let competitionId, let offset):
+            return ["competition_id": competitionId, "offset": offset, "limit": limit]
         }
     }
     

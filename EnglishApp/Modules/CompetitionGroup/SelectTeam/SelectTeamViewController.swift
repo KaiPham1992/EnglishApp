@@ -22,6 +22,8 @@ class SelectTeamViewController: BaseViewController {
     var maxMember = 0
     var competitionId: Int?
     var isCannotJoin = false
+    var offset = 0
+    var isLoadmore = true
 
     var listTeam = [TeamEntity]() {
         didSet {
@@ -38,7 +40,7 @@ class SelectTeamViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        presenter?.getListFightTestTeam(competitionId: competitionId*)
+        presenter?.getListFightTestTeam(competitionId: competitionId*, offset: self.offset)
         hideTabbar()
         if isCannotJoin {
             btnCreateTeam.isHidden = true
@@ -109,7 +111,9 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
         if let id = listTeam[sender.tag].id {
             let vc = DetailTeamRouter.createModule(id: id)
             vc.actionLeaveTeam = { [weak self] in
-                self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0)
+                self?.offset = 0
+                self?.isLoadmore = true
+                self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
             }
             self.push(controller: vc)
         }
@@ -131,7 +135,19 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let id = listTeam[indexPath.row].id, let isTeamJoined = listTeam[indexPath.row].isTeamJoined {
             let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined)
+            vc.actionLeaveTeam = { [weak self] in
+                self?.offset = 0
+                self?.isLoadmore = true
+                self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
+            }
             self.push(controller: vc)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row == listTeam.count - 1 && isLoadmore{
+            self.offset += limit
+            self.presenter?.getListFightTestTeam(competitionId: self.competitionId ?? 0, offset: self.offset)
         }
     }
 }
@@ -146,7 +162,9 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     func joinTeamSuccessed(respone: DetailTeamEntity) {
         let vc = DetailTeamRouter.createModule(teamDetail: respone)
         vc.actionBackView = { [weak self] in
-            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0)
+            self?.offset = 0
+            self?.isLoadmore = true
+            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
         }
         self.push(controller: vc)
     }
@@ -162,7 +180,18 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
             showNoData()
             return
         }
-        self.listTeam = collectionTeam.teams
+        if collectionTeam.teams.count < limit {
+            isLoadmore = false
+        } else {
+            isLoadmore = true
+        }
+        if self.offset == 0 {
+//            self.listTeam.removeAll()
+            self.listTeam = collectionTeam.teams
+        } else {
+            self.listTeam += collectionTeam.teams
+        }
+        
         self.maxMember = _maxMember
         tbTeam.reloadData()
     }

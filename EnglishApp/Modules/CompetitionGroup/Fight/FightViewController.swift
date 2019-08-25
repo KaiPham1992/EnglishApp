@@ -17,6 +17,7 @@ class FightViewController: BaseViewController {
     
     var presenter: FightPresenterProtocol?
 
+    @IBOutlet weak var viewRank: UIView!
     @IBOutlet weak var imgMyTeam: UIImageView!
     @IBOutlet weak var lblPointTeam: UILabel!
     @IBOutlet weak var lblRankTeam: UILabel!
@@ -150,8 +151,8 @@ extension FightViewController :FightViewProtocol{
                         self.lblIndexQuestion.text = "\(self.currentIndex)/\(self.numberQuestion)"
                         self.imgMyTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + (teamInfor?.img_src ?? "")), placeholderImage: #imageLiteral(resourceName: "ic_avatar_default") , completed: nil)
                         self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
-                        if self.heightViewRank.constant == 0 {
-                            self.heightViewRank.constant = 80
+                        if self.viewRank.isHidden  {
+                            self.viewRank.isHidden = false
                         }
                         self.clvRankTeam.reloadData()
                     }

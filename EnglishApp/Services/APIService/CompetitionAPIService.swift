@@ -10,7 +10,7 @@ import Foundation
 
 protocol CompetitionAPIServiceProtocol {
     func getListFight(offset: Int,success: @escaping SuccessHandler<CollectionCompetitionEntity>.object,failure: @escaping RequestFailure)
-    func getListFightTestTeam(competitionId: Int, success: @escaping SuccessHandler<CollectionTeamEntity>.object,failure: @escaping RequestFailure)
+    func getListFightTestTeam(competitionId: Int, offset: Int, success: @escaping SuccessHandler<CollectionTeamEntity>.object,failure: @escaping RequestFailure)
     func getListResultFight(offset: Int,success: @escaping SuccessHandler<CompetitionProfileEntity>.object,failure: @escaping RequestFailure)
     func createTeamFight(idCompetition: Int,name: String,success: @escaping SuccessHandler<TeamEntity>.object,failure: @escaping RequestFailure)
     func getDetailTeam(id: String,success: @escaping SuccessHandler<DetailTeamEntity>.object,failure: @escaping RequestFailure)
@@ -66,8 +66,8 @@ class CompetitionAPIService: CompetitionAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func getListFightTestTeam(competitionId: Int, success: @escaping SuccessHandler<CollectionTeamEntity>.object, failure: @escaping RequestFailure) {
-        let endpoint = CompetitionEndPoint.getListFightTestTeam(competitionId: competitionId)
+    func getListFightTestTeam(competitionId: Int, offset: Int, success: @escaping SuccessHandler<CollectionTeamEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = CompetitionEndPoint.getListFightTestTeam(competitionId: competitionId, offset: offset)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     private let network: APINetworkProtocol

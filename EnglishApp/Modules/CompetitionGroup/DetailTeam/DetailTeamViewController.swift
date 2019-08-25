@@ -35,9 +35,9 @@ class DetailTeamViewController: BaseViewController {
     override func setTitleUI() {
         super.setTitleUI()
         addBackToNavigation()
-        btnStart.setTitle("\(LocalizableKey.startAfter.showLanguage.uppercased())", for: .normal)
-        btnExplain.setTitle(LocalizableKey.explainConpetition.showLanguage.uppercased(), for: .normal)
-        btnLeave.setTitle(LocalizableKey.leaveTeam.showLanguage.uppercased(), for: .normal)
+        btnStart.setAttributedTitle(NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
+        btnExplain.setAttributedTitle(NSAttributedString(string: LocalizableKey.explainConpetition.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
+        btnLeave.setAttributedTitle(NSAttributedString(string: LocalizableKey.leaveTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
         if isTeamJoined == 1 {
             btnLeave.isHidden = false
             btnStart.isHidden = false
