@@ -75,7 +75,7 @@ class ProductEntity: BaseEntity {
 //            if let _money = formatter.string(from: Int(moneyString)! as NSNumber) {
 //                return _money
 //            }
-            return newMoney.description
+            return newMoney.description.replacingOccurrences(of: ".", with: ",")
 //            return moneyString.description
         }
         return ""

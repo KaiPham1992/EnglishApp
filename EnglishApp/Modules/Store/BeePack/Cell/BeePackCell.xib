@@ -36,8 +36,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval_1" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-NI-FVw">
-                                <rect key="frame" x="120" y="0.0" width="160" height="103.5"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Oval_1" translatesAutoresizingMaskIntoConstraints="NO" id="Y4b-NI-FVw">
+                                <rect key="frame" x="115.5" y="0.0" width="164.5" height="103.5"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -48,7 +48,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KgI-E3-vvL">
-                                <rect key="frame" x="16" y="0.0" width="107" height="103.5"/>
+                                <rect key="frame" x="8" y="0.0" width="107" height="103.5"/>
                                 <string key="text">10.000 VND
 1 hũ mật ong</string>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
@@ -56,9 +56,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="0_99" translatesAutoresizingMaskIntoConstraints="NO" id="TLx-eF-hKs">
-                                <rect key="frame" x="128" y="16" width="136" height="71.5"/>
+                                <rect key="frame" x="134" y="16" width="130" height="71.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="136" id="lQ1-Rf-AV3"/>
+                                    <constraint firstAttribute="width" constant="130" id="lQ1-Rf-AV3"/>
                                 </constraints>
                             </imageView>
                         </subviews>
@@ -70,11 +70,11 @@
                             <constraint firstItem="Y4b-NI-FVw" firstAttribute="top" secondItem="uOT-GY-sUJ" secondAttribute="top" id="KZw-qG-sqe"/>
                             <constraint firstItem="Abe-fM-N7P" firstAttribute="top" secondItem="uOT-GY-sUJ" secondAttribute="top" id="PYp-rk-KpT"/>
                             <constraint firstAttribute="bottom" secondItem="KgI-E3-vvL" secondAttribute="bottom" id="RmR-cs-B9F"/>
-                            <constraint firstItem="Y4b-NI-FVw" firstAttribute="width" secondItem="Abe-fM-N7P" secondAttribute="width" multiplier="4/7" id="SmE-DM-gvn"/>
+                            <constraint firstItem="Y4b-NI-FVw" firstAttribute="width" secondItem="Abe-fM-N7P" secondAttribute="width" multiplier="5/8.5" id="SmE-DM-gvn"/>
                             <constraint firstItem="KgI-E3-vvL" firstAttribute="top" secondItem="uOT-GY-sUJ" secondAttribute="top" id="Sum-2Y-Hyw"/>
                             <constraint firstAttribute="bottom" secondItem="TLx-eF-hKs" secondAttribute="bottom" constant="16" id="Ukf-PI-kCu"/>
                             <constraint firstAttribute="bottom" secondItem="Y4b-NI-FVw" secondAttribute="bottom" id="VnI-16-N3C"/>
-                            <constraint firstItem="KgI-E3-vvL" firstAttribute="leading" secondItem="uOT-GY-sUJ" secondAttribute="leading" constant="16" id="YNg-jr-lh9"/>
+                            <constraint firstItem="KgI-E3-vvL" firstAttribute="leading" secondItem="uOT-GY-sUJ" secondAttribute="leading" constant="8" id="YNg-jr-lh9"/>
                             <constraint firstItem="TLx-eF-hKs" firstAttribute="top" secondItem="uOT-GY-sUJ" secondAttribute="top" constant="16" id="ase-uX-rdQ"/>
                             <constraint firstAttribute="trailing" secondItem="Abe-fM-N7P" secondAttribute="trailing" id="emk-fk-Ewe"/>
                             <constraint firstItem="Abe-fM-N7P" firstAttribute="leading" secondItem="uOT-GY-sUJ" secondAttribute="leading" id="g5y-2b-0Qv"/>
