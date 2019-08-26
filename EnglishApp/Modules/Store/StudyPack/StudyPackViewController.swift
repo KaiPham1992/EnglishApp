@@ -11,7 +11,7 @@
 import UIKit
 import XLPagerTabStrip
 
-class StudyPackViewController: UIViewController, StudyPackViewProtocol {    
+class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
 
 	var presenter: StudyPackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
@@ -51,6 +51,7 @@ class StudyPackViewController: UIViewController, StudyPackViewProtocol {
     }
     
     @IBAction func btnSendTapped(){
+        dismissKeyBoard()
         if let code = tfCode.text, code != "" {
             presenter?.sendRedeem(code: code)
         } else {

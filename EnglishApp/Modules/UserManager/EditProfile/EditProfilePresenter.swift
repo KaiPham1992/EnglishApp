@@ -30,6 +30,10 @@ class EditProfilePresenter: EditProfilePresenterProtocol, EditProfileInteractorO
         interactor?.updateAvatar(image: image)
     }
     
+    func didUpdateAvatar() {
+        view?.didUpdateAvatar()
+    }
+    
     func didSuccessUpdateProfile(user: UserEntity?) {
         view?.didSuccessUpdateProfile(user: user)
     }

@@ -17,6 +17,7 @@ class BXHViewController: BaseViewController {
     @IBOutlet weak var lbRank: UILabel!
     @IBOutlet var btnOption: [UIButton]!
     @IBOutlet weak var viewOption: UIView!
+    @IBOutlet weak var vRank: UIView!
     
     var refresh = UIRefreshControl()
     
@@ -58,8 +59,15 @@ class BXHViewController: BaseViewController {
         configureTable()
         configureViewOption()
         setUpLabelRank()
+        displayData(isHidden: true)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideMenu))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func displayData(isHidden: Bool) {
+        tbBXH.isHidden = isHidden
+        vUser.isHidden = isHidden
+        vRank.isHidden = isHidden
     }
     
     func setUpLabelRank() {
@@ -254,7 +262,7 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
 }
 extension BXHViewController: BXHViewProtocol{
     func didGetList(listLeaderBoard: LeaderBoardEntity) {
-        tbBXH.isHidden = false
+        displayData(isHidden: false)
         hideNoData()
         self.listLeaderBoard = listLeaderBoard
         

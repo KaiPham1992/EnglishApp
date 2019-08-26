@@ -57,7 +57,7 @@
                         <constraint firstAttribute="width" constant="24" id="VvY-Q3-6XK"/>
                     </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avtar_user_1" translatesAutoresizingMaskIntoConstraints="NO" id="rHs-GK-Vz8">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarDefautl" translatesAutoresizingMaskIntoConstraints="NO" id="rHs-GK-Vz8">
                     <rect key="frame" x="168" y="68" width="78" height="78"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="78" id="Oq3-4P-NfL"/>
@@ -126,7 +126,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ehJ-jr-8nl">
                     <rect key="frame" x="16" y="92" width="120" height="90"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avtar_user_1" translatesAutoresizingMaskIntoConstraints="NO" id="kL8-4U-ZSf">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarDefautl" translatesAutoresizingMaskIntoConstraints="NO" id="kL8-4U-ZSf">
                             <rect key="frame" x="21" y="0.0" width="78" height="78"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="78" id="4HL-3r-hpa"/>
@@ -208,7 +208,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBg-ao-qYf">
                     <rect key="frame" x="278" y="92" width="120" height="90"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avtar_user_1" translatesAutoresizingMaskIntoConstraints="NO" id="Iqi-q5-mzq">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatarDefautl" translatesAutoresizingMaskIntoConstraints="NO" id="Iqi-q5-mzq">
                             <rect key="frame" x="21.5" y="0.0" width="77" height="78"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="78" id="bff-uj-YMM"/>
@@ -313,8 +313,8 @@
         </view>
     </objects>
     <resources>
+        <image name="avatarDefautl" width="64" height="64"/>
         <image name="cup" width="24" height="24"/>
-        <image name="img_avtar_user_1" width="77" height="78"/>
         <image name="img_background_BXH" width="414" height="150"/>
         <image name="number1" width="24" height="24"/>
         <image name="number2" width="24" height="24"/>
