@@ -39,6 +39,10 @@ extension SignUpPresenter: SignUpInteractorOutputProtocol {
     }
     
     func signUpSuccess(user: UserEntity?) {
+        if user?.attachImg == nil, user?.socialImage == nil {
+            let defaultAvatar = AppImage.avatarDefault
+            interactor?.updateAvatar(image: defaultAvatar)
+        }
         view?.signUpSuccess(user: user)
     }
     

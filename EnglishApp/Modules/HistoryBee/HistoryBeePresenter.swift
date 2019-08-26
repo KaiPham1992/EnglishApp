@@ -26,7 +26,7 @@ class HistoryBeePresenter: HistoryBeePresenterProtocol, HistoryBeeInteractorOutp
     }
     
     func numOfRow() -> Int{
-        return self.listHistory.count ?? 0
+        return self.listHistory.count 
     }
     
     func getWalletLog(wallet_type: Int) {

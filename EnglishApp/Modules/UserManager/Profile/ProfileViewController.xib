@@ -17,6 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
                 <outlet property="imgAvatar" destination="s8v-VP-Z6u" id="gvb-CM-jco"/>
+                <outlet property="imgBackground" destination="eNZ-s7-e9a" id="tdc-9k-rxS"/>
                 <outlet property="lbBee" destination="Lib-HW-C4q" id="wOP-KZ-svf"/>
                 <outlet property="lbDiamon" destination="QAP-Fz-HFt" id="QO1-1X-sxY"/>
                 <outlet property="lbFullName" destination="7tf-uh-FaU" id="f08-rU-o1M"/>
@@ -40,14 +41,13 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-s7-e9a">
                             <rect key="frame" x="-3" y="-3" width="70" height="70"/>
-                            <color key="backgroundColor" red="0.99607843137254903" green="0.75808596986329746" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="8Bq-C6-9pg"/>
                                 <constraint firstAttribute="height" constant="70" id="Sn4-kq-POR"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                    <real key="value" value="35"/>
+                                    <real key="value" value="0.0"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
