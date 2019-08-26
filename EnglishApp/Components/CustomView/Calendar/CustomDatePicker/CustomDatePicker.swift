@@ -29,7 +29,7 @@ class CustomDatePicker : UIView {
     let buttonCancel : UIButton = {
         let view : UIButton = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.setTitle(LocalizableKey.cancelLowercased.showLanguage, for: .normal)
+        view.setTitle(LocalizableKey.cancel_upper.showLanguage, for: .normal)
         view.setTitleColor(.black, for: .normal)
         view.titleLabel?.font = AppFont.fontRegular14
         view.clipsToBounds = true

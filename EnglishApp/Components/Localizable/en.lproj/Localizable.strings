@@ -134,7 +134,7 @@
 "grammar" = "Grammar";
 "vocabulary" = "Vocabulary";
 "note" = "Note";
-"write_note" = "WWrite note";
+"write_note" = "Write note";
 
 //theory
 
@@ -267,13 +267,13 @@
 "YEAR" = "YEAR";
 
 //week
-"Su" = "Sunday";
-"Mo" = "Monday";
-"Tu" = "Tuesday";
-"We" = "Wednesday";
-"Th" = "Thurday";
-"Fr"= "Friday";
-"Sa" = "Saturday";
+"Su" = "Sun";
+"Mo" = "Mon";
+"Tu" = "Tue";
+"We" = "Wed";
+"Th" = "Thu
+"Fr"= "Fri";
+"Sa" = "Sat";
 
 //hour
 
