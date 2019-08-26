@@ -53,6 +53,7 @@ class ViewTime: BaseViewXib{
     
     @objc func turnoffScreen() {
         if isStart {
+            self.currentBackgroundDate = Date()
             self.stopTimer()
         }
     }

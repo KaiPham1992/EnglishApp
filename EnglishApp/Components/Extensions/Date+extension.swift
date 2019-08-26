@@ -45,6 +45,11 @@ enum AppDateFormat: String {
 }
 
 extension Date {
+    
+    var milisecondsSince1970 : Int64 {
+        return Int64((self.timeIntervalSince1970 * 1000).rounded())
+    }
+    
     var isInThePast: Bool {
         let now = Date()
         return self.compare(now) == ComparisonResult.orderedAscending
