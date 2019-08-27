@@ -34,7 +34,7 @@ class TopThreeView: BaseViewXib {
     var listTopThree : [UserEntity]?{
         didSet{
             guard let listTopThree = listTopThree else { return }
-            if listTopThree.count < 2 {return}
+            if listTopThree.count == 0 {return}
             
             lbNametop1.text = listTopThree[0].nameShowUI
             if let point1 = listTopThree[0].rankPoint {
@@ -44,8 +44,10 @@ class TopThreeView: BaseViewXib {
             if listTopThree.count == 1 {
                 lbNametop2.text = ""
                 lbPointtop2.text = ""
+                imgAvatar2.image = AppImage.avatarDefault
                 lbNametop3.text = ""
                 lbPointtop3.text = ""
+                imgAvatar3.image = AppImage.avatarDefault
                 return
                 
             }
@@ -59,6 +61,7 @@ class TopThreeView: BaseViewXib {
             if listTopThree.count == 2 {
                 lbNametop3.text = ""
                 lbPointtop3.text = ""
+                imgAvatar3.image = AppImage.avatarDefault
                 return
             }
             

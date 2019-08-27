@@ -54,8 +54,8 @@ struct LocalizableKey {
     static let CodeNumber = "CodeNumber"
     static let EditProfile = "EditProfile"
     static let titleSave = "titleSave"
-    static let titleDiamon = "Kim cương"
-    static let titleBee = "Hũ mật ong"
+    static let titleDiamon = "titleDiamon"
+    static let titleBee = "titleBee"
     
     // preview profile
     
@@ -339,8 +339,12 @@ struct LocalizableKey {
     static let quater = "quater"
     static let BRONZE = "BRONZE"
     static let SILVER = "SILVER"
-    static let GOLD = "GOLD"
-    static let PLATINUM = "PLATINUM"
+    static let GOLD_I = "GOLD_I"
+    static let GOLD_II = "GOLD_II"
+    static let GOLD_III = "GOLD_III"
+    static let PLATINUM_I = "PLATINUM_I"
+    static let PLATINUM_II = "PLATINUM_II"
+    static let PLATINUM_III = "PLATINUM_III"
     static let MASTER = "MASTER"
     static let TOAA = "TOAA"
     static let TheOneAboveAll = "TheOneAboveAll"
