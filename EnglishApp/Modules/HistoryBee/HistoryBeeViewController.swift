@@ -29,6 +29,7 @@ class HistoryBeeViewController: BaseViewController {
         super.viewDidLoad()
         configureTable()
         presenter?.getWalletLog(wallet_type: self.wallet_type)
+        headerView.isHidden = true
         
     }
     
@@ -46,6 +47,7 @@ class HistoryBeeViewController: BaseViewController {
         }
         headerView.displayData(walletType: self.wallet_type, total: self.totalWallet)
         headerView.delegate = self
+        headerView.isHidden = false
     }
 
 }
@@ -113,12 +115,13 @@ extension HistoryBeeViewController: HistoryBeeViewProtocol{
         
         if presenter?.listHistory.count == 0 {
             showNoData()
+            self.totalWallet = 0
         }else{
             hideNoData()
-            self.listWalletLog = listWalletLog
             self.totalWallet = totalWallet
-            loadHeaderView()
         }
+        self.listWalletLog = listWalletLog
+        loadHeaderView()
     }
     
     func didGetWalletLog(error: Error) {

@@ -52,6 +52,10 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
@@ -69,6 +73,7 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateAvatar), name: NSNotification.Name.init("UpdateAvatar"), object: nil)
         
     }
     
@@ -79,6 +84,11 @@ class HomeViewController: BaseViewController {
                 
             }
         }
+    }
+    
+    @objc func updateAvatar() {
+        presenter?.getHomeRecently()
+        presenter?.getTopThree()
     }
     
     override func setUpNavigation() {

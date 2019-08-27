@@ -37,7 +37,7 @@ class EditProfileInteractor: EditProfileInteractorInputProtocol {
             user.imgSrc = _user?.imgSrc
             user.imgCropSrc = _user?.imgCropSrc
             UserDefaultHelper.shared.loginUserInfo = user
-            
+            self.presenter?.didUpdateAvatar()
         }, failure: { error in
             ProgressView.shared.hide()
             self.presenter?.didErrorUpdateProfile(error: error)

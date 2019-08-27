@@ -28,6 +28,7 @@ protocol EditProfileInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func didSuccessUpdateProfile(user: UserEntity?)
     func didErrorUpdateProfile(error: APIError?)
+    func didUpdateAvatar()
 }
 
 protocol EditProfileInteractorInputProtocol: class {
@@ -47,4 +48,5 @@ protocol EditProfileViewProtocol: class {
     /* Presenter -> ViewController */
     func didSuccessUpdateProfile(user: UserEntity?)
     func didErrorUpdateProfile(error: APIError?)
+    func didUpdateAvatar()
 }
