@@ -12,10 +12,19 @@ import UIKit
 
 class DetailTeamViewController: BaseViewController {
 
+    @IBOutlet weak var lblTitleButtonStart: UILabel!
+    @IBOutlet weak var viewButtonStart: UIView!
+    
+    @IBAction func start(_ sender: Any) {
+        if timer == nil {
+            let vc = FightRouter.createModule(completion_id: Int(self.presenter?.teamDetail?.team_info?.competition_id ?? "0") ?? 0,team_id: Int(self.presenter?.teamDetail?.team_info?.id ?? "0") ?? 0)
+            self.push(controller: vc)
+        }
+    }
+    
     @IBOutlet weak var lblMember: UILabel!
     var presenter: DetailTeamPresenterProtocol?
     @IBOutlet weak var tbTeam: UITableView!
-    @IBOutlet weak var btnStart: UIButton!
     @IBOutlet weak var btnExplain: UIButton!
     @IBOutlet weak var btnLeave: UIButton!
     var id: String = "0"
@@ -24,7 +33,6 @@ class DetailTeamViewController: BaseViewController {
     var distanceTimeMi : Int = 0
     var timer : Timer?
     var isTeamJoined = 1
-//    var isStarted = false
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,24 +43,18 @@ class DetailTeamViewController: BaseViewController {
     override func setTitleUI() {
         super.setTitleUI()
         addBackToNavigation()
-        btnStart.setAttributedTitle(NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
+        lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased())
         btnExplain.setAttributedTitle(NSAttributedString(string: LocalizableKey.explainConpetition.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
         btnLeave.setAttributedTitle(NSAttributedString(string: LocalizableKey.leaveTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
         if isTeamJoined == 1 {
             btnLeave.isHidden = false
-            btnStart.isHidden = false
+            viewButtonStart.isHidden = false
         } else {
             btnLeave.isHidden = true
-            btnStart.isHidden = true
+            viewButtonStart.isHidden = true
         }
     }
-    
-    @IBAction func btnStartTapped() {
-        //test competition
-        let vc = FightRouter.createModule(completion_id: Int(self.presenter?.teamDetail?.team_info?.competition_id ?? "0") ?? 0,team_id: Int(self.presenter?.teamDetail?.team_info?.id ?? "0") ?? 0)
-        self.push(controller: vc)
-    }
-    
+
     @IBAction func btnExplainTapped() {
         self.push(controller: ExplainCompetitionRouter.createModule(idCompetition: self.presenter?.teamDetail?.team_info?.competition_id ?? "0"))
     }
@@ -88,7 +90,7 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
                 self.setTitleNavigation(title: teamInfor.name&)
                 self.lblMember.text = teamInfor.toPercentMember()
                 if self.distanceTimeMi > 0 {
-                    self.btnStart.setTitle(self.distanceTimeMi.convertMilisecondsToTime(), for: .normal)
+                   self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased() + " " + self.distanceTimeMi.convertMilisecondsToTime())
                     if self.timer == nil {
                         self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
                             if self.distanceTimeMi > 0 {
@@ -100,7 +102,7 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
                         })
                     }
                 } else {
-                    self.btnStart.setTitle(LocalizableKey.start.showLanguage.uppercased(), for: .normal)
+                    self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased())
                 }
                 
                 self.tbTeam.reloadData()
@@ -113,11 +115,11 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
             timer?.invalidate()
             timer = nil
         }
-        self.btnStart.setTitle(LocalizableKey.start.showLanguage.uppercased(), for: .normal)
+        self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased())
     }
     
     func processTime(time: Int) {
-        self.btnStart.setTitle(time.convertMilisecondsToTime(), for: .normal)
+        self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased() + " " + time.convertMilisecondsToTime())
     }
     
     func leaveTeamSuccessed() {

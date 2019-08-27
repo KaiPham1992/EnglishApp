@@ -9,28 +9,34 @@
 import UIKit
 
 class CompetitionCell: BaseTableCell {
+    @IBOutlet weak var btnCompetition: UIButton!
+    @IBOutlet weak var lblTitleButtonCompetition: UILabel!
+    @IBOutlet weak var viewButtonCompetition: UIView!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbCondition: UILabel!
     @IBOutlet weak var lbTimeStart: UILabel!
     @IBOutlet weak var lbCountTeam: UILabel!
     @IBOutlet weak var lbContent: UILabel!
-    @IBOutlet weak var btnJoin: UIButton!
     @IBOutlet weak var btnShare: UIButton!
+    
+    @IBAction func competition(_ sender: Any) {
+        actionFight?(self.status, self.indexPath?.row ?? 0 )
+    }
+    
+    var indexPath: IndexPath?
     var timer: Timer?
     var isStarted = false
     var type: ResultCompetition = .result{
         didSet{
             if type == .result {
-                btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]), for: .normal)
+                lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+                viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
             }
-//            if type == .competition{
-//                btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
-//            }
         }
     }
     
     @IBAction func clickFight(_ sender: Any) {
-        actionFight?(self.status,(sender as! UIButton).tag)
+        
     }
 
     override func prepareForReuse() {
@@ -45,24 +51,30 @@ class CompetitionCell: BaseTableCell {
     var competitionEntity: CompetitionEntity? {
         didSet {
             guard let competitionEntity = competitionEntity else { return }
+            viewButtonCompetition.isHidden = false
+            btnCompetition.isHidden = false
             switch competitionEntity.status& {
             case "CANNOT_JOIN":
-                btnJoin.isHidden = false
-                btnJoin.backgroundColor = .clear
-                btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.not_correct.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)]), for: .normal)
+                lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.not_correct.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)])
+                viewButtonCompetition.backgroundColor = .white
+            case "DONING":
+                let isJoined = competitionEntity.is_fight_joined ?? 0
+                if isJoined == 0 {
+                    viewButtonCompetition.isHidden = true
+                    btnCompetition.isHidden = true
+                }
             case "CAN_JOIN":
                 if (competitionEntity.is_fight_joined ?? 0) == 0 {
-                    btnJoin.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
-                    btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
+                    lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
+                    viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                 } else {
+                    lblTitleButtonCompetition.attributedText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
                     if let startTime = competitionEntity.startTime?.timeIntervalSince1970 {
                         let currentTime = Date().timeIntervalSince1970
-                        btnJoin.isHidden = false
-                        btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-                        self.btnJoin.setAttributedTitle(NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]), for: .normal) 
+                        viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
                         if startTime < currentTime {
                             self.isStarted = true
-                            self.btnJoin.setAttributedTitle(NSAttributedString(string:LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]), for: .normal)
+                            lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
                         } else {
                             self.isStarted = false
                             var distanceTime = Int(startTime - currentTime)
@@ -80,9 +92,8 @@ class CompetitionCell: BaseTableCell {
                     }
                 }
             case "DONE":
-                btnJoin.isHidden = false
-                btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-                btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]), for: .normal)
+                lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+                viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
             default:
                 break
             }
@@ -97,7 +108,6 @@ class CompetitionCell: BaseTableCell {
             } else {
                 btnShare.isHidden = true
                 if let startDate = competitionEntity.startDate{
-//                    btnJoin.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
                     lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage)\(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
                 }
             }
@@ -114,11 +124,11 @@ class CompetitionCell: BaseTableCell {
             timer = nil
         }
         self.isStarted = true
-        self.btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]), for: .normal)
+        lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
     }
     
     func processTime(time: Int) {
-        self.btnJoin.setAttributedTitle(NSAttributedString(string: time.convertMilisecondsToTime(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]), for: .normal)
+        lblTitleButtonCompetition.attributedText = NSAttributedString(string: time.convertMilisecondsToTime(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
     }
     
     var status : String = "CANNOT_JOIN"

@@ -186,7 +186,6 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
             isLoadmore = true
         }
         if self.offset == 0 {
-//            self.listTeam.removeAll()
             self.listTeam = collectionTeam.teams
         } else {
             self.listTeam += collectionTeam.teams

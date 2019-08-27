@@ -19,10 +19,11 @@
             <connections>
                 <outlet property="btnExplain" destination="4FT-6D-ywJ" id="g1X-K0-gep"/>
                 <outlet property="btnLeave" destination="ytt-Ns-5gE" id="RAN-Xf-8v9"/>
-                <outlet property="btnStart" destination="oln-Kf-GXf" id="j5B-T8-fkX"/>
                 <outlet property="lblMember" destination="IOT-de-uhT" id="O7d-os-cI9"/>
+                <outlet property="lblTitleButtonStart" destination="ISR-sp-wnC" id="nJ1-xF-83Q"/>
                 <outlet property="tbTeam" destination="I6g-NX-dyi" id="ALH-Zu-fPb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="viewButtonStart" destination="qhk-Yl-13b" id="dNQ-zl-4kW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -50,38 +51,47 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I6g-NX-dyi">
-                    <rect key="frame" x="0.0" y="62" width="375" height="431"/>
+                    <rect key="frame" x="0.0" y="62" width="375" height="415"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vph-3v-olh">
-                    <rect key="frame" x="0.0" y="493" width="375" height="174"/>
+                    <rect key="frame" x="0.0" y="477" width="375" height="190"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="atI-Zv-B5i">
                             <rect key="frame" x="0.0" y="16" width="375" height="158"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oln-Kf-GXf">
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhk-Yl-13b">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISR-sp-wnC">
+                                            <rect key="frame" x="187.5" y="21" width="0.0" height="0.0"/>
+                                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sBg-Ph-CkV">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="42"/>
+                                            <connections>
+                                                <action selector="start:" destination="-1" eventType="touchUpInside" id="fxZ-rn-CF2"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
                                     <color key="backgroundColor" red="0.12549019610000001" green="0.74901960779999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                                    <state key="normal">
-                                        <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    </state>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="sBg-Ph-CkV" secondAttribute="bottom" id="3DO-3w-sNV"/>
+                                        <constraint firstItem="sBg-Ph-CkV" firstAttribute="top" secondItem="qhk-Yl-13b" secondAttribute="top" id="Dr4-NR-GDR"/>
+                                        <constraint firstItem="ISR-sp-wnC" firstAttribute="centerY" secondItem="qhk-Yl-13b" secondAttribute="centerY" id="GBQ-Fl-s7V"/>
+                                        <constraint firstItem="sBg-Ph-CkV" firstAttribute="leading" secondItem="qhk-Yl-13b" secondAttribute="leading" id="P1c-np-3oh"/>
+                                        <constraint firstItem="ISR-sp-wnC" firstAttribute="centerX" secondItem="qhk-Yl-13b" secondAttribute="centerX" id="b19-16-iaA"/>
+                                        <constraint firstAttribute="trailing" secondItem="sBg-Ph-CkV" secondAttribute="trailing" id="uo8-ha-Poh"/>
+                                    </constraints>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="2"/>
                                         </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="btnStartTapped" destination="-1" eventType="touchUpInside" id="pMY-FI-B48"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FT-6D-ywJ">
+                                </view>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FT-6D-ywJ">
                                     <rect key="frame" x="0.0" y="58" width="375" height="42"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                                     <state key="normal">
@@ -89,7 +99,7 @@
                                     </state>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="value" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                             <real key="value" value="2"/>
@@ -123,7 +133,7 @@
                         <constraint firstItem="atI-Zv-B5i" firstAttribute="leading" secondItem="vph-3v-olh" secondAttribute="leading" id="E7M-d5-L5P"/>
                         <constraint firstAttribute="trailing" secondItem="atI-Zv-B5i" secondAttribute="trailing" id="N4Z-4t-iFt"/>
                         <constraint firstItem="atI-Zv-B5i" firstAttribute="top" secondItem="vph-3v-olh" secondAttribute="top" constant="16" id="pQT-94-Ay8"/>
-                        <constraint firstAttribute="bottom" secondItem="atI-Zv-B5i" secondAttribute="bottom" id="shq-xg-Pg3"/>
+                        <constraint firstAttribute="bottom" secondItem="atI-Zv-B5i" secondAttribute="bottom" constant="16" id="shq-xg-Pg3"/>
                     </constraints>
                 </view>
             </subviews>

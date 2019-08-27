@@ -19,8 +19,8 @@ class DetailTeamCell: BaseTableCell {
     var member: UserEntity? {
         didSet {
             guard let member = member else { return }
-            lbName.text = member.fullName
-            lbPoint.text = member.rankName& + ": " + String(member.amountRank ?? 0)
+            lbName.attributedText = NSAttributedString(string: member.fullName ?? "")
+            lbPoint.attributedText = NSAttributedString(string: member.rankName& + ": " + String(member.amountRank ?? 0))
             if (member.isLeader ?? 0) == 1{
                 imgLevel.isHidden = false
                 imgAvatar.sd_setImage(with: URL(string: BASE_URL_IMAGE + member.imgSrc&), placeholderImage: UIImage(named: "ic_avatar_default")!, context: nil)

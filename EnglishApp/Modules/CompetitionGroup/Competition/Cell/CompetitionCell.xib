@@ -28,25 +28,43 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaQ-Hv-vPl">
-                        <rect key="frame" x="170" y="0.0" width="150" height="192.5"/>
+                        <rect key="frame" x="185" y="0.0" width="135" height="192.5"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-0l-0NA">
-                                <rect key="frame" x="15" y="142.5" width="120" height="30"/>
-                                <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7ex-cC-IuZ">
+                                <rect key="frame" x="0.0" y="142.5" width="120" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRG-fM-nRo">
+                                        <rect key="frame" x="60" y="15" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wos-b8-Ncb">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="30"/>
+                                        <connections>
+                                            <action selector="competition:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="LG4-Kn-b1Z"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="0YT-Gj-19E"/>
-                                    <constraint firstAttribute="height" constant="30" id="pyw-2z-qRs"/>
+                                    <constraint firstItem="hRG-fM-nRo" firstAttribute="centerY" secondItem="7ex-cC-IuZ" secondAttribute="centerY" id="5Yy-jt-hT7"/>
+                                    <constraint firstAttribute="trailing" secondItem="wos-b8-Ncb" secondAttribute="trailing" id="E7o-u6-Zrm"/>
+                                    <constraint firstItem="hRG-fM-nRo" firstAttribute="centerX" secondItem="7ex-cC-IuZ" secondAttribute="centerX" id="KJI-Rc-acb"/>
+                                    <constraint firstItem="wos-b8-Ncb" firstAttribute="leading" secondItem="7ex-cC-IuZ" secondAttribute="leading" id="dad-JR-psr"/>
+                                    <constraint firstAttribute="width" constant="120" id="jTb-i5-5pi"/>
+                                    <constraint firstAttribute="height" constant="30" id="u01-Yc-Brx"/>
+                                    <constraint firstAttribute="bottom" secondItem="wos-b8-Ncb" secondAttribute="bottom" id="uTi-Gb-ak9"/>
+                                    <constraint firstItem="wos-b8-Ncb" firstAttribute="top" secondItem="7ex-cC-IuZ" secondAttribute="top" id="x29-ae-Ds0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="clickFight:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Rkj-IR-mqm"/>
-                                </connections>
-                            </button>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CupCompetition" translatesAutoresizingMaskIntoConstraints="NO" id="Iza-Mj-mB7">
-                                <rect key="frame" x="30" y="42.5" width="90" height="90"/>
+                                <rect key="frame" x="22.5" y="40.5" width="90" height="90"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="SwI-9F-vfU"/>
@@ -56,30 +74,30 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="bRp-0l-0NA" secondAttribute="trailing" constant="15" id="D90-uc-cTp"/>
+                            <constraint firstAttribute="bottom" secondItem="7ex-cC-IuZ" secondAttribute="bottom" constant="20" id="34e-lU-bmv"/>
                             <constraint firstItem="Iza-Mj-mB7" firstAttribute="centerX" secondItem="XaQ-Hv-vPl" secondAttribute="centerX" id="JhT-Fh-oNE"/>
-                            <constraint firstAttribute="bottom" secondItem="bRp-0l-0NA" secondAttribute="bottom" constant="20" id="R6c-T0-VhO"/>
-                            <constraint firstAttribute="width" constant="150" id="jHn-zg-CHN"/>
-                            <constraint firstItem="bRp-0l-0NA" firstAttribute="top" secondItem="Iza-Mj-mB7" secondAttribute="bottom" constant="10" id="oND-fy-8O1"/>
+                            <constraint firstAttribute="trailing" secondItem="7ex-cC-IuZ" secondAttribute="trailing" constant="15" id="VWa-KX-8iD"/>
+                            <constraint firstAttribute="width" constant="135" id="jHn-zg-CHN"/>
+                            <constraint firstItem="7ex-cC-IuZ" firstAttribute="top" secondItem="Iza-Mj-mB7" secondAttribute="bottom" constant="12" id="qZm-7q-6De"/>
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Sed-0u-OdD">
-                        <rect key="frame" x="0.0" y="0.0" width="162" height="192.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="170" height="192.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CyJ-lp-gAh">
-                                <rect key="frame" x="15" y="16" width="139" height="0.0"/>
+                                <rect key="frame" x="15" y="16" width="147" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3l-Rt-qk2">
-                                <rect key="frame" x="15" y="24" width="139" height="0.0"/>
+                                <rect key="frame" x="15" y="24" width="147" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <color key="textColor" red="1" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5wk-7S-Ynm">
-                                <rect key="frame" x="15" y="32" width="139" height="20"/>
+                                <rect key="frame" x="15" y="32" width="147" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock" translatesAutoresizingMaskIntoConstraints="NO" id="0qZ-Fb-ga9">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -89,7 +107,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cr-Ze-pYm">
-                                        <rect key="frame" x="25" y="0.0" width="114" height="20"/>
+                                        <rect key="frame" x="25" y="0.0" width="122" height="20"/>
                                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -108,7 +126,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pA1-RV-ouV">
-                                <rect key="frame" x="15" y="60" width="139" height="20"/>
+                                <rect key="frame" x="15" y="60" width="147" height="20"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="team" translatesAutoresizingMaskIntoConstraints="NO" id="OIe-Yx-aZT">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -118,7 +136,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnP-5l-14Q">
-                                        <rect key="frame" x="25" y="0.0" width="109" height="20"/>
+                                        <rect key="frame" x="25" y="0.0" width="117" height="20"/>
                                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -137,7 +155,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ix2-Gj-iTl">
-                                <rect key="frame" x="15" y="88" width="139" height="0.0"/>
+                                <rect key="frame" x="15" y="88" width="147" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -176,14 +194,14 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="8zP-Om-cer" firstAttribute="centerY" secondItem="bRp-0l-0NA" secondAttribute="centerY" id="2OK-Te-DrV"/>
-                    <constraint firstItem="bRp-0l-0NA" firstAttribute="leading" secondItem="8zP-Om-cer" secondAttribute="trailing" constant="8" id="3rY-kG-Gg5"/>
                     <constraint firstAttribute="trailing" secondItem="CpV-Uo-Jdl" secondAttribute="trailing" id="GXm-o8-Qny"/>
+                    <constraint firstItem="8zP-Om-cer" firstAttribute="centerY" secondItem="7ex-cC-IuZ" secondAttribute="centerY" id="LKx-At-b10"/>
                     <constraint firstAttribute="bottom" secondItem="CpV-Uo-Jdl" secondAttribute="bottom" id="O9z-Rf-r4f"/>
-                    <constraint firstItem="XaQ-Hv-vPl" firstAttribute="leading" secondItem="Sed-0u-OdD" secondAttribute="trailing" constant="8" id="OLS-z4-Zz4"/>
+                    <constraint firstItem="XaQ-Hv-vPl" firstAttribute="leading" secondItem="Sed-0u-OdD" secondAttribute="trailing" constant="15" id="OLS-z4-Zz4"/>
                     <constraint firstItem="Sed-0u-OdD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="RHb-sQ-gXa"/>
                     <constraint firstItem="XaQ-Hv-vPl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VC8-Nz-PT3"/>
                     <constraint firstAttribute="bottom" secondItem="XaQ-Hv-vPl" secondAttribute="bottom" id="YZg-1y-QBd"/>
+                    <constraint firstItem="7ex-cC-IuZ" firstAttribute="leading" secondItem="8zP-Om-cer" secondAttribute="trailing" constant="8" id="Z7G-oi-0Hp"/>
                     <constraint firstAttribute="bottom" secondItem="Sed-0u-OdD" secondAttribute="bottom" id="cdy-oM-eQi"/>
                     <constraint firstItem="Sed-0u-OdD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mEL-mM-eNa"/>
                     <constraint firstItem="CpV-Uo-Jdl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="omP-mf-dpX"/>
@@ -192,13 +210,15 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnJoin" destination="bRp-0l-0NA" id="52W-Lp-0Hd"/>
+                <outlet property="btnCompetition" destination="wos-b8-Ncb" id="yrC-wq-xRF"/>
                 <outlet property="btnShare" destination="8zP-Om-cer" id="EsL-jN-d98"/>
                 <outlet property="lbCondition" destination="O3l-Rt-qk2" id="ZyJ-uN-cat"/>
                 <outlet property="lbContent" destination="Ix2-Gj-iTl" id="0fX-p0-gJ6"/>
                 <outlet property="lbCountTeam" destination="TnP-5l-14Q" id="AAZ-vq-ZIR"/>
                 <outlet property="lbName" destination="CyJ-lp-gAh" id="0U1-D3-SE1"/>
                 <outlet property="lbTimeStart" destination="5cr-Ze-pYm" id="ph7-rk-RYo"/>
+                <outlet property="lblTitleButtonCompetition" destination="hRG-fM-nRo" id="rIh-Gs-R3k"/>
+                <outlet property="viewButtonCompetition" destination="7ex-cC-IuZ" id="LDr-ka-dRy"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="130.24553571428572"/>
         </tableViewCell>

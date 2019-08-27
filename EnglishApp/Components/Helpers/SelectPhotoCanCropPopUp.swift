@@ -77,11 +77,15 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
             
             let assetPath = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
             if assetPath.absoluteString?.hasSuffix("GIF") ??  false {
-                imagePickerUIKit.dismiss(animated: true, completion: nil)
-                PopUpHelper.shared.showNoAllowGifPhoto(completionYes: nil)
+                if let image = imageEdit.pngData() {
+                    imagePickerUIKit.dismiss(animated: true, completion: nil)
+                    self.completionImage?(UIImage(data: image))
+                } else {
+                    imagePickerUIKit.dismiss(animated: true, completion: nil)
+                    PopUpHelper.shared.showNoAllowGifPhoto(completionYes: nil)
+                }
             } else {
                 imagePickerUIKit.dismiss(animated: true, completion: nil)
-                //            delegate?.didReceivePhoto(image: imageEdit)
                 self.completionImage?(imageEdit)
             }
         }

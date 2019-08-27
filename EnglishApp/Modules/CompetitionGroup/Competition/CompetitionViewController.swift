@@ -58,24 +58,23 @@ class CompetitionViewController: ListManagerVC {
         if let data = item as? CompetitionEntity {
             cell.competitionEntity = data
         }
-        cell.btnJoin.tag = indexPath.item
-
-        cell.actionFight = {[weak self](status, id) in
-            self?.actionFight(status: status, tag: id)
+        cell.indexPath = indexPath
+        cell.actionFight = {[weak self](status, index) in
+            self?.actionFight(status: status, index: index)
         }
         //---
         cell.btnShare.tag = indexPath.item
         cell.btnShare.addTarget(self, action: #selector(btnShareTapped), for: .touchUpInside)
         return cell
     }
-    func actionFight(status: String,tag: Int) {
+    func actionFight(status: String, index: Int) {
         //correct
         if type == .competition {
-            guard let competitionId = (listData[tag] as! CompetitionEntity).id else {
+            guard let competitionId = (listData[index] as! CompetitionEntity).id else {
                 return
             }
             if status == "CAN_JOIN"{
-                if let cell = tableView.cellForRow(at: IndexPath(row: tag, section: 0)) as? CompetitionCell {
+                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
                     let isStarted = cell.isStarted
                     if isStarted {
                         let vc = FightRouter.createModule(completion_id: competitionId , team_id: 0)
@@ -86,18 +85,18 @@ class CompetitionViewController: ListManagerVC {
                 }
             }
             if status == "DONE"{
-                let isFightJoined = (listData[tag] as! CompetitionEntity).is_fight_joined ?? 0
+                let isFightJoined = (listData[index] as! CompetitionEntity).is_fight_joined ?? 0
                 if isFightJoined == 0 {
-                    self.push(controller: ResultCompetitionRouter.createModule(idCompetition: String((listData[tag] as! CompetitionEntity).id ?? 0)))
+                    self.push(controller: ResultCompetitionRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0)))
                 } else {
-                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String((listData[tag] as! CompetitionEntity).id ?? 0)))
+                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0)))
                 }
             }
             if status == "CANNOT_JOIN" {
                 self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true))
             }
         } else {
-            let vc = ResultGroupRouter.createModule(idCompetition: String((listData[tag] as! CompetitionEntity).id ?? 0))
+            let vc = ResultGroupRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0))
             self.push(controller: vc)
         }
     }

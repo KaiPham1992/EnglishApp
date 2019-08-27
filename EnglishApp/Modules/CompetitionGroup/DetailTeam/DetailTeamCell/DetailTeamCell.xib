@@ -56,15 +56,15 @@
                             <constraint firstAttribute="height" constant="40" id="xp4-tc-dpE"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Kennedy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9j-L5-RZt">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill Kennedy" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9j-L5-RZt">
                         <rect key="frame" x="112" y="19.5" width="144" height="18"/>
                         <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vàng I: 1600 điểm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzK-42-I7C">
-                        <rect key="frame" x="112" y="39.5" width="144" height="18"/>
-                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vàng I: 1600 điểm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzK-42-I7C">
+                        <rect key="frame" x="112" y="42.5" width="144" height="16"/>
+                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -82,9 +82,9 @@
                     <constraint firstItem="xdS-An-O1e" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="C6n-OY-6ow"/>
                     <constraint firstItem="Y5a-QN-8yM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="IYk-7M-NrD"/>
                     <constraint firstItem="Hka-0r-VLb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Mj6-36-3tZ"/>
+                    <constraint firstItem="IzK-42-I7C" firstAttribute="top" secondItem="Q9j-L5-RZt" secondAttribute="bottom" constant="5" id="T6Q-36-keG"/>
                     <constraint firstAttribute="trailing" secondItem="Hka-0r-VLb" secondAttribute="trailing" id="TLE-Ma-H63"/>
                     <constraint firstItem="Q9j-L5-RZt" firstAttribute="leading" secondItem="xdS-An-O1e" secondAttribute="trailing" constant="8" id="ZVF-iv-FvB"/>
-                    <constraint firstItem="IzK-42-I7C" firstAttribute="centerY" secondItem="xdS-An-O1e" secondAttribute="centerY" constant="10" id="aGC-kt-IMk"/>
                     <constraint firstItem="IzK-42-I7C" firstAttribute="leading" secondItem="Q9j-L5-RZt" secondAttribute="leading" id="cL8-hj-YPr"/>
                     <constraint firstItem="Q9j-L5-RZt" firstAttribute="centerY" secondItem="xdS-An-O1e" secondAttribute="centerY" constant="-10" id="dtm-9E-uJK"/>
                     <constraint firstAttribute="trailing" secondItem="x69-VH-jc4" secondAttribute="trailing" constant="16" id="ehC-Bh-uYe"/>
