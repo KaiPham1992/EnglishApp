@@ -295,7 +295,8 @@ class AppTimestampTransform: TransformType {
         }
         
         if let timeStr = value as? String {
-            return Date(timeIntervalSince1970: TimeInterval(atof(timeStr)))
+            let timeDouble = (timeStr as NSString).doubleValue
+            return Date(timeIntervalSince1970: TimeInterval(timeDouble/1000))
         }
         
         return nil
