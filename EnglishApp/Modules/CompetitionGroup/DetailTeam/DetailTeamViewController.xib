@@ -81,6 +81,7 @@
                                         <constraint firstAttribute="bottom" secondItem="sBg-Ph-CkV" secondAttribute="bottom" id="3DO-3w-sNV"/>
                                         <constraint firstItem="sBg-Ph-CkV" firstAttribute="top" secondItem="qhk-Yl-13b" secondAttribute="top" id="Dr4-NR-GDR"/>
                                         <constraint firstItem="ISR-sp-wnC" firstAttribute="centerY" secondItem="qhk-Yl-13b" secondAttribute="centerY" id="GBQ-Fl-s7V"/>
+                                        <constraint firstAttribute="height" constant="42" id="Hkk-9g-hpE"/>
                                         <constraint firstItem="sBg-Ph-CkV" firstAttribute="leading" secondItem="qhk-Yl-13b" secondAttribute="leading" id="P1c-np-3oh"/>
                                         <constraint firstItem="ISR-sp-wnC" firstAttribute="centerX" secondItem="qhk-Yl-13b" secondAttribute="centerX" id="b19-16-iaA"/>
                                         <constraint firstAttribute="trailing" secondItem="sBg-Ph-CkV" secondAttribute="trailing" id="uo8-ha-Poh"/>
@@ -93,6 +94,9 @@
                                 </view>
                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4FT-6D-ywJ">
                                     <rect key="frame" x="0.0" y="58" width="375" height="42"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="42" id="plu-xu-jdT"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
                                     <state key="normal">
                                         <color key="titleColor" red="0.20784313730000001" green="0.08235294118" blue="0.031372549020000001" alpha="1" colorSpace="calibratedRGB"/>

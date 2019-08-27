@@ -31,6 +31,7 @@ class DetailTeamInteractor: DetailTeamInteractorInputProtocol {
         Provider.shared.competitionAPIService.leaveTeam(id: id, success: { (respone) in
             ProgressView.shared.hide()
             if let _ = respone {
+                RealmDBManager.share.removeObject(type: LocalConfigCompetition.self, value: Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0)
                 self.presenter?.leaveTeamSuccessed()
             }
         }) { (error) in

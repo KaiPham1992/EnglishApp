@@ -159,7 +159,7 @@ extension FightViewController :FightViewProtocol{
                 }
             }
         } else {
-            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id)))
+            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0"))
         }
     }
     

@@ -57,11 +57,14 @@ class CompetitionCell: BaseTableCell {
             case "CANNOT_JOIN":
                 lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.not_correct.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)])
                 viewButtonCompetition.backgroundColor = .white
-            case "DONING":
+            case "DOING":
                 let isJoined = competitionEntity.is_fight_joined ?? 0
                 if isJoined == 0 {
                     viewButtonCompetition.isHidden = true
                     btnCompetition.isHidden = true
+                } else {
+                    self.isStarted = true
+                    lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
                 }
             case "CAN_JOIN":
                 if (competitionEntity.is_fight_joined ?? 0) == 0 {

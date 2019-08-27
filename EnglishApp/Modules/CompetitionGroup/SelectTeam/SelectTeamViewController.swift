@@ -24,14 +24,17 @@ class SelectTeamViewController: BaseViewController {
     var isCannotJoin = false
     var offset = 0
     var isLoadmore = true
-
+    var idMyTeam = 0
+    var isFightJoined = 0
     var listTeam = [TeamEntity]() {
         didSet {
             tbTeam.reloadData()
-            
             if listTeam.count == 0 {
                 showNoData()
             } else {
+                if (listTeam[0].isTeamJoined ?? 0) == 1 {
+                    self.idMyTeam = Int(listTeam[0].id ?? "0") ?? 0
+                }
                 hideNoData()
             }
         }
@@ -108,15 +111,14 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func btnJoined(sender: UIButton) {
-        if let id = listTeam[sender.tag].id {
-            let vc = DetailTeamRouter.createModule(id: id)
-            vc.actionLeaveTeam = { [weak self] in
-                self?.offset = 0
-                self?.isLoadmore = true
-                self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
-            }
-            self.push(controller: vc)
+        let team = listTeam[sender.tag]
+        let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, idMyTeam: idMyTeam, isFightJoined: isFightJoined)
+        vc.actionLeaveTeam = { [weak self] in
+            self?.offset = 0
+            self?.isLoadmore = true
+            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
         }
+        self.push(controller: vc)
     }
     @objc func btnJoinTapped(sender: UIButton) {
         if let id = listTeam[sender.tag].id {
@@ -134,7 +136,7 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let id = listTeam[indexPath.row].id, let isTeamJoined = listTeam[indexPath.row].isTeamJoined {
-            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined)
+            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, idMyTeam: idMyTeam, isFightJoined: isFightJoined)
             vc.actionLeaveTeam = { [weak self] in
                 self?.offset = 0
                 self?.isLoadmore = true
@@ -180,6 +182,9 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
             showNoData()
             return
         }
+        
+        self.isFightJoined = collectionTeam.isFightJoined ?? 0
+        
         if collectionTeam.teams.count < limit {
             isLoadmore = false
         } else {
@@ -196,6 +201,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     }
     
     func didCreateTeamSuccessed(collectionTeam: TeamEntity){
+        self.isFightJoined = 1
         collectionTeam.isTeamJoined = 1
         collectionTeam.countMember = "1"
         listTeam.insert(collectionTeam, at: 0)
