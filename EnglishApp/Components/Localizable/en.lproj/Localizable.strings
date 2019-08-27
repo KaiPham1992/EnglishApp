@@ -58,8 +58,8 @@
 "TitleProfile" = "Profile";
 "EditProfile" = "Edit profile";
 "titleSave" = "SAVE";
-"titleDiamon" = "titleDiamon";
-"titleBee" = "titleBee";
+"titleDiamon" = "Diamond";
+"titleBee" = "Honey";
 
 // Preview profile
 
@@ -338,8 +338,12 @@
 "quater" = "Quater";
 "BRONZE" = "Bronze";
 "SILVER" = "Silver";
-"GOLD" = "Gold";
-"PLATINUM" = "Platinum";
+"GOLD_I" = "Gold I";
+"GOLD_II" = "Gold II";
+"GOLD_III" = "Gold IIII";
+"PLATINUM_I" = "Platinum I";
+"PLATINUM_II" = "Platinum II";
+"PLATINUM_III" = "Platinum III";
 "MASTER" = "Master";
 "TOAA" = "TOAA";
 "TheOneAboveAll" = "The one above all";

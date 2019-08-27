@@ -58,8 +58,8 @@
 "TitleProfile" = "Thông tin cá nhân";
 "EditProfile" = "Sửa thông tin";
 "titleSave" = "LƯU";
-"titleDiamon" = "titleDiamon";
-"titleBee" = "titleBee";
+"titleDiamon" = "Kim cương";
+"titleBee" = "Hũ mật ong";
 
 // Preview profile
 
@@ -343,8 +343,12 @@
 "quater" = "Quý";
 "BRONZE" = "Đồng";
 "SILVER" = "Bạc";
-"GOLD" = "Vàng";
-"PLATINUM" = "Bạch kim";
+"GOLD_I" = "Vàng I";
+"GOLD_II" = "Vàng II";
+"GOLD_III" = "Vàng III";
+"PLATINUM_I" = "Bạch kim I";
+"PLATINUM_II" = "Bạch kim II";
+"PLATINUM_III" = "Bạch kim III";
 "MASTER" = "Master";
 "TOAA" = "TOAA";
 "TheOneAboveAll" = "The one above all";

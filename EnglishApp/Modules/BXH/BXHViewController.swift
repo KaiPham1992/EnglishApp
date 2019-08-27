@@ -24,8 +24,20 @@ class BXHViewController: BaseViewController {
 	var presenter: BXHPresenterProtocol?
     var idUser = ""
     
-    let arrayRank = ["\(LocalizableKey.BRONZE.showLanguage)","\(LocalizableKey.SILVER.showLanguage)","\(LocalizableKey.GOLD.showLanguage)","\(LocalizableKey.PLATINUM.showLanguage)","\(LocalizableKey.MASTER.showLanguage)","\(LocalizableKey.TOAA.showLanguage)",""]
-    var index = 6
+    let arrayRank = ["\(LocalizableKey.BRONZE.showLanguage)",
+        "\(LocalizableKey.SILVER.showLanguage)",
+        "\(LocalizableKey.GOLD_I.showLanguage)",
+        "\(LocalizableKey.GOLD_II.showLanguage)",
+        "\(LocalizableKey.GOLD_III.showLanguage)",
+        "\(LocalizableKey.PLATINUM_I.showLanguage)",
+        "\(LocalizableKey.PLATINUM_II.showLanguage)",
+        "\(LocalizableKey.PLATINUM_III.showLanguage)",
+        "\(LocalizableKey.MASTER.showLanguage)",
+        "\(LocalizableKey.TOAA.showLanguage)",
+        ""]
+    let listParam = ["BRONZE","SILVER","GOLD I","GOLD II","GOLD III",
+                     "PLATINUM I","PLATINUM II","PLATINUM III","MASTER","TOAA",""]
+    var index = 10
     
     var quarter = ""
     var year = ""
@@ -151,22 +163,22 @@ class BXHViewController: BaseViewController {
     
     @IBAction func btnLeftTapped() {
         index += 1
-        if index > 6 {
+        if index > 10 {
             index = 0
         }
         setUpLabelRank()
         self.rank = arrayRank[index]
-        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: arrayRank[index])
+        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: listParam[index])
     }
     
     @IBAction func btnRightTapped() {
         index -= 1
         if index < 0 {
-            index = 6
+            index = 10
         }
         setUpLabelRank()
         self.rank = arrayRank[index]
-        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: arrayRank[index])
+        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: listParam[index])
     }
     
 }
