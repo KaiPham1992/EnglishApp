@@ -164,6 +164,7 @@
 "reportTitlePopUp" = "Report";
 "reportMessagePopUp" = "Thank you for reporting us on this case. We will review and revise as soon as possible.";
 "reportButtonPopUp" = "Complete";
+"out_group_message" = "The competition started so can not out group";
 
 "notEnoughBee" = "You have not enough honey.";
 "addBee" = "Add honey";

@@ -73,7 +73,7 @@ class DetailTeamViewController: BaseViewController {
                 self.presenter?.leaveTeam(id: self.id)
             }
         } else {
-            PopUpHelper.shared.showError(message: "Cuộc thi đã bắt đầu không thể rời nhóm.") {
+            PopUpHelper.shared.showError(message: LocalizableKey.out_group_message.showLanguage) {
                 
             }
         }

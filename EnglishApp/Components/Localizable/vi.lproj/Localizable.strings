@@ -34,6 +34,7 @@
 "ForgotPasswordMessage" = "Nhập địa chỉ email liên kết với tài khoản của bạn.Sau đó kiểm tra hòm thư";
 "SentEmail" = "Gửi email";
 "ForgotTitle" = "Quên mật khẩu";
+"out_group_message" = "Cuộc thi đã bắt đầu không thể rời nhóm.";
 
 "invalidLoginEmail" = "Địa chỉ email sai format";
 "invalidLoginPassword" = "Mật khẩu phải có 6 kí tự trở lên";
