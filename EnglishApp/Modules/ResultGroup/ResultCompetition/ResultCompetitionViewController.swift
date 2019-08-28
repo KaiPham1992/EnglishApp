@@ -63,6 +63,6 @@ extension ResultCompetitionViewController: UITableViewDelegate{
 
 extension ResultCompetitionViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.result_competion.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.result_team.showLanguage)
     }
 }

@@ -17,6 +17,6 @@ class CellSingleLabel: UITableViewCell {
     }
     
     func setupCell(title: String){
-        lblText.text = title
+        lblText.attributedText = NSAttributedString(string: title) 
     }
 }

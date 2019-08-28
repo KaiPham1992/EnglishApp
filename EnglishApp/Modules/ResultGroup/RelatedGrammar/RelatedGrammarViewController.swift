@@ -53,15 +53,14 @@ extension RelatedGrammarViewController : UITableViewDataSource {
     }
 }
 extension RelatedGrammarViewController : UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = DetailLessonRouter.createModule(idLesson: self.presenter?.relatedLesson?.data[indexPath.row]._id  ?? "0")
         self.push(controller: vc)
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
     }
 }
 extension RelatedGrammarViewController : RelatedGrammarViewProtocol {

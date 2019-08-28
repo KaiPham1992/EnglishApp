@@ -36,6 +36,10 @@ class CellHistoryListExercise: UITableViewCell {
         lblTitle.text = dataCell.exercise_name&
     }
     
+    func hideLevelLabel() {
+        lblLevel.text = ""
+    }
+    
     func hideWidthButton() {
         widthButton.constant = 0
     }

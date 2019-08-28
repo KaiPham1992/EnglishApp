@@ -65,15 +65,17 @@ class ResultExerciseViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
-        if index != 0 && tempIndex + 1 != numberAnswer {
-            self.index -= 1
-            lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
-            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
-            btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
-        } else {
-            super.btnBackTapped()
-        }
+        //back to font question
+//        let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
+//        if index != 0 && tempIndex + 1 != numberAnswer {
+//            self.index -= 1
+//            lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
+//            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
+//            btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
+//        } else {
+//            super.btnBackTapped()
+//        }
+        super.btnBackTapped()
     }
     
     override func setUpNavigation() {

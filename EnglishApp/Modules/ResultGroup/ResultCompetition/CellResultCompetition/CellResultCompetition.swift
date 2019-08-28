@@ -24,7 +24,7 @@ class CellResultCompetition: UITableViewCell {
     func setupData(dataCell: CompetitionResultTeamEntity){
         imgAVTTeam.sd_setImage(with: URL(string:BASE_URL_IMAGE + dataCell.img_src&), placeholderImage: #imageLiteral(resourceName: "avatarDefautl"), completed: nil)
         lblNameTeam.text = dataCell.name
-        lblPoint.attributedText =  NSAttributedString(string: dataCell.total_score& + " " + LocalizableKey.point.showLanguage)
+        lblPoint.attributedText =  NSAttributedString(string: dataCell.total_score ?? "0" + " " + LocalizableKey.point.showLanguage)
         let rank : Int = dataCell.position ?? 0
         if rank == 1 {
             lbRank.isHidden = true

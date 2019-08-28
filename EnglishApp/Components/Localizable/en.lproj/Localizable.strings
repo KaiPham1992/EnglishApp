@@ -205,7 +205,8 @@
 "enter_name_exercise" = "Enter excercise name";
 "choice_exercise" = "Choose exercise";
 "exercise_level" = "Exercise level";
-"history_exercise" = "Test history";
+"history_exercise" = "Exercise history";
+"history_test" = "Test History";
 "do_exercise" = "Do exercise";
 "preposition" = "Preposition";
 "rewriting" = "Rewriting";

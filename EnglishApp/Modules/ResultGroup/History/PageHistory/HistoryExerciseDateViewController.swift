@@ -19,7 +19,7 @@ class HistoryExerciseDateViewController: PageViewController, HistoryExerciseDate
 	override func viewDidLoad() {
         super.viewDidLoad()
         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.history_exercise.showLanguage)
+        setTitleNavigation(title: LocalizableKey.history_test.showLanguage)
         self.tabBarController?.tabBar.isHidden = true
         self.edgesForExtendedLayout = .bottom
     }
