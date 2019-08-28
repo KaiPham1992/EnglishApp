@@ -147,6 +147,8 @@ class BXHViewController: BaseViewController {
     
     func handleSelectedButton(index: Int) {
         setSelectedButton(index: index)
+        self.quarter = self.listQuaters[index]&
+        self.year = self.listYears[index]&
         presenter?.getListLeaderBoard(quarter: "\(self.listQuaters[index])", year: "\(self.listYears[index])", rank: self.rank)
     }
     
