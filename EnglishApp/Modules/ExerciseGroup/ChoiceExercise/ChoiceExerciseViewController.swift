@@ -120,6 +120,7 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
         }
         return cell
     }
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let row = self.presenter?.exerciseChoiceEntity?.exercises.count ?? 0
         if row - 1 == indexPath.row {
@@ -161,7 +162,7 @@ extension ChoiceExerciseViewController : UITableViewDelegate{
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UITableView.automaticDimension
     }
 }
 

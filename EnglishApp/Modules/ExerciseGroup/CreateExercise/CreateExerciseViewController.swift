@@ -50,7 +50,7 @@ class CreateExerciseViewController: BaseViewController {
     override func setUpViews() {
         super.setUpViews()
         tbvCreateExercise.keyboardDismissMode = .onDrag
-        tbvCreateExercise.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
+        tbvCreateExercise.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         self.presenter?.getListQuestionCatelogy(offset: offset)
         lblSum.text = "0/100 " + LocalizableKey.sentence.showLanguage
         tbvCreateExercise.registerXibFile(CellCreateExercise.self)
