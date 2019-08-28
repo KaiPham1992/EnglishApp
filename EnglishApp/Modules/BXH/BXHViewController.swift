@@ -280,19 +280,26 @@ extension BXHViewController: BXHViewProtocol{
         hideNoData()
         self.listLeaderBoard = listLeaderBoard
         
-        guard let userInfo = listLeaderBoard.user else {return}
         guard let listUser = listLeaderBoard.boards else {return}
-        var number = 0
-        for index in 0 ... (listUser.count - 1) {
-            let user = listUser[index]
-            if user.id?.elementsEqual(userInfo.id&) == true {
-                number = index
-                break
+        if let userInfo = listLeaderBoard.user, userInfo.id != nil {
+
+            var number = 0
+            for index in 0 ... (listUser.count - 1) {
+                let user = listUser[index]
+                if user.id?.elementsEqual(userInfo.id&) == true {
+                    number = index
+                    break
+                }
             }
+            
+            self.idUser = userInfo.id&
+            self.vUser.number = number + 1
+            self.vUser.user = userInfo
+            
         }
-        self.idUser = userInfo.id&
-        self.vUser.number = number + 1
-        self.vUser.user = userInfo
+        
+        
+        
     }
     
     func didGetList(error: Error) {
