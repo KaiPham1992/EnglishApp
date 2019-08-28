@@ -18,6 +18,7 @@ class NoteListViewController: BaseViewController {
     @IBAction func addNote(_ sender: Any) {
         self.presenter?.gotoAddNote()
     }
+    
     @IBOutlet weak var tbvNoteList: UITableView!
     
     var offset = 0
@@ -77,6 +78,7 @@ extension NoteListViewController : UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row = self.presenter?.noteListRespone?.notes.count ?? 0
         if row == 0 {
@@ -86,10 +88,12 @@ extension NoteListViewController : UITableViewDataSource{
         }
         return row
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
         if let data = self.presenter?.noteListRespone?.notes[indexPath.row] {
             cell.indexPath = indexPath
+            cell.setOneline()
             cell.setupTitle(title: data.name&)
         }
         
@@ -101,7 +105,6 @@ extension NoteListViewController : UITableViewDataSource{
         } else {
             cell.setupNoDelete()
         }
-        
         return cell
     }
     
@@ -114,12 +117,9 @@ extension NoteListViewController : UITableViewDataSource{
     }
 }
 extension NoteListViewController: UITableViewDelegate{
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

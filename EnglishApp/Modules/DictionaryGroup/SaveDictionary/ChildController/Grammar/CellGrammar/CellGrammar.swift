@@ -43,6 +43,10 @@ class CellGrammar: UITableViewCell {
         buttonRemove.isHidden = false
     }
     
+    func setOneline() {
+        lblTitle.numberOfLines = 1
+    }
+    
     func setupTitle(title: String){
         widthButton.constant = 0
         lblTitle.attributedText = NSAttributedString(string: title) 

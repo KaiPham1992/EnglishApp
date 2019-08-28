@@ -115,9 +115,11 @@ extension GrammarViewController : UITableViewDataSource{
     }
 }
 extension GrammarViewController: UITableViewDelegate{
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return UITableView.automaticDimension
     }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if !isDelete {
             if let _id = self.presenter?.grammarsResponse?.likes[indexPath.row].lesson_id {
