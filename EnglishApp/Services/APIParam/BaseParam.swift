@@ -33,8 +33,9 @@ class BaseParam: NSObject, Mappable {
         }
         
         if let fcmToken = UserDefaultHelper.shared.fcmToken {
-//             params[Params.appleToken]  = fcmToken
-            params[Params.firebaseToken] = fcmToken
+//             params["apns"]  = fcmToken
+            params["device_token"] = fcmToken
+//            params[Params.firebaseToken] = fcmToken
         }
         
         params[Params.deviceId] =  UIDevice.current.identifierForVendor!.uuidString

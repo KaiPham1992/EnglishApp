@@ -15,6 +15,7 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
 
 	var presenter: ResultGroupPresenterProtocol?
     var idCompetition: String = "0"
+    var idExercise : String = "0"
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,6 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [ResultRouter.createModule(type: .assignExercise, id: idCompetition),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+        return [ResultRouter.createModule(type: .assignExercise, id: idExercise),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
     }
 }

@@ -94,7 +94,7 @@ class RealmDBManager {
     
     func addObject<T:Object>(value: T) {
         try! database.write {
-            database.add(value)
+            database.add(value, update: Realm.UpdatePolicy.all)
         }
     }
     func addSequence<T: Object>(value: [T]){

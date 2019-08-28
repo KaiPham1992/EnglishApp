@@ -318,6 +318,7 @@ struct LocalizableKey {
     static let messagePackage = "messagePackage"
     static let find = "find"
     static let privacyAndPolicy = "PrivacyAndPolicy"
+    static let out_group_message = "out_group_message"
     
     static let pleaseEnterEmail = "pleaseEnterEmail"
     

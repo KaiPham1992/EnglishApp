@@ -17,7 +17,7 @@ class DetailTeamViewController: BaseViewController {
     
     @IBAction func start(_ sender: Any) {
         if timer == nil {
-            let vc = FightRouter.createModule(completion_id: Int(self.presenter?.teamDetail?.team_info?.competition_id ?? "0") ?? 0,team_id: Int(self.presenter?.teamDetail?.team_info?.id ?? "0") ?? 0)
+            let vc = FightRouter.createModule(completion_id: Int(self.presenter?.teamDetail?.team_info?.competition_id ?? "0") ?? 0, team_id: idMyTeam)
             self.push(controller: vc)
         }
     }
@@ -33,7 +33,9 @@ class DetailTeamViewController: BaseViewController {
     var distanceTimeMi : Int = 0
     var timer : Timer?
     var isTeamJoined = 1
-
+    var isFightJoined = 0
+    var idMyTeam = 0 
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
@@ -46,12 +48,16 @@ class DetailTeamViewController: BaseViewController {
         lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased())
         btnExplain.setAttributedTitle(NSAttributedString(string: LocalizableKey.explainConpetition.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
         btnLeave.setAttributedTitle(NSAttributedString(string: LocalizableKey.leaveTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)]), for: .normal)
-        if isTeamJoined == 1 {
-            btnLeave.isHidden = false
-            viewButtonStart.isHidden = false
-        } else {
+        if isFightJoined == 0 {
             btnLeave.isHidden = true
             viewButtonStart.isHidden = true
+        } else {
+            if isTeamJoined == 0 {
+                btnLeave.isHidden = true
+            } else {
+                btnLeave.isHidden = false
+                viewButtonStart.isHidden = false
+            }
         }
     }
 
@@ -67,7 +73,7 @@ class DetailTeamViewController: BaseViewController {
                 self.presenter?.leaveTeam(id: self.id)
             }
         } else {
-            PopUpHelper.shared.showError(message: "Cuộc thi đã bắt đầu không thể rời nhóm.") {
+            PopUpHelper.shared.showError(message: LocalizableKey.out_group_message.showLanguage) {
                 
             }
         }
@@ -115,6 +121,7 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
             timer?.invalidate()
             timer = nil
         }
+        btnLeave.isHidden = true
         self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased())
     }
     

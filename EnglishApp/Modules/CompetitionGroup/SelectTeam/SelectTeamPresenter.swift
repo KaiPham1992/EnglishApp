@@ -16,6 +16,8 @@ class SelectTeamPresenter: SelectTeamPresenterProtocol, SelectTeamInteractorOutp
         Provider.shared.competitionAPIService.joinTeam(id: id, success: { (respone) in
             ProgressView.shared.hide()
             guard let _respone = respone else {return}
+            let localConfigCompetition = LocalConfigCompetition(id_user: Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0, id_team: Int(_respone.team_info?.id ?? "0") ?? 0)
+            RealmDBManager.share.addObject(value: localConfigCompetition)
             self.view?.joinTeamSuccessed(respone: _respone)
         }) { (error) in
             ProgressView.shared.hide()
@@ -26,10 +28,19 @@ class SelectTeamPresenter: SelectTeamPresenterProtocol, SelectTeamInteractorOutp
     
     func getListFightTestTeam(competitionId: Int, offset: Int) {
         ProgressView.shared.show()
-        Provider.shared.competitionAPIService.getListFightTestTeam(competitionId: competitionId, offset: offset, success: { (listTeam) in
+        Provider.shared.competitionAPIService.getListFightTestTeam(competitionId: competitionId, offset: offset, success: { (collectionTeam) in
             ProgressView.shared.hide()
-            guard let listTeam = listTeam else {return}
-            self.view?.didGetListFightTestTeam(collectionTeam: listTeam)
+            guard let collectionTeam = collectionTeam else {return}
+            let listTeam = collectionTeam.teams
+            for item in listTeam {
+                let isTeamJoined = item.isTeamJoined ?? 0
+                if isTeamJoined == 1 {
+                    let localConfigCompetition = LocalConfigCompetition(id_user: Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0, id_team: Int(item.id ?? "0") ?? 0)
+                    RealmDBManager.share.addObject(value: localConfigCompetition)
+                    break
+                }
+            }
+            self.view?.didGetListFightTestTeam(collectionTeam: collectionTeam)
         }) { (error) in
             ProgressView.shared.hide()
             guard let error = error else {return}
@@ -43,6 +54,8 @@ class SelectTeamPresenter: SelectTeamPresenterProtocol, SelectTeamInteractorOutp
         Provider.shared.competitionAPIService.createTeamFight(idCompetition: id, name: name, success: { (respone) in
             ProgressView.shared.hide()
             if let _respone = respone {
+                let localConfigCompetition = LocalConfigCompetition(id_user: Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0, id_team: Int(_respone.id ?? "0") ?? 0)
+                RealmDBManager.share.addObject(value: localConfigCompetition)
                 self.view?.didCreateTeamSuccessed(collectionTeam: _respone)
             }
         }) { (error) in

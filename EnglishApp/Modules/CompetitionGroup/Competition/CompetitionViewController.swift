@@ -74,29 +74,41 @@ class CompetitionViewController: ListManagerVC {
                 return
             }
             if status == "CAN_JOIN"{
-                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
-                    let isStarted = cell.isStarted
-                    if isStarted {
-                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: 0)
-                        self.push(controller: vc,animated: true)
-                    } else {
-                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
-                    }
-                }
+//                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
+//                    let isStarted = cell.isStarted
+//                    if isStarted {
+//                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: 0)
+//                        self.push(controller: vc,animated: true)
+//                    } else {
+//                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+//                    }
+//                }
+                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
             }
             if status == "DONE"{
                 let isFightJoined = (listData[index] as! CompetitionEntity).is_fight_joined ?? 0
                 if isFightJoined == 0 {
                     self.push(controller: ResultCompetitionRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0)))
                 } else {
-                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0)))
+                    let data = listData[index] as! CompetitionEntity
+                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0"))
                 }
             }
+            
+            if status == "DOING" {
+//                if let object = RealmDBManager.share.filter(objectType: LocalConfigCompetition.self, key: "id_user", value: Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0).first {
+//                    let vc = FightRouter.createModule(completion_id: competitionId , team_id: object.id_team)
+//                    self.push(controller: vc,animated: true)
+//                }
+                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+            }
+            
             if status == "CANNOT_JOIN" {
                 self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true))
             }
         } else {
-            let vc = ResultGroupRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0))
+            let data = listData[index] as! CompetitionEntity
+            let vc = ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0")
             self.push(controller: vc)
         }
     }
