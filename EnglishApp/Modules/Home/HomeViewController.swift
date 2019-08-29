@@ -204,6 +204,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 return cell
             } else {
                 let cell = tableView.dequeue(HomeActionCell.self, for: indexPath)
+                cell.selectionStyle = .none
                 cell.delegate = self
                 return cell
             }

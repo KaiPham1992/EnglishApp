@@ -73,9 +73,11 @@ extension ChangeLanguageViewController: UITableViewDelegate, UITableViewDataSour
         }
         if indexPath.item == 0 {
             listLanguage[0].isSelected = true
+            UserDefaultHelper.shared.appLanguage = LanguageType.vietname.rawValue
             LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
         } else {
             listLanguage[1].isSelected = true
+            UserDefaultHelper.shared.appLanguage = LanguageType.english.rawValue
             LanguageHelper.setAppleLAnguageTo(lang: LanguageType.english)
         }
         

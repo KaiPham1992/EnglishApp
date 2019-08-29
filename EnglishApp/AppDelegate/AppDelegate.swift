@@ -28,8 +28,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         NFX.sharedInstance().start()
 //        Fabric.with([Crashlytics.self])
         Crashlytics.sharedInstance().debugMode = true
-        Fabric.sharedSDK().debug = true 
-        LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
+        Fabric.sharedSDK().debug = true
+        if UserDefaultHelper.shared.appLanguage == nil {
+            LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
+        }
         IQKeyboardManager.shared.enable = true
         
         configureGoogle()
