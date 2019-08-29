@@ -23,9 +23,12 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         self.edgesForExtendedLayout = .bottom
         self.tabBarController?.tabBar.isHidden = true
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+            self.moveToViewController(at: 1)
+        }
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [ResultRouter.createModule(type: .assignExercise, id: idExercise),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+        return [ResultRouter.createModule(type: .competition, id: self.idCompetition),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
     }
 }

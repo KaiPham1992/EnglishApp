@@ -376,4 +376,5 @@ struct LocalizableKey {
     static let camera = "camera"
     static let library = "library"
     static let notAllowGifPhoto = "notAllowGifPhoto"
+    static let you_dont_joined_competition = "you_dont_joined_competition"
 }

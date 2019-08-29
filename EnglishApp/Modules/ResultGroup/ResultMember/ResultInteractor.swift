@@ -30,8 +30,10 @@ class ResultInteractor: ResultInteractorInputProtocol {
             ProgressView.shared.show()
             Provider.shared.resultAPIService.getResultUser(idCompetition: id, success: { (respone) in
                 ProgressView.shared.hide()
-                if let _respone = respone {
+                if let _respone = respone, _respone._id != nil {
                     self.presenter?.getViewTestResultSuccessed(respone: _respone)
+                } else {
+                    self.presenter?.usetDontJoindCompetition()
                 }
             }) { (error) in
                 ProgressView.shared.hide()

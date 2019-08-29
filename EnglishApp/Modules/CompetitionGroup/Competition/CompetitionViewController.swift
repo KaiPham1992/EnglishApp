@@ -86,13 +86,16 @@ class CompetitionViewController: ListManagerVC {
                 self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
             }
             if status == "DONE"{
-                let isFightJoined = (listData[index] as! CompetitionEntity).is_fight_joined ?? 0
-                if isFightJoined == 0 {
-                    self.push(controller: ResultCompetitionRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0)))
-                } else {
-                    let data = listData[index] as! CompetitionEntity
-                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0"))
-                }
+//                let isFightJoined = (listData[index] as! CompetitionEntity).is_fight_joined ?? 0
+//
+//                if isFightJoined == 0 {
+//                    self.push(controller: ResultCompetitionRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0)))
+//                } else {
+//                    let data = listData[index] as! CompetitionEntity
+//                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0"))
+//                }
+                let data = listData[index] as! CompetitionEntity
+                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0)))
             }
             
             if status == "DOING" {

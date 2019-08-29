@@ -35,7 +35,8 @@ class ResultExerciseViewController: BaseViewController {
                     self.pop(animated: true)
                 }
             } else {
-                self.navigationController?.popToRootViewController(animated: true)
+                self.pop(animated: true)
+//                self.navigationController?.popToRootViewController(animated: true)
             }
         }
     }

@@ -368,6 +368,7 @@
 "start" = "Start";
 "vocabularyDetail" = "Vocabulary Detail";
 "deadline" = "Deadline";
+"you_dont_joined_competition" = "You don't joind competition.";
 
 // pop up choose photo
 "camera" = "Camera";

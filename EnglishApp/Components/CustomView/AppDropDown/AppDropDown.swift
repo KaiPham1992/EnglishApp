@@ -71,6 +71,7 @@ class AppDropDown: BaseViewXib {
         dropDown.anchorView = tfInput
         dropDown.backgroundColor = .white
         dropDown.width = tfInput.frame.width
+//        dropDown.multiSelectionAction
         
         dropDown.cellNib = UINib(nibName: "AppDropDownCell", bundle:  nil)
         dropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in

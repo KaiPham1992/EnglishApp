@@ -35,6 +35,7 @@ class CompetitionPresenter: CompetitionPresenterProtocol, CompetitionInteractorO
             }
         }
     }
+    
     weak private var view: CompetitionViewProtocol?
     var interactor: CompetitionInteractorInputProtocol?
     private let router: CompetitionWireframeProtocol

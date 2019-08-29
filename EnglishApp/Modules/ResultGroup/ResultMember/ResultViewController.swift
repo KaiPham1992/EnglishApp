@@ -21,6 +21,8 @@ class ResultViewController: BaseViewController {
         self.navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBOutlet weak var lblDontJoinCompetition: UILabel!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblTime: UILabel!
     @IBOutlet weak var lblPoint: UILabel!
     @IBOutlet weak var imgAVT: UIImageView!
@@ -43,6 +45,7 @@ class ResultViewController: BaseViewController {
 
     override func setUpViews() {
         super.setUpViews()
+
         viewRank.imgView.image = #imageLiteral(resourceName: "ic_kimcuong")
         viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
         viewRank.lblTitle.attributedText =  NSAttributedString(string: LocalizableKey.diamond.showLanguage)
@@ -50,6 +53,10 @@ class ResultViewController: BaseViewController {
         if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
             viewRank.isHidden = false
             self.presenter?.getViewResult(id: id)
+        }
+        
+        if type == .competition {
+            self.presenter?.getViewResultUserCompetition(idCompetition: id)
         }
     
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
@@ -65,22 +72,9 @@ class ResultViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-//        if type == .dailyMissonExercise {
-//            setTitleNavigation(title: LocalizableKey.dailyMissionTitle.showLanguage)
-//        }
-//
         if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
-//            viewRank.isHidden = true
-//            self.presenter?.getViewResult(id: id)
-            
-//            setTitleNavigation(title: LocalizableKey.result.showLanguage)
             setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         }
-//        if type == .result || type == .history{
-//            setTitleNavigation(title: LocalizableKey.result.showLanguage)
-//        } else {
-//            setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
-//        }
     }
     
     override func btnBackTapped() {
@@ -96,7 +90,16 @@ class ResultViewController: BaseViewController {
 }
 
 extension ResultViewController: ResultViewProtocol{
+    func usetDontJoindCompetition() {
+        lblDontJoinCompetition.text = LocalizableKey.you_dont_joined_competition.showLanguage
+        scrollView.isHidden = true
+        btnBackHome.isHidden = true
+    }
+    
     func reloadView() {
+        scrollView.isHidden = false
+        btnBackHome.isHidden = false
+        lblDontJoinCompetition.text = ""
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), placeholderImage: UIImage(named: "ic_avatar_default")!, completed: nil)
         lblPoint.attributedText =  NSAttributedString(string: self.presenter?.getTotalPoint() ?? "0")
         lblTime.attributedText =  NSAttributedString(string: self.presenter?.getTotalTime() ?? "")
@@ -105,6 +108,8 @@ extension ResultViewController: ResultViewProtocol{
         self.tbvResult.reloadData()
         
     }
+    
+    
 }
 
 extension ResultViewController : UITableViewDataSource{
@@ -140,7 +145,6 @@ extension ResultViewController : UITableViewDelegate{
         if let question = self.presenter?.getListAnswer() {
             self.presenter?.gotoResultQuestion(listAswer: question, index: indexPath.row, isHistory: self.isHistory)
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

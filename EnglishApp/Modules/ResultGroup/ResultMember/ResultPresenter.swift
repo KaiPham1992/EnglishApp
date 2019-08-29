@@ -27,6 +27,10 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.router.gotoResultQuestion(listAswer: listAswer, index: index,isHistory: isHistory)
     }
     
+    func usetDontJoindCompetition() {
+        self.view?.usetDontJoindCompetition()
+    }
+    
     func getListAnswer() -> [QuestionResultEntity]?{
         return testResultProfile?.questions
     }
