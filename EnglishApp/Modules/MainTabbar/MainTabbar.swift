@@ -56,7 +56,14 @@ class MainTabbar: UITabBarController {
     }
     
     func setUpObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(setUpTabbar), name: NSNotification.Name(rawValue: "Refresh"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(resetTitle), name: NSNotification.Name(rawValue: "Refresh"), object: nil)
+    }
+    
+    @objc func resetTitle() {
+        tabBar.items?[0].title = LocalizableKey.tabbarHome.showLanguage
+        tabBar.items?[1].title = LocalizableKey.tabbarProgram.showLanguage
+        tabBar.items?[2].title = LocalizableKey.tabbarHomeWork.showLanguage
+        tabBar.items?[3].title = LocalizableKey.tabbarCompetition.showLanguage
     }
     
     @objc func setUpTabbar() {

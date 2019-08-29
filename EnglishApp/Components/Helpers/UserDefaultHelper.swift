@@ -13,7 +13,7 @@ enum UserDefaultHelperKey: String {
     case deviceToken = "DeviceToken"
     case fcmToken = "FcmToken"
     case userToken = "UserToken"
-    
+    case appLanguage = "AppLanguage"
     
     
     case userName  = "UserName"
@@ -76,6 +76,16 @@ class UserDefaultHelper {
         }
         set(newToken) {
             save(value: newToken, key: .userToken)
+        }
+    }
+    
+    var appLanguage: String? {
+        get {
+            let value = get(key: .appLanguage) as? String
+            return value
+        }
+        set(newToken) {
+            save(value: newToken, key: .appLanguage)
         }
     }
     
