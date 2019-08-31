@@ -29,8 +29,11 @@ class ListManagerVC: BaseViewController {
     //pull to refresh
     private let refreshControl = UIRefreshControl()
     
+    private var isShowProgressView = true
+    
     override func setUpViews() {
         self.view.addSubview(tableView)
+        isShowProgressView = true
         tableView.fillSuperview()
         setupViewListManager()
         registerTableView()
@@ -46,6 +49,9 @@ class ListManagerVC: BaseViewController {
     }
     
     func initLoadData(data: [Any]){
+        
+        ProgressView.shared.hide()
+        
         if data.count < limit {
             isLoadmore = false
         } else {
@@ -56,6 +62,12 @@ class ListManagerVC: BaseViewController {
             self.listData = data
         } else {
             self.listData += data
+        }
+        
+        if data.count == 0 && self.offset == 0 {
+            showNoData()
+        } else {
+            hideNoData()
         }
         
         UIView.performWithoutAnimation {
@@ -93,11 +105,15 @@ class ListManagerVC: BaseViewController {
     @objc func actionPullToRefresh(){
         isLoadmore = true
         self.offset = 0
+        isShowProgressView = false
         callAPI()
         refreshControl.endRefreshing()
     }
     
     func callAPI() {
+        if isShowProgressView {
+            ProgressView.shared.show()
+        }
     }
     
     func cellForRowListManager(item: Any,_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -117,10 +133,17 @@ extension ListManagerVC : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-
         if indexPath.row == listData.count - 1 && isLoadmore {
             self.offset += limit
+            self.isShowProgressView = false
             callAPI()
+            let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+            spiner.startAnimating()
+            spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
+            self.tableView.tableFooterView = spiner
+            self.tableView.tableFooterView?.isHidden = false
+        } else {
+            self.tableView.tableFooterView?.isHidden = true
         }
     }
 }
@@ -129,12 +152,6 @@ extension ListManagerVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row = listData.count
-        
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
         return row
     }
     
