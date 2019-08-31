@@ -119,6 +119,14 @@ open class BaseTableViewController: UIViewController {
         }
     }
     
+    func addData(data: Any, index: Int) {
+        listData.insert(data, at: index)
+        hideNoData()
+        UIView.performWithoutAnimation {
+            self.tableView?.reloadData()
+        }
+    }
+    
     func cellForRowListManager(item: Any,_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         return UITableViewCell()
     }

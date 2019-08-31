@@ -193,6 +193,8 @@ class BasePopUpView: UIView {
         }
     }
     
+    
+    
     func hidePopUp(success: ((Bool) -> Void)? = nil) {
         
         self.hidePopUpWithAnimation()

@@ -10,49 +10,44 @@
 
 import UIKit
 
-class SelectTeamViewController: BaseViewController {
+class SelectTeamViewController: BaseTableViewController {
 
     
     @IBOutlet weak var btnCreateTeam: UIButton!
-    
 	var presenter: SelectTeamPresenterProtocol?
-    
     @IBOutlet weak var tbTeam: UITableView!
     
     var maxMember = 0
     var competitionId: Int?
     var isCannotJoin = false
-    var offset = 0
-    var isLoadmore = true
     var idMyTeam = 0
     var isFightJoined = 0
-    var listTeam = [TeamEntity]() {
-        didSet {
-            tbTeam.reloadData()
-            if listTeam.count == 0 {
-                showNoData()
-            } else {
-                if (listTeam[0].isTeamJoined ?? 0) == 1 {
-                    self.idMyTeam = Int(listTeam[0].id ?? "0") ?? 0
-                }
-                hideNoData()
-            }
-        }
-    }
+    
+    var joinTeam : (() -> ())?
+    var leaveTeam : (() -> ())?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        configureTable()
-        presenter?.getListFightTestTeam(competitionId: competitionId*, offset: self.offset)
         hideTabbar()
         if isCannotJoin {
             btnCreateTeam.isHidden = true
         }
+        initTableView(tableView: tbTeam)
     }
     
     override func btnBackTapped() {
         showTabbar()
         self.pop()
+    }
+    
+    override func callAPI() {
+        super.callAPI()
+        presenter?.getListFightTestTeam(competitionId: competitionId*, offset: self.offset)
+    }
+    
+    override func registerXibFile() {
+        super.registerXibFile()
+        tbTeam.registerXibFile(SelectTeamCell.self)
     }
 
     override func setTitleUI() {
@@ -73,7 +68,6 @@ class SelectTeamViewController: BaseViewController {
             }
         } else {
             PopUpHelper.shared.showCreateGroup(completionNo: {
-                
             }) { [unowned self] (message) in
                 let name = message?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? ""
                 if name.isEmpty {
@@ -86,19 +80,11 @@ class SelectTeamViewController: BaseViewController {
             }
         }
     }
-}
-
-
-extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
-    func configureTable() {
-        tbTeam.delegate = self
-        tbTeam.dataSource = self
-        tbTeam.registerXibFile(SelectTeamCell.self)
-    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! TeamEntity
         let cell = tableView.dequeue(SelectTeamCell.self, for: indexPath)
-        cell.displayData(maxMember: self.maxMember, team: listTeam[indexPath.item], isCannotJoin: self.isCannotJoin)
+        cell.displayData(maxMember: self.maxMember, team: data, isCannotJoin: self.isCannotJoin)
         cell.btnJoin.tag = indexPath.item
         cell.btnJoined.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
@@ -106,53 +92,41 @@ extension SelectTeamViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listTeam.count
-    }
-    
     @objc func btnJoined(sender: UIButton) {
-        let team = listTeam[sender.tag]
+        let team = listData[sender.tag] as! TeamEntity
         let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, idMyTeam: idMyTeam, isFightJoined: isFightJoined)
         vc.actionLeaveTeam = { [weak self] in
-            self?.offset = 0
-            self?.isLoadmore = true
-            self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
+            self?.leaveTeamSuccessed()
         }
         self.push(controller: vc)
     }
+    
+    private func leaveTeamSuccessed() {
+        leaveTeam?()
+        self.offset = 0
+        self.isLoadmore = true
+        self.presenter?.getListFightTestTeam(competitionId: self.competitionId ?? 0, offset: self.offset )
+    }
+    
     @objc func btnJoinTapped(sender: UIButton) {
-        if let id = listTeam[sender.tag].id {
+        let team = listData[sender.tag] as! TeamEntity
+        if let id = team.id {
             self.presenter?.joinTeam(id: id)
         }
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = listTeam[indexPath.row].id, let isTeamJoined = listTeam[indexPath.row].isTeamJoined {
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! TeamEntity
+        if let id = data.id, let isTeamJoined = data.isTeamJoined {
             let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, idMyTeam: idMyTeam, isFightJoined: isFightJoined)
             vc.actionLeaveTeam = { [weak self] in
-                self?.offset = 0
-                self?.isLoadmore = true
-                self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
+               self?.leaveTeamSuccessed()
             }
             self.push(controller: vc)
         }
     }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == listTeam.count - 1 && isLoadmore{
-            self.offset += limit
-            self.presenter?.getListFightTestTeam(competitionId: self.competitionId ?? 0, offset: self.offset)
-        }
-    }
 }
+
 extension SelectTeamViewController: SelectTeamViewProtocol{
     
     func joinTeamFailed(error: APIError) {
@@ -162,6 +136,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     }
     
     func joinTeamSuccessed(respone: DetailTeamEntity) {
+        joinTeam?()
         let vc = DetailTeamRouter.createModule(teamDetail: respone)
         vc.actionBackView = { [weak self] in
             self?.offset = 0
@@ -182,28 +157,22 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
             showNoData()
             return
         }
-        
-        self.isFightJoined = collectionTeam.isFightJoined ?? 0
-        
-        if collectionTeam.teams.count < limit {
-            isLoadmore = false
-        } else {
-            isLoadmore = true
-        }
-        if self.offset == 0 {
-            self.listTeam = collectionTeam.teams
-        } else {
-            self.listTeam += collectionTeam.teams
-        }
-        
         self.maxMember = _maxMember
-        tbTeam.reloadData()
+        self.isFightJoined = collectionTeam.isFightJoined ?? 0
+        initLoadData(data: collectionTeam.teams)
+        if listData.count > 0 {
+            let data = listData[0] as! TeamEntity
+            if (data.isTeamJoined ?? 0) == 1 {
+                self.idMyTeam = Int(data.id ?? "0") ?? 0
+            }
+        }
     }
     
     func didCreateTeamSuccessed(collectionTeam: TeamEntity){
+        joinTeam?()
         self.isFightJoined = 1
         collectionTeam.isTeamJoined = 1
         collectionTeam.countMember = "1"
-        listTeam.insert(collectionTeam, at: 0)
+        self.addData(data: collectionTeam, index: 0)
     }
 }

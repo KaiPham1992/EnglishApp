@@ -27,9 +27,7 @@ class SelectTeamPresenter: SelectTeamPresenterProtocol, SelectTeamInteractorOutp
     }
     
     func getListFightTestTeam(competitionId: Int, offset: Int) {
-        ProgressView.shared.show()
         Provider.shared.competitionAPIService.getListFightTestTeam(competitionId: competitionId, offset: offset, success: { (collectionTeam) in
-            ProgressView.shared.hide()
             guard let collectionTeam = collectionTeam else {return}
             let listTeam = collectionTeam.teams
             for item in listTeam {
@@ -42,7 +40,6 @@ class SelectTeamPresenter: SelectTeamPresenterProtocol, SelectTeamInteractorOutp
             }
             self.view?.didGetListFightTestTeam(collectionTeam: collectionTeam)
         }) { (error) in
-            ProgressView.shared.hide()
             guard let error = error else {return}
             self.view?.didGetListFightTestTeam(error: error)
         }

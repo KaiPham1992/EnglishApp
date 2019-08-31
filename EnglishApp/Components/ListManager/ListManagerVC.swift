@@ -47,6 +47,11 @@ class ListManagerVC: BaseViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.tableFooterView = UIView()
+        self.tableView.tableFooterView?.isHidden = true
+    }
+    
     func initLoadData(data: [Any]){
         
         ProgressView.shared.hide()

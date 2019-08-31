@@ -176,6 +176,11 @@ class PopUpHelper {
         popUp.showPopUp(message: message, completion: completionYes)
     }
     
+    func showErrorDidNotRemoveView(message: String, completionYes: CompletionClosure?) {
+        let popUp = NotificationPopUp()
+        popUp.showPopUp(message: message, completion: completionYes)
+    }
+    
     func sentNewPassword(completionYes: CompletionClosure?) {
         let popUp = UpdateAccountPopup()
         popUp.showPopup(message: "SENT_NEW_PASSWORD".showLanguage, confirm: completionYes)
@@ -184,7 +189,6 @@ class PopUpHelper {
     func showNoAllowGifPhoto(completionYes: CompletionClosure?) {
         let popUp = NotificationPopUp()
         popUp.setButtonTitle(title: LocalizableKey.cancel.showLanguage.uppercased())
-        
         popUp.showPopUp(message: LocalizableKey.notAllowGifPhoto.showLanguage, completion: completionYes)
     }
     

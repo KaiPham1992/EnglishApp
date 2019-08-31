@@ -35,7 +35,7 @@ class NotificationPopUp: BasePopUpView {
     func showPopUp(message: String, completion: CompletionClosure?) {
         self.completionYes = completion
         vNotification.lbTitle.text = message
-        super.showPopUp(height: 250)
+        super.showPopUpNotRemoveView(height: 250)
     }
     
     func setButtonTitle(title: String) {

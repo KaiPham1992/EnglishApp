@@ -377,4 +377,5 @@ struct LocalizableKey {
     static let library = "library"
     static let notAllowGifPhoto = "notAllowGifPhoto"
     static let you_dont_joined_competition = "you_dont_joined_competition"
+    static let join_team = "join team"
 }

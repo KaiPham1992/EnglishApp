@@ -18,7 +18,7 @@ class CreateGroupPopUp: BasePopUpView {
     
     override func setupView() {
         super.setupView()
-        
+        self.addObserverKeyboard()
         vContent.addSubview(vYesNoContentView)
         vYesNoContentView.fillSuperview()
         

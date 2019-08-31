@@ -84,17 +84,16 @@ class CompetitionViewController: ListManagerVC {
 //                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
 //                    }
 //                }
-                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+                let vc = SelectTeamRouter.createModule(competitionId: competitionId)
+                vc.joinTeam = { [weak self] in
+                    self?.joinTeam(index: index)
+                }
+                vc.leaveTeam = {[weak self] in
+                    self?.leaveTeam(index: index)
+                }
+                self.push(controller: vc)
             }
             if status == "DONE"{
-//                let isFightJoined = (listData[index] as! CompetitionEntity).is_fight_joined ?? 0
-//
-//                if isFightJoined == 0 {
-//                    self.push(controller: ResultCompetitionRouter.createModule(idCompetition: String((listData[index] as! CompetitionEntity).id ?? 0)))
-//                } else {
-//                    let data = listData[index] as! CompetitionEntity
-//                    self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0"))
-//                }
                 let data = listData[index] as! CompetitionEntity
                 self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0)))
             }
@@ -114,6 +113,22 @@ class CompetitionViewController: ListManagerVC {
             let data = listData[index] as! CompetitionEntity
             let vc = ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0")
             self.push(controller: vc)
+        }
+    }
+    
+    func joinTeam(index: Int) {
+        let data = listData[index] as! CompetitionEntity
+        data.is_fight_joined = 1
+        DispatchQueue.main.async {
+             self.tableView.reloadData()
+        }
+    }
+    
+    func leaveTeam(index: Int) {
+        let data = listData[index] as! CompetitionEntity
+        data.is_fight_joined = 0
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
         }
     }
     

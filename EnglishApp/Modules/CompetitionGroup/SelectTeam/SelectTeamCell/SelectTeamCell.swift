@@ -19,7 +19,7 @@ class SelectTeamCell: BaseTableCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        btnJoin.setTitle(LocalizableKey.joinTeam.showLanguage.uppercased(), for: .normal)
+        btnJoin.setTitle(LocalizableKey.join_team.showLanguage.uppercased(), for: .normal)
     }
     func displayData(maxMember: Int, team: TeamEntity, isCannotJoin: Bool){
         lbName.text = team.name
