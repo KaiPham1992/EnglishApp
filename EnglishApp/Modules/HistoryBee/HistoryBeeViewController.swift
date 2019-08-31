@@ -19,6 +19,7 @@ class HistoryBeeViewController: BaseViewController {
     
     var totalWallet = 0
     var wallet_type = 0
+    let frefresh = UIRefreshControl()
     
     var listWalletLog = [LogEntity](){
         didSet{
@@ -61,9 +62,16 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
         tbHistory.separatorStyle = .none
         tbHistory.rowHeight = UITableView.automaticDimension
         tbHistory.estimatedRowHeight = 80
-        
+        tbHistory.refreshControl = frefresh
+        tbHistory.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
 //        tbHistory.estimatedRowHeight = 55
 //        tbHistory.rowHeight = UITableView.automaticDimension
+    }
+    
+    @objc func refreshData() {
+        presenter?.listHistory.removeAll()
+        presenter?.getWalletLog(wallet_type: self.wallet_type)
+        tbHistory.refreshControl?.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

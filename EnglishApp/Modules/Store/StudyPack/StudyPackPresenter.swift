@@ -25,10 +25,13 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
     }
     
     func getProduct() {
+        ProgressView.shared.show()
         Provider.shared.productAPIService.getListProduct(success: { collectionProduct in
+            ProgressView.shared.hide()
             guard let product = collectionProduct else { return }
             self.view?.didGetProduct(product: product)
         }) { _ in
+            ProgressView.shared.hide()
             
         }
     }

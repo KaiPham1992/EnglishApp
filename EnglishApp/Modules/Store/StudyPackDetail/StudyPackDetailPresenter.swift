@@ -20,7 +20,7 @@ class StudyPackDetailPresenter: StudyPackDetailPresenterProtocol, StudyPackDetai
         }) { (error) in
             ProgressView.shared.hide()
             guard let error = error else {return}
-            self.view?.didUpgrade(error: error)
+//            self.view?.didUpgrade(error: error)
         }
     }
     

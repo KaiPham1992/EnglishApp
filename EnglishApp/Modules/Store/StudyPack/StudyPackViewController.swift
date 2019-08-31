@@ -14,6 +14,8 @@ import XLPagerTabStrip
 class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
 
 	var presenter: StudyPackPresenterProtocol?
+    let refresh = UIRefreshControl()
+    
     @IBOutlet weak var tbBeePack: UITableView!
     @IBOutlet weak var lbCode: UILabel!
     @IBOutlet weak var tfCode: UITextField!
@@ -107,6 +109,13 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         
         tbBeePack.estimatedRowHeight = 55
         tbBeePack.rowHeight = UITableView.automaticDimension
+        tbBeePack.refreshControl = refresh
+        tbBeePack.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    @objc func refreshData() {
+        presenter?.getProduct()
+        tbBeePack.refreshControl?.endRefreshing()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

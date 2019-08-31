@@ -31,6 +31,10 @@ class TopThreeView: BaseViewXib {
     @IBOutlet weak var widthAvartar3: NSLayoutConstraint!
     @IBOutlet weak var widthContent3: NSLayoutConstraint!
     
+    @IBOutlet weak var viewTop1: UIView!
+    @IBOutlet weak var viewTop2: UIView!
+    @IBOutlet weak var viewTop3: UIView!
+    
     var listTopThree : [UserEntity]?{
         didSet{
             guard let listTopThree = listTopThree else { return }
@@ -42,12 +46,8 @@ class TopThreeView: BaseViewXib {
             }
             imgAvatar1.sd_setImage(with: listTopThree[0].urlAvatar, placeholderImage: AppImage.avatarDefault)
             if listTopThree.count == 1 {
-                lbNametop2.text = ""
-                lbPointtop2.text = ""
-                imgAvatar2.image = AppImage.avatarDefault
-                lbNametop3.text = ""
-                lbPointtop3.text = ""
-                imgAvatar3.image = AppImage.avatarDefault
+                viewTop2.isHidden = true
+                viewTop3.isHidden = true
                 return
                 
             }
@@ -59,9 +59,7 @@ class TopThreeView: BaseViewXib {
             }
             imgAvatar2.sd_setImage(with: listTopThree[1].urlAvatar, placeholderImage: AppImage.avatarDefault)
             if listTopThree.count == 2 {
-                lbNametop3.text = ""
-                lbPointtop3.text = ""
-                imgAvatar3.image = AppImage.avatarDefault
+                viewTop3.isHidden = true
                 return
             }
             

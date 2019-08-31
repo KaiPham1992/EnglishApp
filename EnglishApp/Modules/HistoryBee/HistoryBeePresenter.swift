@@ -31,7 +31,9 @@ class HistoryBeePresenter: HistoryBeePresenterProtocol, HistoryBeeInteractorOutp
     
     func getWalletLog(wallet_type: Int) {
         canLoadMore = false
-        ProgressView.shared.show()
+        if listHistory.count == 0 {
+            ProgressView.shared.show()
+        }
         Provider.shared.walletLogAPIService.getWalletLog(offset: listHistory.count, wallet_type: wallet_type, success: { (listWalletLog) in
             ProgressView.shared.hide()
             

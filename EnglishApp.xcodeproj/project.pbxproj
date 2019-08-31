@@ -405,6 +405,8 @@
 		2AF2F85022EA084300603444 /* NoteListRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2F84E22EA084300603444 /* NoteListRespone.swift */; };
 		2AF2F85122EA084300603444 /* NoteListRespone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF2F84E22EA084300603444 /* NoteListRespone.swift */; };
 		55B78D00229745E43B2E20BD /* Pods_EnglishApp_Dev.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C147159227EFF5BED8150F93 /* Pods_EnglishApp_Dev.framework */; };
+		7624A6C6231AB570000BA1C6 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */; };
+		7624A6C7231AB571000BA1C6 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */; };
 		7629BDD122ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDD022ACCBBA0051B835 /* ReportQuestionPopUp.swift */; };
 		7629BDD222ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDD022ACCBBA0051B835 /* ReportQuestionPopUp.swift */; };
 		7629BDD322ACCBBA0051B835 /* ReportQuestionPopUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7629BDD022ACCBBA0051B835 /* ReportQuestionPopUp.swift */; };
@@ -7206,6 +7208,7 @@
 				DECD191722A269560054861D /* DetailPackProtocols.swift in Sources */,
 				DEB584892291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				76CE31A12295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
+				7624A6C6231AB570000BA1C6 /* BaseTableViewController.swift in Sources */,
 				DE952FEE2287DF4800E3F688 /* HomeInteractor.swift in Sources */,
 				766D1380228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				2AB4A06E22E226B900557B5F /* HistoryDailyMissonInteractor.swift in Sources */,
@@ -8067,6 +8070,7 @@
 				DEF1C25522903557005AD1A3 /* HomeActionCell.swift in Sources */,
 				76C92F9C22C4888400E8ED69 /* ViewExerciseEntity.swift in Sources */,
 				76CE322C22968C7D00E998FB /* NameExercisePresenter.swift in Sources */,
+				7624A6C7231AB571000BA1C6 /* BaseTableViewController.swift in Sources */,
 				76EE392A22A5777700DD8960 /* HistoryExerciseDateInteractor.swift in Sources */,
 				DE9530DD2287DF6400E3F688 /* HomeRouter.swift in Sources */,
 				DE9530DE2287DF6400E3F688 /* MapperData.swift in Sources */,
