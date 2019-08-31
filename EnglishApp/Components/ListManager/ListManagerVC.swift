@@ -20,7 +20,6 @@ class ListManagerVC: BaseViewController {
     var showButtonBack = true
     //set offset of param
     var offset = 0
-    
     //true -> use pull to fresh : false -> disable pull to refresh
     var isAddPullToFresh = true
     // constraint use callAPI -> ovrrived to use pull to refresh
@@ -89,10 +88,6 @@ class ListManagerVC: BaseViewController {
         self.tableView.delegate = self
     }
     
-    func didSelectTableView(item: Any, indexPath: IndexPath){
-        
-    }
-    
     private func addPullToRefresh(){
         refreshControl.addTarget(self, action: #selector(actionPullToRefresh), for: .valueChanged)
         if #available(iOS 10.0, *) {
@@ -118,6 +113,10 @@ class ListManagerVC: BaseViewController {
     
     func cellForRowListManager(item: Any,_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         return UITableViewCell()
+    }
+    
+    func didSelectTableView(item: Any, indexPath: IndexPath){
+        
     }
 }
 

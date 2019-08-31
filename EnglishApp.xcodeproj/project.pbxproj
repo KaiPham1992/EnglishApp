@@ -43,6 +43,7 @@
 		2A2FC7A322EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
 		2A2FC7A422EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
 		2A2FC7A522EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
+		2A36B8A0231A4AE100E9696F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */; };
 		2A436AF422EB33A800BD9285 /* HistoryListExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */; };
 		2A436AF522EB33A800BD9285 /* HistoryListExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */; };
 		2A436AF622EB33A800BD9285 /* HistoryListExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */; };
@@ -2306,6 +2307,7 @@
 		2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManagerVC.swift; sourceTree = "<group>"; };
 		2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarEntity.swift; sourceTree = "<group>"; };
 		2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarsResponse.swift; sourceTree = "<group>"; };
+		2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListExercisePresenter.swift; sourceTree = "<group>"; };
 		2A436AEF22EB33A800BD9285 /* HistoryListExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListExerciseRouter.swift; sourceTree = "<group>"; };
 		2A436AF022EB33A800BD9285 /* HistoryListExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListExerciseViewController.swift; sourceTree = "<group>"; };
@@ -4306,6 +4308,7 @@
 				DE361DE12283E54C00FA3B0D /* BasePopUpView.swift */,
 				DE361DE22283E54C00FA3B0D /* BaseView.swift */,
 				DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */,
+				2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -6586,6 +6589,7 @@
 				DECD191622A269560054861D /* DetailPackProtocols.swift in Sources */,
 				DEB584882291AC7A00FE0356 /* HistoryBeeHeader.swift in Sources */,
 				76CE31A02295AE3600E998FB /* ChoiceExercisePresenter.swift in Sources */,
+				2A36B8A0231A4AE100E9696F /* BaseTableViewController.swift in Sources */,
 				DE2ADE6D22841B9E003768CE /* HomeInteractor.swift in Sources */,
 				766D137F228F2629005E47F0 /* DetailLessonPresenter.swift in Sources */,
 				2AB4A06D22E226B900557B5F /* HistoryDailyMissonInteractor.swift in Sources */,

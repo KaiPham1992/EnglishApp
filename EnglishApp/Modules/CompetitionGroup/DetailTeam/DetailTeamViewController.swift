@@ -10,7 +10,7 @@
 
 import UIKit
 
-class DetailTeamViewController: BaseViewController {
+class DetailTeamViewController: BaseTableViewController {
 
     @IBOutlet weak var lblTitleButtonStart: UILabel!
     @IBOutlet weak var viewButtonStart: UIView!
@@ -37,9 +37,19 @@ class DetailTeamViewController: BaseViewController {
     var idMyTeam = 0 
     
 	override func viewDidLoad() {
+        self.isAddPullToFresh = false
         super.viewDidLoad()
-        configureTable()
+        initTableView(tableView: tbTeam)
+    }
+    
+    override func callAPI() {
+        super.callAPI()
         self.presenter?.getDetailTeam(id: self.id)
+    }
+    
+    override func registerXibFile() {
+        super.registerXibFile()
+        self.tbTeam.registerXibFile(DetailTeamCell.self)
     }
 
     override func setTitleUI() {
@@ -82,6 +92,14 @@ class DetailTeamViewController: BaseViewController {
         actionBackView?()
         super.btnBackTapped()
     }
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let dataCell = item as! UserEntity
+        let cell = tableView.dequeue(DetailTeamCell.self, for: indexPath)
+        cell.lbIndex.text = "\(indexPath.item + 1)"
+        cell.member = dataCell
+        return cell
+    }
 }
 
 extension DetailTeamViewController : DetailTeamViewProtocol {
@@ -110,8 +128,7 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
                 } else {
                     self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased())
                 }
-                
-                self.tbTeam.reloadData()
+                self.initLoadData(data: self.presenter?.teamDetail?.members ?? [])
             }
         }
     }
@@ -132,44 +149,5 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
     func leaveTeamSuccessed() {
         actionLeaveTeam?()
         self.pop(animated: true)
-    }
-}
-
-extension DetailTeamViewController: UITableViewDelegate, UITableViewDataSource {
-    func configureTable() {
-        tbTeam.delegate = self
-        tbTeam.dataSource = self
-        tbTeam.registerXibFile(DetailTeamCell.self)
-        tbTeam.separatorStyle = .none
-        
-        tbTeam.estimatedRowHeight = 55
-        tbTeam.rowHeight = UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(DetailTeamCell.self, for: indexPath)
-        cell.lbIndex.text = "\(indexPath.item + 1)"
-        if let dataCell = self.presenter?.getUserIndexPath(indexPath: indexPath) {
-            cell.member = dataCell
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.getNumberRow() ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    
-    @objc func btnJoinTapped() {
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
     }
 }
