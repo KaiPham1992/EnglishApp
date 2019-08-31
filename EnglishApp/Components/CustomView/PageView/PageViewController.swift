@@ -36,6 +36,14 @@ class PageViewController : ButtonBarPagerTabStripViewController{
         }
     }
     
+//    func gotoIndex(index: Int) {
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.02) {
+//            if index < self.viewControllers.count {
+//                self.moveToViewController(at: index)
+//            }
+//        }
+//    }
+    
     func addBackToNavigation(icon: UIImage = UIImage(named: "Material_Icons_white_chevron_left")! ) {
         addButtonImageToNavigation(image: icon, style: .left, action: #selector(btnBackTapped))
     }

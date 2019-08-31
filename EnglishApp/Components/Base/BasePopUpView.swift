@@ -75,6 +75,30 @@ class BasePopUpView: UIView {
         vBackGround.addSubview(vContent)
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func addObserverKeyboard() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc func keyboardHide() {
+        self.minYContent = (heightWindow - heightContent) / 2
+        UIView.animate(withDuration: 0.5) {
+            self.vContent.frame = CGRect(x: self.minXContent, y: self.minYContent, width: self.widthContent, height: self.heightContent)
+        }
+    }
+    
+    @objc func keyboardShow(notification : Notification){
+        let keyboardHeight = (notification.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue.height
+        self.minYContent = heightWindow - keyboardHeight - heightContent
+        UIView.animate(withDuration: 0.5) {
+            self.vContent.frame = CGRect(x: self.minXContent, y: self.minYContent, width: self.widthContent, height: self.heightContent)
+        }
+    }
+    
     @objc func btnCloseTapped() {
         hidePopUp()
     }

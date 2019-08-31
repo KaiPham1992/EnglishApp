@@ -17,6 +17,7 @@ class ReportQuestionPopUp : BasePopUpView{
     
     override func setupView() {
         super.setupView()
+        self.addObserverKeyboard()
         self.vContent.addSubview(view)
         view.fillSuperview()
         view.cancel = {

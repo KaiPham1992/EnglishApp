@@ -16,16 +16,19 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
 	var presenter: ResultGroupPresenterProtocol?
     var idCompetition: String = "0"
     var idExercise : String = "0"
-
+    
 	override func viewDidLoad() {
+//        self.gotoIndex(index: 1)
         super.viewDidLoad()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         self.edgesForExtendedLayout = .bottom
         self.tabBarController?.tabBar.isHidden = true
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-            self.moveToViewController(at: 1)
-        }
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
+//            UIView.performWithoutAnimation {
+//                self.moveToViewController(at: 1)
+//            }
+//        }
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
