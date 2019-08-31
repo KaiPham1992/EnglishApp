@@ -75,35 +75,33 @@ class CompetitionViewController: ListManagerVC {
                 return
             }
             if status == "CAN_JOIN"{
-//                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
-//                    let isStarted = cell.isStarted
-//                    if isStarted {
-//                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: 0)
-//                        self.push(controller: vc,animated: true)
-//                    } else {
-//                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
-//                    }
-//                }
-                let vc = SelectTeamRouter.createModule(competitionId: competitionId)
-                vc.joinTeam = { [weak self] in
-                    self?.joinTeam(index: index)
+                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
+                    let isStarted = cell.isStarted
+                    if isStarted {
+                        let data = listData[index] as! CompetitionEntity
+                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0)
+                        self.push(controller: vc,animated: true)
+                    } else {
+                        let vc = SelectTeamRouter.createModule(competitionId: competitionId)
+                        vc.joinTeam = { [weak self] (teamId) in
+                            self?.joinTeam(index: index, teamId: teamId)
+                        }
+                        vc.leaveTeam = {[weak self] in
+                            self?.leaveTeam(index: index)
+                        }
+                        self.push(controller: vc)
+                    }
                 }
-                vc.leaveTeam = {[weak self] in
-                    self?.leaveTeam(index: index)
-                }
-                self.push(controller: vc)
             }
             if status == "DONE"{
                 let data = listData[index] as! CompetitionEntity
-                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0)))
+                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0), isHistory: true))
             }
             
             if status == "DOING" {
-//                if let object = RealmDBManager.share.filter(objectType: LocalConfigCompetition.self, key: "id_user", value: Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0).first {
-//                    let vc = FightRouter.createModule(completion_id: competitionId , team_id: object.id_team)
-//                    self.push(controller: vc,animated: true)
-//                }
-                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId))
+                let data = listData[index] as! CompetitionEntity
+                let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0)
+                self.push(controller: vc,animated: true)
             }
             
             if status == "CANNOT_JOIN" {
@@ -111,13 +109,14 @@ class CompetitionViewController: ListManagerVC {
             }
         } else {
             let data = listData[index] as! CompetitionEntity
-            let vc = ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0")
+            let vc = ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0", isHistory: true)
             self.push(controller: vc)
         }
     }
     
-    func joinTeam(index: Int) {
+    func joinTeam(index: Int, teamId: Int) {
         let data = listData[index] as! CompetitionEntity
+        data.team_id = String(teamId)
         data.is_fight_joined = 1
         DispatchQueue.main.async {
              self.tableView.reloadData()

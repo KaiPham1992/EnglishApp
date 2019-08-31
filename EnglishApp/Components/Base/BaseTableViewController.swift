@@ -49,6 +49,7 @@ open class BaseTableViewController: UIViewController {
     // constraint use callAPI -> ovrrived to use pull to refresh
     var isLoadmore = true
     private var isShowProgressView = true
+    var addLoadmore = true
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -534,17 +535,19 @@ extension BaseTableViewController : UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == listData.count - 1 && isLoadmore {
-            self.offset += limit
-            self.isShowProgressView = false
-            callAPI()
-            let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
-            spiner.startAnimating()
-            spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
-            self.tableView?.tableFooterView = spiner
-            self.tableView?.tableFooterView?.isHidden = false
-        } else {
-            self.tableView?.tableFooterView?.isHidden = true
+        if addLoadmore {
+            if indexPath.row == listData.count - 1 && isLoadmore {
+                self.offset += limit
+                self.isShowProgressView = false
+                callAPI()
+                let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+                spiner.startAnimating()
+                spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
+                self.tableView?.tableFooterView = spiner
+                self.tableView?.tableFooterView?.isHidden = false
+            } else {
+                self.tableView?.tableFooterView?.isHidden = true
+            }
         }
     }
 }

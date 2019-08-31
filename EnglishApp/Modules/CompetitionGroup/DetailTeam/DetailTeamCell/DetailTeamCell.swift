@@ -23,10 +23,10 @@ class DetailTeamCell: BaseTableCell {
             lbPoint.attributedText = NSAttributedString(string: member.rankName& + ": " + String(member.amountRank ?? 0))
             if (member.isLeader ?? 0) == 1{
                 imgLevel.isHidden = false
-                imgAvatar.sd_setImage(with: URL(string: BASE_URL_IMAGE + member.imgSrc&), placeholderImage: UIImage(named: "ic_avatar_default")!, context: nil)
+                imgAvatar.sd_setImage(with: URL(string: BASE_URL_IMAGE + member.attachImg&), placeholderImage: UIImage(named: "ic_avatar_default")!, context: nil)
             } else {
                 imgLevel.isHidden = true
-                imgAvatar.sd_setImage(with: URL(string: BASE_URL_IMAGE + member.imgSrc&), placeholderImage: UIImage(named: "ic_avatar_default")!, context: nil)
+                imgAvatar.sd_setImage(with: URL(string: BASE_URL_IMAGE + member.attachImg&), placeholderImage: UIImage(named: "ic_avatar_default")!, context: nil)
             }
         }
     }

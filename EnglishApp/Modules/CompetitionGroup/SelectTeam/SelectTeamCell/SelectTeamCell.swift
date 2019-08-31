@@ -31,13 +31,13 @@ class SelectTeamCell: BaseTableCell {
         } else {
             if (team.isTeamJoined ?? 0) == 0 {
                 btnJoined.isHidden = true
-                heightBtnJoin.constant = 24
+                if Int(team.countMember&) == maxMember {
+                    heightBtnJoin.constant = 0
+                } else {
+                    heightBtnJoin.constant = 24
+                }
             } else {
                 btnJoined.isHidden = false
-                heightBtnJoin.constant = 0
-            }
-            if Int(team.countMember&) == maxMember {
-                btnJoined.isHidden = true
                 heightBtnJoin.constant = 0
             }
         }

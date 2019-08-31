@@ -37,6 +37,7 @@ class DetailTeamViewController: BaseTableViewController {
     var idMyTeam = 0 
     
 	override func viewDidLoad() {
+        addLoadmore = false
         self.isAddPullToFresh = false
         super.viewDidLoad()
         initTableView(tableView: tbTeam)

@@ -16,6 +16,7 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
 	var presenter: ResultGroupPresenterProtocol?
     var idCompetition: String = "0"
     var idExercise : String = "0"
+    var isHistory : Bool = false
     
 	override func viewDidLoad() {
 //        self.gotoIndex(index: 1)
@@ -31,7 +32,20 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
 //        }
     }
     
+    override func btnBackTapped() {
+        if isHistory {
+            super.btnBackTapped()
+        } else {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+    }
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [ResultRouter.createModule(type: .competition, id: self.idCompetition),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+        if isHistory {
+            return [ResultRouter.createModule(type: .competition, id: self.idCompetition, isHistory:  true),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+        } else {
+             return [ResultRouter.createModule(type: .competition, id: self.idCompetition),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+        }
+        
     }
 }

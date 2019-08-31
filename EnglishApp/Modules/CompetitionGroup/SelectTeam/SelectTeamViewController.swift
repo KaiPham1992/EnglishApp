@@ -23,7 +23,7 @@ class SelectTeamViewController: BaseTableViewController {
     var idMyTeam = 0
     var isFightJoined = 0
     
-    var joinTeam : (() -> ())?
+    var joinTeam : ((_ teamId: Int) -> ())?
     var leaveTeam : (() -> ())?
 
 	override func viewDidLoad() {
@@ -136,7 +136,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     }
     
     func joinTeamSuccessed(respone: DetailTeamEntity) {
-        joinTeam?()
+        joinTeam?(Int(respone.team_info?.id ?? "0") ?? 0)
         let vc = DetailTeamRouter.createModule(teamDetail: respone)
         vc.actionBackView = { [weak self] in
             self?.offset = 0
@@ -169,10 +169,11 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     }
     
     func didCreateTeamSuccessed(collectionTeam: TeamEntity){
-        joinTeam?()
+        joinTeam?(Int(collectionTeam.id ?? "0") ?? 0)
         self.isFightJoined = 1
         collectionTeam.isTeamJoined = 1
         collectionTeam.countMember = "1"
+        collectionTeam.attachImgSrc = UserDefaultHelper.shared.loginUserInfo?.attachImg ?? ""
         self.addData(data: collectionTeam, index: 0)
     }
 }
