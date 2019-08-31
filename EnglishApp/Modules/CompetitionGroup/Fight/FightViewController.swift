@@ -43,6 +43,8 @@ class FightViewController: BaseViewController {
     var team_id : Int = 0
     var isOut = false
     
+    var fightFinished : (() -> ())?
+    
     var player : AVPlayer?
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
@@ -159,6 +161,7 @@ extension FightViewController :FightViewProtocol{
                 }
             }
         } else {
+            self.fightFinished?()
             self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
         }
     }

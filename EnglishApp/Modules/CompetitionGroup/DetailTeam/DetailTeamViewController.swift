@@ -18,6 +18,9 @@ class DetailTeamViewController: BaseTableViewController {
     @IBAction func start(_ sender: Any) {
         if timer == nil {
             let vc = FightRouter.createModule(completion_id: Int(self.presenter?.teamDetail?.team_info?.competition_id ?? "0") ?? 0, team_id: idMyTeam)
+            vc.fightFinished = {[weak self] in
+                self?.fightFinished?()
+            }
             self.push(controller: vc)
         }
     }
@@ -34,7 +37,9 @@ class DetailTeamViewController: BaseTableViewController {
     var timer : Timer?
     var isTeamJoined = 1
     var isFightJoined = 0
-    var idMyTeam = 0 
+    var idMyTeam = 0
+    
+    var fightFinished : (() -> ())?
     
 	override func viewDidLoad() {
         addLoadmore = false

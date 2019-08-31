@@ -25,6 +25,7 @@ class SelectTeamViewController: BaseTableViewController {
     
     var joinTeam : ((_ teamId: Int) -> ())?
     var leaveTeam : (() -> ())?
+    var fightFinished : (() -> ())?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +122,9 @@ class SelectTeamViewController: BaseTableViewController {
             let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, idMyTeam: idMyTeam, isFightJoined: isFightJoined)
             vc.actionLeaveTeam = { [weak self] in
                self?.leaveTeamSuccessed()
+            }
+            vc.fightFinished = {[weak self] in
+                self?.fightFinished?()
             }
             self.push(controller: vc)
         }

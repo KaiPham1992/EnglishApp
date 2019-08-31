@@ -89,10 +89,14 @@ class CompetitionViewController: ListManagerVC {
                         vc.leaveTeam = {[weak self] in
                             self?.leaveTeam(index: index)
                         }
+                        vc.fightFinished = { [weak self] in
+                            self?.fightComplete(index: index)
+                        }
                         self.push(controller: vc)
                     }
                 }
             }
+            
             if status == "DONE"{
                 let data = listData[index] as! CompetitionEntity
                 self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0), isHistory: true))
@@ -101,6 +105,9 @@ class CompetitionViewController: ListManagerVC {
             if status == "DOING" {
                 let data = listData[index] as! CompetitionEntity
                 let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0)
+                vc.fightFinished = {[weak self] in
+                    self?.fightComplete(index: index)
+                }
                 self.push(controller: vc,animated: true)
             }
             
@@ -113,6 +120,12 @@ class CompetitionViewController: ListManagerVC {
             self.push(controller: vc)
         }
     }
+    
+    private func fightComplete(index: Int) {
+        let data = listData[index] as! CompetitionEntity
+        data.status = "DONE"
+        self.tableView.reloadData()
+     }
     
     func joinTeam(index: Int, teamId: Int) {
         let data = listData[index] as! CompetitionEntity
