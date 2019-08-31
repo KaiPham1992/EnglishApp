@@ -106,6 +106,49 @@ class BasePopUpView: UIView {
         hidePopUp()
     }
     
+    func showPopUpNotRemoveView(width: CGFloat = 350 , height: CGFloat = 250, type: BasePopUpViewType = BasePopUpViewType.zoomOut) {
+        if let window = UIApplication.shared.keyWindow {
+            if #available(iOS 11.0, *) {
+                widthWindow = window.safeAreaLayoutGuide.layoutFrame.width
+                heightWindow = window.safeAreaLayoutGuide.layoutFrame.height
+            } else {
+                widthWindow = window.frame.width
+                heightWindow = window.frame.height
+            }
+            
+            //---
+            widthContent = window.frame.width
+            heightContent = height
+            
+            //--
+            if type != .showFromBottom {
+                widthContent = width
+                minXContent = (widthWindow - width) / 2
+                minYContent = (heightWindow - height) / 2
+            } else {
+                widthContent = widthWindow
+                heightContent = height
+                minXContent = 0
+                minYContent = (heightWindow - height)
+            }
+            
+            self.type = type
+            
+            //---
+//            for sub in window.subviews {
+//                if sub is BasePopUpView {
+//                    sub.removeFromSuperview()
+//                }
+//            }
+            window.addSubview(self)
+            self.fillSuperview()
+            self.vBackGround.alpha = 0
+            
+            //---
+            showPopWithAnimation(type: type)
+        }
+    }
+    
     func showPopUp(width: CGFloat = 350 , height: CGFloat = 250, type: BasePopUpViewType = BasePopUpViewType.zoomOut) {
         
         if let window = UIApplication.shared.keyWindow {
