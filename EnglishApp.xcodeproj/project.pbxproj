@@ -227,7 +227,6 @@
 		2AA6D38922DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
 		2AA6D38A22DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
 		2AA6D38B22DC599B006E9859 /* DetailTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */; };
-		2AA8BAA82315933600C8C644 /* LocalConfigCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8BAA72315933600C8C644 /* LocalConfigCompetition.swift */; };
 		2AA9E35D22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */; };
 		2AA9E35E22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */; };
 		2AA9E35F22F9A28B0093F5C8 /* ItemDictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */; };
@@ -243,8 +242,6 @@
 		2AA9E37222FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
 		2AA9E37322FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
 		2AA9E37422FB3C780093F5C8 /* WordLikeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA9E37122FB3C780093F5C8 /* WordLikeResponse.swift */; };
-		2AA9EBFB23198823003BB688 /* LocalConfigCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8BAA72315933600C8C644 /* LocalConfigCompetition.swift */; };
-		2AA9EBFC23198823003BB688 /* LocalConfigCompetition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA8BAA72315933600C8C644 /* LocalConfigCompetition.swift */; };
 		2AAE21F622D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F722D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
 		2AAE21F822D381EB00AE7481 /* NoteDetailEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AAE21F522D381EB00AE7481 /* NoteDetailEntity.swift */; };
@@ -2371,7 +2368,6 @@
 		2AA20CE622F5522400F38894 /* CommentQuestionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentQuestionInteractor.swift; sourceTree = "<group>"; };
 		2AA20CE722F5522400F38894 /* CommentQuestionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentQuestionViewController.xib; sourceTree = "<group>"; };
 		2AA6D38822DC599B006E9859 /* DetailTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTeamEntity.swift; sourceTree = "<group>"; };
-		2AA8BAA72315933600C8C644 /* LocalConfigCompetition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfigCompetition.swift; sourceTree = "<group>"; };
 		2AA9E35C22F9A28B0093F5C8 /* ItemDictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDictionaryResponse.swift; sourceTree = "<group>"; };
 		2AA9E36522F9AA310093F5C8 /* FileZipManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileZipManager.swift; sourceTree = "<group>"; };
 		2AA9E36922FB2DE00093F5C8 /* LocalConfigDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalConfigDictionary.swift; sourceTree = "<group>"; };
@@ -3274,7 +3270,6 @@
 			children = (
 				2A9A81E922EC5AA300345C5F /* WordEntity.swift */,
 				2A9A81ED22EC5C6300345C5F /* WordExplainEntity.swift */,
-				2AA8BAA72315933600C8C644 /* LocalConfigCompetition.swift */,
 			);
 			path = Object;
 			sourceTree = "<group>";
@@ -6444,7 +6439,6 @@
 				DE49F81B22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
 				DEC62ADF22930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE952F992287D2A700E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
-				2AA8BAA82315933600C8C644 /* LocalConfigCompetition.swift in Sources */,
 				DE95312C228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
 				766AE80822B02393002D474E /* ViewFeature.swift in Sources */,
 				769A3BCC22A0A11B00CA55BD /* WeekView.swift in Sources */,
@@ -7061,7 +7055,6 @@
 				DE49F81C22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
 				DEC62AE022930EC400D7CECE /* BeePackProtocols.swift in Sources */,
 				DE952FD22287DF4800E3F688 /* KActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
-				2AA9EBFB23198823003BB688 /* LocalConfigCompetition.swift in Sources */,
 				DE95312D228808ED00E3F688 /* ProfileProtocols.swift in Sources */,
 				766AE80922B02393002D474E /* ViewFeature.swift in Sources */,
 				769A3BCD22A0A11B00CA55BD /* WeekView.swift in Sources */,
@@ -7864,7 +7857,6 @@
 				DE3A8C9B2289B93F0080A8CB /* QADetailPresenter.swift in Sources */,
 				DEA932A822BF804B0050FB1D /* QAAPIService.swift in Sources */,
 				DE9530A62287DF6400E3F688 /* BaseViewXib.swift in Sources */,
-				2AA9EBFC23198823003BB688 /* LocalConfigCompetition.swift in Sources */,
 				DE9530A72287DF6400E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				76C8E2E222C19AB80076E65B /* ResultExercisePresenter.swift in Sources */,
 				DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */,

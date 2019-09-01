@@ -16,6 +16,7 @@ class ItemDictionaryResponse : Mappable {
     var link_dictionary : String = ""
     var isDownload = false
     var isDefault = false
+    var isDownloading = false
     
     
     func changeStatus(isDownload: Bool) {

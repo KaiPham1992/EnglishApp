@@ -14,17 +14,17 @@ class FileZipManager {
     static let shared  = FileZipManager()
     init() {
     }
-    func downLoadFile(link: String, completion : @escaping (() -> ())){
+    func downLoadFile(idDictionary: Int, link: String, completion : @escaping (() -> ())){
         DispatchQueue.main.async {
             let destination = DownloadRequest.suggestedDownloadDestination(for: .documentDirectory)
             Alamofire.download(link,to: destination).responseData { response in
                 if response.result.isSuccess, let destinationURL = response.destinationURL, let unzipURL = self.unzipFile(link: destinationURL)  {
-                    SQLHelper.shared.convertSQLiteToRealmWordEntity(path: unzipURL.path + "/sqliteWord.db", complete: {
+                    SQLHelper.shared.convertSQLiteToRealmWordEntity(idDictionary: idDictionary, path: unzipURL.path + "/sqliteWord.db", complete: {
                         if let url = URL(string: unzipURL.path + "/sqliteWord.db") {
                             self.removeFile(link: url)
                         }
                     })
-                    SQLHelper.shared.convertSQLiteToRealmWordExplainEntity(path: unzipURL.path + "/sqliteWordExplain.db", complete: {
+                    SQLHelper.shared.convertSQLiteToRealmWordExplainEntity(idDictionary: idDictionary, path: unzipURL.path + "/sqliteWordExplain.db", complete: {
                         if let url = URL(string: unzipURL.path + "/sqliteWordExplain.db") {
                             self.removeFile(link: url)
                         }

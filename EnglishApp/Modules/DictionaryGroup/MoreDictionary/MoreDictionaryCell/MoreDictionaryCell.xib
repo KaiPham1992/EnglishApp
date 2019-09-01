@@ -24,6 +24,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="377" height="103.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Srf-gv-Epb">
+                        <rect key="frame" x="345" y="42" width="20" height="20"/>
+                    </activityIndicatorView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljo-Vk-pqw">
                         <rect key="frame" x="343" y="40" width="24" height="24"/>
                         <constraints>
@@ -66,10 +69,12 @@
                     <constraint firstItem="9UA-bE-TAu" firstAttribute="leading" secondItem="Bjl-EQ-0RN" secondAttribute="trailing" constant="5" id="JUk-dd-vZl"/>
                     <constraint firstItem="Bjl-EQ-0RN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="VgR-zb-9VA"/>
                     <constraint firstItem="Bjl-EQ-0RN" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="aF3-hg-TXr"/>
+                    <constraint firstItem="Srf-gv-Epb" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="cvz-df-R9q"/>
                     <constraint firstAttribute="bottom" secondItem="J5Y-2K-Vww" secondAttribute="bottom" id="d5f-ky-YRR"/>
                     <constraint firstAttribute="trailing" secondItem="ljo-Vk-pqw" secondAttribute="trailing" constant="10" id="etM-2R-Hem"/>
                     <constraint firstItem="ljo-Vk-pqw" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ivD-Db-vLy"/>
                     <constraint firstItem="J5Y-2K-Vww" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ive-wA-Cr0"/>
+                    <constraint firstAttribute="trailing" secondItem="Srf-gv-Epb" secondAttribute="trailing" constant="12" id="zKO-k0-j8T"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
@@ -77,6 +82,7 @@
                 <outlet property="btnChoice" destination="9UA-bE-TAu" id="yyS-aY-hR9"/>
                 <outlet property="btnDelete" destination="ljo-Vk-pqw" id="CLT-Qq-4ry"/>
                 <outlet property="heightBtnChocie" destination="LvC-S9-7iQ" id="Z5g-bh-tLk"/>
+                <outlet property="indicator" destination="Srf-gv-Epb" id="UjQ-eP-0a0"/>
                 <outlet property="lblTitle" destination="Bjl-EQ-0RN" id="Asu-cQ-Y6u"/>
             </connections>
             <point key="canvasLocation" x="173.18840579710147" y="136.60714285714286"/>

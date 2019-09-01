@@ -18,6 +18,8 @@ class MoreDictionaryCell: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
     }
+    
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
     var isDownloaded : Bool = false
     var actionCell : ((_ idDownloaded: Bool)->())?
     var actionSetDefaultDictionary : ((_ isChoice: Bool) -> ())?
@@ -29,18 +31,33 @@ class MoreDictionaryCell: UITableViewCell {
         actionSetDefaultDictionary?(btnChoice.isChocie)
     }
     
-    func setupCell(isDownloaded: Bool, title: String,isDefault: Bool){
+    func hideBtnDelete() {
+        indicator.startAnimating()
+        btnDelete.isHidden  = true
+    }
+    
+    func setupCell(isDownloaded: Bool, title: String, isDefault: Bool, idDownloading : Bool){
         self.isDownloaded = isDownloaded
         lblTitle.text = title
-        if isDownloaded {
-            heightBtnChocie.constant = 24
-            btnDelete.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_black_delete"), for: .normal)
+//        btnDelete.isHidden = false
+        if !idDownloading {
+            indicator.stopAnimating()
+            btnDelete.isHidden = false
             btnChoice.isHidden = false
-            btnChoice.isChocie = isDefault
+            if isDownloaded {
+                heightBtnChocie.constant = 24
+                btnDelete.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_black_delete"), for: .normal)
+                btnChoice.isHidden = false
+                btnChoice.isChocie = isDefault
+            } else {
+                heightBtnChocie.constant = 0
+                btnDelete.setBackgroundImage(#imageLiteral(resourceName: "ic_download_button"), for: .normal)
+                btnChoice.isHidden = true
+            }
         } else {
-            heightBtnChocie.constant = 0
-            btnDelete.setBackgroundImage(#imageLiteral(resourceName: "download"), for: .normal)
+            indicator.startAnimating()
             btnChoice.isHidden = true
+            btnDelete.isHidden = true
         }
     }
 }

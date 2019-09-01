@@ -13,7 +13,7 @@ import SQLite3
 class SQLHelper {
     static let shared = SQLHelper()
     //sqlite into document file
-    func convertSQLiteToRealmWordEntity(path: String,complete: @escaping () -> ()) {
+    func convertSQLiteToRealmWordEntity(idDictionary: Int, path: String,complete: @escaping () -> ()) {
         DispatchQueue.global().async {
             var database : OpaquePointer?
             if sqlite3_open(path, &database) != SQLITE_OK {
@@ -27,7 +27,7 @@ class SQLHelper {
             while sqlite3_step(statement) == SQLITE_ROW {
                 let id = Int(sqlite3_column_int(statement, 0))
                 let word  : String = String(cString: sqlite3_column_text(statement, 1))
-                objects.append(WordEntity(id: id, word: word))
+                objects.append(WordEntity(id: id, word: word, id_dictionary: idDictionary))
             }
             DispatchQueue.main.async {
                 RealmDBManager.share.addSequence(value: objects)
@@ -43,7 +43,7 @@ class SQLHelper {
             }
         }
     }
-    func convertSQLiteToRealmWordExplainEntity(path: String, complete: @escaping () -> ()){
+    func convertSQLiteToRealmWordExplainEntity(idDictionary: Int, path: String, complete: @escaping () -> ()){
         DispatchQueue.global().async {
             //save file in docment
 //            let fileURL = try! FileManager.default.url(for: FileManager.SearchPathDirectory.documentDirectory, in: FileManager.SearchPathDomainMask.userDomainMask, appropriateFor: nil, create: false).appendingPathComponent(appendingPathComponent)
@@ -68,7 +68,7 @@ class SQLHelper {
                 let id = Int(sqlite3_column_int(statement, 0))
                 let word  : String = String(cString: sqlite3_column_text(statement, 1))
                 let explain : String = String(cString: sqlite3_column_text(statement, 2))
-                objects.append(WordExplainEntity(id: id, word: word, explain: explain))
+                objects.append(WordExplainEntity(id: id, word: word, explain: explain, id_dictionary: idDictionary))
             }
             DispatchQueue.main.async {
                 RealmDBManager.share.addSequence(value: objects)

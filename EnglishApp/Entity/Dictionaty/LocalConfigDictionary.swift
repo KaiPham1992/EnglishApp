@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class LocalConfigDictionary : Object {
-    @objc dynamic var id: Int = 0
+    @objc dynamic var id_dictionary: Int = 0
     @objc dynamic var name : String = ""
     @objc dynamic var isDefault : Int = 0
     @objc dynamic var id_user : Int = 0
@@ -20,12 +20,12 @@ class LocalConfigDictionary : Object {
         return "local_config_id"
     }
     
-    convenience init(id: Int,name: String, id_user: Int){
+    convenience init(id_dictionary: Int, name: String, id_user: Int){
         self.init()
-        self.id = id
+        self.id_dictionary = id_dictionary
         self.name = name
         self.id_user = id_user
-        self.local_config_id = "\(id)\(id_user)"
+        self.local_config_id = "\(id_dictionary)_\(id_user)"
     }
     
     func setValueDefault(value: Int){

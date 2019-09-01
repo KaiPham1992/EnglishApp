@@ -27,11 +27,19 @@ class ConfirmPopUp: BasePopUpView{
         }
         view.actionNo = {
             self.hidePopUp()
+            self.completionNo?()
         }
     }
     
     func showPopUp(message: String,titleYes: String,titleNo: String,complete: CompletionClosure?){
         self.completionYes = complete
+        view.setupPopUp(message: message, titleYes: titleYes, titleNo: titleNo)
+        self.showPopUp(height: 140)
+    }
+    
+    func showPopUp(message: String,titleYes: String,titleNo: String,complete: CompletionClosure?, cancel: CompletionClosure?){
+        self.completionYes = complete
+        self.completionNo = cancel
         view.setupPopUp(message: message, titleYes: titleYes, titleNo: titleNo)
         self.showPopUp(height: 140)
     }

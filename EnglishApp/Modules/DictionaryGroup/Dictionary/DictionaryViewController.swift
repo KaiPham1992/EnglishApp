@@ -95,7 +95,7 @@ class DictionaryViewController: BaseViewController {
         }
         if let defaultValue = listDictionary.filter({$0.isDefault == 1}).first{
             lblDictionary.text = defaultValue.name
-            idDictionary = defaultValue.id
+            idDictionary = defaultValue.id_dictionary
         } else {
             lblDictionary.text = ""
             idDictionary = 0
@@ -141,7 +141,7 @@ class DictionaryViewController: BaseViewController {
         }
         // Action triggered on selection
         dropDownDictionary.selectionAction = { [unowned self] (index: Int, item: String) in
-            self.idDictionary = self.listDictionary[index].id
+            self.idDictionary = self.listDictionary[index].id_dictionary
             RealmDBManager.share.updateLocalConfigDictionary(id: self.idDictionary, id_user: self.id_user)
             self.lblDictionary.text = item
             self.rotateImage()

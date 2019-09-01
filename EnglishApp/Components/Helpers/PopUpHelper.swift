@@ -27,6 +27,11 @@ class PopUpHelper {
         popup.showPopUp(message: message, titleYes: titleYes, titleNo: titleNo, complete: complete)
     }
     
+    func showComfirmPopUp(message: String,titleYes: String,titleNo: String,complete: CompletionClosure?, cancel: CompletionClosure?){
+        let popup = ConfirmPopUp()
+        popup.showPopUp(message: message, titleYes: titleYes, titleNo: titleNo, complete: complete, cancel: cancel)
+    }
+    
     func showReportSuccessed(complete: CompletionClosure?){
         let popup = ReportSuccessedPopUp()
         popup.showPopUp(complete: complete)

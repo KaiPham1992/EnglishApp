@@ -17,9 +17,10 @@ open class ProgressView {
         return v
     }()
     
-    let vIndicator: KActivityIndicatorView = {
-        let view = KActivityIndicatorView(type: KActivityIndicatorType.ballClipRotateMultiple)
-        
+    let vIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.transform = view.transform.scaledBy(x: 1.8, y: 1.8)
         return view
     }()
     

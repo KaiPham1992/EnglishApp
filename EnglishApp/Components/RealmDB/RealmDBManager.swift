@@ -72,7 +72,7 @@ class RealmDBManager {
                 if object.isDefault == 1 {
                     object.isDefault = 0
                 } else {
-                    if object.id == id {
+                    if object.id_dictionary == id {
                         object.isDefault = 1
                     }
                 }

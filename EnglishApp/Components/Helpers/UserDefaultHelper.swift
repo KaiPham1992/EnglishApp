@@ -9,6 +9,11 @@
 import Foundation
 import ObjectMapper
 
+class LiveData {
+    public static var listDownloading : [Int] = []
+}
+
+
 enum UserDefaultHelperKey: String {
     case deviceToken = "DeviceToken"
     case fcmToken = "FcmToken"
