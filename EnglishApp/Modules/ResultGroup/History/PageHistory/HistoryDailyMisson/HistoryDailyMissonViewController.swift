@@ -43,6 +43,10 @@ class HistoryDailyMissonViewController: ListManagerVC {
         cell.setupTitle(title: data.exercise_name&)
         return cell
     }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! TestResult
+    }
 }
 
 extension HistoryDailyMissonViewController: HistoryDailyMissonViewProtocol {

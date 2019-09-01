@@ -76,8 +76,12 @@ class CommentViewController: BaseViewController {
         let keyboardRect = rect.cgRectValue
         if isKeyboardShowing {
             bottomViewComment.constant = keyboardRect.height  - view.safeAreaInsets.bottom
+            hideNoData()
         } else {
             bottomViewComment.constant = 0
+            if (self.presenter?.commentEntity?.data.count ?? 0) == 0 {
+                showNoData()
+            }
         }
         
         let timeAnination = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSNumber)?.doubleValue ?? 0
@@ -92,6 +96,11 @@ extension CommentViewController: CommentViewProtocol{
     func reloadView() {
         self.idParent = nil
         self.indexSection = nil
+        if (self.presenter?.commentEntity?.data.count ?? 0) == 0 {
+            showNoData()
+        } else{
+            hideNoData()
+        }
         tbvComment.reloadData()
     }
 }
@@ -102,11 +111,6 @@ extension CommentViewController : UITableViewDataSource{
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         let row = self.presenter?.numberParent() ?? 0
-        if row == 0 {
-            showNoData()
-        } else{
-            hideNoData()
-        }
         return row
     }
     

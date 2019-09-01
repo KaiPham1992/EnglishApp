@@ -33,7 +33,8 @@ class DetailLessonViewController: BaseViewController {
         }
     }
     
-    var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+    var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
+    
     override func setUpViews() {
         super.setUpViews()
         
@@ -68,10 +69,12 @@ class DetailLessonViewController: BaseViewController {
                 self.gotoComment()
             }
             addTwoViewToNavigation(view1: viewMessage, image1: nil,action1: nil, view2: nil, image2: UIImage(named:"Material_Icons_white_favorite")!, action2: #selector(clickHeart))
+            viewMessage.isHidden = true
         } else {
             addButtonLikeToNavigation(image: UIImage(named:"Material_Icons_white_favorite")!, actionSelector: #selector(clickHeart))
              setTitleNavigation(title: LocalizableKey.vocabularyDetail.showLanguage)
         }
+        btnLike.isHidden = true
         
     }
     
@@ -121,6 +124,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                 self.isLike = 0
                 self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
             }
+            viewMessage.isHidden = false
         } else {
             if let vocabulary = self.vocabulary {
                 setTitleNavigation(title: vocabulary.word)
@@ -143,5 +147,6 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                 }
             }
         }
+        btnLike.isHidden = false
     }
 }

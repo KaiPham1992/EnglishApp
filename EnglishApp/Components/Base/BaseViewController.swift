@@ -290,6 +290,7 @@ extension BaseViewController {
             button1 = UIBarButtonItem(customView: btn1)
         } else {
             button1 = UIBarButtonItem(customView: view1 ?? UIView())
+            button1.width = 34
         }
         
         let button2 : UIBarButtonItem!

@@ -15,7 +15,7 @@ class CommentPresenter: CommentPresenterProtocol, CommentInteractorOutputProtoco
     weak private var view: CommentViewProtocol?
     var interactor: CommentInteractorInputProtocol?
     private let router: CommentWireframeProtocol
-    private var commentEntity: CommentEntity?
+    var commentEntity: CommentEntity?
     var indexSection: Int?
     var isLoadmore = true
 

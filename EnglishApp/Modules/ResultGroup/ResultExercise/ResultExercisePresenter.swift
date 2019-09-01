@@ -11,6 +11,7 @@
 import UIKit
 
 class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseInteractorOutputProtocol {
+    
     func reportQuestion(questionDetailId: Int, content: String) {
         self.interactor?.reportQuestion(questionDetailId: questionDetailId, content: content)
     }
@@ -22,7 +23,7 @@ class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseIn
 
     weak private var view: ResultExerciseViewProtocol?
     var interactor: ResultExerciseInteractorInputProtocol?
-    private let router: ResultExerciseWireframeProtocol
+    let router: ResultExerciseWireframeProtocol
     var listAnswer: [QuestionResultEntity] = []
 
     init(interface: ResultExerciseViewProtocol, interactor: ResultExerciseInteractorInputProtocol?, router: ResultExerciseWireframeProtocol) {
