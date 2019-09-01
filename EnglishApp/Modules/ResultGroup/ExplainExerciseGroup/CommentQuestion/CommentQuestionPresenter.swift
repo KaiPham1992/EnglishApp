@@ -16,7 +16,7 @@ class CommentQuestionPresenter: CommentQuestionPresenterProtocol, CommentQuestio
     var interactor: CommentQuestionInteractorInputProtocol?
     private let router: CommentQuestionWireframeProtocol
     
-    private var commentEntity: CommentEntity?
+    var commentEntity: CommentEntity?
     var indexSection: Int?
     var isLoadmore = true
 

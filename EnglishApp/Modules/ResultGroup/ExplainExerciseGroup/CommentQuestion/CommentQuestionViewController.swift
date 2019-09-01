@@ -10,6 +10,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import IQKeyboardManagerSwift
 
 class CommentQuestionViewController: BaseViewController {
 
@@ -36,19 +37,22 @@ class CommentQuestionViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        IQKeyboardManager.shared.disabledDistanceHandlingClasses  = [CommentQuestionViewController.self]
+        IQKeyboardManager.shared.disabledToolbarClasses = [CommentQuestionViewController.self]
         addKeyboardNotification()
         tbvComment.registerXibFile(CellComment.self)
         tbvComment.registerXibFile(CellHeaderComment.self)
         tbvComment.delegate = self
         tbvComment.dataSource = self
         self.presenter?.getComment(idLesson: idQuestion&, offset: offset)
+        tbvComment.keyboardDismissMode = .onDrag
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     override func setUpNavigation() {
@@ -57,24 +61,27 @@ class CommentQuestionViewController: BaseViewController {
         setTitleNavigation(title: LocalizableKey.comment.showLanguage)
     }
     
-    @objc func keyboardShow(_ notification: NSNotification) {
-        if let keyboard = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            if #available(iOS 11.0, *) {
-                UIView.animate(withDuration: 0.2) {
-                    self.bottomViewComment.constant = keyboard.height - self.view.safeAreaInsets.bottom
-                    self.view.layoutIfNeeded()
-                }
-            } else {
-                UIView.animate(withDuration: 0.2) {
-                    self.bottomViewComment.constant = keyboard.height
-                    self.view.layoutIfNeeded()
-                }
+    @objc func handleKeyboard(_ notification: NSNotification) {
+        let isKeyboardShowing = notification.name ==  UIResponder.keyboardWillShowNotification
+        guard let rect = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue else{
+            return
+        }
+        let keyboardRect = rect.cgRectValue
+        if isKeyboardShowing {
+            bottomViewComment.constant = keyboardRect.height  - view.safeAreaInsets.bottom
+            hideNoData()
+        } else {
+            bottomViewComment.constant = 0
+            if (self.presenter?.commentEntity?.data.count ?? 0) == 0 {
+                showNoData()
             }
         }
-    }
-    
-    @objc func keyboardHide(_ notification: NSNotification) {
-        bottomViewComment.constant = 0
+        
+        let timeAnination = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+        UIView.animate(withDuration: timeAnination, delay: 0, options: .curveEaseOut, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
+        
     }
 }
 
@@ -82,6 +89,11 @@ extension CommentQuestionViewController: CommentQuestionViewProtocol{
     func reloadView() {
         self.idParent = nil
         self.indexSection = nil
+        if (self.presenter?.commentEntity?.data.count ?? 0) == 0 {
+            showNoData()
+        } else{
+            hideNoData()
+        }
         tbvComment.reloadData()
     }
 }
@@ -92,11 +104,6 @@ extension CommentQuestionViewController : UITableViewDataSource{
     }
     func numberOfSections(in tableView: UITableView) -> Int {
         let row = self.presenter?.numberParent() ?? 0
-        if row == 0 {
-            showNoData()
-        } else{
-            hideNoData()
-        }
         return row
     }
     

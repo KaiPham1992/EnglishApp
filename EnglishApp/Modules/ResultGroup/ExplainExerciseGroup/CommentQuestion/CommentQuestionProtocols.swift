@@ -18,6 +18,7 @@ protocol CommentQuestionWireframeProtocol: class {
 protocol CommentQuestionPresenterProtocol: class {
 
     var interactor: CommentQuestionInteractorInputProtocol? { get set }
+    var commentEntity: CommentEntity? {get set}
     func getComment(idLesson: String,offset: Int)
     func numberParent() -> Int?
     func numberChildren(section: Int) -> Int?
