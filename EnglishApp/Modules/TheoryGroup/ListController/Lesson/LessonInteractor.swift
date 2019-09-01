@@ -15,14 +15,11 @@ class LessonInteractor: LessonInteractorInputProtocol {
     weak var presenter: LessonInteractorOutputProtocol?
     
     func getLessonRecipe(type: Int, offset: Int) {
-        ProgressView.shared.show()
         Provider.shared.theoryAPIService.getLessonRecipe(type: type, offset: offset, success: { (respone) in
-            ProgressView.shared.hide()
             if let _response = respone {
                 self.presenter?.getLessonRecipeSuccessed(respone: _response)
             }
         }) { (error) in
-            ProgressView.shared.hide()
         }
     }
 }

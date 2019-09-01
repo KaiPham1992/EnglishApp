@@ -18,7 +18,7 @@ protocol LessonWireframeProtocol: class {
 protocol LessonPresenterProtocol: class {
 
     var interactor: LessonInteractorInputProtocol? { get set }
-    var lessonEntity: LessonCategoryEntity? {get set}
+    
     func getLessonRecipe(type: Int,offset: Int)
     func gotoListLesson(id: String,type: TheoryType)
 }
@@ -42,7 +42,7 @@ protocol LessonInteractorInputProtocol: class {
 protocol LessonViewProtocol: class {
 
     var presenter: LessonPresenterProtocol?  { get set }
-    func reloadView()
+    func reloadView(listData: [ItemLessonCategory])
 
     /* Presenter -> ViewController */
 }

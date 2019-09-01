@@ -33,6 +33,6 @@ class TheoryViewController: PageViewController, TheoryViewProtocol {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [LessonRouter.createModule(type: .lesson),LessonRouter.createModule(type: .recipe)]
+        return [LessonRouter.createModule(type: .lesson), LessonRouter.createModule(type: .recipe)]
     }
 }

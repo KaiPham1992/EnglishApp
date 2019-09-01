@@ -16,68 +16,49 @@ enum TheoryType : Int {
     case recipe = 2
 }
 
-class LessonViewController: BaseViewController {
+class LessonViewController: ListManagerVC {
 
     @IBOutlet weak var tbvLesson: UITableView!
     var presenter: LessonPresenterProtocol?
     var type: TheoryType = .lesson
-    var offset = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       tbvLesson.dataSource = self
-        tbvLesson.delegate = self
+        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        
+    }
+    
+    override func registerTableView() {
+        super.registerTableView()
         tbvLesson.registerXibFile(CellLesson.self)
-        tbvLesson.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+    }
+    
+    override func callAPI() {
+        super.callAPI()
         self.presenter?.getLessonRecipe(type: self.type.rawValue, offset: self.offset)
+    }
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! ItemLessonCategory
+        let cell = tableView.dequeue(CellLesson.self, for: indexPath)
+        cell.setupDataCell(dataCell: data)
+        return cell
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 124
+    }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! ItemLessonCategory
+        self.presenter?.gotoListLesson(id: data._id ?? "0" ,type: type)
     }
 }
 
 extension LessonViewController : LessonViewProtocol{
-    func reloadView(){
-        tbvLesson.reloadData()
-    }
-}
-
-extension LessonViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.lessonEntity?.categories.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellLesson.self, for: indexPath)
-        if let dataCell = self.presenter?.lessonEntity?.categories[indexPath.row] {
-            cell.setupDataCell(dataCell: dataCell)
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.lessonEntity?.categories.count ?? 0
-        if indexPath.row == row - 1 {
-            self.offset += limit
-            self.presenter?.getLessonRecipe(type: self.type.rawValue, offset: self.offset)
-        }
-    }
-}
-
-extension LessonViewController : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.presenter?.lessonEntity?.categories[indexPath.row]._id {
-            self.presenter?.gotoListLesson(id: id,type: type)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 124
+    func reloadView(listData : [ItemLessonCategory]){
+        initLoadData(data: listData)
     }
 }
 
