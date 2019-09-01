@@ -46,6 +46,8 @@ class HistoryDailyMissonViewController: ListManagerVC {
     
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! TestResult
+        let vc = ResultRouter.createModule(type: .dailyMissonExercise, id: data._id ?? "0" ,isHistory: true)
+        self.push(controller: vc,animated: true)
     }
 }
 
