@@ -15,14 +15,14 @@ class CatelogyExerciseInteractor: CatelogyExerciseInteractorInputProtocol {
     weak var presenter: CatelogyExerciseInteractorOutputProtocol?
     
     func getListCatelogy(offset: Int) {
-        ProgressView.shared.show()
+        
         Provider.shared.exerciseAPIService.getListExerciseCatelogy(offset: offset,success: { (respone) in
-            ProgressView.shared.hide()
+            
             if let _respone = respone {
                 self.presenter?.getListCatelogySuccessed(respone: _respone)
             }
         }) { (error) in
-            ProgressView.shared.hide()
+            
         }
     }
 }

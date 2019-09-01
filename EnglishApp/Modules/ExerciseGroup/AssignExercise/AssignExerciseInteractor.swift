@@ -15,14 +15,14 @@ class AssignExerciseInteractor: AssignExerciseInteractorInputProtocol {
     weak var presenter: AssignExerciseInteractorOutputProtocol?
     
     func getListAssignExercise(offset: Int) {
-        ProgressView.shared.show()
+        
         Provider.shared.exerciseAPIService.getListAssignExercise(offset: offset, success: { (respone) in
-            ProgressView.shared.hide()
+            
             if let _response = respone {
                 self.presenter?.getListAssignExerciseSuccessed(respone: _response)
             }
         }) { (error) in
-            ProgressView.shared.hide()
+            
         }
     }
 }
