@@ -15,14 +15,11 @@ class HistoryDailyMissonInteractor: HistoryDailyMissonInteractorInputProtocol {
     weak var presenter: HistoryDailyMissonInteractorOutputProtocol?
     
     func getHistoryExercise(type: Int,date: String,offset: Int) {
-        ProgressView.shared.show()
         Provider.shared.exerciseAPIService.getHistoryExercise(type: type,date: date, offset: offset, success: { (respone) in
-            ProgressView.shared.hide()
             if let _respone = respone {
-                self.presenter?.getHistoryDailyMissonSuccessed(listLesson: _respone.results ?? [])
+                self.presenter?.getHistoryDailyMissonSuccessed(listLesson: _respone.results)
             }
         }) { (error) in
-            ProgressView.shared.hide()
         }
     }
 }
