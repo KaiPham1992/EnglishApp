@@ -58,6 +58,7 @@ class ListManagerVC: BaseViewController {
                 self.isLoadmore = false
             } else {
                 self.isLoadmore = true
+                self.offset += limit
             }
             
             if self.offset == 0 {
@@ -65,7 +66,6 @@ class ListManagerVC: BaseViewController {
             } else {
                 self.listData += data
             }
-            self.offset += limit
             DispatchQueue.main.async {
                 ProgressView.shared.hide()
                 if data.count == 0 && self.offset == 0 {

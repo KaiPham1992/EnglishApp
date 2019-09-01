@@ -101,6 +101,7 @@ open class BaseTableViewController: UIViewController {
                 self.isLoadmore = false
             } else {
                 self.isLoadmore = true
+                self.offset += limit
             }
             if self.offset == 0 {
 //                self.listData.removeAll()
@@ -540,7 +541,6 @@ extension BaseTableViewController : UITableViewDataSource {
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if addLoadmore {
             if indexPath.row == listData.count - 1 && isLoadmore {
-                self.offset += limit
                 self.isShowProgressView = false
                 callAPI()
                 let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
