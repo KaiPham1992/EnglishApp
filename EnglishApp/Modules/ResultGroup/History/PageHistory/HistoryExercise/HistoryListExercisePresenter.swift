@@ -15,7 +15,6 @@ class HistoryListExercisePresenter: HistoryListExercisePresenterProtocol, Histor
     weak private var view: HistoryListExerciseViewProtocol?
     var interactor: HistoryListExerciseInteractorInputProtocol?
     private let router: HistoryListExerciseWireframeProtocol
-    var isLoadmore = true
     var testsResultResponse: TestsResultRespone?
 
     init(interface: HistoryListExerciseViewProtocol, interactor: HistoryListExerciseInteractorInputProtocol?, router: HistoryListExerciseWireframeProtocol) {
@@ -25,20 +24,11 @@ class HistoryListExercisePresenter: HistoryListExercisePresenterProtocol, Histor
     }
     
     func getListHistoryExercise(type: Int, offset: Int, date: String) {
-        if isLoadmore {
-            self.interactor?.getListHistoryExercise(type: type, offset: offset, date: date)
-        }
+        self.interactor?.getListHistoryExercise(type: type, offset: offset, date: date)
     }
     
     func getListHistoryExerciseSuccessed(response: TestsResultRespone) {
-        if response.results.count < limit {
-            isLoadmore = false
-        }
-        if testsResultResponse == nil {
-            self.testsResultResponse = response
-        } else {
-            self.testsResultResponse?.results += response.results
-        }
+        self.testsResultResponse = response
         self.view?.reloadView()
     }
     
