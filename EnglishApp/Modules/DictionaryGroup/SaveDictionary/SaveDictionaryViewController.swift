@@ -28,7 +28,7 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
         if let controller = self.viewControllers[self.currentIndex] as? GrammarViewController {
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
-            controller.reloadView()
+            controller.tableView.reloadData()
             return
         }
         if let controller = self.viewControllers[self.currentIndex] as? NoteListViewController {

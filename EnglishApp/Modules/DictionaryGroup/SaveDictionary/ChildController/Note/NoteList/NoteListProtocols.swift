@@ -52,8 +52,7 @@ protocol NoteListViewProtocol: class {
     var presenter: NoteListPresenterProtocol?  { get set }
     
     func reloadView(listData: [NoteRespone])
-    func reloadViewAfterDelete()
-    func notifyDelete()
+    func deleteNoteSuccessed()
 
     /* Presenter -> ViewController */
 }

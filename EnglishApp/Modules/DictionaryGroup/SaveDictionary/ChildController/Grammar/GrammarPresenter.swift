@@ -15,10 +15,6 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
     weak private var view: GrammarViewProtocol?
     var interactor: GrammarInteractorInputProtocol?
     private let router: GrammarWireframeProtocol
-    var grammarsResponse: GrammarsResponse?
-    var isLoadmore = true
-    var listDelete: [Int] = []
-    var replaceData = false
 
     init(interface: GrammarViewProtocol, interactor: GrammarInteractorInputProtocol?, router: GrammarWireframeProtocol) {
         self.view = interface
@@ -26,66 +22,20 @@ class GrammarPresenter: GrammarPresenterProtocol, GrammarInteractorOutputProtoco
         self.router = router
     }
     
-//    func getListGrammar(offset: Int) {
-//        if isLoadmore {
-//            self.interactor?.getListGrammar(offset: offset)
-//        }
-//    }
-    
-    func getListGrammar(offset: Int,replaceData: Bool) {
-        self.replaceData = replaceData
-        if replaceData {
-            self.interactor?.getListGrammar(offset: offset)
-            isLoadmore = true
-            grammarsResponse = nil
-        } else {
-            if isLoadmore {
-                self.interactor?.getListGrammar(offset: offset)
-            }
-        }
+
+    func getListGrammar(offset: Int) {
+        self.interactor?.getListGrammar(offset: offset)
     }
     
     func getListGrammarSuccessed(respone: GrammarsResponse) {
-        if respone.likes.count < limit {
-            isLoadmore = false
-        }
-        
-        if !replaceData {
-            if grammarsResponse == nil {
-                self.grammarsResponse = respone
-            } else {
-                self.grammarsResponse?.likes += respone.likes
-            }
-        } else {
-           self.grammarsResponse = respone
-        }
-        self.view?.reloadView()
+        self.view?.reloadView(listData: respone.likes)
     }
     
-    func deleteGrammar() {
-        let likeList = self.grammarsResponse?.likes.filter{$0.isDelete}.map{Int($0._id ?? "0") ?? 0} ?? []
-        self.listDelete = likeList
-        if listDelete.count > 0 {
-            self.view?.notifyDelete()
-        } else {
-            self.view?.reloadViewAfterDeleted()
-        }
-    }
-    
-    func confirmDelete() {
-        self.interactor?.deleteGrammar(likeList: listDelete)
-    }
-    
-    func cancelDelete(){
-        let number = grammarsResponse?.likes.count ?? 0
-        for index in 0..<number{
-            grammarsResponse?.likes[index].isDelete = false
-        }
-        self.view?.reloadViewAfterDeleted()
+    func confirmDelete(listId: [Int]) {
+        self.interactor?.deleteGrammar(likeList: listId)
     }
     
     func deleteGrammarSuccessed() {
-        grammarsResponse?.likes = self.grammarsResponse?.likes.filter{!$0.isDelete} ?? []
-        self.view?.reloadViewAfterDeleted()
+        self.view?.deleteGrammarSuccessed()
     }
 }

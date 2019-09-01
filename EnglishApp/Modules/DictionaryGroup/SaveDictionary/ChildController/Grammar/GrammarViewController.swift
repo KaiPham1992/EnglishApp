@@ -16,83 +16,76 @@ enum TypeSave{
     case vocabulary
 }
 
-class GrammarViewController: BaseViewController {
+class GrammarViewController: ListManagerVC {
     
-    @IBOutlet weak var tbvGrammar: UITableView!
     var presenter: GrammarPresenterProtocol?
-    var offset = 0
     var isDelete = false
     
     var actionDeleteFinish : (()->())?
+    var listDelete: [Int] = []
     
     override func setUpViews() {
+        isAddPullToFresh = false
+        showButtonBack = false
         super.setUpViews()
-        tbvGrammar.registerXibFile(CellGrammar.self)
-        tbvGrammar.dataSource = self
-        tbvGrammar.delegate = self
-        self.presenter?.getListGrammar(offset: self.offset,replaceData: true)
+        
+    }
+    
+    override func registerTableView() {
+        super.registerTableView()
+        tableView.registerXibFile(CellGrammar.self)
+    }
+    
+    override func callAPI() {
+        super.callAPI()
+        self.presenter?.getListGrammar(offset: self.offset)
     }
     
     func deleteGrammar(){
-        self.presenter?.deleteGrammar()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(true)
-        self.presenter?.cancelDelete()
-        actionDeleteFinish?()
-    }
-    
-    func callAPIAgain(){
-        self.offset = 0
-        self.presenter?.getListGrammar(offset: self.offset,replaceData: true)
-    }
-}
-extension GrammarViewController : GrammarViewProtocol {
-    func reloadView() {
-        tbvGrammar.reloadData()
-    }
-    
-    func reloadViewAfterDeleted(){
-        isDelete = false
-        tbvGrammar.reloadData()
-        actionDeleteFinish?()
+        let listGrammar = self.listData as! [GrammarEntity]
+        let listId = listGrammar.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0}
+        self.listDelete = listId
+        if listDelete.count > 0 {
+            self.notifyDelete()
+        } else {
+            self.reloadViewAfterDeleted()
+        }
     }
     
     func notifyDelete() {
         PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.cofirm_delete.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased()) { [unowned self] in
-            self.presenter?.confirmDelete()
+            self.presenter?.confirmDelete(listId: self.listDelete)
         }
     }
-}
-
-extension GrammarViewController : UITableViewDataSource{
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        self.cancelDelete()
+        actionDeleteFinish?()
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row =  self.presenter?.grammarsResponse?.likes.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
+    func cancelDelete(){
+        let listGrammar = listData as! [GrammarEntity]
+        for index in 0..<listGrammar.count{
+            listGrammar[index].isDelete = false
         }
-        return row
+        self.reloadViewAfterDeleted()
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func callAPIAgain(){
+        self.offset = 0
+        self.presenter?.getListGrammar(offset: self.offset)
+    }
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! GrammarEntity
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        if let data = self.presenter?.grammarsResponse?.likes[indexPath.row] {
-            cell.indexPath = indexPath
-            cell.setupTitle(title: data.lesson_name&)
-        }
-        
+        cell.indexPath = indexPath
+        cell.setupTitle(title: data.lesson_name&)
         if isDelete {
-            cell.setupDelete(isDelete: true)
-            cell.actionClick = {[weak self] (index) in
-                self?.changeStatusDelete(index: index)
+            cell.setupDelete(isDelete: data.isDelete)
+            cell.actionClick = { (_) in
+                data.isDelete = !data.isDelete
             }
         } else {
             cell.setupNoDelete()
@@ -101,37 +94,36 @@ extension GrammarViewController : UITableViewDataSource{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.grammarsResponse?.likes.count ?? 0
-        if indexPath.row == row - 1{
-            self.offset += limit
-            self.presenter?.getListGrammar(offset: self.offset, replaceData: false)
-        }
-    }
-    
-    func changeStatusDelete(index: IndexPath){
-        let status = self.presenter?.grammarsResponse?.likes[index.row].isDelete ?? false
-        self.presenter?.grammarsResponse?.likes[index.row].isDelete = !status
-    }
-}
-extension GrammarViewController: UITableViewDelegate{
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! GrammarEntity
         if !isDelete {
-            if let _id = self.presenter?.grammarsResponse?.likes[indexPath.row].lesson_id {
-                let vc = DetailLessonRouter.createModule(idLesson: _id, type: .detailLesson)
-                vc.callbackCallAgainAPI = {[unowned self] in
-                    self.callAPIAgain()
-                }
-                self.push(controller: vc,animated: true)
+            let vc = DetailLessonRouter.createModule(idLesson: data._id ?? "0", type: .detailLesson)
+            vc.callbackCallAgainAPI = {[unowned self] in
+                self.callAPIAgain()
             }
+            self.push(controller: vc,animated: true)
         }
     }
+
+    func reloadViewAfterDeleted(){
+        isDelete = false
+        tableView.reloadData()
+        actionDeleteFinish?()
+    }
 }
+
+extension GrammarViewController : GrammarViewProtocol {
+    func reloadView(listData: [GrammarEntity]) {
+        initLoadData(data: listData)
+    }
+    
+    func deleteGrammarSuccessed() {
+        let listGrammar = self.listData as! [GrammarEntity]
+        self.listData = listGrammar.filter{!$0.isDelete}
+        reloadViewAfterDeleted()
+    }
+}
+
 extension GrammarViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
         return IndicatorInfo(title: LocalizableKey.grammar.showLanguage)

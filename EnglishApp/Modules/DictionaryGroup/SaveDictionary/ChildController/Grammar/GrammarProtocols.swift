@@ -18,11 +18,8 @@ protocol GrammarWireframeProtocol: class {
 protocol GrammarPresenterProtocol: class {
 
     var interactor: GrammarInteractorInputProtocol? { get set }
-    var grammarsResponse : GrammarsResponse? {get set}
-    func getListGrammar(offset: Int,replaceData: Bool)
-    func deleteGrammar()
-    func cancelDelete()
-    func confirmDelete()
+    func getListGrammar(offset: Int)
+    func confirmDelete(listId: [Int])
 }
 
 //MARK: Interactor -
@@ -47,10 +44,8 @@ protocol GrammarInteractorInputProtocol: class {
 protocol GrammarViewProtocol: class {
 
     var presenter: GrammarPresenterProtocol?  { get set }
-    func reloadView()
-    func reloadViewAfterDeleted()
-    func notifyDelete()
-    
+    func reloadView(listData: [GrammarEntity])
+    func deleteGrammarSuccessed()
 
     /* Presenter -> ViewController */
 }

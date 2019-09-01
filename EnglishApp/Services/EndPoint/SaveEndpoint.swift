@@ -80,7 +80,8 @@ extension SaveEndpoint : EndPointType {
         case .getListNote(let offset):
             return ["offset" : offset,"limit":limit]
         case .deleteNote(let id):
-            return ["note_ids": id]
+            return ["note_ids": id,
+                    "type": "NOTE"]
         case .addNote(let desctiption):
             return ["description": desctiption]
         case .getViewNote:
@@ -89,7 +90,8 @@ extension SaveEndpoint : EndPointType {
             return ["note_id": idNote,
                     "description": description]
         case .deleteListGrammar(let likeList):
-            return ["like_ids": likeList]
+            return ["like_ids": likeList,
+                    "type": "VERB"]
         }
     }
     

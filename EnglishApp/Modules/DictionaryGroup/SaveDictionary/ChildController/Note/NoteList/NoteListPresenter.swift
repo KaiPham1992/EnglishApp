@@ -45,6 +45,6 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
     }
     
     func deleteNoteSuccessed() {
-        self.view?.reloadViewAfterDelete()
+        self.view?.deleteNoteSuccessed()
     }
 }

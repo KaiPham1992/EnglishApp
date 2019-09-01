@@ -29,7 +29,6 @@ class NoteListViewController: BaseTableViewController {
         isAddPullToFresh = false
         super.setUpViews()
         initTableView(tableView: tbvNoteList)
-//        self.edgesForExtendedLayout = UIRectEdge.top
     }
     
     override func registerXibFile() {
@@ -97,16 +96,23 @@ class NoteListViewController: BaseTableViewController {
             self.presenter?.confirmDelete(listId: self.listDelete)
         }
     }
-}
-extension NoteListViewController : NoteListViewProtocol {
-    func reloadView(listData: [NoteRespone]) {
-        initLoadData(data: listData)
-    }
     
     func reloadViewAfterDelete(){
         isDelete = false
         tbvNoteList.reloadData()
         actionDeleteFinish?()
+    }
+}
+
+extension NoteListViewController : NoteListViewProtocol {
+    func reloadView(listData: [NoteRespone]) {
+        initLoadData(data: listData)
+    }
+    
+    func deleteNoteSuccessed() {
+        let listNote = self.listData as! [NoteRespone]
+        self.listData = listNote.filter{!$0.isDelete}
+        reloadViewAfterDelete()
     }
 }
 

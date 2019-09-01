@@ -15,14 +15,11 @@ class GrammarInteractor: GrammarInteractorInputProtocol {
     weak var presenter: GrammarInteractorOutputProtocol?
     
     func getListGrammar(offset: Int) {
-        ProgressView.shared.show()
         Provider.shared.saveAPIService.getListGrammar(offset: offset, success: { (response) in
-            ProgressView.shared.hide()
             if let _response = response {
                 self.presenter?.getListGrammarSuccessed(respone: _response)
             }
         }) { (error) in
-            ProgressView.shared.hide()
         }
     }
     
