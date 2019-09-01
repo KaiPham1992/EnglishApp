@@ -33,9 +33,15 @@ class MainTabbar: UITabBarController {
         setUpTabbar()
         setUpObserver()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(noCompetition), name: NSNotification.Name.init("NoCompetition"), object: nil)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158, NSAttributedString.Key.font: AppFont.fontRegular12], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
         self.hidesBottomBarWhenPushed = true 
+    }
+    
+    @objc func noCompetition() {
+        self.viewControllers?[3].tabBarItem = setBarItem(title: LocalizableKey.tabbarCompetition.showLanguage, selectedImage: AppImage.imgTabbarCompetitionSelected, normalImage: AppImage.imgTabbarCompetition)
+        self.viewControllers?[3].tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
     }
     
     @objc func didRecieveCompetition() {

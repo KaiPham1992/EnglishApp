@@ -72,42 +72,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func realmConfig() {
-        let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { (migration, oldSchemaVersion) in
-            if oldSchemaVersion < 1 {
-                migration.enumerateObjects(ofType: LocalConfigDictionary.className(), { (oldObject, newObject) in
-                    newObject!["isDefault"] = 0
-                })
-            }
-            if oldSchemaVersion < 2 {
-                migration.enumerateObjects(ofType: LocalConfigDictionary.className(), { (oldObject, newObject) in
-//                    newObject["id_user"] = User
-                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
-                        oldObject?["id_user"] = idUser
-                    }
-                })
-                
-                migration.enumerateObjects(ofType: LocalConfigDictionary.className(), { (oldObject, newObject) in
-                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
-                        oldObject?["local_config_id"] = "\(String((oldObject?["id"] as? Int) ?? 0)))\(idUser)"
-                    }
-                })
-                
-                migration.enumerateObjects(ofType: WordEntity.className(), { (oldObject, newObject) in
-                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
-                        oldObject?["id_user"] = idUser
-                    }
-                })
-                
-                migration.enumerateObjects(ofType: WordExplainEntity.className(), { (oldObject, newObject) in
-                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
-                        oldObject?["id_user"] = idUser
-                    }
-                })
-            }
-        })
-        Realm.Configuration.defaultConfiguration = config
-    }
+//        let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { (migration, oldSchemaVersion) in
+//            if oldSchemaVersion < 1 {
+//                migration.enumerateObjects(ofType: LocalConfigDictionary.className(), { (oldObject, newObject) in
+//                    newObject!["isDefault"] = 0
+//                })
+//            }
+//            if oldSchemaVersion < 2 {
+//                migration.enumerateObjects(ofType: LocalConfigDictionary.className(), { (oldObject, newObject) in
+//                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
+//                        oldObject?["id_user"] = idUser
+//                    }
+//                })
+//
+//                migration.enumerateObjects(ofType: LocalConfigDictionary.className(), { (oldObject, newObject) in
+//                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
+//                        oldObject?["local_config_id"] = "\(String((oldObject?["id"] as? Int) ?? 0)))\(idUser)"
+//                    }
+//                })
+//
+//                migration.enumerateObjects(ofType: WordEntity.className(), { (oldObject, newObject) in
+//                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
+//                        oldObject?["id_user"] = idUser
+//                    }
+//                })
+//
+//                migration.enumerateObjects(ofType: WordExplainEntity.className(), { (oldObject, newObject) in
+//                    if let idUser = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0")  {
+//                        oldObject?["id_user"] = idUser
+//                    }
+//                })
+//            }
+//        })
+//        Realm.Configuration.defaultConfiguration = config
+//    }
     
+    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:], sourceApplication: String) -> Bool {
         let fb = ApplicationDelegate.shared.application(app, open: url, options: options)
@@ -138,6 +138,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let count = object?.count_fight_test ?? 0
             if count > 0 {
                 NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+            } else {
+                NotificationCenter.default.post(name: NSNotification.Name.init("NoCompetition"), object: nil)
             }
         }) { (error) in
             

@@ -97,17 +97,18 @@ open class BaseTableViewController: UIViewController {
     
     func initLoadData(data: [Any]){
         DispatchQueue.global().async {
-            if data.count < limit {
-                self.isLoadmore = false
-            } else {
-                self.isLoadmore = true
-                self.offset += limit
-            }
+            
             if self.offset == 0 {
 //                self.listData.removeAll()
                 self.listData = data
             } else {
                 self.listData += data
+            }
+            if data.count < limit {
+                self.isLoadmore = false
+            } else {
+                self.isLoadmore = true
+                self.offset += limit
             }
             DispatchQueue.main.async {
                 ProgressView.shared.hide()
