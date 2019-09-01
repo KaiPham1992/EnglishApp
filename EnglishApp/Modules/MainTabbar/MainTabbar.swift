@@ -15,7 +15,7 @@ protocol TabbarProtocol: class {
 extension Notification.Name {
     static let refreshTabbar = Notification.Name("RefreshTabbar")
 }
-let tabIconInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+let tabIconInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
 let tabBarIncrease: CGFloat = 13
 
 class MainTabbar: UITabBarController {
@@ -32,10 +32,14 @@ class MainTabbar: UITabBarController {
         self.delegate = self
         setUpTabbar()
         setUpObserver()
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158, NSAttributedString.Key.font: AppFont.fontRegular12], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
         self.hidesBottomBarWhenPushed = true 
+    }
+    
+    @objc func didRecieveCompetition() {
+        self.setupRedDot()
     }
     
     override func viewDidLayoutSubviews() {
@@ -83,21 +87,21 @@ class MainTabbar: UITabBarController {
         
         vcHomeWork.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarHomeWorkSelected, normalImage: AppImage.imgTabbarHomeWork)
         vcHomeWork.title = LocalizableKey.tabbarHomeWork.showLanguage
-        vcCompetition.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarCompetitionSelected, normalImage: AppImage.imgTabbarCompetition)
+        let tabCompetition = setBarItem(selectedImage: AppImage.imgTabbarCompetitionSelected, normalImage: AppImage.imgTabbarCompetition)
+        vcCompetition.tabBarItem = tabCompetition
         vcCompetition.title = LocalizableKey.tabbarCompetition.showLanguage
         
         listViewController = [vcHome, vcProgramer, vcHomeWork, vcCompetition]
         
-//        for controller in listViewController {
-//            controller.tabBarItem.imageInsets = tabIconInsets
-//        }
+        for controller in listViewController {
+            controller.tabBarItem.imageInsets = tabIconInsets
+        }
         
         if UIDevice.current.isIphone5_8Inch() == true {
             UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: 4)
         } else {
 //            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -8)
         }
-        
         self.tabBar.tintColor = UIColor.white
         addViewControllerToTabbar(listViewController: listViewController)
     }
@@ -116,6 +120,11 @@ class MainTabbar: UITabBarController {
     func setBarItem(title: String? = nil, selectedImage: UIImage?, normalImage: UIImage?) -> UITabBarItem {
         let item = UITabBarItem(title: title, image: normalImage, selectedImage: selectedImage)
         return item
+    }
+    
+    func setupRedDot() {
+        self.viewControllers?[3].tabBarItem = self.setBarItem(title: LocalizableKey.tabbarCompetition.showLanguage, selectedImage: #imageLiteral(resourceName: "ic_fire_dot_choice").withRenderingMode(.alwaysOriginal), normalImage: #imageLiteral(resourceName: "ic_fire_dot_not_choice").withRenderingMode(.alwaysOriginal))
+        self.viewControllers?[3].tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
     }
 }
 

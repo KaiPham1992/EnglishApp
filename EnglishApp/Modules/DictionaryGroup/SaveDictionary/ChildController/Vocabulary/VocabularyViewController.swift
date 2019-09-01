@@ -20,12 +20,15 @@ class VocabularyViewController: ListManagerVC {
 
     override func setUpViews() {
         showButtonBack = false
+        isAddPullToFresh = false
         super.setUpViews()
     }
+    
     override func registerTableView() {
         super.registerTableView()
         tableView.registerXibFile(CellGrammar.self)
     }
+    
     override func callAPI() {
         super.callAPI()
         self.presenter?.getListLikeVocab(offset: self.offset)
@@ -59,16 +62,14 @@ class VocabularyViewController: ListManagerVC {
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
         cell.indexPath = indexPath
         cell.setupTitle(title: data.word&)
-
         if isDelete {
-            cell.setupDelete()
+            cell.setupDelete(isDelete: data.isDelete)
             cell.actionClick = {[weak self] (_) in
                data.isDelete = !data.isDelete
             }
         } else {
             cell.setupNoDelete()
         }
-        
         return cell
     }
     

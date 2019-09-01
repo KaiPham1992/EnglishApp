@@ -96,27 +96,30 @@ open class BaseTableViewController: UIViewController {
     }
     
     func initLoadData(data: [Any]){
-        ProgressView.shared.hide()
-        if data.count < limit {
-            isLoadmore = false
-        } else {
-            isLoadmore = true
-        }
-        
-        if self.offset == 0 {
-            self.listData = data
-        } else {
-            self.listData += data
-        }
-        
-        if data.count == 0 && self.offset == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        
-        UIView.performWithoutAnimation {
-            self.tableView?.reloadData()
+        DispatchQueue.global().async {
+            if data.count < limit {
+                self.isLoadmore = false
+            } else {
+                self.isLoadmore = true
+            }
+            if self.offset == 0 {
+//                self.listData.removeAll()
+                self.listData = data
+            } else {
+                self.listData += data
+            }
+            DispatchQueue.main.async {
+                ProgressView.shared.hide()
+                if data.count == 0 && self.offset == 0 {
+                    self.showNoData()
+                } else {
+                    self.hideNoData()
+                }
+                
+                UIView.performWithoutAnimation {
+                    self.tableView?.reloadData()
+                }
+            }
         }
     }
     

@@ -30,8 +30,8 @@ class CellGrammar: UITableViewCell {
         btnRemove.imageNoChoice = #imageLiteral(resourceName: "ic_Checkbox_off_Yellow")
     }
     
-    func setupDelete(){
-        btnRemove.isChocie = false
+    func setupDelete(isDelete: Bool){
+        btnRemove.isChocie = isDelete
         widthButton.constant = 20
 //        btnRemove.actionClick = clickButton
         buttonRemove.isHidden = false

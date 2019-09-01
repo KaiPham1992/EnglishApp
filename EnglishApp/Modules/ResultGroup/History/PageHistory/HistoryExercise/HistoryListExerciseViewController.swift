@@ -10,71 +10,51 @@
 
 import UIKit
 
-class HistoryListExerciseViewController: BaseViewController {
+class HistoryListExerciseViewController: ListManagerVC {
 
-    @IBOutlet weak var tbvHistoryExercise: UITableView!
     var presenter: HistoryListExercisePresenterProtocol?
     var type: TypeDoExercise = .levelExercise
-    var offset: Int = 0
     var date: String = ""
+    
     override func setUpViews() {
+        customTitle = LocalizableKey.history_test.showLanguage
+        showButtonBack = true
         super.setUpViews()
-        tbvHistoryExercise.delegate = self
-        tbvHistoryExercise.dataSource = self
-        tbvHistoryExercise.registerXibFile(CellHistoryListExercise.self)
+    }
+    
+    override func callAPI() {
+        super.callAPI()
         self.presenter?.getListHistoryExercise(type: type.rawValue, offset: self.offset, date: self.date)
     }
     
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.history_test.showLanguage)
+    override func registerTableView() {
+        super.registerTableView()
+        tableView.registerXibFile(CellHistoryListExercise.self)
     }
-}
-extension HistoryListExerciseViewController : HistoryListExerciseViewProtocol{
-    func reloadView() {
-        self.tbvHistoryExercise.reloadData()
-    }
-}
-
-extension HistoryListExerciseViewController : UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.testsResultResponse?.results.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! TestResult
         let cell = tableView.dequeue(CellHistoryListExercise.self, for: indexPath)
         if type == .assignExercise || type == .createExercise {
             cell.showWidthButton()
         } else {
             cell.hideWidthButton()
         }
-        if let dataCell = self.presenter?.testsResultResponse?.results[indexPath.row] {
-            cell.setupDatacell(dataCell: dataCell)
-        }
+        cell.setupDatacell(dataCell: data)
         if type == .createExercise {
             cell.hideLevelLabel()
         }
         return cell
     }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! TestResult
+        self.presenter?.gotoResult(type: self.type, id: data._id ?? "0")
+    }
 }
 
-extension HistoryListExerciseViewController : UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.presenter?.testsResultResponse?.results[indexPath.row]._id {
-            self.presenter?.gotoResult(type: self.type, id: id)
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+extension HistoryListExerciseViewController : HistoryListExerciseViewProtocol{
+    func reloadView() {
+        initLoadData(data: self.presenter?.testsResultResponse?.results ?? [])
     }
 }

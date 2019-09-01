@@ -90,7 +90,7 @@ extension GrammarViewController : UITableViewDataSource{
         }
         
         if isDelete {
-            cell.setupDelete()
+            cell.setupDelete(isDelete: true)
             cell.actionClick = {[weak self] (index) in
                 self?.changeStatusDelete(index: index)
             }

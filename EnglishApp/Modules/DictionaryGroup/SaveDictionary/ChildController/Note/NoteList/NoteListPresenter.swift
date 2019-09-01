@@ -16,10 +16,6 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
     var interactor: NoteListInteractorInputProtocol?
     private let router: NoteListWireframeProtocol
     
-    var isLoadmore: Bool = true
-    var noteListRespone : NoteListRespone?
-    var replaceData: Bool = false
-    var listDelete : [Int] = []
 
     init(interface: NoteListViewProtocol, interactor: NoteListInteractorInputProtocol?, router: NoteListWireframeProtocol) {
         self.view = interface
@@ -27,51 +23,14 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
         self.router = router
     }
     
-    func getListNote(offset: Int,replaceData: Bool) {
-        self.replaceData = replaceData
-        if replaceData {
-            self.interactor?.getListNote(offset: offset)
-            isLoadmore = true
-            noteListRespone = nil
-        } else {
-            if isLoadmore {
-                self.interactor?.getListNote(offset: offset)
-            }
-        }
+    func getListNote(offset: Int) {
+        self.interactor?.getListNote(offset: offset)
+    }
+    
+    func confirmDelete(listId: [Int]) {
+        self.interactor?.deleteNote(id: listId)
     }
 
-    func changeStatusNote(indexPath: IndexPath){
-        let status = self.noteListRespone?.notes[indexPath.row].isDelete ?? false
-        self.noteListRespone?.notes[indexPath.row].isDelete = !status
-    }
-    
-    func deleteNote(){
-        let listId = self.noteListRespone?.notes.filter{$0.isDelete}.map{Int($0._id ?? "0")}.compactMap{$0} ?? []
-        self.listDelete = listId
-        if listDelete.count > 0 {
-            self.view?.notifyDelete()
-        } else {
-            self.view?.reloadViewAfterDelete()
-        }
-    }
-    
-    func confirmDelete() {
-        self.interactor?.deleteNote(id: listDelete)
-    }
-    
-    func deleteNoteSuccessed(){
-        self.noteListRespone?.notes = self.noteListRespone?.notes.filter{!$0.isDelete} ?? []
-        self.view?.reloadViewAfterDelete()
-    }
-    
-    func cancelDelete(){
-        let number = noteListRespone?.notes.count ?? 0
-        for index in 0..<number{
-            noteListRespone?.notes[index].isDelete = false
-        }
-        self.view?.reloadViewAfterDelete()
-    }
-    
     func gotoNote(idNote: String) {
         self.router.gotoNote(idNote: idNote)
     }
@@ -82,19 +41,10 @@ class NoteListPresenter: NoteListPresenterProtocol, NoteListInteractorOutputProt
 
     
     func getListNoteSuccessed(listNote: NoteListRespone) {
-        if listNote.notes.count < limit {
-            isLoadmore = false
-        }
-        if !replaceData {
-            if noteListRespone == nil {
-                self.noteListRespone = listNote
-            } else {
-                self.noteListRespone?.notes += listNote.notes
-            }
-        } else {
-            self.noteListRespone = listNote
-        }
-        
-        self.view?.reloadView()
+        self.view?.reloadView(listData: listNote.notes)
+    }
+    
+    func deleteNoteSuccessed() {
+        self.view?.reloadViewAfterDelete()
     }
 }

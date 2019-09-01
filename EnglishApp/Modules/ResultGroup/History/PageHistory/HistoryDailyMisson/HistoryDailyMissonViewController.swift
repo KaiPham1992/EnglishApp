@@ -11,70 +11,43 @@
 import UIKit
 import XLPagerTabStrip
 
-class HistoryDailyMissonViewController: BaseViewController {
+class HistoryDailyMissonViewController: ListManagerVC {
 
 	var presenter: HistoryDailyMissonPresenterProtocol?
 
-    @IBOutlet weak var tbvLesson: UITableView!
     var date: String = ""
-    var offset : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tbvLesson.registerXibFile(CellGrammar.self)
-        tbvLesson.dataSource = self
-        tbvLesson.delegate = self
+        
+    }
+    
+    override func callAPI() {
+        super.callAPI()
         self.presenter?.getHistoryExercise(type: 2,date: date, offset: self.offset)
+    }
+    
+    override func registerTableView() {
+        super.registerTableView()
+        tableView.registerXibFile(CellGrammar.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = true
     }
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! TestResult
+        let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
+        cell.setupTitle(title: data.exercise_name&)
+        return cell
+    }
 }
 
 extension HistoryDailyMissonViewController: HistoryDailyMissonViewProtocol {
     func reloadView() {
-        self.tbvLesson.reloadData()
-    }
-}
-
-extension HistoryDailyMissonViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.listResultDailyMisson?.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        if let dataCell = self.presenter?.listResultDailyMisson?[indexPath.row] {
-            cell.setupTitle(title: dataCell.exercise_name&)
-        }
-        return cell
-    }
-    
-}
-extension HistoryDailyMissonViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ResultRouter.createModule(type: .dailyMissonExercise, id: self.presenter?.listResultDailyMisson?[indexPath.row]._id ?? "",isHistory: true)
-        self.push(controller: vc,animated: true)
+        initLoadData(data: self.presenter?.listResultDailyMisson ?? [])
     }
 }
 

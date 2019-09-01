@@ -15,14 +15,11 @@ class HistoryListExerciseInteractor: HistoryListExerciseInteractorInputProtocol 
     weak var presenter: HistoryListExerciseInteractorOutputProtocol?
     
     func getListHistoryExercise(type: Int, offset: Int, date: String) {
-        ProgressView.shared.show()
         Provider.shared.exerciseAPIService.getHistoryExercise(type: type,date: date, offset: offset, success: { (respone) in
-            ProgressView.shared.hide()
             if let _respone = respone {
                 self.presenter?.getListHistoryExerciseSuccessed(response: _respone)
             }
         }) { (error) in
-            ProgressView.shared.hide()
         }
     }
 }
