@@ -134,20 +134,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("=====================================")
         }
         
-//        UNUserNotificationCenter.current().getDeliveredNotifications { (receivedNotifications) in
-//            for notification in receivedNotifications {
-//                let content = notification.request.content.userInfo as? [String : Any]
-//                if let aps = content?["aps"] as? [String: Any]{
-//                    if let alert = aps["alert"] as? [String : Any], let body = alert["body"] as? String {
-//                        if body == "Competition" {
-//                            NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
-//                            break
-//                        }
-//                    }
-//                }
-//                print(content)
-//            }
-//        }
+        Provider.shared.homeAPIService.getTopThree(success: { (object) in
+            let count = object?.count_fight_test ?? 0
+            if count > 0 {
+                NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+            }
+        }) { (error) in
+            
+        }
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
