@@ -50,17 +50,34 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
-        print(JSON(userInfo))
+
+//        print(JSON(userInfo))
 //        AppRouter.shared.openTabbar(index: 3)
 //        AppRouter.shared.handleNotification(userInfo: userInfo)
-        
+        UIApplication.shared.applicationIconBadgeNumber -= 1
+        if let userInfo = response.notification.request.content.userInfo as? [String: Any]{
+            if let aps = userInfo["aps"] as? [String: Any]{
+                if let alert = aps["alert"] as? [String : Any], let body = alert["body"] as? String {
+                    if body == "Competition" {
+                        NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+                    }
+                }
+            }
+        }
+        completionHandler()
         print("didReceive")
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+//        print("didReceiveRemoteNotification didReceiveRemoteNotification")
+//        completionHandler(.newData)
+    }
+    
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("willPresent")
+        UIApplication.shared.applicationIconBadgeNumber += 1
         completionHandler([.alert, .badge, .sound])
     }
 }
