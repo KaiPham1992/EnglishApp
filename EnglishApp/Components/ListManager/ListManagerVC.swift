@@ -53,29 +53,31 @@ class ListManagerVC: BaseViewController {
     }
     
     func initLoadData(data: [Any]){
-        
-        ProgressView.shared.hide()
-        
-        if data.count < limit {
-            isLoadmore = false
-        } else {
-            isLoadmore = true
-        }
-        
-        if self.offset == 0 {
-            self.listData = data
-        } else {
-            self.listData += data
-        }
-        
-        if data.count == 0 && self.offset == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        
-        UIView.performWithoutAnimation {
-            self.tableView.reloadData()
+        DispatchQueue.global().async {
+            if data.count < limit {
+                self.isLoadmore = false
+            } else {
+                self.isLoadmore = true
+            }
+            
+            if self.offset == 0 {
+                self.listData = data
+            } else {
+                self.listData += data
+            }
+            self.offset += limit
+            DispatchQueue.main.async {
+                ProgressView.shared.hide()
+                if data.count == 0 && self.offset == 0 {
+                    self.showNoData()
+                } else {
+                    self.hideNoData()
+                }
+                
+                UIView.performWithoutAnimation {
+                    self.tableView.reloadData()
+                }
+            }
         }
     }
     
@@ -138,7 +140,6 @@ extension ListManagerVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if indexPath.row == listData.count - 1 && isLoadmore {
-            self.offset += limit
             self.isShowProgressView = false
             callAPI()
             let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)

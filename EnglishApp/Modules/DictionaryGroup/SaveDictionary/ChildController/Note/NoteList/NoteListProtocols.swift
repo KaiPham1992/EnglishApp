@@ -20,15 +20,10 @@ protocol NoteListWireframeProtocol: class {
 protocol NoteListPresenterProtocol: class {
 
     var interactor: NoteListInteractorInputProtocol? { get set }
-    
-    var noteListRespone : NoteListRespone? {get set}
-    func changeStatusNote(indexPath: IndexPath)
     func gotoNote(idNote: String)
     func gotoAddNote()
-    func getListNote(offset: Int,replaceData: Bool)
-    func deleteNote()
-    func cancelDelete()
-    func confirmDelete()
+    func getListNote(offset: Int)
+    func confirmDelete(listId: [Int])
 }
 
 //MARK: Interactor -
@@ -56,7 +51,7 @@ protocol NoteListViewProtocol: class {
 
     var presenter: NoteListPresenterProtocol?  { get set }
     
-    func reloadView()
+    func reloadView(listData: [NoteRespone])
     func reloadViewAfterDelete()
     func notifyDelete()
 

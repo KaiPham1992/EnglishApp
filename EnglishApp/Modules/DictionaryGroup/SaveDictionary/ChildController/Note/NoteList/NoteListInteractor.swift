@@ -15,15 +15,12 @@ class NoteListInteractor: NoteListInteractorInputProtocol {
     weak var presenter: NoteListInteractorOutputProtocol?
     
     func getListNote(offset: Int) {
-        ProgressView.shared.show()
         Provider.shared.saveAPIService.getListNote(offset: offset, success: { (response) in
-            ProgressView.shared.hide()
             if let _response = response {
                 self.presenter?.getListNoteSuccessed(listNote: _response)
             }
             
         }) { (error) in
-            ProgressView.shared.hide()
         }
     }
     func deleteNote(id: [Int]){

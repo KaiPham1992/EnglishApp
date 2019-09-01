@@ -32,14 +32,12 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
             return
         }
         if let controller = self.viewControllers[self.currentIndex] as? NoteListViewController {
-//            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black, font: AppFont.fontRegular16)
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
-            controller.reloadView()
+            controller.tbvNoteList.reloadData()
             return
         }
         if let controller = self.viewControllers[self.currentIndex] as? VocabularyViewController {
-//            addButtonTextToNavigation(title: "Xong", style: .right, action: #selector(clickFinish), textColor: .black)
             controller.actionDeleteFinish = actionReloadFinish
             controller.isDelete = true
             controller.tableView.reloadData()

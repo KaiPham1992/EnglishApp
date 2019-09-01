@@ -37,10 +37,10 @@ class AddNoteViewController: BaseViewController {
     
     @objc func clickFinish(){
         let content = tvNote.text ?? ""
+        self.view.endEditing(true)
         if content.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) != "" {
             self.presenter?.addNote(description: content)
         } else {
-            self.view.endEditing(true)
             PopUpHelper.shared.showError(message: " Vui lòng nhập ghi chú của bạn.") { [unowned self] in
                 self.tvNote.becomeFirstResponder()
             }
