@@ -13,8 +13,7 @@ import UIKit
 class CatelogyExerciseViewController: ListManagerVC {
 
 	var presenter: CatelogyExercisePresenterProtocol?
-
-    @IBOutlet weak var tbvLevelExercise: UITableView!
+    
     var typeTest = 0
     var studyPackId : Int = 0
     

@@ -21,8 +21,6 @@ class LevelExerciseViewController: ListManagerVC {
 
 	var presenter: LevelExercisePresenterProtocol?
     
-    @IBOutlet weak var tbvLevelExercise: UITableView!
-    
     override func setUpViews() {
         showButtonBack = true
         customTitle = LocalizableKey.level_exercise.showLanguage

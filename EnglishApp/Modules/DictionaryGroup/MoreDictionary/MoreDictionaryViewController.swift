@@ -12,7 +12,6 @@ import UIKit
 import RealmSwift
 
 class MoreDictionaryViewController: ListManagerVC {
-    @IBOutlet weak var tbvDictionary: UITableView!
     
 	var presenter: MoreDictionaryPresenterProtocol?
     public var callBackChangeDictionary : (() -> ())?
