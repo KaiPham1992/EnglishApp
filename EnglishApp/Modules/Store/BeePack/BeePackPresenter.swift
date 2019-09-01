@@ -28,7 +28,7 @@ class BeePackPresenter: BeePackPresenterProtocol, BeePackInteractorOutputProtoco
             self.view?.didUpgrade(info: success)
         }) { (error) in
             guard let error = error else {return}
-            self.view?.didUpgrade(error: error)
+//            self.view?.didUpgrade(error: error)
         }
     }
 

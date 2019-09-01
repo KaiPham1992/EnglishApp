@@ -13,6 +13,7 @@ import XLPagerTabStrip
 
 class BeePackViewController: BaseViewController, BeePackViewProtocol {
     func didUpgrade(info: UpgradeInfoEntity) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "UpdateProfile"), object: nil)
         PopUpHelper.shared.showError(message: "\(LocalizableKey.upgradeSuccess.showLanguage)") {
             //
         }
@@ -24,7 +25,7 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
         }
     }
     
-
+    let frefresh = UIRefreshControl()
     var presenter: BeePackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
     
@@ -45,7 +46,12 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
     
     func upgradeBeePack(id: String) {
         PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.upgradeBeePack.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
-            self.presenter?.upgradeProduct(productID: id)
+            ProgressView.shared.show()
+            PaymentHelper.shared.purcharseProduct("product_test_03"){
+                ProgressView.shared.hide()
+                self.presenter?.upgradeProduct(productID: id)
+            }
+            
         }
     }
     
@@ -66,6 +72,13 @@ extension BeePackViewController: UITableViewDelegate, UITableViewDataSource {
         
         tbBeePack.estimatedRowHeight = 55
         tbBeePack.rowHeight = UITableView.automaticDimension
+        tbBeePack.refreshControl = frefresh
+        tbBeePack.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    @objc func refreshData() {
+        listBeePack = UserDefaultHelper.shared.collectionProduct.groupHoney
+        tbBeePack.refreshControl?.endRefreshing()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

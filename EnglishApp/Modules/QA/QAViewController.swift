@@ -58,22 +58,22 @@ class QAViewController: BaseViewController {
         presenter?.loadMoreQA()
     }
 
-    func pushNotification() {
-        let content = UNMutableNotificationContent()
-        content.title = "Thông báo"
-        content.body = "Bạn bị trừ mật ong."
-        content.sound = UNNotificationSound.default
-        content.badge = 1
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
-        let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if let error = error {
-                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
-            }
-        }
-    }
+//    func pushNotification() {
+//        let content = UNMutableNotificationContent()
+//        content.title = "Thông báo"
+//        content.body = "Bạn bị trừ mật ong."
+//        content.sound = UNNotificationSound.default
+//        content.badge = 1
+//
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.2, repeats: false)
+//        let request = UNNotificationRequest(identifier: "TestIdentifier", content: content, trigger: trigger)
+//
+//        UNUserNotificationCenter.current().add(request) { (error) in
+//            if let error = error {
+//                print("Unable to Add Notification Request (\(error), \(error.localizedDescription))")
+//            }
+//        }
+//    }
     
     @IBAction func btnSearchTapped() {
         self.dismissKeyBoard()
@@ -103,7 +103,6 @@ class QAViewController: BaseViewController {
     }
 
 }
-
 
 extension QAViewController: UITableViewDelegate, UITableViewDataSource {
     @objc func refreshData() {

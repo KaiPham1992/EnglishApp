@@ -29,6 +29,9 @@
                 <outlet property="lbPointtop1" destination="eoh-xn-moa" id="smn-Ca-XfB"/>
                 <outlet property="lbPointtop2" destination="lrD-Za-GIC" id="P8u-Tp-Qx7"/>
                 <outlet property="lbPointtop3" destination="0nj-t7-yTj" id="WTj-T4-SQh"/>
+                <outlet property="viewTop1" destination="dSi-5f-4y3" id="jox-p5-GdE"/>
+                <outlet property="viewTop2" destination="ehJ-jr-8nl" id="ow5-oR-2ED"/>
+                <outlet property="viewTop3" destination="FBg-ao-qYf" id="jxV-QJ-bgs"/>
                 <outlet property="widthAvartar1" destination="Oq3-4P-NfL" id="dGj-kO-6rU"/>
                 <outlet property="widthAvartar2" destination="4HL-3r-hpa" id="WCo-mY-hzn"/>
                 <outlet property="widthAvartar3" destination="bff-uj-YMM" id="y7O-su-n59"/>

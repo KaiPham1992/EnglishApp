@@ -18,6 +18,7 @@ class HomeViewController: BaseViewController {
     
     var presenter: HomePresenterProtocol?
     var vcMenu:  MenuViewController!
+    let frefresh = UIRefreshControl()
     
     lazy var btnOver: UIButton = {
        let btn = UIButton()
@@ -74,7 +75,7 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateAvatar), name: NSNotification.Name.init("UpdateAvatar"), object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
     }
     
     @objc func testEntranceComplete(notification: Notification){
@@ -84,6 +85,10 @@ class HomeViewController: BaseViewController {
                 
             }
         }
+    }
+    
+    @objc func updateProfile() {
+        presenter?.getProfile()
     }
     
     @objc func updateAvatar() {
@@ -182,7 +187,14 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tbHome.estimatedRowHeight = 120
         tbHome.rowHeight = UITableView.automaticDimension
         tbHome.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
-        
+        tbHome.refreshControl = frefresh
+        tbHome.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    @objc func refreshData() {
+        presenter?.getHomeRecently()
+        presenter?.getTopThree()
+        tbHome.refreshControl?.endRefreshing()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

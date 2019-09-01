@@ -47,5 +47,5 @@ protocol QAViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetQA(list: [QAEntity])
-    func pushNotification()
+//    func pushNotification()
 }
