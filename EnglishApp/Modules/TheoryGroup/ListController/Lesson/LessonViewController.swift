@@ -18,7 +18,6 @@ enum TheoryType : Int {
 
 class LessonViewController: ListManagerVC {
 
-    @IBOutlet weak var tbvLesson: UITableView!
     var presenter: LessonPresenterProtocol?
     var type: TheoryType = .lesson
     
@@ -30,7 +29,7 @@ class LessonViewController: ListManagerVC {
     
     override func registerTableView() {
         super.registerTableView()
-        tbvLesson.registerXibFile(CellLesson.self)
+        tableView.registerXibFile(CellLesson.self)
     }
     
     override func callAPI() {
