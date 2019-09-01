@@ -24,7 +24,7 @@ class BXHView: BaseViewXib {
             
             lbNumber.text = "\(self.number*)"
             lbName.text = user.nameShowUI
-            lbRank.text = "\(user.rankName&): \(user.rankPoint&) \(LocalizableKey.point.showLanguage)"
+            lbRank.text = "\(user.rankName&): \(user.rankPoint ?? 0) \(LocalizableKey.point.showLanguage)"
             imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
             imgPremium.image = user.imagePremium
             imgStudyPack.image = user.imageStudyPack
