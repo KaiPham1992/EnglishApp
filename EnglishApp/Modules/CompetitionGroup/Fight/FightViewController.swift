@@ -122,7 +122,7 @@ class FightViewController: BaseViewController {
     }
     
     private func notifyOutCompetition() {
-        NotificationCenter.default.post(name: NSNotification.Name("LeaveCompetition"), object: nil, userInfo: nil)
+        fightFinished?()
     }
     
     override func btnBackTapped() {

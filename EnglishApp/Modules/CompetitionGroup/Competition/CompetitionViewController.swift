@@ -26,7 +26,6 @@ class CompetitionViewController: ListManagerVC {
         showButtonBack = false
         super.setupViewListManager()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(leaveCompetition), name: NSNotification.Name(rawValue: "LeaveCompetition"), object: nil)
     }
     
     @objc func didRecieveCompetition() {
