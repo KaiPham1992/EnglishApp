@@ -112,6 +112,9 @@ extension NoteListViewController : NoteListViewProtocol {
     func deleteNoteSuccessed() {
         let listNote = self.listData as! [NoteRespone]
         self.listData = listNote.filter{!$0.isDelete}
+        if self.listData.count == 0 {
+            showNoData()
+        }
         reloadViewAfterDelete()
     }
 }

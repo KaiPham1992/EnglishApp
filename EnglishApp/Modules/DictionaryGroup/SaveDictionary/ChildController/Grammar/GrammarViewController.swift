@@ -120,6 +120,9 @@ extension GrammarViewController : GrammarViewProtocol {
     func deleteGrammarSuccessed() {
         let listGrammar = self.listData as! [GrammarEntity]
         self.listData = listGrammar.filter{!$0.isDelete}
+        if self.listData.count == 0 {
+            showNoData()
+        }
         reloadViewAfterDeleted()
     }
 }

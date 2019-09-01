@@ -111,6 +111,9 @@ extension VocabularyViewController : VocabularyViewProtocol{
     func deleteVocabSuccessed() {
         let listVocabulary = self.listData as! [WordLikeEntity]
         self.listData = listVocabulary.filter{!$0.isDelete}
+        if self.listData.count == 0 {
+            showNoData()
+        }
         reloadViewAfterDelete()
     }
    

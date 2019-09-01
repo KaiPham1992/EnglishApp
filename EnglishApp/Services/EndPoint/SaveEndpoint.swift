@@ -91,7 +91,7 @@ extension SaveEndpoint : EndPointType {
                     "description": description]
         case .deleteListGrammar(let likeList):
             return ["like_ids": likeList,
-                    "type": "VERB"]
+                    "type": "LESSON"]
         }
     }
     
