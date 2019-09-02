@@ -68,7 +68,7 @@ class CommentQuestionViewController: BaseViewController {
         }
         let keyboardRect = rect.cgRectValue
         if isKeyboardShowing {
-            bottomViewComment.constant = keyboardRect.height  - view.safeAreaInsets.bottom
+            bottomViewComment.constant = -(keyboardRect.height  - view.safeAreaInsets.bottom)
             hideNoData()
         } else {
             bottomViewComment.constant = 0

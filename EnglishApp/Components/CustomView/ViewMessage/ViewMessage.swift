@@ -15,7 +15,7 @@ class ViewMessage: BaseViewXib{
     @IBAction func clickView(_ sender: Any) {
         action?()
     }
-    
+    @IBOutlet weak var viewNumber: UIView!
     override func setUpViews() {
         super.setUpViews()
     }
@@ -25,6 +25,9 @@ class ViewMessage: BaseViewXib{
             lblNumber.text = "9+"
         } else {
             lblNumber.text = "\(number)"
+            if number == 0 {
+                viewNumber.isHidden = true
+            }
         }
     }
 }
