@@ -26,14 +26,14 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="138"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you sure you want to delete this draft application?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-0d-Dry">
-                    <rect key="frame" x="45" y="0.0" width="324" height="45"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Luc-0d-Dry">
+                    <rect key="frame" x="24" y="15" width="366" height="0.0"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Ic-YY-kyp">
-                    <rect key="frame" x="24" y="69" width="366" height="32"/>
+                    <rect key="frame" x="24" y="30" width="366" height="32"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1J-5g-jde">
                             <rect key="frame" x="0.0" y="0.0" width="172" height="32"/>
@@ -89,10 +89,10 @@
             <constraints>
                 <constraint firstItem="8Ic-YY-kyp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="3Ej-Dt-2ih"/>
                 <constraint firstAttribute="trailing" secondItem="8Ic-YY-kyp" secondAttribute="trailing" constant="24" id="Bcb-iG-B9L"/>
-                <constraint firstItem="Luc-0d-Dry" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="45" id="Iww-uv-hrM"/>
-                <constraint firstItem="8Ic-YY-kyp" firstAttribute="top" secondItem="Luc-0d-Dry" secondAttribute="bottom" constant="24" id="QO7-2Z-B5v"/>
-                <constraint firstAttribute="trailing" secondItem="Luc-0d-Dry" secondAttribute="trailing" constant="45" id="dxZ-sd-OYY"/>
-                <constraint firstItem="Luc-0d-Dry" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="gSK-NW-NjS"/>
+                <constraint firstItem="Luc-0d-Dry" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="24" id="Iww-uv-hrM"/>
+                <constraint firstItem="8Ic-YY-kyp" firstAttribute="top" secondItem="Luc-0d-Dry" secondAttribute="bottom" constant="15" id="QO7-2Z-B5v"/>
+                <constraint firstAttribute="trailing" secondItem="Luc-0d-Dry" secondAttribute="trailing" constant="24" id="dxZ-sd-OYY"/>
+                <constraint firstItem="Luc-0d-Dry" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="gSK-NW-NjS"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="360.9375"/>

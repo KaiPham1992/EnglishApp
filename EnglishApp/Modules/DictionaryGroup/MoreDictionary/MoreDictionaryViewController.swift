@@ -66,26 +66,35 @@ class MoreDictionaryViewController: ListManagerVC {
     
     func processFileDownload(link: String, item: ItemDictionaryResponse, isRunBackground : Bool = false) {
         if !isRunBackground {
-            ProgressView.shared.show()
+            ProgressView.shared.showFullScreen()
         }
-        FileZipManager.shared.downLoadFile(idDictionary: item.id, link: link) {
-            DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
-                let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
-                let object = LocalConfigDictionary(id_dictionary: item.id, name: item.name, id_user: id_user)
-                item.isDownload = true
-                item.isDownloading = false
-                LiveData.listDownloading = LiveData.listDownloading.filter{$0 != item.id}
-                let numberDownloaded = (self.listData as! [ItemDictionaryResponse]).filter({$0.isDownload}).count
-                if numberDownloaded == 1 {
-                    object.isDefault = 1
-                    item.isDefault = true
-                }
-                DispatchQueue.main.async {
-                    RealmDBManager.share.addObject(value: object)
-                    self.tableView.reloadData()
-                    ProgressView.shared.hide()
-                    self.callBackChangeDictionary?()
-                }
+        let objects = RealmDBManager.share.filter(objectType: LocalConfigDictionary.self, key: "id_dictionary", value: item.id)
+        if objects.count > 0 {
+            self.changeViewAfterDownloadSuccessed(item: item)
+        } else {
+            FileZipManager.shared.downLoadFile(idDictionary: item.id, link: link) {
+                self.changeViewAfterDownloadSuccessed(item: item)
+            }
+        }
+    }
+    
+    private func changeViewAfterDownloadSuccessed(item: ItemDictionaryResponse) {
+        DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+            let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
+            let object = LocalConfigDictionary(id_dictionary: item.id, name: item.name, id_user: id_user)
+            item.isDownload = true
+            item.isDownloading = false
+            LiveData.listDownloading = LiveData.listDownloading.filter{$0 != item.id}
+            let numberDownloaded = (self.listData as! [ItemDictionaryResponse]).filter({$0.isDownload}).count
+            if numberDownloaded == 1 {
+                object.isDefault = 1
+                item.isDefault = true
+            }
+            DispatchQueue.main.async {
+                RealmDBManager.share.addObject(value: object)
+                self.tableView.reloadData()
+                ProgressView.shared.hide()
+                self.callBackChangeDictionary?()
             }
         }
     }
@@ -94,7 +103,7 @@ class MoreDictionaryViewController: ListManagerVC {
         if !isDownloaded {
             let link = BASE_URL + item.link_dictionary&
             if link != BASE_URL {
-                PopUpHelper.shared.showComfirmPopUp(message: "Qúa trình có thể mất nhiều thời gian bạn có muốn công việc chạy ngầm?", titleYes: "Có", titleNo: "Không", complete: { [unowned self] in
+                PopUpHelper.shared.showComfirmPopUp(message: "Qúa trình có thể mất nhiều thời gian bạn có muốn công việc chạy ngầm?", titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
                     let index = (self.listData as! [ItemDictionaryResponse]).map({$0.id}).index(item.id, offsetBy: 0, limitedBy: self.listData.count) ?? 0
                     if let cell = self.tableView.cellForRow(at: IndexPath(row: index - 1, section: 0)) as? MoreDictionaryCell{
                         cell.hideBtnDelete()
@@ -108,7 +117,7 @@ class MoreDictionaryViewController: ListManagerVC {
             }
         } else {
             DispatchQueue.main.async {
-                ProgressView.shared.show()
+                ProgressView.shared.showFullScreen()
                 let object = RealmDBManager.share.filter(objectType: LocalConfigDictionary.self, key: "id_dictionary", value: item.id)
                 if object.count == 1 {
                     RealmDBManager.share.removeAllObject(type: WordEntity.self, key: "id_dictionary", value: item.id)
@@ -116,8 +125,10 @@ class MoreDictionaryViewController: ListManagerVC {
                 }
                 RealmDBManager.share.removeObject(type: LocalConfigDictionary.self, value: "\(item.id)_\(self.id_user)")
                 item.isDownload = false
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                    ProgressView.shared.hide()
+                })
                 self.tableView.reloadData()
-                ProgressView.shared.hide()
                 self.callBackChangeDictionary?()
             }
         }

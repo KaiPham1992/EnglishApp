@@ -48,6 +48,18 @@ open class ProgressView {
         vIndicator.startAnimating()
     }
     
+    private func showFullScreen(_ view: UIView) {
+        view.addSubview(vcontainer)
+        vcontainer.fillSuperview()
+        vcontainer.backgroundColor =  UIColor.black.withAlphaComponent(0.2)
+        vcontainer.setBorder(borderWidth: 1, borderColor: .clear, cornerRadius: 0)
+        
+        vcontainer.addSubview(vIndicator)
+        vIndicator.anchor(widthConstant: 60, heightConstant: 60)
+        vIndicator.centerSuperview()
+        vIndicator.startAnimating()
+    }
+    
     open func show() {
        
         DispatchQueue.main.async {
@@ -60,6 +72,16 @@ open class ProgressView {
         DispatchQueue.main.async {
             guard let window = UIApplication.shared.keyWindow else  { return }
             self.showFillSuperView(view: window)
+        }
+    }
+    
+    open func showFullScreen() {
+        DispatchQueue.main.async {
+            let topViewController = UIApplication.topViewController() as? BaseViewController
+            topViewController?.setColorStatusBar(color: .clear)
+            topViewController?.setNeedsStatusBarAppearanceUpdate()
+            guard let window = UIApplication.shared.keyWindow else  { return }
+            self.showFullScreen(window)
         }
     }
     
@@ -84,6 +106,9 @@ open class ProgressView {
     
     open func hide() {
         DispatchQueue.main.async {
+            let topViewController = UIApplication.topViewController() as? BaseViewController
+            topViewController?.setColorStatusBar(color: AppColor.yellow)
+            topViewController?.setNeedsStatusBarAppearanceUpdate()
             self.vcontainer.removeFromSuperview()
             self.vIndicator.removeFromSuperview()
         }

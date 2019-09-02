@@ -30,6 +30,12 @@ open class BaseViewController: UIViewController {
         return btn
     }()
     
+    var statusBarHidden = false
+    
+    open override var prefersStatusBarHidden: Bool {
+        return statusBarHidden
+    }
+    
     override open func viewDidLoad() {
         super.viewDidLoad()
         //store.subscribe(self)
@@ -61,7 +67,7 @@ open class BaseViewController: UIViewController {
     func setColorStatusBar(color: UIColor = AppColor.yellow) {
         guard let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView else { return }
         statusBar.backgroundColor = color
-        UIApplication.shared.statusBarStyle = .lightContent
+//        UIApplication.shared.statusBarStyle = .lightContent
         statusBar.tintColor =  color
     }
     

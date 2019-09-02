@@ -41,6 +41,6 @@ class ConfirmPopUp: BasePopUpView{
         self.completionYes = complete
         self.completionNo = cancel
         view.setupPopUp(message: message, titleYes: titleYes, titleNo: titleNo)
-        self.showPopUp(height: 140)
+        self.showPopUp(height: 180)
     }
 }

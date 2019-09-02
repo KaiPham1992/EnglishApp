@@ -308,6 +308,9 @@
 		2AC7A21E22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
 		2AC7A21F22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
 		2AC7A22022D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */; };
+		2AD638B9231CC586007D0D44 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */; };
+		2AD638BA231CC586007D0D44 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */; };
+		2AD638BB231CC586007D0D44 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */; };
 		2AED147B22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
 		2AED147C22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
 		2AED147D22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
@@ -2395,6 +2398,7 @@
 		2AC7A21522D78C40004ADFEE /* CompetitionResultsProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultsProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultTeamEntity.swift; sourceTree = "<group>"; };
+		2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
 		2AED147522ED8E950076C223 /* VocabularyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyPresenter.swift; sourceTree = "<group>"; };
 		2AED147622ED8E950076C223 /* VocabularyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyRouter.swift; sourceTree = "<group>"; };
 		2AED147722ED8E950076C223 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
@@ -4326,6 +4330,7 @@
 				DEECF8762287075B00A4678B /* UITable+extension.swift */,
 				DEECF87A22870B3D00A4678B /* Bundle+extension.swift */,
 				DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */,
+				2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -6852,6 +6857,7 @@
 				DE49F7EB22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				DEF1C25C22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A3228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
+				2AD638B9231CC586007D0D44 /* UIApplication+Extension.swift in Sources */,
 				DE6FDB1422AB869A00960422 /* FindRouter.swift in Sources */,
 				76CE31A92295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
 				DE952F832287D2A700E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
@@ -7468,6 +7474,7 @@
 				DE49F7EC22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				DEF1C25D22903670005AD1A3 /* HomeHeaderCell.swift in Sources */,
 				76DB93A4228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
+				2AD638BA231CC586007D0D44 /* UIApplication+Extension.swift in Sources */,
 				DE6FDB1522AB869A00960422 /* FindRouter.swift in Sources */,
 				76CE31AA2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
 				DE9530352287DF4800E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
@@ -7620,6 +7627,7 @@
 				DE9530732287DF6400E3F688 /* KActivityIndicatorAnimationBlank.swift in Sources */,
 				768ED33522BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */,
 				76E852F822B945870039751A /* TheoryEndpoint.swift in Sources */,
+				2AD638BB231CC586007D0D44 /* UIApplication+Extension.swift in Sources */,
 				2A436B0B22EB384D00BD9285 /* CellHistoryListExercise.swift in Sources */,
 				DE9530742287DF6400E3F688 /* PhoneEntity.swift in Sources */,
 				DE89D1DE22A413F5000638B0 /* RequireUpgradeContent.swift in Sources */,
