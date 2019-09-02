@@ -19,6 +19,7 @@ class ViewExerciseEntity: Mappable {
     var default_dict_id: String?
     var type_test : String?
     var questions : [QuestionEntity]?
+    
     required init?(map: Map) {
         
     }

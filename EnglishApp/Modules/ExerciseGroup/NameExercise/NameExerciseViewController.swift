@@ -180,7 +180,8 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         }
     }
     
-    func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath) {
+    func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath, isDiamond: Bool) {
+        NotificationCenter.default.post(name: NSNotification.Name.init("SuggestionQuestion"), object: nil, userInfo: ["isDiamond" : isDiamond])
         if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise, let dataCell =  self.presenter?.getQuestion(indexPath: indexPath){
             cell.changeDataSource(index: indexQuestion, data: dataCell.answers ?? [])
         }
@@ -231,14 +232,6 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
             cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillAppear(true)
-//        if player != nil {
-//            player?.pause()
-//            player = nil
-//        }
     }
 }
 
@@ -307,10 +300,17 @@ extension NameExerciseViewController : CellExerciseDelegate{
     }
 
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
-        PopUpHelper.shared.showSuggesstionResult(diamond: {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-        }) {
-            self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
+        let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.row].isShowSuggestQuestion ?? false
+        if !isShowSuggestion {
+            PopUpHelper.shared.showSuggesstionResult(diamond: {
+                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
+            }) {
+                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
+            }
+        } else {
+            PopUpHelper.shared.showError(message: "Không thực hiện được, user chỉ được chọn 1 lần.") {
+                
+            }
         }
     }
     

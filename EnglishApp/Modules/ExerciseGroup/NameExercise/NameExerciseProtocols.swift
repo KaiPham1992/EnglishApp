@@ -45,7 +45,7 @@ protocol NameExerciseInteractorOutputProtocol: class {
     func gotoResult(result: TestResultProfileEntity)
     func getExerciseFailed(error:APIError)
     func exitSuccessed(respone: TestResultProfileEntity)
-    func suggestQuestionSuccessed(respone: [String])
+    func suggestQuestionSuccessed(respone: [String], isDiamond: Bool)
     func suggestQuestionError(error: APIError)
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
 }
@@ -73,7 +73,7 @@ protocol NameExerciseViewProtocol: class {
     func reloadView()
     func getExerciseFailed(error:APIError)
     func exitSuccessed()
-    func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath)
+    func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath, isDiamond: Bool)
     func suggestQuestionError()
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
 }

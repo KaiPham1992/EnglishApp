@@ -76,6 +76,20 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateAvatar), name: NSNotification.Name.init("UpdateAvatar"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
+    }
+    
+    @objc func suggestionQuestion(notification: Notification) {
+        if let isDiamond = notification.userInfo?["isDiamond"] as? Bool, let user = UserDefaultHelper.shared.loginUserInfo {
+            if isDiamond {
+                let diamond = user.amountDiamond ?? 0
+                user.amountDiamond = diamond - 10
+            } else {
+                let honey = user.amountHoney ?? 0
+                user.amountHoney = honey - 5
+            }
+            header.user = user
+        }
     }
     
     @objc func testEntranceComplete(notification: Notification){

@@ -97,19 +97,29 @@ extension ResultViewController: ResultViewProtocol{
     }
     
     func reloadView() {
-        scrollView.isHidden = false
-        btnBackHome.isHidden = false
-        lblDontJoinCompetition.text = ""
-        imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), placeholderImage: UIImage(named: "ic_avatar_default")!, completed: nil)
-        lblPoint.attributedText =  NSAttributedString(string: self.presenter?.getTotalPoint() ?? "0")
-        lblTime.attributedText =  NSAttributedString(string: self.presenter?.getTotalTime() ?? "")
-        viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
-        viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
-        self.tbvResult.reloadData()
+        DispatchQueue.main.async {
+            self.scrollView.isHidden = false
+            self.btnBackHome.isHidden = false
+            self.lblDontJoinCompetition.text = ""
+            self.imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), placeholderImage: UIImage(named: "ic_avatar_default")!, completed: nil)
+            self.lblPoint.attributedText =  NSAttributedString(string: self.presenter?.getTotalPoint() ?? "0")
+            self.lblTime.attributedText =  NSAttributedString(string: self.presenter?.getTotalTime() ?? "")
+            self.viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
+            self.viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
+            self.tbvResult.reloadData()
+            if self.type == .entranceExercise {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
+                        let vc = StoreViewController()
+                        self.push(controller: vc)
+                    }, completeCancel: {
+                        
+                    })
+                })
+            }
+        }
         
     }
-    
-    
 }
 
 extension ResultViewController : UITableViewDataSource{
