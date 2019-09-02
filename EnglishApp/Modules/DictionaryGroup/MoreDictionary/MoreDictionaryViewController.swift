@@ -69,20 +69,24 @@ class MoreDictionaryViewController: ListManagerVC {
             ProgressView.shared.show()
         }
         FileZipManager.shared.downLoadFile(idDictionary: item.id, link: link) {
-            let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
-            let object = LocalConfigDictionary(id_dictionary: item.id, name: item.name, id_user: id_user)
-            item.isDownload = true
-            item.isDownloading = false
-            LiveData.listDownloading = LiveData.listDownloading.filter{$0 != item.id}
-            let numberDownloaded = (self.listData as! [ItemDictionaryResponse]).filter({$0.isDownload}).count
-            if numberDownloaded == 1 {
-                object.isDefault = 1
-                item.isDefault = true
+            DispatchQueue.global(qos: DispatchQoS.QoSClass.background).async {
+                let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0
+                let object = LocalConfigDictionary(id_dictionary: item.id, name: item.name, id_user: id_user)
+                item.isDownload = true
+                item.isDownloading = false
+                LiveData.listDownloading = LiveData.listDownloading.filter{$0 != item.id}
+                let numberDownloaded = (self.listData as! [ItemDictionaryResponse]).filter({$0.isDownload}).count
+                if numberDownloaded == 1 {
+                    object.isDefault = 1
+                    item.isDefault = true
+                }
+                DispatchQueue.main.async {
+                    RealmDBManager.share.addObject(value: object)
+                    self.tableView.reloadData()
+                    ProgressView.shared.hide()
+                    self.callBackChangeDictionary?()
+                }
             }
-            RealmDBManager.share.addObject(value: object)
-            self.tableView.reloadData()
-            ProgressView.shared.hide()
-            self.callBackChangeDictionary?()
         }
     }
     
