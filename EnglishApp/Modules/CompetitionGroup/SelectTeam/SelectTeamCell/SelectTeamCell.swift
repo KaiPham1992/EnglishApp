@@ -16,10 +16,10 @@ class SelectTeamCell: BaseTableCell {
     @IBOutlet weak var lbCountMember: UILabel!
     @IBOutlet weak var btnJoin: UIButton!
     @IBOutlet weak var imgTeam: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        btnJoin.setTitle(LocalizableKey.join_team.showLanguage.uppercased(), for: .normal)
+        btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.join_team.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : UIColor.black]), for: .normal)
     }
     func displayData(maxMember: Int, team: TeamEntity, isCannotJoin: Bool){
         lbName.text = team.name
@@ -34,7 +34,7 @@ class SelectTeamCell: BaseTableCell {
                 if Int(team.countMember&) == maxMember {
                     heightBtnJoin.constant = 0
                 } else {
-                    heightBtnJoin.constant = 24
+                    heightBtnJoin.constant = 35
                 }
             } else {
                 btnJoined.isHidden = false

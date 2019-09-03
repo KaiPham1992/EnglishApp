@@ -28,7 +28,7 @@ class FightRouter: FightWireframeProtocol {
         return view
     }
     
-    static func createModule(completion_id: Int,team_id: Int) -> FightViewController {
+    static func createModule(completion_id: Int, team_id: Int, startDate : Date ) -> FightViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = FightViewController(nibName: nil, bundle: nil)
         let interactor = FightInteractor()
@@ -36,6 +36,7 @@ class FightRouter: FightWireframeProtocol {
         let presenter = FightPresenter(interface: view, interactor: interactor, router: router)
         view.completion_id = completion_id
         view.team_id = team_id
+        view.startDate = startDate
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view

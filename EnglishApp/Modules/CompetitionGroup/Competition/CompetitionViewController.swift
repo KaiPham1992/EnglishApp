@@ -81,10 +81,10 @@ class CompetitionViewController: ListManagerVC {
             }
             if status == "CAN_JOIN"{
                 if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
+                    let data = listData[index] as! CompetitionEntity
                     let isStarted = cell.isStarted
                     if isStarted {
-                        let data = listData[index] as! CompetitionEntity
-                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0)
+                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date())
                         self.push(controller: vc,animated: true)
                     } else {
                         let vc = SelectTeamRouter.createModule(competitionId: competitionId)
@@ -109,7 +109,7 @@ class CompetitionViewController: ListManagerVC {
             
             if status == "DOING" {
                 let data = listData[index] as! CompetitionEntity
-                let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0)
+                let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date())
                 vc.fightFinished = {[weak self] in
                     self?.fightComplete(index: index)
                 }

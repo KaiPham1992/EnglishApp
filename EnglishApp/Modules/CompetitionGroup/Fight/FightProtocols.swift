@@ -45,7 +45,7 @@ protocol FightInteractorOutputProtocol: class {
     func suggestQuestionError(error: APIError)
     func submitCompetitionSuccessed(listRank: [RankTeamEntity])
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
-    
+    func fightDone()
 }
 
 protocol FightInteractorInputProtocol: class {
@@ -68,11 +68,12 @@ protocol FightViewProtocol: class {
     var presenter: FightPresenterProtocol?  { get set }
     
     func reloadView()
-    func getExerciseFailed(error:APIError)
+    func getExerciseFailed(error: APIError)
     func exitSuccessed()
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath)
     func suggestQuestionError()
     func submitCompetitionSuccessed()
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
+    func fightDone()
     /* Presenter -> ViewController */
 }

@@ -55,11 +55,11 @@ class ShareNativeHelper: NSObject {
 
 extension ShareNativeHelper : SharingDelegate {
     func sharer(_ sharer: Sharing, didCompleteWithResults results: [String : Any]) {
-         PopUpHelper.shared.showError(message: "Share thành công.", completionYes: nil)
+//         PopUpHelper.shared.showError(message: "Share thành công.", completionYes: nil)
     }
     
     func sharer(_ sharer: Sharing, didFailWithError error: Error) {
-        PopUpHelper.shared.showError(message: "Facook không khả thi.", completionYes: nil)
+        PopUpHelper.shared.showError(message: "Bạn cần cài Facebook để thực hiện tính năng này.", completionYes: nil)
     }
     
     func sharerDidCancel(_ sharer: Sharing) {

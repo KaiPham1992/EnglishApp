@@ -90,4 +90,8 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
         self.view?.searchVocabularySuccessed(wordEntity: wordEntity, position: position,index:index)
     }
+    
+    func fightDone() {
+        self.view?.fightDone()
+    }
 }

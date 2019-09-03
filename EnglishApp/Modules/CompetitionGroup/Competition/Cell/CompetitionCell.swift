@@ -64,6 +64,7 @@ class CompetitionCell: BaseTableCell {
                     btnCompetition.isHidden = true
                 } else {
                     self.isStarted = true
+                    viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
                     lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
                 }
             case "CAN_JOIN":

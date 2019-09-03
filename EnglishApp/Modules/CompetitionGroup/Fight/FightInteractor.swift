@@ -17,9 +17,14 @@ class FightInteractor: FightInteractorInputProtocol {
         Provider.shared.competitionAPIService.getViewFightCompetition(id: id, success: { (response) in
             if let _response = response {
                 self.presenter?.getExerciseSuccessed(respone: _response)
+            } else {
+                self.presenter?.fightDone()
             }
         }) { (error) in
             ProgressView.shared.hideLoadingCompetition()
+            if let _error = error {
+                self.presenter?.getExerciseFailed(error: _error)
+            }
         }
     }
     

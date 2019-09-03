@@ -42,6 +42,7 @@ class FightViewController: BaseViewController {
     var completion_id : Int = 0
     var team_id : Int = 0
     var isOut = false
+    var startDate : Date = Date()
     
     var fightFinished : (() -> ())?
     
@@ -61,8 +62,9 @@ class FightViewController: BaseViewController {
         }
     }
     
-    var isEnd : Bool = false{
+    var isEnd : Bool = false {
         didSet {
+            btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             vCountTime.stopTimer()
             self.submit()
         }
@@ -184,30 +186,42 @@ extension FightViewController :FightViewProtocol{
         DispatchQueue.global().async {
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
-            if let questions = self.presenter?.exerciseEntity?.questions {
-                for item in questions {
-                    let object = SubmitCompetitionQuestionResponse(competition_id: self.completion_id, team_id: self.team_id)
-                    let submitQuestion : SubmitQuestionEntity = SubmitQuestionEntity()
-                    submitQuestion.question_id = Int(item._id ?? "0") ?? 0
-                    submitQuestion.sequence = Int(item.sequence ?? "0") ?? 0
-                    let listAnswerSubmit = item.answers?.map{SubmitAnswerEntity(question_details_id: Int($0._id ?? "0") ?? 0)} ?? []
-                    submitQuestion.answers = listAnswerSubmit
-                    object.questions = submitQuestion
-                    self.listParamSubmit.append(object)
+            let currentStartTime = Date().timeIntervalSince1970
+            let startTime = self.startDate.timeIntervalSince1970
+            let distanceTime = Int(currentStartTime - startTime)
+            if distanceTime >= self.currentTime {
+                self.view.isHidden = true
+                PopUpHelper.shared.showErrorDidNotRemoveView(message: "Đã quá giờ thi.", completionYes: {
+                    self.pop(animated: true)
+                })
+            } else {
+                self.currentTime = self.currentTime - distanceTime
+                if let questions = self.presenter?.exerciseEntity?.questions {
+                    for item in questions {
+                        let object = SubmitCompetitionQuestionResponse(competition_id: self.completion_id, team_id: self.team_id)
+                        let submitQuestion : SubmitQuestionEntity = SubmitQuestionEntity()
+                        submitQuestion.question_id = Int(item._id ?? "0") ?? 0
+                        submitQuestion.sequence = Int(item.sequence ?? "0") ?? 0
+                        let listAnswerSubmit = item.answers?.map{SubmitAnswerEntity(question_details_id: Int($0._id ?? "0") ?? 0)} ?? []
+                        submitQuestion.answers = listAnswerSubmit
+                        object.questions = submitQuestion
+                        self.listParamSubmit.append(object)
+                    }
                 }
-            }
-            DispatchQueue.main.async {
-                self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
-                self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
-                self.vCountTime.setupTimeStartNow(min: self.currentTime)
-                self.clvQuestion.reloadData()
-                ProgressView.shared.hideLoadingCompetition()
+                DispatchQueue.main.async {
+                    self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
+                    self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
+                    self.vCountTime.setupTimeStartNow(min: self.currentTime)
+                    self.clvQuestion.reloadData()
+                    ProgressView.shared.hideLoadingCompetition()
+                }
             }
         }
     }
     
     func getExerciseFailed(error: APIError) {
         PopUpHelper.shared.showError(message: error.message&) {
+            
         }
     }
     
@@ -218,6 +232,12 @@ extension FightViewController :FightViewProtocol{
         
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
             cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+        }
+    }
+    
+    func fightDone() {
+        PopUpHelper.shared.showErrorDidNotRemoveView(message: "Cuộc thi đã kết thúc.") {
+            self.pop(animated: true)
         }
     }
 }

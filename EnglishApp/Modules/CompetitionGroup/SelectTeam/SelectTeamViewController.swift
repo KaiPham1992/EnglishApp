@@ -141,6 +141,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     
     func joinTeamSuccessed(respone: DetailTeamEntity) {
         joinTeam?(Int(respone.team_info?.id ?? "0") ?? 0)
+        self.isFightJoined = 1
         let vc = DetailTeamRouter.createModule(id: respone.team_info?.id ?? "0", isTeamJoined: 1, isFightJoined: isFightJoined)
         vc.actionBackView = { [weak self] in
             self?.offset = 0
