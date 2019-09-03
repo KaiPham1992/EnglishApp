@@ -95,7 +95,7 @@ class SelectTeamViewController: BaseTableViewController {
     
     @objc func btnJoined(sender: UIButton) {
         let team = listData[sender.tag] as! TeamEntity
-        let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, idMyTeam: idMyTeam, isFightJoined: isFightJoined)
+        let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, isFightJoined: isFightJoined)
         vc.actionLeaveTeam = { [weak self] in
             self?.leaveTeamSuccessed()
         }
@@ -119,7 +119,7 @@ class SelectTeamViewController: BaseTableViewController {
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! TeamEntity
         if let id = data.id, let isTeamJoined = data.isTeamJoined {
-            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, idMyTeam: idMyTeam, isFightJoined: isFightJoined)
+            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, isFightJoined: isFightJoined)
             vc.actionLeaveTeam = { [weak self] in
                self?.leaveTeamSuccessed()
             }
