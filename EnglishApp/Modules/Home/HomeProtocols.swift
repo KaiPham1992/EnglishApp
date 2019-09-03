@@ -47,7 +47,7 @@ protocol HomeViewProtocol: class {
     
     func didGetActivities(activities: [Acitvity])
     func didGetTopThree(listTopThree: [UserEntity])
-    func didGetTopThree(userInfo: UserEntity)
+    func didGetTopThree(collectionUserEntity: CollectionUserEntity)
     func didGetTopThree(error: Error)
     func didGetProfile(user: UserEntity)
 }

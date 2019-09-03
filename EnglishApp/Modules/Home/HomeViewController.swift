@@ -61,8 +61,6 @@ class HomeViewController: BaseViewController {
         super.viewDidLoad()
         configureTable()
         presenter?.getHomeRecently()
-        presenter?.getTopThree()
-        
         PaymentHelper.shared.fetchAvailableProducts()
     }
     
@@ -122,10 +120,9 @@ class HomeViewController: BaseViewController {
         addHeaderHome()
         countNotification()
         presenter?.getProfile()
-        
+        presenter?.getTopThree()
         // -- re init cell after change language
         reInitCell()
-        
     }
     
     func reInitCell() {
@@ -415,7 +412,13 @@ extension HomeViewController: HomeViewProtocol{
         self.listTopThree = listTopThree
     }
     
-    func didGetTopThree(userInfo: UserEntity) {
+    func didGetTopThree(collectionUserEntity: CollectionUserEntity) {
+        let numberCompetition = collectionUserEntity.count_fight_test ?? 0
+        if numberCompetition > 0 {
+            NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+        } else {
+            NotificationCenter.default.post(name: NSNotification.Name.init("NoCompetition"), object: nil)
+        }
     }
     
     func didGetTopThree(error: Error) {
