@@ -23,11 +23,13 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
 
     func getHomeRecently() {
+        ProgressView.shared.show()
         Provider.shared.userAPIService.getHomeRecently(success: { active in
+            ProgressView.shared.hide()
             guard let acti = active?.activities else { return }
             self.view?.didGetActivities(activities: acti)
         }) { _ in
-            
+            ProgressView.shared.hide()
         }
     }
     

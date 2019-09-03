@@ -43,6 +43,11 @@ class HomeViewController: BaseViewController {
     
     var listActivities = [Acitvity]() {
         didSet {
+            if listActivities.count == 0 {
+                if let cell = self.tbHome.cellForRow(at: IndexPath(row: 1, section: 1)) as? HomeNoResultCell {
+                    cell.showNoData()
+                }
+            }
             tbHome.reloadData()
         }
     }
@@ -240,6 +245,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 if self.listActivities.count == 0 {
                     // return cell no results
                     let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
+
                     return cell
                 } else {
                     let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
@@ -330,7 +336,6 @@ extension HomeViewController: MenuViewControllerDelegate {
         case AppImage.imgInfo:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
-            
             
         case AppImage.imgQA:
             self.hideMenu()

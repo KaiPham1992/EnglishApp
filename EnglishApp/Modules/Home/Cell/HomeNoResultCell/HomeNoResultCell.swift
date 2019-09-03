@@ -18,6 +18,10 @@ class HomeNoResultCell: BaseTableCell {
         // Initialization code
         
         lbTitle.text = "\(LocalizableKey.lbNoData.showLanguage)"
+        lbTitle.isHidden = true
     }
     
+    func showNoData() {
+        lbTitle.isHidden = false
+    }
 }
