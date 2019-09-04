@@ -68,29 +68,35 @@ class CompetitionCell: BaseTableCell {
                     lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
                 }
             case "CAN_JOIN":
-                if (competitionEntity.is_fight_joined ?? 0) == 0 {
-                    lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
-                    viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+                if competitionEntity.isHidden {
+                    viewButtonCompetition.isHidden = true
+                    lblTitleButtonCompetition.text = ""
                 } else {
-                    lblTitleButtonCompetition.attributedText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
-                    if let startTime = competitionEntity.startTime?.timeIntervalSince1970 {
-                        let currentTime = Date().timeIntervalSince1970
-                        viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-                        if startTime < currentTime {
-                            self.isStarted = true
-                            lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
-                        } else {
-                            self.isStarted = false
-                            var distanceTime = Int(startTime - currentTime)
-                            if timer == nil {
-                                timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                                    if distanceTime > 0 {
-                                        self.processTime(time: distanceTime)
-                                        distanceTime -= 1
-                                    } else {
-                                        self.disableTimer()
-                                    }
-                                })
+                    viewButtonCompetition.isHidden = false
+                    if (competitionEntity.is_fight_joined ?? 0) == 0 {
+                        lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
+                        viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+                    } else {
+                        lblTitleButtonCompetition.attributedText = NSAttributedString(string: "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+                        if let startTime = competitionEntity.startTime?.timeIntervalSince1970 {
+                            let currentTime = Date().timeIntervalSince1970
+                            viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+                            if startTime < currentTime {
+                                self.isStarted = true
+                                lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+                            } else {
+                                self.isStarted = false
+                                var distanceTime = Int(startTime - currentTime)
+                                if timer == nil {
+                                    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                                        if distanceTime > 0 {
+                                            self.processTime(time: distanceTime)
+                                            distanceTime -= 1
+                                        } else {
+                                            self.disableTimer()
+                                        }
+                                    })
+                                }
                             }
                         }
                     }

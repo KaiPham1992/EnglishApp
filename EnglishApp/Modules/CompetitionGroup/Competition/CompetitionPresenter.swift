@@ -14,6 +14,14 @@ class CompetitionPresenter: CompetitionPresenterProtocol, CompetitionInteractorO
     func getListFight(offset: Int) {
         Provider.shared.competitionAPIService.getListFight(offset: offset,success: { (collectionCompetition) in
             guard let competition = collectionCompetition else{return}
+            let listCompetition = competition.competitionEntity?.filter{$0.is_fight_joined == 1 && $0.status == "CAN_JOIN"} ?? []
+            if listCompetition.count > 0 {
+                for item in (competition.competitionEntity ?? []) {
+                    if (item.is_fight_joined ?? 0) == 0 && item.status == "CAN_JOIN" {
+                        item.isHidden = true
+                    }
+                }
+            }
             self.view?.didGetList(competitionList: competition)
         }) { (error) in
             guard let _error = error else {return}

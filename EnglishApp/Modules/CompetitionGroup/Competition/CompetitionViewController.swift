@@ -127,25 +127,55 @@ class CompetitionViewController: ListManagerVC {
     }
     
     private func fightComplete(index: Int) {
-        let data = listData[index] as! CompetitionEntity
-        data.status = "DONE"
-        self.tableView.reloadData()
-     }
+        DispatchQueue.global().async {
+            let data = self.listData[index] as! CompetitionEntity
+            data.status = "DONE"
+            self.changeStatusShowData()
+            DispatchQueue.main.async {
+                 self.tableView.reloadData()
+            }
+        }
+    }
+        
     
     func joinTeam(index: Int, teamId: Int) {
-        let data = listData[index] as! CompetitionEntity
-        data.team_id = String(teamId)
-        data.is_fight_joined = 1
-        DispatchQueue.main.async {
-             self.tableView.reloadData()
+        DispatchQueue.global().async {
+            let data = self.listData[index] as! CompetitionEntity
+            data.team_id = String(teamId)
+            data.is_fight_joined = 1
+            self.changeStatusHiddenData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    private func changeStatusHiddenData() {
+        let data = listData as! [CompetitionEntity]
+        for item in data {
+            if item.is_fight_joined == 0 && item.status == "CAN_JOIN" {
+                item.isHidden = true
+            }
+        }
+    }
+    
+    private func changeStatusShowData() {
+        let data = listData as! [CompetitionEntity]
+        for item in data {
+            if item.is_fight_joined == 0 && item.status == "CAN_JOIN" {
+                item.isHidden = false
+            }
         }
     }
     
     func leaveTeam(index: Int) {
-        let data = listData[index] as! CompetitionEntity
-        data.is_fight_joined = 0
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        DispatchQueue.global().async {
+            let data = self.listData[index] as! CompetitionEntity
+            data.is_fight_joined = 0
+            self.changeStatusShowData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     

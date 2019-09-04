@@ -37,6 +37,7 @@ class CompetitionEntity : BaseEntity {
     var is_fight_joined: Int?
     var status : String?
     var start_time_mi : String?
+    var isHidden = false
     
     convenience init(name: String) {
         self.init()
