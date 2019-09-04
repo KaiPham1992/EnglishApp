@@ -208,6 +208,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func refreshData() {
+        presenter?.listRecently.removeAll()
         presenter?.getHomeRecently()
         presenter?.getTopThree()
         tbHome.refreshControl?.endRefreshing()
@@ -249,7 +250,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                     return cell
                 } else {
                     let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
-                    cell.actity = self.listActivities[indexPath.item - 1]
+                    cell.actity = presenter?.listRecently[indexPath.item - 1]
                     return cell
                 }
             }
@@ -260,10 +261,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 2//self.listTopThree.count
         } else {
-            if self.listActivities.count == 0 {
+            if presenter?.listRecently.count == 0 {
                 return 2
             } else {
-                return self.listActivities.count + 1
+                return (presenter?.listRecently.count ?? 0) + 1
             }
         }
         
@@ -281,6 +282,12 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = NameExerciseRouter.createModule(id: "", type: .entranceExercise)
         vc.exerciseDelegate = self
         self.push(controller: vc)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if presenter?.canLoadMore == true && indexPath.row >= 8 {
+            presenter?.getHomeRecently()
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

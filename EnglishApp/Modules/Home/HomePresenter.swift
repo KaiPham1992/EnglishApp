@@ -15,7 +15,9 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     weak private var view: HomeViewProtocol?
     var interactor: HomeInteractorInputProtocol?
     private let router: HomeWireframeProtocol
-
+    var canLoadMore: Bool = false
+    var listRecently: [Acitvity] = []
+    
     init(interface: HomeViewProtocol, interactor: HomeInteractorInputProtocol?, router: HomeWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -23,10 +25,18 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     }
 
     func getHomeRecently() {
-        ProgressView.shared.show()
-        Provider.shared.userAPIService.getHomeRecently(success: { active in
+        canLoadMore = false
+        if listRecently.count == 0 {
+            ProgressView.shared.show()
+        }
+        
+        Provider.shared.userAPIService.getHomeRecently(offset: listRecently.count, limit: 10, success: { active in
             ProgressView.shared.hide()
             guard let acti = active?.activities else { return }
+            self.listRecently.append(contentsOf: acti)
+            if acti.count == 10 {
+                self.canLoadMore = true
+            }
             self.view?.didGetActivities(activities: acti)
         }) { _ in
             ProgressView.shared.hide()

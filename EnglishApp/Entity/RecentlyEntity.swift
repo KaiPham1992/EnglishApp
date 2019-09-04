@@ -26,6 +26,7 @@ class Acitvity: BaseEntity {
     var content: String?
     var title: String?
     var id: String?
+    var fullName: String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -34,6 +35,7 @@ class Acitvity: BaseEntity {
         self.content <- map["content"]
         self.title <- map["title"]
         self.imgSrc <- map["img_src"]
+        self.fullName <- map["fullname"]
     }
     
     var urlAvatar:  URL? {

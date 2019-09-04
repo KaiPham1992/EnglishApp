@@ -45,18 +45,4 @@ class LoginInteractor: LoginInteractorInputProtocol {
             self.presenter?.didLogin(error: error)
         }
     }
-    
-    func updateAvatar(image: UIImage) {
-        Provider.shared.userAPIService.uploadAvatar(image: image, success: { _user in
-            guard let user = UserDefaultHelper.shared.loginUserInfo else {return }
-            
-            user.imgSrc = _user?.imgSrc
-            user.imgCropSrc = _user?.imgCropSrc
-            UserDefaultHelper.shared.loginUserInfo = user
-            
-        }, failure: { error in
-            guard let error = error else {return}
-            self.presenter?.didLogin(error: error)
-        })
-    }
 }

@@ -39,7 +39,6 @@ protocol SignUpInteractorInputProtocol: class {
     /* Presenter -> Interactor */
     func getCaptcha()
     func signUp(param: SignUpParam)
-    func updateAvatar(image: UIImage)
 }
 
 //MARK: View -
