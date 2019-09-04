@@ -21,6 +21,8 @@ protocol HomePresenterProtocol: class {
     func getHomeRecently()
     func getTopThree()
     func getProfile()
+    var listRecently: [Acitvity] { get set }
+    var canLoadMore: Bool { get set }
 }
 
 //MARK: Interactor -

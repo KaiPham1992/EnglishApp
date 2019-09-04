@@ -18,7 +18,7 @@ class HomeRecentlyCell: BaseTableCell {
         didSet {
             guard let activity = actity else { return }
             lbContent.text = activity.content
-            lbTitle.text = activity.title
+            lbTitle.text = activity.fullName
             imgIcon.sd_setImage(with: activity.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
         }
     }

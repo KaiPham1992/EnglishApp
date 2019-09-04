@@ -43,7 +43,7 @@ enum UserEndPoint {
     case getProfileUser
     
     case getGPSPosition(lat: String, long: String)
-    case getRecently
+    case getRecently(offset: Int, limit: Int)
 }
 
 extension UserEndPoint: EndPointType {
@@ -206,8 +206,9 @@ extension UserEndPoint: EndPointType {
         case .getGPSPosition(let lat, let long):
             return ["current_latitude": lat,
                     "current_longitude": long]
-        case .getRecently:
-            return [:]
+        case .getRecently(let offset, let limit):
+            return ["offset": offset,
+                    "limit": limit]
         }
     }
     
