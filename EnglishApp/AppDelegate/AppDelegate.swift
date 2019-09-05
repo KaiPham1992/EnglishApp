@@ -122,17 +122,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         print("=========================applicationDidBecomeActive=========================")
-        if let _dateTest = dateTestDaillyMisson {
-            let date = Date()
-            let order = Calendar.current.compare(date, to: _dateTest, toGranularity: Calendar.Component.day)
-            switch order {
-            case .orderedSame:
-                break
-            default:
-               dateTestDaillyMisson = nil
-            }
-            print("=====================================")
-        }
         
         Provider.shared.homeAPIService.getTopThree(success: { (object) in
             let count = object?.count_fight_test ?? 0

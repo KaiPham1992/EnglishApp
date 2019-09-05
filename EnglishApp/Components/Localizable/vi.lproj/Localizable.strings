@@ -35,6 +35,12 @@
 "SentEmail" = "Gửi email";
 "ForgotTitle" = "Quên mật khẩu";
 "out_group_message" = "Cuộc thi đã bắt đầu không thể rời nhóm.";
+"fight_is_doing" = "Cuộc thi đang diễn ra. Bạn phải hoàn thành và nộp bài thi.";
+"fight_is_done" = "Cuộc thi đã kết thúc.";
+"exercise_is_doing" = "Bài tập đang diễn ra. Bạn phải hoàn thành và nộp bài tập.";
+"honey_not_enough" = "Không đủ mật ong vui lòng nạp thêm.";
+"diamod_not_enough" = "Không đủ kim cương vui lòng nạp thêm.";
+"you_have_one_time" = "You can only choose one time.";
 
 "invalidLoginEmail" = "Địa chỉ email sai format";
 "invalidLoginPassword" = "Mật khẩu phải có 6 kí tự trở lên";
@@ -104,7 +110,7 @@
 "competition" = "Cuộc thi";
 
 // Detail team
-"startAfter" = "Bắt đầu";
+"startAfter" = "Bắt đầu sau";
 "explainConpetition" = "Giải thích về cuộc thi";
 "leaveTeam" = "Rời nhóm";
 "createGroup" = "Tạo nhóm";
@@ -383,3 +389,7 @@
 "library" = "Thư viện";
 "notAllowGifPhoto" = "Không thể chọn ảnh GIF";
 "join_team" = "Vào nhóm";
+
+
+"fight_is_doing_result" = "Cuộc thi đang diễn ra không thể xem kết quả.";
+

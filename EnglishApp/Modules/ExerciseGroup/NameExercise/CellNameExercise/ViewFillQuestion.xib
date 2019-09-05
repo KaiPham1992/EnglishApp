@@ -39,10 +39,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0zZ-fC-Nks">
-                    <rect key="frame" x="75" y="36" width="365" height="2"/>
-                    <color key="backgroundColor" red="0.61960784313725492" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
+                    <rect key="frame" x="75" y="37" width="365" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="2" id="AvN-7f-HhF"/>
+                        <constraint firstAttribute="height" constant="1" id="AvN-7f-HhF"/>
                     </constraints>
                 </view>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rkg-CK-nlC">

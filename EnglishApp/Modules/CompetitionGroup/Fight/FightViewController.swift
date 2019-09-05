@@ -220,8 +220,14 @@ extension FightViewController :FightViewProtocol{
     }
     
     func getExerciseFailed(error: APIError) {
-        PopUpHelper.shared.showError(message: error.message&) {
-            
+        if error.message == "THIS EXERCISE IS DOING. PLEASE COMPLETE AND SUBMIT IT." {
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_doing.showLanguage) {
+                self.pop(animated: true)
+            }
+        } else {
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: error.message&) {
+                self.pop(animated: true)
+            }
         }
     }
     
@@ -236,7 +242,7 @@ extension FightViewController :FightViewProtocol{
     }
     
     func fightDone() {
-        PopUpHelper.shared.showErrorDidNotRemoveView(message: "Cuộc thi đã kết thúc.") {
+        PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_done.showLanguage) {
             self.pop(animated: true)
         }
     }

@@ -34,6 +34,12 @@
 "ForgotPasswordMessage" = "Enter the email address associated with your account. Then check the mailbox";
 "SentEmail" = "Send email";
 "ForgotTitle" = "Forgot password";
+"fight_is_doing" = "This fight is doing. Please complete and submit it.";
+"fight_is_done" = "Fight is done";
+"exercise_is_doing" = "This exercise is doing. Please complete and submit it.";
+"honey_not_enough" = "Honey haven't enough please refill.";
+"diamod_not_enough" = "Diamod haven't enough please refill.";
+"you_have_one_time" = "Bạn chỉ được chọn 1 lần.";
 
 "invalidLoginEmail" = "Invalid email";
 "invalidLoginPassword" = "Password must be more than 6 characters";
@@ -376,3 +382,5 @@
 "notAllowGifPhoto" = "Not choose GIF photo";
 "see_result"= "See Result";
 "join_team" = "Join Team";
+
+"fight_is_doing_result" = "Fight is doing";

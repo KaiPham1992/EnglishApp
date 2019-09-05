@@ -88,5 +88,7 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.interactor?.getViewResultUserCompetition(idCompetition: idCompetition)
     }
     
-    
+    func competitionIsDoing() {
+        self.view?.competitionIsDoing()
+    }
 }

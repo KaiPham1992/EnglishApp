@@ -38,6 +38,7 @@ protocol ResultInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func getViewTestResultSuccessed(respone: TestResultProfileEntity)
     func usetDontJoindCompetition()
+    func competitionIsDoing()
 }
 
 protocol ResultInteractorInputProtocol: class {
@@ -55,6 +56,7 @@ protocol ResultViewProtocol: class {
     var presenter: ResultPresenterProtocol?  { get set }
     func reloadView()
     func usetDontJoindCompetition()
+    func competitionIsDoing()
 
     /* Presenter -> ViewController */
 }

@@ -17,6 +17,17 @@ class DailyMissonViewController: BaseViewController, DailyMissonViewProtocol {
     var presenter: DailyMissonPresenterProtocol?
 
     @IBAction func startDailiMisson(_ sender: Any) {
+        if let _dateTest = dateTestDaillyMisson {
+            let date = Date()
+            let order = Calendar.current.compare(date, to: _dateTest, toGranularity: Calendar.Component.day)
+            switch order {
+            case .orderedSame:
+                break
+            default:
+                dateTestDaillyMisson = nil
+            }
+            print("=====================================")
+        }
         if dateTestDaillyMisson == nil {
             self.presenter?.gotoDailyMisson()
         } else {
@@ -25,6 +36,7 @@ class DailyMissonViewController: BaseViewController, DailyMissonViewProtocol {
             }
         }
     }
+    
     override func setUpViews() {
         super.setUpViews()
         btnStartDailyMisson.setTitle(LocalizableKey.startAfter.showLanguage.uppercased(), for: .normal)

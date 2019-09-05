@@ -130,7 +130,9 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
                         })
                     }
                 } else {
-                    self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased())
+                    self.btnLeave.isHidden = true
+                    self.viewButtonStart.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+                    self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
                 }
                 self.initLoadData(data: self.presenter?.teamDetail?.members ?? [])
             }
@@ -143,7 +145,8 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
             timer = nil
         }
         btnLeave.isHidden = true
-        self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased())
+        viewButtonStart.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+        self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
     }
     
     func processTime(time: Int) {

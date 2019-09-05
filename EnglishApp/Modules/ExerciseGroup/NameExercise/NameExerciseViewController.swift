@@ -171,9 +171,9 @@ class NameExerciseViewController: BaseViewController {
 extension NameExerciseViewController :NameExerciseViewProtocol{
     func suggestQuestionError() {
         let errorMessage = self.presenter?.error?.message&
-        var message = "Không đủ mật ong vui lòng nạp thêm."
+        var message = LocalizableKey.honey_not_enough.showLanguage
         if errorMessage == "NOT_ENOUGH_DIAMOND"{
-            message = "Không đủ kim cương vui lòng nạp thêm."
+            message = LocalizableKey.diamod_not_enough.showLanguage
         }
         PopUpHelper.shared.showError(message: message) {
             
@@ -216,7 +216,8 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     }
     
     func getExerciseFailed(error: APIError) {
-        PopUpHelper.shared.showError(message: error.message&) {
+        PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.exercise_is_doing.showLanguage) {
+            self.pop(animated: true)
         }
     }
     
@@ -308,7 +309,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
                 self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
             }
         } else {
-            PopUpHelper.shared.showError(message: "Không thực hiện được, user chỉ được chọn 1 lần.") {
+            PopUpHelper.shared.showError(message: LocalizableKey.you_have_one_time.showLanguage) {
                 
             }
         }

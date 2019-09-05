@@ -90,6 +90,12 @@ class ResultViewController: BaseViewController {
 }
 
 extension ResultViewController: ResultViewProtocol{
+    func competitionIsDoing() {
+        lblDontJoinCompetition.text = LocalizableKey.fight_is_doing_result.showLanguage
+        scrollView.isHidden = true
+        btnBackHome.isHidden = true
+    }
+    
     func usetDontJoindCompetition() {
         lblDontJoinCompetition.text = LocalizableKey.you_dont_joined_competition.showLanguage
         scrollView.isHidden = true

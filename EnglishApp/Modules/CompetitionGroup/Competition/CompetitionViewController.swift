@@ -73,6 +73,14 @@ class CompetitionViewController: ListManagerVC {
         cell.btnShare.addTarget(self, action: #selector(btnShareTapped), for: .touchUpInside)
         return cell
     }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! CompetitionEntity
+        if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
+            self.push(controller: SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true))
+        }
+    }
+    
     func actionFight(status: String, index: Int) {
         //correct
         if type == .competition {
@@ -104,6 +112,7 @@ class CompetitionViewController: ListManagerVC {
             
             if status == "DONE"{
                 let data = listData[index] as! CompetitionEntity
+                
                 self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0), isHistory: true))
             }
             

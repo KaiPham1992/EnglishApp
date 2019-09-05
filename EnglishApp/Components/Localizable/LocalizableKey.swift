@@ -247,7 +247,7 @@ struct LocalizableKey {
     static let explain_solution = "explain_solution"
     static let individual = "individual"
     static let action = "action"
-    static let not_correct = "not_correct"
+    static let not_correct = "not qualify"
     static let see_result = "see_result"
     static let explain_question = "explain_question"
     static let confirm_back_result = "confirm_back_result"
@@ -378,4 +378,12 @@ struct LocalizableKey {
     static let notAllowGifPhoto = "notAllowGifPhoto"
     static let you_dont_joined_competition = "you_dont_joined_competition"
     static let join_team = "join_team"
+    static let fight_is_doing = "fight_is_doing"
+    static let fight_is_done = "fight_is_done"
+    static let exercise_is_doing = "exercise_is_doing"
+    
+    static let honey_not_enough = "honey_not_enough"
+    static let diamod_not_enough = "diamod_not_enough"
+    static let you_have_one_time = "diamod_not_enough"
+    static let fight_is_doing_result = "fight_is_doing_result"
 }
