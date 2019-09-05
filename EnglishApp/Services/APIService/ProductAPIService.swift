@@ -13,7 +13,7 @@ protocol ProductAPIServiceProtocol {
     func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
     func exchangeGift(id: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
     func upgradeProduc(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
-    
+    func purchaseHoney(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
 }
 
 class ProductAPIService: ProductAPIServiceProtocol {
@@ -35,6 +35,11 @@ class ProductAPIService: ProductAPIServiceProtocol {
     func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.object, failure: @escaping RequestFailure) {
         let endpoint = ProductEndPoint.sendRedeem(code: code)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func purchaseHoney(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure) {
+        let endPoint = ProductEndPoint.purchaseHoney(productID: productID)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     
     private let network: APINetworkProtocol

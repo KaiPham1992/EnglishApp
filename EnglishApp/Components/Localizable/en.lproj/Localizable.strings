@@ -87,7 +87,7 @@
 "qAOlder" = "Questions you've ever asked";
 "titleQA" = "Question";
 "notEnoughHoney" = "You have not enough honey";
-"deductFiveHoney" = "You are deducted 5 honey for one question";
+"deductFiveHoney" = "You are deducted 50 honey for one question";
 "pleaseEnterQA" = "Please enter your question";
 "pleaseEnter255Digit" = "Please enter a question within 255 characters";
 
