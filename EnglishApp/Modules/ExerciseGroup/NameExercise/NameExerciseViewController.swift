@@ -160,10 +160,13 @@ class NameExerciseViewController: BaseViewController {
     }
     
     func confirmOutExercise(){
-        if let _param = self.paramSubmit {
-//            self.presenter?.exitExercise(id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
-            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
-            self.presenter?.submitExercise(param: _param, isOut: true)
+        if typeExercise == .dailyMissonExercise {
+            self.presenter?.exitExercise(id: Int(self.idExercise) ?? 0)
+        } else {
+            if let _param = self.paramSubmit {
+                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+                self.presenter?.submitExercise(param: _param, isOut: true)
+            }
         }
     }
 }
@@ -216,8 +219,14 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     }
     
     func getExerciseFailed(error: APIError) {
-        PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.exercise_is_doing.showLanguage) {
-            self.pop(animated: true)
+        if typeExercise == .dailyMissonExercise {
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.the_dally_misson_tested.showLanguage) {
+                self.pop(animated: true)
+            }
+        } else {
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.exercise_is_doing.showLanguage) {
+                self.pop(animated: true)
+            }
         }
     }
     
@@ -309,7 +318,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
                 self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
             }
         } else {
-            PopUpHelper.shared.showError(message: LocalizableKey.you_have_one_time.showLanguage) {
+            PopUpHelper.shared.showError(message: LocalizableKey.suggestion_one_choice.showLanguage) {
                 
             }
         }

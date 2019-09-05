@@ -384,6 +384,8 @@ struct LocalizableKey {
     
     static let honey_not_enough = "honey_not_enough"
     static let diamod_not_enough = "diamod_not_enough"
-    static let you_have_one_time = "diamod_not_enough"
+    static let you_have_one_time = "you_have_one_time"
     static let fight_is_doing_result = "fight_is_doing_result"
+    static let suggestion_one_choice = "suggestion_one_choice"
+    static let the_dally_misson_tested = "the_dally_misson_tested"
 }
