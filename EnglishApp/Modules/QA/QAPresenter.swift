@@ -55,7 +55,7 @@ class QAPresenter: QAPresenterProtocol, QAInteractorOutputProtocol {
         ProgressView.shared.show()
         Provider.shared.qAAPIService.sendQA(question: qa, success: { _ in
             ProgressView.shared.hide()
-            self.loadMoreQA()
+            self.view?.didSendQA()
 //            self.view?.pushNotification()
         }) { error in
             ProgressView.shared.hide()

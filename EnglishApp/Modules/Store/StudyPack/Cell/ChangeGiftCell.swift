@@ -28,7 +28,7 @@ class ChangeGiftCell: BaseTableCell {
             imgIcon.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
             
             lbTitle.attributedText = NSAttributedString(string: product.name&)
-            lbContent.attributedText = NSAttributedString(string: product.content&.replacingOccurrences(of: "<p>", with: "").replacingOccurrences(of: "</p>", with: ""))
+            lbContent.text = product.content?.htmlToString
             lbCountHoney.text = product.amountHoney& + " \(LocalizableKey.boxHoneyTitle.showLanguage.lowercased())"
             lbCountDiamon.text = product.amountDiamond& + " \(LocalizableKey.diamond.showLanguage.lowercased())"
             
