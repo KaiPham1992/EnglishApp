@@ -157,6 +157,11 @@ extension QAViewController: QAViewProtocol {
         }
     }
     
+    func didSendQA() {
+        presenter?.listQA.removeAll()
+        presenter?.loadMoreQA()
+    }
+    
 }
 
 extension QAViewController: UITextFieldDelegate {
