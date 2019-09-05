@@ -74,7 +74,6 @@ class FightViewController: BaseViewController {
         super.setUpViews()
         lblTitleRank.text = LocalizableKey.rank_of_competition.showLanguage
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
-        clvQuestion.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
         clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
         clvQuestion.delegate = self
@@ -264,7 +263,7 @@ extension FightViewController : UICollectionViewDelegateFlowLayout{
             return CGSize(width: self.clvQuestion.frame.width, height: self.clvQuestion.frame.height)
         }
         if collectionView == clvRankTeam {
-            return CGSize(width: 150, height: clvRankTeam.frame.height)
+            return CGSize(width: 130, height: clvRankTeam.frame.height)
         }
         return CGSize(width: 0, height: 0)
     }

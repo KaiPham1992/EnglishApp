@@ -55,15 +55,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 //        AppRouter.shared.openTabbar(index: 3)
 //        AppRouter.shared.handleNotification(userInfo: userInfo)
         UIApplication.shared.applicationIconBadgeNumber -= 1
-        if let userInfo = response.notification.request.content.userInfo as? [String: Any]{
-            if let aps = userInfo["aps"] as? [String: Any]{
-                if let alert = aps["alert"] as? [String : Any], let body = alert["body"] as? String {
-                    if body == "Competition" {
-                        NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
-                    }
-                }
-            }
-        }
         completionHandler()
         print("didReceive")
     }

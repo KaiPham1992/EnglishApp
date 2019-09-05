@@ -75,7 +75,7 @@
                         <constraint firstItem="mjT-4m-8a8" firstAttribute="top" secondItem="DUE-Ll-Mdw" secondAttribute="top" constant="21" id="fP6-eI-K8N"/>
                     </constraints>
                 </view>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CRk-oE-aLp">
+                <stackView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="CRk-oE-aLp">
                     <rect key="frame" x="0.0" y="605" width="375" height="0.0"/>
                     <subviews>
                         <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XM6-bF-BRa">

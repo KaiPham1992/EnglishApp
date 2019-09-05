@@ -27,7 +27,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="302" height="889"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ih8-EC-UFW">
-                                <rect key="frame" x="0.0" y="0.0" width="302" height="177"/>
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="227"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio" translatesAutoresizingMaskIntoConstraints="NO" id="12I-x3-EWf">
                                         <rect key="frame" x="121" y="10" width="60" height="0.0"/>
@@ -72,7 +72,7 @@
                                     <constraint firstItem="12I-x3-EWf" firstAttribute="centerX" secondItem="Ih8-EC-UFW" secondAttribute="centerX" id="H6d-Hh-0XE"/>
                                     <constraint firstItem="12I-x3-EWf" firstAttribute="top" secondItem="Ih8-EC-UFW" secondAttribute="top" constant="10" id="LzK-nY-mCf"/>
                                     <constraint firstItem="yD4-u9-JSq" firstAttribute="top" secondItem="hxi-ch-1F6" secondAttribute="bottom" constant="10" id="dag-M4-5PP"/>
-                                    <constraint firstAttribute="bottom" secondItem="yD4-u9-JSq" secondAttribute="bottom" id="zdB-Fd-nXl"/>
+                                    <constraint firstAttribute="bottom" secondItem="yD4-u9-JSq" secondAttribute="bottom" constant="50" id="zdB-Fd-nXl"/>
                                 </constraints>
                             </view>
                         </subviews>
