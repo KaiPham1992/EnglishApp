@@ -28,9 +28,17 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="175"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRr-FJ-Txx">
+                    <rect key="frame" x="0.0" y="66.5" width="42" height="42"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="21"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_avtar_user" translatesAutoresizingMaskIntoConstraints="NO" id="XuH-Dp-7KT">
                     <rect key="frame" x="0.0" y="66.5" width="42" height="42"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="42" id="hYO-2w-YQA"/>
                         <constraint firstAttribute="width" constant="42" id="iDr-AZ-4HP"/>
@@ -137,11 +145,15 @@
             <constraints>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="centerY" secondItem="XuH-Dp-7KT" secondAttribute="centerY" id="0Oy-aI-EpK"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="leading" secondItem="XuH-Dp-7KT" secondAttribute="trailing" constant="5" id="3Tp-Hu-LME"/>
+                <constraint firstItem="WRr-FJ-Txx" firstAttribute="height" secondItem="XuH-Dp-7KT" secondAttribute="height" id="FLv-gC-AqP"/>
+                <constraint firstItem="WRr-FJ-Txx" firstAttribute="centerY" secondItem="XuH-Dp-7KT" secondAttribute="centerY" id="G2u-cb-l3z"/>
+                <constraint firstItem="WRr-FJ-Txx" firstAttribute="centerX" secondItem="XuH-Dp-7KT" secondAttribute="centerX" id="HUX-53-JFT"/>
                 <constraint firstItem="G12-EU-7y2" firstAttribute="height" secondItem="XuH-Dp-7KT" secondAttribute="height" id="Qur-yY-TL4"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Y3d-Um-xm0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gjg-tt-nX6" secondAttribute="bottom" id="bob-Mc-X5I"/>
                 <constraint firstItem="gjg-tt-nX6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qFl-CE-Pdg"/>
                 <constraint firstItem="XuH-Dp-7KT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="tkB-Ah-Q2l"/>
+                <constraint firstItem="WRr-FJ-Txx" firstAttribute="width" secondItem="XuH-Dp-7KT" secondAttribute="width" id="xIH-v2-C0Z"/>
                 <constraint firstItem="gjg-tt-nX6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yxm-1h-qSv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gjg-tt-nX6" secondAttribute="trailing" id="zxN-13-xf9"/>
             </constraints>
