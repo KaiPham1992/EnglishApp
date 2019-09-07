@@ -18,21 +18,33 @@ import UIKit
 
 var limit = 20
 
-class ListLessonViewController: BaseViewController {
+class ListLessonViewController: ListManagerVC {
 
 	var presenter: ListLessonPresenterProtocol?
 
     @IBOutlet weak var tbvLesson: UITableView!
     var lesson_category_id: String = "1"
-    var offset : Int = 0
     var type : TheoryType = .lesson
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tbvLesson.registerXibFile(CellGrammar.self)
-        tbvLesson.dataSource = self
-        tbvLesson.delegate = self
+    override func setUpViews() {
+        showButtonBack = true
+        if type == .lesson {
+            customTitle =  LocalizableKey.lesson.showLanguage
+        } else {
+            customTitle =  LocalizableKey.recipe.showLanguage
+        }
+        super.setUpViews()
+        
+    }
+    
+    override func callAPI() {
+        super.callAPI()
         self.presenter?.getListLesson(lesson_category_id: self.lesson_category_id, offset: offset)
+    }
+    
+    override func registerTableView() {
+        super.registerTableView()
+        self.tableView.registerXibFile(CellGrammar.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,63 +52,23 @@ class ListLessonViewController: BaseViewController {
         self.tabBarController?.tabBar.isHidden = true
     }
     
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        addBackToNavigation()
-        if type == .lesson {
-            setTitleNavigation(title: LocalizableKey.lesson.showLanguage)
-        } else {
-            setTitleNavigation(title: LocalizableKey.recipe.showLanguage)
-        }
-        
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! ItemLesson
+        let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
+        cell.setupTitle(title: data.name ?? "")
+        return cell
+    }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! ItemLesson
+        let vc = DetailLessonRouter.createModule(lesson: data, type: .detailLesson)
+        self.push(controller: vc,animated: true)
     }
 }
 
 extension ListLessonViewController: ListLessonViewProtocol {
     func reloadView() {
         self.tbvLesson.reloadData()
-    }
-}
-
-extension ListLessonViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.listLesson?.lessons.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        cell.setupTitle(title: self.presenter?.listLesson?.lessons[indexPath.row].name ?? "")
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        let row = self.presenter?.listLesson?.lessons.count ?? 0
-        if indexPath.row == row - 1 {
-            self.offset += limit
-             self.presenter?.getListLesson(lesson_category_id: self.lesson_category_id, offset: offset)
-        }
-    }
-}
-extension ListLessonViewController: UITableViewDelegate{
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 65
-//    }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailLessonRouter.createModule(lesson: self.presenter?.listLesson?.lessons[indexPath.row], type: .detailLesson)
-        self.push(controller: vc,animated: true)
+        initLoadData(data: self.presenter?.listLesson?.lessons ?? [])
     }
 }
