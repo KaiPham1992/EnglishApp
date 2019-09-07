@@ -126,7 +126,6 @@ class HomeViewController: BaseViewController {
         countNotification()
         presenter?.getProfile()
         presenter?.getTopThree()
-        // -- re init cell after change language
         reInitCell()
     }
     
@@ -209,6 +208,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc func refreshData() {
         presenter?.listRecently.removeAll()
+        self.listActivities.removeAll()
         presenter?.getHomeRecently()
         presenter?.getTopThree()
         tbHome.refreshControl?.endRefreshing()
