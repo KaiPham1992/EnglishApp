@@ -72,7 +72,7 @@ struct AppImage {
     static let imgRadioChecked = UIImage(named: "radio_checked")!
     static let imgRadioUnChecked = UIImage(named: "radio_unchecked")!
     
-    static let avatarDefault = UIImage(named: "avatarDefautl")!
+    static let avatarDefault = UIImage(named: "ic_avatar_default")!
     
     
     static let imgHoney = UIImage(named: "Money")!
