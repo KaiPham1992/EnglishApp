@@ -21,9 +21,20 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1098422343691182</string>
+                <string>fb1098422343691182</string>
+				<string>com.engma.englishapp</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.925930271420-bhbihfqrd3lamp7e6g5ndce2eaaoae2d</string>
 			</array>
 		</dict>
 	</array>
