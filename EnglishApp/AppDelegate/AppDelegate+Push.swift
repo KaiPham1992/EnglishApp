@@ -14,7 +14,7 @@ import SwiftyJSON
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func configureFirebase() {
-        #if APPSTORE
+        #if PROD
         let googleServiceFile = "GoogleService-Prod-Info"
         #else
         let googleServiceFile = "GoogleService-Dev-Info"
