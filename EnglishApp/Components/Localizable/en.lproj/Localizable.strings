@@ -34,6 +34,7 @@
 "ForgotPasswordMessage" = "Enter the email address associated with your account. Then check the mailbox";
 "SentEmail" = "Send email";
 "ForgotTitle" = "Forgot password";
+"out_group_message" = "The competition started so can not out group";
 "fight_is_doing" = "This fight is doing. Please complete and submit it.";
 "fight_is_done" = "Fight is done";
 "exercise_is_doing" = "This exercise is doing. Please complete and submit it.";
@@ -141,7 +142,8 @@
 "vocabulary" = "Vocabulary";
 "note" = "Note";
 "write_note" = "Write note";
-
+"please_enter_note" = "Please enter your note.";
+"cofirm_delete" = "Are you sure to delete these?";
 //theory
 
 "phrasal_verbs" = "Phrasal Verbs";
@@ -170,7 +172,6 @@
 "reportTitlePopUp" = "Report";
 "reportMessagePopUp" = "Thank you for reporting us on this case. We will review and revise as soon as possible.";
 "reportButtonPopUp" = "Complete";
-"out_group_message" = "The competition started so can not out group";
 
 "notEnoughBee" = "You have not enough honey.";
 "addBee" = "Add honey";
@@ -196,6 +197,8 @@
 "upgradeSuccess" = "Upgrade successfully.";
 "upgradeBeePack" = "Do you want to buy this honey package?";
 "exchangeTitle" = "Exchange Gift";
+"notEnoughDiamondText" = "You are not enough diamond.";
+"notEnoughHoneyText" = "You are not enough honey.";
 "usedCode" = "Code is used.";
 
 //comment
@@ -243,8 +246,11 @@
 "individual" = " ndividual";
 "action" = "Fight";
 "point" = "point";
+"not_correct" = "Faild";
+"see_result"= "See result";
+"explain_question" = "Explain the question";
 "confirm_back_result" = "Do you want to exit the currently viewed exercise?";
-
+"related_lesson" = "Related grammar";
 
 //popup
 "confirm" = "CONFIRM";
@@ -257,7 +263,6 @@
 "cancel_upper" = "Cancle";
 "complete_upper" = "COMPLETE";
 "update" = "UPDATE";
-"cancelLowercased" = "Cancle";
 
 //month
 "January" = "January";
@@ -337,7 +342,6 @@
 "boxHoney" = "Jar";
 "titleHistoryNap" = "Recharge history";
 "boxHoneyTitle" = "honey";
-"diamond" = "diamond";
 "lbNoData" = "No data";
 
 
@@ -363,7 +367,7 @@
 "feeFind" = "Lost x honey or x diamond for a search.";
 "done" = "Done";
 
-
+// add after
 "rank_of_competition" = "Rank of Competition";
 
 //time
