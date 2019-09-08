@@ -36,19 +36,19 @@
 			</array>
 		</dict>
 	</array>
-    <key>FacebookAppID</key>
-    <string>1098422343691182</string>
-    <key>FacebookDisplayName</key>
-    <string>Obee</string>
-    <key>LSApplicationQueriesSchemes</key>
-    <array>
-        <string>fbapi</string>
-        <string>fb-messenger-share-api</string>
-        <string>fbauth2</string>
-        <string>fbshareextension</string>
-    </array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1098422343691182</string>
+	<key>FacebookDisplayName</key>
+	<string>Obee</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+		<string>fbauth2</string>
+		<string>fbshareextension</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
