@@ -11,16 +11,16 @@
 import UIKit
 
 class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputProtocol {
-    func exchangeGift(id: String) {
+    func exchangeGift(id: String, type: String) {
         ProgressView.shared.show()
-        Provider.shared.productAPIService.exchangeGift(id: id, success: { (success) in
+        Provider.shared.productAPIService.exchangeGift(id: id, type: type, success: { (success) in
             ProgressView.shared.hide()
             self.view?.didExchangeGift()
         }) { (error) in
             ProgressView.shared.hide()
             guard let error = error else {return}
             print(error.localizedDescription)
-            self.view?.didGetError()
+            self.view?.didGetError(error: error)
         }
     }
     

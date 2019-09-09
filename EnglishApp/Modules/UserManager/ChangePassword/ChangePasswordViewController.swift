@@ -28,6 +28,18 @@ class ChangePasswordViewController: BaseViewController {
         addBackToNavigation()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     override func setTitleUI() {
         super.setTitleUI()
        

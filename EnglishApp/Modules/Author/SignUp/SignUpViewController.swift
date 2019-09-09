@@ -61,7 +61,7 @@ class SignUpViewController: BaseViewController {
         heightError.constant = 0
         //vPassword.getText()
         if validateInputData() {
-            let param = SignUpParam(email: vEmail.getText(), password: passwordText, captcha: tfCaptcha.text&, displayName: vDisplayName.getText())
+            let param = SignUpParam(email: vEmail.getText(), password: passwordText.sha256(), captcha: tfCaptcha.text&, displayName: vDisplayName.getText())
             
             presenter?.signUp(param: param)
         }

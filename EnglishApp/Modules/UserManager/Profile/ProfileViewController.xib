@@ -17,7 +17,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController">
             <connections>
                 <outlet property="imgAvatar" destination="s8v-VP-Z6u" id="gvb-CM-jco"/>
-                <outlet property="imgBackground" destination="eNZ-s7-e9a" id="tdc-9k-rxS"/>
+                <outlet property="imgBorder" destination="eNZ-s7-e9a" id="tCt-Ge-fne"/>
                 <outlet property="lbBee" destination="Lib-HW-C4q" id="wOP-KZ-svf"/>
                 <outlet property="lbDiamon" destination="QAP-Fz-HFt" id="QO1-1X-sxY"/>
                 <outlet property="lbFullName" destination="7tf-uh-FaU" id="f08-rU-o1M"/>
@@ -39,9 +39,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vsC-Sd-isL">
                     <rect key="frame" x="52.5" y="30" width="270" height="60"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-s7-e9a">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eNZ-s7-e9a" userLabel="Img border">
                             <rect key="frame" x="-3" y="-3" width="70" height="70"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="70" id="8Bq-C6-9pg"/>
                                 <constraint firstAttribute="height" constant="70" id="Sn4-kq-POR"/>
@@ -49,6 +48,19 @@
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                     <real key="value" value="0.0"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nV2-kn-lJn" userLabel="background">
+                            <rect key="frame" x="1" y="1" width="62" height="62"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="Gop-PB-Nqb"/>
+                                <constraint firstAttribute="width" constant="62" id="QaQ-2b-NPf"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="31"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -97,10 +109,12 @@
                         <constraint firstItem="xAv-Ym-HM7" firstAttribute="centerY" secondItem="tXD-VN-vBp" secondAttribute="centerY" id="J1F-eR-YF4"/>
                         <constraint firstItem="tXD-VN-vBp" firstAttribute="centerY" secondItem="s8v-VP-Z6u" secondAttribute="centerY" constant="15" id="PyA-42-4fL"/>
                         <constraint firstItem="xAv-Ym-HM7" firstAttribute="height" secondItem="tXD-VN-vBp" secondAttribute="height" id="QBm-Sg-Kra"/>
+                        <constraint firstItem="nV2-kn-lJn" firstAttribute="centerY" secondItem="eNZ-s7-e9a" secondAttribute="centerY" id="UNh-dv-KOK"/>
                         <constraint firstItem="eNZ-s7-e9a" firstAttribute="centerY" secondItem="s8v-VP-Z6u" secondAttribute="centerY" id="Vwu-KK-qmi"/>
                         <constraint firstItem="s8v-VP-Z6u" firstAttribute="top" secondItem="vsC-Sd-isL" secondAttribute="top" id="dBI-IT-rGG"/>
                         <constraint firstItem="7tf-uh-FaU" firstAttribute="centerY" secondItem="s8v-VP-Z6u" secondAttribute="centerY" constant="-10" id="okX-qE-gwv"/>
                         <constraint firstAttribute="trailing" secondItem="7tf-uh-FaU" secondAttribute="trailing" id="ubT-q9-H02"/>
+                        <constraint firstItem="nV2-kn-lJn" firstAttribute="centerX" secondItem="eNZ-s7-e9a" secondAttribute="centerX" id="ui0-iY-jeo"/>
                         <constraint firstAttribute="height" constant="60" id="zxn-JO-KAC"/>
                     </constraints>
                 </view>

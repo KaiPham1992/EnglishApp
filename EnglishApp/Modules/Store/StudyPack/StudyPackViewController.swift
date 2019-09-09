@@ -62,32 +62,11 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
         }
     }
     
-    func exchangeGift(id: String) {
-        if checkWallet() == false {
-            return
-        }
+    func exchangeGift(id: String, type: String) {
         PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.exchangeGiftTitle.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
-            self.presenter?.exchangeGift(id: id)
+            self.presenter?.exchangeGift(id: id, type: type)
         }
     }
-    
-    func checkWallet() -> Bool {
-        if (UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0) < 10 {
-            PopUpHelper.shared.showNotEnoughtBee(completionNo: nil) {
-                let storeViewController = StoreViewController()
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.15, execute: {
-                    storeViewController.moveToViewController(at: 1, animated: false)
-                })
-                self.push(controller: storeViewController)
-            }
-            return false
-        } else if (UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0) < 10 {
-            PopUpHelper.shared.showNotEnoughtDiamon(completionYes: nil)
-            return false
-        }
-        return true
-    }
-
 }
 
 
@@ -137,6 +116,8 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
                 let cell = tableView.dequeue(ChangeGiftCell.self, for: indexPath)
                 cell.delegate = self
                 cell.product = self.collectionProduct.groupGift[indexPath.item - 1]
+                cell.btnHoney.tag = indexPath.row - 1
+                cell.btnDiamond.tag = indexPath.row - 1
                 return cell
             }
         }
@@ -158,13 +139,13 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section != 0 && indexPath.item != 0 {
-            if let id = self.collectionProduct.groupGift[indexPath.item - 1].id {
-                exchangeGift(id: id)
-            }
-        }
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        if indexPath.section != 0 && indexPath.item != 0 {
+//            if let id = self.collectionProduct.groupGift[indexPath.item - 1].id {
+//                exchangeGift(id: id)
+//            }
+//        }
+//    }
 }
 
 extension StudyPackViewController: StudyPackViewDelegate {
@@ -177,12 +158,11 @@ extension StudyPackViewController: StudyPackViewDelegate {
 extension StudyPackViewController{
     func didSendRedeem() {
         PopUpHelper.shared.showError(message: "\(LocalizableKey.redeemSuccess.showLanguage)") {
-            //
+            
         }
     }
     
     func didSendRedeem(error: APIError) {
-//        didGetError()
         if error.message&.contains("EXCEED_USAGE_LIMIT") == true {
             lbError.text = LocalizableKey.usedCode.showLanguage
         } else {
@@ -197,8 +177,9 @@ extension StudyPackViewController{
         }
     }
     
-    func didGetError() {
-        PopUpHelper.shared.showError(message: "\(LocalizableKey.getError.showLanguage)") {
+    func didGetError(error: APIError) {
+        let messsageString = error.message?.contains("NOT_ENOUGH_HONEY") == true ? "\(LocalizableKey.notEnoughBee.showLanguage)" : "\(LocalizableKey.notEnoughDiamon.showLanguage)"
+        PopUpHelper.shared.showError(message: messsageString) {
             //do nothing
         }
     }
@@ -213,12 +194,18 @@ extension StudyPackViewController{
 // MARK: - ChangeGiftCellDelegate
 extension StudyPackViewController: ChangeGiftCellDelegate {
     
-    func btnDiamondTapped() {
-        
+    func btnDiamondTapped(index: Int) {
+        if let id = self.collectionProduct.groupGift[index].id {
+        exchangeGift(id: id, type: "DIAMOND")
+        print(id)
+        }
     }
     
-    func btnHoneyTapped() {
-        
+    func btnHoneyTapped(index: Int) {
+        if let id = self.collectionProduct.groupGift[index].id {
+        exchangeGift(id: id, type: "HONEY")
+        print(id)
+        }
     }
 }
 
