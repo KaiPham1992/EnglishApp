@@ -32,6 +32,8 @@ class CompetitionViewController: ListManagerVC {
     @objc func didChangeLanguage() {
         self.offset = 0
         callAPI()
+        customTitle = LocalizableKey.titleCompetition.showLanguage
+        self.setUpNavigation()
     }
     
     @objc func didRecieveCompetition() {
