@@ -25,7 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NFX.sharedInstance().start()
+        #if DEV
+            NFX.sharedInstance().start()
+        #endif
 //        Fabric.with([Crashlytics.self])
         Crashlytics.sharedInstance().debugMode = true
         Fabric.sharedSDK().debug = true

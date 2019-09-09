@@ -7,8 +7,6 @@ def main_pods
     pod 'SDWebImage'
     pod 'IQKeyboardManagerSwift'
     pod 'Firebase/Core'
-    pod 'GoogleMaps'
-    pod 'GooglePlaces'
     pod 'FBSDKLoginKit'
     pod 'FBSDKCoreKit'
     pod 'FBSDKShareKit'
