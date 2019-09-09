@@ -11,14 +11,14 @@ import Foundation
 protocol ProductAPIServiceProtocol {
     func getListProduct(success: @escaping SuccessHandler<ProductCollectionEntity>.object,failure: @escaping RequestFailure)
     func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
-    func exchangeGift(id: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
+    func exchangeGift(id: String, type: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
     func upgradeProduc(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
     func purchaseHoney(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
 }
 
 class ProductAPIService: ProductAPIServiceProtocol {
-    func exchangeGift(id: String, success: @escaping SuccessHandler<QAEntity>.object, failure: @escaping RequestFailure) {
-        let endpoint = ProductEndPoint.exchangeGift(id: id)
+    func exchangeGift(id: String, type: String, success: @escaping SuccessHandler<QAEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ProductEndPoint.exchangeGift(id: id, type: type)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

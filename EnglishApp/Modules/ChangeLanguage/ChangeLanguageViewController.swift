@@ -26,6 +26,18 @@ class ChangeLanguageViewController: BaseViewController, ChangeLanguageViewProtoc
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.changeLanguage.showLanguage)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        tabBarController?.tabBar.isHidden = false
+    }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
