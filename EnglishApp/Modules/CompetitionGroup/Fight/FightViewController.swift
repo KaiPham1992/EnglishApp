@@ -149,9 +149,9 @@ extension FightViewController :FightViewProtocol{
                 DispatchQueue.main.async {
                     self.currentIndex += 1
                     if self.currentIndex <= self.numberQuestion && !self.isEnd {
-                        self.lblPointTeam.text = "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage
-                        self.lblRankTeam.text = LocalizableKey.rank.showLanguage + " " + "\(teamRank)"
-                        self.lblIndexQuestion.text = "\(self.currentIndex)/\(self.numberQuestion)"
+                        self.lblPointTeam.attributedText = NSAttributedString(string: "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage)
+                        self.lblRankTeam.attributedText = NSAttributedString(string: LocalizableKey.rank.showLanguage + " " + "\(teamRank)")
+                        self.lblIndexQuestion.attributedText = NSAttributedString(string: "\(self.currentIndex)/\(self.numberQuestion)")
                         self.imgMyTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + (teamInfor?.img_src ?? "")), placeholderImage: #imageLiteral(resourceName: "ic_avatar_default") , completed: nil)
                         self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
                         if self.viewRank.isHidden  {
