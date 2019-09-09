@@ -126,7 +126,7 @@ class DictionaryViewController: BaseViewController {
         dropDownDictionary.selectionBackgroundColor = .clear
         dropDownDictionary.textColor = .white
         dropDownDictionary.selectedTextColor = .white
-        dropDownDictionary.width = self.viewDictionary.frame.width
+        dropDownDictionary.width = 150
         dropDownDictionary.bottomOffset = CGPoint(x: 0, y: (viewDictionary.frame.height))
         dropDownDictionary.setupCornerRadius(0)
         dropDownDictionary.cellNib = UINib(nibName: "CellDropDownQuestion", bundle: nil)

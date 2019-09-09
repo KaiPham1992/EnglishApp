@@ -20,13 +20,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKC-ta-w9i">
-                        <rect key="frame" x="16" y="11.5" width="11.5" height="21"/>
+                        <rect key="frame" x="16" y="11.5" width="288" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.45882352941176469" green="0.45882352941176469" blue="0.45882352941176469" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="trailing" secondItem="EKC-ta-w9i" secondAttribute="trailing" constant="16" id="98N-MV-A1n"/>
                     <constraint firstItem="EKC-ta-w9i" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ivp-i6-hJv"/>
                     <constraint firstItem="EKC-ta-w9i" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="vKG-hn-lLp"/>
                 </constraints>
