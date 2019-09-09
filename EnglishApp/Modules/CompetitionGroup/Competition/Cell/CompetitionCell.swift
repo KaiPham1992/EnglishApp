@@ -113,17 +113,17 @@ class CompetitionCell: BaseTableCell {
             if type == .competition {
                 btnShare.isHidden = false
                 if let startTime = competitionEntity.startTime{
-                    lbTimeStart.attributedText = NSAttributedString(string: " \(startTime.toString(dateFormat: AppDateFormat.HHmm))h")
+                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage): \(startTime.toString(dateFormat: AppDateFormat.HHmm))h")
                 }
             } else {
                 btnShare.isHidden = true
                 if let startDate = competitionEntity.startDate{
-                    lbTimeStart.attributedText = NSAttributedString(string: " \(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
+                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.time.showLanguage): \(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
                 }
             }
             
             lbCountTeam.attributedText = NSAttributedString(string: "\(LocalizableKey.countTeam.showLanguage)\(competitionEntity.countTeam&)\(LocalizableKey.team.showLanguage)")
-            lbContent.attributedText = competitionEntity.content?.htmlToAttributedString
+            lbContent.attributedText = NSAttributedString(string: competitionEntity.content?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
             
         }
     }
