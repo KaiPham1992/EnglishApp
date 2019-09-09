@@ -50,18 +50,17 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-
-//        print(JSON(userInfo))
-//        AppRouter.shared.openTabbar(index: 3)
-//        AppRouter.shared.handleNotification(userInfo: userInfo)
         UIApplication.shared.applicationIconBadgeNumber -= 1
+        if let userInfor = response.notification.request.content.userInfo as? [String: Any] {
+            self.handleNotification(userInfo: userInfor)
+        }
         completionHandler()
         print("didReceive")
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-//        print("didReceiveRemoteNotification didReceiveRemoteNotification")
-//        completionHandler(.newData)
+        
+        print(userInfo)
     }
     
     
@@ -70,6 +69,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         print("willPresent")
         UIApplication.shared.applicationIconBadgeNumber += 1
         completionHandler([.alert, .badge, .sound])
+    }
+    
+    private func handleNotification(userInfo: [String : Any]) {
+        NotificationCenter.default.post(name: NSNotification.Name.init("didReciveNotification"), object: nil, userInfo: userInfo)
     }
 }
 
@@ -83,5 +86,7 @@ extension AppDelegate: MessagingDelegate {
         UserDefaultHelper.shared.fcmToken = fcmToken
     }
 }
+
+
 
 

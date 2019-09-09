@@ -28,4 +28,19 @@ class QADetailRouter: QADetailWireframeProtocol {
 
         return view
     }
+    
+    static func createModule(id: Int) -> QADetailViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = QADetailViewController.initFromNib()
+        let interactor = QADetailInteractor()
+        let router = QADetailRouter()
+        let presenter = QADetailPresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        view.id = id
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }
