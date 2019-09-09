@@ -195,6 +195,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
             if self.typeExercise == .dailyMissonExercise {
                 dateTestDaillyMisson = Date()
             }
+            self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
 //            self.currentTime = 10
