@@ -86,5 +86,6 @@ extension ChangeLanguageViewController: UITableViewDelegate, UITableViewDataSour
         
         //-- change langguage for tabbar
         NotificationCenter.default.post(name: Notification.Name(rawValue: "Refresh"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "ChangeLanguage"), object: nil)
     }
 }

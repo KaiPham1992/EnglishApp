@@ -22,6 +22,8 @@ protocol EndPointType {
 struct DefaultHeader {
     func addAuthHeader() -> [String: String] {
         var header: [String: String] = ["Content-Type": "application/json"]
+        let code = LanguageHelper.currentAppleLanguage()
+        header["Language"] = code
         if let token = UserDefaultHelper.shared.userToken {
             header["Authorization"] = "Bearer " + token
         }

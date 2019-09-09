@@ -11,6 +11,7 @@ import UIKit
 protocol CommonAPIServiceProtocol {
     func uploadImage(image: UIImage, success: @escaping SuccessHandler<PhotoEntity>.object, failure: @escaping RequestFailure)
     func getNationals( success: @escaping SuccessHandler<NationalEntity>.array, failure: @escaping RequestFailure)
+    func changeLanguageCode(success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure)
     
 }
 
@@ -20,6 +21,11 @@ class CommonAPIService: CommonAPIServiceProtocol {
     
     init(network: APINetworkProtocol) {
         self.network = network
+    }
+    
+    func changeLanguageCode(success: @escaping SuccessHandler<BaseResponse>.object, failure: @escaping RequestFailure){
+        let endpoint = CommonEndPoint.changeLanguageCode
+        network.requestData(endPoint: endpoint, success: success, failure: failure)
     }
     
     func uploadImage(image: UIImage, success: @escaping SuccessHandler<PhotoEntity>.object, failure: @escaping RequestFailure) {

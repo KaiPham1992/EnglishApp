@@ -26,6 +26,12 @@ class CompetitionViewController: ListManagerVC {
         showButtonBack = false
         super.setupViewListManager()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
+    }
+    
+    @objc func didChangeLanguage() {
+        self.offset = 0
+        callAPI()
     }
     
     @objc func didRecieveCompetition() {
