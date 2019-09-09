@@ -17,7 +17,7 @@ import Alamofire
 enum ProductEndPoint {
     case getListProduct
     case sendRedeem(code: String)
-    case exchangeGift(id: String)
+    case exchangeGift(id: String, type: String)
     case upgradeProduct(productID: String)
     case purchaseHoney(productID: String)
 }
@@ -50,8 +50,8 @@ extension ProductEndPoint: EndPointType {
         switch self {
         case .getListProduct :
             return [:]
-        case .exchangeGift(let id):
-            return ["product_id": id]
+        case .exchangeGift(let id, let type):
+            return ["product_id": id, "amount_type": type]
         case .sendRedeem(let code):
             return ["code": code]
         case .upgradeProduct(let productID), .purchaseHoney(let productID):
