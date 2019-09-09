@@ -147,7 +147,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     }
     
     func seeRelatedGrammar(questionId: Int, answerId: Int) {
-        let vc = RelatedGrammarRouter.createModule(id: questionId)
+        let vc = RelatedGrammarRouter.createModule(id: answerId)
         self.push(controller: vc)
     }
     

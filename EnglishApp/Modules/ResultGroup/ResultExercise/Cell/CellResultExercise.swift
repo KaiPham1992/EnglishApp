@@ -153,6 +153,6 @@ extension CellResultExercise: UITableViewDataSource{
     }
     
     func actionRelatedGrammar(indexAnswer: IndexPath){
-        self.actionRelatedGrammar?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row]._id ?? "0") ?? 0)
+        self.actionRelatedGrammar?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row].question_details_id ?? "0") ?? 0)
     }
 }
