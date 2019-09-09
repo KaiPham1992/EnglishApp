@@ -17,7 +17,7 @@ class HistoryListExerciseViewController: ListManagerVC {
     var date: String = ""
     
     override func setUpViews() {
-        customTitle = LocalizableKey.history_test.showLanguage
+        customTitle = LocalizableKey.history_exercise.showLanguage
         showButtonBack = true
         super.setUpViews()
     }
