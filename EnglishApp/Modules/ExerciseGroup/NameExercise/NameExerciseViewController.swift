@@ -17,7 +17,7 @@ protocol ExerciseDelegate: class {
     func confirmOutTestEntrance()
 }
 
-var dateTestDaillyMisson : Date?
+//var dateTestDaillyMisson : Date?
 
 enum TypeDoExercise : Int {
     case createExercise = 5
@@ -160,13 +160,17 @@ class NameExerciseViewController: BaseViewController {
     }
     
     func confirmOutExercise(){
-        if typeExercise == .dailyMissonExercise {
-            self.presenter?.exitExercise(id: Int(self.idExercise) ?? 0)
-        } else {
-            if let _param = self.paramSubmit {
-                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
-                self.presenter?.submitExercise(param: _param, isOut: true)
-            }
+//        if typeExercise == .dailyMissonExercise {
+//            self.presenter?.exitExercise(id: Int(self.idExercise) ?? 0)
+//        } else {
+//            if let _param = self.paramSubmit {
+//                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+//                self.presenter?.submitExercise(param: _param, isOut: true)
+//            }
+//        }
+        if let _param = self.paramSubmit {
+            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+            self.presenter?.submitExercise(param: _param, isOut: true)
         }
     }
 }
@@ -192,9 +196,9 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     
     func reloadView() {
         DispatchQueue.global().async {
-            if self.typeExercise == .dailyMissonExercise {
-                dateTestDaillyMisson = Date()
-            }
+//            if self.typeExercise == .dailyMissonExercise {
+//                dateTestDaillyMisson = Date()
+//            }
             self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
