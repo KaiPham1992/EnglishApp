@@ -18,7 +18,9 @@ class ResultViewController: BaseViewController {
         if type == .entranceExercise {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut":self.isOut])
         }
-        self.navigationController?.popToRootViewController(animated: true)
+//        self.navigationController?.popToRootViewController(animated: true)
+        (self.tabBarController as! MainTabbar).gotoHome()
+        self.pop(animated: false)
     }
     
     @IBOutlet weak var lblDontJoinCompetition: UILabel!

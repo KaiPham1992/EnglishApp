@@ -65,6 +65,14 @@ class MainTabbar: UITabBarController {
 //        if let 
     }
     
+    
+    func gotoHome() {
+        self.selectedIndex = 0
+        if let viewController = self.viewControllers?[self.selectedIndex] as? UINavigationController {
+            viewController.popToRootViewController(animated: false)
+        }
+    }
+    
     @objc func noCompetition() {
         self.viewControllers?[3].tabBarItem = setBarItem(title: LocalizableKey.tabbarCompetition.showLanguage, selectedImage: AppImage.imgTabbarCompetitionSelected, normalImage: AppImage.imgTabbarCompetition)
         self.viewControllers?[3].tabBarItem.imageInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
