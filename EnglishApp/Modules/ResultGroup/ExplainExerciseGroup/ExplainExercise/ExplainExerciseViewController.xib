@@ -29,10 +29,10 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pk6-fc-7rd">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="16"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="24"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kXL-3U-vzU">
-                                    <rect key="frame" x="8" y="8" width="359" height="0.0"/>
+                                    <rect key="frame" x="8" y="16" width="359" height="0.0"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                                 <constraint firstAttribute="bottom" secondItem="kXL-3U-vzU" secondAttribute="bottom" constant="8" id="dYV-kI-q4V"/>
                                 <constraint firstItem="kXL-3U-vzU" firstAttribute="leading" secondItem="pk6-fc-7rd" secondAttribute="leading" constant="8" id="fHW-WY-krV"/>
                                 <constraint firstAttribute="trailing" secondItem="kXL-3U-vzU" secondAttribute="trailing" constant="8" id="mXF-V7-BxU"/>
-                                <constraint firstItem="kXL-3U-vzU" firstAttribute="top" secondItem="pk6-fc-7rd" secondAttribute="top" constant="8" id="pfH-iO-E5N"/>
+                                <constraint firstItem="kXL-3U-vzU" firstAttribute="top" secondItem="pk6-fc-7rd" secondAttribute="top" constant="16" id="pfH-iO-E5N"/>
                             </constraints>
                         </view>
                     </subviews>

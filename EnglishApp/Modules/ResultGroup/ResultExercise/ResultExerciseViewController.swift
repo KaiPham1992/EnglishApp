@@ -25,19 +25,19 @@ class ResultExerciseViewController: BaseViewController {
                 btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             }
         } else {
-            if isHistory {
-                let vc = self.navigationController?.viewControllers
-                if (vc?.count ?? 0) > 2 {
-                    if let view = vc?[(vc?.count ?? 3)-3] {
-                        self.navigationController?.popToViewController(view, animated: true)
-                    }
-                } else {
-                    self.pop(animated: true)
-                }
-            } else {
-                self.pop(animated: true)
-//                self.navigationController?.popToRootViewController(animated: true)
-            }
+//            if isHistory {
+//                let vc = self.navigationController?.viewControllers
+//                if (vc?.count ?? 0) > 2 {
+//                    if let view = vc?[(vc?.count ?? 3)-3] {
+//                        self.navigationController?.popToViewController(view, animated: true)
+//                    }
+//                } else {
+//                    self.pop(animated: true)
+//                }
+//            } else {
+//                self.pop(animated: true)
+//            }
+            self.pop(animated: true)
         }
     }
     
