@@ -15,8 +15,6 @@ class RelatedGrammarPresenter: RelatedGrammarPresenterProtocol, RelatedGrammarIn
     weak private var view: RelatedGrammarViewProtocol?
     var interactor: RelatedGrammarInteractorInputProtocol?
     private let router: RelatedGrammarWireframeProtocol
-    var isLoadmore = true
-    var relatedLesson : RelatedLessonResponse?
 
     init(interface: RelatedGrammarViewProtocol, interactor: RelatedGrammarInteractorInputProtocol?, router: RelatedGrammarWireframeProtocol) {
         self.view = interface
@@ -25,20 +23,10 @@ class RelatedGrammarPresenter: RelatedGrammarPresenterProtocol, RelatedGrammarIn
     }
     
     func getListRelatedLesson(id: Int, offset: Int) {
-        if isLoadmore {
-            self.interactor?.getListRelatedLesson(id: id, offset: offset)
-        }
+       self.interactor?.getListRelatedLesson(id: id, offset: offset)
     }
+    
     func getListRelatedLessonSuccessed(response: RelatedLessonResponse) {
-        if response.data.count < limit {
-            isLoadmore = false
-        }
-        if relatedLesson == nil {
-            self.relatedLesson = response
-        } else {
-            self.relatedLesson?.data += response.data
-        }
-        self.view?.reloadView()
+        self.view?.reloadView(listData: response.data)
     }
-
 }
