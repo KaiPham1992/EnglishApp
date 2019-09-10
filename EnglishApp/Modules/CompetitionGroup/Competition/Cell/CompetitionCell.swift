@@ -54,10 +54,7 @@ class CompetitionCell: BaseTableCell {
             viewButtonCompetition.isHidden = false
             btnCompetition.isHidden = false
             switch competitionEntity.status& {
-            case "CANNOT_JOIN":
-                lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.not_correct.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)])
-                viewButtonCompetition.backgroundColor = .white
-            case "DOING":
+            case "START":
                 let isJoined = competitionEntity.is_fight_joined ?? 0
                 if isJoined == 0 {
                     viewButtonCompetition.isHidden = true
@@ -67,7 +64,17 @@ class CompetitionCell: BaseTableCell {
                     viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                     lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
                 }
+            case "CANNOT_JOIN":
+                lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.not_qualify.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)])
+                viewButtonCompetition.backgroundColor = .white
+            case "DOING":
+                lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+                viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+                viewButtonCompetition.alpha = 0.8
+                viewButtonCompetition.isUserInteractionEnabled = false
             case "CAN_JOIN":
+                viewButtonCompetition.alpha = 1
+                viewButtonCompetition.isUserInteractionEnabled = true
                 if competitionEntity.isHidden {
                     viewButtonCompetition.isHidden = true
                     lblTitleButtonCompetition.text = ""
@@ -104,6 +111,8 @@ class CompetitionCell: BaseTableCell {
             case "DONE":
                 lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
                 viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+                viewButtonCompetition.alpha = 1
+                viewButtonCompetition.isUserInteractionEnabled = true
             default:
                 break
             }
@@ -113,17 +122,17 @@ class CompetitionCell: BaseTableCell {
             if type == .competition {
                 btnShare.isHidden = false
                 if let startTime = competitionEntity.startTime{
-                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage)\(startTime.toString(dateFormat: AppDateFormat.HHmm))h")
+                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage): \(startTime.toString(dateFormat: AppDateFormat.HHmm))h")
                 }
             } else {
                 btnShare.isHidden = true
                 if let startDate = competitionEntity.startDate{
-                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage)\(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
+                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.time.showLanguage): \(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
                 }
             }
             
             lbCountTeam.attributedText = NSAttributedString(string: "\(LocalizableKey.countTeam.showLanguage)\(competitionEntity.countTeam&)\(LocalizableKey.team.showLanguage)")
-            lbContent.attributedText = competitionEntity.content?.htmlToAttributedString
+            lbContent.attributedText = NSAttributedString(string: competitionEntity.content?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
             
         }
     }

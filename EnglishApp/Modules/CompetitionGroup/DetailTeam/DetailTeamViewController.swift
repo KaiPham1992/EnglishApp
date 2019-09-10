@@ -38,6 +38,7 @@ class DetailTeamViewController: BaseTableViewController {
     var isTeamJoined = 1
     var isFightJoined = 0
     var fightFinished : (() -> ())?
+    var currentDate = Date()
     
 	override func viewDidLoad() {
         addLoadmore = false
@@ -73,6 +74,32 @@ class DetailTeamViewController: BaseTableViewController {
                 viewButtonStart.isHidden = false
             }
         }
+        NotificationCenter.default.addObserver(self, selector: #selector(turnoffScreen), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(turnonScreen), name: UIApplication.didBecomeActiveNotification, object: nil)
+    }
+    
+    @objc func turnoffScreen() {
+        if timer != nil {
+            self.currentDate = Date()
+            self.stopTimer()
+        }
+    }
+    
+    private func stopTimer() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+    
+    @objc func turnonScreen() {
+        self.distanceTimeMi = self.distanceTimeMi + Int(self.currentDate.timeIntervalSince(Date()))
+        if distanceTimeMi > 0 {
+            self.processTimer()
+        } else {
+            self.disableTimer()
+        }
+        
     }
 
     @IBAction func btnExplainTapped() {
@@ -118,17 +145,8 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
                 self.setTitleNavigation(title: teamInfor.name&)
                 self.lblMember.text = teamInfor.toPercentMember()
                 if self.distanceTimeMi > 0 {
-                   self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased() + " " + self.distanceTimeMi.convertMilisecondsToTime())
-                    if self.timer == nil {
-                        self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                            if self.distanceTimeMi > 0 {
-                                self.processTime(time: self.distanceTimeMi)
-                                self.distanceTimeMi -= 1
-                            } else {
-                                self.disableTimer()
-                            }
-                        })
-                    }
+                    self.lblTitleButtonStart.attributedText = NSAttributedString(string: LocalizableKey.startAfter.showLanguage.uppercased() + " " + self.distanceTimeMi.convertMilisecondsToTime())
+                    self.processTimer()
                 } else {
                     self.btnLeave.isHidden = true
                     self.viewButtonStart.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
@@ -136,6 +154,19 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
                 }
                 self.initLoadData(data: self.presenter?.teamDetail?.members ?? [])
             }
+        }
+    }
+    
+    private func processTimer(){
+        if self.timer == nil {
+            self.timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                if self.distanceTimeMi > 0 {
+                    self.processTime(time: self.distanceTimeMi)
+                    self.distanceTimeMi -= 1
+                } else {
+                    self.disableTimer()
+                }
+            })
         }
     }
     

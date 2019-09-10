@@ -50,9 +50,8 @@ class CommentViewController: BaseViewController {
         tbvComment.registerXibFile(CellHeaderComment.self)
         tbvComment.delegate = self
         tbvComment.dataSource = self
+        tbvComment.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 15, right: 0)
         self.presenter?.getComment(idLesson: idLesson&, offset: offset)
-        tbvComment.keyboardDismissMode = .onDrag
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -44,7 +44,7 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
         if isHistory {
             return [ResultRouter.createModule(type: .competition, id: self.idCompetition, isHistory:  true),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
         } else {
-             return [ResultRouter.createModule(type: .competition, id: self.idCompetition),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+             return [ResultRouter.createModule(type: .competition, id: self.idCompetition), ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
         }
         
     }

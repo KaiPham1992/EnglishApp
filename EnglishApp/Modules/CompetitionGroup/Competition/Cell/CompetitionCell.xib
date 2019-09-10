@@ -106,8 +106,8 @@
                                             <constraint firstAttribute="width" secondItem="0qZ-Fb-ga9" secondAttribute="height" id="v2d-0X-bpQ"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cr-Ze-pYm">
-                                        <rect key="frame" x="25" y="0.0" width="112" height="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cr-Ze-pYm">
+                                        <rect key="frame" x="25" y="0.0" width="159.5" height="20"/>
                                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                         <color key="textColor" red="0.25882352941176467" green="0.25882352941176467" blue="0.25882352941176467" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -117,7 +117,6 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="5cr-Ze-pYm" secondAttribute="bottom" id="ERK-Ox-WoA"/>
                                     <constraint firstItem="5cr-Ze-pYm" firstAttribute="leading" secondItem="0qZ-Fb-ga9" secondAttribute="trailing" constant="5" id="Lxt-jQ-KoH"/>
-                                    <constraint firstAttribute="trailing" secondItem="5cr-Ze-pYm" secondAttribute="trailing" id="Mo1-EI-TTG"/>
                                     <constraint firstAttribute="height" constant="20" id="Mqe-nM-CHm"/>
                                     <constraint firstItem="5cr-Ze-pYm" firstAttribute="top" secondItem="5wk-7S-Ynm" secondAttribute="top" id="iZV-TY-ooU"/>
                                     <constraint firstItem="0qZ-Fb-ga9" firstAttribute="leading" secondItem="5wk-7S-Ynm" secondAttribute="leading" id="joH-E5-FzU"/>
@@ -181,9 +180,9 @@
                             <constraint firstItem="Ix2-Gj-iTl" firstAttribute="top" secondItem="pA1-RV-ouV" secondAttribute="bottom" constant="8" id="wr0-wF-5HS"/>
                         </constraints>
                     </view>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpV-Uo-Jdl">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpV-Uo-Jdl">
                         <rect key="frame" x="0.0" y="191.5" width="320" height="1"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="OgY-9Q-jNa"/>
                         </constraints>
@@ -194,6 +193,7 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="Iza-Mj-mB7" firstAttribute="leading" secondItem="5cr-Ze-pYm" secondAttribute="trailing" constant="8" id="6uX-7e-xmu"/>
                     <constraint firstAttribute="trailing" secondItem="CpV-Uo-Jdl" secondAttribute="trailing" id="GXm-o8-Qny"/>
                     <constraint firstItem="8zP-Om-cer" firstAttribute="centerY" secondItem="7ex-cC-IuZ" secondAttribute="centerY" id="LKx-At-b10"/>
                     <constraint firstAttribute="bottom" secondItem="CpV-Uo-Jdl" secondAttribute="bottom" id="O9z-Rf-r4f"/>

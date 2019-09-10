@@ -26,6 +26,14 @@ class CompetitionViewController: ListManagerVC {
         showButtonBack = false
         super.setupViewListManager()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
+    }
+    
+    @objc func didChangeLanguage() {
+        self.offset = 0
+        callAPI()
+        customTitle = LocalizableKey.titleCompetition.showLanguage
+        self.setUpNavigation()
     }
     
     @objc func didRecieveCompetition() {
@@ -76,8 +84,29 @@ class CompetitionViewController: ListManagerVC {
     
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! CompetitionEntity
-        if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
-            self.push(controller: SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true))
+        if data.isHidden {
+            let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true)
+            self.push(controller: vc)
+        } else {
+            if data.status == "DOING" {
+                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true)
+                self.push(controller: vc)
+            } else {
+                if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
+                    let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: false)
+                    
+                    vc.joinTeam = { [weak self] (teamId) in
+                        self?.joinTeam(index: indexPath.row, teamId: teamId)
+                    }
+                    vc.leaveTeam = {[weak self] in
+                        self?.leaveTeam(index: indexPath.row)
+                    }
+                    vc.fightFinished = { [weak self] in
+                        self?.fightComplete(index: indexPath.row)
+                    }
+                    self.push(controller: vc)
+                }
+            }
         }
     }
     
@@ -90,22 +119,29 @@ class CompetitionViewController: ListManagerVC {
             if status == "CAN_JOIN"{
                 if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
                     let data = listData[index] as! CompetitionEntity
-                    let isStarted = cell.isStarted
-                    if isStarted {
-                        let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date())
-                        self.push(controller: vc,animated: true)
+                    if data.isHidden {
+                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true))
                     } else {
-                        let vc = SelectTeamRouter.createModule(competitionId: competitionId)
-                        vc.joinTeam = { [weak self] (teamId) in
-                            self?.joinTeam(index: index, teamId: teamId)
+                        let isStarted = cell.isStarted
+                        if isStarted {
+                            let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date())
+                            vc.fightFinished = {[weak self] in
+                                self?.fightComplete(index: index)
+                            }
+                            self.push(controller: vc,animated: true)
+                        } else {
+                            let vc = SelectTeamRouter.createModule(competitionId: competitionId)
+                            vc.joinTeam = { [weak self] (teamId) in
+                                self?.joinTeam(index: index, teamId: teamId)
+                            }
+                            vc.leaveTeam = {[weak self] in
+                                self?.leaveTeam(index: index)
+                            }
+                            vc.fightFinished = { [weak self] in
+                                self?.fightComplete(index: index)
+                            }
+                            self.push(controller: vc)
                         }
-                        vc.leaveTeam = {[weak self] in
-                            self?.leaveTeam(index: index)
-                        }
-                        vc.fightFinished = { [weak self] in
-                            self?.fightComplete(index: index)
-                        }
-                        self.push(controller: vc)
                     }
                 }
             }
@@ -116,7 +152,7 @@ class CompetitionViewController: ListManagerVC {
                 self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0), isHistory: true))
             }
             
-            if status == "DOING" {
+            if status == "START" {
                 let data = listData[index] as! CompetitionEntity
                 let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date())
                 vc.fightFinished = {[weak self] in
@@ -124,6 +160,7 @@ class CompetitionViewController: ListManagerVC {
                 }
                 self.push(controller: vc,animated: true)
             }
+            
             
             if status == "CANNOT_JOIN" {
                 self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true))
@@ -138,7 +175,13 @@ class CompetitionViewController: ListManagerVC {
     private func fightComplete(index: Int) {
         DispatchQueue.global().async {
             let data = self.listData[index] as! CompetitionEntity
-            data.status = "DONE"
+            let endTimeMi = Int(data.end_time_mi ?? "0") ?? 0
+            let currentTimeMi = Int(Date().timeIntervalSince1970)
+            if currentTimeMi < endTimeMi {
+                data.status = "DOING"
+            } else {
+                data.status = "DONE"
+            }
             self.changeStatusShowData()
             DispatchQueue.main.async {
                  self.tableView.reloadData()

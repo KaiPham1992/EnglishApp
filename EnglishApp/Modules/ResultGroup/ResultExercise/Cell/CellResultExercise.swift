@@ -47,7 +47,7 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func detectQuestion(){
-        tvContent.attributedText = dataCell?.content?.htmlToAttributedString
+        tvContent.attributedText = NSAttributedString(string:  dataCell?.content?.htmlToString ?? "", attributes: [NSAttributedString.Key.font: AppFont.fontRegular14])
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
         tvContent.addGestureRecognizer(tap)
@@ -153,6 +153,6 @@ extension CellResultExercise: UITableViewDataSource{
     }
     
     func actionRelatedGrammar(indexAnswer: IndexPath){
-        self.actionRelatedGrammar?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row]._id ?? "0") ?? 0)
+        self.actionRelatedGrammar?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row].question_details_id ?? "0") ?? 0)
     }
 }

@@ -34,9 +34,43 @@ class MainTabbar: UITabBarController {
         setUpObserver()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(noCompetition), name: NSNotification.Name.init("NoCompetition"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didReciveNotification), name: NSNotification.Name.init("didReciveNotification"), object: nil)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158, NSAttributedString.Key.font: AppFont.fontRegular12], for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
         self.hidesBottomBarWhenPushed = true 
+    }
+    @objc func didReciveNotification(notification: Notification){
+        if let aps = notification.userInfo?["aps"] as? [String : Any], let category = aps["category"] as? String {
+            if category == "ASSIGNED_EXERCISE" {
+                self.selectedIndex = 2
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? ExerciseViewController {
+                        let vc = AssignExerciseRouter.createModule()
+                        viewController.push(controller: vc)
+                    }
+                }
+            }
+            if category == "NOTIF_EVENT" {
+                if let oid = notification.userInfo?["gcm.notification.oid"] as? String, let id = Int(oid) {
+                    self.selectedIndex = 0
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
+                            let vc = QADetailRouter.createModule(id: id)
+                            viewController.push(controller: vc)
+                        }
+                    }
+                }
+            }
+        }
+//        if let 
+    }
+    
+    
+    func gotoHome() {
+        self.selectedIndex = 0
+        if let viewController = self.viewControllers?[self.selectedIndex] as? UINavigationController {
+            viewController.popToRootViewController(animated: false)
+        }
     }
     
     @objc func noCompetition() {

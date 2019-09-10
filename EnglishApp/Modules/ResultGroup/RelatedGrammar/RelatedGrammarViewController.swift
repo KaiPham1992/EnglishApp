@@ -10,61 +10,43 @@
 
 import UIKit
 
-class RelatedGrammarViewController: BaseViewController {
+class RelatedGrammarViewController: ListManagerVC {
 
-    @IBOutlet weak var tbvRelatedLesson: UITableView!
     var presenter: RelatedGrammarPresenterProtocol?
     var id: Int = 0
-    var offset = 0 
 
-    override func setUpViews() {
-        super.setUpViews()
-        tbvRelatedLesson.dataSource = self
-        tbvRelatedLesson.delegate = self
-        tbvRelatedLesson.registerXibFile(CellSingleLabel.self)
+    override func viewDidLoad() {
+        customTitle = LocalizableKey.related_lesson.showLanguage
+        showButtonBack = true
+        super.viewDidLoad()
+    }
+    
+    override func registerTableView() {
+        super.registerTableView()
+        tableView.registerXibFile(CellGrammar.self)
+    }
+    
+    override func callAPI() {
+        super.callAPI()
         self.presenter?.getListRelatedLesson(id: id, offset: self.offset)
     }
     
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.related_lesson.showLanguage)
-    }
-}
-extension RelatedGrammarViewController : UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.relatedLesson?.data.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        return row
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellSingleLabel.self, for: indexPath)
-        if let dataCell = self.presenter?.relatedLesson?.data[indexPath.row] {
-            cell.setupCell(title: dataCell.name&)
-        }
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! SearchEntity
+        let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
+        cell.setupTitle(title: data.name&)
         return cell
     }
-}
-extension RelatedGrammarViewController : UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = DetailLessonRouter.createModule(idLesson: self.presenter?.relatedLesson?.data[indexPath.row]._id  ?? "0")
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! SearchEntity
+        let vc = DetailLessonRouter.createModule(idLesson: data._id  ?? "0")
         self.push(controller: vc)
     }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
 }
+
 extension RelatedGrammarViewController : RelatedGrammarViewProtocol {
-    func reloadView() {
-        tbvRelatedLesson.reloadData()
+    func reloadView(listData: [SearchEntity]) {
+        initLoadData(data: listData)
     }
 }

@@ -97,7 +97,7 @@ class GrammarViewController: ListManagerVC {
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! GrammarEntity
         if !isDelete {
-            let vc = DetailLessonRouter.createModule(idLesson: data._id ?? "0", type: .detailLesson)
+            let vc = DetailLessonRouter.createModule(idLesson: data.lesson_id ?? "0", type: .detailLesson)
             vc.callbackCallAgainAPI = {[unowned self] in
                 self.callAPIAgain()
             }

@@ -23,7 +23,7 @@ class ProfileViewController: BaseViewController {
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vLocation: AppTextField!
     @IBOutlet weak var imgAvatar: UIImageView!
-    @IBOutlet weak var imgBackground: UIView!
+    @IBOutlet weak var imgBorder: UIView!
 //    @IBOutlet weak var imgRank: UIImageView!
     
     @IBOutlet weak var lbFullName: UILabel!
@@ -32,7 +32,7 @@ class ProfileViewController: BaseViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        imgBackground.setBorder(borderWidth: 4, borderColor: AppColor.yellow, cornerRadius: 35)
+        imgBorder.setBorder(borderWidth: 4, borderColor: AppColor.yellow, cornerRadius: 35)
         
     }
     

@@ -18,9 +18,7 @@ protocol ResultCompetitionWireframeProtocol: class {
 protocol ResultCompetitionPresenterProtocol: class {
 
     var interactor: ResultCompetitionInteractorInputProtocol? { get set }
-    func getResultTeam(idCompetition: String)
-    func getNumberResult() -> Int
-    func getItemAtIndexPath(indexPath: IndexPath) -> CompetitionResultTeamEntity
+    func getResultTeam(idCompetition: String, offset: Int)
 }
 
 //MARK: Interactor -
@@ -33,7 +31,7 @@ protocol ResultCompetitionInteractorOutputProtocol: class {
 protocol ResultCompetitionInteractorInputProtocol: class {
 
     var presenter: ResultCompetitionInteractorOutputProtocol?  { get set }
-    func getResultTeam(idCompetition: String)
+    func getResultTeam(idCompetition: String, offset: Int)
 
     /* Presenter -> Interactor */
 }
@@ -42,7 +40,7 @@ protocol ResultCompetitionInteractorInputProtocol: class {
 protocol ResultCompetitionViewProtocol: class {
 
     var presenter: ResultCompetitionPresenterProtocol?  { get set }
-    func reloadView()
+    func reloadView(respone: [CompetitionResultTeamEntity])
 
     /* Presenter -> ViewController */
 }

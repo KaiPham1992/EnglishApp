@@ -38,6 +38,7 @@ class ProductEntity: BaseEntity {
     var amountDiamond: String?
     var amountMoney: Double?
     var color: String?
+    var isBought: Bool?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -56,6 +57,7 @@ class ProductEntity: BaseEntity {
         self.nationId <- map["nation_id"]
         self.amountMoney <- (map["amount_money"], StringToDoubleTransform())
         self.color <- map["color"]
+        self.isBought <- map["is_bought"]
     }
     
     var urlAvatar:  URL? {

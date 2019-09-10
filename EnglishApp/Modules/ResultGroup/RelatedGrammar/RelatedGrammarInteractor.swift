@@ -15,14 +15,11 @@ class RelatedGrammarInteractor: RelatedGrammarInteractorInputProtocol {
     weak var presenter: RelatedGrammarInteractorOutputProtocol?
     
     func getListRelatedLesson(id: Int, offset: Int) {
-        ProgressView.shared.show()
         Provider.shared.resultAPIService.getRelatedLesson(id: id, offset: offset, success: { (response) in
-            ProgressView.shared.hide()
             if let _response = response {
                 self.presenter?.getListRelatedLessonSuccessed(response: _response)
             }
         }) { (error) in
-            ProgressView.shared.hide()
         }
     }
 }

@@ -30,6 +30,7 @@ class CompetitionEntity : BaseEntity {
     var rankName: String?
     var countTeam: String?
     var startDate: Date?
+    var endDate: Date?
     var startTime: Date?
     var content: String?
     var image: String?
@@ -37,6 +38,7 @@ class CompetitionEntity : BaseEntity {
     var is_fight_joined: Int?
     var status : String?
     var start_time_mi : String?
+    var end_time_mi : String?
     var isHidden = false
     
     convenience init(name: String) {
@@ -77,7 +79,8 @@ class CompetitionEntity : BaseEntity {
         self.exercise_id <- map["exercise_id"]
         self.is_fight_joined <- map["is_fight_joined"]
         self.content <- map["description"]
-        
+        self.end_time_mi <- map["end_time_mi"]
+        self.endDate <- map["end_time_mi"]
     }
     
     class func toArray() -> [CompetitionEntity] {

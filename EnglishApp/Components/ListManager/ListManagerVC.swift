@@ -25,6 +25,8 @@ class ListManagerVC: BaseViewController {
     // constraint use callAPI -> ovrrived to use pull to refresh
     var isLoadmore = true
     
+    var messageNoData = LocalizableKey.lbNoData.showLanguage
+    
     //pull to refresh
     private let refreshControl = UIRefreshControl()
     
@@ -68,7 +70,7 @@ class ListManagerVC: BaseViewController {
             DispatchQueue.main.async {
                 ProgressView.shared.hide()
                 if data.count == 0 && self.offset == 0 {
-                    self.showNoData()
+                    self.showNoData(text: self.messageNoData)
                 } else {
                     self.hideNoData()
                 }

@@ -18,7 +18,6 @@ protocol RelatedGrammarWireframeProtocol: class {
 protocol RelatedGrammarPresenterProtocol: class {
 
     var interactor: RelatedGrammarInteractorInputProtocol? { get set }
-    var relatedLesson : RelatedLessonResponse? {get set}
     func getListRelatedLesson(id: Int,offset: Int)
 }
 
@@ -41,7 +40,7 @@ protocol RelatedGrammarInteractorInputProtocol: class {
 protocol RelatedGrammarViewProtocol: class {
 
     var presenter: RelatedGrammarPresenterProtocol?  { get set }
-    func reloadView()
+    func reloadView(listData: [SearchEntity])
 
     /* Presenter -> ViewController */
 }

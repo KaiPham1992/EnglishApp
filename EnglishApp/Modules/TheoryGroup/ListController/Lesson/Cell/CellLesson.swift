@@ -11,14 +11,14 @@ import UIKit
 class CellLesson: UITableViewCell {
 
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var viewBackground: UIView!
+    @IBOutlet weak var viewBackground: ViewGradient!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
     }
     
     func setupDataCell(dataCell: ItemLessonCategory){
-        viewBackground.backgroundColor = UIColor(hexString: dataCell.color&)
+        viewBackground.setupGradient(beginColor: UIColor(hexString: dataCell.color&), endColor: UIColor(hexString: dataCell.color&).withAlphaComponent(0.56))
         lblTitle.text = dataCell.name
     }
 }

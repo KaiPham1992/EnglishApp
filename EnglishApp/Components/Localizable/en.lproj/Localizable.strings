@@ -8,8 +8,8 @@
 
 // Menu Page
 "MenuInfo" = "Profile";
-"MenuTop" = "Charts";
-"MenuQA" = "Question";
+"MenuTop" = "Leader Board";
+"MenuQA" = "Q&A";
 "MenuLanguage" = "Language";
 "MenuSaved" = "Saved";
 "MenuHistory" = "Test History";
@@ -92,7 +92,7 @@
 "enterQA" = "Enter your question";
 "messageQA" = "50 honey for one question";
 "qAOlder" = "Questions you've ever asked";
-"titleQA" = "Question";
+"titleQA" = "Q&A";
 "notEnoughHoney" = "You have not enough honey";
 "deductFiveHoney" = "You are deducted 50 honey for one question";
 "pleaseEnterQA" = "Please enter your question";
@@ -243,7 +243,7 @@
 "see_explain" = "SEE EXPLAIN";
 "respond_question" = "REPORT THE QUESTION";
 "explain_solution" = "Explain the answer";
-"individual" = " ndividual";
+"individual" = "Individual";
 "action" = "Fight";
 "point" = "point";
 "not_correct" = "Faild";
@@ -260,7 +260,7 @@
 "report" = "REPORT";
 "description" = "Description";
 "enter_content" = "Enter content";
-"cancel_upper" = "Cancle";
+"cancel_upper" = "Cancel";
 "complete_upper" = "COMPLETE";
 "update" = "UPDATE";
 
@@ -304,7 +304,7 @@
 "btnUpGrade" = "Upgrade";
 "levelUp" = "Level up";
 "changeLanguage" = "Change language";
-"bxh" = "Charts";
+"bxh" = "Leader B ";
 "point_level" = "Level Point";
 
 //lesson
@@ -390,3 +390,7 @@
 "fight_is_doing_result" = "Fight is doing";
 "suggestion_one_choice" = "Only 1 suggestion.";
 "the_dally_misson_tested" = "The daily misson test has made today.";
+"not_qualify" = "Not Qualify";
+"time" = "Time";
+"competition_end" = "The competition has ended.";
+"no_team_joined" = "No team joined";

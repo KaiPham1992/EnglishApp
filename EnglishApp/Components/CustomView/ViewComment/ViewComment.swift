@@ -28,7 +28,7 @@ class ViewComment: BaseViewXib{
     }
     
     func setupViewChildren(data: ChildrenComment){
-        imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + data.attach_img_src&), completed: nil)
+        imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + data.attach_img_src&), placeholderImage: #imageLiteral(resourceName: "avatarDefautl"), completed: nil)
         lblTimeCreate.text = data.created_date?.toString(dateFormat: AppDateFormat.commahhmmaddMMMyy)
         lblContent.attributedText = NSAttributedString(string: data.content ?? "")
         lblNameUser.attributedText = NSAttributedString(string: data.fullname ?? "")
@@ -38,7 +38,7 @@ class ViewComment: BaseViewXib{
     }
     
     func setupViewParent(data: ParentComment){
-        imgAVT.sd_setImage(with: URL(string:  BASE_URL_IMAGE + data.attach_img_src&), completed: nil)
+        imgAVT.sd_setImage(with: URL(string:  BASE_URL_IMAGE + data.attach_img_src&), placeholderImage: #imageLiteral(resourceName: "avatarDefautl"), completed: nil)
         lblTimeCreate.text = data.created_date?.toString(dateFormat: AppDateFormat.commahhmmaddMMMyy)
         lblContent.attributedText = NSAttributedString(string: data.content ?? "")
         lblNameUser.attributedText = NSAttributedString(string: data.fullname ?? "")

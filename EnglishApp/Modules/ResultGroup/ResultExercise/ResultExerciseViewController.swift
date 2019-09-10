@@ -25,19 +25,19 @@ class ResultExerciseViewController: BaseViewController {
                 btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             }
         } else {
-            if isHistory {
-                let vc = self.navigationController?.viewControllers
-                if (vc?.count ?? 0) > 2 {
-                    if let view = vc?[(vc?.count ?? 3)-3] {
-                        self.navigationController?.popToViewController(view, animated: true)
-                    }
-                } else {
-                    self.pop(animated: true)
-                }
-            } else {
-                self.pop(animated: true)
-//                self.navigationController?.popToRootViewController(animated: true)
-            }
+//            if isHistory {
+//                let vc = self.navigationController?.viewControllers
+//                if (vc?.count ?? 0) > 2 {
+//                    if let view = vc?[(vc?.count ?? 3)-3] {
+//                        self.navigationController?.popToViewController(view, animated: true)
+//                    }
+//                } else {
+//                    self.pop(animated: true)
+//                }
+//            } else {
+//                self.pop(animated: true)
+//            }
+            self.pop(animated: true)
         }
     }
     
@@ -66,17 +66,17 @@ class ResultExerciseViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        //back to font question
-//        let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
-//        if index != 0 && tempIndex + 1 != numberAnswer {
-//            self.index -= 1
-//            lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
-//            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
-//            btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
-//        } else {
-//            super.btnBackTapped()
-//        }
-        super.btnBackTapped()
+//        back to font question
+        let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
+        if index != 0 && tempIndex + 1 != numberAnswer {
+            self.index -= 1
+            lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
+            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
+            btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
+        } else {
+            super.btnBackTapped()
+        }
+//        super.btnBackTapped()
     }
     
     override func setUpNavigation() {
@@ -147,7 +147,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     }
     
     func seeRelatedGrammar(questionId: Int, answerId: Int) {
-        let vc = RelatedGrammarRouter.createModule(id: questionId)
+        let vc = RelatedGrammarRouter.createModule(id: answerId)
         self.push(controller: vc)
     }
     

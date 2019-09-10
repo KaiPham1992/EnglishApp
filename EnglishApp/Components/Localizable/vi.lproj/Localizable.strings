@@ -236,7 +236,7 @@
 "rank" = "Hạng";
 "result" = "Kết quả";
 "sum_point" = "Tổng điểm:";
-"time_do_exercise" = "Thời gian làm bài:";
+"time_do_exercise" = "Tổng thời gian làm bài:";
 "back_gome" = "Về trang chủ";
 "result_competion" = "Kết quả cuộc thi";
 "result_group" = "Kết quả đội";
@@ -390,3 +390,7 @@
 "fight_is_doing_result" = "Cuộc thi đang diễn ra không thể xem kết quả.";
 "suggestion_one_choice" = "Chỉ được chọn 1 lần.";
 "the_dally_misson_tested" = "Bạn đã làm bài tập nhiệm vụ hằng ngày của hôm nay.";
+"not_qualify" = "Chưa Đạt";
+"time" = "Thời gian";
+"competition_end" = "Đã quá giờ thi.";
+"no_team_joined" = "Không có đội nào tham gia cuộc thi này.";

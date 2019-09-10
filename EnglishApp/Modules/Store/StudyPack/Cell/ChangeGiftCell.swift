@@ -9,8 +9,8 @@
 import UIKit
 
 protocol ChangeGiftCellDelegate {
-    func btnHoneyTapped()
-    func btnDiamondTapped()
+    func btnHoneyTapped(index: Int)
+    func btnDiamondTapped(index: Int)
 }
 
 class ChangeGiftCell: BaseTableCell {
@@ -19,6 +19,8 @@ class ChangeGiftCell: BaseTableCell {
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var lbCountHoney: UILabel!
     @IBOutlet weak var lbCountDiamon: UILabel!
+    @IBOutlet weak var btnHoney: UIButton!
+    @IBOutlet weak var btnDiamond: UIButton!
     
     var delegate: ChangeGiftCellDelegate?
     var product: ProductEntity? {
@@ -31,7 +33,8 @@ class ChangeGiftCell: BaseTableCell {
             lbContent.text = product.content?.htmlToString
             lbCountHoney.text = product.amountHoney& + " \(LocalizableKey.boxHoneyTitle.showLanguage.lowercased())"
             lbCountDiamon.text = product.amountDiamond& + " \(LocalizableKey.diamond.showLanguage.lowercased())"
-            
+            btnHoney.isUserInteractionEnabled = true
+            btnDiamond.isUserInteractionEnabled = true
         }
     }
 
@@ -43,11 +46,11 @@ class ChangeGiftCell: BaseTableCell {
     // -- MARK: - ACTION
     
     @IBAction func btnDiamondTapped() {
-        delegate?.btnDiamondTapped()
+        delegate?.btnDiamondTapped(index: btnDiamond.tag)
     }
     
     @IBAction func btnHoneyTapped() {
-        delegate?.btnHoneyTapped()
+        delegate?.btnHoneyTapped(index: btnHoney.tag)
     }
     
     

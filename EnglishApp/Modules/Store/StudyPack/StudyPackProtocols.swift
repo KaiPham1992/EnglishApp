@@ -20,7 +20,7 @@ protocol StudyPackPresenterProtocol: class {
     var interactor: StudyPackInteractorInputProtocol? { get set }
     func getProduct()
     func sendRedeem(code: String)
-    func exchangeGift(id: String)
+    func exchangeGift(id: String, type: String)
 }
 
 //MARK: Interactor -
@@ -46,5 +46,5 @@ protocol StudyPackViewProtocol: class {
     func didSendRedeem()
     func didSendRedeem(error: APIError)
     func didExchangeGift()
-    func didGetError()
+    func didGetError(error: APIError)
 }

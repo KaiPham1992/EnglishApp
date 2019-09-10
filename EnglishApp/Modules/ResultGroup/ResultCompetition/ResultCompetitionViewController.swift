@@ -11,53 +11,41 @@
 import UIKit
 import XLPagerTabStrip
 
-class ResultCompetitionViewController: BaseViewController {
+class ResultCompetitionViewController: ListManagerVC {
 
 	var presenter: ResultCompetitionPresenterProtocol?
     
     @IBOutlet weak var tbvResultCompetition: UITableView!
     var idCompetition: String = ""
-
+    
 	override func viewDidLoad() {
+        customTitle = LocalizableKey.result_team.showLanguage
+        messageNoData = LocalizableKey.no_team_joined.showLanguage
         super.viewDidLoad()
-        tbvResultCompetition.registerXibFile(CellResultCompetition.self)
-        tbvResultCompetition.dataSource = self
-        tbvResultCompetition.delegate = self
-        self.presenter?.getResultTeam(idCompetition: idCompetition)
+//        self.tableView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
     }
-
-    override func setUpNavigation() {
-        super.setUpNavigation()
-        addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.result_team.showLanguage)
+    
+    override func registerTableView() {
+        super.registerTableView()
+        tableView.registerXibFile(CellResultCompetition.self)
+    }
+    
+    override func callAPI() {
+        super.callAPI()
+        self.presenter?.getResultTeam(idCompetition: idCompetition, offset: self.offset)
+    }
+    
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! CompetitionResultTeamEntity
+        let cell = tableView.dequeue(CellResultCompetition.self, for: indexPath)
+        cell.setupData(dataCell: data)
+        return cell
     }
 }
 
 extension ResultCompetitionViewController : ResultCompetitionViewProtocol{
-    func reloadView(){
-        tbvResultCompetition.reloadData()
-    }
-}
-
-extension ResultCompetitionViewController : UITableViewDataSource{
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.presenter?.getNumberResult() ?? 0
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellResultCompetition.self, for: indexPath)
-        if let dataCell = self.presenter?.getItemAtIndexPath(indexPath: indexPath){
-            cell.setupData(dataCell: dataCell)
-        }
-        return cell
-    }
-}
-extension ResultCompetitionViewController: UITableViewDelegate{
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80
+    func reloadView(respone: [CompetitionResultTeamEntity]) {
+        initLoadData(data: respone)
     }
 }
 
