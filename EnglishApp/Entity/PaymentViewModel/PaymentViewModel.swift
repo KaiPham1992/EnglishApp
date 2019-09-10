@@ -16,6 +16,7 @@ class PaymentHelper: NSObject {
     
     static let shared = PaymentHelper()
     var completionPurchased: CompletionClosure?
+    var purchaseFailed: CompletionClosure?
     
     func fetchAvailableProducts() { //1
         let productIdentifiers = Set(productIds)
@@ -24,7 +25,7 @@ class PaymentHelper: NSObject {
         productsRequest?.start()
     }
     
-    func purcharseProduct(_ productId: String, completionPurchased: CompletionClosure?) { //2
+    func purcharseProduct(_ productId: String, completionPurchased: CompletionClosure?, purchaseFailed: CompletionClosure?) { //2
         guard canMakePurchases(), validProducts.count > 0 else {
             
             return
@@ -34,6 +35,7 @@ class PaymentHelper: NSObject {
             return
         }
         self.completionPurchased = completionPurchased
+        self.purchaseFailed = purchaseFailed
         let payment = SKPayment(product: skProduct)
         SKPaymentQueue.default().add(self)
         SKPaymentQueue.default().add(payment)
@@ -64,6 +66,7 @@ extension PaymentHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver
                 SKPaymentQueue.default().finishTransaction(transaction)
                 print("restored")
             case .failed:
+                self.purchaseFailed?()
                 if let transactionError = transaction.error as NSError?,
                     let localizedDescription = transaction.error?.localizedDescription,
                     transactionError.code != SKError.paymentCancelled.rawValue {

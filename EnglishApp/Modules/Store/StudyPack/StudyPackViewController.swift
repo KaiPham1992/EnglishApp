@@ -26,6 +26,7 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
     
     var collectionProduct = ProductCollectionEntity() {
         didSet {
+            tbBeePack.isHidden = false
             tbBeePack.reloadData()
         }
     }
@@ -35,6 +36,7 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
         configureTable()
         setUpView()
         presenter?.getProduct()
+        tbBeePack.isHidden = true
     }
     
     func setUpView(){
@@ -105,7 +107,10 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeue(StudyPackCell.self, for: indexPath)
             cell.vStudyPack.delegate = self
-            cell.vStudyPack.getData(listProduct: collectionProduct.groupUpgrade)
+            let list = collectionProduct.groupUpgrade.filter { (item) -> Bool in
+                item.isBought == nil
+            }
+            cell.vStudyPack.getData(listProduct: list)
             return cell
         } else {
             if indexPath.item == 0 {

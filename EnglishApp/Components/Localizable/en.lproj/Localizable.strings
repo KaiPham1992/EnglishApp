@@ -8,8 +8,8 @@
 
 // Menu Page
 "MenuInfo" = "Profile";
-"MenuTop" = "Charts";
-"MenuQA" = "Question";
+"MenuTop" = "Leader Board";
+"MenuQA" = "Q&A";
 "MenuLanguage" = "Language";
 "MenuSaved" = "Saved";
 "MenuHistory" = "Test History";
@@ -92,7 +92,7 @@
 "enterQA" = "Enter your question";
 "messageQA" = "50 honey for one question";
 "qAOlder" = "Questions you've ever asked";
-"titleQA" = "Question";
+"titleQA" = "Q&A";
 "notEnoughHoney" = "You have not enough honey";
 "deductFiveHoney" = "You are deducted 50 honey for one question";
 "pleaseEnterQA" = "Please enter your question";
@@ -304,7 +304,7 @@
 "btnUpGrade" = "Upgrade";
 "levelUp" = "Level up";
 "changeLanguage" = "Change language";
-"bxh" = "Charts";
+"bxh" = "Leader B ";
 "point_level" = "Level Point";
 
 //lesson
