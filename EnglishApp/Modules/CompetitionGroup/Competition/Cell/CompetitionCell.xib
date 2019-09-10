@@ -180,9 +180,9 @@
                             <constraint firstItem="Ix2-Gj-iTl" firstAttribute="top" secondItem="pA1-RV-ouV" secondAttribute="bottom" constant="8" id="wr0-wF-5HS"/>
                         </constraints>
                     </view>
-                    <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpV-Uo-Jdl">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CpV-Uo-Jdl">
                         <rect key="frame" x="0.0" y="191.5" width="320" height="1"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="OgY-9Q-jNa"/>
                         </constraints>

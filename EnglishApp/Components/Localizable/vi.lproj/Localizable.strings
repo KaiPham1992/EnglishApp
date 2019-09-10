@@ -393,3 +393,4 @@
 "not_qualify" = "Chưa Đạt";
 "time" = "Thời gian";
 "competition_end" = "Đã quá giờ thi.";
+"no_team_joined" = "Không có đội nào tham gia cuộc thi này.";

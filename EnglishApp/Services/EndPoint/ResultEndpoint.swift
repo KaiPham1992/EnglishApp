@@ -11,7 +11,7 @@ import Alamofire
 
 enum ResultEndpoint {
     case getViewTestResultProfile(id: String)
-    case getResultTeam(id: Int)
+    case getResultTeam(id: Int, offset: Int)
     case getResultUser(id:Int)
     case getRelatedLesson(id: Int,offset: Int)
 }
@@ -51,8 +51,8 @@ extension ResultEndpoint: EndPointType {
            return ["competition_id": id]
         case .getViewTestResultProfile:
             return ["":""]
-        case .getResultTeam(let competition):
-            return ["competition_id": competition]
+        case .getResultTeam(let competition, let offset):
+            return ["competition_id": competition, "offset": offset, "limit": limit]
         }
     }
     

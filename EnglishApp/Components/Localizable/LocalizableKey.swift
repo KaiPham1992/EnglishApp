@@ -390,4 +390,5 @@ struct LocalizableKey {
     static let the_dally_misson_tested = "the_dally_misson_tested"
     static let time = "time"
     static let competition_end = "competition_end"
+    static let no_team_joined = "no_team_joined"
 }

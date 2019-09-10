@@ -15,7 +15,6 @@ class ResultCompetitionPresenter: ResultCompetitionPresenterProtocol, ResultComp
     weak private var view: ResultCompetitionViewProtocol?
     var interactor: ResultCompetitionInteractorInputProtocol?
     private let router: ResultCompetitionWireframeProtocol
-    var listResult : [CompetitionResultTeamEntity] = []
 
     init(interface: ResultCompetitionViewProtocol, interactor: ResultCompetitionInteractorInputProtocol?, router: ResultCompetitionWireframeProtocol) {
         self.view = interface
@@ -23,21 +22,12 @@ class ResultCompetitionPresenter: ResultCompetitionPresenterProtocol, ResultComp
         self.router = router
     }
     
-    func getNumberResult() -> Int{
-        return listResult.count
-    }
-    
-    func getItemAtIndexPath(indexPath: IndexPath) -> CompetitionResultTeamEntity {
-        return listResult[indexPath.row]
-    }
-    
-    func getResultTeam(idCompetition: String) {
-        self.interactor?.getResultTeam(idCompetition: idCompetition)
+    func getResultTeam(idCompetition: String, offset: Int) {
+        self.interactor?.getResultTeam(idCompetition: idCompetition, offset: offset)
     }
     
     func getResultTeamSuccessed(respone: [CompetitionResultTeamEntity]) {
-        self.listResult = respone
-        self.view?.reloadView()
+        self.view?.reloadView(respone: respone)
     }
 
 }

@@ -49,7 +49,10 @@ open class BaseTableViewController: UIViewController {
     // constraint use callAPI -> ovrrived to use pull to refresh
     var isLoadmore = true
     private var isShowProgressView = true
+    
     var addLoadmore = true
+    
+    var messageNoData = LocalizableKey.lbNoData.showLanguage
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -113,7 +116,7 @@ open class BaseTableViewController: UIViewController {
             DispatchQueue.main.async {
                 ProgressView.shared.hide()
                 if data.count == 0 && self.offset == 0 {
-                    self.showNoData()
+                    self.showNoData(text: self.messageNoData)
                 } else {
                     self.hideNoData()
                 }

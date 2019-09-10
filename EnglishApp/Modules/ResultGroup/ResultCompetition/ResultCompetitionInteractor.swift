@@ -14,17 +14,14 @@ class ResultCompetitionInteractor: ResultCompetitionInteractorInputProtocol {
 
     weak var presenter: ResultCompetitionInteractorOutputProtocol?
     
-    func getResultTeam(idCompetition: String) {
+    func getResultTeam(idCompetition: String, offset: Int) {
         if let id = Int(idCompetition) {
-            ProgressView.shared.show()
-            Provider.shared.resultAPIService.getResultTeam(idCompetition: id, success: { (respone) in
-                ProgressView.shared.hide()
+            Provider.shared.resultAPIService.getResultTeam(idCompetition: id, offset: offset, success: { (respone) in
                 if let _respone = respone {
                     self.presenter?.getResultTeamSuccessed(respone: _respone.team_results ?? [])
                 }
                
             }) { (error) in
-                ProgressView.shared.hide()
             }
         }
     }
