@@ -35,7 +35,7 @@ extension ExplainExerciseViewController : ExplainExerciseViewProtocol {
         if let explain = self.presenter?.explainQuestion?.explain {
             hideNoData()
             let paragraph = NSMutableParagraphStyle()
-            paragraph.alignment = .center
+            paragraph.alignment = .justified
             lblExplainQuestion.attributedText = NSAttributedString(string: explain.htmlToString, attributes: [NSAttributedString.Key.font : AppFont.fontRegular14 , NSAttributedString.Key.paragraphStyle : paragraph])
         } else {
             showNoData()
