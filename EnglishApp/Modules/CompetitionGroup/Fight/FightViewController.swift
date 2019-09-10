@@ -150,7 +150,7 @@ extension FightViewController :FightViewProtocol{
                     self.currentIndex += 1
                     if self.currentIndex <= self.numberQuestion && !self.isEnd {
                         self.lblPointTeam.attributedText = NSAttributedString(string: "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage)
-                        self.lblRankTeam.attributedText = NSAttributedString(string: LocalizableKey.rank.showLanguage + " " + "\(teamRank)")
+                        self.lblRankTeam.attributedText = NSAttributedString(string: LocalizableKey.rank.showLanguage + " \(teamRank)")
                         self.lblIndexQuestion.attributedText = NSAttributedString(string: "\(self.currentIndex)/\(self.numberQuestion)")
                         self.imgMyTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + (teamInfor?.img_src ?? "")), placeholderImage: #imageLiteral(resourceName: "ic_avatar_default") , completed: nil)
                         self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
@@ -190,7 +190,7 @@ extension FightViewController :FightViewProtocol{
             let distanceTime = Int(currentStartTime - startTime)
             if distanceTime >= self.currentTime {
                 self.view.isHidden = true
-                PopUpHelper.shared.showErrorDidNotRemoveView(message: "Đã quá giờ thi.", completionYes: {
+                PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.competition_end.showLanguage, completionYes: {
                     self.pop(animated: true)
                 })
             } else {

@@ -99,6 +99,9 @@ class SelectTeamViewController: BaseTableViewController {
         vc.actionLeaveTeam = { [weak self] in
             self?.leaveTeamSuccessed()
         }
+        vc.fightFinished = {[weak self] in
+            self?.fightFinished?()
+        }
         self.push(controller: vc)
     }
     
@@ -147,6 +150,12 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
             self?.offset = 0
             self?.isLoadmore = true
             self?.presenter?.getListFightTestTeam(competitionId: self?.competitionId ?? 0, offset: self?.offset ?? 0)
+        }
+        vc.actionLeaveTeam = { [weak self] in
+            self?.leaveTeamSuccessed()
+        }
+        vc.fightFinished = {[weak self] in
+            self?.fightFinished?()
         }
         self.push(controller: vc)
     }
