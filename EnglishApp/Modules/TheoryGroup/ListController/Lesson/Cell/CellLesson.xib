@@ -24,7 +24,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="351" height="138.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCt-uo-h6k">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCt-uo-h6k" customClass="ViewGradient" customModule="EnglishApp_AppStore" customModuleProvider="target">
                         <rect key="frame" x="16" y="12" width="319" height="114.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVG-QW-BUk">
@@ -66,7 +66,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lblTitle" destination="jVG-QW-BUk" id="X4m-BU-8Av"/>
-                <outlet property="viewBackground" destination="tCt-uo-h6k" id="rzp-QV-XOD"/>
+                <outlet property="viewBackground" destination="tCt-uo-h6k" id="7sE-T9-HcC"/>
             </connections>
             <point key="canvasLocation" x="160.1449275362319" y="144.30803571428569"/>
         </tableViewCell>
