@@ -43,7 +43,7 @@ class ViewTime: BaseViewXib{
     @IBOutlet weak var lblTime: UILabel!
     override func setUpViews() {
         super.setUpViews()
-        NotificationCenter.default.addObserver(self, selector: #selector(turnoffScreen), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(turnoffScreen), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(turnonScreen), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
