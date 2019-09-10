@@ -8328,7 +8328,7 @@
 			baseConfigurationReference = 5B9797D30EEE2E20FFDA9072 /* Pods-EnglishApp_Prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development: Nghia Nguyen (G7RSC937JS)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
@@ -8339,7 +8339,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Obbe_provisioning;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.nghianguyen.obee-ios";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG PROD";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8351,7 +8351,7 @@
 			baseConfigurationReference = C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Apple Development: Nghia Nguyen (G7RSC937JS)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Nghia Nguyen (8HQRBRRH7Z)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
@@ -8362,7 +8362,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = Obbe_provisioning;
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.nghianguyen.obee-ios";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

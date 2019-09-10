@@ -13,7 +13,7 @@ end
 desc "Init APNs for Staging server with Release mode"
 desc "=> fastlane init_apns_stag_release --env prod ]"
 lane :init_apns_stag_release do
-  pem(development: true)
+  pem(development: false)
 end
 
 desc "Init APNs for Production server with Development mode"
