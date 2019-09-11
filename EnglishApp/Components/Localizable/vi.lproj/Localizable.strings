@@ -350,12 +350,8 @@
 "quater" = "Quý";
 "BRONZE" = "Đồng";
 "SILVER" = "Bạc";
-"GOLD_I" = "Vàng I";
-"GOLD_II" = "Vàng II";
-"GOLD_III" = "Vàng III";
-"PLATINUM_I" = "Bạch kim I";
-"PLATINUM_II" = "Bạch kim II";
-"PLATINUM_III" = "Bạch kim III";
+"GOLD" = "Vàng";
+"PLATINUM" = "Bạch kim";
 "MASTER" = "Master";
 "TOAA" = "TOAA";
 "TheOneAboveAll" = "The one above all";

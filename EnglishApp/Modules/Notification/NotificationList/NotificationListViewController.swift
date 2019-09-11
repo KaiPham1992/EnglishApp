@@ -36,6 +36,11 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
         presenter?.getNotification()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tbNotification.reloadData()
+    }
+    
     override func setUpNavigation() {
         super.setUpNavigation()
          addBackToNavigation()
@@ -49,6 +54,11 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
     }
     
     func didLoadNotification(listNotification: [NotificationEntity]) {
+        if listNotification.count == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
         self.listNotification = listNotification
     }
 }
@@ -83,6 +93,8 @@ extension NotificationListViewController: UITableViewDelegate, UITableViewDataSo
         let noti = self.listNotification[indexPath.item]
         if let id = Int(noti.id&) {
             presenter?.readNotification(id: id)
+            self.listNotification[indexPath.item].isRead = true
+            self.tbNotification.reloadData()
         }
         
         self.push(controller: NotificationDetailRouter.createModule(notification: noti))
