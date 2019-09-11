@@ -17,12 +17,14 @@ class SearchEntity : Mappable{
     //use for create exercise
     var typeCreateExercise : String = "Elementary"
     var numberQuestion : Int = 0
+    var type_test : String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
+        self.type_test <- map["type_test"]
         self._id <- map["_id"]
         self.name <- map["name"]
     }

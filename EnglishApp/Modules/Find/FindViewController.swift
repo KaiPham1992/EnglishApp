@@ -106,6 +106,31 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
             let idLesson = self.presenter?.getIdEntity(indexPath: indexPath) ?? ""
             self.presenter?.gotoTheoryDetail(idLesson: idLesson)
         }
+        if type == .searchExercise {
+            let idExercise = self.presenter?.searchRespone[indexPath.row]._id ?? "0"
+            let typeValue = Int(self.presenter?.searchRespone[indexPath.row].type_test ?? "0") ?? 0
+            var type : TypeDoExercise = .entranceExercise
+            switch typeValue {
+            case 5:
+                type = TypeDoExercise.createExercise
+            case 7:
+                type = TypeDoExercise.levelExercise
+            case 3:
+                type = TypeDoExercise.practiceExercise
+            case 6:
+                type = TypeDoExercise.assignExercise
+            case 2:
+                type = TypeDoExercise.dailyMissonExercise
+            case 1:
+                type = TypeDoExercise.entranceExercise
+            case 100:
+                type = TypeDoExercise.competition
+            default:
+                break
+            }
+            let vc = NameExerciseRouter.createModule(id: idExercise, type: type)
+            self.push(controller: vc)
+        }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
