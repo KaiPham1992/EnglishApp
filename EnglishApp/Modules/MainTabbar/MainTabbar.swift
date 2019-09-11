@@ -45,18 +45,29 @@ class MainTabbar: UITabBarController {
             if category == "ASSIGNED_EXERCISE" {
                 self.selectedIndex = 2
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? ExerciseViewController {
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                         let vc = AssignExerciseRouter.createModule()
                         viewController.push(controller: vc)
                     }
                 }
             }
             if category == "NOTIF_EVENT" {
-                if let oid = notification.userInfo?["gcm.notification.oid"] as? String, let id = Int(oid) {
+                if let oid = notification.userInfo?["gcm.notification.oid"] as? String, let id = Int(oid){
                     self.selectedIndex = 0
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
+                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                             let vc = QADetailRouter.createModule(id: id)
+                            viewController.push(controller: vc)
+                        }
+                    }
+                }
+            }
+            if category == "EXPIRED_PRODUCT" {
+                if let oid = notification.userInfo?["gcm.notification.oid"] as? String, let id = Int(oid) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        self.selectedIndex = 0
+                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
+                            let vc = StoreViewController()
                             viewController.push(controller: vc)
                         }
                     }
@@ -67,9 +78,20 @@ class MainTabbar: UITabBarController {
         if let screen = notification.userInfo?["screen"] as? String, let oid = notification.userInfo?["oid"] as? String {
             if screen == "OTHER" {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
-//                        let vc = QADetailRouter.createModule(id: id)
-//                        viewController.push(controller: vc)
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                        let vc = NotificationDetailRouter.createModule(idNotification: Int(oid) ?? 0)
+                        viewController.push(controller: vc)
+                    }
+                }
+            }
+        }
+        
+        if let screen = notification.userInfo?["screen"] as? String, let nid = notification.userInfo?["nid"] as? String {
+            if screen == "EVENT" {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                        let vc = NotificationDetailRouter.createModule(idNotification: Int(nid) ?? 0)
+                        viewController.push(controller: vc)
                     }
                 }
             }
