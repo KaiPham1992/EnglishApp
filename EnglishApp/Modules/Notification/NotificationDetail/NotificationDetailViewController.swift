@@ -20,6 +20,8 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var lbTime: UILabel!
     
+    var idNotification: Int = 0
+    
     @IBOutlet weak var heightImage: NSLayoutConstraint!
 
 	override func viewDidLoad() {

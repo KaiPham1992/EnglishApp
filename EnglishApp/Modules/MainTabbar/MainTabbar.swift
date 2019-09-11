@@ -39,6 +39,7 @@ class MainTabbar: UITabBarController {
         UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
         self.hidesBottomBarWhenPushed = true 
     }
+    
     @objc func didReciveNotification(notification: Notification){
         if let aps = notification.userInfo?["aps"] as? [String : Any], let category = aps["category"] as? String {
             if category == "ASSIGNED_EXERCISE" {
@@ -62,7 +63,17 @@ class MainTabbar: UITabBarController {
                 }
             }
         }
-//        if let 
+        
+        if let screen = notification.userInfo?["screen"] as? String, let oid = notification.userInfo?["oid"] as? String {
+            if screen == "OTHER" {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
+//                        let vc = QADetailRouter.createModule(id: id)
+//                        viewController.push(controller: vc)
+                    }
+                }
+            }
+        }
     }
     
     

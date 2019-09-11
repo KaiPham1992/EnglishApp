@@ -59,6 +59,12 @@ class FindViewController: BaseViewController {
 }
 extension FindViewController: FindViewProtocol{
     func reloadView() {
+        let row = self.presenter?.getNumberSearch() ?? 0
+        if row == 0 {
+            self.showNoData()
+        } else {
+            self.hideNoData()
+        }
         tbResult.reloadData()
     }
     
@@ -93,11 +99,6 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row = self.presenter?.getNumberSearch() ?? 0
-        if row == 0 {
-            tbResult.isHidden = true
-            return 0
-        }
-        tbResult.isHidden = false
         return row
     }
     

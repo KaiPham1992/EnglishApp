@@ -2348,6 +2348,7 @@
 		2A77694D22FE89A600E12997 /* SubmitAnswerEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitAnswerEntity.swift; sourceTree = "<group>"; };
 		2A77695122FE89FD00E12997 /* SubmitQuestionEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitQuestionEntity.swift; sourceTree = "<group>"; };
 		2A77695522FE8AC500E12997 /* SubmitCompetitionQuestionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitCompetitionQuestionResponse.swift; sourceTree = "<group>"; };
+		2A7907D12329584B003B2752 /* EnglishApp_Prod.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EnglishApp_Prod.entitlements; sourceTree = "<group>"; };
 		2A88F4CE22FE66F800D59336 /* FightPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightPresenter.swift; sourceTree = "<group>"; };
 		2A88F4CF22FE66F800D59336 /* FightRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightRouter.swift; sourceTree = "<group>"; };
 		2A88F4D022FE66F800D59336 /* FightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightViewController.swift; sourceTree = "<group>"; };
@@ -4727,6 +4728,7 @@
 		DE3CC3312283DD980037DBE4 = {
 			isa = PBXGroup;
 			children = (
+				2A7907D12329584B003B2752 /* EnglishApp_Prod.entitlements */,
 				2A13591C2311A67100587C0E /* EnglishApp_Dev.entitlements */,
 				DE3CC33C2283DD980037DBE4 /* EnglishApp */,
 				DE3CC33B2283DD980037DBE4 /* Products */,
@@ -5591,6 +5593,9 @@
 					DE952FAE2287DF4800E3F688 = {
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -8328,6 +8333,7 @@
 			baseConfigurationReference = 5B9797D30EEE2E20FFDA9072 /* Pods-EnglishApp_Prod.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EnglishApp_Prod.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
@@ -8351,6 +8357,7 @@
 			baseConfigurationReference = C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EnglishApp_Prod.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;

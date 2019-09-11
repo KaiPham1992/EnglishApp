@@ -15,7 +15,7 @@ import SDWebImage
 class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
-        if type == .entranceExercise {
+        if type == .entranceExercise && !isHistory {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut":self.isOut])
         }
 //        self.navigationController?.popToRootViewController(animated: true)
