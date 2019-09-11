@@ -8351,7 +8351,7 @@
 			baseConfigurationReference = C0A1FC571A3446773BF28BA5 /* Pods-EnglishApp_Prod.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Nghia Nguyen (8HQRBRRH7Z)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
