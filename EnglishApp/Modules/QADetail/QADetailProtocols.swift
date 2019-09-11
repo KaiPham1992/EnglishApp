@@ -18,6 +18,7 @@ protocol QADetailWireframeProtocol: class {
 protocol QADetailPresenterProtocol: class {
 
     var interactor: QADetailInteractorInputProtocol? { get set }
+    func getDetail(id: Int)
 }
 
 //MARK: Interactor -
@@ -39,4 +40,5 @@ protocol QADetailViewProtocol: class {
     var presenter: QADetailPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
+    func didSuccess(detail: QAEntity)
 }

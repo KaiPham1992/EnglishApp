@@ -11,6 +11,7 @@ import Alamofire
 enum NotificationEndPoint {
     case getNotification(offset: Int)
     case readNotification(notificationId: Int)
+    case getNotificationDetail(id: Int)
 }
 
 extension NotificationEndPoint: EndPointType {
@@ -20,6 +21,8 @@ extension NotificationEndPoint: EndPointType {
             return "_api/notification/get_notification_list"
         case .readNotification:
             return "_api/notification/read_notifications"
+        case .getNotificationDetail:
+            return "_api/notification/notification_detail"
         }
     }
     
@@ -33,6 +36,8 @@ extension NotificationEndPoint: EndPointType {
             return ["offset": "\(offset)", "limit": limit]
         case .readNotification(let id):
             return ["notification_ids": [id]]
+        case .getNotificationDetail(let id):
+            return ["notification_id": id]
         }
     }
     
