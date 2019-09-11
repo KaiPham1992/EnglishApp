@@ -82,7 +82,7 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Rank Competition" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyt-hf-Ebn">
-                                    <rect key="frame" x="16" y="19" width="111.5" height="13.5"/>
+                                    <rect key="frame" x="16" y="22" width="111.5" height="13.5"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -95,7 +95,7 @@
                                     </constraints>
                                 </view>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g31-f6-U4o">
-                                    <rect key="frame" x="305" y="15.5" width="20" height="20"/>
+                                    <rect key="frame" x="303" y="15.5" width="20" height="20"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="e1U-Xh-02Y">
                                             <rect key="frame" x="1" y="1" width="18" height="18"/>
@@ -131,13 +131,16 @@
                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                 </collectionView>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-2R-YuH">
-                                    <rect key="frame" x="330" y="19" width="29" height="13.5"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="điểm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-2R-YuH">
+                                    <rect key="frame" x="328" y="15.5" width="31" height="20"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="20" id="Qcx-7I-H0a"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRO-Me-kCo">
-                                    <rect key="frame" x="132.5" y="19" width="163.5" height="13.5"/>
+                                    <rect key="frame" x="132.5" y="22" width="161.5" height="13.5"/>
                                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
                                     <color key="textColor" red="0.12549019607843137" green="0.74901960784313726" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <nil key="highlightedColor"/>
@@ -146,7 +149,7 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="W1E-fK-CP3" firstAttribute="top" secondItem="g31-f6-U4o" secondAttribute="bottom" constant="2" id="07p-Cz-yX0"/>
-                                <constraint firstItem="PRO-Me-kCo" firstAttribute="top" secondItem="Utm-2R-YuH" secondAttribute="top" id="8lc-Q5-lzs"/>
+                                <constraint firstItem="Utm-2R-YuH" firstAttribute="centerY" secondItem="g31-f6-U4o" secondAttribute="centerY" id="7Gt-o9-xY4"/>
                                 <constraint firstItem="e1U-Xh-02Y" firstAttribute="leading" secondItem="PRO-Me-kCo" secondAttribute="trailing" constant="10" id="AOv-0X-wfX"/>
                                 <constraint firstAttribute="trailing" secondItem="x78-yZ-sSP" secondAttribute="trailing" constant="16" id="FIW-D6-DIs"/>
                                 <constraint firstItem="Utm-2R-YuH" firstAttribute="leading" secondItem="g31-f6-U4o" secondAttribute="trailing" constant="5" id="GDE-NV-wxp"/>
@@ -154,7 +157,6 @@
                                 <constraint firstItem="x78-yZ-sSP" firstAttribute="top" secondItem="W1E-fK-CP3" secondAttribute="bottom" constant="2" id="PHE-M3-UIa"/>
                                 <constraint firstItem="Fyt-hf-Ebn" firstAttribute="top" secondItem="PRO-Me-kCo" secondAttribute="top" id="Szz-Hv-8Rk"/>
                                 <constraint firstItem="PRO-Me-kCo" firstAttribute="bottom" secondItem="Utm-2R-YuH" secondAttribute="bottom" id="TuK-Nt-oDI"/>
-                                <constraint firstItem="Utm-2R-YuH" firstAttribute="centerY" secondItem="g31-f6-U4o" secondAttribute="centerY" id="Z19-6X-lDX"/>
                                 <constraint firstAttribute="height" constant="80" id="a3j-W0-lWp"/>
                                 <constraint firstItem="Fyt-hf-Ebn" firstAttribute="leading" secondItem="XM6-bF-BRa" secondAttribute="leading" constant="16" id="aSb-mY-5T9"/>
                                 <constraint firstItem="PRO-Me-kCo" firstAttribute="leading" secondItem="Fyt-hf-Ebn" secondAttribute="trailing" constant="5" id="dJk-60-dWd"/>

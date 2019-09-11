@@ -128,7 +128,7 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 break
             }
-            let vc = NameExerciseRouter.createModule(id: idExercise, type: type)
+            let vc = ResultRouter.createModule(type: type, id: idExercise, isHistory: true)
             self.push(controller: vc)
         }
     }
