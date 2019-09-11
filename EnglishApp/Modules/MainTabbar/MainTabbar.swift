@@ -75,12 +75,24 @@ class MainTabbar: UITabBarController {
             }
         }
         
-        if let screen = notification.userInfo?["screen"] as? String, let oid = notification.userInfo?["oid"] as? String {
+        if let screen = notification.userInfo?["screen"] as? String {
             if screen == "OTHER" {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
-                        let vc = NotificationDetailRouter.createModule(idNotification: Int(oid) ?? 0)
-                        viewController.push(controller: vc)
+                if let oid = notification.userInfo?["oid"] as? String {
+                    if let clickAction = notification.userInfo?["click_action"] as? String , clickAction == "COMMENT_QUESTION" {
+                        self.selectedIndex = 0
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                                let vc = ExplainExerciseGroupRouter.createModule(id: Int(oid) ?? 0)
+                                viewController.push(controller: vc)
+                            }
+                        }
+                    } else {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                                let vc = NotificationDetailRouter.createModule(idNotification: Int(oid) ?? 0)
+                                viewController.push(controller: vc)
+                            }
+                        }
                     }
                 }
             }
