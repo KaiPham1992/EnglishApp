@@ -350,12 +350,8 @@
 "quater" = "Quater";
 "BRONZE" = "Bronze";
 "SILVER" = "Silver";
-"GOLD_I" = "Gold I";
-"GOLD_II" = "Gold II";
-"GOLD_III" = "Gold IIII";
-"PLATINUM_I" = "Platinum I";
-"PLATINUM_II" = "Platinum II";
-"PLATINUM_III" = "Platinum III";
+"GOLD" = "Gold";
+"PLATINUM" = "Platinum";
 "MASTER" = "Master";
 "TOAA" = "TOAA";
 "TheOneAboveAll" = "The one above all";
