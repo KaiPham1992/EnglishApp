@@ -61,6 +61,29 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
         }
         self.listNotification = listNotification
     }
+    
+    func goToScreen(actionKey: String, index: Int) {
+        let noti = self.listNotification[index]
+        switch actionKey {
+        case "EXPIRED_PRODUCT":
+            self.push(controller: StoreViewController())
+        case "COMMENT_QUESTION":
+            break
+        case "ASSIGNED_EXERCISE":
+            break
+        case "NOTIF_EVENT":
+            if let id = Int(noti.id&) {
+                presenter?.readNotification(id: id)
+                self.listNotification[index].isRead = true
+                self.tbNotification.reloadData()
+            }
+            self.push(controller: NotificationDetailRouter.createModule(notification: noti))
+        case "OTHER":
+            break
+        default:
+            break
+        }
+    }
 }
 
 
@@ -90,15 +113,16 @@ extension NotificationListViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let noti = self.listNotification[indexPath.item]
-        if let id = Int(noti.id&) {
-            presenter?.readNotification(id: id)
-            self.listNotification[indexPath.item].isRead = true
-            self.tbNotification.reloadData()
-        }
-        
-        self.push(controller: NotificationDetailRouter.createModule(notification: noti))
-        
+        guard let actionKey = self.listNotification[indexPath.item].actionKey else { return  }
+        goToScreen(actionKey: actionKey, index: indexPath.item)
+//        let noti = self.listNotification[indexPath.item]
+//        if let id = Int(noti.id&) {
+//            presenter?.readNotification(id: id)
+//            self.listNotification[indexPath.item].isRead = true
+//            self.tbNotification.reloadData()
+//            self.push(controller: NotificationDetailRouter.createModule(idNotification: id))
+//        }
+//        self.push(controller: NotificationDetailRouter.createModule(notification: noti))
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

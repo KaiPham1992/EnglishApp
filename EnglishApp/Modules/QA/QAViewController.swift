@@ -136,7 +136,8 @@ extension QAViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = QADetailRouter.createModule(qa: self.listHistory[indexPath.item])
+        guard let id = Int(self.listHistory[indexPath.item].id&) else { return }
+        let vc = QADetailRouter.createModule(id: id)
         self.push(controller: vc)
     }
     
