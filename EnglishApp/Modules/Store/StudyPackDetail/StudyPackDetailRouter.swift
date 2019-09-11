@@ -25,4 +25,19 @@ class StudyPackDetailRouter: StudyPackDetailWireframeProtocol {
         
         return view
     }
+    
+    static func createModule(id: String) -> UIViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = StudyPackDetailViewController.initFromNib()
+        let interactor = StudyPackDetailInteractor()
+        let router = StudyPackDetailRouter()
+        let presenter = StudyPackDetailPresenter(interface: view, interactor: interactor, router: router)
+        
+        view.presenter = presenter
+        view.id = id
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
 }

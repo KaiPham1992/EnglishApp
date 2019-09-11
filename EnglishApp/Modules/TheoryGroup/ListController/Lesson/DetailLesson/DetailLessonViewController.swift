@@ -84,7 +84,7 @@ class DetailLessonViewController: BaseViewController {
             self.push(controller: CommentRouter.createModule(id: self.idLesson),animated: true)
         } else {
             PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
-                let vc = StoreViewController()
+                let vc = StudyPackDetailRouter.createModule(id: "2")
                 self.push(controller: vc)
             }) {
                 

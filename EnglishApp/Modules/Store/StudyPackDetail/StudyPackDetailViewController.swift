@@ -15,6 +15,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     @IBOutlet weak var webView: UIWebView!
     
     var product = ProductEntity()
+    var id : String = "0"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,8 +44,14 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     }
     
     func displayData(){
-        if let htmlString = product.content{
-            webView.loadHTMLString(htmlString, baseURL: nil)
+        if id != "0" {
+            if let url = URL(string: BASE_URL + "_api/webview/product_detail/2") {
+                webView.loadRequest(URLRequest(url: url))
+            }
+        } else {
+            if let htmlString = product.content{
+                webView.loadHTMLString(htmlString, baseURL: nil)
+            }
         }
         btnUpgrade.setTitle(LocalizableKey.upgrade.showLanguage, for: .normal)
     }
