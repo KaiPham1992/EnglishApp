@@ -88,24 +88,22 @@ class CompetitionViewController: ListManagerVC {
             let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true)
             self.push(controller: vc)
         } else {
-            if data.status == "DOING" {
-                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true)
+            if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
+                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: false)
+                
+                vc.joinTeam = { [weak self] (teamId) in
+                    self?.joinTeam(index: indexPath.row, teamId: teamId)
+                }
+                vc.leaveTeam = {[weak self] in
+                    self?.leaveTeam(index: indexPath.row)
+                }
+                vc.fightFinished = { [weak self] in
+                    self?.fightComplete(index: indexPath.row)
+                }
                 self.push(controller: vc)
             } else {
-                if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
-                    let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: false)
-                    
-                    vc.joinTeam = { [weak self] (teamId) in
-                        self?.joinTeam(index: indexPath.row, teamId: teamId)
-                    }
-                    vc.leaveTeam = {[weak self] in
-                        self?.leaveTeam(index: indexPath.row)
-                    }
-                    vc.fightFinished = { [weak self] in
-                        self?.fightComplete(index: indexPath.row)
-                    }
-                    self.push(controller: vc)
-                }
+                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true)
+                self.push(controller: vc)
             }
         }
     }
