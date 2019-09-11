@@ -38,11 +38,13 @@ class CellQuestion: UITableViewCell {
             if answer == "" {
                 self.lbAnswer.isHidden = true
                 self.vQuestion.backgroundColor = #colorLiteral(red: 0.9467939734, green: 0.9468161464, blue: 0.9468042254, alpha: 1)
+                imgDropDown.tintColor = .gray
                 self.lbAnswer.text = ""
             } else {
                 self.lbAnswer.isHidden = false
                 self.vQuestion.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                 self.lbAnswer.text = answer
+                imgDropDown.tintColor = .white
             }
         }
     }
@@ -82,6 +84,11 @@ class CellQuestion: UITableViewCell {
     }
     
     func setupDropDown(){
+        if answer == "" {
+            imgDropDown.tintColor = .gray
+        } else {
+            imgDropDown.tintColor = .white
+        }
         dropDown.anchorView = vQuestion
         dropDown.bottomOffset = CGPoint(x: 0, y: (vQuestion.frame.height + 5))
         dropDown.backgroundColor = .white
@@ -96,6 +103,7 @@ class CellQuestion: UITableViewCell {
         dropDown.dataSource = dataSource
         
         dropDown.selectionAction = { [unowned self] (index: Int, item: String) in
+            self.imgDropDown.tintColor = .white
             self.isShow = !self.isShow
             self.lbAnswer.isHidden = false
             self.vQuestion.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
