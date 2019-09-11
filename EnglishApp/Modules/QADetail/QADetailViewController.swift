@@ -21,7 +21,8 @@ class QADetailViewController: BaseViewController, QADetailViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        fillData(qa: self.qa)
+        presenter?.getDetail(id: id)
+//        fillData(qa: self.qa)
     }
     
     override func setUpNavigation() {
@@ -39,6 +40,10 @@ class QADetailViewController: BaseViewController, QADetailViewProtocol {
         lbTitle.text = qa.title
         lbContent.text = qa.content
         lbTime.text =  qa.date?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
+    }
+    
+    func didSuccess(detail: QAEntity) {
+        fillData(qa: detail)
     }
 
 }

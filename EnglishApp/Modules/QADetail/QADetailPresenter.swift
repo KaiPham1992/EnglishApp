@@ -21,5 +21,16 @@ class QADetailPresenter: QADetailPresenterProtocol, QADetailInteractorOutputProt
         self.interactor = interactor
         self.router = router
     }
+    
+    func getDetail(id: Int) {
+        ProgressView.shared.show()
+        Provider.shared.qAAPIService.detailQA(id: id, success: { (detail) in
+            guard let detail = detail else { return }
+            ProgressView.shared.hide()
+            self.view?.didSuccess(detail: detail)
+        }) { (error) in
+            ProgressView.shared.hide()
+        }
+    }
 
 }
