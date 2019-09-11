@@ -58,6 +58,7 @@ class TopThreeView: BaseViewXib {
 
             }
             imgAvatar2.sd_setImage(with: listTopThree[1].urlAvatar, placeholderImage: AppImage.avatarDefault)
+            viewTop2.isHidden = false
             if listTopThree.count == 2 {
                 viewTop3.isHidden = true
                 return
@@ -68,7 +69,7 @@ class TopThreeView: BaseViewXib {
                 lbPointtop3.text = "\(point3) \(LocalizableKey.point.showLanguage)"
             }
             imgAvatar3.sd_setImage(with: listTopThree[2].urlAvatar, placeholderImage: AppImage.avatarDefault)
-                
+            viewTop3.isHidden = false
                 
             
                 
