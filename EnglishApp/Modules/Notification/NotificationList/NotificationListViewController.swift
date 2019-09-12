@@ -70,10 +70,13 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
         case "EXPIRED_PRODUCT":
             self.push(controller: StoreViewController())
         case "COMMENT_QUESTION":
-            // do something
+            let oid = noti.objectId
+            let vc = ExplainExerciseGroupRouter.createModule(id: Int(oid&) ?? 0)
+            self.push(controller: vc)
             break
         case "ASSIGNED_EXERCISE":
-            // do something
+            let vc = AssignExerciseRouter.createModule()
+            self.push(controller: vc)
             break
         case "NOTIF_EVENT":
             if let id = Int(noti.id&) {
