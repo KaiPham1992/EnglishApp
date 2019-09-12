@@ -64,7 +64,7 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
     
     override func setUpViews() {
         super.setUpViews()
-        
+         NotificationCenter.default.addObserver(self, selector: #selector(didChangeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
         vCreateExercise.setupGradient(beginColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1), endColor: #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 0.56))
         vPracticeExercise.setupGradient(beginColor: #colorLiteral(red: 0.3098039216, green: 0.6745098039, blue: 0.9960784314, alpha: 1), endColor: #colorLiteral(red: 0, green: 0.9490196078, blue: 0.9960784314, alpha: 1))
         vLevelExercise.setupGradient(beginColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1), endColor: #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 0.56))
@@ -75,6 +75,12 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
          lbLevelExercise.attributedText = NSAttributedString(string: LocalizableKey.level_exercise.showLanguage)
         lbAssignExercise.attributedText = NSAttributedString(string: LocalizableKey.assign_exercise.showLanguage)
     }
+    
+    @objc func didChangeLanguage() {
+        self.setUpViews()
+        self.setUpNavigation()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         if isShowTabbar {
             self.tabBarController?.tabBar.isHidden = false
