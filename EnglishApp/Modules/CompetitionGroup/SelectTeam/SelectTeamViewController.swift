@@ -95,7 +95,7 @@ class SelectTeamViewController: BaseTableViewController {
     
     @objc func btnJoined(sender: UIButton) {
         let team = listData[sender.tag] as! TeamEntity
-        let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, isFightJoined: isFightJoined)
+        let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin)
         vc.actionLeaveTeam = { [weak self] in
             self?.leaveTeamSuccessed()
         }
@@ -122,7 +122,7 @@ class SelectTeamViewController: BaseTableViewController {
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! TeamEntity
         if let id = data.id, let isTeamJoined = data.isTeamJoined {
-            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, isFightJoined: isFightJoined)
+            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin)
             vc.actionLeaveTeam = { [weak self] in
                self?.leaveTeamSuccessed()
             }
@@ -145,7 +145,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     func joinTeamSuccessed(respone: DetailTeamEntity) {
         joinTeam?(Int(respone.team_info?.id ?? "0") ?? 0)
         self.isFightJoined = 1
-        let vc = DetailTeamRouter.createModule(id: respone.team_info?.id ?? "0", isTeamJoined: 1, isFightJoined: isFightJoined)
+        let vc = DetailTeamRouter.createModule(id: respone.team_info?.id ?? "0", isTeamJoined: 1, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin)
         vc.actionBackView = { [weak self] in
             self?.offset = 0
             self?.isLoadmore = true

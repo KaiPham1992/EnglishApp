@@ -39,6 +39,7 @@ class DetailTeamViewController: BaseTableViewController {
     var isFightJoined = 0
     var fightFinished : (() -> ())?
     var currentDate = Date()
+    var isCannotJoin: Bool = false
     
 	override func viewDidLoad() {
         addLoadmore = false
@@ -67,11 +68,16 @@ class DetailTeamViewController: BaseTableViewController {
             btnLeave.isHidden = true
             viewButtonStart.isHidden = true
         } else {
-            if isTeamJoined == 0 {
+            if isCannotJoin {
+                viewButtonStart.isHidden = true
                 btnLeave.isHidden = true
             } else {
-                btnLeave.isHidden = false
-                viewButtonStart.isHidden = false
+                if isTeamJoined == 0 {
+                    btnLeave.isHidden = true
+                } else {
+                    btnLeave.isHidden = false
+                    viewButtonStart.isHidden = false
+                }
             }
         }
         NotificationCenter.default.addObserver(self, selector: #selector(turnoffScreen), name: UIApplication.didEnterBackgroundNotification, object: nil)

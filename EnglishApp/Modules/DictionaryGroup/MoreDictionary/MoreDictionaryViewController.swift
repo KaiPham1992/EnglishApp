@@ -103,7 +103,7 @@ class MoreDictionaryViewController: ListManagerVC {
         if !isDownloaded {
             let link = BASE_URL + item.link_dictionary&
             if link != BASE_URL {
-                PopUpHelper.shared.showComfirmPopUp(message: "Qúa trình có thể mất nhiều thời gian bạn có muốn công việc chạy ngầm?", titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
+                PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.run_background.showLanguage , titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
                     let index = (self.listData as! [ItemDictionaryResponse]).map({$0.id}).index(item.id, offsetBy: 0, limitedBy: self.listData.count) ?? 0
                     if let cell = self.tableView.cellForRow(at: IndexPath(row: index - 1, section: 0)) as? MoreDictionaryCell{
                         cell.hideBtnDelete()
