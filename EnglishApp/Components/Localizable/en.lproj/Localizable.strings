@@ -390,3 +390,4 @@
 "time" = "Time";
 "competition_end" = "The competition has ended.";
 "no_team_joined" = "No team joined";
+"run_background" = "The process may take a long time do you want the job to run in the background?";
