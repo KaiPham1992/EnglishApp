@@ -26,11 +26,19 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        displayUI(isAllowShow: false)
         if notification == nil {
             presenter?.getNotiDetail(id: idNotification)
         } else {
             showData()
         }
+    }
+    
+    func displayUI(isAllowShow bool: Bool ) {
+        imgIcon.isHidden = bool
+        lbTime.isHidden = bool
+        lbContent.isHidden = bool
+        lbTitle.isHidden = bool
     }
     
     func showData() {
@@ -58,6 +66,7 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
         } else {
             heightImage.constant = 9 * self.view.frame.width/16
         }
+        displayUI(isAllowShow: true)
     }
 
     override func setUpNavigation() {
@@ -72,5 +81,6 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
     
     func didSucccess(noti: NotificationEntity) {
         showData(notification: noti)
+        displayUI(isAllowShow: true)
     }
 }
