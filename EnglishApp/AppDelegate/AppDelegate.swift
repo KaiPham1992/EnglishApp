@@ -127,6 +127,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Provider.shared.homeAPIService.getTopThree(success: { (object) in
             let count = object?.count_fight_test ?? 0
+            UIApplication.shared.applicationIconBadgeNumber = object?.count_notify ?? 0
             if count > 0 {
                 NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
             } else {

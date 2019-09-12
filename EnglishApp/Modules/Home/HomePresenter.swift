@@ -45,6 +45,7 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
     
     func getTopThree() {
         Provider.shared.homeAPIService.getTopThree(success: { (collectionUserEntity) in
+            UIApplication.shared.applicationIconBadgeNumber = object?.count_notify ?? 0
             guard let userInfo = collectionUserEntity else { return }
             self.view?.didGetTopThree(collectionUserEntity: userInfo)
             guard let listTopThree = collectionUserEntity?.leader_boards else {return}
