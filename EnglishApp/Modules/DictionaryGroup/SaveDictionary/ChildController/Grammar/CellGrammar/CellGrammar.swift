@@ -49,7 +49,13 @@ class CellGrammar: UITableViewCell {
     
     func setupTitle(title: String){
         widthButton.constant = 0
-        lblTitle.attributedText = NSAttributedString(string: title) 
+//        lblTitle.attributedText = NSAttributedString(string: title)
+        lblTitle.text = title
+    }
+    
+    func setupTitleNote(title: String){
+        widthButton.constant = 0
+        lblTitle.attributedText = NSAttributedString(string: title.replacingOccurrences(of: "\n", with:  "...\n"))
     }
     
 }
