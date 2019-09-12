@@ -16,7 +16,7 @@ class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
         if type == .entranceExercise && !isHistory {
-            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut":self.isOut])
+            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut" : self.isOut])
         }
 //        self.navigationController?.popToRootViewController(animated: true)
         
@@ -81,7 +81,7 @@ class ResultViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        if type == .entranceExercise{
+        if type == .entranceExercise && !isHistory {
              NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut":self.isOut])
         }
         if isHistory {
@@ -116,7 +116,7 @@ extension ResultViewController: ResultViewProtocol{
             self.viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
             self.viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
             self.tbvResult.reloadData()
-            if self.type == .entranceExercise {
+            if self.type == .entranceExercise && !self.isHistory {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
                         let vc = StudyPackDetailRouter.createModule(id: "2")
