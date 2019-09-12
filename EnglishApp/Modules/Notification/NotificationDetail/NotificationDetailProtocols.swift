@@ -19,6 +19,7 @@ protocol NotificationDetailPresenterProtocol: class {
 
     var interactor: NotificationDetailInteractorInputProtocol? { get set }
     func getNotiDetail(id: Int)
+    func readNotification(id: Int)
 }
 
 //MARK: Interactor -

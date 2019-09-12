@@ -27,11 +27,12 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
 	override func viewDidLoad() {
         super.viewDidLoad()
         displayUI(isAllowShow: false)
-        if notification == nil {
-            presenter?.getNotiDetail(id: idNotification)
-        } else {
+//        if notification == nil {
+//            presenter?.getNotiDetail(id: idNotification)
+//        } else {
             showData()
-        }
+//        }
+//        presenter.readNotification(id: idNotification)
     }
     
     func displayUI(isAllowShow bool: Bool ) {
@@ -45,7 +46,7 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
         guard let notification = notification else {
             return
         }
-        lbContent.text = notification.content
+        lbContent.text = notification.content?.htmlToString
         lbTime.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
         lbTitle.text = notification.title
         

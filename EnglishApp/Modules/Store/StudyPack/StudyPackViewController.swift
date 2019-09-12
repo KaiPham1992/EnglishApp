@@ -107,10 +107,7 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeue(StudyPackCell.self, for: indexPath)
             cell.vStudyPack.delegate = self
-            let list = collectionProduct.groupUpgrade.filter { (item) -> Bool in
-                item.isBought == nil
-            }
-            cell.vStudyPack.getData(listProduct: list)
+            cell.vStudyPack.getData(listProduct: collectionProduct.groupUpgrade)
             return cell
         } else {
             if indexPath.item == 0 {
