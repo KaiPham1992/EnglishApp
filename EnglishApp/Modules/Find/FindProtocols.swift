@@ -18,6 +18,7 @@ protocol FindWireframeProtocol: class {
 protocol FindPresenterProtocol: class {
 
     var interactor: FindInteractorInputProtocol? { get set }
+    var searchRespone : [SearchEntity] {get}
     func searchExercise(text: String)
     func getMessageError() -> String?
     func getTextSearch(indexPath: IndexPath) -> String?

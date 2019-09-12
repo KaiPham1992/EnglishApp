@@ -26,18 +26,14 @@ class BXHViewController: BaseViewController {
     
     let arrayRank = ["\(LocalizableKey.BRONZE.showLanguage)",
         "\(LocalizableKey.SILVER.showLanguage)",
-        "\(LocalizableKey.GOLD_I.showLanguage)",
-        "\(LocalizableKey.GOLD_II.showLanguage)",
-        "\(LocalizableKey.GOLD_III.showLanguage)",
-        "\(LocalizableKey.PLATINUM_I.showLanguage)",
-        "\(LocalizableKey.PLATINUM_II.showLanguage)",
-        "\(LocalizableKey.PLATINUM_III.showLanguage)",
+        "\(LocalizableKey.GOLD.showLanguage)",
+        "\(LocalizableKey.PLATINUM.showLanguage)",
         "\(LocalizableKey.MASTER.showLanguage)",
         "\(LocalizableKey.TOAA.showLanguage)",
         ""]
-    let listParam = ["BRONZE","SILVER","GOLD I","GOLD II","GOLD III",
-                     "PLATINUM I","PLATINUM II","PLATINUM III","MASTER","TOAA",""]
-    var index = 10
+    let listParam = ["BRONZE","SILVER","GOLD",
+                     "PLATINUM","MASTER","TOAA",""]
+    var index = 6
     
     var quarter = ""
     var year = ""
@@ -165,7 +161,7 @@ class BXHViewController: BaseViewController {
     
     @IBAction func btnLeftTapped() {
         index += 1
-        if index > 10 {
+        if index > 6 {
             index = 0
         }
         setUpLabelRank()
@@ -176,7 +172,7 @@ class BXHViewController: BaseViewController {
     @IBAction func btnRightTapped() {
         index -= 1
         if index < 0 {
-            index = 10
+            index = 6
         }
         setUpLabelRank()
         self.rank = arrayRank[index]

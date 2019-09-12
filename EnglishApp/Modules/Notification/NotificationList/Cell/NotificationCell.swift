@@ -29,4 +29,8 @@ class NotificationCell: BaseTableCell {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    func changeColor() {
+        self.backgroundColor = .white
+    }
 }

@@ -79,6 +79,7 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.item < presenter?.listHistory.count ?? 0 {
             cell.walletLog = presenter?.listHistory[indexPath.item]
         }
+        cell.selectionStyle = .none
         return cell
     }
     

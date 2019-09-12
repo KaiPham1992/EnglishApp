@@ -55,7 +55,9 @@ class NotificationListPresenter: NotificationListPresenterProtocol, Notification
     
     func readNotification(id: Int) {
         Provider.shared.notificationAPIService.readNotification(notificationId: id, success: { _ in
-            
+            if UIApplication.shared.applicationIconBadgeNumber > 0 {
+                UIApplication.shared.applicationIconBadgeNumber -= 1
+            }
         }) { _ in
             
         }

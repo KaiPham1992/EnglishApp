@@ -21,5 +21,17 @@ class NotificationDetailPresenter: NotificationDetailPresenterProtocol, Notifica
         self.interactor = interactor
         self.router = router
     }
+    
+    func getNotiDetail(id: Int) {
+        ProgressView.shared.show()
+        Provider.shared.notificationAPIService.getNotificationDetail(id: id, success: { (noti) in
+            ProgressView.shared.hide()
+            guard let noti = noti else { return }
+            self.view?.didSucccess(noti: noti)
+        }) { (error) in
+            ProgressView.shared.hide()
+            print(error?.localizedDescription)
+        }
+    }
 
 }

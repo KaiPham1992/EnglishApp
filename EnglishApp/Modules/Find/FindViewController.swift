@@ -59,6 +59,12 @@ class FindViewController: BaseViewController {
 }
 extension FindViewController: FindViewProtocol{
     func reloadView() {
+        let row = self.presenter?.getNumberSearch() ?? 0
+        if row == 0 {
+            self.showNoData()
+        } else {
+            self.hideNoData()
+        }
         tbResult.reloadData()
     }
     
@@ -93,11 +99,6 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row = self.presenter?.getNumberSearch() ?? 0
-        if row == 0 {
-            tbResult.isHidden = true
-            return 0
-        }
-        tbResult.isHidden = false
         return row
     }
     
@@ -105,6 +106,31 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
         if type == .searchTheory {
             let idLesson = self.presenter?.getIdEntity(indexPath: indexPath) ?? ""
             self.presenter?.gotoTheoryDetail(idLesson: idLesson)
+        }
+        if type == .searchExercise {
+            let idExercise = self.presenter?.searchRespone[indexPath.row]._id ?? "0"
+            let typeValue = Int(self.presenter?.searchRespone[indexPath.row].type_test ?? "0") ?? 0
+            var type : TypeDoExercise = .entranceExercise
+            switch typeValue {
+            case 5:
+                type = TypeDoExercise.createExercise
+            case 7:
+                type = TypeDoExercise.levelExercise
+            case 3:
+                type = TypeDoExercise.practiceExercise
+            case 6:
+                type = TypeDoExercise.assignExercise
+            case 2:
+                type = TypeDoExercise.dailyMissonExercise
+            case 1:
+                type = TypeDoExercise.entranceExercise
+            case 100:
+                type = TypeDoExercise.competition
+            default:
+                break
+            }
+            let vc = ResultRouter.createModule(type: type, id: idExercise, isHistory: true)
+            self.push(controller: vc)
         }
     }
     

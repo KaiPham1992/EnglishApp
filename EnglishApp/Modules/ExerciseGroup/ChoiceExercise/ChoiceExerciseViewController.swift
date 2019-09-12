@@ -138,7 +138,7 @@ extension ChoiceExerciseViewController : UITableViewDelegate{
                 }
             } else{
                 PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
-                    let vc = StoreViewController()
+                    let vc = StudyPackDetailRouter.createModule(id: "2")
                     self.push(controller: vc)
                 }) {
                     
@@ -151,7 +151,7 @@ extension ChoiceExerciseViewController : UITableViewDelegate{
                 }
             } else {
                 PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
-                    let vc = StoreViewController()
+                    let vc = StudyPackDetailRouter.createModule(id: "1")
                     self.push(controller: vc)
                 }) {
                     

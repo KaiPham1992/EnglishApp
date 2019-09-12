@@ -15,12 +15,13 @@ import SDWebImage
 class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
-        if type == .entranceExercise {
+        if type == .entranceExercise && !isHistory {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut":self.isOut])
         }
 //        self.navigationController?.popToRootViewController(animated: true)
+        
         (self.tabBarController as! MainTabbar).gotoHome()
-        self.pop(animated: false)
+        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBOutlet weak var lblDontJoinCompetition: UILabel!
@@ -118,7 +119,7 @@ extension ResultViewController: ResultViewProtocol{
             if self.type == .entranceExercise {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
-                        let vc = StoreViewController()
+                        let vc = StudyPackDetailRouter.createModule(id: "2")
                         self.push(controller: vc)
                     }, completeCancel: {
                         

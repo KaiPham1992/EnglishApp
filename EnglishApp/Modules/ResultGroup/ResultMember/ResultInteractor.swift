@@ -42,11 +42,12 @@ class ResultInteractor: ResultInteractorInputProtocol {
                 }
             }) { (error) in
                 ProgressView.shared.hide()
-                if let _error = error {
-                    if (_error.message ?? "") == "COMPETITION IS DOING" {
-                        self.presenter?.competitionIsDoing()
-                    }
-                }
+                self.presenter?.competitionIsDoing()
+//                if let _error = error {
+//                    if (_error.message ?? "") == "COMPETITION IS DOING" {
+//                        
+//                    }
+//                }
             }
         }
     }

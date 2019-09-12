@@ -20,17 +20,35 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var lbTime: UILabel!
     
+    var idNotification: Int = 0
+    
     @IBOutlet weak var heightImage: NSLayoutConstraint!
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        showData()
-        
-        
+        if notification == nil {
+            presenter?.getNotiDetail(id: idNotification)
+        } else {
+            showData()
+        }
     }
     
     func showData() {
-        guard let notification = notification else { return }
+        guard let notification = notification else {
+            return
+        }
+        lbContent.text = notification.content
+        lbTime.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
+        lbTitle.text = notification.title
+        
+        if notification.url == nil {
+            heightImage.constant = 0
+        } else {
+            heightImage.constant = 9 * self.view.frame.width/16
+        }
+    }
+    
+    func showData(notification: NotificationEntity) {
         lbContent.text = notification.content
         lbTime.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
         lbTitle.text = notification.title
@@ -50,5 +68,9 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
     }
     override func setTitleUI() {
         super.setTitleUI()
+    }
+    
+    func didSucccess(noti: NotificationEntity) {
+        showData(notification: noti)
     }
 }
