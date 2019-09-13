@@ -55,6 +55,7 @@ class FindViewController: BaseViewController {
     override func btnBackTapped() {
         showTabbar()
         self.pop()
+        self.dismissKeyBoard()
     }
 }
 extension FindViewController: FindViewProtocol{
@@ -92,7 +93,7 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
         if let textSearch = self.presenter?.getTextSearch(indexPath: indexPath){
-            cell.lblSearch.attributedText = NSAttributedString(string: textSearch)
+            cell.lblSearch.text = textSearch.htmlToString
         }
         return cell
     }

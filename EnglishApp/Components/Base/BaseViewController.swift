@@ -41,7 +41,7 @@ open class BaseViewController: UIViewController {
         //store.subscribe(self)
         setUpViews()
         setUpNavigation()
-        
+        print(self.nibName)
     }
     
     let lbNodata: UILabel = {

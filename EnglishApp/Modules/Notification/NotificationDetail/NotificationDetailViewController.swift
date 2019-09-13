@@ -26,18 +26,27 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        if notification == nil {
-            presenter?.getNotiDetail(id: idNotification)
-        } else {
+        displayUI(isAllowShow: false)
+//        if notification == nil {
+//            presenter?.getNotiDetail(id: idNotification)
+//        } else {
             showData()
-        }
+//        }
+//        presenter.readNotification(id: idNotification)
+    }
+    
+    func displayUI(isAllowShow bool: Bool ) {
+        imgIcon.isHidden = bool
+        lbTime.isHidden = bool
+        lbContent.isHidden = bool
+        lbTitle.isHidden = bool
     }
     
     func showData() {
         guard let notification = notification else {
             return
         }
-        lbContent.text = notification.content
+        lbContent.text = notification.content?.htmlToString
         lbTime.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
         lbTitle.text = notification.title
         
@@ -58,6 +67,7 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
         } else {
             heightImage.constant = 9 * self.view.frame.width/16
         }
+        displayUI(isAllowShow: true)
     }
 
     override func setUpNavigation() {
@@ -72,5 +82,6 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
     
     func didSucccess(noti: NotificationEntity) {
         showData(notification: noti)
+        displayUI(isAllowShow: true)
     }
 }

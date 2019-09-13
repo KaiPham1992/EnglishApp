@@ -71,8 +71,8 @@ class NoteListViewController: BaseTableViewController {
         let data = item as! NoteRespone
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
         cell.indexPath = indexPath
+        cell.setupTitleNote(title: data.name&)
         cell.setOneline()
-        cell.setupTitle(title: data.name&)
         if isDelete {
             cell.setupDelete(isDelete: data.isDelete)
             cell.actionClick = {(index) in

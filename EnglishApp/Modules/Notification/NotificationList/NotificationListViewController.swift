@@ -38,7 +38,9 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tbNotification.reloadData()
+//        DispatchQueue.main.async {
+//            self.tbNotification.reloadData()
+//        }
     }
     
     override func setUpNavigation() {
@@ -68,14 +70,21 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
         case "EXPIRED_PRODUCT":
             self.push(controller: StoreViewController())
         case "COMMENT_QUESTION":
+            let oid = noti.objectId
+            let vc = ExplainExerciseGroupRouter.createModule(id: Int(oid&) ?? 0)
+            self.push(controller: vc)
             break
         case "ASSIGNED_EXERCISE":
+            let vc = AssignExerciseRouter.createModule()
+            self.push(controller: vc)
             break
         case "NOTIF_EVENT":
             if let id = Int(noti.id&) {
                 presenter?.readNotification(id: id)
                 self.listNotification[index].isRead = true
-                self.tbNotification.reloadData()
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                    self.tbNotification.reloadData()
+                })
             }
             self.push(controller: NotificationDetailRouter.createModule(notification: noti))
         case "OTHER":
