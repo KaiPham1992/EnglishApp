@@ -12,6 +12,7 @@ import UIKit
 
 class FindViewController: BaseViewController {
 
+    @IBOutlet weak var heightViewDiamod: NSLayoutConstraint!
     @IBOutlet weak var viewDiamond: UIView!
     var presenter: FindPresenterProtocol?
     @IBOutlet weak var vAppSearch: AppSearchBar!
@@ -37,13 +38,14 @@ class FindViewController: BaseViewController {
         lbFee.text = "\(LocalizableKey.feeFind.showLanguage)"
         
         if type == .searchExercise {
-            viewDiamond.isHidden = false
+            heightViewDiamod.constant = 40
         } else {
-            viewDiamond.isHidden = true
+            heightViewDiamod.constant = 0
         }
     }
     
     func searchExercise(text: String){
+        self.dismissKeyBoard()
         if type == .searchExercise{
             self.presenter?.searchExercise(text: text)
         }
@@ -125,10 +127,8 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
                 type = TypeDoExercise.dailyMissonExercise
             case 1:
                 type = TypeDoExercise.entranceExercise
-            case 100:
-                type = TypeDoExercise.competition
             default:
-                break
+                type = TypeDoExercise.competition
             }
             let vc = ResultRouter.createModule(type: type, id: idExercise, isHistory: true)
             self.push(controller: vc)

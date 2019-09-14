@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindViewController">
             <connections>
+                <outlet property="heightViewDiamod" destination="Unm-Cb-9Um" id="RK7-au-96z"/>
                 <outlet property="lbFee" destination="ZXb-Bg-0at" id="87S-a9-f8f"/>
                 <outlet property="lbNoResult" destination="Utm-54-dXq" id="5dU-8x-TVU"/>
                 <outlet property="tbResult" destination="bOy-Gu-yGC" id="u4B-rw-1If"/>
@@ -56,7 +57,7 @@
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gn6-X1-aUT">
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gn6-X1-aUT">
                     <rect key="frame" x="0.0" y="54" width="375" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tìm kiếm mất x kim cương hoặc x hủ mật ong" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZXb-Bg-0at">
