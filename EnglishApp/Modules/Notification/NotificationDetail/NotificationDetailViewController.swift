@@ -22,6 +22,8 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        webView.navigationDelegate = self
+        ProgressView.shared.show()
         webView.load(URLRequest(url: URL(string: BASE_URL + "_api/webview/notification_detail/\(idNotification)")!))
         if !isRead {
             self.presenter?.readNotification(id: idNotification)
@@ -36,5 +38,11 @@ class NotificationDetailViewController: BaseViewController, NotificationDetailVi
     
     override func setTitleUI() {
         super.setTitleUI()
+    }
+}
+
+extension NotificationDetailViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        ProgressView.shared.hide()
     }
 }

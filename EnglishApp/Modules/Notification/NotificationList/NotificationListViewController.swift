@@ -46,32 +46,35 @@ class NotificationListViewController: ListManagerVC  {
     
     func goToScreen(noti: NotificationEntity) {
         let actionKey = noti.actionKey
+        if noti.isRead == false {
+            self.presenter?.readNotification(id: Int(noti.id ?? "0") ?? 0)
+            noti.isRead = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
+                self.tableView.reloadData()
+            })
+        }
         switch actionKey {
+        case "ANSWERED_QUESTION":
+            let oid = noti.objectId
+            let vc = QADetailRouter.createModule(id: Int(oid&) ?? 0)
+            self.push(controller: vc)
         case "EXPIRED_PRODUCT":
             self.push(controller: StoreViewController())
         case "COMMENT_QUESTION":
             let oid = noti.objectId
             let vc = ExplainExerciseGroupRouter.createModule(id: Int(oid&) ?? 0)
             self.push(controller: vc)
-            break
         case "ASSIGNED_EXERCISE":
             let vc = AssignExerciseRouter.createModule()
             self.push(controller: vc)
-            break
         case "NOTIF_EVENT":
             if let id = Int(noti.id&) {
-                if noti.isRead == false {
-                    presenter?.readNotification(id: id)
-                    noti.isRead = true
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-                    self.tableView.reloadData()
-                })
                 self.push(controller: NotificationDetailRouter.createModule(idNotification: id))
             }
-            
-        case "OTHER":
-            break
+        case "WALLET_DIAMOND":
+            self.push(controller: HistoryBeeRouter.createModule(wallet_type: 1))
+        case "WALLET_HONEY", "BUY_HONEY":
+            self.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
         default:
             break
         }
