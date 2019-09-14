@@ -480,3 +480,30 @@ extension String {
         return result
     }
 }
+
+extension String {
+    func convertFormatString() -> String {
+        let strLowerCase = self.lowercased().trimmingCharacters(in: CharacterSet.whitespaces)
+        var result = ""
+        var indexDot = 0
+        for (index,character) in strLowerCase.enumerated() {
+            if index == 0 {
+                result += String(character).uppercased()
+            } else {
+                if indexDot != 0 {
+                    result += String(character).uppercased()
+                } else {
+                    result += String(character)
+                }
+                if character == "." {
+                    indexDot = index
+                } else {
+                    if character != " " {
+                        indexDot = 0
+                    }
+                }
+            }
+        }
+        return result
+    }
+}

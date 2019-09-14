@@ -37,7 +37,10 @@ class DetailLessonViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         if let _lesson = lesson {
             idLesson = _lesson._id ?? "0"
         }

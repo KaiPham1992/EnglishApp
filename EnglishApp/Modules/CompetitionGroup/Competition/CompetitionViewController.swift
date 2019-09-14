@@ -171,20 +171,9 @@ class CompetitionViewController: ListManagerVC {
     }
     
     private func fightComplete(index: Int) {
-        DispatchQueue.global().async {
-            let data = self.listData[index] as! CompetitionEntity
-            let endTimeMi = Int(data.end_time_mi ?? "0") ?? 0
-            let currentTimeMi = Int(Date().timeIntervalSince1970)
-            if currentTimeMi < endTimeMi {
-                data.status = "DOING"
-            } else {
-                data.status = "DONE"
-            }
-            self.changeStatusShowData()
-            DispatchQueue.main.async {
-                 self.tableView.reloadData()
-            }
-        }
+        self.offset = 0
+        self.isLoadmore = true
+        self.callAPI()
     }
         
     
@@ -203,7 +192,7 @@ class CompetitionViewController: ListManagerVC {
     private func changeStatusHiddenData() {
         let data = listData as! [CompetitionEntity]
         for item in data {
-            if item.is_fight_joined == 0 && item.status == "CAN_JOIN" {
+            if item.is_fight_joined == 0 && (item.status == "CAN_JOIN" || item.status == "START") {
                 item.isHidden = true
             }
         }

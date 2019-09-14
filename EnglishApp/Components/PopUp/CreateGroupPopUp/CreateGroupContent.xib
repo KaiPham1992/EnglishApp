@@ -13,13 +13,18 @@
         <array key="Comfortaa-Bold.ttf">
             <string>Comfortaa-Bold</string>
         </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateGroupContent" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="btnNo" destination="lns-5L-RGq" id="FU7-yM-bnj"/>
                 <outlet property="btnYes" destination="slM-3O-tPM" id="93z-2t-36T"/>
+                <outlet property="heightError" destination="NLk-sk-BzF" id="wGL-As-xr0"/>
                 <outlet property="lbTitle" destination="MaW-Cb-hdM" id="crO-qm-X1E"/>
+                <outlet property="lblError" destination="jx1-l8-N7s" id="pQQ-Of-QW2"/>
                 <outlet property="tfInput" destination="62m-6d-Anr" id="Whj-LP-5nJ"/>
             </connections>
         </placeholder>
@@ -41,75 +46,77 @@
                         <constraint firstAttribute="height" constant="50" id="GTc-HY-R9R"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2oU-TR-Bsv">
-                    <rect key="frame" x="206.5" y="262" width="1" height="1"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jx1-l8-N7s">
+                    <rect key="frame" x="207" y="116.5" width="0.0" height="0.0"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="1" id="dcY-Ky-7hA"/>
-                        <constraint firstAttribute="width" constant="1" id="i9T-vI-QWi"/>
+                        <constraint firstAttribute="height" id="NLk-sk-BzF"/>
                     </constraints>
-                </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lns-5L-RGq">
-                    <rect key="frame" x="46.5" y="128.5" width="150" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="40" id="XKJ-rI-czl"/>
-                        <constraint firstAttribute="width" constant="150" id="sTK-Ss-BXq"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                    <state key="normal" title="HUỶ">
-                        <color key="titleColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slM-3O-tPM">
-                    <rect key="frame" x="217.5" y="128.5" width="150" height="40"/>
-                    <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="150" id="287-pA-1Nx"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                    <state key="normal" title="TẠO NHÓM">
-                        <color key="titleColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="2"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="kiM-pU-MgR">
+                    <rect key="frame" x="49" y="124.5" width="316" height="40"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lns-5L-RGq">
+                            <rect key="frame" x="0.0" y="0.0" width="150" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="XKJ-rI-czl"/>
+                                <constraint firstAttribute="width" constant="150" id="sTK-Ss-BXq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                            <state key="normal" title="HUỶ">
+                                <color key="titleColor" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="calibratedRGB"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slM-3O-tPM">
+                            <rect key="frame" x="166" y="0.0" width="150" height="40"/>
+                            <color key="backgroundColor" red="1" green="0.82745098039999998" blue="0.066666666669999999" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="150" id="287-pA-1Nx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                            <state key="normal" title="TẠO NHÓM">
+                                <color key="titleColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="2oU-TR-Bsv" firstAttribute="leading" secondItem="lns-5L-RGq" secondAttribute="trailing" constant="10" id="2vf-6p-fTh"/>
+                <constraint firstItem="jx1-l8-N7s" firstAttribute="top" secondItem="62m-6d-Anr" secondAttribute="bottom" constant="8" id="53C-FB-LAh"/>
+                <constraint firstItem="kiM-pU-MgR" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="6GI-Oi-3EI"/>
                 <constraint firstItem="62m-6d-Anr" firstAttribute="leading" secondItem="MaW-Cb-hdM" secondAttribute="leading" id="7I3-cr-bKk"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="MaW-Cb-hdM" secondAttribute="trailing" constant="16" id="97l-iB-f0D"/>
+                <constraint firstItem="jx1-l8-N7s" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="FpM-fd-RjU"/>
                 <constraint firstItem="62m-6d-Anr" firstAttribute="trailing" secondItem="MaW-Cb-hdM" secondAttribute="trailing" id="Our-Mi-i2z"/>
                 <constraint firstItem="62m-6d-Anr" firstAttribute="top" secondItem="MaW-Cb-hdM" secondAttribute="bottom" constant="16" id="SG6-MB-AUi"/>
-                <constraint firstItem="slM-3O-tPM" firstAttribute="top" secondItem="lns-5L-RGq" secondAttribute="top" id="WLj-Er-D77"/>
                 <constraint firstItem="MaW-Cb-hdM" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Xxe-IG-JCP"/>
-                <constraint firstItem="slM-3O-tPM" firstAttribute="bottom" secondItem="lns-5L-RGq" secondAttribute="bottom" id="YLE-OF-gaW"/>
-                <constraint firstAttribute="bottom" secondItem="2oU-TR-Bsv" secondAttribute="bottom" constant="5" id="ZOF-54-qO8"/>
                 <constraint firstItem="MaW-Cb-hdM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="geD-qf-Aoi"/>
-                <constraint firstItem="slM-3O-tPM" firstAttribute="width" secondItem="lns-5L-RGq" secondAttribute="width" id="qGT-Ez-bqB"/>
-                <constraint firstItem="slM-3O-tPM" firstAttribute="leading" secondItem="2oU-TR-Bsv" secondAttribute="trailing" constant="10" id="uHR-hN-hJ1"/>
-                <constraint firstItem="lns-5L-RGq" firstAttribute="top" secondItem="62m-6d-Anr" secondAttribute="bottom" constant="20" id="yKy-TA-YUg"/>
-                <constraint firstItem="2oU-TR-Bsv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="znW-9D-N2a"/>
+                <constraint firstItem="kiM-pU-MgR" firstAttribute="top" secondItem="jx1-l8-N7s" secondAttribute="bottom" constant="8" id="kDN-Tb-Qwq"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>

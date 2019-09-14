@@ -169,6 +169,7 @@ extension FightViewController :FightViewProtocol{
     
     func submitFailed() {
         if isEnd {
+            self.fightFinished?()
             self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
         }
     }
@@ -217,7 +218,6 @@ extension FightViewController :FightViewProtocol{
                     self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
                     self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
                     self.vCountTime.setupTimeStartNow(min: self.currentTime)
-//                    self.vCountTime.setupTimeStartNow(min: 70)
                     self.clvQuestion.reloadData()
                     ProgressView.shared.hideLoadingCompetition()
                 }
@@ -226,12 +226,14 @@ extension FightViewController :FightViewProtocol{
     }
     
     func getExerciseFailed(error: APIError) {
-        if error.message == "THIS EXERCISE IS DOING. PLEASE COMPLETE AND SUBMIT IT." {
+        let message = error.message ?? ""
+        switch message {
+        case LocalizableKey.exercise_is_doing.showLanguage.uppercased():
             PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_doing.showLanguage) {
-                self.pop(animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
-        } else {
-            PopUpHelper.shared.showErrorDidNotRemoveView(message: error.message&) {
+        default:
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: message.convertFormatString()) {
                 self.pop(animated: true)
             }
         }

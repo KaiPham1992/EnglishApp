@@ -14,6 +14,7 @@ class DetailTeamViewController: BaseTableViewController {
 
     @IBOutlet weak var lblTitleButtonStart: UILabel!
     @IBOutlet weak var viewButtonStart: UIView!
+    @IBOutlet weak var stackView: UIStackView!
     
     @IBAction func start(_ sender: Any) {
         if timer == nil {
@@ -46,6 +47,7 @@ class DetailTeamViewController: BaseTableViewController {
         self.isAddPullToFresh = false
         super.viewDidLoad()
         initTableView(tableView: tbTeam)
+        stackView.isHidden = true
     }
     
     override func callAPI() {
@@ -148,6 +150,7 @@ extension DetailTeamViewController : DetailTeamViewProtocol {
             let currentTimeMi = Date().timeIntervalSince1970
             self.distanceTimeMi = Int(startMi - currentTimeMi)
             DispatchQueue.main.async {
+                self.stackView.isHidden = false
                 self.setTitleNavigation(title: teamInfor.name&)
                 self.lblMember.text = teamInfor.toPercentMember()
                 if self.distanceTimeMi > 0 {

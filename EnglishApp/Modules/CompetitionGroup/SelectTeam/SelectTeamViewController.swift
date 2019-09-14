@@ -70,14 +70,7 @@ class SelectTeamViewController: BaseTableViewController {
         } else {
             PopUpHelper.shared.showCreateGroup(completionNo: {
             }) { [unowned self] (message) in
-                let name = message?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines) ?? ""
-                if name.isEmpty {
-                    PopUpHelper.shared.showError(message: " Vui lòng nhập tên nhóm", completionYes: {
-                        
-                    })
-                } else {
-                    self.presenter?.createTeam(id: self.competitionId ?? 0, name: message!)
-                }
+                self.presenter?.createTeam(id: self.competitionId ?? 0, name: message!)
             }
         }
     }
@@ -137,8 +130,14 @@ class SelectTeamViewController: BaseTableViewController {
 extension SelectTeamViewController: SelectTeamViewProtocol{
     
     func joinTeamFailed(error: APIError) {
-        if error.message == "THIS USER JOINED TEAM" {
-            PopUpHelper.shared.showError(message: "Bạn đã có nhóm không thể tạo và tham gia nhóm khác.", completionYes: nil)
+        let message = error.message ?? ""
+        switch message {
+        case LocalizableKey.user_joined_team.showLanguage, LocalizableKey.user_joined_team.showLanguage.uppercased() :
+            PopUpHelper.shared.showError(message: LocalizableKey.cannot_join_group.showLanguage, completionYes: nil)
+        case LocalizableKey.competition_doing.showLanguage.uppercased(), LocalizableKey.competition_doing.showLanguage:
+            PopUpHelper.shared.showError(message: LocalizableKey.competition_doing.showLanguage, completionYes: nil)
+        default:
+            PopUpHelper.shared.showError(message: message.convertFormatString(), completionYes: nil)
         }
     }
     
@@ -161,8 +160,14 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     }
     
     func didGetListFightTestTeam(error: APIError) {
-        if error.message == "THIS USER CREATED AND JOINED TEAM" {
-            PopUpHelper.shared.showError(message: "Bạn đã có nhóm không thể tạo và tham gia nhóm khác.", completionYes: nil)
+        let message = error.message ?? ""
+        switch message {
+        case LocalizableKey.error_create_group.showLanguage:
+            PopUpHelper.shared.showError(message: LocalizableKey.cannot_join_group.showLanguage, completionYes: nil)
+        case LocalizableKey.competition_doing.showLanguage.uppercased():
+            PopUpHelper.shared.showError(message: LocalizableKey.competition_doing.showLanguage, completionYes: nil)
+        default:
+            PopUpHelper.shared.showError(message: message.convertFormatString(), completionYes: nil)
         }
     }
     

@@ -12,7 +12,6 @@ class CreateGroupPopUp: BasePopUpView {
     
     let vYesNoContentView: CreateGroupContent = {
         let view = CreateGroupContent()
-        
         return view
     }()
     
@@ -32,7 +31,7 @@ class CreateGroupPopUp: BasePopUpView {
         
         vYesNoContentView.lbTitle.text = titlePopUp
         vYesNoContentView.tfInput.setTitleAndPlaceHolder(title: titleInput, placeHolder: placeHolderInput)
-        
+        vYesNoContentView.lblError.text = LocalizableKey.enter_name_group.showLanguage
         vYesNoContentView.btnNo.setTitle(titleNo, for: .normal)
         vYesNoContentView.btnYes.setTitle(titleYes, for: .normal)
         
@@ -49,7 +48,14 @@ class CreateGroupPopUp: BasePopUpView {
     }
     
     @objc func btnYesTapped() {
-        hidePopUp()
-        completionMessage?(vYesNoContentView.tfInput.tfInput.text)
+        let message = (vYesNoContentView.tfInput.tfInput.text ?? "").trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        if message != "" {
+            hidePopUp()
+            completionMessage?(message)
+        } else {
+            vYesNoContentView.heightError.constant = 21
+            vYesNoContentView.layoutIfNeeded()
+            updateNewHeight(height: 210)
+        }
     }
 }
