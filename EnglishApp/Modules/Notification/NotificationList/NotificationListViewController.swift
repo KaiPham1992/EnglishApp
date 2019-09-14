@@ -80,8 +80,10 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
             break
         case "NOTIF_EVENT":
             if let id = Int(noti.id&) {
-                presenter?.readNotification(id: id)
-                self.listNotification[index].isRead = true
+                if self.listNotification[index].isRead == false {
+                    presenter?.readNotification(id: id)
+                    self.listNotification[index].isRead = true
+                }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                     self.tbNotification.reloadData()
                 })

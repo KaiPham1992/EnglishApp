@@ -216,8 +216,8 @@ extension FightViewController :FightViewProtocol{
                 DispatchQueue.main.async {
                     self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
                     self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
-//                    self.vCountTime.setupTimeStartNow(min: self.currentTime)
-                    self.vCountTime.setupTimeStartNow(min: 70)
+                    self.vCountTime.setupTimeStartNow(min: self.currentTime)
+//                    self.vCountTime.setupTimeStartNow(min: 70)
                     self.clvQuestion.reloadData()
                     ProgressView.shared.hideLoadingCompetition()
                 }
