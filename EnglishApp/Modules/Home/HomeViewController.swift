@@ -36,13 +36,17 @@ class HomeViewController: BaseViewController {
     
     var listActivities = [Acitvity]() {
         didSet {
-            self.tbHome.reloadSections(IndexSet(integer: 2), with: UITableView.RowAnimation.automatic)
+            DispatchQueue.main.async {
+                self.tbHome.reloadSections(IndexSet(integer: 2), with: UITableView.RowAnimation.automatic)
+            }
         }
     }
     
     var listTopThree = [UserEntity](){
         didSet {
-            self.tbHome.reloadRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.none)
+            DispatchQueue.main.async {
+                self.tbHome.reloadRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.none)
+            }
         }
     }
     
