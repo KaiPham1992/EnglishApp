@@ -94,4 +94,9 @@ class FightPresenter: FightPresenterProtocol, FightInteractorOutputProtocol {
     func fightDone() {
         self.view?.fightDone()
     }
+    
+    func submitFailed(error: APIError) {
+        self.error = error
+        self.view?.submitFailed()
+    }
 }

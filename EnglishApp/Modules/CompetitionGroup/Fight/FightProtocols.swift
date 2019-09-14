@@ -46,6 +46,7 @@ protocol FightInteractorOutputProtocol: class {
     func submitCompetitionSuccessed(listRank: [RankTeamEntity])
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
     func fightDone()
+    func submitFailed(error: APIError)
 }
 
 protocol FightInteractorInputProtocol: class {
@@ -75,5 +76,6 @@ protocol FightViewProtocol: class {
     func submitCompetitionSuccessed()
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
     func fightDone()
+    func submitFailed()
     /* Presenter -> ViewController */
 }
