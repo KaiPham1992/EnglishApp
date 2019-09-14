@@ -10,62 +10,42 @@
 
 import UIKit
 
-class NotificationListViewController: BaseViewController, NotificationListViewProtocol {
-
-    @IBOutlet weak var tbNotification: UITableView!
+class NotificationListViewController: ListManagerVC  {
+   
 	var presenter: NotificationListPresenterProtocol?
-    
-    let refreshControl = UIRefreshControl()
-    
-    var listNotification = [NotificationEntity]() {
-        didSet {
-            tbNotification.reloadData()
-        }
-    }
 
 	override func viewDidLoad() {
+        customTitle = LocalizableKey.titleNotification.showLanguage
+        showButtonBack = true
         super.viewDidLoad()
-        configureTable()
-        presenter?.getNotification()
-        
-        refreshControl.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
-    }
-    
-    @objc func pullToRefresh() {
-        refreshControl.endRefreshing()
-        presenter?.getNotification()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-//        DispatchQueue.main.async {
-//            self.tbNotification.reloadData()
-//        }
-    }
-    
-    override func setUpNavigation() {
-        super.setUpNavigation()
-         addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.titleNotification.showLanguage)
-        
         hideTabbar()
+        
     }
     
-    override func setTitleUI() {
-        super.setTitleUI()
+    override func callAPI() {
+        super.callAPI()
+        self.presenter?.getNotification(offset: self.offset)
     }
     
-    func didLoadNotification(listNotification: [NotificationEntity]) {
-        if listNotification.count == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
-        self.listNotification = listNotification
+    override func registerTableView() {
+        super.registerTableView()
+        tableView.registerXibFile(NotificationCell.self)
     }
     
-    func goToScreen(actionKey: String, index: Int) {
-        let noti = self.listNotification[index]
+    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = item as! NotificationEntity
+        let cell = tableView.dequeue(NotificationCell.self, for: indexPath)
+        cell.notification = data
+        return cell
+    }
+   
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        let data = item as! NotificationEntity
+        goToScreen(noti: data)
+    }
+    
+    func goToScreen(noti: NotificationEntity) {
+        let actionKey = noti.actionKey
         switch actionKey {
         case "EXPIRED_PRODUCT":
             self.push(controller: StoreViewController())
@@ -80,12 +60,12 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
             break
         case "NOTIF_EVENT":
             if let id = Int(noti.id&) {
-                if self.listNotification[index].isRead == false {
+                if noti.isRead == false {
                     presenter?.readNotification(id: id)
-                    self.listNotification[index].isRead = true
+                    noti.isRead = true
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
-                    self.tbNotification.reloadData()
+                    self.tableView.reloadData()
                 })
                 self.push(controller: NotificationDetailRouter.createModule(idNotification: id))
             }
@@ -98,48 +78,8 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
     }
 }
 
-
-extension NotificationListViewController: UITableViewDelegate, UITableViewDataSource {
-    func configureTable() {
-        tbNotification.delegate = self
-        tbNotification.dataSource = self
-        tbNotification.registerXibFile(NotificationCell.self)
-        tbNotification.separatorStyle = .none
-        tbNotification.clipsToBounds = true
-        
-        tbNotification.estimatedRowHeight = 55
-        tbNotification.rowHeight = UITableView.automaticDimension
-        
-        tbNotification.refreshControl = self.refreshControl
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(NotificationCell.self, for: indexPath)
-        cell.notification = self.listNotification[indexPath.item]
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listNotification.count
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let actionKey = self.listNotification[indexPath.item].actionKey else { return  }
-        goToScreen(actionKey: actionKey, index: indexPath.item)
-//        let noti = self.listNotification[indexPath.item]
-//        if let id = Int(noti.id&) {
-//            presenter?.readNotification(id: id)
-//            self.listNotification[indexPath.item].isRead = true
-//            self.tbNotification.reloadData()
-//            self.push(controller: NotificationDetailRouter.createModule(idNotification: id))
-//        }
-//        self.push(controller: NotificationDetailRouter.createModule(notification: noti))
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if self.listNotification.count > 5 && indexPath.item >= self.listNotification.count - 5 {
-            presenter?.loadMoreNotification()
-        }
+extension NotificationListViewController: NotificationListViewProtocol {
+    func didLoadNotification(listNotification: [NotificationEntity]) {
+        initLoadData(data: listNotification)
     }
 }
