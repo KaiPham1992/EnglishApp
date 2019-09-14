@@ -18,7 +18,6 @@ protocol NotificationDetailWireframeProtocol: class {
 protocol NotificationDetailPresenterProtocol: class {
 
     var interactor: NotificationDetailInteractorInputProtocol? { get set }
-    func getNotiDetail(id: Int)
     func readNotification(id: Int)
 }
 
@@ -41,6 +40,6 @@ protocol NotificationDetailViewProtocol: class {
     var presenter: NotificationDetailPresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    func didSucccess(noti: NotificationEntity)
+    
     
 }

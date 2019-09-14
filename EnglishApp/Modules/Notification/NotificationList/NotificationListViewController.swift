@@ -85,8 +85,9 @@ class NotificationListViewController: BaseViewController, NotificationListViewPr
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                     self.tbNotification.reloadData()
                 })
+                self.push(controller: NotificationDetailRouter.createModule(idNotification: id))
             }
-            self.push(controller: NotificationDetailRouter.createModule(notification: noti))
+            
         case "OTHER":
             break
         default:

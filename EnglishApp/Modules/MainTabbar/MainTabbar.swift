@@ -59,6 +59,7 @@ class MainTabbar: UITabBarController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                             let vc = NotificationDetailRouter.createModule(idNotification: id)
+                            vc.isRead = false
                             viewController.push(controller: vc)
                         }
                     }
