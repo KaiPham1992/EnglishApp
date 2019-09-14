@@ -18,7 +18,7 @@ class NotificationCell: BaseTableCell {
         didSet {
             guard let notification = notification else { return }
             lbTitle.text = notification.title
-            lbContent.text = notification.content
+            lbContent.text = notification.content?.htmlToString
             lbDate.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
             
             self.backgroundColor = notification.isRead == true ? .white: AppColor.notificationNotRead
