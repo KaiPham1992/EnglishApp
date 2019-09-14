@@ -83,6 +83,28 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateAvatar), name: NSNotification.Name.init("UpdateAvatar"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
+    }
+    
+    @objc func changeLanguage() {
+        //-- action cell
+        if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
+            actionCell.awakeFromNib()
+        }
+        //-- title recently cell
+        if let titleCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 1)) as? HomeTitleCell {
+            titleCell.awakeFromNib()
+        }
+        resetData()
+    }
+    
+    func resetData() {
+        self.offset = 0
+        self.isLoadmore = true
+        self.showProgressView = false
+        self.listActivities.removeAll()
+        callAPIRecent()
+        presenter?.getTopThree()
     }
     
     @objc func suggestionQuestion(notification: Notification) {
@@ -133,18 +155,6 @@ class HomeViewController: BaseViewController {
         countNotification()
         presenter?.getProfile()
         presenter?.getTopThree()
-        reInitCell()
-    }
-    
-    func reInitCell() {
-        //-- action cell
-        if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
-            actionCell.awakeFromNib()
-        }
-        //-- title recently cell
-        if let titleCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 1)) as? HomeTitleCell {
-            titleCell.awakeFromNib()
-        }
     }
     
     func countNotification() {
@@ -214,12 +224,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func refreshData() {
-        self.isLoadmore = true
-        self.offset = 0
-        self.showProgressView = false
-        self.listActivities.removeAll()
-        callAPIRecent()
-        presenter?.getTopThree()
+        resetData()
         frefresh.endRefreshing()
     }
     

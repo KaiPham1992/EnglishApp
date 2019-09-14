@@ -109,9 +109,12 @@ class MainTabbar: UITabBarController {
                 break
             }
         }
-
     }
     
+    func resetHome(){
+        let home = HomeRouter.createModule()
+        self.viewControllers![0] = home
+    }
     
     func gotoHome() {
         self.selectedIndex = 0
@@ -228,31 +231,3 @@ extension MainTabbar: UITabBarControllerDelegate {
         return !UIDevice.current.isIphone5_8Inch()
     }
 }
-//
-//extension UINavigationController {
-//    override open var childForStatusBarStyle: UIViewController? {
-//        return self.topViewController
-//    }
-//}
-
-//extension TabbarViewController: CreatePostItineraryProtocol {
-//    func addPhoto() {
-//        vCreatePopup?.hide()
-//
-//        let vc = ContainerLibraryViewController.configureWith(mode: .multipleImage)
-//
-//        UIApplication.topViewController()?.present(controller: vc, animated: true)
-//    }
-//
-//    func addIniterary() {
-//        vCreatePopup?.hide()
-//
-//        let vc = CreateItineraryRouter.createModule() as! CreateItineraryViewController
-//        UIApplication.topViewController()?.present(controller: vc, animated: true)
-//    }
-//
-//    func dismissView() {
-//        vCreatePopup?.hide()
-//    }
-//}
-
