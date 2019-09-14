@@ -41,19 +41,11 @@ class MainTabbar: UITabBarController {
     }
     
     @objc func didReciveNotification(notification: Notification){
-        if let aps = notification.userInfo?["aps"] as? [String : Any], let category = aps["category"] as? String {
-            if category == "ASSIGNED_EXERCISE" {
-                self.selectedIndex = 2
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
-                        let vc = AssignExerciseRouter.createModule()
-                        viewController.push(controller: vc)
-                    }
-                }
-            }
-            if category == "NOTIF_EVENT" {
-                if let oid = notification.userInfo?["gcm.notification.oid"] as? String, let id = Int(oid){
-                    self.selectedIndex = 0
+        if let action_key = notification.userInfo?["click_action"] as? String {
+            switch action_key {
+            case "ANSWERED_QUESTION":
+                self.selectedIndex = 0
+                if let oid = notification.userInfo?["gcm.notification.oid"] as? String, let id = Int(oid) {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                             let vc = QADetailRouter.createModule(id: id)
@@ -61,53 +53,62 @@ class MainTabbar: UITabBarController {
                         }
                     }
                 }
-            }
-            if category == "EXPIRED_PRODUCT" {
-                if let oid = notification.userInfo?["gcm.notification.oid"] as? String, let id = Int(oid) {
+            case "NOTIF_EVENT":
+                self.selectedIndex = 0
+                if let nid = notification.userInfo?["gcm.notification.nid"] as? String, let id = Int(nid){
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                        self.selectedIndex = 0
-                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
-                            let vc = StoreViewController()
+                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                            let vc = NotificationDetailRouter.createModule(idNotification: id)
                             viewController.push(controller: vc)
                         }
                     }
                 }
-            }
-        }
-        
-        if let screen = notification.userInfo?["screen"] as? String {
-            if screen == "OTHER" {
-                if let oid = notification.userInfo?["oid"] as? String {
-                    if let clickAction = notification.userInfo?["click_action"] as? String , clickAction == "COMMENT_QUESTION" {
-                        self.selectedIndex = 0
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
-                                let vc = ExplainExerciseGroupRouter.createModule(id: Int(oid) ?? 0)
-                                viewController.push(controller: vc)
-                            }
-                        }
-                    } else {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
-                                let vc = NotificationDetailRouter.createModule(idNotification: Int(oid) ?? 0)
-                                viewController.push(controller: vc)
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        
-        if let screen = notification.userInfo?["screen"] as? String, let nid = notification.userInfo?["nid"] as? String {
-            if screen == "EVENT" {
+            case "ASSIGNED_EXERCISE":
+                self.selectedIndex = 2
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
-                        let vc = NotificationDetailRouter.createModule(idNotification: Int(nid) ?? 0)
+                        let vc = AssignExerciseRouter.createModule()
                         viewController.push(controller: vc)
                     }
                 }
+            case "EXPIRED_PRODUCT":
+                self.selectedIndex = 0
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
+                        let vc = StoreViewController()
+                        viewController.push(controller: vc)
+                    }
+                }
+            case "COMMENT_QUESTION":
+                self.selectedIndex = 0
+                if let oid = notification.userInfo?["oid"] as? String, let id = Int(oid) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                            let vc = ExplainExerciseGroupRouter.createModule(id: id)
+                            vc.selectedIndex = 1
+                            viewController.push(controller: vc)
+                        }
+                    }
+                }
+            case "WALLET_DIAMOND":
+                self.selectedIndex = 0
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                        viewController.push(controller: HistoryBeeRouter.createModule(wallet_type: 1))
+                    }
+                }
+            case "WALLET_HONEY", "BUY_HONEY":
+                self.selectedIndex = 0
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                        viewController.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
+                    }
+                }
+            default:
+                break
             }
         }
+
     }
     
     

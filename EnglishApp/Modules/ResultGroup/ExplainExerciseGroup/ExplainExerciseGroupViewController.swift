@@ -15,6 +15,7 @@ class ExplainExerciseGroupViewController: PageViewController, ExplainExerciseGro
 
 	var presenter: ExplainExerciseGroupPresenterProtocol?
     var id: Int = 0
+    var selectedIndex : Int = 2
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ class ExplainExerciseGroupViewController: PageViewController, ExplainExerciseGro
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.see_explain.showLanguage)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            self.moveToViewController(at: 1)
+            self.moveToViewController(at: self.selectedIndex - 1)
         }
     }
     

@@ -14,7 +14,7 @@ class ExplainExerciseGroupRouter: ExplainExerciseGroupWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule(id: Int) -> UIViewController {
+    static func createModule(id: Int) -> ExplainExerciseGroupViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ExplainExerciseGroupViewController(nibName: nil, bundle: nil)
         view.id = id
