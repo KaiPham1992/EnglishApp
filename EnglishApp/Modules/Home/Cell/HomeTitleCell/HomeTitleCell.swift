@@ -13,7 +13,6 @@ class HomeTitleCell: BaseTableCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         lbTitle.text = LocalizableKey.actionRecently.showLanguage
     }
 }
