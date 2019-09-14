@@ -360,7 +360,7 @@
 // Pop up
 "getError" = "An error occurred. Please try again later.";
 "noResultFound" = "No results found.";
-"feeFind" = "Lost x honey or x diamond for a search.";
+"feeFind" = "Lost 5 honey or 50 diamond for a search.";
 "done" = "Done";
 
 // add after

@@ -360,7 +360,7 @@
 // Pop up
 "getError" = "Đã xảy ra lỗi.";
 "noResultFound" = "Không có kết quả tìm kiếm.";
-"feeFind" = "Tìm kiếm mất x hũ mật ong hoặc x kim cương.";
+"feeFind" = "Tìm kiếm mất 5 hũ mật ong hoặc 50 kim cương.";
 "done" = "Xong";
 
 //add after
