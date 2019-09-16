@@ -313,11 +313,14 @@ extension NameExerciseViewController : CellExerciseDelegate{
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.row].isShowSuggestQuestion ?? false
         if !isShowSuggestion {
-            PopUpHelper.shared.showSuggesstionResult(diamond: {
+            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.minus_dianmod.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), height: 150, complete: {
                 self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-            }) {
-                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
-            }
+            }, cancel: nil)
+//            PopUpHelper.shared.showSuggesstionResult(diamond: {
+//                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
+//            }) {
+//                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
+//            }
         } else {
             PopUpHelper.shared.showError(message: LocalizableKey.suggestion_one_choice.showLanguage) {
                 
