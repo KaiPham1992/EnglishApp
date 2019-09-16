@@ -396,3 +396,4 @@
 "user_joined_team" = "THIS USER JOINED TEAM";
 "competition_doing" = "Competition is doing";
 "enter_name_group" = "Please enter the group name.";
+"minus_dianmod" = "You deducted 1 diamond if you use answer hint.";

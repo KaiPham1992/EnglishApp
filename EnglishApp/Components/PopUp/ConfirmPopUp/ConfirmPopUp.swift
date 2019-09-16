@@ -37,10 +37,10 @@ class ConfirmPopUp: BasePopUpView{
         self.showPopUp(height: 140)
     }
     
-    func showPopUp(message: String,titleYes: String,titleNo: String,complete: CompletionClosure?, cancel: CompletionClosure?){
+    func showPopUp(message: String, titleYes: String, titleNo: String, height: Int = 180, complete: CompletionClosure?, cancel: CompletionClosure?){
         self.completionYes = complete
         self.completionNo = cancel
         view.setupPopUp(message: message, titleYes: titleYes, titleNo: titleNo)
-        self.showPopUp(height: 180)
+        self.showPopUp(height: CGFloat(height))
     }
 }

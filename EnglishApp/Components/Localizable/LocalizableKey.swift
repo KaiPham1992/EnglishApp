@@ -393,4 +393,5 @@ struct LocalizableKey {
     static let user_joined_team = "user_joined_team"
     static let competition_doing = "competition_doing"
     static let enter_name_group = "enter_name_group"
+    static let minus_dianmod = "minus_dianmod"
 }
