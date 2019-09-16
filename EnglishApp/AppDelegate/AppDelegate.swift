@@ -12,8 +12,8 @@ import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
-import Fabric
-import Crashlytics
+//import Fabric
+//import Crashlytics
 import netfox
 import UserNotifications
 import RealmSwift
@@ -29,8 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NFX.sharedInstance().start()
         #endif
 //        Fabric.with([Crashlytics.self])
-        Crashlytics.sharedInstance().debugMode = true
-        Fabric.sharedSDK().debug = true
+//        Crashlytics.sharedInstance().debugMode = true
+//        Fabric.sharedSDK().debug = true
         if UserDefaultHelper.shared.appLanguage == nil {
             LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
         }
