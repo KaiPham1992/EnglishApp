@@ -396,4 +396,5 @@ struct LocalizableKey {
     static let minus_dianmod = "minus_dianmod"
     static let less_than_100 = "less_than_100"
     static let equal_100 = "equal_100"
+    static let no_find_result = "no_find_result"
 }
