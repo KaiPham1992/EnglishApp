@@ -25,7 +25,11 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOẠT ĐỘNG GẦN ĐÂY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jzc-kJ-nBh">
+<<<<<<< HEAD
                         <rect key="frame" x="16" y="21.5" width="288" height="30"/>
+=======
+                        <rect key="frame" x="20" y="8" width="284" height="30"/>
+>>>>>>> 906c0be... Add user inventory
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="Ly1-NH-byq"/>
                         </constraints>
@@ -37,15 +41,25 @@
                 <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="jzc-kJ-nBh" secondAttribute="trailing" constant="16" id="Dul-JH-hc4"/>
+<<<<<<< HEAD
                     <constraint firstItem="jzc-kJ-nBh" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Jn8-Y6-aSD"/>
                     <constraint firstItem="jzc-kJ-nBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="UMo-o9-Fy3"/>
+=======
+                    <constraint firstItem="jzc-kJ-nBh" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="UMo-o9-Fy3"/>
+                    <constraint firstItem="jzc-kJ-nBh" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="YI4-Je-YU1"/>
+                    <constraint firstAttribute="bottom" secondItem="jzc-kJ-nBh" secondAttribute="bottom" constant="8" id="qTS-GC-joh"/>
+>>>>>>> 906c0be... Add user inventory
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="lbTitle" destination="jzc-kJ-nBh" id="Dsb-iH-BWT"/>
             </connections>
+<<<<<<< HEAD
             <point key="canvasLocation" x="47.826086956521742" y="29.799107142857142"/>
+=======
+            <point key="canvasLocation" x="164" y="39"/>
+>>>>>>> 906c0be... Add user inventory
         </tableViewCell>
     </objects>
 </document>

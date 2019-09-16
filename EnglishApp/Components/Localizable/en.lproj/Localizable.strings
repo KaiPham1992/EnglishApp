@@ -391,3 +391,17 @@
 "competition_end" = "The competition has ended.";
 "no_team_joined" = "No team joined";
 "run_background" = "The process may take a long time do you want the job to run in the background?";
+<<<<<<< HEAD
+=======
+"error_create_group" = "THIS USER CREATED AND JOINED TEAM";
+"cannot_join_group" = "You already have a group that cannot create and join another group.";
+"user_joined_team" = "THIS USER JOINED TEAM";
+"competition_doing" = "Competition is doing";
+"enter_name_group" = "Please enter the group name.";
+"minus_dianmod" = "You deducted 1 diamond if you use answer hint.";
+
+"less_than_100" = "Please enter a total number of questions that do not exceed 100.";
+"equal_100" = "Please enter the 100 sentences.";
+"userPackage" = "Upgrade package purchased";
+"dateExpire" = "Date expired: ";
+>>>>>>> 906c0be... Add user inventory

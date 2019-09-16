@@ -13,31 +13,41 @@ import UIKit
 class ProfileViewController: BaseViewController {
 
 	var presenter: ProfilePresenterProtocol?
-    @IBOutlet weak var lbBee: UILabel!
-    @IBOutlet weak var lbDiamon: UILabel!
-    
-    @IBOutlet weak var lbTitleBee: UILabel!
-    @IBOutlet weak var lbTitleDiamon: UILabel!
-    
-    @IBOutlet weak var vDisplayName: AppTextField!
-    @IBOutlet weak var vEmail: AppTextField!
-    @IBOutlet weak var vLocation: AppTextField!
-    @IBOutlet weak var imgAvatar: UIImageView!
-    @IBOutlet weak var imgBorder: UIView!
-//    @IBOutlet weak var imgRank: UIImageView!
-    
-    @IBOutlet weak var lbFullName: UILabel!
-    @IBOutlet weak var lbLevel: UILabel!
-    @IBOutlet weak var lbPoint: UILabel!
+    @IBOutlet weak var tableView: UITableView!
 
+    var user = UserEntity() {
+        didSet {
+            tableView.reloadData()
+            tableView.isHidden = false
+        }
+    }
+    
+    var package = [Inventories]() {
+        didSet {
+            tableView.reloadData()
+            tableView.isHidden = false
+        }
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
-        imgBorder.setBorder(borderWidth: 4, borderColor: AppColor.yellow, cornerRadius: 35)
-        
+        setTitleNavigation(title: LocalizableKey.TitleProfile.showLanguage)
+        setUpTableView()
+        tableView.isHidden = true
+    }
+    
+    func setUpTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.registerXibFile(PackageCell.self)
+        tableView.registerXibFile(ProfileHeader.self)
+        tableView.registerXibFile(HomeTitleCell.self)
+        tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        presenter?.getPackage()
         presenter?.getProfile()
     }
     
@@ -60,24 +70,6 @@ class ProfileViewController: BaseViewController {
         self.push(controller: EditProfileRouter.createModule())
     }
     
-    override func setTitleUI() {
-        super.setTitleUI()
-        setTitleNavigation(title: LocalizableKey.TitleProfile.showLanguage)
-        vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage)
-        vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage)
-        vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
-        
-//        imgAvatar.setBorder(borderWidth: 2, borderColor: AppColor.yellow, cornerRadius: 30)
-//        imgRank.setBorder(borderWidth: 2, borderColor: .white, cornerRadius: 11)
-        
-        lbTitleBee.text = LocalizableKey.titleBee.showLanguage
-        lbTitleDiamon.text = LocalizableKey.titleDiamon.showLanguage
-        
-        vDisplayName.tfInput.isEnabled = false
-        vEmail.tfInput.isEnabled = false
-        vLocation.tfInput.isEnabled = false
-    }
-    
     @IBAction func btnBeeTapped() {
         self.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
     }
@@ -89,16 +81,47 @@ class ProfileViewController: BaseViewController {
 
 extension ProfileViewController: ProfileViewProtocol {
     func didGetProfile(user: UserEntity) {
-        vDisplayName.lbPlaceHolder.text = user.nameShowUI
-        vEmail.lbPlaceHolder.text = user.email
-        vLocation.lbPlaceHolder.text = user.national
-        lbFullName.text = user.fullName
-        lbLevel.text = user.rankName
-        lbBee.text = user.amountHoney*.description + " \(LocalizableKey.boxHoney.showLanguage)"
-        lbDiamon.text = user.amountDiamond*.description + " \(LocalizableKey.point.showLanguage)"
-        lbPoint.text = "\(user.rankPoint*.description) \(LocalizableKey.point.showLanguage)"
-        imgAvatar.sd_setImage(with: user.urlRank, placeholderImage: AppImage.avatarDefault)
-        
+        self.user = user
         UserDefaultHelper.shared.saveUser(user: user)
     }
+    
+    func didGetPackage(package: [Inventories]) {
+        self.package = package
+    }
+}
+
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 1
+        } else {
+            return (presenter?.lisPackage.count ?? 0) + 1
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if indexPath.section == 0 {
+            let cell = tableView.dequeue(ProfileHeader.self, for: indexPath)
+            cell.user = self.user
+            return cell
+        } else {
+            if indexPath.row == 0 {
+                let cell = tableView.dequeue(HomeTitleCell.self, for: indexPath)
+                cell.contentView.backgroundColor = .white
+                cell.lbTitle.text = LocalizableKey.userPackage.showLanguage
+                return cell
+            } else {
+                let cell = tableView.dequeue(PackageCell.self, for: indexPath)
+                cell.lbTitle.text = self.package[indexPath.row - 1].name
+                let date = self.package[indexPath.row - 1].expiredTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy).replacingOccurrences(of: "-", with: "/")
+                cell.lbTime.text = "\(LocalizableKey.dateExpire.showLanguage)" +  date&
+                return cell
+            }
+        }
+    }
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+
 }

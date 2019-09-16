@@ -16,6 +16,9 @@ class ProfilePresenter: ProfilePresenterProtocol, ProfileInteractorOutputProtoco
     var interactor: ProfileInteractorInputProtocol?
     private let router: ProfileWireframeProtocol
 
+    var canLoadMore: Bool = false
+    var lisPackage: [Inventories] = []
+    
     init(interface: ProfileViewProtocol, interactor: ProfileInteractorInputProtocol?, router: ProfileWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -28,6 +31,21 @@ class ProfilePresenter: ProfilePresenterProtocol, ProfileInteractorOutputProtoco
     
     func didGetProfile(user: UserEntity) {
         view?.didGetProfile(user: user)
+    }
+    
+    func getPackage() {
+        canLoadMore = false
+        Provider.shared.userAPIService.getPackage(offset: lisPackage.count ,success: { (success) in
+            guard let packages = success?.inventories else { return }
+            self.lisPackage.append(contentsOf: packages)
+            if packages.count == limit {
+                self.canLoadMore = true
+            }
+            self.view?.didGetPackage(package: self.lisPackage)
+        }) { (error) in
+            guard let error = error else { return }
+            print(error.localizedDescription)
+        }
     }
 
 }
