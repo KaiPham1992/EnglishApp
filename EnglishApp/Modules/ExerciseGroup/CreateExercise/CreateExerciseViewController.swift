@@ -25,11 +25,11 @@ class CreateExerciseViewController: BaseViewController {
         guard let listCategories = self.presenter?.createExerciseParam.categories else{ return }
         let sum = listCategories.map{$0.number_of_question ?? 0}.getSum()
         if sum > 100 {
-            PopUpHelper.shared.showError(message: "Vui lòng nhập tổng số câu hỏi không vượt quá 100.") {
+            PopUpHelper.shared.showError(message: LocalizableKey.less_than_100.showLanguage) {
                 
             }
         } else if sum < 100 {
-            PopUpHelper.shared.showError(message: "Vui lòng nhập đủ 100 câu.") {
+            PopUpHelper.shared.showError(message: LocalizableKey.equal_100.showLanguage) {
                 
             }
         } else {

@@ -397,3 +397,6 @@
 "competition_doing" = "Cuộc thi đang diễn ra";
 "enter_name_group" = "Vui lòng nhập tên nhóm.";
 "minus_dianmod" = "Bạn bị trừ 1 kim cương nếu sử dụng gợi ý đáp án.";
+
+"less_than_100" = "Vui lòng nhập tổng số câu hỏi không vượt quá 100.";
+"equal_100" = "Vui lòng nhập đủ 100 câu.";

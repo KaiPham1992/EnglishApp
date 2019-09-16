@@ -152,6 +152,7 @@ extension ChoiceExerciseViewController : UITableViewDelegate{
             } else {
                 PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
                     let vc = StudyPackDetailRouter.createModule(id: "1")
+                    
                     self.push(controller: vc)
                 }) {
                     

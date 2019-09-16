@@ -16,6 +16,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     
     var product = ProductEntity()
     var id : String = "0"
+    var customTitle : String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,18 +41,19 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: product.name ?? "")
     }
     
     func displayData(){
         if id != "0" {
-            if let url = URL(string: BASE_URL + "_api/webview/product_detail/2") {
+            if let url = URL(string: BASE_URL + "_api/webview/product_detail/\(id)") {
                 webView.loadRequest(URLRequest(url: url))
             }
+            setTitleNavigation(title: customTitle)
         } else {
             if let htmlString = product.content{
                 webView.loadHTMLString(htmlString, baseURL: nil)
             }
+            setTitleNavigation(title: product.name ?? "")
         }
         btnUpgrade.setTitle(LocalizableKey.upgrade.showLanguage, for: .normal)
     }
