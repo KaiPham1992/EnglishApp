@@ -311,6 +311,9 @@
 		2AD638B9231CC586007D0D44 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */; };
 		2AD638BA231CC586007D0D44 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */; };
 		2AD638BB231CC586007D0D44 /* UIApplication+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */; };
+		2ADDCB02232F83890087B427 /* TermAndConditionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADDCB01232F83890087B427 /* TermAndConditionResponse.swift */; };
+		2ADDCB03232F83890087B427 /* TermAndConditionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADDCB01232F83890087B427 /* TermAndConditionResponse.swift */; };
+		2ADDCB04232F83890087B427 /* TermAndConditionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ADDCB01232F83890087B427 /* TermAndConditionResponse.swift */; };
 		2AED147B22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
 		2AED147C22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
 		2AED147D22ED8E950076C223 /* VocabularyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AED147522ED8E950076C223 /* VocabularyPresenter.swift */; };
@@ -2367,6 +2370,7 @@
 		2AC7A21922D78D83004ADFEE /* CompetitionProfileEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionProfileEntity.swift; sourceTree = "<group>"; };
 		2AC7A21D22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionResultTeamEntity.swift; sourceTree = "<group>"; };
 		2AD638B8231CC586007D0D44 /* UIApplication+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+Extension.swift"; sourceTree = "<group>"; };
+		2ADDCB01232F83890087B427 /* TermAndConditionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermAndConditionResponse.swift; sourceTree = "<group>"; };
 		2AED147522ED8E950076C223 /* VocabularyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyPresenter.swift; sourceTree = "<group>"; };
 		2AED147622ED8E950076C223 /* VocabularyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyRouter.swift; sourceTree = "<group>"; };
 		2AED147722ED8E950076C223 /* VocabularyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyViewController.swift; sourceTree = "<group>"; };
@@ -3323,6 +3327,14 @@
 				2AC1467822FECCD1002D7D5F /* CellRankTeam.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		2ADDCB00232F83710087B427 /* TermAndCondition */ = {
+			isa = PBXGroup;
+			children = (
+				2ADDCB01232F83890087B427 /* TermAndConditionResponse.swift */,
+			);
+			path = TermAndCondition;
 			sourceTree = "<group>";
 		};
 		2AED147422ED8E6A0076C223 /* Vocabulary */ = {
@@ -4438,6 +4450,7 @@
 		DE361EEB2283E84F00FA3B0D /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				2ADDCB00232F83710087B427 /* TermAndCondition */,
 				DE2D679622F9BFC60055586B /* PaymentViewModel */,
 				2AA20CBF22F5432500F38894 /* Dictionaty */,
 				2AA6D38722DC596E006E9859 /* Competition */,
@@ -6629,6 +6642,7 @@
 				76CE32112296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA52289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				1B94899522CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */,
+				2ADDCB02232F83890087B427 /* TermAndConditionResponse.swift in Sources */,
 				DEECF8742287041900A4678B /* MenuCell.swift in Sources */,
 				76CE31EF22963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE361DF92283E57900FA3B0D /* UIImage+extension.swift in Sources */,
@@ -7239,6 +7253,7 @@
 				76CE32122296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA62289B93F0080A8CB /* QADetailInteractor.swift in Sources */,
 				1B94899622CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */,
+				2ADDCB03232F83890087B427 /* TermAndConditionResponse.swift in Sources */,
 				DE9530112287DF4800E3F688 /* MenuCell.swift in Sources */,
 				76CE31F022963EDE00E998FB /* ResultGroupPresenter.swift in Sources */,
 				DE9530122287DF4800E3F688 /* UIImage+extension.swift in Sources */,
@@ -7501,6 +7516,7 @@
 				76870EA922C0EE7700F12544 /* ViewFillQuestion.swift in Sources */,
 				76E2FECC228DBAB00014B1F4 /* SaveDictionaryViewController.swift in Sources */,
 				DEC62ACB22930E0E00D7CECE /* StudyPackInteractor.swift in Sources */,
+				2ADDCB04232F83890087B427 /* TermAndConditionResponse.swift in Sources */,
 				7680749322C8734C0015A75C /* ResultEndpoint.swift in Sources */,
 				769A3BBA229FE66F00CA55BD /* HistoryExerciseRouter.swift in Sources */,
 				DE73CF2022B913E700B8B83B /* SelectPhotoCanCropPopUp.swift in Sources */,
