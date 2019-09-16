@@ -95,6 +95,12 @@ class ChoiceExerciseViewController: BaseViewController {
 }
 extension ChoiceExerciseViewController : ChoiceExerciseViewProtocol {
     func reloadView() {
+        let row = self.presenter?.exerciseChoiceEntity?.exercises.count ?? 0
+        if row == 0 {
+            showNoData()
+        } else {
+            hideNoData()
+        }
         tbvChoiceExercise.reloadData()
     }
 }
@@ -105,11 +111,6 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let row = self.presenter?.exerciseChoiceEntity?.exercises.count ?? 0
-        if row == 0 {
-            showNoData()
-        } else {
-            hideNoData()
-        }
         return row
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

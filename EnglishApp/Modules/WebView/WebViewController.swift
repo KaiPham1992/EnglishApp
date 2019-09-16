@@ -17,7 +17,7 @@ class WebViewController: BaseViewController {
     
     @IBOutlet weak var wkMain: UIWebView!
     var policyUrl = ""
-    var termUrl = ""
+    var termUrl = "_admin/terms/listing"
     var isTermsOfUse = true
     var isPush = true
     var mainUrl = ""
@@ -49,7 +49,7 @@ class WebViewController: BaseViewController {
         if mainUrl.contains("http") {
             if let url = URL(string: mainUrl) {
                 let urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
-//                wkMain.loadRequest(urlRequest)
+                wkMain.loadRequest(urlRequest)
             }
         } else {
             if isTermsOfUse {
