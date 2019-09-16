@@ -40,7 +40,7 @@ struct AppColor {
     static let gray999999 = UIColor(hexString: "999999")
     static let recommendationYellow = UIColor(hexString: "F0E9C1")
     static let yellowFBEFC1 = UIColor(hexString: "FBEFC1")
-    
+    static let bdbdbdGray = UIColor(hexString: "BDBDBD")
     static let selectedBXH = UIColor(red: 255/255, green: 211/255, blue: 17/255, alpha: 0.25)
     static let nomalBXH = UIColor.white
     

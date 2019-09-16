@@ -19,6 +19,9 @@ protocol ProfilePresenterProtocol: class {
 
     var interactor: ProfileInteractorInputProtocol? { get set }
     func getProfile()
+    func getPackage()
+    var canLoadMore: Bool { get set }
+    var lisPackage: [Inventories] { get set }
 }
 
 //MARK: Interactor -
@@ -43,4 +46,5 @@ protocol ProfileViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetProfile(user: UserEntity)
+    func didGetPackage(package: [Inventories])
 }
