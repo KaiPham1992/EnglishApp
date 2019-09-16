@@ -41,7 +41,7 @@ class LevelExerciseViewController: ListManagerVC {
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(CellLevelExercise.self, for: indexPath)
         let data = item as! SearchEntity
-        cell.lblNameExercise.text = data.name&
+        cell.lblNameExercise.attributedText = NSAttributedString(string: data.name&) 
         return cell
     }
     

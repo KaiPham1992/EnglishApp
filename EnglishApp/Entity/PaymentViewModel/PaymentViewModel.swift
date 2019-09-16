@@ -11,7 +11,7 @@ import StoreKit
 
 class PaymentHelper: NSObject {
     var validProducts: [SKProduct] = []
-    var productIds : [String] = []
+    let productIds = ["product_test_03", "product_test_04"]
     var productsRequest: SKProductsRequest?
     
     static let shared = PaymentHelper()
@@ -48,7 +48,6 @@ extension PaymentHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver
         validProducts = response.products
         for product in validProducts {
             print("product id \(product.productIdentifier) price : \(product.price)")
-            self.productIds.append(product.productIdentifier)
         }
     }
     
