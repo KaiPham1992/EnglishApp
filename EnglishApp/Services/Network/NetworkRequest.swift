@@ -14,8 +14,8 @@ import Alamofire
 import UIKit
 
 #if PROD || APPSTORE
-let BASE_URL = "http://demo7.engma.com.vn/"
-let BASE_URL_IMAGE = "http://demo7.engma.com.vn/"
+let BASE_URL = "http://chuyenanh.vn/"
+let BASE_URL_IMAGE = "http://chuyenanh.vn/"
 #else
 let BASE_URL = "http://demo7.engma.com.vn/"
 let BASE_URL_IMAGE = "http://demo7.engma.com.vn/"

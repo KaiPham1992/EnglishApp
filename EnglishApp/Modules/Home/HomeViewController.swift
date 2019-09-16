@@ -90,6 +90,10 @@ class HomeViewController: BaseViewController {
         if let homeHeaderCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 0)) as? HomeHeaderCell {
             homeHeaderCell.awakeFromNib()
         }
+        
+        if let noDataCell = self.tbHome.cellForRow(at: IndexPath(row: 0, section: 2)) as? HomeNoResultCell {
+            noDataCell.awakeFromNib()
+        }
         //-- action cell
         if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
             actionCell.awakeFromNib()
@@ -257,6 +261,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         case 2:
             if self.listActivities.count == 0 {
                 let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
+                cell.showNoData()
                 return cell
             } else {
                 let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)

@@ -15,8 +15,6 @@ class HomeNoResultCell: BaseTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-        
         lbTitle.text = "\(LocalizableKey.lbNoData.showLanguage)"
         lbTitle.isHidden = true
     }

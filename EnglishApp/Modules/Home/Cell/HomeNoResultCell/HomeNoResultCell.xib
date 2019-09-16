@@ -17,11 +17,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HomeNoResultCell" customModule="EnglishApp_AppStore" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="179"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI6-2Q-K0t">
-                    <rect key="frame" x="25" y="80" width="364" height="19"/>
+                    <rect key="frame" x="25" y="32" width="364" height="23"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -31,8 +31,8 @@
             <constraints>
                 <constraint firstItem="yI6-2Q-K0t" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="25" id="EAR-69-fMd"/>
                 <constraint firstItem="yI6-2Q-K0t" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="KLJ-Be-erE"/>
-                <constraint firstAttribute="bottom" secondItem="yI6-2Q-K0t" secondAttribute="bottom" constant="80" id="STr-Nn-9ZA"/>
-                <constraint firstItem="yI6-2Q-K0t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="80" id="UQ2-X3-sHh"/>
+                <constraint firstAttribute="bottom" secondItem="yI6-2Q-K0t" secondAttribute="bottom" constant="32" id="STr-Nn-9ZA"/>
+                <constraint firstItem="yI6-2Q-K0t" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="32" id="UQ2-X3-sHh"/>
                 <constraint firstItem="yI6-2Q-K0t" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="dAG-0d-9Cf"/>
                 <constraint firstAttribute="trailing" secondItem="yI6-2Q-K0t" secondAttribute="trailing" constant="25" id="gAw-r1-hUh"/>
             </constraints>
@@ -40,7 +40,7 @@
             <connections>
                 <outlet property="lbTitle" destination="yI6-2Q-K0t" id="l7c-n8-w0r"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="125.55803571428571"/>
+            <point key="canvasLocation" x="137.68115942028987" y="94.754464285714278"/>
         </view>
     </objects>
 </document>
