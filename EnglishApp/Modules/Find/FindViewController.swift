@@ -72,10 +72,9 @@ extension FindViewController: FindViewProtocol{
     }
     
     func showErrorSearchFailed() {
-        PopUpHelper.shared.showYesNo(message: self.presenter?.getMessageError() ?? "", completionNo: {
-        }) {
+        PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
             self.push(controller: StoreViewController())
-        }
+            }, completeCancel: nil)
     }
 }
 
