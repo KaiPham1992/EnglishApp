@@ -44,7 +44,7 @@ class NameExerciseViewController: BaseViewController {
         if !isEnd {
             if self.currentIndex + 1 > numberQuestion {
                 if let _param = self.paramSubmit {
-                    _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum() * 1000
+                    _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
                     self.presenter?.submitExercise(param: _param, isOut: false)
                 }
             } else {
@@ -54,7 +54,7 @@ class NameExerciseViewController: BaseViewController {
             }
         } else {
             if let _param = self.paramSubmit {
-                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum() * 1000
+                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
                 self.presenter?.submitExercise(param: _param, isOut: false)
             }
         }
@@ -161,7 +161,7 @@ class NameExerciseViewController: BaseViewController {
     
     func confirmOutExercise(){
         if let _param = self.paramSubmit {
-            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum() * 1000
+            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
             self.presenter?.submitExercise(param: _param, isOut: true)
         }
     }
@@ -352,7 +352,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
 
 extension NameExerciseViewController : TimeDelegate{
     func changeTime() {
-        self.listAnswerQuestion[self.currentIndex - 1].time += 1 
+        self.listAnswerQuestion[self.currentIndex - 1].time += 1000
     }
     
     func startTime() {

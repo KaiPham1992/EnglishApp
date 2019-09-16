@@ -374,7 +374,7 @@ extension FightViewController : CellExerciseDelegate{
 extension FightViewController : TimeDelegate{
     func changeTime() {
         if listParamSubmit.count > 0 {
-            self.listParamSubmit[self.currentIndex - 1].time += 1
+            self.listParamSubmit[self.currentIndex - 1].time += 1000
         }
     }
     
