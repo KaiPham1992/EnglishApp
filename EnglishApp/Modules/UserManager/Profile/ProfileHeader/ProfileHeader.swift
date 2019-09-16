@@ -8,7 +8,10 @@
 
 import Foundation
 import UIKit
-
+protocol ProfileHeaderDelegate: class {
+    func btnBeeTapped()
+    func btnDiamondTapped()
+}
 class ProfileHeader: BaseTableCell {
     @IBOutlet weak var lbBee: UILabel!
     @IBOutlet weak var lbDiamon: UILabel!
@@ -25,7 +28,11 @@ class ProfileHeader: BaseTableCell {
     @IBOutlet weak var lbFullName: UILabel!
     @IBOutlet weak var lbLevel: UILabel!
     @IBOutlet weak var lbPoint: UILabel!
+    
+    @IBOutlet weak var btnBee: UIButton!
+    @IBOutlet weak var btnDiamond: UIButton!
 
+    weak var delegate: ProfileHeaderDelegate?
     var user = UserEntity() {
         didSet {
             displayData()
@@ -49,6 +56,9 @@ class ProfileHeader: BaseTableCell {
         vDisplayName.tfInput.isEnabled = false
         vEmail.tfInput.isEnabled = false
         vLocation.tfInput.isEnabled = false
+        
+        btnBee.isUserInteractionEnabled = true
+        btnDiamond.isUserInteractionEnabled = true
     }
     func displayData() {
         imgAvatar.sd_setImage(with: user.urlRank, placeholderImage: AppImage.avatarDefault)
@@ -62,5 +72,12 @@ class ProfileHeader: BaseTableCell {
         lbDiamon.text = user.amountDiamond*.description + "\(LocalizableKey.point.showLanguage)"
     }
     
+    @IBAction func btnBeeTapped() {
+        delegate?.btnBeeTapped()
+    }
+    
+    @IBAction func btnDiamonTapped() {
+        delegate?.btnDiamondTapped()
+    }
     
 }

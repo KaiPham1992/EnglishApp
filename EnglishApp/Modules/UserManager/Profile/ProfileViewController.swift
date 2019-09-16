@@ -69,14 +69,7 @@ class ProfileViewController: BaseViewController {
     @objc func btnEditTapped() {
         self.push(controller: EditProfileRouter.createModule())
     }
-    
-    @IBAction func btnBeeTapped() {
-        self.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
-    }
-    
-    @IBAction func btnDiamonTapped() {
-        self.push(controller: HistoryBeeRouter.createModule(wallet_type: 1))
-    }
+
 }
 
 extension ProfileViewController: ProfileViewProtocol {
@@ -102,6 +95,7 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeue(ProfileHeader.self, for: indexPath)
+            cell.delegate = self
             cell.user = self.user
             return cell
         } else {
@@ -123,5 +117,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
+}
 
+extension ProfileViewController: ProfileHeaderDelegate {
+    func btnBeeTapped() {
+        self.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
+    }
+    
+    func btnDiamondTapped() {
+        self.push(controller: HistoryBeeRouter.createModule(wallet_type: 1))
+    }
 }

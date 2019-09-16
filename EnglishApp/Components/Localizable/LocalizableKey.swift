@@ -388,8 +388,7 @@ struct LocalizableKey {
     static let competition_end = "competition_end"
     static let no_team_joined = "no_team_joined"
     static let run_background = "run_background"
-<<<<<<< HEAD
-=======
+
     static let error_create_group = "error_create_group"
     static let cannot_join_group = "cannot_join_group"
     static let user_joined_team = "user_joined_team"
@@ -401,5 +400,4 @@ struct LocalizableKey {
     
     static let userPackage = "userPackage"
     static let dateExpire = "dateExpire"
->>>>>>> 906c0be... Add user inventory
 }

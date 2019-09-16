@@ -391,8 +391,6 @@
 "competition_end" = "Đã quá giờ thi.";
 "no_team_joined" = "Không có đội nào tham gia cuộc thi này.";
 "run_background" = "Qúa trình có thể mất nhiều thời gian bạn có muốn công việc chạy ngầm?";
-<<<<<<< HEAD
-=======
 "error_create_group" = "TÀI KHOẢN NÀY ĐÃ TẠO VÀ THAM GIA NHÓM";
 "cannot_join_group" = "Bạn đã có nhóm không thể tạo và tham gia nhóm khác.";
 "user_joined_team" = "TÀI KHOẢN NÀY ĐÃ THAM GIA NHÓM";
@@ -404,4 +402,3 @@
 "equal_100" = "Vui lòng nhập đủ 100 câu.";
 "userPackage" = "Gói nâng cấp đã mua";
 "dateExpire" = "Ngày hết hạn: ";
->>>>>>> 906c0be... Add user inventory

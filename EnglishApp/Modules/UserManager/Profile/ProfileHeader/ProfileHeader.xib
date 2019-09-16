@@ -147,6 +147,9 @@
                                 </imageView>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I0W-ui-Ic3">
                                     <rect key="frame" x="0.0" y="0.0" width="181.5" height="64"/>
+                                    <connections>
+                                        <action selector="btnBeeTapped" destination="iN0-l3-epB" eventType="touchUpInside" id="gQH-XK-YBy"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -206,6 +209,9 @@
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sP9-i8-bdc">
                                     <rect key="frame" x="0.0" y="0.0" width="181.5" height="64"/>
+                                    <connections>
+                                        <action selector="btnDiamonTapped" destination="iN0-l3-epB" eventType="touchUpInside" id="iNh-pd-l6F"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -290,6 +296,8 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="btnBee" destination="I0W-ui-Ic3" id="bcg-gg-FgK"/>
+                <outlet property="btnDiamond" destination="sP9-i8-bdc" id="ISU-Bm-x0H"/>
                 <outlet property="imgAvatar" destination="tXz-va-BJp" id="uoE-2t-KkR"/>
                 <outlet property="imgBorder" destination="rDG-8o-EEb" id="gvs-FK-K8z"/>
                 <outlet property="lbBee" destination="0BO-mc-Nuk" id="v2l-ve-foz"/>
