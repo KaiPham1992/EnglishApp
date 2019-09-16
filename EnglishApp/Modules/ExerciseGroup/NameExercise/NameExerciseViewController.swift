@@ -44,7 +44,7 @@ class NameExerciseViewController: BaseViewController {
         if !isEnd {
             if self.currentIndex + 1 > numberQuestion {
                 if let _param = self.paramSubmit {
-                    _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+                    _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum() * 1000
                     self.presenter?.submitExercise(param: _param, isOut: false)
                 }
             } else {
@@ -54,7 +54,7 @@ class NameExerciseViewController: BaseViewController {
             }
         } else {
             if let _param = self.paramSubmit {
-                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum() * 1000
                 self.presenter?.submitExercise(param: _param, isOut: false)
             }
         }
@@ -160,16 +160,8 @@ class NameExerciseViewController: BaseViewController {
     }
     
     func confirmOutExercise(){
-//        if typeExercise == .dailyMissonExercise {
-//            self.presenter?.exitExercise(id: Int(self.idExercise) ?? 0)
-//        } else {
-//            if let _param = self.paramSubmit {
-//                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
-//                self.presenter?.submitExercise(param: _param, isOut: true)
-//            }
-//        }
         if let _param = self.paramSubmit {
-            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
+            _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum() * 1000
             self.presenter?.submitExercise(param: _param, isOut: true)
         }
     }
