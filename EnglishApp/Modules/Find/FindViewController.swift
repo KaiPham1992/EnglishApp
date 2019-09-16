@@ -34,8 +34,8 @@ class FindViewController: BaseViewController {
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
         vAppSearch.actionSearch = searchExercise
         configureTable()
-        lbNoResult.text = "\(LocalizableKey.noResultFound.showLanguage)"
-        lbFee.text = "\(LocalizableKey.feeFind.showLanguage)"
+        lbNoResult.attributedText = NSAttributedString(string: "\(LocalizableKey.noResultFound.showLanguage)")
+        lbFee.attributedText = NSAttributedString(string: "\(LocalizableKey.feeFind.showLanguage)")
         
         if type == .searchExercise {
             heightViewDiamod.constant = 40
