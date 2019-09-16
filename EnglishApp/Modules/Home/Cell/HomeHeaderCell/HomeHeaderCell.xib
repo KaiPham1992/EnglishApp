@@ -44,7 +44,7 @@
                             <constraint firstAttribute="height" constant="40" id="47F-pB-zcS"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
-                        <state key="normal" title="Trắc nghiệm đầu vào">
+                        <state key="normal">
                             <color key="titleColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
                     </button>

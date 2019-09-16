@@ -87,6 +87,9 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func changeLanguage() {
+        if let homeHeaderCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 0)) as? HomeHeaderCell {
+            homeHeaderCell.awakeFromNib()
+        }
         //-- action cell
         if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
             actionCell.awakeFromNib()

@@ -25,7 +25,7 @@ class HomeHeaderCell: BaseTableCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        btnTestBegin.setTitle(LocalizableKey.do_entrance.showLanguage, for: UIControl.State.normal)
         
     }
     func setTestEnstrance(){
