@@ -49,7 +49,7 @@ class NameExerciseViewController: BaseViewController {
                 }
             } else {
                 self.currentIndex += 1
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
             }
         } else {
@@ -152,7 +152,7 @@ class NameExerciseViewController: BaseViewController {
             } else {
                 if !isEnd {
                     self.currentIndex -= 1
-                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
                     clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
                 }
             }
@@ -196,13 +196,9 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     
     func reloadView() {
         DispatchQueue.global().async {
-//            if self.typeExercise == .dailyMissonExercise {
-//                dateTestDaillyMisson = Date()
-//            }
             self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
-//            self.currentTime = 10
             self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             if let questions = self.presenter?.exerciseEntity?.questions {
                 for item in questions {
@@ -215,7 +211,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
             }
             DispatchQueue.main.async {
                 self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
-                self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
+                self.lblIndexQuestion.text = "1/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
                 self.vCountTime.setupTimeStartNow(min: self.currentTime)
                 self.clvQuestion.reloadData()
                 ProgressView.shared.hide()
