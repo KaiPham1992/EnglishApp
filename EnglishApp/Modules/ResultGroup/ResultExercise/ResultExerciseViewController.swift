@@ -167,7 +167,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
             self.push(controller: vc)
         } else {
             PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
-                let vc = StudyPackDetailRouter.createModule(id: "2")
+                let vc = StudyPackDetailRouter.createModule(id: "-1")
                 self.push(controller: vc)
             }) {
                 

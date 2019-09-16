@@ -62,7 +62,7 @@ class SelectTeamViewController: BaseTableViewController {
         let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium ?? false
         if !isUserStudyPack && !isUserPremium {
             PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
-                let vc = StudyPackDetailRouter.createModule(id: "2")
+                let vc = StudyPackDetailRouter.createModule(id: "-1")
                 self.push(controller: vc)
             }) {
                 

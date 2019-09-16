@@ -35,7 +35,7 @@ class CreateExerciseRouter: CreateExerciseWireframeProtocol {
     }
     
     func gotoStore() {
-        let vc = StudyPackDetailRouter.createModule(id: "2")
+        let vc = StudyPackDetailRouter.createModule(id: "-1")
         self.viewController?.push(controller: vc)
     }
 }

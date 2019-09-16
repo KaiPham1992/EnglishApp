@@ -117,7 +117,7 @@ extension ResultViewController: ResultViewProtocol{
             if self.type == .entranceExercise && !self.isHistory {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
-                        let vc = StudyPackDetailRouter.createModule(id: "2")
+                        let vc = StudyPackDetailRouter.createModule(id: "-1")
                         self.push(controller: vc)
                     }, completeCancel: {
                         
