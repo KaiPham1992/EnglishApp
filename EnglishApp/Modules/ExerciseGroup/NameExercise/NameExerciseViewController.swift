@@ -34,6 +34,8 @@ class NameExerciseViewController: BaseViewController {
 	var presenter: NameExercisePresenterProtocol?
     weak var exerciseDelegate: ExerciseDelegate?
     var player : AVPlayer?
+    var playerItem : AVPlayerItem?
+    var isReapeat = false
     
     @IBAction func clickNext(_ sender: Any) {
         if player != nil {
@@ -105,6 +107,10 @@ class NameExerciseViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player, queue: .main) { [weak self] _ in
+            self?.playerItem?.seek(to: CMTime.zero, completionHandler: nil)
+            self?.isReapeat = true
+        }
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
@@ -326,27 +332,30 @@ extension NameExerciseViewController : CellExerciseDelegate{
     }
         
     func clickAudio(indexPath: IndexPath) {
-//        if player == nil {
         var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
         numberClick += 1
         self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
         
         if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
             if numberClick == 1 {
-                let playerItem = AVPlayerItem(url: url)
+                self.playerItem = AVPlayerItem(url: url)
                 player = AVPlayer(playerItem: playerItem)
                 player?.play()
             } else {
                 if player != nil {
-                    if numberClick % 2 == 0 {
-                        player?.pause()
-                    } else {
+                    if self.isReapeat {
                         player?.play()
+                        self.isReapeat = false
+                    } else {
+                        if numberClick % 2 == 0 {
+                            player?.pause()
+                        } else {
+                            player?.play()
+                        }
                     }
                 }
             }
         }
-//        }
     }
 }
 

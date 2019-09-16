@@ -47,6 +47,9 @@ class FightViewController: BaseViewController {
     var fightFinished : (() -> ())?
     
     var player : AVPlayer?
+    var playerItem : AVPlayerItem?
+    var isReapeat = false
+    
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
@@ -72,6 +75,10 @@ class FightViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player, queue: .main) { [weak self] _ in
+            self?.playerItem?.seek(to: CMTime.zero, completionHandler: nil)
+            self?.isReapeat = true
+        }
         lblTitleRank.text = LocalizableKey.rank_of_competition.showLanguage
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         clvQuestion.registerXibCell(CellFillExercise.self)
@@ -353,17 +360,23 @@ extension FightViewController : CellExerciseDelegate{
         var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
         numberClick += 1
         self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
+        
         if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
             if numberClick == 1 {
-                let playerItem = AVPlayerItem(url: url)
+                self.playerItem = AVPlayerItem(url: url)
                 player = AVPlayer(playerItem: playerItem)
                 player?.play()
             } else {
                 if player != nil {
-                    if numberClick % 2 == 0 {
-                        player?.pause()
-                    } else {
+                    if self.isReapeat {
                         player?.play()
+                        self.isReapeat = false
+                    } else {
+                        if numberClick % 2 == 0 {
+                            player?.pause()
+                        } else {
+                            player?.play()
+                        }
                     }
                 }
             }
