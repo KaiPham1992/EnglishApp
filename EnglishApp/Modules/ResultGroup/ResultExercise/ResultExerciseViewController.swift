@@ -19,7 +19,7 @@ class ResultExerciseViewController: BaseViewController {
         let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
         if index + 1 < numberAnswer {
             self.index += 1
-            lblIndexQuestion.text = "\(index + 1)/\(numberAnswer)"
+            lblIndexQuestion.text = "\(index + 1)/\(numberAnswer) \(LocalizableKey.sentence.showLanguage.lowercased())"
             self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: false)
             if index + 1 == (self.presenter?.getNumberAnswer() ?? 0) {
                 btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
@@ -56,7 +56,7 @@ class ResultExerciseViewController: BaseViewController {
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
-        lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
+        lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0) \(LocalizableKey.sentence.showLanguage.lowercased())"
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: false)
             if self.index + 1 == (self.presenter?.getNumberAnswer() ?? 0) {
@@ -71,7 +71,7 @@ class ResultExerciseViewController: BaseViewController {
             let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
             if index != 0 && tempIndex + 1 != numberAnswer {
                 self.index -= 1
-                lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
+                lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0) \(LocalizableKey.sentence.showLanguage.lowercased())"
                 self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
                 btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
             } else {
@@ -167,7 +167,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
             self.push(controller: vc)
         } else {
             PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
-                let vc = StudyPackDetailRouter.createModule(id: "2")
+                let vc = StudyPackDetailRouter.createModule(id: "-1")
                 self.push(controller: vc)
             }) {
                 

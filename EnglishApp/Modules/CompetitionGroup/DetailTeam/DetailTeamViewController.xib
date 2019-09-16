@@ -21,6 +21,7 @@
                 <outlet property="btnLeave" destination="ytt-Ns-5gE" id="RAN-Xf-8v9"/>
                 <outlet property="lblMember" destination="IOT-de-uhT" id="O7d-os-cI9"/>
                 <outlet property="lblTitleButtonStart" destination="ISR-sp-wnC" id="nJ1-xF-83Q"/>
+                <outlet property="stackView" destination="atI-Zv-B5i" id="yhr-Dm-Kxa"/>
                 <outlet property="tbTeam" destination="I6g-NX-dyi" id="ALH-Zu-fPb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewButtonStart" destination="qhk-Yl-13b" id="dNQ-zl-4kW"/>

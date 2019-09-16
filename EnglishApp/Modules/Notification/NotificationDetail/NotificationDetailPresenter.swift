@@ -27,7 +27,7 @@ class NotificationDetailPresenter: NotificationDetailPresenterProtocol, Notifica
         Provider.shared.notificationAPIService.getNotificationDetail(id: id, success: { (noti) in
             ProgressView.shared.hide()
             guard let noti = noti else { return }
-            self.view?.didSucccess(noti: noti)
+//            self.view?.didSucccess(noti: noti)
         }) { (error) in
             ProgressView.shared.hide()
             print(error?.localizedDescription)
@@ -36,9 +36,9 @@ class NotificationDetailPresenter: NotificationDetailPresenterProtocol, Notifica
     
     func readNotification(id: Int) {
         Provider.shared.notificationAPIService.readNotification(notificationId: id, success: { _ in
-            if UIApplication.shared.applicationIconBadgeNumber > 0 {
-                UIApplication.shared.applicationIconBadgeNumber -= 1
-            }
+//            if UIApplication.shared.applicationIconBadgeNumber > 0 {
+//                UIApplication.shared.applicationIconBadgeNumber -= 1
+//            }
         }) { _ in
             
         }

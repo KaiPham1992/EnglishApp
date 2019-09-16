@@ -27,9 +27,9 @@ class PopUpHelper {
         popup.showPopUp(message: message, titleYes: titleYes, titleNo: titleNo, complete: complete)
     }
     
-    func showComfirmPopUp(message: String,titleYes: String,titleNo: String,complete: CompletionClosure?, cancel: CompletionClosure?){
+    func showComfirmPopUp(message: String, titleYes: String, titleNo: String, height: Int = 180, complete: CompletionClosure?, cancel: CompletionClosure?){
         let popup = ConfirmPopUp()
-        popup.showPopUp(message: message, titleYes: titleYes, titleNo: titleNo, complete: complete, cancel: cancel)
+        popup.showPopUp(message: message, titleYes: titleYes, titleNo: titleNo, height: height , complete: complete, cancel: cancel)
     }
     
     func showReportSuccessed(complete: CompletionClosure?){
@@ -37,26 +37,12 @@ class PopUpHelper {
         popup.showPopUp(complete: complete)
     }
     
-    func showSuggesstionResult(diamond: CompletionClosure?,money: CompletionClosure?){
-        let popup = SuggestionResultPopUp()
-        popup.showPopup(diamod: diamond, money: money)
-    }
-    
-    
+   
     func showReportQuestion(cancel: CompletionClosure?,report: CompletionMessage?){
         let popup = ReportQuestionPopUp()
         popup.showPopUp(cancel: cancel, report: report)
     }
-    
-    func showMorePopUp(content: String){
-        let popup = ShowMorePopUp()
-        popup.showPopUp(content: content)
-    }
-    
-    func showMorePopUpAttributed(attributed: NSMutableAttributedString, completionMessage: CompletionMessage?){
-        let popup = ShowMorePopUp()
-        popup.showPopUpAttributed(attributed: attributed, completionMessage: completionMessage)
-    }
+
     
     func showUpdateAccount(confirm: CompletionClosure?){
         let popup = UpdateAccountPopup()
@@ -144,11 +130,6 @@ class PopUpHelper {
     func showReward(message: String, completionYes: CompletionClosure?) {
         let popUp = RewardPopUp()
         popUp.showPopup(message: message, completionYes: completionYes)
-    }
-    
-    func showRequireUpGrade(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
-        let popUp = RequireUpgradePopUp()
-        popUp.showPopUp(completionNo: completionNo, completionYes: completionYes)
     }
     
     func showLevelUp(completionYes: CompletionClosure?, completionPackage: CompletionClosure?) {

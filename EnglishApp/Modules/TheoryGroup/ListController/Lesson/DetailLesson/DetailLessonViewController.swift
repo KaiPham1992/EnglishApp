@@ -37,7 +37,10 @@ class DetailLessonViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         if let _lesson = lesson {
             idLesson = _lesson._id ?? "0"
         }
@@ -84,7 +87,7 @@ class DetailLessonViewController: BaseViewController {
             self.push(controller: CommentRouter.createModule(id: self.idLesson),animated: true)
         } else {
             PopUpHelper.shared.showUpdateFeature(completeUpdate: {[unowned self] in
-                let vc = StudyPackDetailRouter.createModule(id: "2")
+                let vc = StudyPackDetailRouter.createModule(id: "-1")
                 self.push(controller: vc)
             }) {
                 

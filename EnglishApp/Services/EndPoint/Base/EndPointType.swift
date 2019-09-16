@@ -24,6 +24,7 @@ struct DefaultHeader {
         var header: [String: String] = ["Content-Type": "application/json"]
         let code = LanguageHelper.currentAppleLanguage()
         header["Language"] = code
+        header[Params.deviceId] =  UIDevice.current.identifierForVendor!.uuidString
         if let token = UserDefaultHelper.shared.userToken {
             header["Authorization"] = "Bearer " + token
         }

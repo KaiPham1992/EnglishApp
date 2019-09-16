@@ -360,7 +360,7 @@
 // Pop up
 "getError" = "Đã xảy ra lỗi.";
 "noResultFound" = "Không có kết quả tìm kiếm.";
-"feeFind" = "Tìm kiếm mất x hũ mật ong hoặc x kim cương.";
+"feeFind" = "Tìm kiếm mất 5 hũ mật ong hoặc 50 kim cương.";
 "done" = "Xong";
 
 //add after
@@ -391,3 +391,12 @@
 "competition_end" = "Đã quá giờ thi.";
 "no_team_joined" = "Không có đội nào tham gia cuộc thi này.";
 "run_background" = "Qúa trình có thể mất nhiều thời gian bạn có muốn công việc chạy ngầm?";
+"error_create_group" = "TÀI KHOẢN NÀY ĐÃ TẠO VÀ THAM GIA NHÓM";
+"cannot_join_group" = "Bạn đã có nhóm không thể tạo và tham gia nhóm khác.";
+"user_joined_team" = "TÀI KHOẢN NÀY ĐÃ THAM GIA NHÓM";
+"competition_doing" = "Cuộc thi đang diễn ra";
+"enter_name_group" = "Vui lòng nhập tên nhóm.";
+"minus_dianmod" = "Bạn bị trừ 1 kim cương nếu sử dụng gợi ý đáp án.";
+
+"less_than_100" = "Vui lòng nhập tổng số câu hỏi không vượt quá 100.";
+"equal_100" = "Vui lòng nhập đủ 100 câu.";

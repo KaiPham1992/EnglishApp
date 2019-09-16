@@ -206,7 +206,7 @@
 
 //exercise
 "exercise" = "Exercise";
-"practice" = "Pratice";
+"practice" = "Practice";
 "create_exercise" ="Self-created exercises";
 "level_exercise" ="Level exercises";
 "assign_exercise" = "Assigned assignments";
@@ -223,7 +223,7 @@
 "listening" = "Listening";
 "phrasal_verb" = "Phrasal Verb";
 "cloze_test" = "Cloze Test";
-"try_hard" = "Pratice";
+"try_hard" = "Practice";
 "task_every_date" = "Daily task";
 "time_end" = "The end";
 "see_more" = "See more";
@@ -304,7 +304,7 @@
 "btnUpGrade" = "Upgrade";
 "levelUp" = "Level up";
 "changeLanguage" = "Change language";
-"bxh" = "Leader B ";
+"bxh" = "Leader Board";
 "point_level" = "Level Point";
 
 //lesson
@@ -360,7 +360,7 @@
 // Pop up
 "getError" = "An error occurred. Please try again later.";
 "noResultFound" = "No results found.";
-"feeFind" = "Lost x honey or x diamond for a search.";
+"feeFind" = "Lost 5 honey or 50 diamond for a search.";
 "done" = "Done";
 
 // add after
@@ -391,3 +391,12 @@
 "competition_end" = "The competition has ended.";
 "no_team_joined" = "No team joined";
 "run_background" = "The process may take a long time do you want the job to run in the background?";
+"error_create_group" = "THIS USER CREATED AND JOINED TEAM";
+"cannot_join_group" = "You already have a group that cannot create and join another group.";
+"user_joined_team" = "THIS USER JOINED TEAM";
+"competition_doing" = "Competition is doing";
+"enter_name_group" = "Please enter the group name.";
+"minus_dianmod" = "You deducted 1 diamond if you use answer hint.";
+
+"less_than_100" = "Please enter a total number of questions that do not exceed 100.";
+"equal_100" = "Please enter the 100 sentences.";

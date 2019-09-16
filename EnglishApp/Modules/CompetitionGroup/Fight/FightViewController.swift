@@ -47,6 +47,9 @@ class FightViewController: BaseViewController {
     var fightFinished : (() -> ())?
     
     var player : AVPlayer?
+    var playerItem : AVPlayerItem?
+    var isReapeat = false
+    
     @IBOutlet weak var btnNext: UIButton!
     @IBOutlet weak var lblIndexQuestion: UILabel!
     @IBOutlet weak var clvQuestion: UICollectionView!
@@ -72,6 +75,10 @@ class FightViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player, queue: .main) { [weak self] _ in
+            self?.playerItem?.seek(to: CMTime.zero, completionHandler: nil)
+            self?.isReapeat = true
+        }
         lblTitleRank.text = LocalizableKey.rank_of_competition.showLanguage
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         clvQuestion.registerXibCell(CellFillExercise.self)
@@ -151,7 +158,7 @@ extension FightViewController :FightViewProtocol{
                     if self.currentIndex <= self.numberQuestion && !self.isEnd {
                         self.lblPointTeam.attributedText = NSAttributedString(string: "\(teamInfor?.total_score ?? "0") " + LocalizableKey.point.showLanguage)
                         self.lblRankTeam.attributedText = NSAttributedString(string: LocalizableKey.rank.showLanguage + " \(teamRank)")
-                        self.lblIndexQuestion.attributedText = NSAttributedString(string: "\(self.currentIndex)/\(self.numberQuestion)")
+                        self.lblIndexQuestion.attributedText = NSAttributedString(string: "\(self.currentIndex)/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())")
                         self.imgMyTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + (teamInfor?.img_src ?? "")), placeholderImage: #imageLiteral(resourceName: "ic_avatar_default") , completed: nil)
                         self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
                         if self.viewRank.isHidden  {
@@ -162,6 +169,13 @@ extension FightViewController :FightViewProtocol{
                 }
             }
         } else {
+            self.fightFinished?()
+            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
+        }
+    }
+    
+    func submitFailed() {
+        if isEnd {
             self.fightFinished?()
             self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
         }
@@ -208,7 +222,7 @@ extension FightViewController :FightViewProtocol{
                     }
                 }
                 DispatchQueue.main.async {
-                    self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
+                    self.lblIndexQuestion.text = "1/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
                     self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
                     self.vCountTime.setupTimeStartNow(min: self.currentTime)
                     self.clvQuestion.reloadData()
@@ -219,12 +233,14 @@ extension FightViewController :FightViewProtocol{
     }
     
     func getExerciseFailed(error: APIError) {
-        if error.message == "THIS EXERCISE IS DOING. PLEASE COMPLETE AND SUBMIT IT." {
+        let message = error.message ?? ""
+        switch message {
+        case LocalizableKey.exercise_is_doing.showLanguage.uppercased():
             PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_doing.showLanguage) {
-                self.pop(animated: true)
+                self.navigationController?.popViewController(animated: true)
             }
-        } else {
-            PopUpHelper.shared.showErrorDidNotRemoveView(message: error.message&) {
+        default:
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: message.convertFormatString()) {
                 self.pop(animated: true)
             }
         }
@@ -344,17 +360,23 @@ extension FightViewController : CellExerciseDelegate{
         var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
         numberClick += 1
         self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
+        
         if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
             if numberClick == 1 {
-                let playerItem = AVPlayerItem(url: url)
+                self.playerItem = AVPlayerItem(url: url)
                 player = AVPlayer(playerItem: playerItem)
                 player?.play()
             } else {
                 if player != nil {
-                    if numberClick % 2 == 0 {
-                        player?.pause()
-                    } else {
+                    if self.isReapeat {
                         player?.play()
+                        self.isReapeat = false
+                    } else {
+                        if numberClick % 2 == 0 {
+                            player?.pause()
+                        } else {
+                            player?.play()
+                        }
                     }
                 }
             }
@@ -365,7 +387,7 @@ extension FightViewController : CellExerciseDelegate{
 extension FightViewController : TimeDelegate{
     func changeTime() {
         if listParamSubmit.count > 0 {
-            self.listParamSubmit[self.currentIndex - 1].time += 1
+            self.listParamSubmit[self.currentIndex - 1].time += 1000
         }
     }
     

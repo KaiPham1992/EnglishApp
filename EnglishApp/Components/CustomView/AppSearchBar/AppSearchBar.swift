@@ -22,9 +22,18 @@ class AppSearchBar: BaseViewXib {
     
     override func setUpViews() {
         super.setUpViews()
+        tfInput.delegate = self
     }
     
     @IBAction func btnSearchTapped() {
         actionSearch?(tfInput.text ?? "")
+    }
+}
+
+extension AppSearchBar: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        actionSearch?(tfInput.text ?? "")
+        textField.resignFirstResponder()
+        return true
     }
 }

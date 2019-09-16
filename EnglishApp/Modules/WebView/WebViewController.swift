@@ -16,8 +16,8 @@ protocol WebViewControllerDelegate: class {
 class WebViewController: BaseViewController {
     
     @IBOutlet weak var wkMain: UIWebView!
-    var policyUrl = "_api/webview/security_policy"
-    var termUrl = "_api/webview/terms_of_use"
+    var policyUrl = ""
+    var termUrl = ""
     var isTermsOfUse = true
     var isPush = true
     var mainUrl = ""
@@ -49,7 +49,7 @@ class WebViewController: BaseViewController {
         if mainUrl.contains("http") {
             if let url = URL(string: mainUrl) {
                 let urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
-                wkMain.loadRequest(urlRequest)
+//                wkMain.loadRequest(urlRequest)
             }
         } else {
             if isTermsOfUse {
@@ -58,8 +58,8 @@ class WebViewController: BaseViewController {
                 mainUrl = BASE_URL + policyUrl
             }
             if let url = URL(string: mainUrl) {
-                let urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
-                wkMain.loadRequest(urlRequest)
+//                let urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 15)
+//                wkMain.loadRequest(urlRequest)
             }
         }
     }

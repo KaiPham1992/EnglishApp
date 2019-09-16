@@ -9,79 +9,40 @@
 //
 
 import UIKit
+import WebKit
 
 class NotificationDetailViewController: BaseViewController, NotificationDetailViewProtocol {
 
 	var presenter: NotificationDetailPresenterProtocol?
-    var notification: NotificationEntity?
     
-    @IBOutlet weak var imgIcon: UIImageView!
-    @IBOutlet weak var lbTitle: UILabel!
-    @IBOutlet weak var lbContent: UILabel!
-    @IBOutlet weak var lbTime: UILabel!
+    @IBOutlet weak var webView: WKWebView!
     
     var idNotification: Int = 0
-    
-    @IBOutlet weak var heightImage: NSLayoutConstraint!
+    var isRead = true
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        displayUI(isAllowShow: false)
-//        if notification == nil {
-//            presenter?.getNotiDetail(id: idNotification)
-//        } else {
-            showData()
-//        }
-//        presenter.readNotification(id: idNotification)
-    }
-    
-    func displayUI(isAllowShow bool: Bool ) {
-        imgIcon.isHidden = bool
-        lbTime.isHidden = bool
-        lbContent.isHidden = bool
-        lbTitle.isHidden = bool
-    }
-    
-    func showData() {
-        guard let notification = notification else {
-            return
+        webView.navigationDelegate = self
+        ProgressView.shared.show()
+        webView.load(URLRequest(url: URL(string: BASE_URL + "_api/webview/notification_detail/\(idNotification)")!))
+        if !isRead {
+            self.presenter?.readNotification(id: idNotification)
         }
-        lbContent.text = notification.content?.htmlToString
-        lbTime.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
-        lbTitle.text = notification.title
-        
-        if notification.url == nil {
-            heightImage.constant = 0
-        } else {
-            heightImage.constant = 9 * self.view.frame.width/16
-        }
-    }
-    
-    func showData(notification: NotificationEntity) {
-        lbContent.text = notification.content
-        lbTime.text = notification.createTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy)
-        lbTitle.text = notification.title
-        
-        if notification.url == nil {
-            heightImage.constant = 0
-        } else {
-            heightImage.constant = 9 * self.view.frame.width/16
-        }
-        displayUI(isAllowShow: true)
     }
 
     override func setUpNavigation() {
         super.setUpNavigation()
-        
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.titleNotificationDetail.showLanguage)
     }
+    
     override func setTitleUI() {
         super.setTitleUI()
     }
-    
-    func didSucccess(noti: NotificationEntity) {
-        showData(notification: noti)
-        displayUI(isAllowShow: true)
+}
+
+extension NotificationDetailViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        ProgressView.shared.hide()
     }
 }

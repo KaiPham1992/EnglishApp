@@ -29,34 +29,30 @@ class HomeViewController: BaseViewController {
     
     weak var delegate: HomeViewControllerDelegate?
     
-    var listMenuItem = [MenuItem]() {
-        didSet {
-            tbHome.reloadData()
-        }
-    }
-    
     let header: HeaderUserView = {
         let header = HeaderUserView()
-        
         return header
     }()
     
     var listActivities = [Acitvity]() {
         didSet {
-            if listActivities.count == 0 {
-                if let cell = self.tbHome.cellForRow(at: IndexPath(row: 1, section: 1)) as? HomeNoResultCell {
-                    cell.showNoData()
-                }
+            DispatchQueue.main.async {
+                self.tbHome.reloadSections(IndexSet(integer: 2), with: UITableView.RowAnimation.automatic)
             }
-            tbHome.reloadData()
         }
     }
     
     var listTopThree = [UserEntity](){
         didSet {
-            tbHome.reloadData()
+            DispatchQueue.main.async {
+                self.tbHome.reloadRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.none)
+            }
         }
     }
+    
+    var offset: Int = 0
+    var isLoadmore = true
+    var showProgressView = true
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -65,8 +61,15 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        presenter?.getHomeRecently()
+        callAPIRecent()
         PaymentHelper.shared.fetchAvailableProducts()
+    }
+    
+    func callAPIRecent() {
+        if self.offset == 0 && showProgressView {
+            ProgressView.shared.show()
+        }
+        presenter?.getHomeRecently(offset: self.offset)
     }
     
     override func setUpViews() {
@@ -80,6 +83,31 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateAvatar), name: NSNotification.Name.init("UpdateAvatar"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
+    }
+    
+    @objc func changeLanguage() {
+        if let homeHeaderCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 0)) as? HomeHeaderCell {
+            homeHeaderCell.awakeFromNib()
+        }
+        //-- action cell
+        if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
+            actionCell.awakeFromNib()
+        }
+        //-- title recently cell
+        if let titleCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 1)) as? HomeTitleCell {
+            titleCell.awakeFromNib()
+        }
+        resetData()
+    }
+    
+    func resetData() {
+        self.offset = 0
+        self.isLoadmore = true
+        self.showProgressView = false
+        self.listActivities.removeAll()
+        callAPIRecent()
+        presenter?.getTopThree()
     }
     
     @objc func suggestionQuestion(notification: Notification) {
@@ -109,7 +137,9 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func updateAvatar() {
-        presenter?.getHomeRecently()
+        self.offset = 0
+        self.isLoadmore = true
+        callAPIRecent()
         presenter?.getTopThree()
     }
     
@@ -121,23 +151,13 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tabBarController?.tabBar.isHidden = false
+        self.tbHome.tableFooterView = UIView()
+        self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
         addHeaderHome()
         countNotification()
         presenter?.getProfile()
         presenter?.getTopThree()
-        reInitCell()
-    }
-    
-    func reInitCell() {
-        //-- action cell
-        if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
-            actionCell.awakeFromNib()
-        }
-        //-- title recently cell
-        if let titleCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 1)) as? HomeTitleCell {
-            titleCell.awakeFromNib()
-        }
     }
     
     func countNotification() {
@@ -163,11 +183,7 @@ class HomeViewController: BaseViewController {
         header.anchor(widthConstant: 220, heightConstant: 42)
         header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
-        //---
-        
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
-//        addButtonNotificationNavigation(count: 10, action: nil)
-//        addButtonToNavigation(image: AppImage.imgNotification, style: .right, action: #selector(btnNotificationTapped))
     }
     
     func removeHeaderHome() {
@@ -183,7 +199,11 @@ class HomeViewController: BaseViewController {
     }
     
     func didGetActivities(activities: [Acitvity]) {
-        self.listActivities = activities
+        ProgressView.shared.hide()
+        if activities.count < 20 {
+            self.isLoadmore = false
+        }
+        self.listActivities += activities
     }
 }
 
@@ -207,19 +227,17 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func refreshData() {
-        presenter?.listRecently.removeAll()
-        self.listActivities.removeAll()
-        presenter?.getHomeRecently()
-        presenter?.getTopThree()
-        tbHome.refreshControl?.endRefreshing()
+        resetData()
+        frefresh.endRefreshing()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        switch indexPath.section {
+        case 0:
             if indexPath.item == 0 {
                 let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
                 cell.btnTestBegin.addTarget(self, action: #selector(btnTestBeginTapped), for: .touchUpInside)
@@ -228,7 +246,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     cell.isTestedEnstrane = false
                 }
-                print(self.listTopThree.count)
                 cell.topThreeView.listTopThree = self.listTopThree
                 return cell
             } else {
@@ -237,44 +254,45 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.delegate = self
                 return cell
             }
-        } else {
-            if indexPath.item == 0 {
-                let cell = tableView.dequeue(HomeTitleCell.self, for: indexPath)
-                
+        case 2:
+            if self.listActivities.count == 0 {
+                let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
                 return cell
             } else {
-                if self.listActivities.count == 0 {
-                    // return cell no results
-                    let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
-
-                    return cell
-                } else {
-                    let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
-                    cell.actity = presenter?.listRecently[indexPath.item - 1]
-                    return cell
-                }
+                let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
+                cell.actity = self.listActivities[indexPath.row]
+                return cell
             }
+        case 1:
+            let cell = tableView.dequeueTableCell(HomeTitleCell.self)
+            return cell
+        default:
+            return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 2//self.listTopThree.count
-        } else {
-            if presenter?.listRecently.count == 0 {
-                return 2
-            } else {
-                return (presenter?.listRecently.count ?? 0) + 1
+        switch section {
+        case 0:
+            return 2
+        case 1:
+            return 1
+        case 2:
+            let row = self.listActivities.count
+            if row == 0 {
+                return 1
             }
+            return row
+        default:
+            return 0
         }
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return indexPath.item == 0 ? UITableView.automaticDimension : 150
+            return indexPath.row == 0 ? UITableView.automaticDimension : 150
         } else {
-            return indexPath.item == 0 ? 60: UITableView.automaticDimension
+            return UITableView.automaticDimension
         }
     }
     
@@ -285,21 +303,19 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if presenter?.canLoadMore == true && indexPath.row >= 8 {
-            presenter?.getHomeRecently()
+        if indexPath.section == 2 {
+            if listActivities.count - 5 == indexPath.row && isLoadmore {
+                self.offset += limit
+                callAPIRecent()
+                let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+                spiner.startAnimating()
+                spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
+                self.tbHome.tableFooterView = spiner
+                self.tbHome.tableFooterView?.isHidden = false
+            } else {
+                self.tbHome.tableFooterView?.isHidden = true
+            }
         }
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //        let itemSelected = self.listMenuItem[indexPath.item]
-        //        self.listMenuItem.forEach { item in
-        //            item.isSelected = false
-        //        }
-        //
-        //        itemSelected.isSelected = true
-        ////        pushViewController(itemSelected: itemSelected)
-        //
-        //        tbHome.reloadData()
     }
 }
 extension HomeViewController : ExerciseDelegate {

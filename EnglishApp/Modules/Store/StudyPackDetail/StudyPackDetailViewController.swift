@@ -19,11 +19,33 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.scrollView.isScrollEnabled = false
         displayData()
         print("Product ID: \(product.id&)")
     }
 
+    private func loadData(completion: @escaping((_ name: String, _ product: ProductEntity) -> ())){
+        ProgressView.shared.show()
+        Provider.shared.productAPIService.getListProduct(success: { collectionProduct in
+            guard let product = collectionProduct?.groupUpgrade else { return }
+            if self.id == "-1" {
+                for item in product {
+                    if item.name == "Premium" {
+                        completion(item.name ?? "", item)
+                        break
+                    }
+                }
+            } else {
+                for item in product {
+                    if item.id == self.id {
+                        completion(item.name ?? "", item)
+                        break
+                    }
+                }
+            }
+        }) { _ in
+        }
+    }
+    
     @IBAction func btnUpgradeTapped(){
         guard let id = product.id else {
             return
@@ -40,18 +62,21 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-        setTitleNavigation(title: product.name ?? "")
     }
     
     func displayData(){
         if id != "0" {
-            if let url = URL(string: BASE_URL + "_api/webview/product_detail/2") {
-                webView.loadRequest(URLRequest(url: url))
+            self.loadData { (title, product) in
+                self.setTitleNavigation(title: product.name ?? "")
+                self.webView.loadHTMLString(product.content ?? "", baseURL: nil)
+                ProgressView.shared.hide()
             }
+            
         } else {
             if let htmlString = product.content{
                 webView.loadHTMLString(htmlString, baseURL: nil)
             }
+            setTitleNavigation(title: product.name ?? "")
         }
         btnUpgrade.setTitle(LocalizableKey.upgrade.showLanguage, for: .normal)
     }

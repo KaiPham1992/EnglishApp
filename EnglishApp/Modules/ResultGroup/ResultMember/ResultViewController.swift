@@ -18,8 +18,6 @@ class ResultViewController: BaseViewController {
         if type == .entranceExercise && !isHistory {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut" : self.isOut])
         }
-//        self.navigationController?.popToRootViewController(animated: true)
-        
         (self.tabBarController as! MainTabbar).gotoHome()
         self.navigationController?.popToRootViewController(animated: true)
     }
@@ -119,7 +117,7 @@ extension ResultViewController: ResultViewProtocol{
             if self.type == .entranceExercise && !self.isHistory {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
                     PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
-                        let vc = StudyPackDetailRouter.createModule(id: "2")
+                        let vc = StudyPackDetailRouter.createModule(id: "-1")
                         self.push(controller: vc)
                     }, completeCancel: {
                         

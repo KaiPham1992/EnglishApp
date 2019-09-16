@@ -18,11 +18,9 @@ protocol HomeWireframeProtocol: class {
 protocol HomePresenterProtocol: class {
 
     var interactor: HomeInteractorInputProtocol? { get set }
-    func getHomeRecently()
+    func getHomeRecently(offset: Int)
     func getTopThree()
     func getProfile()
-    var listRecently: [Acitvity] { get set }
-    var canLoadMore: Bool { get set }
 }
 
 //MARK: Interactor -

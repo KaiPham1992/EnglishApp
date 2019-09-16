@@ -22,6 +22,7 @@ class QADetailViewController: BaseViewController, QADetailViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         presenter?.getDetail(id: id)
+        self.tabBarController?.tabBar.isHidden = true
 //        fillData(qa: self.qa)
     }
     

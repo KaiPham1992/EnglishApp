@@ -34,6 +34,8 @@ class NameExerciseViewController: BaseViewController {
 	var presenter: NameExercisePresenterProtocol?
     weak var exerciseDelegate: ExerciseDelegate?
     var player : AVPlayer?
+    var playerItem : AVPlayerItem?
+    var isReapeat = false
     
     @IBAction func clickNext(_ sender: Any) {
         if player != nil {
@@ -49,7 +51,7 @@ class NameExerciseViewController: BaseViewController {
                 }
             } else {
                 self.currentIndex += 1
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
             }
         } else {
@@ -105,6 +107,10 @@ class NameExerciseViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        NotificationCenter.default.addObserver(forName: .AVPlayerItemDidPlayToEndTime, object: player, queue: .main) { [weak self] _ in
+            self?.playerItem?.seek(to: CMTime.zero, completionHandler: nil)
+            self?.isReapeat = true
+        }
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
@@ -152,7 +158,7 @@ class NameExerciseViewController: BaseViewController {
             } else {
                 if !isEnd {
                     self.currentIndex -= 1
-                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
+                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
                     clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
                 }
             }
@@ -160,14 +166,6 @@ class NameExerciseViewController: BaseViewController {
     }
     
     func confirmOutExercise(){
-//        if typeExercise == .dailyMissonExercise {
-//            self.presenter?.exitExercise(id: Int(self.idExercise) ?? 0)
-//        } else {
-//            if let _param = self.paramSubmit {
-//                _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
-//                self.presenter?.submitExercise(param: _param, isOut: true)
-//            }
-//        }
         if let _param = self.paramSubmit {
             _param.total_time = self.listAnswerQuestion.map{$0.time}.getSum()
             self.presenter?.submitExercise(param: _param, isOut: true)
@@ -196,13 +194,9 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     
     func reloadView() {
         DispatchQueue.global().async {
-//            if self.typeExercise == .dailyMissonExercise {
-//                dateTestDaillyMisson = Date()
-//            }
             self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
-//            self.currentTime = 10
             self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             if let questions = self.presenter?.exerciseEntity?.questions {
                 for item in questions {
@@ -215,7 +209,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
             }
             DispatchQueue.main.async {
                 self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
-                self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
+                self.lblIndexQuestion.text = "1/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
                 self.vCountTime.setupTimeStartNow(min: self.currentTime)
                 self.clvQuestion.reloadData()
                 ProgressView.shared.hide()
@@ -317,11 +311,14 @@ extension NameExerciseViewController : CellExerciseDelegate{
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.row].isShowSuggestQuestion ?? false
         if !isShowSuggestion {
-            PopUpHelper.shared.showSuggesstionResult(diamond: {
+            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.minus_dianmod.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), height: 150, complete: {
                 self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-            }) {
-                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
-            }
+            }, cancel: nil)
+//            PopUpHelper.shared.showSuggesstionResult(diamond: {
+//                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
+//            }) {
+//                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
+//            }
         } else {
             PopUpHelper.shared.showError(message: LocalizableKey.suggestion_one_choice.showLanguage) {
                 
@@ -335,33 +332,36 @@ extension NameExerciseViewController : CellExerciseDelegate{
     }
         
     func clickAudio(indexPath: IndexPath) {
-//        if player == nil {
         var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
         numberClick += 1
         self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
         
         if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
             if numberClick == 1 {
-                let playerItem = AVPlayerItem(url: url)
+                self.playerItem = AVPlayerItem(url: url)
                 player = AVPlayer(playerItem: playerItem)
                 player?.play()
             } else {
                 if player != nil {
-                    if numberClick % 2 == 0 {
-                        player?.pause()
-                    } else {
+                    if self.isReapeat {
                         player?.play()
+                        self.isReapeat = false
+                    } else {
+                        if numberClick % 2 == 0 {
+                            player?.pause()
+                        } else {
+                            player?.play()
+                        }
                     }
                 }
             }
         }
-//        }
     }
 }
 
 extension NameExerciseViewController : TimeDelegate{
     func changeTime() {
-        self.listAnswerQuestion[self.currentIndex - 1].time += 1 
+        self.listAnswerQuestion[self.currentIndex - 1].time += 1000
     }
     
     func startTime() {

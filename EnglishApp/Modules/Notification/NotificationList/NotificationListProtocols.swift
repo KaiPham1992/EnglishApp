@@ -19,10 +19,8 @@ protocol NotificationListPresenterProtocol: class {
 
     var interactor: NotificationListInteractorInputProtocol? { get set }
     
-    func getNotification()
-    func loadMoreNotification()
+    func getNotification(offset: Int)
     func readNotification(id: Int)
-    var canLoadMore: Bool {get set }
 }
 
 //MARK: Interactor -

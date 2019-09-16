@@ -149,6 +149,11 @@ class BasePopUpView: UIView {
         }
     }
     
+    func updateNewHeight(height: CGFloat){
+        self.heightContent = height
+        self.vContent.frame = CGRect(x: minXContent, y: minYContent, width: widthContent, height: heightContent)
+    }
+    
     func showPopUp(width: CGFloat = 350 , height: CGFloat = 250, type: BasePopUpViewType = BasePopUpViewType.zoomOut) {
         
         if let window = UIApplication.shared.keyWindow {

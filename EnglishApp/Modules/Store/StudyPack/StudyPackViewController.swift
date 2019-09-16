@@ -180,8 +180,7 @@ extension StudyPackViewController{
     }
     
     func didGetError(error: APIError) {
-        let messsageString = error.message?.contains("NOT_ENOUGH_HONEY") == true ? "\(LocalizableKey.notEnoughBee.showLanguage)" : "\(LocalizableKey.notEnoughDiamon.showLanguage)"
-        PopUpHelper.shared.showError(message: messsageString) {
+        PopUpHelper.shared.showError(message: error.message&) {
             //do nothing
         }
     }
