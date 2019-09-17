@@ -17,7 +17,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         #if PROD
         let googleServiceFile = "GoogleService-Prod-Info"
         #else
-        let googleServiceFile = "GoogleService-Dev-Info"
+        let googleServiceFile = "GoogleService-Prod-Info"
         #endif
         
         let filePath = Bundle.main.path(forResource: googleServiceFile, ofType: "plist")!
