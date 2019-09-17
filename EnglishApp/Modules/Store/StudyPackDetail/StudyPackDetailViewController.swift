@@ -67,6 +67,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     func displayData(){
         if id != "0" {
             self.loadData { (title, product) in
+                self.product = product
                 self.setTitleNavigation(title: product.name ?? "")
                 self.webView.loadHTMLString(product.content ?? "", baseURL: nil)
                 ProgressView.shared.hide()

@@ -103,7 +103,6 @@ class MonthView: UIView {
             if currentMonthIndex < 0 {
                 currentMonthIndex = 11
                 currentYear -= 1
-                
             }
         }
         if sender == btRight{
@@ -112,9 +111,7 @@ class MonthView: UIView {
             if currentMonthIndex > 11 {
                 currentMonthIndex = 0
                 currentYear += 1
-                
             }
-           
         }
         lblTitle.text = "\(monthsArr[currentMonthIndex]) \(currentYear)"
         delegate?.didChangeMonth(month: currentMonthIndex, year: currentYear, isLeft: self.isLeft)

@@ -32,7 +32,7 @@ protocol UserAPIServiceProtocol {
     
     func getProfileUser(success: @escaping SuccessHandler<UserEntity>.object, failure: @escaping RequestFailure)
     func getHomeRecently(offset: Int, limit: Int, success: @escaping SuccessHandler<RecentlyEntity>.object, failure: @escaping RequestFailure)
-    
+    func getPackage(offset: Int, success: @escaping SuccessHandler<PackageEntity>.object, failure: @escaping RequestFailure)
 }
 
 
@@ -116,6 +116,11 @@ class UserAPIService: UserAPIServiceProtocol {
     func getHomeRecently(offset: Int, limit: Int, success: @escaping SuccessHandler<RecentlyEntity>.object, failure: @escaping RequestFailure) {
         let endPoint = UserEndPoint.getRecently(offset: offset, limit: limit)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getPackage(offset: Int, success: @escaping SuccessHandler<PackageEntity>.object, failure: @escaping RequestFailure) {
+        let route = UserEndPoint.getPackage(offset: offset)
+        network.requestData(endPoint: route, success: MapperData.mapObject(success), failure: failure)
     }
     
 }

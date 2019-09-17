@@ -45,6 +45,23 @@ class ResultExerciseRouter: ResultExerciseWireframeProtocol {
         return view
     }
     
+    static func createModule(listAnswer: [QuestionResultEntity], index: Int, isSearch: Bool) -> ResultExerciseViewController {
+        // Change to get view from storyboard if not using progammatic UI
+        let view = ResultExerciseViewController(nibName: nil, bundle: nil)
+        view.index = index
+        view.isSearch = isSearch
+        let interactor = ResultExerciseInteractor()
+        let router = ResultExerciseRouter()
+        let presenter = ResultExercisePresenter(interface: view, interactor: interactor, router: router)
+        presenter.listAnswer = listAnswer
+        
+        view.presenter = presenter
+        interactor.presenter = presenter
+        router.viewController = view
+        
+        return view
+    }
+    
     func gotoDetailVocabulary(idWord: Int){
         let vc = DetailLessonRouter.createModule(idWord: idWord)
         self.viewController?.push(controller: vc,animated: true)

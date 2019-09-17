@@ -400,3 +400,6 @@
 
 "less_than_100" = "Please enter a total number of questions that do not exceed 100.";
 "equal_100" = "Please enter the 100 sentences.";
+"no_find_result" = "No results found";
+"userPackage" = "Upgrade package purchased";
+"dateExpire" = "Date expired: ";

@@ -400,3 +400,6 @@
 
 "less_than_100" = "Vui lòng nhập tổng số câu hỏi không vượt quá 100.";
 "equal_100" = "Vui lòng nhập đủ 100 câu.";
+"no_find_result" = "Không tìm thấy kết quả";
+"userPackage" = "Gói nâng cấp đã mua";
+"dateExpire" = "Ngày hết hạn: ";

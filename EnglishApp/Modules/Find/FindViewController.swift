@@ -62,7 +62,12 @@ class FindViewController: BaseViewController {
 }
 extension FindViewController: FindViewProtocol{
     func reloadView() {
-        let row = self.presenter?.getNumberSearch() ?? 0
+        var row = 0
+        if type == .searchTheory {
+            row = self.presenter?.searchTheoryRespone.count ?? 0
+        } else {
+            row = self.presenter?.searchExciseRespone.count ?? 0
+        }
         if row == 0 {
             self.showNoData()
         } else {
@@ -93,43 +98,36 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
-        if let textSearch = self.presenter?.getTextSearch(indexPath: indexPath){
-            cell.lblSearch.text = textSearch.htmlToString
+        if type == .searchTheory {
+            if let data = self.presenter?.searchTheoryRespone[indexPath.row].name?.htmlToString {
+                cell.lblSearch.text = data
+            }
+        } else {
+            if let data = self.presenter?.searchExciseRespone[indexPath.row].name?.htmlToString {
+                cell.lblSearch.text = data
+            }
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let row = self.presenter?.getNumberSearch() ?? 0
+        var row = 0
+        if type == .searchTheory {
+            row = self.presenter?.searchTheoryRespone.count ?? 0
+        } else {
+            row = self.presenter?.searchExciseRespone.count ?? 0
+        }
         return row
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if type == .searchTheory {
-            let idLesson = self.presenter?.getIdEntity(indexPath: indexPath) ?? ""
+            let idLesson = self.presenter?.searchTheoryRespone[indexPath.row]._id ?? "0"
             self.presenter?.gotoTheoryDetail(idLesson: idLesson)
         }
         if type == .searchExercise {
-            let idExercise = self.presenter?.searchRespone[indexPath.row]._id ?? "0"
-            let typeValue = Int(self.presenter?.searchRespone[indexPath.row].type_test ?? "0") ?? 0
-            var type : TypeDoExercise = .entranceExercise
-            switch typeValue {
-            case 5:
-                type = TypeDoExercise.createExercise
-            case 7:
-                type = TypeDoExercise.levelExercise
-            case 3:
-                type = TypeDoExercise.practiceExercise
-            case 6:
-                type = TypeDoExercise.assignExercise
-            case 2:
-                type = TypeDoExercise.dailyMissonExercise
-            case 1:
-                type = TypeDoExercise.entranceExercise
-            default:
-                type = TypeDoExercise.competition
-            }
-            let vc = ResultRouter.createModule(type: type, id: idExercise, isHistory: true)
+            let exercise = self.presenter?.searchExciseRespone[indexPath.row]
+            let vc = ResultExerciseRouter.createModule(listAnswer: exercise?.questions ?? [], index: 0, isSearch: true)
             self.push(controller: vc)
         }
     }

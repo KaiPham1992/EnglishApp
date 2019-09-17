@@ -150,6 +150,7 @@ class CalendarView : UIView{
     }
     
     func reloadView(isLeft: Bool){
+        firstWeekDayOfMonth = getFirstWeekDate()
         actionTranformDate?(self.getFromDate(),self.getToDate())
         dateEnable.removeAll()
         if isLeft {
@@ -184,7 +185,7 @@ class CalendarView : UIView{
         if isLeft{
             currentMonthIndex -= 1
             self.isLeft = true
-            if currentMonthIndex - 1 < 0 {
+            if currentMonthIndex <= 0 {
                 currentMonthIndex = 12
                 currentYear -= 1
             }
@@ -197,10 +198,9 @@ class CalendarView : UIView{
             } else {
                 currentMonthIndex += 1
                 self.isLeft = false
-                if currentMonthIndex + 1 > 12 {
+                if currentMonthIndex >= 13 {
                     currentMonthIndex = 1
                     currentYear += 1
-                    
                 }
                 return (currentMonthIndex,currentYear)
             }

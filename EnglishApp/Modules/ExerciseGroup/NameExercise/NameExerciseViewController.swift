@@ -186,6 +186,12 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     }
     
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath, isDiamond: Bool) {
+        let infor = UserDefaultHelper.shared.loginUserInfo
+        if let _infor = infor, let diamond = _infor.amountDiamond {
+            _infor.amountDiamond = diamond - 1
+            UserDefaultHelper.shared.loginUserInfo = _infor
+        }
+        
         NotificationCenter.default.post(name: NSNotification.Name.init("SuggestionQuestion"), object: nil, userInfo: ["isDiamond" : isDiamond])
         if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise, let dataCell =  self.presenter?.getQuestion(indexPath: indexPath){
             cell.changeDataSource(index: indexQuestion, data: dataCell.answers ?? [])
@@ -311,14 +317,16 @@ extension NameExerciseViewController : CellExerciseDelegate{
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.row].isShowSuggestQuestion ?? false
         if !isShowSuggestion {
-            PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.minus_dianmod.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), height: 150, complete: {
-                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-            }, cancel: nil)
-//            PopUpHelper.shared.showSuggesstionResult(diamond: {
-//                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
-//            }) {
-//                self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion,isDiamond: false)
-//            }
+            let numberDiamond = UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0
+            if numberDiamond > 1 {
+                PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.minus_dianmod.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), height: 150, complete: {
+                    self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
+                }, cancel: nil)
+            } else {
+                PopUpHelper.shared.showError(message: LocalizableKey.diamod_not_enough.showLanguage) {
+                    
+                }
+            }
         } else {
             PopUpHelper.shared.showError(message: LocalizableKey.suggestion_one_choice.showLanguage) {
                 
@@ -340,6 +348,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
             if numberClick == 1 {
                 self.playerItem = AVPlayerItem(url: url)
                 player = AVPlayer(playerItem: playerItem)
+                try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
                 player?.play()
             } else {
                 if player != nil {
@@ -350,6 +359,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
                         if numberClick % 2 == 0 {
                             player?.pause()
                         } else {
+                            try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
                             player?.play()
                         }
                     }

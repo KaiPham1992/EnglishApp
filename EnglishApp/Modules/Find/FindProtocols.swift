@@ -18,22 +18,19 @@ protocol FindWireframeProtocol: class {
 protocol FindPresenterProtocol: class {
 
     var interactor: FindInteractorInputProtocol? { get set }
-    var searchRespone : [SearchEntity] {get}
+    var searchTheoryRespone : [SearchEntity] {get}
+    var searchExciseRespone : [TestResultProfileEntity] {get}
     func searchExercise(text: String)
-    func getMessageError() -> String?
-    func getTextSearch(indexPath: IndexPath) -> String?
-    func getNumberSearch() -> Int
     func searchTheory(text: String)
     func gotoTheoryDetail(idLesson: String)
-    func getIdEntity(indexPath: IndexPath) -> String?
 }
 
 //MARK: Interactor -
 protocol FindInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func searchExerciseSuccessed(respone: [SearchEntity])
-    func searchExerciseFailed(error: APIError)
+    func searchTheorySuccessed(respone: [SearchEntity])
+    func searchExerciseSuccessed(respone: [TestResultProfileEntity])
 }
 
 protocol FindInteractorInputProtocol: class {
@@ -50,7 +47,6 @@ protocol FindViewProtocol: class {
 
     var presenter: FindPresenterProtocol?  { get set }
     func reloadView()
-    func showErrorSearchFailed()
 
     /* Presenter -> ViewController */
 }

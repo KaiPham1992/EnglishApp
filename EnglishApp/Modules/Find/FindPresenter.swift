@@ -12,11 +12,12 @@ import UIKit
 
 class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
     
+ 
     weak private var view: FindViewProtocol?
     var interactor: FindInteractorInputProtocol?
     private let router: FindWireframeProtocol
-    var searchRespone : [SearchEntity] = []
-    var error: APIError?
+    var searchTheoryRespone: [SearchEntity] = []
+    var searchExciseRespone: [TestResultProfileEntity] = []
 
     init(interface: FindViewProtocol, interactor: FindInteractorInputProtocol?, router: FindWireframeProtocol) {
         self.view = interface
@@ -24,18 +25,15 @@ class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
         self.router = router
     }
     
-    func getMessageError() -> String? {
-        return error?.message
+    func searchTheorySuccessed(respone: [SearchEntity]) {
+        self.searchTheoryRespone = respone
+        self.view?.reloadView()
     }
     
-    func getNumberSearch() -> Int {
-        return searchRespone.count
+    func searchExerciseSuccessed(respone: [TestResultProfileEntity]) {
+        self.searchExciseRespone = respone
+        self.view?.reloadView()
     }
-    
-    func getTextSearch(indexPath: IndexPath) -> String? {
-        return searchRespone[indexPath.row].name
-    }
-    
     
     func searchExercise(text: String) {
         self.interactor?.searchExercise(text: text)
@@ -43,20 +41,6 @@ class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
     
     func searchTheory(text: String){
         self.interactor?.searchTheory(text: text)
-    }
-    
-    func getIdEntity(indexPath: IndexPath) -> String?{
-        return searchRespone[indexPath.row]._id
-    }
-    
-    func searchExerciseSuccessed(respone: [SearchEntity]) {
-        searchRespone = respone
-        self.view?.reloadView()
-    }
-    
-    func searchExerciseFailed(error: APIError) {
-        self.error = error
-        self.view?.showErrorSearchFailed()
     }
     
     func gotoTheoryDetail(idLesson: String){

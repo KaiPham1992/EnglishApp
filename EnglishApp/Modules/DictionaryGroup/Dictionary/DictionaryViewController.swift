@@ -164,7 +164,7 @@ class DictionaryViewController: BaseViewController {
         // Action triggered on selection
         dropDownSearch.selectionAction = { [unowned self] (index: Int, item: String) in
             self.dropDownSearch.hide()
-            if item != "Không tìm thấy kết quả" {
+            if item != LocalizableKey.no_find_result.showLanguage {
                self.currentTextSearch = item
             } else {
                 self.currentTextSearch = ""
@@ -201,7 +201,7 @@ extension DictionaryViewController:DictionaryViewProtocol{
     func searchVocabularySuccessed(){
         let data = self.presenter?.listSearchVocabulary.map{$0.word} ?? []
         if data.count == 0 {
-            dropDownSearch.dataSource = ["Không tìm thấy kết quả"]
+            dropDownSearch.dataSource = [LocalizableKey.no_find_result.showLanguage]
         } else {
             dropDownSearch.dataSource = data
         }

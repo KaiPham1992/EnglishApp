@@ -25,18 +25,6 @@ class ResultExerciseViewController: BaseViewController {
                 btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             }
         } else {
-//            if isHistory {
-//                let vc = self.navigationController?.viewControllers
-//                if (vc?.count ?? 0) > 2 {
-//                    if let view = vc?[(vc?.count ?? 3)-3] {
-//                        self.navigationController?.popToViewController(view, animated: true)
-//                    }
-//                } else {
-//                    self.pop(animated: true)
-//                }
-//            } else {
-//                self.pop(animated: true)
-//            }
             self.pop(animated: true)
         }
     }
@@ -47,6 +35,8 @@ class ResultExerciseViewController: BaseViewController {
     var index: Int = 0
     var tempIndex = 0
     var isHistory = false
+    var fromSearch = true
+    var isSearch = false
 
     override func setUpViews() {
         super.setUpViews()
@@ -56,6 +46,11 @@ class ResultExerciseViewController: BaseViewController {
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
+        if isSearch {
+            btnNext.isHidden = true
+        } else {
+            btnNext.isHidden = false
+        }
         lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0) \(LocalizableKey.sentence.showLanguage.lowercased())"
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: false)
@@ -89,7 +84,9 @@ class ResultExerciseViewController: BaseViewController {
         self.tabBarController?.tabBar.isHidden = true
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         addBackToNavigation()
-        addButtonToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy") ?? UIImage(), style: .right, action: #selector(deleteExercise))
+        if !isSearch {
+            addButtonToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy") ?? UIImage(), style: .right, action: #selector(deleteExercise))
+        }
     }
     
     @objc func deleteExercise(){

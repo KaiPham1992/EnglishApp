@@ -12,10 +12,13 @@ import Alamofire
 enum HomeEndPoint{
     case getTopThree
     case getListLeaderBoard(quarter: String, year: String, rank: String, offset: Int)
+    case getTermAndCondition
 }
 extension HomeEndPoint: EndPointType{
     var path: String {
         switch self {
+        case .getTermAndCondition:
+            return "_api/home/get_policy_term"
         case .getTopThree:
             return "_api/home/get_home_summary"
         case .getListLeaderBoard:
@@ -25,7 +28,7 @@ extension HomeEndPoint: EndPointType{
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getTopThree, .getListLeaderBoard:
+        case .getTopThree, .getListLeaderBoard, .getTermAndCondition:
             return .post
             
         }
@@ -33,7 +36,7 @@ extension HomeEndPoint: EndPointType{
     
     var parameters: JSONDictionary {
         switch self {
-        case .getTopThree:
+        case .getTopThree, .getTermAndCondition:
             return [:]
         case .getListLeaderBoard(let quarter, let year, let rank, let offset):
             let param = ["quarter": quarter, "year": year, "rank": rank, "offset": offset, "limit": limit] as [String: Any]
@@ -45,7 +48,5 @@ extension HomeEndPoint: EndPointType{
         let header = DefaultHeader().addAuthHeader()
         return header
     }
-    
-    
 }
 
