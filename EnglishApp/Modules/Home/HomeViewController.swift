@@ -37,7 +37,7 @@ class HomeViewController: BaseViewController {
     var listActivities = [Acitvity]() {
         didSet {
             DispatchQueue.main.async {
-                self.tbHome.reloadSections(IndexSet(integer: 2), with: UITableView.RowAnimation.automatic)
+                self.tbHome.reloadData()
             }
         }
     }
@@ -109,7 +109,8 @@ class HomeViewController: BaseViewController {
         self.offset = 0
         self.isLoadmore = true
         self.showProgressView = false
-        self.listActivities.removeAll()
+        self.listActivities = []
+        self.listTopThree = []
         callAPIRecent()
         presenter?.getTopThree()
     }
