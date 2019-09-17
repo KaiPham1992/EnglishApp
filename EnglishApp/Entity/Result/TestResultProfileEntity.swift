@@ -19,12 +19,16 @@ class TestResultProfileEntity: Mappable {
     var social_img_src : String?
     var attach_img_src : String?
     var questions : [QuestionResultEntity]?
+    var type_test : String?
+    var name : String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
+       self.type_test <- map["type_test"]
+       self.name <- map["name"]
        self._id <- map["_id"]
        self.total_score <- map["total_score"]
        self.total_time <- map["total_time"]
