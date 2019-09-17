@@ -45,7 +45,7 @@ class HomeViewController: BaseViewController {
     var listTopThree = [UserEntity](){
         didSet {
             DispatchQueue.main.async {
-                self.tbHome.reloadRows(at: [IndexPath(row: 0, section: 0)], with: UITableView.RowAnimation.none)
+                self.tbHome.reloadData()
             }
         }
     }
