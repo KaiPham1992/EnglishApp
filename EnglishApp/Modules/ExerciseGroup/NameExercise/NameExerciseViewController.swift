@@ -348,6 +348,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
             if numberClick == 1 {
                 self.playerItem = AVPlayerItem(url: url)
                 player = AVPlayer(playerItem: playerItem)
+                try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
                 player?.play()
             } else {
                 if player != nil {
@@ -358,6 +359,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
                         if numberClick % 2 == 0 {
                             player?.pause()
                         } else {
+                            try? AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [])
                             player?.play()
                         }
                     }
