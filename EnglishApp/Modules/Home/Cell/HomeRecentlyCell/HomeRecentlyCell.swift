@@ -19,7 +19,7 @@ class HomeRecentlyCell: BaseTableCell {
             guard let activity = actity else { return }
             lbContent.text = activity.content
             lbTitle.text = activity.fullName
-            imgIcon.sd_setImage(with: activity.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
+            imgIcon.sd_setImage(with: activity.urlAvatar, placeholderImage: #imageLiteral(resourceName: "ic_avatar_default"))
         }
     }
     override func awakeFromNib() {
