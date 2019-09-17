@@ -74,15 +74,18 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         
         
         if let imageEdit = info[.editedImage] as? UIImage {
-            
-            let assetPath = info[UIImagePickerController.InfoKey.referenceURL] as! NSURL
-            if assetPath.absoluteString?.hasSuffix("GIF") ??  false {
-                if let image = imageEdit.pngData() {
-                    imagePickerUIKit.dismiss(animated: true, completion: nil)
-                    self.completionImage?(UIImage(data: image))
+            if let assetPath = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
+                if assetPath.absoluteString.hasSuffix("GIF") {
+                    if let image = imageEdit.pngData() {
+                        imagePickerUIKit.dismiss(animated: true, completion: nil)
+                        self.completionImage?(UIImage(data: image))
+                    } else {
+                        imagePickerUIKit.dismiss(animated: true, completion: nil)
+                        PopUpHelper.shared.showNoAllowGifPhoto(completionYes: nil)
+                    }
                 } else {
                     imagePickerUIKit.dismiss(animated: true, completion: nil)
-                    PopUpHelper.shared.showNoAllowGifPhoto(completionYes: nil)
+                    self.completionImage?(imageEdit)
                 }
             } else {
                 imagePickerUIKit.dismiss(animated: true, completion: nil)
