@@ -110,6 +110,7 @@ class HomeViewController: BaseViewController {
         self.isLoadmore = true
         self.showProgressView = false
         self.listActivities.removeAll()
+        self.listTopThree.removeAll()
         callAPIRecent()
         presenter?.getTopThree()
     }
