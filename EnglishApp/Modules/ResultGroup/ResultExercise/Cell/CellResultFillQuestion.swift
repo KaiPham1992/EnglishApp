@@ -40,7 +40,7 @@ class CellResultFillQuestion: UITableViewCell {
 //        lblAnswer.text = answer.content ?? " "
         let status = answer.status ?? "0"
         lblAnswer.text = answer.value&
-        if status == "0"{
+        if status == "0" || status == "2" {
             lblNumberAnswer.textColor = #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
             lblAnswer.textColor = #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1882352941, alpha: 1)
             viewLine.backgroundColor = #colorLiteral(red: 1, green: 0.1882352941, blue: 0.1882352941, alpha: 1)

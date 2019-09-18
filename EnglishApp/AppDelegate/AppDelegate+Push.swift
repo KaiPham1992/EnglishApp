@@ -55,7 +55,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             self.handleNotification(userInfo: userInfor)
         }
         completionHandler()
-        print("didReceive")
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -66,7 +65,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     @available(iOS 10.0, *)
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        print("willPresent")
         UIApplication.shared.applicationIconBadgeNumber += 1
         completionHandler([.alert, .badge, .sound])
     }
@@ -78,15 +76,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
-        print(messaging)
     }
     
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
-        print("\n\n🚀 Firebase registration token\n\(fcmToken)\n\n")
         UserDefaultHelper.shared.fcmToken = fcmToken
     }
 }
-
-
 
 

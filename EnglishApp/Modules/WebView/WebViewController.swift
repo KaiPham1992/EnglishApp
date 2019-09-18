@@ -27,10 +27,14 @@ class WebViewController: BaseViewController {
         Provider.shared.homeAPIService.getTermAndCondition(success: { (response) in
             ProgressView.shared.hide()
             if let _response = response {
+                self.hideNoData()
                 self.lblContent.attributedText = NSAttributedString(string: _response.content?.htmlToString ?? "")
+            } else {
+                self.showNoData()
             }
         }) { (error) in
-            ProgressView.shared.show()
+            ProgressView.shared.hide()
+            self.showNoData()
         }
     }
     
