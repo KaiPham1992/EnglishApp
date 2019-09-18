@@ -14,7 +14,7 @@ class StudyPackRouter: StudyPackWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> StudyPackViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = StudyPackViewController.initFromNib()
         let interactor = StudyPackInteractor()

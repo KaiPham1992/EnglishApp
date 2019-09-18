@@ -41,11 +41,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ksO-Ae-Goc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="537"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Y6-f2-tXR">
-                                    <rect key="frame" x="0.0" y="537" width="375" height="100"/>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Y6-f2-tXR">
+                                    <rect key="frame" x="0.0" y="547" width="375" height="100"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZK-5M-cHX">
                                             <rect key="frame" x="269" y="40.5" width="90" height="33"/>
@@ -87,10 +87,10 @@
                                                 <constraint firstAttribute="height" constant="1" id="gE4-kR-5DX"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzg-gg-0vS">
-                                            <rect key="frame" x="25" y="76.5" width="325" height="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wzg-gg-0vS">
+                                            <rect key="frame" x="25" y="78.5" width="325" height="0.0"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="17" id="f10-1Q-Fk0"/>
+                                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="17" id="f10-1Q-Fk0"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
                                             <color key="textColor" red="1" green="0.2161529324" blue="0.1285244733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -105,7 +105,7 @@
                                         <constraint firstItem="8ZK-5M-cHX" firstAttribute="centerY" secondItem="9xd-In-a0k" secondAttribute="centerY" id="EEk-mD-qgb"/>
                                         <constraint firstItem="NBG-9A-Qrd" firstAttribute="top" secondItem="9xd-In-a0k" secondAttribute="bottom" id="FEK-wt-NWl"/>
                                         <constraint firstItem="dRs-u6-a8V" firstAttribute="leading" secondItem="9Y6-f2-tXR" secondAttribute="leading" constant="16" id="Gxe-CA-7Lc"/>
-                                        <constraint firstItem="Wzg-gg-0vS" firstAttribute="top" secondItem="8ZK-5M-cHX" secondAttribute="bottom" constant="3" id="PPw-Kg-mIz"/>
+                                        <constraint firstItem="Wzg-gg-0vS" firstAttribute="top" secondItem="8ZK-5M-cHX" secondAttribute="bottom" constant="5" id="PPw-Kg-mIz"/>
                                         <constraint firstItem="9xd-In-a0k" firstAttribute="leading" secondItem="9Y6-f2-tXR" secondAttribute="leading" constant="16" id="SXU-fO-det"/>
                                         <constraint firstItem="NBG-9A-Qrd" firstAttribute="leading" secondItem="9Y6-f2-tXR" secondAttribute="leading" constant="16" id="a9j-Wr-EOw"/>
                                         <constraint firstAttribute="trailing" secondItem="dRs-u6-a8V" secondAttribute="trailing" constant="16" id="dr4-rY-Tjg"/>
@@ -116,11 +116,17 @@
                                         <constraint firstAttribute="trailing" secondItem="Wzg-gg-0vS" secondAttribute="trailing" constant="25" id="yrz-Cj-Nh5"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.29999999999999999" colorSpace="calibratedRGB"/>
+                                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" red="0.0" green="0.0" blue="0.0" alpha="0.12" colorSpace="calibratedRGB"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="4"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="2"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
@@ -133,7 +139,7 @@
                                 <constraint firstAttribute="trailing" secondItem="ksO-Ae-Goc" secondAttribute="trailing" id="k61-nm-eHK"/>
                                 <constraint firstItem="ksO-Ae-Goc" firstAttribute="leading" secondItem="3Pv-yG-6g4" secondAttribute="leading" id="kSV-Lk-y4X"/>
                                 <constraint firstItem="9Y6-f2-tXR" firstAttribute="leading" secondItem="3Pv-yG-6g4" secondAttribute="leading" id="ld2-ka-W6l"/>
-                                <constraint firstAttribute="bottom" secondItem="9Y6-f2-tXR" secondAttribute="bottom" constant="10" id="ra5-3d-k5y"/>
+                                <constraint firstAttribute="bottom" secondItem="9Y6-f2-tXR" secondAttribute="bottom" id="ra5-3d-k5y"/>
                             </constraints>
                         </view>
                     </subviews>
