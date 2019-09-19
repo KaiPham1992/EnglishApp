@@ -58,6 +58,7 @@ open class BaseViewController: UIViewController {
     open override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setTitleUI()
+        checkInternet()
     }
     
     override open var preferredStatusBarStyle: UIStatusBarStyle {
@@ -151,6 +152,13 @@ open class BaseViewController: UIViewController {
     
     func hideNoData() {
         lbNodata.removeFromSuperview()
+    }
+    
+    func checkInternet() {
+        if !Utils.isConnectedToInternet() {
+            PopUpHelper.shared.showNoInternet {
+            }
+        }
     }
     
 }
