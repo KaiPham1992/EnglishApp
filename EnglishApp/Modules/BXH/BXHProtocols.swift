@@ -19,6 +19,9 @@ protocol BXHPresenterProtocol: class {
 
     var interactor: BXHInteractorInputProtocol? { get set }
     func getListLeaderBoard(quarter: String, year: String, rank: String)
+    func loadMore(quarter: String, year: String, rank: String)
+    var canLoadMore: Bool { get set }
+    var listUser: [UserEntity] { get set }
 }
 
 //MARK: Interactor -
@@ -41,5 +44,6 @@ protocol BXHViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetList(listLeaderBoard: LeaderBoardEntity)
+    func didLoadMore()
     func didGetList(error: Error)
 }
