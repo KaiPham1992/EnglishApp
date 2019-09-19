@@ -400,4 +400,5 @@ struct LocalizableKey {
     
     static let userPackage = "userPackage"
     static let dateExpire = "dateExpire"
+    static let USER_IS_NOT_EXISTED = "USER_IS_NOT_EXISTED"
 }

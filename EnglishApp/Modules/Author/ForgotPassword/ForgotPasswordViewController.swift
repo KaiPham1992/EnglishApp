@@ -75,6 +75,9 @@ extension ForgotPasswordViewController: ForgotPasswordViewProtocol {
     }
     
     func didForgotPassword(error: APIError?) {
-        hideError(isHidden: false, message: error?.message&.showLanguage)
+//        hideError(isHidden: false, message: error?.message&.showLanguage)
+        if let message = error?.message?.contains("EMAIL_NOT_IS_EXISTED") {
+            PopUpHelper.shared.showError(message: "\(LocalizableKey.USER_IS_NOT_EXISTED.showLanguage)", completionYes: nil)
+        }
     }
 }

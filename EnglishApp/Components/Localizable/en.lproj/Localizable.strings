@@ -40,7 +40,7 @@
 "exercise_is_doing" = "This exercise is doing. Please complete and submit it.";
 "honey_not_enough" = "Honey haven't enough please refill.";
 "diamod_not_enough" = "Diamod haven't enough please refill.";
-"you_have_one_time" = "Bạn chỉ được chọn 1 lần.";
+"you_have_one_time" = "You can only choose one time.";
 
 "invalidLoginEmail" = "Invalid email";
 "invalidLoginPassword" = "Password must be more than 6 characters";
