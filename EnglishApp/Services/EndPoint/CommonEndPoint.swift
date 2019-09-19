@@ -34,7 +34,12 @@ extension CommonEndPoint: EndPointType {
     }
     
     var parameters: JSONDictionary {
-        return [:]
+        switch self {
+        case .changeLanguageCode:
+            return ["device_id": UIDevice.current.identifierForVendor!.uuidString]
+        default:
+            return [:]
+        }
     }
     
     var headers: HTTPHeaders? {
