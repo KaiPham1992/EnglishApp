@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import WebKit
 
 class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProtocol {
 
     var presenter: StudyPackDetailPresenterProtocol?
     @IBOutlet weak var btnUpgrade: UIButton!
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
     
     var product = ProductEntity()
     var id : String = "0"
