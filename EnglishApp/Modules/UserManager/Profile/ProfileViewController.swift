@@ -42,6 +42,7 @@ class ProfileViewController: BaseViewController {
         tableView.registerXibFile(PackageCell.self)
         tableView.registerXibFile(ProfileHeader.self)
         tableView.registerXibFile(HomeTitleCell.self)
+        tableView.registerXibFile(HomeNoResultCell.self)
         tableView.separatorStyle = .none
     }
     
@@ -88,6 +89,9 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
         if section == 0 {
             return 1
         } else {
+            if presenter?.lisPackage.count == 0 {
+                return 2
+            }
             return (presenter?.lisPackage.count ?? 0) + 1
         }
     }
@@ -105,11 +109,18 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.lbTitle.text = LocalizableKey.userPackage.showLanguage
                 return cell
             } else {
-                let cell = tableView.dequeue(PackageCell.self, for: indexPath)
-                cell.lbTitle.text = self.package[indexPath.row - 1].name
-                let date = self.package[indexPath.row - 1].expiredTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy).replacingOccurrences(of: "-", with: "/")
-                cell.lbTime.text = "\(LocalizableKey.dateExpire.showLanguage)" +  date&
-                return cell
+                if (presenter?.lisPackage.count ?? 0) == 0 {
+                    let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
+                    cell.showNoData()
+                    return cell
+                } else {
+                    let cell = tableView.dequeue(PackageCell.self, for: indexPath)
+                    cell.lbTitle.text = self.package[indexPath.row - 1].name
+                    let date = self.package[indexPath.row - 1].expiredTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy).replacingOccurrences(of: "-", with: "/")
+                    cell.lbTime.text = "\(LocalizableKey.dateExpire.showLanguage)" +  date&
+                    return cell
+                }
+                
             }
         }
     }

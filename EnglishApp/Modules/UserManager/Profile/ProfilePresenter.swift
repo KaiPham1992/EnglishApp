@@ -41,6 +41,7 @@ class ProfilePresenter: ProfilePresenterProtocol, ProfileInteractorOutputProtoco
             if packages.count == limit {
                 self.canLoadMore = true
             }
+            self.lisPackage.removeAll()
             self.view?.didGetPackage(package: self.lisPackage)
         }) { (error) in
             guard let error = error else { return }

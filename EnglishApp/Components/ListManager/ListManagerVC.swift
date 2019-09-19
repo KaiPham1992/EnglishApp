@@ -50,6 +50,7 @@ class ListManagerVC: BaseViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.tableView.tableFooterView = UIView()
         self.tableView.tableFooterView?.isHidden = true
     }
