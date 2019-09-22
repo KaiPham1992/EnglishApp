@@ -145,6 +145,7 @@ class BXHViewController: BaseViewController {
         setSelectedButton(index: index)
         self.quarter = self.listQuaters[index]&
         self.year = self.listYears[index]&
+        presenter?.listUser.removeAll()
         presenter?.getListLeaderBoard(quarter: "\(self.listQuaters[index])", year: "\(self.listYears[index])", rank: self.rank)
     }
     
@@ -165,8 +166,8 @@ class BXHViewController: BaseViewController {
             index = 0
         }
         setUpLabelRank()
-        self.rank = arrayRank[index]
-        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: listParam[index])
+        self.rank = listParam[index]
+        handleFilter()
     }
     
     @IBAction func btnRightTapped() {
@@ -175,8 +176,14 @@ class BXHViewController: BaseViewController {
             index = 6
         }
         setUpLabelRank()
-        self.rank = arrayRank[index]
-        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: listParam[index])
+        self.rank = listParam[index]
+        handleFilter()
+    }
+    
+    func handleFilter() {
+        presenter?.canLoadMore = false
+        presenter?.listUser.removeAll()
+        presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: self.rank)
     }
     
 }
@@ -231,6 +238,7 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func refreshData() {
+        presenter?.listUser.removeAll()
         presenter?.getListLeaderBoard(quarter: self.quarter, year: self.year, rank: self.rank)
         tbBXH.refreshControl?.endRefreshing()
     }
@@ -247,7 +255,7 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let cell = tableView.dequeue(BXHCell.self, for: indexPath)
-        if let user = presenter?.listUser {
+        if let user = presenter?.listUser, user.count > 0 {
             cell.viewBXH.number = indexPath.item + 3
             cell.viewBXH.user = user[indexPath.item + 2]
             if user[indexPath.item + 2].id& == self.idUser {
@@ -271,8 +279,10 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if presenter?.canLoadMore == true && indexPath.row >= (presenter?.listUser.count ?? 0) - 5 {
-            presenter?.loadMore(quarter: quarter, year: year, rank: listParam[index])
+        if presenter?.canLoadMore == true {
+            if indexPath.row >= (presenter?.listUser.count ?? 0) - 2 {
+                presenter?.loadMore(quarter: quarter, year: year, rank: listParam[index])
+            }
         }
     }
 }
