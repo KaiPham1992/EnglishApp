@@ -53,7 +53,7 @@ class MainTabbar: UITabBarController {
                         }
                     }
                 }
-            case "NOTIF_EVENT":
+            case "NOTIF_EVENT", "REDEEM_CODE":
                 self.selectedIndex = 0
                 if let nid = notification.userInfo?["gcm.notification.nid"] as? String, let id = Int(nid){
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

@@ -67,7 +67,7 @@ class NotificationListViewController: ListManagerVC  {
         case "ASSIGNED_EXERCISE":
             let vc = AssignExerciseRouter.createModule()
             self.push(controller: vc)
-        case "NOTIF_EVENT":
+        case "NOTIF_EVENT", "REDEEM_CODE":
             if let id = Int(noti.id&) {
                 self.push(controller: NotificationDetailRouter.createModule(idNotification: id))
             }
