@@ -112,7 +112,7 @@ class MainTabbar: UITabBarController {
     }
     
     func resetHome(){
-        let home = HomeRouter.createModule()
+        let home = UINavigationController(rootViewController: HomeRouter.createModule())
         self.viewControllers![0] = home
     }
     

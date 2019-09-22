@@ -39,6 +39,7 @@ open class BaseViewController: UIViewController {
     override open func viewDidLoad() {
         super.viewDidLoad()
         //store.subscribe(self)
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
         setUpViews()
         setUpNavigation()
         print(self.nibName)
@@ -444,3 +445,27 @@ extension BaseViewController {
         }
     }
 }
+
+//
+//class SwipeController: UINavigationController {
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
+//    }
+//
+//    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+//        super.pushViewController(viewController, animated: animated)
+////        self.interactivePopGestureRecognizer?.isEnabled = false
+//    }
+//
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewDidDisappear(true)
+////        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+//    }
+//}
+//
+//extension SwipeController : UIGestureRecognizerDelegate {
+//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+//        return true
+//    }
+//}
