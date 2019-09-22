@@ -40,14 +40,13 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-//        listBeePack = BeePackEntity.toArray()
         listBeePack = UserDefaultHelper.shared.collectionProduct.groupHoney
     }
     
-    func upgradeBeePack(id: String) {
+    func upgradeBeePack(id: String, inAppPurchase: String) {
         PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.upgradeBeePack.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
             ProgressView.shared.show()
-            PaymentHelper.shared.purcharseProduct("product_test_04", completionPurchased: {
+            PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: {
                 ProgressView.shared.hide()
                 self.presenter?.upgradeProduct(productID: id)
             }, purchaseFailed: {
@@ -99,8 +98,8 @@ extension BeePackViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let id = self.listBeePack[indexPath.item].id {
-            upgradeBeePack(id: id)
+        if let id = self.listBeePack[indexPath.item].id, let inAppPurchase = self.listBeePack[indexPath.item].in_app_product_id {
+            upgradeBeePack(id: id, inAppPurchase: inAppPurchase)
         }
     }
 }

@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import WebKit
 
 class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProtocol {
 
     var presenter: StudyPackDetailPresenterProtocol?
     @IBOutlet weak var btnUpgrade: UIButton!
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet weak var webView: WKWebView!
     
     var product = ProductEntity()
     var id : String = "0"
@@ -47,11 +48,11 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     }
     
     @IBAction func btnUpgradeTapped(){
-        guard let id = product.id else {
+        guard let id = product.id , let inAppPurchase = product.in_app_product_id else {
             return
         }
         ProgressView.shared.show()
-        PaymentHelper.shared.purcharseProduct("product_test_03", completionPurchased: {
+        PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: {
             ProgressView.shared.hide()
             self.presenter?.upgradeProduct(productID: id)
         }, purchaseFailed: {

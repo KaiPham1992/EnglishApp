@@ -22,7 +22,8 @@ extension AppDelegate {
         #else
 //        GMSServices.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
 //        GMSPlacesClient.provideAPIKey("AIzaSyBcHRsiNktggnuR-I5eeuZTfRemWD5Dr4c")
-        GIDSignIn.sharedInstance().clientID = "925930271420-bhbihfqrd3lamp7e6g5ndce2eaaoae2d.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().clientID = "925930271420-g38602u84281v4htrbc2um3o7i70jbi8.apps.googleusercontent.com"
+//        GIDSignIn.sharedInstance().clientID = "925930271420-bhbihfqrd3lamp7e6g5ndce2eaaoae2d.apps.googleusercontent.com"
         #endif
         configureFirebase()
     }

@@ -43,20 +43,23 @@ class TopThreeView: BaseViewXib {
             lbNametop1.text = listTopThree[0].nameShowUI
             if let point1 = listTopThree[0].rankPoint {
                 lbPointtop1.text = "\(point1) \(LocalizableKey.point.showLanguage)"
+            } else {
+                lbPointtop1.text = "0 \(LocalizableKey.point.showLanguage)"
             }
             imgAvatar1.sd_setImage(with: listTopThree[0].urlAvatar, placeholderImage: AppImage.avatarDefault)
             if listTopThree.count == 1 {
                 viewTop2.isHidden = true
                 viewTop3.isHidden = true
                 return
-                
             }
             
             lbNametop2.text = listTopThree[1].nameShowUI
             if let point2 = listTopThree[1].rankPoint {
                 lbPointtop2.text = "\(point2) \(LocalizableKey.point.showLanguage)"
-
+            } else {
+                lbPointtop2.text = "0 \(LocalizableKey.point.showLanguage)"
             }
+            
             imgAvatar2.sd_setImage(with: listTopThree[1].urlAvatar, placeholderImage: AppImage.avatarDefault)
             viewTop2.isHidden = false
             if listTopThree.count == 2 {
@@ -67,18 +70,11 @@ class TopThreeView: BaseViewXib {
             lbNametop3.text = listTopThree[2].nameShowUI
             if let point3 = listTopThree[2].rankPoint {
                 lbPointtop3.text = "\(point3) \(LocalizableKey.point.showLanguage)"
+            } else {
+                lbPointtop3.text = "0 \(LocalizableKey.point.showLanguage)"
             }
             imgAvatar3.sd_setImage(with: listTopThree[2].urlAvatar, placeholderImage: AppImage.avatarDefault)
             viewTop3.isHidden = false
-                
-            
-                
-                
-            
-            
-            
-        
-            
         }
     }
         
@@ -96,14 +92,18 @@ class TopThreeView: BaseViewXib {
             widthAvartar1.constant = 60
             widthContent1.constant = 100
             imgAvatar1.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+            lbPointtop1.text = "0 \(LocalizableKey.point.showLanguage)"
             
             widthAvartar2.constant = 60
             widthContent2.constant = 100
             imgAvatar2.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+            lbPointtop2.text = "0 \(LocalizableKey.point.showLanguage)"
             
             widthAvartar3.constant = 60
             widthContent3.constant = 100
             imgAvatar3.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+            lbPointtop3.text = "0 \(LocalizableKey.point.showLanguage)"
+            
         }
         
     }

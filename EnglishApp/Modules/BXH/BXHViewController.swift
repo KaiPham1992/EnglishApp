@@ -247,10 +247,10 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let cell = tableView.dequeue(BXHCell.self, for: indexPath)
-        if let _listLeaderBoard = listLeaderBoard.boards{
+        if let user = presenter?.listUser {
             cell.viewBXH.number = indexPath.item + 3
-            cell.viewBXH.user = _listLeaderBoard[indexPath.item + 2]
-            if _listLeaderBoard[indexPath.item + 2].id& == self.idUser {
+            cell.viewBXH.user = user[indexPath.item + 2]
+            if user[indexPath.item + 2].id& == self.idUser {
                 cell.viewBXH.background.backgroundColor = AppColor.yellowFBEFC1
             } else {
                 cell.viewBXH.background.backgroundColor = .white
@@ -260,14 +260,20 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if listLeaderBoard.total ?? 0 <= 2 {
+        if presenter?.listUser.count ?? 0 <= 2 {
             return 1
         }
-        return (listLeaderBoard.total ?? 0) - 2
+        return (presenter?.listUser.count ?? 0) - 2
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.item == 0 ? 150: 78 
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if presenter?.canLoadMore == true && indexPath.row >= (presenter?.listUser.count ?? 0) - 5 {
+            presenter?.loadMore(quarter: quarter, year: year, rank: listParam[index])
+        }
     }
 }
 extension BXHViewController: BXHViewProtocol{
@@ -293,9 +299,10 @@ extension BXHViewController: BXHViewProtocol{
             self.vUser.user = userInfo
             
         }
-        
-        
-        
+    }
+    
+    func didLoadMore() {
+        tbBXH.reloadData()
     }
     
     func didGetList(error: Error) {

@@ -40,7 +40,7 @@
 "exercise_is_doing" = "Bài tập đang diễn ra. Bạn phải hoàn thành và nộp bài tập.";
 "honey_not_enough" = "Không đủ mật ong vui lòng nạp thêm.";
 "diamod_not_enough" = "Không đủ kim cương vui lòng nạp thêm.";
-"you_have_one_time" = "You can only choose one time.";
+"you_have_one_time" = "Bạn chỉ được chọn 1 lần.";
 
 "invalidLoginEmail" = "Địa chỉ email sai format";
 "invalidLoginPassword" = "Mật khẩu phải có 6 kí tự trở lên";

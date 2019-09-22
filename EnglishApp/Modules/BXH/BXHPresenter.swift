@@ -16,6 +16,9 @@ class BXHPresenter: BXHPresenterProtocol, BXHInteractorOutputProtocol {
     var interactor: BXHInteractorInputProtocol?
     private let router: BXHWireframeProtocol
 
+    var canLoadMore: Bool = false
+    var listUser: [UserEntity] = []
+    
     init(interface: BXHViewProtocol, interactor: BXHInteractorInputProtocol?, router: BXHWireframeProtocol) {
         self.view = interface
         self.interactor = interactor
@@ -26,11 +29,33 @@ class BXHPresenter: BXHPresenterProtocol, BXHInteractorOutputProtocol {
         ProgressView.shared.show()
         Provider.shared.homeAPIService.getListLeaderBoard(quarter: quarter, year: year, rank: rank, offset: 0, success: { (listLeaderBoard) in
             ProgressView.shared.hide()
-            guard let listLeaderBoard = listLeaderBoard else {return}
+            guard let listLeaderBoard = listLeaderBoard,
+            let boards = listLeaderBoard.boards else {return}
+            if boards.count == limit {
+                self.canLoadMore = true
+            }
+            self.listUser.append(contentsOf: boards)
             self.view?.didGetList(listLeaderBoard: listLeaderBoard)
             
         }) { (error) in
             ProgressView.shared.hide()
+            guard let error = error else {return}
+            self.view?.didGetList(error: error)
+        }
+    }
+    
+    func loadMore(quarter: String, year: String, rank: String) {
+        canLoadMore = false
+        Provider.shared.homeAPIService.getListLeaderBoard(quarter: quarter, year: year, rank: rank, offset: listUser.count, success: { (listLeaderBoard) in
+            guard let boards = listLeaderBoard?.boards else {return}
+            guard let listLeaderBoard = listLeaderBoard else {return}
+            self.listUser.append(contentsOf: boards )
+            if boards.count == limit {
+                self.canLoadMore = true
+            }
+            self.view?.didLoadMore()
+            
+        }) { (error) in
             guard let error = error else {return}
             self.view?.didGetList(error: error)
         }

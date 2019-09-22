@@ -51,10 +51,10 @@ struct NetworkRequest: NetworkRequestProtocol {
     func requestData(endPoint: EndPointType, success: @escaping RequestSuccess, failure: @escaping RequestFailure) {
         
         if !Utils.isConnectedToInternet() {
-            PopUpHelper.shared.showNoInternet {
+//            PopUpHelper.shared.showNoInternet {
                 ProgressView.shared.hide()
-//                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
-            }
+////                failure(APIError.init(code: 1992, message: LocalizableKey.pleaseTurnOnInternet.showLanguage))
+//            }
             return
         }
         

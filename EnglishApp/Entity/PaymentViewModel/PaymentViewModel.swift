@@ -11,7 +11,7 @@ import StoreKit
 
 class PaymentHelper: NSObject {
     var validProducts: [SKProduct] = []
-    let productIds = ["product_test_03", "product_test_04"]
+    let productIds = ["product_obee_11", "product_obee_12", "product_obee_13", "product_obee_14", "product_obee_15"]
     var productsRequest: SKProductsRequest?
     
     static let shared = PaymentHelper()

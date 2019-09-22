@@ -39,6 +39,7 @@ class ProductEntity: BaseEntity {
     var amountMoney: Double?
     var color: String?
     var isBought: Bool?
+    var in_app_product_id : String?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
@@ -58,6 +59,7 @@ class ProductEntity: BaseEntity {
         self.amountMoney <- (map["amount_money"], StringToDoubleTransform())
         self.color <- map["color"]
         self.isBought <- map["is_bought"]
+        self.in_app_product_id <- map["in_app_product_id"]
     }
     
     var urlAvatar:  URL? {
