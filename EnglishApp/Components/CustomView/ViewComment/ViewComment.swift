@@ -31,9 +31,18 @@ class ViewComment: BaseViewXib{
         imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + data.attach_img_src&), placeholderImage: #imageLiteral(resourceName: "avatarDefautl"), completed: nil)
         lblTimeCreate.text = data.created_date?.toString(dateFormat: AppDateFormat.commahhmmaddMMMyy)
         lblContent.attributedText = NSAttributedString(string: data.content ?? "")
+//        let status = data.status ?? "1"
+//        if status == "2" {
+//            lblContent.attributedText = NSAttributedString(string: data.content ?? "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)])
+//        } else {
+//
+//            lblContent.attributedText = NSAttributedString(string: data.content ?? "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)])
+//        }
         lblNameUser.attributedText = NSAttributedString(string: data.fullname ?? "")
-        if let status = data.status {
-            lblWait.isHidden = status == "1" ? false  : true
+        if let _ = data.is_waiting_approved {
+            lblWait.isHidden = false
+        } else {
+            lblWait.isHidden = true
         }
     }
     
@@ -41,9 +50,18 @@ class ViewComment: BaseViewXib{
         imgAVT.sd_setImage(with: URL(string:  BASE_URL_IMAGE + data.attach_img_src&), placeholderImage: #imageLiteral(resourceName: "avatarDefautl"), completed: nil)
         lblTimeCreate.text = data.created_date?.toString(dateFormat: AppDateFormat.commahhmmaddMMMyy)
         lblContent.attributedText = NSAttributedString(string: data.content ?? "")
+        //        let status = data.status ?? "1"
+        //        if status == "2" {
+        //            lblContent.attributedText = NSAttributedString(string: data.content ?? "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2588235294, green: 0.2588235294, blue: 0.2588235294, alpha: 1)])
+        //        } else {
+        //
+        //            lblContent.attributedText = NSAttributedString(string: data.content ?? "", attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)])
+        //        }
         lblNameUser.attributedText = NSAttributedString(string: data.fullname ?? "")
-        if let status = data.status {
-            lblWait.isHidden = status == "1" ? false : true
+        if let _ = data.is_waiting_approved {
+            lblWait.isHidden = false
+        } else {
+            lblWait.isHidden = true
         }
     }
 }

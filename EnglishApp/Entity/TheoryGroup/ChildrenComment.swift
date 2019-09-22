@@ -20,7 +20,7 @@ class ChildrenComment: Mappable{
     var created_date : Date?
     var updated_date : Date?
     var created_time_mi : String?
-    var is_waiting_approved : String?
+    var is_waiting_approved : Int?
     var social_img_src : String?
     var attach_img_src : String?
     var img_src: String?
