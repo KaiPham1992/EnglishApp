@@ -250,6 +250,6 @@ extension CompetitionViewController: CompetitionViewProtocol{
             initLoadData(data: [])
             return
         }
-        initLoadData(data:competition.map{CompetitionEntity(competitionResultsProfileEntity: $0)}.compactMap{$0})
+        initLoadData(data:competition.map{CompetitionEntity(competitionResultsProfileEntity: $0)})
     }
 }

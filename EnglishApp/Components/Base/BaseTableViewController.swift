@@ -157,10 +157,13 @@ open class BaseTableViewController: UIViewController {
     }
     
     func setColorStatusBar(color: UIColor = AppColor.yellow) {
-        guard let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView else { return }
-        statusBar.backgroundColor = color
-        UIApplication.shared.statusBarStyle = .lightContent
-        statusBar.tintColor =  color
+        guard #available(iOS 13, *) else {
+            if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+               statusBar.backgroundColor = color
+               statusBar.tintColor =  color
+            }
+            return
+        }
     }
     
     func setUpNavigation() {

@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -63,10 +60,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="wuF-Xw-xs0" firstAttribute="top" secondItem="vOH-kj-Nhv" secondAttribute="top" constant="-20" id="2Ae-ru-oR5"/>
+                <constraint firstItem="wuF-Xw-xs0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="2Ae-ru-oR5"/>
                 <constraint firstItem="WQS-uf-fpc" firstAttribute="top" secondItem="mrk-ff-eaa" secondAttribute="bottom" constant="8" id="33O-sB-Fdv"/>
                 <constraint firstItem="mrk-ff-eaa" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="4dO-H1-rDm"/>
-                <constraint firstItem="vOH-kj-Nhv" firstAttribute="bottom" secondItem="WQS-uf-fpc" secondAttribute="bottom" constant="16" id="Uli-Sp-1Cx"/>
+                <constraint firstAttribute="bottom" secondItem="WQS-uf-fpc" secondAttribute="bottom" constant="16" id="Uli-Sp-1Cx"/>
                 <constraint firstAttribute="trailing" secondItem="wuF-Xw-xs0" secondAttribute="trailing" id="ZWk-IG-27J"/>
                 <constraint firstAttribute="trailing" secondItem="WQS-uf-fpc" secondAttribute="trailing" constant="16" id="cAx-LE-zBT"/>
                 <constraint firstItem="WQS-uf-fpc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="ksm-nw-M00"/>
@@ -74,7 +71,6 @@
                 <constraint firstAttribute="trailing" secondItem="mrk-ff-eaa" secondAttribute="trailing" id="wXc-r6-OIR"/>
                 <constraint firstItem="wuF-Xw-xs0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xWP-to-gAJ"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="vOH-kj-Nhv"/>
             <point key="canvasLocation" x="109.59999999999999" y="52.623688155922046"/>
         </view>
     </objects>

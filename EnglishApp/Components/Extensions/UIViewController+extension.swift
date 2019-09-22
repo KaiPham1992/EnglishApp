@@ -21,8 +21,13 @@ extension UIViewController {
     }
 
     var topbarHeight: CGFloat {
-        return UIApplication.shared.statusBarFrame.size.height +
-            (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        if #available(iOS 13.0, *) {
+            return (self.view.window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0) +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+    } else {
+            return UIApplication.shared.statusBarFrame.size.height +
+                (self.navigationController?.navigationBar.frame.height ?? 0.0)
+        }
     }
 }
 
@@ -46,8 +51,21 @@ extension UIViewController {
 
 extension UIViewController {
     func setStatusBarStyle(_ style: UIStatusBarStyle) {
-        if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
-            statusBar.setValue(style == .lightContent ? UIColor.white : .black, forKey: "foregroundColor")
+//        if #available(iOS 13.0, *) {
+//            if let statusBar = self.view.window?.windowScene?.value(forKey: "statusBar") as? UIView {
+//                statusBar.setValue(style == .lightContent ? UIColor.white : .black, forKey: "foregroundColor")
+//            }
+//        } else {
+//            if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+//                statusBar.setValue(style == .lightContent ? UIColor.white : .black, forKey: "foregroundColor")
+//            }
+//        }
+        
+        guard #available(iOS 13.0, *) else {
+            if let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView {
+                statusBar.setValue(style == .lightContent ? UIColor.white : .black, forKey: "foregroundColor")
+            }
+            return
         }
     }
 }

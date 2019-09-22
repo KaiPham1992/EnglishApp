@@ -28,11 +28,11 @@ extension AppDelegate {
     }
     
     func setUpStatusBar() {
-        UINavigationBar.appearance().shadowImage = UIImage()
-        UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
-        guard let statusBar = UIApplication.shared.value(forKey: "statusBar") as? UIView else { return }
-//        statusBar.backgroundColor = AppColor.red
+        guard #available(iOS 13.0, *) else {
+            UINavigationBar.appearance().shadowImage = UIImage()
+            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+//            guard let _ = UIApplication.shared.value(forKey: "statusBar") as? UIView else { return }
+            return
+        }
     }
-    
-
 }
