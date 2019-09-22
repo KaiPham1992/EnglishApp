@@ -22,6 +22,7 @@ class DailyMissonViewController: BaseViewController, DailyMissonViewProtocol {
     
     override func setUpViews() {
         super.setUpViews()
+        self.tabBarController?.tabBar.isHidden = true
         btnStartDailyMisson.setTitle(LocalizableKey.start.showLanguage.uppercased(), for: .normal)
         lblContentDailyMisson.text = LocalizableKey.messageDailyMission.showLanguage
     }
