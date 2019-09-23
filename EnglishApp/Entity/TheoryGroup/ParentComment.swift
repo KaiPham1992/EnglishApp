@@ -22,12 +22,14 @@ class ParentComment : Mappable {
     var img_src: String?
     var fullname: String?
     var is_waiting_approved: Int?
+    var is_bonus: String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
+        self.is_bonus <- map["is_bonus"]
         self.is_waiting_approved <- map["is_waiting_approved"]
        self.fullname <- map["fullname"]
        self._id <- map["_id"]

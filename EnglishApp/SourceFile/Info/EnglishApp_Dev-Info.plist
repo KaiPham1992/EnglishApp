@@ -25,8 +25,8 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb1098422343691182</string>
-				<string>com.engma.englishapp</string>
+				<string>fb409345703242671</string>
+				<string>com.nghianguyen.obee-ios</string>
 			</array>
 		</dict>
 		<dict>
@@ -55,7 +55,7 @@
 		</array>
 	</dict>
 	<key>FacebookAppID</key>
-	<string>1098422343691182</string>
+	<string>409345703242671</string>
 	<key>FacebookDisplayName</key>
 	<string>Obee</string>
 	<key>LSApplicationQueriesSchemes</key>

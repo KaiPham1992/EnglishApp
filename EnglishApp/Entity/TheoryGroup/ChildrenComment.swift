@@ -25,12 +25,14 @@ class ChildrenComment: Mappable{
     var attach_img_src : String?
     var img_src: String?
     var fullname: String?
+    var is_bonus: String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
+        self.is_bonus <- map["is_bonus"]
        self.fullname <- map["fullname"]
        self._id <- map["_id"]
        self.content <- map["content"]
