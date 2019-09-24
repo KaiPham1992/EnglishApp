@@ -20,6 +20,7 @@ class CompetitionViewController: ListManagerVC {
     
 	var presenter: CompetitionPresenterProtocol?
     var type : ResultCompetition = .competition
+    var date: String = ""
     
     override func setupViewListManager() {
         customTitle = LocalizableKey.titleCompetition.showLanguage
@@ -51,7 +52,7 @@ class CompetitionViewController: ListManagerVC {
         if type == .competition{
             presenter?.getListFight(offset: self.offset)
         } else {
-            self.presenter?.getListResultFight(offset: self.offset)
+            self.presenter?.getListResultFight(offset: self.offset, date: self.date)
         }
     }
     

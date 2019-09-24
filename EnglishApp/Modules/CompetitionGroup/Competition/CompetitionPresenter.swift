@@ -30,8 +30,8 @@ class CompetitionPresenter: CompetitionPresenterProtocol, CompetitionInteractorO
         }
     }
     
-    func getListResultFight(offset: Int) {
-        Provider.shared.competitionAPIService.getListResultFight(offset: offset,success: { (respone) in
+    func getListResultFight(offset: Int, date: String) {
+        Provider.shared.competitionAPIService.getListResultFight(offset: offset, date: date, success: { (respone) in
             if let _respone = respone{
                 self.view?.didGetResultFight(resultFight: _respone)
             }

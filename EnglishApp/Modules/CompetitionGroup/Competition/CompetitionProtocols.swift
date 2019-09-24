@@ -19,7 +19,7 @@ protocol CompetitionPresenterProtocol: class {
 
     var interactor: CompetitionInteractorInputProtocol? { get set }
     func getListFight(offset: Int)
-    func getListResultFight(offset: Int)
+    func getListResultFight(offset: Int, date: String)
     
 }
 

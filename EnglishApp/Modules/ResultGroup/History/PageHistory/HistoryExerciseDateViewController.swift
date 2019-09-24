@@ -26,6 +26,6 @@ class HistoryExerciseDateViewController: PageViewController, HistoryExerciseDate
 
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [HistoryDailyMissonRouter.createModule(date: date),ExerciseRouter.createModule(isShowTabbar: false,date: date),CompetitionRouter.createModule(type: .result)]
+        return [HistoryDailyMissonRouter.createModule(date: date),ExerciseRouter.createModule(isShowTabbar: false,date: date),CompetitionRouter.createModule(type: .result, date: self.date)]
     }
 }
