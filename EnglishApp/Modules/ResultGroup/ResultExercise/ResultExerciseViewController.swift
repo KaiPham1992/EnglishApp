@@ -48,6 +48,7 @@ class ResultExerciseViewController: BaseViewController {
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
         if isSearch {
             btnNext.isHidden = true
+            
         } else {
             btnNext.isHidden = false
         }

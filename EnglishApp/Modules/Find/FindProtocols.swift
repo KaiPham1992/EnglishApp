@@ -23,6 +23,7 @@ protocol FindPresenterProtocol: class {
     func searchExercise(text: String)
     func searchTheory(text: String)
     func gotoTheoryDetail(idLesson: String)
+    func checkAmountSearchExercise()
 }
 
 //MARK: Interactor -
@@ -31,6 +32,7 @@ protocol FindInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func searchTheorySuccessed(respone: [SearchEntity])
     func searchExerciseSuccessed(respone: [TestResultProfileEntity])
+    func checkAmountSearchExerciseSuccessed()
 }
 
 protocol FindInteractorInputProtocol: class {
@@ -38,7 +40,7 @@ protocol FindInteractorInputProtocol: class {
     var presenter: FindInteractorOutputProtocol?  { get set }
     func searchExercise(text: String)
     func searchTheory(text: String)
-
+    func checkAmountSearchExercise()
     /* Presenter -> Interactor */
 }
 
@@ -47,6 +49,7 @@ protocol FindViewProtocol: class {
 
     var presenter: FindPresenterProtocol?  { get set }
     func reloadView()
+    func checkAmountSearchExerciseSuccessed()
 
     /* Presenter -> ViewController */
 }

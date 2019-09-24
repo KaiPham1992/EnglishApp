@@ -41,6 +41,7 @@
 "honey_not_enough" = "Không đủ mật ong vui lòng nạp thêm.";
 "diamod_not_enough" = "Không đủ kim cương vui lòng nạp thêm.";
 "you_have_one_time" = "Bạn chỉ được chọn 1 lần.";
+"cương" = "Không đủ mật ong hoặc kim cương vui lòng nạp thêmg";
 
 "invalidLoginEmail" = "Địa chỉ email sai format";
 "invalidLoginPassword" = "Mật khẩu phải có 6 kí tự trở lên";

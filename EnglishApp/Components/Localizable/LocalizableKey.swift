@@ -377,7 +377,7 @@ struct LocalizableKey {
     static let fight_is_doing = "fight_is_doing"
     static let fight_is_done = "fight_is_done"
     static let exercise_is_doing = "exercise_is_doing"
-    
+    static let honey_diamond_not_enough = "honey_diamond_not_enough"
     static let honey_not_enough = "honey_not_enough"
     static let diamod_not_enough = "diamod_not_enough"
     static let you_have_one_time = "you_have_one_time"

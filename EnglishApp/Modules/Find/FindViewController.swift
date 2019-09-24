@@ -21,6 +21,7 @@ class FindViewController: BaseViewController {
     @IBOutlet weak var lbFee: UILabel!
     
     var type : TypeViewSearch = .searchExercise
+    var indexRow = 0
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -81,6 +82,12 @@ extension FindViewController: FindViewProtocol{
             self.push(controller: StoreViewController())
             }, completeCancel: nil)
     }
+    
+    func checkAmountSearchExerciseSuccessed() {
+        let exercise = self.presenter?.searchExciseRespone[indexRow]
+        let vc = ResultExerciseRouter.createModule(listAnswer: exercise?.questions ?? [], index: 0, isSearch: true)
+        self.push(controller: vc)
+    }
 }
 
 
@@ -125,10 +132,22 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
             let idLesson = self.presenter?.searchTheoryRespone[indexPath.row]._id ?? "0"
             self.presenter?.gotoTheoryDetail(idLesson: idLesson)
         }
+        
         if type == .searchExercise {
-            let exercise = self.presenter?.searchExciseRespone[indexPath.row]
-            let vc = ResultExerciseRouter.createModule(listAnswer: exercise?.questions ?? [], index: 0, isSearch: true)
-            self.push(controller: vc)
+            let numberDiamond = UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0
+            let numberHoney = UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0
+            if numberHoney < 5 && numberDiamond < 50 {
+                PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in
+                    let controller = StoreViewController()
+                    self.push(controller: controller)
+                }
+            } else {
+                PopUpHelper.shared.showYesNo(message: LocalizableKey.feeFind.showLanguage, completionNo: nil) {
+                    [unowned self] in
+                    self.indexRow = indexPath.row
+                    self.presenter?.checkAmountSearchExercise()
+                }
+            }
         }
     }
     
