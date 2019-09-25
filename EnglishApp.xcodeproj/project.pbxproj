@@ -2892,7 +2892,7 @@
 		DE952F7B2287D2A700E3F688 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		DE952FA42287DD2A00E3F688 /* Login+Facebook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login+Facebook.swift"; sourceTree = "<group>"; };
 		DE952FA82287DD2A00E3F688 /* Login+GoogleSignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Login+GoogleSignIn.swift"; sourceTree = "<group>"; };
-		DE95305A2287DF4800E3F688 /* EnglishApp_Prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp_Prod.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE95305A2287DF4800E3F688 /* OBee English Practice Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OBee English Practice Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE9531082287DF6400E3F688 /* EnglishApp_AppStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EnglishApp_AppStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE95310C2287DFFB00E3F688 /* EnglishApp_Prod-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EnglishApp_Prod-Info.plist"; sourceTree = "<group>"; };
 		DE95310D2287DFFB00E3F688 /* EnglishApp_AppStore-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "EnglishApp_AppStore-Info.plist"; sourceTree = "<group>"; };
@@ -4721,7 +4721,7 @@
 			isa = PBXGroup;
 			children = (
 				DE3CC33A2283DD980037DBE4 /* EnglishApp_Dev.app */,
-				DE95305A2287DF4800E3F688 /* EnglishApp_Prod.app */,
+				DE95305A2287DF4800E3F688 /* OBee English Practice Test.app */,
 				DE9531082287DF6400E3F688 /* EnglishApp_AppStore.app */,
 			);
 			name = Products;
@@ -5508,7 +5508,7 @@
 			);
 			name = EnglishApp_Prod;
 			productName = EnglishApp;
-			productReference = DE95305A2287DF4800E3F688 /* EnglishApp_Prod.app */;
+			productReference = DE95305A2287DF4800E3F688 /* OBee English Practice Test.app */;
 			productType = "com.apple.product-type.application";
 		};
 		DE95305C2287DF6400E3F688 /* EnglishApp_AppStore */ = {
@@ -8293,7 +8293,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "OBee English Practice Test";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.nghianguyen.obee-ios";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG PROD";
 				SWIFT_VERSION = 5.0;
@@ -8318,7 +8318,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "OBee English Practice Test";
 				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.nghianguyen.obee-ios";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
