@@ -23,7 +23,7 @@ class ViewFillQuestion : BaseViewXib {
     
     var tagView : Int = 0 {
         didSet{
-            lblNumberQuestion.text = LocalizableKey.sentence.showLanguage + " \(tagView):"
+            lblNumberQuestion.text = "\(tagView)"
         }
     }
     

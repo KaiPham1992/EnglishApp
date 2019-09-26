@@ -35,7 +35,7 @@ class CellResultFillQuestion: UITableViewCell {
     }
     
     func setupCell(answer: AnswerResultProfileEntity){
-        lblNumberAnswer.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1):"
+        lblNumberAnswer.text = "\((indexPath?.row ?? 0) + 1):"
 //
 //        lblAnswer.text = answer.content ?? " "
         let status = answer.status ?? "0"

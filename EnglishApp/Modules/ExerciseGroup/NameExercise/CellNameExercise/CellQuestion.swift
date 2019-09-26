@@ -69,7 +69,7 @@ class CellQuestion: UITableViewCell {
     @IBOutlet weak var vQuestion: UIView!
     var indexPath: IndexPath? {
         didSet {
-            self.lbNumber.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1)"
+            self.lbNumber.text = "\((indexPath?.row ?? 0) + 1):"
         }
     }
     weak var delegate: ClickQuestionDelegate?

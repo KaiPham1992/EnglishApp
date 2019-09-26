@@ -34,7 +34,7 @@ class CellResultChoice: UITableViewCell {
     }
     
     func setupCell(answer: AnswerResultProfileEntity){
-        lblNumberQuestion.text = LocalizableKey.sentence.showLanguage + " \((indexPath?.row ?? 0) + 1):"
+        lblNumberQuestion.text = "\((indexPath?.row ?? 0) + 1):"
         lblAnswer.text = ""
         viewAnswer.backgroundColor = #colorLiteral(red: 0.9333333333, green: 0.9333333333, blue: 0.9333333333, alpha: 1)
         if let _ = answer.answer_id {
