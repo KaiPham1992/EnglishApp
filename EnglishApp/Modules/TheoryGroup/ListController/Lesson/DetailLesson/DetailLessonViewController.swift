@@ -9,7 +9,7 @@
 //
 
 import UIKit
-
+import WebKit
 
 enum DetailLessonVocabulary{
     case detailLesson
@@ -17,7 +17,7 @@ enum DetailLessonVocabulary{
 }
 class DetailLessonViewController: BaseViewController {
 
-    @IBOutlet weak var lbContent: UILabel!
+    @IBOutlet weak var webView: WKWebView!
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: ItemLesson?
@@ -110,17 +110,17 @@ class DetailLessonViewController: BaseViewController {
 extension DetailLessonViewController:DetailLessonViewProtocol{
     func reloadView() {
         if type == .detailLesson {
-            setTitleNavigation(title: self.presenter?.getTitle() ?? "")
-            if let attribute = self.presenter?.getContentLesson(){
-                self.lbContent.attributedText = attribute
+            setTitleNavigation(title: self.presenter?.lessonDetail?.name ?? "")
+            if let htmlString = self.presenter?.self.lessonDetail?.content{
+                webView.loadHTMLString(htmlString, baseURL: nil)
             }
-            if let comment = self.presenter?.getNumberComment(){
+            if let comment = self.presenter?.lessonDetail?.unread_comments{
                 self.viewMessage.setupNumber(number: comment)
             } else {
                 self.viewMessage.setupNumber(number: 0)
             }
             
-            if let _ = self.presenter?.getToggleLike() {
+            if let _ = self.presenter?.lessonDetail?.is_favorite {
                 self.isLike = 1
                 self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
             } else {
@@ -131,7 +131,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
         } else {
             if let vocabulary = self.vocabulary {
                 setTitleNavigation(title: vocabulary.word)
-                self.lbContent.attributedText = vocabulary.explain.html2Attributed
+                webView.loadHTMLString(self.presenter?.vocabulary?.explain ?? "", baseURL: nil)
                 if vocabulary.is_favorite {
                     self.isLike = 1
                     self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
@@ -140,7 +140,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                     self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
                 }
             } else {
-                self.lbContent.attributedText = self.presenter?.vocabulary?.explain.html2Attributed
+                webView.loadHTMLString(self.presenter?.vocabulary?.explain ?? "", baseURL: nil)
                 if (self.presenter?.vocabulary?.is_favorite ?? false) {
                     self.isLike = 1
                     self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)

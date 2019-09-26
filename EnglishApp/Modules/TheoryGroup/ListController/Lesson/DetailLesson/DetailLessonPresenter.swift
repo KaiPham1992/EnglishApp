@@ -37,13 +37,6 @@ class DetailLessonPresenter: DetailLessonPresenterProtocol, DetailLessonInteract
         self.view?.reloadView()
     }
     
-    func getContentLesson() -> NSAttributedString? {
-        if let content = self.lessonDetail?.content {
-            return content.htmlToAttributedString
-        }
-        return nil
-    }
-    
     func getLessonDetailSuccessed(lessonDetail: LessonCatelogyDetail) {
         self.lessonDetail = lessonDetail
         self.view?.reloadView()
