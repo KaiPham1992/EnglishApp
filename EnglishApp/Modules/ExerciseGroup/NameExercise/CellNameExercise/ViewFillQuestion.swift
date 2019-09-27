@@ -23,7 +23,7 @@ class ViewFillQuestion : BaseViewXib {
     
     var tagView : Int = 0 {
         didSet{
-            lblNumberQuestion.text = "\(tagView)"
+            lblNumberQuestion.text = "\(tagView):"
         }
     }
     
