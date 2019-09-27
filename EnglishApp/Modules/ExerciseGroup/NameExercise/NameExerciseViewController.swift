@@ -175,12 +175,12 @@ class NameExerciseViewController: BaseViewController {
 
 extension NameExerciseViewController :NameExerciseViewProtocol{
     func suggestQuestionError() {
-        let errorMessage = self.presenter?.error?.message&
-        var message = LocalizableKey.honey_not_enough.showLanguage
-        if errorMessage == "NOT_ENOUGH_DIAMOND"{
-            message = LocalizableKey.diamod_not_enough.showLanguage
-        }
-        PopUpHelper.shared.showError(message: message) {
+//        let errorMessage = self.presenter?.error?.message&
+//        var message = LocalizableKey.diamod_not_enough.showLanguage
+//        if errorMessage == "NOT_ENOUGH_DIAMOND"{
+//            message = LocalizableKey.diamod_not_enough.showLanguage
+//        }
+        PopUpHelper.shared.showError(message: LocalizableKey.diamod_not_enough.showLanguage) {
             
         }
     }
@@ -318,7 +318,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
         let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.row].isShowSuggestQuestion ?? false
         if !isShowSuggestion {
             let numberDiamond = UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0
-            if numberDiamond > 1 {
+            if numberDiamond >= 1 {
                 PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.minus_dianmod.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), height: 150, complete: {
                     self.presenter?.suggestQuestion(id: id,indexPath: indexPath, indexQuestion: indexQuestion, isDiamond: true)
                 }, cancel: nil)

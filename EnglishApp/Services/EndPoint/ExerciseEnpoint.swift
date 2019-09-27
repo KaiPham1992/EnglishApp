@@ -137,7 +137,7 @@ extension ExerciseEnpoint: EndPointType {
             return ["question_id": id]
         case .suggestQuestion(let id,let isDiamond):
             if isDiamond {
-                return ["question_details_id": id, "amount_diamond": 10]
+                return ["question_details_id": id, "amount_diamond": 1]
             }
             return ["question_details_id": id,
                      "amount_honey": 5]
