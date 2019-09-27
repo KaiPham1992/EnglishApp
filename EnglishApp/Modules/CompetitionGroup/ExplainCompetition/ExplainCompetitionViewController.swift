@@ -29,7 +29,7 @@ class ExplainCompetitionViewController: BaseViewController {
 }
 extension ExplainCompetitionViewController : ExplainCompetitionViewProtocol {
     func getViewFightTestSuccessed(desciption: String) {
-        let attr = NSAttributedString(string: description.htmlToAttributedString ?? "" , attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
+        let attr = NSAttributedString(string: desciption.htmlToString , attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
         lbContent.attributedText = attr
     }
 }
