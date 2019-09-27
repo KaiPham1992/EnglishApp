@@ -178,6 +178,12 @@ extension FightViewController :FightViewProtocol{
         if isEnd {
             self.fightFinished?()
             self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
+        } else {
+            let message = self.presenter?.error?.message
+            if message == LocalizableKey.fight_is_done.showLanguage.uppercased() {
+                self.fightFinished?()
+                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
+            }
         }
     }
     

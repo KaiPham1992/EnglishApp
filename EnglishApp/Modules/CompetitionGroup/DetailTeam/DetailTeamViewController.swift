@@ -82,13 +82,13 @@ class DetailTeamViewController: BaseTableViewController {
                 }
             }
         }
-        NotificationCenter.default.addObserver(self, selector: #selector(turnoffScreen), name: UIApplication.didEnterBackgroundNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(turnoffScreen), name: UIApplication.willResignActiveNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(turnonScreen), name: UIApplication.didBecomeActiveNotification, object: nil)
     }
     
     @objc func turnoffScreen() {
+        self.currentDate = Date()
         if timer != nil {
-            self.currentDate = Date()
             self.stopTimer()
         }
     }
@@ -105,6 +105,7 @@ class DetailTeamViewController: BaseTableViewController {
         if distanceTimeMi > 0 {
             self.processTimer()
         } else {
+            self.distanceTimeMi = 0
             self.disableTimer()
         }
         

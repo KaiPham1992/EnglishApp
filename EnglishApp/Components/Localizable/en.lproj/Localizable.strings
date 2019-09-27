@@ -36,7 +36,7 @@
 "ForgotTitle" = "Forgot password";
 "out_group_message" = "The competition started so can not out group";
 "fight_is_doing" = "This fight is doing. Please complete and submit it.";
-"fight_is_done" = "Fight is done";
+"fight_is_done" = "Competition is done";
 "exercise_is_doing" = "This exercise is doing. Please complete and submit it.";
 "honey_not_enough" = "Honey haven't enough please refill.";
 "diamod_not_enough" = "Diamod haven't enough please refill.";
@@ -230,7 +230,7 @@
 "see_more" = "See more";
 "sentence" = "Sentence";
 "next" = "Next";
-"do_entrance" = "Input test";
+"do_entrance" = "Entrance Testing";
 
 //result
 "result_team" = "Result of Team";

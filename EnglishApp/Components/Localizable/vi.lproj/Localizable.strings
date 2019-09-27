@@ -36,7 +36,7 @@
 "ForgotTitle" = "Quên mật khẩu";
 "out_group_message" = "Cuộc thi đã bắt đầu không thể rời nhóm.";
 "fight_is_doing" = "Cuộc thi đang diễn ra. Bạn phải hoàn thành và nộp bài thi.";
-"fight_is_done" = "Cuộc thi đã kết thúc.";
+"fight_is_done" = "Cuộc thi đã kết thúc";
 "exercise_is_doing" = "Bài tập đang diễn ra. Bạn phải hoàn thành và nộp bài tập.";
 "honey_not_enough" = "Không đủ mật ong vui lòng nạp thêm.";
 "diamod_not_enough" = "Không đủ kim cương vui lòng nạp thêm.";
