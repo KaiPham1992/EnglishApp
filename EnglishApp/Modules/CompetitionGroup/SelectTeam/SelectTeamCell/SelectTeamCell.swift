@@ -21,7 +21,7 @@ class SelectTeamCell: BaseTableCell {
         super.awakeFromNib()
         btnJoin.setAttributedTitle(NSAttributedString(string: LocalizableKey.join_team.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : UIColor.black]), for: .normal)
     }
-    func displayData(maxMember: Int, team: TeamEntity, isCannotJoin: Bool){
+    func displayData(maxMember: Int, team: TeamEntity, isCannotJoin: Bool, userHaveTeam : Bool = false){
         lbName.text = team.name
         lbCountMember.text = "\(team.countMember*)/\(maxMember*)"
         imgTeam.sd_setImage(with: URL(string: BASE_URL_IMAGE + team.attachImgSrc&) , placeholderImage: AppImage.avatarDefault)
@@ -31,7 +31,7 @@ class SelectTeamCell: BaseTableCell {
         } else {
             if (team.isTeamJoined ?? 0) == 0 {
                 btnJoined.isHidden = true
-                if Int(team.countMember&) == maxMember {
+                if Int(team.countMember&) == maxMember || userHaveTeam {
                     heightBtnJoin.constant = 0
                 } else {
                     heightBtnJoin.constant = 35

@@ -22,6 +22,7 @@ class SelectTeamViewController: BaseTableViewController {
     var isCannotJoin = false
     var idMyTeam = 0
     var isFightJoined = 0
+    var userHaveTeam = false
     
     var joinTeam : ((_ teamId: Int) -> ())?
     var leaveTeam : (() -> ())?
@@ -78,7 +79,7 @@ class SelectTeamViewController: BaseTableViewController {
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = item as! TeamEntity
         let cell = tableView.dequeue(SelectTeamCell.self, for: indexPath)
-        cell.displayData(maxMember: self.maxMember, team: data, isCannotJoin: self.isCannotJoin)
+        cell.displayData(maxMember: self.maxMember, team: data, isCannotJoin: self.isCannotJoin, userHaveTeam: self.userHaveTeam)
         cell.btnJoin.tag = indexPath.item
         cell.btnJoined.tag = indexPath.item
         cell.btnJoin.addTarget(self, action: #selector(btnJoinTapped), for: .touchUpInside)
@@ -100,6 +101,7 @@ class SelectTeamViewController: BaseTableViewController {
     
     private func leaveTeamSuccessed() {
         leaveTeam?()
+        self.userHaveTeam = false
         self.offset = 0
         self.isLoadmore = true
         self.presenter?.getListFightTestTeam(competitionId: self.competitionId ?? 0, offset: self.offset )
@@ -144,6 +146,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     func joinTeamSuccessed(respone: DetailTeamEntity) {
         joinTeam?(Int(respone.team_info?.id ?? "0") ?? 0)
         self.isFightJoined = 1
+        self.userHaveTeam = true
         let vc = DetailTeamRouter.createModule(id: respone.team_info?.id ?? "0", isTeamJoined: 1, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin)
         vc.actionBackView = { [weak self] in
             self?.offset = 0
@@ -178,6 +181,9 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
         }
         self.maxMember = _maxMember
         self.isFightJoined = collectionTeam.isFightJoined ?? 0
+        if self.isFightJoined == 1 {
+            self.userHaveTeam = true
+        }
         initLoadData(data: collectionTeam.teams)
         if listData.count > 0 {
             let data = listData[0] as! TeamEntity
@@ -190,6 +196,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
     func didCreateTeamSuccessed(collectionTeam: TeamEntity){
         joinTeam?(Int(collectionTeam.id ?? "0") ?? 0)
         self.isFightJoined = 1
+        self.userHaveTeam = true
         collectionTeam.isTeamJoined = 1
         collectionTeam.countMember = "1"
         collectionTeam.attachImgSrc = UserDefaultHelper.shared.loginUserInfo?.attachImg ?? ""
