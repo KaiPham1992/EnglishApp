@@ -28,10 +28,11 @@ class ResultCompetitionRouter: ResultCompetitionWireframeProtocol {
         return view
     }
     
-    static func createModule(idCompetition: String) -> UIViewController {
+    static func createModule(idCompetition: String, endDate: Date) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultCompetitionViewController.initFromNib()
         view.idCompetition = idCompetition
+        view.endDate = endDate
         let interactor = ResultCompetitionInteractor()
         let router = ResultCompetitionRouter()
         let presenter = ResultCompetitionPresenter(interface: view, interactor: interactor, router: router)

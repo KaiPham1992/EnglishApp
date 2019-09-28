@@ -80,7 +80,7 @@ class CompetitionEntity : BaseEntity {
         self.is_fight_joined <- map["is_fight_joined"]
         self.content <- map["description"]
         self.end_time_mi <- map["end_time_mi"]
-        self.endDate <- map["end_time_mi"]
+        self.endDate <- (map["end_date"], yyyyMMddHHmmssTransform())
     }
     
     class func toArray() -> [CompetitionEntity] {

@@ -18,7 +18,7 @@ class DetailTeamViewController: BaseTableViewController {
     
     @IBAction func start(_ sender: Any) {
         if timer == nil {
-            let vc = FightRouter.createModule(completion_id: Int(self.presenter?.teamDetail?.team_info?.competition_id ?? "0") ?? 0, team_id: Int(self.presenter?.teamDetail?.team_info?.id ?? "0") ?? 0, startDate: self.presenter?.teamDetail?.team_info?.start_date ?? Date())
+            let vc = FightRouter.createModule(completion_id: Int(self.presenter?.teamDetail?.team_info?.competition_id ?? "0") ?? 0, team_id: Int(self.presenter?.teamDetail?.team_info?.id ?? "0") ?? 0, startDate: self.presenter?.teamDetail?.team_info?.start_date ?? Date(), endDate: self.endDate)
             vc.fightFinished = {[weak self] in
                 self?.fightFinished?()
             }
@@ -41,6 +41,7 @@ class DetailTeamViewController: BaseTableViewController {
     var fightFinished : (() -> ())?
     var currentDate = Date()
     var isCannotJoin: Bool = false
+    var endDate: Date = Date()
     
 	override func viewDidLoad() {
         addLoadmore = false

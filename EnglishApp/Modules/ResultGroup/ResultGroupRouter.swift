@@ -27,12 +27,13 @@ class ResultGroupRouter: ResultGroupWireframeProtocol {
 
         return view
     }
-    static func createModule(idCompetition: String, idExercise: String, isHistory: Bool) -> UIViewController {
+    static func createModule(idCompetition: String, idExercise: String, isHistory: Bool, endDate: Date) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultGroupViewController.initFromNib()
         view.idCompetition = idCompetition
         view.idExercise = idExercise
         view.isHistory = isHistory
+        view.endDate = endDate
         let interactor = ResultGroupInteractor()
         let router = ResultGroupRouter()
         let presenter = ResultGroupPresenter(interface: view, interactor: interactor, router: router)

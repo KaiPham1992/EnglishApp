@@ -30,9 +30,11 @@ class ResultInteractor: ResultInteractorInputProtocol {
         }
     }
     
-    func getViewResultUserCompetition(idCompetition: String) {
+    func getViewResultUserCompetition(idCompetition: String, showProgressView: Bool) {
         if let id = Int(idCompetition){
-            ProgressView.shared.show()
+            if showProgressView {
+                ProgressView.shared.show()
+            }
             Provider.shared.resultAPIService.getResultUser(idCompetition: id, success: { (respone) in
                 ProgressView.shared.hide()
                 if let _respone = respone, _respone._id != nil {
@@ -43,11 +45,6 @@ class ResultInteractor: ResultInteractorInputProtocol {
             }) { (error) in
                 ProgressView.shared.hide()
                 self.presenter?.competitionIsDoing()
-//                if let _error = error {
-//                    if (_error.message ?? "") == "COMPETITION IS DOING" {
-//                        
-//                    }
-//                }
             }
         }
     }

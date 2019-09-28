@@ -23,6 +23,7 @@ class SelectTeamViewController: BaseTableViewController {
     var idMyTeam = 0
     var isFightJoined = 0
     var userHaveTeam = false
+    var endDate: Date = Date()
     
     var joinTeam : ((_ teamId: Int) -> ())?
     var leaveTeam : (() -> ())?
@@ -89,7 +90,7 @@ class SelectTeamViewController: BaseTableViewController {
     
     @objc func btnJoined(sender: UIButton) {
         let team = listData[sender.tag] as! TeamEntity
-        let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin)
+        let vc = DetailTeamRouter.createModule(id: team.id ?? "0", isTeamJoined: team.isTeamJoined ?? 0, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin, endDate: self.endDate)
         vc.actionLeaveTeam = { [weak self] in
             self?.leaveTeamSuccessed()
         }
@@ -117,7 +118,7 @@ class SelectTeamViewController: BaseTableViewController {
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! TeamEntity
         if let id = data.id, let isTeamJoined = data.isTeamJoined {
-            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin)
+            let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin, endDate: self.endDate)
             vc.actionLeaveTeam = { [weak self] in
                self?.leaveTeamSuccessed()
             }
@@ -147,7 +148,7 @@ extension SelectTeamViewController: SelectTeamViewProtocol{
         joinTeam?(Int(respone.team_info?.id ?? "0") ?? 0)
         self.isFightJoined = 1
         self.userHaveTeam = true
-        let vc = DetailTeamRouter.createModule(id: respone.team_info?.id ?? "0", isTeamJoined: 1, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin)
+        let vc = DetailTeamRouter.createModule(id: respone.team_info?.id ?? "0", isTeamJoined: 1, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin, endDate: self.endDate)
         vc.actionBackView = { [weak self] in
             self?.offset = 0
             self?.isLoadmore = true

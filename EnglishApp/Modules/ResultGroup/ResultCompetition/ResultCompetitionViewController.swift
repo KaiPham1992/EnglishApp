@@ -14,6 +14,7 @@ import XLPagerTabStrip
 class ResultCompetitionViewController: ListManagerVC {
 
 	var presenter: ResultCompetitionPresenterProtocol?
+    var endDate = Date()
     
     @IBOutlet weak var tbvResultCompetition: UITableView!
     var idCompetition: String = ""
@@ -31,8 +32,14 @@ class ResultCompetitionViewController: ListManagerVC {
     }
     
     override func callAPI() {
-        super.callAPI()
-        self.presenter?.getResultTeam(idCompetition: idCompetition, offset: self.offset)
+        let endDateTime = Int(endDate.timeIntervalSince1970)
+        let currentTime = Int(Date().timeIntervalSince1970)
+        if endDateTime > currentTime {
+            showNoData(text: LocalizableKey.fight_is_doing_result.showLanguage)
+        } else {
+            super.callAPI()
+            self.presenter?.getResultTeam(idCompetition: idCompetition, offset: self.offset)    
+        }
     }
     
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

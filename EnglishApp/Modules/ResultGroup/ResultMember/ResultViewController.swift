@@ -21,7 +21,7 @@ class ResultViewController: BaseViewController {
         (self.tabBarController as! MainTabbar).gotoHome()
         self.navigationController?.popToRootViewController(animated: true)
     }
-    
+    @IBOutlet weak var contentScrollView: UIView!
     @IBOutlet weak var lblDontJoinCompetition: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblTime: UILabel!
@@ -43,10 +43,14 @@ class ResultViewController: BaseViewController {
     var id: String = "1"
     var isHistory : Bool = false
     var isOut = false
+    let refreshControl : UIRefreshControl = UIRefreshControl()
 
     override func setUpViews() {
         super.setUpViews()
-
+        self.addPullToRefresh()
+        lblDontJoinCompetition.isHidden = true
+        vInfo.isHidden = true
+        tbvResult.isHidden = true
         viewRank.imgView.image = #imageLiteral(resourceName: "ic_kimcuong")
         viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
         viewRank.lblTitle.attributedText =  NSAttributedString(string: LocalizableKey.diamond.showLanguage)
@@ -57,7 +61,7 @@ class ResultViewController: BaseViewController {
         }
         
         if type == .competition {
-            self.presenter?.getViewResultUserCompetition(idCompetition: id)
+            self.presenter?.getViewResultUserCompetition(idCompetition: id, showProgressView: true)
         }
     
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
@@ -68,6 +72,26 @@ class ResultViewController: BaseViewController {
         lblPointSum.attributedText = NSAttributedString(string: LocalizableKey.sum_point.showLanguage)
         lblTimeDoExercise.attributedText = NSAttributedString(string: LocalizableKey.time_do_exercise.showLanguage)
         self.edgesForExtendedLayout = UIRectEdge.bottom
+    }
+    
+    private func addPullToRefresh() {
+        refreshControl.addTarget(self, action: #selector(actionPullToRefresh), for: .valueChanged)
+        if #available(iOS 10.0, *) {
+            self.scrollView.refreshControl = refreshControl
+        } else {
+            self.scrollView.addSubview(refreshControl)
+        }
+    }
+    
+    @objc func actionPullToRefresh() {
+        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
+            viewRank.isHidden = false
+            self.presenter?.getViewResult(id: id)
+        }
+        if type == .competition {
+            self.presenter?.getViewResultUserCompetition(idCompetition: id, showProgressView: false)
+        }
+        refreshControl.endRefreshing()
     }
     
     override func setUpNavigation() {
@@ -93,21 +117,27 @@ class ResultViewController: BaseViewController {
 extension ResultViewController: ResultViewProtocol{
     func competitionIsDoing() {
         lblDontJoinCompetition.text = LocalizableKey.fight_is_doing_result.showLanguage
-        scrollView.isHidden = true
+        lblDontJoinCompetition.isHidden = false
+        vInfo.isHidden = true
+        tbvResult.isHidden = true
         btnBackHome.isHidden = true
     }
     
     func usetDontJoindCompetition() {
         lblDontJoinCompetition.text = LocalizableKey.you_dont_joined_competition.showLanguage
-        scrollView.isHidden = true
+        lblDontJoinCompetition.isHidden = false
+        vInfo.isHidden = true
+        tbvResult.isHidden = true
         btnBackHome.isHidden = true
     }
     
     func reloadView() {
         DispatchQueue.main.async {
-            self.scrollView.isHidden = false
+            self.vInfo.isHidden = false
+            self.tbvResult.isHidden = false
             self.btnBackHome.isHidden = false
             self.lblDontJoinCompetition.text = ""
+            self.lblDontJoinCompetition.isHidden = true
             self.imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), placeholderImage: UIImage(named: "ic_avatar_default")!, completed: nil)
             self.lblPoint.attributedText =  NSAttributedString(string: self.presenter?.getTotalPoint() ?? "0")
             self.lblTime.attributedText =  NSAttributedString(string: self.presenter?.getTotalTime() ?? "")

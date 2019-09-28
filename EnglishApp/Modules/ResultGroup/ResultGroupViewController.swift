@@ -17,6 +17,7 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
     var idCompetition: String = "0"
     var idExercise : String = "0"
     var isHistory : Bool = false
+    var endDate = Date()
     
 	override func viewDidLoad() {
 //        self.gotoIndex(index: 1)
@@ -25,11 +26,6 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         self.edgesForExtendedLayout = .bottom
         self.tabBarController?.tabBar.isHidden = true
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.02) {
-//            UIView.performWithoutAnimation {
-//                self.moveToViewController(at: 1)
-//            }
-//        }
     }
     
     override func btnBackTapped() {
@@ -42,9 +38,9 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         if isHistory {
-            return [ResultRouter.createModule(type: .competition, id: self.idCompetition, isHistory:  true),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+            return [ResultRouter.createModule(type: .competition, id: self.idCompetition, isHistory:  true),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition, endDate: self.endDate)]
         } else {
-             return [ResultRouter.createModule(type: .competition, id: self.idCompetition), ResultCompetitionRouter.createModule(idCompetition: self.idCompetition)]
+            return [ResultRouter.createModule(type: .competition, id: self.idCompetition), ResultCompetitionRouter.createModule(idCompetition: self.idCompetition, endDate: self.endDate)]
         }
         
     }

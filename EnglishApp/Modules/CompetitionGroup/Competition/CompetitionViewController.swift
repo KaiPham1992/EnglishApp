@@ -86,11 +86,11 @@ class CompetitionViewController: ListManagerVC {
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
         let data = item as! CompetitionEntity
         if data.isHidden {
-            let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true)
+            let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true, endDate: data.endDate ?? Date())
             self.push(controller: vc)
         } else {
             if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
-                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: false)
+                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: false, endDate: data.endDate ?? Date())
                 
                 vc.joinTeam = { [weak self] (teamId) in
                     self?.joinTeam(index: indexPath.row, teamId: teamId)
@@ -103,7 +103,7 @@ class CompetitionViewController: ListManagerVC {
                 }
                 self.push(controller: vc)
             } else {
-                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true)
+                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true, endDate: data.endDate ?? Date())
                 self.push(controller: vc)
             }
         }
@@ -119,17 +119,17 @@ class CompetitionViewController: ListManagerVC {
                 if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
                     let data = listData[index] as! CompetitionEntity
                     if data.isHidden {
-                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true))
+                        self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true, endDate: data.endDate ?? Date()))
                     } else {
                         let isStarted = cell.isStarted
                         if isStarted {
-                            let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date())
+                            let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())
                             vc.fightFinished = {[weak self] in
                                 self?.fightComplete(index: index)
                             }
                             self.push(controller: vc,animated: true)
                         } else {
-                            let vc = SelectTeamRouter.createModule(competitionId: competitionId)
+                            let vc = SelectTeamRouter.createModule(competitionId: competitionId, endDate: data.endDate ?? Date())
                             vc.joinTeam = { [weak self] (teamId) in
                                 self?.joinTeam(index: index, teamId: teamId)
                             }
@@ -147,13 +147,12 @@ class CompetitionViewController: ListManagerVC {
             
             if status == "DONE"{
                 let data = listData[index] as! CompetitionEntity
-                
-                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0), isHistory: true))
+                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0), isHistory: true, endDate: data.endDate ?? Date()))
             }
             
             if status == "START" {
                 let data = listData[index] as! CompetitionEntity
-                let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date())
+                let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())
                 vc.fightFinished = {[weak self] in
                     self?.fightComplete(index: index)
                 }
@@ -162,11 +161,11 @@ class CompetitionViewController: ListManagerVC {
             
             
             if status == "CANNOT_JOIN" {
-                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true))
+                self.push(controller: SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true, endDate: Date()))
             }
         } else {
             let data = listData[index] as! CompetitionEntity
-            let vc = ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0", isHistory: true)
+            let vc = ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: data.exercise_id ?? "0", isHistory: true, endDate: data.endDate ?? Date())
             self.push(controller: vc)
         }
     }

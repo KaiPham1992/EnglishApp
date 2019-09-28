@@ -29,7 +29,7 @@ protocol ResultPresenterProtocol: class {
     func getPointQuestion(indexPath: IndexPath) -> Int?
     func getNumberQuestion() -> Int?
     func getListAnswer() -> [QuestionResultEntity]?
-    func getViewResultUserCompetition(idCompetition: String)
+    func getViewResultUserCompetition(idCompetition: String, showProgressView: Bool)
 }
 
 //MARK: Interactor -
@@ -45,7 +45,7 @@ protocol ResultInteractorInputProtocol: class {
 
     var presenter: ResultInteractorOutputProtocol?  { get set }
     func getViewResult(id: String)
-    func getViewResultUserCompetition(idCompetition: String)
+    func getViewResultUserCompetition(idCompetition: String, showProgressView: Bool)
 
     /* Presenter -> Interactor */
 }

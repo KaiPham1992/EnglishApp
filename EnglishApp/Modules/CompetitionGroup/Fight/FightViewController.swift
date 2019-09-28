@@ -43,9 +43,8 @@ class FightViewController: BaseViewController {
     var team_id : Int = 0
     var isOut = false
     var startDate : Date = Date()
-    
     var fightFinished : (() -> ())?
-    
+    var endDateCompetition: Date?
     var player : AVPlayer?
     var playerItem : AVPlayerItem?
     var isReapeat = false
@@ -170,19 +169,19 @@ extension FightViewController :FightViewProtocol{
             }
         } else {
             self.fightFinished?()
-            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
+            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false, endDate: self.endDateCompetition ?? Date()))
         }
     }
     
     func submitFailed() {
         if isEnd {
             self.fightFinished?()
-            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
+            self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false, endDate: self.endDateCompetition ?? Date()))
         } else {
             let message = self.presenter?.error?.message
             if message == LocalizableKey.fight_is_done.showLanguage.uppercased() {
                 self.fightFinished?()
-                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false))
+                self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false, endDate: self.endDateCompetition ?? Date()))
             }
         }
     }

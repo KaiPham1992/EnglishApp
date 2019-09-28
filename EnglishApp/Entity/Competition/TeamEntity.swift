@@ -36,6 +36,7 @@ class TeamEntity: BaseEntity {
     var maxMember: String?
     var competition_id: String?
     var start_date : Date?
+    var end_date : Date?
     var start_time_mi : String?
    
     convenience init(name: String) {
@@ -47,6 +48,7 @@ class TeamEntity: BaseEntity {
     override func mapping(map: Map) {
         super.mapping(map: map)
         self.start_date <- (map["start_date"],TranformStringtoDate())
+        self.end_date <- (map["end_date"],TranformStringtoDate())
         self.start_time_mi <- map["start_time_mi"]
         self.competition_id <- map["competition_id"]
         self.id <- map["_id"]

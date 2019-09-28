@@ -28,7 +28,7 @@ class DetailTeamRouter: DetailTeamWireframeProtocol {
         return view
     }
     
-    static func createModule(teamDetail: DetailTeamEntity) -> DetailTeamViewController {
+    static func createModule(teamDetail: DetailTeamEntity, endDate: Date) -> DetailTeamViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = DetailTeamViewController(nibName: nil, bundle: nil)
         let interactor = DetailTeamInteractor()
@@ -36,19 +36,21 @@ class DetailTeamRouter: DetailTeamWireframeProtocol {
         let presenter = DetailTeamPresenter(interface: view, interactor: interactor, router: router)
         presenter.teamDetail = teamDetail
         view.presenter = presenter
+        view.endDate = endDate
         interactor.presenter = presenter
         router.viewController = view
         
         return view
     }
     
-    static func createModule(id: String, isTeamJoined: Int = 1, isFightJoined: Int, isCannotJoin: Bool) -> DetailTeamViewController {
+    static func createModule(id: String, isTeamJoined: Int = 1, isFightJoined: Int, isCannotJoin: Bool, endDate: Date) -> DetailTeamViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = DetailTeamViewController(nibName: nil, bundle: nil)
         view.id = id
         view.isFightJoined = isFightJoined
         view.isTeamJoined = isTeamJoined
         view.isCannotJoin = isCannotJoin
+        view.endDate = endDate
         let interactor = DetailTeamInteractor()
         let router = DetailTeamRouter()
         let presenter = DetailTeamPresenter(interface: view, interactor: interactor, router: router)

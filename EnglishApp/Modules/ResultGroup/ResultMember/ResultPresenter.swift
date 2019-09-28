@@ -84,8 +84,8 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         self.view?.reloadView()
     }
     
-    func getViewResultUserCompetition(idCompetition: String) {
-        self.interactor?.getViewResultUserCompetition(idCompetition: idCompetition)
+    func getViewResultUserCompetition(idCompetition: String, showProgressView: Bool) {
+        self.interactor?.getViewResultUserCompetition(idCompetition: idCompetition, showProgressView: showProgressView)
     }
     
     func competitionIsDoing() {
