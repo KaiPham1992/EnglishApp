@@ -81,6 +81,7 @@ class CompetitionCell: BaseTableCell {
                 } else {
                     viewButtonCompetition.isHidden = false
                     if (competitionEntity.is_fight_joined ?? 0) == 0 {
+                        self.isStarted = false
                         lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
                         viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                     } else {
