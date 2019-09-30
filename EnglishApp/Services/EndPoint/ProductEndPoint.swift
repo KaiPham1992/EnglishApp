@@ -15,7 +15,7 @@ import Foundation
 import Alamofire
 
 enum ProductEndPoint {
-    case getListProduct
+    case getListProduct(fromDoEntrance: Bool, point: Int)
     case sendRedeem(code: String)
     case exchangeGift(id: String, type: String)
     case upgradeProduct(productID: String)
@@ -48,7 +48,10 @@ extension ProductEndPoint: EndPointType {
     
     var parameters: JSONDictionary {
         switch self {
-        case .getListProduct :
+        case .getListProduct(let fromDoEntrance, let point):
+            if fromDoEntrance {
+                return ["point_entrance_test": point < 0 ? 0 : point]
+            }
             return [:]
         case .exchangeGift(let id, let type):
             return ["product_id": id, "amount_type": type]

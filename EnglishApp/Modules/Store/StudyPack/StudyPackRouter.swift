@@ -14,13 +14,14 @@ class StudyPackRouter: StudyPackWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> StudyPackViewController {
+    static func createModule(fromDoEntrance: Bool = false, point : Int = 0) -> StudyPackViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = StudyPackViewController.initFromNib()
         let interactor = StudyPackInteractor()
         let router = StudyPackRouter()
         let presenter = StudyPackPresenter(interface: view, interactor: interactor, router: router)
-
+        presenter.fromDoEntrance = fromDoEntrance
+        presenter.point = point
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view

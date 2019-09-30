@@ -11,6 +11,10 @@
 import UIKit
 
 class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputProtocol {
+    
+    var fromDoEntrance = false
+    var point = 0
+    
     func exchangeGift(id: String, type: String) {
         ProgressView.shared.show()
         Provider.shared.productAPIService.exchangeGift(id: id, type: type, success: { (success) in
@@ -26,7 +30,7 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
     
     func getProduct() {
         ProgressView.shared.show()
-        Provider.shared.productAPIService.getListProduct(success: { collectionProduct in
+        Provider.shared.productAPIService.getListProduct(fromDoEntrance: fromDoEntrance, point: point, success: { collectionProduct in
             ProgressView.shared.hide()
             guard let product = collectionProduct else { return }
             self.view?.didGetProduct(product: product)

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol ProductAPIServiceProtocol {
-    func getListProduct(success: @escaping SuccessHandler<ProductCollectionEntity>.object,failure: @escaping RequestFailure)
+    func getListProduct(fromDoEntrance: Bool, point: Int, success: @escaping SuccessHandler<ProductCollectionEntity>.object,failure: @escaping RequestFailure)
     func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
     func exchangeGift(id: String, type: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
     func upgradeProduc(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
@@ -27,8 +27,8 @@ class ProductAPIService: ProductAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func getListProduct(success: @escaping SuccessHandler<ProductCollectionEntity>.object, failure: @escaping RequestFailure) {
-        let endpoint = ProductEndPoint.getListProduct
+    func getListProduct(fromDoEntrance: Bool, point: Int, success: @escaping SuccessHandler<ProductCollectionEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ProductEndPoint.getListProduct(fromDoEntrance: fromDoEntrance, point: point)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     

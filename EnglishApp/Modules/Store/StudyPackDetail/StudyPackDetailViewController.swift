@@ -26,7 +26,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
 
     private func loadData(completion: @escaping((_ name: String, _ product: ProductEntity) -> ())){
         ProgressView.shared.show()
-        Provider.shared.productAPIService.getListProduct(success: { collectionProduct in
+        Provider.shared.productAPIService.getListProduct(fromDoEntrance: false, point: 0, success: { collectionProduct in
             guard let product = collectionProduct?.groupUpgrade else { return }
             if self.id == "-1" {
                 for item in product {

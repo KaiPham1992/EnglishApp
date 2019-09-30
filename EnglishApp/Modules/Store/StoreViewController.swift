@@ -12,6 +12,8 @@ import XLPagerTabStrip
 class StoreViewController: PageViewController, TheoryViewProtocol {
     
     var presenter: TheoryPresenterProtocol?
+    var fromDoEntrance : Bool = false
+    var point : Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,6 @@ class StoreViewController: PageViewController, TheoryViewProtocol {
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [StudyPackRouter.createModule(),BeePackRouter.createModule()]
+        return [StudyPackRouter.createModule(fromDoEntrance: self.fromDoEntrance, point: point),BeePackRouter.createModule()]
     }
 }
