@@ -128,9 +128,7 @@ class NameExerciseViewController: BaseViewController {
              self.presenter?.getViewExercise(id: self.idExercise)
         }
         
-        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
-        edgePan.edges = .left
-        view.addGestureRecognizer(edgePan)
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
     
     @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
