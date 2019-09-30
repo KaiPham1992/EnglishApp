@@ -102,7 +102,6 @@ class FightViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         addButtonToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy") ?? UIImage(), style: .right, action: #selector(deleteExercise))
     }

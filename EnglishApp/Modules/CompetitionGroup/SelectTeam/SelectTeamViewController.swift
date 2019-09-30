@@ -38,7 +38,6 @@ class SelectTeamViewController: BaseTableViewController {
     }
     
     override func btnBackTapped() {
-        showTabbar()
         self.pop()
     }
     

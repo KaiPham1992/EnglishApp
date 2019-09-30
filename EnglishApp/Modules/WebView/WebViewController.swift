@@ -59,7 +59,6 @@ class WebViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.privacyAndPolicy.showLanguage)
     }

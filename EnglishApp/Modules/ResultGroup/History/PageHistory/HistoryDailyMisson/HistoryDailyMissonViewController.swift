@@ -32,11 +32,6 @@ class HistoryDailyMissonViewController: ListManagerVC {
         tableView.registerXibFile(CellGrammar.self)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = item as! TestResult
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)

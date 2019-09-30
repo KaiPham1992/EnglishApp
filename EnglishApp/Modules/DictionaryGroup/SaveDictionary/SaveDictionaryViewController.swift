@@ -66,11 +66,6 @@ class SaveDictionaryViewController: PageViewController,SaveDictionaryViewProtoco
         addButtonImageToNavigation(image: UIImage(named:"Material_Icons_white_chevron_left_Copy-1")!, style: .right, action: #selector(clickButtonRight))
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [GrammarRouter.createModule(type:.vocabulary),VocabularyRouter.createModule(),NoteListRouter.createModule()]
     }

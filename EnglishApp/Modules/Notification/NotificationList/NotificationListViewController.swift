@@ -18,8 +18,6 @@ class NotificationListViewController: ListManagerVC  {
         customTitle = LocalizableKey.titleNotification.showLanguage
         showButtonBack = true
         super.viewDidLoad()
-        hideTabbar()
-        
     }
     
     override func callAPI() {

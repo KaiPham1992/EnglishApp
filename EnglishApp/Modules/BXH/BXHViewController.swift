@@ -57,7 +57,6 @@ class BXHViewController: BaseViewController {
         
         calculateQuaters()
         setTitleForFilterOption()
-        hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.bxh.showLanguage)
         addButtonToNavigation(image: AppImage.iconFilter, style: .right, action: #selector(btnFilterTapped))
@@ -102,7 +101,6 @@ class BXHViewController: BaseViewController {
         self.viewOption.layer.shadowPath = shadowPath.cgPath
     }
     override func btnBackTapped() {
-        showTabbar()
         self.pop()
     }
     

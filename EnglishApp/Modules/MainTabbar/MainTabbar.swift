@@ -142,23 +142,6 @@ class MainTabbar: UITabBarController {
         self.setupRedDot()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        var newTabBarHeight: CGFloat = 0
-        if checkIncreaseTabbar() {
-            newTabBarHeight = defaultTabBarHeight + tabBarIncrease
-        } else {
-            newTabBarHeight = defaultTabBarHeight
-        }
-        
-        var newFrame = tabBar.frame
-        newFrame.size.height = newTabBarHeight
-        newFrame.origin.y = view.frame.size.height - newTabBarHeight
-        tabBar.barTintColor = UIColor.white
-        tabBar.frame = newFrame
-    }
-    
     func setUpObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(resetTitle), name: NSNotification.Name(rawValue: "Refresh"), object: nil)
     }
@@ -239,5 +222,13 @@ extension MainTabbar: UITabBarControllerDelegate {
     
     func checkIncreaseTabbar() -> Bool {
         return !UIDevice.current.isIphone5_8Inch()
+    }
+}
+
+extension UITabBar {
+    open override func sizeThatFits(_ size: CGSize) -> CGSize {
+        var sizeThatFits = super.sizeThatFits(size)
+        sizeThatFits.height = 60
+        return sizeThatFits
     }
 }

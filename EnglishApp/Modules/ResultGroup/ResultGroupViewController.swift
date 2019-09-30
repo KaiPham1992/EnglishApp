@@ -25,7 +25,6 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         self.edgesForExtendedLayout = .bottom
-        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func btnBackTapped() {

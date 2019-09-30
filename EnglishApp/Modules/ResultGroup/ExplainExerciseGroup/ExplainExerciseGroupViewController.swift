@@ -19,7 +19,6 @@ class ExplainExerciseGroupViewController: PageViewController, ExplainExerciseGro
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
         self.edgesForExtendedLayout = UIRectEdge.bottom
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.see_explain.showLanguage)

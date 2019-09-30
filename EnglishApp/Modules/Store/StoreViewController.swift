@@ -20,7 +20,6 @@ class StoreViewController: PageViewController, TheoryViewProtocol {
         setTitleNavigation(title: LocalizableKey.titleStore.showLanguage)
         self.view.backgroundColor = .white
         addBackToNavigation()
-        self.tabBarController?.tabBar.isHidden = true
         self.edgesForExtendedLayout = UIRectEdge.bottom
     }
     

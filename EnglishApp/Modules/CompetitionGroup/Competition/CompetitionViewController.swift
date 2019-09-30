@@ -61,11 +61,6 @@ class CompetitionViewController: ListManagerVC {
         self.tableView.registerXibFile(CompetitionCell.self)
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//        super.viewWillAppear(true)
-//        self.tabBarController?.tabBar.isHidden = false
-//    }
   
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeue(CompetitionCell.self, for: indexPath)

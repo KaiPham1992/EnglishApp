@@ -54,16 +54,12 @@ class ProfileViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        
-        hideTabbar()
-        
         addBackToNavigation()
         addButtonToNavigation(image: AppImage.imgEditProfile, style: .right, action: #selector(btnEditTapped))
         
     }
     
     override func btnBackTapped() {
-        showTabbar()
         self.pop()
     }
     

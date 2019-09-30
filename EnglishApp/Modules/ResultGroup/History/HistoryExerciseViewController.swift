@@ -30,7 +30,6 @@ class HistoryExerciseViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.history_test.showLanguage)
         self.presenter?.getResultCalendar(from: calendar.getFromDate(), to: calendar.getToDate())

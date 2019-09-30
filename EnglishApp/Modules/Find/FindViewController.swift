@@ -29,7 +29,6 @@ class FindViewController: BaseViewController {
 
     override func setTitleUI() {
         super.setTitleUI()
-        hideTabbar()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.find.showLanguage)
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
@@ -56,7 +55,6 @@ class FindViewController: BaseViewController {
     }
     
     override func btnBackTapped() {
-        showTabbar()
         self.pop()
         self.dismissKeyBoard()
     }

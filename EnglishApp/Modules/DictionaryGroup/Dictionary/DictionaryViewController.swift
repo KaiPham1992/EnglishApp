@@ -74,7 +74,6 @@ class DictionaryViewController: BaseViewController {
 //        self.presenter?.getListDictionary()
         lblSearch.text = LocalizableKey.search.showLanguage
         btnSetting.setTitle(LocalizableKey.setting.showLanguage.uppercased(), for: .normal)
-        self.tabBarController?.tabBar.isHidden = true
 //        lblDictionary.text = LocalizableKey.vietnamese_to_english.showLanguage
         self.setupViewDictionary()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.2) {

@@ -82,7 +82,6 @@ class ResultExerciseViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         addBackToNavigation()
         if !isSearch {

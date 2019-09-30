@@ -32,6 +32,7 @@ class AppRouter {
     }
     
     func pushTo(viewController: UIViewController) {
+        viewController.hidesBottomBarWhenPushed = true
         rootNavigation?.pushViewController(viewController, animated: true)
     }
     

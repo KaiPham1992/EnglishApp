@@ -155,7 +155,6 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = false
         self.tbHome.tableFooterView = UIView()
         self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
@@ -196,7 +195,9 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func btnNotificationTapped() {
-        self.push(controller: NotificationListRouter.createModule())
+        let vc = NotificationListRouter.createModule()
+        vc.hidesBottomBarWhenPushed = true
+        self.push(controller: vc)
     }
     
     @objc func btnMenuTapped() {
@@ -304,6 +305,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     @objc func btnTestBeginTapped() {
         let vc = NameExerciseRouter.createModule(id: "", type: .entranceExercise)
+        vc.hidesBottomBarWhenPushed = true
         vc.exerciseDelegate = self
         self.push(controller: vc)
     }
@@ -340,19 +342,27 @@ extension HomeViewController : ExerciseDelegate {
 
 extension HomeViewController: HomeActionCellDelegate {
     func btnDictionaryTapped() {
-        self.push(controller: DictionaryRouter.createModule())
+        let vc = DictionaryRouter.createModule()
+        vc.hidesBottomBarWhenPushed = true
+        self.push(controller: vc)
     }
     
     func btnStoreTapped() {
-        self.push(controller: StoreViewController())
+        let vc = StoreViewController()
+        vc.hidesBottomBarWhenPushed = true
+        self.push(controller: vc)
     }
     
     func btnMissionTapped() {
-        self.push(controller: DailyMissonRouter.createModule())
+        let vc = DailyMissonRouter.createModule()
+        vc.hidesBottomBarWhenPushed = true
+        self.push(controller: vc)
     }
     
     func btnFindWorkTapped() {
-        self.push(controller: FindRouter.createModule())
+        let vc = FindRouter.createModule()
+        vc.hidesBottomBarWhenPushed = true
+        self.push(controller: vc)
     }
     
 }
