@@ -16,7 +16,6 @@ class ResultViewController: BaseViewController {
 
     @IBAction func backHome(_ sender: Any) {
         if type == .entranceExercise && !isHistory {
-            NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut" : self.isOut])
             let vc = StoreViewController()
             vc.fromDoEntrance = true
             vc.point = Int(self.presenter?.testResultProfile?.total_score ?? "0") ?? 0

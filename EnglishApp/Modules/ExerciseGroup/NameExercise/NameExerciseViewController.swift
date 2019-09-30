@@ -127,14 +127,7 @@ class NameExerciseViewController: BaseViewController {
         default:
              self.presenter?.getViewExercise(id: self.idExercise)
         }
-        
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-    }
-    
-    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if recognizer.state == .recognized {
-//            btnBackTapped()
-        }
     }
     
     override func setUpNavigation() {

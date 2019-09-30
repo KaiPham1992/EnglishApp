@@ -90,14 +90,7 @@ class FightViewController: BaseViewController {
         vCountTime.disableClick = true
         vCountTime.delegate = self
         self.presenter?.getViewFightCompetition(id: String(self.completion_id))
-        
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
-    }
-    
-    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
-        if recognizer.state == .recognized {
-            
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
