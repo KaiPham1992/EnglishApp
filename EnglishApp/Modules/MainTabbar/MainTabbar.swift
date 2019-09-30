@@ -49,6 +49,7 @@ class MainTabbar: UITabBarController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                             let vc = QADetailRouter.createModule(id: id)
+                            vc.hidesBottomBarWhenPushed = true
                             viewController.push(controller: vc)
                         }
                     }
@@ -60,6 +61,7 @@ class MainTabbar: UITabBarController {
                         if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                             let vc = NotificationDetailRouter.createModule(idNotification: id)
                             vc.isRead = false
+                            vc.hidesBottomBarWhenPushed = true
                             viewController.push(controller: vc)
                         }
                     }
@@ -69,6 +71,7 @@ class MainTabbar: UITabBarController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                         let vc = AssignExerciseRouter.createModule()
+                        vc.hidesBottomBarWhenPushed = true
                         viewController.push(controller: vc)
                     }
                 }
@@ -77,6 +80,7 @@ class MainTabbar: UITabBarController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController as? HomeViewController {
                         let vc = StoreViewController()
+                        vc.hidesBottomBarWhenPushed = true
                         viewController.push(controller: vc)
                     }
                 }
@@ -87,6 +91,7 @@ class MainTabbar: UITabBarController {
                         if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                             let vc = ExplainExerciseGroupRouter.createModule(id: id)
                             vc.selectedIndex = 1
+                            vc.hidesBottomBarWhenPushed = true
                             viewController.push(controller: vc)
                         }
                     }
@@ -95,14 +100,18 @@ class MainTabbar: UITabBarController {
                 self.selectedIndex = 0
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
-                        viewController.push(controller: HistoryBeeRouter.createModule(wallet_type: 1))
+                        let vc = HistoryBeeRouter.createModule(wallet_type: 1)
+                        vc.hidesBottomBarWhenPushed = true
+                        viewController.push(controller: vc)
                     }
                 }
             case "WALLET_HONEY", "BUY_HONEY":
                 self.selectedIndex = 0
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                     if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
-                        viewController.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
+                        let vc = HistoryBeeRouter.createModule(wallet_type: 3)
+                        vc.hidesBottomBarWhenPushed = true
+                        viewController.push(controller: vc)
                     }
                 }
             case "COMMENT_LESSON":
@@ -111,6 +120,7 @@ class MainTabbar: UITabBarController {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                         if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
                             let vc = CommentRouter.createModule(id: String(id))
+                            vc.hidesBottomBarWhenPushed = true
                             viewController.push(controller: vc)
                         }
                     }
