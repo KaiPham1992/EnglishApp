@@ -63,6 +63,7 @@ class NotificationListViewController: ListManagerVC  {
         case "COMMENT_QUESTION":
             let oid = noti.objectId
             let vc = ExplainExerciseGroupRouter.createModule(id: Int(oid&) ?? 0)
+            vc.selectedIndex = 1
             self.push(controller: vc)
         case "ASSIGNED_EXERCISE":
             let vc = AssignExerciseRouter.createModule()
@@ -76,7 +77,7 @@ class NotificationListViewController: ListManagerVC  {
         case "WALLET_HONEY", "BUY_HONEY":
             self.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
         case "COMMENT_LESSON":
-            if let id = Int(noti.id&) {
+            if let id = noti.objectId {
                  let vc = CommentRouter.createModule(id: String(id))
                 self.push(controller: vc)
             }
