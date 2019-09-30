@@ -19,7 +19,6 @@ let tabIconInsets = UIEdgeInsets(top: 4, left: 0, bottom: -4, right: 0)
 let tabBarIncrease: CGFloat = 13
 
 class MainTabbar: UITabBarController {
-    fileprivate lazy var defaultTabBarHeight = { tabBar.frame.size.height }()
     weak var tabbarDelagate: TabbarProtocol?
     var listViewController = [UIViewController]()
     
@@ -237,16 +236,16 @@ extension MainTabbar: UITabBarControllerDelegate {
         //        }
         tabbarDelagate?.tabbarSelected(index: tabBarController.selectedIndex)
     }
-    
-    func checkIncreaseTabbar() -> Bool {
-        return !UIDevice.current.isIphone5_8Inch()
-    }
 }
 
 extension UITabBar {
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
         var sizeThatFits = super.sizeThatFits(size)
-        sizeThatFits.height = 60
+        if UIDevice.current.isIphoneXOrLater() {
+            sizeThatFits.height = 100
+        } else {
+            sizeThatFits.height = 60
+        }
         return sizeThatFits
     }
 }
