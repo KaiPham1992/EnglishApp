@@ -17,9 +17,14 @@ class ResultViewController: BaseViewController {
     @IBAction func backHome(_ sender: Any) {
         if type == .entranceExercise && !isHistory {
             NotificationCenter.default.post(name: NSNotification.Name.init("TestEntranceComplete"), object: [HomeViewController.self], userInfo: ["isOut" : self.isOut])
+            let vc = StoreViewController()
+            vc.fromDoEntrance = true
+            vc.point = Int(self.presenter?.testResultProfile?.total_score ?? "0") ?? 0
+            self.push(controller: vc)
+        } else {
+            (self.tabBarController as! MainTabbar).gotoHome()
+            self.navigationController?.popToRootViewController(animated: true)
         }
-        (self.tabBarController as! MainTabbar).gotoHome()
-        self.navigationController?.popToRootViewController(animated: true)
     }
     
     @IBOutlet weak var lblDontJoinCompetition: UILabel!
@@ -58,7 +63,11 @@ class ResultViewController: BaseViewController {
         tbvResult.registerXibFile(CellResult.self)
         tbvResult.dataSource = self
         tbvResult.delegate = self
-        btnBackHome.setTitle(LocalizableKey.back_gome.showLanguage.uppercased(), for: .normal)
+        if self.type == .entranceExercise && !self.isHistory {
+            btnBackHome.setTitle(LocalizableKey.update_package_recieved.showLanguage.uppercased(), for: .normal)
+        } else {
+            btnBackHome.setTitle(LocalizableKey.back_gome.showLanguage.uppercased(), for: .normal)
+        }
         lblPointSum.attributedText = NSAttributedString(string: LocalizableKey.sum_point.showLanguage)
         lblTimeDoExercise.attributedText = NSAttributedString(string: LocalizableKey.time_do_exercise.showLanguage)
         self.edgesForExtendedLayout = UIRectEdge.bottom
@@ -148,18 +157,6 @@ extension ResultViewController: ResultViewProtocol{
             self.viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
             self.viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
             self.tbvResult.reloadData()
-            if self.type == .entranceExercise && !self.isHistory {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
-                    PopUpHelper.shared.showUpdateFeature(completeUpdate: { [unowned self] in
-                        let vc = StoreViewController()
-                        vc.fromDoEntrance = true
-                        vc.point = Int(self.presenter?.testResultProfile?.total_score ?? "0") ?? 0
-                        self.push(controller: vc)
-                    }, completeCancel: {
-                        
-                    })
-                })
-            }
         }
         
     }
