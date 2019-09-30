@@ -90,6 +90,15 @@ class FightViewController: BaseViewController {
         vCountTime.disableClick = true
         vCountTime.delegate = self
         self.presenter?.getViewFightCompetition(id: String(self.completion_id))
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        view.addGestureRecognizer(edgePan)
+    }
+    
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+            
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {

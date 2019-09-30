@@ -25,7 +25,17 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
         self.edgesForExtendedLayout = .bottom
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        view.addGestureRecognizer(edgePan)
     }
+    
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+//            self.btnBackTapped()
+        }
+    }
+
     
     override func btnBackTapped() {
         if isHistory {

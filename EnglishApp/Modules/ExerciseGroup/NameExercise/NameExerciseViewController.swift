@@ -128,6 +128,15 @@ class NameExerciseViewController: BaseViewController {
              self.presenter?.getViewExercise(id: self.idExercise)
         }
         
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        view.addGestureRecognizer(edgePan)
+    }
+    
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+        if recognizer.state == .recognized {
+//            btnBackTapped()
+        }
     }
     
     override func setUpNavigation() {

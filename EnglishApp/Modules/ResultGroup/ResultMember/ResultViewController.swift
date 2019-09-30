@@ -71,7 +71,16 @@ class ResultViewController: BaseViewController {
             }
         }
         self.callAPI()
+        let edgePan = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(screenEdgeSwiped))
+        edgePan.edges = .left
+        view.addGestureRecognizer(edgePan)
     }
+    
+    @objc func screenEdgeSwiped(_ recognizer: UIScreenEdgePanGestureRecognizer) {
+           if recognizer.state == .recognized {
+//                self.btnBackTapped()
+           }
+       }
 
     @objc private func actionPullToRefresh() {
         self.callAPI()
