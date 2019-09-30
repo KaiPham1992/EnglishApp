@@ -87,6 +87,7 @@ class CompetitionViewController: ListManagerVC {
         let data = item as! CompetitionEntity
         if data.isHidden {
             let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true, endDate: data.endDate ?? Date())
+            vc.hidesBottomBarWhenPushed = true
             self.push(controller: vc)
         } else {
             if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
@@ -170,8 +171,8 @@ class CompetitionViewController: ListManagerVC {
             
             if status == "CANNOT_JOIN" {
                 let vc = SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true, endDate: Date())
-                self.push(controller: vc)
                 vc.hidesBottomBarWhenPushed = true
+                self.push(controller: vc)
             }
         } else {
             let data = listData[index] as! CompetitionEntity

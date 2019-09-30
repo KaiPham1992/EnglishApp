@@ -66,16 +66,10 @@ class CreateExerciseViewController: BaseViewController {
     
     override func setUpNavigation() {
         super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.create_exercise.showLanguage)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
+  
     func setupDropDown(){
         dropDown.backgroundColor = .white
         dropDown.width = 135

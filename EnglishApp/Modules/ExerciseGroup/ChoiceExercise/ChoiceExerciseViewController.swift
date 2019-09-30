@@ -59,7 +59,6 @@ class ChoiceExerciseViewController: BaseViewController {
     }
     override func setUpNavigation() {
         super.setUpNavigation()
-        self.tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.choice_exercise.showLanguage)
     }

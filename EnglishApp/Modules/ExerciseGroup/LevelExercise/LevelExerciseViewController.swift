@@ -27,11 +27,6 @@ class LevelExerciseViewController: ListManagerVC {
         super.setUpViews()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.tabBarController?.tabBar.isHidden = true
-    }
-    
     override func registerTableView() {
         super.registerTableView()
         self.tableView.registerXibFile(CellLevelExercise.self)
