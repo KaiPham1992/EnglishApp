@@ -18,6 +18,7 @@ import netfox
 import UserNotifications
 import RealmSwift
 import FBSDKShareKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -113,16 +114,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:], sourceApplication: String) -> Bool {
         let fb = ApplicationDelegate.shared.application(app, open: url, options: options)
-        let gg = GIDSignIn.sharedInstance().handle(url as URL?,
-                                                   sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                                                   annotation: options[UIApplication.OpenURLOptionsKey.annotation])
-       
-        
-        return fb || gg
+        return fb
         
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
+//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+//            if settings.authorizationStatus == .authorized {
+//                print("notification authorized")
+//            } else {
+//                print("notification not authorized")
+//                self.configurePushNotification(application: application)
+//            }
+//        }
+        
         print("=========================applicationDidBecomeActive=========================")
         
         Provider.shared.homeAPIService.getTopThree(success: { (object) in

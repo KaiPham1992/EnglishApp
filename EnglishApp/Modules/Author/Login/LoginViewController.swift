@@ -49,7 +49,7 @@ class LoginViewController: BaseViewController {
     override func setUpViews() {
         super.setUpViews()
         GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().presentingViewController = self
     }
     
     override func setTitleUI() {
