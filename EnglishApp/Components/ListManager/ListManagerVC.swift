@@ -98,12 +98,12 @@ class ListManagerVC: BaseViewController {
     }
     
     private func addPullToRefresh(){
-        refreshControl.addTarget(self, action: #selector(actionPullToRefresh), for: .valueChanged)
         if #available(iOS 10.0, *) {
             self.tableView.refreshControl = refreshControl
         } else {
             self.tableView.addSubview(refreshControl)
         }
+        refreshControl.addTarget(self, action: #selector(ListManagerVC.actionPullToRefresh), for: .valueChanged)
     }
     
     @objc func actionPullToRefresh(){

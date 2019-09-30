@@ -21,7 +21,7 @@ class ResultViewController: BaseViewController {
         (self.tabBarController as! MainTabbar).gotoHome()
         self.navigationController?.popToRootViewController(animated: true)
     }
-    @IBOutlet weak var contentScrollView: UIView!
+    
     @IBOutlet weak var lblDontJoinCompetition: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblTime: UILabel!
@@ -43,11 +43,10 @@ class ResultViewController: BaseViewController {
     var id: String = "1"
     var isHistory : Bool = false
     var isOut = false
-    let refreshControl : UIRefreshControl = UIRefreshControl()
+    private let refreshControlResult = UIRefreshControl()
 
     override func setUpViews() {
         super.setUpViews()
-        self.addPullToRefresh()
         lblDontJoinCompetition.isHidden = true
         vInfo.isHidden = true
         tbvResult.isHidden = true
@@ -55,15 +54,6 @@ class ResultViewController: BaseViewController {
         viewLevel.imgView.image = #imageLiteral(resourceName: "ic_gold")
         viewRank.lblTitle.attributedText =  NSAttributedString(string: LocalizableKey.diamond.showLanguage)
         viewLevel.lblTitle.attributedText = NSAttributedString(string: LocalizableKey.point_level.showLanguage)
-        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
-            viewRank.isHidden = false
-            self.presenter?.getViewResult(id: id)
-        }
-        
-        if type == .competition {
-            self.presenter?.getViewResultUserCompetition(idCompetition: id, showProgressView: true)
-        }
-    
         tbvResult.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbvResult.registerXibFile(CellResult.self)
         tbvResult.dataSource = self
@@ -72,26 +62,31 @@ class ResultViewController: BaseViewController {
         lblPointSum.attributedText = NSAttributedString(string: LocalizableKey.sum_point.showLanguage)
         lblTimeDoExercise.attributedText = NSAttributedString(string: LocalizableKey.time_do_exercise.showLanguage)
         self.edgesForExtendedLayout = UIRectEdge.bottom
-    }
-    
-    private func addPullToRefresh() {
-        refreshControl.addTarget(self, action: #selector(actionPullToRefresh), for: .valueChanged)
-        if #available(iOS 10.0, *) {
-            self.scrollView.refreshControl = refreshControl
-        } else {
-            self.scrollView.addSubview(refreshControl)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.refreshControlResult.addTarget(self, action: #selector(ResultViewController.actionPullToRefresh), for: .valueChanged)
+            if #available(iOS 10.0, *) {
+                self.scrollView.refreshControl = self.refreshControlResult
+            } else {
+                self.scrollView.addSubview(self.refreshControlResult)
+            }
         }
+        self.callAPI()
+    }
+
+    @objc private func actionPullToRefresh() {
+        self.callAPI()
+        refreshControlResult.endRefreshing()
     }
     
-    @objc func actionPullToRefresh() {
+    private func callAPI(){
         if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
             viewRank.isHidden = false
             self.presenter?.getViewResult(id: id)
+            
         }
         if type == .competition {
             self.presenter?.getViewResultUserCompetition(idCompetition: id, showProgressView: false)
         }
-        refreshControl.endRefreshing()
     }
     
     override func setUpNavigation() {

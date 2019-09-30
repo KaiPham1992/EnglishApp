@@ -76,7 +76,7 @@ open class BaseTableViewController: UIViewController {
     }
     
     private func addPullToRefresh(){
-        refreshControl.addTarget(self, action: #selector(actionPullToRefresh), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(BaseTableViewController.actionPullToRefresh), for: .valueChanged)
         if #available(iOS 10.0, *) {
             self.tableView?.refreshControl = refreshControl
         } else {

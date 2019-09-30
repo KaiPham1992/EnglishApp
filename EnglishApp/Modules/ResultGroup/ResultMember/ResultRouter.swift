@@ -35,7 +35,7 @@ class ResultRouter: ResultWireframeProtocol {
         return view
     }
     
-    static func createModule(type: TypeDoExercise,result: TestResultProfileEntity,isOut : Bool = false) -> ResultViewController {
+    static func createModule(type: TypeDoExercise, result: TestResultProfileEntity, isOut: Bool = false) -> ResultViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultViewController(nibName: nil, bundle: nil)
         view.type = type
@@ -53,7 +53,7 @@ class ResultRouter: ResultWireframeProtocol {
     }
     
     
-    static func createModule(type: TypeDoExercise,id: String,isHistory: Bool = false) -> ResultViewController {
+    static func createModule(type: TypeDoExercise, id: String, isHistory: Bool = false) -> ResultViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultViewController(nibName: nil, bundle: nil)
         view.type = type
@@ -70,7 +70,7 @@ class ResultRouter: ResultWireframeProtocol {
         return view
     }
     
-    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int,isHistory: Bool){
+    func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int, isHistory: Bool){
         let vc = ResultExerciseRouter.createModule(listAnswer: listAswer, index: index,isHistory: isHistory)
         self.viewController?.push(controller: vc,animated: true)
     }
