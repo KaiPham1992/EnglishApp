@@ -31,7 +31,6 @@ class SelectTeamViewController: BaseTableViewController {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        hideTabbar()
         if isCannotJoin {
             btnCreateTeam.isHidden = true
         }

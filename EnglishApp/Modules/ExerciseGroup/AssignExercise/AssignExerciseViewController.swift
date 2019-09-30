@@ -18,6 +18,10 @@ class AssignExerciseViewController: ListManagerVC {
         showButtonBack = true
         customTitle = LocalizableKey.assign_exercise.showLanguage
         super.setUpViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = true
     }
     

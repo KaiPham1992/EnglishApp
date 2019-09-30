@@ -26,6 +26,10 @@ class CatelogyExerciseViewController: ListManagerVC {
         }
         showButtonBack = true
         super.setUpViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         self.tabBarController?.tabBar.isHidden = true
     }
     
