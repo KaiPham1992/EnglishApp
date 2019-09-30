@@ -75,6 +75,11 @@ class NotificationListViewController: ListManagerVC  {
             self.push(controller: HistoryBeeRouter.createModule(wallet_type: 1))
         case "WALLET_HONEY", "BUY_HONEY":
             self.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
+        case "COMMENT_LESSON":
+            if let id = Int(noti.id&) {
+                 let vc = CommentRouter.createModule(id: String(id))
+                self.push(controller: vc)
+            }
         default:
             break
         }

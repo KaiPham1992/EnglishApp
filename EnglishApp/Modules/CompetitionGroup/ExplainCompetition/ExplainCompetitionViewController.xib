@@ -6,16 +6,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Comfortaa-Regular.ttf">
-            <string>Comfortaa-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ExplainCompetitionViewController">
             <connections>
-                <outlet property="lbContent" destination="sit-dw-QeA" id="Hl9-h5-7KR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="webView" destination="dUD-6Q-uCf" id="1V9-OJ-nbf"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,42 +18,21 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Py-pM-96u">
+                <wkWebView autoresizesSubviews="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-6Q-uCf">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfk-Of-zyZ">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="10"/>
-                            <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sit-dw-QeA">
-                                    <rect key="frame" x="10" y="10" width="355" height="0.0"/>
-                                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="sit-dw-QeA" firstAttribute="leading" secondItem="xfk-Of-zyZ" secondAttribute="leading" constant="10" id="1f2-ew-DGY"/>
-                                <constraint firstAttribute="bottom" secondItem="sit-dw-QeA" secondAttribute="bottom" id="hLa-sS-21P"/>
-                                <constraint firstAttribute="trailing" secondItem="sit-dw-QeA" secondAttribute="trailing" constant="10" id="o5w-B0-IPB"/>
-                                <constraint firstItem="sit-dw-QeA" firstAttribute="top" secondItem="xfk-Of-zyZ" secondAttribute="top" constant="10" id="wF3-gF-knp"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <constraints>
-                        <constraint firstAttribute="bottom" secondItem="xfk-Of-zyZ" secondAttribute="bottom" id="fCy-ZV-qKM"/>
-                        <constraint firstAttribute="trailing" secondItem="xfk-Of-zyZ" secondAttribute="trailing" id="fYS-b3-LSW"/>
-                        <constraint firstItem="xfk-Of-zyZ" firstAttribute="leading" secondItem="3Py-pM-96u" secondAttribute="leading" id="hXp-Vx-jG3"/>
-                        <constraint firstItem="xfk-Of-zyZ" firstAttribute="top" secondItem="3Py-pM-96u" secondAttribute="top" id="kCi-0W-PDC"/>
-                        <constraint firstItem="xfk-Of-zyZ" firstAttribute="width" secondItem="3Py-pM-96u" secondAttribute="width" id="rIK-5P-pdX"/>
-                    </constraints>
-                </scrollView>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="3Py-pM-96u" secondAttribute="bottom" id="MTb-pE-6LY"/>
-                <constraint firstItem="3Py-pM-96u" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="NPy-9F-qLk"/>
-                <constraint firstAttribute="trailing" secondItem="3Py-pM-96u" secondAttribute="trailing" id="YgJ-su-Mtd"/>
-                <constraint firstItem="3Py-pM-96u" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="pOs-LL-jha"/>
+                <constraint firstItem="dUD-6Q-uCf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Jsi-ON-dof"/>
+                <constraint firstItem="dUD-6Q-uCf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="odr-0c-tOr"/>
+                <constraint firstAttribute="trailing" secondItem="dUD-6Q-uCf" secondAttribute="trailing" id="wj4-h2-Q2I"/>
+                <constraint firstAttribute="bottom" secondItem="dUD-6Q-uCf" secondAttribute="bottom" id="zw2-Ro-H73"/>
             </constraints>
             <point key="canvasLocation" x="138" y="153"/>
         </view>

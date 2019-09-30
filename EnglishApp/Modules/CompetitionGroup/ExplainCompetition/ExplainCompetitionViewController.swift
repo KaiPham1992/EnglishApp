@@ -9,16 +9,35 @@
 //
 
 import UIKit
+import WebKit
 
 class ExplainCompetitionViewController: BaseViewController {
 
 	var presenter: ExplainCompetitionPresenterProtocol?
-    @IBOutlet weak var lbContent: UILabel!
-
+    @IBOutlet weak var webView: WKWebView!
+    var font = """
+    <style>
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: normal;
+        src: url(Comfortaa-Regular.ttf);
+    }
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: bold;
+        src: url(Comfortaa-Bold.ttf);
+    }
+    </style>
+    """
+    
     var idCompetition : String = ""
 	override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter?.getViewFightTest(idCompetition: idCompetition)
+        webView.navigationDelegate = self
+        webView.scrollView.delegate = self
     }
     
     override func setUpNavigation() {
@@ -29,7 +48,24 @@ class ExplainCompetitionViewController: BaseViewController {
 }
 extension ExplainCompetitionViewController : ExplainCompetitionViewProtocol {
     func getViewFightTestSuccessed(desciption: String) {
-        let attr = NSAttributedString(string: desciption.htmlToString , attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
-        lbContent.attributedText = attr
+        let htmlString = font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + (desciption) + #"</span>"#
+        webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
+    }
+}
+
+extension ExplainCompetitionViewController : UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return nil
+    }
+}
+
+extension ExplainCompetitionViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        webView.evaluateJavaScript(jscript)
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.frame.size.height = 1
+        webView.frame.size = webView.scrollView.contentSize
     }
 }

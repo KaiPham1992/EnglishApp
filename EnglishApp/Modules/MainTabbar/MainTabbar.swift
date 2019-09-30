@@ -105,6 +105,16 @@ class MainTabbar: UITabBarController {
                         viewController.push(controller: HistoryBeeRouter.createModule(wallet_type: 3))
                     }
                 }
+            case "COMMENT_LESSON":
+                self.selectedIndex = 0
+                if let oid = notification.userInfo?["oid"] as? String, let id = Int(oid) {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let viewController = navigation.topViewController {
+                            let vc = CommentRouter.createModule(id: String(id))
+                            viewController.push(controller: vc)
+                        }
+                    }
+                }
             default:
                 break
             }

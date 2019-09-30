@@ -43,6 +43,7 @@ class CommentViewController: BaseViewController {
 
     override func setUpViews() {
         super.setUpViews()
+        self.tabBarController?.tabBar.isHidden = true
         IQKeyboardManager.shared.disabledDistanceHandlingClasses.append(CommentViewController.self)
         IQKeyboardManager.shared.disabledToolbarClasses.append(CommentViewController.self)
         addKeyboardNotification()
