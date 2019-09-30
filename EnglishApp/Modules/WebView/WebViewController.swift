@@ -15,11 +15,29 @@ protocol WebViewControllerDelegate: class {
 
 class WebViewController: BaseViewController {
     
-    @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var webView: WKWebView!
+    var font = """
+    <style>
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: normal;
+        src: url(Comfortaa-Regular.ttf);
+    }
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: bold;
+        src: url(Comfortaa-Bold.ttf);
+    }
+    </style>
+    """
     
     override func setUpViews() {
         super.setUpViews()
         loadData()
+        webView.navigationDelegate = self
+        webView.scrollView.delegate = self
     }
     
     private func loadData() {
@@ -28,7 +46,8 @@ class WebViewController: BaseViewController {
             ProgressView.shared.hide()
             if let _response = response {
                 self.hideNoData()
-                self.lblContent.attributedText = NSAttributedString(string: _response.content?.htmlToString ?? "")
+                let htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + (_response.content ?? "") + #"</span>"#
+                self.webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
             } else {
                 self.showNoData()
             }
@@ -43,5 +62,24 @@ class WebViewController: BaseViewController {
         tabBarController?.tabBar.isHidden = true
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.privacyAndPolicy.showLanguage)
+    }
+}
+
+extension WebViewController : UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return nil
+    }
+}
+
+extension WebViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        webView.evaluateJavaScript(jscript)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.frame.size.height = 1
+        webView.frame.size = webView.scrollView.contentSize
     }
 }
