@@ -30,6 +30,7 @@ class TheoryRouter: TheoryWireframeProtocol {
     
     func gotoSearchTheory(){
         let vc = FindRouter.createModule(type: .searchTheory)
+        vc.hidesBottomBarWhenPushed = true
         viewController?.push(controller: vc,animated: true)
     }
 }

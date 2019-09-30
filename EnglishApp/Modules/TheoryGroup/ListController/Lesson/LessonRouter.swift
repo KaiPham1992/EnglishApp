@@ -44,6 +44,7 @@ class LessonRouter: LessonWireframeProtocol {
     
     func gotoListLesson(id: String,type: TheoryType) {
         let vc = ListLessonRouter.createModule(lesson_category_id: id,type: type)
+        vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc)
     }
 }
