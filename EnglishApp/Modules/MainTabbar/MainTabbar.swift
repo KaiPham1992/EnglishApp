@@ -202,7 +202,7 @@ class MainTabbar: UITabBarController {
         } else {
 //            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -8)
         }
-        self.tabBar.tintColor = UIColor.white
+//        self.tabBar.tintColor = UIColor.white
         addViewControllerToTabbar(listViewController: listViewController)
     }
     
