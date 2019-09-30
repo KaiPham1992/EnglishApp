@@ -81,12 +81,6 @@ class ExerciseViewController: BaseViewController, ExerciseViewProtocol {
         self.setUpNavigation()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        if isShowTabbar {
-            self.tabBarController?.tabBar.isHidden = false
-        }
-    }
-    
     override func setUpNavigation() {
         super.setUpNavigation()
         setTitleNavigation(title: LocalizableKey.exercise.showLanguage)

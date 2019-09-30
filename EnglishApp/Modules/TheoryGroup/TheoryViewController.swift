@@ -26,12 +26,6 @@ class TheoryViewController: PageViewController, TheoryViewProtocol {
         self.presenter?.gotoSearchTheory()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        self.tabBarController?.tabBar.isHidden = false
-        
-    }
-    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [LessonRouter.createModule(type: .lesson), LessonRouter.createModule(type: .recipe)]
     }

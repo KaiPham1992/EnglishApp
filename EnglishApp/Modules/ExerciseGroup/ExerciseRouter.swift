@@ -15,7 +15,7 @@ class ExerciseRouter: ExerciseWireframeProtocol {
     weak var viewController: UIViewController?
     var date : String = ""
 
-    static func createModule(isShowTabbar: Bool = true,date: String = "") -> UIViewController {
+    static func createModule(isShowTabbar: Bool = true, date: String = "") -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ExerciseViewController.initFromNib()
         view.isShowTabbar = isShowTabbar
@@ -36,42 +36,42 @@ class ExerciseRouter: ExerciseWireframeProtocol {
         vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc,animated: true)
     }
+    
     func gotoLevelExercise(){
         let vc = LevelExerciseRouter.createModule()
         vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc,animated: true)
     }
+    
     func gotoPracticeExercise() {
         let vc = CatelogyExerciseRouter.createModule(typeTest: TypeExercise.practice.rawValue)
         vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc,animated: true)
     }
+    
     func gotoAssignExercise() {
         let vc = AssignExerciseRouter.createModule()
         vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc,animated: true)
     }
+    
     func gotoHistoryCreateExercise() {
         let vc = HistoryListExerciseRouter.createModule(date: date,type_test: TypeDoExercise.createExercise)
-        vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc)
     }
     
     func gotoHistoryLevelExercise() {
         let vc = HistoryListExerciseRouter.createModule(date: date,type_test: TypeDoExercise.levelExercise)
-        vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc)
     }
     
     func gotoHistoryPracticeExercise() {
         let vc = HistoryListExerciseRouter.createModule(date: date,type_test: TypeDoExercise.practiceExercise)
-        vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc)
     }
     
     func gotoHistoryAssignExercise() {
         let vc = HistoryListExerciseRouter.createModule(date: date,type_test:  TypeDoExercise.assignExercise)
-        vc.hidesBottomBarWhenPushed = true
         self.viewController?.push(controller: vc)
     }
     
