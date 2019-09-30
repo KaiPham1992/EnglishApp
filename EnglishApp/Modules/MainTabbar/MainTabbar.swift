@@ -129,6 +129,14 @@ class MainTabbar: UITabBarController {
                 break
             }
         }
+        
+        if let nid = notification.userInfo?["gcm.notification.nid"] as? String, let id = Int(nid){
+            Provider.shared.notificationAPIService.readNotification(notificationId: id, success: { _ in
+                
+            }) { _ in
+                
+            }
+        }
     }
     
     func resetHome(){
