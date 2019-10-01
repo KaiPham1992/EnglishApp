@@ -53,8 +53,12 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         return listProduct.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10 
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.cvStudyPack.frame.width / 2.4
+        let width = self.cvStudyPack.frame.height * (157 / 215)
         return CGSize(width: width, height: cvStudyPack.frame.height)
     }
 
