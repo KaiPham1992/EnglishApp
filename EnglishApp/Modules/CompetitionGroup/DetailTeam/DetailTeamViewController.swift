@@ -77,6 +77,7 @@ class DetailTeamViewController: BaseTableViewController {
             } else {
                 if isTeamJoined == 0 {
                     btnLeave.isHidden = true
+                    viewButtonStart.isHidden = true
                 } else {
                     btnLeave.isHidden = false
                     viewButtonStart.isHidden = false
