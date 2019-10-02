@@ -39,14 +39,6 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
         return testResultProfile?.img_src
     }
     
-    func getAmountDiamond() -> String?{
-        return testResultProfile?.amount_diamond ?? "0"
-    }
-    
-    func getAmoutRank() -> String?{
-        return testResultProfile?.amount_rank ?? "0"
-    }
-    
     func getTotalTime() -> String {
         let time = Int(testResultProfile?.total_time ?? "0") ?? 0
         let min = time/60

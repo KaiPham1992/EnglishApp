@@ -22,8 +22,6 @@ protocol ResultPresenterProtocol: class {
     func gotoResultQuestion(listAswer: [QuestionResultEntity], index: Int,isHistory: Bool)
     func getViewResult(id: String)
     func getImageProfile() -> String?
-    func getAmountDiamond() -> String?
-    func getAmoutRank() -> String?
     func getTotalTime() -> String
     func getTotalPoint() -> String
     func getPointQuestion(indexPath: IndexPath) -> Int?

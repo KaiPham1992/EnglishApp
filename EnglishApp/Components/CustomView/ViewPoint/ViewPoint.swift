@@ -15,7 +15,7 @@ class ViewPoint: BaseViewXib {
     @IBOutlet weak var lblNumber: UILabel!
     
     func setupNumber(number: String){
-        lblNumber.text = number
+        lblNumber.attributedText = NSAttributedString(string: number)
     }
     
 }

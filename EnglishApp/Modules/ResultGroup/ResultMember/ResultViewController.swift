@@ -152,8 +152,12 @@ extension ResultViewController: ResultViewProtocol{
             self.imgAVT.sd_setImage(with: URL(string: BASE_URL_IMAGE + (self.presenter?.getImageProfile() ?? "")), placeholderImage: UIImage(named: "ic_avatar_default")!, completed: nil)
             self.lblPoint.attributedText =  NSAttributedString(string: self.presenter?.getTotalPoint() ?? "0")
             self.lblTime.attributedText =  NSAttributedString(string: self.presenter?.getTotalTime() ?? "")
-            self.viewRank.setupNumber(number: "+ \(self.presenter?.getAmountDiamond() ?? "0") \(LocalizableKey.point.showLanguage)")
-            self.viewLevel.setupNumber(number: "+ \(self.presenter?.getAmoutRank() ?? "0") \(LocalizableKey.point.showLanguage)")
+            let diamond = Int(self.presenter?.testResultProfile?.amount_diamond ?? "0") ?? 0
+            let textDiamond = diamond >= 0 ? "+\(diamond)" : "\(diamond)"
+            let rank = Int(self.presenter?.testResultProfile?.amount_rank ?? "0") ?? 0
+            let textRank = rank >= 0 ? "+\(rank)" : "\(rank)"
+            self.viewRank.setupNumber(number: textDiamond + " \(LocalizableKey.point.showLanguage)")
+            self.viewLevel.setupNumber(number: textRank + " \(LocalizableKey.point.showLanguage)")
             self.tbvResult.reloadData()
         }
         
