@@ -29,6 +29,8 @@ class ProfileViewController: BaseViewController {
         }
     }
     
+    var showProgressView = true
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
         setTitleNavigation(title: LocalizableKey.TitleProfile.showLanguage)
@@ -48,6 +50,10 @@ class ProfileViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        if showProgressView {
+            ProgressView.shared.show()
+            self.showProgressView = false
+        }
         presenter?.getPackage()
         presenter?.getProfile()
     }
@@ -57,10 +63,6 @@ class ProfileViewController: BaseViewController {
         addBackToNavigation()
         addButtonToNavigation(image: AppImage.imgEditProfile, style: .right, action: #selector(btnEditTapped))
         
-    }
-    
-    override func btnBackTapped() {
-        self.pop()
     }
     
     @objc func btnEditTapped() {

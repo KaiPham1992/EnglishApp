@@ -46,28 +46,27 @@ class ProfileHeader: BaseTableCell {
     }
     
     func setUpView() {
-        
         vDisplayName.setTitleAndPlaceHolder(title: LocalizableKey.DisplayName.showLanguage)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage)
         vLocation.setTitleAndPlaceHolder(title: LocalizableKey.Location.showLanguage)
         lbTitleBee.text = LocalizableKey.titleBee.showLanguage
         lbTitleDiamon.text = LocalizableKey.titleDiamon.showLanguage
-
         vDisplayName.tfInput.isEnabled = false
         vEmail.tfInput.isEnabled = false
         vLocation.tfInput.isEnabled = false
-        
         btnBee.isUserInteractionEnabled = true
         btnDiamond.isUserInteractionEnabled = true
     }
+    
     func displayData() {
         imgAvatar.sd_setImage(with: user.urlRank, placeholderImage: AppImage.avatarDefault)
         vDisplayName.lbPlaceHolder.text = user.nameShowUI
         vEmail.lbPlaceHolder.text = user.email
         vLocation.lbPlaceHolder.text = user.national
+        lbPoint.text = user.rankPoint*.description.formatNumber(type: ".") + " \(LocalizableKey.point.showLanguage)"
         lbFullName.text = user.fullName
         lbLevel.text = user.rankName
-        lbBee.text = user.amountHoney*.description + " \(LocalizableKey.boxHoney.showLanguage)"
+        lbBee.text = user.amountHoney*.description.formatNumber(type: ".") + " \(LocalizableKey.boxHoney.showLanguage)"
         lbDiamon.text = user.amountDiamond*.description.formatNumber(type: ".") + " \(LocalizableKey.point.showLanguage)"
     }
     

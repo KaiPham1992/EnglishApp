@@ -15,7 +15,6 @@ class ProfileInteractor: ProfileInteractorInputProtocol {
     weak var presenter: ProfileInteractorOutputProtocol?
     
     func getProfile() {
-        ProgressView.shared.show()
         Provider.shared.userAPIService.getProfileUser(success: { user in
             guard let user = user else { return }
             ProgressView.shared.hide()
