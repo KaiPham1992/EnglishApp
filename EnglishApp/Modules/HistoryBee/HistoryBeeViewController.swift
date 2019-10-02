@@ -29,9 +29,9 @@ class HistoryBeeViewController: BaseViewController {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
+        ProgressView.shared.show()
         presenter?.getWalletLog(wallet_type: self.wallet_type)
         headerView.isHidden = true
-        
     }
     
     override func setUpNavigation() {
@@ -64,8 +64,6 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
         tbHistory.estimatedRowHeight = 80
         tbHistory.refreshControl = frefresh
         tbHistory.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
-//        tbHistory.estimatedRowHeight = 55
-//        tbHistory.rowHeight = UITableView.automaticDimension
     }
     
     @objc func refreshData() {
@@ -91,32 +89,18 @@ extension HistoryBeeViewController: UITableViewDelegate, UITableViewDataSource {
         
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 60
-//    }
-    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row >= ((presenter?.listHistory.count ?? 0) - 5) && presenter?.canLoadMore == true {
+        if indexPath.row == ((presenter?.listHistory.count ?? 0) - 1) && presenter?.canLoadMore == true {
             presenter?.getWalletLog(wallet_type: self.wallet_type)
+            let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+            spiner.startAnimating()
+            spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
+            self.tbHistory.tableFooterView = spiner
+            self.tbHistory.tableFooterView?.isHidden = false
+        } else {
+            self.tbHistory.tableFooterView?.isHidden = true
         }
     }
-    
-    // header
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let header = HistoryBeeHeader()
-//        header.displayData(walletType: self.wallet_type, total: self.totalWallet)
-//        header.delegate = self
-//        return header
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        if self.wallet_type == 3{
-//            return 300
-//        }else{
-//            return 220
-//        }
-//    }
 }
 extension HistoryBeeViewController: HistoryBeeViewProtocol{
     
@@ -134,7 +118,7 @@ extension HistoryBeeViewController: HistoryBeeViewProtocol{
     }
     
     func didGetWalletLog(error: Error) {
-        print(error.localizedDescription)
+        
     }
 }
 
