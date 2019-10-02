@@ -39,11 +39,11 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             <subviews>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ksO-Ae-Goc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="561"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="581"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jA9-K8-1ft">
-                                    <rect key="frame" x="0.0" y="563" width="375" height="84"/>
+                                    <rect key="frame" x="0.0" y="583" width="375" height="84"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <userDefinedRuntimeAttributes>
                                         <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -58,7 +58,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Y6-f2-tXR">
-                                    <rect key="frame" x="0.0" y="563" width="375" height="84"/>
+                                    <rect key="frame" x="0.0" y="583" width="375" height="84"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ZK-5M-cHX">
                                             <rect key="frame" x="269" y="41" width="90" height="33"/>
@@ -147,11 +147,11 @@
                                 <constraint firstItem="jA9-K8-1ft" firstAttribute="top" secondItem="9Y6-f2-tXR" secondAttribute="top" id="U8V-cc-STv"/>
                                 <constraint firstItem="9Y6-f2-tXR" firstAttribute="top" secondItem="ksO-Ae-Goc" secondAttribute="bottom" constant="2" id="WMm-pQ-4EQ"/>
                                 <constraint firstItem="jA9-K8-1ft" firstAttribute="leading" secondItem="9Y6-f2-tXR" secondAttribute="leading" id="X4x-s8-pgD"/>
+                                <constraint firstAttribute="bottom" secondItem="9Y6-f2-tXR" secondAttribute="bottom" id="cKv-kd-qtN"/>
                                 <constraint firstAttribute="trailing" secondItem="ksO-Ae-Goc" secondAttribute="trailing" id="k61-nm-eHK"/>
                                 <constraint firstItem="ksO-Ae-Goc" firstAttribute="leading" secondItem="3Pv-yG-6g4" secondAttribute="leading" id="kSV-Lk-y4X"/>
                                 <constraint firstItem="9Y6-f2-tXR" firstAttribute="leading" secondItem="3Pv-yG-6g4" secondAttribute="leading" id="ld2-ka-W6l"/>
                                 <constraint firstItem="jA9-K8-1ft" firstAttribute="trailing" secondItem="9Y6-f2-tXR" secondAttribute="trailing" id="pcQ-p1-E8q"/>
-                                <constraint firstAttribute="bottom" secondItem="9Y6-f2-tXR" secondAttribute="bottom" constant="20" id="ra5-3d-k5y"/>
                                 <constraint firstItem="jA9-K8-1ft" firstAttribute="bottom" secondItem="9Y6-f2-tXR" secondAttribute="bottom" id="vjO-vW-nkE"/>
                             </constraints>
                         </view>
