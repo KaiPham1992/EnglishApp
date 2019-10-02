@@ -67,9 +67,8 @@ class ProfileHeader: BaseTableCell {
         vLocation.lbPlaceHolder.text = user.national
         lbFullName.text = user.fullName
         lbLevel.text = user.rankName
-        lbBee.text = user.amountHoney*.description + "\(LocalizableKey.boxHoney.showLanguage)"
-        lbDiamon.text = user.amountDiamond*.description + "\(LocalizableKey.point.showLanguage)"
-        lbDiamon.text = user.amountDiamond*.description + "\(LocalizableKey.point.showLanguage)"
+        lbBee.text = user.amountHoney*.description + " \(LocalizableKey.boxHoney.showLanguage)"
+        lbDiamon.text = user.amountDiamond*.description.formatNumber(type: ".") + " \(LocalizableKey.point.showLanguage)"
     }
     
     @IBAction func btnBeeTapped() {

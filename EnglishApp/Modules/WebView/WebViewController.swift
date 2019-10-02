@@ -76,9 +76,4 @@ extension WebViewController: WKNavigationDelegate {
          let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
         webView.evaluateJavaScript(jscript)
     }
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.frame.size.height = 1
-        webView.frame.size = webView.scrollView.contentSize
-    }
 }
