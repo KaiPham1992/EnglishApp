@@ -48,6 +48,8 @@ class DetailLessonViewController: BaseViewController {
         }
     }
     
+    var showProgressView : Bool = true
+    
     var viewMessage = ViewMessage(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
     
     override func setUpViews() {
@@ -58,6 +60,12 @@ class DetailLessonViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        if showProgressView {
+            ProgressView.shared.show()
+            self.showProgressView = false
+        }
+        
         if let _lesson = lesson {
             idLesson = _lesson._id ?? "0"
         }

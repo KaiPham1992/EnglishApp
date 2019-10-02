@@ -15,7 +15,6 @@ class DetailLessonInteractor: DetailLessonInteractorInputProtocol {
     weak var presenter: DetailLessonInteractorOutputProtocol?
     
     func getLessonDetail(lesson_id: Int) {
-        ProgressView.shared.show()
         Provider.shared.theoryAPIService.getLessonDetail(lesson_id: lesson_id, success: { (lessonDetail) in
             ProgressView.shared.hide()
             if let _lessonDetail = lessonDetail {
@@ -35,7 +34,6 @@ class DetailLessonInteractor: DetailLessonInteractorInputProtocol {
     }
     
     func getViewVocabulary(wordId: Int) {
-        ProgressView.shared.show()
         Provider.shared.findAPIService.getViewVocabulary(wordId: wordId, success: { (response) in
             ProgressView.shared.hide()
             if let _response = response {
