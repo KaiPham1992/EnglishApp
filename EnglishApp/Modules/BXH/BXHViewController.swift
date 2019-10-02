@@ -49,6 +49,7 @@ class BXHViewController: BaseViewController {
     
 	override func viewDidLoad() {
         super.viewDidLoad()
+        ProgressView.shared.show()
         presenter?.getListLeaderBoard(quarter: "", year: "", rank: "")
     }
     
@@ -181,6 +182,7 @@ class BXHViewController: BaseViewController {
     func handleFilter() {
         presenter?.canLoadMore = false
         presenter?.listUser.removeAll()
+        ProgressView.shared.show()
         presenter?.getListLeaderBoard(quarter: quarter, year: year, rank: self.rank)
     }
     
