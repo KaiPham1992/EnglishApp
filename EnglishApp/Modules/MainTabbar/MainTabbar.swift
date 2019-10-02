@@ -34,11 +34,9 @@ class MainTabbar: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(noCompetition), name: NSNotification.Name.init("NoCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didReciveNotification), name: NSNotification.Name.init("didReciveNotification"), object: nil)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158, NSAttributedString.Key.font: AppFont.fontRegular12], for: .normal)
-        UITabBarItem.appearance().setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
-        self.hidesBottomBarWhenPushed = true 
+        self.tabBar.tintColor = AppColor.color255_211_17
     }
-    
+
     @objc func didReciveNotification(notification: Notification){
         if let action_key = notification.userInfo?["click_action"] as? String {
             switch action_key {
@@ -177,19 +175,10 @@ class MainTabbar: UITabBarController {
         let vcProgramer = TheoryRouter.createModule()
         let vcHomeWork = ExerciseRouter.createModule()
         let vcCompetition = CompetitionRouter.createModule()
-        
-        
-        vcHome.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarHomeSelected, normalImage: AppImage.imgTabbarHome)
-        vcHome.title = LocalizableKey.tabbarHome.showLanguage
-        
-        vcProgramer.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarProgramerSelected, normalImage: AppImage.imgTabbarProgramer)
-        vcProgramer.title = LocalizableKey.tabbarProgram.showLanguage
-        
-        vcHomeWork.tabBarItem = setBarItem(selectedImage: AppImage.imgTabbarHomeWorkSelected, normalImage: AppImage.imgTabbarHomeWork)
-        vcHomeWork.title = LocalizableKey.tabbarHomeWork.showLanguage
-        let tabCompetition = setBarItem(selectedImage: AppImage.imgTabbarCompetitionSelected, normalImage: AppImage.imgTabbarCompetition)
-        vcCompetition.tabBarItem = tabCompetition
-        vcCompetition.title = LocalizableKey.tabbarCompetition.showLanguage
+        vcHome.tabBarItem = setBarItem(title: LocalizableKey.tabbarHome.showLanguage, selectedImage: AppImage.imgTabbarHomeSelected, normalImage: AppImage.imgTabbarHome)
+        vcProgramer.tabBarItem = setBarItem(title: LocalizableKey.tabbarProgram.showLanguage, selectedImage: AppImage.imgTabbarProgramerSelected, normalImage: AppImage.imgTabbarProgramer)
+        vcHomeWork.tabBarItem = setBarItem(title: LocalizableKey.tabbarHomeWork.showLanguage, selectedImage: AppImage.imgTabbarHomeWorkSelected, normalImage: AppImage.imgTabbarHomeWork)
+        vcCompetition.tabBarItem = setBarItem(title: LocalizableKey.tabbarCompetition.showLanguage, selectedImage: AppImage.imgTabbarCompetitionSelected, normalImage: AppImage.imgTabbarCompetition)
         
         listViewController = [vcHome, vcProgramer, vcHomeWork, vcCompetition]
         
@@ -202,7 +191,6 @@ class MainTabbar: UITabBarController {
         } else {
 //            UITabBarItem.appearance().titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -8)
         }
-//        self.tabBar.tintColor = UIColor.white
         addViewControllerToTabbar(listViewController: listViewController)
     }
     
@@ -219,6 +207,8 @@ class MainTabbar: UITabBarController {
     
     func setBarItem(title: String? = nil, selectedImage: UIImage?, normalImage: UIImage?) -> UITabBarItem {
         let item = UITabBarItem(title: title, image: normalImage, selectedImage: selectedImage)
+        item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color158_158_158, NSAttributedString.Key.font: AppFont.fontRegular12], for: .normal)
+        item.setTitleTextAttributes([NSAttributedString.Key.foregroundColor : AppColor.color255_211_17, NSAttributedString.Key.font: AppFont.fontRegular12], for: .selected)
         return item
     }
     
