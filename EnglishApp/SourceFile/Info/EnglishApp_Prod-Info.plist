@@ -33,7 +33,7 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb409345703242671</string>
+				<string>fb934138383594598</string>
 				<string>com.nghianguyen.obee-ios</string>
 			</array>
 		</dict>
@@ -41,9 +41,9 @@
 	<key>CFBundleVersion</key>
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>FacebookAppID</key>
-	<string>409345703242671</string>
+	<string>934138383594598</string>
 	<key>FacebookDisplayName</key>
-	<string>Obee</string>
+	<string>Obee - English Practice Test</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>fbapi</string>
