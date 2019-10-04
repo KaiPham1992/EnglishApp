@@ -27,10 +27,8 @@ class PaymentHelper: NSObject {
     
     func purcharseProduct(_ productId: String, completionPurchased: CompletionClosure?, purchaseFailed: CompletionClosure?) { //2
         guard canMakePurchases(), validProducts.count > 0 else {
-            
             return
         }
-
         guard let skProduct = validProducts.filter({ $0.productIdentifier == productId }).first else {
             return
         }
@@ -75,8 +73,9 @@ extension PaymentHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver
                 print("failed")
             case .deferred:
                 break
+            @unknown default:
+                fatalError()
             }
-            
         }
     }
     

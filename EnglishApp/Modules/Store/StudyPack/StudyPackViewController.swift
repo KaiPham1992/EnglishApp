@@ -17,12 +17,6 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
     let refresh = UIRefreshControl()
     
     @IBOutlet weak var tbBeePack: UITableView!
-    @IBOutlet weak var lbCode: UILabel!
-    @IBOutlet weak var tfCode: UITextField!
-    @IBOutlet weak var btnSend: UIButton!
-    
-    @IBOutlet weak var lbError: UILabel!
-    @IBOutlet weak var heightOfError: NSLayoutConstraint!
     
     var collectionProduct = ProductCollectionEntity() {
         didSet {
@@ -34,34 +28,8 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        setUpView()
         presenter?.getProduct()
         tbBeePack.isHidden = true
-    }
-    
-    func setUpView(){
-        lbCode.text = LocalizableKey.enterCode.showLanguage
-        tfCode.placeholder = LocalizableKey.enterCode.showLanguage
-        btnSend.setTitle(LocalizableKey.send.showLanguage, for: .normal)
-        
-        tfCode.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
-        heightOfError.constant = 0
-    }
-    
-    @objc func textDidChange() {
-        if tfCode.text& != "" {
-            heightOfError.constant = 0
-        }
-    }
-    
-    @IBAction func btnSendTapped(){
-        dismissKeyBoard()
-        if let code = tfCode.text, code != "" {
-            presenter?.sendRedeem(code: code)
-        } else {
-            heightOfError.constant = 17
-            lbError.text = LocalizableKey.pleaseEnterCode.showLanguage
-        }
     }
     
     func exchangeGift(id: String, type: String) {
@@ -162,15 +130,6 @@ extension StudyPackViewController{
         PopUpHelper.shared.showError(message: "\(LocalizableKey.redeemSuccess.showLanguage)") {
             
         }
-    }
-    
-    func didSendRedeem(error: APIError) {
-        if error.message&.contains("EXCEED_USAGE_LIMIT") == true {
-            lbError.text = LocalizableKey.usedCode.showLanguage
-        } else {
-            lbError.text = LocalizableKey.notFoundCode.showLanguage
-        }
-        heightOfError.constant = 17
     }
     
     func didExchangeGift() {

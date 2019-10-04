@@ -12,6 +12,12 @@ import UIKit
 
 class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputProtocol {
     
+    weak private var viewBeePack: BeePackViewProtocol?
+
+    weak private var view: StudyPackViewProtocol?
+    var interactor: StudyPackInteractorInputProtocol?
+    private let router: StudyPackWireframeProtocol
+    
     var fromDoEntrance = false
     var point = 0
     
@@ -39,25 +45,6 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
             
         }
     }
-    
-    func sendRedeem(code: String) {
-        ProgressView.shared.show()
-        Provider.shared.productAPIService.sendRedeem(code: code, success: { (success) in
-            ProgressView.shared.hide()
-//            guard let data = success else {return}
-            self.view?.didSendRedeem()
-        }) { (error) in
-            ProgressView.shared.hide()
-            guard let error = error else {return}
-            self.view?.didSendRedeem(error: error)
-        }
-    }
-    
-    weak private var viewBeePack: BeePackViewProtocol?
-
-    weak private var view: StudyPackViewProtocol?
-    var interactor: StudyPackInteractorInputProtocol?
-    private let router: StudyPackWireframeProtocol
 
     init(interface: StudyPackViewProtocol, interactor: StudyPackInteractorInputProtocol?, router: StudyPackWireframeProtocol) {
         self.view = interface
