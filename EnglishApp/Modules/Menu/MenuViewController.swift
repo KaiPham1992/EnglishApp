@@ -94,7 +94,6 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
     
     func pushViewController(itemSelected: MenuItem) {
         delegateController?.controllerSelected(itemSelected: itemSelected)
-        
     }
     
 }

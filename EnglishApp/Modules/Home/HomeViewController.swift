@@ -369,13 +369,22 @@ extension HomeViewController: HomeActionCellDelegate {
 
 extension HomeViewController: MenuViewControllerDelegate {
     func controllerSelected(itemSelected: MenuItem) {
-        
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+            self.hideMenu()
+            let vc = LoginRouter.createModule()
+            vc.modalPresentationStyle = .overFullScreen
+            self.present(controller: vc, animated: true)
+        } else {
+            self.userDidLogin(itemSelected: itemSelected)
+        }
+    }
+    
+    private func userDidLogin(itemSelected: MenuItem) {
         guard let itemIcon = itemSelected.imgIcon else { return }
         switch itemIcon {
         case AppImage.imgInfo:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
-            
         case AppImage.imgQA:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: QARouter.createModule())

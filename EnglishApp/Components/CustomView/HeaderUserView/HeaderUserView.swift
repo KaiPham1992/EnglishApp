@@ -16,10 +16,19 @@ class HeaderUserView: BaseViewXib {
     @IBOutlet weak var lbFullName: UILabel!
 //    @IBOutlet weak var imgRank: UIImageView!
     
+    @IBOutlet weak var viewProfile: UIView!
+    @IBOutlet weak var btnGotoProfile: UIButton!
     var user: UserEntity? {
         didSet {
             guard let user = user else { return }
 //            lbPoint.text = user.rankName
+            if user.email& == emailDefault {
+                viewProfile.isHidden = true
+                btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
+            } else {
+                viewProfile.isHidden = false
+                btnGotoProfile.setTitle("", for: .normal)
+            }
             lbDiamond.text = user.amountDiamond*.description
             lbHoney.text = user.amountHoney*.description
             lbFullName.text = user.fullName
@@ -29,14 +38,15 @@ class HeaderUserView: BaseViewXib {
     }
     
     
-    @IBAction func btnGoToProfile() {
+    
+    
+    @IBAction func goToProfile() {
         AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
         NotificationCenter.default.post(name: NSNotification.Name.init("HideMenu"), object: nil)
     }
     
     override func setUpViews() {
         super.setUpViews()
-        
         self.backgroundColor = AppColor.yellow
         
 //        imgAvatar.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)

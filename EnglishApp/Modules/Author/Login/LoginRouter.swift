@@ -14,7 +14,7 @@ class LoginRouter: LoginWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> LoginViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = LoginViewController(nibName: nil, bundle: nil)
         let interactor = LoginInteractor()
