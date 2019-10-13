@@ -47,6 +47,8 @@ class HeaderUserView: BaseViewXib {
     
     override func setUpViews() {
         super.setUpViews()
+        viewProfile.isHidden = true
+        btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
         self.backgroundColor = AppColor.yellow
         
 //        imgAvatar.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)

@@ -29,6 +29,7 @@ class LoginViewController: BaseViewController {
     @IBAction func backView(_ sender: Any) {
         self.dismiss()
     }
+    
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vPassword: AppTextField!
     @IBOutlet weak var btnLogin: UIButton!
@@ -37,8 +38,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var lbRegister: UILabel!
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var heightError: NSLayoutConstraint!
-    
-    
+    var callBackLoginSuccessed : (()->())?
     var loginType = LoginType.normal
     var paramLogin: Any?
     var passwordText: String = ""
@@ -154,7 +154,9 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        AppRouter.shared.openHome()
+        self.callBackLoginSuccessed?()
+        self.dismiss()
+//        AppRouter.shared.openHome()
     }
     
     func didError(error: APIError?) {
