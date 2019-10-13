@@ -209,7 +209,8 @@ extension DictionaryViewController:DictionaryViewProtocol{
     
     func getDetailVocabularySuccessed() {
         if let _detail = self.presenter?.detailVocabulary {
-            lblTextSearch.attributedText = _detail.explain.htmlToAttributedString
+//            lblTextSearch.attributedText = _detail.explain.htmlToAttributedString
+            lblTextSearch.text = _detail.explain.htmlToString
             hideNoData()
         } else {
             lblTextSearch.text = ""
