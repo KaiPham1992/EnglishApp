@@ -371,25 +371,62 @@ extension HomeViewController : ExerciseDelegate {
 
 extension HomeViewController: HomeActionCellDelegate {
     func btnDictionaryTapped() {
-        let vc = DictionaryRouter.createModule()
-        vc.hidesBottomBarWhenPushed = true
-        self.push(controller: vc)
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = DictionaryRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = DictionaryRouter.createModule()
+            self.pushView(vc: vc)
+        }
     }
     
     func btnStoreTapped() {
-        let vc = StoreViewController()
-        vc.hidesBottomBarWhenPushed = true
-        self.push(controller: vc)
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = DailyMissonRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = StoreViewController()
+            self.pushView(vc: vc)
+        }
     }
     
     func btnMissionTapped() {
-        let vc = DailyMissonRouter.createModule()
-        vc.hidesBottomBarWhenPushed = true
-        self.push(controller: vc)
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = DailyMissonRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = DailyMissonRouter.createModule()
+            self.pushView(vc: vc)
+        }
     }
     
     func btnFindWorkTapped() {
-        let vc = FindRouter.createModule()
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = FindRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = FindRouter.createModule()
+            self.pushView(vc: vc)
+        }
+    }
+    
+    private func pushView(vc: UIViewController) {
         vc.hidesBottomBarWhenPushed = true
         self.push(controller: vc)
     }
@@ -450,6 +487,7 @@ extension HomeViewController: MenuViewControllerDelegate {
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
         case AppImage.imgLogout:
+            self.hideMenu()
             PopUpHelper.shared.showLogout(completionNo: {
                 self.logout()
             }) {
