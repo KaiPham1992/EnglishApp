@@ -15,13 +15,13 @@ class AppRouter {
     
     var rootNavigation: UINavigationController?
     
-    func updateRootView() {
-        if !UserDefaultHelper.shared.userToken&.isEmpty  {
-            openHome()
-        } else {
-            openLogin()
-        }
-    }
+//    func updateRootView() {
+//        if !UserDefaultHelper.shared.userToken&.isEmpty  {
+//            openHome()
+//        } else {
+//            openLogin()
+//        }
+//    }
     
     func setTest() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate, let windowApp = appDelegate.window else { return }
