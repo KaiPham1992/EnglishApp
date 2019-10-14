@@ -405,3 +405,4 @@
 "userPackage" = "Gói nâng cấp đã mua";
 "dateExpire" = "Ngày hết hạn: ";
 "update_package_recieved" = "Gói nâng cấp nhận được";
+"user_not_login" = "Bạn chưa đăng nhập";

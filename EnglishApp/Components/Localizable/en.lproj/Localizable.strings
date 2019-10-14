@@ -405,3 +405,4 @@
 "userPackage" = "Upgrade package purchased";
 "dateExpire" = "Date expired: ";
 "update_package_recieved" = "Upgrade package received";
+"user_not_login" = "User don't login";

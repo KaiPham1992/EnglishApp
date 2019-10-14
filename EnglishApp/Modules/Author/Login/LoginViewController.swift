@@ -26,6 +26,10 @@ class LoginViewController: BaseViewController {
     
     var presenter: LoginPresenterProtocol?
     
+    @IBAction func backView(_ sender: Any) {
+        self.dismiss()
+    }
+    
     @IBOutlet weak var vEmail: AppTextField!
     @IBOutlet weak var vPassword: AppTextField!
     @IBOutlet weak var btnLogin: UIButton!
@@ -34,8 +38,7 @@ class LoginViewController: BaseViewController {
     @IBOutlet weak var lbRegister: UILabel!
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var heightError: NSLayoutConstraint!
-    
-    
+    var callBackLoginSuccessed : (()->())?
     var loginType = LoginType.normal
     var paramLogin: Any?
     var passwordText: String = ""
@@ -43,23 +46,18 @@ class LoginViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         vPassword.tfInput.delegate = self
-        
-    }
-    
-    override func setUpViews() {
-        super.setUpViews()
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().presentingViewController = self
     }
     
+    override func setUpNavigation() {
+        
+    }
+    
     override func setTitleUI() {
-        setColorStatusBar(color: .white)
         vEmail.setTitleAndPlaceHolder(title: LocalizableKey.LoginEmail.showLanguage, placeHolder: LocalizableKey.LoginEmailPlaceHolder.showLanguage)
         
         vPassword.setTitleAndPlaceHolder(title: LocalizableKey.LoginPassword.showLanguage, placeHolder: LocalizableKey.enterPassword.showLanguage)
-//        vPassword.tfInput.isSecureTextEntry = true
-        
-        
         btnLogin.setTitle(LocalizableKey.LoginButtonLogin.showLanguage.uppercased(), for: .normal)
         lbFbGmail.text = LocalizableKey.FBorGmail.showLanguage
         lbForgot.text = LocalizableKey.ForgotPass.showLanguage
@@ -74,25 +72,10 @@ class LoginViewController: BaseViewController {
         lbError.text = ""
     }
     
-    override func setUpNavigation() {
-        super.setUpNavigation()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.hideNavigation()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.showNavigation()
-    }
-    
     @IBAction func btnLoginTapped() {
         heightError.constant = 0
         dismissKeyBoard()
         if validateInputData() {
-//            presenter?.login(email: vEmail.tfInput.text&, password: vPassword.tfInput.text&)
             presenter?.login(email: vEmail.tfInput.text&, password: passwordText)
         }
         
@@ -171,7 +154,9 @@ extension LoginViewController {
 
 extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
-        AppRouter.shared.openHome()
+        self.callBackLoginSuccessed?()
+        self.dismiss()
+//        AppRouter.shared.openHome()
     }
     
     func didError(error: APIError?) {

@@ -29,12 +29,25 @@ class MainTabbar: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        self.loginAccoutDefault()
         setUpTabbar()
         setUpObserver()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(noCompetition), name: NSNotification.Name.init("NoCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didReciveNotification), name: NSNotification.Name.init("didReciveNotification"), object: nil)
         self.tabBar.tintColor = AppColor.color255_211_17
+    }
+    
+    private func loginAccoutDefault() {
+        if UserDefaultHelper.shared.userToken&.isEmpty {
+            Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
+                guard let user = user else { return }
+                UserDefaultHelper.shared.saveUser(user: user)
+                UserDefaultHelper.shared.userToken = user.jwt&
+            }) { (error) in
+                
+            }
+        }
     }
 
     @objc func didReciveNotification(notification: Notification){

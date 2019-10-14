@@ -53,6 +53,7 @@ class HomeViewController: BaseViewController {
     var offset: Int = 0
     var isLoadmore = true
     var showProgressView = true
+    var isCallViewDidload = false
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -61,8 +62,20 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        callAPIRecent()
-        PaymentHelper.shared.fetchAvailableProducts()
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil {
+            self.loginUserDefault {
+                PaymentHelper.shared.fetchAvailableProducts()
+                self.callAPIRecent()
+                self.countNotification()
+                self.presenter?.getProfile()
+                self.presenter?.getTopThree()
+                self.isCallViewDidload = true
+            }
+        } else {
+            PaymentHelper.shared.fetchAvailableProducts()
+            self.callAPIRecent()
+            self.isCallViewDidload = true
+        }
     }
     
     func callAPIRecent() {
@@ -75,7 +88,6 @@ class HomeViewController: BaseViewController {
     override func setUpViews() {
         super.setUpViews()
         vcMenu = MenuRouter.createModule()
-        
         AppRouter.shared.rootNavigation = self.navigationController
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
@@ -158,10 +170,25 @@ class HomeViewController: BaseViewController {
         self.tbHome.tableFooterView = UIView()
         self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
-        addHeaderHome()
-        countNotification()
-        presenter?.getProfile()
-        presenter?.getTopThree()
+        self.addHeaderHome()
+        if UserDefaultHelper.shared.loginUserInfo?.email != nil && isCallViewDidload {
+            self.countNotification()
+            self.presenter?.getProfile()
+            self.presenter?.getTopThree()
+        }
+    }
+    
+    private func loginUserDefault(complete : @escaping (() -> ())) {
+        if UserDefaultHelper.shared.userToken&.isEmpty {
+            Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
+                guard let user = user else { return }
+                UserDefaultHelper.shared.saveUser(user: user)
+                UserDefaultHelper.shared.userToken = user.jwt&
+                complete()
+            }) { (error) in
+                
+            }
+        }
     }
     
     func countNotification() {
@@ -183,7 +210,9 @@ class HomeViewController: BaseViewController {
     
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
-        nav.addSubview(header)
+        if UserDefaultHelper.shared.loginUserInfo?.email != emailDefault && UserDefaultHelper.shared.loginUserInfo?.email != nil  {
+            nav.addSubview(header)
+        }
         header.anchor(widthConstant: 220, heightConstant: 42)
         header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
@@ -342,25 +371,62 @@ extension HomeViewController : ExerciseDelegate {
 
 extension HomeViewController: HomeActionCellDelegate {
     func btnDictionaryTapped() {
-        let vc = DictionaryRouter.createModule()
-        vc.hidesBottomBarWhenPushed = true
-        self.push(controller: vc)
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = DictionaryRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = DictionaryRouter.createModule()
+            self.pushView(vc: vc)
+        }
     }
     
     func btnStoreTapped() {
-        let vc = StoreViewController()
-        vc.hidesBottomBarWhenPushed = true
-        self.push(controller: vc)
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = DailyMissonRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = StoreViewController()
+            self.pushView(vc: vc)
+        }
     }
     
     func btnMissionTapped() {
-        let vc = DailyMissonRouter.createModule()
-        vc.hidesBottomBarWhenPushed = true
-        self.push(controller: vc)
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = DailyMissonRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = DailyMissonRouter.createModule()
+            self.pushView(vc: vc)
+        }
     }
     
     func btnFindWorkTapped() {
-        let vc = FindRouter.createModule()
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                let vc = FindRouter.createModule()
+                self.pushView(vc: vc)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            let vc = FindRouter.createModule()
+            self.pushView(vc: vc)
+        }
+    }
+    
+    private func pushView(vc: UIViewController) {
         vc.hidesBottomBarWhenPushed = true
         self.push(controller: vc)
     }
@@ -369,21 +435,42 @@ extension HomeViewController: HomeActionCellDelegate {
 
 extension HomeViewController: MenuViewControllerDelegate {
     func controllerSelected(itemSelected: MenuItem) {
-        
+        guard let itemIcon = itemSelected.imgIcon else { return }
+        if itemIcon == AppImage.imgPrivacy {
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
+            return
+        }
+        if itemIcon == AppImage.imgLanguage {
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
+            return
+        }
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+            self.hideMenu()
+            let vc = LoginRouter.createModule()
+            vc.modalPresentationStyle = .overFullScreen
+            vc.callBackLoginSuccessed = {[unowned self] in
+                self.userDidLogin(itemSelected: itemSelected)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            self.userDidLogin(itemSelected: itemSelected)
+        }
+    }
+    
+    private func userDidLogin(itemSelected: MenuItem) {
         guard let itemIcon = itemSelected.imgIcon else { return }
         switch itemIcon {
         case AppImage.imgInfo:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
-            
         case AppImage.imgQA:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: QARouter.createModule())
-            
         case AppImage.imgChangePass:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: ChangePasswordRouter.createModule())
-            
         case AppImage.imgLanguage:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
@@ -396,11 +483,11 @@ extension HomeViewController: MenuViewControllerDelegate {
         case AppImage.imgHistoryCheck:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: HistoryExerciseRouter.createModule())
-            
         case AppImage.imgPrivacy:
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
         case AppImage.imgLogout:
+            self.hideMenu()
             PopUpHelper.shared.showLogout(completionNo: {
                 self.logout()
             }) {
@@ -434,18 +521,22 @@ extension HomeViewController: MenuViewControllerDelegate {
             
         }) { _ in
             self.vcMenu.view.removeFromSuperview()
-            
         }
-        
-        
     }
     
     func logout() {
         ProgressView.shared.show()
         Provider.shared.userAPIService.logout(success: { (_) in
-            ProgressView.shared.hide()
             UserDefaultHelper.shared.clearUser()
-            AppRouter.shared.openLogin()
+            Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
+                ProgressView.shared.hide()
+                guard let user = user else { return }
+                UserDefaultHelper.shared.saveUser(user: user)
+                UserDefaultHelper.shared.userToken = user.jwt&
+                let vc = LoginRouter.createModule()
+                self.present(controller: vc, animated: true)
+            }) { (error) in
+            }
         }) { (error) in
             ProgressView.shared.hide()
         }
