@@ -297,7 +297,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return indexPath.row == 0 ? UITableView.automaticDimension : 150
+            return indexPath.row == 0 ? UITableView.automaticDimension : 160
         } else {
             return UITableView.automaticDimension
         }

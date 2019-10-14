@@ -17,7 +17,7 @@ class StoreViewController: PageViewController, TheoryViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setTitleNavigation(title: LocalizableKey.titleStore.showLanguage)
+        setTitleNavigation(title: LocalizableKey.titleMember.showLanguage)
         self.view.backgroundColor = .white
         addBackToNavigation()
         self.edgesForExtendedLayout = UIRectEdge.bottom

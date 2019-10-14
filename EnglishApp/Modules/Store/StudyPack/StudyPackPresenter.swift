@@ -21,6 +21,9 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
     var fromDoEntrance = false
     var point = 0
     
+    var canLoadMore: Bool = false
+    var lisPackage: [Inventories] = []
+    
     func exchangeGift(id: String, type: String) {
         ProgressView.shared.show()
         Provider.shared.productAPIService.exchangeGift(id: id, type: type, success: { (success) in
@@ -50,6 +53,21 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func getPackage() {
+        canLoadMore = false
+        Provider.shared.userAPIService.getPackage(offset: lisPackage.count ,success: { (success) in
+            guard let packages = success?.inventories else { return }
+            self.lisPackage.append(contentsOf: packages)
+            if packages.count == limit {
+                self.canLoadMore = true
+            }
+            self.view?.didGetPackage(package: self.lisPackage)
+        }) { (error) in
+            guard let error = error else { return }
+            print(error.localizedDescription)
+        }
     }
     
 

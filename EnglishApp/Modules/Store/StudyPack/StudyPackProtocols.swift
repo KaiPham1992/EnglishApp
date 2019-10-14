@@ -20,6 +20,10 @@ protocol StudyPackPresenterProtocol: class {
     var interactor: StudyPackInteractorInputProtocol? { get set }
     func getProduct()
     func exchangeGift(id: String, type: String)
+    
+    func getPackage()
+    var canLoadMore: Bool { get set }
+    var lisPackage: [Inventories] { get set }
 }
 
 //MARK: Interactor -
@@ -44,4 +48,5 @@ protocol StudyPackViewProtocol: class {
     func didGetProduct(product: ProductCollectionEntity)
     func didExchangeGift()
     func didGetError(error: APIError)
+    func didGetPackage(package: [Inventories])
 }

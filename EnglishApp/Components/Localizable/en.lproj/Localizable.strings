@@ -159,7 +159,7 @@
 
 // Home
 "homeDictionary" = "Dictionary";
-"homeStore" = "Store";
+"homeStore" = "Member";
 "homeMission" = "Mission";
 "homeFindWork" = "Find exercises";
 "actionRecently" = "Recenly action";
@@ -185,7 +185,7 @@
 // store
 "studyPack" = "Upgrade package";
 "beePack" = "Honey package";
-"titleStore" = "Store";
+"titleMember" = "Member information";
 "enterCode" = "Enter Code";
 "send" = "SEND";
 "detail" = "Detail";

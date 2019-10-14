@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-jp-9Lp">
-                    <rect key="frame" x="20" y="10" width="374" height="16"/>
+                    <rect key="frame" x="20" y="15" width="374" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="ePO-uj-Qj8"/>
                     </constraints>
@@ -34,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-g9-ajd">
-                    <rect key="frame" x="20" y="31" width="374" height="16"/>
+                    <rect key="frame" x="20" y="36" width="374" height="11"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -43,7 +41,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="L6A-g9-ajd" firstAttribute="top" secondItem="CuG-jp-9Lp" secondAttribute="bottom" constant="5" id="7el-H5-6Xn"/>
-                <constraint firstItem="CuG-jp-9Lp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="8sd-JY-Ci4"/>
+                <constraint firstItem="CuG-jp-9Lp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="8sd-JY-Ci4"/>
                 <constraint firstItem="CuG-jp-9Lp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="9SM-2G-yYO"/>
                 <constraint firstAttribute="bottom" secondItem="L6A-g9-ajd" secondAttribute="bottom" constant="10" id="PKi-Fe-dC7"/>
                 <constraint firstAttribute="trailing" secondItem="L6A-g9-ajd" secondAttribute="trailing" constant="20" id="PMv-Ps-0Gu"/>
