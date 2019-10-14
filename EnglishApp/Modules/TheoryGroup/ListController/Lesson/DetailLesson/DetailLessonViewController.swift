@@ -107,6 +107,18 @@ class DetailLessonViewController: BaseViewController {
     }
     
     func gotoComment() {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                self.comment()
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            self.comment()
+        }
+    }
+    
+    private func comment(){
         guard let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium else { return }
         if isUserPremium {
             self.push(controller: CommentRouter.createModule(id: self.idLesson),animated: true)
@@ -121,14 +133,16 @@ class DetailLessonViewController: BaseViewController {
     }
     
     @objc func clickHeart(){
-        if type == .detailLesson {
-            isClickLikeImage = true
-            isLike = isLike == 0 ? 1 : 0
-        } else {
-            isClickLikeImage = true
-            isLike = isLike == 0 ? 1 : 0
+        if UserDefaultHelper.shared.loginUserInfo?.email != emailDefault {
+            if type == .detailLesson {
+                isClickLikeImage = true
+                isLike = isLike == 0 ? 1 : 0
+            } else {
+                isClickLikeImage = true
+                isLike = isLike == 0 ? 1 : 0
+            }
+            self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 ,idWord: self.vocabulary != nil ? self.vocabulary?.id : self.presenter?.vocabulary?.id , isFavorite: self.isLike)
         }
-        self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 ,idWord: self.vocabulary != nil ? self.vocabulary?.id : self.presenter?.vocabulary?.id , isFavorite: self.isLike)
     }
 }
 

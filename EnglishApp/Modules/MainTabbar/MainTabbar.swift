@@ -233,10 +233,6 @@ class MainTabbar: UITabBarController {
 
 extension MainTabbar: UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
-        
-        //        for (index, vc) in listViewController.enumerated() {
-        //            vc.tabBarItem.title = index == tabBarController.selectedIndex ? titleTabbars[index] : ""
-        //        }
         tabbarDelagate?.tabbarSelected(index: tabBarController.selectedIndex)
     }
 }
