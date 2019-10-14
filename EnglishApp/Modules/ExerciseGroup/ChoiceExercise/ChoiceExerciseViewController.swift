@@ -131,6 +131,18 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
 }
 extension ChoiceExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                self.gotoExercise(indexPath: indexPath)
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            self.gotoExercise(indexPath: indexPath)
+        }
+    }
+    
+    private func gotoExercise(indexPath: IndexPath) {
         if type == 3 {
             if let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium, isUserPremium == true {
                 if let id = self.presenter?.exerciseChoiceEntity?.exercises[indexPath.row]._id {

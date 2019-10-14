@@ -22,6 +22,18 @@ class CreateExerciseViewController: BaseViewController {
     
     @IBAction func doExercise(_ sender: Any) {
         self.view.endEditing(true)
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                self.gotoExercise()
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            self.gotoExercise()
+        }
+    }
+    
+    private func gotoExercise(){
         guard let listCategories = self.presenter?.createExerciseParam.categories else{ return }
         let sum = listCategories.map{$0.number_of_question ?? 0}.getSum()
         if sum > 100 {

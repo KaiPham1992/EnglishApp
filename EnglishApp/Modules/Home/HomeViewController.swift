@@ -333,6 +333,18 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func btnTestBeginTapped() {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || UserDefaultHelper.shared.loginUserInfo?.email == nil{
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                self.gotoTestEntrance()
+            }
+            self.present(controller: vc, animated: true)
+        } else {
+            self.gotoTestEntrance()
+        }
+    }
+    
+    private func gotoTestEntrance(){
         let vc = NameExerciseRouter.createModule(id: "", type: .entranceExercise)
         vc.hidesBottomBarWhenPushed = true
         vc.exerciseDelegate = self
