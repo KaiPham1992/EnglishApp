@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Crashlytics.sharedInstance().debugMode = true
 //        Fabric.sharedSDK().debug = true
         if UserDefaultHelper.shared.appLanguage == nil {
-            LanguageHelper.setAppleLAnguageTo(lang: LanguageType.vietname)
+            LanguageHelper.setAppleLAnguageTo(lang: LanguageType.english)
         }
         IQKeyboardManager.shared.enable = true
         

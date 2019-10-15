@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,7 +36,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FDp-Xk-Fbf">
-                        <rect key="frame" x="0.0" y="10" width="206" height="311"/>
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="321"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -53,7 +54,7 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCH-vn-hc8">
-                        <rect key="frame" x="0.0" y="10" width="206" height="311"/>
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="321"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="2"/>
@@ -68,18 +69,19 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="jCH-vn-hc8" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="2yb-mK-T4A"/>
-                <constraint firstItem="jCH-vn-hc8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="7s3-nV-Cdq"/>
                 <constraint firstItem="FDp-Xk-Fbf" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="87T-e9-Ieo"/>
+                <constraint firstItem="jCH-vn-hc8" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Jkw-be-V89"/>
                 <constraint firstAttribute="leading" secondItem="o83-ta-bao" secondAttribute="leading" id="Pip-O7-LMB"/>
                 <constraint firstItem="o83-ta-bao" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" id="Wi9-hJ-Sm9"/>
-                <constraint firstItem="FDp-Xk-Fbf" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="ZfA-W1-CqK"/>
                 <constraint firstAttribute="bottom" secondItem="FDp-Xk-Fbf" secondAttribute="bottom" id="ejR-Ss-Wbd"/>
                 <constraint firstAttribute="bottom" secondItem="jCH-vn-hc8" secondAttribute="bottom" id="fMM-9e-Mrf"/>
                 <constraint firstAttribute="bottom" secondItem="o83-ta-bao" secondAttribute="bottom" id="fdf-iq-Uv1"/>
                 <constraint firstAttribute="trailing" secondItem="jCH-vn-hc8" secondAttribute="trailing" id="jgc-qQ-pqg"/>
+                <constraint firstItem="FDp-Xk-Fbf" firstAttribute="top" secondItem="jCH-vn-hc8" secondAttribute="top" id="l1j-bq-O7A"/>
                 <constraint firstItem="o83-ta-bao" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="udZ-hh-WME"/>
                 <constraint firstAttribute="trailing" secondItem="FDp-Xk-Fbf" secondAttribute="trailing" id="w33-wc-fGr"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="JIa-FP-qIi"/>
             <size key="customSize" width="206" height="321"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
@@ -93,7 +95,7 @@
                 </userDefinedRuntimeAttribute>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="btnDetail" destination="jCH-vn-hc8" id="60M-XQ-iLK"/>
+                <outlet property="btnDetail" destination="jCH-vn-hc8" id="mRm-hq-W1C"/>
                 <outlet property="imgLogo" destination="FDp-Xk-Fbf" id="kAo-17-pr7"/>
             </connections>
             <point key="canvasLocation" x="250.72463768115944" y="15.736607142857142"/>

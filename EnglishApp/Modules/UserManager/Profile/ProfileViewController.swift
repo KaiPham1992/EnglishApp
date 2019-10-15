@@ -122,6 +122,14 @@ extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row >= ((presenter?.lisPackage.count ?? 0) - 3) {
+            if presenter?.canLoadMore ?? false {
+                presenter?.getPackage()
+            }
+        }
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2

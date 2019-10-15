@@ -182,7 +182,7 @@ struct LocalizableKey {
     // store
     static let studyPack = "studyPack"
     static let beePack = "beePack"
-    static let titleStore = "titleStore"
+    static let titleMember = "titleMember"
     static let enterCode = "enterCode"
     static let send = "send"
     static let detail = "detail"

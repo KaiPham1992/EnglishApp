@@ -19,7 +19,7 @@ class StudyPackView: BaseViewXib {
     override func setUpViews() {
         super.setUpViews()
         configureCollection()
-        
+        cvStudyPack.backgroundColor = AppColor.fafafaColor
     }
     func getData(listProduct: [ProductEntity]){
         self.listProduct = listProduct
@@ -33,8 +33,8 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
         cvStudyPack.dataSource = self
         
         if let layout = cvStudyPack.collectionViewLayout as? UICollectionViewFlowLayout {
-            layout.minimumLineSpacing = 0
-            layout.minimumInteritemSpacing = 0
+            layout.minimumLineSpacing = 10
+            layout.minimumInteritemSpacing = 10
             layout.scrollDirection = .horizontal
         }
         
@@ -58,7 +58,8 @@ extension StudyPackView: UICollectionViewDelegateFlowLayout, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = self.cvStudyPack.frame.height * (157 / 215)
+//        let width = self.cvStudyPack.frame.height * (157 / 215)
+        let width = self.frame.height * (157 / 215)
         return CGSize(width: width, height: cvStudyPack.frame.height)
     }
 

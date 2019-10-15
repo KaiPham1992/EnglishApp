@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,35 +14,35 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="179.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="qTa-Jl-s8o">
-                        <rect key="frame" x="16" y="0.0" width="288" height="179.5"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="170"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="u7C-AZ-pGu">
-                                <rect key="frame" x="0.0" y="0.0" width="288" height="82"/>
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="77"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O9X-gN-sUi" customClass="ButtonHomeView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="77"/>
                                         <color key="backgroundColor" red="0.91764705879999997" green="0.12941176469999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4q-Hg-5K0" customClass="ButtonHomeView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="152" y="0.0" width="136" height="82"/>
+                                        <rect key="frame" x="152" y="0.0" width="136" height="77"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Zdv-nS-V5z">
-                                <rect key="frame" x="0.0" y="98" width="288" height="81.5"/>
+                                <rect key="frame" x="0.0" y="93" width="288" height="77"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GrU-iX-MnD" customClass="ButtonHomeView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="136" height="81.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="136" height="77"/>
                                         <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mg-bo-5wh" customClass="ButtonHomeView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                        <rect key="frame" x="152" y="0.0" width="136" height="81.5"/>
+                                        <rect key="frame" x="152" y="0.0" width="136" height="77"/>
                                         <color key="backgroundColor" red="0.91764705879999997" green="0.12941176469999999" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
@@ -56,7 +54,7 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="qTa-Jl-s8o" secondAttribute="trailing" constant="16" id="0kE-tf-hRw"/>
                     <constraint firstItem="qTa-Jl-s8o" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7Lb-6Z-luG"/>
-                    <constraint firstAttribute="bottom" secondItem="qTa-Jl-s8o" secondAttribute="bottom" id="OtI-Ib-HOI"/>
+                    <constraint firstAttribute="bottom" secondItem="qTa-Jl-s8o" secondAttribute="bottom" constant="10" id="OtI-Ib-HOI"/>
                     <constraint firstItem="qTa-Jl-s8o" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="fbG-5s-hpV"/>
                 </constraints>
             </tableViewCellContentView>

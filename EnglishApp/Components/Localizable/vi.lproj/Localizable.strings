@@ -159,7 +159,7 @@
 
 // Home
 "homeDictionary" = "Từ điển";
-"homeStore" = "Cửa hàng";
+"homeStore" = "Thành viên";
 "homeMission" = "Nhiệm vụ";
 "homeFindWork" = "Tìm bài tập";
 "actionRecently" = "HOẠT ĐỘNG GẦN ĐÂY";
@@ -185,7 +185,7 @@
 // store
 "studyPack" = "Gói nâng cấp";
 "beePack" = "Gói mật ong";
-"titleStore" = "Cửa hàng";
+"titleMember" = "Thông tin thành viên";
 "enterCode" = "Nhập mã Code";
 "send" = "GỬI";
 "detail" = "Chi tiết";

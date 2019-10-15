@@ -16,19 +16,33 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
 	var presenter: StudyPackPresenterProtocol?
     let refresh = UIRefreshControl()
     
+    var package = [Inventories]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tbBeePack.reloadData()
+            }
+        }
+    }
+    
     @IBOutlet weak var tbBeePack: UITableView!
     
     var collectionProduct = ProductCollectionEntity() {
         didSet {
-            tbBeePack.isHidden = false
-            tbBeePack.reloadData()
+            DispatchQueue.main.async {
+                self.tbBeePack.isHidden = false
+                self.tbBeePack.reloadData()
+            }
         }
     }
 
 	override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        presenter?.getProduct()
+        presenter?.getPackage()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+            self.presenter?.getProduct()
+        }
+        
         tbBeePack.isHidden = true
     }
     
@@ -53,6 +67,9 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         tbBeePack.registerXibFile(StudyPackCell.self)
         tbBeePack.registerXibFile(ChangeGiftCell.self)
         tbBeePack.registerXibFile(ChangeGiftTitleCell.self)
+        tbBeePack.registerXibFile(PackageCell.self)
+        tbBeePack.registerXibFile(HomeTitleCell.self)
+        tbBeePack.registerXibFile(HomeNoResultCell.self)
         
         tbBeePack.separatorStyle = .none
         
@@ -63,25 +80,41 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func refreshData() {
+        presenter?.lisPackage.removeAll()
+        self.collectionProduct = ProductCollectionEntity()
+        presenter?.getPackage()
         presenter?.getProduct()
         tbBeePack.refreshControl?.endRefreshing()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             let cell = tableView.dequeue(StudyPackCell.self, for: indexPath)
             cell.vStudyPack.delegate = self
             cell.vStudyPack.getData(listProduct: collectionProduct.groupUpgrade)
             return cell
+        } else if indexPath.section == 0 {
+            if indexPath.item == 0 {
+                let cell = tableView.dequeue(HomeTitleCell.self, for: indexPath)
+                    cell.contentView.backgroundColor = AppColor.fafafaColor
+                    cell.lbTitle.text = LocalizableKey.userPackage.showLanguage
+                    return cell
+            } else {
+                let cell = tableView.dequeue(PackageCell.self, for: indexPath)
+                cell.lbTitle.text = self.package[indexPath.row - 1].name
+                let date = self.package[indexPath.row - 1].expiredTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy).replacingOccurrences(of: "-", with: "/")
+                cell.lbTime.text = "\(LocalizableKey.dateExpire.showLanguage)" +  date&
+                cell.backgroundColor = AppColor.fafafaColor
+                return cell
+            }
         } else {
             if indexPath.item == 0 {
                 let cell = tableView.dequeue(ChangeGiftTitleCell.self, for: indexPath)
-                
-                return cell
+                    return cell
             } else {
                 let cell = tableView.dequeue(ChangeGiftCell.self, for: indexPath)
                 cell.delegate = self
@@ -93,29 +126,42 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 1
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row >= ((presenter?.lisPackage.count ?? 0) - 5) {
+            if presenter?.canLoadMore ?? false {
+                presenter?.getPackage()
+            }
         }
-        return collectionProduct.groupGift.count + 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 1 {
+            return 1
+        } else if section == 0 {
+            return package.count == 0 ? 0 : (package.count + 1)
+        } else {
+            return collectionProduct.groupGift.count + 1
+        }
     }
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             return 230
+        } else if indexPath.section == 0 {
+            if indexPath.item == 0 {
+                return 40
+            } else {
+                return  65
+            }
         } else {
-            return indexPath.item == 0 ? 60: 150
+            if indexPath.item == 0 {
+                return 50
+            } else {
+                return  150
+            }
         }
     }
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        if indexPath.section != 0 && indexPath.item != 0 {
-//            if let id = self.collectionProduct.groupGift[indexPath.item - 1].id {
-//                exchangeGift(id: id)
-//            }
-//        }
-//    }
 }
 
 extension StudyPackViewController: StudyPackViewDelegate {
@@ -147,6 +193,10 @@ extension StudyPackViewController{
     func didGetProduct(product: ProductCollectionEntity) {
         collectionProduct = product
         UserDefaultHelper.shared.collectionProduct = product
+    }
+    
+    func didGetPackage(package: [Inventories]) {
+        self.package = package
     }
     
 }

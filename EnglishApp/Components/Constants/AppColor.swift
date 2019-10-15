@@ -45,5 +45,6 @@ struct AppColor {
     static let nomalBXH = UIColor.white
     
      static let color117_117_117 = UIColor(red: 117/255, green: 117/255, blue: 117/255, alpha: 1)
+    static let fafafaColor = UIColor(hexString: "FAFAFA")
     
 }
