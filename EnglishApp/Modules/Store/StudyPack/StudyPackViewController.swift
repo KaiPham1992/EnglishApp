@@ -92,29 +92,24 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             let cell = tableView.dequeue(StudyPackCell.self, for: indexPath)
             cell.vStudyPack.delegate = self
             cell.vStudyPack.getData(listProduct: collectionProduct.groupUpgrade)
             return cell
-        } else if indexPath.section == 1 {
+        } else if indexPath.section == 0 {
             if indexPath.item == 0 {
                 let cell = tableView.dequeue(HomeTitleCell.self, for: indexPath)
                     cell.contentView.backgroundColor = AppColor.fafafaColor
                     cell.lbTitle.text = LocalizableKey.userPackage.showLanguage
                     return cell
             } else {
-                if (presenter?.lisPackage.count ?? 0) == 0 {
-                    let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
-                    cell.showNoData()
-                    return cell
-                } else {
-                    let cell = tableView.dequeue(PackageCell.self, for: indexPath)
-                    cell.lbTitle.text = self.package[indexPath.row - 1].name
-                    let date = self.package[indexPath.row - 1].expiredTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy).replacingOccurrences(of: "-", with: "/")
-                    cell.lbTime.text = "\(LocalizableKey.dateExpire.showLanguage)" +  date&
-                    return cell
-                }
+                let cell = tableView.dequeue(PackageCell.self, for: indexPath)
+                cell.lbTitle.text = self.package[indexPath.row - 1].name
+                let date = self.package[indexPath.row - 1].expiredTime?.toString(dateFormat: AppDateFormat.hhmmddmmyyy).replacingOccurrences(of: "-", with: "/")
+                cell.lbTime.text = "\(LocalizableKey.dateExpire.showLanguage)" +  date&
+                cell.backgroundColor = AppColor.fafafaColor
+                return cell
             }
         } else {
             if indexPath.item == 0 {
@@ -140,10 +135,10 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
+        if section == 1 {
             return 1
-        } else if section == 1 {
-            return (package.count == 0 ? 1 : package.count) + 1
+        } else if section == 0 {
+            return package.count == 0 ? 0 : (package.count + 1)
         } else {
             return collectionProduct.groupGift.count + 1
         }
@@ -151,13 +146,13 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if indexPath.section == 0 {
-            return 260
-        } else if indexPath.section == 1 {
+        if indexPath.section == 1 {
+            return 230
+        } else if indexPath.section == 0 {
             if indexPath.item == 0 {
-                return 50
+                return 40
             } else {
-                return  70
+                return  65
             }
         } else {
             if indexPath.item == 0 {

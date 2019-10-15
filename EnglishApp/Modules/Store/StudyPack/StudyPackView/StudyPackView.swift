@@ -19,7 +19,7 @@ class StudyPackView: BaseViewXib {
     override func setUpViews() {
         super.setUpViews()
         configureCollection()
-        
+        cvStudyPack.backgroundColor = AppColor.fafafaColor
     }
     func getData(listProduct: [ProductEntity]){
         self.listProduct = listProduct

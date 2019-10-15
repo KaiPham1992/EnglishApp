@@ -24,7 +24,7 @@ class StudyPackViewCell: UICollectionViewCell {
 //    @IBOutlet weak var vWorkDependOnLevel: InfoPackView!
 //    @IBOutlet weak var tvDetails: UITextView!
     @IBOutlet weak var imgLogo: UIImageView!
-    @IBOutlet weak var lbTitle: UILabel!
+//    @IBOutlet weak var lbTitle: UILabel!
     
 //    @IBOutlet weak var webView: UIWebView!
     @IBOutlet weak var btnDetail: UIButton!
@@ -65,11 +65,11 @@ class StudyPackViewCell: UICollectionViewCell {
     
     func displayData(){
         imgLogo.sd_setImage(with: product.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
-        if product.isBought ?? false {
-            lbTitle.isHidden = true
-        } else {
-            lbTitle.isHidden = false
-        }
+//        if product.isBought ?? false {
+//            lbTitle.isHidden = true
+//        } else {
+//            lbTitle.isHidden = false
+//        }
 //        btnDetail.setTitle(LocalizableKey.detail.showLanguage, for: .normal)
     }
     @IBAction func btnDetailTapped() {
