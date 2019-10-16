@@ -23,7 +23,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuG-jp-9Lp">
-                    <rect key="frame" x="20" y="15" width="374" height="16"/>
+                    <rect key="frame" x="20" y="5" width="374" height="16"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="16" id="ePO-uj-Qj8"/>
                     </constraints>
@@ -32,7 +32,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6A-g9-ajd">
-                    <rect key="frame" x="20" y="36" width="374" height="11"/>
+                    <rect key="frame" x="20" y="26" width="374" height="21"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -41,7 +41,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="L6A-g9-ajd" firstAttribute="top" secondItem="CuG-jp-9Lp" secondAttribute="bottom" constant="5" id="7el-H5-6Xn"/>
-                <constraint firstItem="CuG-jp-9Lp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="8sd-JY-Ci4"/>
+                <constraint firstItem="CuG-jp-9Lp" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="8sd-JY-Ci4"/>
                 <constraint firstItem="CuG-jp-9Lp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="9SM-2G-yYO"/>
                 <constraint firstAttribute="bottom" secondItem="L6A-g9-ajd" secondAttribute="bottom" constant="10" id="PKi-Fe-dC7"/>
                 <constraint firstAttribute="trailing" secondItem="L6A-g9-ajd" secondAttribute="trailing" constant="20" id="PMv-Ps-0Gu"/>

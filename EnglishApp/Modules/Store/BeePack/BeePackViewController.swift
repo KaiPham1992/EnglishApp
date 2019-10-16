@@ -28,6 +28,7 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
     let frefresh = UIRefreshControl()
     var presenter: BeePackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
+    @IBOutlet weak var lbTotal: UILabel!
     
     var listBeePack = [ProductEntity]() {
         didSet {
@@ -41,6 +42,12 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
         super.viewDidLoad()
         configureTable()
         listBeePack = UserDefaultHelper.shared.collectionProduct.groupHoney
+        if let totalHoney = UserDefaultHelper.shared.loginUserInfo?.amountHoney*.description.formatNumber(type: ".") {
+            lbTotal.text = "\(LocalizableKey.totalHoney.showLanguage )" + totalHoney
+            lbTotal.isHidden = false
+        } else {
+            lbTotal.isHidden = true
+        }
     }
     
     func upgradeBeePack(id: String, inAppPurchase: String) {

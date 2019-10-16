@@ -201,7 +201,7 @@
 "notEnoughDiamondText" = "You are not enough diamond.";
 "notEnoughHoneyText" = "You are not enough honey.";
 "usedCode" = "Code is used.";
-
+"totalHoney" = "Total honey: ";
 //comment
 "comment" = "Comment";
 

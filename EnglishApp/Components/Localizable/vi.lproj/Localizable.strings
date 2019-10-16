@@ -201,7 +201,7 @@
 "notEnoughDiamondText" = "Bạn không đủ kim cương.";
 "notEnoughHoneyText" = "Bạn không đủ mật ong.";
 "usedCode" = "Mã code đã được sử dụng";
-
+"totalHoney" = "Tổng số mật ong: ";
 //comment
 "comment" = "Bình luận";
 
