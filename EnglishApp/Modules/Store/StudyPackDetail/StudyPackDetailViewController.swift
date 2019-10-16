@@ -18,10 +18,28 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     var product = ProductEntity()
     var id : String = "0"
     
+    var font = """
+    <style>
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: normal;
+        src: url(Comfortaa-Regular.ttf);
+    }
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: bold;
+        src: url(Comfortaa-Bold.ttf);
+    }
+    </style>
+    """
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         displayData()
         print("Product ID: \(product.id&)")
+        webView.navigationDelegate = self
     }
 
     private func loadData(completion: @escaping((_ name: String, _ product: ProductEntity) -> ())){
@@ -70,13 +88,15 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
             self.loadData { (title, product) in
                 self.product = product
                 self.setTitleNavigation(title: product.name ?? "")
-                self.webView.loadHTMLString(product.content ?? "", baseURL: nil)
+                self.webView.loadHTMLString(product.content ?? "", baseURL: Bundle.main.bundleURL)
+                let htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 18; color: black; text-align: justify">"# + (product.content ?? "") + #"</span>"#
                 ProgressView.shared.hide()
             }
             
         } else {
             if let htmlString = product.content{
-                webView.loadHTMLString(htmlString, baseURL: nil)
+                let _htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 18; color: black; text-align: justify">"# + htmlString + #"</span>"#
+                webView.loadHTMLString(_htmlString, baseURL: Bundle.main.bundleURL)
             }
             setTitleNavigation(title: product.name ?? "")
         }
@@ -96,4 +116,13 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         }
     }
 }
+
+extension StudyPackDetailViewController: WKNavigationDelegate {
+    
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        webView.evaluateJavaScript(jscript)
+    }
+}
+
 
