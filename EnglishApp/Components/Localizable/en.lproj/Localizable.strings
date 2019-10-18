@@ -202,6 +202,7 @@
 "notEnoughHoneyText" = "You are not enough honey.";
 "usedCode" = "Code is used.";
 "totalHoney" = "Total honey: ";
+"restorePurchase" = "Restore purchases";
 //comment
 "comment" = "Comment";
 

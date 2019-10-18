@@ -14,6 +14,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     var presenter: StudyPackDetailPresenterProtocol?
     @IBOutlet weak var btnUpgrade: UIButton!
     @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var btnRestore: UIButton!
     
     var product = ProductEntity()
     var id : String = "0"
@@ -101,6 +102,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
             setTitleNavigation(title: product.name ?? "")
         }
         btnUpgrade.setTitle(LocalizableKey.upgrade.showLanguage, for: .normal)
+        btnRestore.setTitle(LocalizableKey.restorePurchase.showLanguage.uppercased(), for: .normal)
     }
     
     func didUpgrade(info: UpgradeInfoEntity) {

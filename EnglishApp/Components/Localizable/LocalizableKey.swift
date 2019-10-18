@@ -199,6 +199,7 @@ struct LocalizableKey {
     static let notEnoughHoneyText = "notEnoughHoneyText"
     static let notEnoughDiamondText = "notEnoughDiamondText"
     static let totalHoney = "totalHoney"
+    static let restorePurchase = "restorePurchase"
     
     //comment
     static let comment = "comment"
