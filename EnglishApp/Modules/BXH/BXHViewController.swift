@@ -18,6 +18,7 @@ class BXHViewController: BaseViewController {
     @IBOutlet var btnOption: [UIButton]!
     @IBOutlet weak var viewOption: UIView!
     @IBOutlet weak var vRank: UIView!
+    @IBOutlet weak var heightOfUserView: NSLayoutConstraint!
     
     var refresh = UIRefreshControl()
     
@@ -64,12 +65,21 @@ class BXHViewController: BaseViewController {
     }
     override func setUpViews() {
         super.setUpViews()
+        displayUserView()
         configureTable()
         configureViewOption()
         setUpLabelRank()
         displayData(isHidden: true)
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hideMenu))
         self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    func displayUserView() {
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+            heightOfUserView.constant = 0
+        } else {
+            heightOfUserView.constant = 78
+        }
     }
     
     func displayData(isHidden: Bool) {

@@ -446,6 +446,11 @@ extension HomeViewController: MenuViewControllerDelegate {
             AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
             return
         }
+        if itemIcon == AppImage.imgTop {
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
+            return
+        }
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
             self.hideMenu()
             let vc = LoginRouter.createModule()
@@ -533,6 +538,7 @@ extension HomeViewController: MenuViewControllerDelegate {
                 guard let user = user else { return }
                 UserDefaultHelper.shared.saveUser(user: user)
                 UserDefaultHelper.shared.userToken = user.jwt&
+                self.removeHeaderHome()
                 let vc = LoginRouter.createModule()
                 self.present(controller: vc, animated: true)
             }) { (error) in
