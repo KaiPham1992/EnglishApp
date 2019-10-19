@@ -18,8 +18,8 @@ enum ProductEndPoint {
     case getListProduct(fromDoEntrance: Bool, point: Int)
     case sendRedeem(code: String)
     case exchangeGift(id: String, type: String)
-    case upgradeProduct(productID: String)
-    case purchaseHoney(productID: String)
+    case upgradeProduct(productID: String, transactionId: String)
+    case purchaseHoney(productID: String, transactionId: String)
 }
 
 extension ProductEndPoint: EndPointType {
@@ -57,8 +57,10 @@ extension ProductEndPoint: EndPointType {
             return ["product_id": id, "amount_type": type]
         case .sendRedeem(let code):
             return ["code": code]
-        case .upgradeProduct(let productID), .purchaseHoney(let productID):
-            return ["product_id": productID]
+        case .upgradeProduct(let productID, let transactionId):
+            return ["product_id": productID, "transaction_id": transactionId]
+        case .purchaseHoney(let productID, let transactionId):
+            return ["product_id": productID, "transaction_id": transactionId]
         }
     }
     

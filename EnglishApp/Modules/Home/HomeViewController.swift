@@ -391,7 +391,9 @@ extension HomeViewController: HomeActionCellDelegate {
                 let vc = DailyMissonRouter.createModule()
                 self.pushView(vc: vc)
             }
-            self.present(controller: vc, animated: true)
+            let nc = UINavigationController(rootViewController: vc)
+            
+            self.present(controller: nc, animated: true)
         } else {
             let vc = StoreViewController()
             self.pushView(vc: vc)

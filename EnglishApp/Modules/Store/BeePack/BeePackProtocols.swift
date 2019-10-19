@@ -18,7 +18,7 @@ protocol BeePackWireframeProtocol: class {
 protocol BeePackPresenterProtocol: class {
 
     var interactor: BeePackInteractorInputProtocol? { get set }
-    func upgradeProduct(productID: String)
+    func upgradeProduct(productID: String, transactionId: String)
 }
 
 //MARK: Interactor -

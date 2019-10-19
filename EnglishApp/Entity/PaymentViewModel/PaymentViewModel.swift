@@ -11,11 +11,11 @@ import StoreKit
 
 class PaymentHelper: NSObject {
     var validProducts: [SKProduct] = []
-    let productIds = ["product_obee_12", "product_obee_13", "product_obee_14", "product_obee_15", "product_obee_16"]
+    let productIds = ["product_obee_12", "product_obee_13", "product_obee_14", "product_obee_15", "product_obee_16", "product_obee_17", "Test_Premium", "Test_Premium1"]
     var productsRequest: SKProductsRequest?
     
     static let shared = PaymentHelper()
-    var completionPurchased: CompletionClosure?
+    var completionPurchased: CompletionAny?
     var purchaseFailed: CompletionClosure?
     
     var completionRestored: CompletionClosure?
@@ -33,7 +33,7 @@ class PaymentHelper: NSObject {
         SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
-    func purcharseProduct(_ productId: String, completionPurchased: CompletionClosure?, purchaseFailed: CompletionClosure?) { //2
+    func purcharseProduct(_ productId: String, completionPurchased: CompletionAny?, purchaseFailed: CompletionClosure?) { //2
         guard canMakePurchases(), validProducts.count > 0 else {
             return
         }
@@ -65,7 +65,8 @@ extension PaymentHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver
             case .purchased:
                 print("purchased")
 //                savePaymentInfo()
-                self.completionPurchased?()
+                
+                self.completionPurchased?(transaction.transactionIdentifier&)
                 
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:

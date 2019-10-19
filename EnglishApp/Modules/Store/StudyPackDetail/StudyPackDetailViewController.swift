@@ -67,22 +67,32 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
     }
     
     @IBAction func btnUpgradeTapped() {
-        guard let id = product.id , let inAppPurchase = product.in_app_product_id else {
+        guard let id = product.id , var inAppPurchase = product.in_app_product_id else {
             return
         }
+        
+        if inAppPurchase == "product_obee_16" {
+            inAppPurchase = "product_obee_17"
+        }
         ProgressView.shared.show()
-        PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: {
+        PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: { transactionIdAny in
             ProgressView.shared.hide()
-            self.presenter?.upgradeProduct(productID: id)
+            guard let transactionId = transactionIdAny as? String else { return }
+            
+            self.presenter?.upgradeProduct(productID: id, transactionId: transactionId)
         }, purchaseFailed: {
             ProgressView.shared.hide()
         })
     }
     
     @IBAction func btnRestoreTapped() {
-        guard let inAppPurchase = product.in_app_product_id else {
+        guard var inAppPurchase = product.in_app_product_id else {
             return
         }
+        if inAppPurchase == "product_obee_16" {
+            inAppPurchase = "product_obee_17"
+        }
+        
         PaymentHelper.shared.restoreProduct(productId: inAppPurchase) {
             print(" ")
         }

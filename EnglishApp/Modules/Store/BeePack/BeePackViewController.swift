@@ -53,9 +53,11 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
     func upgradeBeePack(id: String, inAppPurchase: String) {
         PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.upgradeBeePack.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
             ProgressView.shared.show()
-            PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: {
+            PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: { transactionIdAny in
                 ProgressView.shared.hide()
-                self.presenter?.upgradeProduct(productID: id)
+                guard let transactionId = transactionIdAny as? String else { return }
+                
+                self.presenter?.upgradeProduct(productID: id, transactionId: transactionId)
             }, purchaseFailed: {
                 ProgressView.shared.hide()
             })
