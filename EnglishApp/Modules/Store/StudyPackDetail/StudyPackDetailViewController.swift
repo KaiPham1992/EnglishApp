@@ -10,7 +10,7 @@ import UIKit
 import WebKit
 
 class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProtocol {
-
+    
     var presenter: StudyPackDetailPresenterProtocol?
     @IBOutlet weak var btnUpgrade: UIButton!
     @IBOutlet weak var webView: WKWebView!
@@ -42,7 +42,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         print("Product ID: \(product.id&)")
         webView.navigationDelegate = self
     }
-
+    
     private func loadData(completion: @escaping((_ name: String, _ product: ProductEntity) -> ())){
         ProgressView.shared.show()
         Provider.shared.productAPIService.getListProduct(fromDoEntrance: false, point: 0, success: { collectionProduct in
@@ -66,7 +66,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         }
     }
     
-    @IBAction func btnUpgradeTapped(){
+    @IBAction func btnUpgradeTapped() {
         guard let id = product.id , let inAppPurchase = product.in_app_product_id else {
             return
         }
@@ -77,6 +77,15 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
         }, purchaseFailed: {
             ProgressView.shared.hide()
         })
+    }
+    
+    @IBAction func btnRestoreTapped() {
+        guard let inAppPurchase = product.in_app_product_id else {
+            return
+        }
+        PaymentHelper.shared.restoreProduct(productId: inAppPurchase) {
+            print(" ")
+        }
     }
     
     override func setUpNavigation() {
@@ -122,7 +131,7 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
 extension StudyPackDetailViewController: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
         webView.evaluateJavaScript(jscript)
     }
 }

@@ -18,11 +18,19 @@ class PaymentHelper: NSObject {
     var completionPurchased: CompletionClosure?
     var purchaseFailed: CompletionClosure?
     
+    var completionRestored: CompletionClosure?
+    
     func fetchAvailableProducts() { //1
         let productIdentifiers = Set(productIds)
         productsRequest = SKProductsRequest(productIdentifiers: productIdentifiers)
         productsRequest?.delegate = self
         productsRequest?.start()
+    }
+    
+    func restoreProduct(productId: String, completionRestored: CompletionClosure?) {
+        self.completionRestored = completionRestored
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().restoreCompletedTransactions()
     }
     
     func purcharseProduct(_ productId: String, completionPurchased: CompletionClosure?, purchaseFailed: CompletionClosure?) { //2
@@ -61,8 +69,9 @@ extension PaymentHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver
                 
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
+                self.completionRestored?()
                 SKPaymentQueue.default().finishTransaction(transaction)
-                print("restored")
+                
             case .failed:
                 self.purchaseFailed?()
                 if let transactionError = transaction.error as NSError?,
