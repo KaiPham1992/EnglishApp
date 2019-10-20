@@ -11,6 +11,9 @@
 		1B94899322CBA27B00BEDADB /* CompetitionEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94899122CBA27B00BEDADB /* CompetitionEndPoint.swift */; };
 		1B94899522CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */; };
 		1B94899622CBA4C800BEDADB /* CompetitionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */; };
+		228071F8235C11D70076D5CC /* RestoreParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228071F7235C11D70076D5CC /* RestoreParam.swift */; };
+		228071F9235C11D70076D5CC /* RestoreParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228071F7235C11D70076D5CC /* RestoreParam.swift */; };
+		228071FA235C11D70076D5CC /* RestoreParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 228071F7235C11D70076D5CC /* RestoreParam.swift */; };
 		23643E6810F21B2466B06EBA /* Pods_EnglishApp_AppStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 759C0A7C02170E0CF342085F /* Pods_EnglishApp_AppStore.framework */; };
 		2A07430C22E7718E001E82A4 /* CellLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07430A22E7718E001E82A4 /* CellLesson.swift */; };
 		2A07430D22E7718E001E82A4 /* CellLesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A07430A22E7718E001E82A4 /* CellLesson.swift */; };
@@ -2278,6 +2281,7 @@
 		187B6424E15EB5BB969D0CA6 /* Pods_EnglishApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EnglishApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B94899122CBA27B00BEDADB /* CompetitionEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionEndPoint.swift; sourceTree = "<group>"; };
 		1B94899422CBA4C800BEDADB /* CompetitionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionAPIService.swift; sourceTree = "<group>"; };
+		228071F7235C11D70076D5CC /* RestoreParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestoreParam.swift; sourceTree = "<group>"; };
 		25ECF64E91EE97854783E905 /* Pods-EnglishApp_Dev.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_Dev.release.xcconfig"; path = "Target Support Files/Pods-EnglishApp_Dev/Pods-EnglishApp_Dev.release.xcconfig"; sourceTree = "<group>"; };
 		28D786760AE73B0AF55038DE /* Pods-EnglishApp_AppStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EnglishApp_AppStore.debug.xcconfig"; path = "Target Support Files/Pods-EnglishApp_AppStore/Pods-EnglishApp_AppStore.debug.xcconfig"; sourceTree = "<group>"; };
 		2A07430A22E7718E001E82A4 /* CellLesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellLesson.swift; sourceTree = "<group>"; };
@@ -4561,6 +4565,7 @@
 				DE361F0B2283E84F00FA3B0D /* SignUpParam.swift */,
 				DE361F0C2283E84F00FA3B0D /* UpdateProfileParam.swift */,
 				DE361F0D2283E84F00FA3B0D /* UpdateProfileSocial.swift */,
+				228071F7235C11D70076D5CC /* RestoreParam.swift */,
 			);
 			path = UserParam;
 			sourceTree = "<group>";
@@ -6634,6 +6639,7 @@
 				76E2FED0228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F7FF22A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76C8E2EC22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */,
+				228071F8235C11D70076D5CC /* RestoreParam.swift in Sources */,
 				DE89D21122A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE2ADE7922841BB9003768CE /* MenuInteractor.swift in Sources */,
 				DE89D22A22A42592000638B0 /* BXHInteractor.swift in Sources */,
@@ -7247,6 +7253,7 @@
 				76E2FED1228DBAB00014B1F4 /* SaveDictionaryInteractor.swift in Sources */,
 				DE49F80022A3D81D00A92C63 /* NotificationListViewController.swift in Sources */,
 				76C8E2ED22C19AB80076E65B /* ResultExerciseInteractor.swift in Sources */,
+				228071F9235C11D70076D5CC /* RestoreParam.swift in Sources */,
 				DE89D21222A42096000638B0 /* ChangeLanguageCell.swift in Sources */,
 				DE9530042287DF4800E3F688 /* MenuInteractor.swift in Sources */,
 				DE89D22B22A42592000638B0 /* BXHInteractor.swift in Sources */,
@@ -7642,6 +7649,7 @@
 				DE9530812287DF6400E3F688 /* KActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
 				DE953180228846D400E3F688 /* ChangePasswordRouter.swift in Sources */,
 				DEA932AC22BFDF1C0050FB1D /* ProductEntity.swift in Sources */,
+				228071FA235C11D70076D5CC /* RestoreParam.swift in Sources */,
 				DE9530822287DF6400E3F688 /* BaseTabStripViewController.swift in Sources */,
 				2AF2F83E22EA05BF00603444 /* NoteListPresenter.swift in Sources */,
 				76EE392422A5777700DD8960 /* HistoryExerciseDateViewController.swift in Sources */,

@@ -20,6 +20,7 @@ enum ProductEndPoint {
     case exchangeGift(id: String, type: String)
     case upgradeProduct(productID: String, transactionId: String)
     case purchaseHoney(productID: String, transactionId: String)
+    case restore(restoreParam: RestoreParam)
 }
 
 extension ProductEndPoint: EndPointType {
@@ -35,13 +36,14 @@ extension ProductEndPoint: EndPointType {
             return "_api/product/upgrade_product"
         case .purchaseHoney:
             return "_api/product/purchase_honey"
-    
+        case .restore:
+            return "_api/product/restore_product"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getListProduct, .sendRedeem, .exchangeGift, .upgradeProduct, . purchaseHoney:
+        case .getListProduct, .sendRedeem, .exchangeGift, .upgradeProduct, . purchaseHoney, .restore:
             return .post
         }
     }
@@ -61,6 +63,8 @@ extension ProductEndPoint: EndPointType {
             return ["product_id": productID, "transaction_id": transactionId]
         case .purchaseHoney(let productID, let transactionId):
             return ["product_id": productID, "transaction_id": transactionId]
+        case .restore(let param):
+            return param.toJSON()
         }
     }
     

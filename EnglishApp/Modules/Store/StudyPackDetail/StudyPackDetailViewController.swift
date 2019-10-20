@@ -93,8 +93,13 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
             inAppPurchase = "product_obee_17"
         }
         
-        PaymentHelper.shared.restoreProduct(productId: inAppPurchase) {
-            print(" ")
+        PaymentHelper.shared.restoreProduct(productId: inAppPurchase) { transaction in
+            guard let transactions = transaction as? [TransactionParam] else { return }
+            guard let userId = UserDefaultHelper.shared.loginUserInfo?.id else { return }
+            
+            print(transactions.toJSON())
+            let restoreParma = RestoreParam(userId: userId, transactions: transactions)
+            self.presenter?.restore(restoreParam: restoreParma)
         }
     }
     

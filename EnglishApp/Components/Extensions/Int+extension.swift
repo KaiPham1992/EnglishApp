@@ -74,6 +74,28 @@ class StringToIntTransform: TransformType {
     }
 }
 
+class IntToStringTransform: TransformType {
+    public typealias Object     = String
+    public typealias JSON       = Int
+    
+    public init() {}
+    
+    open func transformFromJSON(_ value: Any?) -> String? {
+        if let timeStr = value as? Int {
+            return String(timeStr)
+        }
+        
+        return nil
+    }
+    
+    open func transformToJSON(_ value: String?) -> Int? {
+        if let intValue = value {
+            return Int(intValue)
+        }
+        return nil
+    }
+}
+
 
 extension Int {
     func convertMilisecondsToTime() -> String {

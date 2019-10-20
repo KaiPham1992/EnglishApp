@@ -407,3 +407,5 @@
 "dateExpire" = "Date expired: ";
 "update_package_recieved" = "Upgrade package received";
 "user_not_login" = "User don't login";
+"restore_fail" = "Restore fail, please contact +84909172353";
+"restore_success" = "Restore success";

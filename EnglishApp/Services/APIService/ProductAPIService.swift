@@ -14,6 +14,7 @@ protocol ProductAPIServiceProtocol {
     func exchangeGift(id: String, type: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
     func upgradeProduc(productID: String, transactionId: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
     func purchaseHoney(productID: String, transactionId: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
+    func restore(restoreParam: RestoreParam, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
 }
 
 class ProductAPIService: ProductAPIServiceProtocol {
@@ -39,6 +40,11 @@ class ProductAPIService: ProductAPIServiceProtocol {
     
     func purchaseHoney(productID: String, transactionId: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure) {
         let endPoint = ProductEndPoint.purchaseHoney(productID: productID, transactionId: transactionId)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func restore(restoreParam: RestoreParam, success: @escaping SuccessHandler<UpgradeInfoEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = ProductEndPoint.restore(restoreParam: restoreParam)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     

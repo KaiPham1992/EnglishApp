@@ -35,4 +35,12 @@ class StudyPackDetailPresenter: StudyPackDetailPresenterProtocol, StudyPackDetai
         self.router = router
     }
     
+    func restore(restoreParam: RestoreParam) {
+        Provider.shared.productAPIService.restore(restoreParam: restoreParam, success: { _ in
+            PopUpHelper.shared.showError(message: "restore_success".showLanguage, completionYes: nil)
+        }) { error in
+            PopUpHelper.shared.showError(message: "restore_fail".showLanguage, completionYes: nil)
+        }
+       }
+    
 }

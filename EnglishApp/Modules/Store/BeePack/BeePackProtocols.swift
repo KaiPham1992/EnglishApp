@@ -19,6 +19,7 @@ protocol BeePackPresenterProtocol: class {
 
     var interactor: BeePackInteractorInputProtocol? { get set }
     func upgradeProduct(productID: String, transactionId: String)
+    
 }
 
 //MARK: Interactor -
