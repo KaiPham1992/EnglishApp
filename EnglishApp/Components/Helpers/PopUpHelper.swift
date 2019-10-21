@@ -59,11 +59,6 @@ class PopUpHelper {
         popUp.showPopUp(message: LocalizableKey.popUpLogout.showLanguage, completionNo: completionNo, completionYes: completionYes)
     }
     
-//    func showNotification(message: String, completionYes: CompletionClosure?) {
-//        let popUp = NotificationPopUp()
-//        popUp.showPopUp(message: message, completion: completionYes)
-//    }
-    
     func showCreateGroup(completionNo: CompletionClosure?, completionYes: CompletionMessage?) {
         let popUp = CreateGroupPopUp()
         popUp.showPopUp(titlePopUp: LocalizableKey.createGroup.showLanguage,

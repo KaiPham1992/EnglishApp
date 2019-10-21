@@ -552,6 +552,7 @@ extension HomeViewController: MenuViewControllerDelegate {
                 guard let user = user else { return }
                 UserDefaultHelper.shared.saveUser(user: user)
                 UserDefaultHelper.shared.userToken = user.jwt&
+                NotificationCenter.default.post(name: NSNotification.Name.init("LogoutSuccessed"), object: nil)
                 self.removeHeaderHome()
                 let vc = LoginRouter.createModule()
                 self.present(controller: vc, animated: true)

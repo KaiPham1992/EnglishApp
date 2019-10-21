@@ -18,6 +18,7 @@ class HeaderUserView: BaseViewXib {
     
     @IBOutlet weak var viewProfile: UIView!
     @IBOutlet weak var btnGotoProfile: UIButton!
+    var callbackGotoProfile : (()->())?
     var user: UserEntity? {
         didSet {
             guard let user = user else { return }
@@ -39,12 +40,8 @@ class HeaderUserView: BaseViewXib {
         }
     }
     
-    
-    
-    
     @IBAction func goToProfile() {
-        AppRouter.shared.pushTo(viewController: ProfileRouter.createModule())
-        NotificationCenter.default.post(name: NSNotification.Name.init("HideMenu"), object: nil)
+        callbackGotoProfile?()
     }
     
     override func setUpViews() {

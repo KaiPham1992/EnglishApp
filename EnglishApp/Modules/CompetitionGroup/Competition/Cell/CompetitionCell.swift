@@ -8,6 +8,11 @@
 
 import UIKit
 
+protocol TimerCompetitionDelegate : class {
+    func callbackTimer(index: IndexPath, time: Int)
+}
+
+
 class CompetitionCell: BaseTableCell {
     @IBOutlet weak var btnCompetition: UIButton!
     @IBOutlet weak var lblTitleButtonCompetition: UILabel!
@@ -19,13 +24,13 @@ class CompetitionCell: BaseTableCell {
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var btnShare: UIButton!
     
+    weak var delegate: TimerCompetitionDelegate?
+    
     @IBAction func competition(_ sender: Any) {
         actionFight?(self.status, self.indexPath?.row ?? 0 )
     }
-    
     var indexPath: IndexPath?
-    var timer: Timer?
-    var isStarted = false
+    var callbackTimer: ((_ index: IndexPath, _ time: Int) -> ())?
     var type: ResultCompetition = .result{
         didSet{
             if type == .result {
@@ -37,13 +42,6 @@ class CompetitionCell: BaseTableCell {
     
     @IBAction func clickFight(_ sender: Any) {
         
-    }
-
-    override func prepareForReuse() {
-        if timer != nil {
-            timer?.invalidate()
-            timer = nil
-        }
     }
     
     var actionFight : ((_ status: String,_ tag: Int)->())?
@@ -60,7 +58,6 @@ class CompetitionCell: BaseTableCell {
                     viewButtonCompetition.isHidden = true
                     btnCompetition.isHidden = true
                 } else {
-                    self.isStarted = true
                     viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                     lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
                 }
@@ -81,7 +78,6 @@ class CompetitionCell: BaseTableCell {
                 } else {
                     viewButtonCompetition.isHidden = false
                     if (competitionEntity.is_fight_joined ?? 0) == 0 {
-                        self.isStarted = false
                         lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
                         viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                     } else {
@@ -89,23 +85,13 @@ class CompetitionCell: BaseTableCell {
                         if let startTime = competitionEntity.startTime?.timeIntervalSince1970 {
                             let currentTime = Date().timeIntervalSince1970
                             if startTime < currentTime {
-                                self.isStarted = true
                                 viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                                 lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
                             } else {
-                                self.isStarted = false
+                                let distanceTime = Int(startTime - currentTime)
+                                lblTitleButtonCompetition.attributedText = NSAttributedString(string: distanceTime.convertMilisecondsToTime(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+                                delegate?.callbackTimer(index: self.indexPath ?? IndexPath(row: 0, section: 0), time: distanceTime)
                                 viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-                                var distanceTime = Int(startTime - currentTime)
-                                if timer == nil {
-                                    timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
-                                        if distanceTime > 0 {
-                                            self.processTime(time: distanceTime)
-                                            distanceTime -= 1
-                                        } else {
-                                            self.disableTimer()
-                                        }
-                                    })
-                                }
                             }
                         }
                     }
@@ -139,18 +125,15 @@ class CompetitionCell: BaseTableCell {
         }
     }
     
-    func disableTimer(){
-        if timer != nil {
-            timer?.invalidate()
-            timer = nil
-        }
-        self.isStarted = true
-        viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
-        lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
-    }
-    
     func processTime(time: Int) {
-        lblTitleButtonCompetition.attributedText = NSAttributedString(string: time.convertMilisecondsToTime(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+        if time > 0 {
+            lblTitleButtonCompetition.attributedText = NSAttributedString(string: time.convertMilisecondsToTime(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+        } else {
+            self.callbackTimer?(self.indexPath ?? IndexPath(row: 0, section: 0), 0)
+            viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
+            lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
+        }
+        
     }
     
     var status : String = "CANNOT_JOIN"

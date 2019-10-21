@@ -21,6 +21,7 @@ class CompetitionViewController: ListManagerVC {
 	var presenter: CompetitionPresenterProtocol?
     var type : ResultCompetition = .competition
     var date: String = ""
+    var timer: Timer?
     
     override func setupViewListManager() {
         customTitle = LocalizableKey.titleCompetition.showLanguage
@@ -28,6 +29,25 @@ class CompetitionViewController: ListManagerVC {
         super.setupViewListManager()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didChangeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(logout), name: NSNotification.Name.init("LogoutSuccessed"), object: nil)
+    }
+    
+    private func disableTimer(){
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+    
+    override func actionPullToRefresh() {
+        self.disableTimer()
+        super.actionPullToRefresh()
+    }
+    
+    @objc func logout() {
+        self.disableTimer()
+        self.offset = 0
+        callAPI()
     }
     
     @objc func didChangeLanguage() {
@@ -65,10 +85,11 @@ class CompetitionViewController: ListManagerVC {
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeue(CompetitionCell.self, for: indexPath)
         cell.type = self.type
+        cell.indexPath = indexPath
+        cell.delegate = self
         if let data = item as? CompetitionEntity {
             cell.competitionEntity = data
         }
-        cell.indexPath = indexPath
         cell.actionFight = {[weak self](status, index) in
             self?.actionFight(status: status, index: index)
         }
@@ -76,6 +97,34 @@ class CompetitionViewController: ListManagerVC {
         cell.btnShare.tag = indexPath.item
         cell.btnShare.addTarget(self, action: #selector(btnShareTapped), for: .touchUpInside)
         return cell
+    }
+    
+    private func setTimer(index: IndexPath, time: Int){
+        let data = listData[index.row] as! CompetitionEntity
+        data.distance = time
+        if time > 0 {
+            if timer == nil {
+                let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+                    self.minusTime(index: index)
+                })
+                RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
+                timer.tolerance = 0.1
+                self.timer = timer
+            }
+        } else {
+            if timer != nil {
+                timer?.invalidate()
+                timer = nil
+            }
+        }
+    }
+    
+    private func minusTime(index: IndexPath) {
+        let data = listData[index.row] as! CompetitionEntity
+        data.distance = data.distance - 1
+        if let cell = tableView.cellForRow(at: index) as? CompetitionCell{
+            cell.processTime(time: data.distance)
+        }
     }
     
     override func didSelectTableView(item: Any, indexPath: IndexPath) {
@@ -113,15 +162,14 @@ class CompetitionViewController: ListManagerVC {
                 return
             }
             if status == "CAN_JOIN"{
-                if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
+                if let _ = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
                     let data = listData[index] as! CompetitionEntity
                     if data.isHidden {
                         let vc = SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true, endDate: data.endDate ?? Date())
                         vc.hidesBottomBarWhenPushed = true
                         self.push(controller: vc)
                     } else {
-                        let isStarted = cell.isStarted
-                        if isStarted {
+                        if (data.startTime?.timeIntervalSince1970 ?? 0) <= Date().timeIntervalSince1970 {
                             let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())
                             vc.hidesBottomBarWhenPushed = true
                             vc.fightFinished = {[weak self] in
@@ -185,49 +233,24 @@ class CompetitionViewController: ListManagerVC {
         
     
     func joinTeam(index: Int, teamId: Int) {
-        DispatchQueue.global().async {
-            let data = self.listData[index] as! CompetitionEntity
-            data.team_id = String(teamId)
-            data.is_fight_joined = 1
-            self.changeStatusHiddenData()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
-    }
-    
-    private func changeStatusHiddenData() {
-        let data = listData as! [CompetitionEntity]
-        for item in data {
-            if item.is_fight_joined == 0 && (item.status == "CAN_JOIN" || item.status == "START") {
-                item.isHidden = true
-            }
-        }
-    }
-    
-    private func changeStatusShowData() {
-        let data = listData as! [CompetitionEntity]
-        for item in data {
-            if item.is_fight_joined == 0 && item.status == "CAN_JOIN" {
-                item.isHidden = false
-            }
-        }
+        self.offset = 0
+        callAPI()
     }
     
     func leaveTeam(index: Int) {
-        DispatchQueue.global().async {
-            let data = self.listData[index] as! CompetitionEntity
-            data.is_fight_joined = 0
-            self.changeStatusShowData()
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        self.offset = 0
+        callAPI()   
     }
     
     @objc func btnShareTapped(sender: UIButton) {
         let infor = listData[sender.tag] as! CompetitionEntity
         ShareNativeHelper.shared.showShareLinkInstall(quote: "\(LocalizableKey.competition.showLanguage): \(infor.name&) \n\(LocalizableKey.timeStart.showLanguage): \(infor.startTime?.toString(dateFormat: AppDateFormat.HHmm) ?? "")h")
+    }
+}
+
+extension CompetitionViewController : TimerCompetitionDelegate{
+    func callbackTimer(index: IndexPath, time: Int) {
+        self.setTimer(index: index, time: time)
     }
 }
 

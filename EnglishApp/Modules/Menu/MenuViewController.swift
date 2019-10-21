@@ -34,8 +34,10 @@ class MenuViewController: UIViewController, MenuViewProtocol {
         super.viewDidLoad()
         configureTable()
         listMenuItem = MenuItem.toArray()
-        
         setVersion()
+        header.callbackGotoProfile = { [weak self] in
+            self?.delegateController?.controllerSelected(itemSelected: MenuItem(imgIcon: AppImage.imgInfo, title: LocalizableKey.MenuInfo.showLanguage))
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

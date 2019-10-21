@@ -23,6 +23,7 @@ class CollectionCompetitionEntity: BaseEntity{
         self.default_dict_id <- map["default_dict_id"]
     }
 }
+
 class CompetitionEntity : BaseEntity {
     var id: Int?
     var team_id: String?
@@ -40,16 +41,7 @@ class CompetitionEntity : BaseEntity {
     var start_time_mi : String?
     var end_time_mi : String?
     var isHidden = false
-    
-    convenience init(name: String) {
-        self.init()
-        self.name = name
-//        self.startTime = "Thời gian bắt đầu 16h"
-        self.countTeam = "Số đội 20"
-        self.content = "Team đang thi đấu nhào vô anh em ơi"
-//        self.condition = "Vàng  "
-    }
-    
+    var distance = 0
     
     convenience init(competitionResultsProfileEntity: CompetitionResultsProfileEntity) {
        self.init()
@@ -81,15 +73,5 @@ class CompetitionEntity : BaseEntity {
         self.content <- map["description"]
         self.end_time_mi <- map["end_time_mi"]
         self.endDate <- (map["end_date"], yyyyMMddHHmmssTransform())
-    }
-    
-    class func toArray() -> [CompetitionEntity] {
-        var listHistory = [CompetitionEntity]()
-        for i in 0...10 {
-            let newHis = CompetitionEntity(name: "Cuộc thi \(i+1)")
-            listHistory.append(newHis)
-        }
-        
-        return listHistory
     }
 }
