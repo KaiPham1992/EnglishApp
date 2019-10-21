@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,6 +15,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BXHViewController">
             <connections>
+                <outlet property="heightOfUserView" destination="Vta-u0-bNb" id="47v-8c-2vu"/>
                 <outlet property="lbRank" destination="vl2-kc-jKk" id="BCo-oo-G5c"/>
                 <outlet property="tbBXH" destination="gPU-6W-bhf" id="tBP-IH-UON"/>
                 <outlet property="vRank" destination="Jnj-QV-USl" id="ukX-nO-1t8"/>
@@ -37,14 +36,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dzs-gh-i4c" customClass="BXHView" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="20" width="375" height="78"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="78"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="78" id="Vta-u0-bNb"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jnj-QV-USl">
-                    <rect key="frame" x="0.0" y="98" width="375" height="38"/>
+                    <rect key="frame" x="0.0" y="78" width="375" height="38"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tất cả" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vl2-kc-jKk">
                             <rect key="frame" x="162.5" y="4" width="50.5" height="30"/>
@@ -91,11 +90,11 @@
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gPU-6W-bhf">
-                    <rect key="frame" x="0.0" y="136" width="375" height="531"/>
+                    <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSP-IE-eFw">
-                    <rect key="frame" x="200" y="23" width="150" height="200"/>
+                    <rect key="frame" x="200" y="3" width="150" height="200"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="hWR-Cc-COF">
                             <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>

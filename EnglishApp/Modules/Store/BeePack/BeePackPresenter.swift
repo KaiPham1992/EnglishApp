@@ -22,8 +22,10 @@ class BeePackPresenter: BeePackPresenterProtocol, BeePackInteractorOutputProtoco
         self.router = router
     }
     
-    func upgradeProduct(productID: String) {
-        Provider.shared.productAPIService.purchaseHoney(productID: productID, success: { (success) in
+   
+    
+    func upgradeProduct(productID: String, transactionId: String) {
+        Provider.shared.productAPIService.purchaseHoney(productID: productID, transactionId: transactionId, success: { (success) in
             guard let success = success else {return}
             self.view?.didUpgrade(info: success)
         }) { (error) in

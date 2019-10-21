@@ -52,6 +52,10 @@ class UserEntity: BaseEntity  {
     override func mapping(map: Map) {
         self.isLeader <- map["is_leader"]
         self.id             <- map["_id"]
+        if self.id == nil {
+            self.id <- (map["_id"], IntToStringTransform())
+        }
+        
         self.email       <- map["email"]
         self.fullName          <- map["fullname"]
         self.national       <- map["nation"]

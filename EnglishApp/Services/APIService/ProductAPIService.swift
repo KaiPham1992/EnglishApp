@@ -12,8 +12,9 @@ protocol ProductAPIServiceProtocol {
     func getListProduct(fromDoEntrance: Bool, point: Int, success: @escaping SuccessHandler<ProductCollectionEntity>.object,failure: @escaping RequestFailure)
     func sendRedeem(code: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
     func exchangeGift(id: String, type: String, success: @escaping SuccessHandler<QAEntity>.object,failure: @escaping RequestFailure)
-    func upgradeProduc(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
-    func purchaseHoney(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
+    func upgradeProduc(productID: String, transactionId: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
+    func purchaseHoney(productID: String, transactionId: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
+    func restore(restoreParam: RestoreParam, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure)
 }
 
 class ProductAPIService: ProductAPIServiceProtocol {
@@ -22,8 +23,8 @@ class ProductAPIService: ProductAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func upgradeProduc(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object, failure: @escaping RequestFailure) {
-        let endpoint = ProductEndPoint.upgradeProduct(productID: productID)
+    func upgradeProduc(productID: String, transactionId: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = ProductEndPoint.upgradeProduct(productID: productID, transactionId: transactionId)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
@@ -37,8 +38,13 @@ class ProductAPIService: ProductAPIServiceProtocol {
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
-    func purchaseHoney(productID: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure) {
-        let endPoint = ProductEndPoint.purchaseHoney(productID: productID)
+    func purchaseHoney(productID: String, transactionId: String, success: @escaping SuccessHandler<UpgradeInfoEntity>.object,failure: @escaping RequestFailure) {
+        let endPoint = ProductEndPoint.purchaseHoney(productID: productID, transactionId: transactionId)
+        network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func restore(restoreParam: RestoreParam, success: @escaping SuccessHandler<UpgradeInfoEntity>.object, failure: @escaping RequestFailure) {
+        let endPoint = ProductEndPoint.restore(restoreParam: restoreParam)
         network.requestData(endPoint: endPoint, success: MapperData.mapObject(success), failure: failure)
     }
     

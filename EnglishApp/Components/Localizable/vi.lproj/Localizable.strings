@@ -201,6 +201,8 @@
 "notEnoughDiamondText" = "Bạn không đủ kim cương.";
 "notEnoughHoneyText" = "Bạn không đủ mật ong.";
 "usedCode" = "Mã code đã được sử dụng";
+"totalHoney" = "Tổng số mật ong: ";
+"restorePurchase" = "Khôi phục mua hàng";
 
 //comment
 "comment" = "Bình luận";
@@ -346,6 +348,7 @@
 "lbNoData" = "Không có dữ liệu";
 
 
+
 // BHX
 "all" = "Tất cả";
 "quater" = "Quý";
@@ -406,3 +409,6 @@
 "dateExpire" = "Ngày hết hạn: ";
 "update_package_recieved" = "Gói nâng cấp nhận được";
 "user_not_login" = "Bạn chưa đăng nhập";
+
+"restore_fail" = "Khôi phục thất bại, vui lòng liên hệ +84909172353";
+"restore_success" = "Khôi phục thành công";

@@ -403,7 +403,9 @@ extension HomeViewController: HomeActionCellDelegate {
                 let vc = DailyMissonRouter.createModule()
                 self.pushView(vc: vc)
             }
-            self.present(controller: vc, animated: true)
+            let nc = UINavigationController(rootViewController: vc)
+            
+            self.present(controller: nc, animated: true)
         } else {
             let vc = StoreViewController()
             self.pushView(vc: vc)
@@ -456,6 +458,11 @@ extension HomeViewController: MenuViewControllerDelegate {
         if itemIcon == AppImage.imgLanguage {
             self.hideMenu()
             AppRouter.shared.pushTo(viewController: ChangeLanguageRouter.createModule())
+            return
+        }
+        if itemIcon == AppImage.imgTop {
+            self.hideMenu()
+            AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
             return
         }
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
@@ -545,6 +552,7 @@ extension HomeViewController: MenuViewControllerDelegate {
                 guard let user = user else { return }
                 UserDefaultHelper.shared.saveUser(user: user)
                 UserDefaultHelper.shared.userToken = user.jwt&
+                self.removeHeaderHome()
                 let vc = LoginRouter.createModule()
                 self.present(controller: vc, animated: true)
             }) { (error) in

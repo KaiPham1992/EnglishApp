@@ -150,9 +150,9 @@ extension StudyPackViewController: UITableViewDelegate, UITableViewDataSource {
             return 230
         } else if indexPath.section == 0 {
             if indexPath.item == 0 {
-                return 40
+                return 35
             } else {
-                return  65
+                return  55
             }
         } else {
             if indexPath.item == 0 {

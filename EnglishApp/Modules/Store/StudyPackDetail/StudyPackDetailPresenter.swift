@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class StudyPackDetailPresenter: StudyPackDetailPresenterProtocol, StudyPackDetailInteractorOutputProtocol {
-    func upgradeProduct(productID: String) {
+    func upgradeProduct(productID: String, transactionId: String) {
         ProgressView.shared.show()
-        Provider.shared.productAPIService.upgradeProduc(productID: productID, success: { (success) in
+        Provider.shared.productAPIService.upgradeProduc(productID: productID, transactionId: transactionId, success: { (success) in
             ProgressView.shared.hide()
             guard let success = success else {return}
             
@@ -34,5 +34,13 @@ class StudyPackDetailPresenter: StudyPackDetailPresenterProtocol, StudyPackDetai
         self.interactor = interactor
         self.router = router
     }
+    
+    func restore(restoreParam: RestoreParam) {
+        Provider.shared.productAPIService.restore(restoreParam: restoreParam, success: { _ in
+            PopUpHelper.shared.showError(message: "restore_success".showLanguage, completionYes: nil)
+        }) { error in
+            PopUpHelper.shared.showError(message: "restore_fail".showLanguage, completionYes: nil)
+        }
+       }
     
 }

@@ -11,12 +11,14 @@ import StoreKit
 
 class PaymentHelper: NSObject {
     var validProducts: [SKProduct] = []
-    let productIds = ["product_obee_12", "product_obee_13", "product_obee_14", "product_obee_15", "product_obee_16"]
+    let productIds = ["product_obee_12", "product_obee_13", "product_obee_14", "product_obee_15", "product_obee_16", "product_obee_17", "Test_Premium", "Test_Premium1"]
     var productsRequest: SKProductsRequest?
     
     static let shared = PaymentHelper()
-    var completionPurchased: CompletionClosure?
+    var completionPurchased: CompletionAny?
     var purchaseFailed: CompletionClosure?
+    
+    var completionRestored: CompletionAny?
     
     func fetchAvailableProducts() { //1
         let productIdentifiers = Set(productIds)
@@ -25,7 +27,13 @@ class PaymentHelper: NSObject {
         productsRequest?.start()
     }
     
-    func purcharseProduct(_ productId: String, completionPurchased: CompletionClosure?, purchaseFailed: CompletionClosure?) { //2
+    func restoreProduct(productId: String, completionRestored: CompletionAny?) {
+        self.completionRestored = completionRestored
+        SKPaymentQueue.default().add(self)
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
+    
+    func purcharseProduct(_ productId: String, completionPurchased: CompletionAny?, purchaseFailed: CompletionClosure?) { //2
         guard canMakePurchases(), validProducts.count > 0 else {
             return
         }
@@ -49,6 +57,30 @@ extension PaymentHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver
         }
     }
     
+    func paymentQueueRestoreCompletedTransactionsFinished(_ queue: SKPaymentQueue) {
+        
+        var transactionParams = [TransactionParam]()
+        
+        for transaction in queue.transactions {
+//            let t: SKPaymentTransaction = transaction
+//            let prodID = t.payment.productIdentifier as String
+//
+//            print("***********************: \(prodID)")
+////            queue.finishTransaction(transaction)
+            
+            let transactionDate = transaction.transactionDate?.toString(dateFormat: AppDateFormat.ddMMYYYYTransaction)
+            let transactionId = transaction.transactionIdentifier&
+            let productPurchaseId = transaction.payment.productIdentifier
+            
+            let newTransaction = TransactionParam(transactionId: transactionId, productPurchaseId: productPurchaseId, transactionDate: transactionDate&)
+            
+            transactionParams.append(newTransaction)
+        }
+        
+        completionRestored?(transactionParams)
+       
+    }
+    
     func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
             switch transaction.transactionState {
@@ -57,12 +89,14 @@ extension PaymentHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver
             case .purchased:
                 print("purchased")
 //                savePaymentInfo()
-                self.completionPurchased?()
+                
+                self.completionPurchased?(transaction.transactionIdentifier&)
                 
                 SKPaymentQueue.default().finishTransaction(transaction)
             case .restored:
+//                self.completionRestored?(<#Any?#>)
                 SKPaymentQueue.default().finishTransaction(transaction)
-                print("restored")
+                
             case .failed:
                 self.purchaseFailed?()
                 if let transactionError = transaction.error as NSError?,

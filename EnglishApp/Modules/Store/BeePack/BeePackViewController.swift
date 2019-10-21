@@ -28,6 +28,7 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
     let frefresh = UIRefreshControl()
     var presenter: BeePackPresenterProtocol?
     @IBOutlet weak var tbBeePack: UITableView!
+    @IBOutlet weak var lbTotal: UILabel!
     
     var listBeePack = [ProductEntity]() {
         didSet {
@@ -41,14 +42,22 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
         super.viewDidLoad()
         configureTable()
         listBeePack = UserDefaultHelper.shared.collectionProduct.groupHoney
+        if let totalHoney = UserDefaultHelper.shared.loginUserInfo?.amountHoney*.description.formatNumber(type: ".") {
+            lbTotal.text = "\(LocalizableKey.totalHoney.showLanguage )" + totalHoney
+            lbTotal.isHidden = false
+        } else {
+            lbTotal.isHidden = true
+        }
     }
     
     func upgradeBeePack(id: String, inAppPurchase: String) {
         PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.upgradeBeePack.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
             ProgressView.shared.show()
-            PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: {
+            PaymentHelper.shared.purcharseProduct(inAppPurchase, completionPurchased: { transactionIdAny in
                 ProgressView.shared.hide()
-                self.presenter?.upgradeProduct(productID: id)
+                guard let transactionId = transactionIdAny as? String else { return }
+                
+                self.presenter?.upgradeProduct(productID: id, transactionId: transactionId)
             }, purchaseFailed: {
                 ProgressView.shared.hide()
             })

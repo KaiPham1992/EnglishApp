@@ -25,9 +25,11 @@ class HeaderUserView: BaseViewXib {
             if user.email& == emailDefault {
                 viewProfile.isHidden = true
                 btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
+                btnGotoProfile.isUserInteractionEnabled =  false
             } else {
                 viewProfile.isHidden = false
                 btnGotoProfile.setTitle("", for: .normal)
+                btnGotoProfile.isUserInteractionEnabled =  true
             }
             lbDiamond.text = user.amountDiamond*.description
             lbHoney.text = user.amountHoney*.description
