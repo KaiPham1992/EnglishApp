@@ -408,7 +408,7 @@
 "userPackage" = "Gói nâng cấp đã mua";
 "dateExpire" = "Ngày hết hạn: ";
 "update_package_recieved" = "Gói nâng cấp nhận được";
-"user_not_login" = "Bạn chưa đăng nhập";
+"user_not_login" = "Đăng nhập";
 
 "restore_fail" = "Khôi phục thất bại, vui lòng liên hệ +84909172353";
 "restore_success" = "Khôi phục thành công";

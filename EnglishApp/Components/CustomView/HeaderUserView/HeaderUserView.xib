@@ -148,8 +148,8 @@
                         <constraint firstItem="WRr-FJ-Txx" firstAttribute="leading" secondItem="XuH-Dp-7KT" secondAttribute="leading" constant="2" id="rLg-LZ-CLg"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-tt-nX6">
-                    <rect key="frame" x="0.0" y="44" width="414" height="131"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-tt-nX6">
+                    <rect key="frame" x="50" y="44" width="364" height="131"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                     <state key="normal">
                         <color key="titleColor" red="0.20784313725490194" green="0.082352941176470587" blue="0.031372549019607843" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -166,7 +166,7 @@
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gjg-tt-nX6" secondAttribute="bottom" id="bob-Mc-X5I"/>
                 <constraint firstItem="jl6-Ih-1bY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mdY-B0-857"/>
                 <constraint firstItem="gjg-tt-nX6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qFl-CE-Pdg"/>
-                <constraint firstItem="gjg-tt-nX6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="yxm-1h-qSv"/>
+                <constraint firstItem="gjg-tt-nX6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="yxm-1h-qSv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gjg-tt-nX6" secondAttribute="trailing" id="zxN-13-xf9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

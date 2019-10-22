@@ -53,7 +53,7 @@ class SignUpViewController: BaseViewController {
     }
     
     @IBAction func btnBackBlackTapped() {
-        self.pop()
+        self.dismiss()
     }
     
     @IBAction func btnSignUpTapped() {

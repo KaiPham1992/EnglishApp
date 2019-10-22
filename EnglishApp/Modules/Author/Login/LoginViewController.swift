@@ -87,7 +87,8 @@ class LoginViewController: BaseViewController {
     }
     
     @IBAction func btnRegisterTapped() {
-        self.push(controller: SignUpRouter.createModule())
+//        self.push(controller: SignUpRouter.createModule())
+        self.present(controller: SignUpRouter.createModule())
     }
     
     @IBAction func btnLoginGmail() {
