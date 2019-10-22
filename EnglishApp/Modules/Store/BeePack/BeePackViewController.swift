@@ -43,7 +43,7 @@ class BeePackViewController: BaseViewController, BeePackViewProtocol {
         configureTable()
         listBeePack = UserDefaultHelper.shared.collectionProduct.groupHoney
         if let totalHoney = UserDefaultHelper.shared.loginUserInfo?.amountHoney*.description.formatNumber(type: ".") {
-            lbTotal.text = "\(LocalizableKey.totalHoney.showLanguage )" + totalHoney
+            lbTotal.attributedText = NSAttributedString(string: "\(LocalizableKey.totalHoney.showLanguage )" + totalHoney)
             lbTotal.isHidden = false
         } else {
             lbTotal.isHidden = true

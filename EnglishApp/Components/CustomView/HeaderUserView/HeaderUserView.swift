@@ -26,6 +26,7 @@ class HeaderUserView: BaseViewXib {
             if user.email& == emailDefault {
                 viewProfile.isHidden = true
                 btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
+                btnGotoProfile.setTitleColor(AppColor.color117_117_117, for: .normal)
             } else {
                 viewProfile.isHidden = false
                 btnGotoProfile.setTitle("", for: .normal)
