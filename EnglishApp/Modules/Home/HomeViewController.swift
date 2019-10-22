@@ -336,7 +336,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || UserDefaultHelper.shared.loginUserInfo?.email == nil{
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-//                self.gotoTestEntrance()
+                self.addHeaderHome()
             }
             self.present(controller: vc, animated: true)
         } else {
@@ -391,8 +391,7 @@ extension HomeViewController: HomeActionCellDelegate {
         if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-//                let vc = DailyMissonRouter.createModule()
-//                self.pushView(vc: vc)
+                self.addHeaderHome()
             }
             let nc = UINavigationController(rootViewController: vc)
             
@@ -407,8 +406,7 @@ extension HomeViewController: HomeActionCellDelegate {
         if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-//                let vc = DailyMissonRouter.createModule()
-//                self.pushView(vc: vc)
+                self.addHeaderHome()
             }
             self.present(controller: vc, animated: true)
         } else {
@@ -421,8 +419,7 @@ extension HomeViewController: HomeActionCellDelegate {
         if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-//                let vc = FindRouter.createModule()
-//                self.pushView(vc: vc)
+                self.addHeaderHome()
             }
             self.present(controller: vc, animated: true)
         } else {
@@ -461,7 +458,7 @@ extension HomeViewController: MenuViewControllerDelegate {
             let vc = LoginRouter.createModule()
             vc.modalPresentationStyle = .overFullScreen
             vc.callBackLoginSuccessed = {[unowned self] in
-//                self.userDidLogin(itemSelected: itemSelected)
+                self.addHeaderHome()
             }
             self.present(controller: vc, animated: true)
         } else {

@@ -20,7 +20,6 @@ class MoreDictionaryViewController: ListManagerVC {
         showButtonBack = true
         customTitle = LocalizableKey.addDictionary.showLanguage
         super.setUpViews()
-        print(Realm.Configuration.defaultConfiguration.fileURL)
     }
     
     let id_user = Int(UserDefaultHelper.shared.loginUserInfo?.id ?? "0") ?? 0

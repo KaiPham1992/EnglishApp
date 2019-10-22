@@ -26,17 +26,14 @@ class HeaderUserView: BaseViewXib {
             if user.email& == emailDefault {
                 viewProfile.isHidden = true
                 btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
-                btnGotoProfile.isUserInteractionEnabled =  false
             } else {
                 viewProfile.isHidden = false
                 btnGotoProfile.setTitle("", for: .normal)
-                btnGotoProfile.isUserInteractionEnabled =  true
             }
             lbDiamond.text = user.amountDiamond*.description
             lbHoney.text = user.amountHoney*.description
             lbFullName.text = user.fullName
             imgAvatar.sd_setImage(with: user.urlRank, placeholderImage: AppImage.avatarDefault)
-//            imgRank.sd_setImage(with: user.urlRank, placeholderImage: AppImage.imgPlaceHolder)
         }
     }
     
@@ -49,9 +46,6 @@ class HeaderUserView: BaseViewXib {
         viewProfile.isHidden = true
         btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
         self.backgroundColor = AppColor.yellow
-        
-//        imgAvatar.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 21)
-//        imgRank.setBorder(borderWidth: 1, borderColor: .white, cornerRadius: 8)
     }
     
     
