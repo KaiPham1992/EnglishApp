@@ -110,11 +110,17 @@ class DetailLessonViewController: BaseViewController {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-                self.comment()
+                self.goHome()
             }
             self.present(controller: vc, animated: true)
         } else {
             self.comment()
+        }
+    }
+    
+    private func goHome(){
+        if let tabbar = self.tabBarController as? MainTabbar {
+            tabbar.gotoHome()
         }
     }
     
@@ -142,6 +148,12 @@ class DetailLessonViewController: BaseViewController {
                 isLike = isLike == 0 ? 1 : 0
             }
             self.presenter?.likeLesson(idLesson: Int(self.idLesson) ?? 0 ,idWord: self.vocabulary != nil ? self.vocabulary?.id : self.presenter?.vocabulary?.id , isFavorite: self.isLike)
+        } else {
+            let vc = LoginRouter.createModule()
+            vc.callBackLoginSuccessed = {[unowned self] in
+                self.goHome()
+            }
+            self.present(controller: vc, animated: true)
         }
     }
 }
