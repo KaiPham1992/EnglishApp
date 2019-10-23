@@ -192,6 +192,9 @@ class HomeViewController: BaseViewController {
     }
     
     func countNotification() {
+        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+            return
+        }
          self.addButtonNotificationNavigation(count: 0, action: #selector(self.btnNotificationTapped))
         Provider.shared.notificationAPIService.getNotification(offset: 0, success: { parentNotification in
             guard let total = parentNotification?.totalUnread else { return }
@@ -337,6 +340,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
+                self.countNotification()
             }
             self.present(controller: vc, animated: true)
         } else {
@@ -392,6 +396,7 @@ extension HomeViewController: HomeActionCellDelegate {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
+                self.countNotification()
             }
             let nc = UINavigationController(rootViewController: vc)
             
@@ -407,6 +412,7 @@ extension HomeViewController: HomeActionCellDelegate {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
+                self.countNotification()
             }
             self.present(controller: vc, animated: true)
         } else {
@@ -420,6 +426,7 @@ extension HomeViewController: HomeActionCellDelegate {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
+                self.countNotification()
             }
             self.present(controller: vc, animated: true)
         } else {
@@ -459,6 +466,7 @@ extension HomeViewController: MenuViewControllerDelegate {
             vc.modalPresentationStyle = .overFullScreen
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
+                self.countNotification()
             }
             self.present(controller: vc, animated: true)
         } else {
@@ -535,6 +543,7 @@ extension HomeViewController: MenuViewControllerDelegate {
         ProgressView.shared.show()
         Provider.shared.userAPIService.logout(success: { (_) in
             UserDefaultHelper.shared.clearUser()
+            self.navigationItem.rightBarButtonItem = nil
             Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
                 ProgressView.shared.hide()
                 guard let user = user else { return }
