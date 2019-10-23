@@ -51,14 +51,13 @@ class MoreDictionaryViewController: ListManagerVC {
     func setDefaultDictionary(id: Int){
         let listDataItem = listData as! [ItemDictionaryResponse]
         for item in listDataItem {
-            if item.isDefault {
-                item.isDefault = false
+            if item.id == id {
+                item.isDefault = true
             } else {
-                if item.id == id {
-                    item.isDefault = true
-                }
+                item.isDefault = false
             }
         }
+        self.tableView.reloadData()
         RealmDBManager.share.updateLocalConfigDictionary(id: id, id_user: id_user)
         self.callBackChangeDictionary?()
     }

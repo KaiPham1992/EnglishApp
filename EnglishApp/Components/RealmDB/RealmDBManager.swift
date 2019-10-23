@@ -69,12 +69,10 @@ class RealmDBManager {
         try! database.write {
             let objects = self.filter(objectType: LocalConfigDictionary.self, key: "id_user", value: id_user)
             for object in objects {
-                if object.isDefault == 1 {
-                    object.isDefault = 0
+                if object.id_dictionary == id {
+                    object.isDefault = 1
                 } else {
-                    if object.id_dictionary == id {
-                        object.isDefault = 1
-                    }
+                    object.isDefault = 0
                 }
             }
         }
