@@ -12,7 +12,7 @@
 "MenuQA" = "Q&A";
 "MenuLanguage" = "Language";
 "MenuSaved" = "Saved";
-"MenuHistory" = "Test History";
+"MenuHistory" = "Test Archive";
 "MenuPrivacy" = "Policies & Terms";
 "MenuChangePassword" = "Change Password";
 "MenuLogout" = "Logout";
@@ -34,14 +34,14 @@
 "ForgotPasswordMessage" = "Enter the email address associated with your account. Then check the mailbox";
 "SentEmail" = "Send email";
 "ForgotTitle" = "Forgot password";
-"out_group_message" = "The competition started so can not out group";
-"fight_is_doing" = "This fight is doing. Please complete and submit it.";
-"fight_is_done" = "Competition is done";
+"out_group_message" = "The competition started so you cannot leave your team";
+"fight_is_doing" = "This competition is ongoing. Please complete and submit it.";
+"fight_is_done" = "You have finised your competition";
 "exercise_is_doing" = "This exercise is doing. Please complete and submit it.";
-"honey_not_enough" = "Honey haven't enough please refill.";
-"diamod_not_enough" = "Diamod haven't enough please refill.";
+"honey_not_enough" = "You don't have enough honey jars. Please refill it.";
+"diamod_not_enough" = "You don't have enough diamonds. Please refill it.";
 "you_have_one_time" = "You can only choose one time.";
-"honey_diamond_not_enough" = "Honey and diamod haven't enough please refill.";
+"honey_diamond_not_enough" = "You don't have enough diamonds and honey jars. Please refill them.";
 
 "invalidLoginEmail" = "Invalid email";
 "invalidLoginPassword" = "Password must be more than 6 characters";
@@ -60,7 +60,7 @@
 
 // Profile
 "DisplayName" = "Display name";
-"enterDisplayName" = "Enter display name";
+"enterDisplayName" = "Enter your display name";
 "Location" = "Nation";
 "CodeNumber"  = "Code";
 "TitleProfile" = "Profile";
@@ -89,13 +89,13 @@
 
 //QA
 
-"whatQA" = "What Are You Wondering?";
+"whatQA" = "Don’t hesitate to ask OBee's team";
 "enterQA" = "Enter your question";
-"messageQA" = "50 honey for one question";
+"messageQA" = "50 honey for each question";
 "qAOlder" = "Questions you've ever asked";
-"titleQA" = "Q&A";
-"notEnoughHoney" = "You have not enough honey";
-"deductFiveHoney" = "You are deducted 50 honey for one question";
+"titleQA" = "Obee's Help";
+"notEnoughHoney" = "You don't have enough honey jars";
+"deductFiveHoney" = "You spent 50 honey jars for one question";
 "pleaseEnterQA" = "Please enter your question";
 "pleaseEnter255Digit" = "Please enter a question within 255 characters";
 
@@ -104,7 +104,7 @@
 "conditionCompetition" = "Condition: ";
 "timeStart" = "Time Start: ";
 "countTeam" = "Number of teams: ";
-"selectTeamJoin" = "Select team";
+"selectTeamJoin" = "Select your team";
 "joinTeam" = "Join";
 "team" = " teams";
 "member" = "Members";
@@ -113,18 +113,18 @@
 // Detail team
 "startAfter" = "Start";
 "explainConpetition" = "About competition";
-"leaveTeam" = "Leave Team";
-"createGroup" = "Create group";
-"nameGroup" = "Group name";
-"enterNameGroup" = "Enter group name";
-"leaveTeamPopUp" = "Do you want to leave group?";
+"leaveTeam" = "Leave this team";
+"createGroup" = "Create your own team";
+"nameGroup" = "Team's name";
+"enterNameGroup" = "Enter your team name";
+"leaveTeamPopUp" = "Do you want to leave this team?";
 "verifyButton" = "Yes";
 
 // Daily mission
-"messageDailyMission" = "Complete daily quests to get 1 diamond and x level point right away";
+"messageDailyMission" = "Complete daily missions to receive diamonds and level points";
 "dailyMissionTitle" = "Daily Mission";
 "startMission" = "Start";
-"doneInputTest" = "Congratulations on completing the entrance test, Obee gave you 500 diamonds";
+"doneInputTest" = "Congratulations! You have completed the Qualification Test. Obee awarded you 500 diamonds.";
 
 
 //add dictionary
@@ -174,10 +174,10 @@
 "reportMessagePopUp" = "Thank you for reporting us on this case. We will review and revise as soon as possible.";
 "reportButtonPopUp" = "Complete";
 
-"notEnoughBee" = "You have not enough honey.";
+"notEnoughBee" = "You don't have enough honey jars.";
 "addBee" = "Add honey";
 "ADDBEE" = "ADD HONEY";
-"notEnoughDiamon" = "You have not enough diamond.";
+"notEnoughDiamon" = "You don't have enough diamonds.";
 "addDiamon" = "Add diamond";
 "popleaveHomeWork" = "Do you want to leave?";
 
@@ -186,23 +186,24 @@
 "studyPack" = "Upgrade package";
 "beePack" = "Honey package";
 "titleMember" = "Member information";
-"enterCode" = "Enter Code";
+"enterCode" = "Enter your coupon";
 "send" = "SEND";
 "detail" = "Detail";
 "upgrade" = "UPGRADE";
 "pleaseEnterCode" = "Please enter code";
 "notFoundCode" = "Code does not exist";
 "exchangeGiftTitle" = "Do you want to exchange this gift?";
-"exchangeGiftSucess" = "Exchange gift successfully.";
+"exchangeGiftSucess" = "Exchanged gifts successfully.";
 "redeemSuccess" = "Redeem successfully.";
 "upgradeSuccess" = "Upgrade successfully.";
 "upgradeBeePack" = "Do you want to buy this honey package?";
 "exchangeTitle" = "Exchange Gift";
-"notEnoughDiamondText" = "You are not enough diamond.";
-"notEnoughHoneyText" = "You are not enough honey.";
-"usedCode" = "Code is used.";
+"notEnoughDiamondText" = "You don't have enough diamonds.";
+"notEnoughHoneyText" = "You don't have enough honey jars.";
+"usedCode" = "Code was used.";
 "totalHoney" = "Total honey: ";
 "restorePurchase" = "Restore purchases";
+
 //comment
 "comment" = "Comment";
 
@@ -231,18 +232,18 @@
 "see_more" = "See more";
 "sentence" = "Sentence";
 "next" = "Next";
-"do_entrance" = "Entrance Testing";
+"do_entrance" = "Input test";
 
 //result
-"result_team" = "Result of Team";
+"result_team" = "Team's Result";
 "rank" = "Rank";
 "result" = "Result";
 "sum_point" = "Total point:";
 "time_do_exercise" = "Total time:";
 "back_gome" = "Go home";
 "result_competion" = "Competition Result";
-"result_group" = "Group result";
-"see_explain" = "SEE EXPLAIN";
+"result_group" = "Team's result";
+"see_explain" = "SEE EXPLAINATION";
 "respond_question" = "REPORT THE QUESTION";
 "explain_solution" = "Explain the answer";
 "individual" = "Individual";
@@ -251,7 +252,7 @@
 "not_correct" = "Faild";
 "see_result"= "See result";
 "explain_question" = "Explain the question";
-"confirm_back_result" = "Do you want to exit the currently viewed exercise?";
+"confirm_back_result" = "Do you want to exit this exercise?";
 "related_lesson" = "Related grammar";
 
 //popup
@@ -302,7 +303,7 @@
 "titleNotificationDetail" = "Notification detail";
 
 // upgrade
-"requireUpGrade" = "Upgrade to use this feature";
+"requireUpGrade" = "Please upgrade Premium account to use this feature.";
 "btnUpGrade" = "Upgrade";
 "levelUp" = "Level up";
 "changeLanguage" = "Change language";
@@ -317,7 +318,7 @@
 "past_simple" = "Past Simple";
 "theory" = "Theory";
 
-"messagePackage" = "Some package suit you";
+"messagePackage" = "Some packages for you";
 "find" = "Find";
 "findExcersise" = "Find exercises...";
 "PrivacyAndPolicy" = "Policies & Terms";
@@ -362,7 +363,7 @@
 // Pop up
 "getError" = "An error occurred. Please try again later.";
 "noResultFound" = "No results found.";
-"feeFind" = "Lost 5 honey or 50 diamond for a search.";
+"feeFind" = "Each search will cost 5 honey jars or 50 diamonds.";
 "done" = "Done";
 
 // add after
@@ -376,32 +377,32 @@
 "start" = "Start";
 "vocabularyDetail" = "Vocabulary Detail";
 "deadline" = "Deadline";
-"you_dont_joined_competition" = "You don't joind competition.";
+"you_dont_joined_competition" = "You didn't join this competition.";
 
 // pop up choose photo
 "camera" = "Camera";
 "library" = "Library";
-"notAllowGifPhoto" = "Not choose GIF photo";
+"notAllowGifPhoto" = "Not allow to choose GIF photo";
 "see_result"= "See Result";
 "join_team" = "Join Team";
 
-"fight_is_doing_result" = "Fight is doing";
+"fight_is_doing_result" = "The competition is ongoing";
 "suggestion_one_choice" = "Only 1 suggestion.";
 "the_dally_misson_tested" = "The daily misson test has made today.";
-"not_qualify" = "Not Qualify";
+"not_qualify" = "Not Qualified";
 "time" = "Time";
 "competition_end" = "The competition has ended.";
-"no_team_joined" = "No team joined";
-"run_background" = "The process may take a long time do you want the job to run in the background?";
-"error_create_group" = "THIS USER CREATED AND JOINED TEAM";
-"cannot_join_group" = "You already have a group that cannot create and join another group.";
-"user_joined_team" = "THIS USER JOINED TEAM";
-"competition_doing" = "Competition is doing";
-"enter_name_group" = "Please enter the group name.";
-"minus_dianmod" = "You deducted 1 diamond if you use answer hint.";
+"no_team_joined" = "No team";
+"run_background" = "The process may take long time. Do you want to run it in the background?";
+"error_create_group" = "You have created and joined another team.";
+"cannot_join_group" = "You have already been in a team so you cannot create and join another team.";
+"user_joined_team" = "You have joined this team";
+"competition_doing" = "Competition is ongoing";
+"enter_name_group" = "Please enter your team's name.";
+"minus_dianmod" = "You will spend 1 diamond if you use a hint.";
 
-"less_than_100" = "Please enter a total number of questions that do not exceed 100.";
-"equal_100" = "Please enter the 100 sentences.";
+"less_than_100" = "Please enter a total number of questions that are not over 100.";
+"equal_100" = "Please enter 100 sentences.";
 "no_find_result" = "No results found";
 "userPackage" = "Upgrade package purchased";
 "dateExpire" = "Date expired: ";
