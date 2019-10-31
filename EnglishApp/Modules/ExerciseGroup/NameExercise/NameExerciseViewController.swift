@@ -141,7 +141,7 @@ class NameExerciseViewController: BaseViewController {
     }
     
     @objc func deleteExercise(){
-        if !isEnd && !isPauseTime {
+        if !isPauseTime {
             PopUpHelper.shared.showComfirmPopUp(message: LocalizableKey.popleaveHomeWork.showLanguage, titleYes: LocalizableKey.confirm.showLanguage.uppercased(), titleNo: LocalizableKey.cancel.showLanguage.uppercased(), complete: { [unowned self] in
                 self.confirmOutExercise()
             })
@@ -174,11 +174,6 @@ class NameExerciseViewController: BaseViewController {
 
 extension NameExerciseViewController :NameExerciseViewProtocol{
     func suggestQuestionError() {
-//        let errorMessage = self.presenter?.error?.message&
-//        var message = LocalizableKey.diamod_not_enough.showLanguage
-//        if errorMessage == "NOT_ENOUGH_DIAMOND"{
-//            message = LocalizableKey.diamod_not_enough.showLanguage
-//        }
         PopUpHelper.shared.showError(message: LocalizableKey.diamod_not_enough.showLanguage) {
             
         }
@@ -201,7 +196,8 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         DispatchQueue.global().async {
             self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
-            self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+//            self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+            self.currentTime = 10 
             self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             if let questions = self.presenter?.exerciseEntity?.questions {
                 for item in questions {
