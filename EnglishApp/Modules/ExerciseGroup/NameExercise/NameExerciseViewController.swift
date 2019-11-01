@@ -196,8 +196,8 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         DispatchQueue.global().async {
             self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
-//            self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
-            self.currentTime = 10 
+            self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+//            self.currentTime = 10 
             self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             if let questions = self.presenter?.exerciseEntity?.questions {
                 for item in questions {
