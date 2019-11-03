@@ -72,7 +72,6 @@ class CellExercise: UICollectionViewCell {
             }
             self.layoutIfNeeded()
             self.detectQuestion(contextQuestion: dataCell.content_extend&,type : self.type)
-//            self.answer = dataCell.answers ?? []
             self.tbvNameExercise.reloadData()
         }
     }
@@ -123,7 +122,7 @@ class CellExercise: UICollectionViewCell {
 }
 extension CellExercise : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 60
     }
 }
 extension CellExercise: UITableViewDataSource{
@@ -133,8 +132,10 @@ extension CellExercise: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if listAnswerCompetition.count > 0 {
+            self.heightTableView.constant = CGFloat(listAnswerCompetition.count * 60)
             return listAnswerCompetition.count
         }
+        self.heightTableView.constant = CGFloat(listAnswer.count * 60)
         return listAnswer.count
     }
     
@@ -155,7 +156,6 @@ extension CellExercise: UITableViewDataSource{
         cell.idOption = listIdOption[indexPath.row]
         cell.dataSource = listDataSource[indexPath.row]
         cell.delegate = self
-        heightTableView.constant = tbvNameExercise.contentSize.height
         return cell
     }
     
@@ -166,7 +166,6 @@ extension CellExercise: UITableViewDataSource{
         if let cell = tbvNameExercise.cellForRow(at: index) as? CellQuestion{
             cell.dataSource = listDataSource[index.row]
             cell.idOption = listIdOption[index.row]
-//            cell.dataSource = self.getDataSource(indexPath: index) ?? []
         }
     }
 }
