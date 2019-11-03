@@ -158,6 +158,7 @@ extension LoginViewController: LoginViewProtocol {
     func didLogin(user: UserEntity?) {
         self.callBackLoginSuccessed?()
         self.dismiss()
+        NotificationCenter.default.post(name: NSNotification.Name("UserDidLogin"), object: nil)
 //        AppRouter.shared.openHome()
     }
     
