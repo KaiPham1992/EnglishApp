@@ -73,6 +73,9 @@ class HomeViewController: BaseViewController {
             }
         } else {
             PaymentHelper.shared.fetchAvailableProducts()
+            self.countNotification()
+            self.presenter?.getProfile()
+            self.presenter?.getTopThree()
             self.callAPIRecent()
             self.isCallViewDidload = true
         }
