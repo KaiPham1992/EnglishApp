@@ -39,7 +39,7 @@ class Inventories: Mappable{
         self.id <- map["_id"]
         self.productId <- map["productId"]
         self.name <- map["name"]
-        self.expiredTime <- (map["expired_time"], yyyyMMddHHmmssTransform())
+        self.expiredTime <- (map["expired_time"], TranformStringtoDate())
     }
     
 }
