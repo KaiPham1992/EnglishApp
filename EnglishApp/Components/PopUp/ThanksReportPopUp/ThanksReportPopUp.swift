@@ -26,8 +26,7 @@ class ThanksReportPopUp: BasePopUpView {
     
     func showPopUp(completionYes: CompletionClosure?) {
         self.completionYes = completionYes
-        
-        super.showPopUp(height: 224)
+        super.showPopUp(height: 150)
     }
     
     @objc func btnYesTapped() {
