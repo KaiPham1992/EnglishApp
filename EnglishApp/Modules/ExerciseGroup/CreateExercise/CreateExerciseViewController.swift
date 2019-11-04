@@ -40,7 +40,7 @@ class CreateExerciseViewController: BaseViewController {
             PopUpHelper.shared.showError(message: LocalizableKey.less_than_100.showLanguage) {
                 
             }
-        } else if sum < 100 {
+        } else {
             if let _param = self.presenter?.createExerciseParam {
                 self.presenter?.gotoCreateExercise(param: _param)
             }
