@@ -42,6 +42,7 @@ class SearchVocabularyView: BaseViewXib {
     
     override func setUpViews() {
         super.setUpViews()
+        btnDetail.setTitle(LocalizableKey.see_detail.showLanguage, for: .normal)
     }
     
     func setTitle(word: WordExplainEntity){

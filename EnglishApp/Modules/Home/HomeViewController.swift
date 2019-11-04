@@ -62,7 +62,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        if UserDefaultHelper.shared.loginUserInfo?.email == nil {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
             self.loginUserDefault {
                 PaymentHelper.shared.fetchAvailableProducts()
                 self.callAPIRecent()
@@ -73,6 +73,9 @@ class HomeViewController: BaseViewController {
             }
         } else {
             PaymentHelper.shared.fetchAvailableProducts()
+            self.countNotification()
+            self.presenter?.getProfile()
+            self.presenter?.getTopThree()
             self.callAPIRecent()
             self.isCallViewDidload = true
         }
@@ -179,15 +182,13 @@ class HomeViewController: BaseViewController {
     }
     
     private func loginUserDefault(complete : @escaping (() -> ())) {
-        if UserDefaultHelper.shared.userToken&.isEmpty {
-            Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
-                guard let user = user else { return }
-                UserDefaultHelper.shared.saveUser(user: user)
-                UserDefaultHelper.shared.userToken = user.jwt&
-                complete()
-            }) { (error) in
-                
-            }
+        Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
+            guard let user = user else { return }
+            UserDefaultHelper.shared.saveUser(user: user)
+            UserDefaultHelper.shared.userToken = user.jwt&
+            complete()
+        }) { (error) in
+            
         }
     }
     
