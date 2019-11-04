@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -49,23 +49,9 @@
                                     <subviews>
                                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lOb-OX-mau">
                                             <rect key="frame" x="136.5" y="13" width="102" height="102"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61G-Ca-OKJ">
-                                                    <rect key="frame" x="2" y="2" width="98" height="98"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="49"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="102" id="1Sc-l8-rM6"/>
-                                                <constraint firstAttribute="bottom" secondItem="61G-Ca-OKJ" secondAttribute="bottom" constant="2" id="2c0-hU-gMJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="61G-Ca-OKJ" secondAttribute="trailing" constant="2" id="JvH-1Q-IU2"/>
-                                                <constraint firstItem="61G-Ca-OKJ" firstAttribute="leading" secondItem="lOb-OX-mau" secondAttribute="leading" constant="2" id="N23-JX-7uM"/>
-                                                <constraint firstItem="61G-Ca-OKJ" firstAttribute="top" secondItem="lOb-OX-mau" secondAttribute="top" constant="2" id="VPP-tS-KvL"/>
                                                 <constraint firstAttribute="width" constant="102" id="laV-nC-mqe"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -74,6 +60,9 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="61G-Ca-OKJ">
+                                            <rect key="frame" x="138.5" y="15" width="97" height="98"/>
+                                        </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Dn-7Z-poH">
                                             <rect key="frame" x="0.0" y="120" width="375" height="168"/>
                                             <subviews>
@@ -169,11 +158,15 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
+                                        <constraint firstItem="61G-Ca-OKJ" firstAttribute="trailing" secondItem="lOb-OX-mau" secondAttribute="trailing" constant="-3" id="8QG-Vc-nIL"/>
+                                        <constraint firstItem="61G-Ca-OKJ" firstAttribute="bottom" secondItem="lOb-OX-mau" secondAttribute="bottom" constant="-2" id="KRX-th-ngO"/>
                                         <constraint firstItem="lOb-OX-mau" firstAttribute="top" secondItem="zBF-Yx-ndH" secondAttribute="top" constant="13" id="chX-xl-K1j"/>
                                         <constraint firstItem="8Dn-7Z-poH" firstAttribute="leading" secondItem="zBF-Yx-ndH" secondAttribute="leading" id="ds4-tm-cip"/>
                                         <constraint firstItem="lOb-OX-mau" firstAttribute="centerX" secondItem="zBF-Yx-ndH" secondAttribute="centerX" id="ea2-9G-bxf"/>
                                         <constraint firstAttribute="trailing" secondItem="8Dn-7Z-poH" secondAttribute="trailing" id="etp-vI-T1j"/>
                                         <constraint firstItem="8Dn-7Z-poH" firstAttribute="top" secondItem="lOb-OX-mau" secondAttribute="bottom" constant="5" id="iL4-wh-y2S"/>
+                                        <constraint firstItem="61G-Ca-OKJ" firstAttribute="top" secondItem="lOb-OX-mau" secondAttribute="top" constant="2" id="tNx-mC-ZYF"/>
+                                        <constraint firstItem="61G-Ca-OKJ" firstAttribute="leading" secondItem="lOb-OX-mau" secondAttribute="leading" constant="2" id="vwN-ss-mqa"/>
                                         <constraint firstAttribute="bottom" secondItem="8Dn-7Z-poH" secondAttribute="bottom" id="xzC-nd-dzA"/>
                                     </constraints>
                                 </view>

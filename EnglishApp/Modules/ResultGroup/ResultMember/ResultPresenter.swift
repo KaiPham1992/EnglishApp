@@ -36,7 +36,7 @@ class ResultPresenter: ResultPresenterProtocol, ResultInteractorOutputProtocol {
     }
     
     func getImageProfile() -> String?{
-        return testResultProfile?.img_src
+        return testResultProfile?.attach_img_src
     }
     
     func getTotalTime() -> String {
