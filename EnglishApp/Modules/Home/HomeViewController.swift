@@ -67,7 +67,7 @@ class HomeViewController: BaseViewController {
                 PaymentHelper.shared.fetchAvailableProducts()
                 self.callAPIRecent()
                 self.countNotification()
-                self.presenter?.getProfile()
+//                self.presenter?.getProfile()
                 self.presenter?.getTopThree()
                 self.isCallViewDidload = true
             }
@@ -582,5 +582,6 @@ extension HomeViewController: HomeViewProtocol{
     func didGetProfile(user: UserEntity) {
         UserDefaultHelper.shared.saveUser(user: user)
         header.user = user
+        self.addHeaderHome()
     }
 }

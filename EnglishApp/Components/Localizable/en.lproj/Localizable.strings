@@ -228,7 +228,7 @@
 "cloze_test" = "Cloze Test";
 "try_hard" = "Practice";
 "task_every_date" = "Daily task";
-"time_end" = "The end";
+"time_end" = "End";
 "see_more" = "See more";
 "sentence" = "Sentence";
 "next" = "Next";
@@ -241,7 +241,7 @@
 "sum_point" = "Total point:";
 "time_do_exercise" = "Total time:";
 "back_gome" = "Go home";
-"result_competion" = "Competition Result";
+"result_competion" = "Result";
 "result_group" = "Team's result";
 "see_explain" = "SEE EXPLAINATION";
 "respond_question" = "REPORT THE QUESTION";
@@ -410,4 +410,4 @@
 "user_not_login" = "Login";
 "restore_fail" = "Restore fail, please contact +84909172353";
 "restore_success" = "Restore success";
-"see_detail" = "See Detail";
+"see_detail" = "Details";
