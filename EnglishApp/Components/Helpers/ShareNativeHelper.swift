@@ -13,7 +13,7 @@ import FBSDKShareKit
 class ShareNativeHelper: NSObject {
     static let shared = ShareNativeHelper()
     
-    let linkShare = "http://onelink.to/k77kce"
+    let linkShare = "http://onelink.to/2t5hcp"
     
     func showShare(items: [String]) {
         guard let controller = UIApplication.topViewController() else { return }
