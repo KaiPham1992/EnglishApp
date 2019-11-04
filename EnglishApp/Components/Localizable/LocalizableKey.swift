@@ -406,4 +406,5 @@ struct LocalizableKey {
     static let update_package_recieved = "update_package_recieved"
     static let user_not_login = "user_not_login"
     static let see_detail = "see_detail"
+    static let enter_comment = "enter_comment"
 }

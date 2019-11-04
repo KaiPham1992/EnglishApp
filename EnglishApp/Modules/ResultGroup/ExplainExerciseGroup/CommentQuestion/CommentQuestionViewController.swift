@@ -42,6 +42,7 @@ class CommentQuestionViewController: BaseViewController {
         addKeyboardNotification()
         tbvComment.registerXibFile(CellComment.self)
         tbvComment.registerXibFile(CellHeaderComment.self)
+        tfEnterComment.placeholder = LocalizableKey.enter_comment.showLanguage
         tbvComment.delegate = self
         tbvComment.dataSource = self
         self.presenter?.getComment(idLesson: idQuestion&, offset: offset)

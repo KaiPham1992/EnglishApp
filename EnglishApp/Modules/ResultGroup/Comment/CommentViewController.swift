@@ -46,6 +46,7 @@ class CommentViewController: BaseViewController {
         IQKeyboardManager.shared.disabledDistanceHandlingClasses.append(CommentViewController.self)
         IQKeyboardManager.shared.disabledToolbarClasses.append(CommentViewController.self)
         addKeyboardNotification()
+        tfEnterComment.placeholder = LocalizableKey.enter_comment.showLanguage
         tbvComment.registerXibFile(CellComment.self)
         tbvComment.registerXibFile(CellHeaderComment.self)
         tbvComment.delegate = self
