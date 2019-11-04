@@ -63,15 +63,15 @@ class CompetitionEntity : BaseEntity {
         self.name <- map["name"]
         self.rankName <- map["rank_name"]
         self.countTeam <- map["number_team"]
-        self.startDate <- (map["start_date"], yyyyMMddHHmmssTransform())
+        self.startDate <- (map["start_date"], TranformStringtoDate())
         self.start_time_mi <- map["start_time_mi"]
         
-        self.startTime <- (map["start_date"], yyyyMMddHHmmssTransform())
+        self.startTime <- (map["start_date"], TranformStringtoDate())
         self.image <- map["image"]
         self.exercise_id <- map["exercise_id"]
         self.is_fight_joined <- map["is_fight_joined"]
         self.content <- map["description"]
         self.end_time_mi <- map["end_time_mi"]
-        self.endDate <- (map["end_date"], yyyyMMddHHmmssTransform())
+        self.endDate <- (map["end_date"], TranformStringtoDate())
     }
 }
