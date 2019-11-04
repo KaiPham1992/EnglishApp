@@ -18,7 +18,13 @@ class BeePackCell: BaseTableCell {
         didSet {
             guard let bee = item else { return }
 //            imgIcon.sd_setImage(with: bee.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
-            lbMoney.text = "\(bee.money&) VND\n \(bee.name&)"
+            var name = ""
+            if LanguageHelper.currentAppleLanguage() == "en" {
+                name = bee.nameEn&
+            } else {
+                name = bee.name&
+            }
+            lbMoney.text = "\(bee.money&) VND\n \(name)"
 //            imgIcon.image = bee.image
 //            lbMoney.text = bee.money?.description&
 //            imgBackground.image = bee.background
