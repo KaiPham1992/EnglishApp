@@ -110,7 +110,7 @@ class CompetitionCell: BaseTableCell {
             if type == .competition {
                 btnShare.isHidden = false
                 if let startTime = competitionEntity.startTime{
-                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage) \(startTime.toString(dateFormat: AppDateFormat.hhmm))h")
+                    lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage) \(startTime.toString(dateFormat: AppDateFormat.hhmm))")
                 }
             } else {
                 btnShare.isHidden = true
