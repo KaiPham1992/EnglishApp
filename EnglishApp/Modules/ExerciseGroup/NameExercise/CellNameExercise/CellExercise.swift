@@ -77,7 +77,10 @@ class CellExercise: UICollectionViewCell {
     }
     
     func detectQuestion(contextQuestion: String,type : TypeDoExercise){
-        tvContent.attributedText = NSAttributedString(string:  contextQuestion.htmlToString, attributes: [NSAttributedString.Key.font: AppFont.fontRegular14])
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
+        tvContent.attributedText = NSAttributedString(string: contextQuestion.htmlToString, attributes: attributes)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
         tvContent.addGestureRecognizer(tap)

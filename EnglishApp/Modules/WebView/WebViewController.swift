@@ -46,7 +46,7 @@ class WebViewController: BaseViewController {
             ProgressView.shared.hide()
             if let _response = response {
                 self.hideNoData()
-                let htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + (_response.content ?? "") + #"</span>"#
+                let htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; line-height: 25px !important; color: black">"# + (_response.content ?? "") + #"</span>"#
                 self.webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
             } else {
                 self.showNoData()
