@@ -119,7 +119,7 @@ class CompetitionCell: BaseTableCell {
                 }
             }
             
-            lbCountTeam.attributedText = NSAttributedString(string: "\(LocalizableKey.countTeam.showLanguage)\(competitionEntity.countTeam&)\(LocalizableKey.team.showLanguage)")
+            lbCountTeam.attributedText = NSAttributedString(string: "\(competitionEntity.countTeam&)\(LocalizableKey.team.showLanguage)")
             lbContent.attributedText = NSAttributedString(string: competitionEntity.content?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
             
         }
