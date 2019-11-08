@@ -47,7 +47,10 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func detectQuestion(){
-        tvContent.attributedText = NSAttributedString(string:  dataCell?.content?.htmlToString ?? "", attributes: [NSAttributedString.Key.font: AppFont.fontRegular14])
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
+        tvContent.attributedText = NSAttributedString(string: dataCell?.content?.htmlToString ?? "", attributes: attributes)
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
         tvContent.addGestureRecognizer(tap)
@@ -74,7 +77,6 @@ class CellResultExercise: UICollectionViewCell {
             self.popover.removeFromSuperview()
             let point = self.tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
             let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-            //            aView.btnDetail.addTarget(self, action: #selector(self.clickDetail), for: .touchUpInside)
             aView.actionSeeDetailWord = {[weak self] (word) in
                 self?.gotoDetailVocabulary(word: word)
             }
@@ -94,7 +96,7 @@ class CellResultExercise: UICollectionViewCell {
 extension CellResultExercise : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return 60
     }
 }
 extension CellResultExercise: UITableViewDataSource{

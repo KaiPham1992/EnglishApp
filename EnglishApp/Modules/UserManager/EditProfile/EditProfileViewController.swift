@@ -47,7 +47,7 @@ class EditProfileViewController: BaseViewController {
         guard let user = UserDefaultHelper.shared.loginUserInfo else { return }
         vDisplayName.tfInput.text = user.nameShowUI
         vEmail.tfInput.text = user.email
-        vLocation.tfInput.text = user.national
+        vLocation.tfInput.text = user.nationShowUI
         
         imgAvatar.sd_setImage(with: user.urlAvatar, placeholderImage: AppImage.avatarDefault)
     }

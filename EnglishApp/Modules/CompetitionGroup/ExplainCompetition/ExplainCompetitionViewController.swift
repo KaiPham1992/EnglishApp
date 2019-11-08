@@ -33,11 +33,12 @@ class ExplainCompetitionViewController: BaseViewController {
     """
     
     var idCompetition : String = ""
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
-        self.presenter?.getViewFightTest(idCompetition: idCompetition)
         webView.navigationDelegate = self
         webView.scrollView.delegate = self
+        self.presenter?.getViewFightTest(idCompetition: idCompetition)
     }
     
     override func setUpNavigation() {
@@ -48,7 +49,7 @@ class ExplainCompetitionViewController: BaseViewController {
 }
 extension ExplainCompetitionViewController : ExplainCompetitionViewProtocol {
     func getViewFightTestSuccessed(desciption: String) {
-        let htmlString = font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + (desciption) + #"</span>"#
+        let htmlString = font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + desciption + #"</span>"#
         webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
     }
 }
@@ -63,9 +64,5 @@ extension ExplainCompetitionViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
          let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
         webView.evaluateJavaScript(jscript)
-    }
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        webView.frame.size.height = 1
-        webView.frame.size = webView.scrollView.contentSize
     }
 }

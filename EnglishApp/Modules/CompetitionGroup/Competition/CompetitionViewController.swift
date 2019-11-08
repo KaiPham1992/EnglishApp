@@ -276,7 +276,7 @@ class CompetitionViewController: ListManagerVC {
     
     @objc func btnShareTapped(sender: UIButton) {
         let infor = listData[sender.tag] as! CompetitionEntity
-        ShareNativeHelper.shared.showShareLinkInstall(quote: "\(LocalizableKey.competition.showLanguage): \(infor.name&) \n\(LocalizableKey.timeStart.showLanguage): \(infor.startTime?.toString(dateFormat: AppDateFormat.HHmm) ?? "")h")
+        ShareNativeHelper.shared.showShareLinkInstall(quote: "\(LocalizableKey.competition.showLanguage): \(infor.name&) \n\(LocalizableKey.timeStart.showLanguage): \(infor.startTime?.toString(dateFormat: AppDateFormat.HHmm) ?? "")")
     }
 }
 

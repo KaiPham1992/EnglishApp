@@ -151,7 +151,7 @@
 "grammar_upper" = "Grammar";
 "phonetics" = "Phonetics";
 "lesson" = "Lesson";
-"recipe" = "Recipe";
+"recipe" = "Structure";
 
 "idiams" = "Idiams";
 "word_usage" = "Word usage";
@@ -243,7 +243,7 @@
 "back_gome" = "Home";
 "result_competion" = "Result";
 "result_group" = "Team's result";
-"see_explain" = "SEE EXPLANATION";
+"see_explain" = "See Explanation";
 "respond_question" = "REPORT THE QUESTION";
 "explain_solution" = "Explain the answer";
 "individual" = "Individual";

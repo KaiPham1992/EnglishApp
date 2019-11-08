@@ -28,6 +28,7 @@ class UserEntity: BaseEntity  {
     var email: String?
     var fullName: String?
     var national: String?
+    var nationalEn: String?
     var imgSrc: String?
     var imgCropSrc: String?
     var languageCode: String?
@@ -59,6 +60,7 @@ class UserEntity: BaseEntity  {
         self.email       <- map["email"]
         self.fullName          <- map["fullname"]
         self.national       <- map["nation"]
+        self.nationalEn <- map["nation_name_en"]
         self.imgSrc          <- map["img_src"]
         self.imgCropSrc      <- map["crop_img_src"]
         
@@ -99,6 +101,15 @@ class UserEntity: BaseEntity  {
             return url
         }
         
+        return nil
+    }
+    
+    var nationShowUI: String? {
+        if LanguageHelper.currentAppleLanguage() == "en" {
+            return nationalEn ?? ""
+        } else {
+            return national ?? ""
+        }
         return nil
     }
     

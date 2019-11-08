@@ -26,6 +26,7 @@ class ProductEntity: BaseEntity {
    
     var id: String?
     var name: String?
+    var nameEn: String?
     var content: String?
     var type: String?
     var logo: String?
@@ -60,6 +61,7 @@ class ProductEntity: BaseEntity {
         self.color <- map["color"]
         self.isBought <- map["is_bought"]
         self.in_app_product_id <- map["in_app_product_id"]
+        self.nameEn <- map["name_en"]
     }
     
     var urlAvatar:  URL? {

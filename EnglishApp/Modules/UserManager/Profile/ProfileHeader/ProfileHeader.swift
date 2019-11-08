@@ -62,7 +62,7 @@ class ProfileHeader: BaseTableCell {
         imgAvatar.sd_setImage(with: user.urlRank, placeholderImage: AppImage.avatarDefault)
         vDisplayName.lbPlaceHolder.text = user.nameShowUI
         vEmail.lbPlaceHolder.text = user.email
-        vLocation.lbPlaceHolder.text = user.national
+        vLocation.lbPlaceHolder.text = user.nationShowUI
         lbPoint.text = user.rankPoint*.description.formatNumber(type: ".") + " \(LocalizableKey.point.showLanguage)"
         lbFullName.text = user.fullName
         lbLevel.text = user.rankName

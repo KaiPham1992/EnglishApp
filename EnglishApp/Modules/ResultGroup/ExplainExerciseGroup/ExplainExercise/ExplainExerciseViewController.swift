@@ -10,18 +10,37 @@
 
 import UIKit
 import XLPagerTabStrip
+import WebKit
 
 class ExplainExerciseViewController: BaseViewController {
 
 	var presenter: ExplainExercisePresenterProtocol?
 
-    @IBOutlet weak var lblExplainQuestion: UILabel!
+    @IBOutlet weak var webView: WKWebView!
     
     var id: Int = 0
+    var font = """
+    <style>
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: normal;
+        src: url(Comfortaa-Regular.ttf);
+    }
+    @font-face
+    {
+        font-family: 'Comfortaa';
+        font-weight: bold;
+        src: url(Comfortaa-Bold.ttf);
+    }
+    </style>
+    """
     
     override func setUpViews() {
         super.setUpViews()
         self.presenter?.getExplainQuestion(id: id)
+        webView.navigationDelegate = self
+        webView.scrollView.delegate = self
     }
     
     override func setUpNavigation() {
@@ -34,9 +53,8 @@ extension ExplainExerciseViewController : ExplainExerciseViewProtocol {
     func reloadView() {
         if let explain = self.presenter?.explainQuestion?.explain {
             hideNoData()
-            let paragraph = NSMutableParagraphStyle()
-            paragraph.alignment = .justified
-            lblExplainQuestion.attributedText = NSAttributedString(string: explain.htmlToString, attributes: [NSAttributedString.Key.font : AppFont.fontRegular14 , NSAttributedString.Key.paragraphStyle : paragraph])
+            let _htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black; text-align: justify">"# + explain + #"</span>"#
+            webView.loadHTMLString(_htmlString, baseURL: Bundle.main.bundleURL)
         } else {
             showNoData()
         }
@@ -47,3 +65,21 @@ extension ExplainExerciseViewController : IndicatorInfoProvider {
         return IndicatorInfo(title: LocalizableKey.explain_solution.showLanguage)
     }
 }
+
+extension ExplainExerciseViewController : UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return nil
+    }
+}
+
+extension ExplainExerciseViewController: WKNavigationDelegate {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
+         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        webView.evaluateJavaScript(jscript)
+    }
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        webView.frame.size.height = 1
+        webView.frame.size = webView.scrollView.contentSize
+    }
+}
+
