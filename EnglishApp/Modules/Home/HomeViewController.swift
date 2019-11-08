@@ -62,7 +62,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal"){
             self.loginUserDefault {
                 PaymentHelper.shared.fetchAvailableProducts()
                 self.callAPIRecent()
@@ -174,7 +174,7 @@ class HomeViewController: BaseViewController {
         self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
         self.addHeaderHome()
-        if UserDefaultHelper.shared.loginUserInfo?.email != nil && isCallViewDidload {
+        if (UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal")) && isCallViewDidload {
             self.countNotification()
             self.presenter?.getProfile()
             self.presenter?.getTopThree()
@@ -193,7 +193,7 @@ class HomeViewController: BaseViewController {
     }
     
     func countNotification() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             return
         }
          self.addButtonNotificationNavigation(count: 0, action: #selector(self.btnNotificationTapped))
@@ -214,10 +214,14 @@ class HomeViewController: BaseViewController {
     
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
-        if UserDefaultHelper.shared.loginUserInfo?.email != emailDefault && UserDefaultHelper.shared.loginUserInfo?.email != nil  {
+        if !(UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal"))  {
             nav.addSubview(header)
         }
         header.anchor(widthConstant: 220, heightConstant: 42)
+        header.callbackGotoProfile = {[unowned self] in
+            let vc = ProfileRouter.createModule()
+            self.pushView(vc: vc)
+        }
         header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
@@ -337,7 +341,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     @objc func btnTestBeginTapped() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || UserDefaultHelper.shared.loginUserInfo?.email == nil{
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
@@ -393,7 +397,7 @@ extension HomeViewController: HomeActionCellDelegate {
     }
     
     func btnStoreTapped() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
@@ -409,7 +413,7 @@ extension HomeViewController: HomeActionCellDelegate {
     }
     
     func btnMissionTapped() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
@@ -423,7 +427,7 @@ extension HomeViewController: HomeActionCellDelegate {
     }
     
     func btnFindWorkTapped() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
@@ -461,7 +465,7 @@ extension HomeViewController: MenuViewControllerDelegate {
             AppRouter.shared.pushTo(viewController: BXHRouter.createModule())
             return
         }
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             self.hideMenu()
             let vc = LoginRouter.createModule()
             vc.modalPresentationStyle = .overFullScreen
@@ -553,6 +557,9 @@ extension HomeViewController: MenuViewControllerDelegate {
                 NotificationCenter.default.post(name: NSNotification.Name.init("LogoutSuccessed"), object: nil)
                 self.removeHeaderHome()
                 let vc = LoginRouter.createModule()
+                vc.callBackLoginSuccessed = {[unowned self] in
+                    self.presenter?.getProfile()
+                }
                 self.present(controller: vc, animated: true)
             }) { (error) in
             }
@@ -581,7 +588,7 @@ extension HomeViewController: HomeViewProtocol{
     
     func didGetProfile(user: UserEntity) {
         UserDefaultHelper.shared.saveUser(user: user)
-        header.user = user
         self.addHeaderHome()
+//        header.user = user
     }
 }

@@ -131,7 +131,7 @@ extension ChoiceExerciseViewController : UITableViewDataSource{
 }
 extension ChoiceExerciseViewController : UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.gotoExercise(indexPath: indexPath)

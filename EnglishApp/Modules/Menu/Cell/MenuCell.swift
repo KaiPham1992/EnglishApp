@@ -21,7 +21,7 @@ class MenuItem {
     
     class func toArray() -> [MenuItem] {
         
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             return [
                 MenuItem(imgIcon: AppImage.imgInfo, title: LocalizableKey.MenuInfo.showLanguage),
                 MenuItem(imgIcon: AppImage.imgTop, title: LocalizableKey.MenuTop.showLanguage),

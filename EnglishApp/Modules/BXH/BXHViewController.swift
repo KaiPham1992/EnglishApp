@@ -75,7 +75,7 @@ class BXHViewController: BaseViewController {
     }
     
     func displayUserView() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == nil || UserDefaultHelper.shared.loginUserInfo?.email == emailDefault{
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal"){
             heightOfUserView.constant = 0
         } else {
             heightOfUserView.constant = 78

@@ -22,7 +22,7 @@ class CreateExerciseViewController: BaseViewController {
     
     @IBAction func doExercise(_ sender: Any) {
         self.view.endEditing(true)
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.gotoExercise()

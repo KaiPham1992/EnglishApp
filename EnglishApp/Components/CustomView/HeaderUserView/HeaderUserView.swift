@@ -22,8 +22,7 @@ class HeaderUserView: BaseViewXib {
     var user: UserEntity? {
         didSet {
             guard let user = user else { return }
-//            lbPoint.text = user.rankName
-            if user.email& == emailDefault {
+            if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
                 viewProfile.isHidden = true
                 btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
                 btnGotoProfile.setTitleColor(AppColor.color117_117_117, for: .normal)

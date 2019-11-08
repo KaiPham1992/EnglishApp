@@ -95,7 +95,7 @@ class ResultViewController: BaseViewController {
     }
     
     private func callAPI(){
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             lblDontJoinCompetition.text = LocalizableKey.you_dont_joined_competition.showLanguage
             lblDontJoinCompetition.isHidden = false
             vInfo.isHidden = true

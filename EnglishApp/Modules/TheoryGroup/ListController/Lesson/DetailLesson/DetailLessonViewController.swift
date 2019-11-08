@@ -107,7 +107,7 @@ class DetailLessonViewController: BaseViewController {
     }
     
     func gotoComment() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.goHome()

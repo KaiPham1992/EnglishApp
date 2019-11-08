@@ -143,7 +143,7 @@ class CompetitionViewController: ListManagerVC {
         } else {
             if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
                 var canjoin = false
-                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
                     canjoin = true
                 }
                 let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: canjoin, endDate: data.endDate ?? Date())
@@ -173,7 +173,7 @@ class CompetitionViewController: ListManagerVC {
                 return
             }
             if status == "CAN_JOIN"{
-                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
                     let vc = LoginRouter.createModule()
                     vc.callBackLoginSuccessed = { [unowned self] in
                         if let tabbar = self.tabBarController as? MainTabbar {
@@ -223,7 +223,7 @@ class CompetitionViewController: ListManagerVC {
             }
             
             if status == "START" {
-                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
                     let vc = LoginRouter.createModule()
                     vc.callBackLoginSuccessed = { [unowned self] in
                         if let tabbar = self.tabBarController as? MainTabbar {
