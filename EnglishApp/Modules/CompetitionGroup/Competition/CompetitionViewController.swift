@@ -142,7 +142,11 @@ class CompetitionViewController: ListManagerVC {
             self.push(controller: vc)
         } else {
             if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
-                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: false, endDate: data.endDate ?? Date())
+                var canjoin = false
+                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+                    canjoin = true
+                }
+                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: canjoin, endDate: data.endDate ?? Date())
                 vc.hidesBottomBarWhenPushed = true
                 vc.joinTeam = { [weak self] (teamId) in
                     self?.joinTeam(index: indexPath.row, teamId: teamId)
@@ -169,33 +173,43 @@ class CompetitionViewController: ListManagerVC {
                 return
             }
             if status == "CAN_JOIN"{
-                if let _ = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
-                    let data = listData[index] as! CompetitionEntity
-                    if data.isHidden {
-                        let vc = SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true, endDate: data.endDate ?? Date())
-                        vc.hidesBottomBarWhenPushed = true
-                        self.push(controller: vc)
-                    } else {
-                        if (data.startTime?.timeIntervalSince1970 ?? 0) <= Date().timeIntervalSince1970 {
-                            let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())
+                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+                    let vc = LoginRouter.createModule()
+                    vc.callBackLoginSuccessed = { [unowned self] in
+                        if let tabbar = self.tabBarController as? MainTabbar {
+                            tabbar.gotoHome()
+                        }
+                    }
+                    self.present(controller: vc, animated: true)
+                } else {
+                    if let _ = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
+                        let data = listData[index] as! CompetitionEntity
+                        if data.isHidden {
+                            let vc = SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true, endDate: data.endDate ?? Date())
                             vc.hidesBottomBarWhenPushed = true
-                            vc.fightFinished = {[weak self] in
-                                self?.fightComplete(index: index)
-                            }
-                            self.push(controller: vc,animated: true)
-                        } else {
-                            let vc = SelectTeamRouter.createModule(competitionId: competitionId, endDate: data.endDate ?? Date())
-                            vc.hidesBottomBarWhenPushed = true
-                            vc.joinTeam = { [weak self] (teamId) in
-                                self?.joinTeam(index: index, teamId: teamId)
-                            }
-                            vc.leaveTeam = {[weak self] in
-                                self?.leaveTeam(index: index)
-                            }
-                            vc.fightFinished = { [weak self] in
-                                self?.fightComplete(index: index)
-                            }
                             self.push(controller: vc)
+                        } else {
+                            if (data.startTime?.timeIntervalSince1970 ?? 0) <= Date().timeIntervalSince1970 {
+                                let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())
+                                vc.hidesBottomBarWhenPushed = true
+                                vc.fightFinished = {[weak self] in
+                                    self?.fightComplete(index: index)
+                                }
+                                self.push(controller: vc,animated: true)
+                            } else {
+                                let vc = SelectTeamRouter.createModule(competitionId: competitionId, endDate: data.endDate ?? Date())
+                                vc.hidesBottomBarWhenPushed = true
+                                vc.joinTeam = { [weak self] (teamId) in
+                                    self?.joinTeam(index: index, teamId: teamId)
+                                }
+                                vc.leaveTeam = {[weak self] in
+                                    self?.leaveTeam(index: index)
+                                }
+                                vc.fightFinished = { [weak self] in
+                                    self?.fightComplete(index: index)
+                                }
+                                self.push(controller: vc)
+                            }
                         }
                     }
                 }
@@ -209,13 +223,24 @@ class CompetitionViewController: ListManagerVC {
             }
             
             if status == "START" {
-                let data = listData[index] as! CompetitionEntity
-                let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())
-                vc.hidesBottomBarWhenPushed = true
-                vc.fightFinished = {[weak self] in
-                    self?.fightComplete(index: index)
+                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+                    let vc = LoginRouter.createModule()
+                    vc.callBackLoginSuccessed = { [unowned self] in
+                        if let tabbar = self.tabBarController as? MainTabbar {
+                            tabbar.gotoHome()
+                        }
+                    }
+                    self.present(controller: vc, animated: true)
+                } else {
+                    let data = listData[index] as! CompetitionEntity
+                    let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())
+                    vc.hidesBottomBarWhenPushed = true
+                    vc.fightFinished = {[weak self] in
+                        self?.fightComplete(index: index)
+                    }
+                    self.push(controller: vc,animated: true)
                 }
-                self.push(controller: vc,animated: true)
+            
             }
             
             

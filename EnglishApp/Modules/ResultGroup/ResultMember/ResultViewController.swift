@@ -95,13 +95,22 @@ class ResultViewController: BaseViewController {
     }
     
     private func callAPI(){
-        if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
-            viewRank.isHidden = false
-            self.presenter?.getViewResult(id: id)
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  UserDefaultHelper.shared.loginUserInfo?.email == nil {
+            lblDontJoinCompetition.text = LocalizableKey.you_dont_joined_competition.showLanguage
+            lblDontJoinCompetition.isHidden = false
+            vInfo.isHidden = true
+            tbvResult.isHidden = true
+            btnBackHome.isHidden = true
             
-        }
-        if type == .competition {
-            self.presenter?.getViewResultUserCompetition(idCompetition: id, showProgressView: false)
+        } else {
+            if type ==  .levelExercise || type == .practiceExercise || type == .createExercise || type == .assignExercise || type == .dailyMissonExercise || type == .entranceExercise {
+                viewRank.isHidden = false
+                self.presenter?.getViewResult(id: id)
+                
+            }
+            if type == .competition {
+                self.presenter?.getViewResultUserCompetition(idCompetition: id, showProgressView: false)
+            }
         }
     }
     
