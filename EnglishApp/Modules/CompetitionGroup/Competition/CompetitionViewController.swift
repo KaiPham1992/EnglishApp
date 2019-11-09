@@ -90,24 +90,35 @@ class CompetitionViewController: ListManagerVC {
     }
   
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let data = listData[indexPath.row] as! CompetitionEntity
         let cell = self.tableView.dequeue(CompetitionCell.self, for: indexPath)
-        cell.type = self.type
-        cell.indexPath = indexPath
+        cell.index = indexPath.row
         cell.delegate = self
-        if let data = item as? CompetitionEntity {
-            cell.competitionEntity = data
+        switch data.status& {
+            case "START":
+                cell.setupCellStart(competitionEntity: data)
+            case "CANNOT_JOIN":
+                cell.setupCellCannotJoin(competitionEntity: data)
+            case "DOING":
+                cell.setupCellDoing(competitionEntity: data)
+            case "CAN_JOIN":
+                cell.setupCellCanjoin(competitionEntity: data)
+            case "DONE":
+                cell.setupCellDone(competitionEntity: data)
+           default:
+            cell.setupCellResult(competitionEntity: data)
         }
-        cell.actionFight = {[weak self](status, index) in
-            self?.actionFight(status: status, index: index)
+
+        cell.actionFight = {[weak self](index) in
+            self?.actionFight(index: index)
         }
         //---
-        cell.btnShare.tag = indexPath.item
         cell.btnShare.addTarget(self, action: #selector(btnShareTapped), for: .touchUpInside)
         return cell
     }
     
-    private func setTimer(index: IndexPath, time: Int){
-        let data = listData[index.row] as! CompetitionEntity
+    private func setTimer(index: Int, time: Int){
+        let data = listData[index] as! CompetitionEntity
         data.distance = time
         if time > 0 {
             if timer == nil {
@@ -126,10 +137,10 @@ class CompetitionViewController: ListManagerVC {
         }
     }
     
-    private func minusTime(index: IndexPath) {
-        let data = listData[index.row] as! CompetitionEntity
+    private func minusTime(index: Int) {
+        let data = listData[index] as! CompetitionEntity
         data.distance = data.distance - 1
-        if let cell = tableView.cellForRow(at: index) as? CompetitionCell{
+        if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell{
             cell.processTime(time: data.distance)
         }
     }
@@ -166,12 +177,13 @@ class CompetitionViewController: ListManagerVC {
         }
     }
     
-    func actionFight(status: String, index: Int) {
+    func actionFight(index: Int) {
         //correct
         if type == .competition {
             guard let competitionId = (listData[index] as! CompetitionEntity).id else {
                 return
             }
+            let status = (listData[index] as! CompetitionEntity).status&
             if status == "CAN_JOIN"{
                 if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
                     let vc = LoginRouter.createModule()
@@ -281,7 +293,7 @@ class CompetitionViewController: ListManagerVC {
 }
 
 extension CompetitionViewController : TimerCompetitionDelegate{
-    func callbackTimer(index: IndexPath, time: Int) {
+    func callbackTimer(index: Int, time: Int) {
         self.setTimer(index: index, time: time)
     }
 }

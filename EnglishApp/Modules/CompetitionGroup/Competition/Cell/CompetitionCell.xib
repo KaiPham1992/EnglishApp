@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -168,11 +167,11 @@
                             <constraint firstItem="O3l-Rt-qk2" firstAttribute="leading" secondItem="CyJ-lp-gAh" secondAttribute="leading" id="YMj-Kb-jQ7"/>
                             <constraint firstItem="pA1-RV-ouV" firstAttribute="trailing" secondItem="5wk-7S-Ynm" secondAttribute="trailing" id="byd-eu-MJm"/>
                             <constraint firstItem="5wk-7S-Ynm" firstAttribute="trailing" secondItem="O3l-Rt-qk2" secondAttribute="trailing" id="col-oc-hJ0"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ix2-Gj-iTl" secondAttribute="bottom" constant="20" id="f1G-wV-l3E"/>
                             <constraint firstAttribute="trailing" secondItem="CyJ-lp-gAh" secondAttribute="trailing" constant="8" id="iAe-hO-Qmn"/>
                             <constraint firstItem="Ix2-Gj-iTl" firstAttribute="leading" secondItem="pA1-RV-ouV" secondAttribute="leading" id="iiv-qi-YR7"/>
                             <constraint firstItem="O3l-Rt-qk2" firstAttribute="trailing" secondItem="CyJ-lp-gAh" secondAttribute="trailing" id="kbd-Np-Szh"/>
                             <constraint firstItem="pA1-RV-ouV" firstAttribute="leading" secondItem="5wk-7S-Ynm" secondAttribute="leading" id="qps-i8-Q9L"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Ix2-Gj-iTl" secondAttribute="bottom" constant="20" id="sSH-A8-U3A"/>
                             <constraint firstItem="pA1-RV-ouV" firstAttribute="top" secondItem="5wk-7S-Ynm" secondAttribute="bottom" constant="8" id="vzc-Aw-cpT"/>
                             <constraint firstItem="5wk-7S-Ynm" firstAttribute="top" secondItem="O3l-Rt-qk2" secondAttribute="bottom" constant="8" id="w3O-0u-7qe"/>
                             <constraint firstItem="Ix2-Gj-iTl" firstAttribute="top" secondItem="pA1-RV-ouV" secondAttribute="bottom" constant="8" id="wr0-wF-5HS"/>
@@ -206,7 +205,6 @@
                     <constraint firstAttribute="trailing" secondItem="XaQ-Hv-vPl" secondAttribute="trailing" id="vq3-OD-3sd"/>
                 </constraints>
             </tableViewCellContentView>
-            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="btnCompetition" destination="wos-b8-Ncb" id="yrC-wq-xRF"/>
                 <outlet property="btnShare" destination="8zP-Om-cer" id="EsL-jN-d98"/>
