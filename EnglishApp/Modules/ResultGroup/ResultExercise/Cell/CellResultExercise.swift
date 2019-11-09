@@ -12,15 +12,24 @@ import Popover
 class CellResultExercise: UICollectionViewCell {
     
     weak var delegate: CellExerciseDelegate?
-    @IBOutlet weak var tvContent: UITextView!
-    @IBOutlet weak var vQuestion: UIView!
+
     @IBOutlet weak var tbvResultQuestion: UITableView!
-    @IBOutlet weak var heightTableView: NSLayoutConstraint!
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
+    let tvContent : UITextView = {
+        let view = UITextView()
+        view.isScrollEnabled = false
+        view.sizeToFit()
+        view.textContainerInset = UIEdgeInsets.zero
+        view.textContainer.lineFragmentPadding = 0
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        view.addGestureRecognizer(tap)
+        return view
+    }()
+    
     var dataCell: QuestionResultEntity?{
         didSet{
-            detectQuestion()
             tbvResultQuestion.reloadData()
         }
     }
@@ -37,8 +46,6 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func setupView(){
-        tvContent.textContainerInset = UIEdgeInsets.zero
-        tvContent.textContainer.lineFragmentPadding = 0
         tbvResultQuestion.registerXibFile(CellResultFillQuestion.self)
         tbvResultQuestion.registerXibFile(CellResultChoice.self)
         tbvResultQuestion.dataSource = self
@@ -47,13 +54,7 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func detectQuestion(){
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
-        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
-        tvContent.attributedText = NSAttributedString(string: dataCell?.content?.htmlToString ?? "", attributes: attributes)
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tap)
+        
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
@@ -96,7 +97,7 @@ class CellResultExercise: UICollectionViewCell {
 extension CellResultExercise : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UITableView.automaticDimension
     }
 }
 extension CellResultExercise: UITableViewDataSource{
@@ -106,6 +107,27 @@ extension CellResultExercise: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataCell?.answers?.count ?? 0
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView(frame: CGRect.zero)
+        view.addSubview(tvContent)
+        tvContent.fillVerticalSuperview(constant: 15)
+        tvContent.fillHorizontalSuperview(constant: 15)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
+        tvContent.attributedText = NSAttributedString(string: dataCell?.content?.htmlToString ?? "", attributes: attributes)
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let type = dataCell?.answers?.first?.type else {
             return UITableViewCell()
@@ -125,9 +147,9 @@ extension CellResultExercise: UITableViewDataSource{
             if let answer = dataCell?.answers?[indexPath.row] {
                 cell.setupCell(answer: answer)
             }
-            heightTableView.constant = tbvResultQuestion.contentSize.height
             return cell
         }
+        
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
         cell.indexPath = indexPath
         cell.actionExplainQuestion = {[weak self] (index)in
@@ -142,7 +164,6 @@ extension CellResultExercise: UITableViewDataSource{
         if let answer = dataCell?.answers?[indexPath.row] {
             cell.setupCell(answer: answer)
         }
-        heightTableView.constant = tbvResultQuestion.contentSize.height
         return cell
     }
     

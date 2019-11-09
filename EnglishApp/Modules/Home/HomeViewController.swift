@@ -62,7 +62,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTable()
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal"){
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)){
             self.loginUserDefault {
                 PaymentHelper.shared.fetchAvailableProducts()
                 self.callAPIRecent()

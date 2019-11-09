@@ -6,11 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Comfortaa-Regular.ttf">
-            <string>Comfortaa-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -21,72 +16,21 @@
                 <rect key="frame" x="0.0" y="0.0" width="341" height="1040"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Odi-L7-hYK">
+                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-Vs-7gF">
                         <rect key="frame" x="0.0" y="0.0" width="341" height="1040"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a7k-hZ-JJF">
-                                <rect key="frame" x="0.0" y="0.0" width="341" height="225"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LpI-Gd-d2F">
-                                        <rect key="frame" x="0.0" y="0.0" width="341" height="45"/>
-                                        <subviews>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXF-RU-zzr">
-                                                <rect key="frame" x="14" y="8" width="313" height="32"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstItem="WXF-RU-zzr" firstAttribute="top" secondItem="LpI-Gd-d2F" secondAttribute="top" constant="8" id="2hV-C6-Ejv"/>
-                                            <constraint firstAttribute="trailing" secondItem="WXF-RU-zzr" secondAttribute="trailing" constant="14" id="3aN-qu-AZe"/>
-                                            <constraint firstItem="WXF-RU-zzr" firstAttribute="leading" secondItem="LpI-Gd-d2F" secondAttribute="leading" constant="14" id="Ui4-p6-DpR"/>
-                                            <constraint firstAttribute="bottom" secondItem="WXF-RU-zzr" secondAttribute="bottom" constant="5" id="rp8-O7-8ct"/>
-                                        </constraints>
-                                    </view>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-Vs-7gF">
-                                        <rect key="frame" x="0.0" y="45" width="341" height="100"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="100" id="qkE-ND-SwM"/>
-                                        </constraints>
-                                    </tableView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="LpI-Gd-d2F" firstAttribute="top" secondItem="a7k-hZ-JJF" secondAttribute="top" id="7cU-pR-u7w"/>
-                                    <constraint firstItem="LpI-Gd-d2F" firstAttribute="leading" secondItem="a7k-hZ-JJF" secondAttribute="leading" id="7dx-3p-yRP"/>
-                                    <constraint firstAttribute="trailing" secondItem="rUo-Vs-7gF" secondAttribute="trailing" id="guD-wL-Tpa"/>
-                                    <constraint firstAttribute="bottom" secondItem="rUo-Vs-7gF" secondAttribute="bottom" constant="80" id="l0H-aM-Elp"/>
-                                    <constraint firstItem="rUo-Vs-7gF" firstAttribute="leading" secondItem="a7k-hZ-JJF" secondAttribute="leading" id="oKg-43-8C1"/>
-                                    <constraint firstAttribute="trailing" secondItem="LpI-Gd-d2F" secondAttribute="trailing" id="vag-S3-TjP"/>
-                                    <constraint firstItem="rUo-Vs-7gF" firstAttribute="top" secondItem="LpI-Gd-d2F" secondAttribute="bottom" id="yTE-oH-Cdg"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="a7k-hZ-JJF" firstAttribute="top" secondItem="Odi-L7-hYK" secondAttribute="top" id="HGY-ZA-cGg"/>
-                            <constraint firstAttribute="bottom" secondItem="a7k-hZ-JJF" secondAttribute="bottom" id="V0a-Nf-Lc5"/>
-                            <constraint firstAttribute="trailing" secondItem="a7k-hZ-JJF" secondAttribute="trailing" id="gpI-40-SDT"/>
-                            <constraint firstItem="a7k-hZ-JJF" firstAttribute="leading" secondItem="Odi-L7-hYK" secondAttribute="leading" id="mBk-7o-Q1M"/>
-                            <constraint firstItem="a7k-hZ-JJF" firstAttribute="width" secondItem="Odi-L7-hYK" secondAttribute="width" id="wkf-af-uBm"/>
-                        </constraints>
-                    </scrollView>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </tableView>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="Odi-L7-hYK" secondAttribute="bottom" id="Gk8-ew-ae4"/>
-                <constraint firstItem="Odi-L7-hYK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LXp-QF-OB8"/>
-                <constraint firstAttribute="trailing" secondItem="Odi-L7-hYK" secondAttribute="trailing" id="ODz-vS-UhJ"/>
-                <constraint firstItem="Odi-L7-hYK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="y60-Y7-vqV"/>
+                <constraint firstItem="rUo-Vs-7gF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Gv-ZL-5GB"/>
+                <constraint firstItem="rUo-Vs-7gF" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="AK8-ex-0Ri"/>
+                <constraint firstAttribute="trailing" secondItem="rUo-Vs-7gF" secondAttribute="trailing" id="pW4-o1-YqT"/>
+                <constraint firstAttribute="bottom" secondItem="rUo-Vs-7gF" secondAttribute="bottom" id="s4W-Ys-hf6"/>
             </constraints>
             <size key="customSize" width="341" height="1040"/>
             <connections>
-                <outlet property="heightTableView" destination="qkE-ND-SwM" id="VlS-sw-rOF"/>
                 <outlet property="tbvResultQuestion" destination="rUo-Vs-7gF" id="Qxy-Es-vyO"/>
-                <outlet property="tvContent" destination="WXF-RU-zzr" id="9NZ-AB-KvA"/>
-                <outlet property="vQuestion" destination="LpI-Gd-d2F" id="Vn8-B2-S3y"/>
             </connections>
             <point key="canvasLocation" x="348.55072463768118" y="440.625"/>
         </collectionViewCell>
