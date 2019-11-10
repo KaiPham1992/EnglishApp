@@ -174,10 +174,12 @@ class HomeViewController: BaseViewController {
         self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
         self.addHeaderHome()
-        if (UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal")) && isCallViewDidload {
+        if !(UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal")) && isCallViewDidload {
             self.countNotification()
             self.presenter?.getProfile()
             self.presenter?.getTopThree()
+        } else {
+            self.removeHeaderHome()
         }
     }
     

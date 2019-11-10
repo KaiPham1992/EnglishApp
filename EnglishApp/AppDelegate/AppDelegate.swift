@@ -49,6 +49,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         realmConfig()
         AppRouter.shared.openHome()
 //        AppRouter.shared.updateRootView()
+        UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
         
        
         //--
