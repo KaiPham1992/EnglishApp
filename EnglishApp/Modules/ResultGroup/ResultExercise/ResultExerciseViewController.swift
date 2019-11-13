@@ -144,7 +144,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         PopUpHelper.shared.showReportQuestion(cancel: {
             
         }) { [unowned self] (message) in
-            self.presenter?.reportQuestion(questionDetailId: questionId, content: message ?? "")
+            self.presenter?.reportQuestion(questionDetailId: answerId, content: message ?? "")
         }
     }
     

@@ -67,7 +67,6 @@ class HomeViewController: BaseViewController {
                 PaymentHelper.shared.fetchAvailableProducts()
                 self.callAPIRecent()
                 self.countNotification()
-//                self.presenter?.getProfile()
                 self.presenter?.getTopThree()
                 self.isCallViewDidload = true
             }
@@ -283,7 +282,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
-            if indexPath.item == 0 {
+            if indexPath.row == 0 {
                 let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
                 cell.btnTestBegin.addTarget(self, action: #selector(btnTestBeginTapped), for: .touchUpInside)
                 if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
@@ -470,7 +469,6 @@ extension HomeViewController: MenuViewControllerDelegate {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             self.hideMenu()
             let vc = LoginRouter.createModule()
-            vc.modalPresentationStyle = .overFullScreen
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.addHeaderHome()
                 self.countNotification()
@@ -591,6 +589,5 @@ extension HomeViewController: HomeViewProtocol{
     func didGetProfile(user: UserEntity) {
         UserDefaultHelper.shared.saveUser(user: user)
         self.addHeaderHome()
-//        header.user = user
     }
 }
