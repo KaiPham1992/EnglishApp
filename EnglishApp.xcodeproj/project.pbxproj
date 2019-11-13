@@ -8292,7 +8292,7 @@
 				CODE_SIGN_ENTITLEMENTS = EnglishApp_Prod.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -8300,6 +8300,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "OBee English Practice Test";
 				PROVISIONING_PROFILE_SPECIFIER = "match Development com.nghianguyen.obee-ios";
@@ -8317,7 +8318,7 @@
 				CODE_SIGN_ENTITLEMENTS = EnglishApp_Prod.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nghia Nguyen (8HQRBRRH7Z)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Prod-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -8325,9 +8326,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "OBee English Practice Test";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.nghianguyen.obee-ios";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.nghianguyen.obee-ios";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PROD;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8340,16 +8342,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_AppStore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match Development com.engma.englishapp";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.nghianguyen.obee-ios";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG APPSTORE";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -8363,16 +8365,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = Q3TBY53XUC;
+				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_AppStore-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.engma.englishapp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.nghianguyen.obee-ios";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.engma.oganban";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.nghianguyen.obee-ios";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = APPSTORE;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
