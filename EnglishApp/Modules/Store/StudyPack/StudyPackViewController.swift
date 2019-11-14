@@ -13,6 +13,12 @@ import XLPagerTabStrip
 
 class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
 
+    @IBOutlet weak var lbTitleCode: UILabel!
+    @IBOutlet weak var btnSendCode: UIButton!
+    @IBOutlet weak var tfCode: UITextField!
+    @IBOutlet weak var lbError: UILabel!
+    @IBOutlet weak var heightError: NSLayoutConstraint!
+        
 	var presenter: StudyPackPresenterProtocol?
     let refresh = UIRefreshControl()
     
@@ -42,13 +48,40 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.presenter?.getProduct()
         }
-        
         tbBeePack.isHidden = true
+    }
+    
+    override func setUpViews() {
+        super.setUpViews()
+        
+        lbTitleCode.text = LocalizableKey.titleCode.showLanguage
+        tfCode.placeholder = LocalizableKey.enterCode.showLanguage
+        btnSendCode.setTitle(LocalizableKey.send.showLanguage, for: .normal)
+        
+        tfCode.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        heightError.constant = 0
+
     }
     
     func exchangeGift(id: String, type: String) {
         PopUpHelper.shared.showComfirmPopUp(message: "\(LocalizableKey.exchangeGiftTitle.showLanguage)", titleYes: "\(LocalizableKey.confirm.showLanguage)", titleNo: "\(LocalizableKey.cancel.showLanguage.uppercased())") {
             self.presenter?.exchangeGift(id: id, type: type)
+        }
+    }
+    
+    @objc func textDidChange() {
+        if tfCode.text& != "" {
+            heightError.constant = 0
+        }
+    }
+    
+    @IBAction func btnSendTapped(){
+        dismissKeyBoard()
+        if let code = tfCode.text, code != "" {
+            presenter?.sendRedeem(code: code)
+        } else {
+            heightError.constant = 20
+            lbError.text = LocalizableKey.pleaseEnterCode.showLanguage
         }
     }
 }
@@ -199,6 +232,17 @@ extension StudyPackViewController{
         self.package = package
     }
     
+    func didSendRedeem(error: APIError) {
+        if error.message&.contains("EXCEED_USAGE_LIMIT") == true {
+            lbError.text = LocalizableKey.usedCode.showLanguage
+        } else {
+            lbError.text = LocalizableKey.notFoundCode.showLanguage
+        }
+        heightError.constant = 20
+    }
+    
+
+    
 }
 
 // MARK: - ChangeGiftCellDelegate
@@ -217,5 +261,6 @@ extension StudyPackViewController: ChangeGiftCellDelegate {
         print(id)
         }
     }
+    
 }
 

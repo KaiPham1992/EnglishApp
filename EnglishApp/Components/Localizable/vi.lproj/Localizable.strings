@@ -186,7 +186,8 @@
 "studyPack" = "Gói nâng cấp";
 "beePack" = "Gói mật ong";
 "titleMember" = "Thông tin thành viên";
-"enterCode" = "Nhập mã Code";
+"titleCode" = "Mã quà tặng";
+"enterCode" = "Nhập mã quà tặng";
 "send" = "GỬI";
 "detail" = "Chi tiết";
 "upgrade" = "NÂNG CẤP";
