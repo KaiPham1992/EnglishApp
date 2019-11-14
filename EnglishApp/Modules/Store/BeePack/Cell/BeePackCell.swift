@@ -28,7 +28,7 @@ class BeePackCell: BaseTableCell {
 //            imgIcon.image = bee.image
 //            lbMoney.text = bee.money?.description&
 //            imgBackground.image = bee.background
-            let color = UIColor(hexString: "\(bee.color)")
+            let color = UIColor(hexString: bee.color ?? "")
             background.backgroundColor = color
             imgIcon.sd_setImage(with: bee.urlAvatar, placeholderImage: AppImage.imgPlaceHolder)
         }
