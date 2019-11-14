@@ -290,7 +290,7 @@ extension BXHViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if presenter?.canLoadMore == true {
-            if indexPath.row >= (presenter?.listUser.count ?? 0) - 2 {
+            if indexPath.row == (presenter?.listUser.count ?? 0) - 5 {
                 presenter?.loadMore(quarter: quarter, year: year, rank: listParam[index])
             }
         }
