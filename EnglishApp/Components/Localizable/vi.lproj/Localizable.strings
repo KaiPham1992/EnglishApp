@@ -121,7 +121,7 @@
 "verifyButton" = "Xác nhận";
 
 // Daily mission
-"messageDailyMission" = "Hoàn thành nhiệm vụ hàng ngày nhận ngay 1 kim cương và x điểm level";
+"messageDailyMission" = "Hoàn thành nhiệm vụ hàng ngày nhận ngay 10 kim cương";
 "dailyMissionTitle" = "Nhiệm vụ hàng ngày";
 "startMission" = "Bắt đầu";
 "doneInputTest" = "Chúc mừng bạn đã hoàn thành bài trắc nghiệm đầu vào, Obee tặng bạn 500 kim cương.";
@@ -413,4 +413,4 @@
 "restore_fail" = "Khôi phục thất bại, vui lòng liên hệ +84909172353";
 "restore_success" = "Khôi phục thành công";
 "see_detail" = "Xem chi tiết";
-"enter_comment" = "Nhập bình luận";
+"enter_comment" = "Bình luận";

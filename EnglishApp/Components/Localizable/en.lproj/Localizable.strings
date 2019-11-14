@@ -121,7 +121,7 @@
 "verifyButton" = "Yes";
 
 // Daily mission
-"messageDailyMission" = "Complete daily missions to receive diamonds and level points";
+"messageDailyMission" = "Complete daily mission to receive 10 diamonds";
 "dailyMissionTitle" = "Daily Mission";
 "startMission" = "Start";
 "doneInputTest" = "Congratulations! You have completed the Qualification Test. Obee awarded you 500 diamonds.";
@@ -411,4 +411,4 @@
 "restore_fail" = "Restore fail, please contact +84909172353";
 "restore_success" = "Restore success";
 "see_detail" = "Details";
-"enter_comment" = "Enter comment";
+"enter_comment" = "Comment";
