@@ -177,8 +177,6 @@ class HomeViewController: BaseViewController {
             self.countNotification()
             self.presenter?.getProfile()
             self.presenter?.getTopThree()
-        } else {
-            self.removeHeaderHome()
         }
     }
     
@@ -215,13 +213,22 @@ class HomeViewController: BaseViewController {
     
     func addHeaderHome() {
         guard let nav = self.navigationController?.navigationBar else { return }
-        if !(UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal"))  {
-            nav.addSubview(header)
-        }
+        nav.addSubview(header)
         header.anchor(widthConstant: 220, heightConstant: 42)
         header.callbackGotoProfile = {[unowned self] in
-            let vc = ProfileRouter.createModule()
-            self.pushView(vc: vc)
+            if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
+                let vc = LoginRouter.createModule()
+                vc.callBackLoginSuccessed = {[unowned self] in
+                    if let user = UserDefaultHelper.shared.loginUserInfo {
+                        self.header.user = user
+                    }
+                    self.countNotification()
+                }
+                self.present(controller: vc, animated: true)
+            } else {
+                let vc = ProfileRouter.createModule()
+                self.pushView(vc: vc)
+            }
         }
         header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
@@ -345,7 +352,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-                self.addHeaderHome()
+//                self.addHeaderHome()
+                if let user = UserDefaultHelper.shared.loginUserInfo {
+                    self.header.user = user
+                }
                 self.countNotification()
             }
             self.present(controller: vc, animated: true)
@@ -401,7 +411,10 @@ extension HomeViewController: HomeActionCellDelegate {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-                self.addHeaderHome()
+//                self.addHeaderHome()
+                if let user = UserDefaultHelper.shared.loginUserInfo {
+                    self.header.user = user
+                }
                 self.countNotification()
             }
             let nc = UINavigationController(rootViewController: vc)
@@ -417,7 +430,10 @@ extension HomeViewController: HomeActionCellDelegate {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-                self.addHeaderHome()
+//                self.addHeaderHome()
+                if let user = UserDefaultHelper.shared.loginUserInfo {
+                    self.header.user = user
+                }
                 self.countNotification()
             }
             self.present(controller: vc, animated: true)
@@ -431,7 +447,10 @@ extension HomeViewController: HomeActionCellDelegate {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-                self.addHeaderHome()
+//                self.addHeaderHome()
+                if let user = UserDefaultHelper.shared.loginUserInfo {
+                    self.header.user = user
+                }
                 self.countNotification()
             }
             self.present(controller: vc, animated: true)
@@ -470,7 +489,10 @@ extension HomeViewController: MenuViewControllerDelegate {
             self.hideMenu()
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-                self.addHeaderHome()
+//                self.addHeaderHome()
+                if let user = UserDefaultHelper.shared.loginUserInfo {
+                    self.header.user = user
+                }
                 self.countNotification()
             }
             self.present(controller: vc, animated: true)
@@ -508,7 +530,7 @@ extension HomeViewController: MenuViewControllerDelegate {
             AppRouter.shared.pushTo(viewController: WebViewController.initFromNib())
         case AppImage.imgLogout:
             self.hideMenu()
-            PopUpHelper.shared.showLogout(completionNo: {
+            PopUpHelper.shared.showLogout(completionNo: { [unowned self] in 
                 self.logout()
             }) {
                 
@@ -555,7 +577,7 @@ extension HomeViewController: MenuViewControllerDelegate {
                 UserDefaultHelper.shared.saveUser(user: user)
                 UserDefaultHelper.shared.userToken = user.jwt&
                 NotificationCenter.default.post(name: NSNotification.Name.init("LogoutSuccessed"), object: nil)
-                self.removeHeaderHome()
+                self.header.user = user
                 let vc = LoginRouter.createModule()
                 vc.callBackLoginSuccessed = {[unowned self] in
                     self.presenter?.getProfile()
@@ -588,6 +610,6 @@ extension HomeViewController: HomeViewProtocol{
     
     func didGetProfile(user: UserEntity) {
         UserDefaultHelper.shared.saveUser(user: user)
-        self.addHeaderHome()
+        self.header.user = user
     }
 }

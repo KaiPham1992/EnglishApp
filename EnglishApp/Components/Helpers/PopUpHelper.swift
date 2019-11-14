@@ -53,8 +53,8 @@ class PopUpHelper {
     func showLogout(completionNo: CompletionClosure?, completionYes: CompletionClosure?) {
         let popUp = YesNoPopUp()
         
-    popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.confirm.showLanguage.uppercased(), for: .normal)
-    popUp.vYesNoContentView.btnYes.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
+        popUp.vYesNoContentView.btnNo.setTitle(LocalizableKey.confirm.showLanguage.uppercased(), for: .normal)
+        popUp.vYesNoContentView.btnYes.setTitle(LocalizableKey.cancel.showLanguage.uppercased(), for: .normal)
         
         popUp.showPopUp(message: LocalizableKey.popUpLogout.showLanguage, completionNo: completionNo, completionYes: completionYes)
     }
