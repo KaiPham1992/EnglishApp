@@ -14,11 +14,18 @@ protocol HomeViewControllerDelegate: class {
 }
 
 class HomeViewController: BaseViewController {
+    
     @IBOutlet weak var tbHome: UITableView!
+    
+    weak var delegate: HomeViewControllerDelegate?
     
     var presenter: HomePresenterProtocol?
     var vcMenu:  MenuViewController!
     let frefresh = UIRefreshControl()
+    var offset: Int = 0
+    var isLoadmore = true
+    var showProgressView = true
+    var isCallViewDidload = false
     
     lazy var btnOver: UIButton = {
        let btn = UIButton()
@@ -26,8 +33,6 @@ class HomeViewController: BaseViewController {
         btn.addTarget(self, action: #selector(hideMenu), for: .touchUpInside)
         return btn
     }()
-    
-    weak var delegate: HomeViewControllerDelegate?
     
     let header: HeaderUserView = {
         let header = HeaderUserView()
@@ -42,7 +47,7 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    var listTopThree = [UserEntity](){
+    var topThree = [UserEntity](){
         didSet {
             DispatchQueue.main.async {
                 self.tbHome.reloadData()
@@ -50,13 +55,22 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    var offset: Int = 0
-    var isLoadmore = true
-    var showProgressView = true
-    var isCallViewDidload = false
     
     deinit {
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tbHome.tableFooterView = UIView()
+        self.tbHome.tableFooterView?.isHidden = true
+        setColorStatusBar()
+        self.addHeaderHome()
+        if !(UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal")) && isCallViewDidload {
+            self.countNotification()
+            self.getProfile()
+            self.getHomeSummary()
+        }
     }
     
     override func viewDidLoad() {
@@ -65,26 +79,39 @@ class HomeViewController: BaseViewController {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)){
             self.loginUserDefault {
                 PaymentHelper.shared.fetchAvailableProducts()
-                self.callAPIRecent()
+                self.getHomeRecently()
                 self.countNotification()
-                self.presenter?.getTopThree()
+                self.getHomeSummary()
                 self.isCallViewDidload = true
             }
         } else {
             PaymentHelper.shared.fetchAvailableProducts()
             self.countNotification()
-            self.presenter?.getProfile()
-            self.presenter?.getTopThree()
-            self.callAPIRecent()
+            self.getProfile()
+            self.getHomeSummary()
+            self.getHomeRecently()
             self.isCallViewDidload = true
         }
     }
     
-    func callAPIRecent() {
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        removeHeaderHome()
+    }
+    
+    func getHomeRecently() {
         if self.offset == 0 && showProgressView {
             ProgressView.shared.show()
         }
         presenter?.getHomeRecently(offset: self.offset)
+    }
+    
+    func getHomeSummary() {
+        presenter?.getHomeSummary()
+    }
+    
+    func getProfile() {
+        presenter?.getProfile()
     }
     
     override func setUpViews() {
@@ -100,33 +127,32 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
     }
     
+    // MARK: Reset cell after change language
     @objc func changeLanguage() {
         if let homeHeaderCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 0)) as? HomeHeaderCell {
             homeHeaderCell.awakeFromNib()
         }
-        
         if let noDataCell = self.tbHome.cellForRow(at: IndexPath(row: 0, section: 2)) as? HomeNoResultCell {
             noDataCell.awakeFromNib()
         }
-        //-- action cell
         if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
             actionCell.awakeFromNib()
         }
-        //-- title recently cell
         if let titleCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 1)) as? HomeTitleCell {
             titleCell.awakeFromNib()
         }
         resetData()
     }
     
+    // MARK: Refresh all data
     func resetData() {
         self.offset = 0
         self.isLoadmore = true
         self.showProgressView = false
         self.listActivities = []
-        self.listTopThree = []
-        callAPIRecent()
-        presenter?.getTopThree()
+        self.topThree = []
+        getHomeRecently()
+        getHomeSummary()
     }
     
     @objc func suggestionQuestion(notification: Notification) {
@@ -152,14 +178,11 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func updateProfile() {
-        presenter?.getProfile()
+        resetData()
     }
     
     @objc func updateAvatar() {
-        self.offset = 0
-        self.isLoadmore = true
-        callAPIRecent()
-        presenter?.getTopThree()
+        resetData()
     }
     
     override func setUpNavigation() {
@@ -167,18 +190,7 @@ class HomeViewController: BaseViewController {
         setTitleNavigation(title: "")
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tbHome.tableFooterView = UIView()
-        self.tbHome.tableFooterView?.isHidden = true
-        setColorStatusBar()
-        self.addHeaderHome()
-        if !(UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal")) && isCallViewDidload {
-            self.countNotification()
-            self.presenter?.getProfile()
-            self.presenter?.getTopThree()
-        }
-    }
+    
     
     private func loginUserDefault(complete : @escaping (() -> ())) {
         Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
@@ -186,29 +198,17 @@ class HomeViewController: BaseViewController {
             UserDefaultHelper.shared.saveUser(user: user)
             UserDefaultHelper.shared.userToken = user.jwt&
             complete()
-        }) { (error) in
-            
-        }
+        }) { (error) in }
     }
     
     func countNotification() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
-            return
-        }
-         self.addButtonNotificationNavigation(count: 0, action: #selector(self.btnNotificationTapped))
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") { return }
+        self.addButtonNotificationNavigation(count: 0, action: #selector(self.btnNotificationTapped))
         Provider.shared.notificationAPIService.getNotification(offset: 0, success: { parentNotification in
             guard let total = parentNotification?.totalUnread else { return }
             UIApplication.shared.applicationIconBadgeNumber = total
-            
             self.addButtonNotificationNavigation(count: total, action: #selector(self.btnNotificationTapped))
-        }) { _ in
-            
-        }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        removeHeaderHome()
+        }) { _ in }
     }
     
     func addHeaderHome() {
@@ -247,14 +247,6 @@ class HomeViewController: BaseViewController {
     
     @objc func btnMenuTapped() {
         showMenu()
-    }
-    
-    func didGetActivities(activities: [Acitvity]) {
-        ProgressView.shared.hide()
-        if activities.count < 20 {
-            self.isLoadmore = false
-        }
-        self.listActivities += activities
     }
 }
 
@@ -297,7 +289,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
                 } else {
                     cell.isTestedEnstrane = false
                 }
-                cell.topThreeView.listTopThree = self.listTopThree
+                cell.topThreeView.listTopThree = self.topThree
                 return cell
             } else {
                 let cell = tableView.dequeue(HomeActionCell.self, for: indexPath)
@@ -375,7 +367,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 2 {
             if listActivities.count - 5 == indexPath.row && isLoadmore {
                 self.offset += limit
-                callAPIRecent()
+                getHomeRecently()
                 let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
                 spiner.startAnimating()
                 spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
@@ -580,7 +572,7 @@ extension HomeViewController: MenuViewControllerDelegate {
                 self.header.user = user
                 let vc = LoginRouter.createModule()
                 vc.callBackLoginSuccessed = {[unowned self] in
-                    self.presenter?.getProfile()
+                    self.getProfile()
                 }
                 self.present(controller: vc, animated: true)
             }) { (error) in
@@ -591,12 +583,12 @@ extension HomeViewController: MenuViewControllerDelegate {
     }
 }
 extension HomeViewController: HomeViewProtocol{
-    func didGetTopThree(listTopThree: [UserEntity]) {
-        self.listTopThree = listTopThree
-    }
     
-    func didGetTopThree(collectionUserEntity: CollectionUserEntity) {
-        let numberCompetition = collectionUserEntity.count_fight_test ?? 0
+    func didGetHomeSummary(summaryInfo: CollectionUserEntity) {
+        if let topThree = summaryInfo.leader_boards {
+            self.topThree = topThree
+        }
+        let numberCompetition = summaryInfo.count_fight_test ?? 0
         if numberCompetition > 0 {
             NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         } else {
@@ -604,12 +596,20 @@ extension HomeViewController: HomeViewProtocol{
         }
     }
     
-    func didGetTopThree(error: Error) {
-        print(error.localizedDescription)
+    func didGetHomeRecently(activities: [Acitvity]) {
+        ProgressView.shared.hide()
+        if activities.count < 20 {
+            self.isLoadmore = false
+        }
+        self.listActivities += activities
     }
     
     func didGetProfile(user: UserEntity) {
         UserDefaultHelper.shared.saveUser(user: user)
         self.header.user = user
+    }
+    
+    func didGetError(error: Error) {
+        print(error.localizedDescription)
     }
 }

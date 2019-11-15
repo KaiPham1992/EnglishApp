@@ -23,33 +23,33 @@ class HomePresenter: HomePresenterProtocol, HomeInteractorOutputProtocol {
         self.router = router
     }
 
+    // MARK: Get recently activities
     func getHomeRecently(offset: Int) {
         Provider.shared.userAPIService.getHomeRecently(offset: offset, limit: limit, success: { active in
             guard let activites = active?.activities else { return }
-            self.view?.didGetActivities(activities: activites)
+            self.view?.didGetHomeRecently(activities: activites)
         }) { _ in
         }
     }
     
-    func getTopThree() {
+    // MARK: Get user information and top three of leader board
+    func getHomeSummary() {
         Provider.shared.homeAPIService.getTopThree(success: { (collectionUserEntity) in
             UIApplication.shared.applicationIconBadgeNumber = collectionUserEntity?.count_notify ?? 0
-            guard let userInfo = collectionUserEntity else { return }
-            self.view?.didGetTopThree(collectionUserEntity: userInfo)
-            guard let listTopThree = collectionUserEntity?.leader_boards else {return}
-            self.view?.didGetTopThree(listTopThree: listTopThree)
-
+            guard let summaryInfo = collectionUserEntity else { return }
+            self.view?.didGetHomeSummary(summaryInfo: summaryInfo)
         }) { (error) in
             guard let error = error else {return}
-            self.view?.didGetTopThree(error: error)
+            self.view?.didGetError(error: error)
         }
     }
     
+    // MARK: If need => get new user info after change profile
     func getProfile() {
-        interactor?.getProfile()
-    }
-    
-    func didGetProfile(user: UserEntity) {
-        view?.didGetProfile(user: user)
+        Provider.shared.userAPIService.getProfileUser(success: { user in
+            guard let user = user else { return }
+            self.view?.didGetProfile(user: user)
+        }) { _ in
+        }
     }
 }
