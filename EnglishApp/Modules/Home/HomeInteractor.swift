@@ -14,11 +14,4 @@ class HomeInteractor: HomeInteractorInputProtocol {
 
     weak var presenter: HomeInteractorOutputProtocol?
     
-    func getProfile() {
-        Provider.shared.userAPIService.getProfileUser(success: { user in
-            guard let user = user else { return }
-            self.presenter?.didGetProfile(user: user)
-        }) { _ in
-        }
-    }
 }

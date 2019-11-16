@@ -18,16 +18,16 @@ protocol HomeWireframeProtocol: class {
 protocol HomePresenterProtocol: class {
 
     var interactor: HomeInteractorInputProtocol? { get set }
-    func getHomeRecently(offset: Int)
-    func getTopThree()
+    
     func getProfile()
+    func getHomeRecently(offset: Int)
+    func getHomeSummary()
 }
 
 //MARK: Interactor -
 protocol HomeInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func didGetProfile(user: UserEntity)
 }
 
 protocol HomeInteractorInputProtocol: class {
@@ -35,7 +35,6 @@ protocol HomeInteractorInputProtocol: class {
     var presenter: HomeInteractorOutputProtocol?  { get set }
 
     /* Presenter -> Interactor */
-    func getProfile()
 }
 
 //MARK: View -
@@ -44,10 +43,9 @@ protocol HomeViewProtocol: class {
     var presenter: HomePresenterProtocol?  { get set }
 
     /* Presenter -> ViewController */
-    
-    func didGetActivities(activities: [Acitvity])
-    func didGetTopThree(listTopThree: [UserEntity])
-    func didGetTopThree(collectionUserEntity: CollectionUserEntity)
-    func didGetTopThree(error: Error)
     func didGetProfile(user: UserEntity)
+    func didGetHomeRecently(activities: [Acitvity])
+    func didGetHomeSummary(summaryInfo: CollectionUserEntity)
+    func didGetError(error: Error)
+    
 }
