@@ -13,6 +13,7 @@ class OptionEntity : Mappable {
     var _id: String?
     var value: String?
     var content: String?
+    var isChoice: Bool = false
     
     required init?(map: Map) {
         

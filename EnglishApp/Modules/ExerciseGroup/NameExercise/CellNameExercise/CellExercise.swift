@@ -11,23 +11,22 @@ import Popover
 
 protocol CellExerciseDelegate: class {
     func showDetailVocubulary(word: WordExplainEntity)
-    func suggestQuestion(id: String,indexPath: IndexPath,indexQuestion: IndexPath)
-    func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
-    func changeAnswer(idAnswer: Int,valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath)
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath)
+    func searchVocabulary(word: String, position: CGPoint, index: IndexPath)
+    func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath)
     func clickAudio(indexPath: IndexPath)
 }
 
 class CellExercise: UICollectionViewCell {
     
     @IBOutlet weak var imgAudio: UIImageView!
-    @IBOutlet weak var heightTableView: NSLayoutConstraint!
     weak var delegate: CellExerciseDelegate?
     @IBOutlet weak var tvContent: UITextView!
-    @IBOutlet weak var vQuestion: UIView!
+    @IBOutlet weak var vAudio: UIView!
     @IBOutlet weak var tbvNameExercise: UITableView!
     var type : TypeDoExercise = .entranceExercise
+    var typeQuestion = "2"
     
-    @IBOutlet weak var heightAudio: NSLayoutConstraint!
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
     var numberLine: Int = 0
@@ -38,6 +37,21 @@ class CellExercise: UICollectionViewCell {
     var listAnswer : [QuestionChoiceResultParam] = []
     //for competition
     var listAnswerCompetition : [SubmitAnswerEntity] = []
+    
+    var questionEntity: QuestionEntity? {
+        didSet {
+            if (self.questionEntity?.checkHaveAudio() ?? false) {
+                self.vAudio.isHidden = false
+            } else {
+                self.vAudio.isHidden = true
+            }
+            self.layoutIfNeeded()
+            self.detectQuestion(contextQuestion: self.questionEntity?.content_extend ?? "", type : self.type)
+            DispatchQueue.main.async {
+                self.tbvNameExercise.reloadData()
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -52,9 +66,8 @@ class CellExercise: UICollectionViewCell {
     
     func setupView(){
         imgAudio.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickAudio)))
-        tvContent.textContainerInset = UIEdgeInsets.zero
-        tvContent.textContainer.lineFragmentPadding = 0
-        tbvNameExercise.registerXibFile(CellQuestion.self)
+        tbvNameExercise.registerXibFile(CellChoiceQuestionExercise.self)
+        tbvNameExercise.registerXibFile(CellFillQuestionExercise.self)
         tbvNameExercise.dataSource = self
         tbvNameExercise.delegate = self
     }
@@ -63,20 +76,7 @@ class CellExercise: UICollectionViewCell {
         delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
     }
     
-    func setupCell(dataCell: QuestionEntity){
-        DispatchQueue.main.async {
-            if dataCell.checkHaveAudio() {
-                self.heightAudio.constant = 60
-            } else {
-                self.heightAudio.constant = 0
-            }
-            self.layoutIfNeeded()
-            self.detectQuestion(contextQuestion: dataCell.content_extend&,type : self.type)
-            self.tbvNameExercise.reloadData()
-        }
-    }
-    
-    func detectQuestion(contextQuestion: String,type : TypeDoExercise){
+    func detectQuestion(contextQuestion: String, type : TypeDoExercise){
         let style = NSMutableParagraphStyle()
         style.lineSpacing = 5
         let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
@@ -125,65 +125,107 @@ class CellExercise: UICollectionViewCell {
 }
 extension CellExercise : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UITableView.automaticDimension
     }
 }
 extension CellExercise: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return questionEntity?.answers?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if listAnswerCompetition.count > 0 {
-            self.heightTableView.constant = CGFloat(listAnswerCompetition.count * 60)
-            return listAnswerCompetition.count
-        }
-        self.heightTableView.constant = CGFloat(listAnswer.count * 60)
-        return listAnswer.count
+        return typeQuestion == "2" ? 1 : (questionEntity?.answers?[section].options.count ?? 0)
     }
-    
+    //show UI answer
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(CellQuestion.self, for: indexPath)
-        cell.indexPath = indexPath
-        //for exercise
-        if listAnswer.count > 0  {
-            cell.answer = listAnswer[indexPath.row].value ?? ""
+        //type answer rewirte
+        if typeQuestion == "2" {
+            let answer = listAnswer[indexPath.section].value ?? ""
+            let cell = tableView.dequeue(CellFillQuestionExercise.self, for: indexPath)
+            cell.setupCell(text: answer)
+            cell.callbackChangeHeight = {[weak self] in
+                //update height tableview when user enter input > width textview.
+                self?.updateHeightCell()
+            }
+            return cell
         }
-        //for competition
-        if listAnswerCompetition.count > 0 {
-            cell.answer = listAnswerCompetition[indexPath.row].value
+        //type answer listeninng
+        if let answer = questionEntity?.answers?[indexPath.section].options[indexPath.row] {
+            let cell = tableView.dequeue(CellChoiceQuestionExercise.self, for: indexPath)
+            cell.indexPath = indexPath
+            //isChoice -> to check user choice answer.
+            cell.setupView(isChoice: answer.isChoice, content: (answer.value ?? "") + ". " + (answer._id ?? ""))
+            cell.callbackSelectAnswer = {[weak self] (index) in
+                self?.userChangeChoiceAnswer(indexPath: index)
+            }
+            return cell
         }
-        //show hide button suggesstion
-        let isShowButtonSuggesstion = self.type != .entranceExercise && self.type != .competition ? true : false
-        cell.setupButtonSuggestion(isShow: isShowButtonSuggesstion)
-        cell.idOption = listIdOption[indexPath.row]
-        cell.dataSource = listDataSource[indexPath.row]
-        cell.delegate = self
-        return cell
+//        cell.indexPath = indexPath
+//        //for exercise
+//        if listAnswer.count > 0  {
+//            cell.answer = listAnswer[indexPath.row].value ?? ""
+//        }
+//        //for competition
+//        if listAnswerCompetition.count > 0 {
+//            cell.answer = listAnswerCompetition[indexPath.row].value
+//        }
+        return UITableViewCell()
     }
     
-    func changeDataSource(index: IndexPath, data: [ChildQuestionEntity]){
-//        self.answer = data
-        self.listIdOption[index.row] = data[index.row].options.map{Int($0._id ?? "0") ?? 0}
-        self.listDataSource[index.row] = data[index.row].options.map{$0.value ?? ""}
-        if let cell = tbvNameExercise.cellForRow(at: index) as? CellQuestion{
-            cell.dataSource = listDataSource[index.row]
-            cell.idOption = listIdOption[index.row]
-        }
-    }
-}
-
-extension CellExercise : ClickQuestionDelegate{
-    func suggestQuestion(index: IndexPath) {
-        if let _id = listAnswer[index.row].question_id {
-            delegate?.suggestQuestion(id: String(_id), indexPath: self.indexPath ?? IndexPath(row: 0, section: 0),indexQuestion: index)
+    func userChangeChoiceAnswer(indexPath: IndexPath){
+        if let options = questionEntity?.answers?[indexPath.section].options {
+            var listIndex : [IndexPath] = []
+            if let firstIndex = options.firstIndex(where: {$0.isChoice}), firstIndex != indexPath.row {
+                options[firstIndex].isChoice = false
+                listIndex.append(IndexPath(row: firstIndex, section: indexPath.section))
+            }
+            options[indexPath.row].isChoice = !options[indexPath.row].isChoice
+            if options[indexPath.row].isChoice {
+                self.delegate?.changeAnswer(idAnswer: Int(options[indexPath.row]._id ?? "0"), valueAnswer: options[indexPath.row].value, indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+            } else {
+                self.delegate?.changeAnswer(idAnswer: nil, valueAnswer: options[indexPath.row].value , indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+            }
+            listIndex.append(indexPath)
+            self.tbvNameExercise.reloadRows(at: listIndex, with: .automatic)
         }
     }
     
-    func changeAnswer(index: Int, indexPath: IndexPath?) {
-        if let _indexPath = indexPath {
-             self.delegate?.changeAnswer(idAnswer: listIdOption[_indexPath.row][index], valueAnswer: listDataSource[_indexPath.row][index], indexPathRow: _indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+    private func updateHeightCell(){
+        tbvNameExercise.beginUpdates()
+        tbvNameExercise.endUpdates()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init()
+        let headerView = ViewHeaderQuestionExercise()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(headerView)
+        headerView.fillToView(view: view)
+        headerView.setupSuggestButton(isShow: self.type != .entranceExercise && self.type != .competition && self.typeQuestion != "2" ? true : false)
+        //show UI question
+        headerView.setupCell(index: section + 1, content: questionEntity?.answers?[section]._id ?? "")
+        headerView.callbackSugestionQuestion = {[weak self] in
+            self?.suggestionQuestion(section: section)
         }
+        return view
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
+    func suggestionQuestion(section: Int) {
+        if let _id = listAnswer[section].question_id {
+            delegate?.suggestQuestion(id: String(_id), indexPath: self.indexPath ?? IndexPath(row: 0, section: 0), indexQuestion: IndexPath(row: 0, section: section))
+        }
+    }
+    
+    func changeDataSource(index: IndexPath){
+        self.tbvNameExercise.reloadSections(IndexSet(integer: index.section), with: .automatic)
     }
 }
 

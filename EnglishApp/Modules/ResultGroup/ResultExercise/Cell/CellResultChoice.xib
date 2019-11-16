@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,97 +14,31 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="57" id="KGk-i7-Jjw" customClass="CellResultChoice" customModule="EnglishApp_AppStore" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="385" height="57"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="KGk-i7-Jjw" customClass="CellResultChoice" customModule="EnglishApp_AppStore" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="40"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="385" height="57"/>
+                <rect key="frame" x="0.0" y="0.0" width="385" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cau 1:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sXV-Hr-zyt">
-                        <rect key="frame" x="16" y="19.5" width="25" height="18"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="25" id="vCg-3m-zpo"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-iM-iQb">
+                        <rect key="frame" x="10" y="10" width="365" height="20"/>
+                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiH-qe-XoI">
-                        <rect key="frame" x="57" y="8.5" width="184" height="40"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3vT-1H-WJq">
-                                <rect key="frame" x="10" y="11" width="11.5" height="18"/>
-                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="3vT-1H-WJq" firstAttribute="centerY" secondItem="aiH-qe-XoI" secondAttribute="centerY" id="KuS-x2-ha2"/>
-                            <constraint firstAttribute="height" constant="40" id="vtV-8O-CEz"/>
-                            <constraint firstItem="3vT-1H-WJq" firstAttribute="leading" secondItem="aiH-qe-XoI" secondAttribute="leading" constant="10" id="wnV-xO-7kT"/>
-                        </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="2"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
-                    </view>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cAz-Fd-rRx">
-                        <rect key="frame" x="249" y="12.5" width="120" height="32"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BFf-4c-gef">
-                                <rect key="frame" x="0.0" y="0.0" width="34.5" height="32"/>
-                                <state key="normal" image="ic_reading"/>
-                                <connections>
-                                    <action selector="clickReading:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Wkw-sH-zXK"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bsc-lt-aZW">
-                                <rect key="frame" x="42.5" y="0.0" width="35" height="32"/>
-                                <state key="normal" image="ic_link"/>
-                                <connections>
-                                    <action selector="clickLink:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="jes-U9-ufZ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8fo-0e-cmf">
-                                <rect key="frame" x="85.5" y="0.0" width="34.5" height="32"/>
-                                <state key="normal" image="ic_exclamation"/>
-                                <connections>
-                                    <action selector="clickExclamation:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="WK3-Ya-H1t"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="120" id="3zA-4H-uSc"/>
-                            <constraint firstAttribute="height" constant="32" id="GcD-Dw-eXt"/>
-                        </constraints>
-                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="aiH-qe-XoI" firstAttribute="leading" secondItem="sXV-Hr-zyt" secondAttribute="trailing" constant="16" id="Lqz-MF-e7l"/>
-                    <constraint firstItem="aiH-qe-XoI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8.5" id="O8N-eE-hJX"/>
-                    <constraint firstItem="cAz-Fd-rRx" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ow7-vt-pbn"/>
-                    <constraint firstAttribute="bottom" secondItem="aiH-qe-XoI" secondAttribute="bottom" constant="8.5" id="ccx-rP-oy2"/>
-                    <constraint firstItem="sXV-Hr-zyt" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="db1-Cs-pBN"/>
-                    <constraint firstAttribute="trailing" secondItem="cAz-Fd-rRx" secondAttribute="trailing" constant="16" id="pDA-9p-dmZ"/>
-                    <constraint firstItem="sXV-Hr-zyt" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tdi-FA-iHY"/>
-                    <constraint firstItem="cAz-Fd-rRx" firstAttribute="leading" secondItem="aiH-qe-XoI" secondAttribute="trailing" constant="8" id="yHO-pR-Lfo"/>
+                    <constraint firstItem="3cq-iM-iQb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0B3-Yw-YFf"/>
+                    <constraint firstAttribute="trailing" secondItem="3cq-iM-iQb" secondAttribute="trailing" constant="10" id="FRX-at-gwC"/>
+                    <constraint firstAttribute="bottom" secondItem="3cq-iM-iQb" secondAttribute="bottom" constant="10" id="XP7-r9-vEU"/>
+                    <constraint firstItem="3cq-iM-iQb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="wAr-ef-u0P"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lblAnswer" destination="3vT-1H-WJq" id="5bk-R9-Wbd"/>
-                <outlet property="lblNumberQuestion" destination="sXV-Hr-zyt" id="di4-Kn-30p"/>
-                <outlet property="viewAnswer" destination="aiH-qe-XoI" id="LZn-d0-fyr"/>
+                <outlet property="lblAnswer" destination="3cq-iM-iQb" id="68a-RM-ajV"/>
             </connections>
-            <point key="canvasLocation" x="184.78260869565219" y="171.09375"/>
+            <point key="canvasLocation" x="184.78260869565219" y="165.40178571428569"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="ic_exclamation" width="32" height="32"/>
-        <image name="ic_link" width="32" height="32"/>
-        <image name="ic_reading" width="32" height="32"/>
-    </resources>
 </document>

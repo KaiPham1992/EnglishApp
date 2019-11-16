@@ -36,7 +36,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.router.gotoDetailVocabulary(idWord: idWord)
     }
     
-    func submitExercise(param: SubmitExerciseParam,isOut: Bool) {
+    func submitExercise(param: SubmitExerciseParam, isOut: Bool) {
         self.isOut = isOut
         self.interactor?.submitExercise(param: param)
     }
@@ -91,15 +91,15 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     }
     
     func suggestQuestionSuccessed(respone: [String], isDiamond: Bool) {
-        self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].isShowSuggestQuestion = true
-        let listOptions = self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options ?? []
+        self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.section ?? 0].isShowSuggestQuestion = true
+        let listOptions = self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.section ?? 0].options ?? []
         if listOptions.count == 2 || listOptions.count == 3 {
             if let first = respone.first {
-                self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options = listOptions.filter{($0._id ?? "") != first}
+                self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.section ?? 0].options = listOptions.filter{($0._id ?? "") != first}
             }
         } else {
             if listOptions.count == 4 {
-                self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.row ?? 0].options = listOptions.filter{!respone.contains($0._id ?? "")}
+                self.exerciseEntity?.questions?[indexPath?.row ?? 0].answers?[indexQuestion?.section ?? 0].options = listOptions.filter{!respone.contains($0._id ?? "")}
             }
         }
         self.view?.suggesQuestionSuccessed(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0), indexQuestion: self.indexQuestion ?? IndexPath(row: 0, section: 0), isDiamond: isDiamond)

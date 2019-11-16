@@ -187,8 +187,9 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         }
         
         NotificationCenter.default.post(name: NSNotification.Name.init("SuggestionQuestion"), object: nil, userInfo: ["isDiamond" : isDiamond])
-        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise, let dataCell =  self.presenter?.getQuestion(indexPath: indexPath){
-            cell.changeDataSource(index: indexQuestion, data: dataCell.answers ?? [])
+        
+        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise {
+            cell.changeDataSource(index: indexQuestion)
         }
     }
     
@@ -212,8 +213,8 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
                 self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
                 self.lblIndexQuestion.text = "1/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
                 self.vCountTime.setupTimeStartNow(min: self.currentTime)
-                self.clvQuestion.reloadData()
                 ProgressView.shared.hide()
+                self.clvQuestion.reloadData()
             }
         }
     }
@@ -274,23 +275,33 @@ extension NameExerciseViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let data = self.presenter?.getQuestion(indexPath: indexPath){
             let type = data.answers?.first?.type ?? ""
-            if type == "" || type == "2"{
-                let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
-                cell.type = self.typeExercise
-                
-                cell.setupCell(data: data)
-                cell.indexPath = indexPath
-                cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
-                cell.delegate = self
-                return cell
-            }
+//            if type == "" || type == "2"{
+//                let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
+//                cell.type = self.typeExercise
+//
+//                cell.setupCell(data: data)
+//                cell.indexPath = indexPath
+//                cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
+//                cell.delegate = self
+//                return cell
+//            }
+//            let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+//            cell.type = self.typeExercise
+//            cell.indexPath = indexPath
+//            cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
+//            cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
+//            cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
+//            cell.setupCell(dataCell: data)
+//            cell.delegate = self
+//            return cell
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
             cell.type = self.typeExercise
+            cell.typeQuestion = type
             cell.indexPath = indexPath
             cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
             cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
-            cell.setupCell(dataCell: data)
+            cell.questionEntity = data
             cell.delegate = self
             return cell
         }
@@ -300,7 +311,7 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 
 extension NameExerciseViewController : CellExerciseDelegate{
     
-    func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
+    func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath) {
         self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].option_id = idAnswer
         self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].value = valueAnswer
     }
@@ -310,7 +321,7 @@ extension NameExerciseViewController : CellExerciseDelegate{
     }
 
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
-        let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.row].isShowSuggestQuestion ?? false
+        let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.section].isShowSuggestQuestion ?? false
         if !isShowSuggestion {
             let numberDiamond = UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0
             if numberDiamond >= 1 {

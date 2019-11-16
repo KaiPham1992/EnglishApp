@@ -26,7 +26,6 @@ class CellFillExercise: UICollectionViewCell {
     //for exercise
     var listAnswer : [QuestionChoiceResultParam] = []
     
-    private var listViewAnswer : [ViewFillQuestion] = []
     var indexPath: IndexPath?
     
     override func awakeFromNib() {
@@ -107,37 +106,37 @@ class CellFillExercise: UICollectionViewCell {
     }
     
     func setFillCell(numberView: Int){
-        if stvFillQuestion.subviews.count == 0 && numberView > 0 {
-            for index in 1...numberView {
-                let view = ViewFillQuestion()
-                view.setupTag(tag: index)
-                if listAnswer.count > 0 {
-                    view.content = listAnswer[index-1].value ?? ""
-                }
-                if listAnswerCompetition.count > 0 {
-                    view.content = listAnswerCompetition[index-1].value
-                }
-                self.stvFillQuestion.addArrangedSubview(view)
-                self.listViewAnswer.append(view)
-                view.delegate = self
-            }
-            self.heightStackView.constant = CGFloat(40 * numberView)
-        }
+//        if stvFillQuestion.subviews.count == 0 && numberView > 0 {
+//            for index in 1...numberView {
+//                let view = ViewFillQuestion()
+//                view.setupTag(tag: index)
+//                if listAnswer.count > 0 {
+//                    view.content = listAnswer[index-1].value ?? ""
+//                }
+//                if listAnswerCompetition.count > 0 {
+//                    view.content = listAnswerCompetition[index-1].value
+//                }
+//                self.stvFillQuestion.addArrangedSubview(view)
+//                self.listViewAnswer.append(view)
+//                view.delegate = self
+//            }
+//            self.heightStackView.constant = CGFloat(40 * numberView)
+//        }
     }
 }
-extension CellFillExercise : TextViewChangeHeightDelegate {
-    func textChanged(text: String, index: Int) {
-        //for exercise
-        if listAnswer.count > 0 {
-            self.listAnswer[index - 1].value = text
-        }
-        //for competition
-        if listAnswerCompetition.count > 0 {
-            self.listAnswerCompetition[index - 1].value = text
-        }
-    }
-    
-    func distanceChange(distance: CGFloat) {
-        self.heightStackView.constant += distance
-    }
-}
+//extension CellFillExercise : TextViewChangeHeightDelegate {
+//    func textChanged(text: String, index: Int) {
+//        //for exercise
+//        if listAnswer.count > 0 {
+//            self.listAnswer[index - 1].value = text
+//        }
+//        //for competition
+//        if listAnswerCompetition.count > 0 {
+//            self.listAnswerCompetition[index - 1].value = text
+//        }
+//    }
+//    
+//    func distanceChange(distance: CGFloat) {
+//        self.heightStackView.constant += distance
+//    }
+//}

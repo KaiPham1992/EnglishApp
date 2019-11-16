@@ -16,27 +16,26 @@ class CellResultExercise: UICollectionViewCell {
     @IBOutlet weak var tbvResultQuestion: UITableView!
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
-    let tvContent : UITextView = {
-        let view = UITextView()
-        view.isScrollEnabled = false
-        view.sizeToFit()
-        view.textContainerInset = UIEdgeInsets.zero
-        view.textContainer.lineFragmentPadding = 0
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        view.addGestureRecognizer(tap)
-        return view
-    }()
     
-    var dataCell: QuestionResultEntity?{
+    @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var vAudio: UIView!
+    
+    var questionEntity: QuestionResultEntity?{
         didSet{
+            if (self.questionEntity?.checkHaveAudio() ?? false) {
+                self.vAudio.isHidden = false
+            } else {
+                self.vAudio.isHidden = true
+            }
+            self.layoutIfNeeded()
+            self.setContentQuestion()
             tbvResultQuestion.reloadData()
         }
     }
     
     var actionExplainExericse : ((_ questionId: Int,_ answerId: Int) -> ())?
     var actionRelatedGrammar : ((_ questionId: Int,_ answerId: Int) -> ())?
-    var actionReportQuestion : ((_ questionId: Int,_ answerId: Int) -> ())?
+    
     var numberLine: Int = 0
     let popover = Popover()
     
@@ -53,8 +52,17 @@ class CellResultExercise: UICollectionViewCell {
         detectQuestion()
     }
     
+    func setContentQuestion() {
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
+        tvContent.attributedText = NSAttributedString(string: questionEntity?.content?.htmlToString ?? "", attributes: attributes)
+    }
+    
     func detectQuestion(){
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
@@ -102,49 +110,23 @@ extension CellResultExercise : UITableViewDelegate{
 }
 extension CellResultExercise: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return questionEntity?.answers?.count ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataCell?.answers?.count ?? 0
-    }
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView(frame: CGRect.zero)
-        view.addSubview(tvContent)
-        tvContent.fillVerticalSuperview(constant: 15)
-        tvContent.fillHorizontalSuperview(constant: 15)
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
-        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
-        tvContent.attributedText = NSAttributedString(string: dataCell?.content?.htmlToString ?? "", attributes: attributes)
-        return view
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 100
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return UITableView.automaticDimension
+        guard let type = questionEntity?.answers?.first?.type else {
+            return 0
+        }
+        return type == "1" ? 4 : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let type = dataCell?.answers?.first?.type else {
+        guard let type = questionEntity?.answers?.first?.type else {
             return UITableViewCell()
         }
         if type == "1" {
             let cell = tableView.dequeue(CellResultChoice.self, for: indexPath)
             cell.indexPath = indexPath
-            cell.actionExplainQuestion = {[weak self] (index)in
-                self?.actionExplainQuestion(indexAnswer: index)
-            }
-            cell.actionRelatedGrammar = {[weak self] (index) in
-                self?.actionRelatedGrammar(indexAnswer: index)
-            }
-            cell.actionReportQuestion = {[weak self] (index)in
-                self?.actionReportQuestion(indexAnswer:index)
-            }
-            if let answer = dataCell?.answers?[indexPath.row] {
+            if let answer = questionEntity?.answers?[indexPath.section] {
                 cell.setupCell(answer: answer)
             }
             return cell
@@ -152,30 +134,42 @@ extension CellResultExercise: UITableViewDataSource{
         
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
         cell.indexPath = indexPath
-        cell.actionExplainQuestion = {[weak self] (index)in
-            self?.actionExplainQuestion(indexAnswer: index)
-        }
-        cell.actionRelatedGrammar = {[weak self] (index) in
-            self?.actionRelatedGrammar(indexAnswer: index)
-        }
-        cell.actionReportQuestion = {[weak self] (index)in
-            self?.actionReportQuestion(indexAnswer:index)
-        }
-        if let answer = dataCell?.answers?[indexPath.row] {
+        if let answer = questionEntity?.answers?[indexPath.row] {
             cell.setupCell(answer: answer)
         }
         return cell
     }
     
-    func actionExplainQuestion(indexAnswer: IndexPath){
-        self.actionExplainExericse?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row]._id ?? "0") ?? 0)
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView.init()
+        let headerView = ViewHeaderResultExercise()
+        headerView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(headerView)
+        headerView.fillToView(view: view)
+        //show UI question
+        headerView.setupCell(index: section + 1, content: questionEntity?.answers?[section]._id ?? "")
+        headerView.callbackExplainQuestion = {[weak self] (section) in
+            self?.actionExplainQuestion(section: section)
+        }
+        headerView.callbackRelatedGrammar = {[weak self] (section) in
+            self?.actionRelatedGrammar(section: section)
+        }
+        return view
+    }
+       
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 60
+    }
+       
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
     
-    func actionReportQuestion(indexAnswer: IndexPath){
-        self.actionReportQuestion?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row].question_details_id ?? "0") ?? 0)
+    func actionExplainQuestion(section: Int){
+        self.actionExplainExericse?(Int(self.questionEntity?.question_id ?? "0") ?? 0, Int(self.questionEntity?.answers?[section]._id ?? "0") ?? 0)
     }
     
-    func actionRelatedGrammar(indexAnswer: IndexPath){
-        self.actionRelatedGrammar?(Int(self.dataCell?.question_id ?? "0") ?? 0, Int(self.dataCell?.answers?[indexAnswer.row].question_details_id ?? "0") ?? 0)
+    func actionRelatedGrammar(section: Int){
+        self.actionRelatedGrammar?(Int(self.questionEntity?.question_id ?? "0") ?? 0, Int(self.questionEntity?.answers?[section].question_details_id ?? "0") ?? 0)
     }
 }

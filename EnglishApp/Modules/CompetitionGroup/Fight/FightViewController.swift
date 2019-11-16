@@ -189,15 +189,15 @@ extension FightViewController :FightViewProtocol{
     func exitSuccessed() {
         
     }
-    
+    //use for exercise
     func suggestQuestionError() {
         
     }
-    
+    //use for exercise
     func suggesQuestionSuccessed(indexPath: IndexPath, indexQuestion: IndexPath) {
-        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise, let dataCell =  self.presenter?.exerciseEntity?.questions?[indexPath.row]{
-            cell.changeDataSource(index: indexQuestion, data: dataCell.answers ?? [])
-        }
+//        if let cell = clvQuestion.cellForItem(at: indexPath) as? CellExercise {
+//            cell.changeDataSource(index: indexQuestion)
+//        }
     }
     
     func reloadView() {
@@ -250,7 +250,7 @@ extension FightViewController :FightViewProtocol{
             }
         }
     }
-    
+    //use for exercise
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
             cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
@@ -325,7 +325,7 @@ extension FightViewController: UICollectionViewDataSource{
                 cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
                 cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
                 cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
-                cell.setupCell(dataCell: data)
+                cell.questionEntity = data
                 cell.delegate = self
                 return cell
             }
@@ -343,22 +343,24 @@ extension FightViewController: UICollectionViewDataSource{
     }
 }
 
-extension FightViewController : CellExerciseDelegate{
-    
-    
-    func changeAnswer(idAnswer: Int, valueAnswer: String, indexPathRow: IndexPath, indexPath: IndexPath) {
-        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].option_id = idAnswer
-        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].value = valueAnswer
-    }
-    
+extension FightViewController : CellExerciseDelegate {
+    //use for exercise
     func showDetailVocubulary(word: WordExplainEntity) {
+        
     }
-    
-    func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
-//        self.presenter?.searchVocabulary(word: word, position: position, index: index)
-    }
-    
+    //use for exercise
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
+        
+    }
+    //use for exercise
+    func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
+        
+    }
+    
+    
+    func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath) {
+//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].option_id = idAnswer
+//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].value = valueAnswer
     }
     
     func clickAudio(indexPath: IndexPath) {
