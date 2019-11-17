@@ -221,6 +221,12 @@
 		2A9B0700237FC46D00559589 /* ViewHeaderResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B06FF237FC46D00559589 /* ViewHeaderResultExercise.xib */; };
 		2A9B0701237FC46D00559589 /* ViewHeaderResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B06FF237FC46D00559589 /* ViewHeaderResultExercise.xib */; };
 		2A9B0702237FC46D00559589 /* ViewHeaderResultExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B06FF237FC46D00559589 /* ViewHeaderResultExercise.xib */; };
+		2A9B070B237FEA1C00559589 /* VocabularyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0709237FEA1C00559589 /* VocabularyVC.swift */; };
+		2A9B070C237FEA1C00559589 /* VocabularyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0709237FEA1C00559589 /* VocabularyVC.swift */; };
+		2A9B070D237FEA1C00559589 /* VocabularyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9B0709237FEA1C00559589 /* VocabularyVC.swift */; };
+		2A9B070E237FEA1C00559589 /* VocabularyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B070A237FEA1C00559589 /* VocabularyVC.xib */; };
+		2A9B070F237FEA1C00559589 /* VocabularyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B070A237FEA1C00559589 /* VocabularyVC.xib */; };
+		2A9B0710237FEA1C00559589 /* VocabularyVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A9B070A237FEA1C00559589 /* VocabularyVC.xib */; };
 		2A9CAF5C22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */; };
 		2A9CAF5D22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */; };
 		2A9CAF5E22F1F81700A7F969 /* ViewFightTestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */; };
@@ -2370,6 +2376,8 @@
 		2A9A81F322EC5FE600345C5F /* SQLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLHelper.swift; sourceTree = "<group>"; };
 		2A9B06FB237FC42200559589 /* ViewHeaderResultExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewHeaderResultExercise.swift; sourceTree = "<group>"; };
 		2A9B06FF237FC46D00559589 /* ViewHeaderResultExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewHeaderResultExercise.xib; sourceTree = "<group>"; };
+		2A9B0709237FEA1C00559589 /* VocabularyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VocabularyVC.swift; sourceTree = "<group>"; };
+		2A9B070A237FEA1C00559589 /* VocabularyVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VocabularyVC.xib; sourceTree = "<group>"; };
 		2A9CAF5B22F1F81700A7F969 /* ViewFightTestResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFightTestResponse.swift; sourceTree = "<group>"; };
 		2AA20CC022F5434400F38894 /* DictionarisResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionarisResponse.swift; sourceTree = "<group>"; };
 		2AA20CE222F5522400F38894 /* CommentQuestionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentQuestionPresenter.swift; sourceTree = "<group>"; };
@@ -3285,6 +3293,23 @@
 				2A9A81F322EC5FE600345C5F /* SQLHelper.swift */,
 			);
 			path = SQLHelper;
+			sourceTree = "<group>";
+		};
+		2A9B0703237FCFE400559589 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				2A9B0708237FE9EA00559589 /* Vocaubulary */,
+			);
+			path = Popover;
+			sourceTree = "<group>";
+		};
+		2A9B0708237FE9EA00559589 /* Vocaubulary */ = {
+			isa = PBXGroup;
+			children = (
+				2A9B0709237FEA1C00559589 /* VocabularyVC.swift */,
+				2A9B070A237FEA1C00559589 /* VocabularyVC.xib */,
+			);
+			path = Vocaubulary;
 			sourceTree = "<group>";
 		};
 		2AA20CBF22F5432500F38894 /* Dictionaty */ = {
@@ -4301,6 +4326,7 @@
 		DE361DDC2283E52A00FA3B0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				2A9B0703237FCFE400559589 /* Popover */,
 				2AA9E36422F9AA230093F5C8 /* FileZipManager */,
 				2A2B015A22F085F800A08EEA /* ListManager */,
 				2A6C5ED022EF466C004B23EF /* CommonCell */,
@@ -5758,6 +5784,7 @@
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				76FF690A232FC5EB00D5CB09 /* ProfileHeader.xib in Resources */,
 				DED5A03022A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
+				2A9B070E237FEA1C00559589 /* VocabularyVC.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				2AB4A05722E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
 				DE3CC3482283DD990037DBE4 /* LaunchScreen.storyboard in Resources */,
@@ -5920,6 +5947,7 @@
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				76FF690B232FC5EB00D5CB09 /* ProfileHeader.xib in Resources */,
 				DED5A03122A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
+				2A9B070F237FEA1C00559589 /* VocabularyVC.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				2AB4A05822E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
 				DE9530502287DF4800E3F688 /* LaunchScreen.storyboard in Resources */,
@@ -6091,6 +6119,7 @@
 				DE3A8CF32289C7F60080A8CB /* SelectTeamCell.xib in Resources */,
 				DEC7F92722C4EDAA0096D3D1 /* Comfortaa-Bold.ttf in Resources */,
 				2A5E260D22E0D05B009D6203 /* LevelExerciseViewController.xib in Resources */,
+				2A9B0710237FEA1C00559589 /* VocabularyVC.xib in Resources */,
 				76CE31D422961FC300E998FB /* ResultViewController.xib in Resources */,
 				7643DE8622A38CDA00B7C323 /* SearchVocabularyView.xib in Resources */,
 				76DB93AE228C73A90081A36E /* MoreDictionaryViewController.xib in Resources */,
@@ -6348,6 +6377,7 @@
 				DEECF8A022871D1B00A4678B /* ForgotPasswordInteractor.swift in Sources */,
 				2AB4A05422E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */,
 				DEF1C248229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
+				2A9B070B237FEA1C00559589 /* VocabularyVC.swift in Sources */,
 				76EC6FF422CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76C92FA222C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
@@ -6965,6 +6995,7 @@
 				DE952FBC2287DF4800E3F688 /* ForgotPasswordInteractor.swift in Sources */,
 				2AB4A05522E1E87C00557B5F /* DailyMissonInteractor.swift in Sources */,
 				DEF1C249229033BA005AD1A3 /* ButtonHomeView.swift in Sources */,
+				2A9B070C237FEA1C00559589 /* VocabularyVC.swift in Sources */,
 				76EC6FF522CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
 				76C92FA322C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
@@ -7966,6 +7997,7 @@
 				2AED14AB22EE02D50076C223 /* ExplainExerciseProtocols.swift in Sources */,
 				DE9530BE2287DF6400E3F688 /* UserDefaultHelper.swift in Sources */,
 				766D1387228F2629005E47F0 /* DetailLessonViewController.swift in Sources */,
+				2A9B070D237FEA1C00559589 /* VocabularyVC.swift in Sources */,
 				DE89D1EE22A41B44000638B0 /* LevelUpPopUp.swift in Sources */,
 				76CE32132296539000E998FB /* ResultCompetitionProtocols.swift in Sources */,
 				DE3A8CA72289B93F0080A8CB /* QADetailInteractor.swift in Sources */,

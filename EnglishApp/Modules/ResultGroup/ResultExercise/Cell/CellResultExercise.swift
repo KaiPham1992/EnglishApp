@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Popover
+//import Popover
 
 class CellResultExercise: UICollectionViewCell {
     
@@ -33,11 +33,12 @@ class CellResultExercise: UICollectionViewCell {
         }
     }
     
+    var callbackShowPopup : ((_ fromView: UIView, _ rect: CGPoint, _ word: WordExplainEntity) -> ())?
     var actionExplainExericse : ((_ questionId: Int,_ answerId: Int) -> ())?
     var actionRelatedGrammar : ((_ questionId: Int,_ answerId: Int) -> ())?
     
     var numberLine: Int = 0
-    let popover = Popover()
+//    let popover = Popover()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -82,24 +83,7 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
-        DispatchQueue.main.async {
-            self.popover.removeFromSuperview()
-            let point = self.tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
-            let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-            aView.actionSeeDetailWord = {[weak self] (word) in
-                self?.gotoDetailVocabulary(word: word)
-            }
-            aView.setTitle(word: word)
-            self.popover.blackOverlayColor = .clear
-            self.popover.popoverColor = .white
-            self.popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
-            self.popover.layer.cornerRadius = 5
-            self.popover.show(aView, point: point, inView: self.contentView)
-        }
-    }
-    
-    func gotoDetailVocabulary(word: WordExplainEntity){
-        delegate?.showDetailVocubulary(word: word)
+        callbackShowPopup?(self.contentView, tvContent.convert(CGPoint(x: x, y: y), to: self.contentView), word)
     }
 }
 extension CellResultExercise : UITableViewDelegate{

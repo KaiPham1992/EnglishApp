@@ -322,8 +322,6 @@ extension FightViewController: UICollectionViewDataSource{
                 let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
                 cell.indexPath = indexPath
                 cell.type = .competition
-                cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
-                cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
                 cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                 cell.questionEntity = data
                 cell.delegate = self
@@ -357,10 +355,9 @@ extension FightViewController : CellExerciseDelegate {
         
     }
     
-    
     func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath) {
-//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].option_id = idAnswer
-//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].value = valueAnswer
+//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].option_id = idAnswer ?? 0
+//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].value = valueAnswer ?? ""
     }
     
     func clickAudio(indexPath: IndexPath) {

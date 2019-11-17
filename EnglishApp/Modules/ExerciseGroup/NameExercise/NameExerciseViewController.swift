@@ -52,7 +52,7 @@ class NameExerciseViewController: BaseViewController {
             } else {
                 self.currentIndex += 1
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage)"
-                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
+                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: true)
             }
         } else {
             if let _param = self.paramSubmit {
@@ -158,7 +158,7 @@ class NameExerciseViewController: BaseViewController {
                 if !isEnd {
                     self.currentIndex -= 1
                     lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
-                    clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
+                    clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: true)
                 }
             }
         }
@@ -295,11 +295,15 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 //            cell.delegate = self
 //            return cell
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
+            cell.callbackShowPopup = {[weak self] (fromView: UIView, point: CGPoint, word: WordExplainEntity) in
+                let pointConvert = fromView.convert(point, to: self?.view ?? UIView())
+                self?.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: word)
+            }
             cell.type = self.typeExercise
             cell.typeQuestion = type
             cell.indexPath = indexPath
-            cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
-            cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
+//            cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
+//            cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
             cell.questionEntity = data
             cell.delegate = self
@@ -312,12 +316,12 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 extension NameExerciseViewController : CellExerciseDelegate{
     
     func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath) {
-        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].option_id = idAnswer
-        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].value = valueAnswer
+//        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].option_id = idAnswer
+//        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].value = valueAnswer
     }
     
     func showDetailVocubulary(word: WordExplainEntity) {
-        self.presenter?.gotoDetailVocabulary(idWord: word.id)
+//        self.presenter?.gotoDetailVocabulary(idWord: word.id)
     }
 
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {

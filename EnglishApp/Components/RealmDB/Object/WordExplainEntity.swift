@@ -24,7 +24,7 @@ class WordExplainEntity : Object,Mappable {
         return "primary_key"
     }
     
-    convenience init(id: Int,word: String,explain : String, id_dictionary: Int) {
+    convenience init(id: Int, word: String, explain : String, id_dictionary: Int) {
         self.init()
         self.id = id
         self.word = word

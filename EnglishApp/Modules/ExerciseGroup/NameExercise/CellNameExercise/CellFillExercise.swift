@@ -102,7 +102,7 @@ class CellFillExercise: UICollectionViewCell {
     }
     
     func gotoDetailVocabulary(word: WordExplainEntity){
-        delegate?.showDetailVocubulary(word: word)
+//        delegate?.showDetailVocubulary(word: word)
     }
     
     func setFillCell(numberView: Int){

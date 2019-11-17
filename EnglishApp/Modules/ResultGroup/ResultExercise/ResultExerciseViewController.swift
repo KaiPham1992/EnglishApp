@@ -122,6 +122,12 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(CellResultExercise.self, indexPath: indexPath)
         cell.delegate = self
+        
+        cell.callbackShowPopup = {[weak self] (fromView: UIView, point: CGPoint, word: WordExplainEntity) in
+            let pointConvert = fromView.convert(point, to: self?.view ?? UIView())
+            self?.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: word)
+        }
+        
         cell.actionExplainExericse = {[weak self] (questionId,answerId) in
             self?.explainQuestion(questionId: questionId, answerId: answerId)
         }
@@ -195,7 +201,7 @@ extension ResultExerciseViewController : CellExerciseDelegate {
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         
     }
-    
+    //use for exercise -> result dont use
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
 //        self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }

@@ -449,27 +449,28 @@ extension BaseViewController {
         }
     }
 }
-
-//
-//class SwipeController: UINavigationController {
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        self.navigationController?.interactivePopGestureRecognizer?.delegate = nil
-//    }
-//
-//    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
-//        super.pushViewController(viewController, animated: animated)
-////        self.interactivePopGestureRecognizer?.isEnabled = false
-//    }
-//
-//    override func viewDidDisappear(_ animated: Bool) {
-//        super.viewDidDisappear(true)
-////        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
-//    }
-//}
-//
-//extension SwipeController : UIGestureRecognizerDelegate {
-//    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-//        return true
-//    }
-//}
+//show Popover
+extension BaseViewController : UIPopoverPresentationControllerDelegate{
+    func showPopoverVocabulary(x: CGFloat, y: CGFloat, size: CGSize, word: WordExplainEntity) {
+        let popoverContent = VocabularyVC()
+        popoverContent.modalPresentationStyle = UIModalPresentationStyle.popover
+        popoverContent.modalTransitionStyle = .coverVertical
+        popoverContent.setTitle(word: word)
+        popoverContent.actionSeeDetailWord = {[weak self] (word: WordExplainEntity) in
+            let vc = DetailLessonRouter.createModule(idWord: word.id)
+            self?.push(controller: vc,animated: true)
+        }
+        if let popover = popoverContent.popoverPresentationController {
+            popoverContent.preferredContentSize = CGSize(width: 300, height: 100)
+            popover.permittedArrowDirections = .up
+            popover.sourceView = self.view
+            popover.sourceRect = CGRect(x: x, y: y, width: 0, height: 0)
+            popover.delegate = self
+            self.present(popoverContent, animated: true, completion: nil)
+        }
+    }
+    
+    public func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .none
+    }
+}

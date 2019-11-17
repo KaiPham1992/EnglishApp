@@ -7,10 +7,10 @@
 //
 
 import UIKit
-import Popover
+//import Popover
 
 protocol CellExerciseDelegate: class {
-    func showDetailVocubulary(word: WordExplainEntity)
+//    func showDetailVocubulary(word: WordExplainEntity)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath)
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath)
     func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath)
@@ -30,13 +30,12 @@ class CellExercise: UICollectionViewCell {
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
     var numberLine: Int = 0
-    let popover = Popover()
-    var listIdOption : [[Int]] = []
-    var listDataSource : [[String]] = []
     //for exercise
     var listAnswer : [QuestionChoiceResultParam] = []
     //for competition
     var listAnswerCompetition : [SubmitAnswerEntity] = []
+    
+    var callbackShowPopup : ((_ fromView: UIView, _ rect: CGPoint, _ word: WordExplainEntity) -> ())?
     
     var questionEntity: QuestionEntity? {
         didSet {
@@ -105,23 +104,23 @@ class CellExercise: UICollectionViewCell {
     }
     
     func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
-        popover.removeFromSuperview()
-        let point = tvContent.convert(CGPoint(x: x, y: y), to: self.contentView)
-        let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-        aView.actionSeeDetailWord = {[weak self] (word) in
-            self?.gotoDetailVocabulary(word: word)
-        }
-        aView.setTitle(word: word)
-        popover.blackOverlayColor = .clear
-        popover.popoverColor = .white
-        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
-        popover.layer.cornerRadius = 5
-        popover.show(aView, point: point, inView: self.contentView)
+//        popover.removeFromSuperview()
+        callbackShowPopup?(self.contentView, tvContent.convert(CGPoint(x: x, y: y), to: self.contentView), word)
+//        let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
+//        aView.actionSeeDetailWord = {[weak self] (word) in
+//            self?.gotoDetailVocabulary(word: word)
+//        }
+//        aView.setTitle(word: word)
+//        popover.blackOverlayColor = .clear
+//        popover.popoverColor = .white
+//        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
+//        popover.layer.cornerRadius = 5
+//        popover.show(aView, point: point, inView: self.contentView)
     }
     
-    func gotoDetailVocabulary(word: WordExplainEntity){
-        delegate?.showDetailVocubulary(word: word)
-    }
+//    func gotoDetailVocabulary(word: WordExplainEntity){
+//        delegate?.showDetailVocubulary(word: word)
+//    }
 }
 extension CellExercise : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -146,6 +145,9 @@ extension CellExercise: UITableViewDataSource{
             cell.callbackChangeHeight = {[weak self] in
                 //update height tableview when user enter input > width textview.
                 self?.updateHeightCell()
+            }
+            cell.callbackChangeText = {[weak self] (text: String) in
+                self?.userChangeFillAnswer(indexPath: indexPath, text: text)
             }
             return cell
         }
@@ -172,6 +174,14 @@ extension CellExercise: UITableViewDataSource{
         return UITableViewCell()
     }
     
+    func userChangeFillAnswer(indexPath: IndexPath, text: String) {
+        if type == .competition {
+            self.listAnswerCompetition[indexPath.section].value = text
+        } else {
+            self.listAnswer[indexPath.section].value = text
+        }
+    }
+    
     func userChangeChoiceAnswer(indexPath: IndexPath){
         if let options = questionEntity?.answers?[indexPath.section].options {
             var listIndex : [IndexPath] = []
@@ -180,10 +190,19 @@ extension CellExercise: UITableViewDataSource{
                 listIndex.append(IndexPath(row: firstIndex, section: indexPath.section))
             }
             options[indexPath.row].isChoice = !options[indexPath.row].isChoice
-            if options[indexPath.row].isChoice {
-                self.delegate?.changeAnswer(idAnswer: Int(options[indexPath.row]._id ?? "0"), valueAnswer: options[indexPath.row].value, indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+//            if options[indexPath.row].isChoice {
+//                self.delegate?.changeAnswer(idAnswer: Int(options[indexPath.row]._id ?? "0"), valueAnswer: options[indexPath.row].value, indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+//
+//            } else {
+//                self.delegate?.changeAnswer(idAnswer: nil, valueAnswer: options[indexPath.row].value , indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+//            }
+            if type == .competition {
+//                self.listAnswerCompetition[indexPath.section].value = options[indexPath.row].value ?? ""
+                self.listAnswerCompetition[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : 0
             } else {
-                self.delegate?.changeAnswer(idAnswer: nil, valueAnswer: options[indexPath.row].value , indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+//                self.listAnswer[indexPath.section].value = options[indexPath.row].value ?? ""
+                self.listAnswer[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : nil
+                
             }
             listIndex.append(indexPath)
             self.tbvNameExercise.reloadRows(at: listIndex, with: .automatic)
