@@ -8,7 +8,7 @@
 //
 import Foundation
 import ObjectMapper
-import SwiftyJSON
+//import SwiftyJSON
 
 /***
  Input: endPoint (all info to request)
@@ -35,8 +35,16 @@ struct APINetwork: APINetworkProtocol {
         
         
         request.requestData(endPoint: endPoint, success: { data in
-            let json = JSON(data)
-            
+//            let json = JSON(data)
+//
+//            if json.description == "null" {
+//                print("\n**************ERROR*****************")
+//                print(String(data: data, encoding: .utf8))
+//            } else {
+//                print("\n**************SUCCESS*****************")
+//                print(json)
+//            }
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {return}
             if json.description == "null" {
                 print("\n**************ERROR*****************")
                 print(String(data: data, encoding: .utf8))
@@ -44,9 +52,7 @@ struct APINetwork: APINetworkProtocol {
                 print("\n**************SUCCESS*****************")
                 print(json)
             }
-            
-            
-            guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
+            guard let result = Mapper<BaseResponse>().map(JSONObject: json) else {
                 failure(APPError.canNotParseData)
                 return
             }
@@ -63,10 +69,17 @@ struct APINetwork: APINetworkProtocol {
         print(endPoint.parameters)
         
         request.uploadAvatar(image: image, endPoint: endPoint, success: { data in
-            let json = JSON(data)
-            print(json)
-            
-            guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
+//            let json = JSON(data)
+//            print(json)
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {return}
+            if json.description == "null" {
+                print("\n**************ERROR*****************")
+                print(String(data: data, encoding: .utf8))
+            } else {
+                print("\n**************SUCCESS*****************")
+                print(json)
+            }
+            guard let result = Mapper<BaseResponse>().map(JSONObject: json) else {
                 failure(APPError.canNotParseData)
                 return
             }
@@ -82,10 +95,17 @@ struct APINetwork: APINetworkProtocol {
         print(endPoint.parameters)
         
         request.uploadImages(image: image, endPoint: endPoint, success: { data in
-            let json = JSON(data)
-            print(json)
-            
-            guard let result = Mapper<BaseResponse>().map(JSONObject: json.dictionaryObject) else {
+//            let json = JSON(data)
+//            print(json)
+            guard let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] else {return}
+            if json.description == "null" {
+                print("\n**************ERROR*****************")
+                print(String(data: data, encoding: .utf8))
+            } else {
+                print("\n**************SUCCESS*****************")
+                print(json)
+            }
+            guard let result = Mapper<BaseResponse>().map(JSONObject: json) else {
                 failure(APPError.canNotParseData)
                 return
             }

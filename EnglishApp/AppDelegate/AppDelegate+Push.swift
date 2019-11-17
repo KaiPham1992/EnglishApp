@@ -10,7 +10,7 @@ import Foundation
 import Firebase
 import UserNotifications
 import FirebaseMessaging
-import SwiftyJSON
+//import SwiftyJSON
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
     func configureFirebase() {

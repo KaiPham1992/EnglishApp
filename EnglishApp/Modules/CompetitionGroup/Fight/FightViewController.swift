@@ -9,7 +9,7 @@
 //
 
 import UIKit
-import Popover
+//import Popover
 import AVKit
 import AVFoundation
 
@@ -80,7 +80,7 @@ class FightViewController: BaseViewController {
         }
         lblTitleRank.text = LocalizableKey.rank_of_competition.showLanguage
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
-        clvQuestion.registerXibCell(CellFillExercise.self)
+//        clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
@@ -252,13 +252,13 @@ extension FightViewController :FightViewProtocol{
     }
     //use for exercise
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
-        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
-            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
-        }
-        
-        if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
-            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
-        }
+//        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
+//            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+//        }
+//
+//        if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
+//            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+//        }
     }
     
     func fightDone() {
@@ -310,18 +310,10 @@ extension FightViewController: UICollectionViewDataSource{
         if collectionView == clvQuestion {
             if let data = self.presenter?.exerciseEntity?.questions?[indexPath.row]{
                 let type = data.answers?.first?.type ?? ""
-                if type == "" || type == "2"{
-                    let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
-                    cell.type = .competition
-                    cell.indexPath = indexPath
-                    cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
-                    cell.setupCell(data: data)
-                    cell.delegate = self
-                    return cell
-                }
                 let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
                 cell.indexPath = indexPath
                 cell.type = .competition
+                cell.typeQuestion = type
                 cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                 cell.questionEntity = data
                 cell.delegate = self

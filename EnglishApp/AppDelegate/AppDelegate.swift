@@ -14,7 +14,7 @@ import FBSDKCoreKit
 import GoogleSignIn
 //import Fabric
 //import Crashlytics
-import netfox
+//import netfox
 import UserNotifications
 import RealmSwift
 import FBSDKShareKit
@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        #if DEV
-            NFX.sharedInstance().start()
-        #endif
+//        #if DEV
+//            NFX.sharedInstance().start()
+//        #endif
 //        Fabric.with([Crashlytics.self])
 //        Crashlytics.sharedInstance().debugMode = true
 //        Fabric.sharedSDK().debug = true
@@ -50,7 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         AppRouter.shared.openHome()
 //        AppRouter.shared.updateRootView()
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
-        
        
         //--
 //        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, err) in

@@ -1,7 +1,7 @@
 # platform :ios, '9.0'
 def main_pods
     pod 'RealmSwift'
-    pod 'SwiftyJSON'
+#    pod 'SwiftyJSON'
     pod 'Alamofire'
     pod 'ObjectMapper'
     pod 'SDWebImage'
@@ -16,12 +16,12 @@ def main_pods
     pod 'Firebase/Messaging'
 #    pod 'ImageSlideshow'
 #    pod 'ImageSlideshow/SDWebImage'
-    pod 'Popover'
+#    pod 'Popover'
 #    pod 'Google-Mobile-Ads-SDK'
     pod 'XLPagerTabStrip'
 #    pod 'Fabric'
 #    pod 'Crashlytics'
-    pod 'netfox'
+#    pod 'netfox'
     pod 'Zip', '~> 1.1'
 end
 

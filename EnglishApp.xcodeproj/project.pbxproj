@@ -638,12 +638,6 @@
 		768074AE22C910E80015A75C /* SubmitExerciseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074AD22C910E80015A75C /* SubmitExerciseParam.swift */; };
 		768074AF22C910E80015A75C /* SubmitExerciseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074AD22C910E80015A75C /* SubmitExerciseParam.swift */; };
 		768074B022C910E80015A75C /* SubmitExerciseParam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768074AD22C910E80015A75C /* SubmitExerciseParam.swift */; };
-		76870EAC22C0F00900F12544 /* CellFillExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EAA22C0F00900F12544 /* CellFillExercise.swift */; };
-		76870EAD22C0F00900F12544 /* CellFillExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EAA22C0F00900F12544 /* CellFillExercise.swift */; };
-		76870EAE22C0F00900F12544 /* CellFillExercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76870EAA22C0F00900F12544 /* CellFillExercise.swift */; };
-		76870EAF22C0F00900F12544 /* CellFillExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EAB22C0F00900F12544 /* CellFillExercise.xib */; };
-		76870EB022C0F00900F12544 /* CellFillExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EAB22C0F00900F12544 /* CellFillExercise.xib */; };
-		76870EB122C0F00900F12544 /* CellFillExercise.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76870EAB22C0F00900F12544 /* CellFillExercise.xib */; };
 		768ED33322BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */; };
 		768ED33422BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */; };
 		768ED33522BDB63400D8BEB0 /* CellDropDownQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */; };
@@ -2521,8 +2515,6 @@
 		768074A022C90E5D0015A75C /* QuestionChoiceResultParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionChoiceResultParam.swift; sourceTree = "<group>"; };
 		768074A922C910390015A75C /* QuestionSubmitParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionSubmitParam.swift; sourceTree = "<group>"; };
 		768074AD22C910E80015A75C /* SubmitExerciseParam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitExerciseParam.swift; sourceTree = "<group>"; };
-		76870EAA22C0F00900F12544 /* CellFillExercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellFillExercise.swift; sourceTree = "<group>"; };
-		76870EAB22C0F00900F12544 /* CellFillExercise.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellFillExercise.xib; sourceTree = "<group>"; };
 		768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellDropDownQuestion.swift; sourceTree = "<group>"; };
 		768ED33222BDB63400D8BEB0 /* CellDropDownQuestion.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CellDropDownQuestion.xib; sourceTree = "<group>"; };
 		769A3BAA229FE53A00CA55BD /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
@@ -3936,8 +3928,6 @@
 				7643DE9C22A4DD3600B7C323 /* CellExercise.xib */,
 				768ED33122BDB63400D8BEB0 /* CellDropDownQuestion.swift */,
 				768ED33222BDB63400D8BEB0 /* CellDropDownQuestion.xib */,
-				76870EAA22C0F00900F12544 /* CellFillExercise.swift */,
-				76870EAB22C0F00900F12544 /* CellFillExercise.xib */,
 				2A6B4E26237EFE08007720DB /* CellChoiceQuestionExercise.swift */,
 				2A6B4E27237EFE08007720DB /* CellChoiceQuestionExercise.xib */,
 				2A6B4E36237F0415007720DB /* CellFillQuestionExercise.swift */,
@@ -5691,7 +5681,6 @@
 				76CE31AF2295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B5228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DEECF89422871D0400A4678B /* SignUpViewController.xib in Resources */,
-				76870EAF22C0F00900F12544 /* CellFillExercise.xib in Resources */,
 				76CE31962295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				76EE392B22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */,
 				DE89D23622A425E2000638B0 /* BXHView.xib in Resources */,
@@ -5854,7 +5843,6 @@
 				76CE31B02295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B6228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530472287DF4800E3F688 /* SignUpViewController.xib in Resources */,
-				76870EB022C0F00900F12544 /* CellFillExercise.xib in Resources */,
 				76CE31972295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				76EE392C22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */,
 				DE89D23722A425E2000638B0 /* BXHView.xib in Resources */,
@@ -6015,7 +6003,6 @@
 				76CE31B12295AE3600E998FB /* ChoiceExerciseViewController.xib in Resources */,
 				76DB93B7228C73E60081A36E /* MoreDictionaryCell.xib in Resources */,
 				DE9530F52287DF6400E3F688 /* SignUpViewController.xib in Resources */,
-				76870EB122C0F00900F12544 /* CellFillExercise.xib in Resources */,
 				76CE31982295A9E700E998FB /* CellLevelExercise.xib in Resources */,
 				76EE392D22A5777700DD8960 /* HistoryExerciseDateViewController.xib in Resources */,
 				DE89D23822A425E2000638B0 /* BXHView.xib in Resources */,
@@ -6668,7 +6655,6 @@
 				DE952F7F2287D2A700E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				76C8E2E022C19AB80076E65B /* ResultExercisePresenter.swift in Sources */,
 				DE952FA02287D2A700E3F688 /* FadeInOutAnimation.swift in Sources */,
-				76870EAC22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE361E9A2283E60500FA3B0D /* StringReachability.swift in Sources */,
 				DE952F842287D2A700E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				2A9A81F422EC5FE600345C5F /* SQLHelper.swift in Sources */,
@@ -7286,7 +7272,6 @@
 				DE952FF92287DF4800E3F688 /* KActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
 				76C8E2E122C19AB80076E65B /* ResultExercisePresenter.swift in Sources */,
 				DE952FFA2287DF4800E3F688 /* FadeInOutAnimation.swift in Sources */,
-				76870EAD22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE952FFB2287DF4800E3F688 /* StringReachability.swift in Sources */,
 				DE952FFC2287DF4800E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,
 				2A9A81F522EC5FE600345C5F /* SQLHelper.swift in Sources */,
@@ -7905,7 +7890,6 @@
 				DE9530A82287DF6400E3F688 /* FadeInOutAnimation.swift in Sources */,
 				2A5E25D822E0C6A1009D6203 /* CatelogyExerciseProtocols.swift in Sources */,
 				2A5E25D522E0C6A1009D6203 /* CatelogyExerciseViewController.swift in Sources */,
-				76870EAE22C0F00900F12544 /* CellFillExercise.swift in Sources */,
 				DE9530A92287DF6400E3F688 /* StringReachability.swift in Sources */,
 				2AA20CF322F5522400F38894 /* CommentQuestionProtocols.swift in Sources */,
 				DE9530AA2287DF6400E3F688 /* KActivityIndicatorAnimationBallScale.swift in Sources */,

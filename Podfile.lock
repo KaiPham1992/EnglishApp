@@ -108,9 +108,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
-  - netfox (1.16.0)
   - ObjectMapper (3.5.1)
-  - Popover (1.2.2)
   - Protobuf (3.9.2)
   - Realm (3.19.0):
     - Realm/Headers (= 3.19.0)
@@ -120,7 +118,6 @@ PODS:
   - SDWebImage (5.2.1):
     - SDWebImage/Core (= 5.2.1)
   - SDWebImage/Core (5.2.1)
-  - SwiftyJSON (5.0.0)
   - XLPagerTabStrip (9.0.0)
   - Zip (1.1.0)
 
@@ -134,12 +131,9 @@ DEPENDENCIES:
   - Firebase/Messaging
   - GoogleSignIn
   - IQKeyboardManagerSwift
-  - netfox
   - ObjectMapper
-  - Popover
   - RealmSwift
   - SDWebImage
-  - SwiftyJSON
   - XLPagerTabStrip
   - Zip (~> 1.1)
 
@@ -168,14 +162,11 @@ SPEC REPOS:
     - GTMSessionFetcher
     - IQKeyboardManagerSwift
     - nanopb
-    - netfox
     - ObjectMapper
-    - Popover
     - Protobuf
     - Realm
     - RealmSwift
     - SDWebImage
-    - SwiftyJSON
     - XLPagerTabStrip
     - Zip
 
@@ -203,17 +194,14 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
   IQKeyboardManagerSwift: 9ac7524fad9f9fe9a3b98c927e7772471ca546d2
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
-  netfox: 4590811e5b02e392c72a924c73e000a60ee1f0c7
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
-  Popover: 21e357f86d45c8d9e29a41a4adbca3664d6e511f
   Protobuf: 67fb42ba613def994e61854de2b3164f13790cc4
   Realm: 995d585bcf699aaff226715886c849a29dd3d07f
   RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   SDWebImage: 336f6958a13d5e8347a317cd68a9f6ee9aaaaf03
-  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   XLPagerTabStrip: 61c57fd61f611ee5f01ff1495ad6fbee8bf496c5
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
 
-PODFILE CHECKSUM: 34f069c45fe649787b5896bbc72bd0b833ef61d1
+PODFILE CHECKSUM: a7a225a3f025b237fa917d8cf6e1394f8f6d2edb
 
 COCOAPODS: 1.8.4

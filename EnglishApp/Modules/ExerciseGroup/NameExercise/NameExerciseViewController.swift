@@ -9,7 +9,7 @@
 //
 
 import UIKit
-import Popover
+//import Popover
 import AVKit
 import AVFoundation
 
@@ -112,7 +112,7 @@ class NameExerciseViewController: BaseViewController {
             self?.isReapeat = true
         }
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
-        clvQuestion.registerXibCell(CellFillExercise.self)
+//        clvQuestion.registerXibCell(CellFillExercise.self)
         clvQuestion.registerXibCell(CellExercise.self)
         clvQuestion.delegate = self
         clvQuestion.dataSource = self
@@ -236,10 +236,10 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     }
     
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
-        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
-            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
-        }
-        
+//        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
+//            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+//        }
+//
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
             cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
         }

@@ -8,7 +8,7 @@
 
 import Foundation
 import ObjectMapper
-import SwiftyJSON
+//import SwiftyJSON
 
 struct MapperData {
     // MARK: MAP IOT
