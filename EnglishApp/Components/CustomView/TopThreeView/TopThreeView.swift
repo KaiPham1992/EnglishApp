@@ -94,14 +94,14 @@ class TopThreeView: BaseViewXib {
             imgAvatar1.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
             lbPointtop1.text = "0 \(LocalizableKey.point.showLanguage)"
             
-            widthAvartar2.constant = 60
-            widthContent2.constant = 100
-            imgAvatar2.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+            widthAvartar2.constant = 51
+            widthContent2.constant = 85
+            imgAvatar2.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 25.5)
             lbPointtop2.text = "0 \(LocalizableKey.point.showLanguage)"
             
-            widthAvartar3.constant = 60
-            widthContent3.constant = 100
-            imgAvatar3.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 30)
+            widthAvartar3.constant = 51
+            widthContent3.constant = 85
+            imgAvatar3.setBorder(borderWidth: 0, borderColor: .clear, cornerRadius: 25.5)
             lbPointtop3.text = "0 \(LocalizableKey.point.showLanguage)"
             
         }

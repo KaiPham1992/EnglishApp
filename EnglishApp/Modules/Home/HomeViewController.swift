@@ -455,6 +455,7 @@ extension HomeViewController: MenuViewControllerDelegate {
         }
         if notLogedIn() {
             openLogin()
+            self.hideMenu()
         } else {
             self.userDidLogin(itemSelected: itemSelected)
         }
