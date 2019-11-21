@@ -98,9 +98,7 @@ class HomeViewController: BaseViewController {
         vcMenu = MenuRouter.createModule()
         AppRouter.shared.rootNavigation = self.navigationController
         NotificationCenter.default.removeObserver(self)
-        NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateAvatar"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
