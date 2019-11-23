@@ -16,16 +16,9 @@ protocol HomeViewControllerDelegate: class {
 class HomeViewController: BaseViewController {
     
     @IBOutlet weak var tbHome: UITableView!
-    @IBOutlet weak var topThreeView: TopThreeView!
-    @IBOutlet weak var btnEntranceTest: UIButton!
-    @IBOutlet weak var lbDictionary: UILabel!
-    @IBOutlet weak var lbMission: UILabel!
-    @IBOutlet weak var lbMember: UILabel!
-    @IBOutlet weak var lbSearch: UILabel!
-    @IBOutlet weak var lbRecentTitle: UILabel!
-    @IBOutlet weak var heightEntranceTest: NSLayoutConstraint!
     
     weak var delegate: HomeViewControllerDelegate?
+    
     var presenter: HomePresenterProtocol?
     var vcMenu:  MenuViewController!
     let frefresh = UIRefreshControl()
@@ -54,10 +47,18 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    var topThree = [UserEntity](){
+        didSet {
+            DispatchQueue.main.async {
+                self.tbHome.reloadData()
+            }
+        }
+    }
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-    
+    // MARK: - LIFE CYCLE
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tbHome.tableFooterView = UIView()
@@ -102,29 +103,22 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
-        topThreeView.isUserInteractionEnabled = false
-        setTitleText()
-        
-        // For entrance test
-        if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
-            heightEntranceTest.constant = 0
-        } else {
-            heightEntranceTest.constant = 42
-        }
-    
-    }
-    
-    private func setTitleText() {
-        lbDictionary.text = LocalizableKey.homeDictionary.showLanguage
-        lbMission.text = LocalizableKey.homeMission.showLanguage
-        lbMember.text = LocalizableKey.homeStore.showLanguage
-        lbSearch.text = LocalizableKey.homeFindWork.showLanguage
-        lbRecentTitle.text = LocalizableKey.actionRecently.showLanguage
     }
     
     // Reset cell after change language
     @objc func changeLanguage() {
-        setTitleText()
+        if let homeHeaderCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 0)) as? HomeHeaderCell {
+            homeHeaderCell.awakeFromNib()
+        }
+        if let noDataCell = self.tbHome.cellForRow(at: IndexPath(row: 0, section: 2)) as? HomeNoResultCell {
+            noDataCell.awakeFromNib()
+        }
+        if let actionCell = self.tbHome.cellForRow(at: IndexPath(item: 1, section: 0)) as? HomeActionCell {
+            actionCell.awakeFromNib()
+        }
+        if let titleCell = self.tbHome.cellForRow(at: IndexPath(item: 0, section: 1)) as? HomeTitleCell {
+            titleCell.awakeFromNib()
+        }
         resetData()
     }
         
@@ -178,50 +172,6 @@ class HomeViewController: BaseViewController {
     @objc func btnMenuTapped() {
         showMenu()
     }
-    
-    @IBAction func btnDictionaryTapped() {
-        let vc = DictionaryRouter.createModule()
-        self.pushView(vc: vc)
-    }
-    
-    @IBAction func btnMissionTapped() {
-        if notLogedIn() {
-            openLogin()
-        } else {
-            let vc = DailyMissonRouter.createModule()
-            self.pushView(vc: vc)
-        }
-    }
-    
-    @IBAction func btnMemberTapped() {
-        if notLogedIn() {
-            openLogin()
-        } else {
-            let vc = StoreViewController()
-            self.pushView(vc: vc)
-        }
-    }
-    
-    @IBAction func btnSearchTapped() {
-        if notLogedIn() {
-            openLogin()
-        } else {
-            let vc = FindRouter.createModule()
-            self.pushView(vc: vc)
-        }
-    }
-    
-    @IBAction func btnTestTapped() {
-        if notLogedIn() {
-            openLogin()
-        } else {
-            self.gotoTestEntrance()
-        }
-    }
-    
-    @IBAction func topThreeTapped() {
-        pushView(vc: BXHRouter.createModule())
-    }
 }
 //MARK: - FOR CALL API
 extension HomeViewController {
@@ -240,6 +190,7 @@ extension HomeViewController {
         self.isLoadmore = true
         self.showProgressView = false
         self.listActivities = []
+        self.topThree = []
         getHomeRecently()
         getHomeSummary()
     }
@@ -253,7 +204,7 @@ extension HomeViewController {
         }) { (error) in }
     }
     
-    // For notification icon
+    // For notification icon - Top right icon
     func countNotification() {
         if notLogedIn() { return }
         self.addButtonNotificationNavigation(count: 0, action: #selector(self.btnNotificationTapped))
@@ -282,21 +233,6 @@ extension HomeViewController {
     @objc func updateProfile() {
         resetData()
     }
-    
-    @objc func btnTestBeginTapped() {
-        if notLogedIn() {
-            openLogin()
-        } else {
-            self.gotoTestEntrance()
-        }
-    }
-    
-    private func gotoTestEntrance(){
-        let vc = NameExerciseRouter.createModule(id: "", type: .entranceExercise)
-        vc.hidesBottomBarWhenPushed = true
-        vc.exerciseDelegate = self
-        self.push(controller: vc)
-    }
 }
 
 // MARK: - FOR TABLE VIEW
@@ -304,7 +240,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func configureTable() {
         tbHome.delegate = self
         tbHome.dataSource = self
+        tbHome.registerXibFile(HomeActionCell.self)
+        tbHome.registerXibFile(HomeHeaderCell.self)
         tbHome.registerXibFile(HomeRecentlyCell.self)
+        tbHome.registerXibFile(HomeTitleCell.self)
         tbHome.registerXibFile(HomeNoResultCell.self)
         tbHome.separatorStyle = .none
         
@@ -320,41 +259,100 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         frefresh.endRefreshing()
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if self.listActivities.count == 0 {
-            let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
-            cell.showNoData()
+        switch indexPath.section {
+        case 0:
+            if indexPath.row == 0 {
+                let cell = tableView.dequeue(HomeHeaderCell.self, for: indexPath)
+                cell.btnTestBegin.addTarget(self, action: #selector(btnTestBeginTapped), for: .touchUpInside)
+                if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
+                    cell.isTestedEnstrane = true
+                } else {
+                    cell.isTestedEnstrane = false
+                }
+                cell.topThreeView.listTopThree = self.topThree
+                return cell
+            } else {
+                let cell = tableView.dequeue(HomeActionCell.self, for: indexPath)
+                cell.selectionStyle = .none
+                cell.delegate = self
+                return cell
+            }
+        case 2:
+            if self.listActivities.count == 0 {
+                let cell = tableView.dequeue(HomeNoResultCell.self, for: indexPath)
+                cell.showNoData()
+                return cell
+            } else {
+                let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
+                cell.actity = self.listActivities[indexPath.row]
+                return cell
+            }
+        case 1:
+            let cell = tableView.dequeueTableCell(HomeTitleCell.self)
             return cell
-        } else {
-            let cell = tableView.dequeue(HomeRecentlyCell.self, for: indexPath)
-            cell.actity = self.listActivities[indexPath.row]
-            return cell
+        default:
+            return UITableViewCell()
         }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let numRow = self.listActivities.count
-        if numRow == 0 {
+        switch section {
+        case 0:
+            return 2
+        case 1:
             return 1
+        case 2:
+            let row = self.listActivities.count
+            if row == 0 {
+                return 1
+            }
+            return row
+        default:
+            return 0
         }
-        return numRow
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        if indexPath.section == 0 {
+            return indexPath.row == 0 ? UITableView.automaticDimension : 160
+        } else {
+            return UITableView.automaticDimension
+        }
+    }
+    
+    @objc func btnTestBeginTapped() {
+        if notLogedIn() {
+            openLogin()
+        } else {
+            self.gotoTestEntrance()
+        }
+    }
+    
+    private func gotoTestEntrance(){
+        let vc = NameExerciseRouter.createModule(id: "", type: .entranceExercise)
+        vc.hidesBottomBarWhenPushed = true
+        vc.exerciseDelegate = self
+        self.push(controller: vc)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if listActivities.count - 5 == indexPath.row && isLoadmore {
-            self.offset += limit
-            getHomeRecently()
-            let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
-            spiner.startAnimating()
-            spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
-            self.tbHome.tableFooterView = spiner
-            self.tbHome.tableFooterView?.isHidden = false
-        } else {
-            self.tbHome.tableFooterView?.isHidden = true
+        if indexPath.section == 2 {
+            if listActivities.count - 5 == indexPath.row && isLoadmore {
+                self.offset += limit
+                getHomeRecently()
+                let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
+                spiner.startAnimating()
+                spiner.frame = CGRect(x: 0, y: 0, width: tableView.frame.width, height: 44)
+                self.tbHome.tableFooterView = spiner
+                self.tbHome.tableFooterView?.isHidden = false
+            } else {
+                self.tbHome.tableFooterView?.isHidden = true
+            }
         }
     }
 }
@@ -374,8 +372,40 @@ extension HomeViewController : ExerciseDelegate {
     }
 }
 
-extension HomeViewController {
-
+// MARK: - HOME ACTION CELL DELEGATE
+extension HomeViewController: HomeActionCellDelegate {
+    func btnDictionaryTapped() {
+        let vc = DictionaryRouter.createModule()
+        self.pushView(vc: vc)
+    }
+    
+    func btnStoreTapped() {
+        if notLogedIn() {
+            openLogin()
+        } else {
+            let vc = StoreViewController()
+            self.pushView(vc: vc)
+        }
+    }
+    
+    func btnMissionTapped() {
+        if notLogedIn() {
+            openLogin()
+        } else {
+            let vc = DailyMissonRouter.createModule()
+            self.pushView(vc: vc)
+        }
+    }
+    
+    func btnFindWorkTapped() {
+        if notLogedIn() {
+            openLogin()
+        } else {
+            let vc = FindRouter.createModule()
+            self.pushView(vc: vc)
+        }
+    }
+    
     private func pushView(vc: UIViewController) {
         vc.hidesBottomBarWhenPushed = true
         self.push(controller: vc)
@@ -524,7 +554,7 @@ extension HomeViewController: HomeViewProtocol{
     
     func didGetHomeSummary(summaryInfo: CollectionUserEntity) {
         if let topThree = summaryInfo.leader_boards {
-            self.topThreeView.listTopThree = topThree
+            self.topThree = topThree
         }
         let numberCompetition = summaryInfo.count_fight_test ?? 0
         if numberCompetition > 0 {
