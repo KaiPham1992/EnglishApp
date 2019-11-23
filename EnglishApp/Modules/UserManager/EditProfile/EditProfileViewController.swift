@@ -109,7 +109,7 @@ extension EditProfileViewController: EditProfileViewProtocol {
     }
     
     func didUpdateAvatar() {
-        NotificationCenter.default.post(name: Notification.Name("UpdateProfile"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("UpdateAvatar"), object: nil)
 
     }
 }
