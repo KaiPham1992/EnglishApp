@@ -32,7 +32,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Fabric.with([Crashlytics.self])
 //        Crashlytics.sharedInstance().debugMode = true
 //        Fabric.sharedSDK().debug = true
-        self.removeAccessToken()
         if UserDefaultHelper.shared.appLanguage == nil {
             LanguageHelper.setAppleLAnguageTo(lang: LanguageType.english)
         }
@@ -46,20 +45,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //---
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        checkLogin()
+        checkLogin()
         realmConfig()
         AppRouter.shared.openHome()
 //        AppRouter.shared.updateRootView()
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
-        
-       
-        //--
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, err) in
-//            if !didAllow {
-//                print("User has declined notifications")
-//            }
-//        }
         return true
+    }
+    
+    private func checkLogin() {
+        Provider.shared.userAPIService.checkLogin(success: { user in
+            guard let user = user else { return }
+            UserDefaultHelper.shared.userToken = user.jwt&
+        }) { _error in
+            if let _ = _error?.code {
+                UserDefaultHelper.shared.clearUser()
+                NotificationCenter.default.post(name: NSNotification.Name("InvalidToken"), object: nil)
+                return
+            } else {
+                return
+            }
+        }
     }
     
     func removeAccessToken() {

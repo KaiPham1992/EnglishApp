@@ -84,6 +84,16 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    @objc func reloadViewDidload() {
+        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)) {
+            self.loginUserDefault {
+                self.getInitialData()
+            }
+        } else {
+            getInitialData()
+        }
+    }
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeHeaderHome()
@@ -99,6 +109,7 @@ class HomeViewController: BaseViewController {
         vcMenu = MenuRouter.createModule()
         AppRouter.shared.rootNavigation = self.navigationController
         NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadViewDidload), name: NSNotification.Name("InvalidToken"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(hideMenu), name: NSNotification.Name.init("HideMenu"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateAvatar"), object: nil)

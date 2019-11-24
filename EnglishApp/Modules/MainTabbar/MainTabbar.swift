@@ -34,9 +34,14 @@ class MainTabbar: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(noCompetition), name: NSNotification.Name.init("NoCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didReciveNotification), name: NSNotification.Name.init("didReciveNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(processInvalidToken), name: NSNotification.Name.init("InvalidToken"), object: nil)
         self.tabBar.tintColor = AppColor.color255_211_17
     }
-
+    
+    @objc func processInvalidToken() {
+        
+    }
+    
     @objc func didReciveNotification(notification: Notification){
         if let action_key = notification.userInfo?["click_action"] as? String {
             switch action_key {

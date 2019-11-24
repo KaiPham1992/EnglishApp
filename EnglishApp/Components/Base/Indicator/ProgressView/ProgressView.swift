@@ -32,11 +32,12 @@ open class ProgressView {
         return image
     }()
     
+    private var time : Timer?
+    private var number = 0
     
     public static let shared = ProgressView()
     
     private func show(_ view: UIView) {
-        
         view.addSubview(vcontainer)
         vcontainer.centerSuperview()
         vcontainer.anchor(widthConstant: 80, heightConstant: 80)
@@ -46,6 +47,9 @@ open class ProgressView {
         vIndicator.anchor(widthConstant: 60, heightConstant: 60)
         vIndicator.centerSuperview()
         vIndicator.startAnimating()
+        self.time = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            self.processTimer()
+        })
     }
     
     private func showFullScreen(_ view: UIView) {
@@ -61,10 +65,19 @@ open class ProgressView {
     }
     
     open func show() {
-       
         DispatchQueue.main.async {
             guard let view = UIApplication.topViewController()?.view else { return }
             self.show(view)
+        }
+    }
+    
+    private func processTimer() {
+        self.number += 1
+        if self.number > 60 {
+            if self.time != nil {
+                self.time?.invalidate()
+                self.time = nil
+            }
         }
     }
     
@@ -88,9 +101,13 @@ open class ProgressView {
     func showFillSuperView(view: UIView){
         view.addSubview(imageLoadingCompetition)
         imageLoadingCompetition.fillSuperview()
+        self.time = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (_) in
+            self.processTimer()
+        })
     }
     
     func hideLoadingCompetition(){
+        self.hide()
         DispatchQueue.main.async {
             self.imageLoadingCompetition.removeFromSuperview()
         }
@@ -104,7 +121,15 @@ open class ProgressView {
         }
     }
     
+    private func disableTimer() {
+        if self.time != nil {
+            self.time?.invalidate()
+            self.time = nil
+        }
+    }
+    
     open func hide() {
+        self.disableTimer()
         DispatchQueue.main.async {
             let topViewController = UIApplication.topViewController() as? BaseViewController
             topViewController?.setColorStatusBar(color: AppColor.yellow)

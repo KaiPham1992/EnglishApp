@@ -25,7 +25,7 @@ struct DefaultHeader {
         let code = LanguageHelper.currentAppleLanguage()
         header["Language"] = code
         if let token = UserDefaultHelper.shared.userToken {
-            header["Authorization"] = "Bearer " + "dasjkdhasjdhasjkdhaskjdhaskdjh"
+            header["Authorization"] = "Bearer " + token
         }
         return header
     }
