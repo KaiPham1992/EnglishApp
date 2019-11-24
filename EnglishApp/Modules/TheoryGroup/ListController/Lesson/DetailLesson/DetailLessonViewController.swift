@@ -145,7 +145,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
         if type == .detailLesson {
             setTitleNavigation(title: self.presenter?.lessonDetail?.name ?? "")
             if let htmlString = self.presenter?.self.lessonDetail?.content{
-                tvContent.attributedText = htmlString.attributedString(fontSize: 14)
+                tvContent.attributedText = htmlString.attributedString()
             }
             if let comment = self.presenter?.lessonDetail?.unread_comments{
                 self.viewMessage.setupNumber(number: comment)
@@ -164,7 +164,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
         } else {
             if let vocabulary = self.vocabulary {
                 setTitleNavigation(title: vocabulary.word)
-                tvContent.attributedText = self.presenter?.vocabulary?.explain.attributedString(fontSize: 14)
+                tvContent.attributedText = self.presenter?.vocabulary?.explain.attributedString()
                 if vocabulary.is_favorite {
                     self.isLike = 1
                     self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
@@ -173,7 +173,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                     self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
                 }
             } else {
-                tvContent.attributedText = self.presenter?.vocabulary?.explain.attributedString(fontSize: 14)
+                tvContent.attributedText = self.presenter?.vocabulary?.explain.attributedString()
                 if (self.presenter?.vocabulary?.is_favorite ?? false) {
                     self.isLike = 1
                     self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
