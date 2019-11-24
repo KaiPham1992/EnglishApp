@@ -39,11 +39,31 @@ class DetailLessonViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        if type == .detailLesson {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            tap.numberOfTapsRequired = 2
+            tvContent.addGestureRecognizer(tap)
+        }
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer){
+        let point = sender.location(in: tvContent)
+        if let detectedWord = getWordAtPosition(point){
+            print(detectedWord)
+        }
+    }
+    
+    private func getWordAtPosition(_ point: CGPoint) -> String?{
+        if let textPosition = tvContent.closestPosition(to: point) {
+            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
+                return tvContent.text(in: range)
+            }
+        }
+        return nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         if showProgressView {
             ProgressView.shared.show()
             self.showProgressView = false
