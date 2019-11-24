@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        Fabric.with([Crashlytics.self])
 //        Crashlytics.sharedInstance().debugMode = true
 //        Fabric.sharedSDK().debug = true
+        self.removeAccessToken()
         if UserDefaultHelper.shared.appLanguage == nil {
             LanguageHelper.setAppleLAnguageTo(lang: LanguageType.english)
         }
@@ -61,19 +62,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-//    func checkLogin() {
-//        Provider.shared.userAPIService.checkLogin(success: { _ in
-//
-//        }) { _error in
-//            if let _ = _error?.code {
-//                UserDefaultHelper.shared.clearUser()
-//                AppRouter.shared.openLogin()
-//                return
-//            } else {
-//                return
-//            }
-//        }
-//    }
+    func removeAccessToken() {
+        if let userLogin = UserDefaultHelper.shared.loginUserInfo, userLogin.email == emailDefault {
+            UserDefaults.standard.removeObject(forKey: UserDefaultHelperKey.userToken.rawValue)
+        }
+    }
     
     func realmConfig() {
 //        let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { (migration, oldSchemaVersion) in
