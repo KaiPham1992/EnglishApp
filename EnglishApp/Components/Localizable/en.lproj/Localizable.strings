@@ -121,7 +121,7 @@
 "verifyButton" = "Yes";
 
 // Daily mission
-"messageDailyMission" = "Complete daily mission to receive 10 diamonds";
+"messageDailyMission" = "Complete the daily mission to receive 10 diamonds";
 "dailyMissionTitle" = "Daily Mission";
 "startMission" = "Start";
 "doneInputTest" = "Congratulations! You have completed the Qualification Test. Obee awarded you 500 diamonds.";
@@ -212,7 +212,7 @@
 "exercise" = "Exercise";
 "practice" = "Practice";
 "create_exercise" ="Self-created exercises";
-"level_exercise" ="Level exercises";
+"level_exercise" ="Study Packs";
 "assign_exercise" = "Assigned assignments";
 "name_exercise" = "Excercise name";
 "enter_name_exercise" = "Enter excercise name";
