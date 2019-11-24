@@ -62,8 +62,7 @@ class ListLessonViewController: ListManagerVC {
 }
 
 extension ListLessonViewController: ListLessonViewProtocol {
-    func reloadView() {
-        self.tbvLesson.reloadData()
-        initLoadData(data: self.presenter?.listLesson?.lessons ?? [])
+    func reloadView(data: [ItemLesson]) {
+        initLoadData(data: data)
     }
 }

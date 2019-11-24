@@ -24,7 +24,6 @@ class LessonViewController: ListManagerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
-        
     }
     
     override func registerTableView() {
