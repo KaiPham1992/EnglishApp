@@ -74,6 +74,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tbHome.isHidden = true
         configureTable()
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)) {
             self.loginUserDefault {
@@ -578,6 +579,7 @@ extension HomeViewController: HomeViewProtocol{
     }
     
     func didGetHomeRecently(activities: [Acitvity]) {
+        tbHome.isHidden = false
         ProgressView.shared.hide()
         if activities.count < 20 {
             self.isLoadmore = false

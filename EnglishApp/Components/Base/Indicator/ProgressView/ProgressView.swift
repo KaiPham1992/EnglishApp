@@ -17,6 +17,13 @@ open class ProgressView {
         return v
     }()
     
+    let background : UIView = {
+        let v = UIView()
+        v.backgroundColor = .white
+        v.translatesAutoresizingMaskIntoConstraints = false
+        return v
+    }()
+    
     let vIndicator: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.white)
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -38,6 +45,8 @@ open class ProgressView {
     public static let shared = ProgressView()
     
     private func show(_ view: UIView) {
+        view.addSubview(background)
+        background.fillSuperview()
         view.addSubview(vcontainer)
         vcontainer.centerSuperview()
         vcontainer.anchor(widthConstant: 80, heightConstant: 80)
@@ -136,6 +145,7 @@ open class ProgressView {
             topViewController?.setNeedsStatusBarAppearanceUpdate()
             self.vcontainer.removeFromSuperview()
             self.vIndicator.removeFromSuperview()
+            self.background.removeFromSuperview()
         }
         
     }
