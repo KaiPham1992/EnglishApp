@@ -121,7 +121,7 @@
 "verifyButton" = "Xác nhận";
 
 // Daily mission
-"messageDailyMission" = "Hoàn thành nhiệm vụ hàng ngày nhận ngay 10 kim cương";
+"messageDailyMission" = "Hoàn thành nhiệm vụ hàng ngày để nhận 10 kim cương";
 "dailyMissionTitle" = "Nhiệm vụ hàng ngày";
 "startMission" = "Bắt đầu";
 "doneInputTest" = "Chúc mừng bạn đã hoàn thành bài trắc nghiệm đầu vào, Obee tặng bạn 500 kim cương.";

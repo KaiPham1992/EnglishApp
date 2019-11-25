@@ -17,7 +17,7 @@ enum DetailLessonVocabulary{
 }
 class DetailLessonViewController: BaseViewController {
 
-    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var tvContent: UITextView!
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: ItemLesson?
@@ -26,22 +26,7 @@ class DetailLessonViewController: BaseViewController {
     var isClickLikeImage = false
     var vocabulary : WordExplainEntity?
     var idVocabulary : Int?
-    var font = """
-    <style>
-    @font-face
-    {
-        font-family: 'Comfortaa';
-        font-weight: normal;
-        src: url(Comfortaa-Regular.ttf);
-    }
-    @font-face
-    {
-        font-family: 'Comfortaa';
-        font-weight: bold;
-        src: url(Comfortaa-Bold.ttf);
-    }
-    </style>
-    """
+    var font = ""
     var isLike = 0 {
         didSet{
             self.btnLike.setBackgroundImage(isLike == 0 ? UIImage(named:"Material_Icons_white_favorite") : #imageLiteral(resourceName: "Material_Icons_white_favorite-1") , for: .normal)
@@ -54,13 +39,31 @@ class DetailLessonViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        webView.navigationDelegate = self
-        webView.scrollView.delegate = self
+        if type == .detailLesson {
+            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+            tap.numberOfTapsRequired = 2
+            tvContent.addGestureRecognizer(tap)
+        }
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer){
+        let point = sender.location(in: tvContent)
+        if let detectedWord = getWordAtPosition(point){
+            print(detectedWord)
+        }
+    }
+    
+    private func getWordAtPosition(_ point: CGPoint) -> String?{
+        if let textPosition = tvContent.closestPosition(to: point) {
+            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
+                return tvContent.text(in: range)
+            }
+        }
+        return nil
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         if showProgressView {
             ProgressView.shared.show()
             self.showProgressView = false
@@ -157,30 +160,12 @@ class DetailLessonViewController: BaseViewController {
         }
     }
 }
-
-extension DetailLessonViewController : UIScrollViewDelegate {
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return nil
-    }
-}
-
-extension DetailLessonViewController : WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
-    }
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
-           webView.evaluateJavaScript(jscript)
-    }
-}
-
 extension DetailLessonViewController:DetailLessonViewProtocol{
     func reloadView() {
         if type == .detailLesson {
             setTitleNavigation(title: self.presenter?.lessonDetail?.name ?? "")
             if let htmlString = self.presenter?.self.lessonDetail?.content{
-                let htmlStringAdvanced = font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + htmlString + #"</span>"#
-                webView.loadHTMLString(htmlStringAdvanced, baseURL: Bundle.main.bundleURL)
+                tvContent.attributedText = htmlString.attributedString()
             }
             if let comment = self.presenter?.lessonDetail?.unread_comments{
                 self.viewMessage.setupNumber(number: comment)
@@ -199,8 +184,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
         } else {
             if let vocabulary = self.vocabulary {
                 setTitleNavigation(title: vocabulary.word)
-                let htmlString = font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + (self.presenter?.vocabulary?.explain ?? "") + #"</span>"#
-                webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
+                tvContent.attributedText = self.presenter?.vocabulary?.explain.attributedString()
                 if vocabulary.is_favorite {
                     self.isLike = 1
                     self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
@@ -209,8 +193,7 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                     self.btnLike.setBackgroundImage(UIImage(named:"Material_Icons_white_favorite")!, for: .normal)
                 }
             } else {
-                let htmlString = font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 14; color: black">"# + (self.presenter?.vocabulary?.explain ?? "") + #"</span>"#
-                webView.loadHTMLString(htmlString, baseURL: Bundle.main.bundleURL)
+                tvContent.attributedText = self.presenter?.vocabulary?.explain.attributedString()
                 if (self.presenter?.vocabulary?.is_favorite ?? false) {
                     self.isLike = 1
                     self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)

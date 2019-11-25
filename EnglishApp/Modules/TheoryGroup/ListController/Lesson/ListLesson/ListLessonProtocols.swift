@@ -18,7 +18,6 @@ protocol ListLessonWireframeProtocol: class {
 protocol ListLessonPresenterProtocol: class {
 
     var interactor: ListLessonInteractorInputProtocol? { get set }
-    var listLesson: LessonsResponse?{get set}
     func getListLesson(lesson_category_id: String,offset: Int)
 }
 
@@ -43,7 +42,7 @@ protocol ListLessonViewProtocol: class {
 
     var presenter: ListLessonPresenterProtocol?  { get set }
     
-    func reloadView()
+    func reloadView(data: [ItemLesson])
 
     /* Presenter -> ViewController */
 }

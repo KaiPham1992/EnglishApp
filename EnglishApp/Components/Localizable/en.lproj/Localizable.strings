@@ -9,7 +9,7 @@
 // Menu Page
 "MenuInfo" = "Profile";
 "MenuTop" = "Leader Board";
-"MenuQA" = "Q&A";
+"MenuQA" = "Obee's Help";
 "MenuLanguage" = "Language";
 "MenuSaved" = "Saved";
 "MenuHistory" = "Test Archive";
@@ -121,7 +121,7 @@
 "verifyButton" = "Yes";
 
 // Daily mission
-"messageDailyMission" = "Complete daily mission to receive 10 diamonds";
+"messageDailyMission" = "Complete the daily mission to receive 10 diamonds";
 "dailyMissionTitle" = "Daily Mission";
 "startMission" = "Start";
 "doneInputTest" = "Congratulations! You have completed the Qualification Test. Obee awarded you 500 diamonds.";
@@ -162,7 +162,7 @@
 "homeStore" = "Member";
 "homeMission" = "Mission";
 "homeFindWork" = "Find exercises";
-"actionRecently" = "Recenly action";
+"actionRecently" = "Recent Activities";
 
 "tabbarHome" = "Home";
 "tabbarProgram" = "Theory";
@@ -212,7 +212,7 @@
 "exercise" = "Exercise";
 "practice" = "Practice";
 "create_exercise" ="Self-created exercises";
-"level_exercise" ="Level exercises";
+"level_exercise" ="Study Packs";
 "assign_exercise" = "Assigned assignments";
 "name_exercise" = "Excercise name";
 "enter_name_exercise" = "Enter excercise name";

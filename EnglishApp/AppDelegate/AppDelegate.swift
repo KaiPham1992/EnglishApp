@@ -12,9 +12,6 @@ import Firebase
 import FBSDKLoginKit
 import FBSDKCoreKit
 import GoogleSignIn
-//import Fabric
-//import Crashlytics
-//import netfox
 import UserNotifications
 import RealmSwift
 import FBSDKShareKit
@@ -26,12 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-//        #if DEV
-//            NFX.sharedInstance().start()
-//        #endif
-//        Fabric.with([Crashlytics.self])
-//        Crashlytics.sharedInstance().debugMode = true
-//        Fabric.sharedSDK().debug = true
         if UserDefaultHelper.shared.appLanguage == nil {
             LanguageHelper.setAppleLAnguageTo(lang: LanguageType.english)
         }
@@ -45,34 +36,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //---
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
-//        checkLogin()
+        checkLogin()
         realmConfig()
         AppRouter.shared.openHome()
-//        AppRouter.shared.updateRootView()
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
-       
-        //--
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (didAllow, err) in
-//            if !didAllow {
-//                print("User has declined notifications")
-//            }
-//        }
         return true
     }
     
-//    func checkLogin() {
-//        Provider.shared.userAPIService.checkLogin(success: { _ in
-//
-//        }) { _error in
-//            if let _ = _error?.code {
-//                UserDefaultHelper.shared.clearUser()
-//                AppRouter.shared.openLogin()
-//                return
-//            } else {
-//                return
-//            }
-//        }
-//    }
+    private func checkLogin() {
+        Provider.shared.userAPIService.checkLogin(success: { user in
+            guard let user = user else { return }
+            UserDefaultHelper.shared.userToken = user.jwt&
+        }) { _error in
+            if let _ = _error?.code {
+                UserDefaultHelper.shared.clearUser()
+                NotificationCenter.default.post(name: NSNotification.Name("InvalidToken"), object: nil)
+                return
+            } else {
+                return
+            }
+        }
+    }
     
     func realmConfig() {
 //        let config = Realm.Configuration(schemaVersion: 2, migrationBlock: { (migration, oldSchemaVersion) in
@@ -119,17 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-//        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-//            if settings.authorizationStatus == .authorized {
-//                print("notification authorized")
-//            } else {
-//                print("notification not authorized")
-//                self.configurePushNotification(application: application)
-//            }
-//        }
-        
         print("=========================applicationDidBecomeActive=========================")
-        
         Provider.shared.homeAPIService.getTopThree(success: { (object) in
             let count = object?.count_fight_test ?? 0
             UIApplication.shared.applicationIconBadgeNumber = object?.count_notify ?? 0

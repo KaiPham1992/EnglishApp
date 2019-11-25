@@ -125,6 +125,22 @@ extension APINetwork {
             success(response)
         } else {
             // handle error with message from API
+//            func checkLogin() {
+//                Provider.shared.userAPIService.checkLogin(success: { user in
+//                    guard let user = user else { return }
+//                    UserDefaultHelper.shared.saveUser(user: user)
+//                    UserDefaultHelper.shared.userToken = user.jwt&
+//                }) { _error in
+//                    if let _ = _error?.code {
+//                        UserDefaultHelper.shared.clearUser()
+//                        AppRouter.shared.openLogin()
+//                        return
+//                    } else {
+//                        return
+//                    }
+//                }
+//            }
+//            
             let error = APIError(baseResponse: response)
             failure(error)
         }

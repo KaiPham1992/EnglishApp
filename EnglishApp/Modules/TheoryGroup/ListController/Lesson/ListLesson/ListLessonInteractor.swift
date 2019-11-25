@@ -15,14 +15,11 @@ class ListLessonInteractor: ListLessonInteractorInputProtocol {
     weak var presenter: ListLessonInteractorOutputProtocol?
     
     func getListLesson(lesson_category_id: String,offset: Int) {
-        ProgressView.shared.show()
         Provider.shared.theoryAPIService.getListLesson(lesson_category_id: Int(lesson_category_id) ?? 0, offset: offset, success: { (listLesson) in
-            ProgressView.shared.hide()
             if let _response = listLesson {
                 self.presenter?.getListLessonSuccessed(listLesson: _response)
             }
         }) { (error) in
-            ProgressView.shared.hide()
         }
     }
 }
