@@ -201,7 +201,7 @@ extension ResultExerciseViewController : CellExerciseDelegate {
     }
     
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
-//        self.presenter?.searchVocabulary(word: word, position: position, index: index)
+        self.presenter?.searchVocabulary(word: word, position: position, index: index)
     }
     
     func clickAudio(indexPath: IndexPath) {

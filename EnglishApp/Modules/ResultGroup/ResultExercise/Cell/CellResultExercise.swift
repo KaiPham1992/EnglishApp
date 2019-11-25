@@ -22,15 +22,19 @@ class CellResultExercise: UICollectionViewCell {
         view.sizeToFit()
         view.textContainerInset = UIEdgeInsets.zero
         view.textContainer.lineFragmentPadding = 0
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        view.addGestureRecognizer(tap)
+        
         return view
     }()
     
     var dataCell: QuestionResultEntity?{
         didSet{
             tbvResultQuestion.reloadData()
+        }
+    }
+    
+    override func prepareForReuse() {
+        if let tab = tvContent.gestureRecognizers, let item = tab.first {
+            tvContent.removeGestureRecognizer(item)
         }
     }
     
@@ -50,11 +54,9 @@ class CellResultExercise: UICollectionViewCell {
         tbvResultQuestion.registerXibFile(CellResultChoice.self)
         tbvResultQuestion.dataSource = self
         tbvResultQuestion.delegate = self
-        detectQuestion()
-    }
-    
-    func detectQuestion(){
-        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tap)
     }
     
     @objc func handleTap(sender: UITapGestureRecognizer){
@@ -113,10 +115,7 @@ extension CellResultExercise: UITableViewDataSource{
         view.addSubview(tvContent)
         tvContent.fillVerticalSuperview(constant: 15)
         tvContent.fillHorizontalSuperview(constant: 15)
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
-        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
-        tvContent.attributedText = NSAttributedString(string: dataCell?.content?.htmlToString ?? "", attributes: attributes)
+        tvContent.attributedText = dataCell?.content?.attributedString()
         return view
     }
     
