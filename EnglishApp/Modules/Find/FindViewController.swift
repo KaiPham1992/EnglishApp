@@ -22,9 +22,19 @@ class FindViewController: BaseViewController {
     
     var type : TypeViewSearch = .searchExercise
     var indexRow = 0
+    var isRead: [Bool] = []
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tbResult.reloadData()
+    }
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        print(isRead)
     }
 
     override func setTitleUI() {
@@ -58,6 +68,16 @@ class FindViewController: BaseViewController {
         self.pop()
         self.dismissKeyBoard()
     }
+    
+    // MARK: - For check read or not
+    private func createIsReadList(count: Int) {
+        isRead = Array(repeating: false, count: count)
+    }
+    
+    private func changeStatusRow(index: Int) {
+        isRead[index] = true
+    }
+    
 }
 extension FindViewController: FindViewProtocol{
     func reloadView() {
@@ -66,6 +86,7 @@ extension FindViewController: FindViewProtocol{
             row = self.presenter?.searchTheoryRespone.count ?? 0
         } else {
             row = self.presenter?.searchExciseRespone.count ?? 0
+            createIsReadList(count: row)
         }
         if row == 0 {
             self.showNoData()
@@ -105,11 +126,17 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
         if type == .searchTheory {
             if let data = self.presenter?.searchTheoryRespone[indexPath.row].name?.htmlToString {
-                cell.lblSearch.text = data
+                cell.lbTitle.text = data
             }
         } else {
             if let data = self.presenter?.searchExciseRespone[indexPath.row].name?.htmlToString {
-                cell.lblSearch.text = data
+                if isRead[indexPath.row] {
+                    cell.backgroundColor = UIColor.white
+                } else {
+                    cell.backgroundColor = AppColor.notificationNotRead
+                }
+                
+                cell.lbTitle.text = data
             }
         }
         return cell
@@ -143,6 +170,7 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
                 PopUpHelper.shared.showYesNo(message: LocalizableKey.feeFind.showLanguage, completionNo: nil) {
                     [unowned self] in
                     self.indexRow = indexPath.row
+                    self.changeStatusRow(index: indexPath.row)
                     self.presenter?.checkAmountSearchExercise()
                 }
             }
@@ -150,6 +178,6 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return UITableView.automaticDimension
     }
 }
