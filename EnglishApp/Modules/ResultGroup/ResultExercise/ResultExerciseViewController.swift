@@ -15,6 +15,15 @@ class ResultExerciseViewController: BaseViewController {
 
 	var presenter: ResultExercisePresenterProtocol?
     
+    @IBAction func reportQuestion(_ sender: Any) {
+        PopUpHelper.shared.showReportQuestion(cancel: {
+        }) { [unowned self] (message) in
+            if let answer = self.presenter?.getAnswer(indexPath: IndexPath(row: self.index, section: 0)) {
+                self.presenter?.reportQuestion(questionDetailId: Int(answer.question_id ?? "0") ?? 0, content: message ?? "")
+            }
+        }
+    }
+    
     @IBAction func clickNext(_ sender: Any) {
         let numberAnswer = self.presenter?.getNumberAnswer() ?? 0
         if index + 1 < numberAnswer {
@@ -141,15 +150,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         }
         return cell
     }
-    
-    func reportQuestion(questionId: Int, answerId: Int) {
-        PopUpHelper.shared.showReportQuestion(cancel: {
-            
-        }) { [unowned self] (message) in
-            self.presenter?.reportQuestion(questionDetailId: answerId, content: message ?? "")
-        }
-    }
-    
+
     func seeRelatedGrammar(questionId: Int, answerId: Int) {
         let vc = RelatedGrammarRouter.createModule(id: answerId)
         self.push(controller: vc)

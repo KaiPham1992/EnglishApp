@@ -20,6 +20,10 @@ class CellResultExercise: UICollectionViewCell {
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vAudio: UIView!
     
+    @IBAction func clickAudio(_ sender: Any) {
+        delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+    }
+    
     var questionEntity: QuestionResultEntity?{
         didSet{
             if (self.questionEntity?.checkHaveAudio() ?? false) {
@@ -38,7 +42,6 @@ class CellResultExercise: UICollectionViewCell {
     var actionRelatedGrammar : ((_ questionId: Int,_ answerId: Int) -> ())?
     
     var numberLine: Int = 0
-//    let popover = Popover()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -54,10 +57,7 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func setContentQuestion() {
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
-        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
-        tvContent.attributedText = NSAttributedString(string: questionEntity?.content?.htmlToString ?? "", attributes: attributes)
+        tvContent.attributedText = questionEntity?.content?.attributedString()
     }
     
     func detectQuestion(){

@@ -33,7 +33,7 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-iR-3zt">
                                         <rect key="frame" x="0.0" y="-30" width="302" height="30"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio" translatesAutoresizingMaskIntoConstraints="NO" id="12I-x3-EWf">
+                                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_speaker on" translatesAutoresizingMaskIntoConstraints="NO" id="12I-x3-EWf">
                                                 <rect key="frame" x="5" y="0.0" width="30" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="DRF-aV-eaH"/>
@@ -70,7 +70,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question coner" translatesAutoresizingMaskIntoConstraints="NO" id="CJp-Pp-xoA">
-                                <rect key="frame" x="230.5" y="152.5" width="71.5" height="51"/>
+                                <rect key="frame" x="230.5" y="152.5" width="71.500000000000114" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CJp-Pp-xoA" secondAttribute="height" multiplier="394:279" id="6uG-ld-3IX"/>
                                 </constraints>
@@ -116,8 +116,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="audio" width="145.33332824707031" height="139.33332824707031"/>
         <image name="bg_question" width="1664" height="1120"/>
         <image name="bg_question coner" width="394" height="279"/>
+        <image name="ic_speaker on" width="240" height="208"/>
     </resources>
 </document>

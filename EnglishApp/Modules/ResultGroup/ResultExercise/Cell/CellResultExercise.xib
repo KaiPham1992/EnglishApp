@@ -21,40 +21,64 @@
                 <rect key="frame" x="0.0" y="0.0" width="341" height="507"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kyo-iO-zaT">
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="229.5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    </view>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question" translatesAutoresizingMaskIntoConstraints="NO" id="dQ5-NQ-WBR">
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="229.5"/>
+                    </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zzw-Nn-k4R">
-                        <rect key="frame" x="0.0" y="0.0" width="341" height="170.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="229.5"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlS-FW-V00">
                                 <rect key="frame" x="0.0" y="-30" width="341" height="30"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="audio" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-L8-yKa">
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_speaker on" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-L8-yKa">
                                         <rect key="frame" x="5" y="0.0" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="KS0-Uo-elD"/>
                                             <constraint firstAttribute="height" constant="30" id="lmz-E7-gGF"/>
                                         </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vNe-C6-BFJ">
+                                        <rect key="frame" x="5" y="0.0" width="30" height="30"/>
+                                        <connections>
+                                            <action selector="clickAudio:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Rz3-Zu-fbh"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstItem="vNe-C6-BFJ" firstAttribute="top" secondItem="jMd-L8-yKa" secondAttribute="top" id="1ck-xr-jat"/>
+                                    <constraint firstItem="vNe-C6-BFJ" firstAttribute="trailing" secondItem="jMd-L8-yKa" secondAttribute="trailing" id="CWQ-8B-utf"/>
                                     <constraint firstItem="jMd-L8-yKa" firstAttribute="top" secondItem="hlS-FW-V00" secondAttribute="top" id="Do5-h3-50M"/>
+                                    <constraint firstItem="vNe-C6-BFJ" firstAttribute="bottom" secondItem="jMd-L8-yKa" secondAttribute="bottom" id="Vkx-p2-y26"/>
                                     <constraint firstItem="jMd-L8-yKa" firstAttribute="leading" secondItem="hlS-FW-V00" secondAttribute="leading" constant="5" id="bW2-TR-yPV"/>
                                     <constraint firstAttribute="height" constant="30" id="cnU-iD-UR0"/>
+                                    <constraint firstItem="vNe-C6-BFJ" firstAttribute="leading" secondItem="jMd-L8-yKa" secondAttribute="leading" id="eJM-qB-isS"/>
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4H-qn-iVc">
-                                <rect key="frame" x="0.0" y="0.0" width="341" height="170.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="341" height="229.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="l4H-qn-iVc" secondAttribute="height" multiplier="2:1" id="kP3-3l-8Lp"/>
+                                    <constraint firstAttribute="width" secondItem="l4H-qn-iVc" secondAttribute="height" multiplier="1664:1120" id="kP3-3l-8Lp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question coner" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-ID-1sb">
+                        <rect key="frame" x="260.5" y="172.5" width="80.5" height="57"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="8wy-ID-1sb" secondAttribute="height" multiplier="394:279" id="2uO-gy-Gge"/>
+                        </constraints>
+                    </imageView>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-Vs-7gF">
-                        <rect key="frame" x="0.0" y="175.5" width="341" height="331.5"/>
+                        <rect key="frame" x="0.0" y="234.5" width="341" height="272.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </tableView>
                 </subviews>
@@ -63,9 +87,20 @@
                 <constraint firstItem="zzw-Nn-k4R" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0VU-Ug-OWk"/>
                 <constraint firstItem="rUo-Vs-7gF" firstAttribute="top" secondItem="zzw-Nn-k4R" secondAttribute="bottom" constant="5" id="0xC-zU-q8d"/>
                 <constraint firstItem="rUo-Vs-7gF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="8Gv-ZL-5GB"/>
+                <constraint firstItem="8wy-ID-1sb" firstAttribute="trailing" secondItem="dQ5-NQ-WBR" secondAttribute="trailing" id="AEX-LC-ZTO"/>
+                <constraint firstItem="Kyo-iO-zaT" firstAttribute="leading" secondItem="zzw-Nn-k4R" secondAttribute="leading" id="DQ2-gb-Aen"/>
+                <constraint firstItem="dQ5-NQ-WBR" firstAttribute="bottom" secondItem="l4H-qn-iVc" secondAttribute="bottom" id="GBc-C6-3rL"/>
+                <constraint firstItem="Kyo-iO-zaT" firstAttribute="top" secondItem="zzw-Nn-k4R" secondAttribute="top" id="GQK-2A-9HS"/>
+                <constraint firstItem="dQ5-NQ-WBR" firstAttribute="top" secondItem="l4H-qn-iVc" secondAttribute="top" id="Ih0-fe-P7o"/>
+                <constraint firstItem="dQ5-NQ-WBR" firstAttribute="trailing" secondItem="l4H-qn-iVc" secondAttribute="trailing" id="KKy-Sj-pvc"/>
+                <constraint firstItem="Kyo-iO-zaT" firstAttribute="bottom" secondItem="zzw-Nn-k4R" secondAttribute="bottom" id="Kc1-aG-z8z"/>
                 <constraint firstItem="zzw-Nn-k4R" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="a6c-6W-deU"/>
+                <constraint firstItem="8wy-ID-1sb" firstAttribute="height" secondItem="dQ5-NQ-WBR" secondAttribute="height" multiplier="279:1120" id="hzu-L5-n2G"/>
+                <constraint firstItem="8wy-ID-1sb" firstAttribute="bottom" secondItem="dQ5-NQ-WBR" secondAttribute="bottom" id="j4R-GH-BSs"/>
                 <constraint firstAttribute="trailing" secondItem="zzw-Nn-k4R" secondAttribute="trailing" id="pLx-Cd-dk3"/>
                 <constraint firstAttribute="trailing" secondItem="rUo-Vs-7gF" secondAttribute="trailing" id="pW4-o1-YqT"/>
+                <constraint firstItem="dQ5-NQ-WBR" firstAttribute="leading" secondItem="l4H-qn-iVc" secondAttribute="leading" id="rIw-mY-xU8"/>
+                <constraint firstItem="Kyo-iO-zaT" firstAttribute="trailing" secondItem="zzw-Nn-k4R" secondAttribute="trailing" id="s2x-Tc-wup"/>
                 <constraint firstAttribute="bottom" secondItem="rUo-Vs-7gF" secondAttribute="bottom" id="s4W-Ys-hf6"/>
             </constraints>
             <size key="customSize" width="341" height="507"/>
@@ -78,6 +113,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="audio" width="145.33332824707031" height="139.33332824707031"/>
+        <image name="bg_question" width="1664" height="1120"/>
+        <image name="bg_question coner" width="394" height="279"/>
+        <image name="ic_speaker on" width="240" height="208"/>
     </resources>
 </document>
