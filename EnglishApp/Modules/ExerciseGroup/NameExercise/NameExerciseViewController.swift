@@ -198,7 +198,6 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
             self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
             self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
             self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
-//            self.currentTime = 10 
             self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
             if let questions = self.presenter?.exerciseEntity?.questions {
                 for item in questions {
@@ -275,25 +274,6 @@ extension NameExerciseViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let data = self.presenter?.getQuestion(indexPath: indexPath){
             let type = data.answers?.first?.type ?? ""
-//            if type == "" || type == "2"{
-//                let cell =  collectionView.dequeueCell(CellFillExercise.self, indexPath: indexPath)
-//                cell.type = self.typeExercise
-//
-//                cell.setupCell(data: data)
-//                cell.indexPath = indexPath
-//                cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
-//                cell.delegate = self
-//                return cell
-//            }
-//            let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
-//            cell.type = self.typeExercise
-//            cell.indexPath = indexPath
-//            cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
-//            cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
-//            cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
-//            cell.setupCell(dataCell: data)
-//            cell.delegate = self
-//            return cell
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
             cell.callbackShowPopup = {[weak self] (fromView: UIView, point: CGPoint, word: WordExplainEntity) in
                 let pointConvert = fromView.convert(point, to: self?.view ?? UIView())
@@ -302,8 +282,6 @@ extension NameExerciseViewController: UICollectionViewDataSource{
             cell.type = self.typeExercise
             cell.typeQuestion = type
             cell.indexPath = indexPath
-//            cell.listIdOption = (data.answers ?? []).map{$0.options.map{Int($0._id ?? "0") ?? 0}}
-//            cell.listDataSource = (data.answers ?? []).map{$0.options.map{$0.value ?? ""}}
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
             cell.questionEntity = data
             cell.delegate = self

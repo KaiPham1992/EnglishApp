@@ -19,7 +19,9 @@ protocol CellExerciseDelegate: class {
 
 class CellExercise: UICollectionViewCell {
     
-    @IBOutlet weak var imgAudio: UIImageView!
+    @IBAction func clickAudio(_ sender: Any) {
+        delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+    }
     weak var delegate: CellExerciseDelegate?
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vAudio: UIView!
@@ -64,22 +66,16 @@ class CellExercise: UICollectionViewCell {
     }
     
     func setupView(){
-        imgAudio.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(clickAudio)))
+        tvContent.contentInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
         tbvNameExercise.registerXibFile(CellChoiceQuestionExercise.self)
         tbvNameExercise.registerXibFile(CellFillQuestionExercise.self)
         tbvNameExercise.dataSource = self
         tbvNameExercise.delegate = self
     }
     
-    @objc func clickAudio(){
-        delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
-    }
-    
     func detectQuestion(contextQuestion: String, type : TypeDoExercise){
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
-        let attributes = [NSAttributedString.Key.paragraphStyle : style, NSAttributedString.Key.font: AppFont.fontRegular14]
-        tvContent.attributedText = NSAttributedString(string: contextQuestion.htmlToString, attributes: attributes)
+        print(contextQuestion)
+        tvContent.attributedText = contextQuestion.attributedString()
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
         tvContent.addGestureRecognizer(tap)
@@ -104,18 +100,7 @@ class CellExercise: UICollectionViewCell {
     }
     
     func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
-//        popover.removeFromSuperview()
         callbackShowPopup?(self.contentView, tvContent.convert(CGPoint(x: x, y: y), to: self.contentView), word)
-//        let aView = SearchVocabularyView(frame: CGRect(x: 0, y: 0, width: 200, height: 85))
-//        aView.actionSeeDetailWord = {[weak self] (word) in
-//            self?.gotoDetailVocabulary(word: word)
-//        }
-//        aView.setTitle(word: word)
-//        popover.blackOverlayColor = .clear
-//        popover.popoverColor = .white
-//        popover.addShadow(ofColor: #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.25), opacity: 1)
-//        popover.layer.cornerRadius = 5
-//        popover.show(aView, point: point, inView: self.contentView)
     }
     
 //    func gotoDetailVocabulary(word: WordExplainEntity){
@@ -162,15 +147,6 @@ extension CellExercise: UITableViewDataSource{
             }
             return cell
         }
-//        cell.indexPath = indexPath
-//        //for exercise
-//        if listAnswer.count > 0  {
-//            cell.answer = listAnswer[indexPath.row].value ?? ""
-//        }
-//        //for competition
-//        if listAnswerCompetition.count > 0 {
-//            cell.answer = listAnswerCompetition[indexPath.row].value
-//        }
         return UITableViewCell()
     }
     
@@ -190,17 +166,9 @@ extension CellExercise: UITableViewDataSource{
                 listIndex.append(IndexPath(row: firstIndex, section: indexPath.section))
             }
             options[indexPath.row].isChoice = !options[indexPath.row].isChoice
-//            if options[indexPath.row].isChoice {
-//                self.delegate?.changeAnswer(idAnswer: Int(options[indexPath.row]._id ?? "0"), valueAnswer: options[indexPath.row].value, indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
-//
-//            } else {
-//                self.delegate?.changeAnswer(idAnswer: nil, valueAnswer: options[indexPath.row].value , indexPathRow: indexPath, indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
-//            }
             if type == .competition {
-//                self.listAnswerCompetition[indexPath.section].value = options[indexPath.row].value ?? ""
                 self.listAnswerCompetition[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : 0
             } else {
-//                self.listAnswer[indexPath.section].value = options[indexPath.row].value ?? ""
                 self.listAnswer[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : nil
                 
             }
