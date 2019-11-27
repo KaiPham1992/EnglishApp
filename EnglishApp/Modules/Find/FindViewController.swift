@@ -22,21 +22,11 @@ class FindViewController: BaseViewController {
     
     var type : TypeViewSearch = .searchExercise
     var indexRow = 0
-    var isRead: [Bool] = []
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        tbResult.reloadData()
-    }
-    
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        print(isRead)
-    }
-
     override func setTitleUI() {
         super.setTitleUI()
         addBackToNavigation()
@@ -70,12 +60,14 @@ class FindViewController: BaseViewController {
     }
     
     // MARK: - For check read or not
-    private func createIsReadList(count: Int) {
-        isRead = Array(repeating: false, count: count)
-    }
-    
-    private func changeStatusRow(index: Int) {
-        isRead[index] = true
+    private func changeStatusRow(index: IndexPath) {
+        if let data = self.presenter?.searchExciseRespone[index.row] {
+            data.isRead = true
+            DispatchQueue.main.async {
+                let cell = self.tbResult.cellForRow(at: index)
+                cell?.backgroundColor = UIColor.white
+            }
+        }
     }
     
 }
@@ -86,7 +78,6 @@ extension FindViewController: FindViewProtocol{
             row = self.presenter?.searchTheoryRespone.count ?? 0
         } else {
             row = self.presenter?.searchExciseRespone.count ?? 0
-            createIsReadList(count: row)
         }
         if row == 0 {
             self.showNoData()
@@ -129,14 +120,14 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
                 cell.lbTitle.text = data
             }
         } else {
-            if let data = self.presenter?.searchExciseRespone[indexPath.row].name?.htmlToString {
-                if isRead[indexPath.row] {
+            if let data = self.presenter?.searchExciseRespone[indexPath.row] {
+                if data.isRead {
                     cell.backgroundColor = UIColor.white
                 } else {
                     cell.backgroundColor = AppColor.notificationNotRead
                 }
                 
-                cell.lbTitle.text = data
+                cell.lbTitle.text = data.name?.htmlToString
             }
         }
         return cell
@@ -170,7 +161,7 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
                 PopUpHelper.shared.showYesNo(message: LocalizableKey.feeFind.showLanguage, completionNo: nil) {
                     [unowned self] in
                     self.indexRow = indexPath.row
-                    self.changeStatusRow(index: indexPath.row)
+                    self.changeStatusRow(index: indexPath)
                     self.presenter?.checkAmountSearchExercise()
                 }
             }

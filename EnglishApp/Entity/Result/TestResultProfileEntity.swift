@@ -21,6 +21,7 @@ class TestResultProfileEntity: Mappable {
     var questions : [QuestionResultEntity]?
     var type_test : String?
     var name : String?
+    var isRead = false
     
     required init?(map: Map) {
         
