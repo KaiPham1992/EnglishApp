@@ -21,32 +21,45 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuH-AP-ARv">
-                        <rect key="frame" x="10" y="5" width="300" height="34"/>
-                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hm-TR-gyn">
+                        <rect key="frame" x="16" y="0.0" width="288" height="44"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yuH-AP-ARv">
+                                <rect key="frame" x="8" y="8" width="272" height="28"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yuH-AP-ARv" firstAttribute="leading" secondItem="3hm-TR-gyn" secondAttribute="leading" constant="8" id="1E3-Qm-jej"/>
+                            <constraint firstAttribute="bottom" secondItem="yuH-AP-ARv" secondAttribute="bottom" constant="8" id="IQq-0n-Peg"/>
+                            <constraint firstAttribute="trailing" secondItem="yuH-AP-ARv" secondAttribute="trailing" constant="8" id="So5-0X-Hzv"/>
+                            <constraint firstItem="yuH-AP-ARv" firstAttribute="top" secondItem="3hm-TR-gyn" secondAttribute="top" constant="8" id="v2e-s4-LbW"/>
+                        </constraints>
+                    </view>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G0Q-5R-DsW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="16" y="0.0" width="288" height="44"/>
                         <connections>
                             <action selector="chocieAnswer:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="IpP-gM-EHD"/>
                         </connections>
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="yuH-AP-ARv" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="6a2-sz-BM1"/>
-                    <constraint firstItem="G0Q-5R-DsW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="82m-QY-pbG"/>
-                    <constraint firstAttribute="bottom" secondItem="yuH-AP-ARv" secondAttribute="bottom" constant="5" id="9d0-4t-UmB"/>
-                    <constraint firstAttribute="trailing" secondItem="yuH-AP-ARv" secondAttribute="trailing" constant="10" id="Tmw-br-aNy"/>
-                    <constraint firstItem="G0Q-5R-DsW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Tze-v3-EPn"/>
-                    <constraint firstAttribute="bottom" secondItem="G0Q-5R-DsW" secondAttribute="bottom" id="cti-w9-cWm"/>
-                    <constraint firstAttribute="trailing" secondItem="G0Q-5R-DsW" secondAttribute="trailing" id="sQH-uO-naw"/>
-                    <constraint firstItem="yuH-AP-ARv" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="zIm-aF-ujg"/>
+                    <constraint firstItem="3hm-TR-gyn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="C89-oC-YDM"/>
+                    <constraint firstItem="G0Q-5R-DsW" firstAttribute="trailing" secondItem="3hm-TR-gyn" secondAttribute="trailing" id="HEe-xY-ItB"/>
+                    <constraint firstItem="G0Q-5R-DsW" firstAttribute="top" secondItem="3hm-TR-gyn" secondAttribute="top" id="LzV-FU-Bca"/>
+                    <constraint firstItem="3hm-TR-gyn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ODf-br-hbo"/>
+                    <constraint firstAttribute="bottom" secondItem="3hm-TR-gyn" secondAttribute="bottom" id="Upb-Il-sA4"/>
+                    <constraint firstItem="G0Q-5R-DsW" firstAttribute="bottom" secondItem="3hm-TR-gyn" secondAttribute="bottom" id="Yxf-tJ-BgX"/>
+                    <constraint firstAttribute="trailing" secondItem="3hm-TR-gyn" secondAttribute="trailing" constant="16" id="aXz-eS-Pdz"/>
+                    <constraint firstItem="G0Q-5R-DsW" firstAttribute="leading" secondItem="3hm-TR-gyn" secondAttribute="leading" id="cOC-Mw-afh"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="lblContent" destination="yuH-AP-ARv" id="hb7-6H-i3p"/>
+                <outlet property="viewBackground" destination="3hm-TR-gyn" id="Bzk-14-xX4"/>
             </connections>
             <point key="canvasLocation" x="139" y="119"/>
         </tableViewCell>

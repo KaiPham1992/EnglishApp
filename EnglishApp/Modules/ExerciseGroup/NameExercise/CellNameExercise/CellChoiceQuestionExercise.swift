@@ -12,6 +12,7 @@ class CellChoiceQuestionExercise: UITableViewCell {
     
     var indexPath: IndexPath!
     
+    @IBOutlet weak var viewBackground: UIView!
     @IBAction func chocieAnswer(_ sender: Any) {
         callbackSelectAnswer?(indexPath)
     }
@@ -27,9 +28,9 @@ class CellChoiceQuestionExercise: UITableViewCell {
     func setupView(isChoice: Bool, content: String) {
         lblContent.text = content
         if isChoice {
-            contentView.backgroundColor = UIColor.blue.withAlphaComponent(0.6)
+            viewBackground.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.8039215686, blue: 1, alpha: 1)
         } else {
-            contentView.backgroundColor = .white
+            viewBackground.backgroundColor = .white
         }
     }
 }
