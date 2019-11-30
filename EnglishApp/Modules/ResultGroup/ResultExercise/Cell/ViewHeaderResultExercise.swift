@@ -18,6 +18,8 @@ class ViewHeaderResultExercise : BaseViewXib {
         callbackRelatedGrammar?(self.section)
     }
 
+    @IBOutlet weak var lblIndex: UILabel!
+    
     var callbackExplainQuestion : ((_ section : Int)->())?
     var callbackRelatedGrammar: ((_ section: Int) -> ())?
     
@@ -27,7 +29,8 @@ class ViewHeaderResultExercise : BaseViewXib {
     
     func setupCell(index: Int, content: String) {
         self.section = index - 1
-        lblContent.text = "\(index). \(content)"
+        lblIndex.text = "\(index). "
+        lblContent.attributedText = content.attributedString()
     }
     
     override func setUpViews() {

@@ -98,10 +98,7 @@ extension CellResultExercise: UITableViewDataSource{
         return questionEntity?.answers?.count ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let type = questionEntity?.answers?.first?.type else {
-            return 0
-        }
-        return type == "1" ? 4 : 1
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -132,7 +129,7 @@ extension CellResultExercise: UITableViewDataSource{
         view.addSubview(headerView)
         headerView.fillToView(view: view)
         //show UI question
-        headerView.setupCell(index: section + 1, content: questionEntity?.answers?[section]._id ?? "")
+        headerView.setupCell(index: section + 1, content: questionEntity?.answers?[section].content_extend ?? "")
         headerView.callbackExplainQuestion = {[weak self] (section) in
             self?.actionExplainQuestion(section: section)
         }

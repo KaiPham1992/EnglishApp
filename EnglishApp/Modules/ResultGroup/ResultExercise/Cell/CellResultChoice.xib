@@ -21,22 +21,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="385" height="40"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-iM-iQb">
-                        <rect key="frame" x="10" y="10" width="365" height="20"/>
-                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjP-SC-YEF">
+                        <rect key="frame" x="16" y="0.0" width="353" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-iM-iQb">
+                                <rect key="frame" x="8" y="8" width="337" height="24"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="3cq-iM-iQb" firstAttribute="top" secondItem="TjP-SC-YEF" secondAttribute="top" constant="8" id="SNH-my-Mef"/>
+                            <constraint firstItem="3cq-iM-iQb" firstAttribute="leading" secondItem="TjP-SC-YEF" secondAttribute="leading" constant="8" id="dX9-eH-IBl"/>
+                            <constraint firstAttribute="trailing" secondItem="3cq-iM-iQb" secondAttribute="trailing" constant="8" id="jYi-UR-C4O"/>
+                            <constraint firstAttribute="bottom" secondItem="3cq-iM-iQb" secondAttribute="bottom" constant="8" id="sal-zz-dWK"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="3cq-iM-iQb" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="0B3-Yw-YFf"/>
-                    <constraint firstAttribute="trailing" secondItem="3cq-iM-iQb" secondAttribute="trailing" constant="10" id="FRX-at-gwC"/>
-                    <constraint firstAttribute="bottom" secondItem="3cq-iM-iQb" secondAttribute="bottom" constant="10" id="XP7-r9-vEU"/>
-                    <constraint firstItem="3cq-iM-iQb" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="wAr-ef-u0P"/>
+                    <constraint firstAttribute="bottom" secondItem="TjP-SC-YEF" secondAttribute="bottom" id="4BX-h8-RvV"/>
+                    <constraint firstAttribute="trailing" secondItem="TjP-SC-YEF" secondAttribute="trailing" constant="16" id="a7S-PZ-iQn"/>
+                    <constraint firstItem="TjP-SC-YEF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ghS-Lc-w4h"/>
+                    <constraint firstItem="TjP-SC-YEF" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="qOo-NW-cgi"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="lblAnswer" destination="3cq-iM-iQb" id="68a-RM-ajV"/>
+                <outlet property="viewBackground" destination="TjP-SC-YEF" id="sqx-O1-CXc"/>
             </connections>
             <point key="canvasLocation" x="184.78260869565219" y="165.40178571428569"/>
         </tableViewCell>
