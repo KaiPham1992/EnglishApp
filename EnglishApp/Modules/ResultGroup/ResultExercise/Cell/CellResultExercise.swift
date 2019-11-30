@@ -49,7 +49,7 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     func setupView(){
-        tvContent.contentInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
+        tvContent.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
         tbvResultQuestion.registerXibFile(CellResultFillQuestion.self)
         tbvResultQuestion.registerXibFile(CellResultChoice.self)
         tbvResultQuestion.dataSource = self
