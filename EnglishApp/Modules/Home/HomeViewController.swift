@@ -32,7 +32,6 @@ class HomeViewController: BaseViewController {
     var offset: Int = 0
     var isLoadmore = true
     var showProgressView = true
-    var isCallViewDidload = false
     
     lazy var btnOver: UIButton = {
        let btn = UIButton()
@@ -64,25 +63,12 @@ class HomeViewController: BaseViewController {
         self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
         self.addHeaderHome()
-        if !self.notLogedIn() && isCallViewDidload {
-            self.countNotification()
-            self.getProfile()
-            self.getHomeSummary()
-        }
     }
     
     override func viewDidLoad() {
-        
-        self.tbHome.isHidden = true
         super.viewDidLoad()
+        self.tbHome.isHidden = true
         configureTable()
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)) {
-            self.loginUserDefault {
-                self.getInitialData()
-            }
-        } else {
-            getInitialData()
-        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -99,22 +85,21 @@ class HomeViewController: BaseViewController {
         super.setUpViews()
         vcMenu = MenuRouter.createModule()
         AppRouter.shared.rootNavigation = self.navigationController
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadViewDidload), name: NSNotification.Name("InvalidToken"), object: nil)
         NotificationCenter.default.removeObserver(self)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadViewDidload), name: NSNotification.Name("InvalidToken"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
         topThreeView.isUserInteractionEnabled = false
         setTitleText()
-        
         // For entrance test
         if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
             heightEntranceTest.constant = 0
         } else {
             heightEntranceTest.constant = 42
         }
-    
+        getInitialData()
     }
     
     private func setTitleText() {
@@ -183,12 +168,9 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func reloadViewDidload() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)) {
-            self.loginUserDefault {
-                self.getInitialData()
-            }
-        } else {
-            getInitialData()
+        self.loginUserDefault {
+            self.getInitialData()
+            self.header.user = UserDefaultHelper.shared.loginUserInfo
         }
     }
     
@@ -244,7 +226,6 @@ extension HomeViewController {
         self.getHomeRecently()
         self.countNotification()
         self.getHomeSummary()
-        self.isCallViewDidload = true
     }
     
     // Refresh all data
@@ -536,6 +517,7 @@ extension HomeViewController: MenuViewControllerDelegate {
 extension HomeViewController: HomeViewProtocol{
     
     func didGetHomeSummary(summaryInfo: CollectionUserEntity) {
+        self.tbHome.isHidden = false
         if let topThree = summaryInfo.leader_boards {
             self.topThreeView.listTopThree = topThree
         }
@@ -548,7 +530,6 @@ extension HomeViewController: HomeViewProtocol{
     }
     
     func didGetHomeRecently(activities: [Acitvity]) {
-        self.tbHome.isHidden = false
         ProgressView.shared.hide()
         if activities.count < 20 {
             self.isLoadmore = false

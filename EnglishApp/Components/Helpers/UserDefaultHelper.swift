@@ -108,6 +108,9 @@ extension UserDefaultHelper {
     
     func clearUser() {
         UserDefaults.standard.removeObject(forKey: UserDefaultHelperKey.userToken.rawValue)
+        UserDefaults.standard.removeObject(forKey: UserDefaultHelperKey.loginUserInfo.rawValue)
+        UserDefaults.standard.synchronize()
+        
     }
     
     func saveUser(user: UserEntity) {
