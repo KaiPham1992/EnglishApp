@@ -112,20 +112,24 @@ class NameExerciseViewController: BaseViewController {
             self?.isReapeat = true
         }
         btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
-//        clvQuestion.registerXibCell(CellFillExercise.self)
-        clvQuestion.registerXibCell(CellExercise.self)
-        clvQuestion.delegate = self
         clvQuestion.dataSource = self
+        clvQuestion.delegate = self
+        clvQuestion.registerXibCell(CellExercise.self)
         vCountTime.delegate = self
         self.presenter?.type = self.typeExercise
-        
         switch typeExercise {
         case .dailyMissonExercise:
             self.presenter?.getDailyMisson()
         case .entranceExercise:
             self.presenter?.getViewEntranceTest()
         default:
-             self.presenter?.getViewExercise(id: self.idExercise)
+            if self.presenter?.exerciseEntity == nil {
+                self.presenter?.getViewExercise(id: self.idExercise)
+            } else {
+                self.parseAnswer()
+                self.updateUI()
+            }
+             
         }
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
@@ -193,25 +197,33 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         }
     }
     
+    private func parseAnswer(){
+        self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
+        self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
+        self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
+        self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
+        if let questions = self.presenter?.exerciseEntity?.questions {
+            for item in questions {
+                let answer = item.answers?.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)} ?? []
+                let questionSubmitParam = QuestionSubmitParam(_id: Int(item._id ?? "0") ?? 0)
+                questionSubmitParam.answer = answer
+                self.listAnswerQuestion.append(questionSubmitParam)
+            }
+            self.paramSubmit?.questions = self.listAnswerQuestion
+        }
+    }
+    
+    private func updateUI() {
+        self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
+        self.lblIndexQuestion.text = "1/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
+        self.vCountTime.setupTimeStartNow(min: self.currentTime)
+    }
+    
     func reloadView() {
         DispatchQueue.global().async {
-            self.idExercise = self.presenter?.exerciseEntity?._id ?? "0"
-            self.numberQuestion = self.presenter?.exerciseEntity?.questions?.count ?? 0
-            self.currentTime = self.presenter?.exerciseEntity?.total_times ?? 0
-            self.paramSubmit = SubmitExerciseParam(exercise_id: Int(self.presenter?.exerciseEntity?._id ?? "0") ?? 0)
-            if let questions = self.presenter?.exerciseEntity?.questions {
-                for item in questions {
-                    let answer = item.answers?.map{QuestionChoiceResultParam(question_id: Int($0._id&) ?? 0)} ?? []
-                    let questionSubmitParam = QuestionSubmitParam(_id: Int(item._id ?? "0") ?? 0)
-                    questionSubmitParam.answer = answer
-                    self.listAnswerQuestion.append(questionSubmitParam)
-                }
-                self.paramSubmit?.questions = self.listAnswerQuestion
-            }
+            self.parseAnswer()
             DispatchQueue.main.async {
-                self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
-                self.lblIndexQuestion.text = "1/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
-                self.vCountTime.setupTimeStartNow(min: self.currentTime)
+                self.updateUI()
                 ProgressView.shared.hide()
                 self.clvQuestion.reloadData()
             }
@@ -235,10 +247,6 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     }
     
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
-//        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
-//            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
-//        }
-//
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
             cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
         }
@@ -254,10 +262,6 @@ extension NameExerciseViewController : UICollectionViewDelegateFlowLayout{
         return 0.00009
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: self.clvQuestion.frame.width, height: self.clvQuestion.frame.height)
     }
@@ -268,19 +272,17 @@ extension NameExerciseViewController: UICollectionViewDataSource{
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-         return self.numberQuestion
+        return self.presenter?.exerciseEntity?.questions?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if let data = self.presenter?.getQuestion(indexPath: indexPath){
-            let type = data.answers?.first?.type ?? ""
+        if let data = self.presenter?.exerciseEntity?.questions?[indexPath.row]{
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
             cell.callbackShowPopup = {[weak self] (fromView: UIView, point: CGPoint, word: WordExplainEntity) in
                 let pointConvert = fromView.convert(point, to: self?.view ?? UIView())
                 self?.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: word)
             }
             cell.type = self.typeExercise
-            cell.typeQuestion = type
             cell.indexPath = indexPath
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
             cell.questionEntity = data

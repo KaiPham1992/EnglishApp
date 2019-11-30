@@ -31,7 +31,7 @@ class CreateExerciseRouter: CreateExerciseWireframeProtocol {
     
     func gotoExercise(viewExerciseEntity: ViewExerciseEntity) {
         let vc = NameExerciseRouter.createModule(viewExerciseEntity: viewExerciseEntity)
-        self.viewController?.navigationController?.pushViewController(vc, animated: true)
+        self.viewController?.push(controller: vc)
     }
     
     func gotoStore() {

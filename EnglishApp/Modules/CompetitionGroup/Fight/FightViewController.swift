@@ -309,11 +309,9 @@ extension FightViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == clvQuestion {
             if let data = self.presenter?.exerciseEntity?.questions?[indexPath.row]{
-                let type = data.answers?.first?.type ?? ""
                 let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
                 cell.indexPath = indexPath
                 cell.type = .competition
-                cell.typeQuestion = type
                 cell.listAnswerCompetition = self.listParamSubmit[indexPath.row].questions?.answers ?? []
                 cell.questionEntity = data
                 cell.delegate = self

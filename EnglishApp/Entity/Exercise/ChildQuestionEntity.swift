@@ -15,6 +15,7 @@ class ChildQuestionEntity : Mappable {
     var sequence : String?
     var type : String?
     var isShowSuggestQuestion = false
+    var content : String?
     var options : [OptionEntity] = []
     
     required init?(map: Map) {
@@ -22,6 +23,7 @@ class ChildQuestionEntity : Mappable {
     }
     
     func mapping(map: Map) {
+        self.content <- map["content"]
         self._id <- map["_id"]
         self.sequence <- map["sequence"]
         self.type <- map["type"]

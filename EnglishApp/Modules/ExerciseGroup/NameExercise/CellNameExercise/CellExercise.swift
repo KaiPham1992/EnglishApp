@@ -7,10 +7,8 @@
 //
 
 import UIKit
-//import Popover
 
 protocol CellExerciseDelegate: class {
-//    func showDetailVocubulary(word: WordExplainEntity)
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath)
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath)
     func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath)
@@ -27,11 +25,8 @@ class CellExercise: UICollectionViewCell {
     @IBOutlet weak var vAudio: UIView!
     @IBOutlet weak var tbvNameExercise: UITableView!
     var type : TypeDoExercise = .entranceExercise
-    var typeQuestion = "2"
     
-    var attributed: NSMutableAttributedString?
     var indexPath: IndexPath?
-    var numberLine: Int = 0
     //for exercise
     var listAnswer : [QuestionChoiceResultParam] = []
     //for competition
@@ -118,12 +113,13 @@ extension CellExercise: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return typeQuestion == "2" ? 1 : (questionEntity?.answers?[section].options.count ?? 0)
+        return ((questionEntity?.answers?[section].type ?? "") == "2") ? 1 : (questionEntity?.answers?[section].options.count ?? 0)
+//        return 1
     }
     //show UI answer
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //type answer rewirte
-        if typeQuestion == "2" {
+        if (questionEntity?.answers?[indexPath.section].type ?? "") == "2" {
             let answer = listAnswer[indexPath.section].value ?? ""
             let cell = tableView.dequeue(CellFillQuestionExercise.self, for: indexPath)
             cell.setupCell(text: answer)
@@ -141,7 +137,7 @@ extension CellExercise: UITableViewDataSource{
             let cell = tableView.dequeue(CellChoiceQuestionExercise.self, for: indexPath)
             cell.indexPath = indexPath
             //isChoice -> to check user choice answer.
-            cell.setupView(isChoice: answer.isChoice, content: (answer.value ?? "") + ". " + (answer._id ?? ""))
+            cell.setupView(isChoice: answer.isChoice, content: (answer.value ?? "") + ". " + (answer.content ?? ""))
             cell.callbackSelectAnswer = {[weak self] (index) in
                 self?.userChangeChoiceAnswer(indexPath: index)
             }
@@ -170,7 +166,7 @@ extension CellExercise: UITableViewDataSource{
                 self.listAnswerCompetition[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : 0
             } else {
                 self.listAnswer[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : nil
-                
+
             }
             listIndex.append(indexPath)
             self.tbvNameExercise.reloadRows(at: listIndex, with: .automatic)
@@ -188,9 +184,9 @@ extension CellExercise: UITableViewDataSource{
         headerView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(headerView)
         headerView.fillToView(view: view)
-        headerView.setupSuggestButton(isShow: self.type != .entranceExercise && self.type != .competition && self.typeQuestion != "2" ? true : false)
+        headerView.setupSuggestButton(isShow: self.type != .entranceExercise && self.type != .competition && (questionEntity?.answers?[section].type ?? "") == "1" ? true : false)
         //show UI question
-        headerView.setupCell(index: section + 1, content: questionEntity?.answers?[section]._id ?? "")
+        headerView.setupCell(index: section + 1, content: questionEntity?.answers?[section].content ?? "")
         headerView.callbackSugestionQuestion = {[weak self] in
             self?.suggestionQuestion(section: section)
         }

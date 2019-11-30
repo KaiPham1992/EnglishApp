@@ -16,6 +16,7 @@ class ViewHeaderQuestionExercise : BaseViewXib {
     
     var callbackSugestionQuestion : (()->())?
     
+    @IBOutlet weak var lblIndex: UILabel!
     @IBOutlet weak var btnSuggestion: UIButton!
     @IBOutlet weak var lblContent: UILabel!
     
@@ -28,10 +29,10 @@ class ViewHeaderQuestionExercise : BaseViewXib {
     }
     
     func setupCell(index: Int, content: String) {
-        lblContent.text = "\(index). \(content)"
+        lblIndex.text = "\(index)."
+        lblContent.attributedText = content.attributedString()
     }
     
     override func setUpViews() {
-        
     }
 }

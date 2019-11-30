@@ -54,12 +54,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
     }
     
     func getViewExercise(id: String) {
-        if exerciseEntity == nil {
-            self.interactor?.getViewExercise(id: id)
-        } else {
-            self.view?.reloadView()
-        }
-        
+        self.interactor?.getViewExercise(id: id)
     }
     
     func getViewEntranceTest() {
