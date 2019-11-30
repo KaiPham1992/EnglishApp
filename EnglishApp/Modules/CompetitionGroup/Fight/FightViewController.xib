@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -209,8 +209,8 @@
                 <constraint firstAttribute="trailing" secondItem="DUE-Ll-Mdw" secondAttribute="trailing" id="38O-Ma-2CO"/>
                 <constraint firstItem="iTR-uJ-YPF" firstAttribute="top" secondItem="DUE-Ll-Mdw" secondAttribute="bottom" id="4td-Jc-Wig"/>
                 <constraint firstItem="CRk-oE-aLp" firstAttribute="leading" secondItem="dlq-ld-4lf" secondAttribute="leading" id="9hz-n6-nl3"/>
+                <constraint firstItem="CRk-oE-aLp" firstAttribute="top" secondItem="iTR-uJ-YPF" secondAttribute="bottom" id="AMt-uq-DeY"/>
                 <constraint firstItem="dlq-ld-4lf" firstAttribute="top" secondItem="CRk-oE-aLp" secondAttribute="bottom" id="AU2-Sh-WE6"/>
-                <constraint firstItem="dlq-ld-4lf" firstAttribute="top" secondItem="iTR-uJ-YPF" secondAttribute="bottom" id="Jbo-OU-jaL"/>
                 <constraint firstItem="DUE-Ll-Mdw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Oez-Jd-gtG"/>
                 <constraint firstItem="CRk-oE-aLp" firstAttribute="trailing" secondItem="dlq-ld-4lf" secondAttribute="trailing" id="RBg-8S-oIH"/>
                 <constraint firstAttribute="bottom" secondItem="dlq-ld-4lf" secondAttribute="bottom" id="esk-jj-Mq3"/>
