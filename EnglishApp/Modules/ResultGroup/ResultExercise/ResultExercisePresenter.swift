@@ -51,4 +51,8 @@ class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseIn
     func gotoDetailVocabulary(idWord: Int) {
         self.router.gotoDetailVocabulary(idWord: idWord)
     }
+    
+    func checkAmountSearchExercise(callback: @escaping (_ isSuccessed: Bool) -> ()) {
+        self.interactor?.checkAmountSearchExercise(callback: callback)
+    }
 }

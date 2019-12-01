@@ -47,11 +47,11 @@ class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
         self.router.gotoTheoryDetail(idLesson: idLesson)
     }
     
-    func checkAmountSearchExercise() {
-        self.interactor?.checkAmountSearchExercise()
-    }
-    
-    func checkAmountSearchExerciseSuccessed() {
-        self.view?.checkAmountSearchExerciseSuccessed()
-    }
+//    func checkAmountSearchExercise() {
+//        self.interactor?.checkAmountSearchExercise()
+//    }
+//
+//    func checkAmountSearchExerciseSuccessed() {
+//        self.view?.checkAmountSearchExerciseSuccessed()
+//    }
 }

@@ -41,15 +41,15 @@ class FindInteractor: FindInteractorInputProtocol {
         }
     }
     
-    func checkAmountSearchExercise() {
-        ProgressView.shared.show()
-        Provider.shared.exerciseAPIService.checkAmountSearchExercise(success: { (response) in
-            ProgressView.shared.hide()
-            if let _ = response {
-                self.presenter?.checkAmountSearchExerciseSuccessed()
-            }
-        }) { (error) in
-            ProgressView.shared.hide()
-        }
-    }
+//    func checkAmountSearchExercise() {
+//        ProgressView.shared.show()
+//        Provider.shared.exerciseAPIService.checkAmountSearchExercise(success: { (response) in
+//            ProgressView.shared.hide()
+//            if let _ = response {
+//                self.presenter?.checkAmountSearchExerciseSuccessed()
+//            }
+//        }) { (error) in
+//            ProgressView.shared.hide()
+//        }
+//    }
 }

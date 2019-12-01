@@ -44,8 +44,8 @@ class ResultExerciseViewController: BaseViewController {
     var index: Int = 0
     var tempIndex = 0
     var isHistory = false
-    var fromSearch = true
     var isSearch = false
+    var isMinusMoney = false
 
     override func setUpViews() {
         super.setUpViews()
@@ -153,6 +153,21 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     }
 
     func seeRelatedGrammar(questionId: Int, answerId: Int) {
+        if isSearch && !isMinusMoney {
+            self.minusMoney(callback: { [weak self] (isSuccessed: Bool) in
+                if isSuccessed {
+                    self?.isMinusMoney = true
+                    let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
+                    self?.push(controller: vc)
+                } else {
+                    PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in
+                        let controller = StoreViewController()
+                        self?.push(controller: controller)
+                    }
+                }
+            })
+            return
+        }
         let vc = RelatedGrammarRouter.createModule(id: answerId)
         self.push(controller: vc)
     }
@@ -164,6 +179,21 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     func gotoExplainQuestion(questionId: Int) {
         guard let isUserPremium = UserDefaultHelper.shared.loginUserInfo?.isUserPremium else { return }
         if isUserPremium {
+            if isSearch && !isMinusMoney {
+                self.minusMoney(callback: { [weak self] (isSuccessed: Bool) in
+                    if isSuccessed {
+                        self?.isMinusMoney = true
+                        let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
+                        self?.push(controller: vc)
+                    } else {
+                        PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in
+                            let controller = StoreViewController()
+                            self?.push(controller: controller)
+                        }
+                    }
+                })
+                return
+            }
             let vc = ExplainExerciseGroupRouter.createModule(id: questionId)
             self.push(controller: vc)
         } else {
@@ -178,6 +208,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
 }
 
 extension ResultExerciseViewController: ResultExerciseViewProtocol {
+    
     func reportQuestionSuccessed() {
         PopUpHelper.shared.showThanks(completionYes: {
             
@@ -186,6 +217,22 @@ extension ResultExerciseViewController: ResultExerciseViewProtocol {
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellResultExercise{
             cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+        }
+    }
+    
+    private func minusMoney(callback: @escaping (_ isSuccessed: Bool) -> ()) {
+        let numberDiamond = UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0
+        let numberHoney = UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0
+        if numberHoney < 5 && numberDiamond < 50 {
+            PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in
+                let controller = StoreViewController()
+                self.push(controller: controller)
+            }
+        } else {
+            PopUpHelper.shared.showYesNo(message: LocalizableKey.feeFind.showLanguage, completionNo: nil) {
+                [unowned self] in
+                self.presenter?.checkAmountSearchExercise(callback: callback)
+            }
         }
     }
 }
@@ -197,6 +244,20 @@ extension ResultExerciseViewController : CellExerciseDelegate {
     }
     
     func showDetailVocubulary(word: WordExplainEntity) {
+        if isSearch && !isMinusMoney {
+            self.minusMoney(callback: { [weak self] (isSuccessed: Bool) in
+                if isSuccessed {
+                    self?.isMinusMoney = true
+                    self?.presenter?.gotoDetailVocabulary(idWord: word.id)
+                } else {
+                    PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in
+                        let controller = StoreViewController()
+                        self?.push(controller: controller)
+                    }
+                }
+            })
+            return
+        }
         self.presenter?.gotoDetailVocabulary(idWord: word.id)
     }
     

@@ -34,6 +34,19 @@ class ResultExerciseInteractor: ResultExerciseInteractorInputProtocol {
             }
         }
     }
+    
+    func checkAmountSearchExercise(callback: @escaping (_ isSuccessed: Bool) -> ()) {
+        ProgressView.shared.show()
+        Provider.shared.exerciseAPIService.checkAmountSearchExercise(success: { (response) in
+            ProgressView.shared.hide()
+            if let _ = response {
+                callback(true)
+            }
+        }) { (error) in
+            ProgressView.shared.hide()
+            callback(false)
+        }
+    }
 
     weak var presenter: ResultExerciseInteractorOutputProtocol?
 }

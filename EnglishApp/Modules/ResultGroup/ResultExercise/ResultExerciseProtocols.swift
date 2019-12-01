@@ -24,6 +24,7 @@ protocol ResultExercisePresenterProtocol: class {
     func reportQuestion(questionDetailId: Int, content: String)
     func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
     func gotoDetailVocabulary(idWord: Int)
+    func checkAmountSearchExercise(callback: @escaping (_ isSuccessed: Bool) -> ())
 }
 
 //MARK: Interactor -
@@ -32,6 +33,8 @@ protocol ResultExerciseInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func reportQuestionSuccessed()
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
+//    func checkAmountSearchExerciseSuccessed()
+//    func checkAmountSearchExerciseFailed()
 }
 
 protocol ResultExerciseInteractorInputProtocol: class {
@@ -40,6 +43,7 @@ protocol ResultExerciseInteractorInputProtocol: class {
     func reportQuestion(questionDetailId: Int, content: String)
 
     func searchVocabulary(word: String,position: CGPoint,index: IndexPath)
+    func checkAmountSearchExercise(callback: @escaping (_ isSuccessed: Bool) -> ())
     /* Presenter -> Interactor */
 }
 
@@ -49,6 +53,7 @@ protocol ResultExerciseViewProtocol: class {
     var presenter: ResultExercisePresenterProtocol?  { get set }
     func reportQuestionSuccessed()
     func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint,index: IndexPath)
+//    func checkAmountSearchExerciseSuccessed()
 
     /* Presenter -> ViewController */
 }
