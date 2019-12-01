@@ -12,13 +12,10 @@ import UIKit
 
 class FindViewController: BaseViewController {
 
-    @IBOutlet weak var heightViewDiamod: NSLayoutConstraint!
-    @IBOutlet weak var viewDiamond: UIView!
     var presenter: FindPresenterProtocol?
     @IBOutlet weak var vAppSearch: AppSearchBar!
     @IBOutlet weak var tbResult: UITableView!
     @IBOutlet weak var lbNoResult: UILabel!
-    @IBOutlet weak var lbFee: UILabel!
     
     var type : TypeViewSearch = .searchExercise
     var indexRow = 0
@@ -35,13 +32,6 @@ class FindViewController: BaseViewController {
         vAppSearch.actionSearch = searchExercise
         configureTable()
         lbNoResult.attributedText = NSAttributedString(string: "\(LocalizableKey.noResultFound.showLanguage)")
-        lbFee.attributedText = NSAttributedString(string: "\(LocalizableKey.feeFind.showLanguage)")
-        
-        if type == .searchExercise {
-            heightViewDiamod.constant = 40
-        } else {
-            heightViewDiamod.constant = 0
-        }
     }
     
     func searchExercise(text: String){
@@ -80,9 +70,11 @@ extension FindViewController: FindViewProtocol{
             row = self.presenter?.searchExciseRespone.count ?? 0
         }
         if row == 0 {
-            self.showNoData()
+//            self.showNoData()
+            tbResult.isHidden = true
         } else {
-            self.hideNoData()
+//            self.hideNoData()
+            tbResult.isHidden = false
         }
         tbResult.reloadData()
     }

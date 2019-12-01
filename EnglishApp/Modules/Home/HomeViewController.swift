@@ -102,7 +102,7 @@ class HomeViewController: BaseViewController {
         lbMission.text = LocalizableKey.homeMission.showLanguage
         lbMember.text = LocalizableKey.homeStore.showLanguage
         lbSearch.text = LocalizableKey.homeFindWork.showLanguage
-        lbRecentTitle.text = LocalizableKey.actionRecently.showLanguage
+        lbRecentTitle.attributedText = NSAttributedString(string: "\(LocalizableKey.actionRecently.showLanguage)")
     }
         
     @objc func suggestionQuestion(notification: Notification) {
