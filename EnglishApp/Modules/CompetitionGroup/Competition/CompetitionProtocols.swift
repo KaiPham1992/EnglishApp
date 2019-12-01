@@ -19,8 +19,6 @@ protocol CompetitionPresenterProtocol: class {
 
     var interactor: CompetitionInteractorInputProtocol? { get set }
     func getListFight(offset: Int)
-    func getListResultFight(offset: Int, date: String)
-    
 }
 
 //MARK: Interactor -
@@ -43,6 +41,4 @@ protocol CompetitionViewProtocol: class {
 
     /* Presenter -> ViewController */
     func didGetList(competitionList: CollectionCompetitionEntity)
-    func didGetResultFight(resultFight: CompetitionProfileEntity)
-    func didGetList(error: Error)
 }

@@ -19,11 +19,24 @@ class HistoryCompetitionViewController: ListManagerVC {
 	override func setUpViews() {
         showButtonBack = false
         super.setUpViews()
+        NotificationCenter.default.addObserver(self, selector: #selector(logout), name: NSNotification.Name.init("LogoutSuccessed"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name.init("UserDidLogin"), object: nil)
+    }
+    
+    @objc func login() {
+       self.offset = 0
+       callAPI()
+    }
+       
+    @objc func logout() {
+       self.offset = 0
+       callAPI()
     }
     
     override func registerTableView() {
         super.registerTableView()
-        tableView.registerXibFile(CompetitionCell.self)
+        self.tableView.registerXibFile(CompetitionCell.self)
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
     }
     
     override func callAPI() {

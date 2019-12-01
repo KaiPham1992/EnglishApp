@@ -23,23 +23,7 @@ class CompetitionPresenter: CompetitionPresenterProtocol, CompetitionInteractorO
                 }
             }
             self.view?.didGetList(competitionList: competition)
-        }) { (error) in
-            ProgressView.shared.hide()
-            guard let _error = error else {return}
-            self.view?.didGetList(error: _error)
-        }
-    }
-    
-    func getListResultFight(offset: Int, date: String) {
-        Provider.shared.competitionAPIService.getListResultFight(offset: offset, date: date, success: { (respone) in
-            if let _respone = respone{
-                self.view?.didGetResultFight(resultFight: _respone)
-            }
-        }) { (error) in
-            ProgressView.shared.hide()
-            if let _error = error {
-                self.view?.didGetList(error: _error)
-            }
+        }) { (_) in
         }
     }
     

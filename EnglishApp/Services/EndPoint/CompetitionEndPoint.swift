@@ -75,7 +75,10 @@ extension CompetitionEndPoint: EndPointType{
             return ["competition_id": id,
                 "name": name]
         case .getListResultFight(let offset, let date):
-            return ["offset": offset,"limit":limit, "date": date]
+            if date == "" {
+                return ["offset": offset, "limit": limit]
+            }
+            return ["offset": offset,"limit": limit, "date": date]
         case .getListFight(let offset):
             return ["offset": offset,"limit":limit]
         case .getListFightTestTeam(let competitionId, let offset):

@@ -17,7 +17,7 @@ class PageViewCompetitionViewController: PageViewController, PageViewCompetition
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        setTitleNavigation(title: LocalizableKey.competition.showLanguage)
+        setTitleNavigation(title: LocalizableKey.action.showLanguage)
     }
 
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

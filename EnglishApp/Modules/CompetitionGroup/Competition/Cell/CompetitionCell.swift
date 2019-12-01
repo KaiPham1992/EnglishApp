@@ -35,7 +35,7 @@ class CompetitionCell: BaseTableCell {
     func setupCellResult(competitionEntity: CompetitionResultsProfileEntity){
         lbName.attributedText = NSAttributedString(string: competitionEntity.name ?? "")
         lbCondition.attributedText = NSAttributedString(string: "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.rank_name&)")
-        lbCountTeam.attributedText = NSAttributedString(string: "\(competitionEntity.number_team&)\(LocalizableKey.team.showLanguage)")
+        lbCountTeam.attributedText = NSAttributedString(string: "\(competitionEntity.number_team&) \(LocalizableKey.team.showLanguage)")
         lbContent.attributedText = NSAttributedString(string: competitionEntity.description?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
         btnShare.isHidden = true
         if let startDate = competitionEntity.start_date {
@@ -119,7 +119,7 @@ class CompetitionCell: BaseTableCell {
         if let startTime = competitionEntity.startTime {
             lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage) \(startTime.toString(dateFormat: AppDateFormat.hhmm))")
         }
-        lbCountTeam.attributedText = NSAttributedString(string: "\(competitionEntity.countTeam&)\(LocalizableKey.team.showLanguage)")
+        lbCountTeam.attributedText = NSAttributedString(string: "\(competitionEntity.countTeam&) \(LocalizableKey.team.showLanguage)")
         lbContent.attributedText = NSAttributedString(string: competitionEntity.content?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
     }
     

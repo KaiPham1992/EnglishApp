@@ -43,18 +43,6 @@ class CompetitionEntity : BaseEntity {
     var isHidden = false
     var distance = 0
     
-    convenience init(competitionResultsProfileEntity: CompetitionResultsProfileEntity) {
-       self.init()
-       self.id = Int(competitionResultsProfileEntity._id&) ?? 0
-       self.name = competitionResultsProfileEntity.name
-       self.rankName = competitionResultsProfileEntity.rank_name
-       self.countTeam = competitionResultsProfileEntity.number_team
-       self.startDate = competitionResultsProfileEntity.start_date
-       self.content = competitionResultsProfileEntity.description
-       self.image = competitionResultsProfileEntity.image
-       self.exercise_id = competitionResultsProfileEntity.exercise_id
-    }
-    
     override func mapping(map: Map) {
         super.mapping(map: map)
         self.team_id <- map["team_id"]
