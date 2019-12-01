@@ -121,7 +121,7 @@
 "verifyButton" = "Yes";
 
 // Daily mission
-"messageDailyMission" = "Complete the daily mission to receive 10 diamonds";
+"messageDailyMission" = "Complete daily mission to receive 10 diamonds";
 "dailyMissionTitle" = "Daily Mission";
 "startMission" = "Start";
 "doneInputTest" = "Congratulations! You have completed the Qualification Test. Obee awarded you 500 diamonds.";
