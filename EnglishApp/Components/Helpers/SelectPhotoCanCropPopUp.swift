@@ -71,7 +71,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        
+        print("asd")
         
         if let imageEdit = info[.editedImage] as? UIImage {
             if let assetPath = info[UIImagePickerController.InfoKey.mediaURL] as? URL {
@@ -96,6 +96,7 @@ UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         imagePickerUIKit.dismiss(animated: true, completion: nil)
+        print("asd")
     }
 }
 
