@@ -130,6 +130,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueCell(CellResultExercise.self, indexPath: indexPath)
+        cell.indexPath = indexPath
         cell.delegate = self
         
         cell.callbackShowPopup = {[weak self] (fromView: UIView, point: CGPoint, word: WordExplainEntity) in

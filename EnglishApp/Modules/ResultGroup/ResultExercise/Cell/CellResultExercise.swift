@@ -15,13 +15,13 @@ class CellResultExercise: UICollectionViewCell {
 
     @IBOutlet weak var tbvResultQuestion: UITableView!
     var attributed: NSMutableAttributedString?
-    var indexPath: IndexPath?
+    var indexPath: IndexPath!
     
     @IBOutlet weak var tvContent: UITextView!
     @IBOutlet weak var vAudio: UIView!
     
     @IBAction func clickAudio(_ sender: Any) {
-        delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
+        delegate?.clickAudio(indexPath: self.indexPath)
     }
     
     var questionEntity: QuestionResultEntity?{
@@ -32,6 +32,7 @@ class CellResultExercise: UICollectionViewCell {
                 self.vAudio.isHidden = true
             }
             self.layoutIfNeeded()
+            detectQuestion()
             self.setContentQuestion()
             tbvResultQuestion.reloadData()
         }
@@ -48,13 +49,19 @@ class CellResultExercise: UICollectionViewCell {
         setupView()
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        if let tab = tvContent.gestureRecognizers, let item = tab.first {
+            tvContent.removeGestureRecognizer(item)
+        }
+    }
+    
     func setupView(){
         tvContent.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
         tbvResultQuestion.registerXibFile(CellResultFillQuestion.self)
         tbvResultQuestion.registerXibFile(CellResultChoice.self)
         tbvResultQuestion.dataSource = self
         tbvResultQuestion.delegate = self
-        detectQuestion()
     }
     
     func setContentQuestion() {
@@ -70,7 +77,7 @@ class CellResultExercise: UICollectionViewCell {
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
         if let detectedWord = getWordAtPosition(point){
-            delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+            delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath)
         }
     }
     
