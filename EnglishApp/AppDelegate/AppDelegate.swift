@@ -44,16 +44,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func checkLogin() {
-        Provider.shared.userAPIService.checkLogin(success: { user in
-            guard let user = user else { return }
-            UserDefaultHelper.shared.userToken = user.jwt&
-        }) { _error in
-            if let _ = _error?.code {
-                UserDefaultHelper.shared.clearUser()
-                NotificationCenter.default.post(name: NSNotification.Name("InvalidToken"), object: nil)
-                return
-            } else {
-                return
+        if UserDefaultHelper.shared.loginUserInfo != nil {
+            Provider.shared.userAPIService.checkLogin(success: { user in
+                guard let user = user else { return }
+                UserDefaultHelper.shared.userToken = user.jwt&
+            }) { _error in
+                if let _ = _error?.code {
+                    UserDefaultHelper.shared.clearUser()
+                    NotificationCenter.default.post(name: NSNotification.Name("InvalidToken"), object: nil)
+                    return
+                } else {
+                    return
+                }
             }
         }
     }

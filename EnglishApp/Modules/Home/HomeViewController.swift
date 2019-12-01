@@ -84,7 +84,6 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
         vcMenu = MenuRouter.createModule()
         AppRouter.shared.rootNavigation = self.navigationController
-        self.tbHome.isHidden = true
         configureTable()
         topThreeView.isUserInteractionEnabled = false
         setTitleText()
@@ -94,7 +93,11 @@ class HomeViewController: BaseViewController {
         } else {
             heightEntranceTest.constant = 42
         }
-        getInitialData()
+        if UserDefaultHelper.shared.loginUserInfo == nil {
+            self.reloadViewDidload()
+        } else {
+            getInitialData()
+        }
     }
     
     private func setTitleText() {
@@ -506,7 +509,6 @@ extension HomeViewController: MenuViewControllerDelegate {
 extension HomeViewController: HomeViewProtocol{
     
     func didGetHomeSummary(summaryInfo: CollectionUserEntity) {
-        self.tbHome.isHidden = false
         if let topThree = summaryInfo.leader_boards {
             self.topThreeView.listTopThree = topThree
         }
