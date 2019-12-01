@@ -23,6 +23,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet weak var lbMember: UILabel!
     @IBOutlet weak var lbSearch: UILabel!
     @IBOutlet weak var lbRecentTitle: UILabel!
+    @IBOutlet weak var viewRecentTitle: UIView!
+    @IBOutlet weak var buttonView: UIStackView!
     @IBOutlet weak var heightEntranceTest: NSLayoutConstraint!
     
     weak var delegate: HomeViewControllerDelegate?
@@ -77,6 +79,7 @@ class HomeViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        showUI(isHidden: true)
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadViewDidload), name: NSNotification.Name("InvalidToken"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
@@ -208,6 +211,13 @@ class HomeViewController: BaseViewController {
     
     @IBAction func topThreeTapped() {
         pushView(vc: BXHRouter.createModule())
+    }
+    
+    private func showUI(isHidden: Bool) {
+        buttonView.isHidden = isHidden
+        topThreeView.isHidden = isHidden
+        tbHome.isHidden = isHidden
+        viewRecentTitle.isHidden = isHidden
     }
 }
 //MARK: - FOR CALL API
@@ -521,6 +531,7 @@ extension HomeViewController: HomeViewProtocol{
     }
     
     func didGetHomeRecently(activities: [Acitvity]) {
+        showUI(isHidden: false)
         ProgressView.shared.hide()
         if activities.count < 20 {
             self.isLoadmore = false

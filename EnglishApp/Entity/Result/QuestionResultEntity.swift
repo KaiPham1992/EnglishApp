@@ -11,6 +11,7 @@ import ObjectMapper
 
 class QuestionResultEntity : Mappable {
     var _id : String?
+    var contentString: String?
     var question_id : String?
     var content : String?
     var score : String?
@@ -30,6 +31,9 @@ class QuestionResultEntity : Mappable {
        self.score <- map["score"]
        self.time <- map["time"]
        self.answers <- map["answers"]
+        if self.content != nil {
+            self.contentString = self.content?.htmlToString
+        }
     }
     
     func checkHaveAudio() -> Bool {

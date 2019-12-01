@@ -12,6 +12,7 @@ import ObjectMapper
 class SearchEntity : Mappable{
     
     var _id : String?
+    var nameString: String?
     var name : String?
     
     //use for create exercise
@@ -27,5 +28,8 @@ class SearchEntity : Mappable{
         self.type_test <- map["type_test"]
         self._id <- map["_id"]
         self.name <- map["name"]
+        if self.name != nil {
+            self.nameString = self.name?.htmlToString
+        }
     }
 }

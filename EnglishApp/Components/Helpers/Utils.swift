@@ -29,7 +29,7 @@ class Utils {
     }
 }
 
-//extension Utils {
+extension Utils {
 //    class func getMinimumWidthHeight() -> CGFloat {
 //        return CGFloat.minimum(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
 //    }
@@ -38,13 +38,13 @@ class Utils {
 //        return CGFloat.maximum(UIScreen.main.bounds.width, UIScreen.main.bounds.height)
 //    }
 //
-//    class func isIphoneXOrLater() -> Bool {
-//        if UIDevice.current.isIphone4Inch() || UIDevice.current.isIphone4_7Inch() || UIDevice.current.isIphone5_5Inch() {
-//            return false
-//        }
-//
-//        return true
-//    }
+    class func isIphoneXOrLater() -> Bool {
+        if UIDevice.current.isIphone4Inch() || UIDevice.current.isIphone4_7Inch() || UIDevice.current.isIphone5_5Inch() {
+            return false
+        }
+
+        return true
+    }
 //
 //    class func checkIncreaseTabbar() -> Bool {
 //        return !UIDevice.current.isIphone5_8Inch()
@@ -67,7 +67,7 @@ class Utils {
 //        statusBar.backgroundColor = color
 //        statusBar.tintColor = color
 //    }
-//}
+}
 
 extension Utils {
     class func getTimeZone() -> String {

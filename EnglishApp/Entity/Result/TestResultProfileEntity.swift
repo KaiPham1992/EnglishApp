@@ -20,6 +20,7 @@ class TestResultProfileEntity: Mappable {
     var attach_img_src : String?
     var questions : [QuestionResultEntity]?
     var type_test : String?
+    var nameString: String?
     var name : String?
     var isRead = false
     
@@ -39,5 +40,8 @@ class TestResultProfileEntity: Mappable {
        self.social_img_src <- map["social_img_src"]
        self.attach_img_src <- map["attach_img_src"]
        self.questions <- map["questions"]
+        if self.name != nil {
+            self.nameString = self.name?.htmlToString
+        }
     }
 }

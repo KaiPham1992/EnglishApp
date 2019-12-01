@@ -10,6 +10,7 @@
 
 import UIKit
 import XLPagerTabStrip
+import IQKeyboardManagerSwift
 
 class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
 
@@ -18,6 +19,7 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
     @IBOutlet weak var tfCode: UITextField!
     @IBOutlet weak var lbError: UILabel!
     @IBOutlet weak var heightError: NSLayoutConstraint!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
         
 	var presenter: StudyPackPresenterProtocol?
     let refresh = UIRefreshControl()
@@ -43,12 +45,19 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        IQKeyboardManager.shared.enable = false
+        addKeyboardNotification()
         configureTable()
         presenter?.getPackage()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
             self.presenter?.getProduct()
         }
         tbBeePack.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        IQKeyboardManager.shared.enable = true
     }
     
     override func setUpViews() {
@@ -60,7 +69,6 @@ class StudyPackViewController: BaseViewController, StudyPackViewProtocol {
         
         tfCode.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
         heightError.constant = 0
-
     }
     
     func exchangeGift(id: String, type: String) {
@@ -262,5 +270,22 @@ extension StudyPackViewController: ChangeGiftCellDelegate {
         }
     }
     
+}
+
+extension StudyPackViewController {
+    override func keyboardWillShow(_ notification: NSNotification) {
+        if let keyboardRectValue = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+            
+            let keyboardHeight = keyboardRectValue.height
+            UIView.animate(withDuration: 0.4) {
+                self.bottomConstraint.constant = keyboardHeight
+                self.view.layoutIfNeeded()
+            }
+        }
+    }
+    
+    override func keyboardWillHide(_ notification: NSNotification) {
+        bottomConstraint.constant = 0
+    }
 }
 

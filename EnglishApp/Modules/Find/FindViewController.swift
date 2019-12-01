@@ -107,7 +107,7 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
         if type == .searchTheory {
-            if let data = self.presenter?.searchTheoryRespone[indexPath.row].name?.htmlToString {
+            if let data = self.presenter?.searchTheoryRespone[indexPath.row].nameString {
                 cell.lbTitle.text = data
             }
         } else {
@@ -118,7 +118,8 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.backgroundColor = AppColor.notificationNotRead
                 }
                 
-                cell.lbTitle.text = data.name
+                cell.lbTitle.text = data.nameString
+                cell.lbContent.text = data.questions?.first?.contentString
             }
         }
         return cell
