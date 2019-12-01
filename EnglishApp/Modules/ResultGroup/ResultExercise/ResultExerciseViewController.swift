@@ -18,9 +18,7 @@ class ResultExerciseViewController: BaseViewController {
     @IBAction func reportQuestion(_ sender: Any) {
         PopUpHelper.shared.showReportQuestion(cancel: {
         }) { [unowned self] (message) in
-            if let answer = self.presenter?.getAnswer(indexPath: IndexPath(row: self.index, section: 0)) {
-                self.presenter?.reportQuestion(questionDetailId: Int(answer.question_id ?? "0") ?? 0, content: message ?? "")
-            }
+            self.presenter?.reportQuestion(questionDetailId: Int(self.presenter?.getAnswer(indexPath: IndexPath(row: self.index, section: 0)).question_id ?? "0") ?? 0, content: message ?? "")
         }
     }
     
@@ -138,12 +136,12 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
             self?.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: word)
         }
         
-        cell.actionExplainExericse = {[weak self] (questionId,answerId) in
-            self?.explainQuestion(questionId: questionId, answerId: answerId)
+        cell.actionExplainExericse = {[weak self] (questionId) in
+            self?.explainQuestion(questionId: questionId)
         }
         
-        cell.actionRelatedGrammar = {[weak self] (questionId,answerId) in
-            self?.seeRelatedGrammar(questionId: questionId, answerId: answerId)
+        cell.actionRelatedGrammar = {[weak self] (questionId) in
+            self?.seeRelatedGrammar(questionId: questionId)
         }
         
         if let dataCell = self.presenter?.getAnswer(indexPath: indexPath){
@@ -152,7 +150,7 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         return cell
     }
 
-    func seeRelatedGrammar(questionId: Int, answerId: Int) {
+    func seeRelatedGrammar(questionId: Int) {
         if isSearch && !isMinusMoney {
             self.minusMoney(callback: { [weak self] (isSuccessed: Bool) in
                 if isSuccessed {
@@ -168,11 +166,11 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
             })
             return
         }
-        let vc = RelatedGrammarRouter.createModule(id: answerId)
+        let vc = RelatedGrammarRouter.createModule(id: questionId)
         self.push(controller: vc)
     }
     
-    func explainQuestion(questionId: Int, answerId: Int) {
+    func explainQuestion(questionId: Int) {
         self.gotoExplainQuestion(questionId: questionId)
     }
     

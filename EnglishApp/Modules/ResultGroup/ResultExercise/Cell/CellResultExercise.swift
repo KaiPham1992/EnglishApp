@@ -39,8 +39,8 @@ class CellResultExercise: UICollectionViewCell {
     }
     
     var callbackShowPopup : ((_ fromView: UIView, _ rect: CGPoint, _ word: WordExplainEntity) -> ())?
-    var actionExplainExericse : ((_ questionId: Int,_ answerId: Int) -> ())?
-    var actionRelatedGrammar : ((_ questionId: Int,_ answerId: Int) -> ())?
+    var actionExplainExericse : ((_ questionId: Int) -> ())?
+    var actionRelatedGrammar : ((_ questionId: Int) -> ())?
     
     var numberLine: Int = 0
     
@@ -155,10 +155,10 @@ extension CellResultExercise: UITableViewDataSource{
     }
     
     func actionExplainQuestion(section: Int){
-        self.actionExplainExericse?(Int(self.questionEntity?.question_id ?? "0") ?? 0, Int(self.questionEntity?.answers?[section]._id ?? "0") ?? 0)
+        self.actionExplainExericse?(Int(self.questionEntity?.answers?[section].question_details_id ?? "0") ?? 0)
     }
     
     func actionRelatedGrammar(section: Int){
-        self.actionRelatedGrammar?(Int(self.questionEntity?.question_id ?? "0") ?? 0, Int(self.questionEntity?.answers?[section].question_details_id ?? "0") ?? 0)
+        self.actionRelatedGrammar?(Int(self.questionEntity?.answers?[section].question_details_id ?? "0") ?? 0)
     }
 }
