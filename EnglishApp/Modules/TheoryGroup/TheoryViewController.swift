@@ -19,7 +19,6 @@ class TheoryViewController: PageViewController, TheoryViewProtocol {
         super.viewDidLoad()
         setTitleNavigation(title: LocalizableKey.theory.showLanguage)
         addButtonImageToNavigation(image: #imageLiteral(resourceName: "Material_Icons_white_search"), style: .right, action: #selector(clickButtonSearch))
-        self.edgesForExtendedLayout = UIRectEdge.bottom
     }
     
     @objc func clickButtonSearch(){

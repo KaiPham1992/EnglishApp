@@ -69,7 +69,6 @@ class ResultViewController: BaseViewController {
         }
         lblPointSum.attributedText = NSAttributedString(string: LocalizableKey.sum_point.showLanguage)
         lblTimeDoExercise.attributedText = NSAttributedString(string: LocalizableKey.time_do_exercise.showLanguage)
-        self.edgesForExtendedLayout = UIRectEdge.bottom
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.refreshControlResult.addTarget(self, action: #selector(ResultViewController.actionPullToRefresh), for: .valueChanged)
             if #available(iOS 10.0, *) {

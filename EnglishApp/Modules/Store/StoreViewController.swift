@@ -20,7 +20,6 @@ class StoreViewController: PageViewController, TheoryViewProtocol {
         setTitleNavigation(title: LocalizableKey.titleMember.showLanguage)
         self.view.backgroundColor = .white
         addBackToNavigation()
-        self.edgesForExtendedLayout = UIRectEdge.bottom
     }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {

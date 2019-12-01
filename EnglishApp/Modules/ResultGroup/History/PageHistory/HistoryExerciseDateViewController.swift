@@ -20,7 +20,6 @@ class HistoryExerciseDateViewController: PageViewController, HistoryExerciseDate
         super.viewDidLoad()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.history_test.showLanguage)
-        self.edgesForExtendedLayout = .bottom
     }
 
     

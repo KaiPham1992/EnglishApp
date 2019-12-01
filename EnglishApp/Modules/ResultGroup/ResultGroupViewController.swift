@@ -24,7 +24,6 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
         super.viewDidLoad()
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.result_competion.showLanguage)
-        self.edgesForExtendedLayout = .bottom        
         self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
     }
 

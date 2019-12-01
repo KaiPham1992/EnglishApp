@@ -19,7 +19,6 @@ class ExplainExerciseGroupViewController: PageViewController, ExplainExerciseGro
 
 	override func viewDidLoad() {
         super.viewDidLoad()
-        self.edgesForExtendedLayout = UIRectEdge.bottom
         addBackToNavigation()
         setTitleNavigation(title: LocalizableKey.see_explain.showLanguage)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
