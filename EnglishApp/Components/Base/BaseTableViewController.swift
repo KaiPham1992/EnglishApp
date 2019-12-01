@@ -100,7 +100,6 @@ open class BaseTableViewController: UIViewController {
     
     func initLoadData(data: [Any]){
         DispatchQueue.global().async {
-            
             if self.offset == 0 {
 //                self.listData.removeAll()
                 self.listData = data

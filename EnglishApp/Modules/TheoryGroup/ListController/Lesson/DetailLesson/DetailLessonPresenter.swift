@@ -58,4 +58,11 @@ class DetailLessonPresenter: DetailLessonPresenterProtocol, DetailLessonInteract
         return lessonDetail?.is_favorite
     }
 
+    func searchVocabulary(word: String, position: CGPoint) {
+        self.interactor?.searchVocabulary(word: word, position: position)
+    }
+    
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint) {
+        self.view?.searchVocabularySuccessed(wordEntity: wordEntity, position: position)
+    }
 }

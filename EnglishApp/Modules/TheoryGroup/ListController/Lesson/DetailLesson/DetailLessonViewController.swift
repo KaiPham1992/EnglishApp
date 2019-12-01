@@ -49,7 +49,7 @@ class DetailLessonViewController: BaseViewController {
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
         if let detectedWord = getWordAtPosition(point){
-            print(detectedWord)
+            self.presenter?.searchVocabulary(word: detectedWord, position: point)
         }
     }
     
@@ -161,6 +161,12 @@ class DetailLessonViewController: BaseViewController {
     }
 }
 extension DetailLessonViewController:DetailLessonViewProtocol{
+    
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint) {
+        let pointConvert = tvContent.convert(position, to: self.view)
+        self.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: wordEntity)
+    }
+    
     func reloadView() {
         if type == .detailLesson {
             setTitleNavigation(title: self.presenter?.lessonDetail?.name ?? "")

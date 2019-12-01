@@ -69,9 +69,7 @@ class ListManagerVC: BaseViewController {
                 self.offset += limit
             }
             DispatchQueue.main.async {
-                if self.offset == 0 {
-                    self.tableView.isHidden = false
-                }
+                self.tableView.isHidden = false
                 ProgressView.shared.hide()
                 if data.count == 0 && self.offset == 0 {
                     self.showNoData(text: self.messageNoData)

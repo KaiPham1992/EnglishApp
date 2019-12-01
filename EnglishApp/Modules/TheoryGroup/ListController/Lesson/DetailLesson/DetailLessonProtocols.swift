@@ -24,6 +24,7 @@ protocol DetailLessonPresenterProtocol: class {
     func getLessonDetail(lesson_id: Int)
     func likeLesson(idLesson: Int, idWord: Int?, isFavorite: Int)
     func getViewVocabulary(wordId: Int)
+    func searchVocabulary(word: String,position: CGPoint)
 }
 
 //MARK: Interactor -
@@ -32,6 +33,7 @@ protocol DetailLessonInteractorOutputProtocol: class {
     /* Interactor -> Presenter */
     func getLessonDetailSuccessed(lessonDetail: LessonCatelogyDetail)
     func getViewVocabularySuccessed(vocabulary: WordExplainEntity)
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint)
 }
 
 protocol DetailLessonInteractorInputProtocol: class {
@@ -40,6 +42,7 @@ protocol DetailLessonInteractorInputProtocol: class {
     func getLessonDetail(lesson_id: Int)
     func likeLesson(idLesson: Int, idWord: Int?, isFavorite: Int)
     func getViewVocabulary(wordId: Int)
+    func searchVocabulary(word: String,position: CGPoint)
 
     /* Presenter -> Interactor */
 }
@@ -49,5 +52,6 @@ protocol DetailLessonViewProtocol: class {
 
     var presenter: DetailLessonPresenterProtocol?  { get set }
     func reloadView()
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity,position: CGPoint)
     /* Presenter -> ViewController */
 }
