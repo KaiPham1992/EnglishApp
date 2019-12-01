@@ -32,10 +32,13 @@ class CompetitionCell: BaseTableCell {
     var index: Int!
     var callbackTimer: ((_ index: Int, _ time: Int) -> ())?
 
-    func setupCellResult(competitionEntity: CompetitionEntity){
-        self.parseBaseData(competitionEntity: competitionEntity)
+    func setupCellResult(competitionEntity: CompetitionResultsProfileEntity){
+        lbName.attributedText = NSAttributedString(string: competitionEntity.name ?? "")
+        lbCondition.attributedText = NSAttributedString(string: "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.rank_name&)")
+        lbCountTeam.attributedText = NSAttributedString(string: "\(competitionEntity.number_team&)\(LocalizableKey.team.showLanguage)")
+        lbContent.attributedText = NSAttributedString(string: competitionEntity.description?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
         btnShare.isHidden = true
-        if let startDate = competitionEntity.startDate {
+        if let startDate = competitionEntity.start_date {
             lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.time.showLanguage) \(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
         }
         lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
@@ -112,10 +115,6 @@ class CompetitionCell: BaseTableCell {
     func parseBaseData(competitionEntity: CompetitionEntity) {
         lbName.attributedText = NSAttributedString(string: competitionEntity.name ?? "")
         lbCondition.attributedText = NSAttributedString(string: "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.rankName&)")
-        btnShare.isHidden = false
-        if let startTime = competitionEntity.startTime{
-            lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage) \(startTime.toString(dateFormat: AppDateFormat.hhmm))")
-        }
         btnShare.isHidden = false
         if let startTime = competitionEntity.startTime {
             lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage) \(startTime.toString(dateFormat: AppDateFormat.hhmm))")

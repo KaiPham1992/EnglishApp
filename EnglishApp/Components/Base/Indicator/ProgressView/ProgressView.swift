@@ -19,7 +19,7 @@ open class ProgressView {
     
     let background : UIView = {
         let v = UIView()
-        v.backgroundColor = .white
+//        v.backgroundColor = .white
         v.translatesAutoresizingMaskIntoConstraints = false
         return v
     }()

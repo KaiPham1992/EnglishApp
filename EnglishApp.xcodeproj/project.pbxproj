@@ -47,6 +47,42 @@
 		2A2FC7A422EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
 		2A2FC7A522EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
 		2A36B8A0231A4AE100E9696F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */; };
+		2A39194423934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */; };
+		2A39194523934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */; };
+		2A39194623934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */; };
+		2A39194723934F830071A1CC /* HistoryCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193F23934F830071A1CC /* HistoryCompetitionRouter.swift */; };
+		2A39194823934F830071A1CC /* HistoryCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193F23934F830071A1CC /* HistoryCompetitionRouter.swift */; };
+		2A39194923934F830071A1CC /* HistoryCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193F23934F830071A1CC /* HistoryCompetitionRouter.swift */; };
+		2A39194A23934F830071A1CC /* HistoryCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194023934F830071A1CC /* HistoryCompetitionViewController.swift */; };
+		2A39194B23934F830071A1CC /* HistoryCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194023934F830071A1CC /* HistoryCompetitionViewController.swift */; };
+		2A39194C23934F830071A1CC /* HistoryCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194023934F830071A1CC /* HistoryCompetitionViewController.swift */; };
+		2A39194D23934F830071A1CC /* HistoryCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194123934F830071A1CC /* HistoryCompetitionProtocols.swift */; };
+		2A39194E23934F830071A1CC /* HistoryCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194123934F830071A1CC /* HistoryCompetitionProtocols.swift */; };
+		2A39194F23934F830071A1CC /* HistoryCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194123934F830071A1CC /* HistoryCompetitionProtocols.swift */; };
+		2A39195023934F830071A1CC /* HistoryCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194223934F830071A1CC /* HistoryCompetitionInteractor.swift */; };
+		2A39195123934F830071A1CC /* HistoryCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194223934F830071A1CC /* HistoryCompetitionInteractor.swift */; };
+		2A39195223934F830071A1CC /* HistoryCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39194223934F830071A1CC /* HistoryCompetitionInteractor.swift */; };
+		2A39195323934F830071A1CC /* HistoryCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A39194323934F830071A1CC /* HistoryCompetitionViewController.xib */; };
+		2A39195423934F830071A1CC /* HistoryCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A39194323934F830071A1CC /* HistoryCompetitionViewController.xib */; };
+		2A39195523934F830071A1CC /* HistoryCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A39194323934F830071A1CC /* HistoryCompetitionViewController.xib */; };
+		2A391961239357C10071A1CC /* PageViewCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195B239357C10071A1CC /* PageViewCompetitionPresenter.swift */; };
+		2A391962239357C10071A1CC /* PageViewCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195B239357C10071A1CC /* PageViewCompetitionPresenter.swift */; };
+		2A391963239357C10071A1CC /* PageViewCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195B239357C10071A1CC /* PageViewCompetitionPresenter.swift */; };
+		2A391964239357C10071A1CC /* PageViewCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195C239357C10071A1CC /* PageViewCompetitionRouter.swift */; };
+		2A391965239357C10071A1CC /* PageViewCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195C239357C10071A1CC /* PageViewCompetitionRouter.swift */; };
+		2A391966239357C10071A1CC /* PageViewCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195C239357C10071A1CC /* PageViewCompetitionRouter.swift */; };
+		2A391967239357C10071A1CC /* PageViewCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195D239357C10071A1CC /* PageViewCompetitionViewController.swift */; };
+		2A391968239357C10071A1CC /* PageViewCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195D239357C10071A1CC /* PageViewCompetitionViewController.swift */; };
+		2A391969239357C10071A1CC /* PageViewCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195D239357C10071A1CC /* PageViewCompetitionViewController.swift */; };
+		2A39196A239357C10071A1CC /* PageViewCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195E239357C10071A1CC /* PageViewCompetitionProtocols.swift */; };
+		2A39196B239357C10071A1CC /* PageViewCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195E239357C10071A1CC /* PageViewCompetitionProtocols.swift */; };
+		2A39196C239357C10071A1CC /* PageViewCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195E239357C10071A1CC /* PageViewCompetitionProtocols.swift */; };
+		2A39196D239357C10071A1CC /* PageViewCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195F239357C10071A1CC /* PageViewCompetitionInteractor.swift */; };
+		2A39196E239357C10071A1CC /* PageViewCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195F239357C10071A1CC /* PageViewCompetitionInteractor.swift */; };
+		2A39196F239357C10071A1CC /* PageViewCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39195F239357C10071A1CC /* PageViewCompetitionInteractor.swift */; };
+		2A391970239357C10071A1CC /* PageViewCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A391960239357C10071A1CC /* PageViewCompetitionViewController.xib */; };
+		2A391971239357C10071A1CC /* PageViewCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A391960239357C10071A1CC /* PageViewCompetitionViewController.xib */; };
+		2A391972239357C10071A1CC /* PageViewCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A391960239357C10071A1CC /* PageViewCompetitionViewController.xib */; };
 		2A436AF422EB33A800BD9285 /* HistoryListExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */; };
 		2A436AF522EB33A800BD9285 /* HistoryListExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */; };
 		2A436AF622EB33A800BD9285 /* HistoryListExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */; };
@@ -2221,24 +2257,6 @@
 		DED5A01722A579F800872261 /* BXHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A01322A579F800872261 /* BXHCell.xib */; };
 		DED5A01822A579F800872261 /* BXHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A01322A579F800872261 /* BXHCell.xib */; };
 		DED5A01922A579F800872261 /* BXHCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A01322A579F800872261 /* BXHCell.xib */; };
-		DED5A02122A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01B22A5839C00872261 /* HistoryCompetitionPresenter.swift */; };
-		DED5A02222A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01B22A5839C00872261 /* HistoryCompetitionPresenter.swift */; };
-		DED5A02322A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01B22A5839C00872261 /* HistoryCompetitionPresenter.swift */; };
-		DED5A02422A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01C22A5839C00872261 /* HistoryCompetitionRouter.swift */; };
-		DED5A02522A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01C22A5839C00872261 /* HistoryCompetitionRouter.swift */; };
-		DED5A02622A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01C22A5839C00872261 /* HistoryCompetitionRouter.swift */; };
-		DED5A02722A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01D22A5839C00872261 /* HistoryCompetitionViewController.swift */; };
-		DED5A02822A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01D22A5839C00872261 /* HistoryCompetitionViewController.swift */; };
-		DED5A02922A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01D22A5839C00872261 /* HistoryCompetitionViewController.swift */; };
-		DED5A02A22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01E22A5839C00872261 /* HistoryCompetitionProtocols.swift */; };
-		DED5A02B22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01E22A5839C00872261 /* HistoryCompetitionProtocols.swift */; };
-		DED5A02C22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01E22A5839C00872261 /* HistoryCompetitionProtocols.swift */; };
-		DED5A02D22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01F22A5839C00872261 /* HistoryCompetitionInteractor.swift */; };
-		DED5A02E22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01F22A5839C00872261 /* HistoryCompetitionInteractor.swift */; };
-		DED5A02F22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED5A01F22A5839C00872261 /* HistoryCompetitionInteractor.swift */; };
-		DED5A03022A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A02022A5839C00872261 /* HistoryCompetitionViewController.xib */; };
-		DED5A03122A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A02022A5839C00872261 /* HistoryCompetitionViewController.xib */; };
-		DED5A03222A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DED5A02022A5839C00872261 /* HistoryCompetitionViewController.xib */; };
 		DEDDEF6522914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6622914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
 		DEDDEF6722914A980043A62D /* MainTabbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEDDEF6422914A980043A62D /* MainTabbar.swift */; };
@@ -2293,6 +2311,18 @@
 		2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarEntity.swift; sourceTree = "<group>"; };
 		2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarsResponse.swift; sourceTree = "<group>"; };
 		2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionPresenter.swift; sourceTree = "<group>"; };
+		2A39193F23934F830071A1CC /* HistoryCompetitionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionRouter.swift; sourceTree = "<group>"; };
+		2A39194023934F830071A1CC /* HistoryCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionViewController.swift; sourceTree = "<group>"; };
+		2A39194123934F830071A1CC /* HistoryCompetitionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionProtocols.swift; sourceTree = "<group>"; };
+		2A39194223934F830071A1CC /* HistoryCompetitionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionInteractor.swift; sourceTree = "<group>"; };
+		2A39194323934F830071A1CC /* HistoryCompetitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCompetitionViewController.xib; sourceTree = "<group>"; };
+		2A39195B239357C10071A1CC /* PageViewCompetitionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewCompetitionPresenter.swift; sourceTree = "<group>"; };
+		2A39195C239357C10071A1CC /* PageViewCompetitionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewCompetitionRouter.swift; sourceTree = "<group>"; };
+		2A39195D239357C10071A1CC /* PageViewCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewCompetitionViewController.swift; sourceTree = "<group>"; };
+		2A39195E239357C10071A1CC /* PageViewCompetitionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewCompetitionProtocols.swift; sourceTree = "<group>"; };
+		2A39195F239357C10071A1CC /* PageViewCompetitionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewCompetitionInteractor.swift; sourceTree = "<group>"; };
+		2A391960239357C10071A1CC /* PageViewCompetitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PageViewCompetitionViewController.xib; sourceTree = "<group>"; };
 		2A436AEE22EB33A800BD9285 /* HistoryListExercisePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListExercisePresenter.swift; sourceTree = "<group>"; };
 		2A436AEF22EB33A800BD9285 /* HistoryListExerciseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListExerciseRouter.swift; sourceTree = "<group>"; };
 		2A436AF022EB33A800BD9285 /* HistoryListExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryListExerciseViewController.swift; sourceTree = "<group>"; };
@@ -3020,12 +3050,6 @@
 		DED5A00B22A579CC00872261 /* BXHTop3Cell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXHTop3Cell.xib; sourceTree = "<group>"; };
 		DED5A01222A579F800872261 /* BXHCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BXHCell.swift; sourceTree = "<group>"; };
 		DED5A01322A579F800872261 /* BXHCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BXHCell.xib; sourceTree = "<group>"; };
-		DED5A01B22A5839C00872261 /* HistoryCompetitionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionPresenter.swift; sourceTree = "<group>"; };
-		DED5A01C22A5839C00872261 /* HistoryCompetitionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionRouter.swift; sourceTree = "<group>"; };
-		DED5A01D22A5839C00872261 /* HistoryCompetitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionViewController.swift; sourceTree = "<group>"; };
-		DED5A01E22A5839C00872261 /* HistoryCompetitionProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionProtocols.swift; sourceTree = "<group>"; };
-		DED5A01F22A5839C00872261 /* HistoryCompetitionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionInteractor.swift; sourceTree = "<group>"; };
-		DED5A02022A5839C00872261 /* HistoryCompetitionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCompetitionViewController.xib; sourceTree = "<group>"; };
 		DEDDEF6422914A980043A62D /* MainTabbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbar.swift; sourceTree = "<group>"; };
 		DEDDEF6822914B8D0043A62D /* UIDevice+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+extension.swift"; sourceTree = "<group>"; };
 		DEECF86D2286FCAB00A4678B /* HeaderUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderUserView.swift; sourceTree = "<group>"; };
@@ -3113,6 +3137,19 @@
 				2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */,
 			);
 			path = ListManager;
+			sourceTree = "<group>";
+		};
+		2A391956239357890071A1CC /* PageViewCompetition */ = {
+			isa = PBXGroup;
+			children = (
+				2A39195B239357C10071A1CC /* PageViewCompetitionPresenter.swift */,
+				2A39195C239357C10071A1CC /* PageViewCompetitionRouter.swift */,
+				2A39195D239357C10071A1CC /* PageViewCompetitionViewController.swift */,
+				2A39195E239357C10071A1CC /* PageViewCompetitionProtocols.swift */,
+				2A39195F239357C10071A1CC /* PageViewCompetitionInteractor.swift */,
+				2A391960239357C10071A1CC /* PageViewCompetitionViewController.xib */,
+			);
+			path = PageViewCompetition;
 			sourceTree = "<group>";
 		};
 		2A436AD522EB327B00BD9285 /* HistoryExercise */ = {
@@ -3351,6 +3388,19 @@
 			path = SlideMenu;
 			sourceTree = "<group>";
 		};
+		2ACA2C5623934E9400A64177 /* HistoryCompetition */ = {
+			isa = PBXGroup;
+			children = (
+				2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */,
+				2A39193F23934F830071A1CC /* HistoryCompetitionRouter.swift */,
+				2A39194023934F830071A1CC /* HistoryCompetitionViewController.swift */,
+				2A39194123934F830071A1CC /* HistoryCompetitionProtocols.swift */,
+				2A39194223934F830071A1CC /* HistoryCompetitionInteractor.swift */,
+				2A39194323934F830071A1CC /* HistoryCompetitionViewController.xib */,
+			);
+			path = HistoryCompetition;
+			sourceTree = "<group>";
+		};
 		2AD6E7EF237F88610009FF3C /* TextViewPlaceHolder */ = {
 			isa = PBXGroup;
 			children = (
@@ -3512,6 +3562,7 @@
 		7643DEC922A567F900B7C323 /* PageHistory */ = {
 			isa = PBXGroup;
 			children = (
+				2ACA2C5623934E9400A64177 /* HistoryCompetition */,
 				2A436AD522EB327B00BD9285 /* HistoryExercise */,
 				2AB4A05A22E2267E00557B5F /* HistoryDailyMisson */,
 				76EE391622A5777700DD8960 /* HistoryExerciseDatePresenter.swift */,
@@ -4708,7 +4759,6 @@
 			isa = PBXGroup;
 			children = (
 				2A88F4CD22FE66D600D59336 /* Fight */,
-				DED5A01A22A5838100872261 /* HistoryCompetition */,
 				DEBD671C228D47BD004B74C8 /* ExplainCompetition */,
 				DEBD66FA228D2004004B74C8 /* DetailTeam */,
 				DE3A8CD22289C7490080A8CB /* SelectTeam */,
@@ -4720,6 +4770,7 @@
 		DE3A8CAC2289BBE60080A8CB /* Competition */ = {
 			isa = PBXGroup;
 			children = (
+				2A391956239357890071A1CC /* PageViewCompetition */,
 				DE3A8CC52289BC2B0080A8CB /* Cell */,
 				DE3A8CAD2289BBF30080A8CB /* CompetitionPresenter.swift */,
 				DE3A8CAE2289BBF30080A8CB /* CompetitionRouter.swift */,
@@ -5376,19 +5427,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		DED5A01A22A5838100872261 /* HistoryCompetition */ = {
-			isa = PBXGroup;
-			children = (
-				DED5A01B22A5839C00872261 /* HistoryCompetitionPresenter.swift */,
-				DED5A01C22A5839C00872261 /* HistoryCompetitionRouter.swift */,
-				DED5A01D22A5839C00872261 /* HistoryCompetitionViewController.swift */,
-				DED5A01E22A5839C00872261 /* HistoryCompetitionProtocols.swift */,
-				DED5A01F22A5839C00872261 /* HistoryCompetitionInteractor.swift */,
-				DED5A02022A5839C00872261 /* HistoryCompetitionViewController.xib */,
-			);
-			path = HistoryCompetition;
-			sourceTree = "<group>";
-		};
 		DEDDEF6322914A790043A62D /* MainTabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -5597,6 +5635,7 @@
 				DEBCBC6422945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEC7F92222C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				2AA20CF722F5522400F38894 /* CommentQuestionViewController.xib in Resources */,
+				2A39195323934F830071A1CC /* HistoryCompetitionViewController.xib in Resources */,
 				76E2FF46228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5E228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DED5A00F22A579CC00872261 /* BXHTop3Cell.xib in Resources */,
@@ -5605,6 +5644,7 @@
 				766AE80422B02371002D474E /* ViewFeature.xib in Resources */,
 				2AD6E7F5237FAA710009FF3C /* ViewHeaderQuestionExercise.xib in Resources */,
 				DE361E9C2283E60500FA3B0D /* NotificationContent.xib in Resources */,
+				2A391970239357C10071A1CC /* PageViewCompetitionViewController.xib in Resources */,
 				DEBD6710228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACC22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD18FF22A25AB10054861D /* BeePackCell.xib in Resources */,
@@ -5709,7 +5749,6 @@
 				B197F3C0238C1D6800F794AA /* HomeActionCell.xib in Resources */,
 				DE95316422883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				76FF690A232FC5EB00D5CB09 /* ProfileHeader.xib in Resources */,
-				DED5A03022A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				2A9B070E237FEA1C00559589 /* VocabularyVC.xib in Resources */,
 				DE3A8CA82289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				2AB4A05722E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
@@ -5757,6 +5796,7 @@
 				DEBCBC6522945B4400DF7F74 /* StudyPackView.xib in Resources */,
 				DEC7F92322C4EDAA0096D3D1 /* Comfortaa-Regular.ttf in Resources */,
 				2AA20CF822F5522400F38894 /* CommentQuestionViewController.xib in Resources */,
+				2A39195423934F830071A1CC /* HistoryCompetitionViewController.xib in Resources */,
 				76E2FF47228DD1070014B1F4 /* AddNoteViewController.xib in Resources */,
 				76E2FF5F228DD2120014B1F4 /* SeeNoteViewController.xib in Resources */,
 				DED5A01022A579CC00872261 /* BXHTop3Cell.xib in Resources */,
@@ -5765,6 +5805,7 @@
 				766AE80522B02371002D474E /* ViewFeature.xib in Resources */,
 				2AD6E7F6237FAA710009FF3C /* ViewHeaderQuestionExercise.xib in Resources */,
 				DE9530442287DF4800E3F688 /* NotificationContent.xib in Resources */,
+				2A391971239357C10071A1CC /* PageViewCompetitionViewController.xib in Resources */,
 				DEBD6711228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACD22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
 				DECD190022A25AB10054861D /* BeePackCell.xib in Resources */,
@@ -5869,7 +5910,6 @@
 				B197F3C1238C1D6800F794AA /* HomeActionCell.xib in Resources */,
 				DE95316522883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				76FF690B232FC5EB00D5CB09 /* ProfileHeader.xib in Resources */,
-				DED5A03122A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				2A9B070F237FEA1C00559589 /* VocabularyVC.xib in Resources */,
 				DE3A8CA92289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				2AB4A05822E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
@@ -5925,6 +5965,8 @@
 				DE49F82C22A3DB9C00A92C63 /* NotificationDetailViewController.xib in Resources */,
 				766AE80622B02371002D474E /* ViewFeature.xib in Resources */,
 				B197F3CB238C1D6800F794AA /* HomeTitleCell.xib in Resources */,
+				2A391972239357C10071A1CC /* PageViewCompetitionViewController.xib in Resources */,
+				2A39195523934F830071A1CC /* HistoryCompetitionViewController.xib in Resources */,
 				DE9530F22287DF6400E3F688 /* NotificationContent.xib in Resources */,
 				DEBD6712228D201A004B74C8 /* DetailTeamViewController.xib in Resources */,
 				DEC62ACE22930E0E00D7CECE /* StudyPackViewController.xib in Resources */,
@@ -6026,7 +6068,6 @@
 				DEBD671B228D22F2004B74C8 /* DetailTeamCell.xib in Resources */,
 				DE95316622883FB100E3F688 /* PreviewProfileViewController.xib in Resources */,
 				2A9B0702237FC46D00559589 /* ViewHeaderResultExercise.xib in Resources */,
-				DED5A03222A5839C00872261 /* HistoryCompetitionViewController.xib in Resources */,
 				DE3A8CAA2289B93F0080A8CB /* QADetailViewController.xib in Resources */,
 				2AB4A05922E1E87C00557B5F /* DailyMissonViewController.xib in Resources */,
 				DE9530FE2287DF6400E3F688 /* LaunchScreen.storyboard in Resources */,
@@ -6298,6 +6339,7 @@
 				2A9B070B237FEA1C00559589 /* VocabularyVC.swift in Sources */,
 				76EC6FF422CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320B2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
+				2A39194D23934F830071A1CC /* HistoryCompetitionProtocols.swift in Sources */,
 				76C92FA222C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CC22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				2A88F4D822FE66F800D59336 /* FightInteractor.swift in Sources */,
@@ -6410,6 +6452,7 @@
 				76DB93A9228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DB229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE952F962287D2A700E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				2A39196A239357C10071A1CC /* PageViewCompetitionProtocols.swift in Sources */,
 				2AF2F84222EA05BF00603444 /* NoteListViewController.swift in Sources */,
 				2AA6D38922DC599B006E9859 /* DetailTeamEntity.swift in Sources */,
 				76EF925A22DF67CC0047DA1A /* StudyPackDetailInteractor.swift in Sources */,
@@ -6431,6 +6474,7 @@
 				DE9531482288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				76E8530622B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE361F452283E85000FA3B0D /* BaseParam.swift in Sources */,
+				2A391961239357C10071A1CC /* PageViewCompetitionPresenter.swift in Sources */,
 				DE361DF52283E57900FA3B0D /* UIColor+extension.swift in Sources */,
 				76CE31CF22961FC300E998FB /* ResultInteractor.swift in Sources */,
 				2A6C5EDB22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
@@ -6481,7 +6525,6 @@
 				DE361F3B2283E85000FA3B0D /* Network.swift in Sources */,
 				2AED14D622EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */,
 				DE361F402283E85000FA3B0D /* UpdateProfileParam.swift in Sources */,
-				DED5A02D22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
 				DEB9612B22898F1F0046801B /* QAViewController.swift in Sources */,
 				769A3BD622A0A69200CA55BD /* DateCell.swift in Sources */,
 				DEB9612522898F1F0046801B /* QAPresenter.swift in Sources */,
@@ -6504,11 +6547,12 @@
 				766D1305228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				76CE31E12296382D00E998FB /* CellResult.swift in Sources */,
 				DEB584772291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
-				DED5A02722A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */,
 				DE89D20822A41E09000638B0 /* ChangeLanguageInteractor.swift in Sources */,
+				2A391967239357C10071A1CC /* PageViewCompetitionViewController.swift in Sources */,
 				2AEFC30D22D3239400F3D5B6 /* ParentComment.swift in Sources */,
 				DE361F442283E85000FA3B0D /* RecordParam.swift in Sources */,
 				76F7F46522946928001E9984 /* CellCreateExercise.swift in Sources */,
+				2A39194423934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */,
 				DE361E992283E60500FA3B0D /* Utils.swift in Sources */,
 				B197F3AB238C1D6700F794AA /* HomeViewController.swift in Sources */,
 				769A3BE222A24FF000CA55BD /* ViewTime.swift in Sources */,
@@ -6521,10 +6565,10 @@
 				DE89D1EF22A41B44000638B0 /* LevelUpContent.swift in Sources */,
 				DE952FA92287DD2A00E3F688 /* Login+Facebook.swift in Sources */,
 				DEB584712291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
-				DED5A02122A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE2ADE7622841BB9003768CE /* MenuRouter.swift in Sources */,
 				2AC7A21E22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
 				2AA9E36A22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
+				2A39196D239357C10071A1CC /* PageViewCompetitionInteractor.swift in Sources */,
 				76FF691B232FDA7E00D5CB09 /* PackageEntity.swift in Sources */,
 				DE3A8CDC2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952F9D2287D2A700E3F688 /* KActivityIndicatorView.swift in Sources */,
@@ -6551,6 +6595,7 @@
 				DE953129228808ED00E3F688 /* ProfileViewController.swift in Sources */,
 				769A3BBE229FE66F00CA55BD /* HistoryExerciseProtocols.swift in Sources */,
 				DE361DD72283E4BD00FA3B0D /* LoginRouter.swift in Sources */,
+				2A39195023934F830071A1CC /* HistoryCompetitionInteractor.swift in Sources */,
 				2AF2F84F22EA084300603444 /* NoteListRespone.swift in Sources */,
 				DECD191922A269560054861D /* DetailPackInteractor.swift in Sources */,
 				2AB4A06A22E226B900557B5F /* HistoryDailyMissonProtocols.swift in Sources */,
@@ -6569,6 +6614,7 @@
 				2AA20CEE22F5522400F38894 /* CommentQuestionViewController.swift in Sources */,
 				2AB4A05122E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749522C8737E0015A75C /* ResultAPIService.swift in Sources */,
+				2A39194A23934F830071A1CC /* HistoryCompetitionViewController.swift in Sources */,
 				2A07431F22E77D47001E82A4 /* LessonsResponse.swift in Sources */,
 				7643DE9722A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				2A88F4D422FE66F800D59336 /* FightPresenter.swift in Sources */,
@@ -6633,7 +6679,6 @@
 				76E2FEEA228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				769A3BC8229FE74A00CA55BD /* MothView.swift in Sources */,
 				DE361EA12283E60500FA3B0D /* YesNoPopUp.swift in Sources */,
-				DED5A02A22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */,
 				DE1F61B9228573950024223F /* AppConstant.swift in Sources */,
 				DE49F80E22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6701228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
@@ -6756,6 +6801,7 @@
 				766D1320228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				76EF925E22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */,
 				7680748522C86CD60015A75C /* SelfCreatedTestEntity.swift in Sources */,
+				2A39194723934F830071A1CC /* HistoryCompetitionRouter.swift in Sources */,
 				DEECF87B22870B3D00A4678B /* Bundle+extension.swift in Sources */,
 				769A3BB5229FE66F00CA55BD /* HistoryExercisePresenter.swift in Sources */,
 				DEECF87922870AEB00A4678B /* LanguageHelper.swift in Sources */,
@@ -6805,7 +6851,6 @@
 				DEC7F92C22C509CB0096D3D1 /* ProductAPIService.swift in Sources */,
 				DE361F292283E85000FA3B0D /* BaseEntity.swift in Sources */,
 				DE953181228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
-				DED5A02422A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */,
 				DE49F7EB22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				76DB93A3228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE6FDB1422AB869A00960422 /* FindRouter.swift in Sources */,
@@ -6827,6 +6872,7 @@
 				2A9A81EA22EC5AA300345C5F /* WordEntity.swift in Sources */,
 				2A88F4D522FE66F800D59336 /* FightRouter.swift in Sources */,
 				76CE323322968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
+				2A391964239357C10071A1CC /* PageViewCompetitionRouter.swift in Sources */,
 				2A436B0922EB384D00BD9285 /* CellHistoryListExercise.swift in Sources */,
 				76C92FB222C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */,
 				76CF0C8A22906D09003C4B4B /* ViewComment.swift in Sources */,
@@ -6911,6 +6957,7 @@
 				2A9B070C237FEA1C00559589 /* VocabularyVC.swift in Sources */,
 				76EC6FF522CE504300E7538C /* LeaderBoardEntity.swift in Sources */,
 				76CE320C2296538F00E998FB /* ResultCompetitionRouter.swift in Sources */,
+				2A39194E23934F830071A1CC /* HistoryCompetitionProtocols.swift in Sources */,
 				76C92FA322C48A0400E8ED69 /* ChildQuestionEntity.swift in Sources */,
 				76CE31CD22961FC300E998FB /* ResultProtocols.swift in Sources */,
 				2A88F4DE22FE670400D59336 /* FightInteractor.swift in Sources */,
@@ -7023,6 +7070,7 @@
 				76DB93AA228C73A90081A36E /* MoreDictionaryInteractor.swift in Sources */,
 				76CE31DC229631C600E998FB /* ViewPoint.swift in Sources */,
 				DE952FD52287DF4800E3F688 /* KActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				2A39196B239357C10071A1CC /* PageViewCompetitionProtocols.swift in Sources */,
 				2AF2F84322EA05BF00603444 /* NoteListViewController.swift in Sources */,
 				2AA6D38A22DC599B006E9859 /* DetailTeamEntity.swift in Sources */,
 				76EF925B22DF67CC0047DA1A /* StudyPackDetailInteractor.swift in Sources */,
@@ -7044,6 +7092,7 @@
 				DE9531492288324300E3F688 /* EditProfileInteractor.swift in Sources */,
 				76E8530722B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE952FD82287DF4800E3F688 /* BaseParam.swift in Sources */,
+				2A391962239357C10071A1CC /* PageViewCompetitionPresenter.swift in Sources */,
 				DE952FD92287DF4800E3F688 /* UIColor+extension.swift in Sources */,
 				76CE31D022961FC300E998FB /* ResultInteractor.swift in Sources */,
 				2A6C5EDC22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
@@ -7094,7 +7143,6 @@
 				DE952FE12287DF4800E3F688 /* Network.swift in Sources */,
 				2AED14D722EE14BD0076C223 /* ExplainExerciseGroupProtocols.swift in Sources */,
 				DE952FE22287DF4800E3F688 /* UpdateProfileParam.swift in Sources */,
-				DED5A02E22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
 				DEB9612C22898F1F0046801B /* QAViewController.swift in Sources */,
 				769A3BD722A0A69200CA55BD /* DateCell.swift in Sources */,
 				DEB9612622898F1F0046801B /* QAPresenter.swift in Sources */,
@@ -7117,11 +7165,12 @@
 				766D1306228EE8DA005E47F0 /* TheoryProtocols.swift in Sources */,
 				76CE31E22296382D00E998FB /* CellResult.swift in Sources */,
 				DEB584782291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
-				DED5A02822A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */,
 				DE89D20922A41E09000638B0 /* ChangeLanguageInteractor.swift in Sources */,
+				2A391968239357C10071A1CC /* PageViewCompetitionViewController.swift in Sources */,
 				2AEFC30E22D3239400F3D5B6 /* ParentComment.swift in Sources */,
 				DE952FE72287DF4800E3F688 /* RecordParam.swift in Sources */,
 				76F7F46622946928001E9984 /* CellCreateExercise.swift in Sources */,
+				2A39194523934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */,
 				DE952FE82287DF4800E3F688 /* Utils.swift in Sources */,
 				B197F3AC238C1D6700F794AA /* HomeViewController.swift in Sources */,
 				769A3BE322A24FF000CA55BD /* ViewTime.swift in Sources */,
@@ -7134,10 +7183,10 @@
 				DE89D1F022A41B44000638B0 /* LevelUpContent.swift in Sources */,
 				DE952FEA2287DF4800E3F688 /* Login+Facebook.swift in Sources */,
 				DEB584722291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
-				DED5A02222A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE952FEB2287DF4800E3F688 /* MenuRouter.swift in Sources */,
 				2AC7A21F22D79CBC004ADFEE /* CompetitionResultTeamEntity.swift in Sources */,
 				2AA9E36B22FB2DE00093F5C8 /* LocalConfigDictionary.swift in Sources */,
+				2A39196E239357C10071A1CC /* PageViewCompetitionInteractor.swift in Sources */,
 				76FF691C232FDA7E00D5CB09 /* PackageEntity.swift in Sources */,
 				DE3A8CDD2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE952FEC2287DF4800E3F688 /* KActivityIndicatorView.swift in Sources */,
@@ -7164,6 +7213,7 @@
 				DE95312A228808ED00E3F688 /* ProfileViewController.swift in Sources */,
 				769A3BBF229FE66F00CA55BD /* HistoryExerciseProtocols.swift in Sources */,
 				DE952FF02287DF4800E3F688 /* LoginRouter.swift in Sources */,
+				2A39195123934F830071A1CC /* HistoryCompetitionInteractor.swift in Sources */,
 				2AF2F85022EA084300603444 /* NoteListRespone.swift in Sources */,
 				DECD191A22A269560054861D /* DetailPackInteractor.swift in Sources */,
 				2AB4A06B22E226B900557B5F /* HistoryDailyMissonProtocols.swift in Sources */,
@@ -7182,6 +7232,7 @@
 				2AA20CEF22F5522400F38894 /* CommentQuestionViewController.swift in Sources */,
 				2AB4A05222E1E87C00557B5F /* DailyMissonProtocols.swift in Sources */,
 				7680749622C8737E0015A75C /* ResultAPIService.swift in Sources */,
+				2A39194B23934F830071A1CC /* HistoryCompetitionViewController.swift in Sources */,
 				2A07432022E77D47001E82A4 /* LessonsResponse.swift in Sources */,
 				7643DE9822A4C0A800B7C323 /* ViewMessage.swift in Sources */,
 				2A88F4DA22FE670400D59336 /* FightPresenter.swift in Sources */,
@@ -7246,7 +7297,6 @@
 				76E2FEEB228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				769A3BC9229FE74A00CA55BD /* MothView.swift in Sources */,
 				DE9530052287DF4800E3F688 /* YesNoPopUp.swift in Sources */,
-				DED5A02B22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */,
 				DE9530062287DF4800E3F688 /* AppConstant.swift in Sources */,
 				DE49F80F22A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6702228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
@@ -7369,6 +7419,7 @@
 				766D1321228EE9E4005E47F0 /* LessonProtocols.swift in Sources */,
 				76EF925F22DF67E90047DA1A /* StudyPackDetailViewController.swift in Sources */,
 				7680748622C86CD60015A75C /* SelfCreatedTestEntity.swift in Sources */,
+				2A39194823934F830071A1CC /* HistoryCompetitionRouter.swift in Sources */,
 				DE9530252287DF4800E3F688 /* Bundle+extension.swift in Sources */,
 				769A3BB6229FE66F00CA55BD /* HistoryExercisePresenter.swift in Sources */,
 				DE9530262287DF4800E3F688 /* LanguageHelper.swift in Sources */,
@@ -7418,7 +7469,6 @@
 				DEC7F92D22C509CB0096D3D1 /* ProductAPIService.swift in Sources */,
 				DE9530342287DF4800E3F688 /* BaseEntity.swift in Sources */,
 				DE953182228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
-				DED5A02522A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */,
 				DE49F7EC22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				76DB93A4228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
 				DE6FDB1522AB869A00960422 /* FindRouter.swift in Sources */,
@@ -7440,6 +7490,7 @@
 				2A9A81EB22EC5AA300345C5F /* WordEntity.swift in Sources */,
 				2A88F4DB22FE670400D59336 /* FightRouter.swift in Sources */,
 				76CE323422968C7D00E998FB /* NameExerciseProtocols.swift in Sources */,
+				2A391965239357C10071A1CC /* PageViewCompetitionRouter.swift in Sources */,
 				2A436B0A22EB384D00BD9285 /* CellHistoryListExercise.swift in Sources */,
 				76C92FB322C4A23600E8ED69 /* ExerciseEnpoint.swift in Sources */,
 				76CF0C8B22906D09003C4B4B /* ViewComment.swift in Sources */,
@@ -7505,6 +7556,8 @@
 				DE9530652287DF6400E3F688 /* KActivityIndicatorType.swift in Sources */,
 				B197F3D1238C1D6800F794AA /* HomePresenter.swift in Sources */,
 				DE953189228846D400E3F688 /* ChangePasswordInteractor.swift in Sources */,
+				2A39194C23934F830071A1CC /* HistoryCompetitionViewController.swift in Sources */,
+				2A391963239357C10071A1CC /* PageViewCompetitionPresenter.swift in Sources */,
 				DE49F82322A3DB9C00A92C63 /* NotificationDetailViewController.swift in Sources */,
 				DEA932A422BF7ED80050FB1D /* QAEndPoint.swift in Sources */,
 				DE9530662287DF6400E3F688 /* KActivityIndicatorAnimationCubeTransition.swift in Sources */,
@@ -7622,6 +7675,7 @@
 				DE95307D2287DF6400E3F688 /* KActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
 				DE6FDB1C22AB869A00960422 /* FindProtocols.swift in Sources */,
 				DE95307F2287DF6400E3F688 /* KActivityIndicatorAnimationBallBeat.swift in Sources */,
+				2A39194923934F830071A1CC /* HistoryCompetitionRouter.swift in Sources */,
 				2A5E260422E0D05B009D6203 /* LevelExerciseProtocols.swift in Sources */,
 				DE49F81D22A3DB9C00A92C63 /* NotificationDetailPresenter.swift in Sources */,
 				DEC62AE122930EC400D7CECE /* BeePackProtocols.swift in Sources */,
@@ -7665,6 +7719,7 @@
 				2A436AF922EB33A800BD9285 /* HistoryListExerciseRouter.swift in Sources */,
 				76E8530822B95EB90039751A /* SearchEntity.swift in Sources */,
 				DE9530862287DF6400E3F688 /* BaseParam.swift in Sources */,
+				2A391966239357C10071A1CC /* PageViewCompetitionRouter.swift in Sources */,
 				DE9530872287DF6400E3F688 /* UIColor+extension.swift in Sources */,
 				76CE31D122961FC300E998FB /* ResultInteractor.swift in Sources */,
 				7640840122B7CA6F002D9401 /* SaveAPIService.swift in Sources */,
@@ -7674,6 +7729,7 @@
 				DE89D1FE22A41E09000638B0 /* ChangeLanguagePresenter.swift in Sources */,
 				76CE31B72295AE6300E998FB /* CellChoiceExercise.swift in Sources */,
 				76E2FF5D228DD2120014B1F4 /* SeeNoteInteractor.swift in Sources */,
+				2A39194F23934F830071A1CC /* HistoryCompetitionProtocols.swift in Sources */,
 				2A77695422FE89FD00E12997 /* SubmitQuestionEntity.swift in Sources */,
 				76F7F45E229466DD001E9984 /* CreateExerciseInteractor.swift in Sources */,
 				2A5E262022E0D119009D6203 /* AssignExerciseViewController.swift in Sources */,
@@ -7713,7 +7769,6 @@
 				DE95308F2287DF6400E3F688 /* Network.swift in Sources */,
 				DE9530902287DF6400E3F688 /* UpdateProfileParam.swift in Sources */,
 				2AED14DB22EE14BD0076C223 /* ExplainExerciseGroupInteractor.swift in Sources */,
-				DED5A02F22A5839C00872261 /* HistoryCompetitionInteractor.swift in Sources */,
 				DEB9612D22898F1F0046801B /* QAViewController.swift in Sources */,
 				769A3BD822A0A69200CA55BD /* DateCell.swift in Sources */,
 				76FF6915232FD7BB00D5CB09 /* PackageCell.swift in Sources */,
@@ -7739,7 +7794,6 @@
 				76CE31E32296382D00E998FB /* CellResult.swift in Sources */,
 				DEB584792291ABD700FE0356 /* HistoryBeeViewController.swift in Sources */,
 				2AED14D522EE14BD0076C223 /* ExplainExerciseGroupViewController.swift in Sources */,
-				DED5A02922A5839C00872261 /* HistoryCompetitionViewController.swift in Sources */,
 				2AC1467B22FECCD1002D7D5F /* CellRankTeam.swift in Sources */,
 				2AA9E36822F9AA310093F5C8 /* FileZipManager.swift in Sources */,
 				2A436B0222EB33A800BD9285 /* HistoryListExerciseInteractor.swift in Sources */,
@@ -7755,13 +7809,13 @@
 				DEBD6709228D201A004B74C8 /* DetailTeamViewController.swift in Sources */,
 				2A5E25CF22E0C6A1009D6203 /* CatelogyExercisePresenter.swift in Sources */,
 				2A07431522E7740F001E82A4 /* ItemLessonCategory.swift in Sources */,
+				2A39196C239357C10071A1CC /* PageViewCompetitionProtocols.swift in Sources */,
 				DE9530972287DF6400E3F688 /* SignUpParam.swift in Sources */,
 				2A6C5EC922EF4606004B23EF /* RelatedGrammarProtocols.swift in Sources */,
 				B197F3BC238C1D6800F794AA /* HomeHeaderCell.swift in Sources */,
 				DE89D1F122A41B44000638B0 /* LevelUpContent.swift in Sources */,
 				DE9530982287DF6400E3F688 /* Login+Facebook.swift in Sources */,
 				DEB584732291ABD700FE0356 /* HistoryBeePresenter.swift in Sources */,
-				DED5A02322A5839C00872261 /* HistoryCompetitionPresenter.swift in Sources */,
 				DE9530992287DF6400E3F688 /* MenuRouter.swift in Sources */,
 				DE3A8CDE2289C75C0080A8CB /* SelectTeamRouter.swift in Sources */,
 				DE95309A2287DF6400E3F688 /* KActivityIndicatorView.swift in Sources */,
@@ -7822,6 +7876,7 @@
 				76C92FB822C4A93200E8ED69 /* LevelExerciseEntity.swift in Sources */,
 				76F7F455229466DD001E9984 /* CreateExerciseRouter.swift in Sources */,
 				DE9530AB2287DF6400E3F688 /* MenuProtocols.swift in Sources */,
+				2A391969239357C10071A1CC /* PageViewCompetitionViewController.swift in Sources */,
 				7680747F22C859170015A75C /* DateCalendarEntity.swift in Sources */,
 				76483BF2229EE3C90079F9A1 /* UpdateAccountView.swift in Sources */,
 				DECD18FE22A25AB10054861D /* BeePackCell.swift in Sources */,
@@ -7868,7 +7923,6 @@
 				76E2FEEC228DBAF10014B1F4 /* GrammarInteractor.swift in Sources */,
 				769A3BCA229FE74A00CA55BD /* MothView.swift in Sources */,
 				DE9530B32287DF6400E3F688 /* YesNoPopUp.swift in Sources */,
-				DED5A02C22A5839C00872261 /* HistoryCompetitionProtocols.swift in Sources */,
 				DE9530B42287DF6400E3F688 /* AppConstant.swift in Sources */,
 				DE49F81022A3D83A00A92C63 /* NotificationCell.swift in Sources */,
 				DEBD6703228D201A004B74C8 /* DetailTeamPresenter.swift in Sources */,
@@ -7949,6 +8003,7 @@
 				76DB9389228C56640081A36E /* DictionaryRouter.swift in Sources */,
 				76C8E2E522C19AB80076E65B /* ResultExerciseRouter.swift in Sources */,
 				B197F3C5238C1D6800F794AA /* HomeNoResultCell.swift in Sources */,
+				2A39194623934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */,
 				DE89D20122A41E09000638B0 /* ChangeLanguageRouter.swift in Sources */,
 				76F7F458229466DD001E9984 /* CreateExerciseViewController.swift in Sources */,
 				76CE32162296539000E998FB /* ResultCompetitionInteractor.swift in Sources */,
@@ -7996,6 +8051,7 @@
 				DE9530D62287DF6400E3F688 /* NetworkRequest.swift in Sources */,
 				2AAE220122D3B2DF00AE7481 /* CellResultChoice.swift in Sources */,
 				768074B022C910E80015A75C /* SubmitExerciseParam.swift in Sources */,
+				2A39196F239357C10071A1CC /* PageViewCompetitionInteractor.swift in Sources */,
 				DE953125228808ED00E3F688 /* ProfilePresenter.swift in Sources */,
 				DE9530D82287DF6400E3F688 /* KActivityIndicatorAnimationBallPulseRise.swift in Sources */,
 				2AED148622ED8E950076C223 /* VocabularyProtocols.swift in Sources */,
@@ -8031,10 +8087,10 @@
 				DEC7F92E22C509CB0096D3D1 /* ProductAPIService.swift in Sources */,
 				DE9530E22287DF6400E3F688 /* BaseEntity.swift in Sources */,
 				DE953183228846D400E3F688 /* ChangePasswordViewController.swift in Sources */,
-				DED5A02622A5839C00872261 /* HistoryCompetitionRouter.swift in Sources */,
 				2A5E261A22E0D118009D6203 /* AssignExercisePresenter.swift in Sources */,
 				DE49F7ED22A3D1AD00A92C63 /* ChangeGiftTitleCell.swift in Sources */,
 				76DB93A5228C73A90081A36E /* MoreDictionaryViewController.swift in Sources */,
+				2A39195223934F830071A1CC /* HistoryCompetitionInteractor.swift in Sources */,
 				DE6FDB1622AB869A00960422 /* FindRouter.swift in Sources */,
 				76CE31AB2295AE3600E998FB /* ChoiceExerciseProtocols.swift in Sources */,
 				DE9530E32287DF6400E3F688 /* KActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,

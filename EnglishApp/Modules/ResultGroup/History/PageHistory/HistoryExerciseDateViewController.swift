@@ -22,8 +22,7 @@ class HistoryExerciseDateViewController: PageViewController, HistoryExerciseDate
         setTitleNavigation(title: LocalizableKey.history_test.showLanguage)
     }
 
-    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [HistoryDailyMissonRouter.createModule(date: date), ExerciseRouter.createModule(isShowTabbar: false, date: date), CompetitionRouter.createModule(type: .result, date: self.date)]
+        return [HistoryDailyMissonRouter.createModule(date: date), ExerciseRouter.createModule(isShowTabbar: false, date: date), HistoryCompetitionRouter.createModule(date: date)]
     }
 }

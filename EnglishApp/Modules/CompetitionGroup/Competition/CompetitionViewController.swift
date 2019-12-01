@@ -106,7 +106,8 @@ class CompetitionViewController: ListManagerVC {
             case "DONE":
                 cell.setupCellDone(competitionEntity: data)
            default:
-            cell.setupCellResult(competitionEntity: data)
+            break
+//            cell.setupCellResult(competitionEntity: data)
         }
 
         cell.actionFight = {[weak self](index) in

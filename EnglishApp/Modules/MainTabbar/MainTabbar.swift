@@ -169,12 +169,12 @@ class MainTabbar: UITabBarController {
     }
     
     @objc func setUpTabbar() {
+        self.tabBar.backgroundColor = .white
         navigationItem.setHidesBackButton(true, animated: true)
-        
         let vcHome = HomeRouter.createModule()
         let vcProgramer = TheoryRouter.createModule()
         let vcHomeWork = ExerciseRouter.createModule()
-        let vcCompetition = CompetitionRouter.createModule()
+        let vcCompetition = PageViewCompetitionRouter.createModule()
         vcHome.tabBarItem = setBarItem(title: LocalizableKey.tabbarHome.showLanguage, selectedImage: AppImage.imgTabbarHomeSelected, normalImage: AppImage.imgTabbarHome)
         vcProgramer.tabBarItem = setBarItem(title: LocalizableKey.tabbarProgram.showLanguage, selectedImage: AppImage.imgTabbarProgramerSelected, normalImage: AppImage.imgTabbarProgramer)
         vcHomeWork.tabBarItem = setBarItem(title: LocalizableKey.tabbarHomeWork.showLanguage, selectedImage: AppImage.imgTabbarHomeWorkSelected, normalImage: AppImage.imgTabbarHomeWork)

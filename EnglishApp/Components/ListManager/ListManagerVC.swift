@@ -42,7 +42,7 @@ class ListManagerVC: BaseViewController {
             addPullToRefresh()
         }
         callAPI()
-
+        self.tableView.isHidden = true
     }
     
     func setupViewListManager(){
@@ -58,6 +58,7 @@ class ListManagerVC: BaseViewController {
     func initLoadData(data: [Any]){
         DispatchQueue.global().async {
             if self.offset == 0 {
+                self.tableView.isHidden = false
                 self.listData = data
             } else {
                 self.listData += data
@@ -75,7 +76,6 @@ class ListManagerVC: BaseViewController {
                 } else {
                     self.hideNoData()
                 }
-                
                 UIView.performWithoutAnimation {
                     self.tableView.reloadData()
                 }
