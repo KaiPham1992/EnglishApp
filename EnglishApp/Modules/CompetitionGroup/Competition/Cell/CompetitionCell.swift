@@ -39,7 +39,7 @@ class CompetitionCell: BaseTableCell {
         lbContent.attributedText = NSAttributedString(string: competitionEntity.description?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
         btnShare.isHidden = true
         if let startDate = competitionEntity.start_date {
-            lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.time.showLanguage) \(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
+            lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.time.showLanguage): \(startDate.toString(dateFormat: AppDateFormat.HHmmddMMyyyy))")
         }
         lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
         viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)

@@ -265,7 +265,7 @@
 "description" = "Description";
 "enter_content" = "Enter content";
 "cancel_upper" = "Cancel";
-"complete_upper" = "COMPLETE";
+"complete" = "Complete";
 "update" = "UPDATE";
 
 //month
@@ -366,6 +366,7 @@
 "noResultFound" = "No results found.";
 "feeFind" = "Each search will cost 5 honey jars or 50 diamonds.";
 "done" = "Done";
+"doing" = "Doing";
 
 // add after
 "rank_of_competition" = "Rank of Competition";

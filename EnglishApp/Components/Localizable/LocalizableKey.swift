@@ -265,7 +265,7 @@ struct LocalizableKey {
     
     static let enter_content = "enter_content"
     static let cancel_upper = "cancel_upper"
-    static let complete_upper = "complete_upper"
+    static let complete = "complete"
     
     
     //month
@@ -361,6 +361,8 @@ struct LocalizableKey {
     
     // save
     static let done = "done"
+    static let doing = "doing"
+    
     
     //add after
     

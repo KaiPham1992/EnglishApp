@@ -58,7 +58,6 @@ class ListManagerVC: BaseViewController {
     func initLoadData(data: [Any]){
         DispatchQueue.global().async {
             if self.offset == 0 {
-                self.tableView.isHidden = false
                 self.listData = data
             } else {
                 self.listData += data
@@ -70,15 +69,16 @@ class ListManagerVC: BaseViewController {
                 self.offset += limit
             }
             DispatchQueue.main.async {
+                if self.offset == 0 {
+                    self.tableView.isHidden = false
+                }
                 ProgressView.shared.hide()
                 if data.count == 0 && self.offset == 0 {
                     self.showNoData(text: self.messageNoData)
                 } else {
                     self.hideNoData()
                 }
-                UIView.performWithoutAnimation {
-                    self.tableView.reloadData()
-                }
+                self.tableView.reloadData()
             }
         }
     }

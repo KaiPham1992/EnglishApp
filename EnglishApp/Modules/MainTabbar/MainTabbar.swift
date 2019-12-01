@@ -31,10 +31,16 @@ class MainTabbar: UITabBarController {
         self.delegate = self
         setUpTabbar()
         setUpObserver()
+        NotificationCenter.default.addObserver(self, selector: #selector(didChangeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(noCompetition), name: NSNotification.Name.init("NoCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didReciveNotification), name: NSNotification.Name.init("didReciveNotification"), object: nil)
         self.tabBar.tintColor = AppColor.color255_211_17
+    }
+    
+    @objc func didChangeLanguage() {
+        NotificationCenter.default.removeObserver(self)
+        self.viewDidLoad()
     }
     
     @objc func didReciveNotification(notification: Notification){

@@ -70,6 +70,9 @@ extension HistoryCompetitionViewController : HistoryCompetitionViewProtocol {
 
 extension HistoryCompetitionViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
+        if date == "" {
+            return IndicatorInfo(title: LocalizableKey.done.showLanguage)
+        }
         return IndicatorInfo(title: LocalizableKey.competition.showLanguage)
     }
 }

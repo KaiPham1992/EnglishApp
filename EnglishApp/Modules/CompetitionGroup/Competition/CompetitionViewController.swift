@@ -21,7 +21,6 @@ class CompetitionViewController: ListManagerVC {
         showButtonBack = false
         super.setupViewListManager()
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(didChangeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(logout), name: NSNotification.Name.init("LogoutSuccessed"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name.init("UserDidLogin"), object: nil)
     }
@@ -48,13 +47,6 @@ class CompetitionViewController: ListManagerVC {
         self.disableTimer()
         self.offset = 0
         callAPI()
-    }
-    
-    @objc func didChangeLanguage() {
-        self.offset = 0
-        callAPI()
-        customTitle = LocalizableKey.titleCompetition.showLanguage
-        self.setUpNavigation()
     }
     
     @objc func didRecieveCompetition() {
@@ -282,7 +274,7 @@ extension CompetitionViewController : TimerCompetitionDelegate{
 
 extension CompetitionViewController: IndicatorInfoProvider{
     func indicatorInfo(for pagerTabStripController: PagerTabStripViewController) -> IndicatorInfo {
-        return IndicatorInfo(title: LocalizableKey.action.showLanguage)
+        return IndicatorInfo(title: LocalizableKey.doing.showLanguage)
     }
 }
 extension CompetitionViewController: CompetitionViewProtocol{

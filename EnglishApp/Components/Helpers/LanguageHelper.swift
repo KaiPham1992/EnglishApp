@@ -52,7 +52,7 @@ class LanguageHelper {
         userdef.synchronize()
         Bundle.setLanguage(lang.rawValue)
         Provider.shared.commonAPIService.changeLanguageCode(success: { (_) in
-            
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "ChangeLanguage"), object: nil)
         }) { (_) in
             
         }

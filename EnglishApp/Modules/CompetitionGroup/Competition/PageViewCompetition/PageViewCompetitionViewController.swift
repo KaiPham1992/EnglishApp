@@ -17,9 +17,14 @@ class PageViewCompetitionViewController: PageViewController, PageViewCompetition
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+//        NotificationCenter.default.addObserver(self, selector: #selector(didChangeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
         setTitleNavigation(title: LocalizableKey.action.showLanguage)
     }
 
+//    @objc func didChangeLanguage() {
+//        self.viewDidLoad()
+//    }
+    
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         return [CompetitionRouter.createModule(), HistoryCompetitionRouter.createModule(date: "")]
     }

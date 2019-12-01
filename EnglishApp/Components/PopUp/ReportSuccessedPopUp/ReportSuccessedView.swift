@@ -23,6 +23,6 @@ class ReportSuccessedView : BaseViewXib{
     override func setUpViews() {
         super.setUpViews()
         lblTitle.text = LocalizableKey.report.showLanguage
-        btnComplete.setTitle(LocalizableKey.complete_upper.showLanguage, for: .normal)
+        btnComplete.setTitle(LocalizableKey.complete.showLanguage.uppercased(), for: .normal)
     }
 }

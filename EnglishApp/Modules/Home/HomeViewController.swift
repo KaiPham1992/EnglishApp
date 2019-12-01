@@ -65,12 +65,6 @@ class HomeViewController: BaseViewController {
         self.addHeaderHome()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tbHome.isHidden = true
-        configureTable()
-    }
-    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         removeHeaderHome()
@@ -83,14 +77,15 @@ class HomeViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        vcMenu = MenuRouter.createModule()
-        AppRouter.shared.rootNavigation = self.navigationController
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadViewDidload), name: NSNotification.Name("InvalidToken"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
+        vcMenu = MenuRouter.createModule()
+        AppRouter.shared.rootNavigation = self.navigationController
+        self.tbHome.isHidden = true
+        configureTable()
         topThreeView.isUserInteractionEnabled = false
         setTitleText()
         // For entrance test
@@ -108,12 +103,6 @@ class HomeViewController: BaseViewController {
         lbMember.text = LocalizableKey.homeStore.showLanguage
         lbSearch.text = LocalizableKey.homeFindWork.showLanguage
         lbRecentTitle.text = LocalizableKey.actionRecently.showLanguage
-    }
-    
-    // Reset cell after change language
-    @objc func changeLanguage() {
-        setTitleText()
-        resetData()
     }
         
     @objc func suggestionQuestion(notification: Notification) {

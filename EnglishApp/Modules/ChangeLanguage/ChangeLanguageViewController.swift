@@ -80,12 +80,5 @@ extension ChangeLanguageViewController: UITableViewDelegate, UITableViewDataSour
             UserDefaultHelper.shared.appLanguage = LanguageType.english.rawValue
             LanguageHelper.setAppleLAnguageTo(lang: LanguageType.english)
         }
-        
-        tbLanguage.reloadData()
-        self.viewDidLoad()
-        
-        //-- change langguage for tabbar
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "Refresh"), object: nil)
-        NotificationCenter.default.post(name: Notification.Name(rawValue: "ChangeLanguage"), object: nil)
     }
 }

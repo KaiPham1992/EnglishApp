@@ -265,7 +265,7 @@
 "description" = "Mô tả";
 "enter_content" = "Nhập nội dung";
 "cancel_upper" = "HUỶ";
-"complete_upper" = "HOÀN THÀNH";
+"complete" = "Hoàn thành";
 "update" = "Nâng cấp";
 
 //month
@@ -367,6 +367,8 @@
 "noResultFound" = "Không có kết quả tìm kiếm.";
 "feeFind" = "Tìm kiếm mất 5 hũ mật ong hoặc 50 kim cương.";
 "done" = "Xong";
+
+"doing" = "Đang diễn ra";
 
 //add after
 "rank_of_competition" = "Thứ hạng cuộc thi";
