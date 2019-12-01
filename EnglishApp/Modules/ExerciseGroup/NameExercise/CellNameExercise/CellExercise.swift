@@ -97,10 +97,6 @@ class CellExercise: UICollectionViewCell {
     func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
         callbackShowPopup?(self.contentView, tvContent.convert(CGPoint(x: x, y: y), to: self.contentView), word)
     }
-    
-//    func gotoDetailVocabulary(word: WordExplainEntity){
-//        delegate?.showDetailVocubulary(word: word)
-//    }
 }
 extension CellExercise : UITableViewDelegate{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -166,10 +162,11 @@ extension CellExercise: UITableViewDataSource{
                 self.listAnswerCompetition[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : 0
             } else {
                 self.listAnswer[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : nil
-
             }
             listIndex.append(indexPath)
-            self.tbvNameExercise.reloadRows(at: listIndex, with: .automatic)
+            UIView.performWithoutAnimation {
+                self.tbvNameExercise.reloadRows(at: listIndex, with: .automatic)
+            }
         }
     }
     
