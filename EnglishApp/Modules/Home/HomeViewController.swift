@@ -104,6 +104,7 @@ class HomeViewController: BaseViewController {
     }
     
     private func setTitleText() {
+        btnEntranceTest.setTitle(LocalizableKey.do_entrance.showLanguage, for: .normal)
         lbDictionary.text = LocalizableKey.homeDictionary.showLanguage
         lbMission.text = LocalizableKey.homeMission.showLanguage
         lbMember.text = LocalizableKey.homeStore.showLanguage
@@ -214,6 +215,7 @@ class HomeViewController: BaseViewController {
     }
     
     private func showUI(isHidden: Bool) {
+        btnEntranceTest.isHidden = isHidden
         buttonView.isHidden = isHidden
         topThreeView.isHidden = isHidden
         tbHome.isHidden = isHidden
