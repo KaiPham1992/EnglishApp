@@ -65,30 +65,12 @@ class HomeViewController: BaseViewController {
         self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
         self.addHeaderHome()
-        if !self.notLogedIn() && isCallViewDidload {
-            self.countNotification()
-            self.getProfile()
-            self.getHomeSummary()
-        }
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.tbHome.isHidden = true
-        configureTable()
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)) {
-            self.loginUserDefault {
-                self.getInitialData()
-            }
-        } else {
-            getInitialData()
-        }
     }
     
     @objc func reloadViewDidload() {
         self.loginUserDefault {
             self.getInitialData()
-            
+            self.header.user = UserDefaultHelper.shared.loginUserInfo
         }
     }
 
@@ -105,6 +87,7 @@ class HomeViewController: BaseViewController {
     override func setUpViews() {
         super.setUpViews()
         vcMenu = MenuRouter.createModule()
+        self.tbHome.isHidden = true
         AppRouter.shared.rootNavigation = self.navigationController
         NotificationCenter.default.removeObserver(self)
         NotificationCenter.default.addObserver(self, selector: #selector(reloadViewDidload), name: NSNotification.Name("InvalidToken"), object: nil)
@@ -114,6 +97,12 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(changeLanguage), name: NSNotification.Name.init("ChangeLanguage"), object: nil)
+        configureTable()
+        if UserDefaultHelper.shared.loginUserInfo == nil {
+            self.reloadViewDidload()
+        } else {
+            getInitialData()
+        }
     }
     
     // Reset cell after change language
@@ -165,7 +154,6 @@ class HomeViewController: BaseViewController {
                 self.pushView(vc: vc)
             }
         }
-        header.centerSuperview()
         header.user = UserDefaultHelper.shared.loginUserInfo
         addButtonToNavigation(image: AppImage.imgMenu, style: .left, action: #selector(btnMenuTapped))
     }
@@ -192,7 +180,7 @@ extension HomeViewController {
         self.getHomeRecently()
         self.countNotification()
         self.getHomeSummary()
-        self.isCallViewDidload = true
+//        self.isCallViewDidload = true
     }
     
     // Refresh all data
