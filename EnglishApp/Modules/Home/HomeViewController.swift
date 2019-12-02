@@ -86,12 +86,9 @@ class HomeViewController: BaseViewController {
     }
     
     @objc func reloadViewDidload() {
-        if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault || (UserDefaultHelper.shared.loginUserInfo?.email == nil  && (UserDefaultHelper.shared.loginUserInfo?.socialType == "normal" || UserDefaultHelper.shared.loginUserInfo?.socialType == nil)) {
-            self.loginUserDefault {
-                self.getInitialData()
-            }
-        } else {
-            getInitialData()
+        self.loginUserDefault {
+            self.getInitialData()
+            
         }
     }
 
