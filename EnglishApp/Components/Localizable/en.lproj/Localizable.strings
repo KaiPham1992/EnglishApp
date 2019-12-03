@@ -159,7 +159,7 @@
 
 // Home
 "homeDictionary" = "Dictionary";
-"homeStore" = "Member";
+"homeStore" = "Store";
 "homeMission" = "Mission";
 "homeFindWork" = "Find exercises";
 "actionRecently" = "Recent Activities";
