@@ -58,6 +58,14 @@ class LanguageHelper {
         }
     }
     
+    // default language for the first time install app: en, vi
+    class func setInitialLanguage() {
+        let userdef = UserDefaults.standard
+        userdef.set(["en","vi"], forKey: APPLE_LANGUAGE_KEY)
+        userdef.synchronize()
+        Bundle.setLanguage("en")
+    }
+    
     class func getCurrentBundle() -> Bundle {
         let currentLanguage = LanguageHelper.currentAppleLanguage()
         if let _path = Bundle.main.path(forResource: LanguageHelper.currentAppleLanguageFull(), ofType: "lproj") {
