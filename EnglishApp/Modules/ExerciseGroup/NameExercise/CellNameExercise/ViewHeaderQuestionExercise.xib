@@ -38,6 +38,9 @@
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="agree daskdnaskdaskdjaskdjaskdjaskdjaskdjaksdjaskldjas" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7YX-le-dPh">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="55"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="YUd-4S-y06"/>
+                            </constraints>
                             <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>

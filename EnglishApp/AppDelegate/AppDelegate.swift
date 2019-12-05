@@ -49,13 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 guard let user = user else { return }
                 UserDefaultHelper.shared.userToken = user.jwt&
             }) { _error in
-                if let _ = _error?.code {
-                    UserDefaultHelper.shared.clearUser()
-                    NotificationCenter.default.post(name: NSNotification.Name("InvalidToken"), object: nil)
-                    return
-                } else {
-                    return
-                }
+                UserDefaultHelper.shared.clearUser()
+                NotificationCenter.default.post(name: NSNotification.Name("InvalidToken"), object: nil)
             }
         }
     }
