@@ -361,6 +361,7 @@ struct LocalizableKey {
     
     // save
     static let done = "done"
+    static let passed = "passed"
     static let doing = "doing"
     
     

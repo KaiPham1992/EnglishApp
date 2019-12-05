@@ -366,6 +366,7 @@
 "noResultFound" = "No results found.";
 "feeFind" = "Each search will cost 5 honey jars or 50 diamonds.";
 "done" = "Done";
+"passed" = "Passed";
 "doing" = "Doing";
 
 // add after

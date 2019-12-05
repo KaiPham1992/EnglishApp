@@ -51,7 +51,7 @@ class NameExerciseViewController: BaseViewController {
                 }
             } else {
                 self.currentIndex += 1
-                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage)"
+                lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                 clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: true)
             }
         } else {
@@ -161,7 +161,7 @@ class NameExerciseViewController: BaseViewController {
             } else {
                 if !isEnd {
                     self.currentIndex -= 1
-                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
+                    lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
                     clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: true)
                 }
             }
@@ -215,7 +215,7 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
     
     private func updateUI() {
         self.setTitleNavigation(title: self.presenter?.exerciseEntity?.name ?? "")
-        self.lblIndexQuestion.text = "1/\(self.numberQuestion) \(LocalizableKey.sentence.showLanguage.lowercased())"
+        self.lblIndexQuestion.text = "1/\(self.numberQuestion)"
         self.vCountTime.setupTimeStartNow(min: self.currentTime)
     }
     

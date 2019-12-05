@@ -118,8 +118,8 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.backgroundColor = AppColor.notificationNotRead
                 }
                 
-                cell.lbTitle.text = data.nameString
-                cell.lbContent.text = data.questions?.first?.contentString
+                cell.lbTitle.text = data.titleString
+                cell.lbContent.text = data.nameString
             }
         }
         return cell

@@ -21,6 +21,8 @@ class TestResultProfileEntity: Mappable {
     var questions : [QuestionResultEntity]?
     var type_test : String?
     var nameString: String?
+    var title: String?
+    var titleString: String?
     var name : String?
     var isRead = false
     
@@ -30,6 +32,7 @@ class TestResultProfileEntity: Mappable {
     
     func mapping(map: Map) {
        self.type_test <- map["type_test"]
+       self.title <- map["title"]
        self.name <- map["name"]
        self._id <- map["_id"]
        self.total_score <- map["total_score"]
@@ -40,8 +43,11 @@ class TestResultProfileEntity: Mappable {
        self.social_img_src <- map["social_img_src"]
        self.attach_img_src <- map["attach_img_src"]
        self.questions <- map["questions"]
-        if self.name != nil {
+       if self.title != nil {
+            self.titleString = self.title?.htmlToString
+       }
+       if self.name != nil {
             self.nameString = self.name?.htmlToString
-        }
+       }
     }
 }
