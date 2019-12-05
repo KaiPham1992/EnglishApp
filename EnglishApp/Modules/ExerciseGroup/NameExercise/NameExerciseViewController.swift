@@ -52,7 +52,7 @@ class NameExerciseViewController: BaseViewController {
             } else {
                 self.currentIndex += 1
                 lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: true)
+                clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
             }
         } else {
             if let _param = self.paramSubmit {
@@ -162,7 +162,7 @@ class NameExerciseViewController: BaseViewController {
                 if !isEnd {
                     self.currentIndex -= 1
                     lblIndexQuestion.text = "\(self.currentIndex)/\(numberQuestion)"
-                    clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: true)
+                    clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .left, animated: false)
                 }
             }
         }

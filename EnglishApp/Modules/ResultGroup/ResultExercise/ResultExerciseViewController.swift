@@ -27,7 +27,7 @@ class ResultExerciseViewController: BaseViewController {
         if index + 1 < numberAnswer {
             self.index += 1
             lblIndexQuestion.text = "\(index + 1)/\(numberAnswer)"
-            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: true)
+            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: false)
             if index + 1 == (self.presenter?.getNumberAnswer() ?? 0) {
                 btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             }
@@ -61,7 +61,7 @@ class ResultExerciseViewController: BaseViewController {
         }
         lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: true)
+            self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.right, animated: false)
             if self.index + 1 == (self.presenter?.getNumberAnswer() ?? 0) {
                 self.btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
             }
@@ -75,7 +75,7 @@ class ResultExerciseViewController: BaseViewController {
             if index != 0 && tempIndex + 1 != numberAnswer {
                 self.index -= 1
                 lblIndexQuestion.text = "\(index + 1)/\(self.presenter?.getNumberAnswer() ?? 0)"
-                self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: true)
+                self.clvQuestion.scrollToItem(at: IndexPath(row: self.index, section: 0), at: UICollectionView.ScrollPosition.left, animated: false)
                 btnNext.setTitle(LocalizableKey.next.showLanguage.uppercased(), for: .normal)
             } else {
                 super.btnBackTapped()
