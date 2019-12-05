@@ -80,7 +80,7 @@ extension CompetitionEndPoint: EndPointType{
             }
             return ["offset": offset,"limit": limit, "date": date]
         case .getListFight(let offset):
-            return ["offset": offset,"limit":limit]
+            return ["offset": offset,"limit":limit, "status": 1]
         case .getListFightTestTeam(let competitionId, let offset):
             return ["competition_id": competitionId, "offset": offset, "limit": limit]
         }
