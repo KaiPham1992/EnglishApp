@@ -24,32 +24,70 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="uBn-n6-pzM">
-                    <rect key="frame" x="341.5" y="5" width="62.5" height="32"/>
+                    <rect key="frame" x="335" y="5" width="69" height="32"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-4n-bzr">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wwX-xk-WGx">
                             <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_book-1" translatesAutoresizingMaskIntoConstraints="NO" id="Wa6-uf-HKw">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XnG-4n-bzr">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="32" id="3rL-zW-PCR"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="clickReading:" destination="-1" eventType="touchUpInside" id="9TY-qw-LTc"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="32" id="3rL-zW-PCR"/>
+                                <constraint firstAttribute="bottom" secondItem="XnG-4n-bzr" secondAttribute="bottom" id="0EF-Mp-1b5"/>
+                                <constraint firstAttribute="bottom" secondItem="Wa6-uf-HKw" secondAttribute="bottom" id="13e-PB-rXP"/>
+                                <constraint firstAttribute="width" constant="32" id="15D-Oj-JHi"/>
+                                <constraint firstAttribute="trailing" secondItem="Wa6-uf-HKw" secondAttribute="trailing" id="1og-vJ-BKM"/>
+                                <constraint firstItem="XnG-4n-bzr" firstAttribute="leading" secondItem="wwX-xk-WGx" secondAttribute="leading" id="MP5-xp-BUb"/>
+                                <constraint firstItem="Wa6-uf-HKw" firstAttribute="leading" secondItem="wwX-xk-WGx" secondAttribute="leading" id="Z1B-h0-Bo1"/>
+                                <constraint firstItem="XnG-4n-bzr" firstAttribute="top" secondItem="wwX-xk-WGx" secondAttribute="top" id="d24-4G-i6P"/>
+                                <constraint firstItem="Wa6-uf-HKw" firstAttribute="top" secondItem="wwX-xk-WGx" secondAttribute="top" id="dgW-ZM-Mga"/>
+                                <constraint firstAttribute="trailing" secondItem="XnG-4n-bzr" secondAttribute="trailing" id="hi3-Gg-2ni"/>
                             </constraints>
-                            <state key="normal" image="ic_book-1"/>
-                            <connections>
-                                <action selector="clickReading:" destination="-1" eventType="touchUpInside" id="9TY-qw-LTc"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsA-Pe-xlU">
-                            <rect key="frame" x="37" y="0.0" width="25.5" height="32"/>
-                            <state key="normal" image="ic_link-1"/>
-                            <connections>
-                                <action selector="clickLink:" destination="-1" eventType="touchUpInside" id="jPQ-xh-Qc5"/>
-                            </connections>
-                        </button>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NP3-1F-xZ3">
+                            <rect key="frame" x="37" y="0.0" width="32" height="32"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_link-1" translatesAutoresizingMaskIntoConstraints="NO" id="B0g-Zk-tZn">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PsA-Pe-xlU">
+                                    <rect key="frame" x="0.0" y="0.0" width="32" height="32"/>
+                                    <connections>
+                                        <action selector="clickLink:" destination="-1" eventType="touchUpInside" id="jPQ-xh-Qc5"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="PsA-Pe-xlU" secondAttribute="bottom" id="4t3-f2-F3v"/>
+                                <constraint firstAttribute="trailing" secondItem="B0g-Zk-tZn" secondAttribute="trailing" id="85t-4E-BQK"/>
+                                <constraint firstAttribute="width" constant="32" id="CR2-67-V9s"/>
+                                <constraint firstAttribute="trailing" secondItem="PsA-Pe-xlU" secondAttribute="trailing" id="KAj-HP-7Yt"/>
+                                <constraint firstItem="PsA-Pe-xlU" firstAttribute="leading" secondItem="NP3-1F-xZ3" secondAttribute="leading" id="M2L-Vf-ab2"/>
+                                <constraint firstItem="B0g-Zk-tZn" firstAttribute="top" secondItem="NP3-1F-xZ3" secondAttribute="top" id="PgK-9G-XYf"/>
+                                <constraint firstItem="PsA-Pe-xlU" firstAttribute="top" secondItem="NP3-1F-xZ3" secondAttribute="top" id="hem-P2-DRl"/>
+                                <constraint firstItem="B0g-Zk-tZn" firstAttribute="leading" secondItem="NP3-1F-xZ3" secondAttribute="leading" id="kAv-aY-H4C"/>
+                                <constraint firstAttribute="bottom" secondItem="B0g-Zk-tZn" secondAttribute="bottom" id="vwr-xC-GQt"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="688-Jo-RKd"/>
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTi-No-kQ4">
-                    <rect key="frame" x="48" y="14" width="283.5" height="33"/>
+                    <rect key="frame" x="48" y="14" width="277" height="33"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="cQi-o1-8OT"/>
                     </constraints>
