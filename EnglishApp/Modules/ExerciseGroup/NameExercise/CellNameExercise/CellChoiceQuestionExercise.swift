@@ -25,6 +25,14 @@ class CellChoiceQuestionExercise: UITableViewCell {
         self.selectionStyle = .none
     }
     
+    func setupView(isChoice: Bool) {
+        if isChoice {
+            viewBackground.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.8039215686, blue: 1, alpha: 1)
+        } else {
+            viewBackground.backgroundColor = .white
+        }
+    }
+    
     func setupView(isChoice: Bool, content: String) {
         lblContent.text = content
         if isChoice {

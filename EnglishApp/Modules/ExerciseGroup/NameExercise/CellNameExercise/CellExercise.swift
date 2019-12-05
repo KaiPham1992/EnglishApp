@@ -152,20 +152,20 @@ extension CellExercise: UITableViewDataSource{
     
     func userChangeChoiceAnswer(indexPath: IndexPath){
         if let options = questionEntity?.answers?[indexPath.section].options {
-            var listIndex : [IndexPath] = []
             if let firstIndex = options.firstIndex(where: {$0.isChoice}), firstIndex != indexPath.row {
                 options[firstIndex].isChoice = false
-                listIndex.append(IndexPath(row: firstIndex, section: indexPath.section))
+                if let cellChoice = tbvNameExercise.cellForRow(at: IndexPath(row: firstIndex, section: indexPath.section)) as? CellChoiceQuestionExercise {
+                    cellChoice.setupView(isChoice: options[firstIndex].isChoice)
+                }
             }
             options[indexPath.row].isChoice = !options[indexPath.row].isChoice
+            if let cellChoice = tbvNameExercise.cellForRow(at: indexPath) as? CellChoiceQuestionExercise {
+                cellChoice.setupView(isChoice: options[indexPath.row].isChoice)
+            }
             if type == .competition {
                 self.listAnswerCompetition[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : 0
             } else {
                 self.listAnswer[indexPath.section].option_id = options[indexPath.row].isChoice ? Int(options[indexPath.row]._id ?? "0") ?? 0 : nil
-            }
-            listIndex.append(indexPath)
-            UIView.performWithoutAnimation {
-                self.tbvNameExercise.reloadRows(at: listIndex, with: .automatic)
             }
         }
     }
