@@ -105,22 +105,26 @@ extension CellResultExercise: UITableViewDataSource{
         return questionEntity?.answers?.count ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let type = questionEntity?.answers?.first?.type else {
+            return 0
+        }
+        return type == "1" ? (questionEntity?.answers?[section].options.count ?? 0) : 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let type = questionEntity?.answers?.first?.type else {
             return UITableViewCell()
         }
+        let value = questionEntity?.answers?[indexPath.section].value ?? ""
+        let status = questionEntity?.answers?[indexPath.section].status ?? ""
         if type == "1" {
             let cell = tableView.dequeue(CellResultChoice.self, for: indexPath)
             cell.indexPath = indexPath
-            if let answer = questionEntity?.answers?[indexPath.section] {
-                cell.setupCell(answer: answer)
+            if let option = questionEntity?.answers?[indexPath.section].options[indexPath.row]{
+                cell.setupCell(option: option, status: status, value: value)
             }
             return cell
         }
-        
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
         cell.indexPath = indexPath
         if let answer = questionEntity?.answers?[indexPath.row] {

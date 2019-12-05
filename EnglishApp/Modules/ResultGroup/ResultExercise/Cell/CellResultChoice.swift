@@ -28,4 +28,10 @@ class CellResultChoice: UITableViewCell {
             }
         }
     }
+    func setupCell(option: OptionEntity, status: String, value: String){
+        lblAnswer.text = option.value& + ". " + option.content&
+        if value != "" {
+            viewBackground.backgroundColor = status == "0" ? #colorLiteral(red: 0.9019607843, green: 0.1882352941, blue: 0.1882352941, alpha: 1) : #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+        }
+    }
 }

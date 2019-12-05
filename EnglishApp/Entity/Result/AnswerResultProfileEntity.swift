@@ -18,12 +18,14 @@ class AnswerResultProfileEntity: Mappable {
     var content : String?
     var content_extend : String?
     var type : String?
+    var options : [OptionEntity] = []
     
     func mapping(map: Map) {
         
     }
     
     required init?(map: Map) {
+        self.options <- map["options"]
         self.content_extend <- map["content_extend"]
         self._id <- map["_id"]
         self.question_details_id <- map["question_details_id"]
