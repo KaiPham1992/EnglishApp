@@ -84,8 +84,6 @@ class CompetitionViewController: ListManagerVC {
                 cell.setupCellDoing(competitionEntity: data)
             case "CAN_JOIN":
                 cell.setupCellCanjoin(competitionEntity: data)
-            case "DONE":
-                cell.setupCellDone(competitionEntity: data)
            default:
             break
         }
@@ -133,23 +131,8 @@ class CompetitionViewController: ListManagerVC {
             vc.hidesBottomBarWhenPushed = true
             self.push(controller: vc)
         } else {
-            if data.is_fight_joined == 0 && data.status == "CAN_JOIN"{
-                var canjoin = false
-                if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
-                    canjoin = true
-                }
-                let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: canjoin, endDate: data.endDate ?? Date())
-                vc.hidesBottomBarWhenPushed = true
-                vc.joinTeam = { [weak self] (teamId) in
-                    self?.joinTeam(index: indexPath.row, teamId: teamId)
-                }
-                vc.leaveTeam = {[weak self] in
-                    self?.leaveTeam(index: indexPath.row)
-                }
-                vc.fightFinished = { [weak self] in
-                    self?.fightComplete(index: indexPath.row)
-                }
-                self.push(controller: vc)
+            if (data.is_fight_joined == 0 && data.status == "CAN_JOIN") || (data.is_fight_joined == 1 && data.status == "DOING"){
+                self.actionFight(index: indexPath.row)
             } else {
                 let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true, endDate: data.endDate ?? Date())
                 vc.hidesBottomBarWhenPushed = true
@@ -206,14 +189,6 @@ class CompetitionViewController: ListManagerVC {
                 }
             }
         }
-        
-        if status == "DONE"{
-            let data = listData[index] as! CompetitionEntity
-            let vc = ResultGroupRouter.createModule(idCompetition: String(data.id ?? 0), idExercise: String(data.id ?? 0), isHistory: true, endDate: data.endDate ?? Date())
-            vc.hidesBottomBarWhenPushed = true
-            self.push(controller: vc)
-        }
-        
         if status == "START" {
             if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
                 let vc = LoginRouter.createModule()
@@ -234,7 +209,6 @@ class CompetitionViewController: ListManagerVC {
             }
         
         }
-        
         
         if status == "CANNOT_JOIN" {
             let vc = SelectTeamRouter.createModule(competitionId: competitionId, isCannotJoin: true, endDate: Date())
