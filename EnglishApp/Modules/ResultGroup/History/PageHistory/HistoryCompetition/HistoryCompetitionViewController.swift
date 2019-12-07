@@ -58,6 +58,7 @@ class HistoryCompetitionViewController: ListManagerVC {
     func actionFight(index: Int) {
         let data = listData[index] as! CompetitionResultsProfileEntity
         let vc = ResultGroupRouter.createModule(idCompetition: data._id ?? "0", idExercise: data.exercise_id ?? "0", isHistory: true, endDate: Date())
+        vc.hidesBottomBarWhenPushed = true
         self.push(controller: vc)
     }
 }
