@@ -382,6 +382,7 @@ struct LocalizableKey {
     static let join_team = "join_team"
     static let fight_is_doing = "fight_is_doing"
     static let fight_is_done = "fight_is_done"
+    static let message_fight_is_done = "message_fight_is_done"
     static let exercise_is_doing = "exercise_is_doing"
     static let honey_diamond_not_enough = "honey_diamond_not_enough"
     static let honey_not_enough = "honey_not_enough"

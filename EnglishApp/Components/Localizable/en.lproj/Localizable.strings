@@ -37,6 +37,7 @@
 "out_group_message" = "The competition started so you cannot leave your team";
 "fight_is_doing" = "This competition is ongoing. Please complete and submit it.";
 "fight_is_done" = "You have finised your competition";
+"message_fight_is_done" = "Competition is done";
 "exercise_is_doing" = "This exercise is doing. Please complete and submit it.";
 "honey_not_enough" = "You don't have enough honey jars. Please refill it.";
 "diamod_not_enough" = "You don't have enough diamonds. Please refill it.";

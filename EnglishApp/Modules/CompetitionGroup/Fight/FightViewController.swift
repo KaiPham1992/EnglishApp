@@ -181,7 +181,7 @@ extension FightViewController :FightViewProtocol{
             self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false, endDate: self.endDateCompetition ?? Date()))
         } else {
             let message = self.presenter?.error?.message
-            if message == LocalizableKey.fight_is_done.showLanguage.uppercased() {
+            if message == LocalizableKey.message_fight_is_done.showLanguage.uppercased() {
                 self.fightFinished?()
                 self.push(controller: ResultGroupRouter.createModule(idCompetition: String(completion_id), idExercise: self.presenter?.exerciseEntity?._id ?? "0", isHistory: false, endDate: self.endDateCompetition ?? Date()))
             }
@@ -213,7 +213,8 @@ extension FightViewController :FightViewProtocol{
                 DispatchQueue.main.async {
                     self.view.isHidden = true
                     PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.competition_end.showLanguage, completionYes: {
-                        self.pop(animated: true)
+                        ProgressView.shared.hideLoadingCompetition()
+                        self.navigationController?.popViewController(animated: true)
                     })
                 }
             } else {
@@ -246,10 +247,12 @@ extension FightViewController :FightViewProtocol{
         switch message {
         case LocalizableKey.exercise_is_doing.showLanguage.uppercased():
             PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_doing.showLanguage) {[unowned self] in
+                ProgressView.shared.hideLoadingCompetition()
                 self.navigationController?.popViewController(animated: true)
             }
         default:
             PopUpHelper.shared.showErrorDidNotRemoveView(message: message.convertFormatString()) { [unowned self] in
+                ProgressView.shared.hideLoadingCompetition()
                 self.navigationController?.popViewController(animated: true)
             }
         }
@@ -267,6 +270,7 @@ extension FightViewController :FightViewProtocol{
     
     func fightDone() {
         PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_done.showLanguage) {[unowned self] in
+            ProgressView.shared.hideLoadingCompetition()
             self.navigationController?.popViewController(animated: true)
         }
     }
