@@ -131,7 +131,7 @@ class CompetitionViewController: ListManagerVC {
             vc.hidesBottomBarWhenPushed = true
             self.push(controller: vc)
         } else {
-            if (data.is_fight_joined == 0 && data.status == "CAN_JOIN") || (data.is_fight_joined == 1 && data.status == "DOING"){
+            if (data.is_fight_joined == 0 && data.status == "CAN_JOIN") || (data.is_fight_joined == 1){
                 self.actionFight(index: indexPath.row)
             } else {
                 let vc =  SelectTeamRouter.createModule(competitionId: data.id ?? 0, isCannotJoin: true, endDate: data.endDate ?? Date())
