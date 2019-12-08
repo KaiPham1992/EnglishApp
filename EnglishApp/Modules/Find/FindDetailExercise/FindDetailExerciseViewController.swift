@@ -173,7 +173,7 @@ extension FindDetailExerciseViewController: UITableViewDataSource{
                 if isSuccessed {
                     self.isMinusMoney = true
                     self.callbackMinusMoney?()
-                    let vc = RelatedGrammarRouter.createModule(id: Int(findDetail.question_details_id ?? "0") ?? 0)
+                    let vc = RelatedGrammarRouter.createModule(id: Int(self.findDetail.question_details_id ?? "0") ?? 0)
                     self.push(controller: vc)
                 } else {
                     PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in

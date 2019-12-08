@@ -127,7 +127,7 @@ extension CellResultExercise: UITableViewDataSource{
         }
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
         cell.indexPath = indexPath
-        if let answer = questionEntity?.answers?[indexPath.row] {
+        if let answer = questionEntity?.answers?[indexPath.section] {
             cell.setupCell(answer: answer)
         }
         return cell
