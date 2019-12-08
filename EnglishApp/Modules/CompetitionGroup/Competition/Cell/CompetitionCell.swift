@@ -47,7 +47,6 @@ class CompetitionCell: BaseTableCell {
     
     var actionFight : ((_ index: Int)->())?
     
-    
     func setupCellStart(competitionEntity: CompetitionEntity) {
         self.parseBaseData(competitionEntity: competitionEntity)
         let isJoined = competitionEntity.is_fight_joined ?? 0
@@ -63,7 +62,7 @@ class CompetitionCell: BaseTableCell {
     func setupCellCannotJoin(competitionEntity: CompetitionEntity) {
         self.parseBaseData(competitionEntity: competitionEntity)
         lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.not_qualify.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)])
-        viewButtonCompetition.backgroundColor = .white
+//        viewButtonCompetition.backgroundColor = .white
     }
     
     func setupCellDoing(competitionEntity: CompetitionEntity) {

@@ -345,11 +345,6 @@ extension FightViewController : CellExerciseDelegate {
         
     }
     
-    func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath) {
-//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].option_id = idAnswer ?? 0
-//        self.listParamSubmit[indexPath.row].questions?.answers[indexPathRow.row].value = valueAnswer ?? ""
-    }
-    
     func clickAudio(indexPath: IndexPath) {
         var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
         numberClick += 1

@@ -295,11 +295,6 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 
 extension NameExerciseViewController : CellExerciseDelegate{
     
-    func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath) {
-//        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].option_id = idAnswer
-//        self.listAnswerQuestion[indexPath.row].answer?[indexPathRow.row].value = valueAnswer
-    }
-    
     func showDetailVocubulary(word: WordExplainEntity) {
 //        self.presenter?.gotoDetailVocabulary(idWord: word.id)
     }

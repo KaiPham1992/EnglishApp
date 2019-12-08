@@ -117,10 +117,17 @@ class CompetitionViewController: ListManagerVC {
     }
     
     private func minusTime(index: Int) {
-        let data = listData[index] as! CompetitionEntity
-        data.distance = data.distance - 1
-        if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell{
-            cell.processTime(time: data.distance)
+        let data = self.listData[index] as! CompetitionEntity
+        if data.is_fight_joined == 1 && data.status == "CAN_JOIN" {
+            data.distance = data.distance - 1
+            if let cell = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell{
+                cell.processTime(time: data.distance)
+            }
+        } else {
+            if timer != nil {
+                timer?.invalidate()
+                timer = nil
+            }
         }
     }
     
@@ -251,6 +258,7 @@ extension CompetitionViewController: IndicatorInfoProvider{
         return IndicatorInfo(title: LocalizableKey.doing.showLanguage)
     }
 }
+
 extension CompetitionViewController: CompetitionViewProtocol{
     func didGetList(competitionList: CollectionCompetitionEntity) {
         initLoadData(data: competitionList.competitionEntity ?? [])
