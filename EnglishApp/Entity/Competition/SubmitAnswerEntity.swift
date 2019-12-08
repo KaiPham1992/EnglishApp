@@ -20,6 +20,7 @@ class SubmitAnswerEntity : Mappable {
     func mapping(map: Map) {
        self.question_details_id <- map["question_details_id"]
        self.option_id <- map["option_id"]
+        self.value <- map["value"]
     }
     required init?(map: Map) {
         
