@@ -397,6 +397,11 @@ extension String {
         return htmlToAttributedString?.string ?? ""
     }
 
+    func convertToAttributedString() -> NSAttributedString {
+        let modifiedFontString = "<span style=\"font-family: Comfortaa-Regular;font-size: 14\">" + self + "</span>"
+        return modifiedFontString.htmlToAttributedString ?? NSAttributedString()
+    }
+    
     func HTMLImageCorrector() -> String {
         let htmlString: String =  "<html><meta name='viewport' content='width=device-width, initial-scale=1'><head><link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'><style>body { background: white; font-family: 'Open Sans' !important; font-size: 15px; } </style> </head> <body> <img align=\"middle\">" + self + "</body></html>"
         return htmlString

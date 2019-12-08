@@ -30,7 +30,7 @@ class ViewHeaderResultExercise : BaseViewXib {
     func setupCell(index: Int, content: String) {
         self.section = index - 1
         lblIndex.text = "\(index). "
-        lblContent.attributedText = content.attributedString()
+        lblContent.attributedText = content.convertToAttributedString()
     }
     
     override func setUpViews() {

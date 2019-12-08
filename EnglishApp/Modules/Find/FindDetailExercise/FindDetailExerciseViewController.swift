@@ -40,7 +40,7 @@ class FindDetailExerciseViewController: BaseViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2
         tvContent.addGestureRecognizer(tap)
-        tvContent.attributedText = findDetail.title?.htmlToAttributedString
+        tvContent.attributedText = (findDetail.name ?? "").convertToAttributedString()
     }
     
     override func setUpNavigation() {
@@ -124,7 +124,7 @@ extension FindDetailExerciseViewController: UITableViewDataSource{
         view.addSubview(headerView)
         headerView.fillToView(view: view)
         //show UI question
-        headerView.setupCell(index: section + 1, content: findDetail.name ?? "")
+        headerView.setupCell(index: section + 1, content: findDetail.title ?? "")
         headerView.callbackExplainQuestion = {[weak self] (section) in
             guard let self = self else {return}
             self.actionExplainQuestion(section: section)
