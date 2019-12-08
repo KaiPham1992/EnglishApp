@@ -162,6 +162,8 @@ extension FightViewController :FightViewProtocol{
                         self.clvQuestion.scrollToItem(at: IndexPath(row: self.currentIndex - 1, section: 0), at: .right, animated: false)
                         if self.viewRank.isHidden  {
                             self.viewRank.isHidden = false
+                            //update height collection view height.
+                            self.clvQuestion.collectionViewLayout.invalidateLayout()
                         }
                         self.clvRankTeam.reloadData()
                     }
