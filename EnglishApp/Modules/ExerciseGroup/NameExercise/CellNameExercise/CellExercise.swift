@@ -11,7 +11,6 @@ import UIKit
 protocol CellExerciseDelegate: class {
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath)
     func searchVocabulary(word: String, position: CGPoint, index: IndexPath)
-    func changeAnswer(idAnswer: Int?, valueAnswer: String?, indexPathRow: IndexPath, indexPath: IndexPath)
     func clickAudio(indexPath: IndexPath)
 }
 
@@ -110,21 +109,28 @@ extension CellExercise: UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return ((questionEntity?.answers?[section].type ?? "") == "2") ? 1 : (questionEntity?.answers?[section].options.count ?? 0)
-//        return 1
     }
     //show UI answer
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //type answer rewirte
         if (questionEntity?.answers?[indexPath.section].type ?? "") == "2" {
-            let answer = listAnswer[indexPath.section].value ?? ""
             let cell = tableView.dequeue(CellFillQuestionExercise.self, for: indexPath)
-            cell.setupCell(text: answer)
+            if listAnswer.count > 0 {
+                let answer = listAnswer[indexPath.section].value ?? ""
+                cell.setupCell(text: answer)
+            }
+            if listAnswerCompetition.count > 0 {
+                let answer = listAnswerCompetition[indexPath.section].value
+                cell.setupCell(text: answer)
+            }
             cell.callbackChangeHeight = {[weak self] in
                 //update height tableview when user enter input > width textview.
-                self?.updateHeightCell()
+                guard let self = self else {return}
+                self.updateHeightCell()
             }
             cell.callbackChangeText = {[weak self] (text: String) in
-                self?.userChangeFillAnswer(indexPath: indexPath, text: text)
+                guard let self = self else {return}
+                self.userChangeFillAnswer(indexPath: indexPath, text: text)
             }
             return cell
         }
@@ -135,7 +141,8 @@ extension CellExercise: UITableViewDataSource{
             //isChoice -> to check user choice answer.
             cell.setupView(isChoice: answer.isChoice, content: (answer.value ?? "") + ". " + (answer.content ?? ""))
             cell.callbackSelectAnswer = {[weak self] (index) in
-                self?.userChangeChoiceAnswer(indexPath: index)
+                guard let self = self else {return}
+                self.userChangeChoiceAnswer(indexPath: index)
             }
             return cell
         }

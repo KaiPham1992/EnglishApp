@@ -31,11 +31,11 @@
                             <constraint firstAttribute="width" secondItem="dQ5-NQ-WBR" secondAttribute="height" multiplier="1664:1120" id="JCa-pI-QYs"/>
                         </constraints>
                     </imageView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zzw-Nn-k4R">
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zzw-Nn-k4R">
                         <rect key="frame" x="16" y="10" width="309" height="203.5"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlS-FW-V00">
-                                <rect key="frame" x="0.0" y="-30" width="309" height="30"/>
+                                <rect key="frame" x="0.0" y="0.0" width="309" height="30"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_speaker on" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-L8-yKa">
                                         <rect key="frame" x="5" y="0.0" width="30" height="30"/>
@@ -51,7 +51,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="vNe-C6-BFJ" firstAttribute="top" secondItem="jMd-L8-yKa" secondAttribute="top" id="1ck-xr-jat"/>
                                     <constraint firstItem="vNe-C6-BFJ" firstAttribute="trailing" secondItem="jMd-L8-yKa" secondAttribute="trailing" id="CWQ-8B-utf"/>

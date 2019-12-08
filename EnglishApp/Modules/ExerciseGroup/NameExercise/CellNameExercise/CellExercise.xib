@@ -30,11 +30,11 @@
                                     <constraint firstAttribute="width" secondItem="bMB-rW-3dE" secondAttribute="height" multiplier="1664:1120" id="Frc-72-fbR"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WfP-tD-d7H">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WfP-tD-d7H">
                                 <rect key="frame" x="16" y="10" width="270" height="177.5"/>
                                 <subviews>
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-iR-3zt">
-                                        <rect key="frame" x="0.0" y="-30" width="270" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="30"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_speaker on" translatesAutoresizingMaskIntoConstraints="NO" id="12I-x3-EWf">
                                                 <rect key="frame" x="5" y="0.0" width="30" height="30"/>
@@ -50,7 +50,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="cdE-J7-Gwp" firstAttribute="bottom" secondItem="12I-x3-EWf" secondAttribute="bottom" id="4Hb-VQ-hip"/>
                                             <constraint firstItem="cdE-J7-Gwp" firstAttribute="leading" secondItem="12I-x3-EWf" secondAttribute="leading" id="DGH-xo-t1l"/>
@@ -70,7 +70,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question coner" translatesAutoresizingMaskIntoConstraints="NO" id="CJp-Pp-xoA">
-                                <rect key="frame" x="230.5" y="152.5" width="71.500000000000114" height="51"/>
+                                <rect key="frame" x="230.5" y="152.5" width="71.5" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CJp-Pp-xoA" secondAttribute="height" multiplier="394:279" id="6uG-ld-3IX"/>
                                 </constraints>
