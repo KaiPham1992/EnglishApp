@@ -210,10 +210,12 @@ extension FightViewController :FightViewProtocol{
             let startTime = self.startDate.timeIntervalSince1970
             let distanceTime = Int(currentStartTime - startTime)
             if distanceTime >= self.currentTime {
-                self.view.isHidden = true
-                PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.competition_end.showLanguage, completionYes: {
-                    self.pop(animated: true)
-                })
+                DispatchQueue.main.async {
+                    self.view.isHidden = true
+                    PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.competition_end.showLanguage, completionYes: {
+                        self.pop(animated: true)
+                    })
+                }
             } else {
                 self.currentTime = self.currentTime - distanceTime
                 if let questions = self.presenter?.exerciseEntity?.questions {
@@ -243,12 +245,12 @@ extension FightViewController :FightViewProtocol{
         let message = error.message ?? ""
         switch message {
         case LocalizableKey.exercise_is_doing.showLanguage.uppercased():
-            PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_doing.showLanguage) {
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_doing.showLanguage) {[unowned self] in
                 self.navigationController?.popViewController(animated: true)
             }
         default:
-            PopUpHelper.shared.showErrorDidNotRemoveView(message: message.convertFormatString()) {
-                self.pop(animated: true)
+            PopUpHelper.shared.showErrorDidNotRemoveView(message: message.convertFormatString()) { [unowned self] in
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -264,8 +266,8 @@ extension FightViewController :FightViewProtocol{
     }
     
     func fightDone() {
-        PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_done.showLanguage) {
-            self.pop(animated: true)
+        PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_done.showLanguage) {[unowned self] in
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }
