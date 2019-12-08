@@ -12,15 +12,6 @@ import UIKit
 
 class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseInteractorOutputProtocol {
     
-    func reportQuestion(questionDetailId: Int, content: String) {
-        self.interactor?.reportQuestion(questionDetailId: questionDetailId, content: content)
-    }
-    
-    func reportQuestionSuccessed() {
-        self.view?.reportQuestionSuccessed()
-    }
-    
-
     weak private var view: ResultExerciseViewProtocol?
     var interactor: ResultExerciseInteractorInputProtocol?
     let router: ResultExerciseWireframeProtocol
@@ -30,6 +21,14 @@ class ResultExercisePresenter: ResultExercisePresenterProtocol, ResultExerciseIn
         self.view = interface
         self.interactor = interactor
         self.router = router
+    }
+    
+    func reportQuestion(questionDetailId: Int, content: String) {
+        self.interactor?.reportQuestion(questionDetailId: questionDetailId, content: content)
+    }
+    
+    func reportQuestionSuccessed() {
+        self.view?.reportQuestionSuccessed()
     }
     
     func getNumberAnswer() -> Int{

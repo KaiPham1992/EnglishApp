@@ -28,28 +28,10 @@ class ResultExerciseRouter: ResultExerciseWireframeProtocol {
         return view
     }
     
-    static func createModule(listAnswer: [QuestionResultEntity], index: Int,isHistory: Bool) -> ResultExerciseViewController {
+    static func createModule(listAnswer: [QuestionResultEntity], index: Int) -> ResultExerciseViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = ResultExerciseViewController(nibName: nil, bundle: nil)
         view.index = index
-        view.isHistory = isHistory
-        let interactor = ResultExerciseInteractor()
-        let router = ResultExerciseRouter()
-        let presenter = ResultExercisePresenter(interface: view, interactor: interactor, router: router)
-        presenter.listAnswer = listAnswer
-        
-        view.presenter = presenter
-        interactor.presenter = presenter
-        router.viewController = view
-        
-        return view
-    }
-    
-    static func createModule(listAnswer: [QuestionResultEntity], index: Int, isSearch: Bool) -> ResultExerciseViewController {
-        // Change to get view from storyboard if not using progammatic UI
-        let view = ResultExerciseViewController(nibName: nil, bundle: nil)
-        view.index = index
-        view.isSearch = isSearch
         let interactor = ResultExerciseInteractor()
         let router = ResultExerciseRouter()
         let presenter = ResultExercisePresenter(interface: view, interactor: interactor, router: router)

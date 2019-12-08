@@ -70,10 +70,8 @@ extension FindViewController: FindViewProtocol{
             row = self.presenter?.searchExciseRespone.count ?? 0
         }
         if row == 0 {
-//            self.showNoData()
             tbResult.isHidden = true
         } else {
-//            self.hideNoData()
             tbResult.isHidden = false
         }
         tbResult.reloadData()
@@ -100,8 +98,6 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
         tbResult.dataSource = self
         tbResult.registerXibFile(FindCell.self)
         tbResult.separatorStyle = .none
-//        tbResult.estimatedRowHeight = 55
-//        tbResult.rowHeight = UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -143,27 +139,15 @@ extension FindViewController: UITableViewDelegate, UITableViewDataSource {
         
         if type == .searchExercise {
             self.changeStatusRow(index: indexPath)
-            let exercise = self.presenter?.searchExciseRespone[indexPath.row]
-            let vc = ResultExerciseRouter.createModule(listAnswer: exercise?.questions ?? [], index: 0, isSearch: true)
-            self.push(controller: vc)
-//            let exercise = self.presenter?.searchExciseRespone[indexRow]
-//            let vc = ResultExerciseRouter.createModule(listAnswer: exercise?.questions ?? [], index: 0, isSearch: true)
-//            self.push(controller: vc)
-//            let numberDiamond = UserDefaultHelper.shared.loginUserInfo?.amountDiamond ?? 0
-//            let numberHoney = UserDefaultHelper.shared.loginUserInfo?.amountHoney ?? 0
-//            if numberHoney < 5 && numberDiamond < 50 {
-//                PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in
-//                    let controller = StoreViewController()
-//                    self.push(controller: controller)
-//                }
-//            } else {
-//                PopUpHelper.shared.showYesNo(message: LocalizableKey.feeFind.showLanguage, completionNo: nil) {
-//                    [unowned self] in
-//                    self.indexRow = indexPath.row
-//                    self.changeStatusRow(index: indexPath)
-//                    self.presenter?.checkAmountSearchExercise()
-//                }
-//            }
+            if let exercise = self.presenter?.searchExciseRespone[indexPath.row] {
+                let vc = FindDetailExerciseRouter.createModule(findDetail: exercise, isMinusMoney: exercise.isMinusMoney)
+                vc.callbackMinusMoney = { [weak self] in
+                    if let self = self {
+                        self.presenter?.searchExciseRespone[indexPath.row].isMinusMoney = true
+                    }
+                }
+                self.push(controller: vc)
+            }
         }
     }
     

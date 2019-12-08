@@ -19,7 +19,7 @@ protocol FindPresenterProtocol: class {
 
     var interactor: FindInteractorInputProtocol? { get set }
     var searchTheoryRespone : [SearchEntity] {get}
-    var searchExciseRespone : [TestResultProfileEntity] {get}
+    var searchExciseRespone : [TestResultProfileEntity] {set get}
     func searchExercise(text: String)
     func searchTheory(text: String)
     func gotoTheoryDetail(idLesson: String)
