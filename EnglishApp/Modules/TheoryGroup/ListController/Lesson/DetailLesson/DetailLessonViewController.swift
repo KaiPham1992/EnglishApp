@@ -191,7 +191,9 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
             if let vocabulary = self.vocabulary {
                 setTitleNavigation(title: vocabulary.word)
                 let attributeString = self.presenter?.vocabulary?.explain.htmlToString ?? ""
-                tvContent.attributedText = NSAttributedString(string: attributeString, attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 5
+                tvContent.attributedText = NSAttributedString(string: attributeString, attributes: [NSAttributedString.Key.font : AppFont.fontRegular16, NSAttributedString.Key.paragraphStyle : paragraphStyle])
                 if vocabulary.is_favorite {
                     self.isLike = 1
                     self.btnLike.setBackgroundImage(#imageLiteral(resourceName: "Material_Icons_white_favorite-1"), for: .normal)
@@ -201,7 +203,9 @@ extension DetailLessonViewController:DetailLessonViewProtocol{
                 }
             } else {
                 let attributeString = self.presenter?.vocabulary?.explain.htmlToString ?? ""
-                tvContent.attributedText = NSAttributedString(string: attributeString, attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 5
+                tvContent.attributedText = NSAttributedString(string: attributeString, attributes: [NSAttributedString.Key.font : AppFont.fontRegular16, NSAttributedString.Key.paragraphStyle : paragraphStyle])
 //                tvContent.attributedText = self.presenter?.vocabulary?.explain.attributedString()
                 if (self.presenter?.vocabulary?.is_favorite ?? false) {
                     self.isLike = 1
