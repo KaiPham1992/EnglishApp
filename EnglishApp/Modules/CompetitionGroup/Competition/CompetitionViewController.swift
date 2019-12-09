@@ -249,7 +249,14 @@ class CompetitionViewController: ListManagerVC {
 
 extension CompetitionViewController : TimerCompetitionDelegate{
     func callbackTimer(index: Int, time: Int) {
-        self.setTimer(index: index, time: time)
+        if index == -1 && time == -1 {
+            if timer != nil {
+                timer?.invalidate()
+                timer = nil
+            }
+        } else {
+            self.setTimer(index: index, time: time)
+        }
     }
 }
 

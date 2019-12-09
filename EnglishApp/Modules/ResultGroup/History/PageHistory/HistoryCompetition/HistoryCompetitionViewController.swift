@@ -61,6 +61,10 @@ class HistoryCompetitionViewController: ListManagerVC {
         vc.hidesBottomBarWhenPushed = true
         self.push(controller: vc)
     }
+    
+    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+        actionFight(index: indexPath.row)
+    }
 }
 
 extension HistoryCompetitionViewController : HistoryCompetitionViewProtocol {

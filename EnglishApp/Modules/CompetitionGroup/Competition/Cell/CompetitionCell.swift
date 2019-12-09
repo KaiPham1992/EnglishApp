@@ -29,6 +29,7 @@ class CompetitionCell: BaseTableCell {
     @IBAction func competition(_ sender: Any) {
         actionFight?(index)
     }
+    
     var index: Int!
     var callbackTimer: ((_ index: Int, _ time: Int) -> ())?
 
@@ -91,6 +92,7 @@ class CompetitionCell: BaseTableCell {
                     if startTime < currentTime {
                         viewButtonCompetition.backgroundColor = #colorLiteral(red: 1, green: 0.8274509804, blue: 0.06666666667, alpha: 1)
                         lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.start.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.2039215686, green: 0.08235294118, blue: 0.03137254902, alpha: 1)])
+                        delegate?.callbackTimer(index: -1, time: -1)
                     } else {
                         let distanceTime = Int(startTime - currentTime)
                         lblTitleButtonCompetition.attributedText = NSAttributedString(string: distanceTime.convertMilisecondsToTime(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
