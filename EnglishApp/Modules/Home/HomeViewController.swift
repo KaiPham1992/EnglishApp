@@ -495,10 +495,10 @@ extension HomeViewController: MenuViewControllerDelegate {
     func logout() {
         ProgressView.shared.show()
         Provider.shared.userAPIService.logout(success: { (_) in
-            UserDefaultHelper.shared.clearUser()
             self.navigationItem.rightBarButtonItem = nil
             Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
                 ProgressView.shared.hide()
+                UserDefaultHelper.shared.clearUser()
                 guard let user = user else { return }
                 UserDefaultHelper.shared.saveUser(user: user)
                 UserDefaultHelper.shared.userToken = user.jwt&

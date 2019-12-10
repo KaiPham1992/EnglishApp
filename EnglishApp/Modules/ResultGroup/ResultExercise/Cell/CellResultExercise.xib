@@ -22,17 +22,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kyo-iO-zaT">
-                        <rect key="frame" x="0.0" y="0.0" width="341" height="229.5"/>
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="188.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </view>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question" translatesAutoresizingMaskIntoConstraints="NO" id="dQ5-NQ-WBR">
-                        <rect key="frame" x="0.0" y="0.0" width="341" height="229.5"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question" translatesAutoresizingMaskIntoConstraints="NO" id="dQ5-NQ-WBR">
+                        <rect key="frame" x="0.0" y="0.0" width="341" height="188.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="dQ5-NQ-WBR" secondAttribute="height" multiplier="1664:1120" id="JCa-pI-QYs"/>
+                            <constraint firstAttribute="width" secondItem="dQ5-NQ-WBR" secondAttribute="height" multiplier="1664:920" id="JCa-pI-QYs"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="zzw-Nn-k4R">
-                        <rect key="frame" x="16" y="10" width="309" height="203.5"/>
+                        <rect key="frame" x="16" y="10" width="309" height="162.5"/>
                         <subviews>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hlS-FW-V00">
                                 <rect key="frame" x="0.0" y="0.0" width="309" height="30"/>
@@ -63,7 +63,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4H-qn-iVc">
-                                <rect key="frame" x="0.0" y="0.0" width="309" height="203.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="309" height="162.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -71,14 +71,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </stackView>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question coner" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-ID-1sb">
-                        <rect key="frame" x="260.5" y="172.5" width="80.5" height="57"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question coner" translatesAutoresizingMaskIntoConstraints="NO" id="8wy-ID-1sb">
+                        <rect key="frame" x="255.5" y="141.5" width="85.5" height="47"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="8wy-ID-1sb" secondAttribute="height" multiplier="394:279" id="2uO-gy-Gge"/>
+                            <constraint firstAttribute="width" secondItem="8wy-ID-1sb" secondAttribute="height" multiplier="454:250" id="2uO-gy-Gge"/>
                         </constraints>
                     </imageView>
                     <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="rUo-Vs-7gF">
-                        <rect key="frame" x="0.0" y="229.5" width="341" height="277.5"/>
+                        <rect key="frame" x="0.0" y="188.5" width="341" height="318.5"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     </tableView>
                 </subviews>
