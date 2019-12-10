@@ -8394,7 +8394,7 @@
 				CODE_SIGN_ENTITLEMENTS = EnglishApp_Dev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Nghia Nguyen (G7RSC937JS)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Dev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -8419,7 +8419,7 @@
 				CODE_SIGN_ENTITLEMENTS = EnglishApp_Dev.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Nghia Nguyen (8HQRBRRH7Z)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 24;
 				DEVELOPMENT_TEAM = 8HQRBRRH7Z;
 				INFOPLIST_FILE = "$(SRCROOT)/EnglishApp/SourceFile/Info/EnglishApp_Dev-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
