@@ -213,6 +213,7 @@ extension FightViewController :FightViewProtocol{
                 DispatchQueue.main.async {
                     self.view.isHidden = true
                     PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.competition_end.showLanguage, completionYes: {
+                        self.fightFinished?()
                         ProgressView.shared.hideLoadingCompetition()
                         self.navigationController?.popViewController(animated: true)
                     })
@@ -247,11 +248,13 @@ extension FightViewController :FightViewProtocol{
         switch message {
         case LocalizableKey.exercise_is_doing.showLanguage.uppercased():
             PopUpHelper.shared.showErrorDidNotRemoveView(message: LocalizableKey.fight_is_doing.showLanguage) {[unowned self] in
+                self.fightFinished?()
                 ProgressView.shared.hideLoadingCompetition()
                 self.navigationController?.popViewController(animated: true)
             }
         default:
             PopUpHelper.shared.showErrorDidNotRemoveView(message: message.convertFormatString()) { [unowned self] in
+                self.fightFinished?()
                 ProgressView.shared.hideLoadingCompetition()
                 self.navigationController?.popViewController(animated: true)
             }
@@ -259,13 +262,6 @@ extension FightViewController :FightViewProtocol{
     }
     //use for exercise
     func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
-//        if let cell = self.clvQuestion.cellForItem(at: index) as? CellFillExercise{
-//            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
-//        }
-//
-//        if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
-//            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
-//        }
     }
     
     func fightDone() {
