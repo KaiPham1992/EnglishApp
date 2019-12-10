@@ -140,7 +140,7 @@ extension ListManagerVC : UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.row == listData.count - 1 && isLoadmore {
+        if indexPath.row == listData.count - 5 && isLoadmore {
             self.isShowProgressView = false
             callAPI()
             let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)

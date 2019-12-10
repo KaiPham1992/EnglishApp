@@ -29,6 +29,28 @@ class ExerciseEntity : Mappable {
     }
 }
 
+class TranformStringtoAttributeString : TransformType {
+    
+    typealias Object = NSAttributedString
+    typealias JSON = String
+    
+    func transformFromJSON(_ value: Any?) -> NSAttributedString? {
+        if let _value = value as? String{
+            return NSAttributedString(string: _value.htmlToAttributedString?.string ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
+        }
+        return nil
+    }
+    
+    func transformToJSON(_ value: NSAttributedString?) -> String? {
+        if let _value = value {
+            return _value.string
+        }
+        return nil
+    }
+    
+}
+
+
 class TranformStringtoDate : TransformType {
     
     typealias Object = Date

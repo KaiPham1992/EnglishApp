@@ -46,6 +46,12 @@ class CompetitionCell: BaseTableCell {
         viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
     }
     
+    func setupCellDone(competitionEntity: CompetitionEntity){
+        self.parseBaseData(competitionEntity: competitionEntity)
+        lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
+        viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
+    }
+    
     var actionFight : ((_ index: Int)->())?
     
     func setupCellStart(competitionEntity: CompetitionEntity) {
@@ -104,14 +110,6 @@ class CompetitionCell: BaseTableCell {
         }
     }
     
-    func setupCellDone(competitionEntity: CompetitionEntity){
-        self.parseBaseData(competitionEntity: competitionEntity)
-        lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.see_result.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)])
-        viewButtonCompetition.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
-        viewButtonCompetition.alpha = 1
-        viewButtonCompetition.isUserInteractionEnabled = true
-    }
-    
     func parseBaseData(competitionEntity: CompetitionEntity) {
         lbName.attributedText = NSAttributedString(string: competitionEntity.name ?? "")
         lbCondition.attributedText = NSAttributedString(string: "\(LocalizableKey.conditionCompetition.showLanguage)\(competitionEntity.rankName&)")
@@ -120,7 +118,7 @@ class CompetitionCell: BaseTableCell {
             lbTimeStart.attributedText = NSAttributedString(string: "\(LocalizableKey.timeStart.showLanguage) \(startTime.toString(dateFormat: AppDateFormat.hhmm))")
         }
         lbCountTeam.attributedText = NSAttributedString(string: "\(competitionEntity.countTeam&) \(LocalizableKey.team.showLanguage)")
-        lbContent.attributedText = NSAttributedString(string: competitionEntity.content?.htmlToString ?? "", attributes: [NSAttributedString.Key.font : AppFont.fontRegular14])
+        self.lbContent.attributedText = competitionEntity.contentHtml
     }
     
     func processTime(time: Int) {

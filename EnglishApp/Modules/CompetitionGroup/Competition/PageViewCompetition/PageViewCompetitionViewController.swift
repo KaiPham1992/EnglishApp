@@ -26,7 +26,7 @@ class PageViewCompetitionViewController: PageViewController, PageViewCompetition
 //    }
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
-        return [CompetitionRouter.createModule(), HistoryCompetitionRouter.createModule(date: "")]
+        return [CompetitionRouter.createModule(), PassedCompetitionRouter.createModule()]
     }
 
 }

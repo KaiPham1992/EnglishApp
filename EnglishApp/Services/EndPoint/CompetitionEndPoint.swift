@@ -11,6 +11,7 @@ import Alamofire
 
 enum CompetitionEndPoint{
     case getListFight(offset: Int)
+    case getListFightDone(offset: Int)
     case getListFightTestTeam(competitionId: Int, offset: Int)
     case getListResultFight(offset: Int, date: String)
     case createTeamFight(id: Int,name: String)
@@ -36,7 +37,7 @@ extension CompetitionEndPoint: EndPointType{
             return "_api/fight/leave_fight_test_team/\(id)"
         case .getDetailTeam(let id):
             return "_api/fight/get_view_fight_test_team/\(id)"
-        case .getListFight:
+        case .getListFight, .getListFightDone:
             return "_api/fight/get_list_fight_test"
         case .getListFightTestTeam:
             return "_api/fight/get_list_fight_test_team"
@@ -51,7 +52,7 @@ extension CompetitionEndPoint: EndPointType{
         switch self {
         case .getDetailTeam,.leaveTeam,.joinTeam,.getViewFightTest,.getViewFightCompetition:
             return .get
-        case .getListFight, .getListFightTestTeam,.getListResultFight,.createTeamFight,.submitCompetition:
+        case .getListFight, .getListFightTestTeam,.getListResultFight,.createTeamFight,.submitCompetition, .getListFightDone:
             return .post
         
         }
@@ -81,6 +82,8 @@ extension CompetitionEndPoint: EndPointType{
             return ["offset": offset,"limit": limit, "date": date]
         case .getListFight(let offset):
             return ["offset": offset,"limit":limit, "status": 1]
+        case .getListFightDone(let offset):
+            return ["offset": offset,"limit":limit, "status": 0]
         case .getListFightTestTeam(let competitionId, let offset):
             return ["competition_id": competitionId, "offset": offset, "limit": limit]
         }

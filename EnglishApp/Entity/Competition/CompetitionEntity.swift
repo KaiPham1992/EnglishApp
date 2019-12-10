@@ -42,9 +42,11 @@ class CompetitionEntity : BaseEntity {
     var end_time_mi : String?
     var isHidden = false
     var distance = 0
+    var contentHtml: NSAttributedString?
     
     override func mapping(map: Map) {
         super.mapping(map: map)
+        self.contentHtml <- (map["description"], TranformStringtoAttributeString())
         self.team_id <- map["team_id"]
         self.status <- map["status"]
         self.id <- (map["_id"], StringToIntTransform())

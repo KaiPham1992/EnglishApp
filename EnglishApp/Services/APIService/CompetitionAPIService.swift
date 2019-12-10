@@ -10,6 +10,7 @@ import Foundation
 
 protocol CompetitionAPIServiceProtocol {
     func getListFight(offset: Int,success: @escaping SuccessHandler<CollectionCompetitionEntity>.object,failure: @escaping RequestFailure)
+    func getListFightDone(offset: Int,success: @escaping SuccessHandler<CollectionCompetitionEntity>.object,failure: @escaping RequestFailure)
     func getListFightTestTeam(competitionId: Int, offset: Int, success: @escaping SuccessHandler<CollectionTeamEntity>.object,failure: @escaping RequestFailure)
     func getListResultFight(offset: Int, date: String, success: @escaping SuccessHandler<CompetitionProfileEntity>.object,failure: @escaping RequestFailure)
     func createTeamFight(idCompetition: Int,name: String,success: @escaping SuccessHandler<TeamEntity>.object,failure: @escaping RequestFailure)
@@ -63,6 +64,11 @@ class CompetitionAPIService: CompetitionAPIServiceProtocol {
     
     func getListFight(offset: Int, success: @escaping SuccessHandler<CollectionCompetitionEntity>.object, failure: @escaping RequestFailure) {
         let endpoint = CompetitionEndPoint.getListFight(offset: offset)
+        network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
+    }
+    
+    func getListFightDone(offset: Int, success: @escaping SuccessHandler<CollectionCompetitionEntity>.object, failure: @escaping RequestFailure) {
+        let endpoint = CompetitionEndPoint.getListFightDone(offset: offset)
         network.requestData(endPoint: endpoint, success: MapperData.mapObject(success), failure: failure)
     }
     
