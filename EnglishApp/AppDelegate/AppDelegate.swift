@@ -35,24 +35,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //---
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.makeKeyAndVisible()
-        checkLogin()
+        window?.makeKeyAndVisible() 
         realmConfig()
         AppRouter.shared.openHome()
         UIApplication.shared.setMinimumBackgroundFetchInterval(UIApplication.backgroundFetchIntervalMinimum)
         return true
-    }
-    
-    private func checkLogin() {
-        if UserDefaultHelper.shared.loginUserInfo != nil {
-            Provider.shared.userAPIService.checkLogin(success: { user in
-                guard let user = user else { return }
-                UserDefaultHelper.shared.userToken = user.jwt&
-            }) { _error in
-                UserDefaultHelper.shared.clearUser()
-                NotificationCenter.default.post(name: NSNotification.Name("InvalidToken"), object: nil)
-            }
-        }
     }
     
     func realmConfig() {
@@ -101,17 +88,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         print("=========================applicationDidBecomeActive=========================")
-        Provider.shared.homeAPIService.getTopThree(success: { (object) in
-            let count = object?.count_fight_test ?? 0
-            UIApplication.shared.applicationIconBadgeNumber = object?.count_notify ?? 0
-            if count > 0 {
-                NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
-            } else {
-                NotificationCenter.default.post(name: NSNotification.Name.init("NoCompetition"), object: nil)
-            }
-        }) { (error) in
-            
-        }
+//        Provider.shared.homeAPIService.getTopThree(success: { (object) in
+//            let count = object?.count_fight_test ?? 0
+//            UIApplication.shared.applicationIconBadgeNumber = object?.count_notify ?? 0
+//            if count > 0 {
+//                NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
+//            } else {
+//                NotificationCenter.default.post(name: NSNotification.Name.init("NoCompetition"), object: nil)
+//            }
+//        }) { (error) in
+//            
+//        }
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

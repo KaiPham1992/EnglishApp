@@ -65,6 +65,11 @@ class HomeViewController: BaseViewController {
         self.tbHome.tableFooterView?.isHidden = true
         setColorStatusBar()
         self.addHeaderHome()
+        if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
+            heightEntranceTest.constant = 0
+        } else {
+            heightEntranceTest.constant = 42
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -81,7 +86,6 @@ class HomeViewController: BaseViewController {
         super.setUpViews()
         showUI(isHidden: true)
         NotificationCenter.default.removeObserver(self)
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadViewDidload), name: NSNotification.Name("InvalidToken"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
@@ -91,15 +95,19 @@ class HomeViewController: BaseViewController {
         topThreeView.isUserInteractionEnabled = false
         setTitleText()
         // For entrance test
-        if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
-            heightEntranceTest.constant = 0
-        } else {
-            heightEntranceTest.constant = 42
-        }
+        
         if UserDefaultHelper.shared.loginUserInfo == nil {
             self.reloadViewDidload()
         } else {
-            getInitialData()
+             Provider.shared.userAPIService.checkLogin(success: { user in
+                guard let user = user else { return }
+                UserDefaultHelper.shared.userToken = user.jwt&
+                self.getInitialData()
+                self.header.user = UserDefaultHelper.shared.loginUserInfo
+            }) { _error in
+                UserDefaultHelper.shared.clearUser()
+                self.reloadViewDidload()
+            }
         }
     }
     
@@ -245,8 +253,8 @@ extension HomeViewController {
     private func loginUserDefault(complete : @escaping (() -> ())) {
         Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
             guard let user = user else { return }
-            UserDefaultHelper.shared.saveUser(user: user)
             UserDefaultHelper.shared.userToken = user.jwt&
+            UserDefaultHelper.shared.saveUser(user: user)
             complete()
         }) { (error) in }
     }
@@ -364,11 +372,7 @@ extension HomeViewController : ExerciseDelegate {
     }
     
     func hideTestEntrance(){
-        if let cell = tbHome.cellForRow(at: IndexPath(row: 0, section: 0)) as? HomeHeaderCell{
-            cell.isTestedEnstrane = true
-            tbHome.beginUpdates()
-            tbHome.endUpdates()
-        }
+        heightEntranceTest.constant = 0
     }
 }
 
@@ -390,11 +394,16 @@ extension HomeViewController {
         let vc = LoginRouter.createModule()
         vc.callBackLoginSuccessed = {[unowned self] in
         //self.addHeaderHome()
-            if let user = UserDefaultHelper.shared.loginUserInfo {
-                self.header.user = user
-            }
-                self.countNotification()
-            }
+        if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
+            self.heightEntranceTest.constant = 0
+        } else {
+            self.heightEntranceTest.constant = 42
+        }
+        if let user = UserDefaultHelper.shared.loginUserInfo {
+            self.header.user = user
+        }
+            self.countNotification()
+        }
         self.present(controller: vc, animated: true)
     }
     
@@ -475,10 +484,10 @@ extension HomeViewController: MenuViewControllerDelegate {
         vcMenu.viewWillAppear(true)
         vcMenu.delegateController = self
         vcMenu.view.frame = CGRect(x: -300, y: 0, width: 300, height: window.frame.height)
-        
         UIView.animate(withDuration: 0.3) {
             self.vcMenu.view.frame = CGRect(x: 0, y: 0, width: 300, height: window.frame.height)
         }
+        
     }
     
     @objc func hideMenu() {
@@ -496,9 +505,10 @@ extension HomeViewController: MenuViewControllerDelegate {
         ProgressView.shared.show()
         Provider.shared.userAPIService.logout(success: { (_) in
             self.navigationItem.rightBarButtonItem = nil
+            UserDefaultHelper.shared.clearUser()
+//            self.heightEntranceTest.constant = 42
             Provider.shared.userAPIService.login(email: emailDefault, password: passwordDefault.sha256(), success: { (user) in
                 ProgressView.shared.hide()
-                UserDefaultHelper.shared.clearUser()
                 guard let user = user else { return }
                 UserDefaultHelper.shared.saveUser(user: user)
                 UserDefaultHelper.shared.userToken = user.jwt&
