@@ -35,7 +35,21 @@ class MainTabbar: UITabBarController {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(noCompetition), name: NSNotification.Name.init("NoCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(didReciveNotification), name: NSNotification.Name.init("didReciveNotification"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(invalidToken), name: NSNotification.Name.init("InvalidToken"), object: nil)
+        
         self.tabBar.tintColor = AppColor.color255_211_17
+    }
+    
+    @objc func invalidToken(){
+        if let vc = self.viewControllers?[self.selectedIndex] as? UINavigationController{
+            vc.popToRootViewController(animated: true)
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            self.selectedIndex = 0
+            if let navigation = self.viewControllers?[self.selectedIndex] as? UINavigationController, let homeView = navigation.topViewController as? HomeViewController {
+                homeView.reloadViewDidload()
+            }
+        }
     }
     
     @objc func didChangeLanguage() {
@@ -140,11 +154,6 @@ class MainTabbar: UITabBarController {
                 
             }
         }
-    }
-    
-    func resetHome(){
-        let home = UINavigationController(rootViewController: HomeRouter.createModule())
-        self.viewControllers![0] = home
     }
     
     func gotoHome() {

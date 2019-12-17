@@ -419,3 +419,4 @@
 "restore_success" = "Khôi phục thành công";
 "see_detail" = "Xem chi tiết";
 "enter_comment" = "Bình luận";
+"invalid_token" = "Tài khoản được đăng nhập ở một thiết bị khác.";

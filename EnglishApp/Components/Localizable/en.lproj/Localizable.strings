@@ -416,3 +416,4 @@
 "restore_success" = "Restore success";
 "see_detail" = "Details";
 "enter_comment" = "Comment";
+"invalid_token" = "Account login by diffence device";

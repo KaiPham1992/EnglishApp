@@ -23,6 +23,13 @@ class CompetitionViewController: ListManagerVC {
         NotificationCenter.default.addObserver(self, selector: #selector(didRecieveCompetition), name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(logout), name: NSNotification.Name.init("LogoutSuccessed"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(login), name: NSNotification.Name.init("UserDidLogin"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(userLoginDefault), name: NSNotification.Name("UserLoginDefault"), object: nil)
+    }
+    
+    @objc func userLoginDefault() {
+        self.disableTimer()
+        self.offset = 0
+        callAPI()
     }
     
     @objc func login() {

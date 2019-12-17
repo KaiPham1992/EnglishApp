@@ -175,6 +175,7 @@ class HomeViewController: BaseViewController {
         self.loginUserDefault {
             self.getInitialData()
             self.header.user = UserDefaultHelper.shared.loginUserInfo
+            NotificationCenter.default.post(name: NSNotification.Name.init("UserLoginDefault"), object: nil)
         }
     }
     

@@ -68,7 +68,6 @@ class CellExercise: UICollectionViewCell {
     }
     
     func detectQuestion(contextQuestion: String, type : TypeDoExercise){
-        print(contextQuestion)
         tvContent.attributedText = contextQuestion.attributedString()
         let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
         tap.numberOfTapsRequired = 2

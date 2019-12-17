@@ -24,12 +24,20 @@ class LessonViewController: ListManagerVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 100, right: 0)
+        NotificationCenter.default.addObserver(self, selector: #selector(userLoginDefault), name: NSNotification.Name("UserLoginDefault"), object: nil)
+    }
+    
+    @objc func userLoginDefault() {
+        self.offset = 0
+        self.callAPI()
     }
     
     override func registerTableView() {
         super.registerTableView()
         tableView.registerXibFile(CellLesson.self)
     }
+    
+    
     
     override func callAPI() {
         super.callAPI()

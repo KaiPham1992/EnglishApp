@@ -124,23 +124,11 @@ extension APINetwork {
         if response.status == 200 || response.status == nil {
             success(response)
         } else {
-            // handle error with message from API
-//            func checkLogin() {
-//                Provider.shared.userAPIService.checkLogin(success: { user in
-//                    guard let user = user else { return }
-//                    UserDefaultHelper.shared.saveUser(user: user)
-//                    UserDefaultHelper.shared.userToken = user.jwt&
-//                }) { _error in
-//                    if let _ = _error?.code {
-//                        UserDefaultHelper.shared.clearUser()
-//                        AppRouter.shared.openLogin()
-//                        return
-//                    } else {
-//                        return
-//                    }
-//                }
-//            }
-//            
+            if response.status == 403 {
+                PopUpHelper.shared.showError(message: LocalizableKey.invalid_token.showLanguage, completionYes: nil)
+                UserDefaultHelper.shared.clearUser()
+                NotificationCenter.default.post(name: NSNotification.Name.init("InvalidToken"), object: nil)
+            }
             let error = APIError(baseResponse: response)
             failure(error)
         }
