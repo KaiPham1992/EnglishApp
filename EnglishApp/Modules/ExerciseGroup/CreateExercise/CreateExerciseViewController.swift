@@ -25,11 +25,17 @@ class CreateExerciseViewController: BaseViewController {
         if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
             let vc = LoginRouter.createModule()
             vc.callBackLoginSuccessed = {[unowned self] in
-                self.gotoExercise()
+                self.goHome()
             }
             self.present(controller: vc, animated: true)
         } else {
             self.gotoExercise()
+        }
+    }
+    
+    private func goHome(){
+        if let tabbar = self.tabBarController as? MainTabbar {
+            tabbar.gotoHome()
         }
     }
     
