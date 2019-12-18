@@ -110,7 +110,13 @@ class MoreDictionaryViewController: ListManagerVC {
                     LiveData.listDownloading.append(item.id)
                     self.processFileDownload(link: link, item: item, isRunBackground: true)
                 }) {
-                    self.processFileDownload(link: link, item: item)
+                    let index = (self.listData as! [ItemDictionaryResponse]).map({$0.id}).firstIndex(where: {$0 == item.id}) ?? 0
+                    if let cell = self.tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? MoreDictionaryCell{
+                        cell.hideBtnDelete()
+                    }
+                    item.isDownloading = true
+                    LiveData.listDownloading.append(item.id)
+                    self.processFileDownload(link: link, item: item, isRunBackground: false)
                 }
             }
         } else {
