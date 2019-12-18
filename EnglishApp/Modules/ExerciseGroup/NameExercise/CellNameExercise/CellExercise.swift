@@ -16,6 +16,7 @@ protocol CellExerciseDelegate: class {
 
 class CellExercise: UICollectionViewCell {
     
+    @IBOutlet weak var imgBackground: UIImageView!
     @IBAction func clickAudio(_ sender: Any) {
         delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
     }
@@ -33,6 +34,7 @@ class CellExercise: UICollectionViewCell {
     
     var callbackShowPopup : ((_ fromView: UIView, _ rect: CGPoint, _ word: WordExplainEntity) -> ())?
     
+    @IBOutlet weak var numberRatio: NSLayoutConstraint!
     var questionEntity: QuestionEntity? {
         didSet {
             if (self.questionEntity?.checkHaveAudio() ?? false) {
@@ -60,6 +62,14 @@ class CellExercise: UICollectionViewCell {
     }
     
     func setupView(){
+        imgBackground.translatesAutoresizingMaskIntoConstraints = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            if UIDevice.current.isIphone4_7Inch() {
+                self.imgBackground.heightAnchor.constraint(equalTo: self.imgBackground.widthAnchor, multiplier: 720/1620).isActive = true
+            } else {
+                self.imgBackground.heightAnchor.constraint(equalTo: self.imgBackground.widthAnchor, multiplier: 920/1620).isActive = true
+            }
+        }
         tvContent.contentInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 80, right: 10)
         tbvNameExercise.registerXibFile(CellChoiceQuestionExercise.self)
         tbvNameExercise.registerXibFile(CellFillQuestionExercise.self)

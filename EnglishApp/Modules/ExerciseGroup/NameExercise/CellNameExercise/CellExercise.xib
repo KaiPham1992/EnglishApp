@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,7 +33,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-rW-3dE">
                                                 <rect key="frame" x="0.0" y="0.0" width="302" height="167"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="bMB-rW-3dE" secondAttribute="height" multiplier="1664:920" id="Frc-72-fbR"/>
+                                                    <constraint firstAttribute="width" secondItem="bMB-rW-3dE" secondAttribute="height" multiplier="1664:920" placeholder="YES" id="Frc-72-fbR"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WfP-tD-d7H">
@@ -133,6 +133,7 @@
             </constraints>
             <size key="customSize" width="302" height="541"/>
             <connections>
+                <outlet property="imgBackground" destination="bMB-rW-3dE" id="C42-cr-bF9"/>
                 <outlet property="tbvNameExercise" destination="yD4-u9-JSq" id="Jn7-EO-dKz"/>
                 <outlet property="tvContent" destination="KRm-eN-hh2" id="PKM-sD-Nsu"/>
                 <outlet property="vAudio" destination="ElR-iR-3zt" id="DMG-nG-7eP"/>
@@ -142,7 +143,7 @@
     </objects>
     <resources>
         <image name="bg_question" width="1664" height="1120"/>
-        <image name="bg_question coner" width="394" height="279"/>
+        <image name="bg_question coner" width="1182" height="838"/>
         <image name="ic_speaker on" width="240" height="208"/>
     </resources>
 </document>
