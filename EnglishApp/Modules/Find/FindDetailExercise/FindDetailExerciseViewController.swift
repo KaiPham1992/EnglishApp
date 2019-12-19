@@ -167,23 +167,6 @@ extension FindDetailExerciseViewController: UITableViewDataSource{
     }
     
     func actionRelatedGrammar(section: Int){
-        if !isMinusMoney {
-            self.minusMoney(callback: { [weak self] (isSuccessed: Bool) in
-                guard let self = self else {return}
-                if isSuccessed {
-                    self.isMinusMoney = true
-                    self.callbackMinusMoney?()
-                    let vc = RelatedGrammarRouter.createModule(id: Int(self.findDetail.question_details_id ?? "0") ?? 0)
-                    self.push(controller: vc)
-                } else {
-                    PopUpHelper.shared.showYesNo(message: LocalizableKey.honey_diamond_not_enough.showLanguage, completionNo: nil) { [unowned self] in
-                        let controller = StoreViewController()
-                        self.push(controller: controller)
-                    }
-                }
-            })
-            return
-        }
         let vc = RelatedGrammarRouter.createModule(id: Int(findDetail.question_details_id ?? "0") ?? 0)
         self.push(controller: vc)
     }

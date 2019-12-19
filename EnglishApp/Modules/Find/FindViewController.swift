@@ -16,22 +16,28 @@ class FindViewController: BaseViewController {
     @IBOutlet weak var vAppSearch: AppSearchBar!
     @IBOutlet weak var tbResult: UITableView!
     @IBOutlet weak var lbNoResult: UILabel!
+    @IBOutlet weak var lblMessage: UILabel!
     
     var type : TypeViewSearch = .searchExercise
 //    var indexRow = 0
 
-	override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func setTitleUI() {
-        super.setTitleUI()
-        addBackToNavigation()
-        setTitleNavigation(title: LocalizableKey.find.showLanguage)
+    override func setUpViews() {
+        super.setUpViews()
+        if type == .searchExercise {
+            lblMessage.attributedText = NSAttributedString(string: LocalizableKey.feeFind.showLanguage)
+        } else {
+            lblMessage.attributedText = NSAttributedString(string: "")
+        }
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
         vAppSearch.actionSearch = searchExercise
         configureTable()
         lbNoResult.attributedText = NSAttributedString(string: "\(LocalizableKey.noResultFound.showLanguage)")
+    }
+    
+    override func setUpNavigation() {
+        super.setUpNavigation()
+        addBackToNavigation()
+               setTitleNavigation(title: LocalizableKey.find.showLanguage)
     }
     
     func searchExercise(text: String){

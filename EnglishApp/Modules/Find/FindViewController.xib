@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,6 +16,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindViewController">
             <connections>
                 <outlet property="lbNoResult" destination="Utm-54-dXq" id="5dU-8x-TVU"/>
+                <outlet property="lblMessage" destination="Cnp-sW-Lqv" id="uB3-Sg-KKV"/>
                 <outlet property="tbResult" destination="YRG-9P-g6e" id="wBp-cW-5AM"/>
                 <outlet property="vAppSearch" destination="uUp-Wl-EQp" id="jBh-ql-EBO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -27,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mKU-6d-Tfg" userLabel="View Search Bar">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="72"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uUp-Wl-EQp" customClass="AppSearchBar" customModule="EnglishApp_AppStore" customModuleProvider="target">
                             <rect key="frame" x="5" y="6" width="365" height="42"/>
@@ -36,13 +37,25 @@
                                 <constraint firstAttribute="height" constant="42" id="25N-ic-P15"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnp-sW-Lqv">
+                            <rect key="frame" x="5" y="60" width="365" height="0.0"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="14" id="vLq-dl-TIh"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstItem="uUp-Wl-EQp" firstAttribute="centerY" secondItem="mKU-6d-Tfg" secondAttribute="centerY" id="5L6-mR-2hm"/>
-                        <constraint firstAttribute="height" constant="54" id="Dei-FC-ZBM"/>
+                        <constraint firstItem="uUp-Wl-EQp" firstAttribute="top" secondItem="mKU-6d-Tfg" secondAttribute="top" constant="6" id="1Yh-L0-Ttv"/>
+                        <constraint firstItem="Cnp-sW-Lqv" firstAttribute="leading" secondItem="uUp-Wl-EQp" secondAttribute="leading" id="3fh-xs-NbB"/>
+                        <constraint firstAttribute="bottom" secondItem="Cnp-sW-Lqv" secondAttribute="bottom" constant="12" id="QBc-7T-hzg"/>
+                        <constraint firstItem="uUp-Wl-EQp" firstAttribute="bottom" secondItem="Cnp-sW-Lqv" secondAttribute="top" constant="-12" id="Sjm-6R-IYh"/>
                         <constraint firstAttribute="trailing" secondItem="uUp-Wl-EQp" secondAttribute="trailing" constant="5" id="dp9-H9-izF"/>
                         <constraint firstItem="uUp-Wl-EQp" firstAttribute="leading" secondItem="mKU-6d-Tfg" secondAttribute="leading" constant="5" id="nAj-Rf-4v8"/>
+                        <constraint firstItem="Cnp-sW-Lqv" firstAttribute="trailing" secondItem="uUp-Wl-EQp" secondAttribute="trailing" id="tx0-HL-b2y"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có kết quả tìm kiếm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-54-dXq">
@@ -51,7 +64,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YRG-9P-g6e">
-                    <rect key="frame" x="0.0" y="54" width="375" height="613"/>
+                    <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
