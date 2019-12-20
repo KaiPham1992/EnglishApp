@@ -8,6 +8,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="Comfortaa-Bold.ttf">
+            <string>Comfortaa-Bold</string>
+        </array>
         <array key="Comfortaa-Regular.ttf">
             <string>Comfortaa-Regular</string>
         </array>
@@ -37,25 +40,37 @@
                                 <constraint firstAttribute="height" constant="42" id="25N-ic-P15"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnp-sW-Lqv">
-                            <rect key="frame" x="5" y="60" width="365" height="0.0"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QvF-d5-viA">
+                            <rect key="frame" x="0.0" y="56" width="375" height="16"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnp-sW-Lqv">
+                                    <rect key="frame" x="8" y="8" width="359" height="0.0"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="28" id="vLq-dl-TIh"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="14"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" relation="lessThanOrEqual" constant="14" id="vLq-dl-TIh"/>
+                                <constraint firstItem="Cnp-sW-Lqv" firstAttribute="leading" secondItem="QvF-d5-viA" secondAttribute="leading" constant="8" id="5ze-BL-q4U"/>
+                                <constraint firstAttribute="bottom" secondItem="Cnp-sW-Lqv" secondAttribute="bottom" constant="8" id="P2y-lx-L6c"/>
+                                <constraint firstAttribute="trailing" secondItem="Cnp-sW-Lqv" secondAttribute="trailing" constant="8" id="Udm-5y-Ono"/>
+                                <constraint firstItem="Cnp-sW-Lqv" firstAttribute="top" secondItem="QvF-d5-viA" secondAttribute="top" constant="8" id="jhC-qV-4eA"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="12"/>
-                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="uUp-Wl-EQp" firstAttribute="top" secondItem="mKU-6d-Tfg" secondAttribute="top" constant="6" id="1Yh-L0-Ttv"/>
-                        <constraint firstItem="Cnp-sW-Lqv" firstAttribute="leading" secondItem="uUp-Wl-EQp" secondAttribute="leading" id="3fh-xs-NbB"/>
-                        <constraint firstAttribute="bottom" secondItem="Cnp-sW-Lqv" secondAttribute="bottom" constant="12" id="QBc-7T-hzg"/>
-                        <constraint firstItem="uUp-Wl-EQp" firstAttribute="bottom" secondItem="Cnp-sW-Lqv" secondAttribute="top" constant="-12" id="Sjm-6R-IYh"/>
+                        <constraint firstItem="QvF-d5-viA" firstAttribute="top" secondItem="uUp-Wl-EQp" secondAttribute="bottom" constant="8" id="L33-b0-eAb"/>
+                        <constraint firstItem="QvF-d5-viA" firstAttribute="leading" secondItem="mKU-6d-Tfg" secondAttribute="leading" id="Nwq-bE-gUY"/>
                         <constraint firstAttribute="trailing" secondItem="uUp-Wl-EQp" secondAttribute="trailing" constant="5" id="dp9-H9-izF"/>
+                        <constraint firstAttribute="trailing" secondItem="QvF-d5-viA" secondAttribute="trailing" id="ejZ-TJ-FWa"/>
                         <constraint firstItem="uUp-Wl-EQp" firstAttribute="leading" secondItem="mKU-6d-Tfg" secondAttribute="leading" constant="5" id="nAj-Rf-4v8"/>
-                        <constraint firstItem="Cnp-sW-Lqv" firstAttribute="trailing" secondItem="uUp-Wl-EQp" secondAttribute="trailing" id="tx0-HL-b2y"/>
+                        <constraint firstAttribute="bottom" secondItem="QvF-d5-viA" secondAttribute="bottom" id="p9q-w4-HGt"/>
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có kết quả tìm kiếm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-54-dXq">
