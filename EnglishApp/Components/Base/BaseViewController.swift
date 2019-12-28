@@ -462,7 +462,7 @@ extension BaseViewController : UIPopoverPresentationControllerDelegate{
         }
         if let popover = popoverContent.popoverPresentationController {
             popoverContent.preferredContentSize = CGSize(width: 300, height: 100)
-            popover.permittedArrowDirections = .up
+            popover.permittedArrowDirections = [.up]
             popover.sourceView = self.view
             popover.sourceRect = CGRect(x: x, y: y, width: 0, height: 0)
             popover.delegate = self

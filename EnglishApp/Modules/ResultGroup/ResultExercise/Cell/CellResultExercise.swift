@@ -77,7 +77,7 @@ class CellResultExercise: UICollectionViewCell {
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
         if let detectedWord = getWordAtPosition(point){
-            delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath)
+            delegate?.searchVocabulary(word: detectedWord, position: point, index: self.indexPath)
         }
     }
     
@@ -146,6 +146,10 @@ extension CellResultExercise: UITableViewDataSource{
         }
         headerView.callbackRelatedGrammar = {[weak self] (section) in
             self?.actionRelatedGrammar(section: section)
+        }
+        headerView.callbackDoubleTap = {[weak self] (word, point) in
+            let newPoint = headerView.convert(point, to: self?.contentView)
+            self?.delegate?.searchVocabulary(word: word, position: newPoint, index: self?.indexPath ?? IndexPath(row: 0, section: 0 ))
         }
         return view
     }

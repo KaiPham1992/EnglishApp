@@ -13,16 +13,43 @@ class CellChoiceQuestionExercise: UITableViewCell {
     var indexPath: IndexPath!
     
     @IBOutlet weak var viewBackground: UIView!
-    @IBAction func chocieAnswer(_ sender: Any) {
-        callbackSelectAnswer?(indexPath)
-    }
-    
-    @IBOutlet weak var lblContent: UILabel!
-    var callbackSelectAnswer : ((_ index: IndexPath)->())?
+
+    @IBOutlet weak var tvContent: UITextView!
+    var callbackDoubleTap : ((_ word: String,_ position: CGPoint)->())?
+    var callbackOneTap : (()->())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .none
+        tvContent.contentInset = UIEdgeInsets.zero
+        let tapDouble = UITapGestureRecognizer(target: self, action: #selector(handleTapDouble))
+        tapDouble.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tapDouble)
+        
+        let tapOne = UITapGestureRecognizer(target: self, action: #selector(handleTapOne))
+        tapOne.numberOfTapsRequired = 1
+        tvContent.addGestureRecognizer(tapOne)
+    }
+    
+    @objc func handleTapOne(sender: UITapGestureRecognizer){
+        self.callbackOneTap?()
+    }
+    
+    
+    @objc func handleTapDouble(sender: UITapGestureRecognizer){
+        let point = sender.location(in: tvContent)
+        if let detectedWord = getWordAtPosition(point){
+            callbackDoubleTap?(detectedWord, point)
+        }
+    }
+    
+    private func getWordAtPosition(_ point: CGPoint) -> String?{
+        if let textPosition = tvContent.closestPosition(to: point) {
+            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
+                return tvContent.text(in: range)
+            }
+        }
+        return nil
     }
     
     func setupView(isChoice: Bool) {
@@ -34,7 +61,7 @@ class CellChoiceQuestionExercise: UITableViewCell {
     }
     
     func setupView(isChoice: Bool, content: String) {
-        lblContent.text = content
+        tvContent.text = content
         if isChoice {
             viewBackground.backgroundColor = #colorLiteral(red: 0.6039215686, green: 0.8039215686, blue: 1, alpha: 1)
         } else {

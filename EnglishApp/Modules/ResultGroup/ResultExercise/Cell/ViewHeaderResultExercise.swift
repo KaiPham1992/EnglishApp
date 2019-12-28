@@ -22,18 +22,38 @@ class ViewHeaderResultExercise : BaseViewXib {
     
     var callbackExplainQuestion : ((_ section : Int)->())?
     var callbackRelatedGrammar: ((_ section: Int) -> ())?
+    var callbackDoubleTap : ((_ word: String,_ position: CGPoint)->())?
     
     var section : Int!
     
-    @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var tvContent: UITextView!
     
     func setupCell(index: Int, content: String) {
         self.section = index - 1
         lblIndex.text = "\(index). "
-        lblContent.attributedText = content.convertToAttributedString()
+        tvContent.attributedText = content.convertToAttributedString()
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer){
+        let point = sender.location(in: tvContent)
+        if let detectedWord = getWordAtPosition(point){
+            callbackDoubleTap?(detectedWord, point)
+        }
+    }
+    
+    private func getWordAtPosition(_ point: CGPoint) -> String?{
+        if let textPosition = tvContent.closestPosition(to: point) {
+            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
+                return tvContent.text(in: range)
+            }
+        }
+        return nil
     }
     
     override func setUpViews() {
-        
+        tvContent.contentInset = UIEdgeInsets.zero
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tap)
     }
 }

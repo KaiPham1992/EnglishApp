@@ -15,10 +15,11 @@ class ViewHeaderQuestionExercise : BaseViewXib {
     }
     
     var callbackSugestionQuestion : (()->())?
+    var callbackDoubleTap : ((_ word: String,_ position: CGPoint)->())?
     
     @IBOutlet weak var lblIndex: UILabel!
     @IBOutlet weak var btnSuggestion: UIButton!
-    @IBOutlet weak var lblContent: UILabel!
+    @IBOutlet weak var tvContent: UITextView!
     
     func setupSuggestButton(isShow: Bool) {
         if isShow {
@@ -30,9 +31,29 @@ class ViewHeaderQuestionExercise : BaseViewXib {
     
     func setupCell(index: Int, content: String) {
         lblIndex.text = "\(index)."
-        lblContent.attributedText = content.attributedString()
+        tvContent.attributedText = content.attributedString()
+    }
+    
+    @objc func handleTap(sender: UITapGestureRecognizer){
+        let point = sender.location(in: tvContent)
+        if let detectedWord = getWordAtPosition(point){
+            callbackDoubleTap?(detectedWord, point)
+        }
+    }
+    
+    private func getWordAtPosition(_ point: CGPoint) -> String?{
+        if let textPosition = tvContent.closestPosition(to: point) {
+            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
+                return tvContent.text(in: range)
+            }
+        }
+        return nil
     }
     
     override func setUpViews() {
+        tvContent.contentInset = UIEdgeInsets.zero
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
+        tap.numberOfTapsRequired = 2
+        tvContent.addGestureRecognizer(tap)
     }
 }

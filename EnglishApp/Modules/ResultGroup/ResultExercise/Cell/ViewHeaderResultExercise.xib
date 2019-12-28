@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="Comfortaa-Bold.ttf">
             <string>Comfortaa-Bold</string>
         </array>
+        <array key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewHeaderResultExercise" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
-                <outlet property="lblContent" destination="LTi-No-kQ4" id="SpZ-J2-hEr"/>
                 <outlet property="lblIndex" destination="mZc-Ed-f0p" id="VF4-Jr-Eon"/>
+                <outlet property="tvContent" destination="mQ1-zF-eHP" id="o2N-TO-Rdi"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -86,18 +89,18 @@
                         <constraint firstAttribute="height" constant="32" id="688-Jo-RKd"/>
                     </constraints>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTi-No-kQ4">
-                    <rect key="frame" x="35" y="14" width="290" height="89.5"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-zF-eHP">
+                    <rect key="frame" x="35" y="6" width="290" height="128"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="28" id="cQi-o1-8OT"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="4IZ-rH-EqI"/>
                     </constraints>
-                    <string key="text">Mark the letter A, B, C, or D on your answer sheet to indicate the sentence that is correct and closest in meaning to each of the following questions. </string>
-                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZc-Ed-f0p">
-                    <rect key="frame" x="10" y="19" width="15" height="18"/>
+                    <rect key="frame" x="10" y="16" width="15" height="18"/>
                     <constraints>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="1uo-We-se6"/>
                     </constraints>
@@ -108,13 +111,13 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="LTi-No-kQ4" firstAttribute="leading" secondItem="mZc-Ed-f0p" secondAttribute="trailing" constant="10" id="A8e-6s-Ifr"/>
-                <constraint firstItem="LTi-No-kQ4" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="Ltn-DO-H3K"/>
+                <constraint firstItem="mZc-Ed-f0p" firstAttribute="top" secondItem="mQ1-zF-eHP" secondAttribute="top" constant="10" id="2mz-0t-rvO"/>
+                <constraint firstAttribute="bottom" secondItem="mQ1-zF-eHP" secondAttribute="bottom" constant="7" id="88Z-QI-ghk"/>
                 <constraint firstItem="uBn-n6-pzM" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="-10" id="QcS-rP-I2J"/>
-                <constraint firstItem="uBn-n6-pzM" firstAttribute="leading" secondItem="LTi-No-kQ4" secondAttribute="trailing" constant="10" id="ULF-vC-YPV"/>
-                <constraint firstItem="mZc-Ed-f0p" firstAttribute="top" secondItem="LTi-No-kQ4" secondAttribute="top" constant="5" id="Yli-Cg-RpM"/>
+                <constraint firstItem="mQ1-zF-eHP" firstAttribute="leading" secondItem="mZc-Ed-f0p" secondAttribute="trailing" constant="10" id="Svw-72-tIe"/>
+                <constraint firstItem="mQ1-zF-eHP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="ccF-Vz-ISL"/>
                 <constraint firstItem="mZc-Ed-f0p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="cjW-1o-3z5"/>
-                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="LTi-No-kQ4" secondAttribute="bottom" constant="10" id="dOT-80-MVZ"/>
+                <constraint firstItem="mQ1-zF-eHP" firstAttribute="trailing" secondItem="uBn-n6-pzM" secondAttribute="leading" constant="-10" id="qTC-ZM-d62"/>
                 <constraint firstItem="uBn-n6-pzM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="zaK-Hv-l5y"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

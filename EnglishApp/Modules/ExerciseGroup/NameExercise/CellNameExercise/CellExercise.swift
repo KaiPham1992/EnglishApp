@@ -149,13 +149,22 @@ extension CellExercise: UITableViewDataSource{
             cell.indexPath = indexPath
             //isChoice -> to check user choice answer.
             cell.setupView(isChoice: answer.isChoice, content: (answer.value ?? "") + ". " + (answer.content ?? ""))
-            cell.callbackSelectAnswer = {[weak self] (index) in
-                guard let self = self else {return}
-                self.userChangeChoiceAnswer(indexPath: index)
+            if type != .entranceExercise && type != .competition {
+                cell.callbackDoubleTap = {[weak self] (word, point) in
+                    let newPoint = cell.contentView.convert(point, to: self?.contentView)
+                    self?.delegate?.searchVocabulary(word: word, position: newPoint, index: self?.indexPath ?? IndexPath(row: 0, section: 0 ))
+                }
+            }
+            cell.callbackOneTap = {[weak self] in
+                self?.userChangeChoiceAnswer(indexPath: indexPath)
             }
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.userChangeChoiceAnswer(indexPath: indexPath)
     }
     
     func userChangeFillAnswer(indexPath: IndexPath, text: String) {
@@ -202,6 +211,12 @@ extension CellExercise: UITableViewDataSource{
         headerView.setupCell(index: section + 1, content: questionEntity?.answers?[section].content ?? "")
         headerView.callbackSugestionQuestion = {[weak self] in
             self?.suggestionQuestion(section: section)
+        }
+        if type != .entranceExercise && type != .competition {
+            headerView.callbackDoubleTap = {[weak self] (word, point) in
+                let newPoint = headerView.convert(point, to: self?.contentView)
+                self?.delegate?.searchVocabulary(word: word, position: newPoint, index: self?.indexPath ?? IndexPath(row: 0, section: 0 ))
+            }
         }
         return view
     }

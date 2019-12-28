@@ -133,6 +133,10 @@ extension FindDetailExerciseViewController: UITableViewDataSource{
             guard let self = self else {return}
             self.actionRelatedGrammar(section: section)
         }
+        headerView.callbackDoubleTap = {[weak self] (word, point) in
+            let newPoint = headerView.convert(point, to: self?.view)
+            self?.presenter?.searchVocabulary(word: word, position: newPoint)
+        }
         return view
     }
        
