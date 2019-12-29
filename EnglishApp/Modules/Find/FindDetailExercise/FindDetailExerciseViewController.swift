@@ -109,6 +109,10 @@ extension FindDetailExerciseViewController: UITableViewDataSource{
             let cell = tableView.dequeue(CellResultChoice.self, for: indexPath)
             cell.indexPath = indexPath
             cell.setupCell(option: findDetail.answer[indexPath.row], status: "0", value: "")
+            cell.callbackDoubleTap = {[weak self] (word, point) in
+                let newPoint = cell.convert(point, to: self?.view)
+                self?.presenter?.searchVocabulary(word: word, position: newPoint)
+            }
             return cell
         }
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)

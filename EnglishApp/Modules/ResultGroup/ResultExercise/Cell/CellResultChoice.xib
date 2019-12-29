@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,19 +24,20 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TjP-SC-YEF">
                         <rect key="frame" x="16" y="0.0" width="353" height="40"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cq-iM-iQb">
-                                <rect key="frame" x="8" y="8" width="337" height="24"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhH-ci-Cvs">
+                                <rect key="frame" x="0.0" y="0.0" width="353" height="40"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="3cq-iM-iQb" firstAttribute="top" secondItem="TjP-SC-YEF" secondAttribute="top" constant="8" id="SNH-my-Mef"/>
-                            <constraint firstItem="3cq-iM-iQb" firstAttribute="leading" secondItem="TjP-SC-YEF" secondAttribute="leading" constant="8" id="dX9-eH-IBl"/>
-                            <constraint firstAttribute="trailing" secondItem="3cq-iM-iQb" secondAttribute="trailing" constant="8" id="jYi-UR-C4O"/>
-                            <constraint firstAttribute="bottom" secondItem="3cq-iM-iQb" secondAttribute="bottom" constant="8" id="sal-zz-dWK"/>
+                            <constraint firstItem="EhH-ci-Cvs" firstAttribute="top" secondItem="TjP-SC-YEF" secondAttribute="top" id="8Gs-2b-nCr"/>
+                            <constraint firstItem="EhH-ci-Cvs" firstAttribute="leading" secondItem="TjP-SC-YEF" secondAttribute="leading" id="Ckp-Gu-fen"/>
+                            <constraint firstAttribute="bottom" secondItem="EhH-ci-Cvs" secondAttribute="bottom" id="hiz-ma-ztn"/>
+                            <constraint firstAttribute="trailing" secondItem="EhH-ci-Cvs" secondAttribute="trailing" id="mMM-jJ-iQ3"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -48,7 +49,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lblAnswer" destination="3cq-iM-iQb" id="68a-RM-ajV"/>
+                <outlet property="tvContent" destination="EhH-ci-Cvs" id="pRY-Ac-xZu"/>
                 <outlet property="viewBackground" destination="TjP-SC-YEF" id="sqx-O1-CXc"/>
             </connections>
             <point key="canvasLocation" x="184.78260869565219" y="165.40178571428569"/>

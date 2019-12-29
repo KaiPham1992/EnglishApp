@@ -246,9 +246,10 @@ extension NameExerciseViewController :NameExerciseViewProtocol{
         self.exerciseDelegate?.confirmOutTestEntrance()
     }
     
-    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint, index: IndexPath) {
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellExercise{
-            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+            let pointConvert = cell.convert(position, to: self.view)
+            self.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: wordEntity)
         }
     }
 }
@@ -278,10 +279,6 @@ extension NameExerciseViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let data = self.presenter?.exerciseEntity?.questions?[indexPath.row]{
             let cell = collectionView.dequeueCell(CellExercise.self, indexPath: indexPath)
-            cell.callbackShowPopup = {[weak self] (fromView: UIView, point: CGPoint, word: WordExplainEntity) in
-                let pointConvert = fromView.convert(point, to: self?.view ?? UIView())
-                self?.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: word)
-            }
             cell.type = self.typeExercise
             cell.indexPath = indexPath
             cell.listAnswer = listAnswerQuestion[indexPath.row].answer ?? []
@@ -294,10 +291,6 @@ extension NameExerciseViewController: UICollectionViewDataSource{
 }
 
 extension NameExerciseViewController : CellExerciseDelegate{
-    
-    func showDetailVocubulary(word: WordExplainEntity) {
-//        self.presenter?.gotoDetailVocabulary(idWord: word.id)
-    }
 
     func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath) {
         let isShowSuggestion = self.presenter?.exerciseEntity?.questions?[indexPath.row].answers?[indexQuestion.section].isShowSuggestQuestion ?? false

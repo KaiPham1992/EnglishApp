@@ -36,8 +36,9 @@ class ViewHeaderResultExercise : BaseViewXib {
     
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
+        let newPoint = tvContent.convert(point, from: self)
         if let detectedWord = getWordAtPosition(point){
-            callbackDoubleTap?(detectedWord, point)
+            callbackDoubleTap?(detectedWord, newPoint)
         }
     }
     

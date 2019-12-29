@@ -123,6 +123,11 @@ extension CellResultExercise: UITableViewDataSource{
             if let option = questionEntity?.answers?[indexPath.section].options[indexPath.row]{
                 cell.setupCell(option: option, status: status, value: value)
             }
+            
+            cell.callbackDoubleTap = {[weak self] (word, position) in
+                let newPoint = cell.convert(position, to: self)
+                self?.delegate?.searchVocabulary(word: word, position: newPoint, index: self?.indexPath ?? IndexPath(row: 0, section: 0 ))
+            }
             return cell
         }
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
@@ -148,7 +153,7 @@ extension CellResultExercise: UITableViewDataSource{
             self?.actionRelatedGrammar(section: section)
         }
         headerView.callbackDoubleTap = {[weak self] (word, point) in
-            let newPoint = headerView.convert(point, to: self?.contentView)
+            let newPoint = headerView.convert(point, to: self)
             self?.delegate?.searchVocabulary(word: word, position: newPoint, index: self?.indexPath ?? IndexPath(row: 0, section: 0 ))
         }
         return view

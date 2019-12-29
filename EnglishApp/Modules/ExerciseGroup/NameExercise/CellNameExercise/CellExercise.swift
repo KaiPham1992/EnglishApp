@@ -32,8 +32,6 @@ class CellExercise: UICollectionViewCell {
     //for competition
     var listAnswerCompetition : [SubmitAnswerEntity] = []
     
-    var callbackShowPopup : ((_ fromView: UIView, _ rect: CGPoint, _ word: WordExplainEntity) -> ())?
-    
     @IBOutlet weak var numberRatio: NSLayoutConstraint!
     var questionEntity: QuestionEntity? {
         didSet {
@@ -86,9 +84,10 @@ class CellExercise: UICollectionViewCell {
     
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
+        let newPoint = tvContent.convert(point, to: self)
         if let detectedWord = getWordAtPosition(point){
             if type != .entranceExercise && type != .competition {
-                delegate?.searchVocabulary(word: detectedWord,position: point, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+                delegate?.searchVocabulary(word: detectedWord, position: newPoint, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
             }
         }
     }
@@ -100,10 +99,6 @@ class CellExercise: UICollectionViewCell {
             }
         }
         return nil
-    }
-    
-    func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
-        callbackShowPopup?(self.contentView, tvContent.convert(CGPoint(x: x, y: y), to: self.contentView), word)
     }
 }
 extension CellExercise : UITableViewDelegate{
@@ -151,7 +146,7 @@ extension CellExercise: UITableViewDataSource{
             cell.setupView(isChoice: answer.isChoice, content: (answer.value ?? "") + ". " + (answer.content ?? ""))
             if type != .entranceExercise && type != .competition {
                 cell.callbackDoubleTap = {[weak self] (word, point) in
-                    let newPoint = cell.contentView.convert(point, to: self?.contentView)
+                    let newPoint = cell.convert(point, to: self)
                     self?.delegate?.searchVocabulary(word: word, position: newPoint, index: self?.indexPath ?? IndexPath(row: 0, section: 0 ))
                 }
             }
@@ -214,7 +209,7 @@ extension CellExercise: UITableViewDataSource{
         }
         if type != .entranceExercise && type != .competition {
             headerView.callbackDoubleTap = {[weak self] (word, point) in
-                let newPoint = headerView.convert(point, to: self?.contentView)
+                let newPoint = headerView.convert(point, to: self)
                 self?.delegate?.searchVocabulary(word: word, position: newPoint, index: self?.indexPath ?? IndexPath(row: 0, section: 0 ))
             }
         }
