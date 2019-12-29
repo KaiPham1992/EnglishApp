@@ -37,12 +37,9 @@ class CellResultExercise: UICollectionViewCell {
             tbvResultQuestion.reloadData()
         }
     }
-    
-    var callbackShowPopup : ((_ fromView: UIView, _ rect: CGPoint, _ word: WordExplainEntity) -> ())?
+
     var actionExplainExericse : ((_ questionId: Int) -> ())?
     var actionRelatedGrammar : ((_ questionId: Int) -> ())?
-    
-    var numberLine: Int = 0
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -76,8 +73,9 @@ class CellResultExercise: UICollectionViewCell {
     
     @objc func handleTap(sender: UITapGestureRecognizer){
         let point = sender.location(in: tvContent)
+        let newPoint = tvContent.convert(point, to: self)
         if let detectedWord = getWordAtPosition(point){
-            delegate?.searchVocabulary(word: detectedWord, position: point, index: self.indexPath)
+            delegate?.searchVocabulary(word: detectedWord, position: newPoint, index: self.indexPath)
         }
     }
     
@@ -88,10 +86,6 @@ class CellResultExercise: UICollectionViewCell {
             }
         }
         return nil
-    }
-    
-    func setupPopOver(x:CGFloat, y: CGFloat,word: WordExplainEntity){
-        callbackShowPopup?(self.contentView, tvContent.convert(CGPoint(x: x, y: y), to: self.contentView), word)
     }
 }
 extension CellResultExercise : UITableViewDelegate{

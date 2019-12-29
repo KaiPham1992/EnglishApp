@@ -123,11 +123,6 @@ extension ResultExerciseViewController: UICollectionViewDataSource{
         cell.indexPath = indexPath
         cell.delegate = self
         
-        cell.callbackShowPopup = {[weak self] (fromView: UIView, point: CGPoint, word: WordExplainEntity) in
-            let pointConvert = fromView.convert(point, to: self?.view ?? UIView())
-            self?.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: word)
-        }
-        
         cell.actionExplainExericse = {[weak self] (questionId) in
             self?.explainQuestion(questionId: questionId)
         }
@@ -174,9 +169,10 @@ extension ResultExerciseViewController: ResultExerciseViewProtocol {
             
         })
     }
-    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint, index: IndexPath) {
         if let cell = self.clvQuestion.cellForItem(at: index) as? CellResultExercise{
-            cell.setupPopOver(x: position.x, y: position.y, word: wordEntity)
+            let pointConvert = cell.convert(position, to: self.view)
+            self.showPopoverVocabulary(x: pointConvert.x, y: pointConvert.y, size: CGSize.zero, word: wordEntity)
         }
     }
 }
