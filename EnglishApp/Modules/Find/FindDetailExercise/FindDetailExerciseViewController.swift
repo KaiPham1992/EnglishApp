@@ -14,7 +14,7 @@ class FindDetailExerciseViewController: BaseViewController {
 	var presenter: FindDetailExercisePresenterProtocol?
     
     @IBOutlet weak var tbvResultQuestion: UITableView!
-    @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var tvContent: TextViewHandleTap!
     @IBOutlet weak var vAudio: UIView!
     
     var findDetail : TestResultProfileEntity!
@@ -37,37 +37,16 @@ class FindDetailExerciseViewController: BaseViewController {
         tbvResultQuestion.registerXibFile(CellResultChoice.self)
         tbvResultQuestion.dataSource = self
         tbvResultQuestion.delegate = self
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tap)
         tvContent.attributedText = (findDetail.title ?? "").convertToAttributedString()
+        tvContent.callbackDoubleTap = {[weak self] (position, word) in
+            guard let self = self else {return}
+            self.presenter?.searchVocabulary(word: word, position: self.tvContent.convert(position, to: self.view))
+        }
     }
     
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        if let tab = tvContent.gestureRecognizers, let item = tab.first {
-            tvContent.removeGestureRecognizer(item)
-        }
-    }
-    
-    @objc func handleTap(sender: UITapGestureRecognizer){
-         let point = sender.location(in: tvContent)
-         if let detectedWord = getWordAtPosition(point){
-             self.presenter?.searchVocabulary(word: detectedWord, position: tvContent.convert(point, to: self.view))
-         }
-     }
-        
-    private func getWordAtPosition(_ point: CGPoint) -> String?{
-        if let textPosition = tvContent.closestPosition(to: point) {
-            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
-                return tvContent.text(in: range)
-            }
-        }
-        return nil
     }
 }
 

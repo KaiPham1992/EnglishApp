@@ -15,7 +15,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindDetailExerciseViewController">
             <connections>
                 <outlet property="tbvResultQuestion" destination="ak4-Zp-dhO" id="F9S-pH-2Oh"/>
-                <outlet property="tvContent" destination="ubl-1J-JNH" id="A4J-Xc-sd6"/>
+                <outlet property="tvContent" destination="ubl-1J-JNH" id="GoU-Bc-fb9"/>
                 <outlet property="vAudio" destination="n7V-eZ-aQ1" id="kZb-wI-Ixs"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -81,7 +81,7 @@
                                         <constraint firstAttribute="height" constant="30" id="mg2-qp-e63"/>
                                     </constraints>
                                 </view>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-1J-JNH">
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubl-1J-JNH" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="35" width="343" height="146.5"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>

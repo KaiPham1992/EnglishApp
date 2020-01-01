@@ -18,7 +18,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewHeaderResultExercise" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="lblIndex" destination="mZc-Ed-f0p" id="VF4-Jr-Eon"/>
-                <outlet property="tvContent" destination="mQ1-zF-eHP" id="o2N-TO-Rdi"/>
+                <outlet property="tvContent" destination="mQ1-zF-eHP" id="fxF-J3-d9f"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -89,7 +89,7 @@
                         <constraint firstAttribute="height" constant="32" id="688-Jo-RKd"/>
                     </constraints>
                 </stackView>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-zF-eHP">
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-zF-eHP" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
                     <rect key="frame" x="35" y="6" width="290" height="128"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>

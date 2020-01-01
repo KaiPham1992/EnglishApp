@@ -17,7 +17,7 @@ class CellResultExercise: UICollectionViewCell {
     var attributed: NSMutableAttributedString?
     var indexPath: IndexPath!
     
-    @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var tvContent: TextViewHandleTap!
     @IBOutlet weak var vAudio: UIView!
     
     @IBAction func clickAudio(_ sender: Any) {
@@ -32,7 +32,6 @@ class CellResultExercise: UICollectionViewCell {
                 self.vAudio.isHidden = true
             }
             self.layoutIfNeeded()
-            detectQuestion()
             self.setContentQuestion()
             tbvResultQuestion.reloadData()
         }
@@ -45,47 +44,22 @@ class CellResultExercise: UICollectionViewCell {
         super.awakeFromNib()
         setupView()
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        if let tab = tvContent.gestureRecognizers, let item = tab.first {
-            tvContent.removeGestureRecognizer(item)
-        }
-    }
-    
+
     func setupView(){
         tvContent.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
         tbvResultQuestion.registerXibFile(CellResultFillQuestion.self)
         tbvResultQuestion.registerXibFile(CellResultChoice.self)
         tbvResultQuestion.dataSource = self
         tbvResultQuestion.delegate = self
+        tvContent.callbackDoubleTap = {[weak self] (position, word) in
+            guard let self = self else {return}
+            let newPoint = self.tvContent.convert(position, to: self)
+            self.delegate?.searchVocabulary(word: word, position: newPoint, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+        }
     }
     
     func setContentQuestion() {
         tvContent.attributedText = questionEntity?.content?.attributedString()
-    }
-    
-    func detectQuestion(){
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tap)
-    }
-    
-    @objc func handleTap(sender: UITapGestureRecognizer){
-        let point = sender.location(in: tvContent)
-        let newPoint = tvContent.convert(point, to: self)
-        if let detectedWord = getWordAtPosition(point){
-            delegate?.searchVocabulary(word: detectedWord, position: newPoint, index: self.indexPath)
-        }
-    }
-    
-    private func getWordAtPosition(_ point: CGPoint) -> String?{
-        if let textPosition = tvContent.closestPosition(to: point) {
-            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
-                return tvContent.text(in: range)
-            }
-        }
-        return nil
     }
 }
 extension CellResultExercise : UITableViewDelegate{

@@ -11,7 +11,7 @@ import UIKit
 class CellResultChoice: UITableViewCell {
 
 
-    @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var tvContent: TextViewHandleTap!
     @IBOutlet weak var viewBackground: UIView!
     var indexPath: IndexPath?
     
@@ -21,28 +21,12 @@ class CellResultChoice: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         tvContent.contentInset = UIEdgeInsets.zero
-        let tapDouble = UITapGestureRecognizer(target: self, action: #selector(handleTapDouble))
-        tapDouble.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tapDouble)
-    }
-    
-    @objc func handleTapDouble(sender: UITapGestureRecognizer){
-        let point = sender.location(in: tvContent)
-        let newPoint = tvContent.convert(point, to: self)
-        if let detectedWord = getWordAtPosition(point){
-            callbackDoubleTap?(detectedWord, newPoint)
+        tvContent.callbackDoubleTap = {[weak self] (position, word) in
+            guard let self = self else {return}
+            let newPoint = self.tvContent.convert(position, to: self)
+            self.callbackDoubleTap?(word, newPoint)
         }
     }
-    
-    private func getWordAtPosition(_ point: CGPoint) -> String?{
-        if let textPosition = tvContent.closestPosition(to: point) {
-            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
-                return tvContent.text(in: range)
-            }
-        }
-        return nil
-    }
-    
     
     func setupCell(answer: AnswerResultProfileEntity){
         if let _ = answer.answer_id {

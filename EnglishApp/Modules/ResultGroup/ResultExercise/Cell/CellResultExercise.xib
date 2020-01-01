@@ -62,7 +62,7 @@
                                     <constraint firstItem="vNe-C6-BFJ" firstAttribute="leading" secondItem="jMd-L8-yKa" secondAttribute="leading" id="eJM-qB-isS"/>
                                 </constraints>
                             </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4H-qn-iVc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l4H-qn-iVc" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="309" height="162.5"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
@@ -106,7 +106,7 @@
             <size key="customSize" width="341" height="507"/>
             <connections>
                 <outlet property="tbvResultQuestion" destination="rUo-Vs-7gF" id="Qxy-Es-vyO"/>
-                <outlet property="tvContent" destination="l4H-qn-iVc" id="B7K-Oc-Gay"/>
+                <outlet property="tvContent" destination="l4H-qn-iVc" id="1aj-hJ-fNd"/>
                 <outlet property="vAudio" destination="hlS-FW-V00" id="2rV-Mz-vLr"/>
             </connections>
             <point key="canvasLocation" x="348.55072463768118" y="619.08482142857144"/>
