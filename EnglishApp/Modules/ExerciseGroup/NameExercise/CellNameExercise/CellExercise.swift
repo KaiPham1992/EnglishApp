@@ -21,7 +21,7 @@ class CellExercise: UICollectionViewCell {
         delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
     }
     weak var delegate: CellExerciseDelegate?
-    @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var tvContent: TextViewHandleTap!
     @IBOutlet weak var vAudio: UIView!
     @IBOutlet weak var tbvNameExercise: UITableView!
     var type : TypeDoExercise = .entranceExercise
@@ -32,7 +32,6 @@ class CellExercise: UICollectionViewCell {
     //for competition
     var listAnswerCompetition : [SubmitAnswerEntity] = []
     
-    @IBOutlet weak var numberRatio: NSLayoutConstraint!
     var questionEntity: QuestionEntity? {
         didSet {
             if (self.questionEntity?.checkHaveAudio() ?? false) {
@@ -41,7 +40,7 @@ class CellExercise: UICollectionViewCell {
                 self.vAudio.isHidden = true
             }
             self.layoutIfNeeded()
-            self.detectQuestion(contextQuestion: self.questionEntity?.content_extend ?? "", type : self.type)
+            self.tvContent.attributedText = (self.questionEntity?.content_extend ?? "").attributedString()
             DispatchQueue.main.async {
                 self.tbvNameExercise.reloadData()
             }
@@ -51,12 +50,6 @@ class CellExercise: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupView()
-    }
-    
-    override func prepareForReuse() {
-        if let tab = tvContent.gestureRecognizers, let item = tab.first {
-            tvContent.removeGestureRecognizer(item)
-        }
     }
     
     func setupView(){
@@ -73,32 +66,13 @@ class CellExercise: UICollectionViewCell {
         tbvNameExercise.registerXibFile(CellFillQuestionExercise.self)
         tbvNameExercise.dataSource = self
         tbvNameExercise.delegate = self
-    }
-    
-    func detectQuestion(contextQuestion: String, type : TypeDoExercise){
-        tvContent.attributedText = contextQuestion.attributedString()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-        tap.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tap)
-    }
-    
-    @objc func handleTap(sender: UITapGestureRecognizer){
-        let point = sender.location(in: tvContent)
-        let newPoint = tvContent.convert(point, to: self)
-        if let detectedWord = getWordAtPosition(point){
-            if type != .entranceExercise && type != .competition {
-                delegate?.searchVocabulary(word: detectedWord, position: newPoint, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
+        tvContent.callbackDoubleTap = {[weak self] (position, word) in
+            guard let self = self else {return}
+            if self.type != .entranceExercise && self.type != .competition {
+                let newPoint = self.tvContent.convert(position, to: self)
+                self.delegate?.searchVocabulary(word: word, position: newPoint, index: self.indexPath ?? IndexPath(row: 0, section: 0 ))
             }
         }
-    }
-    
-    private func getWordAtPosition(_ point: CGPoint) -> String?{
-        if let textPosition = tvContent.closestPosition(to: point) {
-            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
-                return tvContent.text(in: range)
-            }
-        }
-        return nil
     }
 }
 extension CellExercise : UITableViewDelegate{
@@ -159,7 +133,9 @@ extension CellExercise: UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.userChangeChoiceAnswer(indexPath: indexPath)
+        if (questionEntity?.answers?[indexPath.section].type ?? "") == "1" {
+            self.userChangeChoiceAnswer(indexPath: indexPath)
+        }
     }
     
     func userChangeFillAnswer(indexPath: IndexPath, text: String) {

@@ -35,7 +35,7 @@ class NameExerciseRouter: NameExerciseWireframeProtocol {
         let router = NameExerciseRouter()
         let presenter = NameExercisePresenter(interface: view, interactor: interactor, router: router)
         presenter.exerciseEntity = viewExerciseEntity
-        
+        view.typeExercise = .createExercise
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view

@@ -14,7 +14,7 @@ class CellChoiceQuestionExercise: UITableViewCell {
     
     @IBOutlet weak var viewBackground: UIView!
 
-    @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var tvContent: TextViewHandleTap!
     var callbackDoubleTap : ((_ word: String,_ position: CGPoint)->())?
     var callbackOneTap : (()->())?
     
@@ -22,9 +22,11 @@ class CellChoiceQuestionExercise: UITableViewCell {
         super.awakeFromNib()
         self.selectionStyle = .none
         tvContent.contentInset = UIEdgeInsets.zero
-        let tapDouble = UITapGestureRecognizer(target: self, action: #selector(handleTapDouble))
-        tapDouble.numberOfTapsRequired = 2
-        tvContent.addGestureRecognizer(tapDouble)
+        tvContent.callbackDoubleTap = {[weak self] (position, word) in
+            guard let self = self else {return}
+            let newPoint = self.tvContent.convert(position, to: self)
+            self.callbackDoubleTap?(word, newPoint)
+        }
         
         let tapOne = UITapGestureRecognizer(target: self, action: #selector(handleTapOne))
         tapOne.numberOfTapsRequired = 1
@@ -33,24 +35,6 @@ class CellChoiceQuestionExercise: UITableViewCell {
     
     @objc func handleTapOne(sender: UITapGestureRecognizer){
         self.callbackOneTap?()
-    }
-    
-    
-    @objc func handleTapDouble(sender: UITapGestureRecognizer){
-        let point = sender.location(in: tvContent)
-        let newPoint = tvContent.convert(point, to: self)
-        if let detectedWord = getWordAtPosition(point){
-            callbackDoubleTap?(detectedWord, newPoint)
-        }
-    }
-    
-    private func getWordAtPosition(_ point: CGPoint) -> String?{
-        if let textPosition = tvContent.closestPosition(to: point) {
-            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
-                return tvContent.text(in: range)
-            }
-        }
-        return nil
     }
     
     func setupView(isChoice: Bool) {

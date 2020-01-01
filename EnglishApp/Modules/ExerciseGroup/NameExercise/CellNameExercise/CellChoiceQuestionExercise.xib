@@ -24,7 +24,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3hm-TR-gyn">
                         <rect key="frame" x="16" y="0.0" width="288" height="44"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-Rs-OMu">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMC-Rs-OMu" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="288" height="44"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -49,7 +49,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="tvContent" destination="IMC-Rs-OMu" id="CAE-BJ-P0y"/>
+                <outlet property="tvContent" destination="IMC-Rs-OMu" id="KDi-CJ-5Og"/>
                 <outlet property="viewBackground" destination="3hm-TR-gyn" id="Bzk-14-xX4"/>
             </connections>
             <point key="canvasLocation" x="139" y="119"/>

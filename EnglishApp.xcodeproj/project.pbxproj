@@ -46,6 +46,9 @@
 		2A2FC7A322EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
 		2A2FC7A422EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
 		2A2FC7A522EC174600D7011D /* GrammarsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */; };
+		2A30240A23BC318B00A2BBB3 /* TextViewHandleTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30240923BC318B00A2BBB3 /* TextViewHandleTap.swift */; };
+		2A30240B23BC318B00A2BBB3 /* TextViewHandleTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30240923BC318B00A2BBB3 /* TextViewHandleTap.swift */; };
+		2A30240C23BC318B00A2BBB3 /* TextViewHandleTap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A30240923BC318B00A2BBB3 /* TextViewHandleTap.swift */; };
 		2A36B8A0231A4AE100E9696F /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */; };
 		2A39194423934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */; };
 		2A39194523934F830071A1CC /* HistoryCompetitionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */; };
@@ -2346,6 +2349,7 @@
 		2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListManagerVC.swift; sourceTree = "<group>"; };
 		2A2FC79E22EC16F700D7011D /* GrammarEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarEntity.swift; sourceTree = "<group>"; };
 		2A2FC7A222EC174600D7011D /* GrammarsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrammarsResponse.swift; sourceTree = "<group>"; };
+		2A30240923BC318B00A2BBB3 /* TextViewHandleTap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewHandleTap.swift; sourceTree = "<group>"; };
 		2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		2A39193E23934F830071A1CC /* HistoryCompetitionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionPresenter.swift; sourceTree = "<group>"; };
 		2A39193F23934F830071A1CC /* HistoryCompetitionRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCompetitionRouter.swift; sourceTree = "<group>"; };
@@ -3185,6 +3189,14 @@
 				2A2B015B22F0861E00A08EEA /* ListManagerVC.swift */,
 			);
 			path = ListManager;
+			sourceTree = "<group>";
+		};
+		2A30240823BC313900A2BBB3 /* TextViewHandleTap */ = {
+			isa = PBXGroup;
+			children = (
+				2A30240923BC318B00A2BBB3 /* TextViewHandleTap.swift */,
+			);
+			path = TextViewHandleTap;
 			sourceTree = "<group>";
 		};
 		2A391956239357890071A1CC /* PageViewCompetition */ = {
@@ -4542,6 +4554,7 @@
 		DE361E062283E60400FA3B0D /* CustomView */ = {
 			isa = PBXGroup;
 			children = (
+				2A30240823BC313900A2BBB3 /* TextViewHandleTap */,
 				2AD6E7EF237F88610009FF3C /* TextViewPlaceHolder */,
 				B197F37C238C1D4D00F794AA /* TopThreeView */,
 				7629BDE122ACF0A00051B835 /* TextFieldBee */,
@@ -6380,6 +6393,7 @@
 				2A5E261822E0D118009D6203 /* AssignExercisePresenter.swift in Sources */,
 				DE3A8CEE2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A0228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				2A30240A23BC318B00A2BBB3 /* TextViewHandleTap.swift in Sources */,
 				76C92F9622C4878300E8ED69 /* ExerciseEntity.swift in Sources */,
 				DEC62AD922930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE952F812287D2A700E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
@@ -7008,6 +7022,7 @@
 				2A5E261922E0D118009D6203 /* AssignExercisePresenter.swift in Sources */,
 				DE3A8CEF2289C7F60080A8CB /* SelectTeamCell.swift in Sources */,
 				76DB93A1228C73A90081A36E /* MoreDictionaryRouter.swift in Sources */,
+				2A30240B23BC318B00A2BBB3 /* TextViewHandleTap.swift in Sources */,
 				76C92F9722C4878300E8ED69 /* ExerciseEntity.swift in Sources */,
 				DEC62ADA22930EC400D7CECE /* BeePackRouter.swift in Sources */,
 				DE952FB12287DF4800E3F688 /* KActivityIndicatorAnimationPacman.swift in Sources */,
@@ -7994,6 +8009,7 @@
 				2AB4A04A22E1E87C00557B5F /* DailyMissonPresenter.swift in Sources */,
 				2A6C5EC622EF4606004B23EF /* RelatedGrammarViewController.swift in Sources */,
 				2A6C5EDD22EF488B004B23EF /* RelatedLessonResponse.swift in Sources */,
+				2A30240C23BC318B00A2BBB3 /* TextViewHandleTap.swift in Sources */,
 				2AA9E37422FB3C780093F5C8 /* WordLikeResponse.swift in Sources */,
 				76E2FEE3228DBAF10014B1F4 /* GrammarRouter.swift in Sources */,
 				2AED14AE22EE02D50076C223 /* ExplainExerciseInteractor.swift in Sources */,

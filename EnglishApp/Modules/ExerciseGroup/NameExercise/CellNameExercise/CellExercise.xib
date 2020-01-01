@@ -67,7 +67,7 @@
                                                             <constraint firstAttribute="height" constant="30" id="l46-7T-XHU"/>
                                                         </constraints>
                                                     </view>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-eN-hh2">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-eN-hh2" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="270" height="141"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
@@ -135,7 +135,7 @@
             <connections>
                 <outlet property="imgBackground" destination="bMB-rW-3dE" id="C42-cr-bF9"/>
                 <outlet property="tbvNameExercise" destination="yD4-u9-JSq" id="Jn7-EO-dKz"/>
-                <outlet property="tvContent" destination="KRm-eN-hh2" id="PKM-sD-Nsu"/>
+                <outlet property="tvContent" destination="KRm-eN-hh2" id="6Uu-Yi-Iq1"/>
                 <outlet property="vAudio" destination="ElR-iR-3zt" id="DMG-nG-7eP"/>
             </connections>
             <point key="canvasLocation" x="320.28985507246381" y="696.09375"/>

@@ -19,7 +19,7 @@
             <connections>
                 <outlet property="btnSuggestion" destination="RMF-Qe-1c9" id="Ljv-hq-uL9"/>
                 <outlet property="lblIndex" destination="bqc-hD-aLQ" id="B7L-VW-EDM"/>
-                <outlet property="tvContent" destination="PHU-sX-e5v" id="NSd-iX-k5l"/>
+                <outlet property="tvContent" destination="PHU-sX-e5v" id="alV-Kg-0Qm"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -39,7 +39,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="snb-Wb-Jwt">
                     <rect key="frame" x="50" y="10" width="354" height="82"/>
                     <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-sX-e5v">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-sX-e5v" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
