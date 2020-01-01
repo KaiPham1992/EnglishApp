@@ -163,6 +163,10 @@ class HomeViewController: BaseViewController {
     
     @objc func btnNotificationTapped() {
         let vc = NotificationListRouter.createModule()
+        vc.callbackResetNumberNotification = {[weak self] in
+            guard let self = self else {return}
+            self.countNotification()
+        }
         vc.hidesBottomBarWhenPushed = true
         self.push(controller: vc)
     }

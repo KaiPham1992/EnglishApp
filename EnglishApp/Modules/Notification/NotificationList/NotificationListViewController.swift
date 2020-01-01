@@ -25,6 +25,9 @@ class NotificationListViewController: ListManagerVC  {
         self.presenter?.getNotification(offset: self.offset)
     }
     
+    var isClickedNotification = false
+    var callbackResetNumberNotification : (() -> ())?
+    
     override func registerTableView() {
         super.registerTableView()
         tableView.registerXibFile(NotificationCell.self)
@@ -42,11 +45,19 @@ class NotificationListViewController: ListManagerVC  {
         goToScreen(noti: data)
     }
     
+    override func btnBackTapped() {
+        if isClickedNotification {
+            self.callbackResetNumberNotification?()
+        }
+        super.btnBackTapped()
+    }
+    
     func goToScreen(noti: NotificationEntity) {
         let actionKey = noti.actionKey
         if noti.isRead == false {
             self.presenter?.readNotification(id: Int(noti.id ?? "0") ?? 0)
             noti.isRead = true
+            self.isClickedNotification = true
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: {
                 self.tableView.reloadData()
             })

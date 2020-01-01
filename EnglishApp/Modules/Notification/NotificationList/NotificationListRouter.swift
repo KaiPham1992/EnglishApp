@@ -14,7 +14,7 @@ class NotificationListRouter: NotificationListWireframeProtocol {
 
     weak var viewController: UIViewController?
 
-    static func createModule() -> UIViewController {
+    static func createModule() -> NotificationListViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = NotificationListViewController.initFromNib()
         let interactor = NotificationListInteractor()
