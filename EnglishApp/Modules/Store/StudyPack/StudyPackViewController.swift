@@ -215,7 +215,7 @@ extension StudyPackViewController: StudyPackViewDelegate {
 extension StudyPackViewController{
     func didSendRedeem() {
         PopUpHelper.shared.showError(message: "\(LocalizableKey.redeemSuccess.showLanguage)") {
-            
+            NotificationCenter.default.post(name: NSNotification.Name.init("RedeemCode"), object: nil)
         }
     }
     

@@ -74,7 +74,6 @@ class StudyPackPresenter: StudyPackPresenterProtocol, StudyPackInteractorOutputP
         ProgressView.shared.show()
         Provider.shared.productAPIService.sendRedeem(code: code, success: { (success) in
             ProgressView.shared.hide()
-//            guard let data = success else {return}
             self.view?.didSendRedeem()
         }) { (error) in
             ProgressView.shared.hide()

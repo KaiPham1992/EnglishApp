@@ -89,6 +89,7 @@ class HomeViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(testEntranceComplete), name: NSNotification.Name.init("TestEntranceComplete"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updateProfile), name: NSNotification.Name.init("UpdateProfile"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(suggestionQuestion), name: NSNotification.Name.init("SuggestionQuestion"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didRedeemCode), name: NSNotification.Name.init("RedeemCode"), object: nil)
         vcMenu = MenuRouter.createModule()
         AppRouter.shared.rootNavigation = self.navigationController
         configureTable()
@@ -118,6 +119,10 @@ class HomeViewController: BaseViewController {
         lbMember.text = LocalizableKey.homeStore.showLanguage
         lbSearch.text = LocalizableKey.homeFindWork.showLanguage
         lbRecentTitle.attributedText = NSAttributedString(string: "\(LocalizableKey.actionRecently.showLanguage)")
+    }
+    
+    @objc func didRedeemCode() {
+        self.getProfile()
     }
         
     @objc func suggestionQuestion(notification: Notification) {
