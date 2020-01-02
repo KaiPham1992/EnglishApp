@@ -16,6 +16,8 @@ protocol CellExerciseDelegate: class {
 
 class CellExercise: UICollectionViewCell {
     
+    @IBOutlet weak var ratioBackgroundCorner: NSLayoutConstraint!
+    @IBOutlet weak var bottomBackgroundCorner: NSLayoutConstraint!
     @IBOutlet weak var imgBackground: UIImageView!
     @IBAction func clickAudio(_ sender: Any) {
         delegate?.clickAudio(indexPath: self.indexPath ?? IndexPath(row: 0, section: 0))
@@ -57,8 +59,12 @@ class CellExercise: UICollectionViewCell {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             if UIDevice.current.isIphone4_7Inch() {
                 self.imgBackground.heightAnchor.constraint(equalTo: self.imgBackground.widthAnchor, multiplier: 720/1620).isActive = true
+                self.bottomBackgroundCorner.constant = -2
+                self.ratioBackgroundCorner.constant = 580/250
             } else {
                 self.imgBackground.heightAnchor.constraint(equalTo: self.imgBackground.widthAnchor, multiplier: 920/1620).isActive = true
+                self.bottomBackgroundCorner.constant = -3
+                self.ratioBackgroundCorner.constant = 454/250
             }
         }
         tvContent.contentInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 80, right: 10)
