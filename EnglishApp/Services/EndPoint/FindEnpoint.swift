@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 enum FindEnpoint {
-    case searchExercise(text: String)
-    case searchTheory(text: String)
+    case searchExercise(text: String, offset: Int)
+    case searchTheory(text: String, offset: Int)
     case getListDictionary
     case lookupWordOnline(dictionary_id: Int,word: String)
     case getViewVocabulary(wordId: Int)
@@ -56,10 +56,10 @@ extension FindEnpoint: EndPointType {
                     "word": word]
         case .getListDictionary:
             return ["":""]
-        case .searchExercise(let text):
-            return ["keyword": text]
-        case .searchTheory(let text):
-            return ["keyword": text]
+        case .searchExercise(let text, let offset):
+            return ["keyword": text, "offset": offset, "limit": limit]
+        case .searchTheory(let text, let offset):
+            return ["keyword": text, "offset": offset, "limit": limit]
         case .getViewVocabulary(let wordId):
             return ["word_id":wordId]
         }

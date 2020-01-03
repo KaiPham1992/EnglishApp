@@ -14,32 +14,20 @@ class FindInteractor: FindInteractorInputProtocol {
  
     weak var presenter: FindInteractorOutputProtocol?
     
-    func searchExercise(text: String) {
-        ProgressView.shared.show()
-        Provider.shared.findAPIService.searchExercise(text: text, success: { (respone) in
-            ProgressView.shared.hide()
-            self.presenter?.searchExerciseSuccessed(respone: respone)
-        }) { (error) in
-            ProgressView.shared.hide()
-            if let _error = error {
-//               self.presenter?.searchExerciseFailed(error: _error)
-            }
-            
+    func search(type: TypeViewSearch, text: String, offset: Int) {
+        if type == .searchExercise {
+            Provider.shared.findAPIService.searchExercise(text: text, offset: offset, success: { (respone) in
+                guard let newResponse = respone?.lists else { return }
+                self.presenter?.didSearchSuccessed(respone: newResponse)
+            }) { (_) in }
+        } else {
+            Provider.shared.findAPIService.searchTheory(text: text, offset: offset, success: { (respone) in
+                self.presenter?.didSearchSuccessed(respone: respone)
+            }) { (_) in }
         }
+        
     }
     
-    func searchTheory(text: String){
-        Provider.shared.findAPIService.searchTheory(text: text, success: { (respone) in
-            ProgressView.shared.hide()
-            self.presenter?.searchTheorySuccessed(respone: respone)
-        }) { (error) in
-            ProgressView.shared.hide()
-            if let _error = error {
-//                self.presenter?.searchExerciseFailed(error: _error)
-            }
-            
-        }
-    }
     
 //    func checkAmountSearchExercise() {
 //        ProgressView.shared.show()

@@ -20,7 +20,7 @@
             <connections>
                 <outlet property="lbNoResult" destination="Utm-54-dXq" id="5dU-8x-TVU"/>
                 <outlet property="lblMessage" destination="Cnp-sW-Lqv" id="uB3-Sg-KKV"/>
-                <outlet property="tbResult" destination="YRG-9P-g6e" id="wBp-cW-5AM"/>
+                <outlet property="myTableView" destination="YRG-9P-g6e" id="Q6A-IC-ixS"/>
                 <outlet property="vAppSearch" destination="uUp-Wl-EQp" id="jBh-ql-EBO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

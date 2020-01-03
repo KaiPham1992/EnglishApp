@@ -16,8 +16,6 @@ class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
     weak private var view: FindViewProtocol?
     var interactor: FindInteractorInputProtocol?
     private let router: FindWireframeProtocol
-    var searchTheoryRespone: [SearchEntity] = []
-    var searchExciseRespone: [TestResultProfileEntity] = []
 
     init(interface: FindViewProtocol, interactor: FindInteractorInputProtocol?, router: FindWireframeProtocol) {
         self.view = interface
@@ -25,22 +23,12 @@ class FindPresenter: FindPresenterProtocol, FindInteractorOutputProtocol {
         self.router = router
     }
     
-    func searchTheorySuccessed(respone: [SearchEntity]) {
-        self.searchTheoryRespone = respone
-        self.view?.reloadView()
+    func didSearchSuccessed(respone: [Any]) {
+        self.view?.reloadView(data: respone)
     }
     
-    func searchExerciseSuccessed(respone: [TestResultProfileEntity]) {
-        self.searchExciseRespone = respone
-        self.view?.reloadView()
-    }
-    
-    func searchExercise(text: String) {
-        self.interactor?.searchExercise(text: text)
-    }
-    
-    func searchTheory(text: String){
-        self.interactor?.searchTheory(text: text)
+    func search(type: TypeViewSearch, text: String, offset: Int) {
+        self.interactor?.search(type: type, text: text, offset: offset)
     }
     
     func gotoTheoryDetail(idLesson: String){
