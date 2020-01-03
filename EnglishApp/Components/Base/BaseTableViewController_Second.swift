@@ -19,10 +19,17 @@ class BaseTableViewControllerSecond: BaseViewController {
         didSet {
             ProgressView.shared.hide()
             if refreshControl.isRefreshing { refreshControl.endRefreshing() }
+            
             print("* list tableview item count = \(self.listItem.count) *")
             DispatchQueue.main.async {
+                if self.listItem.count == 0 {
+                    self.showNoData(text: LocalizableKey.lbNoData.showLanguage)
+                } else {
+                    self.hideNoData()
+                }
                 self.myTableView.isHidden = false
                 self.myTableView.reloadData()
+                
             }
         }
     }
@@ -61,9 +68,6 @@ class BaseTableViewControllerSecond: BaseViewController {
         } else {
             listItem += data
         }
-        /** Show no data if need
-            ...
-        */
         
     }
     
