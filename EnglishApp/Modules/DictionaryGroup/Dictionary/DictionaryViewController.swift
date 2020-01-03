@@ -14,6 +14,7 @@ import DropDown
 class DictionaryViewController: BaseViewController {
 
     @IBOutlet weak var btnSetting: UIButton!
+    
     @IBAction func gotoSetting(_ sender: Any) {
         let vc = MoreDictionaryRouter.createModule()
         vc.callBackChangeDictionary = { [weak self] in
@@ -26,9 +27,7 @@ class DictionaryViewController: BaseViewController {
         let text = tfSearch.text ?? ""
         currentTextSearch = text
         if idDictionary != 0 && text != "" {
-            if !isConnection {
-               self.presenter?.searchVocabulary(text: currentTextSearch)
-            }
+            self.presenter?.searchVocabulary(text: currentTextSearch)
         }
     }
     
@@ -40,16 +39,16 @@ class DictionaryViewController: BaseViewController {
     
     @IBOutlet weak var heightViewNoDictionary: NSLayoutConstraint!
     @IBOutlet weak var lblTextSearch: UILabel!
-//    var currentIdSearch = 0
+    
     var currentTextSearch = ""
     @IBAction func searchVocabulary(_ sender: Any) {
-//        let text = tfSearch.text ?? ""
         if currentTextSearch != "" {
-            if !isConnection {
-                self.presenter?.getDetailWord(text: currentTextSearch)
-            } else {
-                self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: currentTextSearch)
-            }
+            self.presenter?.getDetailWord(text: currentTextSearch)
+//            if !isConnection {
+//                self.presenter?.getDetailWord(text: currentTextSearch)
+//            } else {
+//                self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: currentTextSearch)
+//            }
             self.view.endEditing(true)
         }
     }
@@ -118,10 +117,8 @@ class DictionaryViewController: BaseViewController {
     }
     
     func setupDropDown(){
-        //dropdownDictionary
         dropDownDictionary.anchorView = self.viewDictionary
         dropDownDictionary.backgroundColor = UIColor(red: 32/255, green: 181/255, blue: 85/255, alpha: 1)
-//        dropDownDictionary.backgroundColor = UIColor.white
         dropDownDictionary.selectionBackgroundColor = .clear
         dropDownDictionary.textColor = .white
         dropDownDictionary.selectedTextColor = .white
@@ -169,26 +166,8 @@ class DictionaryViewController: BaseViewController {
                 self.currentTextSearch = ""
             }
             self.tfSearch.text = item
-//            DispatchQueue.main.async {
-//                self.getDetailVocabulary(index: index, item: item)
-//            }
         }
     }
-    
-//    func getDetailVocabulary(index: Int,item: String){
-//        tfSearch.text = item
-//        if isConnection {
-//            self.presenter?.lookWordOnline(dictionary_id: idDictionary, word: tfSearch.text ?? "")
-//        } else {
-//            if let id = self.presenter?.listSearchVocabulary[index].id {
-//                self.idDictionary = id
-//            }
-//        }
-//    }
-//    func getGetDetailWord(id: Int) {
-//        
-//    }
-//
     func rotateImage(){
         UIView.animate(withDuration: 0.2) {
             self.imgPolygon.transform = self.imgPolygon.transform.rotated(by: CGFloat(Double.pi))
@@ -209,7 +188,6 @@ extension DictionaryViewController:DictionaryViewProtocol{
     
     func getDetailVocabularySuccessed() {
         if let _detail = self.presenter?.detailVocabulary {
-//            lblTextSearch.attributedText = _detail.explain.htmlToAttributedString
             lblTextSearch.text = _detail.explain.htmlToString
             hideNoData()
         } else {
@@ -218,12 +196,4 @@ extension DictionaryViewController:DictionaryViewProtocol{
         }
         
     }
-    
-//    func reloadDictionary(){
-//        if let dictionary = self.presenter?.listDictionary.first {
-//            self.lblDictionary.text = dictionary.name
-//            self.idDictionary = dictionary.id
-//        }
-//        self.dropDownDictionary.dataSource = self.presenter?.listDictionary.map{$0.name}.compactMap{$0} ?? []
-//    }
 }
