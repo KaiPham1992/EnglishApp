@@ -10,26 +10,26 @@
 
 import UIKit
 
-class FindViewController: BaseViewController {
-
-    var presenter: FindPresenterProtocol?
+class FindViewController: BaseTableViewControllerSecond {
+    
     @IBOutlet weak var vAppSearch: AppSearchBar!
-    @IBOutlet weak var tbResult: UITableView!
     @IBOutlet weak var lbNoResult: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
     
+    var presenter: FindPresenterProtocol?
     var type : TypeViewSearch = .searchExercise
-//    var indexRow = 0
+    var keySearch = "" {
+        didSet { fetchData() }
+    }
 
     override func setUpViews() {
         super.setUpViews()
-        if type == .searchExercise {
-            lblMessage.attributedText = NSAttributedString(string: LocalizableKey.feeFind.showLanguage)
-        } else {
-            lblMessage.attributedText = NSAttributedString(string: "")
-        }
+        lblMessage.attributedText = NSAttributedString(string: "\(type == .searchExercise ? LocalizableKey.feeFind.showLanguage : "")")
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
-        vAppSearch.actionSearch = searchExercise
+        vAppSearch.actionSearch = { [weak self] (text) in
+            guard let strongSelf = self else { return }
+            strongSelf.keySearch = text
+        }
         configureTable()
         lbNoResult.attributedText = NSAttributedString(string: "\(LocalizableKey.noResultFound.showLanguage)")
     }
@@ -37,50 +37,82 @@ class FindViewController: BaseViewController {
     override func setUpNavigation() {
         super.setUpNavigation()
         addBackToNavigation()
-               setTitleNavigation(title: LocalizableKey.find.showLanguage)
+        setTitleNavigation(title: LocalizableKey.find.showLanguage)
     }
     
-    func searchExercise(text: String){
+    func searchExercise(text: String) {
         self.dismissKeyBoard()
-        if type == .searchExercise{
-            self.presenter?.searchExercise(text: text)
-        }
-        if type == .searchTheory {
-            self.presenter?.searchTheory(text: text)
-        }
+        self.presenter?.search(type: self.type, text: text, offset: listItem.count)
     }
     
     override func btnBackTapped() {
         self.pop()
         self.dismissKeyBoard()
     }
-    
-    // MARK: - For check read or not
+        
+    // MARK: For check read or not
     private func changeStatusRow(index: IndexPath) {
-        if let data = self.presenter?.searchExciseRespone[index.row] {
-            data.isRead = true
-            DispatchQueue.main.async {
-                let cell = self.tbResult.cellForRow(at: index)
-                cell?.backgroundColor = UIColor.white
+        (listItem as! [TestResultProfileEntity])[index.row].isRead = true
+        DispatchQueue.main.async {
+            let cell = self.myTableView.cellForRow(at: index)
+            cell?.backgroundColor = UIColor.white
+        }
+    }
+    
+    private func configureTable() {
+        myTableView.registerXibFile(FindCell.self)
+        myTableView.separatorStyle = .none
+    }
+    
+    // MARK: - Call api
+    override func fetchData() {
+        super.fetchData()
+        searchExercise(text: self.keySearch)
+    }
+    
+    // MARK: - TableView
+    override func cellForRowAt(item: Any, for indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
+        let cell = tableView.dequeue(FindCell.self, for: indexPath)
+        
+        if type == .searchTheory {
+            if let _item = item as? SearchEntity, let name = _item.nameString { cell.lbTitle.text = name }
+        } else {
+            if let _item = item as? TestResultProfileEntity {
+                cell.backgroundColor = (_item.isRead == true ? (UIColor.white) : (AppColor.notificationNotRead))
+                cell.lbTitle.text = _item.titleString
+                cell.lbContent.text = _item.nameString
             }
+        }
+        return cell
+    }
+    
+    override func didSelectRowAt(selectedItem: Any, indexPath: IndexPath) {
+        if type == .searchTheory {
+            guard let item = selectedItem as? SearchEntity else { return }
+            let idLesson = item._id ?? "0"
+            self.presenter?.gotoTheoryDetail(idLesson: idLesson)
+        }
+        
+        if type == .searchExercise {
+            guard let exercise = selectedItem as? TestResultProfileEntity else { return }
+            self.changeStatusRow(index: indexPath)
+            let vc = FindDetailExerciseRouter.createModule(findDetail: exercise, isMinusMoney: exercise.isMinusMoney)
+            vc.callbackMinusMoney = { [weak self] in
+                if let self = self {
+                    (self.listItem as! [TestResultProfileEntity])[indexPath.row].isMinusMoney = true
+                }
+            }
+            self.push(controller: vc)
+            
         }
     }
     
 }
+
+// MARK: - FindViewProtocol's method
 extension FindViewController: FindViewProtocol{
-    func reloadView() {
-        var row = 0
-        if type == .searchTheory {
-            row = self.presenter?.searchTheoryRespone.count ?? 0
-        } else {
-            row = self.presenter?.searchExciseRespone.count ?? 0
-        }
-        if row == 0 {
-            tbResult.isHidden = true
-        } else {
-            tbResult.isHidden = false
-        }
-        tbResult.reloadData()
+    func reloadView(data: [Any]) {
+        self.didFetchData(data: data)
     }
     
     func showErrorSearchFailed() {
@@ -89,75 +121,10 @@ extension FindViewController: FindViewProtocol{
             }, completeCancel: nil)
     }
     
-    func checkAmountSearchExerciseSuccessed() {
+//    func checkAmountSearchExerciseSuccessed() {
 //        let exercise = self.presenter?.searchExciseRespone[indexRow]
 //        let vc = ResultExerciseRouter.createModule(listAnswer: exercise?.questions ?? [], index: 0, isSearch: true)
 //        self.push(controller: vc)
-    }
-}
-
-
-
-extension FindViewController: UITableViewDelegate, UITableViewDataSource {
-    func configureTable() {
-        tbResult.delegate = self
-        tbResult.dataSource = self
-        tbResult.registerXibFile(FindCell.self)
-        tbResult.separatorStyle = .none
-    }
+//    }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(FindCell.self, for: indexPath)
-        if type == .searchTheory {
-            if let data = self.presenter?.searchTheoryRespone[indexPath.row].nameString {
-                cell.lbTitle.text = data
-            }
-        } else {
-            if let data = self.presenter?.searchExciseRespone[indexPath.row] {
-                if data.isRead {
-                    cell.backgroundColor = UIColor.white
-                } else {
-                    cell.backgroundColor = AppColor.notificationNotRead
-                }
-                
-                cell.lbTitle.text = data.titleString
-                cell.lbContent.text = data.nameString
-            }
-        }
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var row = 0
-        if type == .searchTheory {
-            row = self.presenter?.searchTheoryRespone.count ?? 0
-        } else {
-            row = self.presenter?.searchExciseRespone.count ?? 0
-        }
-        return row
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if type == .searchTheory {
-            let idLesson = self.presenter?.searchTheoryRespone[indexPath.row]._id ?? "0"
-            self.presenter?.gotoTheoryDetail(idLesson: idLesson)
-        }
-        
-        if type == .searchExercise {
-            self.changeStatusRow(index: indexPath)
-            if let exercise = self.presenter?.searchExciseRespone[indexPath.row] {
-                let vc = FindDetailExerciseRouter.createModule(findDetail: exercise, isMinusMoney: exercise.isMinusMoney)
-                vc.callbackMinusMoney = { [weak self] in
-                    if let self = self {
-                        self.presenter?.searchExciseRespone[indexPath.row].isMinusMoney = true
-                    }
-                }
-                self.push(controller: vc)
-            }
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
 }

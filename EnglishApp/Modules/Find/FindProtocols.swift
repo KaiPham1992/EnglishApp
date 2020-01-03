@@ -18,10 +18,7 @@ protocol FindWireframeProtocol: class {
 protocol FindPresenterProtocol: class {
 
     var interactor: FindInteractorInputProtocol? { get set }
-    var searchTheoryRespone : [SearchEntity] {get}
-    var searchExciseRespone : [TestResultProfileEntity] {set get}
-    func searchExercise(text: String)
-    func searchTheory(text: String)
+    func search(type: TypeViewSearch, text: String, offset: Int)
     func gotoTheoryDetail(idLesson: String)
 //    func checkAmountSearchExercise()
 }
@@ -30,16 +27,14 @@ protocol FindPresenterProtocol: class {
 protocol FindInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
-    func searchTheorySuccessed(respone: [SearchEntity])
-    func searchExerciseSuccessed(respone: [TestResultProfileEntity])
+    func didSearchSuccessed(respone: [Any])
 //    func checkAmountSearchExerciseSuccessed()
 }
 
 protocol FindInteractorInputProtocol: class {
 
     var presenter: FindInteractorOutputProtocol?  { get set }
-    func searchExercise(text: String)
-    func searchTheory(text: String)
+    func search(type: TypeViewSearch, text: String, offset: Int)
 //    func checkAmountSearchExercise()
     /* Presenter -> Interactor */
 }
@@ -48,7 +43,7 @@ protocol FindInteractorInputProtocol: class {
 protocol FindViewProtocol: class {
 
     var presenter: FindPresenterProtocol?  { get set }
-    func reloadView()
+    func reloadView(data: [Any])
 //    func checkAmountSearchExerciseSuccessed()
 
     /* Presenter -> ViewController */
