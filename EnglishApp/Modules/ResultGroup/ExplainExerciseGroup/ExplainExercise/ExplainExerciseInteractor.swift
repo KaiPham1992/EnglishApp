@@ -25,4 +25,16 @@ class ExplainExerciseInteractor: ExplainExerciseInteractorInputProtocol {
             ProgressView.shared.hide()
         }
     }
+    
+    func searchVocabulary(word: String, position: CGPoint) {
+        if word != "" {
+            Provider.shared.exerciseAPIService.searchVocabulary(word: word, id_dictionary: "1", success: { (response) in
+                if let _response = response {
+                    self.presenter?.searchVocabularySuccessed(wordEntity: _response, position: position)
+                }
+            }) { (error) in
+                
+            }
+        }
+    }
 }
