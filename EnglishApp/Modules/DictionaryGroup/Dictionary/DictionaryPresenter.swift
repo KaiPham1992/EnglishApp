@@ -33,6 +33,7 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
     }
     
     func searchVocabulary(text: String) {
+        
         self.listSearchVocabulary = RealmDBManager.share.filter(objectType: WordEntity.self, key: "word", value: text)
         self.view?.searchVocabularySuccessed()
     }
@@ -43,14 +44,6 @@ class DictionaryPresenter: DictionaryPresenterProtocol, DictionaryInteractorOutp
             self.view?.getDetailVocabularySuccessed()
         }
     }
-//    func getListDictionary() {
-//        self.interactor?.getListDictionary()
-//    }
-//    
-//    func getListDictionarySuccessed(listDictionary: [ItemDictionaryResponse]) {
-//        self.listDictionary = listDictionary
-//        self.view?.reloadDictionary()
-//    }
     
     func lookWordOnline(dictionary_id: Int, word: String) {
         self.interactor?.lookWordOnline(dictionary_id: dictionary_id, word: word)
