@@ -21,7 +21,7 @@ class ResultExerciseInteractor: ResultExerciseInteractorInputProtocol {
         }
     }
     
-    func searchVocabulary(word: String, position: CGPoint,index: IndexPath) {
+    func searchVocabulary(word: String, position: CGPoint, index: IndexPath) {
         if word != "" {
             Provider.shared.exerciseAPIService.searchVocabulary(word: word, id_dictionary: "1", success: { (response) in
                 if let _response = response {

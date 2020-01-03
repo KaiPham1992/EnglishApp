@@ -67,7 +67,7 @@ class CellExercise: UICollectionViewCell {
                 self.ratioBackgroundCorner.constant = 454/250
             }
         }
-        tvContent.contentInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 80, right: 10)
+        tvContent.contentInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 0, right: 10)
         tbvNameExercise.registerXibFile(CellChoiceQuestionExercise.self)
         tbvNameExercise.registerXibFile(CellFillQuestionExercise.self)
         tbvNameExercise.dataSource = self

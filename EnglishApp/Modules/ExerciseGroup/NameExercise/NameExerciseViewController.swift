@@ -98,9 +98,15 @@ class NameExerciseViewController: BaseViewController {
             if isPauseTime {
                 btnNext.isUserInteractionEnabled = false
                 clvQuestion.isUserInteractionEnabled = false
+                if player != nil {
+                    player?.pause()
+                }
             } else {
                 btnNext.isUserInteractionEnabled = true
                 clvQuestion.isUserInteractionEnabled = true
+                if player != nil {
+                    player?.play()
+                }
             }
         }
     }

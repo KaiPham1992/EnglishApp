@@ -9,6 +9,7 @@
 //
 
 import Foundation
+import UIKit
 
 //MARK: Wireframe -
 protocol ExplainExerciseWireframeProtocol: class {
@@ -20,6 +21,7 @@ protocol ExplainExercisePresenterProtocol: class {
     var interactor: ExplainExerciseInteractorInputProtocol? { get set }
     var explainQuestion: ExplainQuestionResponse? {get set}
     func getExplainQuestion(id: Int)
+    func searchVocabulary(word: String, position: CGPoint)
 }
 
 //MARK: Interactor -
@@ -27,12 +29,14 @@ protocol ExplainExerciseInteractorOutputProtocol: class {
 
     /* Interactor -> Presenter */
     func getExlainQuestionSuccessed(respone: ExplainQuestionResponse)
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint)
 }
 
 protocol ExplainExerciseInteractorInputProtocol: class {
 
     var presenter: ExplainExerciseInteractorOutputProtocol?  { get set }
     func getExplainQuestion(id: Int)
+    func searchVocabulary(word: String, position: CGPoint)
 
     /* Presenter -> Interactor */
 }
@@ -42,6 +46,7 @@ protocol ExplainExerciseViewProtocol: class {
 
     var presenter: ExplainExercisePresenterProtocol?  { get set }
     func reloadView()
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint)
 
     /* Presenter -> ViewController */
 }

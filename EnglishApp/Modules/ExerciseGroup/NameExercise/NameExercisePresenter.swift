@@ -79,7 +79,7 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.interactor?.exitExercise(id: id)
     }
     
-    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath,isDiamond: Bool) {
+    func suggestQuestion(id: String, indexPath: IndexPath, indexQuestion: IndexPath, isDiamond: Bool) {
         self.interactor?.suggestQuestion(id: id, isDiamond: isDiamond)
         self.indexPath = indexPath
         self.indexQuestion = indexQuestion
@@ -105,11 +105,11 @@ class NameExercisePresenter: NameExercisePresenterProtocol, NameExerciseInteract
         self.view?.suggestQuestionError()
     }
     
-    func searchVocabulary(word: String, id_dictionary: String, position: CGPoint,index: IndexPath) {
+    func searchVocabulary(word: String, id_dictionary: String, position: CGPoint, index: IndexPath) {
         self.interactor?.searchVocabulary(word: word, id_dictionary: id_dictionary, position: position,index: index)
     }
     
-    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint,index: IndexPath) {
+    func searchVocabularySuccessed(wordEntity: WordExplainEntity, position: CGPoint, index: IndexPath) {
         self.view?.searchVocabularySuccessed(wordEntity: wordEntity, position: position,index:index)
     }
 }
