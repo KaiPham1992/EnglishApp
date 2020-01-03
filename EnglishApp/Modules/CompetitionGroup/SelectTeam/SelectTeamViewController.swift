@@ -35,6 +35,7 @@ class SelectTeamViewController: BaseTableViewController {
             btnCreateTeam.isHidden = true
         }
         initTableView(tableView: tbTeam)
+        self.callAPI()
     }
     
     override func btnBackTapped() {
@@ -75,7 +76,7 @@ class SelectTeamViewController: BaseTableViewController {
         }
     }
     
-    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func cellForRowAt(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = item as! TeamEntity
         let cell = tableView.dequeue(SelectTeamCell.self, for: indexPath)
         cell.displayData(maxMember: self.maxMember, team: data, isCannotJoin: self.isCannotJoin, userHaveTeam: self.userHaveTeam)
@@ -113,7 +114,7 @@ class SelectTeamViewController: BaseTableViewController {
         }
     }
     
-    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+    override func didSelectedRowAt(item: Any, indexPath: IndexPath) {
         let data = item as! TeamEntity
         if let id = data.id, let isTeamJoined = data.isTeamJoined {
             let vc = DetailTeamRouter.createModule(id: id, isTeamJoined: isTeamJoined, isFightJoined: isFightJoined, isCannotJoin: self.isCannotJoin, endDate: self.endDate)

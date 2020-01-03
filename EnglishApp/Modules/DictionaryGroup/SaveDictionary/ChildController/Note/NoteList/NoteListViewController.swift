@@ -31,6 +31,12 @@ class NoteListViewController: BaseTableViewController {
         initTableView(tableView: tbvNoteList)
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.callAPI()
+    }
+    
     override func registerXibFile() {
         super.registerXibFile()
         tbvNoteList.registerXibFile(CellGrammar.self)
@@ -67,7 +73,7 @@ class NoteListViewController: BaseTableViewController {
         reloadViewAfterDelete()
     }
     
-    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func cellForRowAt(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let data = item as! NoteRespone
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
         cell.indexPath = indexPath
@@ -84,7 +90,7 @@ class NoteListViewController: BaseTableViewController {
         return cell
     }
     
-    override func didSelectTableView(item: Any, indexPath: IndexPath) {
+    override func didSelectedRowAt(item: Any, indexPath: IndexPath) {
         if !isDelete {
             let data = item as! NoteRespone
             self.presenter?.gotoNote(idNote: data._id ?? "0")

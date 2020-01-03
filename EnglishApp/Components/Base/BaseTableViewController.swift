@@ -58,7 +58,7 @@ open class BaseTableViewController: UIViewController {
         super.viewDidLoad()
         setUpViews()
         setUpNavigation()
-        self.callAPI()
+//        self.callAPI()
     }
     
     func initTableView(tableView: UITableView) {
@@ -135,11 +135,11 @@ open class BaseTableViewController: UIViewController {
         }
     }
     
-    func cellForRowListManager(item: Any,_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+    func cellForRowAt(item: Any,_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         return UITableViewCell()
     }
     
-    func didSelectTableView(item: Any, indexPath: IndexPath){
+    func didSelectedRowAt(item: Any, indexPath: IndexPath){
         
     }
     
@@ -533,7 +533,7 @@ extension BaseTableViewController : UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        didSelectTableView(item: listData[indexPath.row], indexPath: indexPath)
+        didSelectedRowAt(item: listData[indexPath.row], indexPath: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -560,7 +560,7 @@ extension BaseTableViewController : UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = cellForRowListManager(item: listData[indexPath.row], tableView, cellForRowAt: indexPath)
+        let cell = cellForRowAt(item: listData[indexPath.row], tableView, cellForRowAt: indexPath)
         return cell
     }
     

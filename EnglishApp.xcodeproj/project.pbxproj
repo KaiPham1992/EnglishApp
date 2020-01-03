@@ -1220,9 +1220,6 @@
 		B128AF7A23BF86B8006BE6C8 /* SearchExersiseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128AF7923BF86B8006BE6C8 /* SearchExersiseEntity.swift */; };
 		B128AF7B23BF86B8006BE6C8 /* SearchExersiseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128AF7923BF86B8006BE6C8 /* SearchExersiseEntity.swift */; };
 		B128AF7C23BF86B8006BE6C8 /* SearchExersiseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128AF7923BF86B8006BE6C8 /* SearchExersiseEntity.swift */; };
-		B128AF7E23BF8B13006BE6C8 /* BaseTableViewController_Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128AF7D23BF8B13006BE6C8 /* BaseTableViewController_Second.swift */; };
-		B128AF7F23BF8B13006BE6C8 /* BaseTableViewController_Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128AF7D23BF8B13006BE6C8 /* BaseTableViewController_Second.swift */; };
-		B128AF8023BF8B13006BE6C8 /* BaseTableViewController_Second.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128AF7D23BF8B13006BE6C8 /* BaseTableViewController_Second.swift */; };
 		B197F37F238C1D4E00F794AA /* TopThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B197F37D238C1D4D00F794AA /* TopThreeView.xib */; };
 		B197F380238C1D4E00F794AA /* TopThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B197F37D238C1D4D00F794AA /* TopThreeView.xib */; };
 		B197F381238C1D4E00F794AA /* TopThreeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B197F37D238C1D4D00F794AA /* TopThreeView.xib */; };
@@ -2758,7 +2755,6 @@
 		76FF6916232FD7CB00D5CB09 /* PackageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PackageCell.xib; sourceTree = "<group>"; };
 		76FF691A232FDA7E00D5CB09 /* PackageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageEntity.swift; sourceTree = "<group>"; };
 		B128AF7923BF86B8006BE6C8 /* SearchExersiseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchExersiseEntity.swift; sourceTree = "<group>"; };
-		B128AF7D23BF8B13006BE6C8 /* BaseTableViewController_Second.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController_Second.swift; sourceTree = "<group>"; };
 		B197F37D238C1D4D00F794AA /* TopThreeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopThreeView.xib; sourceTree = "<group>"; };
 		B197F37E238C1D4D00F794AA /* TopThreeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopThreeView.swift; sourceTree = "<group>"; };
 		B197F387238C1D6600F794AA /* HomeNavigationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeNavigationView.xib; sourceTree = "<group>"; };
@@ -4523,7 +4519,6 @@
 				DE361DE22283E54C00FA3B0D /* BaseView.swift */,
 				DE2C07F722857FF000BAE311 /* BaseTabStripViewController.swift */,
 				2A36B89F231A4AE100E9696F /* BaseTableViewController.swift */,
-				B128AF7D23BF8B13006BE6C8 /* BaseTableViewController_Second.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -6716,7 +6711,6 @@
 				DE361DD92283E4BD00FA3B0D /* LoginProtocols.swift in Sources */,
 				DE361E9D2283E60500FA3B0D /* NotificationPopUp.swift in Sources */,
 				B197F3BD238C1D6800F794AA /* HomeActionCell.swift in Sources */,
-				B128AF7E23BF8B13006BE6C8 /* BaseTableViewController_Second.swift in Sources */,
 				DEBCBC6A22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */,
 				DE952F8D2287D2A700E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE361DFB2283E57900FA3B0D /* String+extension.swift in Sources */,
@@ -7347,7 +7341,6 @@
 				DE952FF12287DF4800E3F688 /* LoginProtocols.swift in Sources */,
 				DE952FF22287DF4800E3F688 /* NotificationPopUp.swift in Sources */,
 				B197F3BE238C1D6800F794AA /* HomeActionCell.swift in Sources */,
-				B128AF7F23BF8B13006BE6C8 /* BaseTableViewController_Second.swift in Sources */,
 				DEBCBC6B22945BA000DF7F74 /* StudyPackViewCell.swift in Sources */,
 				DE952FF32287DF4800E3F688 /* KActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
 				DE952FF42287DF4800E3F688 /* String+extension.swift in Sources */,
@@ -8043,7 +8036,6 @@
 				B197F384238C1D4E00F794AA /* TopThreeView.swift in Sources */,
 				2A2FC7A122EC16F700D7011D /* GrammarEntity.swift in Sources */,
 				DE9530B02287DF6400E3F688 /* KActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
-				B128AF8023BF8B13006BE6C8 /* BaseTableViewController_Second.swift in Sources */,
 				DE6FDB2822AB909600960422 /* FindCell.swift in Sources */,
 				DE9531442288324300E3F688 /* EditProfileViewController.swift in Sources */,
 				DE9530B12287DF6400E3F688 /* UserEndPoint.swift in Sources */,

@@ -10,8 +10,9 @@
 
 import UIKit
 
-class FindViewController: BaseTableViewControllerSecond {
+class FindViewController: BaseTableViewController {
     
+    @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var vAppSearch: AppSearchBar!
     @IBOutlet weak var lbNoResult: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
@@ -19,11 +20,12 @@ class FindViewController: BaseTableViewControllerSecond {
     var presenter: FindPresenterProtocol?
     var type : TypeViewSearch = .searchExercise
     var keySearch = "" {
-        didSet { fetchData() }
+        didSet { callAPI() }
     }
 
     override func setUpViews() {
         super.setUpViews()
+        initTableView(tableView: resultsTableView)
         lblMessage.attributedText = NSAttributedString(string: "\(type == .searchExercise ? LocalizableKey.feeFind.showLanguage : "")")
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
         vAppSearch.actionSearch = { [weak self] (text) in
@@ -42,7 +44,7 @@ class FindViewController: BaseTableViewControllerSecond {
     
     func searchExercise(text: String) {
         self.dismissKeyBoard()
-        self.presenter?.search(type: self.type, text: text, offset: listItem.count)
+        self.presenter?.search(type: self.type, text: text, offset: self.offset)
     }
     
     override func btnBackTapped() {
@@ -52,26 +54,26 @@ class FindViewController: BaseTableViewControllerSecond {
         
     // MARK: For check read or not
     private func changeStatusRow(index: IndexPath) {
-        (listItem as! [TestResultProfileEntity])[index.row].isRead = true
+        (listData as! [TestResultProfileEntity])[index.row].isRead = true
         DispatchQueue.main.async {
-            let cell = self.myTableView.cellForRow(at: index)
+            let cell = self.resultsTableView.cellForRow(at: index)
             cell?.backgroundColor = UIColor.white
         }
     }
     
     private func configureTable() {
-        myTableView.registerXibFile(FindCell.self)
-        myTableView.separatorStyle = .none
+        resultsTableView.registerXibFile(FindCell.self)
+        resultsTableView.separatorStyle = .none
     }
     
     // MARK: - Call api
-    override func fetchData() {
-        super.fetchData()
+    override func callAPI() {
+        super.callAPI()
         searchExercise(text: self.keySearch)
     }
     
     // MARK: - TableView
-    override func cellForRowAt(item: Any, for indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
+    override func cellForRowAt(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
         
         if type == .searchTheory {
@@ -86,25 +88,25 @@ class FindViewController: BaseTableViewControllerSecond {
         return cell
     }
     
-    override func didSelectRowAt(selectedItem: Any, indexPath: IndexPath) {
-        if type == .searchTheory {
-            guard let item = selectedItem as? SearchEntity else { return }
-            let idLesson = item._id ?? "0"
-            self.presenter?.gotoTheoryDetail(idLesson: idLesson)
-        }
-        
-        if type == .searchExercise {
-            guard let exercise = selectedItem as? TestResultProfileEntity else { return }
-            self.changeStatusRow(index: indexPath)
-            let vc = FindDetailExerciseRouter.createModule(findDetail: exercise, isMinusMoney: exercise.isMinusMoney)
-            vc.callbackMinusMoney = { [weak self] in
-                if let self = self {
-                    (self.listItem as! [TestResultProfileEntity])[indexPath.row].isMinusMoney = true
-                }
+    override func didSelectedRowAt(item: Any, indexPath: IndexPath) {
+    if type == .searchTheory {
+        guard let item = item as? SearchEntity else { return }
+        let idLesson = item._id ?? "0"
+        self.presenter?.gotoTheoryDetail(idLesson: idLesson)
+    }
+    
+    if type == .searchExercise {
+        guard let exercise = item as? TestResultProfileEntity else { return }
+        self.changeStatusRow(index: indexPath)
+        let vc = FindDetailExerciseRouter.createModule(findDetail: exercise, isMinusMoney: exercise.isMinusMoney)
+        vc.callbackMinusMoney = { [weak self] in
+            if let self = self {
+                (self.listData as! [TestResultProfileEntity])[indexPath.row].isMinusMoney = true
             }
-            self.push(controller: vc)
-            
         }
+        self.push(controller: vc)
+        
+    }
     }
     
 }
@@ -112,7 +114,7 @@ class FindViewController: BaseTableViewControllerSecond {
 // MARK: - FindViewProtocol's method
 extension FindViewController: FindViewProtocol{
     func reloadView(data: [Any]) {
-        self.didFetchData(data: data)
+        initLoadData(data: data)
     }
     
     func showErrorSearchFailed() {

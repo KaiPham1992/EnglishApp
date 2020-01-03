@@ -49,6 +49,7 @@ class DetailTeamViewController: BaseTableViewController {
         super.viewDidLoad()
         initTableView(tableView: tbTeam)
         stackView.isHidden = true
+        self.callAPI()
     }
     
     override func callAPI() {
@@ -135,7 +136,7 @@ class DetailTeamViewController: BaseTableViewController {
         super.btnBackTapped()
     }
     
-    override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func cellForRowAt(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let dataCell = item as! UserEntity
         let cell = tableView.dequeue(DetailTeamCell.self, for: indexPath)
         cell.lbIndex.text = "\(indexPath.item + 1)"
