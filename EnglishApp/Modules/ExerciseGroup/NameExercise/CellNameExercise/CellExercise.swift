@@ -34,6 +34,11 @@ class CellExercise: UICollectionViewCell {
     //for competition
     var listAnswerCompetition : [SubmitAnswerEntity] = []
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        tvContent.contentOffset = CGPoint(x: 0, y: 0)
+    }
+    
     var questionEntity: QuestionEntity? {
         didSet {
             if (self.questionEntity?.checkHaveAudio() ?? false) {
@@ -64,7 +69,7 @@ class CellExercise: UICollectionViewCell {
             } else {
                 self.imgBackground.heightAnchor.constraint(equalTo: self.imgBackground.widthAnchor, multiplier: 920/1620).isActive = true
                 self.bottomBackgroundCorner.constant = -3
-                self.ratioBackgroundCorner.constant = 454/250
+                self.ratioBackgroundCorner.constant = 440/250
             }
         }
         tvContent.contentInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 0, right: 10)

@@ -47,9 +47,14 @@ class CreateExerciseViewController: BaseViewController {
                 
             }
         } else {
-            if let _param = self.presenter?.createExerciseParam {
-                self.presenter?.gotoCreateExercise(param: _param)
+            if UserDefaultHelper.shared.loginUserInfo?.isUserPremium == true {
+                if let _param = self.presenter?.createExerciseParam {
+                    self.presenter?.gotoCreateExercise(param: _param)
+                }
+            } else {
+                self.upgradeAccount()
             }
+            
         }
     }
     
