@@ -89,24 +89,24 @@ class FindViewController: BaseTableViewController {
     }
     
     override func didSelectedRowAt(item: Any, indexPath: IndexPath) {
-    if type == .searchTheory {
-        guard let item = item as? SearchEntity else { return }
-        let idLesson = item._id ?? "0"
-        self.presenter?.gotoTheoryDetail(idLesson: idLesson)
-    }
-    
-    if type == .searchExercise {
-        guard let exercise = item as? TestResultProfileEntity else { return }
-        self.changeStatusRow(index: indexPath)
-        let vc = FindDetailExerciseRouter.createModule(findDetail: exercise, isMinusMoney: exercise.isMinusMoney)
-        vc.callbackMinusMoney = { [weak self] in
-            if let self = self {
-                (self.listData as! [TestResultProfileEntity])[indexPath.row].isMinusMoney = true
-            }
+        if type == .searchTheory {
+            guard let item = item as? SearchEntity else { return }
+            let idLesson = item._id ?? "0"
+            self.presenter?.gotoTheoryDetail(idLesson: idLesson)
         }
-        self.push(controller: vc)
         
-    }
+        if type == .searchExercise {
+            guard let exercise = item as? TestResultProfileEntity else { return }
+            self.changeStatusRow(index: indexPath)
+            let vc = FindDetailExerciseRouter.createModule(findDetail: exercise, isMinusMoney: exercise.isMinusMoney)
+            vc.callbackMinusMoney = { [weak self] in
+                if let self = self {
+                    (self.listData as! [TestResultProfileEntity])[indexPath.row].isMinusMoney = true
+                }
+            }
+            self.push(controller: vc)
+            
+        }
     }
     
 }
