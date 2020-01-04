@@ -37,7 +37,7 @@ class CreateExerciseInteractor: CreateExerciseInteractorInputProtocol {
         }) { (error) in
              ProgressView.shared.hide()
              guard let _error = error else {return}
-             self.presenter?.upgradeAccount()
+//             self.presenter?.upgradeAccount()
         }
     }
 }
