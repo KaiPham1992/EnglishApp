@@ -44,6 +44,11 @@ class CellResultExercise: UICollectionViewCell {
         super.awakeFromNib()
         setupView()
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        tvContent.contentOffset = CGPoint(x: 0, y: 0)
+    }
 
     func setupView(){
 //        tvContent.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 50, right: 0)
