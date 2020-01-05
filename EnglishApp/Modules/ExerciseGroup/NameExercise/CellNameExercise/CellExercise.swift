@@ -62,7 +62,7 @@ class CellExercise: UICollectionViewCell {
     func setupView(){
         imgBackground.translatesAutoresizingMaskIntoConstraints = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            if UIDevice.current.isIphone4_7Inch() {
+            if UIDevice.current.isIphone4_7Inch() || UIDevice.current.isIphone4Inch(){
                 self.imgBackground.heightAnchor.constraint(equalTo: self.imgBackground.widthAnchor, multiplier: 720/1620).isActive = true
                 self.bottomBackgroundCorner.constant = -2
                 self.ratioBackgroundCorner.constant = 580/250

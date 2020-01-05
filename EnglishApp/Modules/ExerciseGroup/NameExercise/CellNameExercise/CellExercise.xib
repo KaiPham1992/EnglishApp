@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina5_5" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -28,16 +28,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="302" height="541"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j8t-lX-8WA">
-                                        <rect key="frame" x="0.0" y="0.0" width="302" height="167"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="302" height="130.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question" translatesAutoresizingMaskIntoConstraints="NO" id="bMB-rW-3dE">
-                                                <rect key="frame" x="0.0" y="0.0" width="302" height="167"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="302" height="130.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="bMB-rW-3dE" secondAttribute="height" multiplier="1664:920" placeholder="YES" id="Frc-72-fbR"/>
+                                                    <constraint firstAttribute="width" secondItem="bMB-rW-3dE" secondAttribute="height" multiplier="1664:720" placeholder="YES" id="Frc-72-fbR"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WfP-tD-d7H">
-                                                <rect key="frame" x="16" y="10" width="270" height="141"/>
+                                                <rect key="frame" x="16" y="10" width="270" height="104.5"/>
                                                 <subviews>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ElR-iR-3zt">
                                                         <rect key="frame" x="0.0" y="0.0" width="270" height="30"/>
@@ -68,7 +68,7 @@
                                                         </constraints>
                                                     </view>
                                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRm-eN-hh2" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="270" height="141"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="270" height="104.5"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -76,9 +76,9 @@
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_question coner" translatesAutoresizingMaskIntoConstraints="NO" id="CJp-Pp-xoA">
-                                                <rect key="frame" x="231.66666666666666" y="122.33333333333333" width="73.333333333333343" height="41.666666666666671"/>
+                                                <rect key="frame" x="229.5" y="96" width="75.5" height="32.5"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="CJp-Pp-xoA" secondAttribute="height" multiplier="440:250" id="6uG-ld-3IX"/>
+                                                    <constraint firstAttribute="width" secondItem="CJp-Pp-xoA" secondAttribute="height" multiplier="580:250" id="6uG-ld-3IX"/>
                                                 </constraints>
                                             </imageView>
                                         </subviews>
@@ -89,7 +89,7 @@
                                             <constraint firstItem="CJp-Pp-xoA" firstAttribute="height" secondItem="bMB-rW-3dE" secondAttribute="height" multiplier="279:1120" id="6Nd-Om-i7Q"/>
                                             <constraint firstItem="bMB-rW-3dE" firstAttribute="leading" secondItem="j8t-lX-8WA" secondAttribute="leading" id="HQZ-IB-kCy"/>
                                             <constraint firstItem="WfP-tD-d7H" firstAttribute="top" secondItem="j8t-lX-8WA" secondAttribute="top" constant="10" id="IYW-KF-StU"/>
-                                            <constraint firstItem="CJp-Pp-xoA" firstAttribute="bottom" secondItem="bMB-rW-3dE" secondAttribute="bottom" constant="-3" id="Lg3-fq-4tK"/>
+                                            <constraint firstItem="CJp-Pp-xoA" firstAttribute="bottom" secondItem="bMB-rW-3dE" secondAttribute="bottom" constant="-2" id="Lg3-fq-4tK"/>
                                             <constraint firstItem="CJp-Pp-xoA" firstAttribute="trailing" secondItem="bMB-rW-3dE" secondAttribute="trailing" constant="3" id="QuD-G2-nvn"/>
                                             <constraint firstAttribute="trailing" secondItem="WfP-tD-d7H" secondAttribute="trailing" constant="16" id="U3r-kH-gYX"/>
                                             <constraint firstAttribute="bottom" secondItem="WfP-tD-d7H" secondAttribute="bottom" constant="16" id="eft-xQ-eLI"/>
@@ -98,7 +98,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="yD4-u9-JSq">
-                                        <rect key="frame" x="0.0" y="167" width="302" height="374"/>
+                                        <rect key="frame" x="0.0" y="130.5" width="302" height="410.5"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
                                 </subviews>
