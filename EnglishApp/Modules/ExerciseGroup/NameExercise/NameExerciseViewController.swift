@@ -33,6 +33,7 @@ class NameExerciseViewController: BaseViewController {
 
 	var presenter: NameExercisePresenterProtocol?
     weak var exerciseDelegate: ExerciseDelegate?
+    
     var player : AVPlayer?
     var playerItem : AVPlayerItem?
     var isReapeat = false
@@ -84,32 +85,8 @@ class NameExerciseViewController: BaseViewController {
         }
     }
     
-    var isEnd : Bool = false {
-        didSet {
-            vCountTime.stopTimer()
-            btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
-            self.vCountTime.isUserInteractionEnabled = false
-            self.disableUserInteractionCell()
-        }
-    }
-    
-    var isPauseTime = false {
-        didSet{
-            if isPauseTime {
-                btnNext.isUserInteractionEnabled = false
-                clvQuestion.isUserInteractionEnabled = false
-                if player != nil {
-                    player?.pause()
-                }
-            } else {
-                btnNext.isUserInteractionEnabled = true
-                clvQuestion.isUserInteractionEnabled = true
-                if player != nil {
-                    player?.play()
-                }
-            }
-        }
-    }
+    var isEnd : Bool = false
+    var isPauseTime = false
     
     override func setUpViews() {
         super.setUpViews()
@@ -326,8 +303,8 @@ extension NameExerciseViewController : CellExerciseDelegate{
     func clickAudio(indexPath: IndexPath) {
         var numberClick = self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick ?? 0
         numberClick += 1
+        //if numberclick % 2 == 0 -> audio is pause else audio is playing.
         self.presenter?.exerciseEntity?.questions?[indexPath.row].numberClick = numberClick
-        
         if let linkAudio = self.presenter?.exerciseEntity?.questions?[indexPath.row].link_audio, let url = URL(string: BASE_URL + linkAudio) {
             if numberClick == 1 {
                 self.playerItem = AVPlayerItem(url: url)
@@ -360,13 +337,16 @@ extension NameExerciseViewController : TimeDelegate{
     
     func startTime() {
         isPauseTime = false
-        if player != nil {
-            player?.play()
-        }
+        btnNext.isUserInteractionEnabled = true
+        clvQuestion.isUserInteractionEnabled = true
     }
     
     func endTime() {
         self.isEnd = true
+        vCountTime.stopTimer()
+        btnNext.setTitle(LocalizableKey.time_end.showLanguage.uppercased(), for: .normal)
+        self.vCountTime.isUserInteractionEnabled = false
+        self.disableUserInteractionCell()
         if player != nil {
             player?.pause()
             player = nil
@@ -376,6 +356,13 @@ extension NameExerciseViewController : TimeDelegate{
     
     func pauseTime() {
         isPauseTime = true
+        btnNext.isUserInteractionEnabled = false
+        clvQuestion.isUserInteractionEnabled = false
+        let numberClick = self.presenter?.exerciseEntity?.questions?[currentIndex - 1].numberClick ?? 0
+        //if numberclick % 2 == 0 -> audio is pause else audio is playing.
+        if numberClick % 2 != 0 {
+            self.presenter?.exerciseEntity?.questions?[currentIndex - 1].numberClick = numberClick + 1
+        }
         if player != nil {
             player?.pause()
         }
