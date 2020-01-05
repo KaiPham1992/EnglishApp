@@ -91,8 +91,9 @@ open class BaseTableViewController: BaseViewController {
             DispatchQueue.main.async {
                 ProgressView.shared.hide()
                 if data.count == 0 && self.offset == 0 {
-                    self.showNoData(text: self.messageNoData)
+                    self.showNoData()
                 } else {
+                    self.tableView?.isHidden = false
                     self.hideNoData()
                 }
                 self.tableView?.reloadData()

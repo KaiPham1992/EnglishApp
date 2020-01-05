@@ -14,6 +14,7 @@ class AppSearchBar: BaseViewXib {
     @IBOutlet weak var btnSearch: UIButton!
     var actionSearch : ((String) -> ())?
     var changedText : ((String)->())?
+    var timer: Timer?
     
     func setTitleAndPlaceHolder(placeHolder: String? = nil) {
         if placeHolder != nil {
@@ -27,7 +28,7 @@ class AppSearchBar: BaseViewXib {
     }
     
     @objc func actionChangeText() {
-        changedText?(tfInput.text ?? "")
+        self.changedText?(self.tfInput.text ?? "")
     }
     
     @IBAction func btnSearchTapped() {

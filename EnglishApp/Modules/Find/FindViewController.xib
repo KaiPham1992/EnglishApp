@@ -11,14 +11,10 @@
         <array key="Comfortaa-Bold.ttf">
             <string>Comfortaa-Bold</string>
         </array>
-        <array key="Comfortaa-Regular.ttf">
-            <string>Comfortaa-Regular</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FindViewController">
             <connections>
-                <outlet property="lbNoResult" destination="Utm-54-dXq" id="5dU-8x-TVU"/>
                 <outlet property="lblMessage" destination="Cnp-sW-Lqv" id="uB3-Sg-KKV"/>
                 <outlet property="resultsTableView" destination="YRG-9P-g6e" id="jCE-Q7-i8e"/>
                 <outlet property="vAppSearch" destination="uUp-Wl-EQp" id="jBh-ql-EBO"/>
@@ -73,11 +69,6 @@
                         <constraint firstAttribute="bottom" secondItem="QvF-d5-viA" secondAttribute="bottom" id="p9q-w4-HGt"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Không có kết quả tìm kiếm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utm-54-dXq">
-                    <rect key="frame" x="91" y="325.5" width="193" height="16"/>
-                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="YRG-9P-g6e">
                     <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -85,13 +76,11 @@
             </subviews>
             <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="Utm-54-dXq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="13S-SQ-IfS"/>
                 <constraint firstItem="fA9-A1-vi7" firstAttribute="bottom" secondItem="YRG-9P-g6e" secondAttribute="bottom" id="TEG-rF-hHH"/>
                 <constraint firstItem="YRG-9P-g6e" firstAttribute="trailing" secondItem="fA9-A1-vi7" secondAttribute="trailing" id="UzG-9m-CaW"/>
                 <constraint firstItem="YRG-9P-g6e" firstAttribute="leading" secondItem="fA9-A1-vi7" secondAttribute="leading" id="VSC-Bu-38Y"/>
                 <constraint firstItem="mKU-6d-Tfg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ZEE-US-NHF"/>
                 <constraint firstItem="YRG-9P-g6e" firstAttribute="top" secondItem="mKU-6d-Tfg" secondAttribute="bottom" id="aIG-lu-baI"/>
-                <constraint firstItem="Utm-54-dXq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eIk-pq-Yr1"/>
                 <constraint firstItem="mKU-6d-Tfg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="jWV-zy-GAw"/>
                 <constraint firstItem="mKU-6d-Tfg" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="o72-UJ-AJq"/>
             </constraints>

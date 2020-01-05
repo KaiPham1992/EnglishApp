@@ -14,34 +14,52 @@ class FindViewController: BaseTableViewController {
     
     @IBOutlet weak var resultsTableView: UITableView!
     @IBOutlet weak var vAppSearch: AppSearchBar!
-    @IBOutlet weak var lbNoResult: UILabel!
     @IBOutlet weak var lblMessage: UILabel!
     
     var presenter: FindPresenterProtocol?
     var type : TypeViewSearch = .searchExercise
-    
+    var timer: Timer?
     var keySearch = ""
     
     override func setUpViews() {
         super.setUpViews()
-        self.showProgressViewOnTableView = true
         initTableView(tableView: resultsTableView)
         lblMessage.attributedText = NSAttributedString(string: "\(type == .searchExercise ? LocalizableKey.feeFind.showLanguage : "")")
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
-        vAppSearch.actionSearch = { [weak self] (_) in
+        vAppSearch.actionSearch = { [weak self] (text) in
             guard let self = self else { return }
-            self.offset = 0
+            ProgressView.shared.show()
             self.dismissKeyBoard()
-            self.callAPI()
+            self.prepareForSearching(text: text)
         }
         vAppSearch.changedText = {[weak self] (text) in
             guard let self = self else { return }
-            self.keySearch = text
-            self.offset = 0
-            self.callAPI()
+            if text.isEmpty {
+                ProgressView.shared.hide()
+                self.tableView?.isHidden = true
+                return
+            }
+            ProgressView.shared.show()
+            self.timer?.invalidate()
+            self.timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { (_) in
+                self.prepareForSearching(text: text)
+            })
+            
         }
         configureTable()
-        lbNoResult.attributedText = NSAttributedString(string: "\(LocalizableKey.noResultFound.showLanguage)")
+    }
+    
+    private func prepareForSearching(text: String) {
+        
+        hideNoData()
+        listData.removeAll()
+        self.keySearch = text
+        self.offset = 0
+        self.callAPI()
+    }
+    
+    override func showNoData(text: String = LocalizableKey.lbNoData.showLanguage) {
+        super.showNoData(text: LocalizableKey.noResultFound.showLanguage)
     }
     
     override func setUpNavigation() {
@@ -122,6 +140,7 @@ class FindViewController: BaseTableViewController {
 extension FindViewController: FindViewProtocol{
     func reloadView(data: [Any]) {
         initLoadData(data: data)
+        
     }
     
     func showErrorSearchFailed() {

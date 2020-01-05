@@ -16,6 +16,7 @@ class FindDetailExerciseViewController: BaseViewController {
     @IBOutlet weak var tbvResultQuestion: UITableView!
     @IBOutlet weak var tvContent: TextViewHandleTap!
     @IBOutlet weak var vAudio: UIView!
+    @IBOutlet weak var heightOfAudioView: NSLayoutConstraint!
     
     var findDetail : TestResultProfileEntity!
     
@@ -32,6 +33,14 @@ class FindDetailExerciseViewController: BaseViewController {
 
     override func setUpViews() {
         super.setUpViews()
+        if (findDetail.questions?.first?.link_audio) != nil {
+            heightOfAudioView.constant = 30
+            vAudio.isHidden = false
+        } else {
+            heightOfAudioView.constant = 0
+            vAudio.isHidden = true
+        }
+        
         tvContent.contentInset = UIEdgeInsets.init(top: 0, left: 0, bottom: 100, right: 0)
         tbvResultQuestion.registerXibFile(CellResultFillQuestion.self)
         tbvResultQuestion.registerXibFile(CellResultChoice.self)
