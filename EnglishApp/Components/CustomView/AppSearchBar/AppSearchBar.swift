@@ -13,6 +13,7 @@ class AppSearchBar: BaseViewXib {
     @IBOutlet weak var vContain: UIView!
     @IBOutlet weak var btnSearch: UIButton!
     var actionSearch : ((String) -> ())?
+    var changedText : ((String)->())?
     
     func setTitleAndPlaceHolder(placeHolder: String? = nil) {
         if placeHolder != nil {
@@ -22,18 +23,14 @@ class AppSearchBar: BaseViewXib {
     
     override func setUpViews() {
         super.setUpViews()
-        tfInput.delegate = self
+        tfInput.addTarget(self, action: #selector(actionChangeText), for: UIControl.Event.editingChanged)
+    }
+    
+    @objc func actionChangeText() {
+        changedText?(tfInput.text ?? "")
     }
     
     @IBAction func btnSearchTapped() {
         actionSearch?(tfInput.text ?? "")
-    }
-}
-
-extension AppSearchBar: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        actionSearch?(tfInput.text ?? "")
-        textField.resignFirstResponder()
-        return true
     }
 }

@@ -19,18 +19,26 @@ class FindViewController: BaseTableViewController {
     
     var presenter: FindPresenterProtocol?
     var type : TypeViewSearch = .searchExercise
-    var keySearch = "" {
-        didSet { callAPI() }
-    }
-
+    
+    var keySearch = ""
+    
     override func setUpViews() {
         super.setUpViews()
+        self.showProgressViewOnTableView = true
         initTableView(tableView: resultsTableView)
         lblMessage.attributedText = NSAttributedString(string: "\(type == .searchExercise ? LocalizableKey.feeFind.showLanguage : "")")
         vAppSearch.setTitleAndPlaceHolder(placeHolder: LocalizableKey.findExcersise.showLanguage)
-        vAppSearch.actionSearch = { [weak self] (text) in
-            guard let strongSelf = self else { return }
-            strongSelf.keySearch = text
+        vAppSearch.actionSearch = { [weak self] (_) in
+            guard let self = self else { return }
+            self.offset = 0
+            self.dismissKeyBoard()
+            self.callAPI()
+        }
+        vAppSearch.changedText = {[weak self] (text) in
+            guard let self = self else { return }
+            self.keySearch = text
+            self.offset = 0
+            self.callAPI()
         }
         configureTable()
         lbNoResult.attributedText = NSAttributedString(string: "\(LocalizableKey.noResultFound.showLanguage)")
@@ -43,7 +51,6 @@ class FindViewController: BaseTableViewController {
     }
     
     func searchExercise(text: String) {
-        self.dismissKeyBoard()
         self.presenter?.search(type: self.type, text: text, offset: self.offset)
     }
     
@@ -122,11 +129,4 @@ extension FindViewController: FindViewProtocol{
             self.push(controller: StoreViewController())
             }, completeCancel: nil)
     }
-    
-//    func checkAmountSearchExerciseSuccessed() {
-//        let exercise = self.presenter?.searchExciseRespone[indexRow]
-//        let vc = ResultExerciseRouter.createModule(listAnswer: exercise?.questions ?? [], index: 0, isSearch: true)
-//        self.push(controller: vc)
-//    }
-    
 }

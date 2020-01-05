@@ -8,7 +8,6 @@
 
 import Foundation
 import UIKit
-import Alamofire
 
 open class BaseTableViewController: BaseViewController {
 
@@ -29,12 +28,12 @@ open class BaseTableViewController: BaseViewController {
     var isLoadmore = true
     var addLoadmore = true
     private var isShowProgressView = true
+    var showProgressViewOnTableView = false
 
     var messageNoData = LocalizableKey.lbNoData.showLanguage
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-//        self.callAPI()
     }
     
     func initTableView(tableView: UITableView) {
@@ -66,12 +65,19 @@ open class BaseTableViewController: BaseViewController {
         refreshControl.endRefreshing()
     }
     
-    func callAPI() { if isShowProgressView { ProgressView.shared.show() } }
+    func callAPI() {
+        if isShowProgressView {
+            if showProgressViewOnTableView {
+                ProgressView.shared.showOnFrame(frame: tableView?.frame ?? CGRect.zero)
+            } else {
+                ProgressView.shared.show()
+            }
+        }
+    }
     
     func initLoadData(data: [Any]){
         DispatchQueue.global().async {
             if self.offset == 0 {
-//                self.listData.removeAll()
                 self.listData = data
             } else {
                 self.listData += data
@@ -89,10 +95,7 @@ open class BaseTableViewController: BaseViewController {
                 } else {
                     self.hideNoData()
                 }
-                
-                UIView.performWithoutAnimation {
-                    self.tableView?.reloadData()
-                }
+                self.tableView?.reloadData()
             }
         }
     }
@@ -124,7 +127,7 @@ extension BaseTableViewController : UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if addLoadmore {
-            if indexPath.row == listData.count - 1 && isLoadmore {
+            if indexPath.row == listData.count - 5 && isLoadmore {
                 self.isShowProgressView = false
                 callAPI()
                 let spiner = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)

@@ -80,6 +80,19 @@ open class ProgressView {
         }
     }
     
+    func showOnFrame(frame: CGRect) {
+        guard let view = UIApplication.topViewController()?.view else { return }
+        vcontainer.translatesAutoresizingMaskIntoConstraints = true
+        vcontainer.frame = frame
+        view.addSubview(vcontainer)
+        vcontainer.backgroundColor =  UIColor.black.withAlphaComponent(0.2)
+        vcontainer.setBorder(borderWidth: 1, borderColor: .clear, cornerRadius: 0)
+        vcontainer.addSubview(vIndicator)
+        vIndicator.anchor(widthConstant: 60, heightConstant: 60)
+        vIndicator.centerSuperview()
+        vIndicator.startAnimating()
+    }
+    
     private func processTimer() {
         self.number += 1
         if self.number > 60 {
