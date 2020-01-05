@@ -157,6 +157,7 @@ extension QAViewController: QAViewProtocol {
     }
     
     func didSendQA() {
+        NotificationCenter.default.post(name: Notification.Name("UpdateProfile"), object: nil)
         presenter?.listQA.removeAll()
         presenter?.loadMoreQA()
     }

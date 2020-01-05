@@ -258,6 +258,7 @@ extension HomeViewController {
         self.listActivities = []
         getHomeRecently()
         getHomeSummary()
+        getProfile()
     }
     
     private func loginUserDefault(complete : @escaping (() -> ())) {
@@ -402,8 +403,14 @@ extension HomeViewController {
     
     private func openLogin() {
         let vc = LoginRouter.createModule()
-        vc.callBackLoginSuccessed = {[unowned self] in
+        vc.callBackLoginSuccessed = { [unowned self] in
         //self.addHeaderHome()
+            self.handleLoginSuccess()
+        }
+        self.present(controller: vc, animated: true)
+    }
+    
+    private func handleLoginSuccess() {
         if let isEntranceTest = UserDefaultHelper.shared.loginUserInfo?.is_entrance_test, isEntranceTest == "1" {
             self.heightEntranceTest.constant = 0
         } else {
@@ -412,9 +419,7 @@ extension HomeViewController {
         if let user = UserDefaultHelper.shared.loginUserInfo {
             self.header.user = user
         }
-            self.countNotification()
-        }
-        self.present(controller: vc, animated: true)
+        self.countNotification()
     }
     
 }
@@ -526,7 +531,8 @@ extension HomeViewController: MenuViewControllerDelegate {
                 self.header.user = user
                 let vc = LoginRouter.createModule()
                 vc.callBackLoginSuccessed = {[unowned self] in
-                    self.getProfile()
+//                    self.getProfile()
+                    self.handleLoginSuccess()
                 }
                 self.present(controller: vc, animated: true)
             }) { (error) in
@@ -544,11 +550,16 @@ extension HomeViewController: HomeViewProtocol{
         if let topThree = summaryInfo.leader_boards {
             self.topThreeView.listTopThree = topThree
         }
+        
         let numberCompetition = summaryInfo.count_fight_test ?? 0
         if numberCompetition > 0 {
             NotificationCenter.default.post(name: NSNotification.Name.init("RecieveCompetition"), object: nil)
         } else {
             NotificationCenter.default.post(name: NSNotification.Name.init("NoCompetition"), object: nil)
+        }
+        
+        if let user = summaryInfo.user_info {
+            self.header.user = user
         }
     }
     
