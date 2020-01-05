@@ -78,16 +78,12 @@ extension CellResultExercise: UITableViewDataSource{
         return questionEntity?.answers?.count ?? 0
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let type = questionEntity?.answers?.first?.type else {
-            return 0
-        }
-        return type == "1" ? (questionEntity?.answers?[section].options.count ?? 0) : 1
+        let type = questionEntity?.answers?[section].type ?? "1"
+        return type == "2" ? 1 : (questionEntity?.answers?[section].options.count ?? 0)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let type = questionEntity?.answers?.first?.type else {
-            return UITableViewCell()
-        }
+        let type = questionEntity?.answers?[indexPath.section].type ?? "1"
         let value = questionEntity?.answers?[indexPath.section].value ?? ""
         let status = questionEntity?.answers?[indexPath.section].status ?? ""
         if type == "1" {
