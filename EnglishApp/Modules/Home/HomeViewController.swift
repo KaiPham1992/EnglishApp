@@ -557,10 +557,6 @@ extension HomeViewController: HomeViewProtocol{
         } else {
             NotificationCenter.default.post(name: NSNotification.Name.init("NoCompetition"), object: nil)
         }
-        
-        if let user = summaryInfo.user_info {
-            self.header.user = user
-        }
     }
     
     func didGetHomeRecently(activities: [Acitvity]) {
