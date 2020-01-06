@@ -102,7 +102,10 @@ class FindViewController: BaseTableViewController {
         let cell = tableView.dequeue(FindCell.self, for: indexPath)
         
         if type == .searchTheory {
-            if let _item = item as? SearchEntity, let name = _item.nameString { cell.lbTitle.text = name }
+            if let _item = item as? SearchEntity, let name = _item.nameString {
+                cell.lbTitle.text = name
+                cell.heightOfContentLbl.constant = 0
+            }
         } else {
             if let _item = item as? TestResultProfileEntity {
                 cell.backgroundColor = (_item.isRead == true ? (UIColor.white) : (AppColor.notificationNotRead))

@@ -113,12 +113,14 @@ open class BaseTableViewController: BaseViewController {
     
     func didSelectedRowAt(item: Any, indexPath: IndexPath) { }
     
+    func heightForRow() -> CGFloat { return UITableView.automaticDimension }
+    
 }
 
 // MARK: - UITableViewDataSource
 extension BaseTableViewController : UITableViewDataSource {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
+        return heightForRow()
         
     }
     

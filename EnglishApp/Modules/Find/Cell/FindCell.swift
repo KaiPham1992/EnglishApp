@@ -12,6 +12,7 @@ class FindCell: BaseTableCell {
 
     @IBOutlet weak var lbTitle: UILabel!
     @IBOutlet weak var lbContent: UILabel!
+    @IBOutlet weak var heightOfContentLbl: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
