@@ -36,7 +36,7 @@ class CellFillQuestionExercise: UITableViewCell {
             tvContent.text = text
             tvContent.textColor = .black
         } else {
-            tvContent.placeholder = "Enter answer"
+            tvContent.placeholder = LocalizableKey.enter_answer.showLanguage
         }
     }
 }

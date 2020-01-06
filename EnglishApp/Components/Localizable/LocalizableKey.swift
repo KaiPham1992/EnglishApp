@@ -413,4 +413,6 @@ struct LocalizableKey {
     static let see_detail = "see_detail"
     static let enter_comment = "enter_comment"
     static let invalid_token = "invalid_token"
+    
+    static let enter_answer = "enter_answer"
 }

@@ -15,6 +15,7 @@ class PlaceHolderTextView : UITextView, UITextViewDelegate {
     @IBInspectable var placeholder : String? {
         didSet {
             self.text = placeholder
+            self.textColor = placeholderColor
         }
     }
     

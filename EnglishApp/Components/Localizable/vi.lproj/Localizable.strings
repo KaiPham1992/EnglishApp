@@ -420,3 +420,5 @@
 "see_detail" = "Xem chi tiết";
 "enter_comment" = "Bình luận";
 "invalid_token" = "Có một thiết bị khác đang đăng nhập tài khoản của bạn. Nếu không phải là bạn, đổi ngay mật khẩu đăng nhập để bảo vệ tài khoản.";
+
+"enter_answer" = "Nhập câu trả lời";
