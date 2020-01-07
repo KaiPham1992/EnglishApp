@@ -249,7 +249,7 @@
 "respond_question" = "REPORT THE QUESTION";
 "explain_solution" = "Explain the answer";
 "individual" = "Individual";
-"action" = "Fight";
+"action" = "Competition";
 "point" = "point";
 "not_correct" = "Faild";
 "see_result"= "See result";
@@ -367,8 +367,8 @@
 "noResultFound" = "No results found.";
 "feeFind" = "Each search will cost 5 honey jars or 50 diamonds.";
 "done" = "Done";
-"passed" = "Passed";
-"doing" = "Doing";
+"passed" = "History";
+"doing" = "Contest";
 
 // add after
 "rank_of_competition" = "Rank of Competition";

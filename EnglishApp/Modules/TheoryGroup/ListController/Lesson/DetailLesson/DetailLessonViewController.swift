@@ -39,6 +39,7 @@ class DetailLessonViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
+        tvContent.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
         if type == .detailLesson {
             let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
             tap.numberOfTapsRequired = 2
