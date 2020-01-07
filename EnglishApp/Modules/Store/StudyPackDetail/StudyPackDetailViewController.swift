@@ -115,16 +115,18 @@ class StudyPackDetailViewController: BaseViewController, StudyPackDetailViewProt
                 self.setTitleNavigation(title: product.name ?? "")
                 self.webView.loadHTMLString(product.content ?? "", baseURL: Bundle.main.bundleURL)
                 let htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 18; color: black; text-align: justify">"# + (product.content ?? "") + #"</span>"#
-                ProgressView.shared.hide()
+                
             }
             
         } else {
+            ProgressView.shared.show()
             if let htmlString = product.content{
                 let _htmlString = self.font + #"<span style="font-family: 'Comfortaa'; font-weight: Regular; font-size: 18; color: black; text-align: justify">"# + htmlString + #"</span>"#
                 webView.loadHTMLString(_htmlString, baseURL: Bundle.main.bundleURL)
             }
             setTitleNavigation(title: product.name ?? "")
         }
+        
         btnUpgrade.setTitle(LocalizableKey.upgrade.showLanguage, for: .normal)
         btnRestore.setTitle(LocalizableKey.restorePurchase.showLanguage.uppercased(), for: .normal)
     }
@@ -148,6 +150,10 @@ extension StudyPackDetailViewController: WKNavigationDelegate {
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         let jscript = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);"
         webView.evaluateJavaScript(jscript)
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        ProgressView.shared.hide()
     }
 }
 
