@@ -116,7 +116,7 @@ extension FindDetailExerciseViewController: UITableViewDataSource{
         view.addSubview(headerView)
         headerView.fillToView(view: view)
         //show UI question
-        headerView.setupCell(index: section + 1, content: findDetail.name ?? "")
+        headerView.setupCell(content: findDetail.name ?? "")
         headerView.callbackExplainQuestion = {[weak self] (section) in
             guard let self = self else {return}
             self.actionExplainQuestion(section: section)

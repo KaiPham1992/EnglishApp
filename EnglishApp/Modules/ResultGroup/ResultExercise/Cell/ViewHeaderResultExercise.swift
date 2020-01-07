@@ -34,6 +34,11 @@ class ViewHeaderResultExercise : BaseViewXib {
         tvContent.attributedText = content.convertToAttributedString()
     }
     
+    func setupCell(content: String) {
+        lblIndex.isHidden = true
+        tvContent.attributedText = content.convertToAttributedString()
+    }
+    
     override func setUpViews() {
         tvContent.contentInset = UIEdgeInsets.zero
         tvContent.callbackDoubleTap = {[weak self] (position, word) in
