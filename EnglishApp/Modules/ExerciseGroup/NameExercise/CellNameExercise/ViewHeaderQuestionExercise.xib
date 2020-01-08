@@ -7,9 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Comfortaa-Bold.ttf">
-            <string>Comfortaa-Bold</string>
-        </array>
         <array key="Comfortaa-Regular.ttf">
             <string>Comfortaa-Regular</string>
         </array>
@@ -18,7 +15,6 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewHeaderQuestionExercise" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
                 <outlet property="btnSuggestion" destination="RMF-Qe-1c9" id="Ljv-hq-uL9"/>
-                <outlet property="lblIndex" destination="bqc-hD-aLQ" id="B7L-VW-EDM"/>
                 <outlet property="tvContent" destination="PHU-sX-e5v" id="alV-Kg-0Qm"/>
             </connections>
         </placeholder>
@@ -27,20 +23,11 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="102"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqc-hD-aLQ">
-                    <rect key="frame" x="10" y="17" width="30" height="18"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="lessThanOrEqual" constant="30" id="1st-f0-ig4"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="snb-Wb-Jwt">
-                    <rect key="frame" x="50" y="10" width="354" height="82"/>
+                    <rect key="frame" x="10" y="10" width="394" height="82"/>
                     <subviews>
                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PHU-sX-e5v" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                            <rect key="frame" x="0.0" y="0.0" width="360" height="82"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="ito-n3-h4d"/>
@@ -50,7 +37,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Io-Z5-AfF">
-                            <rect key="frame" x="330" y="0.0" width="24" height="82"/>
+                            <rect key="frame" x="370" y="0.0" width="24" height="82"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RMF-Qe-1c9">
                                     <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -77,11 +64,9 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="snb-Wb-Jwt" secondAttribute="bottom" constant="10" id="KNr-p5-0kE"/>
-                <constraint firstItem="PHU-sX-e5v" firstAttribute="leading" secondItem="bqc-hD-aLQ" secondAttribute="trailing" constant="10" id="Ugf-VK-2TF"/>
+                <constraint firstItem="snb-Wb-Jwt" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="Wvw-gP-lMJ"/>
                 <constraint firstItem="snb-Wb-Jwt" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="bjF-is-xo5"/>
                 <constraint firstAttribute="trailing" secondItem="snb-Wb-Jwt" secondAttribute="trailing" constant="10" id="dmt-Aj-KBk"/>
-                <constraint firstItem="PHU-sX-e5v" firstAttribute="top" secondItem="bqc-hD-aLQ" secondAttribute="top" constant="-7" id="krD-Am-7Eb"/>
-                <constraint firstItem="bqc-hD-aLQ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="wJO-ga-AVV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="137.68115942028987" y="316.07142857142856"/>

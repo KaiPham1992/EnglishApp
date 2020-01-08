@@ -7,9 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Comfortaa-Bold.ttf">
-            <string>Comfortaa-Bold</string>
-        </array>
         <array key="Comfortaa-Regular.ttf">
             <string>Comfortaa-Regular</string>
         </array>
@@ -17,7 +14,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewHeaderResultExercise" customModule="EnglishApp_AppStore" customModuleProvider="target">
             <connections>
-                <outlet property="lblIndex" destination="mZc-Ed-f0p" id="VF4-Jr-Eon"/>
                 <outlet property="tvContent" destination="mQ1-zF-eHP" id="fxF-J3-d9f"/>
             </connections>
         </placeholder>
@@ -90,7 +86,7 @@
                     </constraints>
                 </stackView>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ1-zF-eHP" customClass="TextViewHandleTap" customModule="EnglishApp_AppStore" customModuleProvider="target">
-                    <rect key="frame" x="35" y="6" width="290" height="128"/>
+                    <rect key="frame" x="10" y="6" width="315" height="128"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="4IZ-rH-EqI"/>
@@ -99,24 +95,13 @@
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="14"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZc-Ed-f0p">
-                    <rect key="frame" x="10" y="16" width="15" height="18"/>
-                    <constraints>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="1uo-We-se6"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="16"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="mZc-Ed-f0p" firstAttribute="top" secondItem="mQ1-zF-eHP" secondAttribute="top" constant="10" id="2mz-0t-rvO"/>
                 <constraint firstAttribute="bottom" secondItem="mQ1-zF-eHP" secondAttribute="bottom" constant="7" id="88Z-QI-ghk"/>
                 <constraint firstItem="uBn-n6-pzM" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="-10" id="QcS-rP-I2J"/>
-                <constraint firstItem="mQ1-zF-eHP" firstAttribute="leading" secondItem="mZc-Ed-f0p" secondAttribute="trailing" constant="10" id="Svw-72-tIe"/>
                 <constraint firstItem="mQ1-zF-eHP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="6" id="ccF-Vz-ISL"/>
-                <constraint firstItem="mZc-Ed-f0p" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="cjW-1o-3z5"/>
+                <constraint firstItem="mQ1-zF-eHP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="10" id="i6B-wc-prK"/>
                 <constraint firstItem="mQ1-zF-eHP" firstAttribute="trailing" secondItem="uBn-n6-pzM" secondAttribute="leading" constant="-10" id="qTC-ZM-d62"/>
                 <constraint firstItem="uBn-n6-pzM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="5" id="zaK-Hv-l5y"/>
             </constraints>
