@@ -17,7 +17,7 @@ enum DetailLessonVocabulary{
 }
 class DetailLessonViewController: BaseViewController {
 
-    @IBOutlet weak var tvContent: UITextView!
+    @IBOutlet weak var tvContent: TextViewHandleTap!
     var presenter: DetailLessonPresenterProtocol?
     var type : DetailLessonVocabulary = .detailLesson
     var lesson: ItemLesson?
@@ -26,7 +26,6 @@ class DetailLessonViewController: BaseViewController {
     var isClickLikeImage = false
     var vocabulary : WordExplainEntity?
     var idVocabulary : Int?
-    var font = ""
     var isLike = 0 {
         didSet{
             self.btnLike.setBackgroundImage(isLike == 0 ? UIImage(named:"Material_Icons_white_favorite") : #imageLiteral(resourceName: "Material_Icons_white_favorite-1") , for: .normal)
@@ -39,28 +38,13 @@ class DetailLessonViewController: BaseViewController {
     
     override func setUpViews() {
         super.setUpViews()
-        tvContent.textContainer.lineBreakMode = NSLineBreakMode.byWordWrapping
-        if type == .detailLesson {
-            let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap))
-            tap.numberOfTapsRequired = 2
-            tvContent.addGestureRecognizer(tap)
-        }
-    }
-    
-    @objc func handleTap(sender: UITapGestureRecognizer){
-        let point = sender.location(in: tvContent)
-        if let detectedWord = getWordAtPosition(point){
-            self.presenter?.searchVocabulary(word: detectedWord, position: point)
-        }
-    }
-    
-    private func getWordAtPosition(_ point: CGPoint) -> String?{
-        if let textPosition = tvContent.closestPosition(to: point) {
-            if let range = tvContent.tokenizer.rangeEnclosingPosition(textPosition, with: .word, inDirection: UITextDirection(rawValue: 1)) {
-                return tvContent.text(in: range)
+        tvContent.callbackDoubleTap = {[weak self] (position, word) in
+            guard let self = self else {return}
+            if self.type == .detailLesson {
+                let newPosition = self.tvContent.convert(position, to: self.view)
+                self.presenter?.searchVocabulary(word: word, position: newPosition)
             }
         }
-        return nil
     }
     
     override func viewWillAppear(_ animated: Bool) {

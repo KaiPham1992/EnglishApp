@@ -17,7 +17,7 @@ class ViewHeaderQuestionExercise : BaseViewXib {
     var callbackSugestionQuestion : (()->())?
     var callbackDoubleTap : ((_ word: String,_ position: CGPoint)->())?
     
-    @IBOutlet weak var lblIndex: UILabel!
+//    @IBOutlet weak var lblIndex: UILabel!
     @IBOutlet weak var btnSuggestion: UIButton!
     @IBOutlet weak var tvContent: TextViewHandleTap!
     
@@ -30,7 +30,7 @@ class ViewHeaderQuestionExercise : BaseViewXib {
     }
     
     func setupCell(index: Int, content: String) {
-        lblIndex.text = "\(index)."
+//        lblIndex.text = "\(index)."
         tvContent.attributedText = content.attributedString()
     }
 

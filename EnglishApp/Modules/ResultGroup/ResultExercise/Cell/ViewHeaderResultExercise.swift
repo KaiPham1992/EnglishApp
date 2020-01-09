@@ -18,7 +18,7 @@ class ViewHeaderResultExercise : BaseViewXib {
         callbackRelatedGrammar?(self.section)
     }
 
-    @IBOutlet weak var lblIndex: UILabel!
+//    @IBOutlet weak var lblIndex: UILabel!
     
     var callbackExplainQuestion : ((_ section : Int)->())?
     var callbackRelatedGrammar: ((_ section: Int) -> ())?
@@ -30,12 +30,12 @@ class ViewHeaderResultExercise : BaseViewXib {
     
     func setupCell(index: Int, content: String) {
         self.section = index - 1
-        lblIndex.text = "\(index). "
+//        lblIndex.text = "\(index). "
         tvContent.attributedText = content.convertToAttributedString()
     }
     
     func setupCell(content: String) {
-        lblIndex.isHidden = true
+//        lblIndex.isHidden = true
         tvContent.attributedText = content.convertToAttributedString()
     }
     
