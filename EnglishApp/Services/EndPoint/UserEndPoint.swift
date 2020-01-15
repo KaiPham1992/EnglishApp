@@ -129,7 +129,8 @@ extension UserEndPoint: EndPointType {
         case .fogotPassword(let email):
             return ["email": email]
         case .checkLogin:
-            var param = [:] as [String: Any]
+            let code = LanguageHelper.currentAppleLanguage()
+            var param = ["language_code": code] as [String: Any]
             param = BaseParam.addDeviceParams(inputParams: param)
             return param
         case .getCaptcha:
