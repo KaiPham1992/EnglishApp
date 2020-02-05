@@ -33,9 +33,9 @@ class HistoryDailyMissonViewController: ListManagerVC {
     }
     
     override func cellForRowListManager(item: Any, _ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let data = item as! TestResult
+//        let data = item as! TestResult
         let cell = tableView.dequeue(CellGrammar.self, for: indexPath)
-        cell.setupTitle(title: data.exercise_name&)
+        cell.setupTitle(title: LocalizableKey.dailyMissionTitle.showLanguage)
         return cell
     }
     
