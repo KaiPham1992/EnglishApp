@@ -29,7 +29,12 @@ class CellResultFillQuestion: UITableViewCell {
             viewLine.backgroundColor = #colorLiteral(red: 0.1254901961, green: 0.7490196078, blue: 0.3333333333, alpha: 1)
         }
     }
+    
     func setupCell(option: OptionEntity){
         lblAnswer.text = option.value& + ". " + option.content&
+    }
+    
+    func setupCellFindDetail(){
+        lblAnswer.text = ""
     }
 }

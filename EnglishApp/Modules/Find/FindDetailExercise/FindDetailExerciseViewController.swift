@@ -105,7 +105,7 @@ extension FindDetailExerciseViewController: UITableViewDataSource{
         }
         let cell = tableView.dequeue(CellResultFillQuestion.self, for: indexPath)
         cell.indexPath = indexPath
-        cell.setupCell(option: findDetail.answer[indexPath.row])
+        cell.setupCellFindDetail()
         return cell
     }
     
