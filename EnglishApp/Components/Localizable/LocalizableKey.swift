@@ -112,6 +112,7 @@ struct LocalizableKey {
     static let explainConpetition = "explainConpetition"
     static let leaveTeam = "leaveTeam"
     static let createGroup = "createGroup"
+    static let create = "create"
     static let nameGroup = "nameGroup"
     static let enterNameGroup = "enterNameGroup"
     static let leaveTeamPopUp = "leaveTeamPopUp"

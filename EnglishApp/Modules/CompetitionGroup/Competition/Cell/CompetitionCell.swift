@@ -72,6 +72,7 @@ class CompetitionCell: BaseTableCell {
     
     func setupCellCannotJoin(competitionEntity: CompetitionEntity) {
         self.parseBaseData(competitionEntity: competitionEntity)
+        viewButtonCompetition.backgroundColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         lblTitleButtonCompetition.attributedText = NSAttributedString(string: LocalizableKey.joinTeam.showLanguage.uppercased(), attributes: [NSAttributedString.Key.foregroundColor : #colorLiteral(red: 0.3803921569, green: 0.3803921569, blue: 0.3803921569, alpha: 1)])
     }
     

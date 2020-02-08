@@ -64,8 +64,8 @@ class PopUpHelper {
         popUp.showPopUp(titlePopUp: LocalizableKey.createGroup.showLanguage,
                         titleInput: LocalizableKey.nameGroup.showLanguage,
                         placeHolderInput: LocalizableKey.enterNameGroup.showLanguage,
-                        titleNo: LocalizableKey.cancel.showLanguage.uppercased(),
-                        titleYes: LocalizableKey.createGroup.showLanguage.uppercased(),
+                        titleNo: LocalizableKey.cancel.showLanguage,
+                        titleYes: LocalizableKey.create.showLanguage,
                         completionNo: completionNo,
                         completionYes: completionYes)
     }

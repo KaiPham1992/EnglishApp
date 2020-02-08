@@ -117,6 +117,7 @@
 "explainConpetition" = "Giải thích về cuộc thi";
 "leaveTeam" = "Rời nhóm";
 "createGroup" = "Tạo nhóm";
+"create" = "Tạo nhóm";
 "nameGroup" = "Tên nhóm";
 "enterNameGroup" = "Nhập tên nhóm";
 "leaveTeamPopUp" = "Bạn có muốn rời nhóm?";

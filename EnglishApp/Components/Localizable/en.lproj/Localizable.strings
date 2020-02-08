@@ -86,7 +86,7 @@
 // logout
 "popUpLogout" = "Do you want to logout?";
 "agree" = "YES";
-"cancel" = "NO";
+"cancel" = "Cancel";
 
 //QA
 
@@ -117,6 +117,7 @@
 "explainConpetition" = "About competition";
 "leaveTeam" = "Leave this team";
 "createGroup" = "Create your own team";
+"create" = "Create";
 "nameGroup" = "Team's name";
 "enterNameGroup" = "Enter your team name";
 "leaveTeamPopUp" = "Do you want to leave this team?";
