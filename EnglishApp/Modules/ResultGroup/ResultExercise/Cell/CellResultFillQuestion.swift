@@ -35,6 +35,6 @@ class CellResultFillQuestion: UITableViewCell {
     }
     
     func setupCellFindDetail(){
-        lblAnswer.text = ""
+        lblAnswer.text = " "
     }
 }

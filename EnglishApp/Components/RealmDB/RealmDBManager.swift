@@ -78,12 +78,12 @@ class RealmDBManager {
         }
     }
     
-    func filter<T:Object, K: Codable>(objectType: T.Type,key: String,value: K) -> [T]{
-        var query = "\(key) contains '\(value)'"
+    func filter<T:Object, K: Codable>(objectType: T.Type, key: String, value: K) -> [T]{
+        var query = "\(key) BEGINSWITH '\(value)'"
         if value is Int {
             query = "\(key) = \(value)"
         }
-        let objects = database.objects(objectType).filter(query).toArrayLimit20()
+        let objects = database.objects(objectType).filter(query).sorted(byKeyPath: "\(key)").toArrayLimit20()
         guard let _objects = objects as? [T] else{
             return []
         }
@@ -114,7 +114,7 @@ extension Results {
     
     func toArrayLimit20<T: Object>() -> [T] {
         var arr : [T] = []
-        let lastIndex = self.count > 20 ? 20 : self.count
+//        let lastIndex = self.count > 20 ? 20 : self.count
         for item in self {
             if let _item = item as? T {
                 arr.append(_item)
