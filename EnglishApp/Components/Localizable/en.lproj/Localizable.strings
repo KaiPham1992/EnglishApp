@@ -104,6 +104,7 @@
 "titleCompetition" = "Competition";
 "conditionCompetition" = "Condition: ";
 "timeStart" = "Time Start: ";
+"timeEnd" = "Time End: ";
 "countTeam" = "Number of teams: ";
 "selectTeamJoin" = "Select your team";
 "joinTeam" = "Join";

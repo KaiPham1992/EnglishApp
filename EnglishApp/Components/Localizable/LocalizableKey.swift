@@ -98,6 +98,7 @@ struct LocalizableKey {
     static let titleCompetition = "titleCompetition"
     static let conditionCompetition = "conditionCompetition"
     static let timeStart = "timeStart"
+    static let timeEnd = "timeEnd"
     static let countTeam = "countTeam"
     static let competition = "competition"
     

@@ -104,6 +104,7 @@
 "titleCompetition" = "Thi đấu";
 "conditionCompetition" = "Điều kiện: ";
 "timeStart" = "Thời gian bắt đầu: ";
+"timeEnd" = "Thời gian kết thúc: ";
 "countTeam" = "Số đội: ";
 "selectTeamJoin" = "Chọn nhóm tham gia";
 "joinTeam" = "Tham gia";
