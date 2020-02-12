@@ -30,14 +30,16 @@ class TestResultProfileEntity: Mappable {
     var type : String?
     var question_id : String?
     var question_details_id : String?
+    var link_audio : String?
     
     required init?(map: Map) {
         
     }
     
     func mapping(map: Map) {
-        self.question_id <- map["question_id"]
-        self.question_details_id <- map["question_details_id"]
+       self.link_audio <- map["link_audio"]
+       self.question_id <- map["question_id"]
+       self.question_details_id <- map["question_details_id"]
        self.type <- map["type"]
        self.answer <- map["answers"]
        self.type_test <- map["type_test"]

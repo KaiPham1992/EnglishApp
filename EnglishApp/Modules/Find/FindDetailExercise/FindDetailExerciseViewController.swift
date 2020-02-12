@@ -33,7 +33,7 @@ class FindDetailExerciseViewController: BaseViewController {
 
     override func setUpViews() {
         super.setUpViews()
-        if (findDetail.questions?.first?.link_audio) != nil {
+        if (findDetail.link_audio) != nil {
             heightOfAudioView.constant = 30
             vAudio.isHidden = false
         } else {
