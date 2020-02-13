@@ -207,6 +207,7 @@ struct LocalizableKey {
     //comment
     static let comment = "comment"
     static let point = "point"
+    static let points = "points"
     
     //exercise
     static let exercise = "exercise"

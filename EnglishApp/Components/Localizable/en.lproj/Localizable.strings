@@ -252,7 +252,8 @@
 "explain_solution" = "Explain the answer";
 "individual" = "Individual";
 "action" = "Competition";
-"point" = "bp";
+"point" = "points";
+"points" = "bp";
 "not_correct" = "Faild";
 "see_result"= "See result";
 "explain_question" = "Explain the question";

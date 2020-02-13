@@ -252,7 +252,8 @@
 "explain_solution" = "Giải thích đáp án";
 "individual" = "Cá nhân";
 "action" = "Thi đấu";
-"point" = "bp";
+"point" = "điểm";
+"points" = "bp";
 "not_correct" = "Chưa đạt";
 "see_result"= "Xem kết quả";
 "explain_question" = "Giải thích câu hỏi";

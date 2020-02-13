@@ -63,7 +63,7 @@ class ProfileHeader: BaseTableCell {
         vDisplayName.lbPlaceHolder.text = user.nameShowUI
         vEmail.lbPlaceHolder.text = user.email
         vLocation.lbPlaceHolder.text = user.nationShowUI
-        lbPoint.text = user.rankPoint*.description.formatNumber(type: ".") + " \(LocalizableKey.point.showLanguage)"
+        lbPoint.text = user.rankPoint*.description.formatNumber(type: ".") + " \(LocalizableKey.points.showLanguage)"
         lbFullName.text = user.fullName
         lbLevel.text = user.rankName
         lbBee.text = user.amountHoney*.description.formatNumber(type: ".") + " \(LocalizableKey.boxHoney.showLanguage)"
