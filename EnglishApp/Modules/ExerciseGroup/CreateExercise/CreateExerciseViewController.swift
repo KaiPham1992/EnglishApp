@@ -27,7 +27,7 @@ class CreateExerciseViewController: BaseViewController {
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.goHome()
             }
-            self.present(controller: vc, animated: true)
+            self.present(controller: UINavigationController(rootViewController: vc), animated: true)
         } else {
             self.gotoExercise()
         }

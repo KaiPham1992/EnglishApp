@@ -407,7 +407,7 @@ extension HomeViewController {
         //self.addHeaderHome()
             self.handleLoginSuccess()
         }
-        self.present(controller: vc, animated: true)
+        self.present(controller: UINavigationController(rootViewController: vc), animated: true)
     }
     
     private func handleLoginSuccess() {
@@ -534,7 +534,7 @@ extension HomeViewController: MenuViewControllerDelegate {
 //                    self.getProfile()
                     self.handleLoginSuccess()
                 }
-                self.present(controller: vc, animated: true)
+                self.present(controller: UINavigationController(rootViewController: vc), animated: true)
             }) { (error) in
             }
         }) { (error) in

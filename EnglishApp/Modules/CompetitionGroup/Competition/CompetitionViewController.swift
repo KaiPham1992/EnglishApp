@@ -169,7 +169,7 @@ class CompetitionViewController: ListManagerVC {
                         tabbar.gotoHome()
                     }
                 }
-                self.present(controller: vc, animated: true)
+                self.present(controller: UINavigationController(rootViewController: vc), animated: true)
             } else {
                 if let _ = tableView.cellForRow(at: IndexPath(row: index, section: 0)) as? CompetitionCell {
                     let data = listData[index] as! CompetitionEntity
@@ -211,7 +211,7 @@ class CompetitionViewController: ListManagerVC {
                         tabbar.gotoHome()
                     }
                 }
-                self.present(controller: vc, animated: true)
+                self.present(controller: UINavigationController(rootViewController: vc), animated: true)
             } else {
                 let data = listData[index] as! CompetitionEntity
                 let vc = FightRouter.createModule(completion_id: competitionId , team_id: Int(data.team_id ?? "0") ?? 0, startDate: data.startDate ?? Date(), endDate: data.endDate ?? Date())

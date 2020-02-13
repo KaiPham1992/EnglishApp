@@ -136,7 +136,7 @@ extension ChoiceExerciseViewController : UITableViewDelegate{
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.gotoExercise(indexPath: indexPath)
             }
-            self.present(controller: vc, animated: true)
+            self.present(controller: UINavigationController(rootViewController: vc), animated: true)
         } else {
             self.gotoExercise(indexPath: indexPath)
         }

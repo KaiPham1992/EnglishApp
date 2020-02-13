@@ -100,7 +100,7 @@ class DetailLessonViewController: BaseViewController {
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.goHome()
             }
-            self.present(controller: vc, animated: true)
+            self.present(controller: UINavigationController(rootViewController: vc), animated: true)
         } else {
             self.comment()
         }
@@ -141,7 +141,7 @@ class DetailLessonViewController: BaseViewController {
             vc.callBackLoginSuccessed = {[unowned self] in
                 self.goHome()
             }
-            self.present(controller: vc, animated: true)
+            self.present(controller: UINavigationController(rootViewController: vc), animated: true)
         }
     }
 }
