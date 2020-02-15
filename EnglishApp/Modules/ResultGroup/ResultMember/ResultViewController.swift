@@ -165,7 +165,7 @@ extension ResultViewController: ResultViewProtocol{
             let rank = Int(self.presenter?.testResultProfile?.amount_rank ?? "0") ?? 0
             let textRank = rank >= 0 ? "+\(rank)" : "\(rank)"
             self.viewRank.setupNumber(number: textDiamond + " \(LocalizableKey.point.showLanguage)")
-            self.viewLevel.setupNumber(number: textRank + " \(LocalizableKey.point.showLanguage)")
+            self.viewLevel.setupNumber(number: textRank + " \(LocalizableKey.points.showLanguage)")
             self.tbvResult.reloadData()
         }
         
