@@ -204,7 +204,7 @@
 "exchangeTitle" = "Đổi Quà";
 "notEnoughDiamondText" = "Bạn không đủ kim cương.";
 "notEnoughHoneyText" = "Bạn không đủ mật ong.";
-"usedCode" = "Mã code đã được sử dụng";
+"usedCode" = "Mã code đã hết lượt sử dụng";
 "totalHoney" = "Tổng số mật ong: ";
 "restorePurchase" = "Khôi phục mua hàng";
 
