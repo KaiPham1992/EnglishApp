@@ -37,7 +37,7 @@ class ResultGroupViewController: PageViewController, ResultGroupViewProtocol {
     
     override func viewControllers(for pagerTabStripController: PagerTabStripViewController) -> [UIViewController] {
         if isHistory {
-            return [ResultRouter.createModule(type: .competition, id: self.idCompetition, isHistory:  true),ResultCompetitionRouter.createModule(idCompetition: self.idCompetition, endDate: self.endDate)]
+            return [ResultRouter.createModule(type: .competition, id: self.idCompetition, isHistory:  true), ResultCompetitionRouter.createModule(idCompetition: self.idCompetition, endDate: self.endDate)]
         } else {
             return [ResultRouter.createModule(type: .competition, id: self.idCompetition), ResultCompetitionRouter.createModule(idCompetition: self.idCompetition, endDate: self.endDate)]
         }
