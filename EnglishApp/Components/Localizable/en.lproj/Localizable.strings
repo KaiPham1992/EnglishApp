@@ -419,6 +419,6 @@
 "restore_success" = "Restore success";
 "see_detail" = "Details";
 "enter_comment" = "Comment";
-"invalid_token" = "There is another device logged in to your account. If not you, immediately change your password to protect your account.";
+"invalid_token" = "There is a suspicious activity in your account. Please log in again.";// "There is another device logged in to your account. If not you, immediately change your password to protect your account.";
 
 "enter_answer" = "Enter answer";
