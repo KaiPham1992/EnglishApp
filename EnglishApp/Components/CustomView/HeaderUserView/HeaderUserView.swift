@@ -16,6 +16,7 @@ class HeaderUserView: BaseViewXib {
     @IBOutlet weak var lbFullName: UILabel!
 //    @IBOutlet weak var imgRank: UIImageView!
     
+    @IBOutlet weak var lblLogin: UILabel!
     @IBOutlet weak var viewProfile: UIView!
     @IBOutlet weak var btnGotoProfile: UIButton!
     var callbackGotoProfile : (()->())?
@@ -24,11 +25,12 @@ class HeaderUserView: BaseViewXib {
             guard let user = user else { return }
             if UserDefaultHelper.shared.loginUserInfo?.email == emailDefault ||  (UserDefaultHelper.shared.loginUserInfo?.email == nil  && UserDefaultHelper.shared.loginUserInfo?.socialType == "normal") {
                 viewProfile.isHidden = true
-                btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
-                btnGotoProfile.setTitleColor(AppColor.color117_117_117, for: .normal)
+                lblLogin.attributedText = NSAttributedString(string: LocalizableKey.user_not_login.showLanguage)
+//                btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
             } else {
+                lblLogin.attributedText = NSAttributedString(string: "")
                 viewProfile.isHidden = false
-                btnGotoProfile.setTitle("", for: .normal)
+//                btnGotoProfile.setTitle("", for: .normal)
             }
             lbDiamond.text = user.amountDiamond*.description
             lbHoney.text = user.amountHoney*.description
@@ -43,8 +45,10 @@ class HeaderUserView: BaseViewXib {
     
     override func setUpViews() {
         super.setUpViews()
+        btnGotoProfile.setTitle("", for: .normal)
+        lblLogin.textColor = AppColor.color117_117_117
         viewProfile.isHidden = true
-        btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
+//        btnGotoProfile.setTitle(LocalizableKey.user_not_login.showLanguage, for: .normal)
         self.backgroundColor = AppColor.yellow
     }
     

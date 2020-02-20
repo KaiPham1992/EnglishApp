@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,6 +20,7 @@
                 <outlet property="lbDiamond" destination="2OK-ka-M96" id="kHR-4L-Jyq"/>
                 <outlet property="lbFullName" destination="Lu1-aH-LJ4" id="S1Q-IZ-GLe"/>
                 <outlet property="lbHoney" destination="QTJ-kd-EKk" id="7xV-Va-vHb"/>
+                <outlet property="lblLogin" destination="hi8-IX-qsN" id="LBu-9f-Ei1"/>
                 <outlet property="viewProfile" destination="jl6-Ih-1bY" id="CCr-ST-nkE"/>
             </connections>
         </placeholder>
@@ -148,7 +149,13 @@
                         <constraint firstItem="WRr-FJ-Txx" firstAttribute="leading" secondItem="XuH-Dp-7KT" secondAttribute="leading" constant="2" id="rLg-LZ-CLg"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-tt-nX6">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hi8-IX-qsN">
+                    <rect key="frame" x="207" y="109.5" width="0.0" height="0.0"/>
+                    <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-tt-nX6">
                     <rect key="frame" x="50" y="44" width="364" height="131"/>
                     <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="16"/>
                     <state key="normal">
@@ -161,10 +168,12 @@
             </subviews>
             <color key="backgroundColor" red="1" green="0.82745098039215681" blue="0.066666666666666666" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="hi8-IX-qsN" firstAttribute="centerY" secondItem="gjg-tt-nX6" secondAttribute="centerY" id="0su-ym-oQ1"/>
                 <constraint firstItem="jl6-Ih-1bY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="1GH-zv-uTs"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="jl6-Ih-1bY" secondAttribute="trailing" id="Vvc-aX-crd"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gjg-tt-nX6" secondAttribute="bottom" id="bob-Mc-X5I"/>
                 <constraint firstItem="jl6-Ih-1bY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mdY-B0-857"/>
+                <constraint firstItem="hi8-IX-qsN" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="p1Y-en-FLF"/>
                 <constraint firstItem="gjg-tt-nX6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="qFl-CE-Pdg"/>
                 <constraint firstItem="gjg-tt-nX6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="yxm-1h-qSv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="gjg-tt-nX6" secondAttribute="trailing" id="zxN-13-xf9"/>
