@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -140,7 +140,7 @@
                 <outlet property="tvContent" destination="KRm-eN-hh2" id="6Uu-Yi-Iq1"/>
                 <outlet property="vAudio" destination="ElR-iR-3zt" id="DMG-nG-7eP"/>
             </connections>
-            <point key="canvasLocation" x="320.28985507246381" y="696.09375"/>
+            <point key="canvasLocation" x="320.14388489208636" y="695.773381294964"/>
         </collectionViewCell>
     </objects>
     <resources>
