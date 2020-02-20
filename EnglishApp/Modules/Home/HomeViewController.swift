@@ -324,9 +324,6 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
         tbHome.registerXibFile(HomeRecentlyCell.self)
         tbHome.registerXibFile(HomeNoResultCell.self)
         tbHome.separatorStyle = .none
-        
-        tbHome.estimatedRowHeight = 120
-        tbHome.rowHeight = UITableView.automaticDimension
         tbHome.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 50, right: 0)
         tbHome.refreshControl = frefresh
         tbHome.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
