@@ -42,9 +42,7 @@ class MenuViewController: UIViewController, MenuViewProtocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         header.user = UserDefaultHelper.shared.loginUserInfo
-        
         self.listMenuItem.forEach { item in
             item.isSelected = false
         }
